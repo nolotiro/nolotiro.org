@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @ad.title %>
+</p>
+
+<p>
+  <strong>Body:</strong>
+  <%= @ad.body %>
+</p>
+
+<p>
+  <strong>User owner:</strong>
+  <%= @ad.user_owner %>
+</p>
+
+<p>
+  <strong>Type:</strong>
+  <%= @ad.type %>
+</p>
+
+<p>
+  <strong>Woeid code:</strong>
+  <%= @ad.woeid_code %>
+</p>
+
+<p>
+  <strong>Ip:</strong>
+  <%= @ad.ip %>
+</p>
+
+<%= link_to 'Edit', edit_ad_path(@ad) %> |
+<%= link_to 'Back', ads_path %>
