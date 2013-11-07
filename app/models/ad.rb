@@ -1,5 +1,6 @@
 class Ad < ActiveRecord::Base
   self.inheritance_column = nil
+  default_scope order('date_created DESC')
 
   require 'geoplanet'
 

@@ -1,14 +1,133 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>NolotiroOrg</title>
+  <title>nolotiro.org</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <div class="container">
+<div id="header">
 
-<%= yield %>
+      <div id="select_language_box">
+        <a class="lang" href="/en/index/setlang">
+          <span class="flag en"></span>
+                    <span>
+            <img src="/images/flags/en.gif" alt="English">&nbsp;English          </span>
+        </a>
+        <a class="lang active" href="/es/index/setlang">
+          <span class="flag es"></span>
+                    <span>
+            <img src="/images/flags/es.gif" alt="Español">&nbsp;Español          </span>
+        </a>
+        <a class="lang" href="/ca/index/setlang">
+          <span class="flag ca beta"></span>
+          <span class="beta_lang"></span>          <span>
+            <img src="/images/flags/ca.gif" alt="Català">&nbsp;Català          </span>
+        </a>
+        <a class="lang" href="/gl/index/setlang">
+          <span class="flag gl beta"></span>
+          <span class="beta_lang"></span>          <span>
+            <img src="/images/flags/gl.gif" alt="Galego">&nbsp;Galego          </span>
+        </a>
+        <a class="lang" href="/eu/index/setlang">
+          <span class="flag eu beta"></span>
+          <span class="beta_lang"></span>          <span>
+            <img src="/images/flags/eu.gif" alt="Euskara">&nbsp;Euskara          </span>
+        </a>
+        <a class="lang" href="/nl/index/setlang">
+          <span class="flag nl beta"></span>
+          <span class="beta_lang"></span>          <span>
+            <img src="/images/flags/nl.gif" alt="Nederlands">&nbsp;Nederlands          </span>
+        </a>
+        <a class="lang" href="/de/index/setlang">
+          <span class="flag de beta"></span>
+          <span class="beta_lang"></span>          <span>
+            <img src="/images/flags/de.gif" alt="Deutsch">&nbsp;Deutsch          </span>
+        </a>
+        <a class="lang" href="/fr/index/setlang">
+          <span class="flag fr beta"></span>
+          <span class="beta_lang"></span>          <span>
+            <img src="/images/flags/fr.gif" alt="Français">&nbsp;Français          </span>
+        </a>
+        <a class="lang" href="/pt/index/setlang">
+          <span class="flag pt beta"></span>
+          <span class="beta_lang"></span>          <span>
+            <img src="/images/flags/pt.gif" alt="Português">&nbsp;Português          </span>
+        </a>
+        <a class="lang" href="/it/index/setlang">
+          <span class="flag it beta"></span>
+          <span class="beta_lang"></span>          <span>
+            <img src="/images/flags/it.gif" alt="Italiano">&nbsp;Italiano          </span>
+        </a>
+        <a href="/es/page/translate">Otro...</a>
+      </div>
+
+      <div class="user_login_box">
+<a href="/es /user/register">
+             nuevo usuario</a>
+             o <a href="/es/auth/login">
+             acceder</a>      </div>
+
+      <div class="site-name">
+        <a href="/es" title="nolotiro.org home"><img src="/images/nolotiro_logo.png" alt="nolotiro.org" id="logo"> nolotiro.org -</a>
+      </div>
+
+      <div class="site-slogan">
+        no lo tiro, te lo regalo (sin condiciones)      </div>
+
+      <div class="ad_create_tab">
+        <a href="/es/ad/create">+ Publicar anuncio</a>
+      </div>
+
+    </div>
+
+  <%= yield %>
+
+<div id="footer">
+
+    <div id="social-butttons">
+    <div id="google-button">
+            <div id="___plusone_1" style="text-indent: 0px; margin: 0px; padding: 0px; background: none repeat scroll 0% 0% transparent; border-style: none; float: none; line-height: normal; font-size: 1px; vertical-align: baseline; display: inline-block; width: 90px; height: 20px;"><iframe title="+1" data-gapiattached="true" src="https://apis.google.com/u/0/_/+1/fastbutton?usegapi=1&amp;bsv=o&amp;size=medium&amp;hl=es&amp;origin=http%3A%2F%2Fnolotiro.org&amp;url=http%3A%2F%2Fnolotiro.org%2F&amp;gsrc=3p&amp;jsh=m%3B%2F_%2Fscs%2Fapps-static%2F_%2Fjs%2Fk%3Doz.gapi.en.ORnOFvvdM_I.O%2Fm%3D__features__%2Fam%3DAQ%2Frt%3Dj%2Fd%3D1%2Frs%3DAItRSTNO7cebcMT3Ua3DTr5qULAXLSRwzg#_methods=onPlusOne%2C_ready%2C_close%2C_open%2C_resizeMe%2C_renderstart%2Concircled%2Cdrefresh%2Cerefresh&amp;id=I1_1383819649763&amp;parent=http%3A%2F%2Fnolotiro.org&amp;pfname=&amp;rpctoken=34039969" name="I1_1383819649763" id="I1_1383819649763" vspace="0" tabindex="0" style="position: static; top: 0px; width: 90px; margin: 0px; border-style: none; left: 0px; visibility: visible; height: 20px;" marginwidth="0" marginheight="0" hspace="0" scrolling="no" width="100%" frameborder="0"></iframe></div>
+        </div>
+    <div id="twitter-button">
+        <iframe style="width: 117px; height: 20px;" data-twttr-rendered="true" title="Twitter Tweet Button" class="twitter-share-button twitter-tweet-button twitter-count-horizontal" src="http://platform.twitter.com/widgets/tweet_button.1383343979.html#_=1383819649738&amp;count=horizontal&amp;id=twitter-widget-1&amp;lang=es&amp;original_referer=http%3A%2F%2Fnolotiro.org%2Fes%2Fad%2F151695&amp;related=alabs_es&amp;size=m&amp;text=No%20lo%20tiro%2C%20te%20lo%20regalo%20(sin%20condiciones)&amp;url=http%3A%2F%2Fnolotiro.org%2F&amp;via=nolotiro" allowtransparency="true" id="twitter-widget-1" scrolling="no" frameborder="0"></iframe><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+    </div>
+        <div id="facebook-button">
+            <iframe src="http://www.facebook.com/plugins/like.php?href=http://www.facebook.com/nolotiroteloregalo%2F&amp;send=false&amp;layout=button_count&amp;width=450&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font&amp;height=21" style="border:none; overflow:hidden; width:450px; height:21px;" allowtransparency="true" scrolling="no" frameborder="0"></iframe>
+        </div>
+  </div>
+
+    <div class="links-right">
+        <a href="/es/page/about">acerca de</a>
+        | <a href="http://blog.alabs.es/category/nolotiro-org/">blog</a>
+        | <a href="/es/page/faqs">preguntas frecuentes</a>
+        | <a href="/es/ad/listall/ad_type/give">todos los anuncios</a>
+        | <a href="/es/page/translate">ayuda a traducir</a>
+        &nbsp;&nbsp;
+
+
+        <a href="http://alabs.es/"><img src="/images/alabs.png" alt="aLabs logo"></a>
+    </div>
+
+    <br>
+
+    <div id="info" class="innerWrap clearfix">
+        <p>
+            nolotiro.org es un sitio web donde regalo y busco regalos gratis de segunda mano : muebles, sillas, sofás, bicicletas, ordenadores portátiles, mesas, cocinas, lámparas, camas, ropa, juguetes, cunas o carros para bebes, teléfonos móviles y otras muchas cosas que ya no quieres y ya no necesitas para que las reutilicen otra gente a la que puede servirle o darle nueva vida.        </p>
+    </div>
+
+    <div class="links-left">
+        <a href="/es/page/tos">términos de uso</a> |
+        <a href="/es/page/privacy">política de privacidad</a> |
+        <a href="https://github.com/alabs/nolotiro">desarrolladores</a> |
+        <a href="/es/contact">contacto</a> |
+        <a href="http://nolotiro.uservoice.com/forums/30282?lang=es" target="_blank">sugerencias </a>
+    </div>
+</div>
+  </div>
+
 
 </body>
 </html>
