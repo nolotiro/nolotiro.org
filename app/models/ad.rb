@@ -1,21 +1,8 @@
 class Ad < ActiveRecord::Base
-  self.inheritance_column = nil
-  default_scope order('date_created DESC')
+  # legacy database: has a column with value "type", rails doesn't like that
+  # the "type" column is no longer need it by rails, so we don't care about it
+  self.inheritance_column = nil 
 
-  require 'geoplanet'
-
-  class << self
- 
-    def search_by_woeid woeid
-      GeoPlanet.appid = APP_CONFIG[:geoplanet_app_id]
-      GeoPlanet::Place.new(woeid)
-    end
-
-    def filter_by_woeid woeid
-      GeoPlanet.appid = APP_CONFIG[:geoplanet_app_id]
-      Ad.find_by_woeid_code(GeoPlanet::Place.new(woeid))
-    end
-
-  end
+  default_scope { order('date_created DESC') }
 
 end

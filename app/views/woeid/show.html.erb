@@ -1,0 +1,8 @@
+
+<%= @woeid %>
+
+<% @ads.each do |ad| %>
+    <%= render :partial => "ads/ad", :locals => { :ad => ad } %>
+<% end %>
+
+<%= will_paginate @ads %>

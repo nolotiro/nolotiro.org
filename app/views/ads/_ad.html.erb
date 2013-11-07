@@ -9,6 +9,9 @@
             <%= ad.title %>
         <% end %>
     </h4>
+<div class="ad_excerpt_woeid">
+        <a href="/es/woeid/<%= ad.woeid_code %>/give"><%= WoeidHelper.convert_woeid_name ad.woeid_code %> &gt; regalo</a>
+      </div>
 
     <span class="ad_status available">
         disponible
