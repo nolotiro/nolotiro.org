@@ -1,0 +1,12 @@
+defaults: &defaults
+
+development:
+  <<: *defaults
+  geoplanet_app_id: ""
+
+test:
+  <<: *defaults
+
+production:
+  <<: *defaults
+

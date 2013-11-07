@@ -1,4 +1,5 @@
 class Ad < ActiveRecord::Base
+  self.inheritance_column = nil
 
   require 'geoplanet'
 
