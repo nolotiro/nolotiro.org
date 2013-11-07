@@ -46,3 +46,4 @@ end
 
 gem 'geoplanet'
 gem 'mysql2'
+gem 'will_paginate', '~> 3.0'
