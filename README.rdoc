@@ -1,28 +1,24 @@
-== README
+== nolotiro.org v3
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is the next revision of nolotiro.org, this time in Ruby On Rails.
 
-Things you may want to cover:
+* Ruby: 2.0.0p247
+* Rails: 4.0.1
 
-* Ruby version
+We recommend using RVM or rbenv to set up the gems. 
 
-* System dependencies
+To install it you should do something like: 
 
-* Configuration
+```
+$ bundle
+$ cp config/app_config.yml.example config/app_config.yml
+$ cp config/database.yml.example config/database.yml
+$ rails s
+```
 
-* Database creation
+The database we use is legacy, a MySQL with the schema of v2 (https://github.com/alabs/nolotiro)
 
-* Database initialization
+For the WOEID we use [Yahoo GeoPlanet](http://developer.yahoo.com/geo/geoplanet/),
+so you need to register, create a new app and configure in config/app_config.yml
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+Happy hacking!
