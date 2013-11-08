@@ -407,16 +407,10 @@ textarea
 
 /* COMMON CODEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE STARTS HERE
 
-html input[type="text"]
+input[type="text"], input[type="password"], input[type="submit"]
   border: 1px solid #666
   font-size: 1.1em
   padding: 4px
-
-input
-  &[type="password"], &[type="submit"]
-    border: 1px solid #666
-    font-size: 1.1em
-    padding: 4px
 
 html img
   vertical-align: middle
@@ -587,7 +581,7 @@ form.searchbox
   font-weight: bold !important
 
 .ad_create_tab a
-  background: transparent url(/images/btn_new_ad.png) no-repeat scroll 100% 0
+  background: transparent image-url("btn_new_ad.png") no-repeat scroll 100% 0
   height: 24px
   overflow: hidden
   color: #fff
@@ -655,7 +649,6 @@ form.searchbox
 .ad_excerpt
   float: left
   border-bottom: 1px solid #DDD
-  width: 714px
   padding: 14px 18px 22px 18px
   margin: 0
   h4
@@ -721,7 +714,7 @@ form.searchbox
 
 .triangle-me
   position: absolute
-  background: url(/images/pico-green-left.png) no-repeat 0 0
+  background: image_url("pico-green-left.png") no-repeat 0 0
   height: 10px
   top: 40px
   left: -11px
@@ -729,7 +722,7 @@ form.searchbox
 
 .triangle-other
   position: absolute
-  background: url(/images/pico-white-right.png) no-repeat 0 0
+  background: image_url("pico-white-right.png") no-repeat 0 0
   height: 10px
   top: 40px
   right: -11px
@@ -896,7 +889,7 @@ form.searchbox
   padding: 2px 8px
   border: 1px solid #DDDDCA
   text-align: center
-  background: url(/images/envelope.png) no-repeat 0 0
+  background: image_url("envelope.png") no-repeat 0 0
   margin: 20px 8px 20px 18px
   &:hover .unread-hover-info
     display: block
