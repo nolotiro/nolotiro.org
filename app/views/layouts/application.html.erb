@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <!-- TODO: dynamic titles -->
     <title>nolotiro.org</title>
+    <%= favicon_link_tag 'favicon.ico' %>
     <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
     <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
     <%= csrf_meta_tags %>
@@ -17,16 +19,13 @@
 
         <%= render :partial => "partials/select_language_box" %>
 
-        <div class="user_login_box">
-          <a href="/es/user/register">
-            nuevo usuario</a>
-          o <a href="/es/auth/login">
-            acceder</a>      </div>
+        <%= render :partial => "partials/user_actions" %>
 
         <div class="site-name">
           <a href="/es" title="nolotiro.org home">
             <%= image_tag "nolotiro_logo.png", :alt => "nolotiro.org", :id => "logo" %>
             nolotiro.org -
+            <!-- TODO: dynamic titles -->
           </a>
         </div>
 
