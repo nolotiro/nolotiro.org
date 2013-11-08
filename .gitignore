@@ -19,3 +19,6 @@ config/app_config.yml
 config/database.yml
 
 *.swp
+
+# geolitecity.dat
+vendor/geolite/*

@@ -44,6 +44,7 @@ GEM
       warden (~> 1.2.3)
     erubis (2.7.0)
     execjs (2.0.2)
+    geoip (1.3.3)
     geoplanet (0.2.6)
       json (>= 1.1.3)
       rest-client (>= 0.9)
@@ -132,6 +133,7 @@ PLATFORMS
 DEPENDENCIES
   coffee-rails (~> 4.0.0)
   devise
+  geoip
   geoplanet
   jbuilder (~> 1.2)
   jquery-rails
