@@ -12,6 +12,6 @@
 
 <%= render :partial => "partials/section_locations" %>
 
-<%= render :partial => "partials/section_users" %>
+<%= render :partial => "partials/section_users", :locals => {:section_users => @section_users} %>
 
 <%= link_to 'New Ad', new_ad_path %>

@@ -5,6 +5,10 @@ class AdsController < ApplicationController
   # GET /ads.json
   def index
     @ads = Ad.paginate(:page => params[:page])
+
+    # TODO: cache | select only id, username and ad_count
+    @section_users = User.order("ads_count DESC").limit(40)
+
   end
 
   # GET /ads/1
@@ -62,13 +66,13 @@ class AdsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_ad
-      @ad = Ad.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_ad
+    @ad = Ad.find(params[:id])
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def ad_params
-      params.require(:ad).permit(:title, :body, :user_owner, :type, :woeid_code, :ip)
-    end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def ad_params
+    params.require(:ad).permit(:title, :body, :user_owner, :type, :woeid_code, :ip)
+  end
 end

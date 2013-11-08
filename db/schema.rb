@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131108110157) do
+ActiveRecord::Schema.define(version: 20131108110903) do
 
   create_table "ads", force: true do |t|
     t.string   "title",            limit: 100,                       null: false
@@ -107,6 +107,7 @@ ActiveRecord::Schema.define(version: 20131108110157) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
+    t.integer  "ads_count",                          default: 0
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

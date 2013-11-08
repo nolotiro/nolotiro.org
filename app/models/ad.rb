@@ -1,6 +1,6 @@
 class Ad < ActiveRecord::Base
 
-  belongs_to :user, foreign_key: 'user_owner'
+  belongs_to :user, foreign_key: 'user_owner', :counter_cache => true
 
   # legacy database: has a column with value "type", rails doesn't like that
   # the "type" column is no longer need it by rails, so we don't care about it
