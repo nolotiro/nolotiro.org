@@ -1,9 +1,17 @@
-<h1>Listing ads</h1>
+<div id="main">
+  <div class="section_ads">
+    <h2>últimos regalos publicados</h2>
 
-<% @ads.each do |ad| %>
-    <%= render :partial => "ad", :locals => { :ad => ad } %>
-<% end %>
+    <% @ads.each do |ad| %>
+      <%= render :partial => "ad", :locals => { :ad => ad } %>
+    <% end %>
 
-<%= will_paginate @ads %>
+    <%= will_paginate @ads %>
+  </div>
+</div>
+
+<%= render :partial => "partials/section_locations" %>
+
+<%= render :partial => "partials/section_users" %>
 
 <%= link_to 'New Ad', new_ad_path %>

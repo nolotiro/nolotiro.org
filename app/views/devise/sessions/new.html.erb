@@ -1,0 +1,45 @@
+<%= render :partial => "partials/you_have_to_sign_in" %>
+
+<div class="span-16">
+  <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+    <fieldset>
+      <legend>
+        Por favor, introduce tu email y contraseña
+      </legend>
+
+      <dt id="email-label">
+      <label for="email" class="required">
+        Tu email:
+      </label>
+      </dt>
+
+      <dd id="email-element">
+      <%= f.email_field :email, :autofocus => true %>
+      </dd>
+
+      <dt id="password-label">
+      <label for="password" class="required">
+        Contraseña:
+      </label>
+      </dt>
+
+      <dd id="password-element">
+      <%= f.password_field :password %>
+      </dd>
+
+      <% if devise_mapping.rememberable? -%>
+        <dd id="rememberme-element">
+        <%= f.check_box :remember_me %> 
+        Recuérdame
+        </dd>
+
+      <% end -%>
+
+      <div><%= f.submit "Acceder" %></div>
+
+      <%= render "devise/shared/links" %>
+
+    </fieldset>
+  <% end %>
+
+</div>

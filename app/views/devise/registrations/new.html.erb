@@ -1,0 +1,82 @@
+<div id="default_header_section">
+  <h1>Nuevo usuario</h1><br><br>
+  (Si ya eres un usuario registrado, por favor&nbsp;
+  <a href="/es/auth/login" title="user login">accede aquí</a>)
+</div>
+
+
+<div class="span-16">
+
+  <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+    <fieldset>
+
+      <legend>
+        Por favor, rellena este formulario para ser miembro de nolotiro
+      </legend>  
+
+      <%= devise_error_messages! %>
+
+      <dl class="zend_form">
+
+        <dt id="email-label">
+        <label for="email" class="required">
+          Tu email:
+        </label>
+        </dt>
+
+        <dd id="email-element">
+        <%= f.email_field :email, :autofocus => true %>
+        </dd>
+        <dt id="password1-label">
+        <label for="password1" class="required">
+          Elige tu contraseña:
+        </label>
+        </dt>
+        <dd id="password1-element">
+        <%= f.password_field :password %>
+        </dd>
+        <dt id="password2-label">
+        <label for="password2" class="required">
+          Introduce tu contraseña (si, otra vez):
+        </label>
+        </dt>
+        <dd id="password2-element">
+        <%= f.password_field :password_confirmation %></dd>
+
+
+        <!-- TODO username -->
+
+        <dt id="username-label">
+        <label for="username" class="required">
+          Elige un nombre de usuario:
+        </label>
+        </dt>
+        <dd id="username-element">
+        <input name="username" id="username" value="" type="text">
+        </dd>
+
+        <!-- TODO captcha -->
+        <dt id="captcha-input-label">
+        <label for="captcha-input" class="required">
+          Por favor, introduce los cuatro caracteres:
+        </label>
+        </dt>
+
+        <dd id="captcha-element">
+        <img alt="" src="/images/captcha/2a0a949d62beb3e2afa79cfa616e8576.png" width="160" height="50">
+        <input name="captcha[id]" value="2a0a949d62beb3e2afa79cfa616e8576" id="captcha-id" type="hidden">
+        <input name="captcha[input]" id="captcha-input" value="" type="text">
+        </dd>
+
+        <dt id="submit-label">&nbsp;</dt>
+        <dd id="submit-element">
+        <%= f.submit "Regístrate" %>
+        </dd>
+      </dl>
+
+      Enviando este formulario, admites haber leido, comprendido, y estás conforme con las <a href="/es/page/user-agreement">condiciones de uso</a> y la <a href="/es/page/privacy">política de privacidad</a> de nolotiro.org.
+    </fieldset>
+  <% end %>
+
+</div>
+
