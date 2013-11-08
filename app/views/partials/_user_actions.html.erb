@@ -1,0 +1,29 @@
+
+<% if user_signed_in? %>
+  <div class="user_login_box">
+    hola,
+    <b>
+      <a href="/es/profile/22123">
+      <%= current_user.username %>
+      </a>
+    </b> | 
+    <a title="0 unread mensajes" href="/es/message/list">
+      <%= image_tag "icons/ico_email.gif" %>
+      &nbsp;<b>0</b>
+    </a> |
+    <%= link_to "salir", destroy_user_session_path, :method => :delete %>
+  </div>
+  <div class="user_login_box">
+  </div>
+<% else %>
+  <div class="user_login_box">
+    <a href="/es/user/register">
+      nuevo usuario
+    </a>
+    o
+    <a href="/es/auth/login">
+      acceder
+    </a>
+  </div>
+
+<% end %>

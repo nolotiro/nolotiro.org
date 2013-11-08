@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131107202008) do
+ActiveRecord::Schema.define(version: 20131108110157) do
 
   create_table "ads", force: true do |t|
     t.string   "title",            limit: 100,                       null: false
@@ -89,7 +89,7 @@ ActiveRecord::Schema.define(version: 20131107202008) do
 
   create_table "users", force: true do |t|
     t.string   "username",               limit: 32,                   null: false
-    t.string   "password",               limit: 32,                   null: false
+    t.string   "legacy_password_hash"
     t.string   "email",                  limit: 100,                  null: false
     t.date     "created",                                             null: false
     t.integer  "active",                             default: 0,      null: false
