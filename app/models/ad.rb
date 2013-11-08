@@ -8,4 +8,6 @@ class Ad < ActiveRecord::Base
 
   default_scope { order('date_created DESC') }
 
+  has_attached_file :image, :styles => {:thumb => "100x90>"}
+
 end
