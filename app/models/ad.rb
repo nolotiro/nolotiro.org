@@ -10,4 +10,28 @@ class Ad < ActiveRecord::Base
 
   has_attached_file :image, :styles => {:thumb => "100x90>"}
 
+  def type_string
+    case type
+    when 1
+      'regalo'
+    when 2
+      'busco' 
+    else
+      'regalo'
+    end 
+  end
+
+  def status_string
+    case status
+    when 'available'
+      'disponible'
+    when 'reserved'
+      'reservado' 
+    when 'delivered'
+      'entregado' 
+    else
+      'disponible'
+    end 
+  end
+
 end

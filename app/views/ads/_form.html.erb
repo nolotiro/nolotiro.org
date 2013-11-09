@@ -1,42 +1,63 @@
-<%= form_for(@ad, :html => {:multipart => true}) do |f| %>
-  <% if @ad.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@ad.errors.count, "error") %> prohibited this ad from being saved:</h2>
+<div id="default_header_section">
+  <h1>Crea un nuevo anuncio - Madrid, Madrid, España</h1>
+  <br><a class="world_link" href="/es/location/change"><img src="/images/change_location.png" alt="change location"> cambiar ciudad</a>
+</div>
 
-      <ul>
-      <% @ad.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
+<div id="main">
+  <div class="span-16">
+    <!-- TODO woeid -->
+    <!-- TODO usuario -->
+    <!-- TODO date_created -->
+    <!-- TODO ip -->
+    <fieldset>
+      <legend>Para publicar tu anuncio, por favor, introduce estos datos</legend>
+      <%= form_for(@ad, :html => {:multipart => true}) do |f| %>
+        <% if @ad.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(@ad.errors.count, "error") %> prohibited this ad from being saved:</h2>
+
+            <ul>
+              <% @ad.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+              <% end %>
+            </ul>
+          </div>
+        <% end %>
+        <dl class="zend_form">
+          <dt id="photo-label"><label for="photo" class="optional">Selecciona una imagen para tu anuncio (opcional).</label></dt>
+          <dd>
+          <%= f.file_field :image %>
+          <p class="description">Formatos permitidos: gif, jpg, png. Max:1Mb de tamaño.</p></dd>
+          <dt id="type-label"><label for="type" class="required">Tipo de anuncio:</label></dt>
+          <dd id="type-element">
+          <!-- TODO select type -->
+          <select name="type" id="type" type="type">
+            <option value="" label="por favor, selecciona el tipo de anuncio">por favor, selecciona el tipo de anuncio</option>
+            <option value="2" label="busco...">busco...</option>
+            <option value="1" label="regalo...">regalo...</option>
+          </select></dd>
+          <dt id="title-label"><label for="title" class="required">Título de tu anuncio:</label></dt>
+          <dd id="title-element">
+          <%= f.text_field :title %>
+          </dd>
+          <dt id="body-label"><label for="body" class="required">Cuerpo del anuncio:</label></dt>
+          <dd id="body-element">
+          <%= f.text_area :body, :rows => 24, :cols => 80 %>
+          </dd>
+          <!-- TODO comments_enabled -->
+          <dt id="comments_enabled-label"><label for="comments_enabled" class="required">Permitir comentarios públicos</label></dt>
+          <span class="element">
+            <input name="comments_enabled" value="0" type="hidden"><input name="comments_enabled" id="comments_enabled" value="1" checked="checked" type="checkbox"></span>
+          <!-- TODO captcha -->
+          <dt id="captcha-input-label"><label for="captcha-input" class="required">Por favor, introduce los cuatro caracteres:</label></dt>
+          <dd id="captcha-element">
+          <img alt="" src="/images/captcha/4cfd9d923cb806f5eb4474258069ed8f.png" width="160" height="60">
+          <input name="captcha[id]" value="4cfd9d923cb806f5eb4474258069ed8f" id="captcha-id" type="hidden">
+          <input name="captcha[input]" id="captcha-input" value="" type="text"></dd>
+          <dt id="submit-label">&nbsp;</dt><dd id="submit-element">
+          <input name="submit" id="submit" value="Enviar" type="submit"></dd></dl>
       <% end %>
-      </ul>
-    </div>
-  <% end %>
+    </fieldset>
 
-  <div class="field">
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
   </div>
-  <div class="field">
-    <%= f.label :body %><br>
-    <%= f.text_area :body %>
-  </div>
-  <div class="field">
-    <%= f.label :user_owner %><br>
-    <%= f.number_field :user_owner %>
-  </div>
-  <div class="field">
-    <%= f.label :type %><br>
-    <%= f.number_field :type %>
-  </div>
-  <div class="field">
-    <%= f.label :woeid_code %><br>
-    <%= f.number_field :woeid_code %>
-  </div>
-  <div class="field">
-    <%= f.label :ip %><br>
-    <%= f.text_field :ip %>
-  </div>
-    <%= f.file_field :image %>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+</div>

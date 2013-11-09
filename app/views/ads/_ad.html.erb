@@ -10,15 +10,19 @@
     <% end %>
   </h4>
   <div class="ad_excerpt_woeid">
-    <a href="/es/woeid/<%= ad.woeid_code %>/give"><%= WoeidHelper.convert_woeid_name ad.woeid_code %> &gt; regalo</a>
+    <a href="/es/woeid/<%= ad.woeid_code %>/give">
+      <%= WoeidHelper.convert_woeid_name ad.woeid_code %> &gt; 
+      <%= ad.type_string %>
+    </a>
   </div>
 
-  <span class="ad_status available">
-    disponible
+  <span class="ad_status <%= ad.status %>">
+    <%= ad.status_string %>
   </span>
   <span class="ad_date">
-    Publicado el Hoy, 11:29 por el usuario
-    <a href="/es/ad/listuser/id/42397">sorayam</a>
+    Publicado hace <%= distance_of_time_in_words_to_now(ad.date_created) %>
+    por el usuario
+    <a href="/es/ad/listuser/id/<%= ad.user.id %>"><%= ad.user.username %></a>
   </span>
 
   <div><p><%= ad.body %></p></div>
