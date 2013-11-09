@@ -18,4 +18,8 @@
 config/app_config.yml
 config/database.yml
 
+# photos / images
+public/legacy/uploads/ads/original/*
+public/system/*
+
 *.swp
