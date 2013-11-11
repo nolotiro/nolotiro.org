@@ -10,6 +10,13 @@ class Ad < ActiveRecord::Base
 
   has_attached_file :image, :styles => {:thumb => "100x90>"}
 
+  scope :want, -> { where(type: 2) }
+  scope :give, -> { where(type: 1) }
+
+  scope :available, -> { where(status: "available") }
+  scope :booked, -> { where(status: "booked") }
+  scope :delivered, -> { where(status: "delivered") }
+
   def type_string
     case type
     when 1
@@ -25,7 +32,7 @@ class Ad < ActiveRecord::Base
     case status
     when 'available'
       'disponible'
-    when 'reserved'
+    when 'booked'
       'reservado' 
     when 'delivered'
       'entregado' 

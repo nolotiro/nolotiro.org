@@ -1,8 +1,46 @@
 
-<%= @woeid %>
+<div id="location_header_section">
+
+  <span class="give-want">
+    <a class=<%= @type == "give" ? "actual" : "''" %> href="/es/woeid/766273/give">regalo</a>
+    &nbsp;
+    <a class=<%= @type == "want" ? "actual" : "''" %> href="/es/woeid/766273/want">busco</a>
+  </span>
+
+  <div class="location_name">
+    <h1>regalo - <%= @woeid %></h1><br>
+
+<%= render :partial => "ads/search" %>
+
+<a class="world_link" href="/es/location/change">
+<%= link_to location_ask_path, :class => "world_link" do %>
+ <%= image_tag "change_location.png", :alt => "change location" %> 
+ cambiar ciudad
+ <% end %>
+  </div>
+
+</div>
+
+<div id="main">
+  <div class="span-18">
+    
+<%= render :partial => "filter_status", :locals => {:status => @status} %>
 
 <% @ads.each do |ad| %>
     <%= render :partial => "ads/ad", :locals => { :ad => ad } %>
 <% end %>
 
-<%= will_paginate @ads %>
+    <%= will_paginate @ads %>
+
+<div class="rss">
+            <a href="http://nolotiro.org/es
+                     /rss/feed/woeid/766273
+                     /ad_type/give">
+              <img alt="Suscribirse via rss a" src="/images/icons/rss.png">&nbsp;Suscribirse via rss a Madrid, Madrid, España - regalo</a></div>
+
+  </div> <!-- /div ads -->
+
+</div>
+
+
+

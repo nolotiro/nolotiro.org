@@ -12,10 +12,13 @@ NolotiroOrg::Application.routes.draw do
     }
 
     # locations lists
-    get '/woeid/:id/:type', to: 'woeid#show', as: 'woeid'
+    get '/woeid/:id/want', to: 'woeid#want'
+    get '/woeid/:id/give', to: 'woeid#available', as: 'woeid'
+    get '/woeid/:id/give/status/booked', to: 'woeid#booked'
+    get '/woeid/:id/give/status/delivered', to: 'woeid#delivered'
 
     # location change
-    get '/location/change', to: 'location#ask'
+    get '/location/change', to: 'location#ask', as: 'location_ask'
     post '/location/change/', to: 'location#list'
     get '/location/change2/', to: 'location#list'
     post '/location/change2/', to: 'location#change'

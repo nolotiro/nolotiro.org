@@ -1,16 +1,38 @@
 class WoeidController < ApplicationController
 
-  def show 
+  before_action :convert_woeid_name
+
+  def want 
+    @ads = Ad.want.available.where(:woeid_code => params[:id]).paginate(:page => params[:page])
+    @type = "want"
+    render "show"
+  end
+
+  def available 
+    @ads = Ad.give.available.where(:woeid_code => params[:id]).paginate(:page => params[:page])
+    @type = "give"
+    @status = "available"
+    render "show"
+  end
+
+  def booked 
+    @ads = Ad.give.booked.where(:woeid_code => params[:id]).paginate(:page => params[:page])
+    @type = "give"
+    @status = "booked"
+    render "show"
+  end
+
+  def delivered 
+    @ads = Ad.give.delivered.where(:woeid_code => params[:id]).paginate(:page => params[:page])
+    @type = "give"
+    @status = "delivered"
+    render "show"
+  end
+
+  private
+
+  def convert_woeid_name
     @woeid = WoeidHelper.convert_woeid_name params[:id]
-    case params[:type] 
-    when 'give'
-      type = 1
-    when 'want'
-      type = 2
-    else
-      type = 1
-    end
-    @ads = Ad.where(:woeid_code => params[:id], :type => type).paginate(:page => params[:page])
   end
 
 end
