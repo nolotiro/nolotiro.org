@@ -47,8 +47,10 @@ NolotiroOrg::Application.routes.draw do
     # TODO: rss
     # /es/rss/feed/woeid/766273/ad_type/give
 
-    # TODO: page
-    # /es/page/faqs
+    get '/page/faqs', to: 'page#faqs'
+    get '/page/tos', to: 'page#tos'
+    get '/page/about', to: 'page#about'
+    get '/page/privacy', to: 'page#privacy'
 
     # TODO: contact
     # /es/contact
