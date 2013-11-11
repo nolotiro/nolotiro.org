@@ -23,3 +23,6 @@ public/legacy/uploads/ads/original/*
 public/system/*
 
 *.swp
+
+# geolitecity.dat
+vendor/geolite/*
