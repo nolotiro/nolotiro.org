@@ -1,0 +1,27 @@
+<div id="default_header_section">
+  <h1>Elige tu ubicación</h1>
+</div>
+
+<div id="main">
+  <div class="span-16">
+    <% if @location_asked.nil? %>
+      <p class="error">No se han encontrado ubicaciones con el nombre <b><%= params[:location] %></b>. Vuelve a intentarlo</p>
+      <%= render :partial =>"ask_form", :locals => {location_suggest: @location_suggest} %>
+    <% else %>
+      <%= form_tag({action: "change"}) do %>
+        <fieldset><legend></legend>
+          <dl class="zend_form">
+            <dt id="location-label">&nbsp;</dt>
+            <dd id="location-element">
+            <%= select_tag(:location, options_for_select(@location_asked)) %>
+            </dd>
+            <dt id="submit-label">&nbsp;</dt>
+            <dd id="submit-element">
+            <%= submit_tag("Elige tu ubicación") %>
+            </dd>
+          </dl>
+        </fieldset>
+      <% end %>
+    <% end %>
+  </div>
+</div>
