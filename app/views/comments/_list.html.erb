@@ -1,0 +1,13 @@
+<div class="ad_comments">
+  <h5>Comentarios</h5>
+
+  <% comments.each do |comment| %>
+    <div class="ad_comment">
+     <span class="ad_date">Publicado el <%= comment.date_created %> por el usuario
+     <a href="/es/profile/<%= comment.user.id %>"><%= comment.user.username %></a>
+     </span>
+     <br>
+     <span><%= comment.body %></span>
+    </div>
+  <% end %>
+</div>

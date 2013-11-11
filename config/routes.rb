@@ -7,9 +7,15 @@ NolotiroOrg::Application.routes.draw do
 
     # ads
     get '/', to: 'ads#index'
+    # TODO: optional slug
+    # /es/ad/146609/regalo-moises 
     resources :ads, path: 'ad', path_names: {
       new: 'create'
     }
+
+    # TODO: listall
+    # /es/ad/listall/ad_type/give
+    # /es/ad/listall/ad_type/give/status/booked
 
     # locations lists
     get '/woeid/:id/want', to: 'woeid#want'
@@ -32,7 +38,20 @@ NolotiroOrg::Application.routes.draw do
       password: 'reset'
     }
 
+    # comments
+    post '/comment/create/ad_id/:id', to: 'comments#create', as: 'create_comment'
+
     # TODO: messaging
+    # /es/message/create/id_user_to/42825/subject/mueble-de-salon
+
+    # TODO: rss
+    # /es/rss/feed/woeid/766273/ad_type/give
+
+    # TODO: page
+    # /es/page/faqs
+
+    # TODO: contact
+    # /es/contact
 
   end
 

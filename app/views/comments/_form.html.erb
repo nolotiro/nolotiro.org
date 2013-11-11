@@ -1,0 +1,17 @@
+<div class="ad_comment_form">
+	<%= form_tag(create_comment_path(ad)) do %>
+	<dl class="zend_form">
+		<dt id="body-label">
+			<label for="body" class="optional">
+				Tu comentario:
+			</label>
+		</dt>
+		<dd id="body-element">
+			<%= text_area_tag("body", "", size: "80x24") %>
+		</dd>
+		<dt id="submit-label">&nbsp;</dt><dd id="submit-element">
+		<%= submit_tag "Enviar" %>
+	</dd>
+</dl>
+<% end %>
+</div>
