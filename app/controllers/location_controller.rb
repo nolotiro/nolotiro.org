@@ -3,9 +3,7 @@ class LocationController < ApplicationController
   # GET /es/location/change
   def ask
     # show form for asking possible locations
-    # TODO: cache?
-    ip_address = Rails.env == "development" ? "87.218.80.79" : request.remote_ip
-    @location_suggest = GeoHelper.suggest ip_address
+    @location = get_location_suggest
   end
 
   # POST /es/location/change
@@ -13,9 +11,7 @@ class LocationController < ApplicationController
   def list
     # list possible locations 
 
-    # TODO: cache?
-    ip_address = Rails.env == "development" ? "87.218.80.79" : request.remote_ip
-    @location_suggest = GeoHelper.suggest ip_address
+    @location = get_location_suggest
 
     if params[:location]
       locations = WoeidHelper.search_by_name params[:location]
@@ -41,7 +37,7 @@ class LocationController < ApplicationController
       current_user.save
     end
     cookies[:location] = woeid
-    redirect_to woeid_path(id: woeid, type: 'give')
+    redirect_to woeid_path(id: woeid)
   end
 
 end

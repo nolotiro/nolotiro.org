@@ -1,6 +1,7 @@
 class CommentsController < ApplicationController
   before_filter :authenticate_user!
 
+  # POST /comment/create/ad_id/:id
   def create
   	Comment.create({
   		ads_id: params[:id],
@@ -9,8 +10,8 @@ class CommentsController < ApplicationController
     	date_created: DateTime.now,
     	ip: request.remote_ip,
 	})
-	# TODO: alert
-	# TODO: mailer to ad_owner
-	redirect_to(ad_path(params[:id]))
+  	# TODO: alert
+  	# TODO: mailer to ad_owner
+  	redirect_to(ad_path(params[:id]))
   end
 end

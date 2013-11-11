@@ -7,8 +7,7 @@ class AdsController < ApplicationController
     @ads = Ad.paginate(:page => params[:page])
 
     # TODO: cache?
-    ip_address = Rails.env == "development" ? "87.218.80.79" : request.remote_ip
-    @location_suggest = GeoHelper.suggest ip_address
+    @location = get_location_suggest
 
     # TODO: cache | select only id, username and ad_count
     @section_users = User.order("ads_count DESC").limit(40)

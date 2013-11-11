@@ -1,0 +1,35 @@
+
+<div class="no_results">
+  <h2>No hay anuncios para esta ubicación.</h2>
+  <br>
+
+  <h2>Puedes probar alguna de estas cosas:</h2>
+  <br>
+
+  <p>1. Sé el primero en   
+    <a href="/es/ad/create">publicar un anuncio en esta ciudad.</a>
+  </p>
+
+  <p>2. Prueba a cambiar la ciudad por una mas grande que esté cerca de tu ubicación.</p>
+  <br>
+
+  <p>3. Nuestro sistema de sugerencia de ubicación (basado en tu IP) dice que estas cerca de: <br><a href="/es/location/change2/?location=<%= location_suggest %>"><%= location_suggest %></a>
+  </p><br>
+
+
+  O inténtalo con estas ciudades de nombre similar:<br>
+  <ul>
+    <% location_options.each do |l| %>
+      <li>
+        <a href="/es/location/change2/?location=<%= l[0] %>"><%= l[0] %></a>
+      </li>
+      <% end %>
+    </ul>
+
+    <br>
+
+    <h5>
+      <i>"Un viaje de mil kilómetros comienza con un simple paso" Lao Tse.        </i>
+    </h5>
+
+  </div>
