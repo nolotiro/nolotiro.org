@@ -22,6 +22,8 @@ For the WOEID we use [Yahoo GeoPlanet](http://developer.yahoo.com/geo/geoplanet/
 so you need to register, create a new app and configure in config/app_config.yml
 
 For the GeoLocation we use GeoLiteCity. 
-vendor/geolite/GeoLiteCity.dat
+cd vendor/geolite
+wget http://geolite.maxmind.com/download/geoip/database/GeoLiteCity.dat.gz
+gunzip GeoLiteCity.dat.gz
 
 Happy hacking!

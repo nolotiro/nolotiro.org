@@ -25,4 +25,4 @@ public/system/*
 *.swp
 
 # geolitecity.dat
-vendor/geolite/*
+vendor/geolite/GeoLiteCity.dat
