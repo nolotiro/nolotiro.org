@@ -10,7 +10,7 @@ module WoeidHelper
     if Rails.cache.fetch(key)
       return Rails.cache.fetch(key)
     else
-      GeoPlanet.appid = APP_CONFIG[:geoplanet_app_id]
+      GeoPlanet.appid = APP_CONFIG["geoplanet_app_id"]
       place_raw = GeoPlanet::Place.new(woeid, :lang => :es)
       place = "#{place_raw.name}, #{place_raw.admin1}, #{place_raw.country}"
       Rails.cache.write(key, place)
@@ -28,7 +28,7 @@ module WoeidHelper
     if Rails.cache.fetch(key)
       return Rails.cache.fetch(key)
     else
-      GeoPlanet.appid = APP_CONFIG[:geoplanet_app_id]
+      GeoPlanet.appid = APP_CONFIG["geoplanet_app_id"]
       # FIXME: this is really slow. optimize plz
       locations = GeoPlanet::Place.search(name, :lang => :es, :count => 0)
       places = []
