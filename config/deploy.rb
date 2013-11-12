@@ -16,7 +16,7 @@ set :deploy_via, :remote_cache
 set :ssh_options, { :forward_agent => true }
 
 set :linked_files, %w{config/database.yml config/app_config.yml vendor/geolite/GeoLiteCity.dat}
-set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
+set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system public/legacy}
 
 set :keep_releases, 5
 
