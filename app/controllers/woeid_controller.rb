@@ -1,6 +1,6 @@
 class WoeidController < ApplicationController
 
-  before_action :convert_woeid_name
+  before_action :convert_woeid_name, :get_id
 
   # GET /es/woeid/:id/give
   def available 
@@ -38,6 +38,10 @@ class WoeidController < ApplicationController
   end
 
   private
+
+  def get_id
+    @id = params[:id]
+  end
 
   def convert_woeid_name
     @woeid = WoeidHelper.convert_woeid_name params[:id]

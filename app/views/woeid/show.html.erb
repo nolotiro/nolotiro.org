@@ -2,9 +2,9 @@
 <div id="location_header_section">
 
   <span class="give-want">
-    <a class=<%= @type == "give" ? "actual" : "''" %> href="/es/woeid/766273/give">regalo</a>
+    <a class=<%= @type == "give" ? "actual" : "''" %> href="/es/woeid/<%= @id %>/give">regalo</a>
     &nbsp;
-    <a class=<%= @type == "want" ? "actual" : "''" %> href="/es/woeid/766273/want">busco</a>
+    <a class=<%= @type == "want" ? "actual" : "''" %> href="/es/woeid/<%= @id %>/want">busco</a>
   </span>
 
   <div class="location_name">
@@ -21,7 +21,7 @@
 <div id="main">
   <div class="span-18">
     
-    <%= render :partial => "filter_status", :locals => {:status => @status} %>
+    <%= render :partial => "filter_status", :locals => {:status => @status, :id => @id} %>
 
     <% if @ads.any? %>
       <% @ads.each do |ad| %>
