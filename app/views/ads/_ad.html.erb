@@ -22,7 +22,12 @@
   <span class="ad_date">
     Publicado hace <%= distance_of_time_in_words_to_now(ad.date_created) %>
     por el usuario
-    <a href="/es/ad/listuser/id/<%= ad.user.id %>"><%= ad.user.username %></a>
+
+    <!-- FIXME: no se porque hay usuarios q no tienen id WTF -->
+    <% if defined? ad.user.id %>
+      <a href="/es/ad/listuser/id/<%= ad.user.id %>"><%= ad.user.username %></a>
+    <% end %>
+
   </span>
 
   <div><p><%= ad.body %></p></div>
