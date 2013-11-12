@@ -1,8 +1,5 @@
 set :stage, :staging
 
-set :rvm_type, :user
-set :rvm_ruby_version, '2.0.0@nolotiro-staging'
-
 # Simple Role Syntax
 # ==================
 # Supports bulk-adding hosts to roles, the primary
