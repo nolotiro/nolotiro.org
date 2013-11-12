@@ -26,8 +26,8 @@
     <% if @ads.any? %>
       <% @ads.each do |ad| %>
           <%= render :partial => "ads/ad", :locals => { :ad => ad } %>
-          <%= will_paginate @ads %>
       <% end %>
+      <%= will_paginate @ads %>
     <% else %>
       <%= render :partial => "ads/no_results", :locals => { :location_suggest => @location_suggest, :location_options => @location_options } %>
     <% end %>
