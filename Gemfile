@@ -39,6 +39,7 @@ gem 'unicorn'
 gem 'capistrano', '~> 3.0'
 gem 'capistrano-rvm', '~> 0.0.3'
 gem 'capistrano-rails'
+gem 'capistrano-bundler'
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
