@@ -7,7 +7,7 @@ set :deploy_to, '/var/www/beta.nolotiro.org'
 set :scm, :git
 
 set :format, :pretty
-set :log_level, :debug
+#set :log_level, :debug
 set :pty, true
 
 #set :deploy_via, :copy
@@ -36,14 +36,12 @@ namespace :deploy do
 
   after :restart, :clear_cache do
     on roles(:web), in: :groups, limit: 3, wait: 10 do
-      within release_path do
-        execute :rake, 'cache:clear'
-      end
+#      within release_path do
+#        execute :rake, 'cache:clear'
+#      end
     end
   end
 
   after :finishing, 'deploy:cleanup'
 
 end
-
-after "deploy:update_code", "deploy:migrate"
