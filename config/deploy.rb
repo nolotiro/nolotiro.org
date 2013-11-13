@@ -25,6 +25,12 @@ set :rvm_ruby_version, '2.0.0@nolotiro'
 
 server "beta.nolotiro.org", roles: [:app, :web, :db]
 
+# Logical flow for deploying an app
+after  'deploy:cold',            'ts:index'
+after  'deploy:cold',            'ts:start'
+after  'deploy:setup',           'ts:shared_sphinx_folder'
+after  'deploy:finalize_update', 'ts:symlink_indexes'
+
 namespace :deploy do
 
   desc 'Restart application'

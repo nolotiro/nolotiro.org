@@ -1,0 +1,79 @@
+require 'capistrano'
+
+set :thinking_sphinx_roles, :db
+set :thinking_sphinx_options, {:roles => fetch(:thinking_sphinx_roles) }
+
+namespace :ts do
+
+  desc 'Generate the Sphinx configuration file.'
+  task :configure do
+    on roles(:db) do
+      rake 'ts:configure'
+    end
+  end
+
+  desc 'Build Sphinx indexes into the shared path and symlink them into your release.'
+  task :index do
+    on roles(:db) do
+      rake 'ts:index'
+    end
+  end
+  after 'ts:index', 'ts:symlink_indexes'
+
+  desc 'Start the Sphinx search daemon.'
+  task :start do
+    on roles(:db) do
+      rake 'ts:start'
+    end
+  end
+  before 'ts:start', 'ts:configure'
+
+  desc 'Stop the Sphinx search daemon.'
+  task :stop do
+    on roles(:db) do
+      rake 'ts:stop'
+    end
+  end
+
+  desc 'Restart the Sphinx search daemon.'
+  task :restart do
+    on roles(:db) do
+      rake 'ts:stop ts:configure ts:start'
+    end
+  end
+
+  desc <<-DESC
+Stop, reindex, and then start the Sphinx search daemon. This task must be executed \
+    if you alter the structure of your indexes.
+  DESC
+  task :rebuild do
+    on roles(:db) do
+      rake 'ts:rebuild'
+    end
+  end
+  after 'ts:rebuild', 'ts:symlink_indexes'
+
+  desc 'Create the shared folder for sphinx indexes.'
+  task :shared_sphinx_folder do
+    on roles(:db) do
+      rails_env = fetch(:rails_env, 'production')
+      run "mkdir -p #{shared_path}/db/sphinx/#{rails_env}"
+    end
+  end
+
+  desc 'Symlink Sphinx indexes from the shared folder to the latest release.'
+  task :symlink_indexes do
+    on roles(:db) do
+      run "if [ -d #{release_path} ]; then ln -nfs #{shared_path}/db/sphinx #{release_path}/db/sphinx; else ln -nfs #{shared_path}/db/sphinx #{current_path}/db/sphinx; fi;"
+    end
+  end
+
+  def rake(tasks)
+    rails_env = fetch(:rails_env, 'production')
+    rake = fetch(:rake, 'rake')
+    tasks += ' INDEX_ONLY=true' if ENV['INDEX_ONLY'] == 'true'
+
+    run "if [ -d #{release_path} ]; then cd #{release_path}; else cd #{current_path}; fi; if [ -f Rakefile ]; then #{rake} RAILS_ENV=#{rails_env} #{tasks}; fi;"
+  end
+
+end
