@@ -13,15 +13,18 @@ NolotiroOrg::Application.routes.draw do
       new: 'create'
     }
 
-    # TODO: listall
-    # /es/ad/listall/ad_type/give
-    # /es/ad/listall/ad_type/give/status/booked
+    # listall
+    get '/ad/listall/ad_type/give', to: 'woeid#listall_give', as: "listall_give" 
+    get '/ad/listall/ad_type/give/status/available', to: 'woeid#listall_give_available', as: 'listall_give_available'
+    get '/ad/listall/ad_type/give/status/delivered', to: 'woeid#listall_give_delivered', as: 'listall_give_delivered'
+    get '/ad/listall/ad_type/give/status/booked', to: 'woeid#listall_give_booked', as: 'listall_give_booked'
+    get '/ad/listall/ad_type/want', to: 'woeid#listall_want', as: "listall_want" 
 
     # locations lists
-    get '/woeid/:id/want', to: 'woeid#want'
+    get '/woeid/:id/want', to: 'woeid#want', as: 'woeid_want'
     get '/woeid/:id/give', to: 'woeid#available', as: 'woeid'
-    get '/woeid/:id/give/status/booked', to: 'woeid#booked'
-    get '/woeid/:id/give/status/delivered', to: 'woeid#delivered'
+    get '/woeid/:id/give/status/booked', to: 'woeid#booked', as: 'woeid_booked'
+    get '/woeid/:id/give/status/delivered', to: 'woeid#delivered', as: 'woeid_delivered'
 
     # location change
     get '/location/change', to: 'location#ask', as: 'location_ask'

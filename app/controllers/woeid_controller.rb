@@ -1,6 +1,50 @@
 class WoeidController < ApplicationController
 
-  before_action :convert_woeid_name, :get_id
+  before_action :convert_woeid_name, :get_id, :only => [:available, :booked, :delivered, :want]
+
+  # GET /es/ad/listall/ad_type/give
+  def listall_give
+    @ads = Ad.give.paginate(:page => params[:page]) 
+    @all = true
+    @type = "give"
+    @status = "all"
+    render "show"
+  end
+
+  # GET /es/ad/listall/ad_type/give/status/available
+  def listall_give_available
+    @ads = Ad.give.available.paginate(:page => params[:page]) 
+    @all = true
+    @type = "give"
+    @status = "available"
+    render "show"
+  end
+
+  # GET /es/ad/listall/ad_type/give/status/booked
+  def listall_give_booked
+    @ads = Ad.give.booked.paginate(:page => params[:page]) 
+    @all = true
+    @type = "give"
+    @status = "booked"
+    render "show"
+  end
+
+  # GET /es/ad/listall/ad_type/give/status/delivered
+  def listall_give_delivered
+    @ads = Ad.give.delivered.paginate(:page => params[:page]) 
+    @all = true
+    @type = "give"
+    @status = "delivered"
+    render "show"
+  end
+
+  # GET /es/ad/listall/ad_type/want
+  def listall_want
+    @ads = Ad.want.paginate(:page => params[:page]) 
+    @all = true
+    @type = "want"
+    render "show"
+  end
 
   # GET /es/woeid/:id/give
   def available 
