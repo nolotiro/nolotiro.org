@@ -4,8 +4,8 @@ class AddAdsCounterToUser < ActiveRecord::Migration
     add_column :users, :ads_count, :integer, :default => 0
 
     User.reset_column_information
-    User.find(:all).each do |u|
-      User.update_counters u.id, :ads_count => u.ads.length
+    User.find_each do |u|
+      User.reset_counters u.id, :ads
     end
   end
 

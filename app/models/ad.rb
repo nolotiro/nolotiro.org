@@ -13,12 +13,12 @@ class Ad < ActiveRecord::Base
 
   has_attached_file :image, :styles => {:thumb => "100x90>"}
 
-  scope :want, -> { where(type: 2) }
   scope :give, -> { where(type: 1) }
+  scope :want, -> { where(type: 2) }
 
-  scope :available, -> { where(status: "available") }
-  scope :booked, -> { where(status: "booked") }
-  scope :delivered, -> { where(status: "delivered") }
+  scope :available, -> { where(status: 1) }
+  scope :booked, -> { where(status: 2) }
+  scope :delivered, -> { where(status: 3) }
 
   def type_string
     case type
@@ -31,13 +31,26 @@ class Ad < ActiveRecord::Base
     end 
   end
 
+  def status_class
+    case status
+    when 1
+      'available'
+    when 2
+      'booked' 
+    when 3
+      'delivered' 
+    else
+      'available'
+    end 
+  end
+
   def status_string
     case status
-    when 'available'
+    when 1
       'disponible'
-    when 'booked'
+    when 2
       'reservado' 
-    when 'delivered'
+    when 3
       'entregado' 
     else
       'disponible'

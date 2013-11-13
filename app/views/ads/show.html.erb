@@ -16,7 +16,7 @@
       <div class="ad_list_image">
         <%= link_to image_tag(@ad.image.url(:thumb), :alt => @ad.title), @ad.image.url, :rel => 'superbox[image]', :alt => "Click para agrandar foto" %>
       </div>
-      <span class="ad_status <%= @ad.status %>"><%= @ad.status_string %></span>
+      <span class="ad_status <%= @ad.status_class %>"><%= @ad.status_string %></span>
 
       <span class="ad_date">
         Publicado hace <%= distance_of_time_in_words_to_now(@ad.date_created) %> por el usuario 
