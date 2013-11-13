@@ -1,11 +1,10 @@
-<form method="get" class="searchbox" action="/es/search/"><dl class="zend_form">
-<dd id="q-element">
-<input name="q" id="q" value="" type="text"></dd>
-<dd id="ad_type-element">
-<input name="ad_type" value="1" id="ad_type" type="hidden"></dd>
-
-<input name="submit" id="submit" value="buscar" type="submit">
-<dd id="woeid-element">
-<input name="woeid" value="766273" id="woeid" type="hidden"></dd>
-</dl>
-</form> 
+<%= form_tag search_path, :method => :get, :class => "searchbox" do %>
+  <dl class="zend_form">
+    <dd id="q-element">
+    <%= text_field_tag :q %>
+    </dd>
+    <%= hidden_field_tag "ad_type", ad_type %>
+    <%= hidden_field_tag "woeid_code", woeid %>
+    <%= submit_tag "buscar" %>
+  </dl>
+<% end %>

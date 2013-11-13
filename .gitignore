@@ -26,3 +26,8 @@ public/system/*
 
 # geolitecity.dat
 vendor/geolite/GeoLiteCity.dat
+
+# thinking-sphinx
+config/*.sphinx.conf
+db/sphinx/*
+log/*.sphinx.pid

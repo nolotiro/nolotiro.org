@@ -17,7 +17,9 @@
 
   <div class="location_name">
     <h1>regalo - <%= @woeid %></h1><br>
-    <%= render :partial => "ads/search" %>
+
+    <%= render :partial => "ads/search", :locals => {:woeid => @woeid, :ad_type => @type} %>
+
     <%= link_to location_ask_path, :class => "world_link" do %>
       <%= image_tag "change_location.png", :alt => "change location" %> 
       cambiar ciudad
@@ -39,7 +41,11 @@
       <% end %>
       <%= will_paginate @ads %>
     <% else %>
-      <%= render :partial => "ads/no_results", :locals => { :location_suggest => @location_suggest, :location_options => @location_options } %>
+      <% if defined? @no_results_search %>
+        <%= render :partial => "ads/no_results_search", :locals => { :location_suggest => @location_suggest, :location_options => @location_options } %>
+      <% else %>
+        <%= render :partial => "ads/no_results", :locals => { :location_suggest => @location_suggest, :location_options => @location_options } %>
+      <% end %>
     <% end %>
 
     <div class="rss">

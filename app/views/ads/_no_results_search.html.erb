@@ -1,0 +1,11 @@
+<div id="main">
+  <div class="span-18">
+    <div class="ad_excerpt"> 
+      <div class="error">
+        No hay anuncios que coincidan
+        con la búsqueda <b><%= @q %></b>
+        en la ubicación <%= link_to WoeidHelper.convert_woeid_name(@id), woeid_path(@id) %>.
+      </div>
+    </div>
+  </div>
+</div>

@@ -17,13 +17,18 @@ end
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 
+# webserver
 gem 'unicorn'
+
+# deploy
 gem 'capistrano', '~> 3.0'
 gem 'capistrano-rvm', '~> 0.0.3'
 gem 'capistrano-rails'
 gem 'capistrano-bundler'
 
+# DBs
 gem 'mysql2'
+gem 'thinking-sphinx'
 gem 'dalli'
 
 # Use debugger
@@ -35,3 +40,4 @@ gem 'geoip'
 gem 'will_paginate', '~> 3.0'
 gem 'devise'
 gem 'paperclip', '~> 3.0'
+

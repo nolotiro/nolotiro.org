@@ -44,6 +44,9 @@ NolotiroOrg::Application.routes.draw do
     # comments
     post '/comment/create/ad_id/:id', to: 'comments#create', as: 'create_comment'
 
+    # search 
+    get '/search', to: 'search#search', as: 'search'
+
     # TODO: messaging
     # /es/message/create/id_user_to/42825/subject/mueble-de-salon
 
