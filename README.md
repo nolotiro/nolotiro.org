@@ -33,6 +33,10 @@ For the search we use Sphinx, so you'll need to install it:
     $ rake ts:index
     $ rake ts:start
 
+For recaptcha you need to [signup](https://www.google.com/recaptcha/admin/create)
+and configure it in the relevant environment in *config/app_config.yml* (keys 
+*recaptcha_public_key* and *recaptcha_private_key*)
+
 Happy hacking!
 
 ## stats 12/11/2013

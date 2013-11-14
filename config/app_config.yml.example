@@ -3,6 +3,8 @@ defaults: &defaults
 development:
   <<: *defaults
   geoplanet_app_id: ""
+  recaptcha_public_key: ""
+  recaptcha_private_key: ""
 
 test:
   <<: *defaults

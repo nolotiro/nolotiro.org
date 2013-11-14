@@ -113,6 +113,7 @@ GEM
     rake (10.1.0)
     rdoc (3.12.2)
       json (~> 1.4)
+    recaptcha (0.3.5)
     ref (1.0.5)
     rest-client (1.6.7)
       mime-types (>= 1.16)
@@ -190,6 +191,7 @@ DEPENDENCIES
   mysql2
   paperclip (~> 3.0)
   rails (= 4.0.1)
+  recaptcha
   sass-rails (~> 4.0.0)
   sdoc
   sqlite3
