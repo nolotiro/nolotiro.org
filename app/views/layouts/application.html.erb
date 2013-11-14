@@ -11,10 +11,6 @@
   <body>
     <div class="container">
 
-      <!-- TODO show when there is an alert -->
-      <p class="notice hide"><%= notice %></p>
-      <p class="alert hide"><%= alert %></p>
-
       <div id="header">
 
         <%= render :partial => "partials/select_language_box" %>
@@ -34,6 +30,14 @@
         </div>
 
       </div>
+
+      <% flash.each do |name, msg| %>
+        <% if msg.is_a?(String) %>
+          <p class="notice alert-<%= name == :notice ? "success" : "error" %>">
+          <%= msg %>
+          </p>
+        <% end %>
+      <% end %>
 
       <%= yield %>
 
