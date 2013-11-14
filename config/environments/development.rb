@@ -32,4 +32,7 @@ NolotiroOrg::Application.configure do
   # for devise
   config.action_mailer.default_url_options = { :host => 'localhost:3000' }
 
+  # for mailcatcher
+  config.action_mailer.smtp_settings = { :address => "127.0.0.1", :port => 1025 }
+
 end
