@@ -9,11 +9,11 @@ NolotiroOrg::Application.routes.draw do
 
     # ads
     get '/', to: 'ads#index'
-    # TODO: optional slug
-    # /es/ad/146609/regalo-moises 
-    resources :ads, path: 'ad', path_names: {
-      new: 'create'
-    }
+
+    resources :ads, path: 'ad', path_names: { new: 'create' }
+    
+    # ads: optional slug
+    get '/ad/:id/:slug', to: 'ads#show', :as => 'adslug'
 
     # listall
     get '/ad/listall/ad_type/give', to: 'woeid#listall_give', as: "listall_give" 

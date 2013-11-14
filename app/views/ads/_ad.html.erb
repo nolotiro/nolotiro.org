@@ -1,11 +1,11 @@
 <div class="ad_excerpt">
   <div class="ad_list_image">
-    <%= link_to ad do %>
+    <%= link_to adslug_path(ad,ad.slug) do %>
       <%= image_tag ad.image.url(:thumb) %>
     <% end %>
   </div>
   <h4>
-    <%= link_to ad do %>
+    <%= link_to adslug_path(ad,ad.slug) do %>
       <%= ad.title %>
     <% end %>
   </h4>

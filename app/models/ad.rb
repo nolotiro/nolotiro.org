@@ -20,6 +20,10 @@ class Ad < ActiveRecord::Base
   scope :booked, -> { where(status: 2) }
   scope :delivered, -> { where(status: 3) }
 
+  def slug
+    title.parameterize
+  end
+
   def type_string
     case type
     when 1
