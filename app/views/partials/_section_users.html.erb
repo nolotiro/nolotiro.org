@@ -5,9 +5,9 @@
   <ul>
     <% section_users.each do |u| %>
       <li>
-      <a href="/es/ad/listuser/id/<%= u.id %>">
+      <%= link_to listads_user_path u.id do %>
         <%= u.username %> (<%= u.ads_count %>)
-      </a>
+      <% end %>
       </li>
     <% end %>
   </ul>

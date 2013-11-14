@@ -59,8 +59,11 @@ NolotiroOrg::Application.routes.draw do
     # TODO: messaging
     # /es/message/create/id_user_to/42825/subject/mueble-de-salon
 
-    # TODO: rss
-    # /es/rss/feed/woeid/766273/ad_type/give
+    # rss
+    # FIXME: las URLs legacy vienen asi
+    # /en                     /rss/feed/woeid/766273                     /ad_type/give
+    get '/rss/feed/woeid/:woeid/ad_type/:type', format: 'rss', to: 'rss#feed', as: 'rss_type'
+    get '/rss/feed/woeid/:woeid/ad_type/give/status/:status', format: 'rss', to: 'rss#feed', as: 'rss_status'
 
     get '/page/faqs', to: 'page#faqs', as: 'faqs'
     get '/page/tos', to: 'page#tos', as: 'tos'

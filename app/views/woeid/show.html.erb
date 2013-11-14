@@ -49,10 +49,10 @@
     <% end %>
 
     <div class="rss">
-      <a href="http://nolotiro.org/es
-               /rss/feed/woeid/766273
-               /ad_type/give">
-        <img alt="Suscribirse via rss a" src="/images/icons/rss.png">&nbsp;Suscribirse via rss a Madrid, Madrid, España - regalo</a>
+      <%= link_to rss_type_path(:woeid => @id, :type => "give") do %>
+        <%= image_tag "icons/rss.png", :alt => t("nlt.rss_suscribe") %>
+        &nbsp; <%= t('nlt.rss_suscribe') %> - <%= @woeid %>
+      <% end %>
     </div>
 
   </div> <!-- /div ads -->
