@@ -31,10 +31,7 @@ class ApplicationController < ActionController::Base
   end
 
   def get_location_suggest 
-    ip_address = Rails.env == "development" ? "87.218.80.79" : request.remote_ip
-    if request.env['HTTP_X_FORWARDED_FOR']
-      ip_address = request.env['HTTP_X_FORWARDED_FOR'].split(',')[0] || ip_address
-    end
+    ip_address = GeoHelper.get_ip_address request
     GeoHelper.suggest ip_address
   end
 
