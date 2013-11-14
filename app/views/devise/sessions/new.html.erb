@@ -4,22 +4,22 @@
   <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
     <fieldset>
       <legend>
-        Por favor, introduce tu email y contraseña
+        <% t :please_insert_email_and_password %>
       </legend>
 
       <dt id="email-label">
       <label for="email" class="required">
-        Tu email:
+        <%= f.label :email %>
       </label>
       </dt>
 
       <dd id="email-element">
-      <%= f.email_field :email, :autofocus => true %>
+        <%= f.email_field :email, :autofocus => true %>
       </dd>
 
       <dt id="password-label">
       <label for="password" class="required">
-        Contraseña:
+        <%= f.label :password %>
       </label>
       </dt>
 
@@ -30,12 +30,12 @@
       <% if devise_mapping.rememberable? -%>
         <dd id="rememberme-element">
         <%= f.check_box :remember_me %> 
-        Recuérdame
+        <%= f.label :remember_me %>
         </dd>
 
       <% end -%>
 
-      <div><%= f.submit "Acceder" %></div>
+      <div><%= f.submit t('.sign_in') %></div>
 
       <%= render "devise/shared/links" %>
 

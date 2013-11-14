@@ -16,7 +16,7 @@
       <%= render :partial => "ad", :locals => { :ad => ad } %>
     <% end %>
 
-    <%= will_paginate @ads %>
+    <%= will_paginate @ads, :page_links => false %>
   </div>
 </div>
 

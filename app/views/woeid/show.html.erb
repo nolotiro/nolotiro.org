@@ -39,7 +39,7 @@
       <% @ads.each do |ad| %>
           <%= render :partial => "ads/ad", :locals => { :ad => ad } %>
       <% end %>
-      <%= will_paginate @ads %>
+      <%= will_paginate @ads, :page_links => false %>
     <% else %>
       <% if defined? @no_results_search %>
         <%= render :partial => "ads/no_results_search", :locals => { :location_suggest => @location_suggest, :location_options => @location_options } %>

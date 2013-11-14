@@ -1,82 +1,44 @@
 
 <div id="select_language_box">
-  <a class="lang" href="/en/index/setlang">
-    <span class="flag en"></span>
-    <span>
-      <%= image_tag "flags/en.gif", :alt => "English" %>
-      &nbsp;English
-      </span>
-  </a>
-  <a class="lang active" href="/es/index/setlang">
-    <span class="flag es"></span>
-    <span>
-      <%= image_tag "flags/es.gif", :alt => "Español" %>
-      &nbsp;Español         
-    </span>
-  </a>
-  <a class="lang" href="/ca/index/setlang">
-    <span class="flag ca beta"></span>
-    <span class="beta_lang"></span>
-    <span>
-      <%= image_tag "flags/ca.gif", :alt => "Català" %>
-      &nbsp;Català
-      </span>
-  </a>
-  <a class="lang" href="/gl/index/setlang">
-    <span class="flag gl beta"></span>
-    <span class="beta_lang"></span>
-    <span>
-      <%= image_tag "flags/gl.gif", :alt => "Galego" %>
-      &nbsp;Galego
-      </span>
-  </a>
-  <a class="lang" href="/eu/index/setlang">
-    <span class="flag eu beta"></span>
-    <span class="beta_lang"></span>
-    <span>
-      <%= image_tag "flags/eu.gif", :alt => "Euskara" %>
-      &nbsp;Euskara
-      </span>
-  </a>
-  <a class="lang" href="/nl/index/setlang">
-    <span class="flag nl beta"></span>
-    <span class="beta_lang"></span>
-    <span>
-      <%= image_tag "flags/nl.gif", :alt => "Nederlands" %>
-      &nbsp;Nederlands
-      </span>
-  </a>
-  <a class="lang" href="/de/index/setlang">
-    <span class="flag de beta"></span>
-    <span class="beta_lang"></span>
-    <span>
-      <%= image_tag "flags/de.gif", :alt => "Deutsch" %>
-      &nbsp;Deutsch
-      </span>
-  </a>
-  <a class="lang" href="/fr/index/setlang">
-    <span class="flag fr beta"></span>
-    <span class="beta_lang"></span>
-    <span>
-      <%= image_tag "flags/fr.gif", :alt => "Français" %>
-      &nbsp;Français
-      </span>
-  </a>
-  <a class="lang" href="/pt/index/setlang">
-    <span class="flag pt beta"></span>
-    <span class="beta_lang"></span>
-    <span>
-      <%= image_tag "flags/pt.gif", :alt => "Português" %>
-      &nbsp;Português
-      </span>
-  </a>
-  <a class="lang" href="/it/index/setlang">
-    <span class="flag it beta"></span>
-    <span class="beta_lang"></span>
-    <span>
-      <%= image_tag "flags/it.gif", :alt => "Italiano" %>
-      &nbsp;Italiano
-      </span>
-  </a>
+  <%= render :partial => "partials/language", :locals => {
+    :abbr => "en",
+    :language => "English"
+  } %>
+  <%= render :partial => "partials/language", :locals => {
+    :abbr => "es",
+    :language => "Español"
+  } %>
+  <%= render :partial => "partials/language", :locals => {
+    :abbr => "ca",
+    :language => "Català"
+  } %>
+  <%= render :partial => "partials/language", :locals => {
+    :abbr => "gl",
+    :language => "Galego"
+  } %>
+  <%= render :partial => "partials/language", :locals => {
+    :abbr => "eu",
+    :language => "Euskara"
+  } %>
+  <%= render :partial => "partials/language", :locals => {
+    :abbr => "nl", 
+    :language => "Nederlands"
+  } %>
+  <%= render :partial => "partials/language", :locals => {
+    :abbr => "de",
+    :language => "Deutsch"
+  } %>
+  <%= render :partial => "partials/language", :locals => {
+    :abbr => "fr",
+    :language => "Français"
+  } %>
+  <%= render :partial => "partials/language", :locals => {
+    :abbr => "pt",
+    :language => "Português"
+  } %>
+  <%= render :partial => "partials/language", :locals => {
+    :abbr => "it",
+    :language => "Italiano"
+  } %>
   <a href="/es/page/translate">Otro...</a>
 </div>

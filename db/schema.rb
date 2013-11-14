@@ -11,18 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131108121449) do
+ActiveRecord::Schema.define(version: 20131113104108) do
 
   create_table "ads", force: true do |t|
-    t.string   "title",              limit: 100,                       null: false
-    t.text     "body",                                                 null: false
-    t.integer  "user_owner",                                           null: false
-    t.integer  "type",                                                 null: false
-    t.integer  "woeid_code",                                           null: false
-    t.datetime "date_created",                                         null: false
-    t.string   "ip",                 limit: 15,                        null: false
+    t.string   "title",              limit: 100,             null: false
+    t.text     "body",                                       null: false
+    t.integer  "user_owner",                                 null: false
+    t.integer  "type",                                       null: false
+    t.integer  "woeid_code",                                 null: false
+    t.datetime "date_created",                               null: false
+    t.string   "ip",                 limit: 15,              null: false
     t.string   "photo",              limit: 100
-    t.string   "status",             limit: 9,   default: "available", null: false
+    t.integer  "status",                         default: 1, null: false
     t.integer  "comments_enabled"
     t.string   "image_file_name"
     t.string   "image_content_type"

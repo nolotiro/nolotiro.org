@@ -21,6 +21,7 @@ config/database.yml
 # photos / images
 public/legacy/uploads/ads/original/*
 public/system/*
+public/assets/*
 
 *.swp
 

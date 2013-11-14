@@ -2,8 +2,10 @@ NolotiroOrg::Application.routes.draw do
 
   root 'ads#index'
 
-  # TODO: i18n
-  scope '/es' do
+  get '/:locale' => 'ads#index'
+
+  # i18n
+  scope "(:locale)", locale: /es|en|ca|gl|eu|nl|de|fr|pt|it/ do
 
     # ads
     get '/', to: 'ads#index'
@@ -34,6 +36,7 @@ NolotiroOrg::Application.routes.draw do
 
     # auth
     get '/auth/login', to: redirect('/es/user/login')
+
     devise_for :users, path: 'user', path_names: {
       sign_up: 'register',
       sign_in: 'login',
@@ -57,9 +60,14 @@ NolotiroOrg::Application.routes.draw do
     get '/page/tos', to: 'page#tos'
     get '/page/about', to: 'page#about'
     get '/page/privacy', to: 'page#privacy'
+    get '/page/translate', to: 'page#translate'
 
     # TODO: contact
     # /es/contact
+    
+    # i18n legacy
+    # do nothing, the locale is in the link
+    get '/index/setlang', to: redirect('/')
 
   end
 
