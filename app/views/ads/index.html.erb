@@ -10,7 +10,7 @@
   </div>
 
   <div class="section_ads">
-    <h2>últimos regalos publicados</h2>
+    <h2><%= t('nlt.last_published_gifts') %></h2>
 
     <% @ads.each do |ad| %>
       <%= render :partial => "ad", :locals => { :ad => ad } %>
@@ -20,7 +20,7 @@
   </div>
 </div>
 
-<%= render :partial => "partials/section_locations" %>
+<%= render :partial => "partials/section_locations", :locals => {:section_locations => @section_locations} %>
 
 <%= render :partial => "partials/section_users", :locals => {:section_users => @section_users} %>
 
