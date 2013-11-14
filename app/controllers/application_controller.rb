@@ -4,6 +4,16 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   before_action :set_locale
+
+  # after a user sing ins, go to their location
+  def after_sign_in_path_for(resource)
+    if current_user.woeid?
+      woeid_path(current_user.woeid)
+    # or ask for the location
+    else
+      location_ask_path
+    end
+  end
    
   def set_locale
       I18n.locale = params[:locale] || I18n.default_locale
