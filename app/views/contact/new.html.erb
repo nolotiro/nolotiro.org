@@ -1,0 +1,52 @@
+<div id="default_header_section">
+  <h2><%= t('nlt.contact_form') %></h2>
+</div>
+
+<div id="main">
+  <div class="span-16">
+    <%= form_for @contact do |f| %>
+      <fieldset>
+        <legend><%= t('nlt.contact_legend') %></legend>
+
+        <% if @contact.errors.any? %>
+          <div class="error_messages">
+            <h2><%= pluralize(@contact.errors.count, "error") %> prohibited this message from being saved:</h2>
+            <ul>
+              <% @contact.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+              <% end %>
+            </ul>
+          </div>
+        <% end %>
+
+        <dl class="zend_form">
+          <dt id="email-label">
+          <%= f.label :email, :class => "required" %>
+          </dt>
+          <dd id="email-element">
+          <%= f.text_field :email, :required => "required" %>
+          </dd>
+          <dt id="message-label">
+          <%= f.label :message, "Message", :class => "required" %><br />
+          </dt>
+          <dd id="message-element">
+          <%= f.text_area :message, :size => "24x10" %>
+          </dd>
+          <dt id="captcha-input-label">
+          <label for="captcha-input" class="required">
+            <%= t('nlt.please_introduce') %>
+          </label>
+          </dt>
+          <dd id="captcha-element">
+          <%= recaptcha_tags :display => { :theme => "white" }%>
+          </dd>
+          <dt id="submit-label">&nbsp;</dt>
+          <dd id="submit-element">
+          <%= f.submit t('nlt.send') %>
+          </dd>
+        </dl>    
+      </fieldset>
+    <% end %>
+  </div>
+
+</div>

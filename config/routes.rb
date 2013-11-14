@@ -71,8 +71,9 @@ NolotiroOrg::Application.routes.draw do
     get '/page/privacy', to: 'page#privacy', as: 'privacy'
     get '/page/translate', to: 'page#translate', as: 'translate'
 
-    # TODO: contact
-    # /es/contact
+    # contact
+    get '/contact', to: 'contact#new', as: 'contacts'
+    post '/contact', to: 'contact#create'
     
     # i18n legacy
     # do nothing, the locale is in the link
