@@ -1,0 +1,32 @@
+
+<div id="default_header_section">
+  <h1><%= t('nlt.user_profile') %>  -  <%= @user.username %></h1>
+</div>
+
+<div id="main">
+  <div class="span-18">
+
+    <ul id="tabnav">
+      <li>
+      <%= link_to t('nlt.profile'), profile_path(@user), :id => 'tab_active' %>
+      </li>
+      <li>
+      <%= link_to t('nlt.ads'), listads_user_path(@user) %>
+      </li>
+    </ul>
+
+    <div class="ad_excerpt">
+      <h4><%= t('nlt.username') %>: <%= @user.username %></h4>
+      <h4><%= t('nlt.member_since') %>: <%= l @user.created, format: :short %></h4>
+
+      <a class="world_link" href="/en/message/create/id_user_to/<%= @user.id %>">send message to <%= @user.username %>
+        <img src="/images/email_send.png" alt="send a message"></a><br>
+
+      <div><h4>Friends list:</h4>
+        TODO
+        <br></div>
+    </div>
+
+  </div>
+
+</div>

@@ -1,0 +1,24 @@
+<div id="default_header_section">
+  <h1>Ads list  -  <%= @user.username %></h1>
+</div>
+
+<div id="main">
+  <div class="span-19">
+
+    <ul id="tabnav">
+      <li>
+      <%= link_to t('nlt.profile'), profile_path(@user) %>
+      </li>
+      <li>
+      <%= link_to t('nlt.ads'), listads_user_path(@user), :id => "tab_active" %>
+      </li>
+    </ul>
+
+    <% @ads.each do |ad| %>
+      <%= render :partial => "ads/ad", :locals => { :ad => ad } %>
+    <% end %>
+
+    <%= will_paginate @ads, :page_links => false %>
+
+  </div>
+</div>

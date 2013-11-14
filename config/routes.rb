@@ -44,6 +44,12 @@ NolotiroOrg::Application.routes.draw do
       password: 'reset'
     }
 
+    # ads lists for user
+    get '/ad/listuser/id/:id', to: 'users#listads', as: 'listads_user'
+
+    # public profile for user
+    get '/profile/:id', to: 'users#profile', as: 'profile'
+
     # comments
     post '/comment/create/ad_id/:id', to: 'comments#create', as: 'create_comment'
 
