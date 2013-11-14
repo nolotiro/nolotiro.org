@@ -8,9 +8,9 @@ class ContactController < ApplicationController
   # POST /contact
   def create
     @contact = Contact.new(params[:contact])
-    if @contact.valid? and verify_recaptcha(:model => @contact, :message => "Oh! It's error with reCAPTCHA!")
-      # TODO send contact here
-      redirect_to root_url, notice: "Message sent! Thank you for contacting us."
+    if @contact.valid? and verify_recaptcha(:model => @contact, :message => t('nlt.captcha_error'))
+      ContactMailer.contact_form(@contact.email, @contact.message, request).deliver
+      redirect_to root_url, notice: t('nlt.contact_thanks')
     else
       render "new"
     end
