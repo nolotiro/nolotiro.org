@@ -16,7 +16,7 @@ set :deploy_via, :remote_cache
 set :ssh_options, { :forward_agent => true }
 
 set :linked_files, %w{config/database.yml config/app_config.yml vendor/geolite/GeoLiteCity.dat}
-set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system public/legacy}
+set :linked_dirs, %w{bin db/sphinx log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system public/legacy}
 
 set :keep_releases, 5
 
@@ -26,10 +26,10 @@ set :rvm_ruby_version, '2.0.0@nolotiro'
 server "beta.nolotiro.org", roles: [:app, :web, :db]
 
 # Logical flow for deploying an app
-after  'deploy:cold',            'ts:index'
-after  'deploy:cold',            'ts:start'
-after  'deploy:setup',           'ts:shared_sphinx_folder'
-after  'deploy:finalize_update', 'ts:symlink_indexes'
+after  'deploy:started',            'ts:index'
+after  'deploy:started',            'ts:start'
+#after  'deploy:setup',           'ts:shared_sphinx_folder'
+#after  'deploy:finalize_update', 'ts:symlink_indexes'
 
 namespace :deploy do
 
