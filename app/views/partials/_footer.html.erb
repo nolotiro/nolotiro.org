@@ -3,13 +3,12 @@
   <%= render :partial => "partials/social_buttons", :locals => { :url => url } %>
 
   <div class="links-right">
-    <a href="/es/page/about">acerca de</a>
-    | <a href="http://blog.alabs.es/category/nolotiro-org/">blog</a>
-    | <a href="/es/page/faqs">preguntas frecuentes</a>
-    | <a href="/es/ad/listall/ad_type/give">todos los anuncios</a>
-    | <a href="/es/page/translate">ayuda a traducir</a>
+    <%= link_to t('nlt.about'), about_path %> |
+    <%= link_to t('nlt.blog'), "http://blog.alabs.es/category/nolotiro-org/" %> |
+    <%= link_to t('nlt.faqs'), faqs_path %> |
+    <%= link_to t('nlt.all_ads'), listall_give_path %> |
+    <%= link_to t('nlt.help_translate'), translate_path %> |
     &nbsp;&nbsp;
-
 
     <a href="http://alabs.es/">
       <%= image_tag("alabs.png", :alt => "aLabs logo") %>
@@ -19,15 +18,14 @@
   <br>
 
   <div id="info" class="innerWrap clearfix">
-    <p>
-    nolotiro.org es un sitio web donde regalo y busco regalos gratis de segunda mano : muebles, sillas, sofás, bicicletas, ordenadores portátiles, mesas, cocinas, lámparas, camas, ropa, juguetes, cunas o carros para bebes, teléfonos móviles y otras muchas cosas que ya no quieres y ya no necesitas para que las reutilicen otra gente a la que puede servirle o darle nueva vida.        </p>
+    <p><%= t('nlt.footer_explain') %></p>
   </div>
 
   <div class="links-left">
-    <a href="/es/page/tos">términos de uso</a> |
-    <a href="/es/page/privacy">política de privacidad</a> |
-    <a href="https://github.com/alabs/nolotiro">desarrolladores</a> |
-    <a href="/es/contact">contacto</a> |
-    <a href="http://nolotiro.uservoice.com/forums/30282?lang=es" target="_blank">sugerencias </a>
+    <%= link_to t('nlt.tos'), tos_path %> |
+    <%= link_to t('nlt.privacy'), privacy_path %> |
+    <%= link_to t('nlt.developers'), 'https://github.com/alabs/nolotiro' %> |
+    <%= link_to t('nlt.contact'), '#' %> |
+    <%= link_to t('nlt.suggestions'), 'http://nolotiro.uservoice.com/forums/30282?lang', :target => "_blank" %>
   </div>
 </div>

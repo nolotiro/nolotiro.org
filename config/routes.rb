@@ -56,11 +56,11 @@ NolotiroOrg::Application.routes.draw do
     # TODO: rss
     # /es/rss/feed/woeid/766273/ad_type/give
 
-    get '/page/faqs', to: 'page#faqs'
-    get '/page/tos', to: 'page#tos'
-    get '/page/about', to: 'page#about'
-    get '/page/privacy', to: 'page#privacy'
-    get '/page/translate', to: 'page#translate'
+    get '/page/faqs', to: 'page#faqs', as: 'faqs'
+    get '/page/tos', to: 'page#tos', as: 'tos'
+    get '/page/about', to: 'page#about', as: 'about'
+    get '/page/privacy', to: 'page#privacy', as: 'privacy'
+    get '/page/translate', to: 'page#translate', as: 'translate'
 
     # TODO: contact
     # /es/contact
