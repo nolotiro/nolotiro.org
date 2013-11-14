@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131113104108) do
+ActiveRecord::Schema.define(version: 20131114094859) do
 
   create_table "ads", force: true do |t|
     t.string   "title",              limit: 100,             null: false
@@ -48,12 +48,12 @@ ActiveRecord::Schema.define(version: 20131113104108) do
 
   add_index "commentsAdCount", ["id_comment", "count"], name: "idAd_comments", using: :btree
 
-  create_table "friends", id: false, force: true do |t|
-    t.integer "id_user",   null: false
-    t.integer "id_friend", null: false
+  create_table "friendships", id: false, force: true do |t|
+    t.integer "user_id",   null: false
+    t.integer "friend_id", null: false
   end
 
-  add_index "friends", ["id_user", "id_friend"], name: "iduser_idfriend", unique: true, using: :btree
+  add_index "friendships", ["user_id", "friend_id"], name: "iduser_idfriend", unique: true, using: :btree
 
   create_table "messages", force: true do |t|
     t.integer  "thread_id",                            null: false

@@ -23,7 +23,9 @@ public/legacy/uploads/ads/original/*
 public/system/*
 public/assets/*
 
+# vim temp files
 *.swp
+*.swo
 
 # geolitecity.dat
 vendor/geolite/GeoLiteCity.dat

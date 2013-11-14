@@ -7,7 +7,7 @@
 
     <ul id="tabnav">
       <li>
-      <%= link_to t('nlt.profile'), profile_path(@user) %>
+      <%= link_to t('nlt.profile'), profile_path(@user.username) %>
       </li>
       <li>
       <%= link_to t('nlt.ads'), listads_user_path(@user), :id => "tab_active" %>
