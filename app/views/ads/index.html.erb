@@ -1,14 +1,5 @@
 <div id="main">
 
-  <div class="home_location_change">
-    <div class="ad_create_tab ad_create_tab_home">
-      <a href="/es/location/change2/?location=<%= @location_suggest %>"> Ver anuncios en <%= @location_suggest %></a>
-    </div>
-    <p class="ad_change_location_home">
-    <a href="/es/location/change">cambiar ciudad</a>
-    </p>
-  </div>
-
   <div class="section_ads">
     <h2><%= t('nlt.last_published_gifts') %></h2>
 
@@ -24,4 +15,14 @@
 
 <%= render :partial => "partials/section_users", :locals => {:section_users => @section_users} %>
 
-<%= link_to 'New Ad', new_ad_path %>
+
+<% content_for :action do %>
+  <div class="home_location_change">
+    <div class="ad_create_tab ad_create_tab_home">
+      <a href="/es/location/change2/?location=<%= @location_suggest %>"> Ver anuncios en <%= @location_suggest %></a>
+    </div>
+    <p class="ad_change_location_home">
+    <a href="/es/location/change">cambiar ciudad</a>
+    </p>
+  </div>
+<% end %>

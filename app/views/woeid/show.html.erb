@@ -60,3 +60,9 @@
 
   </div> <!-- /div ads -->
 </div>
+
+<% content_for :action do %>
+  <div class="ad_create_tab">
+    <a href="/es/ad/create">+ Publicar anuncio en <%= @woeid %></a>
+  </div>
+<% end %>
