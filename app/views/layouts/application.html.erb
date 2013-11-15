@@ -2,7 +2,7 @@
 <html>
   <head>
     <!-- TODO: dynamic titles -->
-    <title>nolotiro.org</title>
+    <title><%=h yield(:title) %> - nolotiro.org</title>
     <%= favicon_link_tag 'favicon.ico' %>
     <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
     <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
@@ -18,11 +18,11 @@
         <%= render :partial => "partials/user_actions" %>
 
         <div class="site-name">
-          <a href="/es" title="nolotiro.org home">
+          <%= link_to root_path, :title => "nolotiro.org home" do %>
             <%= image_tag "nolotiro_logo.png", :alt => "nolotiro.org", :id => "logo" %>
             nolotiro.org -
-            <!-- TODO: dynamic titles -->
-          </a>
+            <%=h yield(:title) %>
+          <% end %>
         </div>
 
         <div class="site-slogan">
