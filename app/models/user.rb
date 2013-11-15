@@ -11,6 +11,10 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
     :recoverable, :rememberable, :trackable, :validatable
 
+  def admin?
+    role == 1
+  end
+
   # nolotirov2 legacy: auth migration - from zend md5 to devise
   # https://github.com/plataformatec/devise/wiki/How-To:-Migration-legacy-database 
   def valid_password?(password)

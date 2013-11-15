@@ -1,6 +1,7 @@
 class AdsController < ApplicationController
   before_action :set_ad, only: [:show, :edit, :update, :destroy]
   before_action :get_section_locations, only: [:index]
+  load_and_authorize_resource
 
   # GET /ads
   # GET /ads.json

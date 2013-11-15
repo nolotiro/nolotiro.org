@@ -16,6 +16,14 @@
           <%= link_to image_tag(@ad.image.url(:thumb), :alt => @ad.title), @ad.image.url, :rel => 'superbox[image]', :alt => "Click para agrandar foto" %>
         </div>
       <% end %>
+      <% if can? :update, @ad %>
+        <div class="ad_edit">
+          <%= link_to ads_edit_path(@ad.id) do %>
+            <%= image_tag "edit_ad.png", :alt => "Edita este anuncio" %>
+            &nbsp;Edita este anuncio
+          <% end %>
+        </div>
+      <% end %>
       <span class="ad_status <%= @ad.status_class %>"><%= @ad.status_string %></span>
       <span class="ad_date">
         Publicado hace <%= distance_of_time_in_words_to_now(@ad.date_created) %> por el usuario 

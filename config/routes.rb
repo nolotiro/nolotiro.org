@@ -14,6 +14,7 @@ NolotiroOrg::Application.routes.draw do
     
     # ads: optional slug
     get '/ad/:id/:slug', to: 'ads#show', :as => 'adslug'
+    get '/ad/edit/id/:id', to: 'ads#edit', :as => 'ads_edit'
 
     # listall
     get '/ad/listall/ad_type/give', to: 'woeid#listall_give', as: "listall_give" 

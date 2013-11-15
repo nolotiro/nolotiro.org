@@ -13,6 +13,14 @@
       <% end %>
     </div>
   <% end %>
+  <% if can? :update, ad %>
+    <div class="ad_edit">
+      <%= link_to ads_edit_path(ad.id) do %>
+        <%= image_tag "edit_ad.png", :alt => "Edita este anuncio" %>
+        &nbsp;Edita este anuncio
+      <% end %>
+    </div>
+  <% end %>
   <h4>
     <%= link_to adslug_path(ad,ad.slug) do %>
       <%= ad.title %>
