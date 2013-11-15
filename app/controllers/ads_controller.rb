@@ -5,13 +5,21 @@ class AdsController < ApplicationController
   # GET /ads
   # GET /ads.json
   def index
-    @ads = Ad.paginate(:page => params[:page])
+    if user_signed_in? 
+      if current_user.woeid?
+        redirect_to woeid_path(current_user.woeid)
+      # or ask for the location
+      else
+        redirect_to location_ask_path
+      end
+    else
+      @ads = Ad.paginate(:page => params[:page])
 
-    # TODO: cache?
-    @location = get_location_suggest
-
-    # TODO: cache | select only id, username and ad_count
-    @section_users = User.order("ads_count DESC").limit(40)
+      # TODO: cache?
+      @location = get_location_suggest
+      # TODO: cache | select only id, username and ad_count
+      @section_users = User.order("ads_count DESC").limit(40)
+    end
 
   end
 
