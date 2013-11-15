@@ -27,11 +27,11 @@ class Ad < ActiveRecord::Base
   def type_string
     case type
     when 1
-      'regalo'
+      I18n.t('nlt.give')
     when 2
-      'busco' 
+      I18n.t('nlt.want')
     else
-      'regalo'
+      I18n.t('nlt.give')
     end 
   end
 
@@ -51,13 +51,13 @@ class Ad < ActiveRecord::Base
   def status_string
     case status
     when 1
-      'disponible'
+      I18n.t('nlt.available')
     when 2
-      'reservado' 
+      I18n.t('nlt.booked') 
     when 3
-      'entregado' 
+      I18n.t('nlt.delivered') 
     else
-      'disponible'
+      I18n.t('nlt.available')
     end 
   end
 

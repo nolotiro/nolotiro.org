@@ -32,29 +32,23 @@
       <%= ad.type_string %>
     </a>
   </div>
-
   <span class="ad_status <%= ad.status_class %>">
     <%= ad.status_string %>
   </span>
   <span class="ad_date">
-    Publicado hace <%= distance_of_time_in_words_to_now(ad.date_created) %>
-    por el usuario
-
+    <%= t('nlt.published_on', date: distance_of_time_in_words_to_now(ad.date_created)) %>
     <!-- FIXME: no se porque hay usuarios q no tienen id WTF -->
     <% if defined? ad.user.id %>
-      <a href="/es/ad/listuser/id/<%= ad.user.id %>"><%= ad.user.username %></a>
+      <%= t('nlt.by_user') %>
+      <%= link_to ad.user.username, listads_user_path(ad.user) %>
     <% end %>
-
   </span>
-
   <div><p><%= ad.body %></p></div>
-
   <div class="ad_meta_info">
-    <b><a rel="nofollow" href="/es/message/create/id_user_to/42397/subject/fulares-para-cuello">+ Envía un mensaje al anunciante</a></b>
-    &nbsp;&nbsp;&nbsp;<b><%= link_to "+ Escribe un nuevo comentario", adslug_path(ad,ad.slug) %></b>
-
+    <b><a rel="nofollow" href="/es/message/create/id_user_to/42397/subject/fulares-para-cuello"><%= t('nlt.send_a_message') %></a></b>
+    &nbsp;&nbsp;&nbsp;<b><%= link_to t('nlt.write_a_comment'), adslug_path(ad,ad.slug) %></b>
     &nbsp;&nbsp;
-    13&nbsp;&nbsp;lecturas          
+    13&nbsp;&nbsp;<%= t('nlt.reads') %>          
   </div>
 
 </div>
