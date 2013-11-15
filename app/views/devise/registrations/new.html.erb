@@ -1,80 +1,65 @@
 <div id="default_header_section">
-  <h1>Nuevo usuario</h1><br><br>
-  (Si ya eres un usuario registrado, por favor&nbsp;
-  <a href="/es/auth/login" title="user login">accede aquí</a>)
+  <h1><%= t 'nlt.new_user' %></h1><br><br>
+  (<%= t 'nlt.if_youre_already_an_user' %>&nbsp;
+  <%= link_to t('nlt.access_here'), new_user_session_path, :title => "user login" %>)
 </div>
 
-
 <div class="span-16">
-
   <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
     <fieldset>
-
-      <legend>
-        Por favor, rellena este formulario para ser miembro de nolotiro
-      </legend>  
-
+      <legend><%= t 'nlt.please_fill_to_become_member' %></legend>  
       <%= devise_error_messages! %>
-
       <dl class="zend_form">
-
         <dt id="email-label">
         <label for="email" class="required">
-          Tu email:
+          <%= t 'nlt.your_email' %>
         </label>
         </dt>
-
         <dd id="email-element">
-        <%= f.email_field :email, :autofocus => true %>
+        <%= f.email_field :email, :autofocus => true, :required => true %>
         </dd>
         <dt id="password1-label">
         <label for="password1" class="required">
-          Elige tu contraseña:
+          <%= t 'nlt.choose_your_pass' %>
         </label>
         </dt>
         <dd id="password1-element">
-        <%= f.password_field :password %>
+        <%= f.password_field :password, :required => true %>
         </dd>
         <dt id="password2-label">
         <label for="password2" class="required">
-          Introduce tu contraseña (si, otra vez):
+          <%= t 'nlt.choose_your_pass_again' %>
         </label>
         </dt>
         <dd id="password2-element">
-        <%= f.password_field :password_confirmation %></dd>
-
-
-        <!-- TODO username -->
-
+        <%= f.password_field :password_confirmation, :required => true %>
+        </dd>
         <dt id="username-label">
         <label for="username" class="required">
-          Elige un nombre de usuario:
+          <%= t 'nlt.choose_username' %>
         </label>
         </dt>
         <dd id="username-element">
-        <input name="username" id="username" value="" type="text">
+        <%= f.text_field :username, :required => true %>
         </dd>
-
-        <!-- TODO captcha -->
         <dt id="captcha-input-label">
         <label for="captcha-input" class="required">
-          Por favor, introduce los cuatro caracteres:
+          <%= t 'nlt.fill_captcha' %>
         </label>
         </dt>
-
         <dd id="captcha-element">
-        <img alt="" src="/images/captcha/2a0a949d62beb3e2afa79cfa616e8576.png" width="160" height="50">
-        <input name="captcha[id]" value="2a0a949d62beb3e2afa79cfa616e8576" id="captcha-id" type="hidden">
-        <input name="captcha[input]" id="captcha-input" value="" type="text">
+        <%= recaptcha_tags :display => { :theme => "white" }%>
         </dd>
-
         <dt id="submit-label">&nbsp;</dt>
         <dd id="submit-element">
-        <%= f.submit "Regístrate" %>
+        <%= f.submit t('nlt.register') %>
         </dd>
       </dl>
 
-      Enviando este formulario, admites haber leido, comprendido, y estás conforme con las <a href="/es/page/user-agreement">condiciones de uso</a> y la <a href="/es/page/privacy">política de privacidad</a> de nolotiro.org.
+          <%= t 'nlt.sending_this_form' %>
+          <%= link_to t('nlt.tos'), tos_path %>
+          <%= t 'nlt.and' %>
+          <%= link_to t('nlt.privacy'), privacy_path %>.
     </fieldset>
   <% end %>
 

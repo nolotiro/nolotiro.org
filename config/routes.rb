@@ -38,11 +38,14 @@ NolotiroOrg::Application.routes.draw do
     # auth
     get '/auth/login', to: redirect('/user/login')
 
-    devise_for :users, path: 'user', path_names: {
-      sign_up: 'register',
-      sign_in: 'login',
-      sign_out: 'logout',
-      password: 'reset'
+    devise_for :users,
+      :controllers => { :registrations => 'registrations' },
+      path: 'user',
+      path_names: {
+        sign_up: 'register',
+        sign_in: 'login',
+        sign_out: 'logout',
+        password: 'reset'
     }
 
     get '/ad/listuser/id/:id', to: 'users#listads', as: 'listads_user'

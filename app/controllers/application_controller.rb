@@ -4,6 +4,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   before_action :set_locale
+  before_filter :configure_permitted_parameters, if: :devise_controller?
 
   # after a user sing ins, go to their location
   def after_sign_in_path_for(resource)
@@ -44,5 +45,13 @@ class ApplicationController < ActionController::Base
     ip_address = GeoHelper.get_ip_address request
     GeoHelper.suggest ip_address
   end
+
+  protected
+
+  def configure_permitted_parameters
+    devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:username, :email, :password, :password_confirmation, :remember_me) }
+    devise_parameter_sanitizer.for(:sign_in) { |u| u.permit(:username, :email, :password, :remember_me) }
+  end
+
 
 end

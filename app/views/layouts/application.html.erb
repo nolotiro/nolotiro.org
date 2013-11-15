@@ -38,7 +38,7 @@
 
       <% flash.each do |name, msg| %>
         <% if msg.is_a?(String) %>
-          <p class="notice alert-<%= name == :notice ? "success" : "error" %>">
+          <p class="<%= name %>">
           <%= msg %>
           </p>
         <% end %>

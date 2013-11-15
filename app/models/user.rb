@@ -50,4 +50,5 @@ class User < ActiveRecord::Base
     self.legacy_password_hash = nil
     super
   end
+
 end

@@ -1,4 +1,7 @@
 es: 
+  recaptcha:
+    errors:
+      incorrect-captcha-sol: 'Hubo un error rellenando los caracteres del captcha.'
   nlt:
     cities_in_the_world: 'ciudades del mundo que más reciclan'
     users_most_active: 'usuarios más activos'
@@ -34,3 +37,15 @@ es:
     reads: 'lecturas'
     give: 'regalo'
     want: 'busco'
+    new_user: 'Nuevo usuario'
+    if_youre_already_an_user: 'Si ya eres un usuario registrado, por favor'
+    access_here: 'accede aquí'
+    please_fill_to_become_member: 'Por favor, rellena este formulario para ser miembro de nolotiro'
+    your_email: 'Tu email'
+    choose_your_pass: 'Elige tu contraseña'
+    choose_your_pass_again: 'Introduce tu contraseña (si, otra vez)'
+    choose_username: 'Elige un nombre de usuario'
+    fill_captcha: 'Por favor rellena los siguientes carácteres'
+    register: 'Regístrate'
+    sending_this_form: 'Enviando este formulario, admites haber leido, comprendido, y estás conforme con nuestras'
+    and: 'y'
