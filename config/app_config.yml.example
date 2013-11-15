@@ -5,8 +5,12 @@ development:
   geoplanet_app_id: ""
   recaptcha_public_key: ""
   recaptcha_private_key: ""
-  contact_email: "@"
+  contact_email1: "@"
+  contact_email2: "@"
   default_from_email: "@"
+  airbrake_apikey: ''
+  airbrake_host: ''
+  airbrake_port: '80'
 
 test:
   <<: *defaults
