@@ -15,10 +15,13 @@ namespace :ts do
   desc 'Build Sphinx indexes into the shared path and symlink them into your release.'
   task :index do
     on roles(:db) do
-      rake 'ts:index'
+      within release_path do
+        with rails_env: fetch(:rails_env) { execute :rake, 'ts:index'}
+      end
     end
   end
-  after 'ts:index', 'ts:symlink_indexes'
+
+  #after 'ts:index', 'ts:symlink_indexes'
 
   desc 'Start the Sphinx search daemon.'
   task :start do
@@ -66,14 +69,6 @@ Stop, reindex, and then start the Sphinx search daemon. This task must be execut
     on roles(:db) do
       run "if [ -d #{release_path} ]; then ln -nfs #{shared_path}/db/sphinx #{release_path}/db/sphinx; else ln -nfs #{shared_path}/db/sphinx #{current_path}/db/sphinx; fi;"
     end
-  end
-
-  def rake(tasks)
-    rails_env = fetch(:rails_env, 'production')
-    rake = fetch(:rake, 'rake')
-    tasks += ' INDEX_ONLY=true' if ENV['INDEX_ONLY'] == 'true'
-
-    run "if [ -d #{release_path} ]; then cd #{release_path}; else cd #{current_path}; fi; if [ -f Rakefile ]; then #{rake} RAILS_ENV=#{rails_env} #{tasks}; fi;"
   end
 
 end

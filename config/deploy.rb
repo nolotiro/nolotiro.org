@@ -7,7 +7,7 @@ set :deploy_to, '/var/www/beta.nolotiro.org'
 set :scm, :git
 
 set :format, :pretty
-#set :log_level, :debug
+set :log_level, :debug
 set :pty, true
 
 #set :deploy_via, :copy
@@ -23,15 +23,26 @@ set :keep_releases, 5
 set :rvm_type, :user
 set :rvm_ruby_version, '2.0.0@nolotiro'
 
-server "beta.nolotiro.org", roles: [:app, :web, :db]
+#server "beta.nolotiro.org", roles: [:app, :web, :db]
 
 # Logical flow for deploying an app
-after  'deploy:started',            'ts:index'
-after  'deploy:started',            'ts:start'
+after  'deploy:finished',            'ts:index'
+after  'deploy:finished',            'ts:start'
 #after  'deploy:setup',           'ts:shared_sphinx_folder'
 #after  'deploy:finalize_update', 'ts:symlink_indexes'
 
 namespace :deploy do
+
+  desc 'Perform migrations'
+  task :migrations do
+    on roles(:db) do
+      within release_path do
+        with rails_env:
+          fetch(:rails_env) do execute :rake, 'db:migrate'
+          end
+      end
+    end
+  end
 
   desc 'Restart application'
   task :restart do
