@@ -14,19 +14,21 @@ class RssController < ApplicationController
       @ads = ads
     else
       if params[:status].nil? 
-        @ads = ads.available
+        ads = ads.available
         case params[:status]
         when 1
-          @ads = ads.available
+          ads = ads.available
         when 2
-          @ads = ads.booked
+          ads = ads.booked
         when 3
-          @ads = ads.delivered
+          ads = ads.delivered
         else
-          @ads = ads.available
+          ads = ads.available
         end
       end
     end
+
+    @ads = ads.limit(30)
   end
 
 end
