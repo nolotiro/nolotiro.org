@@ -26,20 +26,14 @@ gem 'capistrano-rvm', '~> 0.0.3'
 gem 'capistrano-rails'
 gem 'capistrano-bundler'
 
-# DBs
-gem 'mysql2'
-gem 'thinking-sphinx'
-gem 'dalli'
-
-# Use debugger
-# gem 'debugger', group: [:development, :test]
-
-gem 'geoplanet'
-gem 'geoip'
-
-gem 'will_paginate', '~> 3.0'
-gem 'devise'
-gem 'paperclip', '~> 3.0'
-gem 'recaptcha', :require => 'recaptcha/rails'
-gem 'mailcatcher', group: [:development, :test]
-gem 'airbrake'
+gem 'mysql2'                                        # mysql
+gem 'thinking-sphinx'                               # sphinxsearch
+gem 'dalli'                                         # memcached
+gem 'geoplanet'                                     # yahoo woeid geoplanet
+gem 'geoip'                                         # geolite city
+gem 'will_paginate', '~> 3.0'                       # pagination
+gem 'devise'                                        # users
+gem 'paperclip', '~> 3.0'                           # images
+gem 'recaptcha', :require => 'recaptcha/rails'      # captcha
+gem 'mailcatcher', group: [:development, :test]     # mailbox for development
+gem 'airbrake'                                      # exception notification
