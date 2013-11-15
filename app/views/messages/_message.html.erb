@@ -1,18 +1,39 @@
-<div class="message-excerpt">
-  <div class="message-from-left">
-    <%= link_to profile_path message.sender do %>
-      <%= image_tag "contact.png" %>
-      <%= message.sender.username %>
-    <% end %>
-  </div>
-  <div class="message-container-right">
-    <div class="triangle-me">
+<% if message.sender == current_user %>
+  <div class="message-excerpt">
+    <div class="message-from-left">
+      <%= link_to profile_path message.sender do %>
+        <%= image_tag "contact.png" %>
+        <%= message.sender.username %>
+      <% end %>
     </div>
-    <div class="bubble bg-bubble-me">
-      <%= message.body %>
-      <div class="message-date">
-        <%= message.date_created %>
+    <div class="message-container-right">
+      <div class="triangle-me">
+      </div>
+      <div class="bubble bg-bubble-me">
+        <%= message.body %>
+        <div class="message-date">
+          <%= message.date_created %>
+        </div>
       </div>
     </div>
   </div>
-</div>
+<% else %>
+  <div class="message-excerpt">
+    <div class="message-from-right">
+      <%= link_to profile_path message.sender do %>
+        <%= image_tag "contact.png" %>
+        <%= message.sender.username %>
+      <% end %>
+    </div>
+    <div class="message-container-left">
+      <div class="triangle-other">
+      </div>
+      <div class="bubble">
+        <%= message.body %>
+        <div class="message-date">
+          <%= message.date_created %>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
