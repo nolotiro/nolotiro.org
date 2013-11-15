@@ -38,3 +38,4 @@ gem 'paperclip', '~> 3.0'                           # images
 gem 'recaptcha', :require => 'recaptcha/rails'      # captcha
 gem 'mailcatcher', group: [:development, :test]     # mailbox for development
 gem 'airbrake'                                      # exception notification
+gem 'paranoia', '~> 2.0'                            # don't really delete a model

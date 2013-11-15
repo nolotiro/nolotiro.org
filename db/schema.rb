@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131114094859) do
+ActiveRecord::Schema.define(version: 20131115085202) do
 
   create_table "ads", force: true do |t|
     t.string   "title",              limit: 100,             null: false
@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 20131114094859) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
+    t.datetime "deleted_at"
   end
 
   add_index "ads", ["woeid_code"], name: "woeid", using: :btree

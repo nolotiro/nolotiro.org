@@ -110,6 +110,8 @@ GEM
       activesupport (>= 3.0.0)
       cocaine (~> 0.5.3)
       mime-types
+    paranoia (2.0.1)
+      activerecord (~> 4.0)
     polyglot (0.3.3)
     rack (1.5.2)
     rack-protection (1.5.1)
@@ -226,6 +228,7 @@ DEPENDENCIES
   mailcatcher
   mysql2
   paperclip (~> 3.0)
+  paranoia (~> 2.0)
   rails (= 4.0.1)
   recaptcha
   sass-rails (~> 4.0.0)

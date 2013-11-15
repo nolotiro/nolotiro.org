@@ -11,6 +11,8 @@ class Ad < ActiveRecord::Base
 
   default_scope { order('date_created DESC') }
 
+  acts_as_paranoid
+
   has_attached_file :image, :styles => {:thumb => "100x90>"}
 
   scope :give, -> { where(type: 1) }
