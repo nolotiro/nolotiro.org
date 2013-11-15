@@ -6,6 +6,9 @@ class User < ActiveRecord::Base
   has_many :friendships
   has_many :friends, :through => :friendships
 
+  has_many :sent_messages, :class_name=> 'Message', :foreign_key=>'user_from', :dependent=>:destroy
+  has_many :recieved_messages, :class_name=> 'Message', :foreign_key=>'user_to', :dependent=>:destroy
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
