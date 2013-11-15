@@ -11,6 +11,7 @@ development:
   airbrake_apikey: ''
   airbrake_host: ''
   airbrake_port: '80'
+  devise_secret_key: ''
 
 test:
   <<: *defaults

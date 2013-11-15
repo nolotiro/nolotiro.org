@@ -11,6 +11,10 @@ class UsersController < ApplicationController
   def profile
     # public profile for user
     @user = User.find_by_username(params[:username])
+    if @user.nil? 
+      # not username, but ID
+      @user = User.find(params[:username])
+    end
   end
 
 end

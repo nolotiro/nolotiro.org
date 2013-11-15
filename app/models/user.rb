@@ -18,6 +18,17 @@ class User < ActiveRecord::Base
     role == 1
   end
 
+  def last_threads
+    all_threads = recieved_messages.order('date_created DESC').limit(10).joins(:thread).group('thread_id').count
+    threads = []
+    all_threads.keys.each do |thread|
+      th = MessageThread.find(thread.to_i)
+      other_user = th.messages.first.user_from == id ? th.messages.first.reciever : th.messages.first.sender
+      threads.append([th, other_user])
+    end
+    threads
+  end
+
   # nolotirov2 legacy: auth migration - from zend md5 to devise
   # https://github.com/plataformatec/devise/wiki/How-To:-Migration-legacy-database 
   def valid_password?(password)

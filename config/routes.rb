@@ -36,7 +36,7 @@ NolotiroOrg::Application.routes.draw do
     post '/location/change2/', to: 'location#change'
 
     # auth
-    get '/auth/login', to: redirect('/es/user/login')
+    get '/auth/login', to: redirect('/user/login')
 
     devise_for :users, path: 'user', path_names: {
       sign_up: 'register',
@@ -45,10 +45,8 @@ NolotiroOrg::Application.routes.draw do
       password: 'reset'
     }
 
-    # ads lists for user
     get '/ad/listuser/id/:id', to: 'users#listads', as: 'listads_user'
-
-    # public profile for user
+    get '/user/edit/id/:id', to: redirect('/es/user/edit'), as: 'user_edit'
     get '/profile/:username', to: 'users#profile', as: 'profile'
 
     # comments
@@ -57,8 +55,12 @@ NolotiroOrg::Application.routes.draw do
     # search 
     get '/search', to: 'search#search', as: 'search'
 
-    # TODO: messaging
-    # /es/message/create/id_user_to/42825/subject/mueble-de-salon
+    # messaging
+    get '/message/list', to: 'messages#list', as: 'messages_list'
+    get '/message/show/:id/subject/:subject', to: 'messages#show', as: 'message_show'
+    # TODO
+    get '/message/create/id_user_to/:user_id/subject/:subject', to: "message#create", as: 'message_create'
+    post '/message/reply/:id/to/:message_id', to: 'message#reply', as: 'message_reply'
 
     # rss
     # FIXME: las URLs legacy vienen asi
