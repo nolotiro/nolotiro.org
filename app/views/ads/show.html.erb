@@ -1,63 +1,43 @@
 <div id="default_header_section">
   <h2>
-    <a href="/es/woeid/766273/give">
+    <a href="/es/woeid/<%= @ad.woeid_code %>/give">
       <%= WoeidHelper.convert_woeid_name @ad.woeid_code %> &gt;
       <%= @ad.type_string %>
     </a>
   </h2>
   <h1><%= @ad.title %></h1>
 </div>
+
 <div id="main">
-
   <div class="span-15">
-
     <div class="ad_excerpt_show">
-
-      <div class="ad_list_image">
-        <%= link_to image_tag(@ad.image.url(:thumb), :alt => @ad.title), @ad.image.url, :rel => 'superbox[image]', :alt => "Click para agrandar foto" %>
-      </div>
+      <% if @ad.image.exists? %>
+        <div class="ad_list_image">
+          <%= link_to image_tag(@ad.image.url(:thumb), :alt => @ad.title), @ad.image.url, :rel => 'superbox[image]', :alt => "Click para agrandar foto" %>
+        </div>
+      <% end %>
       <span class="ad_status <%= @ad.status_class %>"><%= @ad.status_string %></span>
-
       <span class="ad_date">
         Publicado hace <%= distance_of_time_in_words_to_now(@ad.date_created) %> por el usuario 
         <a href="/es/ad/listuser/id/40780"><%= @ad.user.username %></a>
       </span>
-
       <br>
-      <p><%= @ad.body %>
-      </p>
-
-      <div class="ad_meta_info">
-        33 lecturas
-      </div>
-
+      <p><%= @ad.body %></p>
+      <div class="ad_meta_info">33 lecturas</div>
       ¿Te interesa?&nbsp;
       <a href="/es/message/create/id_user_to/40780/subject/top-talla-s-getafe" rel="nofollow">Envía un mensaje privado al anunciante <img src="/images/email_send.png" alt="send a message"></a>
-
       <br><br>
-
       <div class="sharelinks">
         <p style="text-align:left;margin-bottom:5px;">Comparte este anuncio:</p>
         <%= render :partial => "partials/social_buttons", :locals => { :url => ad_url(@ad) } %>
       </div>
-
     </div>
-
-    <% if @ad.comments_enabled? %>
-      <% if user_signed_in? %>
-        <% if @ad.comments.any? %>
-          <%= render :partial => "comments/list", :locals => {:comments => @ad.comments} %>
-        <% end %>
-        <%= render :partial => "comments/form", :locals => {:ad => @ad.id} %>
-      <% else %>
-        <div class="ad_comment_form">
-          <a href="/es/auth/login">accede para escribir un comentario</a>
-        </div>
-      <% end %>
-    <% end %>
-
+    <%= render :partial => "comments/show", :locals => {:ad => @ad} %>
   </div>
+</div>
 
+<div class="google_ads"> 
+  <%= image_tag "http://placehold.it/300x250" %>
 </div>
 
 <% content_for :action do %>

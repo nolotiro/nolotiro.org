@@ -1,7 +1,6 @@
 <% content_for(:title, @woeid) %>
 
 <div id="location_header_section">
-
   <span class="give-want">
     <% if @all %>
       <%= link_to "regalo", listall_give_path, :class => @type == "give" ? "actual" : "''" %>
@@ -15,30 +14,24 @@
       <%= link_to "busco", woeid_want_path(@id), :class => @type == "want" ? "actual" : "''" %>
     <% end %>
   </span>
-
   <div class="location_name">
     <h1>regalo - <%= @woeid %></h1><br>
-
     <%= render :partial => "ads/search", :locals => {:woeid => @woeid, :ad_type => @type} %>
-
     <%= link_to location_ask_path, :class => "world_link" do %>
       <%= image_tag "change_location.png", :alt => "change location" %> 
       cambiar ciudad
     <% end %>
   </div>
-
 </div>
 
 <div id="main">
   <div class="span-18">
-    
     <% if @type == "give" %>
       <%= render :partial => "filter_status", :locals => {:status => @status, :id => @id, :all => @all} %>
     <% end %>
-
     <% if @ads.any? %>
       <% @ads.each do |ad| %>
-          <%= render :partial => "ads/ad", :locals => { :ad => ad } %>
+        <%= render :partial => "ads/ad", :locals => { :ad => ad } %>
       <% end %>
       <%= will_paginate @ads, :page_links => false %>
     <% else %>
@@ -48,7 +41,6 @@
         <%= render :partial => "ads/no_results", :locals => { :location_suggest => @location_suggest, :location_options => @location_options } %>
       <% end %>
     <% end %>
-
     <% if @woeid %>
       <div class="rss">
         <%= link_to rss_type_path(:woeid => @id, :type => "give") do %>
@@ -57,8 +49,11 @@
         <% end %>
       </div>
     <% end %>
+  </div> 
+</div>
 
-  </div> <!-- /div ads -->
+<div class="google_ads">
+  <%= image_tag "http://placehold.it/160x600" %>
 </div>
 
 <% content_for :action do %>

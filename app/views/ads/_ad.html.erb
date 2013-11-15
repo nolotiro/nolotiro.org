@@ -1,9 +1,18 @@
+<%# for ads %>
+<% if defined? i %>
+  <% if [3,5,10,15].include? i %>
+    <%= image_tag "http://placehold.it/468x60" %>
+  <% end %>
+<% end %>
+
 <div class="ad_excerpt">
-  <div class="ad_list_image">
-    <%= link_to adslug_path(ad,ad.slug) do %>
-      <%= image_tag ad.image.url(:thumb) %>
-    <% end %>
-  </div>
+  <% if ad.image.exists? %>
+    <div class="ad_list_image">
+      <%= link_to adslug_path(ad,ad.slug) do %>
+        <%= image_tag ad.image.url(:thumb) %>
+      <% end %>
+    </div>
+  <% end %>
   <h4>
     <%= link_to adslug_path(ad,ad.slug) do %>
       <%= ad.title %>
@@ -34,7 +43,7 @@
 
   <div class="ad_meta_info">
     <b><a rel="nofollow" href="/es/message/create/id_user_to/42397/subject/fulares-para-cuello">+ Envía un mensaje al anunciante</a></b>
-    &nbsp;&nbsp;&nbsp;<b><a href="/es/ad/153384/fulares-para-cuello">+ Escribe un nuevo comentario</a></b>
+    &nbsp;&nbsp;&nbsp;<b><%= link_to "+ Escribe un nuevo comentario", adslug_path(ad,ad.slug) %></b>
 
     &nbsp;&nbsp;
     13&nbsp;&nbsp;lecturas          

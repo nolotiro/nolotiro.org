@@ -4,7 +4,6 @@
 
 <div id="main">
   <div class="span-19">
-
     <ul id="tabnav">
       <li>
       <%= link_to t('nlt.profile'), profile_path(@user.username) %>
@@ -13,12 +12,13 @@
       <%= link_to t('nlt.ads'), listads_user_path(@user), :id => "tab_active" %>
       </li>
     </ul>
-
     <% @ads.each do |ad| %>
       <%= render :partial => "ads/ad", :locals => { :ad => ad } %>
     <% end %>
-
     <%= will_paginate @ads, :page_links => false %>
-
   </div>
+</div>
+
+<div class="google_ads">
+  <%= image_tag "http://placehold.it/160x600" %>
 </div>

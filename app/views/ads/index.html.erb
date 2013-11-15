@@ -1,12 +1,11 @@
-<div id="main">
+<% content_for(:title, "anuncios de regalos nuevos y de segunda mano") %>
 
+<div id="main">
   <div class="section_ads">
     <h2><%= t('nlt.last_published_gifts') %></h2>
-
-    <% @ads.each do |ad| %>
-      <%= render :partial => "ad", :locals => { :ad => ad } %>
+    <% @ads.each_with_index do |ad,i| %>
+      <%= render :partial => "ad", :locals => { :ad => ad, :i => i } %>
     <% end %>
-
     <%= will_paginate @ads, :page_links => false %>
   </div>
 </div>
@@ -14,7 +13,6 @@
 <%= render :partial => "partials/section_locations", :locals => {:section_locations => @section_locations} %>
 
 <%= render :partial => "partials/section_users", :locals => {:section_users => @section_users} %>
-
 
 <% content_for :action do %>
   <div class="home_location_change">

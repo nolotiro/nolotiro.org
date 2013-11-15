@@ -1,0 +1,12 @@
+<% if ad.comments_enabled? %>
+  <% if user_signed_in? %>
+    <% if ad.comments.any? %>
+      <%= render :partial => "comments/list", :locals => {:comments => ad.comments} %>
+    <% end %>
+    <%= render :partial => "comments/form", :locals => {:ad => ad.id} %>
+  <% else %>
+    <div class="ad_comment_form">
+      <a href="/es/auth/login">accede para escribir un comentario</a>
+    </div>
+  <% end %>
+<% end %>
