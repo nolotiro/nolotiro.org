@@ -49,12 +49,14 @@
       <% end %>
     <% end %>
 
-    <div class="rss">
-      <%= link_to rss_type_path(:woeid => @id, :type => "give") do %>
-        <%= image_tag "icons/rss.png", :alt => t("nlt.rss_suscribe") %>
-        &nbsp; <%= t('nlt.rss_suscribe') %> - <%= @woeid %>
-      <% end %>
-    </div>
+    <% if @woeid %>
+      <div class="rss">
+        <%= link_to rss_type_path(:woeid => @id, :type => "give") do %>
+          <%= image_tag "icons/rss.png", :alt => t("nlt.rss_suscribe") %>
+          &nbsp; <%= t('nlt.rss_suscribe') %> - <%= @woeid %>
+        <% end %>
+      </div>
+    <% end %>
 
   </div> <!-- /div ads -->
 </div>
