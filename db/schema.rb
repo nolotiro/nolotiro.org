@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131115085202) do
+ActiveRecord::Schema.define(version: 20131117122824) do
 
   create_table "ads", force: true do |t|
     t.string   "title",              limit: 100,             null: false
@@ -96,7 +96,7 @@ ActiveRecord::Schema.define(version: 20131115085202) do
     t.string   "username",               limit: 32,                   null: false
     t.string   "legacy_password_hash"
     t.string   "email",                  limit: 100,                  null: false
-    t.date     "created",                                             null: false
+    t.date     "created_at",                                          null: false
     t.integer  "active",                             default: 0,      null: false
     t.string   "token",                  limit: 32,                   null: false
     t.integer  "locked",                                              null: false
