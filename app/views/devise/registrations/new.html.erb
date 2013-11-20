@@ -50,6 +50,9 @@
         <dd id="captcha-element">
         <%= recaptcha_tags :display => { :theme => "white" }%>
         </dd>
+        <dd id="hidden-elements">
+        <%= f.hidden_field :lang, :value => I18n.locale.to_s %>
+        </dd>
         <dt id="submit-label">&nbsp;</dt>
         <dd id="submit-element">
         <%= f.submit t('nlt.register') %>
