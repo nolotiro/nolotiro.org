@@ -1,11 +1,13 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+one: 
+  thread_id: 1
+  date_created: "2013-11-18T10:41:00+01:00" 
+  ip: '87.223.138.147'
+  subject: 'mensaje enviado por pepito'
+  body: 'este es un msg enviado por pepito a jaimito que jaimito responde'
 
-# This model initially had no columns defined.  If you add columns to the
-# model remove the '{}' from the fixture names and add the columns immediately
-# below each fixture, per the syntax in the comments below
-#
-one: {}
-# column: value
-#
-two: {}
-#  column: value
+two:
+  thread_id: 1
+  date_created: "2013-11-18T12:30:00+01:00" 
+  ip: '18.122.211.29'
+  subject: 'mensaje enviado por jaimito'
+  body: 'esta es la respuesta de jaimito'

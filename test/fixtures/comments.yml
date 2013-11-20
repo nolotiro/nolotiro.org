@@ -1,11 +1,13 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+one:
+  ads_id: 1
+  body: "oye sigues teniendo este regalo?"
+  date_created: "2013-11-01T12:30:00+01:00" 
+  user_owner: 1
+  ip: '8.2.2.1'
 
-# This model initially had no columns defined.  If you add columns to the
-# model remove the '{}' from the fixture names and add the columns immediately
-# below each fixture, per the syntax in the comments below
-#
-one: {}
-# column: value
-#
-two: {}
-#  column: value
+two:
+  ads_id: 2
+  body: "esto es claramente spam"
+  date_created: "2013-11-08T12:30:00+01:00" 
+  ip: '99.22.2.1'
+  user_owner: 1
