@@ -6,9 +6,9 @@ NolotiroOrg::Application.routes.draw do
 
   scope '/api' do
     scope '/v1' do
-      get '/ad/:id', format: 'json', to: 'api/v1#ad_show'
-      get '/woeid/:id/:type', format: 'json', to: 'api/v1#woeid_show'
-      get '/woeid/list', format: 'json', to: 'api/v1#woeid_list'
+      get '/ad/:id', format: 'json', to: 'api/v1#ad_show', as: 'apiv1_ad_show'
+      get '/woeid/:id/:type', format: 'json', to: 'api/v1#woeid_show', as: 'apiv1_woeid_show'
+      get '/woeid/list', format: 'json', to: 'api/v1#woeid_list', as: 'apiv1_woeid_list'
     end
   end
 
