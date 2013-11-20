@@ -6,6 +6,14 @@ class ApplicationController < ActionController::Base
   before_action :set_locale
   before_filter :configure_permitted_parameters, if: :devise_controller?
 
+  rescue_from CanCan::AccessDenied do |exception|
+    if user_signed_in? 
+      redirect_to root_url, :alert => t('nlt.permission_denied')
+    else
+      redirect_to new_user_session_url, :alert => exception.message
+    end
+  end
+
   # after a user sing ins, go to their location
   def after_sign_in_path_for(resource)
     if current_user.woeid?

@@ -1,4 +1,7 @@
 es: 
+  unauthorized:
+    manage:
+      all: "Debes primero iniciar sesión o registrarte un usuario."
   recaptcha:
     errors:
       incorrect-captcha-sol: 'Hubo un error rellenando los caracteres del captcha.'
@@ -49,3 +52,4 @@ es:
     register: 'Regístrate'
     sending_this_form: 'Enviando este formulario, admites haber leido, comprendido, y estás conforme con nuestras'
     and: 'y'
+    permission_denied: 'No tienes permisos para realizar esta acción.'
