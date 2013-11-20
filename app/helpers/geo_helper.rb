@@ -2,7 +2,7 @@
 module GeoHelper
 
   def self.get_ip_address request
-    ip_address = defined? APP_CONFIG["debug_ip_address"]  ? APP_CONFIG["debug_ip_address"] : request.remote_ip
+    ip_address = APP_CONFIG["debug_ip_address"] != ""  ? APP_CONFIG["debug_ip_address"] : request.remote_ip
     if request.env['HTTP_X_FORWARDED_FOR']
       ip_address = request.env['HTTP_X_FORWARDED_FOR'].split(',')[0] || ip_address
     end
