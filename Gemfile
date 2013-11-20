@@ -14,11 +14,14 @@ group :doc do
   gem 'sdoc', require: false
 end
 
+group :development, :test do
+  gem 'factory_girl_rails', '~> 4.0'                # test: factories 
+  gem 'turn'                                        # test: color output
+end
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 
-# webserver
-gem 'unicorn'
 
 # deploy
 gem 'capistrano', '~> 3.0'
@@ -26,6 +29,7 @@ gem 'capistrano-rvm', '~> 0.0.3'
 gem 'capistrano-rails'
 gem 'capistrano-bundler'
 
+gem 'unicorn'                                       # webserver
 gem 'mysql2'                                        # mysql
 gem 'thinking-sphinx'                               # sphinxsearch
 gem 'dalli'                                         # memcached
