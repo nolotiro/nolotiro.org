@@ -17,7 +17,7 @@
 
     <div class="ad_excerpt">
       <h4><%= t('nlt.username') %>: <%= @user.username %></h4>
-      <h4><%= t('nlt.member_since') %>: <%= l @user.created, format: :short %></h4>
+      <h4><%= t('nlt.member_since') %>: <%= l @user.created_at, format: :long %></h4>
 
       <a class="world_link" href="/en/message/create/id_user_to/<%= @user.id %>">send message to <%= @user.username %>
         <img src="/images/email_send.png" alt="send a message"></a><br>
