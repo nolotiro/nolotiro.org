@@ -4,6 +4,14 @@ NolotiroOrg::Application.routes.draw do
 
   get '/:locale' => 'ads#index'
 
+  scope '/api' do
+    scope '/v1' do
+      get '/ad/:id', format: 'json', to: 'api/v1#ad_show', as: 'apiv1_ad_show'
+      get '/woeid/:id/:type', format: 'json', to: 'api/v1#woeid_show', as: 'apiv1_woeid_show'
+      get '/woeid/list', format: 'json', to: 'api/v1#woeid_list', as: 'apiv1_woeid_list'
+    end
+  end
+
   # i18n
   scope "(:locale)", locale: /es|en|ca|gl|eu|nl|de|fr|pt|it/ do
 

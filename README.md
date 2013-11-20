@@ -39,6 +39,17 @@ and configure it in the relevant environment in *config/app_config.yml* (keys
 
 Happy hacking!
 
+## API 
+
+### v1
+
+Example URLs: 
+
+http://beta.nolotiro.org/api/v1/woeid/list 
+http://beta.nolotiro.org/api/v1/woeid/766273/give
+http://beta.nolotiro.org/api/v1/woeid/766273/give?page=2
+http://beta.nolotiro.org/api/v1/ad/153735
+
 ## stats 12/11/2013
 
 * Ads: 97206
