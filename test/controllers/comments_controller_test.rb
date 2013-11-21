@@ -11,7 +11,7 @@ class CommentsControllerTest < ActionController::TestCase
 
   test "should not create a comment as anonymous" do
     assert_difference('Comment.count', 0) do
-      post :create, id: @ad.id, comments: {body: "hola mundo" }
+      post :create, id: @ad.id, body: "hola mundo"
     end
     assert_response :redirect
     assert_redirected_to new_user_session_path
@@ -20,8 +20,10 @@ class CommentsControllerTest < ActionController::TestCase
   test "should create a comment as a user" do
     sign_in @user 
     assert_difference('Comment.count', 1) do
-      post :create, id: @ad.id, comments: {body: "hola mundo" }
+      post :create, id: @ad.id, body: "hola mundo"
     end
+    assert_response :redirect
+    assert_redirected_to ad_path(@ad)
   end
 
 end
