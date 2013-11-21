@@ -38,7 +38,7 @@
       <% if defined? @no_results_search %>
         <%= render :partial => "ads/no_results_search", :locals => { :location_suggest => @location_suggest, :location_options => @location_options } %>
       <% else %>
-        <%= render :partial => "ads/no_results", :locals => { :location_suggest => @location_suggest, :location_options => @location_options } %>
+        <%= render :partial => "ads/no_results", :locals => { :location_suggest => @location_suggest, :location_options => @location_options, :woeid => @id } %>
       <% end %>
     <% end %>
     <% if @woeid %>
