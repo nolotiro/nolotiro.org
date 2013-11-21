@@ -1,0 +1,11 @@
+# .travis.yml
+language: ruby
+rvm:
+  - 2.0.0
+script:
+  - RAILS_ENV=test bundle exec rake db:migrate --trace
+  - bundle exec rake db:test:prepare
+  - bundle exec rake
+before_script:
+  - cp config/app_config.yml.example config/app_config.yml
+
