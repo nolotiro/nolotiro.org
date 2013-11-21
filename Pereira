@@ -1,0 +1,716 @@
+[33mcommit a75a57ff76bffa0b0f72e2e8588f83cc1091cbb8[m
+Author: Andrés Pereira <apereira@alabs.es>
+Date:   Thu Nov 21 12:18:40 2013 +0100
+
+    tests: listall/woeid/users/search
+
+[33mcommit d0e7302ec7fcaf358d33771583d45ae9349b4a16[m
+Author: Andrés Pereira <apereira@alabs.es>
+Date:   Thu Nov 21 12:17:34 2013 +0100
+
+    helpers: refactoring get_location_options and no_results
+
+[33mcommit da19965782f66e82b7bbaffdb86de612ece763a1[m
+Author: Andrés Pereira <apereira@alabs.es>
+Date:   Thu Nov 21 10:20:30 2013 +0100
+
+    tests: travis - bundler cache
+
+[33mcommit ecdcad37de16e8e5f1f52256171edc74dd5b77c3[m
+Author: Andrés Pereira <apereira@alabs.es>
+Date:   Thu Nov 21 09:25:42 2013 +0100
+
+    tests: travis - devise secret key in app_config
+
+[33mcommit 7e99bf769a32817582cb3d9d0b9dd9b90b661fd1[m
+Author: Andrés Pereira <apereira@alabs.es>
+Date:   Thu Nov 21 09:16:23 2013 +0100
+
+    tests: travis.yml - https://travis-ci.org/alabs/nolotiro.org/
+
+[33mcommit b3e4e34e0377eeade276afcd277c1901e22333ed[m
+Author: Andrés Pereira <apereira@alabs.es>
+Date:   Thu Nov 21 09:08:50 2013 +0100
+
+    tests: failed for messages
+
+[33mcommit dc9187e77407cead60f266fb82bb2ff5788d4917[m
+Author: Andrés Pereira <apereira@alabs.es>
+Date:   Thu Nov 21 09:04:32 2013 +0100
+
+    tests: failed tests for anything we need to test
+
+[33mcommit 5fbfb3506c6bdce54f1942639ff3d4ea0eb00cd2[m
+Author: Andrés Pereira <apereira@alabs.es>
+Date:   Thu Nov 21 08:24:06 2013 +0100
+
+    tests: api, pages, contact, etc
+
+[33mcommit 1c621ecaafa7c7339d0dd60fe6b7b2b42cf5ccca[m
+Author: Andrés Pereira <apereira@alabs.es>
+Date:   Wed Nov 20 16:10:29 2013 +0100
+
+    geo_helper: dev/test IP address
+
+[33mcommit d394b0a55f874f18b68ef26e9b27081c5115703d[m
+Author: Andrés Pereira <apereira@alabs.es>
+Date:   Wed Nov 20 16:08:59 2013 +0100
+
+    [gems] test: factory_girl (factories) and turn for color output
+
+[33mcommit 6e7643beb4779ae1e34a179413a7e015fccd56b5[m
+Author: Andrés Pereira <apereira@alabs.es>
+Date:   Wed Nov 20 16:08:19 2013 +0100
+
+    capistrano: redirect if user not logged in, i18n, abilities
+
+[33mcommit dc8ba1c5b3c6f7d405bd9356d65b9b434464a5fd[m
+Author: Andrés Pereira <apereira@alabs.es>
+Date:   Wed Nov 20 16:07:19 2013 +0100
+
+    [bug] users: profile
+
+[33mcommit 71f38c5ede3534fef170eb0d399f55fd52ba8d26[m
+Merge: 3a46715 391086d
+Author: Andrés Pereira <apereira@alabs.es>
+Date:   Wed Nov 20 11:59:41 2013 +0100
+
+    Merge branch 'master' into messages
+
+[33mcommit 3a467156c6faf9bd2f703852e1396ce43645d3e3[m
+Author: Andrés Pereira <apereira@alabs.es>
+Date:   Wed Nov 20 11:59:38 2013 +0100
+
+    geo_helper: dev/test IP address
+
+[33mcommit 391086d384b68d4e3fbe1fe51039f4ce4da81e31[m
+Author: Andrés Pereira <apereira@alabs.es>
+Date:   Wed Nov 20 11:57:33 2013 +0100
+
+    api: v1 - README and initial test
+
+[33mcommit e9f68344471201c9eee516d70a1e8b77c93686b5[m
+Author: Andrés Pereira <apereira@alabs.es>
+Date:   Wed Nov 20 11:50:04 2013 +0100
+
+    api: v1 - for murdok and cia
+
+[33mcommit 4ae37c2eddd27219b7a5e667e668b1cb2d64cd51[m
+Author: Andrés Pereira <apereira@alabs.es>
+Date:   Wed Nov 20 11:49:39 2013 +0100
+
+    geo_helper: bug on path in geolite file location
+
+[33mcommit 07e8b381f216ca7d6ed06333e110402ff2d6641e[m
+Author: Andrés Pereira <apereira@alabs.es>
+Date:   Wed Nov 20 10:33:59 2013 +0100
+
+    users: confirmable and lockable
+
+[33mcommit 7dc8181a24d64dc14cd6c0a0ce2673d746e94866[m
+Author: Andrés Pereira <apereira@alabs.es>
+Date:   Wed Nov 20 10:33:18 2013 +0100
+
+    test: fixtures, tests for geo, user, etc
+
+[33mcommit 14941aa9377be09e293ae855966627d19f8002b5[m
+Author: Andrés Pereira <apereira@alabs.es>
+Date:   Sun Nov 17 13:43:40 2013 +0100
+
+    test: geohelper
+
+[33mcommit 645629c45f893be6bf223a4dab631b0793cdcba2[m
+Author: Andrés Pereira <apereira@alabs.es>
+Date:   Sun Nov 17 13:43:30 2013 +0100
+
+    users: migration rename_column_created_on_users
+
+[33mcommit 762b762f5a897eef855c13cb0e320ab2f79437a2[m
+Author: Andrés Pereira <apereira@alabs.es>
+Date:   Sun Nov 17 13:36:27 2013 +0100
+
+    messages: routes
+
+[33mcommit a630a4ca59c656296237a07daf89afe1b67f5a30[m
+Author: Andrés Pereira <apereira@alabs.es>
+Date:   Fri Nov 15 18:09:13 2013 +0100
+
+    messages: thread view
+
+[33mcommit 6dfa6cbfb56c769c3e4b5e95c777d078787cd062[m
+Author: Andrés Pereira <apereira@alabs.es>
+Date:   Fri Nov 15 17:45:12 2013 +0100
+
+    users: recaptcha on user registration
+
+[33mcommit e854a3a02e26ea4fc3cd27fb75fa2dbae8ad331c[m
+Author: Andrés Pereira <apereira@alabs.es>
+Date:   Fri Nov 15 16:45:48 2013 +0100
+
+    messages: controller and views
+
+[33mcommit 6d252281a06139c8deb0bce9e5b50a6536a3d6d3[m
+Author: Andrés Pereira <apereira@alabs.es>
+Date:   Fri Nov 15 11:40:40 2013 +0100
+
+    ads: json api fix
+
+[33mcommit 5a428ad7d1ef900425487659694a5618dfd95fa2[m
+Author: Andrés Pereira <apereira@alabs.es>
+Date:   Fri Nov 15 11:38:41 2013 +0100
+
+    messages: models and associations for messages/threads/users
+
+[33mcommit 52d5ae64868ab0b0f4c3f30ab6bae28a4b01b0a7[m
+Author: Andrés Pereira <apereira@alabs.es>
+Date:   Fri Nov 15 10:11:27 2013 +0100
+
+    gem: paranoia - disabling it because it punches itself in the head and can't do the migration because doesn't have the deleted_at column - too much paranoia - wat
+
+[33mcommit 57da8a0998dc9917afabb3912ede04effc094faa[m
+Author: Andrés Pereira <apereira@alabs.es>
+Date:   Fri Nov 15 09:53:07 2013 +0100
+
+    gem: paranoia (acts_as_paranoid) - don't really delete anything
+
+[33mcommit 360737533f7bdbaf4f2f9729643fa2ec10d5e27f[m
+Author: Andrés Pereira <apereira@alabs.es>
+Date:   Fri Nov 15 09:24:32 2013 +0100
+
+    i18n strings
+
+[33mcommit 605cc1f88cc08520003907ccbd687909a11e4ba8[m
+Author: Andrés Pereira <apereira@alabs.es>
+Date:   Fri Nov 15 09:11:32 2013 +0100
+
+    users: gem cancan for authorization. auth for edit an ad
+
+[33mcommit 0ee8e07acdb7197f3255f619b227ea38c0dd0e8f[m
+Author: Andrés Pereira <apereira@alabs.es>
+Date:   Fri Nov 15 09:11:05 2013 +0100
+
+    gems: comments
+
+[33mcommit ae625f9cc3341547a780084a8acfaa52e773f22f[m
+Author: Andrés Pereira <apereira@alabs.es>
+Date:   Fri Nov 15 08:51:48 2013 +0100
+
+    i18n: will_paginate
+
+[33mcommit 4122dce27b939b4a99434b028ad579f361714d29[m
+Author: Andrés Pereira <apereira@alabs.es>
+Date:   Fri Nov 15 08:33:01 2013 +0100
+
+    refactoring: comments, show ad image if present, placehold.it for adsense
+
+[33mcommit 24547f15c3ea30828b21e96157c66073bc6d7f6b[m
+Author: Andrés Pereira <apereira@alabs.es>
+Date:   Fri Nov 15 08:10:38 2013 +0100
+
+    layout: action section (with content_for)
+
+[33mcommit 167123976c064fecc1f67710d86a6c70bb8436d4[m
+Author: Andrés Pereira <apereira@alabs.es>
+Date:   Fri Nov 15 07:58:06 2013 +0100
+
+    rss: limit to 30 items
+
+[33mcommit 370306a6d0512f50264b84e776db1ba6b913e230[m
+Author: Andrés Pereira <apereira@alabs.es>
+Date:   Fri Nov 15 07:52:36 2013 +0100
+
+    fix: woeid and /listall
+
+[33mcommit 1b9cc80ff90e6e0d5575b8d63e53986d97bb5757[m
+Author: Andrés Pereira <apereira@alabs.es>
+Date:   Fri Nov 15 07:35:29 2013 +0100
+
+    layout: contact link in footer
+
+[33mcommit 141536d3fa396466abea890cc1540ae8519d6e75[m
+Author: Andrés Pereira <apereira@alabs.es>
+Date:   Fri Nov 15 07:26:03 2013 +0100
+
+    gem: airbrake/errbit for exception notification
+
+[33mcommit ce23359d4e38f164b2a70a6fe7804bfa569b242b[m
+Author: Andrés Pereira <apereira@alabs.es>
+Date:   Fri Nov 15 07:22:58 2013 +0100
+
+    capistrano: testing rake tasks
+
+[33mcommit 1c15bcd556935e8ebc8e73d525dd4b00a37ebd85[m
+Author: Andrés Pereira <apereira@alabs.es>
+Date:   Fri Nov 15 07:09:19 2013 +0100
+
+    frontend: layout title
+
+[33mcommit 1a2cf844aa2914ff440eb20c43ac31a9cfd04cd7[m
+Author: Andrés Pereira <apereira@alabs.es>
+Date:   Fri Nov 15 07:08:57 2013 +0100
+
+    users: redirect / to /woeid/XXX/give if user is logged in and has one woeid defined
+
+[33mcommit 7f670833b867693b6f6121819f16e309038cb488[m
+Author: Andrés Pereira <apereira@alabs.es>
+Date:   Thu Nov 14 21:08:26 2013 +0100
+
+    users: redirect after sign in
+
+[33mcommit 9ebd2ad55137ba959ce1133970fd4ed206e64d72[m
+Author: Andrés Pereira <apereira@alabs.es>
+Date:   Thu Nov 14 21:02:02 2013 +0100
+
+    ads: optional slug in URL
+
+[33mcommit ee23ac98d09789a6339426850c3c3b0c996f9ceb[m
+Author: Andrés Pereira <apereira@alabs.es>
+Date:   Thu Nov 14 14:14:07 2013 +0100
+
+    contact: mailer
+
+[33mcommit 690c72a6a956df549fafe727c7d802c4863b240b[m
+Author: Andrés Pereira <apereira@alabs.es>
+Date:   Thu Nov 14 14:13:41 2013 +0100
+
+    capistrano: ts linked dir
+
+[33mcommit 5c097f177a2e7c347613614b2bcb726fa8f38420[m
+Author: Andrés Pereira <apereira@alabs.es>
+Date:   Thu Nov 14 14:13:19 2013 +0100
+
+    get_ip_address refactoring
+
+[33mcommit f4c81c58358e96a05c6b32c0b0ed7083e8d0afed[m
+Author: Andrés Pereira <apereira@alabs.es>
+Date:   Thu Nov 14 14:12:27 2013 +0100
+
+    gem: mailcatcher for mail development
+
+[33mcommit 396b75dfa68e2cc13cc18adcc7407571dcdc9083[m
+Author: Andrés Pereira <apereira@alabs.es>
+Date:   Thu Nov 14 14:11:51 2013 +0100
+
+    frontend:  show when there is an alert
+
+[33mcommit c2dd8672d32490f50194769d05b51566978f29c9[m
+Author: Andrés Pereira <apereira@alabs.es>
+Date:   Thu Nov 14 13:02:09 2013 +0100
+
+    contact: controller/form
+
+[33mcommit 2acc744b2b3b71be57dfccfa4287bef198775582[m
+Author: Andrés Pereira <apereira@alabs.es>
+Date:   Thu Nov 14 11:58:08 2013 +0100
+
+    recaptcha: for the captcha
+
+[33mcommit 7187c2aa2f505c6e00483e9c8ef2580f68d8afac[m
+Author: Andrés Pereira <apereira@alabs.es>
+Date:   Thu Nov 14 11:50:39 2013 +0100
+
+    rss: rss on ads by type and status
+
+[33mcommit 32e15c392403cc29ecd927b2382fc7eb21b0d751[m
+Author: Andrés Pereira <apereira@alabs.es>
+Date:   Thu Nov 14 11:11:30 2013 +0100
+
+    users: friendships
+
+[33mcommit 23207173595d01bf765ea6603d963458bab4c712[m
+Author: Andrés Pereira <apereira@alabs.es>
+Date:   Thu Nov 14 10:45:05 2013 +0100
+
+    users: profile and listads
+
+[33mcommit 6b786d0cdb643f231e009abbd8d6fc9a2e091cc1[m
+Author: Andrés Pereira <apereira@alabs.es>
+Date:   Thu Nov 14 10:11:41 2013 +0100
+
+    i18n strings
+
+[33mcommit fc1d5495b48fdfd20106d74d7c008b4cc43c2d3f[m
+Author: Andrés Pereira <apereira@alabs.es>
+Date:   Thu Nov 14 09:54:53 2013 +0100
+
+    layout: footer to partial
+
+[33mcommit 6b5545ba9f8e5227cde924d356e3cccc89daecb5[m
+Author: Andrés Pereira <apereira@alabs.es>
+Date:   Thu Nov 14 09:54:38 2013 +0100
+
+    i18n: strings
+
+[33mcommit e0da11518de3d731072a845c961b1d38d394970d[m
+Author: Andrés Pereira <apereira@alabs.es>
+Date:   Thu Nov 14 09:54:12 2013 +0100
+
+    fix: location: /change error when ?location= empty
+
+[33mcommit 2fe9f57c51a16977819eb55fe62262e412be9c59[m
+Author: Andrés Pereira <apereira@alabs.es>
+Date:   Thu Nov 14 09:53:29 2013 +0100
+
+    ads: section_location dynamic in homepage
+
+[33mcommit f33fa99b3b415ba88f1e931626662cbb22cbec32[m
+Author: Andrés Pereira <apereira@alabs.es>
+Date:   Thu Nov 14 09:11:29 2013 +0100
+
+    i18n basic
+
+[33mcommit bd29be07e41650445c871693f70f737c0ce64f99[m
+Author: Andrés Pereira <apereira@alabs.es>
+Date:   Thu Nov 14 09:11:23 2013 +0100
+
+    i18n basic
+
+[33mcommit 45729391dc6f25a13efee370fd9a4544ee01d44a[m
+Author: Andrés Pereira <apereira@alabs.es>
+Date:   Thu Nov 14 09:10:44 2013 +0100
+
+    social_buttons improvement
+
+[33mcommit 785be24b7e2641fc2bd64a1de9125f0871ad336a[m
+Author: Andrés Pereira <apereira@alabs.es>
+Date:   Thu Nov 14 09:02:44 2013 +0100
+
+    404/500 static pages
+
+[33mcommit 44ecd724616dc492510e2a6f3d9fef7ad4d82aad[m
+Author: Andrés Pereira <apereira@alabs.es>
+Date:   Thu Nov 14 09:02:23 2013 +0100
+
+    ads: fix in migrate status from string
+
+[33mcommit 0dcf10ba6e11d814b3d087e1ba5501f39cc6a9db[m
+Merge: a6a056e 7435461
+Author: Andrés Pereira <apereira@alabs.es>
+Date:   Wed Nov 13 16:28:12 2013 +0100
+
+    Merge branch 'master' into ts
+
+[33mcommit 7435461770ce532d8d656fff4172492cbf781726[m
+Author: Andrés Pereira <apereira@alabs.es>
+Date:   Wed Nov 13 16:28:05 2013 +0100
+
+    ads: migrate status from string with values available, booked and delivered to 1, 2 and 3
+
+[33mcommit 63bff5480a2574194fc81a9a958321768b7b149d[m
+Author: Andrés Pereira <apereira@alabs.es>
+Date:   Wed Nov 13 16:27:09 2013 +0100
+
+    refactor migration users ads counters
+
+[33mcommit 3ac5b117cebd4fe5b88aae3f2fe09eae260c179d[m
+Author: Andrés Pereira <apereira@alabs.es>
+Date:   Wed Nov 13 16:25:30 2013 +0100
+
+    fix bug on location search by name
+
+[33mcommit b5ec915a9fea9ef2954cc866bbdb2a8fbf256594[m
+Author: Andrés Pereira <apereira@alabs.es>
+Date:   Wed Nov 13 16:25:01 2013 +0100
+
+    500 error html page
+
+[33mcommit a6a056ec4a936a8a33a6b36737316f0f01be91fe[m
+Author: Andrés Pereira <apereira@alabs.es>
+Date:   Wed Nov 13 16:24:43 2013 +0100
+
+    search: ts capistrano
+
+[33mcommit 0fc632842aecbd2126add851446939edd33e5654[m
+Author: Andrés Pereira <apereira@alabs.es>
+Date:   Wed Nov 13 16:23:48 2013 +0100
+
+    search: thinking sphinx install, indice, controller and views
+
+[33mcommit 3548610d89300a9a4a426c06b963182949f66a12[m
+Author: Andrés Pereira <apereira@alabs.es>
+Date:   Wed Nov 13 08:15:01 2013 +0100
+
+    capistrano: cleanup deploy env files
+
+[33mcommit 6d685e0d2bf5d9bea82203b01a1a35fc0aebc91d[m
+Author: Andrés Pereira <apereira@alabs.es>
+Date:   Wed Nov 13 08:14:01 2013 +0100
+
+    ads: listall /es/ad/listall/ad_type/give
+
+[33mcommit 7ed855ce65471244f05d3c881c3df0bd2c367ddc[m
+Author: Andrés Pereira <apereira@alabs.es>
+Date:   Tue Nov 12 18:29:55 2013 +0100
+
+    capistrano: legacy photos fix
+
+[33mcommit eed222bd8ad8f9c173f642248ddfe77d0d07d8b7[m
+Author: Andrés Pereira <apereira@alabs.es>
+Date:   Tue Nov 12 16:43:48 2013 +0100
+
+    fix: geo bugs
+
+[33mcommit 388bb1b3684276db1e7adbf97c873b868bb56451[m
+Author: Andrés Pereira <apereira@alabs.es>
+Date:   Tue Nov 12 16:32:04 2013 +0100
+
+    fix: /location/change with proxy (HTTP_X_FORWARDED_FOR)
+
+[33mcommit ab04da116eaad71304bfb42c5d5e973214bbdb3b[m
+Author: Andrés Pereira <apereira@alabs.es>
+Date:   Tue Nov 12 16:28:14 2013 +0100
+
+    ads: list bug on woeid/id
+
+[33mcommit 6b5d2aaf0b4d0ed64cd4f584509b851e653f0637[m
+Author: Andrés Pereira <apereira@alabs.es>
+Date:   Tue Nov 12 16:21:30 2013 +0100
+
+    fix: mini bugs on woeid, location, list ads
+
+[33mcommit 9a1786fade138510fc82cbab986544ea9b773824[m
+Author: Andrés Pereira <apereira@alabs.es>
+Date:   Tue Nov 12 14:42:22 2013 +0100
+
+    memcached production
+
+[33mcommit 4dc74258c71eee8be14271f197924e66018a00fb[m
+Author: Andrés Pereira <apereira@alabs.es>
+Date:   Tue Nov 12 14:41:44 2013 +0100
+
+    capistrano fix
+
+[33mcommit 56bb8d8bbe77e004b33e555bb8ef3f92f590efba[m
+Author: Andrés Pereira <apereira@alabs.es>
+Date:   Tue Nov 12 14:31:17 2013 +0100
+
+    capistrano migrations, cache clear, restart unicorn
+
+[33mcommit 2f967c63650ca61bc58108bf74e63338fa1cf888[m
+Author: Andrés Pereira <apereira@alabs.es>
+Date:   Tue Nov 12 13:43:33 2013 +0100
+
+    README update
+
+[33mcommit 49dc93846167ff1c3ae72c4a4d9ec01f0703e07d[m
+Author: Andrés Pereira <apereira@alabs.es>
+Date:   Tue Nov 12 13:12:28 2013 +0100
+
+    capistrano rvm fix
+
+[33mcommit 81568588de43e91d99574a3014b78235345aadbc[m
+Author: Andrés Pereira <apereira@alabs.es>
+Date:   Tue Nov 12 13:09:25 2013 +0100
+
+    capistrano memcached production
+
+[33mcommit e300ea88b3fcfd00162257da394ff7b2ecf5cc04[m
+Author: Andrés Pereira <apereira@alabs.es>
+Date:   Tue Nov 12 13:03:50 2013 +0100
+
+    capistrano memcached production
+
+[33mcommit 26ffcdf11499671bbc1485586763b872220e895b[m
+Author: Andrés Pereira <apereira@alabs.es>
+Date:   Tue Nov 12 12:28:30 2013 +0100
+
+    fix: app_config
+
+[33mcommit b853ec30897e320342a0541fedb591f6b4e9fee7[m
+Author: Andrés Pereira <apereira@alabs.es>
+Date:   Tue Nov 12 12:21:01 2013 +0100
+
+    capistrano geolite
+
+[33mcommit 5e904c58b1df4abf5e866a4a2d6389b421b413ba[m
+Author: Andrés Pereira <apereira@alabs.es>
+Date:   Tue Nov 12 10:51:49 2013 +0100
+
+    fix: app_config
+
+[33mcommit b59e96b38945291c1938f2c2671d9372a1e8e31b[m
+Author: Andrés Pereira <apereira@alabs.es>
+Date:   Tue Nov 12 10:44:37 2013 +0100
+
+    capistrano fix
+
+[33mcommit ff8c7de05ab831b3b22f87b471bb873b3528db8d[m
+Author: Andrés Pereira <apereira@alabs.es>
+Date:   Tue Nov 12 10:15:00 2013 +0100
+
+    capistrano, bundler
+
+[33mcommit 29925a29b1d7d7dd59fa71621e124378f753f2e9[m
+Author: Andrés Pereira <apereira@alabs.es>
+Date:   Tue Nov 12 10:06:45 2013 +0100
+
+    capistrano, rvm, unicorn
+
+[33mcommit 67d77b7bd6fbdcda10dba02ee6859d496c78f953[m
+Author: Andrés Pereira <apereira@alabs.es>
+Date:   Tue Nov 12 09:27:40 2013 +0100
+
+    capistrano
+
+[33mcommit b5c7966507d7fc51a68db2d299e70c459b0e528c[m
+Author: Andrés Pereira <apereira@alabs.es>
+Date:   Tue Nov 12 09:27:31 2013 +0100
+
+    fix: ads pagination bug
+
+[33mcommit 8de78ee98cb767cca5a95f1b907924e0591d66f8[m
+Author: Andrés Pereira <apereira@alabs.es>
+Date:   Mon Nov 11 14:04:39 2013 +0100
+
+    pages: static pages (about/tos/privacy/faqs)
+
+[33mcommit e34d25f7b9459a5743f5f0655cd453e6e61de947[m
+Author: Andrés Pereira <apereira@alabs.es>
+Date:   Mon Nov 11 13:50:01 2013 +0100
+
+    refactoring get_location_suggest and no_results for ads
+
+[33mcommit fe9d533d776f2437566ef32c068f1027685f3b55[m
+Author: Andrés Pereira <apereira@alabs.es>
+Date:   Mon Nov 11 13:15:30 2013 +0100
+
+    ads: user comments
+
+[33mcommit 1742231da4eed61fa7c5d1ef5697992694cc0fa5[m
+Author: Andrés Pereira <apereira@alabs.es>
+Date:   Mon Nov 11 12:05:19 2013 +0100
+
+    ads: filter by status and type
+
+[33mcommit 736866d2c89c60aeee0209bb443a6b301e2b64bb[m
+Author: Andrés Pereira <apereira@alabs.es>
+Date:   Mon Nov 11 11:36:27 2013 +0100
+
+    location: change location /es/location/change /es/location/change2
+
+[33mcommit 6601661f52b46ef0305f2631e4b68d3bce240158[m
+Merge: bcd47a9 021c602
+Author: Andrés Pereira <apereira@alabs.es>
+Date:   Mon Nov 11 09:17:06 2013 +0100
+
+    geoip: merging
+
+[33mcommit bcd47a9a07e0a48a6261b41f127b279a0392447d[m
+Author: Andrés Pereira <apereira@alabs.es>
+Date:   Sun Nov 10 00:17:25 2013 +0100
+
+    ads: improving views - show, form, list
+
+[33mcommit f8dcb2140a7c26731f3f87bc65224b1f52c27781[m
+Author: Andrés Pereira <apereira@alabs.es>
+Date:   Sat Nov 9 13:39:14 2013 +0100
+
+    ads: images - tunning conversion
+
+[33mcommit 021c6020c5bb71e6780579a05b00e9221c08776a[m
+Author: Andrés Pereira <apereira@alabs.es>
+Date:   Fri Nov 8 17:52:51 2013 +0100
+
+    geohelper: ip location using geolitecity
+
+[33mcommit 6ec94410ea3bbcc0fb48e37d0154d46f095e9d8f[m
+Author: Andrés Pereira <apereira@alabs.es>
+Date:   Fri Nov 8 15:55:21 2013 +0100
+
+    ads: adding images to model, converting from legacy photos
+
+[33mcommit da22d54f8938575032facd25df23272cea4e4f93[m
+Author: Andrés Pereira <apereira@alabs.es>
+Date:   Fri Nov 8 13:06:10 2013 +0100
+
+    users: ads_count
+
+[33mcommit 4cb0bc2efe427b76b29bca59bc4a096e00f57f97[m
+Author: Andrés Pereira <apereira@alabs.es>
+Date:   Fri Nov 8 12:05:07 2013 +0100
+
+    users: nolotirov2 legacy: auth migration - from zend md5 to devise - https://github.com/plataformatec/devise/wiki/How-To:-Migration-legacy-database
+
+[33mcommit e45e40d09d583f2f5f37af89496df032fab83ffd[m
+Author: Andrés Pereira <apereira@alabs.es>
+Date:   Fri Nov 8 12:04:19 2013 +0100
+
+    frontend: favicon.ico
+
+[33mcommit ea830868af2c898fce5ae6e2eacfced7cfcf8e70[m
+Author: Andrés Pereira <apereira@alabs.es>
+Date:   Fri Nov 8 11:22:11 2013 +0100
+
+    users: devise gem :D
+
+[33mcommit 531e85cc40befdb19d85183161acb742b4bdf23c[m
+Author: Andrés Pereira <apereira@alabs.es>
+Date:   Fri Nov 8 11:21:11 2013 +0100
+
+    frontend: application.html separated into partials and images
+
+[33mcommit 98949ca2d17c1aa7ed1eac750e7d5598b7c996f2[m
+Author: Andrés Pereira <apereira@alabs.es>
+Date:   Thu Nov 7 21:07:46 2013 +0100
+
+    users: scaffolding models, helpers and tests
+
+[33mcommit 48fdc738cd759fd76742fc55242fcb36f3103076[m
+Author: Andrés Pereira <apereira@alabs.es>
+Date:   Thu Nov 7 21:07:17 2013 +0100
+
+    set ruby version and gemset
+
+[33mcommit 7a420e57abc248de0277d1d4420f60e929be6b04[m
+Author: Andrés Pereira <apereira@alabs.es>
+Date:   Thu Nov 7 13:19:09 2013 +0100
+
+    README updated
+
+[33mcommit ec28f83c8445a589142975681876a0fb6ed7f6f6[m
+Author: Andrés Pereira <apereira@alabs.es>
+Date:   Thu Nov 7 13:09:47 2013 +0100
+
+    woeid: logic, controller, view, etc
+
+[33mcommit 657cc9f5c1c7bdf13dffbd671defc56501516f05[m
+Author: Andrés Pereira <apereira@alabs.es>
+Date:   Thu Nov 7 12:09:19 2013 +0100
+
+    frontend: css, layout, show
+
+[33mcommit 11c371dd40ca14ef3f66b67d926ca45bffcdb9a1[m
+Author: Andrés Pereira <apereira@alabs.es>
+Date:   Thu Nov 7 10:56:33 2013 +0100
+
+    ads pagination (will_paginate)
+
+[33mcommit 1013323ef8f7a9d62a107895bbe8b800feaa511f[m
+Author: Andrés Pereira <apereira@alabs.es>
+Date:   Thu Nov 7 10:51:21 2013 +0100
+
+    .example and app_config pattern, deleting ads migration, using legacy DB
+
+[33mcommit 79a51d0887de691599d25749f0945c2479279119[m
+Author: Andrés Pereira <apereira@alabs.es>
+Date:   Thu Nov 7 10:50:30 2013 +0100
+
+    geoplanet woeid test
+
+[33mcommit c39d94ca39b295fdc25da36cf5fc3305a890e3fa[m
+Author: Andrés Pereira <apereira@alabs.es>
+Date:   Thu Nov 7 10:03:55 2013 +0100
+
+    model: ads
+
+[33mcommit c610c0fc5c0e1948d554df152449601e0a97bae6[m
+Author: Andrés Pereira <apereira@alabs.es>
+Date:   Thu Nov 7 10:03:32 2013 +0100
+
+    rails execjs js runtime
+
+[33mcommit 3d9c0cd283ae5577d8f1abee69048eca89ac97aa[m
+Author: Andrés Pereira <apereira@alabs.es>
+Date:   Tue Nov 5 10:54:38 2013 +0100
+
+    initial commit - rails new
