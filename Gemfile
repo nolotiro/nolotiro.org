@@ -15,8 +15,9 @@ group :doc do
 end
 
 group :development, :test do
-  gem 'factory_girl_rails', '~> 4.0'                # test: factories 
-  gem 'turn'                                        # test: color output
+  gem 'factory_girl_rails', '~> 4.0'        # test: factories 
+  gem 'turn'                                # test: color output
+  gem 'debugger'
 end
 
 # Use ActiveModel has_secure_password

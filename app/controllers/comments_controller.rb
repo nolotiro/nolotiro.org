@@ -14,4 +14,5 @@ class CommentsController < ApplicationController
   	# TODO: mailer to ad_owner
   	redirect_to(ad_path(params[:id]))
   end
+
 end

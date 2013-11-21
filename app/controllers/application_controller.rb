@@ -41,7 +41,7 @@ class ApplicationController < ActionController::Base
       @section_locations = Rails.cache.fetch(key)
     else
       locations = []
-      Ad.available.find(:all).group_by(&:woeid_code).each do |woeid_code, ad| 
+      Ad.available.all.group_by(&:woeid_code).each do |woeid_code, ad| 
         locations.append [woeid_code,ad.count]
       end
       @section_locations = locations.sort {|a,b| b[1] <=> a[1]}

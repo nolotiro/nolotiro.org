@@ -4,6 +4,7 @@ FactoryGirl.define do
     email 'pepito@gmail.com'
     lang 'es'
     password '123456789'
+    role 0
   end
 
   # This will use the User class (Admin would have been guessed)
@@ -12,5 +13,6 @@ FactoryGirl.define do
     email 'admin@gmail.com'
     lang 'es'
     password '12435968770'
+    role 1
   end
 end
