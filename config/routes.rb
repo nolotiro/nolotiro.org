@@ -69,9 +69,12 @@ NolotiroOrg::Application.routes.draw do
     # messaging
     get '/message/list', to: 'messages#list', as: 'messages_list'
     get '/message/show/:id/subject/:subject', to: 'messages#show', as: 'message_show'
-    # TODO
-    get '/message/create/id_user_to/:user_id', to: 'messages#create', as: 'message_create'
-    get '/message/create/id_user_to/:user_id/subject/:subject', to: "messages#create", as: 'message_create_with_subject'
+
+    get '/message/create/id_user_to/:user_id', to: 'messages#new', as: 'message_new'
+    get '/message/create/id_user_to/:user_id/subject/:subject', to: "messages#new", as: 'message_new_with_subject'
+    post '/message/create/id_user_to/:user_id', to: 'messages#create', as: 'message_create'
+    post '/message/create/id_user_to/:user_id/subject/:subject', to: "messages#create", as: 'message_create_with_subject'
+
     post '/message/reply/:id/to/:message_id', to: 'messages#reply', as: 'message_reply'
 
     # rss
