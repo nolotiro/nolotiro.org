@@ -3,6 +3,9 @@ class Ad < ActiveRecord::Base
   belongs_to :user, foreign_key: 'user_owner', :counter_cache => true
   has_many :comments, class_name: 'Comment', foreign_key: 'ads_id'
 
+  validates presence: :title, :body, :user_owner, :type, :woeid_code, :date_created, :ip, :status
+  validates :ip, :validated_ip_address
+
   # TODO: validations
 
   # legacy database: has a column with value "type", rails doesn't like that
@@ -15,6 +18,7 @@ class Ad < ActiveRecord::Base
   # activate this later
   # acts_as_paranoid
 
+  # TODO: validates extension, max file size, etc
   has_attached_file :image, :styles => {:thumb => "100x90>"}
 
   scope :give, -> { where(type: 1) }
