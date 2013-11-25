@@ -2,7 +2,7 @@ defaults: &defaults
 
 development:
   <<: *defaults
-  geoplanet_app_id: ""
+  geoplanet_app_id: "dj0yJmk9VXY4UnllWWh2cERFJmQ9WVdrOWFXRjBkbEpOTm1zbWNHbzlNQS0tJnM9Y29uc3VtZXJzZWNyZXQmeD1mMQ--"
   recaptcha_public_key: ""
   recaptcha_private_key: ""
   contact_email1: "@"
@@ -15,7 +15,7 @@ development:
 
 test:
   <<: *defaults
-  geoplanet_app_id: ""
+  geoplanet_app_id: "dj0yJmk9VXY4UnllWWh2cERFJmQ9WVdrOWFXRjBkbEpOTm1zbWNHbzlNQS0tJnM9Y29uc3VtZXJzZWNyZXQmeD1mMQ--"
   recaptcha_public_key: ""
   recaptcha_private_key: ""
   contact_email1: "@"
