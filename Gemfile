@@ -17,7 +17,9 @@ end
 group :development, :test do
   gem 'factory_girl_rails', '~> 4.0'        # test: factories 
   gem 'turn'                                # test: color output
-  gem 'debugger'
+  gem 'debugger'                            # dev: debugger
+  gem 'zeus'                                # dev: speed up things 
+  gem 'commands'                            # dev: rake commands in console 
 end
 
 # Use ActiveModel has_secure_password
@@ -44,3 +46,4 @@ gem 'recaptcha', :require => 'recaptcha/rails'      # captcha
 gem 'mailcatcher', group: [:development, :test]     # mailbox for development
 gem 'airbrake'                                      # exception notification
 gem 'paranoia', '~> 2.0'                            # don't really delete a model
+gem 'ipaddress'                                     # ip address validation
