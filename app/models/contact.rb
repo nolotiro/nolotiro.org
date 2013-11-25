@@ -6,8 +6,11 @@ class Contact
 
   attr_accessor :email, :message
 
+  validates :email, presence: true
+  validates :message, presence: true
+
   validates_format_of :email, :with => /@/
-  validates_length_of :message, :maximum => 500
+  validates_length_of :message, :maximum => 2000
 
   def initialize(attributes = {})
     attributes.each do |name, value|

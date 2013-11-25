@@ -1,12 +1,25 @@
 class Ad < ActiveRecord::Base
 
+  require 'ipaddress'
+
   belongs_to :user, foreign_key: 'user_owner', :counter_cache => true
   has_many :comments, class_name: 'Comment', foreign_key: 'ads_id'
 
-  validates presence: :title, :body, :user_owner, :type, :woeid_code, :date_created, :ip, :status
-  validates :ip, :validated_ip_address
+  validates :title, presence: true
+  validates :body, presence: true
+  validates :user_owner, presence: true
+  validates :type, presence: true
+  validates :woeid_code, presence: true
+  validates :date_created, presence: true
+  validates :ip, presence: true
+  validates :status, presence: true
 
-  # TODO: validations
+  validates :status, inclusion: { in: [1, 2, 3],
+                                  message: "%{value} no es un estado válido" }
+  validates :type, inclusion: { in: [1, 2],
+                                message: "%{value} no es un tipo válido" }
+
+  validate :valid_ip_address
 
   # legacy database: has a column with value "type", rails doesn't like that
   # the "type" column is no longer need it by rails, so we don't care about it
@@ -68,5 +81,12 @@ class Ad < ActiveRecord::Base
       I18n.t('nlt.available')
     end 
   end
+
+  def valid_ip_address
+    unless IPAddress.valid?(ip)
+      errors.add(:ip, "No es una IP válida")
+    end
+  end
+
 
 end
