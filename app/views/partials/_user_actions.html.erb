@@ -17,9 +17,7 @@
   </div>
 <% else %>
   <div class="user_login_box">
-    <a href="/es/user/register">
-      nuevo usuario
-    </a>
+    <%= link_to "nuevo usuario", new_user_registration_path, "data-no-turbolink" => true %>
     o
     <a href="/es/auth/login">
       acceder

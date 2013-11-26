@@ -9,6 +9,8 @@ class User < ActiveRecord::Base
   has_many :sent_messages, :class_name=> 'Message', :foreign_key=>'user_from', :dependent=>:destroy
   has_many :recieved_messages, :class_name=> 'Message', :foreign_key=>'user_to', :dependent=>:destroy
 
+  before_save :default_lang
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -21,6 +23,10 @@ class User < ActiveRecord::Base
   #this method is called by devise to check for "active" state of the model
   def active_for_authentication?
     super and self.locked != 1
+  end
+
+  def default_lang
+    self.lang ||= "es"
   end
 
   def last_threads

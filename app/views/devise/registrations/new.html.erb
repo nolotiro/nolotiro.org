@@ -51,6 +51,7 @@
         <%= recaptcha_tags :display => { :theme => "white" }%>
         </dd>
         <dd id="hidden-elements">
+        <!-- FIXME: this doesn't work -->
         <%= f.hidden_field :lang, :value => I18n.locale.to_s %>
         </dd>
         <dt id="submit-label">&nbsp;</dt>
