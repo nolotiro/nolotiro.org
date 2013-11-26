@@ -56,6 +56,10 @@ NolotiroOrg::Application.routes.draw do
         password: 'reset'
     }
 
+    scope '/admin' do 
+      get '/become/:id', to: 'admin#become', as: 'become_user' 
+    end
+
     get '/ad/listuser/id/:id', to: 'users#listads', as: 'listads_user'
     get '/user/edit/id/:id', to: redirect('/es/user/edit'), as: 'user_edit'
     get '/profile/:username', to: 'users#profile', as: 'profile'

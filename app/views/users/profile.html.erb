@@ -1,6 +1,9 @@
 
 <div id="default_header_section">
   <h1><%= t('nlt.user_profile') %>  -  <%= @user.username %></h1>
+  <% if can? :become, @user %>
+    <%= link_to "Cambiar a este usuario", become_user_path(@user.id) %>
+  <% end %>
 </div>
 
 <div id="main">
