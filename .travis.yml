@@ -5,6 +5,8 @@ rvm:
   - 2.0.0
 before_install:
   - gem update --system
+  - uname -a
+  - lsb_release -a 
   - curl -O http://fs-packages.s3.amazonaws.com/fs-sphinx-2.0.6_x86_64_12.04.deb
   - sudo dpkg -i fs-sphinx-2.0.6_x86_64_12.04.deb
 script:
