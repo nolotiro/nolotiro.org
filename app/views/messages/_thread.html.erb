@@ -4,11 +4,14 @@
       <%= link_to thread[1].username, profile_path(thread[1]) %>
     </h4>
   </div>
-  <div class="thread-messages" title="1 mensaje en la conversación
-    1 aún no leído por sonrisa24">1 [1]      </div>
+  <div class="thread-messages" title="1 mensaje en la conversación 1 aún no leído por sonrisa24">
+    <%= thread[0].messages.count %>
+    [1]      
+  </div>
   <div class="thread-subject">
-    <a href="/es/message/show/<%= thread[0].id %>/subject/pantalon-deporte"><%= thread[0].subject %></a>
+    <a href="/es/message/show/<%= thread[0].id %>/subject/<%= thread[0].subject %>"><%= thread[0].subject %></a>
   </div>
   <div class="thread-date">
-    Hoy, 09:28      </div>
+    Hoy, 09:28
+  </div>
 </div>

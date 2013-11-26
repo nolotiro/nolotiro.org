@@ -30,7 +30,13 @@ class User < ActiveRecord::Base
   end
 
   def last_threads
-    all_threads = recieved_messages.order('date_created DESC').limit(10).joins(:thread).group('thread_id').count
+    # nolotirov2 legacy: messaging
+    # what the fuck 
+    # this is 100% legacy, from the DB we had
+    # FIXME: PLEEAAASEE migrate me to mailboxer or something more Rails like
+    # TODO: move this to MessageThreads model
+    # TODO: also for recieved messages
+    all_threads = sent_messages.order('date_created DESC').limit(10).joins(:thread).group('thread_id').count
     threads = []
     all_threads.keys.each do |thread|
       th = MessageThread.find(thread.to_i)

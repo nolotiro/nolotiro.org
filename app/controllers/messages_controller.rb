@@ -18,7 +18,6 @@ class MessagesController < ApplicationController
   # POST '/message/create/id_user_to/:user_id/subject/:subject'
   def create
     @user = User.find params[:user_id]
-    puts params
     @thread = MessageThread.create(
       subject: params[:message][:subject],
       last_speaker: current_user.id,
@@ -35,14 +34,27 @@ class MessagesController < ApplicationController
     )
 
     if @message.save
-      redirect_to thread_path(@thread), notice: 'Message was successfully created.'
+      redirect_to message_show_path(@thread.id, @thread.subject), notice: 'Message was successfully created.'
     else
       render action: 'new'
     end
   end
 
-  # POST '/message/reply/:id/to/:message_id'
+  # POST '/message/reply/:id/to/:user_id'
   def reply
+    # WIP  TODO
+    @thread = MessageThread.find params[:id]
+    @user = User.find params[:user_id]
+
+    @message = Message.new(
+      thread_id: @thread.id,
+      date_created: DateTime.now,
+      ip: request.remote_ip,
+      subject: @thread.subject,
+      body: params[:message][:body],
+      user_from: current_user.id,
+      user_to: @user.id
+    )
   end
 
   # GET '/message/list'

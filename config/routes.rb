@@ -79,7 +79,7 @@ NolotiroOrg::Application.routes.draw do
     post '/message/create/id_user_to/:user_id', to: 'messages#create', as: 'message_create'
     post '/message/create/id_user_to/:user_id/subject/:subject', to: "messages#create", as: 'message_create_with_subject'
 
-    post '/message/reply/:id/to/:message_id', to: 'messages#reply', as: 'message_reply'
+    post '/message/reply/:id/to/:user_id', to: 'messages#reply', as: 'message_reply'
 
     # rss
     # FIXME: las URLs legacy vienen asi
