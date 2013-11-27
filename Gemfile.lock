@@ -121,6 +121,7 @@ GEM
     net-scp (1.1.2)
       net-ssh (>= 2.6.5)
     net-ssh (2.7.0)
+    newrelic_rpm (3.6.9.171)
     orm_adapter (0.4.0)
     paperclip (3.5.2)
       activemodel (>= 3.0.0)
@@ -252,6 +253,7 @@ DEPENDENCIES
   jquery-rails
   mailcatcher
   mysql2
+  newrelic_rpm
   paperclip (~> 3.0)
   paranoia (~> 2.0)
   rails (= 4.0.1)

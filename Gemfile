@@ -22,6 +22,10 @@ group :development, :test do
   gem 'commands'                            # dev: rake commands in console 
 end
 
+group :production do
+  gem 'newrelic_rpm'
+end
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 
