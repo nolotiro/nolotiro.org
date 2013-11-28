@@ -16,6 +16,7 @@ class WoeidController < ApplicationController
       when "delivered"
         ads = ads.delivered
       else
+        @status = "available"
         ads = ads.available
       end
     else
