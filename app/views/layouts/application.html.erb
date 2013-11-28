@@ -44,6 +44,13 @@
         <% end %>
       <% end %>
 
+      <% if Rails.env.development? || Rails.env.staging? %>
+        <p class="notice">
+        Esta versión de nolotiro se encuentra en fase beta.
+        Ten en cuenta que los anuncios pueden desaparecer y cambiarse.
+        </p>
+      <% end %>
+
       <%= yield %>
 
       <%= render :partial => "partials/footer", :locals => { :url => "http://nolotiro.org" } %>
