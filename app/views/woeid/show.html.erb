@@ -3,15 +3,16 @@
 <div id="location_header_section">
   <span class="give-want">
     <% if @all %>
-      <%= link_to "regalo", listall_give_path, :class => @type == "give" ? "actual" : "''" %>
+      <%= link_to "regalo", ads_listall_path(type: 'give'), 
+        :class => @type == "give" ? "actual" : "''" %>
     <% else %>
-      <%= link_to "regalo", woeid_path(@id), :class => @type == "give" ? "actual" : "''" %>
+      <%= link_to "regalo", ads_woeid_path(id: @id, type: 'give'), :class => @type == "give" ? "actual" : "''" %>
     <% end %>
     &nbsp;
     <% if @all %>
-      <%= link_to "busco", listall_want_path, :class => @type == "want" ? "actual" : "''" %>
+      <%= link_to "busco", ads_listall_path(type: 'want'), :class => @type == "want" ? "actual" : "''" %>
     <% else %>
-      <%= link_to "busco", woeid_want_path(@id), :class => @type == "want" ? "actual" : "''" %>
+      <%= link_to "busco", ads_woeid_path(id: @id, type: 'want'), :class => @type == "want" ? "actual" : "''" %>
     <% end %>
   </span>
   <div class="location_name">

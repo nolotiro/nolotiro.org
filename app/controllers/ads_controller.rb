@@ -14,7 +14,7 @@ class AdsController < ApplicationController
         redirect_to location_ask_path
       end
     else
-      @ads = Ad.paginate(:page => params[:page])
+      @ads = Ad.available.includes(:user).paginate(:page => params[:page])
 
       # TODO: cache?
       @location = get_location_suggest

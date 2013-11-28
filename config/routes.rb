@@ -25,17 +25,12 @@ NolotiroOrg::Application.routes.draw do
     get '/ad/edit/id/:id', to: 'ads#edit', :as => 'ads_edit'
 
     # listall
-    get '/ad/listall/ad_type/give', to: 'woeid#listall_give', as: "listall_give" 
-    get '/ad/listall/ad_type/give/status/available', to: 'woeid#listall_give_available', as: 'listall_give_available'
-    get '/ad/listall/ad_type/give/status/delivered', to: 'woeid#listall_give_delivered', as: 'listall_give_delivered'
-    get '/ad/listall/ad_type/give/status/booked', to: 'woeid#listall_give_booked', as: 'listall_give_booked'
-    get '/ad/listall/ad_type/want', to: 'woeid#listall_want', as: "listall_want" 
+    get '/ad/listall/ad_type/:type', to: 'woeid#show', as: "ads_listall" 
+    get '/ad/listall/ad_type/:type/status/:status', to: 'woeid#show', as: 'ads_listall_status'
 
     # locations lists
-    get '/woeid/:id/want', to: 'woeid#want', as: 'woeid_want'
-    get '/woeid/:id/give', to: 'woeid#available', as: 'woeid'
-    get '/woeid/:id/give/status/booked', to: 'woeid#booked', as: 'woeid_booked'
-    get '/woeid/:id/give/status/delivered', to: 'woeid#delivered', as: 'woeid_delivered'
+    get '/woeid/:id/:type', to: 'woeid#show', as: 'ads_woeid'
+    get '/woeid/:id/:type/status/:status', to: 'woeid#show', as: 'ads_woeid_status'
 
     # location change
     get '/location/change', to: 'location#ask', as: 'location_ask'
