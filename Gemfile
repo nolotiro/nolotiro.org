@@ -20,6 +20,7 @@ group :development, :test do
   gem 'debugger'                            # dev: debugger
   gem 'zeus'                                # dev: speed up things 
   gem 'commands'                            # dev: rake commands in console 
+  gem 'rails-footnotes', '>= 3.7.9'
 end
 
 group :production do
