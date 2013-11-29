@@ -53,3 +53,16 @@ es:
     sending_this_form: 'Enviando este formulario, admites haber leido, comprendido, y estás conforme con nuestras'
     and: 'y'
     permission_denied: 'No tienes permisos para realizar esta acción.'
+    change_city: 'cambiar ciudad'
+    create_new_ad: 'Crea un nuevo anuncio'
+    ads:
+      form:
+        title: 'Título de tu anuncio:'
+        body: 'Cuerpo del anuncio:'
+        select_an_image: 'Selecciona una imagen para tu anuncion (opcional).'
+        image_permited_formats: 'Formatos permitidos: gif, jpg, png. Max:1Mb de tamaño.'
+        to_publish: 'Para publicar tu anuncio, por favor, introduce estos datos'
+        prohibited: 'prohibited this ad from being saved'
+        comments_enabled: 'Permitir comentarios públicos'
+        please_ad_type: 'por favor, selecciona el tipo de anuncio'
+        type_ad: 'Tipo de anuncio:'

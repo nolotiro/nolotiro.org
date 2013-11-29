@@ -1,63 +1,67 @@
-<div id="default_header_section">
-  <h1>Crea un nuevo anuncio - Madrid, Madrid, España</h1>
-  <br><a class="world_link" href="/es/location/change"><img src="/images/change_location.png" alt="change location"> cambiar ciudad</a>
-</div>
-
 <div id="main">
   <div class="span-16">
-    <!-- TODO woeid -->
-    <!-- TODO usuario -->
-    <!-- TODO date_created -->
-    <!-- TODO ip -->
     <fieldset>
-      <legend>Para publicar tu anuncio, por favor, introduce estos datos</legend>
+      <legend>
+        <%= t 'nlt.es.ads.form.to_publish' %>
+      </legend>
       <%= form_for(@ad, :html => {:multipart => true}) do |f| %>
         <% if @ad.errors.any? %>
-          <div id="error_explanation">
-            <h2><%= pluralize(@ad.errors.count, "error") %> prohibited this ad from being saved:</h2>
-
-            <ul>
-              <% @ad.errors.full_messages.each do |msg| %>
-                <li><%= msg %></li>
-              <% end %>
-            </ul>
-          </div>
+        <div id="error_explanation">
+        <h2><%= pluralize(@ad.errors.count, "error") %> <%= t 'nlt.es.ads.form.prohibited' %>:</h2>
+        <ul>
+          <% @ad.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
         <% end %>
-        <dl class="zend_form">
-          <dt id="photo-label"><label for="photo" class="optional">Selecciona una imagen para tu anuncio (opcional).</label></dt>
-          <dd>
-          <%= f.file_field :image %>
-          <p class="description">Formatos permitidos: gif, jpg, png. Max:1Mb de tamaño.</p></dd>
-          <dt id="type-label"><label for="type" class="required">Tipo de anuncio:</label></dt>
-          <dd id="type-element">
-          <!-- TODO select type -->
-          <select name="type" id="type" type="type">
-            <option value="" label="por favor, selecciona el tipo de anuncio">por favor, selecciona el tipo de anuncio</option>
-            <option value="2" label="busco...">busco...</option>
-            <option value="1" label="regalo...">regalo...</option>
-          </select></dd>
-          <dt id="title-label"><label for="title" class="required">Título de tu anuncio:</label></dt>
-          <dd id="title-element">
-          <%= f.text_field :title %>
-          </dd>
-          <dt id="body-label"><label for="body" class="required">Cuerpo del anuncio:</label></dt>
-          <dd id="body-element">
-          <%= f.text_area :body, :rows => 24, :cols => 80 %>
-          </dd>
-          <!-- TODO comments_enabled -->
-          <dt id="comments_enabled-label"><label for="comments_enabled" class="required">Permitir comentarios públicos</label></dt>
-          <span class="element">
-            <input name="comments_enabled" value="0" type="hidden"><input name="comments_enabled" id="comments_enabled" value="1" checked="checked" type="checkbox"></span>
-          <!-- TODO captcha -->
-          <dt id="captcha-input-label"><label for="captcha-input" class="required">Por favor, introduce los cuatro caracteres:</label></dt>
-          <dd id="captcha-element">
-          <img alt="" src="/images/captcha/4cfd9d923cb806f5eb4474258069ed8f.png" width="160" height="60">
-          <input name="captcha[id]" value="4cfd9d923cb806f5eb4474258069ed8f" id="captcha-id" type="hidden">
-          <input name="captcha[input]" id="captcha-input" value="" type="text"></dd>
-          <dt id="submit-label">&nbsp;</dt><dd id="submit-element">
-          <input name="submit" id="submit" value="Enviar" type="submit"></dd></dl>
-      <% end %>
+        </ul>
+      </div>
+    <% end %>
+      <dl class="zend_form">
+        <dt id="photo-label">
+        <%= f.label :image,  t('nlt.ads.form.select_an_image'), :class => "optional" %> 
+        </dt>
+        <dd>
+        <%= f.file_field :image %>
+        <p class="description">
+        <%= t 'nlt.es.ads.form.image_permited_formats' %>
+        </p></dd>
+        <dt id="type-label">
+        <%= f.label :type,  t('nlt.ads.form.type_ad'), :class => "required" %> 
+        </dt>
+        <dd id="type-element">
+        <%= f.select(:type, options_for_select([['regalo...', 1], ['busco...', 2]]))  %>
+        </dd>
+        <dt id="title-label">
+        <%= f.label :title,  t('nlt.ads.form.title'), :class => "required" %> 
+        </dt>
+        <dd id="title-element">
+        <%= f.text_field :title, required: true %>
+        </dd>
+        <dt id="body-label">
+        <%= f.label :body,  t('nlt.ads.form.body'), :class => "required" %> 
+        </dt>
+        <dd id="body-element">
+        <%= f.text_area :body, :rows => 24, :cols => 80, required: true %>
+        </dd>
+        <!-- TODO comments_enabled -->
+        <dt id="comments_enabled-label">
+        <%= f.label :comments_enabled,  t('nlt.ads.form.comments_enabled'), :class => "required" %> 
+        </dt>
+        <span class="element">
+          <%= f.check_box :comments_enabled %>
+        </span>
+        <dt id="captcha-input-label">
+        <label for="captcha-input" class="required">
+          <%= t('nlt.please_introduce') %>
+        </label>
+        </dt>
+        <dd id="captcha-element">
+        <%= recaptcha_tags :display => { :theme => "white" }%>
+        </dd>
+        <%= f.hidden_field :woeid_code, value: @woeid_code %>
+        <%= f.submit t 'nlt.send' %>
+        </dd>
+      </dl>
+    <% end %>
     </fieldset>
-
   </div>
 </div>
