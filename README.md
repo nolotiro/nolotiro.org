@@ -37,6 +37,18 @@ For recaptcha you need to [signup](https://www.google.com/recaptcha/admin/create
 and configure it in the relevant environment in *config/app_config.yml* (keys 
 *recaptcha_public_key* and *recaptcha_private_key*)
 
+To speed up things in development we recommend using zeus.
+
+    $ gem install zeus
+    $ zeus start 
+
+And leave that console, restart it only when making change in Factories and when
+trange things start to happen (TODO: install and configure guard). Then you can 
+execute very fast (less than 1-2 seconds) some rails commands: 
+
+    $ zeus server
+    $ zeus console
+
 Happy hacking!
 
 ## API 

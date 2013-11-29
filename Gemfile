@@ -15,16 +15,21 @@ group :doc do
 end
 
 group :development, :test do
+
   gem 'factory_girl_rails', '~> 4.0'        # test: factories 
   gem 'turn'                                # test: color output
+
   gem 'debugger'                            # dev: debugger
-  gem 'zeus'                                # dev: speed up things 
+#  gem 'zeus'                                # dev: speed up things 
   gem 'commands'                            # dev: rake commands in console 
-  gem 'rails-footnotes', '>= 3.7.9'
+  gem 'rails-footnotes', '>= 3.7.9'         # dev: data at footnote
+  gem 'better_errors'                       # dev: better errors
+  gem 'binding_of_caller'                   # dev: better errors
+
 end
 
 group :production do
-  gem 'newrelic_rpm'
+  gem 'newrelic_rpm'                        # prod: monitoring
 end
 
 # Use ActiveModel has_secure_password
