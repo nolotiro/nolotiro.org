@@ -11,7 +11,7 @@ xml.rss :version => "2.0" do
         # TODO if image, put image_tag
         description =  ad.body
         xml.description description
-        xml.pubDate ad.date_created.to_s(:rfc822)
+        xml.pubDate ad.created_at.to_s(:rfc822)
         xml.link ad_url(ad)
         xml.guid ad_url(ad)
       end

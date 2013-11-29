@@ -10,7 +10,7 @@ class Ad < ActiveRecord::Base
   validates :user_owner, presence: true
   validates :type, presence: true
   validates :woeid_code, presence: true
-  validates :date_created, presence: true
+  validates :created_at, presence: true
   validates :ip, presence: true
   validates :status, presence: true
 
@@ -25,7 +25,7 @@ class Ad < ActiveRecord::Base
   # the "type" column is no longer need it by rails, so we don't care about it
   self.inheritance_column = nil 
 
-  default_scope { order('date_created DESC') }
+  default_scope { order('created_at DESC') }
 
   # FIXME: ensure that deleted_at is created
   # activate this later

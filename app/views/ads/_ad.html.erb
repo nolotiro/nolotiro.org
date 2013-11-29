@@ -36,7 +36,7 @@
     <%= ad.status_string %>
   </span>
   <span class="ad_date">
-    <%= t('nlt.published_on', date: distance_of_time_in_words_to_now(ad.date_created)) %>
+    <%= t('nlt.published_on', date: distance_of_time_in_words_to_now(ad.created_at)) %>
     <!-- FIXME: no se porque hay usuarios q no tienen id WTF -->
     <% if defined? ad.user.id %>
       <%= t('nlt.by_user') %>

@@ -7,7 +7,7 @@ one:
   type: 1
   woeid_code: 28720 
   ip: "28.3.2.4"
-  date_created: "2013-11-01T10:41:00+01:00" 
+  created_at: "2013-11-01T10:41:00+01:00" 
 
 two:
   title: "regalo un coche"
@@ -16,4 +16,4 @@ two:
   type: 1
   woeid_code: 82412 
   ip: "82.4.56.2"
-  date_created: "2013-11-02T10:41:00+01:00" 
+  created_at: "2013-11-02T10:41:00+01:00" 

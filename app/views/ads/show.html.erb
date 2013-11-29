@@ -26,7 +26,7 @@
       <% end %>
       <span class="ad_status <%= @ad.status_class %>"><%= @ad.status_string %></span>
       <span class="ad_date">
-        Publicado hace <%= distance_of_time_in_words_to_now(@ad.date_created) %> por el usuario 
+        Publicado hace <%= distance_of_time_in_words_to_now(@ad.created_at) %> por el usuario 
         <a href="/es/ad/listuser/id/40780"><%= @ad.user.username %></a>
       </span>
       <br>

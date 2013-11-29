@@ -36,10 +36,10 @@ class AdTest < ActiveSupport::TestCase
     assert a.errors[:woeid_code].include?("no puede estar en blanco")
   end
 
-  test "ad requires date_created" do
+  test "ad requires created_at" do
     a = Ad.new
     a.valid?
-    assert a.errors[:date_created].include?("no puede estar en blanco")
+    assert a.errors[:created_at].include?("no puede estar en blanco")
   end
 
   test "ad requires ip" do
