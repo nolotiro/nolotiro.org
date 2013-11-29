@@ -8,7 +8,7 @@ class AdsController < ApplicationController
   def index
     if user_signed_in? 
       if current_user.woeid?
-        redirect_to woeid_path(current_user.woeid)
+        redirect_to ads_woeid_path(id: current_user.woeid, type: 'give')
       # or ask for the location
       else
         redirect_to location_ask_path
@@ -18,6 +18,7 @@ class AdsController < ApplicationController
 
       # TODO: cache?
       @location = get_location_suggest
+
       # TODO: cache | select only id, username and ad_count
       @section_users = User.order("ads_count DESC").limit(40)
     end
@@ -32,6 +33,7 @@ class AdsController < ApplicationController
   # GET /ads/new
   def new
     @ad = Ad.new
+    @woeid_code = params[:woeid]
   end
 
   # GET /ads/1/edit
@@ -42,9 +44,12 @@ class AdsController < ApplicationController
   # POST /ads.json
   def create
     @ad = Ad.new(ad_params)
+    @ad.user_owner = current_user.id
+    @ad.ip = request.remote_ip
+    @ad.status = 1
 
     respond_to do |format|
-      if @ad.save
+      if @ad.save and verify_recaptcha(:model => @ad, :message => t('nlt.captcha_error'))
         format.html { redirect_to @ad, notice: 'Ad was successfully created.' }
         format.json { render action: 'show', status: :created, location: @ad }
       else

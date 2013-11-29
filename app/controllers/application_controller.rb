@@ -14,12 +14,13 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  # after a user sing ins, go to their location
+  # after a user sing ins
   def after_sign_in_path_for(resource)
+    # go to their location if they have one
     if current_user.woeid?
-      woeid_path(current_user.woeid)
-    # or ask for the location
+      ads_woeid_path(id: current_user.woeid, type: 'give')
     else
+    # or ask for the location
       location_ask_path
     end
   end
