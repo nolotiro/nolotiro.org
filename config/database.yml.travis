@@ -5,9 +5,9 @@
 #   gem 'sqlite3'
 development:
   adapter: mysql2
-  database: nolotirov3
-  username: nolotirov3
-  password: nolotirov3pass
+  database: nolotirov3_dev
+  username: travis
+  password: 
   pool: 5
   timeout: 5000
 
@@ -17,13 +17,15 @@ development:
 test:
   adapter: mysql2
   database: nolotirov3_test
-  username: nolotirov3_test
-  password: nolotirov3pass
+  username: travis
+  password: 
   pool: 5
   timeout: 5000
 
 production:
-  adapter: sqlite3
-  database: db/production.sqlite3
+  adapter: mysql2
+  database: nolotirov3_prod
+  username: travis
+  password: 
   pool: 5
   timeout: 5000

@@ -13,5 +13,6 @@ script:
 before_script:
   - mysql -e 'create database nolotirov3_test;'
   - cp config/app_config.yml.example config/app_config.yml
+  - cp config/database.yml.travis config/database.yml
 env:
   - DATABASE=mysql2 SPHINX_BIN=/usr/bin/ SPHINX_VERSION=2.0.4
