@@ -37,6 +37,8 @@ For recaptcha you need to [signup](https://www.google.com/recaptcha/admin/create
 and configure it in the relevant environment in *config/app_config.yml* (keys 
 *recaptcha_public_key* and *recaptcha_private_key*)
 
+## Development environment magic
+
 To speed up things in development we recommend using zeus.
 
     $ gem install zeus
@@ -48,6 +50,21 @@ execute very fast (less than 1-2 seconds) some rails commands:
 
     $ zeus server
     $ zeus console
+
+Also we recommend using mailcatcher. This doesn't send external emails during
+development, and you can see them in a nice web interface. The SMTP port is 
+already configured to it (1025).
+
+    $ mailcatcher
+    $ open http://localhost:1080
+
+We use a special task for the colors: 
+    $ rake color_routes
+
+We use better_errors when giving a 500 in development env. 
+
+We use rails_footnotes in development so below the footer you have
+some useful information (SQL queries executed and such). 
 
 Happy hacking!
 
