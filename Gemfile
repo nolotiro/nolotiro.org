@@ -45,7 +45,8 @@ gem 'capistrano-bundler'
 gem 'unicorn'                                       # webserver
 gem 'mysql2'                                        # mysql
 gem 'thinking-sphinx'                               # sphinxsearch
-gem 'dalli'                                         # memcached
+gem 'redis-rails'                                   # redis cache
+
 gem 'geoplanet'                                     # yahoo woeid geoplanet
 gem 'geoip'                                         # geolite city
 gem 'will_paginate', '~> 3.0'                       # pagination
