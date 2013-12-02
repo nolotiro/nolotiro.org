@@ -52,6 +52,10 @@ NolotiroOrg::Application.routes.draw do
     }
 
     scope '/admin' do 
+      # config/initializers/admin.rb
+      constraints CanAccessResque do
+        mount Resque::Server, :at => "/resque"
+      end
       get '/become/:id', to: 'admin#become', as: 'become_user' 
     end
 

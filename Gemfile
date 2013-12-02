@@ -46,6 +46,7 @@ gem 'unicorn'                                       # webserver
 gem 'mysql2'                                        # mysql
 gem 'thinking-sphinx'                               # sphinxsearch
 gem 'redis-rails'                                   # redis cache
+gem 'resque', require: 'resque/server'              # job workers redis
 
 gem 'geoplanet'                                     # yahoo woeid geoplanet
 gem 'geoip'                                         # geolite city
