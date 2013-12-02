@@ -52,6 +52,7 @@ gem 'geoplanet'                                     # yahoo woeid geoplanet
 gem 'geoip'                                         # geolite city
 gem 'will_paginate', '~> 3.0'                       # pagination
 gem 'devise'                                        # users
+gem 'devise-async'                                  # send mails async
 gem 'cancan'                                        # authorization
 gem 'paperclip', '~> 3.0'                           # images
 gem 'recaptcha', :require => 'recaptcha/rails'      # captcha
