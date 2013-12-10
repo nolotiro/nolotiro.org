@@ -5,10 +5,28 @@ This is the next revision of nolotiro.org, this time in Ruby On Rails.
 * Ruby: 2.0.0p247
 * Rails: 4.0.1
 
+## Installation
+
+### Automatic
+
+Using Vagrant (VirtualBox or LXC), you need to install it:
+
+    $ gem install vagrant
+    $ vagrant box add precise32 http://files.vagrantup.com/precise32.box
+    $ vagrant up
+
+You can access with: 
+
+http://localhost:8080
+http://localhost:8081
+
+### Manual
+
+Check out the script in bin/bootstrap.sh - that's the same that vagrant uses. 
+
 We recommend using RVM or rbenv to set up the gems. 
 
 To install it you should do something like: 
-
 
     $ bundle
     $ cp config/app_config.yml.example config/app_config.yml
