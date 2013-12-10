@@ -20,11 +20,12 @@ group :development, :test do
   gem 'turn'                                # test: color output
 
   gem 'debugger'                            # dev: debugger
-#  gem 'zeus'                                # dev: speed up things 
+  gem 'zeus', '>= 0.13.4.pre2'              # dev: speed up sthings
   gem 'commands'                            # dev: rake commands in console 
   gem 'rails-footnotes', '>= 3.7.9'         # dev: data at footnote
   gem 'better_errors'                       # dev: better errors
   gem 'binding_of_caller'                   # dev: better errors
+  gem 'mailcatcher'                         # dev: mailbox 
 
 end
 
@@ -56,7 +57,6 @@ gem 'devise-async'                                  # send mails async
 gem 'cancan'                                        # authorization
 gem 'paperclip', '~> 3.0'                           # images
 gem 'recaptcha', :require => 'recaptcha/rails'      # captcha
-gem 'mailcatcher', group: [:development, :test]     # mailbox for development
 gem 'airbrake'                                      # exception notification
 gem 'paranoia', '~> 2.0'                            # don't really delete a model
 gem 'ipaddress'                                     # ip address validation

@@ -34,3 +34,6 @@ vendor/geolite/GeoLiteCity.dat
 config/*.sphinx.conf
 db/sphinx/*
 log/*.sphinx.pid
+
+# Vagrant
+.vagrant
