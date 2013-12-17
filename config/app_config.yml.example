@@ -12,6 +12,7 @@ development:
   airbrake_host: ''
   airbrake_port: '80'
   devise_secret_key: 'e4babb7746d1e2302f1fd2ab13d6985512c17e24e5b8e21abbf0199b2a43a5c907db3b30ba6e092c2abfef2d9bf305998958ab4f4fe43dc22343b7379984e284'
+  debug_ip_address: '8.8.8.8'
 
 test:
   <<: *defaults
