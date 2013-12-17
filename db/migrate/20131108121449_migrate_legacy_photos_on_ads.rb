@@ -13,28 +13,31 @@ class MigrateLegacyPhotosOnAds < ActiveRecord::Migration
     ]
     # Touch missing photos
     files.each do |f|
-      File.open(Rails.root.to_s + "/public/legacy/uploads/ads/original/" + f, "w") {} 
+      fi = File.open(Rails.root.to_s + "/public/legacy/uploads/ads/original/" + f, "w")
+      fi.close
     end
 
     # For all Ads if they have photo we are going to the original photo file and 
     # save it as image; the photo attribute after the conversion is nil 
-    Ad.all.each do |ad|
-      if ad.photo? 
+    Ad.all.find_each do |ad|
+      if ad.photo? and ad.image_file_name.nil?
         filename = Rails.root.to_s + '/public/legacy/uploads/ads/original/' + ad.photo
         if File.file?(filename)
           # From photo to image awww yeaaahhhh
-          ad.image = File.new(filename, "r")
+          file = File.new(filename, "r")
+          ad.image = file
           ad.photo = nil
           ad.save
+          file.close
         else
           # List missing photos
           puts filename
-          File.open('/tmp/nolotiro-images-missing.txt', 'a') { |f| f.write(filename) }
         end
       end
     end
   end
 
   def down
+    # TODO: rollback
   end
 end

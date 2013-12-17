@@ -1,15 +1,38 @@
 class ChangeStatusTypeToAds < ActiveRecord::Migration
+  # nolotirov2 legacy DB
+
   def self.up
-    Ad.update_all({:status => 1}, {:status => "available"})
-    Ad.update_all({:status => 2}, {:status => "booked"})
-    Ad.update_all({:status => 3}, {:status => "delivered"})
-    change_column :ads, :status, :integer, :default => 1
+    # Change DB column status type from enum to string (VARCHAR)
+    #
+    #   Field: status
+    #   Type: enum('delivered','booked','available')
+    #   Null: NO
+    #   Key: 
+    #   Default: available
+    #   Extra: 
+    change_column :ads, :status, :string, :default => "available", :null => false
+
+    # Change status data from strings like "available" to integers like "1"
+    Ad.unscoped.where(status: "available").update_all(status: "1")
+    Ad.unscoped.where(status: "booked").update_all(status: "2")
+    Ad.unscoped.where(status: "delivered").update_all(status: "3")
+
+    # Change DB column status type from string (VARCHAR) to integer
+    change_column :ads, :status, :integer, :default => 1, :null => false
   end
 
   def self.down
+    # TODO: enum stuff and such, should convert from integer to stri) 
+    # 
+    #   Field: status
+    #   Type: enum('delivered','booked','available')
+    #   Null: NO
+    #   Default: available
+
     change_column :ads, :status, :string, :default => "available"
-    Ad.update_all({:status => 'available'}, {:status => 1})
-    Ad.update_all({:status => 'booked'}, {:status => 2})
-    Ad.update_all({:status => 'delivered'}, {:status => 3})
+    Ad.unscoped.where(status: 1).update_all(status: 'available')
+    Ad.unscoped.where(status: 2).update_all(status: 'booked')
+    Ad.unscoped.where(status: 3).update_all(status: 'delivered')
   end
+
 end
