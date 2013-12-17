@@ -31,8 +31,10 @@
       </span>
       <br>
       <p><%= @ad.body %></p>
-      <div class="ad_meta_info">33 lecturas</div>
-      ¿Te interesa?&nbsp;
+      <div class="ad_meta_info">
+        <%= @ad.readed_count %> <%= t('nlt.reads') %>          
+      </div>
+      &nbsp;
       <a href="/es/message/create/id_user_to/40780/subject/top-talla-s-getafe" rel="nofollow">Envía un mensaje privado al anunciante <img src="/images/email_send.png" alt="send a message"></a>
       <br><br>
       <div class="sharelinks">

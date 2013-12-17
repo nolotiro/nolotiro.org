@@ -28,6 +28,7 @@ class AdsController < ApplicationController
   # GET /ads/1
   # GET /ads/1.json
   def show
+    @ad.increment_readed_count
   end
 
   # GET /ads/new

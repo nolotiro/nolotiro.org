@@ -41,6 +41,17 @@ class Ad < ActiveRecord::Base
   scope :booked, -> { where(status: 2) }
   scope :delivered, -> { where(status: 3) }
 
+
+  def readed_counter
+    readed_count || 0
+  end
+
+  def increment_readed_count
+    # Is this premature optimization?
+    # AdIncrementReadedCountWorker.new(self.id)
+    Ad.increment_counter(:readed_count, self.id)
+  end
+
   def slug
     title.parameterize
   end

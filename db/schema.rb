@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131118085658) do
+ActiveRecord::Schema.define(version: 20131217153655) do
 
   create_table "ads", force: true do |t|
     t.string   "title",              limit: 100,             null: false
@@ -19,16 +19,18 @@ ActiveRecord::Schema.define(version: 20131118085658) do
     t.integer  "user_owner",                                 null: false
     t.integer  "type",                                       null: false
     t.integer  "woeid_code",                                 null: false
-    t.datetime "date_created",                               null: false
+    t.datetime "created_at",                                 null: false
     t.string   "ip",                 limit: 15,              null: false
     t.string   "photo",              limit: 100
     t.integer  "status",                         default: 1, null: false
     t.integer  "comments_enabled"
+    t.datetime "updated_at"
     t.string   "image_file_name"
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
     t.datetime "deleted_at"
+    t.integer  "readed_count"
   end
 
   add_index "ads", ["woeid_code"], name: "woeid", using: :btree
@@ -77,12 +79,6 @@ ActiveRecord::Schema.define(version: 20131118085658) do
   end
 
   add_index "messages_deleted", ["id_user", "id_message"], name: "iduser_idmessage", unique: true, using: :btree
-
-  create_table "readedAdCount", primary_key: "id_ad", force: true do |t|
-    t.integer "counter", null: false
-  end
-
-  add_index "readedAdCount", ["id_ad", "counter"], name: "id_ad_counter", unique: true, using: :btree
 
   create_table "threads", force: true do |t|
     t.string  "subject",      limit: 100,             null: false

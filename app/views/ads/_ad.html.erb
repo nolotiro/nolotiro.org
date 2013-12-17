@@ -48,7 +48,7 @@
     <b><a rel="nofollow" href="/es/message/create/id_user_to/42397/subject/fulares-para-cuello"><%= t('nlt.send_a_message') %></a></b>
     &nbsp;&nbsp;&nbsp;<b><%= link_to t('nlt.write_a_comment'), adslug_path(ad,ad.slug) %></b>
     &nbsp;&nbsp;
-    13&nbsp;&nbsp;<%= t('nlt.reads') %>          
+    <%= ad.readed_counter %> <%= t('nlt.reads') %>          
   </div>
 
 </div>
