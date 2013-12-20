@@ -8,48 +8,33 @@ class WoeidControllerTest < ActionController::TestCase
     @ad = FactoryGirl.create(:ad)
   end
 
-  test "should get listall and give" do 
-    get :listall_give
+  test "should get listall - give and want" do 
+    get :show, type: "give"
+    assert_response :success
+    get :show, type: "want"
     assert_response :success
   end
 
-  test "should get listall and give/available" do 
-    get :listall_give_available
+  test "should get listall and give (available, delivered, booked)" do 
+    get :show, type: "give", status: "available"
+    assert_response :success
+    get :show, type: "give", status: "booked"
+    assert_response :success
+    get :show, type: "give", status: "delivered"
     assert_response :success
   end
 
-  test "should get listall and give/booked" do 
-    get :listall_give_booked
+  test "should get WOEID and give (available, delivered, booked)" do 
+    get :show, type: "give", status: "available", id: @ad.woeid_code
     assert_response :success
-  end
-
-  test "should get listall and give/delivered" do 
-    get :listall_give_delivered
+    get :show, type: "give", status: "booked", id: @ad.woeid_code
     assert_response :success
-  end
-
-  test "should get listall and want" do 
-    get :listall_want
-    assert_response :success
-  end
-
-  test "should get WOEID and give/available" do 
-    get :available, id: @ad.woeid_code
-    assert_response :success
-  end
-
-  test "should get WOEID and give/booked" do 
-    get :booked, id: @ad.woeid_code
-    assert_response :success
-  end
-
-  test "should get WOEID and give/delivered" do 
-    get :delivered, id: @ad.woeid_code
+    get :show, type: "give", status: "delivered", id: @ad.woeid_code
     assert_response :success
   end
 
   test "should get WOEID and want" do 
-    get :want, id: @ad.woeid_code
+    get :show, type: "want", id: @ad.woeid_code
     assert_response :success
   end
 
