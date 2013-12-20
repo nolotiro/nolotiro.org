@@ -1,3 +1,4 @@
+# encoding : utf-8
 class Ad < ActiveRecord::Base
 
   require 'ipaddress'
@@ -8,16 +9,17 @@ class Ad < ActiveRecord::Base
   validates :title, presence: true
   validates :body, presence: true
   validates :user_owner, presence: true
-  validates :type, presence: true
   validates :woeid_code, presence: true
   validates :created_at, presence: true
   validates :ip, presence: true
-  validates :status, presence: true
 
-  validates :status, inclusion: { in: [1, 2, 3],
-                                  message: "%{value} no es un estado válido" }
-  validates :type, inclusion: { in: [1, 2],
-                                message: "%{value} no es un tipo válido" }
+  validates :status,
+    inclusion: { in: [1, 2, 3], message: "no es un estado válido" },
+    presence: true
+
+  validates :type,
+    inclusion: { in: [1, 2], message: "no es un tipo válido" },
+    presence: true
 
   validate :valid_ip_address
 
