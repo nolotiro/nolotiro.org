@@ -1,57 +1,23 @@
-require 'test_helper'
-
+# encoding : utf-8
 class AdTest < ActiveSupport::TestCase
 
+  require 'test_helper'
+ 
   setup do
     @ad = FactoryGirl.create(:ad)
   end
 
-  test "ad requires title" do
-    a = Ad.new
-    a.valid?
-    assert a.errors[:title].include?("no puede estar en blanco")
-  end
-
-  test "ad requires body" do
-    a = Ad.new
-    a.valid?
-    assert a.errors[:body].include?("no puede estar en blanco")
-  end
-
-  test "ad requires user_owner" do
-    a = Ad.new
-    a.valid?
-    assert a.errors[:user_owner].include?("no puede estar en blanco")
-  end
-
-  test "ad requires type" do
-    a = Ad.new
-    a.valid?
-    assert a.errors[:type].include?("no puede estar en blanco")
-  end
-
-  test "ad requires woeid_code" do
-    a = Ad.new
-    a.valid?
-    assert a.errors[:woeid_code].include?("no puede estar en blanco")
-  end
-
-  test "ad requires created_at" do
-    a = Ad.new
-    a.valid?
-    assert a.errors[:created_at].include?("no puede estar en blanco")
-  end
-
-  test "ad requires ip" do
-    a = Ad.new
-    a.valid?
-    assert a.errors[:ip].include?("no puede estar en blanco")
-  end
-
-  test "ad requires status" do
+  test "ad requires everything" do
     a = Ad.new
     a.valid?
     assert a.errors[:status].include?("no puede estar en blanco")
+    assert a.errors[:body].include?("no puede estar en blanco")
+    assert a.errors[:title].include?("no puede estar en blanco")
+    assert a.errors[:user_owner].include?("no puede estar en blanco")
+    assert a.errors[:type].include?("no puede estar en blanco")
+    assert a.errors[:woeid_code].include?("no puede estar en blanco")
+    assert a.errors[:created_at].include?("no puede estar en blanco")
+    assert a.errors[:ip].include?("no puede estar en blanco")
   end
 
   test "ad validates type" do
@@ -64,7 +30,7 @@ class AdTest < ActiveSupport::TestCase
     assert_equal @ad.type, 2
     @ad.type = 3
     @ad.valid?
-    assert @ad.errors[:type].include?("3 no es un tipo válido")
+    assert @ad.errors[:type].include?("no es un tipo válido")
   end
 
   test "ad validates status" do
@@ -80,7 +46,7 @@ class AdTest < ActiveSupport::TestCase
     assert_equal @ad.status, 3
     @ad.status = 4
     @ad.valid?
-    assert @ad.errors[:status].include?("4 no es un estado válido")
+    assert @ad.errors[:status].include?("no es un estado válido")
   end
 
   test "ad check slug" do
