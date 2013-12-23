@@ -18,6 +18,7 @@ group :development, :test do
 
   gem 'factory_girl_rails', '~> 4.0'        # test: factories 
   gem 'turn'                                # test: color output
+  gem 'database_cleaner'                    # test: for not having duplicity
 
   gem 'debugger'                            # dev: debugger
   gem 'zeus', '>= 0.13.4.pre2'              # dev: speed up sthings
