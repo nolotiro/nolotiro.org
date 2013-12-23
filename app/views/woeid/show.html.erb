@@ -1,28 +1,33 @@
 <% content_for(:title, @woeid) %>
 
 <div id="location_header_section">
-  <span class="give-want">
-    <% if @all %>
+  <% if @all %>
+    <span class="give-want">
       <%= link_to "regalo", ads_listall_path(type: 'give'), 
         :class => @type == "give" ? "actual" : "''" %>
-    <% else %>
-      <%= link_to "regalo", ads_woeid_path(id: @id, type: 'give'), :class => @type == "give" ? "actual" : "''" %>
-    <% end %>
-    &nbsp;
-    <% if @all %>
+      &nbsp;
       <%= link_to "busco", ads_listall_path(type: 'want'), :class => @type == "want" ? "actual" : "''" %>
-    <% else %>
-      <%= link_to "busco", ads_woeid_path(id: @id, type: 'want'), :class => @type == "want" ? "actual" : "''" %>
-    <% end %>
-  </span>
+    </span>
   <div class="location_name">
-    <h1>regalo - <%= @woeid %></h1><br>
-    <%= render :partial => "ads/search", :locals => {:woeid => @woeid, :ad_type => @type} %>
-    <%= link_to location_ask_path, :class => "world_link" do %>
-      <%= image_tag "change_location.png", :alt => "change location" %> 
-      cambiar ciudad
-    <% end %>
+    <h1>Todos los anuncios</h1>
+    <br>
   </div>
+  <% else %>
+    <span class="give-want">
+      <%= link_to "regalo", ads_woeid_path(id: @id, type: 'give'), :class => @type == "give" ? "actual" : "''" %>
+      &nbsp;
+      <%= link_to "busco", ads_woeid_path(id: @id, type: 'want'), :class => @type == "want" ? "actual" : "''" %>
+    </span>
+    <div class="location_name">
+      <h1>regalo - <%= @woeid %></h1><br>
+      <%= render :partial => "ads/search", :locals => {:woeid => @woeid, :ad_type => @type} %>
+      <%= link_to location_ask_path, :class => "world_link" do %>
+        <%= image_tag "change_location.png", :alt => "change location" %> 
+        cambiar ciudad
+      <% end %>
+    </div>
+  <% end %>
+
 </div>
 
 <div id="main">
