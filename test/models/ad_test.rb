@@ -16,7 +16,6 @@ class AdTest < ActiveSupport::TestCase
     assert a.errors[:user_owner].include?("no puede estar en blanco")
     assert a.errors[:type].include?("no puede estar en blanco")
     assert a.errors[:woeid_code].include?("no puede estar en blanco")
-    assert a.errors[:created_at].include?("no puede estar en blanco")
     assert a.errors[:ip].include?("no puede estar en blanco")
   end
 

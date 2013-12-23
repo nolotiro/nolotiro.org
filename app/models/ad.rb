@@ -10,7 +10,6 @@ class Ad < ActiveRecord::Base
   validates :body, presence: true
   validates :user_owner, presence: true
   validates :woeid_code, presence: true
-  validates :created_at, presence: true
   validates :ip, presence: true
 
   validates :status,
