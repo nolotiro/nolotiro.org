@@ -70,6 +70,7 @@ NolotiroOrg::Application.routes.draw do
     get '/search', to: 'search#search', as: 'search'
 
     # messaging
+    get '/message/received', to: redirect('/es/message/list'), as: 'messages_received'
     get '/message/list', to: 'messages#list', as: 'messages_list'
     get '/message/show/:id/subject/:subject', to: 'messages#show', as: 'message_show'
 
