@@ -31,7 +31,9 @@ class WoeidController < ApplicationController
     @ads = ads.includes(:user).paginate(:page => params[:page])
     if not @ads.any?
       @location_suggest = get_location_suggest # no results
-      @location_options = WoeidHelper.search_by_name(WoeidHelper.convert_woeid_name(params[:id]).split(',')[0])
+      if @woeid
+        @location_options = WoeidHelper.search_by_name(WoeidHelper.convert_woeid_name(params[:id]).split(',')[0])
+      end 
     end
     render "show"
   end
