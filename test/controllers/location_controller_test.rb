@@ -5,7 +5,7 @@ class LocationControllerTest < ActionController::TestCase
   include Devise::TestHelpers
 
   setup do
-    @user = FactoryGirl.create(:user, "email" => "jaimito@gmail.com", "username" => "jaimito")
+    @user = FactoryGirl.create(:user)
     @request.headers["REMOTE_ADDR"] = "87.223.138.147"
   end
 
@@ -28,13 +28,13 @@ class LocationControllerTest < ActionController::TestCase
     sign_in @user
     post :change, location: 288888
     assert_response :redirect
-    assert_redirected_to woeid_path(288888)
+    assert_redirected_to ads_woeid_path(288888, type: "give")
   end
 
   test "should set location in my session" do
     post :change, location: 288888
     assert_response :redirect
-    assert_redirected_to woeid_path(288888)
+    assert_redirected_to ads_woeid_path(288888, type: "give")
   end
 
 end

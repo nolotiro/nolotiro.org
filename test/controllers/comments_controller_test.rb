@@ -14,7 +14,7 @@ class CommentsControllerTest < ActionController::TestCase
       post :create, id: @ad.id, body: "hola mundo"
     end
     assert_response :redirect
-    assert_redirected_to new_user_session_path
+    assert_redirected_to new_user_session_url
   end
 
   test "should create a comment as a user" do

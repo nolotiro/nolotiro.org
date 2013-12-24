@@ -8,7 +8,7 @@ class AdsControllerTest < ActionController::TestCase
 
   setup do
     @ad = FactoryGirl.create(:ad)
-    @user = FactoryGirl.create(:user, "email" => "jaimito@gmail.com", "username" => "jaimito")
+    @user = FactoryGirl.create(:user)
     @admin = FactoryGirl.create(:admin)
   end
 
@@ -31,9 +31,17 @@ class AdsControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "should create ad" do
+  test "should not create ad if not signed in" do
+    ad_new = FactoryGirl.build(:ad)
+    post :create, ad: ad_new
+    assert_redirected_to new_user_session_url
+  end
+
+  test "should create ad if logged in" do
+    sign_in @user
+
     assert_difference('Ad.count') do
-      post :create, ad: { body: @ad.body, ip: @ad.ip, title: @ad.title, type: @ad.type, user_owner: @ad.user_owner, woeid_code: @ad.woeid_code }
+      post :create, ad: { body: "Es una Ferrari de esas rojas, muy linda.", ip: '8.8.8.8', title: 'Regalo Ferrari', type: 1, woeid_code: '788273' }
     end
 
     assert_redirected_to ad_path(assigns(:ad))

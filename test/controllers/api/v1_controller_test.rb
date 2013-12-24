@@ -1,3 +1,4 @@
+# encoding : utf-8
 require 'test_helper'
 
 class Api::V1ControllerTest < ActionController::TestCase
@@ -18,7 +19,7 @@ class Api::V1ControllerTest < ActionController::TestCase
   test "should get ad show on api v1" do
     get :ad_show, format: 'json', id: @ad
     body = JSON.parse(@response.body)
-    assert_equal(body"woeid_code", 766273)
+    assert_equal(body["woeid_code"], 766273)
     assert_equal(body["title"], "ordenador en Vallecas")
     assert_response :success
   end

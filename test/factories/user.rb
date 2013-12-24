@@ -1,10 +1,16 @@
 FactoryGirl.define do
+
+  sequence :email do |n|
+    "foo#{n}@example.com"
+  end
+
   factory :user do
     username "Pepito"
-    email 'pepito@gmail.com'
+    email 
     lang 'es'
     password '123456789'
     role 0
+    woeid 766273
   end
 
   # This will use the User class (Admin would have been guessed)
