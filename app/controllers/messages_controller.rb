@@ -1,4 +1,5 @@
 class MessagesController < ApplicationController
+
   before_filter :authenticate_user!
 
   # GET '/message/show/:id/subject/:subject'
@@ -34,7 +35,7 @@ class MessagesController < ApplicationController
     )
     if @message.save
       MessagesMailer.create(@user.email, current_user.username, params[:message][:subject], params[:message][:body]).deliver
-      redirect_to message_show_path(@thread.id, @thread.subject), notice: 'Message was successfully created.'
+      redirect_to message_show_path(@thread.id, @thread.subject.parameterize), notice: 'Message was successfully created.'
     else
       render action: 'new'
     end
