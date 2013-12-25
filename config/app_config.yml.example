@@ -7,7 +7,7 @@ development:
   recaptcha_private_key: ""
   contact_email1: "@"
   contact_email2: "@"
-  default_from_email: "@"
+  default_from_email: "noreply@nolotiro.org"
   airbrake_apikey: ''
   airbrake_host: ''
   airbrake_port: '80'
@@ -21,7 +21,7 @@ test:
   recaptcha_private_key: ""
   contact_email1: "@"
   contact_email2: "@"
-  default_from_email: "@"
+  default_from_email: "noreply@nolotiro.org"
   airbrake_apikey: ''
   airbrake_host: ''
   airbrake_port: '80'
