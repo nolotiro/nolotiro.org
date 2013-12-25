@@ -35,10 +35,10 @@ NolotiroOrg::Application.routes.draw do
 
     # location change
     scope '/location' do
-      get '/change', to: 'location#ask', as: 'location_ask'
-      post '/change/', to: 'location#list'
-      get '/change2/', to: 'location#list'
-      post '/change2/', to: 'location#change'
+      get  '/change', to: 'location#ask', as: 'location_ask'
+      get  '/change2', to: 'location#list'
+      post '/change', to: 'location#list'
+      post '/change2', to: 'location#change'
     end
 
     # auth
@@ -53,6 +53,12 @@ NolotiroOrg::Application.routes.draw do
         sign_out: 'logout',
         password: 'reset'
     }
+
+    # TODO: friends and friendship revise legacy
+    scope '/friends' do
+      post '/create/:id', to: 'friendships#create', as: 'create_friend'
+      post '/create/:id', to: 'friendships#destroy', as: 'destroy_friend'
+    end
 
     scope '/admin' do 
       # config/initializers/admin.rb
@@ -75,11 +81,11 @@ NolotiroOrg::Application.routes.draw do
 
     # messaging
     scope '/message' do
-      get '/received', to: redirect('/es/message/list'), as: 'messages_received'
-      get '/list', to: 'messages#list', as: 'messages_list'
-      get '/show/:id/subject/:subject', to: 'messages#show', as: 'message_show'
-      get '/create/id_user_to/:user_id', to: 'messages#new', as: 'message_new'
-      get '/create/id_user_to/:user_id/subject/:subject', to: "messages#new", as: 'message_new_with_subject'
+      get  '/received', to: redirect('/es/message/list'), as: 'messages_received'
+      get  '/list', to: 'messages#list', as: 'messages_list'
+      get  '/show/:id/subject/:subject', to: 'messages#show', as: 'message_show'
+      get  '/create/id_user_to/:user_id', to: 'messages#new', as: 'message_new'
+      get  '/create/id_user_to/:user_id/subject/:subject', to: "messages#new", as: 'message_new_with_subject'
       post '/create/id_user_to/:user_id', to: 'messages#create', as: 'message_create'
       post '/create/id_user_to/:user_id/subject/:subject', to: "messages#create", as: 'message_create_with_subject'
       post '/reply/:id/to/:user_id', to: 'messages#reply', as: 'message_reply'
