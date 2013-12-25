@@ -55,7 +55,8 @@ es:
     permission_denied: 'No tienes permisos para realizar esta acción.'
     change_city: 'cambiar ciudad'
     create_new_ad: 'Crea un nuevo anuncio'
-    ads:
+    user_ads: 'Anuncios'
+    ads: 
       form:
         title: 'Título de tu anuncio:'
         body: 'Cuerpo del anuncio:'

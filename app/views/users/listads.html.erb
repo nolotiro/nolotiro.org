@@ -4,14 +4,7 @@
 
 <div id="main">
   <div class="span-19">
-    <ul id="tabnav">
-      <li>
-      <%= link_to t('nlt.profile'), profile_path(@user.username) %>
-      </li>
-      <li>
-      <%= link_to t('nlt.ads'), listads_user_path(@user), :id => "tab_active" %>
-      </li>
-    </ul>
+    <%= render partial: "users/tabnav", locals: {user: @user} %>
     <% @ads.each do |ad| %>
       <%= render :partial => "ads/ad", :locals => { :ad => ad } %>
     <% end %>
