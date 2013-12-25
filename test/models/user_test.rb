@@ -19,4 +19,16 @@ class UserTest < ActiveSupport::TestCase
     assert_equal @user.lang, 'es'
   end
 
+  test "should lock! an user" do
+    @user.lock!
+    assert_equal @user.locked?, true
+  end
+
+  test "should unlock! an user" do
+    @user.locked = 1
+    @user.save
+    @user.unlock!
+    assert_equal @user.locked?, false
+  end
+
 end

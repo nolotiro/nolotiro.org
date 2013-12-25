@@ -1,4 +1,5 @@
 class Ability
+# https://github.com/ryanb/cancan/wiki/Defining-Abilities
 
   include CanCan::Ability
 
@@ -11,11 +12,12 @@ class Ability
     # if the user is a real user (non anon)
     unless user.username.nil?
       can :create, Ad
+      # TODO cannot become another user
+      # TODO cannot lock a user
+      # TODO cannot unlock a user
       can [:edit, :update], Ad, :user_owner => user.id 
     end
     can :read, :all
-
-    # https://github.com/ryanb/cancan/wiki/Defining-Abilities
   end
 
 end

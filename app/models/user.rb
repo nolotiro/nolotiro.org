@@ -25,6 +25,16 @@ class User < ActiveRecord::Base
     super and self.locked != 1
   end
 
+  def unlock!
+    self.locked = 0
+    self.save
+  end
+
+  def lock!
+    self.locked = 1
+    self.save
+  end
+
   def default_lang
     self.lang ||= "es"
   end

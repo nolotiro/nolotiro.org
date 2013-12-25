@@ -1,5 +1,6 @@
 NolotiroOrg::Application.routes.draw do
 
+  # FIXME: redirect to /locale
   root 'ads#index'
 
   get '/:locale' => 'ads#index'
@@ -59,6 +60,8 @@ NolotiroOrg::Application.routes.draw do
         mount Resque::Server, :at => "/resque"
       end
       get '/become/:id', to: 'admin#become', as: 'become_user' 
+      get '/lock/:id', to: 'admin#lock', as: 'lock_user' 
+      get '/unlock/:id', to: 'admin#unlock', as: 'unlock_user' 
     end
 
     get '/user/edit/id/:id', to: redirect('/es/user/edit'), as: 'user_edit'
