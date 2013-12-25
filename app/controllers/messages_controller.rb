@@ -32,8 +32,8 @@ class MessagesController < ApplicationController
       user_from: current_user.id,
       user_to: @user.id
     )
-
     if @message.save
+      MessagesMailer.create(@user.email, current_user.username, params[:message][:subject], params[:message][:body]).deliver
       redirect_to message_show_path(@thread.id, @thread.subject), notice: 'Message was successfully created.'
     else
       render action: 'new'
@@ -51,10 +51,18 @@ class MessagesController < ApplicationController
       date_created: DateTime.now,
       ip: request.remote_ip,
       subject: @thread.subject,
-      body: params[:message][:body],
+      body: params[:body],
       user_from: current_user.id,
       user_to: @user.id
     )
+
+    if @message.save
+      MessagesMailer.create(@user.email, current_user.username, @thread.subject, params[:body]).deliver
+      redirect_to message_show_path(@thread.id, @thread.subject), notice: 'Message was successfully replied.'
+    else
+      # there was an error saving
+      render action: 'new'
+    end
   end
 
   # GET '/message/list'

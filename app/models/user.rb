@@ -29,16 +29,19 @@ class User < ActiveRecord::Base
     self.lang ||= "es"
   end
 
+  # nolotirov2 legacy: messaging
   def last_threads
-    # nolotirov2 legacy: messaging
-    # what the fuck 
-    # this is 100% legacy, from the DB we had
+    # 100% legacy, from the DB we had
     # FIXME: PLEEAAASEE migrate me to mailboxer or something more Rails like
-    # TODO: move this to MessageThreads model
-    # TODO: also for recieved messages
-    all_threads = sent_messages.order('date_created DESC').limit(10).joins(:thread).group('thread_id').count
+    send_threads = sent_messages.order('date_created DESC').limit(10).joins(:thread).group('thread_id').count
+    recieved_threads = recieved_messages.order('date_created DESC').limit(10).joins(:thread).group('thread_id').count
     threads = []
-    all_threads.keys.each do |thread|
+    send_threads.keys.each do |thread|
+      th = MessageThread.find(thread.to_i)
+      other_user = th.messages.first.user_from == id ? th.messages.first.reciever : th.messages.first.sender
+      threads.append([th, other_user])
+    end
+    recieved_threads.keys.each do |thread|
       th = MessageThread.find(thread.to_i)
       other_user = th.messages.first.user_from == id ? th.messages.first.reciever : th.messages.first.sender
       threads.append([th, other_user])
