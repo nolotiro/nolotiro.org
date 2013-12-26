@@ -10,8 +10,9 @@ class ContactControllerTest < ActionController::TestCase
   end
 
   test "should verify recaptcha in contact form" do
-    post :create, contact: {mail: "hola@mundo.com", message: "hola mundo"}
-    assert_response :success
+    post :create, contact: {email: "hola@mundo.com", message: "hola mundo"}
+    assert_redirected_to root_path
+    assert_equal( I18n.t('nlt.contact_thanks'), flash[:notice] )
   end
 
 end

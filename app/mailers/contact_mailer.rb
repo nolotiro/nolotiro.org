@@ -10,7 +10,7 @@ class ContactMailer < ActionMailer::Base
       from: email,
       to: APP_CONFIG["contact_email1"],
       cc: APP_CONFIG["contact_email2"],
-      subject: 'nolotiro.org - contact from #{email}'
+      subject: "nolotiro.org - contact from #{email}"
     )
   end
 
