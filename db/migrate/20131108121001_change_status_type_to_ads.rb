@@ -22,13 +22,6 @@ class ChangeStatusTypeToAds < ActiveRecord::Migration
   end
 
   def self.down
-    # TODO: enum stuff and such, should convert from integer to stri) 
-    # 
-    #   Field: status
-    #   Type: enum('delivered','booked','available')
-    #   Null: NO
-    #   Default: available
-
     change_column :ads, :status, :string, :default => "available"
     Ad.unscoped.where(status: 1).update_all(status: 'available')
     Ad.unscoped.where(status: 2).update_all(status: 'booked')
