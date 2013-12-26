@@ -1,0 +1,14 @@
+<p>
+  <%= @comment %>
+</p>
+
+<p>
+  Haz click en este enlace para responder el mensaje:
+  <%= link_to adslug_url(id: @ad.id, slug: @ad.slug), adslug_url(id: @ad.id, slug: @ad.slug) %>
+</p>
+
+<hr />
+
+<p>
+  Este es un mensaje automático. Por favor, no respondas a esta dirección de email. 
+</p>
