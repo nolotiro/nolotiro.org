@@ -54,11 +54,8 @@ NolotiroOrg::Application.routes.draw do
         password: 'reset'
     }
 
-    # TODO: friends and friendship revise legacy
-    scope '/friends' do
-      post '/create/:id', to: 'friendships#create', as: 'create_friend'
-      post '/create/:id', to: 'friendships#destroy', as: 'destroy_friend'
-    end
+    post '/addfriend/id/:id', to: 'friendships#create', as: 'create_friend'
+    post '/deletefriend/:id', to: 'friendships#destroy', as: 'destroy_friend'
 
     scope '/admin' do 
       # config/initializers/admin.rb
