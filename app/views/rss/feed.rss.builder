@@ -8,7 +8,9 @@ xml.rss :version => "2.0" do
     @ads.each do |ad|
       xml.item do
         xml.title ad.title
-        # TODO if image, put image_tag
+        if ad.image?
+          xml.image "http://nolotiro.org/" + ad.image.url
+        end
         description =  ad.body
         xml.description description
         xml.pubDate ad.created_at.to_s(:rfc822)
@@ -18,4 +20,3 @@ xml.rss :version => "2.0" do
     end
   end
 end
-
