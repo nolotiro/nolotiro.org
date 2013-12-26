@@ -61,7 +61,7 @@ es:
         title: 'Título de tu anuncio:'
         body: 'Cuerpo del anuncio:'
         select_an_image: 'Selecciona una imagen para tu anuncion (opcional).'
-        image_permited_formats: 'Formatos permitidos: gif, jpg, png. Max:1Mb de tamaño.'
+        image_permitted_formats: 'Formatos permitidos: gif, jpg, png. Max: 1Mb de tamaño.'
         to_publish: 'Para publicar tu anuncio, por favor, introduce estos datos'
         prohibited: 'prohibited this ad from being saved'
         comments_enabled: 'Permitir comentarios públicos'

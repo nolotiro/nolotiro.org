@@ -30,8 +30,11 @@ class Ad < ActiveRecord::Base
 
   acts_as_paranoid
 
-  # TODO: validates extension, max file size, etc
-  has_attached_file :image, :styles => {:thumb => "100x90>"}
+  has_attached_file :image,
+    :styles => {:thumb => "100x90>"},
+    :content_type => { :content_type => ["image/jpg", "image/gif", "image/png"] }
+
+  validates_attachment_size :image, :in => 0.megabytes..1.megabytes
 
   scope :give, -> { where(type: 1) }
   scope :want, -> { where(type: 2) }
