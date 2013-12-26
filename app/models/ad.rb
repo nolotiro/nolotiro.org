@@ -28,9 +28,7 @@ class Ad < ActiveRecord::Base
 
   default_scope { order('created_at DESC') }
 
-  # FIXME: ensure that deleted_at is created
-  # activate this later
-  # acts_as_paranoid
+  acts_as_paranoid
 
   # TODO: validates extension, max file size, etc
   has_attached_file :image, :styles => {:thumb => "100x90>"}
