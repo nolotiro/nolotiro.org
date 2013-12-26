@@ -38,6 +38,5 @@ class MigrateLegacyPhotosOnAds < ActiveRecord::Migration
   end
 
   def down
-    # TODO: rollback
   end
 end

@@ -16,12 +16,5 @@ class AddReadedCountToAd < ActiveRecord::Migration
 
   def down
     remove_column :ads, :readed_count, :integer
-    # TODO: move everything back to readedAdCount table
-    # +---------+---------------------------+------+-----+---------+-------+
-    # | Field   | Type                      | Null | Key | Default | Extra |
-    # +---------+---------------------------+------+-----+---------+-------+
-    # | id_ad   | int(11)                   | NO   | PRI | NULL    |       |
-    # | counter | int(11) unsigned zerofill | NO   |     | NULL    |       |
-    # +---------+---------------------------+------+-----+---------+-------+
   end
 end
