@@ -48,7 +48,7 @@
         </label>
         </dt>
         <dd id="captcha-element">
-        <%= recaptcha_tags :display => { :theme => "white" }%>
+          <%= recaptcha_tags(:display => { :theme => "white" }, ajax: true)%>
         </dd>
         <dd id="hidden-elements">
         <!-- FIXME: this doesn't work -->

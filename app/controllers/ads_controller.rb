@@ -3,38 +3,40 @@ class AdsController < ApplicationController
   before_action :get_section_locations, only: [:index]
   load_and_authorize_resource
 
-  # GET /ads
-  # GET /ads.json
+  caches_action :list, :show, layout: false
+
+  # GET /
   def index
     if user_signed_in? 
       if current_user.woeid?
         redirect_to ads_woeid_path(id: current_user.woeid, type: 'give')
-      # or ask for the location
       else
         redirect_to location_ask_path
       end
     else
-      @ads = Ad.available.includes(:user).paginate(:page => params[:page])
-
-      # TODO: cache?
-      @location = get_location_suggest
-
-      # TODO: cache | select only id, username and ad_count
-      @section_users = User.order("ads_count DESC").limit(40)
+      list
     end
+  end
 
+  def list
+    @ads = Ad.available.includes(:user).paginate(:page => params[:page])
+    @location = get_location_suggest
+    @section_users = User.order("ads_count DESC").limit(40)
   end
 
   # GET /ads/1
   # GET /ads/1.json
   def show
-    @ad.increment_readed_count
+    # TODO: move to AJAX
+    #@ad.increment_readed_count
   end
 
   # GET /ads/new
   def new
     @ad = Ad.new
-    @woeid_code = params[:woeid]
+    if current_user.woeid.nil? 
+      redirect_to location_ask_path
+    end
   end
 
   # GET /ads/1/edit

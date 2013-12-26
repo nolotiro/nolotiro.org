@@ -46,6 +46,8 @@ gem 'capistrano-rvm', '~> 0.0.3'
 gem 'capistrano-rails'
 gem 'capistrano-bundler'
 
+gem 'actionpack-page_caching'                       # caching
+gem 'actionpack-action_caching'                     # caching
 gem 'unicorn'                                       # webserver
 gem 'mysql2'                                        # mysql
 gem 'thinking-sphinx'                               # sphinxsearch

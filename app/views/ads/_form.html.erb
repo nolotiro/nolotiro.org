@@ -55,9 +55,9 @@
         </label>
         </dt>
         <dd id="captcha-element">
-        <%= recaptcha_tags :display => { :theme => "white" }%>
+          <%= recaptcha_tags(:display => { :theme => "white" }, ajax: true)%>
         </dd>
-        <%= f.hidden_field :woeid_code, value: @woeid_code %>
+        <%= f.hidden_field :woeid_code, value: current_user.woeid %>
         <%= f.submit t 'nlt.send' %>
         </dd>
       </dl>

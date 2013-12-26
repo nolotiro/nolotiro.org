@@ -40,7 +40,9 @@
 
       <div id="header">
 
-        <%= render :partial => "partials/select_language_box" %>
+        <% cache do %>
+          <%= render :partial => "partials/select_language_box" %>
+        <% end %>
 
         <%= render :partial => "partials/user_actions" %>
 

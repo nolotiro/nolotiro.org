@@ -38,7 +38,7 @@
           </label>
           </dt>
           <dd id="captcha-element">
-          <%= recaptcha_tags :display => { :theme => "white" }%>
+            <%= recaptcha_tags(:display => { :theme => "white" }, ajax: true)%>
           </dd>
           <dt id="submit-label">&nbsp;</dt>
           <dd id="submit-element">

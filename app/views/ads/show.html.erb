@@ -35,7 +35,12 @@
         <%= @ad.readed_count %> <%= t('nlt.reads') %>          
       </div>
       &nbsp;
-      <a href="/es/message/create/id_user_to/40780/subject/top-talla-s-getafe" rel="nofollow">Envía un mensaje privado al anunciante <img src="/images/email_send.png" alt="send a message"></a>
+
+      <%= link_to message_new_with_subject_path(user_id: @ad.user.id, subject: @ad.title.parameterize), :class => "world_link" do %>
+        send message to <%= @ad.user.username %>
+        <%= image_tag "email_send.png", :alt => "send a mesage" %>
+      <% end %>
+
       <br><br>
       <div class="sharelinks">
         <p style="text-align:left;margin-bottom:5px;">Comparte este anuncio:</p>
