@@ -7,9 +7,8 @@ class CommentsController < ApplicationController
     expire_action(controller: '/ads', action: 'show')
     Comment.create({
       ads_id: params[:id],
-      user_owner: current_user.id,
       body: params[:body],
-      date_created: DateTime.now,
+      user_owner: current_user.id,
       ip: request.remote_ip,
     })
     flash[:notice] = "Comment created"
