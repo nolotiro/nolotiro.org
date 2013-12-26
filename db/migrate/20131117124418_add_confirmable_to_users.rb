@@ -10,10 +10,6 @@ class AddConfirmableToUsers < ActiveRecord::Migration
     # nolotiro v2 legacy - migrate users with tokens 
     # to the new confirmable model 
     #
-    # TODO: rake task to remember all the users to log in with the token
-    #       after all the migration to v3  - they are 13500 users that 
-    #       cant log in because they are not confirmed in this moment
-    #        
     users_with_tokens = User.all.where.not(:token => "" )
     users_with_tokens.find_each do |u|
       u.confirmation_token = u.token
