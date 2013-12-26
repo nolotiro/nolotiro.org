@@ -19,7 +19,8 @@ class AdminControllerTest < ActionController::TestCase
   test "should not become an user as a normal user" do
     sign_in @user
     get :become, id: @another_user.id
-    assert_redirected_to new_user_session_url
+    assert_redirected_to root_path
+    assert_equal "No tienes permisos para realizar esta acción.", flash[:alert]
   end
 
   test "should become an user as admin" do
@@ -39,10 +40,12 @@ class AdminControllerTest < ActionController::TestCase
   test "should not lock or unlock an user as a normal user" do
     sign_in @user
     get :lock, id: @another_user.id
-    assert_redirected_to new_user_session_url
+    assert_redirected_to root_path
+    assert_equal "No tienes permisos para realizar esta acción.", flash[:alert]
     assert_equal(@user.locked?, false)
     get :unlock, id: @another_user.id
-    assert_redirected_to new_user_session_url
+    assert_redirected_to root_path
+    assert_equal "No tienes permisos para realizar esta acción.", flash[:alert]
   end
 
   test "should lock or unlock an user as admin" do

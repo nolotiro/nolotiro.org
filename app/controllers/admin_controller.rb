@@ -1,10 +1,9 @@
 class AdminController < ApplicationController
 
   before_filter :authenticate_user!
+  authorize_resource :class => false
   
   def become
-    # FIXME: should be doing this in cancan (app/models/ability.rb) 
-    return unless current_user.admin?
     user = User.find(params[:id])
     sign_in(:user, user)
     flash[:notice] = "Becoming user #{user.username}"
@@ -12,8 +11,6 @@ class AdminController < ApplicationController
   end
 
   def lock
-    # FIXME: should be doing this in cancan (app/models/ability.rb) 
-    return unless current_user.admin?
     user = User.find(params[:id])
     user.lock!
     flash[:notice] = "Successfully locked user #{user.username}. The user can't log in."
@@ -21,8 +18,6 @@ class AdminController < ApplicationController
   end
 
   def unlock
-    # FIXME: should be doing this in cancan (app/models/ability.rb) 
-    return unless current_user.admin?
     user = User.find(params[:id])
     user.unlock!
     flash[:notice] = "Successfully unlocked user #{user.username}. The user can log in."
