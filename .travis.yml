@@ -1,11 +1,17 @@
 # .travis.yml
 language: ruby
-cache: bundler
+cache: 
+  bundler: true
+  apt: true
+  directories: 
+    - vendor/geolite
+bundler_args: --without development --deployment
 rvm:
   - 2.0.0
 before_install:
   - gem update --system
   - sudo apt-get install sphinxsearch
+  - cd vendor/geolite/ && wget --quiet --output-document gelolite.download.log http://geolite.maxmind.com/download/geoip/database/GeoLiteCity.dat.gz -O GeoLiteCity.dat.gz && gunzip GeoLiteCity.dat.gz
 script:
   - RAILS_ENV=test bundle exec rake db:schema:load --trace
   - bundle exec rake db:test:prepare
