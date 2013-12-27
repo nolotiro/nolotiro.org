@@ -17,6 +17,7 @@ script:
   - rm config/thinking_sphinx.yml 
   - RAILS_ENV=test bundle exec rake ts:configure
   - bundle exec rake db:test:prepare
+  - bundle exec rake test
 before_script:
   - mysql -e 'create database nolotirov3_test;'
   - cp config/app_config.yml.example config/app_config.yml
