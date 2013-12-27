@@ -12,11 +12,11 @@ before_install:
   - gem update --system
   - sudo apt-get install sphinxsearch
   - cd vendor/geolite/ && wget --quiet --output-document gelolite.download.log http://geolite.maxmind.com/download/geoip/database/GeoLiteCity.dat.gz -O GeoLiteCity.dat.gz && gunzip GeoLiteCity.dat.gz && cd -
-  - rake ts:configure
 script:
   - RAILS_ENV=test bundle exec rake db:schema:load --trace
   - bundle exec rake db:test:prepare
   - bundle exec rake
+  - bundle exec rake ts:configure
 before_script:
   - mysql -e 'create database nolotirov3_test;'
   - cp config/app_config.yml.example config/app_config.yml
