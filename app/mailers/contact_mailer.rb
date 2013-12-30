@@ -1,4 +1,5 @@
 class ContactMailer < ActionMailer::Base
+  layout "mail"
   default from: APP_CONFIG["default_from_email"]
 
   def contact_form(email, message, request)

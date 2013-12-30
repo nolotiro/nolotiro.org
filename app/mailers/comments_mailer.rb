@@ -1,4 +1,5 @@
 class CommentsMailer < ActionMailer::Base
+  layout "mail"
   default from: APP_CONFIG["default_from_email"]
 
   def create(ad_id, comment)
