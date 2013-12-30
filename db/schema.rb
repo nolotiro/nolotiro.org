@@ -24,12 +24,12 @@ ActiveRecord::Schema.define(version: 20131220113738) do
     t.string   "photo",              limit: 100
     t.integer  "status",                         null: false
     t.integer  "comments_enabled"
+    t.datetime "deleted_at"
     t.datetime "updated_at"
     t.string   "image_file_name"
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
-    t.datetime "deleted_at"
     t.integer  "readed_count"
   end
 
