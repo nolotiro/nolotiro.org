@@ -20,7 +20,7 @@ class Ad < ActiveRecord::Base
     inclusion: { in: [1, 2], message: "no es un tipo válido" },
     presence: true
 
-  validate :valid_ip_address
+  #validate :valid_ip_address
 
   # legacy database: has a column with value "type", rails doesn't like that
   # the "type" column is no longer need it by rails, so we don't care about it
@@ -56,6 +56,14 @@ class Ad < ActiveRecord::Base
 
   def slug
     title.parameterize
+  end
+
+  def woeid_name
+    WoeidHelper.convert_woeid_name(self.woeid_code)
+  end
+
+  def full_title 
+    self.type_string + " segunda mano " + self.title + ' ' + self.woeid_name
   end
 
   def type_string
