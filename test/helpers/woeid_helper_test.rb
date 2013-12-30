@@ -10,8 +10,8 @@ class WoeidHelperTest < ActionView::TestCase
 
   test "should search serveral cities with the same name" do
     results = WoeidHelper.search_by_name "Bilbao" 
-    expected_results = [["Bilbao, País Vasco, España", 754542], ["Bilbao, Tolima, Colombia", 351483], ["Bilbao, Chimborazo, Ecuador", 56189784], ["Bilbao, Andalucía, España", 90231453], ["Bilbao (hda de Las Torres Univ), Chihuahua, México", 55885079], ["Bilbao, País Vasco, España", 90251343]]
-    assert_equal(results, expected_results)
+    expected_results = [["Bilbao, País Vasco, España", 754542], ["Bilbao, Tolima, Colombia", 351483], ["Bilbao, Chimborazo, Ecuador", 56189784], ["Bilbao, Andalucía, España", 90231453], ["Bilbao (hda de Las Torres Univ), Chihuahua, México", 55885079], ["Bilbao, Bicolandia, Filipinas", 1163615], ["Bilbao, País Vasco, España", 90251343], ["Bilbao, Santiago del Estero, Argentina", 91831128]]
+    assert_equal(expected_results, results)
   end
 
 end
