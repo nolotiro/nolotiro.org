@@ -31,4 +31,9 @@ class UserTest < ActiveSupport::TestCase
     assert_equal @user.locked?, false
   end
 
+  test "should need confirmation for a new user" do
+    user = FactoryGirl.create(:non_confirmed_user)
+    assert_equal(user.active_for_authentication?, false)
+  end
+
 end
