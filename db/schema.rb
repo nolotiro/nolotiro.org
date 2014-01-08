@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131220113738) do
+ActiveRecord::Schema.define(version: 20131226160510) do
 
   create_table "ads", force: true do |t|
     t.string   "title",              limit: 100, null: false
@@ -36,11 +36,12 @@ ActiveRecord::Schema.define(version: 20131220113738) do
   add_index "ads", ["woeid_code"], name: "woeid", using: :btree
 
   create_table "comments", force: true do |t|
-    t.integer  "ads_id",                  null: false
-    t.text     "body",                    null: false
-    t.datetime "date_created",            null: false
-    t.integer  "user_owner",              null: false
-    t.string   "ip",           limit: 15, null: false
+    t.integer  "ads_id",                null: false
+    t.text     "body",                  null: false
+    t.datetime "created_at",            null: false
+    t.integer  "user_owner",            null: false
+    t.string   "ip",         limit: 15, null: false
+    t.datetime "updated_at"
   end
 
   add_index "comments", ["ads_id"], name: "ads_id", using: :btree
