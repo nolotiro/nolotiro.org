@@ -1,9 +1,6 @@
 
 <div id="default_header_section">
   <h1><%= t('nlt.user_profile') %>  -  <%= @user.username %></h1>
-  <% if can? :become, @user %>
-    <%= link_to "Cambiar a este usuario", become_user_path(@user.id) %>
-  <% end %>
 </div>
 
 <div id="main">
@@ -12,19 +9,43 @@
     <div class="ad_excerpt">
       <h4><%= t('nlt.username') %>: <%= @user.username %></h4>
       <h4><%= t('nlt.member_since') %>: <%= l @user.created_at, format: :long %></h4>
-      <%= link_to message_new_path @user.id, :class => "world_link" do %>
-        send message to <%= @user.username %>
-        <%= image_tag "email_send.png", :alt => "send a mesage" %>
-      <% end %>
-      <div><h4>Friends list:</h4>
-        <ul>
-          <% @user.friends.each do |friend| %>
-            <li>
-            <%= link_to friend.username, profile_path(friend.username) %>
-            </li>
+      <ul>
+        <li>
+          <%= link_to message_new_path @user.id, :class => "world_link" do %>
+            send message to <%= @user.username %>
+            <%= image_tag "email_send.png", :alt => "send a mesage" %>
           <% end %>
-        </ul>
-        <br></div>
-    </div>
-  </div>
-</div>
+        </li>
+      <% if can? :lock, @user %>
+        <li>
+          <% if @user.locked? %>
+            <%= link_to unlock_user_path(@user.id) do %>
+              [ADMIN] Desbloquear a este usuario
+              <%= image_tag "neu/24x24/actions/add.png", :alt => "send a mesage" %>
+            <% end %>
+          <% else %>
+            <%= link_to lock_user_path(@user.id) do %>
+              [ADMIN] Bloquear a este usuario
+              <%= image_tag "neu/24x24/actions/remove.png", :alt => "send a mesage" %>
+            <% end %>
+          <% end %>
+        </li>
+      <% end %>
+      <% if can? :become, @user %>
+        <li>
+          <%= link_to "[ADMIN] Cambiar a este usuario", become_user_path(@user.id) %>
+        </li>
+      <% end %>
+
+      <div><h4>Friends list:</h4>
+      <ul>
+      <% @user.friends.each do |friend| %>
+      <li>
+      <%= link_to friend.username, profile_path(friend.username) %>
+      </li>
+      <% end %>
+      </ul>
+      <br></div>
+      </div>
+      </div>
+      </div>

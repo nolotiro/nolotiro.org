@@ -51,11 +51,16 @@ class AdminControllerTest < ActionController::TestCase
   test "should lock or unlock an user as admin" do
     sign_in @admin
     get :lock, id: @user.id
-    assert_redirected_to root_path
-    assert_equal(@user.locked?, true)
+    assert_redirected_to profile_url(@user)
+    assert_equal("Successfully locked user Pepito. The user can't log in.", flash[:notice])
+    user = User.find @user.id
+    assert_equal(user.active_for_authentication?, false)
     get :unlock, id: @user.id
-    assert_redirected_to root_path
-    assert_equal(@user.locked?, false)
+    assert_redirected_to profile_url(@user)
+    user = User.find @user.id
+    assert_equal(user.locked?, false)
+    assert_equal(user.active_for_authentication?, true)
+    assert_equal("Successfully unlocked user Pepito. The user can log in.", flash[:notice])
   end
 
 end

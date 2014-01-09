@@ -14,14 +14,14 @@ class AdminController < ApplicationController
     user = User.find(params[:id])
     user.lock!
     flash[:notice] = "Successfully locked user #{user.username}. The user can't log in."
-    redirect_to root_url 
+    redirect_to profile_url(user) 
   end
 
   def unlock
     user = User.find(params[:id])
     user.unlock!
     flash[:notice] = "Successfully unlocked user #{user.username}. The user can log in."
-    redirect_to root_url 
+    redirect_to profile_url(user) 
   end
 
 end

@@ -22,17 +22,15 @@ class User < ActiveRecord::Base
 
   #this method is called by devise to check for "active" state of the model
   def active_for_authentication?
-    super and self.locked != 1
+    self.locked != 1
   end
 
   def unlock!
-    self.locked = 0
-    self.save
+    self.update_column('locked', 0)
   end
 
   def lock!
-    self.locked = 1
-    self.save
+    self.update_column('locked', 1)
   end
 
   def default_lang

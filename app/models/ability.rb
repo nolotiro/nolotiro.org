@@ -8,16 +8,17 @@ class Ability
     if user.admin?
       can :manage, :all
       can :manage, Resque
-      can :lock, :admin
-      can :unlock, :admin
-      can :become, :admin
+      can :lock, Admin
+      can :unlock, Admin
+      can :become, Admin
     end
     # if the user is a real user (non anon)
     unless user.username.nil?
       can :create, Ad
-      cannot :lock, :admin
-      cannot :unlock, :admin
-      cannot :become, :admin
+      can :create, Comment
+      cannot :lock, Admin
+      cannot :unlock, Admin
+      cannot :become, Admin
       can [:edit, :update], Ad, :user_owner => user.id 
     end
     can :read, :all
