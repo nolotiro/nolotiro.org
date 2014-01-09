@@ -5,6 +5,7 @@ class Api::V1ControllerTest < ActionController::TestCase
 
   setup do
     @ad = FactoryGirl.create(:ad)
+    Rails.cache.clear
   end
 
   test "should get woeid list on api v1" do
