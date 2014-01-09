@@ -49,12 +49,8 @@ class ApplicationController < ActionController::Base
     if Rails.cache.fetch(key)
       @section_locations = Rails.cache.fetch(key)
     else
-      locations = []
-      Ad.available.all.group_by(&:woeid_code).each do |woeid_code, ad| 
-        locations.append [woeid_code,ad.count]
-      end
-      @section_locations = locations.sort {|a,b| b[1] <=> a[1]}
-      Rails.cache.write(key, @locations)
+      @section_locations = Ad.available.group_by(&:woeid_code).map { |w,a| [w, a.count] }
+      Rails.cache.write(key, @section_locations)
     end
   end
 
