@@ -1,7 +1,7 @@
-<%= content_for(:meta_title, "#{t('nlt.user_profile')} #{@user.username}") %>
+<%= content_for(:meta_title, "#{t('nlt.user_profile')} - #{@user.username}") %>
 
 <div id="default_header_section">
-  <h1><%= t('nlt.user_profile') %>  -  <%= @user.username %></h1>
+  <h1><%= t('nlt.user_profile') %> - <%= @user.username %></h1>
 </div>
 
 <div id="main">
@@ -11,12 +11,20 @@
       <h4><%= t('nlt.username') %>: <%= @user.username %></h4>
       <h4><%= t('nlt.member_since') %>: <%= l @user.created_at, format: :long %></h4>
       <ul>
+
+        <% if user_signed_in? and @user.id == current_user.id %>  
+          <li>                                                                         
+            <%= link_to t('nlt.user_edit_profile'), user_edit_path(@user) %>                      
+          </li>
+        <% end %>
+
         <li>
           <%= link_to message_new_path @user.id, :class => "world_link" do %>
             <%= t('nlt.send_a_message_to') %> <%= @user.username %>
             <%= image_tag "email_send.png", :alt => "send a mesage" %>
           <% end %>
         </li>
+
       <% if can? :lock, @user %>
         <li>
           <% if @user.locked? %>
@@ -32,10 +40,27 @@
           <% end %>
         </li>
       <% end %>
-      <% if can? :become, @user %>
-        <li>
-          <%= link_to "[ADMIN] Cambiar a este usuario", become_user_path(@user.id) %>
-        </li>
+
+      <% unless user_signed_in? and @user.id == current_user.id %>  
+
+        <% if can? :become, @user %>
+          <li>
+            <%= link_to "[ADMIN] Cambiar a este usuario", become_user_path(@user.id) %>
+          </li>
+        <% end %>
+
+        <% if current_user.is_friend? @user %>
+          <%= link_to destroy_friend_path(@user.id), class: 'world_link', method: 'post' do %>
+            Borrar @user.username de tu lista de amigos
+            <%= image_tag "friend_delete.png", alt: "Delete friend"%>
+          <% end %>
+        <% else %>
+          <%= link_to add_friend_path(@user.id), class: 'world_link', method: 'post' do %>
+            Agregar a @user.username a tu lista de amigos
+            <%= image_tag "friend_add.png", alt: "Add friend"%>
+          <% end %>
+        <% end %>
+
       <% end %>
 
       <% unless @user.friends.count == 0 %>

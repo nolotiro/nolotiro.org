@@ -37,6 +37,10 @@ class User < ActiveRecord::Base
     self.lang ||= "es"
   end
 
+  def is_friend? user
+    self.friends.where(id: user.id).count > 0 ? true : false
+  end
+
   # nolotirov2 legacy: messaging
   def last_threads
     # 100% legacy, from the DB we had

@@ -7,6 +7,11 @@ es:
       incorrect-captcha-sol: 'Hubo un error rellenando los caracteres del captcha.'
   nlt:
     profile: 'perfil'
+    user_ads: 'anuncios'
+    messages: 'mensajes'
+    user_edit_profile: 'Editar perfil de usuario'
+    published_ads: 'Anuncios publicados'
+    messages_title: "Mensajes"
     user_profile: 'Perfil de usuario'
     username: 'Nombre de usuario'
     member_since: 'Miembro desde'
@@ -73,7 +78,6 @@ es:
     delete_ad: 'borrar anuncio'
     delete_sure: '¿Estás seguro que quieres borrarlo?'
     create_new_ad: 'Crea un nuevo anuncio'
-    user_ads: 'Anuncios'
     to_publish_or_send_messages: 'Para publicar anuncios o enviar mensajes accede a tu cuenta'
     are_you_interested: '¿Te interesa?'
     if_you_are_new: 'Si eres un nuevo usuario, por favor'

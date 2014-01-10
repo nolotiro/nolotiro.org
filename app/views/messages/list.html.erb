@@ -1,3 +1,9 @@
+<%= content_for(:meta_title, t('nlt.messages_title')) %>
+
+<div id="default_header_section">
+  <h1><%= t('nlt.messages_title') %> - <%= current_user.username %></h1>
+</div>
+
 <div id="main">
   <div class="span-19">
     <%= render :partial => "users/tabnav", :locals => {:user => current_user, :active => "message"} %>

@@ -51,7 +51,7 @@ NolotiroOrg::Application.routes.draw do
         password: 'reset'
     }
 
-    post '/addfriend/id/:id', to: 'friendships#create', as: 'create_friend'
+    post '/addfriend/id/:id', to: 'friendships#create', as: 'add_friend'
     post '/deletefriend/:id', to: 'friendships#destroy', as: 'destroy_friend'
 
     scope '/admin' do 
