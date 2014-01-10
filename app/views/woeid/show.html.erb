@@ -59,9 +59,9 @@
   </div> 
 </div>
 
-<div class="google_ads">
-  <%= image_tag "http://placehold.it/160x600" %>
-</div>
+<%= render partial: "partials/google_adsense", locals:
+  {id: "woeid-show", ad_slot: "6783776462", ad_width: 160, ad_height: 600}
+%>
 
 <% content_for :action do %>
   <% if @woeid %>

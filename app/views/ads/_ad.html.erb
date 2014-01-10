@@ -1,7 +1,23 @@
-<%# for ads %>
 <% if defined? i %>
-  <% if [3,5,10,15].include? i %>
-    <%= image_tag "http://placehold.it/468x60" %>
+  <% if i == 5 %>
+    <%= render partial: "partials/google_adsense", locals:
+      {id: "ads-ad-1", ad_slot: "3690709263", ad_width: 468, ad_height: 60}
+    %>
+  <% end %>
+  <% if i == 10 %>
+    <%= render partial: "partials/google_adsense", locals:
+      {id: "ads-ad-2", ad_slot: "3690709263", ad_width: 468, ad_height: 60}
+    %>
+  <% end %>
+  <% if i == 20 %>
+    <%= render partial: "partials/google_adsense", locals:
+      {id: "ads-ad-3", ad_slot: "3690709263", ad_width: 468, ad_height: 60}
+    %>
+  <% end %>
+  <% if i == 15 %>
+    <%= render partial: "partials/google_adsense", locals:
+      {id: "ads-ad-4", ad_slot: "3690709263", ad_width: 468, ad_height: 60}
+    %>
   <% end %>
 <% end %>
 

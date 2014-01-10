@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <!-- TODO: dynamic titles -->
     <title><%=h yield(:meta_title) %> - nolotiro.org</title>
     <%= favicon_link_tag 'favicon.ico' %>
     <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+
+    <script src="//www.google.com/jsapi"></script>
     <%= airbrake_javascript_notifier %>
     <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+
     <%= csrf_meta_tags %>
 
     <!--

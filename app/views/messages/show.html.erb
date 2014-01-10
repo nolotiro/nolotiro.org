@@ -25,8 +25,7 @@
     </div>
   </div>
 
-  <!-- google adsense block -->
-  <div class="google_ads">
-    <%= image_tag "http://placehold.it/300x250" %>
-  </div>
+  <%= render partial: "partials/google_adsense", locals:
+    {id: "messages-show", ad_slot: "2213976068", ad_width: 300, ad_height: 250}
+  %>
 </div>

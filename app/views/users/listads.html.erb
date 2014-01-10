@@ -14,6 +14,6 @@
   </div>
 </div>
 
-<div class="google_ads">
-  <%= image_tag "http://placehold.it/160x600" %>
-</div>
+<%= render partial: "partials/google_adsense", locals:
+  {id: "users-listads", ad_slot: "5307043267", ad_width: 160, ad_height: 600}
+%>
