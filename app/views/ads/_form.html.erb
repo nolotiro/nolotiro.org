@@ -1,9 +1,6 @@
 <div id="main">
   <div class="span-16">
     <fieldset>
-      <legend>
-        <%= t 'nlt.es.ads.form.to_publish' %>
-      </legend>
       <%= form_for(@ad, :html => {:multipart => true}) do |f| %>
         <% if @ad.errors.any? %>
         <div id="error_explanation">
@@ -16,6 +13,13 @@
       </div>
     <% end %>
       <dl class="zend_form">
+
+        <% if @ad.image.exists? %>
+          <div class="ad_list_image">
+            <%= link_to image_tag(@ad.image.url(:thumb), :alt => @ad.title), @ad.image.url, :rel => 'superbox[image]', :alt => "Click para agrandar foto" %>
+          </div>
+        <% end %>
+
         <dt id="photo-label">
         <%= f.label :image,  t('nlt.ads.form.select_an_image'), :class => "optional" %> 
         </dt>
@@ -23,45 +27,66 @@
         <%= f.file_field :image %>
         <p class="description">
         <%= t 'nlt.ads.form.image_permitted_formats' %>
-        </p></dd>
+        </p>
+        </dd>
+
+        <% if @ad.id %>
+          <dt id="status-label">
+          <%= f.label :status,  t('nlt.ads.form.status'), :class => "required" %> 
+          </dt>
+          <dd id="status-element">
+          <%= f.select(:status, options_for_select([['disponible', 1], ['reservado', 2], ['entregado', 3]], selected: @ad.status))  %>
+          </dd>
+        <% end %>
+
         <dt id="type-label">
         <%= f.label :type,  t('nlt.ads.form.type_ad'), :class => "required" %> 
         </dt>
         <dd id="type-element">
-        <%= f.select(:type, options_for_select([['regalo...', 1], ['busco...', 2]]))  %>
+        <%= f.select(:type, options_for_select([['regalo...', 1], ['busco...', 2]]), selected: @ad.type)  %>
         </dd>
+
         <dt id="title-label">
         <%= f.label :title,  t('nlt.ads.form.title'), :class => "required" %> 
         </dt>
         <dd id="title-element">
         <%= f.text_field :title, required: true %>
         </dd>
+
         <dt id="body-label">
         <%= f.label :body,  t('nlt.ads.form.body'), :class => "required" %> 
         </dt>
         <dd id="body-element">
-        <%= f.text_area :body, :rows => 24, :cols => 80, required: true %>
+        <%= f.text_area :body, :rows => 24, :cols => 80, :required => true %>
         </dd>
-        <!-- TODO comments_enabled -->
+
         <dt id="comments_enabled-label">
         <%= f.label :comments_enabled,  t('nlt.ads.form.comments_enabled'), :class => "required" %> 
         </dt>
         <span class="element">
           <%= f.check_box :comments_enabled %>
         </span>
-        <dt id="captcha-input-label">
-        <label for="captcha-input" class="required">
-          <%= t('nlt.please_introduce') %>
-        </label>
-        </dt>
-        <dd id="captcha-element">
-          <%= recaptcha_tags(:display => { :theme => "white" }, ajax: true)%>
-        </dd>
+
+        <% unless @ad.id %>
+          <dt id="captcha-input-label">
+          <label for="captcha-input" class="required">
+            <%= t('nlt.please_introduce') %>
+          </label>
+          </dt>
+          <dd id="captcha-element">
+            <%= recaptcha_tags(:display => { :theme => "white" }, ajax: true)%>
+          </dd>
+        <% end %>
+
         <%= f.hidden_field :woeid_code, value: current_user.woeid %>
-        <%= f.submit t 'nlt.send' %>
+
+        <dd>
+          <%= f.submit t 'nlt.send' %>
         </dd>
-      </dl>
-    <% end %>
+
+        </dd>
+        </dl>
+      <% end %>
     </fieldset>
   </div>
 </div>

@@ -39,7 +39,7 @@ es:
       update_needs_confirmation: Has actualizado tu cuenta correctamente, pero es necesario confirmar tu nuevo correo electrónico. Por favor, comprueba tu correo y sigue el enlace de confirmación para finalizar la comprobación del nuevo correo eletrónico.
       updated: Tu cuenta fue actualizada.
     sessions:
-      signed_in: Sesión iniciada.
+      signed_in: Bienvenido
       signed_out: Sesión finalizada.
     unlocks:
       send_instructions: Vas a recibir instrucciones para desbloquear tu cuenta en unos pocos minutos.

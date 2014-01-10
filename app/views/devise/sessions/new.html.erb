@@ -1,4 +1,5 @@
 <%= render :partial => "partials/you_have_to_sign_in" %>
+<% content_for(:meta_title, t('nlt.to_publish_or_send_messages')) %>
 
 <div class="span-16">
   <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
@@ -9,7 +10,7 @@
 
       <dt id="email-label">
       <label for="email" class="required">
-        <%= f.label :email %>
+        <%= f.label t 'nlt.your_email' %>
       </label>
       </dt>
 
@@ -19,7 +20,7 @@
 
       <dt id="password-label">
       <label for="password" class="required">
-        <%= f.label :password %>
+        <%= f.label t 'nlt.password' %>
       </label>
       </dt>
 
@@ -30,12 +31,12 @@
       <% if devise_mapping.rememberable? -%>
         <dd id="rememberme-element">
         <%= f.check_box :remember_me %> 
-        <%= f.label :remember_me %>
+        <%= f.label t 'nlt.remember_me' %>
         </dd>
 
       <% end -%>
 
-      <div><%= f.submit t('.sign_in') %></div>
+      <div><%= f.submit t('nlt.sign_in') %></div>
 
       <%= render "devise/shared/links" %>
 

@@ -13,8 +13,6 @@
     </a> |
     <%= link_to "salir", destroy_user_session_path, :method => :delete %>
   </div>
-  <div class="user_login_box">
-  </div>
 <% else %>
   <div class="user_login_box">
     <%= link_to "nuevo usuario", new_user_registration_path, "data-no-turbolink" => true %>

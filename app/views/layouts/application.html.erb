@@ -2,7 +2,7 @@
 <html>
   <head>
     <!-- TODO: dynamic titles -->
-    <title><%=h yield(:title) %> - nolotiro.org</title>
+    <title><%=h yield(:meta_title) %> - nolotiro.org</title>
     <%= favicon_link_tag 'favicon.ico' %>
     <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
     <%= airbrake_javascript_notifier %>
@@ -74,8 +74,7 @@
 
       <% if Rails.env.development? || Rails.env.staging? %>
         <p class="notice">
-        Esta versión de nolotiro se encuentra en fase beta.
-        Ten en cuenta que los anuncios pueden desaparecer y cambiarse.
+          <%= t('nlt.beta_warning') %>
         </p>
       <% end %>
 

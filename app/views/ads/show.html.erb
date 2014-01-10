@@ -1,3 +1,5 @@
+<% content_for(:meta_title,  "#{t('nlt.keywords')} #{@ad.title} #{@ad.woeid_name}") %>
+
 <div id="default_header_section">
   <h2>
     <a href="/es/woeid/<%= @ad.woeid_code %>/give">
@@ -19,31 +21,30 @@
       <% if can? :update, @ad %>
         <div class="ad_edit">
           <%= link_to ads_edit_path(@ad.id) do %>
-            <%= image_tag "edit_ad.png", :alt => "Edita este anuncio" %>
-            &nbsp;Edita este anuncio
+            <%= image_tag "edit_ad.png", :alt => t('nlt.edit_this_ad') %>
+            &nbsp; <%= t('nlt.edit_this_ad') %>
           <% end %>
         </div>
       <% end %>
       <span class="ad_status <%= @ad.status_class %>"><%= @ad.status_string %></span>
       <span class="ad_date">
-        Publicado hace <%= distance_of_time_in_words_to_now(@ad.created_at) %> por el usuario 
-        <a href="/es/ad/listuser/id/40780"><%= @ad.user.username %></a>
+        <%= t('nlt.published_at_by_html', time: distance_of_time_in_words_to_now(@ad.created_at), user: link_to(@ad.user.username, listads_user_path(@ad.user))) %>
       </span>
       <br>
       <p><%= @ad.body %></p>
       <div class="ad_meta_info">
-        <%= @ad.readed_count %> <%= t('nlt.reads') %>          
       </div>
       &nbsp;
 
+      <%= t('nlt.are_you_interested') %>
       <%= link_to message_new_with_subject_path(user_id: @ad.user.id, subject: @ad.title.parameterize), :class => "world_link" do %>
-        send message to <%= @ad.user.username %>
+        <%= t('nlt.send_a_message') %>
         <%= image_tag "email_send.png", :alt => "send a mesage" %>
       <% end %>
 
       <br><br>
       <div class="sharelinks">
-        <p style="text-align:left;margin-bottom:5px;">Comparte este anuncio:</p>
+        <p style="text-align:left;margin-bottom:5px;"><%= t('nlt.share_this_ad') %>:</p>
         <%= render :partial => "partials/social_buttons", :locals => { :url => ad_url(@ad) } %>
       </div>
     </div>

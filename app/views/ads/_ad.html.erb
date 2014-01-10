@@ -16,8 +16,8 @@
   <% if can? :update, ad %>
     <div class="ad_edit">
       <%= link_to ads_edit_path(ad.id) do %>
-        <%= image_tag "edit_ad.png", :alt => "Edita este anuncio" %>
-        &nbsp;Edita este anuncio
+        <%= image_tag "edit_ad.png", :alt => t('nlt.edit_this_ad') %>
+        &nbsp; <%= t('nlt.edit_this_ad') %>
       <% end %>
     </div>
   <% end %>
@@ -48,7 +48,6 @@
     <b><a rel="nofollow" href="/es/message/create/id_user_to/42397/subject/fulares-para-cuello"><%= t('nlt.send_a_message') %></a></b>
     &nbsp;&nbsp;&nbsp;<b><%= link_to t('nlt.write_a_comment'), adslug_path(ad,ad.slug) %></b>
     &nbsp;&nbsp;
-    <%= ad.readed_counter %> <%= t('nlt.reads') %>          
   </div>
 
 </div>

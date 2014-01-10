@@ -1,9 +1,6 @@
 NolotiroOrg::Application.routes.draw do
 
-  # FIXME: redirect to /locale
-  root 'ads#index'
-
-  get '/:locale' => 'ads#index'
+  get '/', to: redirect('/es')
 
   scope '/api' do
     scope '/v1' do
@@ -16,8 +13,7 @@ NolotiroOrg::Application.routes.draw do
   # i18n
   scope "(:locale)", locale: /es|en|ca|gl|eu|nl|de|fr|pt|it/ do
 
-    # ads
-    get '/', to: 'ads#index'
+    root 'ads#index'
 
     resources :ads, path: 'ad', path_names: { new: 'create' }
     
@@ -36,13 +32,14 @@ NolotiroOrg::Application.routes.draw do
     # location change
     scope '/location' do
       get  '/change', to: 'location#ask', as: 'location_ask'
-      get  '/change2', to: 'location#list'
+      get  '/change2', to: 'location#change'
       post '/change', to: 'location#list'
       post '/change2', to: 'location#change'
     end
 
     # auth
-    get '/auth/login', to: redirect('/user/login')
+    get '/auth/login', to: redirect('/es/user/login')
+    get '/user/forgot', to: redirect('/es/user/reset/new')
 
     devise_for :users,
       :controllers => { :registrations => 'registrations' },
@@ -96,7 +93,7 @@ NolotiroOrg::Application.routes.draw do
       get '/feed/woeid/:woeid/ad_type/give/status/:status', format: 'rss', to: 'rss#feed', as: 'rss_status'
     end
 
-    scope '/page' do
+    scope '/pages' do
       get '/faqs', to: 'page#faqs', as: 'faqs'
       get '/tos', to: 'page#tos', as: 'tos'
       get '/about', to: 'page#about', as: 'about'
