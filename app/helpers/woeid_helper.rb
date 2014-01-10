@@ -22,22 +22,19 @@ module WoeidHelper
     # search by name, return possible places 
     #
     # param name: string. example: "Madrid"
-    # return places: list. format: [["Madrid, Madrid, España",766273],["Madrid, Comunidad de Madrid, España",12578024],["Madrid, Cundinamarca, Colombia",361938]]
+    # return places: list. format: [[full name, woeid, ad_count], ...]
+    #                      example: [["Madrid, Madrid, España (2444 anuncios)",766273],["Madrid, Comunidad de Madrid, España (444 anuncios)",12578024],["Madrid, Cundinamarca, Colombia (0 anuncios)",361938]]
     #
     key = 'location_' + name
     if Rails.cache.fetch(key)
       return Rails.cache.fetch(key)
     else
       GeoPlanet.appid = APP_CONFIG["geoplanet_app_id"]
-      # FIXME: this is really slow. optimize plz
       locations = GeoPlanet::Place.search(name, :lang => :es, :count => 0)
-      places = []
       if locations.nil? 
         places = nil
       else
-        locations.each do |l|
-          places.append [WoeidHelper.convert_woeid_name(l.woeid), l.woeid] 
-        end
+        places = locations.map {|l| ["#{WoeidHelper.convert_woeid_name(l.woeid)} (#{Ad.where(woeid_code: l.woeid).count} anuncios)", l.woeid] }
       end
       Rails.cache.write(key, places)
       return places
