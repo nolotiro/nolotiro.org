@@ -1,5 +1,5 @@
 <% content_for(:title, @woeid) %>
-<% content_for(:meta_title, t('nlt.keywords') + @woeid) %>
+<% content_for(:meta_title, t('nlt.keywords') + @woeid.to_s) %>
 
 <div id="location_header_section">
   <% if @all %>

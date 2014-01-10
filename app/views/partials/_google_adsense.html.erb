@@ -1,12 +1,15 @@
 <div class="google_ads">    
-  <div id="adsense-<%= id %>"></div>    
-    
-  <script>    
-  window.MyAdSense.newAd(document.getElementById("adsense-<%= id %>"), {          
-    'ad_slot': "<%= ad_slot %>",    
-    'ad_width': <%= ad_width %>,    
-    'ad_height': <%= ad_height %>    
-  });    
-  </script>    
+  <% if Rails.env.development? %>
+    <img src="http://placehold.it/<%= ad_width %>x<%= ad_height %>">
+  <% else %>
+    <div id="adsense-<%= id %>"></div>    
+      
+    <script>    
+    window.MyAdSense.newAd(document.getElementById("adsense-<%= id %>"), {          
+      'ad_slot': "<%= ad_slot %>",    
+      'ad_width': <%= ad_width %>,    
+      'ad_height': <%= ad_height %>    
+    });    
+    </script>    
+  <% end %>
 </div>    
-

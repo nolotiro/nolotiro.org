@@ -49,14 +49,14 @@
           </li>
         <% end %>
 
-        <% if current_user.is_friend? @user %>
+        <% if user_signed_in? and current_user.is_friend? @user %>
           <%= link_to destroy_friend_path(@user.id), class: 'world_link', method: 'post' do %>
-            Borrar @user.username de tu lista de amigos
+            Borrar <%= @user.username %> de tu lista de amigos
             <%= image_tag "friend_delete.png", alt: "Delete friend"%>
           <% end %>
         <% else %>
           <%= link_to add_friend_path(@user.id), class: 'world_link', method: 'post' do %>
-            Agregar a @user.username a tu lista de amigos
+            Agregar a <%= @user.username %> a tu lista de amigos
             <%= image_tag "friend_add.png", alt: "Add friend"%>
           <% end %>
         <% end %>
