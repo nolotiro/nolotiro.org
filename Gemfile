@@ -23,9 +23,10 @@ group :development, :test do
   gem 'debugger'                            # dev: debugger
   gem 'zeus', '>= 0.13.4.pre2'              # dev: speed up sthings
   gem 'commands'                            # dev: rake commands in console 
-  # FIXME: lots of warnings of this kind
-  # DEPRECATION WARNING: Hash#diff is no longer used inside of Rails, and is being deprecated with no replacement. If you're using it to compare hashes for the purpose of testing, please use MiniTest's assert_equal instead. (called from <main> at -e:1)
-  #gem 'rails-footnotes'                     # dev: data at footnote
+  # rails-footnotes: using github master
+  #                  until this issue is in gem repo
+  #                  https://github.com/josevalim/rails-footnotes/pull/93
+  gem 'rails-footnotes', git: "https://github.com/josevalim/rails-footnotes"                     # dev: data at footnote
   gem 'better_errors'                       # dev: better errors
   gem 'binding_of_caller'                   # dev: better errors
   gem 'mailcatcher'                         # dev: mailbox 
