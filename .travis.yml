@@ -14,6 +14,7 @@ before_install:
   - cd vendor/geolite/ && wget --quiet --output-document gelolite.download.log http://geolite.maxmind.com/download/geoip/database/GeoLiteCity.dat.gz -O GeoLiteCity.dat.gz && gunzip GeoLiteCity.dat.gz && cd -
 script:
   - RAILS_ENV=test bundle exec rake db:schema:load --trace
+  - mkdir tmp/cache
   - rm config/thinking_sphinx.yml 
   - RAILS_ENV=test bundle exec rake ts:configure
   - RAILS_ENV=test bundle exec rake ts:index
