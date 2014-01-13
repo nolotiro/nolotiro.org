@@ -1,8 +1,6 @@
 class AdsController < ApplicationController
   before_action :set_ad, only: [:show, :edit, :update, :destroy]
-  before_action :get_section_locations, only: [:index]
   load_and_authorize_resource
-
   caches_action :list, :show, layout: false
 
   # GET /
@@ -21,14 +19,11 @@ class AdsController < ApplicationController
   def list
     @ads = Ad.available.includes(:user).paginate(:page => params[:page])
     @location = get_location_suggest
-    @section_users = User.order("ads_count DESC").limit(40)
   end
 
   # GET /ads/1
   # GET /ads/1.json
   def show
-    # TODO: move to AJAX
-    #@ad.increment_readed_count
   end
 
   # GET /ads/new

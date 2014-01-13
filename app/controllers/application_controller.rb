@@ -44,16 +44,6 @@ class ApplicationController < ActionController::Base
 
   private
 
-  def get_section_locations
-    key = 'section_locations'
-    if Rails.cache.fetch(key)
-      @section_locations = Rails.cache.fetch(key)
-    else
-      @section_locations = Ad.available.group_by(&:woeid_code).map { |w,a| [w, a.count] }
-      Rails.cache.write(key, @section_locations)
-    end
-  end
-
   def get_location_suggest 
     ip_address = GeoHelper.get_ip_address request
     GeoHelper.suggest ip_address

@@ -1,9 +1,8 @@
 <div class="section_users">
-
   <h2><%= t('nlt.users_most_active') %></h2>
   <br>
   <ul>
-    <% section_users.each do |u| %>
+    <% AdHelper.get_users_ranking.each do |u| %>
       <li>
       <%= link_to listads_user_path u.id do %>
         <%= u.username %> (<%= u.ads_count %>)
@@ -11,6 +10,4 @@
       </li>
     <% end %>
   </ul>
-
-
 </div>

@@ -11,9 +11,13 @@
   </div>
 </div>
 
-<%= render :partial => "partials/section_locations", :locals => {:section_locations => @section_locations} %>
+<% cache('section_locations') do %>
+  <%= render :partial => "partials/section_locations" %>
+<% end %>
 
-<%= render :partial => "partials/section_users", :locals => {:section_users => @section_users} %>
+<% cache('section_users') do %>
+  <%= render :partial => "partials/section_users" %>
+<% end %>
 
 <% content_for :action do %>
   <div class="home_location_change">

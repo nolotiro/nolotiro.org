@@ -1,7 +1,5 @@
 class Api::V1Controller < ApplicationController
 
-  before_action :get_section_locations, only: [:woeid_list]
-
   def ad_show
     @ad = Ad.find params[:id]
   end
@@ -18,6 +16,7 @@ class Api::V1Controller < ApplicationController
   end
 
   def woeid_list
+    @section_locations = AdHelper.get_locations_ranking
   end
 
 end
