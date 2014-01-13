@@ -4,10 +4,8 @@ class MessageThread < ActiveRecord::Base
   has_many :messages, :foreign_key => 'thread_id'
 
   def other_user user
-    user == first_sender ? first_sender : first_reciever
+    user == first_sender ? first_reciever : first_sender
   end
-
-  private 
 
   def first_sender
     messages.first.reciever
