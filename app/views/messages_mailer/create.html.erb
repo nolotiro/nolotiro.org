@@ -1,0 +1,10 @@
+<p> Tienes un nuevo mensaje del usuario <%= @from_username %></p>
+
+<p> Asunto: <b> <%= @subject %> </b> </p>
+
+<p> Mensaje: <%= @message %> </p>
+
+<p>
+Haz click en este enlace para responder el mensaje:
+<%= link_to messages_received_url, messages_received_url %>
+</p>
