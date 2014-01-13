@@ -45,8 +45,8 @@ class User < ActiveRecord::Base
   def last_threads
     # 100% legacy, from the DB we had
     # FIXME: PLEEAAASEE migrate me to mailboxer or something more Rails like
-    send_threads = sent_messages.order('date_created DESC').limit(10).joins(:thread).group('thread_id').count
-    recieved_threads = recieved_messages.order('date_created DESC').limit(10).joins(:thread).group('thread_id').count
+    send_threads = sent_messages.order('created_at DESC').limit(10).joins(:thread).group('thread_id').count
+    recieved_threads = recieved_messages.order('created_at DESC').limit(10).joins(:thread).group('thread_id').count
     threads = []
     send_threads.keys.each do |thread|
       th = MessageThread.find(thread.to_i)

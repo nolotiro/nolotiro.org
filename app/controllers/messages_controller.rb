@@ -26,7 +26,6 @@ class MessagesController < ApplicationController
     )
     @message = Message.new(
       thread_id: @thread.id,
-      date_created: DateTime.now,
       ip: request.remote_ip,
       subject: params[:message][:subject],
       body: params[:message][:body],
@@ -49,7 +48,6 @@ class MessagesController < ApplicationController
 
     @message = Message.new(
       thread_id: @thread.id,
-      date_created: DateTime.now,
       ip: request.remote_ip,
       subject: @thread.subject,
       body: params[:body],
@@ -73,7 +71,7 @@ class MessagesController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def message_params
-    params.require(:message).permit(:thread_id, :date_created, :ip, :subject, :body, :readed, :user_from, :user_to)
+    params.require(:message).permit(:thread_id, :ip, :subject, :body, :readed, :user_from, :user_to)
   end
 
 end
