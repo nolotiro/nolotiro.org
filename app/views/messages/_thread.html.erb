@@ -9,9 +9,9 @@
     [1]      
   </div>
   <div class="thread-subject">
-    <a href="/es/message/show/<%= thread[0].id %>/subject/<%= thread[0].subject %>"><%= thread[0].subject %></a>
+    <%= link_to thread[0].subject, message_show_path(id: thread[0].id, subject: thread[0].subject) %>
   </div>
   <div class="thread-date">
-    Hoy, 09:28
+    <%= distance_of_time_in_words_to_now thread[0].messages.last.created_at %>
   </div>
 </div>
