@@ -26,7 +26,7 @@ group :development, :test do
   # rails-footnotes: using github master
   #                  until this issue is in gem repo
   #                  https://github.com/josevalim/rails-footnotes/pull/93
-  gem 'rails-footnotes', git: "https://github.com/josevalim/rails-footnotes"                     # dev: data at footnote
+ # gem 'rails-footnotes', git: "https://github.com/josevalim/rails-footnotes"                     # dev: data at footnote
   gem 'better_errors'                       # dev: better errors
   gem 'binding_of_caller'                   # dev: better errors
   gem 'mailcatcher'                         # dev: mailbox 
