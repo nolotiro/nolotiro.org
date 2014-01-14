@@ -1,12 +1,14 @@
 <div class="thread_excerpt">
   <div class="thread-from">
     <h4>
-      <%= link_to thread[1].username, profile_path(thread[1]) %>
+      <% if defined? thread[1].username %>
+        <%= link_to thread[1].username, profile_path(thread[1]) %>
+      <% end %>
     </h4>
   </div>
   <div class="thread-messages" title="1 mensaje en la conversación 1 aún no leído por sonrisa24">
     <%= thread[0].messages.count %>
-    [1]      
+    [<%= thread[0].unreaded_messages_count %>]
   </div>
   <div class="thread-subject">
     <%= link_to thread[0].subject, message_show_path(id: thread[0].id, subject: thread[0].subject) %>
