@@ -16,6 +16,8 @@ class Ability
     unless user.username.nil?
       can :create, Ad
       can :create, Comment
+      can :create, Message
+      can :list, Message
       cannot :lock, Admin
       cannot :unlock, Admin
       cannot :become, Admin
