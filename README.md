@@ -1,5 +1,7 @@
 # nolotiro.org v3
 
+[![Build Status](https://travis-ci.org/alabs/nolotiro.org.png?branch=master)](https://travis-ci.org/alabs/nolotiro.org)
+
 This is the next revision of nolotiro.org, this time in Ruby On Rails.
 
 * Ruby: 2.0.0p247
