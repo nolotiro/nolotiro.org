@@ -10,6 +10,16 @@
     <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
 
     <%= csrf_meta_tags %>
+    <!-- TODO: RSS -->
+
+    <% if content_for?(:extra_meta) %>
+      <%= yield(:extra_meta) %>
+    <% end %>
+
+    <!-- FIXME: Other languages - move to helper -->
+    <% %w(es en ca gl eu nl de fr pt it).each do |l|  %>
+      <meta data="lang" href="<%= l %>">
+    <% end %>
 
     <!--
 

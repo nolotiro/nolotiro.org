@@ -41,24 +41,8 @@ class User < ActiveRecord::Base
     self.friends.where(id: user.id).count > 0 ? true : false
   end
 
-  # nolotirov2 legacy: messaging
   def last_threads
-    # 100% legacy, from the DB we had
-    # FIXME: PLEEAAASEE migrate me to mailboxer or something more Rails like
-    send_threads = sent_messages.order('created_at DESC').limit(10).joins(:thread).group('thread_id').count
-    recieved_threads = recieved_messages.order('created_at DESC').limit(10).joins(:thread).group('thread_id').count
-    threads = []
-    send_threads.keys.each do |thread|
-      th = MessageThread.find(thread.to_i)
-      other_user = th.messages.first.user_from == id ? th.messages.first.reciever : th.messages.first.sender
-      threads.append([th, other_user])
-    end
-    recieved_threads.keys.each do |thread|
-      th = MessageThread.find(thread.to_i)
-      other_user = th.messages.first.user_from == id ? th.messages.first.reciever : th.messages.first.sender
-      threads.append([th, other_user])
-    end
-    threads
+    # FIXME: refactoring
   end
 
   # nolotirov2 legacy: auth migration - from zend md5 to devise

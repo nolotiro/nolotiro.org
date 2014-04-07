@@ -18,22 +18,23 @@ class MessagesController < ApplicationController
   # POST '/message/create/id_user_to/:user_id'
   # POST '/message/create/id_user_to/:user_id/subject/:subject'
   def create
-    @user = User.find params[:user_id]
-    @thread = MessageThread.create(
-      subject: params[:message][:subject],
-      last_speaker: current_user.id,
-      unread: 1
-    )
-    @message = Message.new(
-      thread_id: @thread.id,
-      ip: request.remote_ip,
-      subject: params[:message][:subject],
-      body: params[:message][:body],
-      user_from: current_user.id,
-      user_to: @user.id
+    # TODO: check sender and recipient are not the same
+    # 
+    @message = Message.create_thread(
+      current_user.id,
+      params[:user_id],
+      params[:message][:subject],
+      params[:message][:body],
+      request.remote_ip
     )
     if @message.save
-      MessagesMailer.create(@user.email, current_user.username, params[:message][:subject], params[:message][:body]).deliver
+      @user = User.find params[:user_id]
+      MessagesMailer.create(
+        @user.email,
+        current_user.username,
+        params[:message][:subject],
+        params[:message][:body]
+      ).deliver
       redirect_to message_show_path(@thread.id, @thread.subject.parameterize), notice: 'Message was successfully created.'
     else
       render action: 'new'
@@ -56,7 +57,12 @@ class MessagesController < ApplicationController
     )
 
     if @message.save
-      MessagesMailer.create(@user.email, current_user.username, @thread.subject, params[:body]).deliver
+      MessagesMailer.create(
+        @user.email,
+        current_user.username,
+        @thread.subject,
+        params[:body]
+      ).deliver
       redirect_to message_show_path(@thread.id, @thread.subject), notice: 'Message was successfully replied.'
     else
       # there was an error saving
@@ -66,7 +72,7 @@ class MessagesController < ApplicationController
 
   # GET '/message/list'
   def list 
-    @last_threads = current_user.last_threads
+    @last_threads = Message.get_threads_from_user(current_user)
   end
 
   # Never trust parameters from the scary internet, only allow the white list through.

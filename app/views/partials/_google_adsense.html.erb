@@ -3,7 +3,6 @@
     <img src="http://placehold.it/<%= ad_width %>x<%= ad_height %>">
   <% else %>
     <div id="adsense-<%= id %>"></div>    
-      
     <script>    
     window.MyAdSense.newAd(document.getElementById("adsense-<%= id %>"), {          
       'ad_slot': "<%= ad_slot %>",    
@@ -12,4 +11,8 @@
     });    
     </script>    
   <% end %>
+
+  <% if ad_height == 600%>
+    <%= link_to(image_tag("ad_puntoabierto.gif", style: "width:140px; margin-top: 20px; display: block; margin-left: auto; margin-right: auto;", title: "Punto Abierto - Comunicación, Social Media y Web"), "http://puntoabierto.net/") %>
+<% end %>
 </div>    

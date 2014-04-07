@@ -33,6 +33,7 @@ class Ad < ActiveRecord::Base
   has_attached_file :image,
     :styles => {:thumb => "100x90>"},
     :content_type => { :content_type => ["image/jpg", "image/gif", "image/png"] }
+  # FIXME: route should have /ads/ in the URL 
 
   validates_attachment_size :image, :in => 0.megabytes..1.megabytes
 

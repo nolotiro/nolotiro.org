@@ -70,3 +70,8 @@
     </div>
   <% end %>
 <% end %>
+
+<!-- FIXME: syntax -->
+<% content_for :extra_meta do %>
+  <meta href="<%= rss_type_url(:woeid => @id, :type => "give") %>">
+<% end %>

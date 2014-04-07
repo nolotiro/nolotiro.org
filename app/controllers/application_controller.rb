@@ -1,4 +1,11 @@
 class ApplicationController < ActionController::Base
+  # TODO: comment captcha for ad creation/edition
+  # TODO: on first login show notice of what is nolotiro.org  
+  # TODO: add meta description 'nolotiro.org is a website where you can give away things you no longer want or no longer need to pick them up other people who may serve or be of much use. '
+  # FIXME: extra_meta in RSS 
+  # FIXME: extra languages helper meta
+  # FIXME: after login whould say "Welcome, USERNAME "
+  #
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
