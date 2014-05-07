@@ -3,13 +3,11 @@
   <div class="user_login_box">
     hola,
     <b>
-      <a href="/es/profile/22123">
-      <%= current_user.username %>
-      </a>
+      <%= link_to current_user.username, profile_path(current_user) %>
     </b> | 
-    <a title="0 unread mensajes" href="/es/message/list">
+    <a title="<%= current_user.unread_messages_count %> unread mensajes" href="/es/message/list">
       <%= image_tag "icons/ico_email.gif" %>
-      &nbsp;<b>0</b>
+      &nbsp;<b><%= current_user.unread_messages_count %></b>
     </a> |
     <%= link_to "salir", destroy_user_session_path, :method => :delete %>
   </div>

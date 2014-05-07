@@ -1,0 +1,1360 @@
+Kerbal Space Program - 0.23.0.0 (LinuxPlayer) Steam
+
+
+OS: Linux 3.13.0-24-generic Ubuntu 14.04 64bit
+CPU: Intel(R) Core(TM) i5-3210M CPU @ 2.50GHz (4)
+RAM: 15955
+GPU: Mesa DRI Intel(R) Ivybridge Mobile  (256MB)
+SM: 30 (OpenGL 3.0 [3.0 Mesa 10.1.0])
+
+
+Log started: Wed, May 07, 2014 16:23:32
+
+
+[LOG 16:23:33.220] AssemblyLoader: Loading assemblies
+[LOG 16:23:33.234] Load(Audio): Squad/Parts/Utility/LandingLeg/sounds/sound_servomotor
+[WRN 16:23:33.240] The image effect ImageEffects Unity3 (TiltShift) has been disabled as it's not supported on the current platform.
+[WRN 16:23:33.240] The image effect ImageEffects Unity3 (SunShafts) has been disabled as it's not supported on the current platform.
+[WRN 16:23:33.242] The image effect ImageEffects Unity3 (GlobalFog) has been disabled as it's not supported on the current platform.
+[WRN 16:23:33.243] The image effect ImageEffects Unity3 (EdgeDetectEffectNormals) has been disabled as it's not supported on the current platform.
+[WRN 16:23:33.243] The image effect ImageEffects Unity3 (DepthOfFieldScatter) has been disabled as it's not supported on the current platform.
+[WRN 16:23:33.243] The image effect ImageEffects Unity3 (DepthOfField34) has been disabled as it's not supported on the current platform.
+[WRN 16:23:33.244] The image effect ImageEffects Unity3 (Crease) has been disabled as it's not supported on the current platform.
+[LOG 16:23:33.359] Load(Audio): Squad/Sounds/editorLoop01
+[LOG 16:23:33.600] Load(Audio): Squad/Sounds/sound_ambience_nature
+[LOG 16:23:33.633] Load(Audio): Squad/Sounds/sound_click_flick
+[LOG 16:23:33.668] Load(Audio): Squad/Sounds/sound_click_latch
+[LOG 16:23:33.699] Load(Audio): Squad/Sounds/sound_click_sharp
+[LOG 16:23:34.848] Load(Audio): Squad/Sounds/sound_click_tick
+[LOG 16:23:34.881] Load(Audio): Squad/Sounds/sound_click_tock
+[LOG 16:23:34.917] Load(Audio): Squad/Sounds/sound_decoupler_fire
+[LOG 16:23:34.947] Load(Audio): Squad/Sounds/sound_delete_bin
+[LOG 16:23:34.980] Load(Audio): Squad/Sounds/sound_explosion_debris1
+[LOG 16:23:35.014] Load(Audio): Squad/Sounds/sound_explosion_debris2
+[LOG 16:23:35.047] Load(Audio): Squad/Sounds/sound_explosion_large
+[LOG 16:23:35.080] Load(Audio): Squad/Sounds/sound_rocket_mini
+[LOG 16:23:35.154] Load(Audio): Squad/Sounds/sound_rocket_spurts
+[LOG 16:23:35.187] Load(Audio): Squad/Sounds/sound_tab_extend
+[LOG 16:23:35.220] Load(Audio): Squad/Sounds/sound_tab_retreat
+[LOG 16:23:35.253] Load(Texture): Squad/FX/rocketplume2
+[LOG 16:23:35.286] Load(Texture): Squad/FX/shockDiamond2
+[LOG 16:23:35.303] Load(Texture): Squad/Flags/09
+[LOG 16:23:35.327] Load(Texture): Squad/Flags/blorbs
+[LOG 16:23:35.338] Load(Texture): Squad/Flags/bullseye
+[LOG 16:23:35.354] Load(Texture): Squad/Flags/capsule
+[LOG 16:23:35.371] Load(Texture): Squad/Flags/circles
+[LOG 16:23:35.389] Load(Texture): Squad/Flags/default
+[LOG 16:23:35.406] Load(Texture): Squad/Flags/hexagon
+[LOG 16:23:35.421] Load(Texture): Squad/Flags/hexagonCircles
+[LOG 16:23:35.438] Load(Texture): Squad/Flags/kerbal1
+[LOG 16:23:35.454] Load(Texture): Squad/Flags/kerbal2
+[LOG 16:23:35.472] Load(Texture): Squad/Flags/kerbin
+[LOG 16:23:35.488] Load(Texture): Squad/Flags/kerbinmunflag
+[LOG 16:23:35.503] Load(Texture): Squad/Flags/line
+[LOG 16:23:35.520] Load(Texture): Squad/Flags/minimalistic
+[LOG 16:23:35.539] Load(Texture): Squad/Flags/orbit
+[LOG 16:23:35.554] Load(Texture): Squad/Flags/orbs
+[LOG 16:23:35.570] Load(Texture): Squad/Flags/retro
+[LOG 16:23:35.587] Load(Texture): Squad/Flags/rings
+[LOG 16:23:35.604] Load(Texture): Squad/Flags/rocketScience
+[LOG 16:23:35.620] Load(Texture): Squad/Flags/satellite
+[LOG 16:23:35.636] Load(Texture): Squad/Flags/spheres
+[LOG 16:23:35.653] Load(Texture): Squad/Flags/squadLogo
+[LOG 16:23:35.669] Load(Texture): Squad/Flags/squadLogo2
+[LOG 16:23:35.686] Load(Texture): Squad/Flags/stripes
+[LOG 16:23:35.702] Load(Texture): Squad/Flags/trees
+[LOG 16:23:35.719] Load(Texture): Squad/Flags/trippy
+[LOG 16:23:35.738] Load(Texture): Squad/Parts/Aero/Ailerons/model000
+[LOG 16:23:35.750] Load(Texture): Squad/Parts/Aero/Ailerons/model001
+[LOG 16:23:35.790] Load(Texture): Squad/Parts/Aero/CanardController/model000
+[LOG 16:23:36.020] Load(Texture): Squad/Parts/Aero/CanardController/model001
+[LOG 16:23:36.096] Load(Texture): Squad/Parts/Aero/NoseCone/model000
+[LOG 16:23:36.175] Load(Texture): Squad/Parts/Aero/advancedCanard/model000
+[LOG 16:23:36.246] Load(Texture): Squad/Parts/Aero/advancedCanard/model001
+[LOG 16:23:36.336] Load(Texture): Squad/Parts/Aero/airplaneTail/model000
+[LOG 16:23:36.361] Load(Texture): Squad/Parts/Aero/airplaneTail/model001
+[LOG 16:23:36.380] Load(Texture): Squad/Parts/Aero/deltaWing/model000
+[LOG 16:23:36.407] Load(Texture): Squad/Parts/Aero/deltaWing/model001
+[LOG 16:23:36.427] Load(Texture): Squad/Parts/Aero/noseConeAdapter/model000
+[LOG 16:23:36.515] Load(Texture): Squad/Parts/Aero/noseConeAdapter/model001
+[LOG 16:23:36.592] Load(Texture): Squad/Parts/Aero/rocketNoseCone/model000
+[LOG 16:23:36.612] Load(Texture): Squad/Parts/Aero/smallCtrlSrf/model000
+[LOG 16:23:36.629] Load(Texture): Squad/Parts/Aero/standardNoseCone/model000
+[LOG 16:23:36.652] Load(Texture): Squad/Parts/Aero/standardNoseCone/model001
+[LOG 16:23:36.672] Load(Texture): Squad/Parts/Aero/sweptWing/model000
+[LOG 16:23:36.759] Load(Texture): Squad/Parts/Aero/sweptWing/model001
+[LOG 16:23:36.844] Load(Texture): Squad/Parts/Aero/sweptWing/model002
+[LOG 16:23:36.861] Load(Texture): Squad/Parts/Aero/tailfin/model000
+[LOG 16:23:36.884] Load(Texture): Squad/Parts/Aero/tailfin/model001
+[LOG 16:23:36.904] Load(Texture): Squad/Parts/Aero/wingConnector/model000
+[LOG 16:23:36.928] Load(Texture): Squad/Parts/Aero/wingConnector/model001
+[LOG 16:23:36.947] Load(Texture): Squad/Parts/Aero/winglet/model000
+[LOG 16:23:36.968] Load(Texture): Squad/Parts/Aero/winglet/model001
+[LOG 16:23:36.986] Load(Texture): Squad/Parts/Aero/winglet2/model000
+[LOG 16:23:37.002] Load(Texture): Squad/Parts/Aero/winglet2/model001
+[LOG 16:23:37.019] Load(Texture): Squad/Parts/Aero/winglet3/model000
+[LOG 16:23:37.039] Load(Texture): Squad/Parts/Command/Mark1Cockpit/model000
+[LOG 16:23:37.138] Load(Texture): Squad/Parts/Command/Mark1Cockpit/model001
+[LOG 16:23:37.206] Load(Texture): Squad/Parts/Command/Mark2Cockpit/model000
+[LOG 16:23:37.289] Load(Texture): Squad/Parts/Command/Mark2Cockpit/model001
+[LOG 16:23:37.385] Load(Texture): Squad/Parts/Command/Mark2Cockpit/model002
+[LOG 16:23:37.401] Load(Texture): Squad/Parts/Command/Mk1-2Pod/model000
+[LOG 16:23:37.480] Load(Texture): Squad/Parts/Command/Mk1-2Pod/model001
+[LOG 16:23:37.549] Load(Texture): Squad/Parts/Command/Mk1-2Pod/model002
+[LOG 16:23:37.565] Load(Texture): Squad/Parts/Command/advSasModule/model000
+[LOG 16:23:37.590] Load(Texture): Squad/Parts/Command/advSasModule/model001
+[LOG 16:23:37.607] Load(Texture): Squad/Parts/Command/asasmodule1-2/model000
+[LOG 16:23:37.624] Load(Texture): Squad/Parts/Command/asasmodule1-2/model001
+[LOG 16:23:37.641] Load(Texture): Squad/Parts/Command/avionicsNoseCone/model000
+[LOG 16:23:37.664] Load(Texture): Squad/Parts/Command/crewCabin/model000
+[LOG 16:23:37.736] Load(Texture): Squad/Parts/Command/crewCabin/model001
+[LOG 16:23:37.756] Load(Texture): Squad/Parts/Command/cupola/model000
+[LOG 16:23:37.834] Load(Texture): Squad/Parts/Command/cupola/model001
+[LOG 16:23:37.853] Load(Texture): Squad/Parts/Command/landerCabinSmall/model000
+[LOG 16:23:37.944] Load(Texture): Squad/Parts/Command/landerCabinSmall/model001
+[LOG 16:23:37.963] Load(Texture): Squad/Parts/Command/mark3Cockpit/model000
+[LOG 16:23:37.985] Load(Texture): Squad/Parts/Command/mark3Cockpit/model001
+[LOG 16:23:38.004] Load(Texture): Squad/Parts/Command/mark3Cockpit/model002
+[LOG 16:23:38.021] Load(Texture): Squad/Parts/Command/mk1pod/model000
+[LOG 16:23:38.042] Load(Texture): Squad/Parts/Command/mk1pod/model001
+[LOG 16:23:38.068] Load(Texture): Squad/Parts/Command/mk1pod/model002
+[LOG 16:23:38.087] Load(Texture): Squad/Parts/Command/mk1pod/model003
+[LOG 16:23:38.104] Load(Texture): Squad/Parts/Command/mk1pod/model004
+[LOG 16:23:38.121] Load(Texture): Squad/Parts/Command/mk2LanderCabin/ladder
+[LOG 16:23:38.137] Load(Texture): Squad/Parts/Command/mk2LanderCabin/outershell
+[LOG 16:23:38.218] Load(Texture): Squad/Parts/Command/mk2LanderCabin/outershell_n
+[LOG 16:23:38.246] Load(Texture): Squad/Parts/Command/probeCoreCube/model000
+[LOG 16:23:38.262] Load(Texture): Squad/Parts/Command/probeCoreCube/model001
+[LOG 16:23:38.279] Load(Texture): Squad/Parts/Command/probeCoreHex/ksp_m_hexProbe_diff
+[LOG 16:23:38.356] Load(Texture): Squad/Parts/Command/probeCoreHex/ksp_m_hexProbe_normal
+[LOG 16:23:38.375] Load(Texture): Squad/Parts/Command/probeCoreOcto/model000
+[LOG 16:23:38.391] Load(Texture): Squad/Parts/Command/probeCoreOcto/model001
+[LOG 16:23:38.408] Load(Texture): Squad/Parts/Command/probeCoreOcto2/model000
+[LOG 16:23:38.425] Load(Texture): Squad/Parts/Command/probeCoreSphere/model000
+[LOG 16:23:38.463] Load(Texture): Squad/Parts/Command/probeCoreSphere/model001
+[LOG 16:23:38.480] Load(Texture): Squad/Parts/Command/probeStackLarge/model000
+[LOG 16:23:38.556] Load(Texture): Squad/Parts/Command/probeStackLarge/model001
+[LOG 16:23:38.624] Load(Texture): Squad/Parts/Command/probeStackSmall/model000
+[LOG 16:23:38.708] Load(Texture): Squad/Parts/Command/probeStackSmall/model001
+[LOG 16:23:38.792] Load(Texture): Squad/Parts/Command/sasModule/model000
+[LOG 16:23:38.809] Load(Texture): Squad/Parts/Command/sasModule/model001
+[LOG 16:23:38.825] Load(Texture): Squad/Parts/Command/sasModule/model002
+[LOG 16:23:38.842] Load(Texture): Squad/Parts/Command/seatExternalCmd/model000
+[LOG 16:23:38.942] Load(Texture): Squad/Parts/Electrical/RTG/model000
+[LOG 16:23:38.968] Load(Texture): Squad/Parts/Electrical/batteryBank/model000
+[LOG 16:23:38.984] Load(Texture): Squad/Parts/Electrical/batteryBank/model001
+[LOG 16:23:39.000] Load(Texture): Squad/Parts/Electrical/batteryBankLarge/ksp_l_batteryPack_diff
+[LOG 16:23:39.020] Load(Texture): Squad/Parts/Electrical/batteryBankLarge/ksp_l_batteryPack_normal
+[LOG 16:23:39.039] Load(Texture): Squad/Parts/Electrical/batteryBankMini/ksp_m_batteryPack_diff
+[LOG 16:23:39.056] Load(Texture): Squad/Parts/Electrical/batteryPack/model000
+[LOG 16:23:39.072] Load(Texture): Squad/Parts/Electrical/ksp_r_largeBatteryPack/model000
+[LOG 16:23:39.097] Load(Texture): Squad/Parts/Electrical/largeSolarPanel/model000
+[LOG 16:23:39.117] Load(Texture): Squad/Parts/Electrical/solarPanels1/model000
+[LOG 16:23:39.138] Load(Texture): Squad/Parts/Electrical/solarPanels1/model001
+[LOG 16:23:39.164] Load(Texture): Squad/Parts/Electrical/solarPanels1/model002
+[LOG 16:23:39.181] Load(Texture): Squad/Parts/Electrical/solarPanels2/model000
+[LOG 16:23:39.200] Load(Texture): Squad/Parts/Electrical/solarPanels2/model001
+[LOG 16:23:39.217] Load(Texture): Squad/Parts/Electrical/solarPanels2/model002
+[LOG 16:23:39.233] Load(Texture): Squad/Parts/Electrical/solarPanels3/model000
+[LOG 16:23:39.250] Load(Texture): Squad/Parts/Electrical/solarPanels3/model001
+[LOG 16:23:39.269] Load(Texture): Squad/Parts/Electrical/solarPanels3/model002
+[LOG 16:23:39.286] Load(Texture): Squad/Parts/Electrical/solarPanels4/model000
+[LOG 16:23:39.302] Load(Texture): Squad/Parts/Electrical/solarPanels4/model001
+[LOG 16:23:39.319] Load(Texture): Squad/Parts/Electrical/solarPanels4/model002
+[LOG 16:23:39.335] Load(Texture): Squad/Parts/Electrical/solarPanels5/model000
+[LOG 16:23:39.352] Load(Texture): Squad/Parts/Engine/JetEngine/model000
+[LOG 16:23:39.374] Load(Texture): Squad/Parts/Engine/JetEngine/model001
+[LOG 16:23:39.391] Load(Texture): Squad/Parts/Engine/engineLargeSkipper/ksp_l_midrangeEngine_diff
+[LOG 16:23:39.449] Load(Texture): Squad/Parts/Engine/engineLargeSkipper/ksp_l_midrangeEngine_emissive
+[LOG 16:23:39.528] Load(Texture): Squad/Parts/Engine/engineLargeSkipper/ksp_l_midrangeEngine_fairing_diff
+[LOG 16:23:39.696] Load(Texture): Squad/Parts/Engine/engineLargeSkipper/ksp_l_midrangeEngine_fairing_norm
+[LOG 16:23:39.831] Load(Texture): Squad/Parts/Engine/engineLargeSkipper/ksp_l_midrangeEngine_normal
+[LOG 16:23:39.936] Load(Texture): Squad/Parts/Engine/ionEngine/model000
+[LOG 16:23:40.028] Load(Texture): Squad/Parts/Engine/liquidEngine1/model000
+[LOG 16:23:40.113] Load(Texture): Squad/Parts/Engine/liquidEngine1/model001
+[LOG 16:23:40.199] Load(Texture): Squad/Parts/Engine/liquidEngine1/model002
+[LOG 16:23:40.282] Load(Texture): Squad/Parts/Engine/liquidEngine1/model003
+[LOG 16:23:40.435] Load(Texture): Squad/Parts/Engine/liquidEngine1/model004
+[LOG 16:23:40.595] Load(Texture): Squad/Parts/Engine/liquidEngine1-2/model000
+[LOG 16:23:40.682] Load(Texture): Squad/Parts/Engine/liquidEngine1-2/model001
+[LOG 16:23:40.768] Load(Texture): Squad/Parts/Engine/liquidEngine1-2/model002
+[LOG 16:23:40.864] Load(Texture): Squad/Parts/Engine/liquidEngine1-2/model003
+[LOG 16:23:40.956] Load(Texture): Squad/Parts/Engine/liquidEngine1-2/model004
+[LOG 16:23:41.039] Load(Texture): Squad/Parts/Engine/liquidEngine2/model000
+[LOG 16:23:41.128] Load(Texture): Squad/Parts/Engine/liquidEngine2/model001
+[LOG 16:23:41.210] Load(Texture): Squad/Parts/Engine/liquidEngine2/model002
+[LOG 16:23:41.295] Load(Texture): Squad/Parts/Engine/liquidEngine2/model003
+[LOG 16:23:41.329] Load(Texture): Squad/Parts/Engine/liquidEngine2-2/model000
+[LOG 16:23:41.346] Load(Texture): Squad/Parts/Engine/liquidEngine2-2/model001
+[LOG 16:23:41.367] Load(Texture): Squad/Parts/Engine/liquidEngine2-2/model002
+[LOG 16:23:41.386] Load(Texture): Squad/Parts/Engine/liquidEngine2-2/model003
+[LOG 16:23:41.402] Load(Texture): Squad/Parts/Engine/liquidEngine3/bigfairing
+[LOG 16:23:41.423] Load(Texture): Squad/Parts/Engine/liquidEngine3/engine3
+[LOG 16:23:41.444] Load(Texture): Squad/Parts/Engine/liquidEngine3/engine3_emissive
+[LOG 16:23:41.461] Load(Texture): Squad/Parts/Engine/liquidEngine3/engine3_n
+[LOG 16:23:41.479] Load(Texture): Squad/Parts/Engine/liquidEngineMini/ksp_m_liquidEngine_diff
+[LOG 16:23:41.499] Load(Texture): Squad/Parts/Engine/liquidEngineMini/ksp_m_liquidEngine_norm
+[LOG 16:23:41.520] Load(Texture): Squad/Parts/Engine/liquidEngineMini/ksp_m_liquidFuelEngine_fairing_norm
+[LOG 16:23:41.539] Load(Texture): Squad/Parts/Engine/liquidEngineMini/ksp_m_liquidFuelEngine_fairing_psd
+[LOG 16:23:41.558] Load(Texture): Squad/Parts/Engine/microEngine/model000
+[LOG 16:23:41.574] Load(Texture): Squad/Parts/Engine/microEngine/model001
+[LOG 16:23:41.591] Load(Texture): Squad/Parts/Engine/nuclearEngine/model000
+[LOG 16:23:41.615] Load(Texture): Squad/Parts/Engine/nuclearEngine/model001
+[LOG 16:23:41.633] Load(Texture): Squad/Parts/Engine/nuclearEngine/model002
+[LOG 16:23:41.649] Load(Texture): Squad/Parts/Engine/nuclearEngine/model003
+[LOG 16:23:41.720] Load(Texture): Squad/Parts/Engine/radialEngineMini/ksp_r_microEngine_diff
+[LOG 16:23:41.816] Load(Texture): Squad/Parts/Engine/radialLiquidEngine1-2/model000
+[LOG 16:23:41.832] Load(Texture): Squad/Parts/Engine/rapierEngine/rapierDiffuse
+[LOG 16:23:41.855] Load(Texture): Squad/Parts/Engine/rapierEngine/rapieremit
+[LOG 16:23:41.871] Load(Texture): Squad/Parts/Engine/sepMotor1/model000
+[LOG 16:23:41.888] Load(Texture): Squad/Parts/Engine/smallRadialEngine/model000
+[LOG 16:23:41.905] Load(Texture): Squad/Parts/Engine/solidBooster/model000
+[LOG 16:23:41.968] Load(Texture): Squad/Parts/Engine/solidBooster/model001
+[LOG 16:23:41.988] Load(Texture): Squad/Parts/Engine/solidBooster/model002
+[LOG 16:23:42.004] Load(Texture): Squad/Parts/Engine/solidBooster1-1/model000
+[LOG 16:23:42.027] Load(Texture): Squad/Parts/Engine/solidBooster1-1/model001
+[LOG 16:23:42.045] Load(Texture): Squad/Parts/Engine/solidBooster1-1/model002
+[LOG 16:23:42.061] Load(Texture): Squad/Parts/Engine/toroidalAerospike/model000
+[LOG 16:23:42.089] Load(Texture): Squad/Parts/Engine/toroidalAerospike/model001
+[LOG 16:23:42.107] Load(Texture): Squad/Parts/Engine/toroidalAerospike/model002
+[LOG 16:23:42.130] Load(Texture): Squad/Parts/Engine/turboFanEngine/model000
+[LOG 16:23:42.152] Load(Texture): Squad/Parts/Engine/turboFanEngine/model001
+[LOG 16:23:42.169] Load(Texture): Squad/Parts/FuelTank/MK1Fuselage/model000
+[LOG 16:23:42.201] Load(Texture): Squad/Parts/FuelTank/MK1Fuselage/model001
+[LOG 16:23:42.218] Load(Texture): Squad/Parts/FuelTank/MK1FuselageStructural/model000
+[LOG 16:23:42.240] Load(Texture): Squad/Parts/FuelTank/MK1FuselageStructural/model001
+[LOG 16:23:42.259] Load(Texture): Squad/Parts/FuelTank/RCSFuelTank/model000
+[LOG 16:23:42.275] Load(Texture): Squad/Parts/FuelTank/RCSFuelTank/model001
+[LOG 16:23:42.292] Load(Texture): Squad/Parts/FuelTank/RCSTank1-2/model000
+[LOG 16:23:42.325] Load(Texture): Squad/Parts/FuelTank/RCSTank1-2/model001
+[LOG 16:23:42.408] Load(Texture): Squad/Parts/FuelTank/RCStankMini/ksp_m_rcsTank_diff
+[LOG 16:23:42.495] Load(Texture): Squad/Parts/FuelTank/RCStankMini/ksp_m_rcsTank_normal
+[LOG 16:23:42.580] Load(Texture): Squad/Parts/FuelTank/RCStankRadialLong/ksp_r_rcsCylTank_diff
+[LOG 16:23:42.670] Load(Texture): Squad/Parts/FuelTank/fuelTank/model000
+[LOG 16:23:42.770] Load(Texture): Squad/Parts/FuelTank/fuelTank/model001
+[LOG 16:23:42.922] Load(Texture): Squad/Parts/FuelTank/fuelTank1-2/model000
+[LOG 16:23:43.074] Load(Texture): Squad/Parts/FuelTank/fuelTank1-2/model001
+[LOG 16:23:43.160] Load(Texture): Squad/Parts/FuelTank/fuelTank2-2/model000
+[LOG 16:23:43.243] Load(Texture): Squad/Parts/FuelTank/fuelTank2-2/model001
+[LOG 16:23:43.336] Load(Texture): Squad/Parts/FuelTank/fuelTank3-2/model000
+[LOG 16:23:43.445] Load(Texture): Squad/Parts/FuelTank/fuelTank3-2/model001
+[LOG 16:23:43.551] Load(Texture): Squad/Parts/FuelTank/fuelTank4-2/model000
+[LOG 16:23:43.684] Load(Texture): Squad/Parts/FuelTank/fuelTank4-2/model001
+[LOG 16:23:43.772] Load(Texture): Squad/Parts/FuelTank/fuelTankSmall/tank3
+[LOG 16:23:43.859] Load(Texture): Squad/Parts/FuelTank/fuelTankSmall/tank3_n
+[LOG 16:23:43.944] Load(Texture): Squad/Parts/FuelTank/fuelTankSmallFlat/tank4
+[LOG 16:23:44.094] Load(Texture): Squad/Parts/FuelTank/fuelTank_long/model000
+[LOG 16:23:44.201] Load(Texture): Squad/Parts/FuelTank/fuelTank_long/model001
+[LOG 16:23:44.314] Load(Texture): Squad/Parts/FuelTank/miniFuelTank/model000
+[LOG 16:23:44.364] Load(Texture): Squad/Parts/FuelTank/miniFuelTank/model001
+[LOG 16:23:44.381] Load(Texture): Squad/Parts/FuelTank/mk2Fuselage/model000
+[LOG 16:23:44.410] Load(Texture): Squad/Parts/FuelTank/mk2Fuselage/model001
+[LOG 16:23:44.431] Load(Texture): Squad/Parts/FuelTank/mk2SpacePlaneAdapter/model000
+[LOG 16:23:44.460] Load(Texture): Squad/Parts/FuelTank/mk2SpacePlaneAdapter/model001
+[LOG 16:23:44.483] Load(Texture): Squad/Parts/FuelTank/mk3Fuselage/model000
+[LOG 16:23:44.506] Load(Texture): Squad/Parts/FuelTank/mk3Fuselage/model001
+[LOG 16:23:44.525] Load(Texture): Squad/Parts/FuelTank/mk3spacePlaneAdapter/model000
+[LOG 16:23:44.551] Load(Texture): Squad/Parts/FuelTank/mk3spacePlaneAdapter/model001
+[LOG 16:23:44.577] Load(Texture): Squad/Parts/FuelTank/radialRCSTank/model000
+[LOG 16:23:44.593] Load(Texture): Squad/Parts/FuelTank/toroidalFuelTank/model000
+[LOG 16:23:44.615] Load(Texture): Squad/Parts/FuelTank/toroidalFuelTank/model001
+[LOG 16:23:44.636] Load(Texture): Squad/Parts/FuelTank/xenonTank/model000
+[LOG 16:23:44.665] Load(Texture): Squad/Parts/FuelTank/xenonTank/model001
+[LOG 16:23:44.692] Load(Texture): Squad/Parts/FuelTank/xenonTankRadial/ksp_r_xenonTank_diff
+[LOG 16:23:44.716] Load(Texture): Squad/Parts/Science/GooExperiment/A_GooExperiment_diff
+[LOG 16:23:44.794] Load(Texture): Squad/Parts/Science/LargeCrewedLab/Large_Crewed_Lab
+[LOG 16:23:44.879] Load(Texture): Squad/Parts/Science/MaterialBay/science_module_small
+[LOG 16:23:44.953] Load(Texture): Squad/Parts/Science/MaterialBay/science_module_small_emit
+[LOG 16:23:44.969] Load(Texture): Squad/Parts/Science/MaterialBay/science_module_small_nrm
+[LOG 16:23:44.989] Load(Texture): Squad/Parts/Science/MaterialBay/wires
+[LOG 16:23:45.006] Load(Texture): Squad/Parts/Structural/adapterLargeSmallBi/ksp_l_biAdapter_diff
+[LOG 16:23:45.085] Load(Texture): Squad/Parts/Structural/adapterLargeSmallQuad/ksp_l_quadAdapter_diff
+[LOG 16:23:45.162] Load(Texture): Squad/Parts/Structural/adapterLargeSmallTri/ksp_l_triAdapter_diff
+[LOG 16:23:45.233] Load(Texture): Squad/Parts/Structural/adapterSmallMiniShort/ksp_s_adapterShort_diff
+[LOG 16:23:45.253] Load(Texture): Squad/Parts/Structural/adapterSmallMiniTall/ksp_s_adapterLong_diff
+[LOG 16:23:45.337] Load(Texture): Squad/Parts/Structural/nacelleBody/model000
+[LOG 16:23:45.380] Load(Texture): Squad/Parts/Structural/nacelleBody/model001
+[LOG 16:23:45.404] Load(Texture): Squad/Parts/Structural/radialEngineBody/model000
+[LOG 16:23:45.431] Load(Texture): Squad/Parts/Structural/radialEngineBody/model001
+[LOG 16:23:45.453] Load(Texture): Squad/Parts/Structural/smallHardpoint/model000
+[LOG 16:23:45.481] Load(Texture): Squad/Parts/Structural/smallHardpoint/model001
+[LOG 16:23:45.505] Load(Texture): Squad/Parts/Structural/stationHub/model000
+[LOG 16:23:45.528] Load(Texture): Squad/Parts/Structural/stationHub/model001
+[LOG 16:23:45.557] Load(Texture): Squad/Parts/Structural/structuralIBeam1/model000
+[LOG 16:23:45.574] Load(Texture): Squad/Parts/Structural/structuralIBeam2/model000
+[LOG 16:23:45.590] Load(Texture): Squad/Parts/Structural/structuralIBeam3/model000
+[LOG 16:23:45.607] Load(Texture): Squad/Parts/Structural/structuralMiniNode/model000
+[LOG 16:23:45.624] Load(Texture): Squad/Parts/Structural/structuralPanel1/model000
+[LOG 16:23:45.640] Load(Texture): Squad/Parts/Structural/structuralPanel1/model001
+[LOG 16:23:45.657] Load(Texture): Squad/Parts/Structural/structuralPanel2/model000
+[LOG 16:23:45.673] Load(Texture): Squad/Parts/Structural/structuralPanel2/model001
+[LOG 16:23:45.690] Load(Texture): Squad/Parts/Structural/structuralPylon/model000
+[LOG 16:23:45.725] Load(Texture): Squad/Parts/Structural/structuralPylon/model001
+[LOG 16:23:45.745] Load(Texture): Squad/Parts/Structural/structuralWing/model000
+[LOG 16:23:45.771] Load(Texture): Squad/Parts/Structural/structuralWing/model001
+[LOG 16:23:45.790] Load(Texture): Squad/Parts/Structural/strutConnector/model000
+[LOG 16:23:45.806] Load(Texture): Squad/Parts/Structural/strutCube/model000
+[LOG 16:23:45.823] Load(Texture): Squad/Parts/Structural/strutOcto/model000
+[LOG 16:23:45.839] Load(Texture): Squad/Parts/Structural/trussAdapter/model000
+[LOG 16:23:45.856] Load(Texture): Squad/Parts/Structural/trussAdapter/model001
+[LOG 16:23:45.896] Load(Texture): Squad/Parts/Structural/trussPiece1x/model000
+[LOG 16:23:45.975] Load(Texture): Squad/Parts/Structural/trussPiece3x/model000
+[LOG 16:23:46.052] Load(Texture): Squad/Parts/Utility/CircularIntake/model000
+[LOG 16:23:46.085] Load(Texture): Squad/Parts/Utility/CircularIntake/model001
+[LOG 16:23:46.103] Load(Texture): Squad/Parts/Utility/LandingLeg/ksp_r_landingStrut_diff
+[LOG 16:23:46.129] Load(Texture): Squad/Parts/Utility/LandingLeg1-2/landingLeg
+[LOG 16:23:46.160] Load(Texture): Squad/Parts/Utility/RCS block/model000
+[LOG 16:23:46.177] Load(Texture): Squad/Parts/Utility/StackDecoupler/model000
+[LOG 16:23:46.193] Load(Texture): Squad/Parts/Utility/StackDecoupler/model001
+[LOG 16:23:46.210] Load(Texture): Squad/Parts/Utility/airScoop/model000
+[LOG 16:23:46.232] Load(Texture): Squad/Parts/Utility/commDish/comm_dish_array
+[LOG 16:23:46.257] Load(Texture): Squad/Parts/Utility/commDish/comm_dish_v2_diff
+[LOG 16:23:46.276] Load(Texture): Squad/Parts/Utility/commDish/model000
+[LOG 16:23:46.293] Load(Texture): Squad/Parts/Utility/decoupler1-2/model000
+[LOG 16:23:46.335] Load(Texture): Squad/Parts/Utility/decoupler1-2/model001
+[LOG 16:23:46.351] Load(Texture): Squad/Parts/Utility/dockingPort1/model000
+[LOG 16:23:46.374] Load(Texture): Squad/Parts/Utility/dockingPort1/model001
+[LOG 16:23:46.408] Load(Texture): Squad/Parts/Utility/dockingPort1/model002
+[LOG 16:23:46.425] Load(Texture): Squad/Parts/Utility/dockingPort2/model000
+[LOG 16:23:46.446] Load(Texture): Squad/Parts/Utility/dockingPort2/model001
+[LOG 16:23:46.465] Load(Texture): Squad/Parts/Utility/dockingPort3/model000
+[LOG 16:23:46.481] Load(Texture): Squad/Parts/Utility/dockingPort3/model001
+[LOG 16:23:46.499] Load(Texture): Squad/Parts/Utility/dockingPortLarge/model000
+[LOG 16:23:46.575] Load(Texture): Squad/Parts/Utility/dockingPortLarge/model001
+[LOG 16:23:46.655] Load(Texture): Squad/Parts/Utility/dockingPortLateral/model000
+[LOG 16:23:46.682] Load(Texture): Squad/Parts/Utility/dockingPortLateral/model001
+[LOG 16:23:46.712] Load(Texture): Squad/Parts/Utility/dockingPortLateral/model002
+[LOG 16:23:46.739] Load(Texture): Squad/Parts/Utility/fuelLine/model000
+[LOG 16:23:46.755] Load(Texture): Squad/Parts/Utility/ladder1/model000
+[LOG 16:23:46.772] Load(Texture): Squad/Parts/Utility/largeAdapter/model000
+[LOG 16:23:46.796] Load(Texture): Squad/Parts/Utility/largeAdapter2/model000
+[LOG 16:23:46.814] Load(Texture): Squad/Parts/Utility/launchClamp1/model000
+[LOG 16:23:46.841] Load(Texture): Squad/Parts/Utility/launchClamp1/model001
+[LOG 16:23:46.857] Load(Texture): Squad/Parts/Utility/linearRCS/model000
+[LOG 16:23:46.874] Load(Texture): Squad/Parts/Utility/linearRCS/model001
+[LOG 16:23:46.890] Load(Texture): Squad/Parts/Utility/longAntenna/model000
+[LOG 16:23:46.923] Load(Texture): Squad/Parts/Utility/mediumDishAntenna/mediumDishAntenna
+[LOG 16:23:46.992] Load(Texture): Squad/Parts/Utility/mediumDishAntenna/mediumDishAntenna_Emit
+[LOG 16:23:47.009] Load(Texture): Squad/Parts/Utility/miniLandingLeg/leg
+[LOG 16:23:47.026] Load(Texture): Squad/Parts/Utility/miniLandingLeg/model000
+[LOG 16:23:47.042] Load(Texture): Squad/Parts/Utility/parachuteDrogue/model000
+[LOG 16:23:47.062] Load(Texture): Squad/Parts/Utility/parachuteDrogue/model001
+[LOG 16:23:47.079] Load(Texture): Squad/Parts/Utility/parachuteLarge/model000
+[LOG 16:23:47.099] Load(Texture): Squad/Parts/Utility/parachuteLarge/model001
+[LOG 16:23:47.116] Load(Texture): Squad/Parts/Utility/parachuteRadial/model000
+[LOG 16:23:47.136] Load(Texture): Squad/Parts/Utility/parachuteRadial/model001
+[LOG 16:23:47.152] Load(Texture): Squad/Parts/Utility/parachute_single/model000
+[LOG 16:23:47.177] Load(Texture): Squad/Parts/Utility/parachute_single/model001
+[LOG 16:23:47.204] Load(Texture): Squad/Parts/Utility/radialDecoupler/model000
+[LOG 16:23:47.221] Load(Texture): Squad/Parts/Utility/radialDecoupler/model001
+[LOG 16:23:47.237] Load(Texture): Squad/Parts/Utility/radialDecoupler1-2/model000
+[LOG 16:23:47.254] Load(Texture): Squad/Parts/Utility/radialDecoupler2/model000
+[LOG 16:23:47.270] Load(Texture): Squad/Parts/Utility/ramAirIntake/model000
+[LOG 16:23:47.295] Load(Texture): Squad/Parts/Utility/ramAirIntake/model001
+[LOG 16:23:47.313] Load(Texture): Squad/Parts/Utility/ramAirIntake/model002
+[LOG 16:23:47.331] Load(Texture): Squad/Parts/Utility/roverBody/model000
+[LOG 16:23:47.352] Load(Texture): Squad/Parts/Utility/roverBody/model001
+[LOG 16:23:47.369] Load(Texture): Squad/Parts/Utility/sensorAccelerometer/model000
+[LOG 16:23:47.386] Load(Texture): Squad/Parts/Utility/sensorBarometer/model000
+[LOG 16:23:47.403] Load(Texture): Squad/Parts/Utility/sensorGravimeter/model000
+[LOG 16:23:47.436] Load(Texture): Squad/Parts/Utility/sensorThermometer/model000
+[LOG 16:23:47.452] Load(Texture): Squad/Parts/Utility/spotLight1/model000
+[LOG 16:23:47.469] Load(Texture): Squad/Parts/Utility/spotLight1/model001
+[LOG 16:23:47.485] Load(Texture): Squad/Parts/Utility/spotLight2/model000
+[LOG 16:23:47.502] Load(Texture): Squad/Parts/Utility/spotLight2/model001
+[LOG 16:23:47.519] Load(Texture): Squad/Parts/Utility/stackBiCoupler/model000
+[LOG 16:23:47.546] Load(Texture): Squad/Parts/Utility/stackDecouplerMini/model000
+[LOG 16:23:47.562] Load(Texture): Squad/Parts/Utility/stackPoint1/model000
+[LOG 16:23:47.613] Load(Texture): Squad/Parts/Utility/stackPoint1/model001
+[LOG 16:23:47.638] Load(Texture): Squad/Parts/Utility/stackQuadCoupler/ksp_s_quadCoupler_diff
+[LOG 16:23:47.714] Load(Texture): Squad/Parts/Utility/stackSeparator/model000
+[LOG 16:23:47.735] Load(Texture): Squad/Parts/Utility/stackSeparator/model001
+[LOG 16:23:47.774] Load(Texture): Squad/Parts/Utility/stackSeparatorBig/model000
+[LOG 16:23:47.826] Load(Texture): Squad/Parts/Utility/stackSeparatorMini/model000
+[LOG 16:23:47.846] Load(Texture): Squad/Parts/Utility/stackTriCoupler/model000
+[LOG 16:23:47.877] Load(Texture): Squad/Parts/Utility/telescopicLadder/model000
+[LOG 16:23:47.979] Load(Texture): Squad/Parts/Utility/telescopicLadder/model001
+[LOG 16:23:48.057] Load(Texture): Squad/Parts/Utility/telescopicLadder/model002
+[LOG 16:23:48.142] Load(Texture): Squad/Parts/Utility/telescopicLadderBay/model000
+[LOG 16:23:48.231] Load(Texture): Squad/Parts/Utility/telescopicLadderBay/model001
+[LOG 16:23:48.301] Load(Texture): Squad/Parts/Wheel/SmallGearBay/SmallGearBaymodel000
+[LOG 16:23:48.389] Load(Texture): Squad/Parts/Wheel/SmallGearBay/SmallGearBaymodel001
+[LOG 16:23:48.453] Load(Texture): Squad/Parts/Wheel/SmallGearBay/internal shell box props
+[LOG 16:23:48.540] Load(Texture): Squad/Parts/Wheel/roverWheel1/model000
+[LOG 16:23:48.564] Load(Texture): Squad/Parts/Wheel/roverWheel2/model000
+[LOG 16:23:48.581] Load(Texture): Squad/Parts/Wheel/roverWheel2/model001
+[LOG 16:23:48.599] Load(Texture): Squad/Parts/Wheel/roverWheel3/model000
+[LOG 16:23:48.675] Load(Texture): Squad/Parts/Wheel/roverWheel3/model001
+[LOG 16:23:48.695] Load(Texture): Squad/Parts/Wheel/roverWheel3/model002
+[LOG 16:23:48.711] Load(Texture): Squad/Parts/Wheel/roverWheel3/model003
+[LOG 16:23:48.728] Load(Texture): Squad/Parts/Wheel/wheelMed/model000
+[LOG 16:23:48.810] Load(Texture): Squad/Parts/Wheel/wheelMed/model001
+[LOG 16:23:48.878] Load(Texture): Squad/Parts/Wheel/wheelMed/model002
+[LOG 16:23:48.948] Load(Texture): Squad/Parts/Wheel/wheelMed/model003
+[LOG 16:23:49.017] Load(Texture): Squad/Props/AltimeterThreeHands/model000
+[LOG 16:23:49.050] Load(Texture): Squad/Props/AltimeterThreeHands/model001
+[LOG 16:23:49.066] Load(Texture): Squad/Props/AtmosphereDepth/model000
+[LOG 16:23:49.083] Load(Texture): Squad/Props/AtmosphereDepth/model001
+[LOG 16:23:49.099] Load(Texture): Squad/Props/AxisIndicator/model000
+[LOG 16:23:49.116] Load(Texture): Squad/Props/ButtonSquare/model000
+[LOG 16:23:49.180] Load(Texture): Squad/Props/Compass/model000
+[LOG 16:23:49.202] Load(Texture): Squad/Props/IndicatorPanel/model000
+[LOG 16:23:49.223] Load(Texture): Squad/Props/IndicatorPanel/model001
+[LOG 16:23:49.240] Load(Texture): Squad/Props/NavBall/model000
+[LOG 16:23:49.256] Load(Texture): Squad/Props/NavBall/model001
+[LOG 16:23:49.273] Load(Texture): Squad/Props/NavBall/model002
+[LOG 16:23:49.290] Load(Texture): Squad/Props/NavBall/model003
+[LOG 16:23:49.306] Load(Texture): Squad/Props/VSI/model000
+[LOG 16:23:49.334] Load(Texture): Squad/Props/circularButton/model000
+[LOG 16:23:49.351] Load(Texture): Squad/Props/directionalKnob/model000
+[LOG 16:23:49.368] Load(Texture): Squad/Props/directionalKnob2/model000
+[LOG 16:23:49.384] Load(Texture): Squad/Props/ledPanelSpeed/model000
+[LOG 16:23:49.401] Load(Texture): Squad/Props/ledPanelSpeed/model001
+[LOG 16:23:49.417] Load(Texture): Squad/Props/pullSwitch/model000
+[LOG 16:23:49.434] Load(Texture): Squad/Props/pullSwitch/model001
+[LOG 16:23:49.450] Load(Texture): Squad/Props/radarAltitude/model000
+[LOG 16:23:49.475] Load(Texture): Squad/Props/squareButton/model000
+[LOG 16:23:49.492] Load(Texture): Squad/Props/standingSwitch/model000
+[LOG 16:23:49.508] Load(Texture): Squad/Props/standingSwitch/model001
+[LOG 16:23:49.525] Load(Texture): Squad/Props/switch/model000
+[LOG 16:23:49.558] Load(Texture): Squad/Props/switchGuard/model000
+[LOG 16:23:49.574] Load(Texture): Squad/Props/switchWithGuards/model000
+[LOG 16:23:49.591] Load(Texture): Squad/Props/switchWithGuards/model001
+[LOG 16:23:49.608] Load(Texture): Squad/Props/switchWithGuards/model002
+[LOG 16:23:49.624] Load(Texture): Squad/Props/throttle/model000
+[LOG 16:23:49.641] Load(Texture): Squad/Props/throttle/model001
+[LOG 16:23:49.710] Load(Texture): Squad/Spaces/GenericSpace1/model000
+[LOG 16:23:49.791] Load(Texture): Squad/Spaces/GenericSpace1/model001
+[LOG 16:23:49.860] Load(Texture): Squad/Spaces/GenericSpace1/model002
+[LOG 16:23:49.928] Load(Texture): Squad/Spaces/GenericSpace1/model003
+[LOG 16:23:49.997] Load(Texture): Squad/Spaces/GenericSpace1/model004
+[LOG 16:23:50.088] Load(Texture): Squad/Spaces/GenericSpace1/model005
+[LOG 16:23:50.159] Load(Texture): Squad/Spaces/GenericSpace3/model000
+[LOG 16:23:50.233] Load(Texture): Squad/Spaces/GenericSpace3/model001
+[LOG 16:23:50.250] Load(Texture): Squad/Spaces/GenericSpace3/model002
+[LOG 16:23:50.321] Load(Texture): Squad/Spaces/GenericSpace3/model003
+[LOG 16:23:50.398] Load(Texture): Squad/Spaces/GenericSpace3/model004
+[LOG 16:23:50.471] Load(Texture): Squad/Spaces/GenericSpace3/model005
+[LOG 16:23:50.543] Load(Texture): Squad/Spaces/GenericSpace3/model006
+[LOG 16:23:50.635] Load(Texture): Squad/Spaces/GenericSpace3/model007
+[LOG 16:23:50.700] Load(Texture): Squad/Spaces/PodCockpit/model000
+[LOG 16:23:50.770] Load(Texture): Squad/Spaces/PodCockpit/model001
+[LOG 16:23:50.841] Load(Texture): Squad/Spaces/PodCockpit/model002
+[LOG 16:23:50.906] Load(Texture): Squad/Spaces/PodCockpit/model003
+[LOG 16:23:50.980] Load(Texture): Squad/Spaces/PodCockpit/model004
+[LOG 16:23:51.053] Load(Texture): Squad/Spaces/PodCockpit/model005
+[LOG 16:23:51.136] Load(Texture): Squad/Spaces/PodCockpit/model006
+[LOG 16:23:51.212] Load(Texture): Squad/Spaces/PodCockpit/model007
+[LOG 16:23:51.286] Load(Texture): Squad/Spaces/crewCabinInternals/model000
+[LOG 16:23:51.303] Load(Texture): Squad/Spaces/crewCabinInternals/model001
+[LOG 16:23:51.697] Load(Texture): Squad/Spaces/crewCabinInternals/model002
+[LOG 16:23:51.717] Load(Texture): Squad/Spaces/crewCabinInternals/model003
+[LOG 16:23:51.786] Load(Texture): Squad/Spaces/crewCabinInternals/model004
+[LOG 16:23:51.803] Load(Texture): Squad/Spaces/crewCabinInternals/model005
+[LOG 16:23:51.870] Load(Texture): Squad/Spaces/cupolaInternal/ksp_l_cupola_internal_diff
+[LOG 16:23:52.169] Load(Texture): Squad/Spaces/cupolaInternal/ksp_l_cupola_internal_normal
+[LOG 16:23:52.465] Load(Texture): Squad/Spaces/cupolaInternal/ksp_l_cupola_internal_windows_alpha
+[LOG 16:23:52.519] Load(Texture): Squad/Spaces/cupolaInternal/pilot Seat
+[LOG 16:23:52.594] Load(Texture): Squad/Spaces/landerCabinInternals/model000
+[LOG 16:23:52.686] Load(Texture): Squad/Spaces/landerCabinInternals/model001
+[LOG 16:23:52.762] Load(Texture): Squad/Spaces/landerCabinInternals/model002
+[LOG 16:23:52.840] Load(Texture): Squad/Spaces/landerCabinInternals/model003
+[LOG 16:23:53.174] Load(Texture): Squad/Spaces/landerCabinInternals/model004
+[LOG 16:23:53.251] Load(Texture): Squad/Spaces/landerCabinInternals/model005
+[LOG 16:23:53.269] Load(Texture): Squad/Spaces/landerCabinInternals/model006
+[LOG 16:23:53.343] Load(Texture): Squad/Spaces/landerCabinInternals/model007
+[LOG 16:23:53.359] Load(Texture): Squad/Spaces/landerCabinSmallInternal/ksp_s_landerCan_internal_diff
+[LOG 16:23:53.640] Load(Texture): Squad/Spaces/landerCabinSmallInternal/ksp_s_landerCan_internal_normal
+[LOG 16:23:53.918] Load(Texture): Squad/Spaces/landerCabinSmallInternal/ksp_s_landerCan_internal_window_alpha
+[LOG 16:23:53.982] Load(Texture): Squad/Spaces/landerCabinSmallInternal/pilot Seat
+[LOG 16:23:54.068] Load(Texture): Squad/Spaces/mk1CockpitInternal/model000
+[LOG 16:23:54.173] Load(Texture): Squad/Spaces/mk1CockpitInternal/model001
+[LOG 16:23:54.269] Load(Texture): Squad/Spaces/mk1CockpitInternal/model002
+[LOG 16:23:54.357] Load(Texture): Squad/Spaces/mk1CockpitInternal/model003
+[LOG 16:23:54.456] Load(Texture): Squad/Spaces/mk1CockpitInternal/model004
+[LOG 16:23:54.576] Load(Texture): Squad/Spaces/mk1CockpitInternal/model005
+[LOG 16:23:54.656] Load(Texture): Squad/Spaces/mk1CockpitInternal/model006
+[LOG 16:23:54.721] Load(Texture): Squad/Spaces/mk1CockpitInternal/model007
+[LOG 16:23:54.780] Load(Texture): Squad/Spaces/mk1CockpitInternal/model008
+[LOG 16:23:54.825] Load(Texture): Squad/Spaces/mk1CockpitInternal/model009
+[LOG 16:23:54.894] Load(Texture): Squad/Spaces/mk1PodCockpit/model000
+[LOG 16:23:54.991] Load(Texture): Squad/Spaces/mk1PodCockpit/model001
+[LOG 16:23:55.059] Load(Texture): Squad/Spaces/mk1PodCockpit/model002
+[LOG 16:23:55.131] Load(Texture): Squad/Spaces/mk1PodCockpit/model003
+[LOG 16:23:55.182] Load(Texture): Squad/Spaces/mk1PodCockpit/model004
+[LOG 16:23:55.493] Load(Texture): Squad/Spaces/mk1PodCockpit/model005
+[LOG 16:23:55.512] Load(Texture): Squad/Spaces/mk1PodCockpit/model006
+[LOG 16:23:55.580] Load(Texture): Squad/Spaces/mk1PodCockpit/model007
+[LOG 16:23:55.597] Load(Model): Squad/FX/exhaustFlames_blue
+[LOG 16:23:55.621] Load(Model): Squad/FX/shockExhaust_blue
+[LOG 16:23:55.633] Load(Model): Squad/FX/shockExhaust_blue_small
+[LOG 16:23:55.650] Load(Model): Squad/FX/shockExhaust_red_small
+[LOG 16:23:55.666] Load(Model): Squad/Parts/Aero/Ailerons/model
+[LOG 16:23:55.683] Load(Model): Squad/Parts/Aero/CanardController/model
+[LOG 16:23:55.700] Load(Model): Squad/Parts/Aero/NoseCone/model
+[LOG 16:23:55.718] Load(Model): Squad/Parts/Aero/advancedCanard/model
+[LOG 16:23:55.733] Load(Model): Squad/Parts/Aero/airplaneTail/model
+[LOG 16:23:55.749] Load(Model): Squad/Parts/Aero/deltaWing/model
+[LOG 16:23:55.766] Load(Model): Squad/Parts/Aero/noseConeAdapter/model
+[LOG 16:23:55.782] Load(Model): Squad/Parts/Aero/rocketNoseCone/model
+[LOG 16:23:55.801] Load(Model): Squad/Parts/Aero/smallCtrlSrf/model
+[LOG 16:23:55.816] Load(Model): Squad/Parts/Aero/standardNoseCone/model
+[LOG 16:23:55.832] Load(Model): Squad/Parts/Aero/sweptWing/model
+[LOG 16:23:55.849] Load(Model): Squad/Parts/Aero/tailfin/model
+[LOG 16:23:55.865] Load(Model): Squad/Parts/Aero/wingConnector/model
+[LOG 16:23:55.882] Load(Model): Squad/Parts/Aero/winglet/model
+[LOG 16:23:55.899] Load(Model): Squad/Parts/Aero/winglet2/model
+[LOG 16:23:55.942] Load(Model): Squad/Parts/Aero/winglet3/model
+[LOG 16:23:55.958] Load(Model): Squad/Parts/Command/Mark1Cockpit/model
+[LOG 16:23:55.975] Load(Model): Squad/Parts/Command/Mark2Cockpit/model
+[LOG 16:23:56.008] Load(Model): Squad/Parts/Command/Mk1-2Pod/model
+[LOG 16:23:56.025] Load(Model): Squad/Parts/Command/advSasModule/model
+[LOG 16:23:56.041] Load(Model): Squad/Parts/Command/asasmodule1-2/model
+[LOG 16:23:56.058] Load(Model): Squad/Parts/Command/avionicsNoseCone/model
+[LOG 16:23:56.074] Load(Model): Squad/Parts/Command/crewCabin/model
+[LOG 16:23:56.091] Load(Model): Squad/Parts/Command/cupola/model
+[LOG 16:23:56.107] Load(Model): Squad/Parts/Command/landerCabinSmall/model
+[LOG 16:23:56.125] Load(Model): Squad/Parts/Command/mark3Cockpit/model
+[LOG 16:23:56.142] Load(Model): Squad/Parts/Command/mk1pod/model
+[LOG 16:23:56.158] Load(Model): Squad/Parts/Command/mk2LanderCabin/model
+[LOG 16:23:56.181] Load(Model): Squad/Parts/Command/probeCoreCube/model
+[LOG 16:23:56.190] Load(Model): Squad/Parts/Command/probeCoreHex/model
+[LOG 16:23:56.207] Load(Model): Squad/Parts/Command/probeCoreOcto/model
+[LOG 16:23:56.224] Load(Model): Squad/Parts/Command/probeCoreOcto2/model
+[LOG 16:23:56.240] Load(Model): Squad/Parts/Command/probeCoreSphere/model
+[LOG 16:23:56.257] Load(Model): Squad/Parts/Command/probeStackLarge/model
+[LOG 16:23:56.273] Load(Model): Squad/Parts/Command/probeStackSmall/model
+[LOG 16:23:56.289] Load(Model): Squad/Parts/Command/sasModule/model
+[LOG 16:23:56.306] Load(Model): Squad/Parts/Command/seatExternalCmd/model
+[LOG 16:23:56.323] Load(Model): Squad/Parts/Electrical/RTG/model
+[LOG 16:23:56.340] Load(Model): Squad/Parts/Electrical/batteryBank/model
+[LOG 16:23:56.356] Load(Model): Squad/Parts/Electrical/batteryBankLarge/model
+[LOG 16:23:56.372] Load(Model): Squad/Parts/Electrical/batteryBankMini/model
+[LOG 16:23:56.389] Load(Model): Squad/Parts/Electrical/batteryPack/model
+[LOG 16:23:56.405] Load(Model): Squad/Parts/Electrical/ksp_r_largeBatteryPack/model
+[LOG 16:23:56.422] Load(Model): Squad/Parts/Electrical/largeSolarPanel/model
+[LOG 16:23:56.438] Load(Model): Squad/Parts/Electrical/solarPanels1/model
+[LOG 16:23:56.455] Load(Model): Squad/Parts/Electrical/solarPanels2/model
+[LOG 16:23:56.472] Load(Model): Squad/Parts/Electrical/solarPanels3/model
+[LOG 16:23:56.488] Load(Model): Squad/Parts/Electrical/solarPanels4/model
+[LOG 16:23:56.521] Load(Model): Squad/Parts/Electrical/solarPanels5/model
+[LOG 16:23:56.538] Load(Model): Squad/Parts/Engine/JetEngine/model
+[LOG 16:23:56.567] Load(Model): Squad/Parts/Engine/engineLargeSkipper/model
+[LOG 16:23:56.584] Load(Model): Squad/Parts/Engine/ionEngine/model
+[LOG 16:23:56.601] Load(Model): Squad/Parts/Engine/liquidEngine1/model
+[LOG 16:23:56.618] Load(Model): Squad/Parts/Engine/liquidEngine1-2/model
+[LOG 16:23:56.635] Load(Model): Squad/Parts/Engine/liquidEngine2/model
+[LOG 16:23:56.651] Load(Model): Squad/Parts/Engine/liquidEngine2-2/model
+[LOG 16:23:56.668] Load(Model): Squad/Parts/Engine/liquidEngine3/model
+[LOG 16:23:56.684] Load(Model): Squad/Parts/Engine/liquidEngineMini/model
+[LOG 16:23:56.700] Load(Model): Squad/Parts/Engine/microEngine/model
+[LOG 16:23:56.716] Load(Model): Squad/Parts/Engine/nuclearEngine/model
+[LOG 16:23:56.733] Load(Model): Squad/Parts/Engine/radialEngineMini/model
+[LOG 16:23:56.750] Load(Model): Squad/Parts/Engine/radialLiquidEngine1-2/model
+[LOG 16:23:56.766] Load(Model): Squad/Parts/Engine/rapierEngine/rapier
+[LOG 16:23:56.784] Load(Model): Squad/Parts/Engine/sepMotor1/model
+[LOG 16:23:56.799] Load(Model): Squad/Parts/Engine/smallRadialEngine/model
+[LOG 16:23:56.820] Load(Model): Squad/Parts/Engine/solidBooster/model
+[LOG 16:23:56.834] Load(Model): Squad/Parts/Engine/solidBooster1-1/model
+[LOG 16:23:56.849] Load(Model): Squad/Parts/Engine/toroidalAerospike/model
+[LOG 16:23:56.866] Load(Model): Squad/Parts/Engine/turboFanEngine/model
+[LOG 16:23:56.883] Load(Model): Squad/Parts/FuelTank/MK1Fuselage/model
+[LOG 16:23:56.899] Load(Model): Squad/Parts/FuelTank/MK1FuselageStructural/model
+[LOG 16:23:56.916] Load(Model): Squad/Parts/FuelTank/RCSFuelTank/model
+[LOG 16:23:56.933] Load(Model): Squad/Parts/FuelTank/RCSTank1-2/model
+[LOG 16:23:56.974] Load(Model): Squad/Parts/FuelTank/RCStankMini/model
+[LOG 16:23:56.990] Load(Model): Squad/Parts/FuelTank/RCStankRadialLong/model
+[LOG 16:23:57.023] Load(Model): Squad/Parts/FuelTank/fuelTank/model
+[LOG 16:23:57.040] Load(Model): Squad/Parts/FuelTank/fuelTank1-2/model
+[LOG 16:23:57.057] Load(Model): Squad/Parts/FuelTank/fuelTank2-2/model
+[LOG 16:23:57.074] Load(Model): Squad/Parts/FuelTank/fuelTank3-2/model
+[LOG 16:23:57.090] Load(Model): Squad/Parts/FuelTank/fuelTank4-2/model
+[LOG 16:23:57.107] Load(Model): Squad/Parts/FuelTank/fuelTankSmall/model
+[LOG 16:23:57.124] Load(Model): Squad/Parts/FuelTank/fuelTankSmallFlat/model
+[LOG 16:23:57.139] Load(Model): Squad/Parts/FuelTank/fuelTank_long/model
+[LOG 16:23:57.156] Load(Model): Squad/Parts/FuelTank/miniFuelTank/model
+[LOG 16:23:57.173] Load(Model): Squad/Parts/FuelTank/mk2Fuselage/model
+[LOG 16:23:57.190] Load(Model): Squad/Parts/FuelTank/mk2SpacePlaneAdapter/model
+[LOG 16:23:57.208] Load(Model): Squad/Parts/FuelTank/mk3Fuselage/model
+[LOG 16:23:57.222] Load(Model): Squad/Parts/FuelTank/mk3spacePlaneAdapter/model
+[LOG 16:23:57.240] Load(Model): Squad/Parts/FuelTank/radialRCSTank/model
+[LOG 16:23:57.255] Load(Model): Squad/Parts/FuelTank/toroidalFuelTank/model
+[LOG 16:23:57.272] Load(Model): Squad/Parts/FuelTank/xenonTank/model
+[LOG 16:23:57.289] Load(Model): Squad/Parts/FuelTank/xenonTankRadial/model
+[LOG 16:23:57.306] Load(Model): Squad/Parts/Science/GooExperiment/GooExperiment
+[LOG 16:23:57.321] Load(Model): Squad/Parts/Science/LargeCrewedLab/large_crewed_lab
+[LOG 16:23:57.346] Load(Model): Squad/Parts/Science/MaterialBay/science_module_small
+[LOG 16:23:57.357] Load(Model): Squad/Parts/Structural/adapterLargeSmallBi/model
+[LOG 16:23:57.373] Load(Model): Squad/Parts/Structural/adapterLargeSmallQuad/model
+[LOG 16:23:57.390] Load(Model): Squad/Parts/Structural/adapterLargeSmallTri/model
+[LOG 16:23:57.406] Load(Model): Squad/Parts/Structural/adapterSmallMiniShort/model
+[LOG 16:23:57.423] Load(Model): Squad/Parts/Structural/adapterSmallMiniTall/model
+[LOG 16:23:57.440] Load(Model): Squad/Parts/Structural/nacelleBody/model
+[LOG 16:23:57.456] Load(Model): Squad/Parts/Structural/radialEngineBody/model
+[LOG 16:23:57.473] Load(Model): Squad/Parts/Structural/smallHardpoint/model
+[LOG 16:23:57.489] Load(Model): Squad/Parts/Structural/stationHub/model
+[LOG 16:23:57.522] Load(Model): Squad/Parts/Structural/structuralIBeam1/model
+[LOG 16:23:57.539] Load(Model): Squad/Parts/Structural/structuralIBeam2/model
+[LOG 16:23:57.556] Load(Model): Squad/Parts/Structural/structuralIBeam3/model
+[LOG 16:23:57.572] Load(Model): Squad/Parts/Structural/structuralMiniNode/model
+[LOG 16:23:57.589] Load(Model): Squad/Parts/Structural/structuralPanel1/model
+[LOG 16:23:57.605] Load(Model): Squad/Parts/Structural/structuralPanel2/model
+[LOG 16:23:57.622] Load(Model): Squad/Parts/Structural/structuralPylon/model
+[LOG 16:23:57.638] Load(Model): Squad/Parts/Structural/structuralWing/model
+[LOG 16:23:57.655] Load(Model): Squad/Parts/Structural/strutConnector/model
+[LOG 16:23:57.672] Load(Model): Squad/Parts/Structural/strutCube/model
+[LOG 16:23:57.688] Load(Model): Squad/Parts/Structural/strutOcto/model
+[LOG 16:23:57.705] Load(Model): Squad/Parts/Structural/trussAdapter/model
+[LOG 16:23:57.722] Load(Model): Squad/Parts/Structural/trussPiece1x/model
+[LOG 16:23:57.738] Load(Model): Squad/Parts/Structural/trussPiece3x/model
+[LOG 16:23:57.754] Load(Model): Squad/Parts/Utility/CircularIntake/model
+[LOG 16:23:57.771] Load(Model): Squad/Parts/Utility/LandingLeg/model
+[ERR 16:23:57.775] WheelCollider requires an attached Rigidbody to function.
+[ERR 16:23:57.775] WheelCollider requires an attached Rigidbody to function.
+[LOG 16:23:57.788] Load(Model): Squad/Parts/Utility/LandingLeg1-2/model
+[ERR 16:23:57.790] WheelCollider requires an attached Rigidbody to function.
+[ERR 16:23:57.790] WheelCollider requires an attached Rigidbody to function.
+[LOG 16:23:57.804] Load(Model): Squad/Parts/Utility/RCS block/model
+[LOG 16:23:57.820] Load(Model): Squad/Parts/Utility/StackDecoupler/model
+[LOG 16:23:57.838] Load(Model): Squad/Parts/Utility/airScoop/model
+[LOG 16:23:57.854] Load(Model): Squad/Parts/Utility/commDish/model
+[LOG 16:23:57.884] Load(Model): Squad/Parts/Utility/decoupler1-2/model
+[LOG 16:23:57.899] Load(Model): Squad/Parts/Utility/dockingPort1/model
+[LOG 16:23:57.916] Load(Model): Squad/Parts/Utility/dockingPort2/model
+[LOG 16:23:57.933] Load(Model): Squad/Parts/Utility/dockingPort3/model
+[LOG 16:23:57.949] Load(Model): Squad/Parts/Utility/dockingPortLarge/model
+[LOG 16:23:57.965] Load(Model): Squad/Parts/Utility/dockingPortLateral/model
+[LOG 16:23:57.982] Load(Model): Squad/Parts/Utility/fuelLine/model
+[LOG 16:23:57.998] Load(Model): Squad/Parts/Utility/ladder1/model
+[LOG 16:23:58.031] Load(Model): Squad/Parts/Utility/largeAdapter/model
+[LOG 16:23:58.047] Load(Model): Squad/Parts/Utility/largeAdapter2/model
+[LOG 16:23:58.064] Load(Model): Squad/Parts/Utility/launchClamp1/model
+[LOG 16:23:58.081] Load(Model): Squad/Parts/Utility/linearRCS/model
+[LOG 16:23:58.097] Load(Model): Squad/Parts/Utility/longAntenna/model
+[LOG 16:23:58.114] Load(Model): Squad/Parts/Utility/mediumDishAntenna/mediumDishAntenna
+[LOG 16:23:58.130] Load(Model): Squad/Parts/Utility/miniLandingLeg/model
+[ERR 16:23:58.134] WheelCollider requires an attached Rigidbody to function.
+[ERR 16:23:58.134] WheelCollider requires an attached Rigidbody to function.
+[LOG 16:23:58.147] Load(Model): Squad/Parts/Utility/parachuteDrogue/model
+[LOG 16:23:58.164] Load(Model): Squad/Parts/Utility/parachuteLarge/model
+[LOG 16:23:58.180] Load(Model): Squad/Parts/Utility/parachuteRadial/model
+[LOG 16:23:58.196] Load(Model): Squad/Parts/Utility/parachute_single/model
+[LOG 16:23:58.214] Load(Model): Squad/Parts/Utility/radialDecoupler/model
+[LOG 16:23:58.230] Load(Model): Squad/Parts/Utility/radialDecoupler1-2/model
+[LOG 16:23:58.246] Load(Model): Squad/Parts/Utility/radialDecoupler2/model
+[LOG 16:23:58.263] Load(Model): Squad/Parts/Utility/ramAirIntake/model
+[LOG 16:23:58.280] Load(Model): Squad/Parts/Utility/roverBody/model
+[LOG 16:23:58.297] Load(Model): Squad/Parts/Utility/sensorAccelerometer/model
+[LOG 16:23:58.313] Load(Model): Squad/Parts/Utility/sensorBarometer/model
+[LOG 16:23:58.329] Load(Model): Squad/Parts/Utility/sensorGravimeter/model
+[LOG 16:23:58.346] Load(Model): Squad/Parts/Utility/sensorThermometer/model
+[LOG 16:23:58.362] Load(Model): Squad/Parts/Utility/spotLight1/model
+[LOG 16:23:58.379] Load(Model): Squad/Parts/Utility/spotLight2/model
+[LOG 16:23:58.395] Load(Model): Squad/Parts/Utility/stackBiCoupler/model
+[LOG 16:23:58.412] Load(Model): Squad/Parts/Utility/stackDecouplerMini/model
+[LOG 16:23:58.429] Load(Model): Squad/Parts/Utility/stackPoint1/model
+[LOG 16:23:58.445] Load(Model): Squad/Parts/Utility/stackQuadCoupler/model
+[LOG 16:23:58.462] Load(Model): Squad/Parts/Utility/stackSeparator/model
+[LOG 16:23:58.479] Load(Model): Squad/Parts/Utility/stackSeparatorBig/model
+[LOG 16:23:58.495] Load(Model): Squad/Parts/Utility/stackSeparatorMini/model
+[LOG 16:23:58.512] Load(Model): Squad/Parts/Utility/stackTriCoupler/model
+[LOG 16:23:58.544] Load(Model): Squad/Parts/Utility/telescopicLadder/model
+[LOG 16:23:58.561] Load(Model): Squad/Parts/Utility/telescopicLadderBay/model
+[LOG 16:23:58.578] Load(Model): Squad/Parts/Wheel/SmallGearBay/model
+[ERR 16:23:58.580] WheelCollider requires an attached Rigidbody to function.
+[ERR 16:23:58.580] WheelCollider requires an attached Rigidbody to function.
+[LOG 16:23:58.594] Load(Model): Squad/Parts/Wheel/roverWheel1/model
+[ERR 16:23:58.596] WheelCollider requires an attached Rigidbody to function.
+[ERR 16:23:58.596] WheelCollider requires an attached Rigidbody to function.
+[LOG 16:23:58.611] Load(Model): Squad/Parts/Wheel/roverWheel2/model
+[ERR 16:23:58.615] WheelCollider requires an attached Rigidbody to function.
+[ERR 16:23:58.615] WheelCollider requires an attached Rigidbody to function.
+[LOG 16:23:58.630] Load(Model): Squad/Parts/Wheel/roverWheel3/model
+[ERR 16:23:58.632] WheelCollider requires an attached Rigidbody to function.
+[ERR 16:23:58.632] WheelCollider requires an attached Rigidbody to function.
+[LOG 16:23:58.652] Load(Model): Squad/Parts/Wheel/wheelMed/model
+[ERR 16:23:58.653] WheelCollider requires an attached Rigidbody to function.
+[ERR 16:23:58.653] WheelCollider requires an attached Rigidbody to function.
+[LOG 16:23:58.669] Load(Model): Squad/Props/AltimeterThreeHands/model
+[LOG 16:23:58.685] Load(Model): Squad/Props/AtmosphereDepth/model
+[LOG 16:23:58.702] Load(Model): Squad/Props/AxisIndicator/model
+[LOG 16:23:58.718] Load(Model): Squad/Props/ButtonSquare/model
+[LOG 16:23:58.735] Load(Model): Squad/Props/Compass/model
+[LOG 16:23:58.752] Load(Model): Squad/Props/IndicatorPanel/model
+[LOG 16:23:58.768] Load(Model): Squad/Props/NavBall/model
+[LOG 16:23:58.785] Load(Model): Squad/Props/VSI/model
+[LOG 16:23:58.801] Load(Model): Squad/Props/circularButton/model
+[LOG 16:23:58.818] Load(Model): Squad/Props/directionalKnob/model
+[LOG 16:23:58.835] Load(Model): Squad/Props/directionalKnob2/model
+[LOG 16:23:58.851] Load(Model): Squad/Props/ledPanelSpeed/model
+[LOG 16:23:58.868] Load(Model): Squad/Props/pullSwitch/model
+[LOG 16:23:58.884] Load(Model): Squad/Props/radarAltitude/model
+[LOG 16:23:58.901] Load(Model): Squad/Props/squareButton/model
+[LOG 16:23:58.917] Load(Model): Squad/Props/standingSwitch/model
+[LOG 16:23:58.934] Load(Model): Squad/Props/switch/model
+[LOG 16:23:58.950] Load(Model): Squad/Props/switchGuard/model
+[LOG 16:23:58.967] Load(Model): Squad/Props/switchWithGuards/model
+[LOG 16:23:58.984] Load(Model): Squad/Props/throttle/model
+[LOG 16:23:59.000] Load(Model): Squad/Spaces/GenericSpace1/model
+[LOG 16:23:59.019] Load(Model): Squad/Spaces/GenericSpace3/model
+[LOG 16:23:59.053] Load(Model): Squad/Spaces/PodCockpit/model
+[LOG 16:23:59.077] Load(Model): Squad/Spaces/crewCabinInternals/model
+[LOG 16:23:59.093] Load(Model): Squad/Spaces/cupolaInternal/model
+[LOG 16:23:59.110] Load(Model): Squad/Spaces/landerCabinInternals/model
+[LOG 16:23:59.126] Load(Model): Squad/Spaces/landerCabinSmallInternal/model
+[LOG 16:23:59.143] Load(Model): Squad/Spaces/mk1CockpitInternal/model
+[LOG 16:23:59.622] Load(Model): Squad/Spaces/mk1PodCockpit/model
+[LOG 16:23:59.643] Config(PART) Squad/Parts/Aero/Ailerons/part/StandardCtrlSrf
+[LOG 16:23:59.644] Config(PART) Squad/Parts/Aero/CanardController/part/CanardController
+[LOG 16:23:59.644] Config(PART) Squad/Parts/Aero/NoseCone/part/noseCone
+[LOG 16:23:59.644] Config(PART) Squad/Parts/Aero/advancedCanard/part/AdvancedCanard
+[LOG 16:23:59.644] Config(PART) Squad/Parts/Aero/airplaneTail/part/airplaneTail
+[LOG 16:23:59.644] Config(PART) Squad/Parts/Aero/deltaWing/part/deltaWing
+[LOG 16:23:59.644] Config(PART) Squad/Parts/Aero/noseConeAdapter/part/noseConeAdapter
+[LOG 16:23:59.644] Config(PART) Squad/Parts/Aero/rocketNoseCone/part/rocketNoseCone
+[LOG 16:23:59.644] Config(PART) Squad/Parts/Aero/smallCtrlSrf/part/smallCtrlSrf
+[LOG 16:23:59.644] Config(PART) Squad/Parts/Aero/standardNoseCone/part/standardNoseCone
+[LOG 16:23:59.644] Config(PART) Squad/Parts/Aero/sweptWing/part/sweptWing
+[LOG 16:23:59.644] Config(PART) Squad/Parts/Aero/tailfin/part/tailfin
+[LOG 16:23:59.644] Config(PART) Squad/Parts/Aero/wingConnector/part/wingConnector
+[LOG 16:23:59.644] Config(PART) Squad/Parts/Aero/winglet/part/winglet
+[LOG 16:23:59.644] Config(PART) Squad/Parts/Aero/winglet2/part/R8winglet
+[LOG 16:23:59.644] Config(PART) Squad/Parts/Aero/winglet3/part/winglet3
+[LOG 16:23:59.644] Config(PART) Squad/Parts/Command/Mark1Cockpit/part/Mark1Cockpit
+[LOG 16:23:59.644] Config(PART) Squad/Parts/Command/Mark2Cockpit/part/Mark2Cockpit
+[LOG 16:23:59.644] Config(PART) Squad/Parts/Command/Mk1-2Pod/part/Mark1-2Pod
+[LOG 16:23:59.644] Config(PART) Squad/Parts/Command/advSasModule/part/advSasModule
+[LOG 16:23:59.644] Config(PART) Squad/Parts/Command/asasmodule1-2/part/asasmodule1-2
+[LOG 16:23:59.644] Config(PART) Squad/Parts/Command/avionicsNoseCone/part/avionicsNoseCone
+[LOG 16:23:59.644] Config(PART) Squad/Parts/Command/crewCabin/part/crewCabin
+[LOG 16:23:59.644] Config(PART) Squad/Parts/Command/cupola/part/cupola
+[LOG 16:23:59.644] Config(PART) Squad/Parts/Command/landerCabinSmall/part/landerCabinSmall
+[LOG 16:23:59.644] Config(PART) Squad/Parts/Command/mark3Cockpit/part/mark3Cockpit
+[LOG 16:23:59.644] Config(PART) Squad/Parts/Command/mk1pod/part/mk1pod
+[LOG 16:23:59.645] Config(PART) Squad/Parts/Command/mk2LanderCabin/part/mk2LanderCabin
+[LOG 16:23:59.645] Config(PART) Squad/Parts/Command/probeCoreCube/part/probeCoreCube
+[LOG 16:23:59.645] Config(PART) Squad/Parts/Command/probeCoreHex/part/probeCoreHex
+[LOG 16:23:59.645] Config(PART) Squad/Parts/Command/probeCoreOcto/part/probeCoreOcto
+[LOG 16:23:59.645] Config(PART) Squad/Parts/Command/probeCoreOcto2/part/probeCoreOcto2
+[LOG 16:23:59.645] Config(PART) Squad/Parts/Command/probeCoreSphere/part/probeCoreSphere
+[LOG 16:23:59.645] Config(PART) Squad/Parts/Command/probeStackLarge/part/probeStackLarge
+[LOG 16:23:59.645] Config(PART) Squad/Parts/Command/probeStackSmall/part/probeStackSmall
+[LOG 16:23:59.645] Config(PART) Squad/Parts/Command/sasModule/part/sasModule
+[LOG 16:23:59.645] Config(PART) Squad/Parts/Command/seatExternalCmd/part/seatExternalCmd
+[LOG 16:23:59.645] Config(PART) Squad/Parts/Electrical/RTG/part/rtg
+[LOG 16:23:59.645] Config(PART) Squad/Parts/Electrical/batteryBank/part/batteryBank
+[LOG 16:23:59.645] Config(PART) Squad/Parts/Electrical/batteryBankLarge/part/batteryBankLarge
+[LOG 16:23:59.645] Config(PART) Squad/Parts/Electrical/batteryBankMini/part/batteryBankMini
+[LOG 16:23:59.645] Config(PART) Squad/Parts/Electrical/batteryPack/part/batteryPack
+[LOG 16:23:59.645] Config(PART) Squad/Parts/Electrical/ksp_r_largeBatteryPack/part/ksp_r_largeBatteryPack
+[LOG 16:23:59.645] Config(PART) Squad/Parts/Electrical/largeSolarPanel/part/largeSolarPanel
+[LOG 16:23:59.645] Config(PART) Squad/Parts/Electrical/solarPanels1/part/solarPanels1
+[LOG 16:23:59.645] Config(PART) Squad/Parts/Electrical/solarPanels2/part/solarPanels2
+[LOG 16:23:59.645] Config(PART) Squad/Parts/Electrical/solarPanels3/part/solarPanels3
+[LOG 16:23:59.645] Config(PART) Squad/Parts/Electrical/solarPanels4/part/solarPanels4
+[LOG 16:23:59.645] Config(PART) Squad/Parts/Electrical/solarPanels5/part/solarPanels5
+[LOG 16:23:59.645] Config(PART) Squad/Parts/Engine/JetEngine/part/JetEngine
+[LOG 16:23:59.645] Config(PART) Squad/Parts/Engine/engineLargeSkipper/part/engineLargeSkipper
+[LOG 16:23:59.646] Config(PART) Squad/Parts/Engine/ionEngine/part/ionEngine
+[LOG 16:23:59.646] Config(PART) Squad/Parts/Engine/liquidEngine1/part/liquidEngine
+[LOG 16:23:59.646] Config(PART) Squad/Parts/Engine/liquidEngine1-2/part/liquidEngine1-2
+[LOG 16:23:59.646] Config(PART) Squad/Parts/Engine/liquidEngine2/part/liquidEngine2
+[LOG 16:23:59.646] Config(PART) Squad/Parts/Engine/liquidEngine2-2/part/liquidEngine2-2
+[LOG 16:23:59.646] Config(PART) Squad/Parts/Engine/liquidEngine3/part/liquidEngine3
+[LOG 16:23:59.646] Config(PART) Squad/Parts/Engine/liquidEngineMini/part/liquidEngineMini
+[LOG 16:23:59.646] Config(PART) Squad/Parts/Engine/microEngine/part/microEngine
+[LOG 16:23:59.646] Config(PART) Squad/Parts/Engine/nuclearEngine/part/nuclearEngine
+[LOG 16:23:59.646] Config(PART) Squad/Parts/Engine/radialEngineMini/part/radialEngineMini
+[LOG 16:23:59.646] Config(PART) Squad/Parts/Engine/radialLiquidEngine1-2/part/radialLiquidEngine1-2
+[LOG 16:23:59.646] Config(PART) Squad/Parts/Engine/rapierEngine/part/RAPIER
+[LOG 16:23:59.646] Config(PART) Squad/Parts/Engine/sepMotor1/part/sepMotor1
+[LOG 16:23:59.646] Config(PART) Squad/Parts/Engine/smallRadialEngine/part/smallRadialEngine
+[LOG 16:23:59.646] Config(PART) Squad/Parts/Engine/solidBooster/part/solidBooster
+[LOG 16:23:59.646] Config(PART) Squad/Parts/Engine/solidBooster1-1/part/solidBooster1-1
+[LOG 16:23:59.646] Config(PART) Squad/Parts/Engine/toroidalAerospike/part/toroidalAerospike
+[LOG 16:23:59.646] Config(PART) Squad/Parts/Engine/turboFanEngine/part/turboFanEngine
+[LOG 16:23:59.646] Config(PART) Squad/Parts/FuelTank/MK1Fuselage/part/MK1Fuselage
+[LOG 16:23:59.646] Config(PART) Squad/Parts/FuelTank/MK1FuselageStructural/part/Mk1FuselageStructural
+[LOG 16:23:59.646] Config(PART) Squad/Parts/FuelTank/RCSFuelTank/part/RCSFuelTank
+[LOG 16:23:59.646] Config(PART) Squad/Parts/FuelTank/RCSTank1-2/part/RCSTank1-2
+[LOG 16:23:59.646] Config(PART) Squad/Parts/FuelTank/RCStankMini/part/rcsTankMini
+[LOG 16:23:59.647] Config(PART) Squad/Parts/FuelTank/RCStankRadialLong/part/rcsTankRadialLong
+[LOG 16:23:59.647] Config(PART) Squad/Parts/FuelTank/fuelTank/part/fuelTank
+[LOG 16:23:59.647] Config(PART) Squad/Parts/FuelTank/fuelTank1-2/part/fuelTank1-2
+[LOG 16:23:59.647] Config(PART) Squad/Parts/FuelTank/fuelTank2-2/part/fuelTank2-2
+[LOG 16:23:59.647] Config(PART) Squad/Parts/FuelTank/fuelTank3-2/part/fuelTank3-2
+[LOG 16:23:59.647] Config(PART) Squad/Parts/FuelTank/fuelTank4-2/part/fuelTank4-2
+[LOG 16:23:59.647] Config(PART) Squad/Parts/FuelTank/fuelTankSmall/part/fuelTankSmall
+[LOG 16:23:59.647] Config(PART) Squad/Parts/FuelTank/fuelTankSmallFlat/part/fuelTankSmallFlat
+[LOG 16:23:59.647] Config(PART) Squad/Parts/FuelTank/fuelTank_long/part/fuelTank_long
+[LOG 16:23:59.647] Config(PART) Squad/Parts/FuelTank/miniFuelTank/part/miniFuelTank
+[LOG 16:23:59.647] Config(PART) Squad/Parts/FuelTank/mk2Fuselage/part/mk2Fuselage
+[LOG 16:23:59.647] Config(PART) Squad/Parts/FuelTank/mk2SpacePlaneAdapter/part/mk2SpacePlaneAdapter
+[LOG 16:23:59.647] Config(PART) Squad/Parts/FuelTank/mk3Fuselage/part/mk3Fuselage
+[LOG 16:23:59.647] Config(PART) Squad/Parts/FuelTank/mk3spacePlaneAdapter/part/mk3spacePlaneAdapter
+[LOG 16:23:59.647] Config(PART) Squad/Parts/FuelTank/radialRCSTank/part/radialRCSTank
+[LOG 16:23:59.647] Config(PART) Squad/Parts/FuelTank/toroidalFuelTank/part/toroidalFuelTank
+[LOG 16:23:59.647] Config(PART) Squad/Parts/FuelTank/xenonTank/part/xenonTank
+[LOG 16:23:59.647] Config(PART) Squad/Parts/FuelTank/xenonTankRadial/part/xenonTankRadial
+[LOG 16:23:59.647] Config(PART) Squad/Parts/Science/GooExperiment/part/GooExperiment
+[LOG 16:23:59.648] Config(PART) Squad/Parts/Science/LargeCrewedLab/part/Large_Crewed_Lab
+[LOG 16:23:59.648] Config(PART) Squad/Parts/Science/MaterialBay/part/science_module
+[LOG 16:23:59.648] Config(PART) Squad/Parts/Structural/adapterLargeSmallBi/part/adapterLargeSmallBi
+[LOG 16:23:59.648] Config(PART) Squad/Parts/Structural/adapterLargeSmallQuad/part/adapterLargeSmallQuad
+[LOG 16:23:59.648] Config(PART) Squad/Parts/Structural/adapterLargeSmallTri/part/adapterLargeSmallTri
+[LOG 16:23:59.648] Config(PART) Squad/Parts/Structural/adapterSmallMiniShort/part/adapterSmallMiniShort
+[LOG 16:23:59.648] Config(PART) Squad/Parts/Structural/adapterSmallMiniTall/part/adapterSmallMiniTall
+[LOG 16:23:59.648] Config(PART) Squad/Parts/Structural/nacelleBody/part/nacelleBody
+[LOG 16:23:59.648] Config(PART) Squad/Parts/Structural/radialEngineBody/part/radialEngineBody
+[LOG 16:23:59.648] Config(PART) Squad/Parts/Structural/smallHardpoint/part/smallHardpoint
+[LOG 16:23:59.648] Config(PART) Squad/Parts/Structural/stationHub/part/stationHub
+[LOG 16:23:59.648] Config(PART) Squad/Parts/Structural/structuralIBeam1/part/structuralIBeam1
+[LOG 16:23:59.648] Config(PART) Squad/Parts/Structural/structuralIBeam2/part/structuralIBeam2
+[LOG 16:23:59.648] Config(PART) Squad/Parts/Structural/structuralIBeam3/part/structuralIBeam3
+[LOG 16:23:59.648] Config(PART) Squad/Parts/Structural/structuralMiniNode/part/structuralMiniNode
+[LOG 16:23:59.648] Config(PART) Squad/Parts/Structural/structuralPanel1/part/structuralPanel1
+[LOG 16:23:59.648] Config(PART) Squad/Parts/Structural/structuralPanel2/part/structuralPanel2
+[LOG 16:23:59.648] Config(PART) Squad/Parts/Structural/structuralPylon/part/structuralPylon
+[LOG 16:23:59.648] Config(PART) Squad/Parts/Structural/structuralWing/part/structuralWing
+[LOG 16:23:59.648] Config(PART) Squad/Parts/Structural/strutConnector/part/strutConnector
+[LOG 16:23:59.648] Config(PART) Squad/Parts/Structural/strutCube/part/strutCube
+[LOG 16:23:59.648] Config(PART) Squad/Parts/Structural/strutOcto/part/strutOcto
+[LOG 16:23:59.649] Config(PART) Squad/Parts/Structural/trussAdapter/part/trussAdapter
+[LOG 16:23:59.649] Config(PART) Squad/Parts/Structural/trussPiece1x/part/trussPiece1x
+[LOG 16:23:59.649] Config(PART) Squad/Parts/Structural/trussPiece3x/part/trussPiece3x
+[LOG 16:23:59.649] Config(PART) Squad/Parts/Utility/CircularIntake/part/CircularIntake
+[LOG 16:23:59.649] Config(PART) Squad/Parts/Utility/LandingLeg/part/landingLeg1
+[LOG 16:23:59.649] Config(PART) Squad/Parts/Utility/LandingLeg1-2/part/landingLeg1-2
+[LOG 16:23:59.649] Config(PART) Squad/Parts/Utility/RCS block/part/RCSBlock
+[LOG 16:23:59.649] Config(PART) Squad/Parts/Utility/StackDecoupler/part/stackDecoupler
+[LOG 16:23:59.649] Config(PART) Squad/Parts/Utility/airScoop/part/airScoop
+[LOG 16:23:59.649] Config(PART) Squad/Parts/Utility/commDish/part/commDish
+[LOG 16:23:59.649] Config(PART) Squad/Parts/Utility/decoupler1-2/part/decoupler1-2
+[LOG 16:23:59.649] Config(PART) Squad/Parts/Utility/dockingPort1/part/dockingPort1
+[LOG 16:23:59.649] Config(PART) Squad/Parts/Utility/dockingPort2/part/dockingPort2
+[LOG 16:23:59.649] Config(PART) Squad/Parts/Utility/dockingPort3/part/dockingPort3
+[LOG 16:23:59.649] Config(PART) Squad/Parts/Utility/dockingPortLarge/part/dockingPortLarge
+[LOG 16:23:59.649] Config(PART) Squad/Parts/Utility/dockingPortLateral/part/dockingPortLateral
+[LOG 16:23:59.649] Config(PART) Squad/Parts/Utility/fuelLine/part/fuelLine
+[LOG 16:23:59.649] Config(PART) Squad/Parts/Utility/ladder1/part/ladder1
+[LOG 16:23:59.649] Config(PART) Squad/Parts/Utility/largeAdapter/part/largeAdapter
+[LOG 16:23:59.649] Config(PART) Squad/Parts/Utility/largeAdapter2/part/largeAdapter2
+[LOG 16:23:59.649] Config(PART) Squad/Parts/Utility/launchClamp1/part/launchClamp1
+[LOG 16:23:59.649] Config(PART) Squad/Parts/Utility/linearRCS/part/linearRcs
+[LOG 16:23:59.649] Config(PART) Squad/Parts/Utility/longAntenna/part/longAntenna
+[LOG 16:23:59.649] Config(PART) Squad/Parts/Utility/mediumDishAntenna/part/mediumDishAntenna
+[LOG 16:23:59.649] Config(PART) Squad/Parts/Utility/miniLandingLeg/part/miniLandingLeg
+[LOG 16:23:59.649] Config(PART) Squad/Parts/Utility/parachuteDrogue/part/parachuteDrogue
+[LOG 16:23:59.649] Config(PART) Squad/Parts/Utility/parachuteLarge/part/parachuteLarge
+[LOG 16:23:59.649] Config(PART) Squad/Parts/Utility/parachuteRadial/part/parachuteRadial
+[LOG 16:23:59.649] Config(PART) Squad/Parts/Utility/parachute_single/part/parachuteSingle
+[LOG 16:23:59.649] Config(PART) Squad/Parts/Utility/radialDecoupler/part/radialDecoupler
+[LOG 16:23:59.649] Config(PART) Squad/Parts/Utility/radialDecoupler1-2/part/radialDecoupler1-2
+[LOG 16:23:59.650] Config(PART) Squad/Parts/Utility/radialDecoupler2/part/radialDecoupler2
+[LOG 16:23:59.650] Config(PART) Squad/Parts/Utility/ramAirIntake/part/ramAirIntake
+[LOG 16:23:59.650] Config(PART) Squad/Parts/Utility/roverBody/part/roverBody
+[LOG 16:23:59.650] Config(PART) Squad/Parts/Utility/sensorAccelerometer/part/sensorAccelerometer
+[LOG 16:23:59.650] Config(PART) Squad/Parts/Utility/sensorBarometer/part/sensorBarometer
+[LOG 16:23:59.650] Config(PART) Squad/Parts/Utility/sensorGravimeter/part/sensorGravimeter
+[LOG 16:23:59.650] Config(PART) Squad/Parts/Utility/sensorThermometer/part/sensorThermometer
+[LOG 16:23:59.650] Config(PART) Squad/Parts/Utility/spotLight1/part/spotLight1
+[LOG 16:23:59.650] Config(PART) Squad/Parts/Utility/spotLight2/part/spotLight2
+[LOG 16:23:59.650] Config(PART) Squad/Parts/Utility/stackBiCoupler/part/stackBiCoupler
+[LOG 16:23:59.650] Config(PART) Squad/Parts/Utility/stackDecouplerMini/part/stackDecouplerMini
+[LOG 16:23:59.650] Config(PART) Squad/Parts/Utility/stackPoint1/part/stackPoint1
+[LOG 16:23:59.650] Config(PART) Squad/Parts/Utility/stackQuadCoupler/part/stackQuadCoupler
+[LOG 16:23:59.650] Config(PART) Squad/Parts/Utility/stackSeparator/part/stackSeparator
+[LOG 16:23:59.650] Config(PART) Squad/Parts/Utility/stackSeparatorBig/part/stackSeparatorBig
+[LOG 16:23:59.650] Config(PART) Squad/Parts/Utility/stackSeparatorMini/part/stackSeparatorMini
+[LOG 16:23:59.650] Config(PART) Squad/Parts/Utility/stackTriCoupler/part/stackTriCoupler
+[LOG 16:23:59.650] Config(PART) Squad/Parts/Utility/telescopicLadder/part/telescopicLadder
+[LOG 16:23:59.650] Config(PART) Squad/Parts/Utility/telescopicLadderBay/part/telescopicLadderBay
+[LOG 16:23:59.650] Config(PART) Squad/Parts/Wheel/SmallGearBay/part/SmallGearBay
+[LOG 16:23:59.650] Config(PART) Squad/Parts/Wheel/roverWheel1/part/roverWheel1
+[LOG 16:23:59.650] Config(PART) Squad/Parts/Wheel/roverWheel2/part/roverWheel2
+[LOG 16:23:59.650] Config(PART) Squad/Parts/Wheel/roverWheel3/part/roverWheel3
+[LOG 16:23:59.650] Config(PART) Squad/Parts/Wheel/wheelMed/part/wheelMed
+[LOG 16:23:59.650] Config(PROP) Squad/Props/AltimeterThreeHands/prop/AltimeterThreeHands
+[LOG 16:23:59.650] Config(PROP) Squad/Props/AtmosphereDepth/prop/AtmosphereDepth
+[LOG 16:23:59.650] Config(PROP) Squad/Props/AxisIndicator/pitchConfig/AxisIndicatorPitch
+[LOG 16:23:59.650] Config(PROP) Squad/Props/AxisIndicator/rollConfig/AxisIndicatorRoll
+[LOG 16:23:59.650] Config(PROP) Squad/Props/AxisIndicator/yawConfig/AxisIndicatorYaw
+[LOG 16:23:59.651] Config(PROP) Squad/Props/ButtonSquare/prop/ButtonSquare
+[LOG 16:23:59.651] Config(PROP) Squad/Props/Compass/prop/Compass
+[LOG 16:23:59.651] Config(PROP) Squad/Props/IndicatorPanel/prop/IndicatorPanel
+[LOG 16:23:59.651] Config(PROP) Squad/Props/NavBall/prop/NavBall
+[LOG 16:23:59.651] Config(PROP) Squad/Props/VSI/prop/VSI
+[LOG 16:23:59.651] Config(PROP) Squad/Props/circularButton/prop/circularButton
+[LOG 16:23:59.651] Config(PROP) Squad/Props/directionalKnob/prop/directionalKnob
+[LOG 16:23:59.651] Config(PROP) Squad/Props/directionalKnob2/prop/directionalKnob2
+[LOG 16:23:59.651] Config(PROP) Squad/Props/ledPanelSpeed/prop/ledPanelSpeed
+[LOG 16:23:59.651] Config(PROP) Squad/Props/pullSwitch/prop/pullSwitch
+[LOG 16:23:59.651] Config(PROP) Squad/Props/radarAltitude/prop/RadarAltimeter
+[LOG 16:23:59.651] Config(PROP) Squad/Props/squareButton/prop/squareButton
+[LOG 16:23:59.651] Config(PROP) Squad/Props/standingSwitch/prop/standingSwitch
+[LOG 16:23:59.651] Config(PROP) Squad/Props/switch/prop/switch
+[LOG 16:23:59.651] Config(PROP) Squad/Props/switchGuard/prop/switchGuard
+[LOG 16:23:59.651] Config(PROP) Squad/Props/switchWithGuards/prop/switchWithGuards
+[LOG 16:23:59.651] Config(PROP) Squad/Props/throttle/prop/throttle
+[LOG 16:23:59.651] Config(RESOURCE_DEFINITION) Squad/Resources/ResourcesGeneric/LiquidFuel
+[LOG 16:23:59.651] Config(RESOURCE_DEFINITION) Squad/Resources/ResourcesGeneric/XenonGas
+[LOG 16:23:59.651] Config(RESOURCE_DEFINITION) Squad/Resources/ResourcesGeneric/SolidFuel
+[LOG 16:23:59.651] Config(RESOURCE_DEFINITION) Squad/Resources/ResourcesGeneric/ElectricCharge
+[LOG 16:23:59.651] Config(RESOURCE_DEFINITION) Squad/Resources/ResourcesGeneric/IntakeAir
+[LOG 16:23:59.651] Config(RESOURCE_DEFINITION) Squad/Resources/ResourcesGeneric/Oxidizer
+[LOG 16:23:59.651] Config(RESOURCE_DEFINITION) Squad/Resources/ResourcesGeneric/MonoPropellant
+[LOG 16:23:59.651] Config(RESOURCE_DEFINITION) Squad/Resources/ResourcesGeneric/EVA Propellant
+[LOG 16:23:59.651] Config(EXPERIMENT_DEFINITION) Squad/Resources/ScienceDefs/EXPERIMENT_DEFINITION
+[LOG 16:23:59.651] Config(EXPERIMENT_DEFINITION) Squad/Resources/ScienceDefs/EXPERIMENT_DEFINITION
+[LOG 16:23:59.651] Config(EXPERIMENT_DEFINITION) Squad/Resources/ScienceDefs/EXPERIMENT_DEFINITION
+[LOG 16:23:59.651] Config(EXPERIMENT_DEFINITION) Squad/Resources/ScienceDefs/EXPERIMENT_DEFINITION
+[LOG 16:23:59.651] Config(EXPERIMENT_DEFINITION) Squad/Resources/ScienceDefs/EXPERIMENT_DEFINITION
+[LOG 16:23:59.651] Config(EXPERIMENT_DEFINITION) Squad/Resources/ScienceDefs/EXPERIMENT_DEFINITION
+[LOG 16:23:59.651] Config(EXPERIMENT_DEFINITION) Squad/Resources/ScienceDefs/EXPERIMENT_DEFINITION
+[LOG 16:23:59.651] Config(EXPERIMENT_DEFINITION) Squad/Resources/ScienceDefs/EXPERIMENT_DEFINITION
+[LOG 16:23:59.651] Config(EXPERIMENT_DEFINITION) Squad/Resources/ScienceDefs/EXPERIMENT_DEFINITION
+[LOG 16:23:59.652] Config(EXPERIMENT_DEFINITION) Squad/Resources/ScienceDefs/EXPERIMENT_DEFINITION
+[LOG 16:23:59.652] Config(INTERNAL) Squad/Spaces/GenericSpace1/internal/GenericSpace1
+[LOG 16:23:59.652] Config(INTERNAL) Squad/Spaces/GenericSpace3/internal/GenericSpace3
+[LOG 16:23:59.652] Config(INTERNAL) Squad/Spaces/PodCockpit/internal/PodCockpit
+[LOG 16:23:59.652] Config(INTERNAL) Squad/Spaces/crewCabinInternals/internal/crewCabinInternals
+[LOG 16:23:59.652] Config(INTERNAL) Squad/Spaces/cupolaInternal/internal/cupolaInternal
+[LOG 16:23:59.652] Config(INTERNAL) Squad/Spaces/landerCabinInternals/internal/landerCabinInternals
+[LOG 16:23:59.652] Config(INTERNAL) Squad/Spaces/landerCabinSmallInternal/internal/landerCabinSmallInternal
+[LOG 16:23:59.652] Config(INTERNAL) Squad/Spaces/mk1CockpitInternal/internal/mk1CockpitInternal
+[LOG 16:23:59.652] Config(INTERNAL) Squad/Spaces/mk1PodCockpit/internal/mk1PodCockpit
+[LOG 16:23:59.655] Resource RESOURCE_DEFINITION added to database
+[LOG 16:23:59.655] Resource RESOURCE_DEFINITION added to database
+[LOG 16:23:59.655] Resource RESOURCE_DEFINITION added to database
+[LOG 16:23:59.655] Resource RESOURCE_DEFINITION added to database
+[LOG 16:23:59.655] Resource RESOURCE_DEFINITION added to database
+[LOG 16:23:59.655] Resource RESOURCE_DEFINITION added to database
+[LOG 16:23:59.655] Resource RESOURCE_DEFINITION added to database
+[LOG 16:23:59.655] Resource RESOURCE_DEFINITION added to database
+[LOG 16:23:59.657] GameDatabase: Assets loaded in 26.833s
+[LOG 16:23:59.659] PartLoader: Compiling Part 'Squad/Parts/Aero/Ailerons/part/StandardCtrlSrf'
+[LOG 16:23:59.682] EffectList: Created 11 effect types
+[LOG 16:23:59.713] PartLoader: Compiling Part 'Squad/Parts/Aero/CanardController/part/CanardController'
+[LOG 16:23:59.723] PartLoader: Compiling Part 'Squad/Parts/Aero/NoseCone/part/noseCone'
+[LOG 16:23:59.742] PartLoader: Compiling Part 'Squad/Parts/Aero/advancedCanard/part/AdvancedCanard'
+[LOG 16:23:59.753] PartLoader: Compiling Part 'Squad/Parts/Aero/airplaneTail/part/airplaneTail'
+[LOG 16:23:59.761] PartLoader: Compiling Part 'Squad/Parts/Aero/deltaWing/part/deltaWing'
+[LOG 16:23:59.767] PartLoader: Compiling Part 'Squad/Parts/Aero/noseConeAdapter/part/noseConeAdapter'
+[LOG 16:23:59.777] PartLoader: Compiling Part 'Squad/Parts/Aero/rocketNoseCone/part/rocketNoseCone'
+[LOG 16:23:59.793] PartLoader: Compiling Part 'Squad/Parts/Aero/smallCtrlSrf/part/smallCtrlSrf'
+[LOG 16:23:59.800] PartLoader: Compiling Part 'Squad/Parts/Aero/standardNoseCone/part/standardNoseCone'
+[LOG 16:23:59.821] PartLoader: Compiling Part 'Squad/Parts/Aero/sweptWing/part/sweptWing'
+[LOG 16:23:59.828] PartLoader: Compiling Part 'Squad/Parts/Aero/tailfin/part/tailfin'
+[LOG 16:23:59.834] PartLoader: Compiling Part 'Squad/Parts/Aero/wingConnector/part/wingConnector'
+[LOG 16:23:59.841] PartLoader: Compiling Part 'Squad/Parts/Aero/winglet/part/winglet'
+[LOG 16:23:59.848] PartLoader: Compiling Part 'Squad/Parts/Aero/winglet2/part/R8winglet'
+[LOG 16:23:59.857] PartLoader: Compiling Part 'Squad/Parts/Aero/winglet3/part/winglet3'
+[LOG 16:23:59.867] PartLoader: Compiling Part 'Squad/Parts/Command/Mark1Cockpit/part/Mark1Cockpit'
+[LOG 16:23:59.906] PartLoader: Compiling Part 'Squad/Parts/Command/Mark2Cockpit/part/Mark2Cockpit'
+[LOG 16:23:59.927] PartLoader: Compiling Part 'Squad/Parts/Command/Mk1-2Pod/part/Mark1-2Pod'
+[LOG 16:23:59.954] PartLoader: Compiling Part 'Squad/Parts/Command/advSasModule/part/advSasModule'
+[LOG 16:23:59.968] PartLoader: Compiling Part 'Squad/Parts/Command/asasmodule1-2/part/asasmodule1-2'
+[LOG 16:23:59.982] PartLoader: Compiling Part 'Squad/Parts/Command/avionicsNoseCone/part/avionicsNoseCone'
+[LOG 16:23:59.995] PartLoader: Compiling Part 'Squad/Parts/Command/crewCabin/part/crewCabin'
+[LOG 16:24:00.018] PartLoader: Compiling Part 'Squad/Parts/Command/cupola/part/cupola'
+[LOG 16:24:00.046] PartLoader: Compiling Part 'Squad/Parts/Command/landerCabinSmall/part/landerCabinSmall'
+[LOG 16:24:00.068] PartLoader: Compiling Part 'Squad/Parts/Command/mark3Cockpit/part/mark3Cockpit'
+[LOG 16:24:00.101] PartLoader: Compiling Part 'Squad/Parts/Command/mk1pod/part/mk1pod'
+[LOG 16:24:00.126] PartLoader: Compiling Part 'Squad/Parts/Command/mk2LanderCabin/part/mk2LanderCabin'
+[LOG 16:24:00.186] PartLoader: Compiling Part 'Squad/Parts/Command/probeCoreCube/part/probeCoreCube'
+[LOG 16:24:00.204] PartLoader: Compiling Part 'Squad/Parts/Command/probeCoreHex/part/probeCoreHex'
+[WRN 16:24:00.208] PartLoader Warning: Variable rotPower not found in Part
+[WRN 16:24:00.208] PartLoader Warning: Variable linPower not found in Part
+[WRN 16:24:00.208] PartLoader Warning: Variable Kp not found in Part
+[WRN 16:24:00.208] PartLoader Warning: Variable Kd not found in Part
+[LOG 16:24:00.217] PartLoader: Compiling Part 'Squad/Parts/Command/probeCoreOcto/part/probeCoreOcto'
+[LOG 16:24:00.233] PartLoader: Compiling Part 'Squad/Parts/Command/probeCoreOcto2/part/probeCoreOcto2'
+[LOG 16:24:00.251] PartLoader: Compiling Part 'Squad/Parts/Command/probeCoreSphere/part/probeCoreSphere'
+[LOG 16:24:00.269] PartLoader: Compiling Part 'Squad/Parts/Command/probeStackLarge/part/probeStackLarge'
+[LOG 16:24:00.285] PartLoader: Compiling Part 'Squad/Parts/Command/probeStackSmall/part/probeStackSmall'
+[LOG 16:24:00.304] PartLoader: Compiling Part 'Squad/Parts/Command/sasModule/part/sasModule'
+[LOG 16:24:00.316] PartLoader: Compiling Part 'Squad/Parts/Command/seatExternalCmd/part/seatExternalCmd'
+[LOG 16:24:00.325] PartLoader: Compiling Part 'Squad/Parts/Electrical/RTG/part/rtg'
+[LOG 16:24:00.340] PartLoader: Compiling Part 'Squad/Parts/Electrical/batteryBank/part/batteryBank'
+[LOG 16:24:00.351] PartLoader: Compiling Part 'Squad/Parts/Electrical/batteryBankLarge/part/batteryBankLarge'
+[LOG 16:24:00.357] PartLoader: Compiling Part 'Squad/Parts/Electrical/batteryBankMini/part/batteryBankMini'
+[LOG 16:24:00.363] PartLoader: Compiling Part 'Squad/Parts/Electrical/batteryPack/part/batteryPack'
+[LOG 16:24:00.369] PartLoader: Compiling Part 'Squad/Parts/Electrical/ksp_r_largeBatteryPack/part/ksp_r_largeBatteryPack'
+[LOG 16:24:00.375] PartLoader: Compiling Part 'Squad/Parts/Electrical/largeSolarPanel/part/largeSolarPanel'
+[LOG 16:24:00.387] PartLoader: Compiling Part 'Squad/Parts/Electrical/solarPanels1/part/solarPanels1'
+[LOG 16:24:00.397] PartLoader: Compiling Part 'Squad/Parts/Electrical/solarPanels2/part/solarPanels2'
+[LOG 16:24:00.410] PartLoader: Compiling Part 'Squad/Parts/Electrical/solarPanels3/part/solarPanels3'
+[LOG 16:24:00.419] PartLoader: Compiling Part 'Squad/Parts/Electrical/solarPanels4/part/solarPanels4'
+[LOG 16:24:00.429] PartLoader: Compiling Part 'Squad/Parts/Electrical/solarPanels5/part/solarPanels5'
+[LOG 16:24:00.438] PartLoader: Compiling Part 'Squad/Parts/Engine/JetEngine/part/JetEngine'
+[LOG 16:24:00.466] Added sound_jet_deep to FXGroup power
+[LOG 16:24:00.466] Added sound_explosion_low to FXGroup flameout
+[LOG 16:24:00.589] PartLoader: Compiling Part 'Squad/Parts/Engine/engineLargeSkipper/part/engineLargeSkipper'
+[LOG 16:24:00.593] Added sound_rocket_hard to FXGroup running
+[LOG 16:24:00.593] Added sound_explosion_low to FXGroup flameout
+[LOG 16:24:00.609] PartLoader: Compiling Part 'Squad/Parts/Engine/ionEngine/part/ionEngine'
+[LOG 16:24:00.624] PartLoader: Compiling Part 'Squad/Parts/Engine/liquidEngine1/part/liquidEngine'
+[LOG 16:24:00.628] Added sound_rocket_hard to FXGroup running
+[LOG 16:24:00.629] Added sound_explosion_low to FXGroup flameout
+[LOG 16:24:00.653] PartLoader: Compiling Part 'Squad/Parts/Engine/liquidEngine1-2/part/liquidEngine1-2'
+[LOG 16:24:00.660] Added sound_rocket_hard to FXGroup running
+[LOG 16:24:00.660] Added sound_explosion_low to FXGroup flameout
+[LOG 16:24:00.679] PartLoader: Compiling Part 'Squad/Parts/Engine/liquidEngine2/part/liquidEngine2'
+[LOG 16:24:00.683] Added sound_rocket_hard to FXGroup running
+[LOG 16:24:00.710] Added sound_explosion_low to FXGroup flameout
+[LOG 16:24:00.739] PartLoader: Compiling Part 'Squad/Parts/Engine/liquidEngine2-2/part/liquidEngine2-2'
+[LOG 16:24:00.746] Added sound_rocket_hard to FXGroup running
+[LOG 16:24:00.762] PartLoader: Compiling Part 'Squad/Parts/Engine/liquidEngine3/part/liquidEngine3'
+[LOG 16:24:00.767] Added sound_rocket_hard to FXGroup running
+[LOG 16:24:00.780] PartLoader: Compiling Part 'Squad/Parts/Engine/liquidEngineMini/part/liquidEngineMini'
+[LOG 16:24:00.783] Added sound_rocket_mini to FXGroup running
+[LOG 16:24:00.793] PartLoader: Compiling Part 'Squad/Parts/Engine/microEngine/part/microEngine'
+[LOG 16:24:00.801] Added sound_rocket_mini to FXGroup running
+[LOG 16:24:00.815] PartLoader: Compiling Part 'Squad/Parts/Engine/nuclearEngine/part/nuclearEngine'
+[WRN 16:24:00.822] PartLoader Warning: Variable ThermalAnim not found in Part
+[LOG 16:24:00.822] Added sound_rocket_hard to FXGroup running
+[LOG 16:24:00.848] PartLoader: Compiling Part 'Squad/Parts/Engine/radialEngineMini/part/radialEngineMini'
+[LOG 16:24:00.851] Added sound_rocket_mini to FXGroup running
+[LOG 16:24:00.858] PartLoader: Compiling Part 'Squad/Parts/Engine/radialLiquidEngine1-2/part/radialLiquidEngine1-2'
+[LOG 16:24:00.861] Added sound_rocket_hard to FXGroup running
+[LOG 16:24:00.870] PartLoader: Compiling Part 'Squad/Parts/Engine/rapierEngine/part/RAPIER'
+[LOG 16:24:00.920] PartLoader: Compiling Part 'Squad/Parts/Engine/sepMotor1/part/sepMotor1'
+[LOG 16:24:00.924] Added sound_rocket_mini to FXGroup running
+[LOG 16:24:00.935] PartLoader: Compiling Part 'Squad/Parts/Engine/smallRadialEngine/part/smallRadialEngine'
+[LOG 16:24:00.937] Added sound_rocket_mini to FXGroup running
+[LOG 16:24:00.951] PartLoader: Compiling Part 'Squad/Parts/Engine/solidBooster/part/solidBooster'
+[LOG 16:24:00.957] Added sound_rocket_hard to FXGroup running
+[LOG 16:24:00.968] PartLoader: Compiling Part 'Squad/Parts/Engine/solidBooster1-1/part/solidBooster1-1'
+[LOG 16:24:00.972] Added sound_rocket_hard to FXGroup running
+[LOG 16:24:00.984] PartLoader: Compiling Part 'Squad/Parts/Engine/toroidalAerospike/part/toroidalAerospike'
+[LOG 16:24:00.991] Added sound_rocket_hard to FXGroup running
+[LOG 16:24:00.992] Added sound_explosion_low to FXGroup flameout
+[LOG 16:24:01.011] PartLoader: Compiling Part 'Squad/Parts/Engine/turboFanEngine/part/turboFanEngine'
+[LOG 16:24:01.022] Added sound_jet_deep to FXGroup power
+[LOG 16:24:01.022] Added sound_explosion_low to FXGroup flameout
+[LOG 16:24:01.038] PartLoader: Compiling Part 'Squad/Parts/FuelTank/MK1Fuselage/part/MK1Fuselage'
+[LOG 16:24:01.047] PartLoader: Compiling Part 'Squad/Parts/FuelTank/MK1FuselageStructural/part/Mk1FuselageStructural'
+[LOG 16:24:01.055] PartLoader: Compiling Part 'Squad/Parts/FuelTank/RCSFuelTank/part/RCSFuelTank'
+[LOG 16:24:01.063] PartLoader: Compiling Part 'Squad/Parts/FuelTank/RCSTank1-2/part/RCSTank1-2'
+[LOG 16:24:01.074] PartLoader: Compiling Part 'Squad/Parts/FuelTank/RCStankMini/part/rcsTankMini'
+[LOG 16:24:01.084] PartLoader: Compiling Part 'Squad/Parts/FuelTank/RCStankRadialLong/part/rcsTankRadialLong'
+[LOG 16:24:01.110] PartLoader: Compiling Part 'Squad/Parts/FuelTank/fuelTank/part/fuelTank'
+[LOG 16:24:01.119] PartLoader: Compiling Part 'Squad/Parts/FuelTank/fuelTank1-2/part/fuelTank1-2'
+[LOG 16:24:01.129] PartLoader: Compiling Part 'Squad/Parts/FuelTank/fuelTank2-2/part/fuelTank2-2'
+[LOG 16:24:01.137] PartLoader: Compiling Part 'Squad/Parts/FuelTank/fuelTank3-2/part/fuelTank3-2'
+[LOG 16:24:01.147] PartLoader: Compiling Part 'Squad/Parts/FuelTank/fuelTank4-2/part/fuelTank4-2'
+[LOG 16:24:01.155] PartLoader: Compiling Part 'Squad/Parts/FuelTank/fuelTankSmall/part/fuelTankSmall'
+[LOG 16:24:01.170] PartLoader: Compiling Part 'Squad/Parts/FuelTank/fuelTankSmallFlat/part/fuelTankSmallFlat'
+[LOG 16:24:01.181] PartLoader: Compiling Part 'Squad/Parts/FuelTank/fuelTank_long/part/fuelTank_long'
+[LOG 16:24:01.197] PartLoader: Compiling Part 'Squad/Parts/FuelTank/miniFuelTank/part/miniFuelTank'
+[LOG 16:24:01.207] PartLoader: Compiling Part 'Squad/Parts/FuelTank/mk2Fuselage/part/mk2Fuselage'
+[LOG 16:24:01.223] PartLoader: Compiling Part 'Squad/Parts/FuelTank/mk2SpacePlaneAdapter/part/mk2SpacePlaneAdapter'
+[LOG 16:24:01.247] PartLoader: Compiling Part 'Squad/Parts/FuelTank/mk3Fuselage/part/mk3Fuselage'
+[LOG 16:24:01.265] PartLoader: Compiling Part 'Squad/Parts/FuelTank/mk3spacePlaneAdapter/part/mk3spacePlaneAdapter'
+[LOG 16:24:01.297] PartLoader: Compiling Part 'Squad/Parts/FuelTank/radialRCSTank/part/radialRCSTank'
+[LOG 16:24:01.303] PartLoader: Compiling Part 'Squad/Parts/FuelTank/toroidalFuelTank/part/toroidalFuelTank'
+[LOG 16:24:01.313] PartLoader: Compiling Part 'Squad/Parts/FuelTank/xenonTank/part/xenonTank'
+[LOG 16:24:01.325] PartLoader: Compiling Part 'Squad/Parts/FuelTank/xenonTankRadial/part/xenonTankRadial'
+[LOG 16:24:01.334] PartLoader: Compiling Part 'Squad/Parts/Science/GooExperiment/part/GooExperiment'
+[LOG 16:24:01.350] PartLoader: Compiling Part 'Squad/Parts/Science/LargeCrewedLab/part/Large_Crewed_Lab'
+[LOG 16:24:01.422] PartLoader: Compiling Part 'Squad/Parts/Science/MaterialBay/part/science_module'
+[LOG 16:24:01.436] PartLoader: Compiling Part 'Squad/Parts/Structural/adapterLargeSmallBi/part/adapterLargeSmallBi'
+[LOG 16:24:01.442] PartLoader: Compiling Part 'Squad/Parts/Structural/adapterLargeSmallQuad/part/adapterLargeSmallQuad'
+[LOG 16:24:01.447] PartLoader: Compiling Part 'Squad/Parts/Structural/adapterLargeSmallTri/part/adapterLargeSmallTri'
+[LOG 16:24:01.453] PartLoader: Compiling Part 'Squad/Parts/Structural/adapterSmallMiniShort/part/adapterSmallMiniShort'
+[LOG 16:24:01.464] PartLoader: Compiling Part 'Squad/Parts/Structural/adapterSmallMiniTall/part/adapterSmallMiniTall'
+[LOG 16:24:01.470] PartLoader: Compiling Part 'Squad/Parts/Structural/nacelleBody/part/nacelleBody'
+[LOG 16:24:01.481] PartLoader: Compiling Part 'Squad/Parts/Structural/radialEngineBody/part/radialEngineBody'
+[LOG 16:24:01.489] PartLoader: Compiling Part 'Squad/Parts/Structural/smallHardpoint/part/smallHardpoint'
+[LOG 16:24:01.495] PartLoader: Compiling Part 'Squad/Parts/Structural/stationHub/part/stationHub'
+[LOG 16:24:01.511] PartLoader: Compiling Part 'Squad/Parts/Structural/structuralIBeam1/part/structuralIBeam1'
+[LOG 16:24:01.517] PartLoader: Compiling Part 'Squad/Parts/Structural/structuralIBeam2/part/structuralIBeam2'
+[LOG 16:24:01.522] PartLoader: Compiling Part 'Squad/Parts/Structural/structuralIBeam3/part/structuralIBeam3'
+[LOG 16:24:01.528] PartLoader: Compiling Part 'Squad/Parts/Structural/structuralMiniNode/part/structuralMiniNode'
+[LOG 16:24:01.533] PartLoader: Compiling Part 'Squad/Parts/Structural/structuralPanel1/part/structuralPanel1'
+[LOG 16:24:01.539] PartLoader: Compiling Part 'Squad/Parts/Structural/structuralPanel2/part/structuralPanel2'
+[LOG 16:24:01.546] PartLoader: Compiling Part 'Squad/Parts/Structural/structuralPylon/part/structuralPylon'
+[LOG 16:24:01.549] Added sound_vent_large to FXGroup activate
+[LOG 16:24:01.553] PartLoader: Compiling Part 'Squad/Parts/Structural/structuralWing/part/structuralWing'
+[LOG 16:24:01.562] PartLoader: Compiling Part 'Squad/Parts/Structural/strutConnector/part/strutConnector'
+[LOG 16:24:01.578] PartLoader: Compiling Part 'Squad/Parts/Structural/strutCube/part/strutCube'
+[LOG 16:24:01.585] PartLoader: Compiling Part 'Squad/Parts/Structural/strutOcto/part/strutOcto'
+[LOG 16:24:01.593] PartLoader: Compiling Part 'Squad/Parts/Structural/trussAdapter/part/trussAdapter'
+[LOG 16:24:01.602] PartLoader: Compiling Part 'Squad/Parts/Structural/trussPiece1x/part/trussPiece1x'
+[LOG 16:24:01.609] PartLoader: Compiling Part 'Squad/Parts/Structural/trussPiece3x/part/trussPiece3x'
+[LOG 16:24:01.619] PartLoader: Compiling Part 'Squad/Parts/Utility/CircularIntake/part/CircularIntake'
+[LOG 16:24:01.637] PartLoader: Compiling Part 'Squad/Parts/Utility/LandingLeg/part/landingLeg1'
+[LOG 16:24:01.651] PartLoader: Compiling Part 'Squad/Parts/Utility/LandingLeg1-2/part/landingLeg1-2'
+[WRN 16:24:01.654] PartLoader Warning: Variable animationName not found in Part
+[LOG 16:24:01.662] PartLoader: Compiling Part 'Squad/Parts/Utility/RCS block/part/RCSBlock'
+[LOG 16:24:01.675] PartLoader: Compiling Part 'Squad/Parts/Utility/StackDecoupler/part/stackDecoupler'
+[LOG 16:24:01.683] Added sound_vent_large to FXGroup decouple
+[LOG 16:24:01.696] PartLoader: Compiling Part 'Squad/Parts/Utility/airScoop/part/airScoop'
+[LOG 16:24:01.724] PartLoader: Compiling Part 'Squad/Parts/Utility/commDish/part/commDish'
+[LOG 16:24:01.771] PartLoader: Compiling Part 'Squad/Parts/Utility/decoupler1-2/part/decoupler1-2'
+[LOG 16:24:01.782] Added sound_decoupler_fire to FXGroup decouple
+[LOG 16:24:01.795] PartLoader: Compiling Part 'Squad/Parts/Utility/dockingPort1/part/dockingPort1'
+[LOG 16:24:01.829] PartLoader: Compiling Part 'Squad/Parts/Utility/dockingPort2/part/dockingPort2'
+[LOG 16:24:01.848] PartLoader: Compiling Part 'Squad/Parts/Utility/dockingPort3/part/dockingPort3'
+[LOG 16:24:01.862] PartLoader: Compiling Part 'Squad/Parts/Utility/dockingPortLarge/part/dockingPortLarge'
+[LOG 16:24:01.876] PartLoader: Compiling Part 'Squad/Parts/Utility/dockingPortLateral/part/dockingPortLateral'
+[LOG 16:24:01.901] PartLoader: Compiling Part 'Squad/Parts/Utility/fuelLine/part/fuelLine'
+[LOG 16:24:01.915] PartLoader: Compiling Part 'Squad/Parts/Utility/ladder1/part/ladder1'
+[LOG 16:24:01.926] PartLoader: Compiling Part 'Squad/Parts/Utility/largeAdapter/part/largeAdapter'
+[LOG 16:24:01.936] PartLoader: Compiling Part 'Squad/Parts/Utility/largeAdapter2/part/largeAdapter2'
+[LOG 16:24:01.949] PartLoader: Compiling Part 'Squad/Parts/Utility/launchClamp1/part/launchClamp1'
+[LOG 16:24:01.953] Added sound_decoupler_fire to FXGroup activate
+[LOG 16:24:01.962] PartLoader: Compiling Part 'Squad/Parts/Utility/linearRCS/part/linearRcs'
+[LOG 16:24:01.971] PartLoader: Compiling Part 'Squad/Parts/Utility/longAntenna/part/longAntenna'
+[LOG 16:24:01.981] PartLoader: Compiling Part 'Squad/Parts/Utility/mediumDishAntenna/part/mediumDishAntenna'
+[LOG 16:24:01.993] PartLoader: Compiling Part 'Squad/Parts/Utility/miniLandingLeg/part/miniLandingLeg'
+[WRN 16:24:01.996] PartLoader Warning: Variable animationName not found in Part
+[LOG 16:24:02.003] PartLoader: Compiling Part 'Squad/Parts/Utility/parachuteDrogue/part/parachuteDrogue'
+[LOG 16:24:02.009] Added sound_parachute_open to FXGroup activate
+[LOG 16:24:02.023] PartLoader: Compiling Part 'Squad/Parts/Utility/parachuteLarge/part/parachuteLarge'
+[LOG 16:24:02.030] Added sound_parachute_open to FXGroup activate
+[LOG 16:24:02.043] PartLoader: Compiling Part 'Squad/Parts/Utility/parachuteRadial/part/parachuteRadial'
+[LOG 16:24:02.048] Added sound_parachute_open to FXGroup activate
+[LOG 16:24:02.060] PartLoader: Compiling Part 'Squad/Parts/Utility/parachute_single/part/parachuteSingle'
+[LOG 16:24:02.064] Added sound_parachute_open to FXGroup activate
+[LOG 16:24:02.072] PartLoader: Compiling Part 'Squad/Parts/Utility/radialDecoupler/part/radialDecoupler'
+[LOG 16:24:02.074] Added sound_vent_large to FXGroup decouple
+[LOG 16:24:02.080] PartLoader: Compiling Part 'Squad/Parts/Utility/radialDecoupler1-2/part/radialDecoupler1-2'
+[LOG 16:24:02.083] Added sound_decoupler_fire to FXGroup decouple
+[LOG 16:24:02.088] PartLoader: Compiling Part 'Squad/Parts/Utility/radialDecoupler2/part/radialDecoupler2'
+[LOG 16:24:02.090] Added sound_vent_large to FXGroup decouple
+[LOG 16:24:02.095] PartLoader: Compiling Part 'Squad/Parts/Utility/ramAirIntake/part/ramAirIntake'
+[LOG 16:24:02.113] PartLoader: Compiling Part 'Squad/Parts/Utility/roverBody/part/roverBody'
+[LOG 16:24:02.130] PartLoader: Compiling Part 'Squad/Parts/Utility/sensorAccelerometer/part/sensorAccelerometer'
+[LOG 16:24:02.146] PartLoader: Compiling Part 'Squad/Parts/Utility/sensorBarometer/part/sensorBarometer'
+[LOG 16:24:02.158] PartLoader: Compiling Part 'Squad/Parts/Utility/sensorGravimeter/part/sensorGravimeter'
+[LOG 16:24:02.170] PartLoader: Compiling Part 'Squad/Parts/Utility/sensorThermometer/part/sensorThermometer'
+[LOG 16:24:02.192] PartLoader: Compiling Part 'Squad/Parts/Utility/spotLight1/part/spotLight1'
+[LOG 16:24:02.214] PartLoader: Compiling Part 'Squad/Parts/Utility/spotLight2/part/spotLight2'
+[LOG 16:24:02.229] PartLoader: Compiling Part 'Squad/Parts/Utility/stackBiCoupler/part/stackBiCoupler'
+[LOG 16:24:02.236] PartLoader: Compiling Part 'Squad/Parts/Utility/stackDecouplerMini/part/stackDecouplerMini'
+[LOG 16:24:02.248] PartLoader: Compiling Part 'Squad/Parts/Utility/stackPoint1/part/stackPoint1'
+[LOG 16:24:02.257] PartLoader: Compiling Part 'Squad/Parts/Utility/stackQuadCoupler/part/stackQuadCoupler'
+[LOG 16:24:02.263] PartLoader: Compiling Part 'Squad/Parts/Utility/stackSeparator/part/stackSeparator'
+[LOG 16:24:02.268] Added sound_vent_large to FXGroup decouple
+[LOG 16:24:02.280] PartLoader: Compiling Part 'Squad/Parts/Utility/stackSeparatorBig/part/stackSeparatorBig'
+[LOG 16:24:02.289] Added sound_vent_large to FXGroup decouple
+[LOG 16:24:02.301] PartLoader: Compiling Part 'Squad/Parts/Utility/stackSeparatorMini/part/stackSeparatorMini'
+[LOG 16:24:02.320] PartLoader: Compiling Part 'Squad/Parts/Utility/stackTriCoupler/part/stackTriCoupler'
+[LOG 16:24:02.327] PartLoader: Compiling Part 'Squad/Parts/Utility/telescopicLadder/part/telescopicLadder'
+[LOG 16:24:02.345] PartLoader: Compiling Part 'Squad/Parts/Utility/telescopicLadderBay/part/telescopicLadderBay'
+[LOG 16:24:02.355] PartLoader: Compiling Part 'Squad/Parts/Wheel/SmallGearBay/part/SmallGearBay'
+[LOG 16:24:02.376] PartLoader: Compiling Part 'Squad/Parts/Wheel/roverWheel1/part/roverWheel1'
+[LOG 16:24:02.407] PartLoader: Compiling Part 'Squad/Parts/Wheel/roverWheel2/part/roverWheel2'
+[LOG 16:24:02.439] PartLoader: Compiling Part 'Squad/Parts/Wheel/roverWheel3/part/roverWheel3'
+[LOG 16:24:02.534] PartLoader: Compiling Part 'Squad/Parts/Wheel/wheelMed/part/wheelMed'
+[LOG 16:24:02.553] PartLoader: Compiling Internal Space 'Squad/Props/AltimeterThreeHands/prop/AltimeterThreeHands'
+[LOG 16:24:02.556] PartLoader: Compiling Internal Space 'Squad/Props/AtmosphereDepth/prop/AtmosphereDepth'
+[LOG 16:24:02.557] PartLoader: Compiling Internal Space 'Squad/Props/AxisIndicator/pitchConfig/AxisIndicatorPitch'
+[LOG 16:24:02.558] PartLoader: Compiling Internal Space 'Squad/Props/AxisIndicator/rollConfig/AxisIndicatorRoll'
+[LOG 16:24:02.559] PartLoader: Compiling Internal Space 'Squad/Props/AxisIndicator/yawConfig/AxisIndicatorYaw'
+[LOG 16:24:02.560] PartLoader: Compiling Internal Space 'Squad/Props/ButtonSquare/prop/ButtonSquare'
+[LOG 16:24:02.563] PartLoader: Compiling Internal Space 'Squad/Props/Compass/prop/Compass'
+[LOG 16:24:02.564] PartLoader: Compiling Internal Space 'Squad/Props/IndicatorPanel/prop/IndicatorPanel'
+[LOG 16:24:02.569] PartLoader: Compiling Internal Space 'Squad/Props/NavBall/prop/NavBall'
+[LOG 16:24:02.581] PartLoader: Compiling Internal Space 'Squad/Props/VSI/prop/VSI'
+[LOG 16:24:02.584] PartLoader: Compiling Internal Space 'Squad/Props/circularButton/prop/circularButton'
+[LOG 16:24:02.585] PartLoader: Compiling Internal Space 'Squad/Props/directionalKnob/prop/directionalKnob'
+[LOG 16:24:02.586] PartLoader: Compiling Internal Space 'Squad/Props/directionalKnob2/prop/directionalKnob2'
+[LOG 16:24:02.587] PartLoader: Compiling Internal Space 'Squad/Props/ledPanelSpeed/prop/ledPanelSpeed'
+[LOG 16:24:02.590] PartLoader: Compiling Internal Space 'Squad/Props/pullSwitch/prop/pullSwitch'
+[LOG 16:24:02.592] PartLoader: Compiling Internal Space 'Squad/Props/radarAltitude/prop/RadarAltimeter'
+[LOG 16:24:02.594] PartLoader: Compiling Internal Space 'Squad/Props/squareButton/prop/squareButton'
+[LOG 16:24:02.595] PartLoader: Compiling Internal Space 'Squad/Props/standingSwitch/prop/standingSwitch'
+[LOG 16:24:02.596] PartLoader: Compiling Internal Space 'Squad/Props/switch/prop/switch'
+[LOG 16:24:02.597] PartLoader: Compiling Internal Space 'Squad/Props/switchGuard/prop/switchGuard'
+[LOG 16:24:02.598] PartLoader: Compiling Internal Space 'Squad/Props/switchWithGuards/prop/switchWithGuards'
+[LOG 16:24:02.600] PartLoader: Compiling Internal Space 'Squad/Props/throttle/prop/throttle'
+[LOG 16:24:02.605] PartLoader: Compiling Internal Space 'Squad/Spaces/GenericSpace1/internal/GenericSpace1'
+[LOG 16:24:02.610] PartLoader: Compiling Internal Space 'Squad/Spaces/GenericSpace3/internal/GenericSpace3'
+[LOG 16:24:02.614] PartLoader: Compiling Internal Space 'Squad/Spaces/PodCockpit/internal/PodCockpit'
+[LOG 16:24:02.640] PartLoader: Compiling Internal Space 'Squad/Spaces/crewCabinInternals/internal/crewCabinInternals'
+[LOG 16:24:02.645] PartLoader: Compiling Internal Space 'Squad/Spaces/cupolaInternal/internal/cupolaInternal'
+[LOG 16:24:02.663] PartLoader: Compiling Internal Space 'Squad/Spaces/landerCabinInternals/internal/landerCabinInternals'
+[LOG 16:24:02.665] PartLoader: Compiling Internal Space 'Squad/Spaces/landerCabinSmallInternal/internal/landerCabinSmallInternal'
+[LOG 16:24:02.679] PartLoader: Compiling Internal Space 'Squad/Spaces/mk1CockpitInternal/internal/mk1CockpitInternal'
+[LOG 16:24:02.687] PartLoader: Compiling Internal Space 'Squad/Spaces/mk1PodCockpit/internal/mk1PodCockpit'
+[LOG 16:24:05.408] The SpaceNavigator driver is a Windows-Only feature at the moment.
+[WRN 16:24:07.580] [HighLogic]: =========================== Scene Change : From LOADING to MAINMENU =====================
+[LOG 16:24:37.848] Loading banner texture from /home/anders/.local/share/Steam/SteamApps/common/Kerbal Space Program/KSP_Data/../saves/training/banners/default.png
+[LOG 16:24:37.856] Scenario Construction Basics has status Unstarted, but is being validated for a game resume. Something's off here.
+[LOG 16:24:37.856] Scenario Construction Basics is non-resumable.
+[LOG 16:24:37.857] Loading banner texture from /home/anders/.local/share/Steam/SteamApps/common/Kerbal Space Program/KSP_Data/../saves/training/banners/default.png
+[LOG 16:24:37.871] Loading banner texture from /home/anders/.local/share/Steam/SteamApps/common/Kerbal Space Program/KSP_Data/../saves/training/banners/C_Orbit101.png
+[LOG 16:24:37.882] Loading banner texture from /home/anders/.local/share/Steam/SteamApps/common/Kerbal Space Program/KSP_Data/../saves/training/banners/default.png
+[LOG 16:24:40.073] Game State Saved as persistent
+[WRN 16:24:40.074] [HighLogic]: =========================== Scene Change : From MAINMENU to EDITOR =====================
+[LOG 16:24:41.368] ------------------- initializing editor mode... ------------------
+[LOG 16:24:41.368] editor started
+[LOG 16:24:41.393] Untitled Space Craft - Untitled Space Craft
+[LOG 16:24:52.379] fuelTank(Clone) added to ship - part count: 2
+[LOG 16:24:52.380] stage count is: 0
+[LOG 16:25:06.843] liquidEngine2(Clone) added to ship - part count: 3
+[LOG 16:25:06.844] stage count is: 0
+[LOG 16:25:28.070] radialDecoupler(Clone) added to ship - part count: 4
+[LOG 16:25:28.070] stage count is: 1
+[LOG 16:25:46.137] fuelTank(Clone) added to ship - part count: 4
+[LOG 16:25:46.140] stage count is: 1
+[LOG 16:25:55.225] fuelTank(Clone) added to ship - part count: 4
+[LOG 16:25:55.228] stage count is: 1
+[LOG 16:26:13.087] Game State Saved as persistent
+[LOG 16:26:14.889] [Pre-Flight Check]: Checking for NoControlSources: PASS!
+[LOG 16:26:14.891] [Pre-Flight Check]: Checking for NoCrewInMannedVessel: PASS!
+[LOG 16:26:14.893] [Pre-Flight Check]: Checking for LaunchSiteClear: PASS!
+[LOG 16:26:14.893] [Pre-Flight Check]: All Checks Complete. Go for Launch!
+[LOG 16:26:14.900] Launching vessel from LaunchPad. Craft file: /home/anders/.local/share/Steam/SteamApps/common/Kerbal Space Program/KSP_Data/../saves/training/A_VesselConstruction/Ships/VAB/Auto-Saved Ship.craft
+[LOG 16:26:14.902] Game State Saved as persistent
+[WRN 16:26:14.902] [HighLogic]: =========================== Scene Change : From EDITOR to FLIGHT =====================
+[LOG 16:26:16.717] ------------------- initializing flight mode... ------------------
+[LOG 16:26:16.722] Loading ship from file: /home/anders/.local/share/Steam/SteamApps/common/Kerbal Space Program/KSP_Data/../saves/training/A_VesselConstruction/Ships/VAB/Auto-Saved Ship.craft
+[LOG 16:26:16.849] Untitled Space Craft loaded!
+[LOG 16:26:17.051] putting ship to ground: 4.320532
+[LOG 16:26:17.076] [Untitled Space Craft]: Ready to Launch - waiting to start physics...
+[LOG 16:26:17.093] Crewmember Jebediah Kerman assigned to Command Pod Mk1, seat # 0 (crew seat index: 0)
+[LOG 16:26:17.094] [FLIGHT GLOBALS]: Switching To Vessel Untitled Space Craft ---------------------- 
+[LOG 16:26:17.100] setting new dominant body: Kerbin
+FlightGlobals.mainBody: Kerbin
+[LOG 16:26:17.103] Reference Frame: Rotating
+[LOG 16:26:17.144] stage manager resuming...
+[LOG 16:26:17.146] Vessel assembly complete!
+[LOG 16:26:17.146] stage manager starting...
+[LOG 16:26:17.147] all systems started
+[ERR 16:26:17.316] RenderTexture.Create failed: format unsupported.
+[ERR 16:26:19.865] RenderTexture.Create failed: format unsupported.
+[LOG 16:26:20.524] [PlanetariumCamera]: Focus: Untitled Space Craft
+[LOG 16:26:22.204] Flight State Captured
+[LOG 16:26:22.218] Game State Saved as persistent
+[LOG 16:26:31.876] [Untitled Space Craft]: ground contact! - error: 0.141m
+[LOG 16:26:31.877] Unpacking Untitled Space Craft
+[LOG 16:26:35.816] [Orbit Targeter]: Target is null
+[LOG 16:26:35.837] [Orbit Targeter]: Target is null
+[LOG 16:26:35.839] [Orbit Targeter]: Target is null
+[LOG 16:26:35.839] [Orbit Targeter]: Target is null
+[LOG 16:26:35.842] [Orbit Targeter]: Target is null
+[LOG 16:26:36.774] [Orbit Targeter]: Target is null
+[LOG 16:26:45.519] Game Paused!
+[LOG 16:26:55.036] [FlightDriver]: Flight State Reverted to Prelaunch.
+[LOG 16:26:55.039] Game State Saved as persistent
+[WRN 16:26:55.039] [HighLogic]: =========================== Scene Change : From FLIGHT to EDITOR =====================
+[LOG 16:26:55.985] [PlanetariumCamera]: Focus: Kerbin
+[LOG 16:26:56.892] ------------------- initializing editor mode... ------------------
+[LOG 16:26:56.892] editor started
+[LOG 16:26:56.939] Untitled Space Craft loaded!
+[LOG 16:26:56.940] Untitled Space Craft - Untitled Space Craft
+[LOG 16:27:24.676] fuelTank added to ship - part count: 3
+[LOG 16:27:24.678] stage count is: 0
+[LOG 16:27:27.736] liquidEngine2 added to ship - part count: 4
+[LOG 16:27:27.738] stage count is: 0
+[LOG 16:27:48.822] launchClamp1(Clone) added to ship - part count: 5
+[LOG 16:27:48.822] stage count is: 0
+[LOG 16:28:10.372] launchClamp1(Clone) added to ship - part count: 5
+[LOG 16:28:10.372] stage count is: 0
+[LOG 16:28:11.926] [Pre-Flight Check]: Checking for NoControlSources: PASS!
+[LOG 16:28:11.926] [Pre-Flight Check]: Checking for NoCrewInMannedVessel: PASS!
+[LOG 16:28:11.926] [Pre-Flight Check]: Checking for LaunchSiteClear: PASS!
+[LOG 16:28:11.926] [Pre-Flight Check]: All Checks Complete. Go for Launch!
+[LOG 16:28:11.932] Launching vessel from LaunchPad. Craft file: /home/anders/.local/share/Steam/SteamApps/common/Kerbal Space Program/KSP_Data/../saves/training/A_VesselConstruction/Ships/VAB/Auto-Saved Ship.craft
+[LOG 16:28:11.934] Game State Saved as persistent
+[WRN 16:28:11.935] [HighLogic]: =========================== Scene Change : From EDITOR to FLIGHT =====================
+[LOG 16:28:13.669] ------------------- initializing flight mode... ------------------
+[LOG 16:28:13.670] Loading ship from file: /home/anders/.local/share/Steam/SteamApps/common/Kerbal Space Program/KSP_Data/../saves/training/A_VesselConstruction/Ships/VAB/Auto-Saved Ship.craft
+[LOG 16:28:13.709] Untitled Space Craft loaded!
+[LOG 16:28:14.793] putting ship to ground: 0
+[LOG 16:28:14.794] [Untitled Space Craft]: Ready to Launch - waiting to start physics...
+[LOG 16:28:14.795] Crewmember Jebediah Kerman assigned to Command Pod Mk1, seat # 0 (crew seat index: 0)
+[LOG 16:28:14.795] [FLIGHT GLOBALS]: Switching To Vessel Untitled Space Craft ---------------------- 
+[LOG 16:28:14.795] setting new dominant body: Kerbin
+FlightGlobals.mainBody: Kerbin
+[LOG 16:28:14.795] Reference Frame: Rotating
+[LOG 16:28:14.805] stage manager resuming...
+[LOG 16:28:14.805] Vessel assembly complete!
+[LOG 16:28:14.805] stage manager starting...
+[LOG 16:28:14.805] all systems started
+[LOG 16:28:16.925] [PlanetariumCamera]: Focus: Untitled Space Craft
+[LOG 16:28:17.669] Flight State Captured
+[LOG 16:28:17.677] Game State Saved as persistent
+[LOG 16:28:23.269] [Untitled Space Craft]: ground contact! - error: 0.140m
+[LOG 16:28:23.270] Unpacking Untitled Space Craft
+[LOG 16:28:28.215] activating stage 0 - current stage: 1
+[LOG 16:28:28.216] [mk1pod]: Activated
+[LOG 16:28:28.216] [fuelTank]: Activated
+[LOG 16:28:28.231] [00:00:00]: Separation of stage 1 confirmed
+[LOG 16:28:28.231] [radialDecoupler]: Activated
+[LOG 16:28:28.231] [liquidEngine2]: Activated
+[LOG 16:28:28.236] [launchClamp1]: Activated
+[LOG 16:28:28.236] [00:00:00]: Liftoff!!
+[LOG 16:28:29.552] radialDecoupler collided into model_launchpad_ground_collider_v46 - relative velocity: 89.72814 - no impact momentum (no RB)
+[LOG 16:28:29.553] radialDecoupler Exploded!! - blast awesomeness: 0.5
+[LOG 16:28:29.554] [radialDecoupler]: Deactivated
+[LOG 16:28:29.556] [00:00:01]: TT-38K Radial Decoupler collided into Launch Pad.
+[LOG 16:28:29.569] 1 explosions created.
+[LOG 16:28:39.175] stage drag started
+[LOG 16:28:42.196] [Orbit Targeter]: Target is null
+[LOG 16:28:42.206] [Orbit Targeter]: Target is null
+[LOG 16:28:42.834] [Orbit Targeter]: Target is null
+[LOG 16:28:46.981] activating stage 3 - current stage: 4
+[LOG 16:28:48.753] activating stage 2 - current stage: 3
+[LOG 16:28:49.992] activating stage 1 - current stage: 2
+[LOG 16:28:50.573] activating stage 0 - current stage: 1
+[LOG 16:28:50.573] [mk1pod]: Activated
+[LOG 16:28:50.573] [fuelTank]: Activated
+[LOG 16:28:50.573] [liquidEngine2]: Activated
+[LOG 16:28:55.087] Game Paused!
+[LOG 16:29:00.350] [FlightDriver]: Flight State Reverted to Prelaunch.
+[LOG 16:29:00.351] Game State Saved as persistent
+[WRN 16:29:00.351] [HighLogic]: =========================== Scene Change : From FLIGHT to EDITOR =====================
+[LOG 16:29:01.241] [PlanetariumCamera]: Focus: Kerbin
+[LOG 16:29:02.181] ------------------- initializing editor mode... ------------------
+[LOG 16:29:02.181] editor started
+[LOG 16:29:02.243] Untitled Space Craft loaded!
+[LOG 16:29:02.245] Untitled Space Craft - Untitled Space Craft
+[LOG 16:29:07.449] fuelTank added to ship - part count: 5
+[LOG 16:29:07.452] stage count is: 0
+[LOG 16:29:30.895] radialEngineMini(Clone) added to ship - part count: 6
+[LOG 16:29:30.895] stage count is: 0
+[LOG 16:29:37.024] deleting part liquidEngine2
+[LOG 16:29:39.340] liquidEngine3(Clone) added to ship - part count: 6
+[LOG 16:29:39.341] stage count is: 0
+[LOG 16:29:41.695] [Pre-Flight Check]: Checking for NoControlSources: PASS!
+[LOG 16:29:41.695] [Pre-Flight Check]: Checking for NoCrewInMannedVessel: PASS!
+[LOG 16:29:41.695] [Pre-Flight Check]: Checking for LaunchSiteClear: PASS!
+[LOG 16:29:41.695] [Pre-Flight Check]: All Checks Complete. Go for Launch!
+[LOG 16:29:41.696] Launching vessel from LaunchPad. Craft file: /home/anders/.local/share/Steam/SteamApps/common/Kerbal Space Program/KSP_Data/../saves/training/A_VesselConstruction/Ships/VAB/Auto-Saved Ship.craft
+[LOG 16:29:41.697] Game State Saved as persistent
+[WRN 16:29:41.697] [HighLogic]: =========================== Scene Change : From EDITOR to FLIGHT =====================
+[LOG 16:29:43.285] ------------------- initializing flight mode... ------------------
+[LOG 16:29:43.289] Loading ship from file: /home/anders/.local/share/Steam/SteamApps/common/Kerbal Space Program/KSP_Data/../saves/training/A_VesselConstruction/Ships/VAB/Auto-Saved Ship.craft
+[LOG 16:29:43.397] Untitled Space Craft loaded!
+[LOG 16:29:44.788] putting ship to ground: 0
+[LOG 16:29:44.789] [Untitled Space Craft]: Ready to Launch - waiting to start physics...
+[LOG 16:29:44.789] Crewmember Jebediah Kerman assigned to Command Pod Mk1, seat # 0 (crew seat index: 0)
+[LOG 16:29:44.789] [FLIGHT GLOBALS]: Switching To Vessel Untitled Space Craft ---------------------- 
+[LOG 16:29:44.789] setting new dominant body: Kerbin
+FlightGlobals.mainBody: Kerbin
+[LOG 16:29:44.789] Reference Frame: Rotating
+[LOG 16:29:44.800] stage manager resuming...
+[LOG 16:29:44.800] Vessel assembly complete!
+[LOG 16:29:44.800] stage manager starting...
+[LOG 16:29:44.800] all systems started
+[LOG 16:29:47.018] [PlanetariumCamera]: Focus: Untitled Space Craft
+[LOG 16:29:48.304] Flight State Captured
+[LOG 16:29:48.315] Game State Saved as persistent
+[LOG 16:29:54.220] [Untitled Space Craft]: ground contact! - error: 0.140m
+[LOG 16:29:54.220] Unpacking Untitled Space Craft
+[LOG 16:29:54.791] activating stage 0 - current stage: 1
+[LOG 16:29:54.791] [mk1pod]: Activated
+[LOG 16:29:54.791] [fuelTank]: Activated
+[LOG 16:29:54.808] [00:00:00]: Separation of stage 1 confirmed
+[LOG 16:29:54.808] [radialDecoupler]: Activated
+[LOG 16:29:54.828] [launchClamp1]: Activated
+[LOG 16:29:54.829] [radialEngineMini]: Activated
+[LOG 16:29:54.833] [liquidEngine3]: Activated
+[LOG 16:29:54.833] [00:00:00]: Liftoff!!
+[LOG 16:29:56.234] radialDecoupler collided into model_launchpad_ground_collider_v46 - relative velocity: 89.25106 - no impact momentum (no RB)
+[LOG 16:29:56.234] radialDecoupler Exploded!! - blast awesomeness: 0.5
+[LOG 16:29:56.234] [radialDecoupler]: Deactivated

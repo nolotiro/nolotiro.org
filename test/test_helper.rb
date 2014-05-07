@@ -11,9 +11,9 @@ end
 
 require 'rails/test_help'
 
-class ActiveSupport::TestCase
-  ActiveRecord::Migration.check_pending!
-end
+#class ActiveSupport::TestCase
+#  ActiveRecord::Migration.check_pending!
+#end
 
 DatabaseCleaner.strategy = :transaction
 

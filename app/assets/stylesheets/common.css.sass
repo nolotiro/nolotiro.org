@@ -863,62 +863,46 @@ form.searchbox
   a
     color: #264409
 
-/* styles for threads
+/* styles for threads - now mails and maillist
 
-.thread_excerpt
-  display: block
-  float: left
-  border-bottom: 1px solid #ddd
-  padding: 11px 10px 11px 22px
-  line-height: 80px
-  h4
-    font-size: 1.3em
-    font-weight: bold
-    line-height: 80px
-  &:hover
-    background-color: #FFFFCC
-
-.thread-from
-  width: 185px
-  float: left
-  height: 80px
-
-.thread-messages
-  width: 34px
-  float: left
-  height: 34px
-  line-height: 34px
-  padding: 2px 8px
-  border: 1px solid #DDDDCA
-  text-align: center
-  background: image_url("envelope.png") no-repeat 0 0
-  margin: 20px 8px 20px 18px
-  &:hover .unread-hover-info
-    display: block
-
-.unread-hover-info
-  display: none
-
-.thread-subject
-  width: 280px
-  float: left
-  height: 80px
-  margin-right: 20px
-
-.thread-date
-  width: 130px
-  color: #666
-  font-size: 0.9em
-  font-weight: normal
-  float: left
-  height: 80px
-  text-align: right
-
-.thread-delete
-  width: 15px
-  padding-left: 10px
-  height: 80px
-  float: right
+#mail-list
+  list-style: none
+  padding: 5px
+  .sender
+    width: 150px
+  .mail
+    background-color: #fcfcfc
+    border-top: 1px solid #efefef
+    border-left: 1px solid #efefef
+    border-right: 1px solid #efefef
+    padding: 5px
+    span
+      vertical-align: middle
+    &:last-child
+      border-bottom: 1px solid #efefef
+  .unread 
+    a
+      font-weight: bold
+  a
+    text-decoration: none
+    font-weight: normal
+  .icon
+    background-repeat: no-repeat
+    padding-left: 4px
+    padding-bottom: 5px
+  .bookmark
+    background-image: url('icons/star.png')
+  .nobookmark
+    background-image: url('icons/nostar.png')
+  .labels
+    border: 1px solid white
+    padding: 2px
+    margin: 0px 9px 0px 9px
+    background-color: #34AD00
+    color: white
+    font-size: 11px
+    font-weight: normal
+    text-align: center
 
 /**
  * Home

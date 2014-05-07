@@ -1,7 +1,7 @@
 class MessageThread < ActiveRecord::Base
   self.table_name = "threads"
 
-  has_many :messages, :foreign_key => 'thread_id'
+  has_many :messages_legacy, :foreign_key => 'thread_id'
 
   def other_user user
     user == self.first_sender ? self.first_reciever : self.first_sender

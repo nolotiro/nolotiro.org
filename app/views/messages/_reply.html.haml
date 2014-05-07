@@ -1,0 +1,13 @@
+.message-excerpt
+  .message-from-left
+    = link_to profile_path(current_user) do 
+      = image_tag "contact.png"
+      = current_user.username 
+  .message-container-right
+    .triangle-me 
+    .bubble-reply.bg-bubble-me
+      #reply
+        = form_for message do |f|
+          = f.hidden_field :conversation_id
+          = f.text_area :body, size: '80x3'
+          = f.submit 'Enviar'

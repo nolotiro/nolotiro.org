@@ -74,9 +74,20 @@ NolotiroOrg::Application.routes.draw do
     get '/search', to: 'search#search', as: 'search'
 
     # messaging
+    resources :messages do
+      member do
+        delete 'trash'
+        post 'untrash'
+      end
+      collection do
+        delete 'trash'
+      end
+    end
+
+    # messaging legacy
     scope '/message' do
       get  '/received', to: redirect('/es/message/list'), as: 'messages_received'
-      get  '/list', to: 'messages#list', as: 'messages_list'
+      get  '/list', to: 'messages#index', as: 'messages_list'
       get  '/show/:id/subject/:subject', to: 'messages#show', as: 'message_show'
       get  '/create/id_user_to/:user_id', to: 'messages#new', as: 'message_new'
       get  '/create/id_user_to/:user_id/subject/:subject', to: "messages#new", as: 'message_new_with_subject'
@@ -104,7 +115,7 @@ NolotiroOrg::Application.routes.draw do
     # contact
     get '/contact', to: 'contact#new', as: 'contacts'
     post '/contact', to: 'contact#create'
-    
+
     # i18n legacy
     # do nothing, the locale is in the link
     get '/index/setlang', to: redirect('/')

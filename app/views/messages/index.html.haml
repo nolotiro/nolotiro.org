@@ -1,0 +1,30 @@
+#default_header_section
+  %h1 Mensajes '#{@current_user.username}'
+#main 
+  .span-19 
+    = render partial: "users/tabnav", locals: {user: current_user} 
+    = render partial: "messages/tabmessages", locals: {box: @box} 
+    - if @search
+      %h2 Search results for '#{@search}'
+    = form_tag trash_messages_path, method: :delete do
+      = hidden_field_tag 'current_box', @box
+      %ul#mail-list
+        - @messages.each do |m|
+          %li{ class: "#{ 'unread' if m.is_unread?(current_user) }" }
+            %div
+              .mail
+                - unless @box == 'trash'
+                  %span{style: "float:left;width:20px;"}
+                    = check_box_tag '', m.id, false, class: 'delete_multiple_checkbox', name: "conversations[]"
+                = link_to message_path(m) do
+                  %span.star.icon.nobookmark{style: "float:left;width:20px;"}  
+                  %span.sender{style: "float:left;width:130px;"}
+                    = m.last_sender
+                  %span.mail-subject{style: "float:left;width:350px;"}
+                    = m.subject 
+                  %span.timestamp{style: "float:left;width:100px;text-align:right;"}
+                    = l m.messages.last.created_at, format: :short
+                  %div{style: "clear:both;"}
+      - unless @box == 'trash'
+        = submit_tag "Delete checked messages", id: 'delete_multiple_button'
+

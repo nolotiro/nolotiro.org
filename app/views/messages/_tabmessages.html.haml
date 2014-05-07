@@ -1,0 +1,9 @@
+<!-- TODO: can an user edit or view messages from another user? -->
+<!-- TODO: active class in partials -->
+%ul#tabnav
+  %li
+    = link_to_unless_current t('nlt.messages.inbox'), ( messages_path(box: 'inbox') || messages_path ) 
+  %li
+    = link_to_unless_current t('nlt.messages.sent'), messages_path(box: 'sent')
+  %li
+    = link_to_unless_current t('nlt.messages.trash'), messages_path(box: 'trash') 

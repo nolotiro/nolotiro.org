@@ -6,15 +6,30 @@ class User < ActiveRecord::Base
   has_many :friendships
   has_many :friends, :through => :friendships
 
-  has_many :sent_messages, :class_name=> 'Message', :foreign_key=>'user_from', :dependent=>:destroy
-  has_many :recieved_messages, :class_name=> 'Message', :foreign_key=>'user_to', :dependent=>:destroy
-
   before_save :default_lang
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :confirmable, :database_authenticatable, :async, :registerable,
     :recoverable, :rememberable, :trackable, :validatable
+
+  acts_as_messageable
+
+  def name
+    username
+  end
+
+  def to_s
+    username
+  end
+
+  def mailboxer_email(object)
+    email
+  end
+
+  def unread_messages_count 
+    self.mailbox.inbox(:unread => true).count(:id, :distinct => true) 
+  end
 
   def admin?
     role == 1
@@ -61,6 +76,7 @@ class User < ActiveRecord::Base
       super
     end
   end
+
 
   def reset_password!(*args)
     self.legacy_password_hash = nil

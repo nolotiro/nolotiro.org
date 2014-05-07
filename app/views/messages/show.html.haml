@@ -1,0 +1,20 @@
+#actions
+  - if @conversation.is_trashed?(current_user)
+    = link_to "Untrash", untrash_message_path(@conversation), class: :button, method: :post
+  - else
+    = link_to "Trash", trash_message_path(@conversation), class: :button, method: :delete
+
+#default_header_section
+  %h5 
+    = link_to "< volver a mensajes", messages_path
+  %h1
+    = "Conversación con #{@conversation.recipients.first.username} asunto #{@conversation.subject}"
+
+#main
+  .span-15
+    - @conversation.messages.each do |mes|
+      = render :partial => "message", :locals => {:message => mes} 
+    = render :partial => "reply", :locals => {:message => @message}
+
+= render partial: "partials/google_adsense", locals: {id: "messages-show", ad_slot: "2213976068", ad_width: 300, ad_height: 250}
+

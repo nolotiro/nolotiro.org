@@ -1,4 +1,6 @@
-class Message < ActiveRecord::Base
+class MessagesLegacy < ActiveRecord::Base
+
+  self.table_name = "messages_legacy" 
 
   belongs_to :sender, :class_name=>'User', :foreign_key=>'user_from'
   belongs_to :reciever, :class_name=>'User', :foreign_key=>'user_to'

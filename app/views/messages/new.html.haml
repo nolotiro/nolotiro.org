@@ -1,0 +1,27 @@
+#default_header_section
+#main
+  .span-16
+    = form_for @message do |f|
+      %fieldset
+        %legend Por favor, escribe tu mensaje
+        -if @message.errors.any?
+          .error 
+            %h2 '#{pluralize(@message.errors.count, "error")}'  prohibited this message from being saved:
+            %ul
+              -@message.errors.full_messages.each do |msg|
+                %li '#{ msg }'
+        %dl.zend_form
+          %dt#subject-label
+            = f.label :subject
+          %dd#subject-element
+            -if params['subject']
+              = f.text_field :subject, value: params['subject']
+            -else
+              = f.text_field :subject
+          %dd#body-element
+            = f.text_area :body, size: '80x3', required: true
+        = f.hidden_field :recipients
+        = f.submit 'Enviar'
+
+
+= render partial: "partials/google_adsense", locals: {id: "messages-new", ad_slot: "9737242867", ad_width: 300, ad_height: 250}

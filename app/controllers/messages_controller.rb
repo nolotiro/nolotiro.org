@@ -2,82 +2,87 @@ class MessagesController < ApplicationController
 
   before_filter :authenticate_user!
 
-  # GET '/message/show/:id/subject/:subject'
-  def show 
-    @thread = MessageThread.find params[:id]
+  def index
+    @box = params[:box] || 'inbox'
+    @messages = current_user.mailbox.inbox if @box == 'inbox'
+    @messages = current_user.mailbox.sentbox if @box == 'sent'
+    @messages = current_user.mailbox.trash if @box == 'trash'
+    @messages = current_user.mailbox.archive if @box == 'archive'
+    @messages = @messages.paginate(:page => params[:page], :total_entries => @messages.to_a.size)
+    session[:last_mailbox] = @box
   end
 
-  # GET '/message/create/id_user_to/:user_id'
-  # GET '/message/create/id_user_to/:user_id/subject/:subject'
   def new
-    @user = User.find params[:user_id]
-    @subject = params[:subject]
     @message = Message.new
+    if params[:user_id]
+      @message.recipients = User.find(params[:user_id]).id 
+    end
   end
 
-  # POST '/message/create/id_user_to/:user_id'
-  # POST '/message/create/id_user_to/:user_id/subject/:subject'
   def create
-    # TODO: check sender and recipient are not the same
-    # 
-    @message = Message.create_thread(
-      current_user.id,
-      params[:user_id],
-      params[:message][:subject],
-      params[:message][:body],
-      request.remote_ip
-    )
-    if @message.save
-      @user = User.find params[:user_id]
-      MessagesMailer.create(
-        @user.email,
-        current_user.username,
-        params[:message][:subject],
-        params[:message][:body]
-      ).deliver
-      redirect_to message_show_path(@thread.id, @thread.subject.parameterize), notice: 'Message was successfully created.'
+    @message = Message.new message_params
+    @message.sender_id = current_user.id
+
+    if @message.conversation_id
+      @conversation = Conversation.find(@message.conversation_id)
+      unless @conversation.is_participant?(current_user)
+        flash[:alert] = "You do not have permission to view that conversation."
+        return redirect_to root_path
+      end
+      receipt = current_user.reply_to_conversation(@conversation, @message.body, nil, true, true, @message.attachment)
     else
-      render action: 'new'
+      @message.recipients = User.find(params[:message][:recipients])
+      unless @message.valid?
+        return render :new
+      end
+      receipt = current_user.send_message(@message.recipients, @message.body, @message.subject, true, @message.attachment)
     end
+    flash[:notice] = "Message sent."
+
+    redirect_to message_path(receipt.conversation)
   end
 
-  # POST '/message/reply/:id/to/:user_id'
-  def reply
-    # WIP  TODO
-    @thread = MessageThread.find params[:id]
-    @user = User.find params[:user_id]
+  def show
+    @conversation = Conversation.find_by_id(params[:id])
+    unless @conversation.is_participant?(current_user)
+      flash[:alert] = "You do not have permission to view that conversation."
+      return redirect_to root_path
+    end
+    @message = Message.new conversation_id: @conversation.id
+    current_user.mark_as_read(@conversation)
+  end
 
-    @message = Message.new(
-      thread_id: @thread.id,
-      ip: request.remote_ip,
-      subject: @thread.subject,
-      body: params[:body],
-      user_from: current_user.id,
-      user_to: @user.id
-    )
-
-    if @message.save
-      MessagesMailer.create(
-        @user.email,
-        current_user.username,
-        @thread.subject,
-        params[:body]
-      ).deliver
-      redirect_to message_show_path(@thread.id, @thread.subject), notice: 'Message was successfully replied.'
+  def move
+    mailbox = params[:mailbox]
+    conversation = Conversation.find_by_id(params[:id])
+    if conversation
+      current_user.send(mailbox, conversation)
+      flash[:notice] = "Message sent to #{mailbox}."
     else
-      # there was an error saving
-      render action: 'new'
+      conversations = Conversation.find(params[:conversations])
+      conversations.each { |c| current_user.send(mailbox, c) }
+      flash[:notice] = "Messages sent to #{mailbox}."
     end
+    redirect_to messages_path(box: params[:current_box])
   end
 
-  # GET '/message/list'
-  def list 
-    @last_threads = Message.get_threads_from_user(current_user)
+  def untrash
+    conversation = Conversation.find(params[:id])
+    current_user.untrash(conversation)
+    flash[:notice] = "Message untrashed."
+    redirect_to messages_path(:box => 'inbox')
   end
 
+  def search
+    @search = params[:search]
+    @messages = current_user.search_messages(@search)
+    render :index
+  end
+
+  private 
   # Never trust parameters from the scary internet, only allow the white list through.
   def message_params
-    params.require(:message).permit(:thread_id, :ip, :subject, :body, :readed, :user_from, :user_to)
+    params.require(:message).permit(:conversation_id, :body, :subject, :recipients, :sender_id)
   end
 
 end

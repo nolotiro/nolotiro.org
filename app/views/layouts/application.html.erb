@@ -16,9 +16,8 @@
       <%= yield(:extra_meta) %>
     <% end %>
 
-    <!-- FIXME: Other languages - move to helper -->
     <% %w(es en ca gl eu nl de fr pt it).each do |l|  %>
-      <meta data="lang" href="<%= l %>">
+      <meta data="lang" href="<%= url_for(locale: l, host: 'nolotiro.org') %>">
     <% end %>
 
     <!--

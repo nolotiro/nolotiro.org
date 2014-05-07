@@ -1,0 +1,10 @@
+io = User.find_by_email "iokese@sindominio.net"
+u = User.find_by_email "andreslucena@gmail.com"
+u.send_message(io, "test", "sub") 
+
+---------------------------------------------------
+
+1. Views de /messages y distintas casillas
+2. Migrar mensajes antiguos (sin notificar de nuevo a los usuarios)
+
+
