@@ -82,6 +82,12 @@ ActiveRecord::Schema.define(version: 20140113101630) do
 
   add_index "messages_deleted", ["id_user", "id_message"], name: "iduser_idmessage", unique: true, using: :btree
 
+  create_table "readedAdCount", primary_key: "id_ad", force: true do |t|
+    t.integer "counter", null: false
+  end
+
+  add_index "readedAdCount", ["id_ad", "counter"], name: "id_ad_counter", unique: true, using: :btree
+
   create_table "threads", force: true do |t|
     t.string  "subject",      limit: 100,             null: false
     t.integer "last_speaker"

@@ -77,6 +77,8 @@ GEM
       debugger-ruby_core_source (~> 1.2.4)
     debugger-linecache (1.2.0)
     debugger-ruby_core_source (1.2.4)
+    delayed_paperclip (2.7.1)
+      paperclip (>= 3.3)
     devise (3.2.0)
       bcrypt-ruby (~> 3.0)
       orm_adapter (~> 0.1)
@@ -165,6 +167,7 @@ GEM
       thor (>= 0.18.1, < 2.0)
     raindrops (0.12.0)
     rake (10.1.1)
+    rb-readline (0.5.1)
     rdoc (3.12.2)
       json (~> 1.4)
     recaptcha (0.3.5)
@@ -289,6 +292,7 @@ DEPENDENCIES
   commands
   database_cleaner
   debugger
+  delayed_paperclip
   devise
   devise-async
   factory_girl_rails (~> 4.0)
@@ -303,6 +307,7 @@ DEPENDENCIES
   paperclip (~> 3.0)
   paranoia (~> 2.0)
   rails (= 4.0.1)
+  rb-readline
   recaptcha
   redis-rails
   resque
