@@ -1,17 +1,6 @@
 class AddReadedCountToAd < ActiveRecord::Migration
   def up
     add_column :ads, :readed_count, :integer
-    connection = ActiveRecord::Base.connection
-    query = ActiveRecord::Base.connection.execute("SELECT * FROM readedAdCount")
-    query.each do |row|
-      # find_by_id doesn't raise ActiveRecord::RecordNotFound
-      ad = Ad.find_by_id(row[0])
-      unless ad.nil? 
-        ad.readed_count = row[1]
-        ad.save
-      end
-    end
-    drop_table "readedAdCount"
   end
 
   def down

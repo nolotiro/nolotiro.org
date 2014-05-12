@@ -3,7 +3,7 @@ class Ad < ActiveRecord::Base
 
   require 'ipaddress'
 
-  belongs_to :user, foreign_key: 'user_owner', :counter_cache => true
+  belongs_to :user, foreign_key: 'user_owner' #, :counter_cache => true
   has_many :comments, class_name: 'Comment', foreign_key: 'ads_id'
 
   validates :title, presence: true
@@ -34,6 +34,7 @@ class Ad < ActiveRecord::Base
     :styles => {:thumb => "100x90>"},
     :content_type => { :content_type => ["image/jpg", "image/gif", "image/png"] }
   # FIXME: route should have /ads/ in the URL 
+  process_in_background :image 
 
   validates_attachment_size :image, :in => 0.megabytes..1.megabytes
 
