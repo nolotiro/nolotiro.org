@@ -27,7 +27,7 @@ group :development, :test do
   # rails-footnotes: using github master
   #                  until this issue is in gem repo
   #                  https://github.com/josevalim/rails-footnotes/pull/93
- # gem 'rails-footnotes', git: "https://github.com/josevalim/rails-footnotes"                     # dev: data at footnote
+  gem 'rails-footnotes', git: "https://github.com/josevalim/rails-footnotes"                     # dev: data at footnote
   gem 'better_errors'                       # dev: better errors
   gem 'binding_of_caller'                   # dev: better errors
   gem 'mailcatcher'                         # dev: mailbox 
@@ -68,5 +68,5 @@ gem 'recaptcha', :require => 'recaptcha/rails'      # captcha
 gem 'airbrake'                                      # exception notification
 gem 'paranoia', '~> 2.0'                            # don't really delete a model
 gem 'ipaddress'                                     # ip address validation
-gem 'mailboxer'
-gem 'rb-readline'
+gem 'mailboxer'                                     # messaging
+gem 'rb-readline'                                   # fix rails console error

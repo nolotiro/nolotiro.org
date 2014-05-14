@@ -1,3 +1,10 @@
+GIT
+  remote: https://github.com/josevalim/rails-footnotes
+  revision: 961015b3a73c2a0fc6b9501fc001e6eb082b7025
+  specs:
+    rails-footnotes (4.0.1)
+      rails (>= 3.2)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -330,6 +337,7 @@ DEPENDENCIES
   paperclip (~> 3.0)
   paranoia (~> 2.0)
   rails (= 4.0.1)
+  rails-footnotes!
   rb-readline
   recaptcha
   redis-rails
