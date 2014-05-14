@@ -1,10 +1,6 @@
 <!-- for showing the i18n active lang -->
 <% is_active_class = I18n.locale == abbr.to_sym ? "active" : "''" %>
 
-<%= link_to params.merge({:locale => abbr}), :class => "lang #{is_active_class}" do %>
-  <span class="flag <%= abbr %>"></span>
-  <span>
-    <%= image_tag "flags/" + abbr  + ".gif", :alt => language %>
-    &nbsp;<%= language %>
-  </span>
+<%= link_to params.merge({:locale => abbr}), :class => "flag-#{ abbr }  lang #{is_active_class}" do %>
+  <span><%= language %></span>
 <% end %>

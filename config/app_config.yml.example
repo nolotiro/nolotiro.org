@@ -1,32 +1,23 @@
 defaults: &defaults
+  geoplanet_app_id: "dj0yJmk9VXY4UnllWWh2cERFJmQ9WVdrOWFXRjBkbEpOTm1zbWNHbzlNQS0tJnM9Y29uc3VtZXJzZWNyZXQmeD1mMQ--"
+  recaptcha_public_key: ""
+  recaptcha_private_key: ""
+  contact_email1: "@"
+  contact_email2: "@"
+  default_from_email: "noreply@nolotiro.org"
+  airbrake_apikey: ''
+  airbrake_host: ''
+  airbrake_port: '80'
+  devise_secret_key: 'e4babb7746d1e2302f1fd2ab13d6985512c17e24e5b8e21abbf0199b2a43a5c907db3b30ba6e092c2abfef2d9bf305998958ab4f4fe43dc22343b7379984e284'
+  debug_ip_address: '8.8.8.8'
+  langs_routes: 'es|en|ca|gl|eu|nl|de|fr|pt|it'
+  langs: 'es en ca gl eu nl de fr pt it'
 
 development:
   <<: *defaults
-  geoplanet_app_id: "dj0yJmk9VXY4UnllWWh2cERFJmQ9WVdrOWFXRjBkbEpOTm1zbWNHbzlNQS0tJnM9Y29uc3VtZXJzZWNyZXQmeD1mMQ--"
-  recaptcha_public_key: ""
-  recaptcha_private_key: ""
-  contact_email1: "@"
-  contact_email2: "@"
-  default_from_email: "noreply@nolotiro.org"
-  airbrake_apikey: ''
-  airbrake_host: ''
-  airbrake_port: '80'
-  devise_secret_key: 'e4babb7746d1e2302f1fd2ab13d6985512c17e24e5b8e21abbf0199b2a43a5c907db3b30ba6e092c2abfef2d9bf305998958ab4f4fe43dc22343b7379984e284'
-  debug_ip_address: '8.8.8.8'
 
 test:
   <<: *defaults
-  geoplanet_app_id: "dj0yJmk9VXY4UnllWWh2cERFJmQ9WVdrOWFXRjBkbEpOTm1zbWNHbzlNQS0tJnM9Y29uc3VtZXJzZWNyZXQmeD1mMQ--"
-  recaptcha_public_key: ""
-  recaptcha_private_key: ""
-  contact_email1: "@"
-  contact_email2: "@"
-  default_from_email: "noreply@nolotiro.org"
-  airbrake_apikey: ''
-  airbrake_host: ''
-  airbrake_port: '80'
-  devise_secret_key: 'e4babb7746d1e2302f1fd2ab13d6985512c17e24e5b8e21abbf0199b2a43a5c907db3b30ba6e092c2abfef2d9bf305998958ab4f4fe43dc22343b7379984e284'
-  debug_ip_address: '8.8.8.8'
 
 production:
   <<: *defaults

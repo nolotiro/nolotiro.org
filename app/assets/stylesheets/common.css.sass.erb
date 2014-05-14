@@ -718,7 +718,7 @@ form.searchbox
 
 .triangle-me
   position: absolute
-  background: image_url("pico-green-left.png") no-repeat 0 0
+  background: image-url("pico-green-left.png") no-repeat 0 0
   height: 10px
   top: 40px
   left: -11px
@@ -726,7 +726,7 @@ form.searchbox
 
 .triangle-other
   position: absolute
-  background: image_url("pico-white-right.png") no-repeat 0 0
+  background: image-url("pico-white-right.png") no-repeat 0 0
   height: 10px
   top: 40px
   right: -11px
@@ -891,9 +891,9 @@ form.searchbox
     padding-left: 4px
     padding-bottom: 5px
   .bookmark
-    background-image: url('icons/star.png')
+    background-image: image-url('icons/star.png')
   .nobookmark
-    background-image: url('icons/nostar.png')
+    background-image: image-url('icons/nostar.png')
   .labels
     border: 1px solid white
     padding: 2px
@@ -1244,7 +1244,7 @@ a#tab_active
   height: 32px
   margin: 0 auto
   text-indent: -9999px
-  background: url(loader.gif) no-repeat 0 0
+  background: image-url('loader.gif') no-repeat 0 0
 
 #superbox
   .close a
@@ -1272,3 +1272,18 @@ a#tab_active
   clear: both
   border: 1px silver solid
   padding: 4px
+
+$langs: <%= APP_CONFIG["langs"] %>
+
+=flags-countries
+  @each $l in $langs 
+    .flag-#{$l} 
+      vertical-align: center
+      background-repeat: no-repeat
+      background-position: 0px 5px, center
+      background-image: image-url("flags/#{$l}.gif")
+      span
+        margin-left: 15px
+ 
+#select_language_box
+  +flags-countries
