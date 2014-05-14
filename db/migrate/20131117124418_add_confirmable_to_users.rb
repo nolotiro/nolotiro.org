@@ -10,19 +10,13 @@ class AddConfirmableToUsers < ActiveRecord::Migration
     # nolotiro v2 legacy - migrate users with tokens 
     # to the new confirmable model 
     #
-    users_with_tokens = User.all.where.not(:token => "" )
-    users_with_tokens.find_each do |u|
-      u.confirmation_token = u.token
-      u.save
+    User.all.where.not(:token => "" ).find_each do |u|
+      u.update_column(:confirmation_token, u.token)
     end
 
     # nolotiro v2 legacy - migrate users without tokens 
     # to the new confirmable model 
-    users_with_tokens = User.all.where(:token => "" )
-    users_with_tokens.find_each do |u|
-      u.confirmed_at = Time.now
-      u.save
-    end
+    User.all.where(:token => "" ).update_all(confirmed_at: Time.now)
 
     remove_columns :users, :token
 
