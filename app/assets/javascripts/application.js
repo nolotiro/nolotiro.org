@@ -24,4 +24,13 @@ $(document).ready(function(){
     message: 'Utilizamos cookies para mejorar tu navegación en este sitio',
     acceptText: 'OK'
   });
+
+  if (! readCookie('alert-first-visit-close') )  { $('.js-alert-first-visit').show('slow'); } 
+
+  $('.js-close-first-visit').on('click', function(e){
+    e.preventDefault();
+    $(this).parent().hide('slow');
+    createCookie('alert-first-visit-close', true, 90); 
+  })
+
 }); 

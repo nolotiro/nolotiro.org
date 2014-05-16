@@ -83,7 +83,6 @@ es:
     if_you_are_new: 'Si eres un nuevo usuario, por favor'
     register_here: 'registrate aquí'
     share_this_ad: 'Comparte este anuncio'
-    beta_warning: 'Esta versión de nolotiro se encuentra en fase beta. Ten en cuenta que los anuncios pueden desaparecer y cambiarse. '
     publish_ad: "Publicando anuncio "
     ads: 
       form:

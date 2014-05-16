@@ -82,12 +82,15 @@
           </p>
         <% end %>
       <% end %>
+      
+      <div class="info js-alert-first-visit hide">
+        nolotiro.org es una comunidad donde podemos deshacernos de los objetos que ya no utilizamos y nos estorban en casa.   
+        <a href="#" class="js-close-first-visit alert-close">x</a> 
+      </div>                                                                                        
 
-      <% if Rails.env.development? || Rails.env.staging? %>
-        <p class="notice">
-          <%= t('nlt.beta_warning') %>
-        </p>
-      <% end %>
+      <div class="notice">
+        Estamos actualizando todo el sitio, por lo que en las próximas horas habrá retrasos con los mensajes entre los usuarios, las imágenes de un anuncio y la cantidad de anuncios de los usuarios. No te preocupes que "estamos trabajando en ellou".
+      </div>         
 
       <%= yield %>
 
