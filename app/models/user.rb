@@ -28,7 +28,7 @@ class User < ActiveRecord::Base
   end
 
   def unread_messages_count 
-    self.mailbox.inbox(:unread => true).count(:id, :distinct => true) 
+    self.mailbox.receipts.where(is_read: false).count
   end
 
   def admin?
@@ -54,10 +54,6 @@ class User < ActiveRecord::Base
 
   def is_friend? user
     self.friends.where(id: user.id).count > 0 ? true : false
-  end
-
-  def last_threads
-    # FIXME: refactoring
   end
 
   # nolotirov2 legacy: auth migration - from zend md5 to devise
