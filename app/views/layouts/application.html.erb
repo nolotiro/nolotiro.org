@@ -12,6 +12,12 @@
     <%= csrf_meta_tags %>
     <!-- TODO: RSS -->
 
+    <% if content_for?(:meta_description) %>
+      <%= yield(:meta_description) %>
+    <% else%>
+      <meta name="description" content="nolotiro.org es un sitio web donde regalo y busco regalos gratis de segunda mano : muebles, sillas, sofás, bicicletas, ordenadores portátiles, mesas, cocinas, lámparas, camas, ropa, juguetes, cunas o carros para bebes, teléfonos móviles y otras muchas cosas que ya no quieres y ya no necesitas para que las reutilicen otra gente a la que puede servirle o darle nueva vida." />
+    <% end %>
+
     <% if content_for?(:extra_meta) %>
       <%= yield(:extra_meta) %>
     <% end %>

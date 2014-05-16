@@ -1,9 +1,12 @@
 <% content_for(:meta_title,  "#{t('nlt.keywords')} #{@ad.title} #{@ad.woeid_name}") %>
+<% content_for :meta_description do %>
+  <meta name="description" content="regalo segunda mano <%= @ad.title %> en <%= @ad.woeid_name %>. <%= @ad.body %>" />
+<% end %>
 
 <div id="default_header_section">
   <h2>
     <a href="/es/woeid/<%= @ad.woeid_code %>/give">
-      <%= WoeidHelper.convert_woeid_name @ad.woeid_code %> &gt;
+      <%= @ad.woeid_name %> &gt;
       <%= @ad.type_string %>
     </a>
   </h2>
