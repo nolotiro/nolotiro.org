@@ -1,6 +1,5 @@
 class ApplicationController < ActionController::Base
   # TODO: comment captcha for ad creation/edition
-  # FIXME: extra_meta in RSS 
   # FIXME: after login whould say "Welcome, USERNAME "
   
   # Prevent CSRF attacks by raising an exception.

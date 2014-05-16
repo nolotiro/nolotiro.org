@@ -1,7 +1,20 @@
 <% content_for(:title, @woeid) %>
 <% content_for(:meta_title, t('nlt.keywords') + @woeid.to_s) %>
+
 <% content_for :meta_description do %>
   <meta name="description" content="regalo en <%= @woeid %>. nolotiro.org es un sitio web donde regalo y busco regalos gratis de segunda mano : muebles, sillas, sofás, bicicletas, ordenadores portátiles, mesas, cocinas, lámparas, camas, ropa, juguetes, cunas o carros para bebes, teléfonos móviles y otras muchas cosas que ya no quieres y ya no necesitas para que las reutilicen otra gente a la que puede servirle o darle nueva vida." />
+<% end %>
+
+<% content_for :meta_extra do %>
+  <link rel=”alternate” type=”application/rss+xml” title=”nolotiro.org - <%= @woeid %>” href=”<%= rss_type_url(woeid: @id, type: @type, status: @status) %>” /> 
+<% end %>
+
+<% content_for :action do %>
+  <% if @woeid %>
+    <div class="ad_create_tab">
+      <a href="/es/ad/create">+ Publicar anuncio en <%= @woeid %></a>
+    </div>
+  <% end %>
 <% end %>
 
 <div id="location_header_section">
@@ -65,16 +78,3 @@
 <%= render partial: "partials/google_adsense", locals:
   {id: "woeid-show", ad_slot: "6783776462", ad_width: 160, ad_height: 600}
 %>
-
-<% content_for :action do %>
-  <% if @woeid %>
-    <div class="ad_create_tab">
-      <a href="/es/ad/create">+ Publicar anuncio en <%= @woeid %></a>
-    </div>
-  <% end %>
-<% end %>
-
-<!-- FIXME: syntax -->
-<% content_for :extra_meta do %>
-  <meta href="<%= rss_type_url(:woeid => @id, :type => "give") %>">
-<% end %>
