@@ -12,5 +12,16 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.cookiebar
 //= require turbolinks
 //= require_tree .
+
+
+$(document).ready(function(){
+
+  // http://www.primebox.co.uk/projects/jquery-cookiebar/ 
+  $.cookieBar({
+    message: 'Utilizamos cookies para mejorar tu navegación en este sitio',
+    acceptText: 'OK'
+  });
+}); 

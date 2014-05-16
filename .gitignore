@@ -27,6 +27,9 @@ public/assets/*
 *.swp
 *.swo
 
+# gedit temp files
+*~
+
 # geolitecity.dat
 vendor/geolite/GeoLiteCity.dat
 
