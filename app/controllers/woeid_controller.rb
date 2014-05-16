@@ -8,27 +8,34 @@ class WoeidController < ApplicationController
     @id = params[:id]
     @type = params[:type]
     @status = params[:status]
-    if @type == "give" # regalo
-      ads = Ad.give 
-      case @status
-      when "booked"
-        ads = ads.booked
-      when "delivered"
-        ads = ads.delivered
-      else
-        @status = "available"
-        ads = ads.available
-      end
+
+    case @status
+    when 'available'
+      st = 1
+    when 'booked'
+      st = 3
+    when 'delivered'
+      st = 3
     else
-      ads = Ad.want  # busco
-    end
+      st = 1
+    end 
+    case @type
+    when 'give'
+      ty = 1
+    when 'want'
+      ty = 2
+    else
+      ty = 1
+    end 
+
+    @ads = Ad.includes(:user).by_type(ty).by_status(st).by_woeid_code(@id).paginate(:page => params[:page])
+
     if params.has_key?(:id) 
-      ads = ads.where(:woeid_code => params[:id])
       @woeid = WoeidHelper.convert_woeid_name params[:id]
     else
       @all = true # se trata de un listall
     end
-    @ads = ads.includes(:user).paginate(:page => params[:page])
+      
     if not @ads.any?
       @location_suggest = get_location_suggest # no results
       if @woeid

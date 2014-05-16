@@ -41,10 +41,24 @@ class Ad < ActiveRecord::Base
   scope :give, -> { where(type: 1) }
   scope :want, -> { where(type: 2) }
 
+  scope :by_type, lambda {|type|
+    return scoped unless type.present?
+    where('type = ?', type) 
+  }
+
   scope :available, -> { where(status: 1) }
   scope :booked, -> { where(status: 2) }
   scope :delivered, -> { where(status: 3) }
 
+  scope :by_status, lambda {|status|
+    return scoped unless status.present?
+    where('status = ?', status) 
+  }
+
+  scope :by_woeid_code, lambda {|woeid_code|
+    return scoped unless woeid_code.present?
+    where('woeid_code = ?', woeid_code) 
+  }
 
   def readed_counter
     readed_count || 0
