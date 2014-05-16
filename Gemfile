@@ -70,3 +70,5 @@ gem 'paranoia', '~> 2.0'                            # don't really delete a mode
 gem 'ipaddress'                                     # ip address validation
 gem 'mailboxer'                                     # messaging
 gem 'rb-readline'                                   # fix rails console error
+
+gem 'blueprint-rails'                               # blueprint css framework
