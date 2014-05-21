@@ -81,20 +81,19 @@ namespace :nolotiro do
   end
 
   def start_all_threads
-      #MessageThread.where(:id => 1000000..1002000).each do |mt|
-      #MessageThread.find_each do |mt|
-        #mt.messages_legacy.find_each do |m| 
-        #start_or_reply_conversation(mt,m)
     ActiveRecord::Base.connection_pool.with_connection do  
-      MessagesLegacy.find_each do |m| 
-        start_or_reply_conversation(m.thread,m)
+      #Legacy::Message.find_each do |m| 
+      Legacy::Message.where(id: 931400..932800).each do |m| 
+        unless m.user_from.nil? or m.user_to.nil? 
+          start_or_reply_conversation(m.thread,m)
+        end
       end
     end
   end
 
   def start_a_thread thread_id
-    mt = MessageThread.find(thread_id)
-    mt.messages_legacy.each do |m| 
+    mt = Legacy::MessageThread.find(thread_id)
+    mt.messages.each do |m| 
       start_or_reply_conversation(mt,m)
     end
   end

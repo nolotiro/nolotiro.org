@@ -1,4 +1,4 @@
-class MessagesLegacy < ActiveRecord::Base
+class Legacy::Message < ActiveRecord::Base
 
   self.table_name = "messages_legacy" 
 
