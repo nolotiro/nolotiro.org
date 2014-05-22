@@ -79,6 +79,24 @@ class AdTest < ActiveSupport::TestCase
     assert_equal @ad.status_class, "delivered"
   end
 
+  test "ad is_give? or is_want?" do
+    @ad.type = 1
+    @ad.save
+    assert_equal @ad.is_give?, true
+    @ad.type = 2
+    @ad.save
+    assert_equal @ad.is_want?, true
+  end
+
+  test "ad meta_title" do
+    @ad.type = 1
+    @ad.save
+    assert_equal @ad.meta_title, "regalo segunda mano gratis  ordenador en Vallecas Madrid, Madrid, España"
+    @ad.type = 2
+    @ad.save
+    assert_equal @ad.meta_title, "busco ordenador en Vallecas Madrid, Madrid, España"
+  end
+
 #  Disabling IP validation. Some legacy IP are bad (8.8.8.1, 24.2.2.2) 
 #  test "ad validates ip address - fail" do
 #    @ad.ip = '999.99.9.9'

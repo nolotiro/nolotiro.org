@@ -1,4 +1,4 @@
-<% content_for(:meta_title,  "#{t('nlt.keywords')} #{@ad.title} #{@ad.woeid_name}") %>
+<% content_for(:meta_title,  "#{@ad.meta_title}") %>
 <% content_for :meta_description do %>
   <meta name="description" content="regalo segunda mano <%= @ad.title %> en <%= @ad.woeid_name %>. <%= @ad.body %>" />
 <% end %>
@@ -29,7 +29,9 @@
           <% end %>
         </div>
       <% end %>
-      <span class="ad_status <%= @ad.status_class %>"><%= @ad.status_string %></span>
+      <% if @ad.is_give? %>
+        <span class="ad_status <%= @ad.status_class %>"><%= @ad.status_string %></span>
+      <% end %>
       <span class="ad_date">
         <%= t('nlt.published_at_by_html', time: distance_of_time_in_words_to_now(@ad.created_at), user: link_to(@ad.user.username, listads_user_path(@ad.user))) %>
       </span>
