@@ -19,18 +19,18 @@ namespace :nolotiro do
     # Agrupa todos sus Receipts por los notification_id que los dos tienen
     # (si dos usuarios tienen el mismo notification_id tuvieron una conversación)
     if from and to 
-      notification_ids = Receipt.
-        where("receiver_id=? OR receiver_id=?", from, to).
-        count(group: :notification_id).
-        select{|k,v| v > 1}.
-        keys 
+      notification_ids = Receipt.where("receiver_id=? OR receiver_id=?", from, to).count(group: :notification_id).select{|k,v| v > 1}.keys 
       # 2. De ese resultado filtramos los que coincidan con el Subject, devolvemos la Conversation
       notification_ids.each do |n|
         notification = Notification.find_by_id n 
-        return notification.conversation if notification.subject == subject
+        if notification.subject == subject
+          return notification.conversation 
+        else
+          return nil
+        end
       end
     else 
-      nil
+      return nil
     end
   end
 
@@ -40,7 +40,12 @@ namespace :nolotiro do
     if from_u and to_u
       from_u.send_message(to_u, body, subject, true, nil, created_at)
     else
-      puts "******************* INVALID USER #{from} - #{to} *********************"
+      puts "Message from a deleted user"
+      if from_u and not to_u
+        puts "******************* INVALID USER #{to} *********************"
+      else
+        puts "******************* INVALID USER #{from} *********************"
+      end
     end
   end
 
@@ -63,16 +68,17 @@ namespace :nolotiro do
     # nolotirov2 legacy 
     # FIX: hay algunos mensajes que no tienen un user_from (bug legacy)
     # FIXME: user_to nil?
-    unless message_thread.messages_legacy.map(&:user_from).include?(nil) or message_thread.messages_legacy.map(&:user_to).include?(nil)
-      if message ==  message_thread.messages_legacy.first
+    unless message_thread.messages.map(&:user_from).include?(nil) or message_thread.messages.map(&:user_to).include?(nil)
+      # FIXME y si buscamos la conversa antes de que se haya creado?¿?
+      if message ==  message_thread.messages.first
         start_conversation(message.user_from, message.user_to, message_thread.subject, message.body, message.created_at)
       else
         conversation = get_conversation(message.user_from, message.user_to, message_thread.subject)
         #conversation = Conversation.find_by_subject message_thread.subject
-        if conversation
+        unless conversation == [] or conversation.nil?
           reply_to_conversation(conversation, message.user_from, message.body, message.created_at)
         else
-          puts "******************* INVALID USER - messages #{message.id} *********************"
+          puts "******************* INVALID CONVERSATION - messages #{message.id} *********************"
         end
       end
     else 
@@ -82,9 +88,12 @@ namespace :nolotiro do
 
   def start_all_threads
     ActiveRecord::Base.connection_pool.with_connection do  
-      #Legacy::Message.find_each do |m| 
-      Legacy::Message.where(id: 931400..932800).each do |m| 
-        unless m.user_from.nil? or m.user_to.nil? 
+      Legacy::Message.order(:created_at).find_each do |m| 
+        # FIXME: MariaDB [nolotirov3]> SELECT COUNT(*) FROM messages_legacy where thread_id = 0 \G
+        # *************************** 1. row ***************************
+        # COUNT(*): 70598
+        #
+        unless m.user_from.nil? or m.user_to.nil? or m.thread.nil?
           start_or_reply_conversation(m.thread,m)
         end
       end
