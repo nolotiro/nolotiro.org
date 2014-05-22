@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140416131907) do
+ActiveRecord::Schema.define(version: 20140522073916) do
 
   create_table "ads", force: true do |t|
     t.string   "title",              limit: 100, null: false
@@ -33,6 +33,8 @@ ActiveRecord::Schema.define(version: 20140416131907) do
     t.integer  "readed_count"
   end
 
+  add_index "ads", ["deleted_at"], name: "index_ads_on_deleted_at", using: :btree
+  add_index "ads", ["status"], name: "index_ads_on_status", using: :btree
   add_index "ads", ["woeid_code"], name: "woeid", using: :btree
 
   create_table "comments", force: true do |t|
