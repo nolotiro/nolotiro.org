@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140522120854) do
+ActiveRecord::Schema.define(version: 20140522160202) do
 
   create_table "ads", force: true do |t|
     t.string   "title",              limit: 100, null: false
@@ -75,15 +75,16 @@ ActiveRecord::Schema.define(version: 20140522120854) do
   add_index "messages_deleted", ["id_user", "id_message"], name: "iduser_idmessage", unique: true, using: :btree
 
   create_table "messages_legacy", force: true do |t|
-    t.integer  "thread_id",                          null: false
-    t.datetime "created_at",                         null: false
+    t.integer  "thread_id",                               null: false
+    t.datetime "created_at",                              null: false
     t.integer  "user_from"
     t.integer  "user_to"
-    t.string   "ip",         limit: 15,              null: false
-    t.string   "subject",    limit: 100,             null: false
-    t.text     "body",                               null: false
-    t.integer  "readed",                 default: 0, null: false
+    t.string   "ip",          limit: 15,                  null: false
+    t.string   "subject",     limit: 100,                 null: false
+    t.text     "body",                                    null: false
+    t.integer  "readed",                  default: 0,     null: false
     t.datetime "updated_at"
+    t.boolean  "is_migrated",             default: false
   end
 
   add_index "messages_legacy", ["thread_id"], name: "thread_id", using: :btree

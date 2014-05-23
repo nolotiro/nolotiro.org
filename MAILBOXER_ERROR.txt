@@ -4,7 +4,9 @@ u.send_message(io, "test", "sub")
 
 ---------------------------------------------------
 
-1. Views de /messages y distintas casillas
 2. Migrar mensajes antiguos (sin notificar de nuevo a los usuarios)
+** is_migrated: boolean
+** worker and lib model 
+
 
 
