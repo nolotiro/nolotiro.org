@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140522073916) do
+ActiveRecord::Schema.define(version: 20140522120854) do
 
   create_table "ads", force: true do |t|
     t.string   "title",              limit: 100, null: false
