@@ -3,7 +3,6 @@ set :repo_url, 'git@github.com:alabs/nolotiro.org.git'
 
 # ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }
 
-set :deploy_to, '/var/www/beta.nolotiro.org'
 set :scm, :git
 
 set :format, :pretty

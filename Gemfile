@@ -45,7 +45,7 @@ end
 
 # deploy
 gem 'capistrano', '~> 3.0'
-gem 'capistrano-rvm', '~> 0.0.3'
+gem 'capistrano-rvm'
 gem 'capistrano-rails'
 gem 'capistrano-bundler'
 
