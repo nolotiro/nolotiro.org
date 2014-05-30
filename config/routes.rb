@@ -97,8 +97,11 @@ NolotiroOrg::Application.routes.draw do
     end
 
     # rss
-    # FIXME: las URLs legacy vienen asi
+    # nolotirov2 - legacy 
+    # FIX: las URLs legacy vienen asi
     # /en                     /rss/feed/woeid/766273                     /ad_type/give
+    # Lo solucionamos en el nginx.conf y una configuracion para hacer el search and replace
+    # http://stackoverflow.com/questions/22421522/nginx-rewrite-rule-for-replacing-space-whitespace-with-hyphen-and-convert-url-to
     scope '/rss' do
       get '/feed/woeid/:woeid/ad_type/:type', format: 'rss', to: 'rss#feed', as: 'rss_type'
       get '/feed/woeid/:woeid/ad_type/give/status/:status', format: 'rss', to: 'rss#feed', as: 'rss_status'
