@@ -44,7 +44,8 @@ class Legacy::Message < ActiveRecord::Base
   end
 
   def self.get_threads_from_user(user)
-    # nolotirov2 - legacy - from the DB we had
+    # 100% legacy, from the DB we had
+    # FIXME: PLEEAAASEE migrate me to mailboxer or something more Rails like
     send_threads = user.sent_messages.order('created_at DESC').limit(10).joins(:thread).group('thread_id').count
     recieved_threads = user.recieved_messages.order('created_at DESC').limit(10).joins(:thread).group('thread_id').count
     threads = []
@@ -87,9 +88,8 @@ class Legacy::Message < ActiveRecord::Base
     # 2. De ese resultado filtramos los que coincidan con el Subject, devolvemos la Conversation
     notification_ids.each do |n|
       notification = Notification.find_by_id n
-      puts notification.subject
       res = notification.subject == subject ? notification.conversation : nil
-      puts res
+      # 
     end
   end
 
@@ -134,15 +134,14 @@ class Legacy::Message < ActiveRecord::Base
 
         message_thread.messages.each do |m|
           if m ==  message_thread.messages.first
-            puts "START conversation..."
-            #start_conversation
+            #puts "START conversation..."
             from_u.send_message(to_u, m.body, message_thread.subject, true, nil, m.created_at)
             m.update_attribute(:is_migrated, true)
           else
             conversation = m.get_conversation
             #conversation = Conversation.find_by_subject message_thread.subject
             unless conversation == [] or conversation.nil?
-              puts "REPLY conversation..."
+              #puts "REPLY conversation..."
               m.reply_to_conversation(conversation, from_u)
             else
               raise "******************* INVALID CONVERSATION - maybe it isnt well ordered? - messages #{m.id} *********************"
@@ -150,6 +149,8 @@ class Legacy::Message < ActiveRecord::Base
           end
         end
       else
+        puts "NO THREAD - NEW conversation..."
+        puts message.id
         from_u.send_message(to_u, message.body, message.subject, true, nil, message.created_at)
         message.update_attribute(:is_migrated, true)
       end
