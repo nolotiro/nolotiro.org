@@ -26,7 +26,7 @@ set :rvm_ruby_version, '2.0.0@nolotiro'
 
 # Logical flow for deploying an app
 after  'deploy:finished',            'thinking_sphinx:index'
-after  'deploy:finished',            'thinking_sphinx:start'
+after  'deploy:finished',            'thinking_sphinx:restart'
 #after  'deploy:setup',           'ts:shared_sphinx_folder'
 #after  'deploy:finalize_update', 'ts:symlink_indexes'
 
