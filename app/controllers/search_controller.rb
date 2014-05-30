@@ -2,8 +2,6 @@ class SearchController < ApplicationController
 
   # GET /search
   def search
-    # TODO: filter by want/give
-    #
     @search = true
     @type =  params[:ad_type] == "give" ? 1 : 2
 
