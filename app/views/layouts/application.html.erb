@@ -21,6 +21,8 @@
       <%= yield(:meta_extra) %>
     <% end %>
 
+    <meta name='viewport' content='width=device-width, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no' />
+
     <% APP_CONFIG["langs"].split(' ').each do |l|  %>
       <link rel="alternate" hreflang="<%= l %>" href="<%= url_for(locale: l) %>" />
     <% end %>
