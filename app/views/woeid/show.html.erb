@@ -5,8 +5,10 @@
   <meta name="description" content="regalo en <%= @woeid %>. nolotiro.org es un sitio web donde regalo y busco regalos gratis de segunda mano : muebles, sillas, sofás, bicicletas, ordenadores portátiles, mesas, cocinas, lámparas, camas, ropa, juguetes, cunas o carros para bebes, teléfonos móviles y otras muchas cosas que ya no quieres y ya no necesitas para que las reutilicen otra gente a la que puede servirle o darle nueva vida." />
 <% end %>
 
-<% content_for :meta_extra do %>
-  <link rel=”alternate” type=”application/rss+xml” title=”nolotiro.org - <%= @woeid %>” href=”<%= rss_type_url(woeid: @id, type: @type, status: @status) %>” /> 
+<% unless @search %>
+  <% content_for :meta_extra do %>
+    <link rel=”alternate” type=”application/rss+xml” title=”nolotiro.org - <%= @woeid %>” href=”<%= rss_type_url(woeid: @id, type: @type, status: @status) %>” /> 
+  <% end %>
 <% end %>
 
 <% content_for :action do %>
@@ -36,47 +38,57 @@
       <%= link_to "busco", ads_woeid_path(id: @id, type: 'want'), :class => @type == "want" ? "actual" : "''" %>
     </span>
     <div class="location_name">
-      <h1>regalo - <%= @woeid %></h1><br>
-      <%= render :partial => "ads/search", :locals => {:woeid => @woeid, :ad_type => @type} %>
+      <h1>
+        <% if @search %>
+          Buscando <i><%= @q %></i> en 
+        <% end %>
+        <% if @type == "give" %>
+          regalo
+        <% else %>
+          busco
+        <% end %>
+        - <%= @woeid %>
+      </h1>
+      <br>
+      <%= render :partial => "ads/search", :locals => {:woeid => @id, :ad_type => @type, :q => @q} %>
       <%= link_to location_ask_path, :class => "world_link" do %>
         <%= image_tag "change_location.png", :alt => "change location" %> 
-        cambiar ciudad
+          cambiar ciudad
       <% end %>
     </div>
   <% end %>
+  </div>
 
-</div>
-
-<div id="main">
-  <div class="span-18">
-    <% if @type == "give" %>
-      <%= render :partial => "filter_status", :locals => {:status => @status, :id => @id, :all => @all} %>
+  <div id="main">
+    <div class="span-18">
+      <% if @type == "give" %>
+        <%= render :partial => "filter_status", :locals => {:status => @status, :id => @id, :all => @all} %>
     <% end %>
-    <% if @ads.any? %>
-      <% @ads.each do |ad| %>
+      <% if @ads.any? %>
+        <% @ads.each do |ad| %>
         <% cache(ad) do %>
-          <%= render :partial => "ads/ad", :locals => { :ad => ad } %>
-        <% end %>
-      <% end %>
+        <%= render :partial => "ads/ad", :locals => { :ad => ad } %>
+    <% end %>
+    <% end %>
       <%= will_paginate @ads, :page_links => false %>
     <% else %>
-      <% if defined? @no_results_search %>
+        <% if defined? @no_results_search %>
         <%= render :partial => "ads/no_results_search", :locals => { :location_suggest => @location_suggest, :location_options => @location_options } %>
-      <% else %>
+    <% else %>
         <%= render :partial => "ads/no_results", :locals => { :location_suggest => @location_suggest, :location_options => @location_options, :woeid => @id } %>
-      <% end %>
     <% end %>
-    <% if @woeid %>
-      <div class="rss">
+    <% end %>
+      <% if @woeid %>
+        <div class="rss">
         <%= link_to rss_type_path(:woeid => @id, :type => "give") do %>
           <%= image_tag "icons/rss.png", :alt => t("nlt.rss_suscribe") %>
-          &nbsp; <%= t('nlt.rss_suscribe') %> - <%= @woeid %>
-        <% end %>
+        &nbsp; <%= t('nlt.rss_suscribe') %> - <%= @woeid %>
+    <% end %>
       </div>
     <% end %>
-  </div> 
-</div>
+    </div> 
+  </div>
 
-<%= render partial: "partials/google_adsense", locals:
-  {id: "woeid-show", ad_slot: "6783776462", ad_width: 160, ad_height: 600}
-%>
+  <%= render partial: "partials/google_adsense", locals:
+    {id: "woeid-show", ad_slot: "6783776462", ad_width: 160, ad_height: 600}
+  %>

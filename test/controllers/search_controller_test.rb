@@ -21,7 +21,7 @@ class SearchControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "should work search without WOEID param but a logged in user" do 
+  test "should work search with a logged in user with a WOEID code" do 
     sign_in @user
     get :search, q: 'ordenador'
     assert_response :success

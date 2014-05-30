@@ -44,8 +44,9 @@ class Legacy::Message < ActiveRecord::Base
   end
 
   def self.get_threads_from_user(user)
-    # 100% legacy, from the DB we had
-    # FIXME: PLEEAAASEE migrate me to mailboxer or something more Rails like
+    # nolotirov2 - legacy
+    #
+    # FIX: this is 100% legacy, now we use mailboxer
     send_threads = user.sent_messages.order('created_at DESC').limit(10).joins(:thread).group('thread_id').count
     recieved_threads = user.recieved_messages.order('created_at DESC').limit(10).joins(:thread).group('thread_id').count
     threads = []

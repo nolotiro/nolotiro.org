@@ -1,7 +1,7 @@
 <%= form_tag search_path, :method => :get, :class => "searchbox" do %>
   <dl class="zend_form">
     <dd id="q-element">
-    <%= text_field_tag :q %>
+    <%= text_field_tag :q, q %>
     </dd>
     <%= hidden_field_tag "ad_type", ad_type %>
     <%= hidden_field_tag "woeid_code", woeid %>
