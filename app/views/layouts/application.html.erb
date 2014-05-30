@@ -101,7 +101,9 @@
 
       <%= yield %>
 
-      <%= render :partial => "partials/footer", :locals => { :url => "http://nolotiro.org" } %>
+      <% cache do %>
+        <%= render :partial => "partials/footer", :locals => { :url => "http://nolotiro.org" } %>
+      <% end %>
 
     </div>
 

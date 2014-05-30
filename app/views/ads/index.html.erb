@@ -3,8 +3,10 @@
 <div id="main">
   <div class="section_ads">
     <h2><%= t('nlt.last_published_gifts') %></h2>
-    <% @ads.each_with_index do |ad,i| %>
-      <%= render :partial => "ad", :locals => { :ad => ad, :i => i } %>
+    <% cache ['ads-list', *@ads] do %>
+      <% @ads.each_with_index do |ad,i| %>
+        <%= render :partial => "ad", :locals => { :ad => ad, :i => i } %>
+      <% end %>
     <% end %>
     <%= will_paginate @ads, :page_links => false %>
   </div>

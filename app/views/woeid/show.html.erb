@@ -54,7 +54,9 @@
     <% end %>
     <% if @ads.any? %>
       <% @ads.each do |ad| %>
-        <%= render :partial => "ads/ad", :locals => { :ad => ad } %>
+        <% cache(ad) do %>
+          <%= render :partial => "ads/ad", :locals => { :ad => ad } %>
+        <% end %>
       <% end %>
       <%= will_paginate @ads, :page_links => false %>
     <% else %>

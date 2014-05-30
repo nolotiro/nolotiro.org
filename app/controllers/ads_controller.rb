@@ -2,6 +2,7 @@ class AdsController < ApplicationController
   before_action :set_ad, only: [:show, :edit, :update, :destroy]
   load_and_authorize_resource
   caches_action :list, :show, layout: false
+  caches_action :index, :cache_path => Proc.new { |c| c.params }
 
   # GET /
   def index
