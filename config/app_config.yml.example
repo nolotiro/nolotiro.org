@@ -12,6 +12,7 @@ defaults: &defaults
   debug_ip_address: '8.8.8.8'
   langs_routes: 'es|en|ca|gl|eu|nl|de|fr|pt|it'
   langs: 'es en ca gl eu nl de fr pt it'
+  localeapp_apikey: ''
 
 development:
   <<: *defaults

@@ -123,6 +123,7 @@ GEM
     geoplanet (0.2.7)
       json (>= 1.1.3)
       rest-client (>= 0.9)
+    gli (2.10.0)
     haml (4.0.5)
       tilt
     haml-rails (0.5.3)
@@ -145,6 +146,13 @@ GEM
     json (1.8.1)
     kgio (2.9.2)
     libv8 (3.16.14.3)
+    localeapp (0.7.2)
+      gli
+      i18n
+      json
+      rack
+      rest-client
+      ya2yaml
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
@@ -302,6 +310,7 @@ GEM
     warden (1.2.3)
       rack (>= 1.0)
     will_paginate (3.0.5)
+    ya2yaml (0.31)
     zeus (0.15.1)
       method_source (>= 0.6.7)
 
@@ -334,6 +343,7 @@ DEPENDENCIES
   ipaddress
   jbuilder (~> 1.2)
   jquery-rails
+  localeapp
   mailboxer
   mailcatcher
   mysql2

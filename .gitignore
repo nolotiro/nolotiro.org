@@ -40,3 +40,4 @@ log/*.sphinx.pid
 
 # Vagrant
 .vagrant
+.localeapp

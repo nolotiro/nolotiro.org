@@ -93,6 +93,10 @@ some useful information (SQL queries executed and such).
 
 Happy hacking!
 
+## i18n 
+
+For the localization and translation interface we use [LocaleApp](http://accounts.localeapp.com/projects/6872).
+
 ## API 
 
 ### v1
