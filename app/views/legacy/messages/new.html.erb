@@ -1,0 +1,44 @@
+<%= content_for(:meta_title, "Nuevo mensaje privado para el usuario #{@user.username} ") %>
+<div id="default_header_section">
+  <h1>Nuevo mensaje privado para el usuario <%= @user.username %></h1>
+</div>
+
+<div id="main">
+  <div class="span-16">
+    <%= form_for @message, url: {action: "create"} do |f| %>
+      <fieldset>
+      <legend>Por favor, escribe tu mensaje</legend>
+        <% if @message.errors.any? %>
+          <div class="error">
+            <h2><%= pluralize(@message.errors.count, "error") %> prohibited this message from being saved:</h2>
+
+            <ul>
+              <% @message.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+              <% end %>
+            </ul>
+          </div>
+        <% end %>
+      <dl class="zend_form">
+        <dt id="subject-label">
+        <label for="subject" class="required">Tema</label>
+        </dt>
+        <dd id="subject-element">
+        <%= f.text_field "subject", :value => @subject, required: true %>
+        </dd>
+        <dd id="body-element">
+        <%= f.text_area "body", size: "80x3", required: true %>
+      </textarea>
+      </dd>
+      <%= f.submit "Enviar" %>
+    </dl>   
+  </fieldset>
+<% end %>
+</div>
+</div>
+
+<%= render partial: "partials/google_adsense", locals:
+  {id: "messages-new", ad_slot: "9737242867", ad_width: 300, ad_height: 250}
+%>
+
+

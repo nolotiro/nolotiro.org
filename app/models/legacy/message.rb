@@ -47,16 +47,16 @@ class Legacy::Message < ActiveRecord::Base
     # nolotirov2 - legacy
     #
     # FIX: this is 100% legacy, now we use mailboxer
-    send_threads = user.sent_messages.order('created_at DESC').limit(10).joins(:thread).group('thread_id').count
-    recieved_threads = user.recieved_messages.order('created_at DESC').limit(10).joins(:thread).group('thread_id').count
+    send_threads = user.legacy_sent_messages.order('created_at DESC').limit(10).joins(:thread).group('thread_id').count
+    recieved_threads = user.legacy_recieved_messages.order('created_at DESC').limit(10).joins(:thread).group('thread_id').count
     threads = []
     send_threads.keys.each do |thread|
-      th = MessageThread.find(thread.to_i)
+      th = Legacy::MessageThread.find(thread.to_i)
       other_user = th.messages.first.user_from == user.id ? th.messages.first.reciever : th.messages.first.sender
       threads.append([th, other_user])
     end
     recieved_threads.keys.each do |thread|
-      th = MessageThread.find(thread.to_i)
+      th = Legacy::MessageThread.find(thread.to_i)
       other_user = th.messages.first.user_from == user.id ? th.messages.first.reciever : th.messages.first.sender
       threads.append([th, other_user])
     end
@@ -64,7 +64,7 @@ class Legacy::Message < ActiveRecord::Base
   end
 
   def self.get_messages_from_thread(thread_id)
-    MessageThread.find(thread_id).messages
+    Legacy::MessageThread.find(thread_id).messages
   end
 
   def self.get_unread_count(user_id)
@@ -89,7 +89,12 @@ class Legacy::Message < ActiveRecord::Base
     # 2. De ese resultado filtramos los que coincidan con el Subject, devolvemos la Conversation
     notification_ids.each do |n|
       notification = Notification.find_by_id n
-      res = notification.subject == subject ? notification.conversation : nil
+      if notification.subject == subject
+        return notification.conversation 
+      else 
+        next 
+      end
+      #res = notification.subject == subject ? notification.conversation : nil
       # 
     end
   end
@@ -157,7 +162,7 @@ class Legacy::Message < ActiveRecord::Base
       end
 
     else 
-      puts "ALREADY MIGRATED conversation..."
+      raise "ALREADY MIGRATED conversation..., #{message.id}"
     end
   end
 

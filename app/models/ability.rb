@@ -17,7 +17,8 @@ class Ability
       can :create, Ad
       can :create, Comment
       can :create, Message
-      can :list, Message
+      can :list, Message, :user_from => user.id
+      can :list, Message, :user_to => user.id
       cannot :lock, Admin
       cannot :unlock, Admin
       cannot :become, Admin

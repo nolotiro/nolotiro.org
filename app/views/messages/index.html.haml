@@ -1,5 +1,5 @@
 #default_header_section
-  %h1 Mensajes '#{@current_user.username}'
+  %h1 Mensajes '#{current_user.username}'
 #main 
   .span-19 
     = render partial: "users/tabnav", locals: {user: current_user} 
