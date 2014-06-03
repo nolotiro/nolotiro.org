@@ -25,7 +25,7 @@ class MessagesController < ApplicationController
 
     if @message.conversation_id
       @conversation = Conversation.find(@message.conversation_id)
-      unless @conversation.is_participant?(current_user)
+      unless @conversation.is_participant?(current_user) or current_user.admin?
         flash[:alert] = "You do not have permission to view that conversation."
         return redirect_to root_path
       end
@@ -44,7 +44,7 @@ class MessagesController < ApplicationController
 
   def show
     @conversation = Conversation.find_by_id(params[:id])
-    unless @conversation.is_participant?(current_user)
+    unless @conversation.is_participant?(current_user) or current_user.admin?
       flash[:alert] = "You do not have permission to view that conversation."
       return redirect_to root_path
     end

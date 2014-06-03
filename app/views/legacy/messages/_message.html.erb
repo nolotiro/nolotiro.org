@@ -1,4 +1,4 @@
-<% if message.sender == current_user %>
+<% unless message.sender == message.thread.messages.first.reciever %>
   <div class="message-excerpt">
     <div class="message-from-left">
       <%= link_to profile_path message.sender do %>

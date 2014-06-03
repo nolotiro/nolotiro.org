@@ -141,14 +141,20 @@ class Legacy::Message < ActiveRecord::Base
         message_thread.messages.each do |m|
           if m ==  message_thread.messages.first
             #puts "START conversation..."
-            from_u.send_message(to_u, m.body, message_thread.subject, true, nil, m.created_at)
+            from_u = m.sender.nil? ? User.find_by_username("[borrado]") : m.sender
+            to_u = m.reciever.nil? ? User.find_by_username("[borrado]") : m.reciever
+            r = from_u.send_message(to_u, m.body, message_thread.subject, true, nil, m.created_at)
+            r.conversation.update_attribute(:thread_id, message_thread.id)
             m.update_attribute(:is_migrated, true)
+            m.thread.update_attribute(:conversation_id, r.conversation.id)
           else
             conversation = m.get_conversation
             #conversation = Conversation.find_by_subject message_thread.subject
             unless conversation == [] or conversation.nil?
+              from_u = m.sender.nil? ? User.find_by_username("[borrado]") : m.sender
+              to_u = m.reciever.nil? ? User.find_by_username("[borrado]") : m.reciever
               #puts "REPLY conversation..."
-              m.reply_to_conversation(conversation, from_u)
+              m.reply_to_conversation(conversation, m.sender)
             else
               raise "******************* INVALID CONVERSATION - maybe it isnt well ordered? - messages #{m.id} *********************"
             end
@@ -157,12 +163,14 @@ class Legacy::Message < ActiveRecord::Base
       else
         puts "NO THREAD - NEW conversation..."
         puts message.id
-        from_u.send_message(to_u, message.body, message.subject, true, nil, message.created_at)
+        r = from_u.send_message(to_u, message.body, message.subject, true, nil, message.created_at)
+        r.conversation.update_attribute(:thread_id, message.thread.id)
         message.update_attribute(:is_migrated, true)
+        message.thread.update_attribute(:conversation_id, r.conversation.id)
       end
 
     else 
-      raise "ALREADY MIGRATED conversation..., #{message.id}"
+      puts "ALREADY MIGRATED conversation..., #{message.id} -  http://localhost:3000/es/legacy/message/show/#{message.thread.id}/subject/#{message.thread.subject}"
     end
   end
 

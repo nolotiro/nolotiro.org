@@ -1,3 +1,5 @@
+- content_for :meta_title, "Conversación con #{@conversation.recipients.first.username} asunto #{@conversation.subject}"
+
 #actions
   - if @conversation.is_trashed?(current_user)
     = link_to "Untrash", untrash_message_path(@conversation), class: :button, method: :post
@@ -9,6 +11,8 @@
     = link_to "< volver a mensajes", messages_path
   %h1
     = "Conversación con #{@conversation.recipients.first.username} asunto #{@conversation.subject}"
+  - unless @conversation.thread_id.zero?
+    = link_to "Ver conversación antigua", legacy_message_show_path(@conversation.thread_id, @conversation.subject)
 
 #main
   .span-15

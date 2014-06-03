@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140522160202) do
+ActiveRecord::Schema.define(version: 20140602122522) do
 
   create_table "ads", force: true do |t|
     t.string   "title",              limit: 100, null: false
@@ -58,6 +58,7 @@ ActiveRecord::Schema.define(version: 20140522160202) do
     t.string   "subject",    default: ""
     t.datetime "created_at",              null: false
     t.datetime "updated_at",              null: false
+    t.integer  "thread_id",  default: 0
   end
 
   create_table "friendships", id: false, force: true do |t|
@@ -132,9 +133,10 @@ ActiveRecord::Schema.define(version: 20140522160202) do
   add_index "receipts", ["notification_id"], name: "index_receipts_on_notification_id", using: :btree
 
   create_table "threads", force: true do |t|
-    t.string  "subject",      limit: 100,             null: false
+    t.string  "subject",         limit: 100,             null: false
     t.integer "last_speaker"
-    t.integer "unread",                   default: 0, null: false
+    t.integer "unread",                      default: 0, null: false
+    t.integer "conversation_id",             default: 0
   end
 
   add_index "threads", ["last_speaker"], name: "last_speaker", using: :btree
