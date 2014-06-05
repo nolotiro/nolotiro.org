@@ -23,10 +23,15 @@
 <% content_for :action do %>
   <div class="home_location_change">
     <div class="ad_create_tab ad_create_tab_home">
-      <a href="/es/location/change2/?location=<%= @location_suggest %>"> Ver anuncios en <%= @location_suggest %></a>
+      <% if @location_suggest.nil? %>
+        <%= link_to "Ver anuncios en tu ciudad o pueblo", location_ask_path %>
+      <% else %>
+        <%= link_to "Ver anuncios en #{@location_suggest}", location_change_path(location: @location_suggest) %>
+        <a href="/es/location/change2/?location=<%= @location_suggest %>"> Ver anuncios en <%= @location_suggest %></a>
+      <% end %>
     </div>
     <p class="ad_change_location_home">
-    <a href="/es/location/change">cambiar ciudad</a>
+      <%= link_to "cambiar ciudad", location_ask_path %>
     </p>
   </div>
 <% end %>

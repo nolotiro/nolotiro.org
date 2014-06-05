@@ -32,7 +32,7 @@ NolotiroOrg::Application.routes.draw do
     # location change
     scope '/location' do
       get  '/change', to: 'location#ask', as: 'location_ask'
-      get  '/change2', to: 'location#change'
+      get  '/change2', to: 'location#change', as: 'location_change'
       post '/change', to: 'location#list'
       post '/change2', to: 'location#change'
     end
