@@ -102,7 +102,7 @@ class Legacy::Message < ActiveRecord::Base
   def reply_to_conversation(conversation, from_u)
     # It isn't the first, so the Conversation is already there
     if body != ""
-      r = from_u.reply_to_conversation(conversation, self.body)
+      r = from_u.reply_to_conversation(conversation, self.body.force_encoding('UTF-8'))
       r.created_at = self.created_at 
       r.updated_at = self.created_at 
       r.message.created_at = self.created_at 
@@ -134,8 +134,6 @@ class Legacy::Message < ActiveRecord::Base
       from_u = message.sender.nil? ? User.find_by_username("[borrado]") : message.sender
       to_u = message.reciever.nil? ? User.find_by_username("[borrado]") : message.reciever
 
-      # FIXME: if there isn't a thread for this message, then we start the conversation'
-      #
       if message_thread
 
         message_thread.messages.each do |m|
@@ -154,19 +152,20 @@ class Legacy::Message < ActiveRecord::Base
               from_u = m.sender.nil? ? User.find_by_username("[borrado]") : m.sender
               to_u = m.reciever.nil? ? User.find_by_username("[borrado]") : m.reciever
               #puts "REPLY conversation..."
-              m.reply_to_conversation(conversation, m.sender)
+              m.reply_to_conversation(conversation, from_u)
             else
               raise "******************* INVALID CONVERSATION - maybe it isnt well ordered? - messages #{m.id} *********************"
             end
           end
         end
       else
-        puts "NO THREAD - NEW conversation..."
-        puts message.id
+      # FIX: if there isn't a thread for this message, then we start the conversation'
+      #
+      #  puts "NO THREAD - NEW conversation..."
+      #  puts message.id
         r = from_u.send_message(to_u, message.body, message.subject, true, nil, message.created_at)
-        r.conversation.update_attribute(:thread_id, message.thread.id)
+        r.conversation.update_attribute(:thread_id, 999999999) # mismo numero para diferenciarlos
         message.update_attribute(:is_migrated, true)
-        message.thread.update_attribute(:conversation_id, r.conversation.id)
       end
 
     else 

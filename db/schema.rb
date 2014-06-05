@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140602122522) do
+ActiveRecord::Schema.define(version: 20140603083702) do
 
   create_table "ads", force: true do |t|
     t.string   "title",              limit: 100, null: false
@@ -94,19 +94,19 @@ ActiveRecord::Schema.define(version: 20140602122522) do
 
   create_table "notifications", force: true do |t|
     t.string   "type"
-    t.text     "body"
-    t.string   "subject",              default: ""
+    t.text     "body",                 limit: 16777215
+    t.string   "subject",                               default: ""
     t.integer  "sender_id"
     t.string   "sender_type"
     t.integer  "conversation_id"
-    t.boolean  "draft",                default: false
-    t.datetime "updated_at",                           null: false
-    t.datetime "created_at",                           null: false
+    t.boolean  "draft",                                 default: false
+    t.datetime "updated_at",                                            null: false
+    t.datetime "created_at",                                            null: false
     t.integer  "notified_object_id"
     t.string   "notified_object_type"
     t.string   "notification_code"
     t.string   "attachment"
-    t.boolean  "global",               default: false
+    t.boolean  "global",                                default: false
     t.datetime "expires"
   end
 

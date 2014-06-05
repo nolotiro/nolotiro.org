@@ -17,8 +17,6 @@ class Legacy::MessagesController < ApplicationController
   # POST '/message/create/id_user_to/:user_id'
   # POST '/message/create/id_user_to/:user_id/subject/:subject'
   def create
-    # TODO: check sender and recipient are not the same
-    # 
     @message = Legacy::Message.create_thread(
       current_user.id,
       params[:user_id],
