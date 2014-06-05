@@ -33,4 +33,11 @@ $(document).ready(function(){
     createCookie('alert-first-visit-close', true, 90); 
   })
 
+  if ( $('p.notice').length > 0 ) {
+   if ( $('p.notice').html().trim() == "Bienvenido" ) {
+     $('p.notice').hide(); 
+     $('#main').prepend('<p class="success">Bienvenido ' + $('#js-username').html() + '</p>')
+   }
+  }
+
 }); 

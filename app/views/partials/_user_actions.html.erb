@@ -4,7 +4,7 @@
     <div class="user_login_box">
       hola,
       <b>
-        <%= link_to current_user.username, profile_path(current_user) %>
+        <%= link_to current_user.username, profile_path(current_user), id: 'js-username' %>
       </b> | 
       <% unread_messages_count = current_user.unread_messages_count %>
       <a title="<%= unread_messages_count  %> unread mensajes" href="/es/message/list">

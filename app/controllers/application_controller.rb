@@ -1,6 +1,5 @@
 class ApplicationController < ActionController::Base
   # TODO: comment captcha for ad creation/edition
-  # FIXME: after login whould say "Welcome, USERNAME "
   
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
