@@ -25,7 +25,7 @@
   <% if ad.image.exists? %>
     <div class="ad_list_image">
       <%= link_to adslug_path(ad,ad.slug) do %>
-        <%= image_tag ad.image.url(:thumb) %>
+        <%= image_tag ad.image.url(:thumb), title: ad.title, alt: ad.title %>
       <% end %>
     </div>
   <% end %>
