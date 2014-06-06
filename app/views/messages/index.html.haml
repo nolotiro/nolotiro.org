@@ -1,5 +1,7 @@
+= content_for :meta_title, "Mensajes de #{current_user.username}"
+
 #default_header_section
-  %h1 Mensajes '#{current_user.username}'
+  %h1 Mensajes de #{current_user.username}
 #main 
   .span-19 
     = render partial: "users/tabnav", locals: {user: current_user} 
@@ -23,8 +25,8 @@
                   %span.mail-subject{style: "float:left;width:350px;"}
                     = m.subject 
                   %span.timestamp{style: "float:left;width:100px;text-align:right;"}
-                    = l m.messages.last.created_at, format: :short
+                    = l m.messages.last.created_at, format: "a las %H:%M del %d-%m-%Y "
                   %div{style: "clear:both;"}
       - unless @box == 'trash'
-        = submit_tag "Delete checked messages", id: 'delete_multiple_button'
+        = submit_tag "Borrar mensajes seleccionados", id: 'delete_multiple_button'
 

@@ -9,6 +9,10 @@ es:
     profile: 'perfil'
     user_ads: 'anuncios'
     messages: 'mensajes'
+    messages_tabs:
+      inbox: "Recibidos"
+      sent: "Enviados"
+      trash: "Papelera"
     user_edit_profile: 'Editar perfil de usuario'
     published_ads: 'Anuncios publicados'
     messages_title: "Mensajes"
