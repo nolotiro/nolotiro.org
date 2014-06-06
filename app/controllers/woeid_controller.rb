@@ -1,6 +1,6 @@
 class WoeidController < ApplicationController
 
-  caches_action :show, :cache_path => Proc.new { |c| c.params }
+  caches_action :show, :cache_path => Proc.new { |c| c.params }, unless: :current_user
 
   # GET /es/woeid/:id/:type
   # GET /es/woeid/:id/:type/status/:status
