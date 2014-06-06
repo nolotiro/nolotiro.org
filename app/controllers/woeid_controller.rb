@@ -9,13 +9,13 @@ class WoeidController < ApplicationController
   def show 
     @id = params[:id]
     @type = params[:type]
-    @status = params[:status]
+    @status = params[:status].nil? ? 'available' : params[:status] 
 
     case @status
     when 'available'
       st = 1
     when 'booked'
-      st = 3
+      st = 2
     when 'delivered'
       st = 3
     else
