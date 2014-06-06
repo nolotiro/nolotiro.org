@@ -17,9 +17,11 @@ html img
   z-index: 360
 
 a
-  &:link, &:visited
+  &:link
     color: #00ACCF
     text-decoration: none
+  &:visited
+    color: #667B99
   &:active
     color: #00C7EF
   &:hover
@@ -178,12 +180,10 @@ form.searchbox
 
 .google_ads
   padding: 10px
-  clear: right
-  float: right
-  right: 0px
-  margin-top: 10px
-  margin-bottom: 20px
   background-color: #fff
+  display: block
+  text-align: center
+  margin: 10px auto 20px
 
 .ad_create_tab
   position: absolute
@@ -950,6 +950,9 @@ a#tab_active
   border: 1px silver solid
   padding: 4px
 
+.container
+  margin-top: 3px
+
 $langs: <%= APP_CONFIG["langs"] %>
 
 =flags-countries
@@ -975,4 +978,13 @@ $langs: <%= APP_CONFIG["langs"] %>
   float: right
   top: 0
   position: relative
+
+#new_user
+  input[type='submit']
+    margin-top: 10px
+    margin-bottom: 30px
+
+//@media only screen and (min-width: 768px) and (max-width: 959px)
+//@media only screen and (max-width: 479px)
+//@media only screen and (min-width: 480px) and (max-width: 767px) 
 
