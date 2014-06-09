@@ -5,7 +5,7 @@
   <meta name="description" content="regalo en <%= @woeid %>. nolotiro.org es un sitio web donde regalo y busco regalos gratis de segunda mano : muebles, sillas, sofás, bicicletas, ordenadores portátiles, mesas, cocinas, lámparas, camas, ropa, juguetes, cunas o carros para bebes, teléfonos móviles y otras muchas cosas que ya no quieres y ya no necesitas para que las reutilicen otra gente a la que puede servirle o darle nueva vida." />
 <% end %>
 
-<% unless @search %>
+<% unless @search or @all %>
   <% content_for :meta_extra do %>
     <link rel=”alternate” type=”application/rss+xml” title=”nolotiro.org - <%= @woeid %>” href=”<%= rss_type_url(woeid: @id, type: @type, status: @status) %>” /> 
   <% end %>

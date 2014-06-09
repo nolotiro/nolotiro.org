@@ -38,11 +38,11 @@ class LegacyRoutingTest < ActionDispatch::IntegrationTest
   end
 
   test "should route to pages" do 
-    assert_routing '/es/pages/faqs', {controller: 'page', action: 'faqs', locale: 'es'}
-    assert_routing '/es/pages/translate', {controller: 'page', action: 'translate', locale: 'es'}
-    assert_routing '/es/pages/tos', {controller: 'page', action: 'tos', locale: 'es'}
-    assert_routing '/es/pages/privacy', {controller: 'page', action: 'privacy', locale: 'es'}
-    assert_routing '/es/pages/about', {controller: 'page', action: 'about', locale: 'es'}
+    assert_routing '/es/page/faqs', {controller: 'page', action: 'faqs', locale: 'es'}
+    assert_routing '/es/page/translate', {controller: 'page', action: 'translate', locale: 'es'}
+    assert_routing '/es/page/tos', {controller: 'page', action: 'tos', locale: 'es'}
+    assert_routing '/es/page/privacy', {controller: 'page', action: 'privacy', locale: 'es'}
+    assert_routing '/es/page/about', {controller: 'page', action: 'about', locale: 'es'}
   end
 
   test "should route to contact" do
@@ -56,8 +56,18 @@ class LegacyRoutingTest < ActionDispatch::IntegrationTest
   end
 
   test "should route messaging" do 
-    assert_routing "/es/message/list", {controller: "messages", action: "list", locale: "es"}
+
+    get '/es/message/list'
+    assert_redirected_to new_user_session_url
+
+    get "/es/message/show/XXX/subject/XXX"
+    assert_redirected_to new_user_session_url
+
+    post_via_redirect 'user/login', 'user[email]' => @user.email, 'user[password]' => @user.password
+    get '/es/message/list'
+    assert_routing "/es/messages", {controller: "messages", action: "index", locale: "es"}
     assert_routing "/es/message/show/XXX/subject/XXX", {controller: "messages", action: "show", locale: "es", id: "XXX", subject: "XXX"}
+    
   end
 
   test "should route auth" do 

@@ -10,7 +10,7 @@ class AdHelperTest < ActionView::TestCase
 
   test "should get user ranking" do
     users = AdHelper.get_users_ranking
-    assert_equal(users[0].ads_count, 1)
+    assert_equal(1, users[0].ads_count)
   end
 
   test "should get locations ranking" do
