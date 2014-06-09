@@ -119,7 +119,7 @@ NolotiroOrg::Application.routes.draw do
       get '/feed/woeid/:woeid/ad_type/give/status/:status', format: 'rss', to: 'rss#feed', as: 'rss_status'
     end
 
-    scope '/pages' do
+    scope '/page' do
       get '/faqs', to: 'page#faqs', as: 'faqs'
       get '/tos', to: 'page#tos', as: 'tos'
       get '/about', to: 'page#about', as: 'about'
