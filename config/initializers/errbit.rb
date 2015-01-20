@@ -1,5 +1,5 @@
 Airbrake.configure do |config|
-  config.api_key = APP_CONFIG["airbrake_apikey"]
-  config.host    = APP_CONFIG["airbrake_host"]
-  config.port    = APP_CONFIG["airbrake_port"]
+  config.api_key = Rails.application.secrets.airbrake["apikey"]
+  config.host    = Rails.application.secrets.airbrake["host"]
+  config.port    = Rails.application.secrets.airbrake["port"]
 end

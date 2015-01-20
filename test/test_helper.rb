@@ -1,15 +1,14 @@
 ENV["RAILS_ENV"] ||= "test"
 require File.expand_path('../../config/environment', __FILE__)
+require 'rails/test_help'
 require 'minitest/spec'
-
-Turn.config.trace = 5
+require "minitest/reporters"
+Minitest::Reporters.use!
 
 if ENV.keys.grep(/ZEUS/).any?
   require 'minitest/unit'
   MiniTest::Unit.class_variable_set("@@installed_at_exit", true)
 end
-
-require 'rails/test_help'
 
 #class ActiveSupport::TestCase
 #  ActiveRecord::Migration.check_pending!
