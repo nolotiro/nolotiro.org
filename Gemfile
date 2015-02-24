@@ -21,7 +21,7 @@ group :development, :test do
   gem 'turn'                                # test: color output
   gem 'database_cleaner'                    # test: for not having duplicity
 
-  gem 'debugger'                            # dev: debugger
+  gem 'byebug'                              # dev: debugger
   gem 'zeus', '>= 0.13.4.pre2'              # dev: speed up sthings
   gem 'commands'                            # dev: rake commands in console 
   # rails-footnotes: using github master
