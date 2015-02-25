@@ -21,51 +21,49 @@
   <% end %>
 <% end %>
 
-<div class="ad_excerpt_home">
-  <% if ad.image.exists? %>
-    <div class="ad_list_image">
-      <%= link_to adslug_path(ad,ad.slug) do %>
-        <%= image_tag ad.image.url(:thumb), title: ad.title, alt: ad.title %>
-      <% end %>
-    </div>
-  <% end %>
-  <% if can? :update, ad %>
-    <div class="ad_edit">
-      <%= link_to ads_edit_path(ad.id) do %>
-        <%= image_tag "edit_ad.png", :alt => t('nlt.edit_this_ad') %>
-        &nbsp; <%= t('nlt.edit_this_ad') %>
-      <% end %>
-    </div>
-  <% end %>
-  <h4>
-    <%= link_to adslug_path(ad,ad.slug) do %>
-      <%= ad.title %>
+<% if ad.user %>
+  <div class="ad_excerpt_home">
+    <% if ad.image.exists? %>
+      <div class="ad_list_image">
+        <%= link_to adslug_path(ad,ad.slug) do %>
+          <%= image_tag ad.image.url(:thumb), title: ad.title, alt: ad.title %>
+        <% end %>
+      </div>
     <% end %>
-  </h4>
-  <div class="ad_excerpt_woeid">
-    <a href="/es/woeid/<%= ad.woeid_code %>/give">
-      <%= WoeidHelper.convert_woeid_name ad.woeid_code %> &gt; 
-      <%= ad.type_string %>
-    </a>
-  </div>
-  <% if ad.is_give? %>
-    <span class="ad_status <%= ad.status_class %>">
-      <%= ad.status_string %>
-    </span>
-  <% end %>
-  <span class="ad_date">
-    <%= t('nlt.published_on', date: distance_of_time_in_words_to_now(ad.created_at)) %>
-    <!-- FIXME: no se porque hay usuarios q no tienen id WTF -->
-    <% if defined? ad.user.id %>
+    <% if can? :update, ad %>
+      <div class="ad_edit">
+        <%= link_to ads_edit_path(ad.id) do %>
+          <%= image_tag "edit_ad.png", :alt => t('nlt.edit_this_ad') %>
+          &nbsp; <%= t('nlt.edit_this_ad') %>
+        <% end %>
+      </div>
+    <% end %>
+    <h4>
+      <%= link_to adslug_path(ad,ad.slug) do %>
+        <%= ad.title %>
+      <% end %>
+    </h4>
+    <div class="ad_excerpt_woeid">
+      <a href="/es/woeid/<%= ad.woeid_code %>/give">
+        <%= WoeidHelper.convert_woeid_name ad.woeid_code %> &gt; 
+        <%= ad.type_string %>
+      </a>
+    </div>
+    <% if ad.is_give? %>
+      <span class="ad_status <%= ad.status_class %>">
+        <%= ad.status_string %>
+      </span>
+    <% end %>
+    <span class="ad_date">
+      <%= t('nlt.published_on_html', full_date: ad.created_at, date: distance_of_time_in_words_to_now(ad.created_at)) %>
       <%= t('nlt.by_user') %>
       <%= link_to ad.user.username, listads_user_path(ad.user) %>
-    <% end %>
-  </span>
-  <div><p><%= ad.body %></p></div>
-  <div class="ad_meta_info">
-    <b><a rel="nofollow" href="/es/message/create/id_user_to/42397/subject/fulares-para-cuello"><%= t('nlt.send_a_message') %></a></b>
-    &nbsp;&nbsp;&nbsp;<b><%= link_to t('nlt.write_a_comment'), adslug_path(ad,ad.slug) %></b>
-    &nbsp;&nbsp;
+    </span>
+    <div><p><%= ad.body %></p></div>
+    <div class="ad_meta_info">
+      <b><%= link_to t('nlt.send_a_message'), message_new_with_subject_path(user_id: ad.user.id, subject: ad.slug) %></b>
+      &nbsp;&nbsp;&nbsp;<b><%= link_to t('nlt.write_a_comment'), adslug_path(ad,ad.slug) %></b>
+      &nbsp;&nbsp;
+    </div>
   </div>
-
-</div>
+<% end %>
