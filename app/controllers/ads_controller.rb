@@ -18,13 +18,14 @@ class AdsController < ApplicationController
   end
 
   def list
-    @ads = Ad.available.includes(:user).paginate(:page => params[:page])
+    @ads = Ad.give.available.includes(:user).paginate(:page => params[:page])
     @location = get_location_suggest
   end
 
   # GET /ads/1
   # GET /ads/1.json
   def show
+    redirect_to ads_path unless @ad.user
   end
 
   # GET /ads/new
