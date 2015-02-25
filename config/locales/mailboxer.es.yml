@@ -3,5 +3,23 @@ es:
     message_mailer:
       subject_new: "[nolotiro.org] Nuevo mensaje: %{subject}"
       subject_reply: "[nolotiro.org] Nueva respuesta: %{subject}"
+      you_have_new_message:  "Has recibido un nuevo mensaje"
+      you_have_recieved_new_message: "Has recibido un nuevo mensaje"
+      visit_html: "Visita %{url} y ve a tu bandeja de entrada para responder"
+      visit_text: "Visita %{url} y ve a tu bandeja de entrada para responder"
     notification_mailer:
       subject: "[nolotiro.org] Nueva notificación: %{subject}"
+      you_have_new_reply:  "Has recibido una nueva respuesta"
+      you_have_recieved_new_reply: "Has recibido una nueva respuesta"
+      visit_html: "Visita %{url} y ve a tu bandeja de entrada para responder"
+      visit_text: "Visita %{url} y ve a tu bandeja de entrada para responder"
+    notifications:
+      sent: "Mensaje enviado"
+      move: "Mensaje movido a %{mailbox}" 
+      untrash: "Mensaje recuperado"
+    title: "Conversación con %{recipient} asunto %{subject}"
+    buttons:
+      back: "< volver a mensajes"
+      trash: "Mover mensaje a papelera"
+      untrash: "Recuperar mensaje de papelera"
+

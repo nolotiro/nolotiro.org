@@ -21,12 +21,13 @@ class MessagesController < ApplicationController
 
   def create
     @message = Message.new message_params
-    @message.sender_id = current_user.id
-
+    @message.sender = current_user
     if @message.conversation_id
       @conversation = Conversation.find(@message.conversation_id)
+      #@conversation = current_user.mailbox.conversations.find(@message.conversation_id)
+      # FIXME: ACL should be on app/models/ability.rb
       unless @conversation.is_participant?(current_user) or current_user.admin?
-        flash[:alert] = "You do not have permission to view that conversation."
+        flash[:alert] = I18n.t('nlt.permission_denied')
         return redirect_to root_path
       end
       receipt = current_user.reply_to_conversation(@conversation, @message.body, nil, true, true, @message.attachment)
@@ -37,15 +38,16 @@ class MessagesController < ApplicationController
       end
       receipt = current_user.send_message(@message.recipients, @message.body, @message.subject, true, @message.attachment)
     end
-    flash[:notice] = "Message sent."
-
+    flash[:notice] = I18n.t "mailboxer.notifications.sent" 
     redirect_to message_path(receipt.conversation)
   end
 
   def show
     @conversation = Conversation.find_by_id(params[:id])
+    #@conversation = current_user.mailbox.conversations.find(params[:id])
+    # FIXME: ACL should be on app/models/ability.rb
     unless @conversation.is_participant?(current_user) or current_user.admin?
-      flash[:alert] = "You do not have permission to view that conversation."
+      flash[:alert] = I18n.t('nlt.permission_denied')
       return redirect_to root_path
     end
     @message = Message.new conversation_id: @conversation.id
@@ -54,22 +56,29 @@ class MessagesController < ApplicationController
 
   def move
     mailbox = params[:mailbox]
-    conversation = Conversation.find_by_id(params[:id])
+    conversation = current_user.mailbox.conversations.find(params[:id])
     if conversation
       current_user.send(mailbox, conversation)
-      flash[:notice] = "Message sent to #{mailbox}."
+      flash[:notice] = I18n.t "mailboxer.notifications.sent", mailbox: mailbox
     else
-      conversations = Conversation.find(params[:conversations])
+      conversation = current_user.mailbox.conversations.find(params[:conversations])
       conversations.each { |c| current_user.send(mailbox, c) }
-      flash[:notice] = "Messages sent to #{mailbox}."
+      flash[:notice] = I18n.t "mailboxer.notifications.sent", mailbox: mailbox
     end
     redirect_to messages_path(box: params[:current_box])
   end
 
+  def trash
+    conversation = current_user.mailbox.conversations.find(params[:id] || params[:conversations])
+    current_user.trash(conversation)
+    flash[:notice] = I18n.t "mailboxer.notifications.trash"
+    redirect_to messages_path(:box => 'inbox')
+  end
+
   def untrash
-    conversation = Conversation.find(params[:id])
+    conversation = current_user.mailbox.conversations.find(params[:id])
     current_user.untrash(conversation)
-    flash[:notice] = "Message untrashed."
+    flash[:notice] = I18n.t "mailboxer.notifications.untrash"
     redirect_to messages_path(:box => 'inbox')
   end
 
