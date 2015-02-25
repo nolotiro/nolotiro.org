@@ -45,7 +45,7 @@ es:
     send: 'Enviar'
     home_title: 'anuncios de regalos nuevos y de segunda mano'
     edit_this_ad: 'Edita este anuncio'
-    published_on: "Publicado hace %{date}"
+    published_on_html: "Publicado hace <abbr title='%{full_date}'>%{date}</abbr>"
     published_at_by_html: "Publicado hace %{time} por el usuario %{user}"
     by_user: 'por el usuario '
     available: 'disponible'
