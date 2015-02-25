@@ -26,7 +26,7 @@ class Ad < ActiveRecord::Base
   # the "type" column is no longer need it by rails, so we don't care about it
   self.inheritance_column = nil 
 
-  default_scope { order('created_at DESC') }
+  default_scope { order('ads.created_at DESC') }
 
   acts_as_paranoid
 
