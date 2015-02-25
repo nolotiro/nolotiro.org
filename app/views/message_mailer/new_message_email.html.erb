@@ -1,0 +1,12 @@
+<h1><%= I18n.t("mailboxer.message_mailer.you_have_new_message") %>: <%= @subject %></h1>
+<p>
+  <%= I18n.t("mailboxer.message_mailer.you_have_recieved_new_message") %>
+</p>
+<blockquote>
+  <p>
+    <%= raw @message.body %>
+  </p>
+</blockquote>
+<p>
+  <%= raw I18n.t("mailboxer.message_mailer.visit_html", url: link_to(root_url, root_url)) %>
+</p>
