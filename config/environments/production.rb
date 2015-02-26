@@ -82,7 +82,7 @@ NolotiroOrg::Application.configure do
   config.action_mailer.default_url_options = { :host => 'nolotiro.org' }
 
   # for images on mailer
-  config.action_controller.asset_host = 'https://nolotiro.org'
+  config.action_controller.asset_host = 'http://nolotiro.org'
   config.action_mailer.asset_host = config.action_controller.asset_host
 
 end
