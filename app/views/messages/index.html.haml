@@ -1,29 +1,29 @@
-- title = "Mensajes de #{current_user.username}"
+- title = t('mailboxer.titles.index', username: current_user.username)
 = content_for :meta_title, title
 
 #default_header_section
-  %h1 title
+  %h1=title
 #main 
   .span-19 
     = render partial: "users/tabnav", locals: {user: current_user} 
     = render partial: "messages/tabmessages", locals: {box: @box} 
     - if @search
-      %h2 Search results for '#{@search}'
+      %h2=t('mailboxer.search', search: @search)
     = form_tag trash_messages_path, method: :delete do
       = hidden_field_tag 'current_box', @box
       %table#mail-list
         %thead
           %tr 
             - unless @box == 'trash'
-              %td ¿Borrar?
+              %td=t('mailboxer.table.delete')
             - else 
               %td
             %td
-            %td Enviado
-            %td Recibido
-            %td Último
-            %td{style: "width: 300px;"} Asunto
-            %td Fecha
+            %td=t('mailboxer.table.sender')
+            %td=t('mailboxer.table.reciever')
+            %td=t('mailboxer.table.last')
+            %td{style: "width: 300px;"}=t('mailboxer.table.subject')
+            %td=t('mailboxer.table.date')
         %tbody
           - @messages.each do |m|
             %tr{ class: "mail #{ 'unread' if m.is_unread?(current_user) }" }
@@ -45,5 +45,4 @@
               %td.timestamp
                 = l m.messages.last.created_at, format: "a las %H:%M del %d-%m-%Y "
       - unless @box == 'trash'
-        = submit_tag "Borrar mensajes seleccionados", id: 'delete_multiple_button'
-
+        = submit_tag t('mailboxer.buttons.trash_selected'), id: 'delete_multiple_button'

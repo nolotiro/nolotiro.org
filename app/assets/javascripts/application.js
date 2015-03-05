@@ -21,7 +21,7 @@ $(document).ready(function(){
 
   // http://www.primebox.co.uk/projects/jquery-cookiebar/ 
   $.cookieBar({
-    message: 'Utilizamos cookies para mejorar tu navegación en este sitio',
+    message: $('.js-cookie-message').html(),
     acceptText: 'OK'
   });
 
@@ -36,7 +36,7 @@ $(document).ready(function(){
   if ( $('p.notice').length > 0 ) {
    if ( $('p.notice').html().trim() == "Bienvenido" ) {
      $('p.notice').hide(); 
-     $('#main').prepend('<p class="success">Bienvenido ' + $('#js-username').html() + '</p>')
+     $('#main').prepend('<p class="success">' + $('.js-welcome-message').html() + $('#js-username').html() + '</p>')
    }
   }
 

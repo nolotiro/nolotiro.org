@@ -1,17 +1,14 @@
 class AdsController < ApplicationController
   before_action :set_ad, only: [:show, :edit, :update, :destroy]
-  load_and_authorize_resource
   caches_action :list, :show, layout: false, unless: :current_user
   caches_action :index, :cache_path => Proc.new { |c| c.params }, unless: :current_user
+  load_and_authorize_resource
 
   # GET /
   def index
     if user_signed_in? 
-      if current_user.woeid?
-        redirect_to ads_woeid_path(id: current_user.woeid, type: 'give')
-      else
-        redirect_to location_ask_path
-      end
+      url = current_user.woeid? ? ads_woeid_path(id: current_user.woeid, type: 'give') : location_ask_path
+      redirect_to url
     else
       list
     end

@@ -1,5 +1,4 @@
 # Additional translations at https://github.com/plataformatec/devise/wiki/I18n
-
 en:
   devise:
     confirmations:
@@ -18,11 +17,11 @@ en:
       unconfirmed: "You have to confirm your account before continuing."
     mailer:
       confirmation_instructions:
-        subject: "Confirmation instructions"
+        subject: "[nolotiro.org] Confirmation instructions"
       reset_password_instructions:
-        subject: "Reset password instructions"
+        subject: "[nolotiro.org] Reset password instructions"
       unlock_instructions:
-        subject: "Unlock Instructions"
+        subject: "[nolotiro.org] Unlock Instructions"
     omniauth_callbacks:
       failure: "Could not authenticate you from %{kind} because \"%{reason}\"."
       success: "Successfully authenticated from %{kind} account."

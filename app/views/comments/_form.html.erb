@@ -3,14 +3,14 @@
 	<dl class="zend_form">
 		<dt id="body-label">
 			<label for="body" class="optional">
-				Tu comentario:
+        <%= t('nlt.comments.label') %>
 			</label>
 		</dt>
 		<dd id="body-element">
 			<%= text_area_tag("body", "", size: "80x24") %>
 		</dd>
 		<dt id="submit-label">&nbsp;</dt><dd id="submit-element">
-		<%= submit_tag "Enviar" %>
+		<%= submit_tag t('nlt.comments.submit') %>
 	</dd>
 </dl>
 <% end %>

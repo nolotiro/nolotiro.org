@@ -92,6 +92,17 @@ class Ad < ActiveRecord::Base
     end 
   end
 
+  def type_class
+    case type
+    when 1
+      "give"
+    when 2
+      "want"
+    else
+      "give"
+    end 
+  end
+
   def status_class
     case status
     when 1

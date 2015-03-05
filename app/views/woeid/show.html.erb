@@ -2,7 +2,7 @@
 <% content_for(:meta_title, t('nlt.keywords') + @woeid.to_s) %>
 
 <% content_for :meta_description do %>
-  <meta name="description" content="regalo en <%= @woeid %>. nolotiro.org es un sitio web donde regalo y busco regalos gratis de segunda mano : muebles, sillas, sofás, bicicletas, ordenadores portátiles, mesas, cocinas, lámparas, camas, ropa, juguetes, cunas o carros para bebes, teléfonos móviles y otras muchas cosas que ya no quieres y ya no necesitas para que las reutilicen otra gente a la que puede servirle o darle nueva vida." />
+  <meta name="description" content="<%= t('nlt.gift_on', woeid: @woeid) %>. <%= t('nlt.meta_description') %>" />
 <% end %>
 
 <% unless @search or @all %>
@@ -14,7 +14,7 @@
 <% content_for :action do %>
   <% if @woeid %>
     <div class="ad_create_tab">
-      <a href="/es/ad/create">+ Publicar anuncio en <%= @woeid %></a>
+      <%= link_to new_ad_path, "+ #{t('nlt.publish_ad_on', woeid: @woeid)}" %>
     </div>
   <% end %>
 <% end %>
@@ -22,30 +22,30 @@
 <div id="location_header_section">
   <% if @all %>
     <span class="give-want">
-      <%= link_to "regalo", ads_listall_path(type: 'give'), 
+      <%= link_to t('nlt.give'), ads_listall_path(type: 'give'), 
         :class => @type == "give" ? "actual" : "''" %>
       &nbsp;
-      <%= link_to "busco", ads_listall_path(type: 'want'), :class => @type == "want" ? "actual" : "''" %>
+      <%= link_to t('nlt.want'), ads_listall_path(type: 'want'), :class => @type == "want" ? "actual" : "''" %>
     </span>
   <div class="location_name">
-    <h1>Todos los anuncios</h1>
+    <h1><%= t('nlt.all_ads') %></h1>
     <br>
   </div>
   <% else %>
     <span class="give-want">
-      <%= link_to "regalo", ads_woeid_path(id: @id, type: 'give'), :class => @type == "give" ? "actual" : "''" %>
+      <%= link_to t('nlt.give'), ads_woeid_path(id: @id, type: 'give'), :class => @type == "give" ? "actual" : "''" %>
       &nbsp;
-      <%= link_to "busco", ads_woeid_path(id: @id, type: 'want'), :class => @type == "want" ? "actual" : "''" %>
+      <%= link_to t('nlt.want'), ads_woeid_path(id: @id, type: 'want'), :class => @type == "want" ? "actual" : "''" %>
     </span>
     <div class="location_name">
       <h1>
         <% if @search %>
-          Buscando <i><%= @q %></i> en 
+          <%= t('nlt.searching_on_html', q: @q) %>
         <% end %>
         <% if @type == "give" %>
-          regalo
+          <%= t('nlt.give') %>
         <% else %>
-          busco
+          <%= t('nlt.want') %>
         <% end %>
         - <%= @woeid %>
       </h1>
@@ -53,7 +53,7 @@
       <%= render :partial => "ads/search", :locals => {:woeid => @id, :ad_type => @type, :q => @q} %>
       <%= link_to location_ask_path, :class => "world_link" do %>
         <%= image_tag "change_location.png", :alt => "change location" %> 
-          cambiar ciudad
+        <%= t('nlt.change_city') %>
       <% end %>
     </div>
   <% end %>

@@ -3,11 +3,12 @@
     <div class="ad_excerpt"> 
       <div class="error">
       <% if defined? @q %>
-        No hay anuncios que coincidan
-        con la búsqueda <b><%= @q %></b>
-        en la ubicación <%= link_to WoeidHelper.convert_woeid_name(@id), ads_woeid_path(@id, type: "give") %>.
+        <%= t('nlt.search.no_ads_message_html', 
+              q: @q, 
+              woeid: link_to(WoeidHelper.convert_woeid_name(@id), ads_woeid_path(@id, type: "give"))) 
+        %>
       <% else %>
-        Debes buscar por algo en algun lugar.
+        <%= t('nlt.search.must_search') %>
       <% end %>
       </div>
     </div>

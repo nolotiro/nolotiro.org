@@ -29,12 +29,12 @@
         <li>
           <% if @user.locked? %>
             <%= link_to unlock_user_path(@user.id) do %>
-              [ADMIN] Desbloquear a este usuario
+              <%= t('nlt.user_profile.unlock_user') %>
               <%= image_tag "neu/24x24/actions/add.png", :alt => "send a mesage" %>
             <% end %>
           <% else %>
             <%= link_to lock_user_path(@user.id) do %>
-              [ADMIN] Bloquear a este usuario
+              <%= t('nlt.user_profile.lock_user') %>
               <%= image_tag "neu/24x24/actions/remove.png", :alt => "send a mesage" %>
             <% end %>
           <% end %>
@@ -45,18 +45,18 @@
 
         <% if can? :become, @user %>
           <li>
-            <%= link_to "[ADMIN] Cambiar a este usuario", become_user_path(@user.id) %>
+            <%= link_to t('nlt.user_profile.become_user'), become_user_path(@user.id) %>
           </li>
         <% end %>
 
         <% if user_signed_in? and current_user.is_friend? @user %>
           <%= link_to destroy_friend_path(@user.id), class: 'world_link', method: 'post' do %>
-            Borrar <%= @user.username %> de tu lista de amigos
+            <%= t('nlt.user_profile.delete_friend', username: @user.username) %>
             <%= image_tag "friend_delete.png", alt: "Delete friend"%>
           <% end %>
         <% else %>
           <%= link_to add_friend_path(@user.id), class: 'world_link', method: 'post' do %>
-            Agregar a <%= @user.username %> a tu lista de amigos
+            <%= t('nlt.user_profile.add_friend', username: @user.username) %>
             <%= image_tag "friend_add.png", alt: "Add friend"%>
           <% end %>
         <% end %>

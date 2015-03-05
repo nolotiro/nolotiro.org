@@ -1,0 +1,9 @@
+es: 
+  mailer:
+    hello: Hola,
+    greetings: Gracias y saludos,
+    signature: Equipo de nolotiro.org
+    confirmation_reminder:
+      p1: Hemos detectado que te has creado una cuenta en nolotiro.org y no la has confirmado. 
+      p2: 'Esto significa que puedes haber tenido problemas para acceder a la página. Si quieres confirmar tu usuario (%{username}) puedes hacerlo con este enlace:'
+

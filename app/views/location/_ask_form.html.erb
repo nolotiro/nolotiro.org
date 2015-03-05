@@ -1,12 +1,12 @@
 <%= form_tag({action: "list"}) do %>
   <fieldset>
     <legend>
-      Por favor, escribe tu ciudad
+      <%= t('nlt.change_town.please') %>
     </legend>
     <dl class="zend_form">
       <dt id="location-label">
       <label for="location" class="required">
-        Ciudad:
+        <%= t('nlt.change_town.town') %>
       </label>
       </dt>
       <dd id="location-element">
@@ -14,13 +14,13 @@
       </dd>
       <dt id="submit-label">&nbsp;</dt>
       <dd id="submit-element">
-      <%= submit_tag("Enviar") %>
+      <%= submit_tag(t('nlt.change_town.submit')) %>
       </dd>
     </dl>
-    Nuestro sistema de sugerencia de ubicación (basado en tu IP) dice que estas cerca de:
+        <%= t('nlt.change_town.close_to') %>
     <br>
     <b>
-      <a href="/es/location/change2/?location=<%= location_suggest %>"><%= location_suggest %></a>
+      <%= link_to location_change_path(location: location_suggest), location_suggest %>
     </b>
   </fieldset>
 <% end %>

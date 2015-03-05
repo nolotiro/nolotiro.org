@@ -14,8 +14,9 @@ class MessagesController < ApplicationController
 
   def new
     @message = Message.new
+    @recipient = User.find(params[:user_id])
     if params[:user_id]
-      @message.recipients = User.find(params[:user_id]).id 
+      @message.recipients = @recipient.id 
     end
   end
 

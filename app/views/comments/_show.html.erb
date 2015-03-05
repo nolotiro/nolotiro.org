@@ -6,7 +6,7 @@
     <%= render :partial => "comments/form", :locals => {:ad => ad.id} %>
   <% else %>
     <div class="ad_comment_form">
-      <a href="/es/auth/login">accede para escribir un comentario</a>
+      <%= link_to new_user_session_path, t('nlt.login_to_comment') %>
     </div>
   <% end %>
 <% end %>

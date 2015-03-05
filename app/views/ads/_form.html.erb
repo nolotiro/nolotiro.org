@@ -16,7 +16,7 @@
 
         <% if @ad.image.exists? %>
           <div class="ad_list_image">
-            <%= link_to image_tag(@ad.image.url(:thumb), :alt => @ad.title), @ad.image.url, :rel => 'superbox[image]', :alt => "Click para agrandar foto" %>
+            <%= link_to image_tag(@ad.image.url(:thumb), :alt => @ad.title), @ad.image.url, :rel => 'superbox[image]', :alt => t('nlt.click_to_large') %>
           </div>
         <% end %>
 
@@ -35,7 +35,7 @@
           <%= f.label :status,  t('nlt.ads.form.status'), :class => "required" %> 
           </dt>
           <dd id="status-element">
-          <%= f.select(:status, options_for_select([['disponible', 1], ['reservado', 2], ['entregado', 3]], selected: @ad.status))  %>
+          <%= f.select(:status, options_for_select([[t('nlt.available'), 1], [t('nlt.booked'), 2], [t('nlt.delivered'), 3]], selected: @ad.status))  %>
           </dd>
         <% end %>
 
@@ -43,7 +43,7 @@
         <%= f.label :type,  t('nlt.ads.form.type_ad'), :class => "required" %> 
         </dt>
         <dd id="type-element">
-        <%= f.select(:type, options_for_select([['regalo...', 1], ['busco...', 2]]), selected: @ad.type)  %>
+        <%= f.select(:type, options_for_select([["#{t('nlt.give')}...", 1], ["#{t('nlt.want')}...", 2]]), selected: @ad.type)  %>
         </dd>
 
         <dt id="title-label">

@@ -1,13 +1,15 @@
-<div class="section_users">
-  <h2><%= t('nlt.users_most_active') %></h2>
-  <br>
-  <ul>
-    <% AdHelper.get_users_ranking.each do |u| %>
-      <li>
-      <%= link_to listads_user_path u.id do %>
-        <%= u.username %> (<%= u.ads_count %>)
+<% cache('section_users') do %>
+  <div class="section_users">
+    <h2><%= t('nlt.users_most_active') %></h2>
+    <br>
+    <ul>
+      <% AdHelper.get_users_ranking.each do |u| %>
+        <li>
+        <%= link_to listads_user_path u.id do %>
+          <%= u.username %> (<%= u.ads_count %>)
+        <% end %>
+        </li>
       <% end %>
-      </li>
-    <% end %>
-  </ul>
-</div>
+    </ul>
+  </div>
+<% end %>

@@ -44,10 +44,10 @@
       <% end %>
     </h4>
     <div class="ad_excerpt_woeid">
-      <a href="/es/woeid/<%= ad.woeid_code %>/give">
+      <%= link_to ads_woeid_path(id: ad.woeid_code, type: ad.type_class) do %>
         <%= WoeidHelper.convert_woeid_name ad.woeid_code %> &gt; 
         <%= ad.type_string %>
-      </a>
+      <% end %>
     </div>
     <% if ad.is_give? %>
       <span class="ad_status <%= ad.status_class %>">

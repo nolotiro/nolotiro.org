@@ -6,7 +6,7 @@ class CommentsMailer < ActionMailer::Base
     @ad = Ad.find ad_id
     mail(
       to: @ad.user.email,
-      subject: "[nolotiro.org] Tienes un nuevo comentario en el anuncio #{@ad.title}"
+      subject: t('nlt.comments.subject', ad: @ad.title)
     )
   end
 

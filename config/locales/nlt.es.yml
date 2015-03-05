@@ -6,6 +6,14 @@ es:
     errors:
       incorrect-captcha-sol: 'Hubo un error rellenando los caracteres del captcha.'
   nlt:
+    welcome: "hola"
+    welcome_message: Bienvenido
+    cookie: 'Utilizamos cookies para mejorar tu navegación en este sitio'
+    login: acceder
+    logout: "salir"
+    login_to_comment: accede para escribir un comentario
+    or: "o"
+    new_user: "nuevo usuario"
     profile: 'perfil'
     user_ads: 'anuncios'
     messages: 'mensajes'
@@ -29,13 +37,20 @@ es:
     faqs: 'preguntas frecuentes'
     all_ads: 'todos los anunciones'
     help_translate: 'ayuda a traducir'
-    footer_explain: 'nolotiro.org es un sitio web donde regalo y busco regalos gratis de segunda mano : muebles, sillas, sofás, bicicletas, ordenadores portátiles, mesas, cocinas, lámparas, camas, ropa, juguetes, cunas o carros para bebes, teléfonos móviles y otras muchas cosas que ya no quieres y ya no necesitas para que las reutilicen otra gente a la que puede servirle o darle nueva vida.'
+    click_to_large: Click para agrandar foto
+    all_ads: 'Todos los anuncios'
+    publish_ad_on: Publicar anuncio en %{woeid}
+    gift_on: regalo en %{woeid}
+    updating: Estamos actualizando todo el sitio, por lo que en las próximas horas habrá retrasos con los mensajes entre los usuarios, las imágenes de un anuncio y la cantidad de anuncios de los usuarios. No te preocupes que "estamos trabajando en ellou".
+    meta_description_ad: regalo segunda mano %{title} en %{woeid}. %{body}
+    meta_description: 'nolotiro.org es un sitio web donde regalo y busco regalos gratis de segunda mano : muebles, sillas, sofás, bicicletas, ordenadores portátiles, mesas, cocinas, lámparas, camas, ropa, juguetes, cunas o carros para bebes, teléfonos móviles y otras muchas cosas que ya no quieres y ya no necesitas para que las reutilicen otra gente a la que puede servirle o darle nueva vida.'
     tos: 'términos de uso'
     privacy: 'política de privacidad'
     developers: 'desarrolladores'
     contact: 'contacto'
     suggestions: 'sugerencias'
     slogan: 'no lo tiro, te lo regalo (sin condiciones)' 
+    first_visit: nolotiro.org es una comunidad donde podemos deshacernos de los objetos que ya no utilizamos y nos estorban en casa.   
     rss_suscribe: 'Suscribirse via RSS'
     contact_thanks: '¡Mensaje enviado! Gracias por contactar con nolotiro.org'
     captcha_error: 'Hubo un error con los caracteres que tenias que poner por seguridad, vuelve a rellenar las letras que veas (el captcha)'
@@ -48,6 +63,7 @@ es:
     published_on_html: "Publicado hace <abbr title='%{full_date}'>%{date}</abbr>"
     published_at_by_html: "Publicado hace %{time} por el usuario %{user}"
     by_user: 'por el usuario '
+    all: "todos"
     available: 'disponible'
     booked: 'reservado'
     delivered: 'entregado'
@@ -88,6 +104,44 @@ es:
     register_here: 'registrate aquí'
     share_this_ad: 'Comparte este anuncio'
     publish_ad: "Publicando anuncio "
+    back: volver a la página de inicio
+    searching_on_html: Buscando <i>%{ @q }</i> en 
+    comments: 
+      title: Comentarios
+      label: "Tu comentario"
+      submit: "Enviar"
+      flash_ok: "Comentario guardado"
+      flash_ko: "Hubo un error al guardar tu comentario. Revisalo y envialo de nuevo"
+      subject: "[nolotiro.org] Tienes un nuevo comentario en el anuncio %{ad}" 
+      do_click: "Haz click en este enlace para responder el mensaje:"
+    view_ads_on_your_city: "Ver anuncios en tu ciudad o pueblo"
+    view_ads_on: Ver anuncios en %{location_suggest}
+    change_your_city: 'Cambia tu ciudad'
+    change_town: 
+      please: Por favor, escribe tu ciudad
+      town: "Ciudad:"
+      submit: "Enviar" 
+      close_to: "Nuestro sistema de sugerencia de ubicación (basado en tu IP) dice que estas cerca de:"
+      choose: Elige tu ubicación
+      choose_html: No se han encontrado ubicaciones con el nombre <b>%{location}</b>. Vuelve a intentarlo
+    admin:
+      lock_user: "[ADMIN] Bloquear a este usuario"
+      unlock_user: "[ADMIN] Desbloquear a este usuario"
+      become_user: "[ADMIN] Cambiar a este usuario"
+    user_profile:
+      add_friend: Agregar %{username} a tu lista de amigos
+      delete_friend: Borrar %{username} de tu lista de amigos
+    no_results:
+      title: No hay anuncios para esta ubicación.
+      subtitle: Puedes probar alguna de estas cosas
+      explain_html: "<p>1. Sé el primero en %{publish}.</p> <p>2. Prueba a cambiar la ciudad por una mas grande que esté cerca de tu ubicación.</p> <p>3. Nuestro sistema de sugerencia de ubicación (basado en tu IP) dice que estas cerca de: <br> %{change_location} </p>"
+      publish_ad: publicar un anuncio en esta ciudad
+      try: "O inténtalo con estas ciudades de nombre similar:"
+      phrase: '"Un viaje de mil kilómetros comienza con un simple paso" Lao Tse.'
+    search: 
+      button: "buscar"
+      no_ads_message_html: No hay anuncios que coincidan con la búsqueda <b>%{q}</b> en la ubicación %{woeid}.
+      must_search: Debes buscar por algo en algun lugar.
     ads: 
       form:
         title: 'Título de tu anuncio:'
@@ -100,3 +154,67 @@ es:
         please_ad_type: 'por favor, selecciona el tipo de anuncio'
         type_ad: 'Tipo de anuncio:'
         status: 'Estado'
+    faq:
+      title: Preguntas frecuentes
+      question_1: ¿Cuál es el propósito de este proyecto?
+      answer_1_html: El propósito fundamental de esta web es el de deshacernos de los objetos que ya no utilizamos y nos estorban en casa.
+      question_2: Entonces ...¿Esta web no es para ayudar a los demás?
+      answer_2_html: "Primero a ti directamente pudiéndote deshacer de esas cosas que ya no quieres, y siempre al que regalas algo implícitamente. Lo mejor es enfocarlo egoistamente y controlar la relación de causa-efecto que vamos a desencadenar regalando.<br> Si enfocamos dicho acto de regalar objetos desde una perspectiva  egoísta, la de deshacernos de cosas útiles, pero que nos molestan,porque nos estorban, porque van a ir a la basura, porque son objetos desahuciados ... siempre tendremos una buena experiencia, al no esperar nada mas que  librarnos de dichos objetos. <br> Y el saber que alguien le está dando uso o provecho reforzará esa experiencia como positiva. <br> Es decir: el acto de regalar cosas de valor o útiles siempre es algo positivo si no esperamos una recompensa moral o aplacar nuestra conciencia."
+      question_3: Pero a mi me gustaría regalar mis cosas a alguien que realmente lo necesitj
+      answer_3_html: En este sitio web tu tienes poder absoluto sobre la decisión de a quién, dónde y cuando regalas tus objetos.<br> Por supuesto que lo idóneo es regalar algo a la persona que mas lo necesite.<br> No hay que malinterpretar la forma en que usamos la palabra egoismo aquí. Pero poder saber si la persona a la que le vamos a dar un objeto se lo merece  es una tarea muy difícil, y fomenta un tipo de conductas que derivan en malas experiencias y juicios de valor que pueden hacer mucho daño.
+      question_4: ¿Es verdad que hay gente que luego vende las cosas que regalan aquí?
+      answer_4_html: 'Aunque las probabilidades de que traficantes de peluches de segunda mano ronden por esta web son bastante remotas, si así fuese ... no importaría lo mas mínimo si tu enfoque es el de deshacerte de cosas que tu no quieres (el egoista).<br> Como lo oyes: NO IMPORTA, es mas, aunque no lo creas sigues haciendo algo bueno.<br> Si regalaste objetos porque no usabas y no sabías que hacer con ellos, pero tampoco los querías tirar a la basura has hecho bien.<br> Te has hecho bien a ti, y has devuelto ese objeto al <a href="http://www.lapetiteclaudine.com/archives/009217.html">mundo de las cosas útiles,</a> ahorrando dinero a gente y energía, generando riqueza (aunque sea poca, es riqueza). Si por el contrario esta respuesta no te convence entonces no deberías regalar nada aquí y venderlo o donarlo a alguna ONG, donde hacen un seguimiento y selección de dicha gente necesitada (nosotros no podemos garantizar dicho proceso). '
+      question_5: ¿Qué clase de anuncios puedo publicar en nolotiro?
+      answer_5_html: "Sólo hay 2 clases de anuncios: Los de Regalo, en los que ofreces objetos que te estorban o ya no quieres tener. Y los anuncios de Quiero, que sirven para dar pistas e inspirar a la gente sobre que clase de objetos quiere otra gente utilizar o poseer.<br> <strong>Los anuncios de cambio, venta , pidiendo dinero, comerciales, de empleo, medicamentos,etc no están permitidos.</strong> Y son borrados en cuanto un moderador los detecta, en caso de publicar repetidamente anuncios no deseados, se puede proceder al bloqueo de la cuenta del usuario."
+      question_6: ¿No está permitido el intercambio de objetos? que raro
+      answer_6_html: "El trueque es un sistema que funciona muy bien en formato físico, esto es, dos personas cara a cara , viendo los objetos y hablando en vivo y en directo. Pero en internet el trueque es muy susceptible de terminar en engaños o insatisfacciones y discusiones eternas.<br> Además como has podido leer anteriormente , aquí se dan objetos sin condiciones y el trueque tiene el condicionamiento del quid pro quo, es decir: tu me das y yo te doy algo igual."
+      question_7: ¿Puedo enviar cosas a gente que no vive en mi ciudad?
+      answer_7_html: 'Sorprendentemente mucha gente lo hace, y no hay nada malo en que se hagan envíos, pero debes tener un mínimo de precaución con la seriedad del receptor, ha habido casos en que alguien de muy buena fe ha realizado un envío pagando los gastos y luego ha resultado que se le ha devuelto el paquete.
+Lo ideal es que no se hagan, se debe fomentar que los objetos circulen lo mas cerca posible, ahorrando energía, y puede servir para conocer mejor a la gente de tu misma ciudad.<br> Esperamos que en la nueva versión , que hemos enfocado a un concepto local, se consiga.<br> <a href="http://en.wikipedia.org/wiki/Think_Globally,_Act_Locally">Piensa globalmente, actúa localmente.</a>'
+    translate:
+      title: Ayúdanos a traducir nolotiro.org a tu idioma
+      description_html: Actualmente, Nolotiro.org está disponible en pocos idiomas, pero tú puedes ayudarnos a <a href="http://accounts.localeapp.com/projects/6872">traducirlo al tuyo</a>.
+    about_page:
+      title: "Acerca de nolotiro.org"
+      description_html: '<b>¿Qué es nolotiro.org?</b><br>
+      Es un sitio web donde ofrecer al público, las cosas que ya no quieres o ya no necesitas para que las recoja otra gente a la que puede servirle o serle de mucha utilidad.
+      <br><br>
+      <strong>Lee las <a href="/es/page/faqs">preguntas de uso frecuente</a> para saber mas detalles de la filosofia y objetivos del proyecto</strong>
+      <br><br>
+      <b>Ventajas de nolotiro.org:</b><br>
+      La gran ventaja de nolotiro.org, es que sustituye la nostalgia/sentimiento de derroche, por la sensación de hacer algo por alguien. Logras deshacerte de esas cosas que no tirabas porque te daba pena, porque estaban nuevas, o porque... y que al final solo acumulaban polvo en algún rincón olvidadas u ocupaban espacio, sabiendo que alguien las va a sacar buen partido, porque si que las necesita verdaderamente.
+      Por otra parte, nolotiro.org al estar organizado por zonas geográficas fomenta que las cosas que quieras dar, se queden cerca, no hay gastos de envío, ni desplazamientos, ni envios a países lejanos que nunca sabes si llegan, se lo das tú mismo a alguien de tu misma ciudad, que va a buscarlo en persona a un lugar pactado.
+      <br><br>
+      <b>A tener en cuenta:</b><br>
+      NO HAY OPCIÓN DE INTERCAMBIO, esto no se basa en el trueque, ni en la compra, por que hay que fomentar el altruismo, dar las cosas por que sí, porque nos sobran.
+      <br><br>
+      <b>Explicación en versión literaria</b><br>
+      <a href="http://www.marcianoduran.com.uy/?p=176">¿Porqué no lo tiro?</a> Por Marciano Durán
+      <br><br>
+      <b>Nolotiro.org funciona  gracias al trabajo de muchas <a href="http://www.youtube.com/watch?v=KMU0tzLwhbE">personas</a> que han creado el siguiente software libre:</b>
+      <a href="http://framework.zend.com/">Zend Framework</a>,
+      <a href="http://www.php.net/">PHP</a>,
+      <a href="http://www.mysql.com/">MySQL</a>,
+      <a href="http://developer.yahoo.com/geo/geoplanet/">Yahoo GeoPlanet API</a>,
+      <a href="http://www.postfix.org/">Postfix</a>,
+      <a href="http://www.debian.org/">Debian</a>,
+      <a href="http://nginx.org/">Nginx</a>, <a href="http://sphinxsearch.com/">Sphinx</a>
+      , y muchos mas, tantos que sería imposible nombrarlos todos aquí.
+      <br><br>
+      <b>El código fuente de nolotiro.org es código abierto</b> y está disponible para ser utilizado (bajo licencia Affero GPL 3).<br>
+      Visita la <a href="https://github.com/alabs/nolotiro"> web para desarrolladores</a> para mas detalles (en inglés).<br>
+      Los colaboradores son bienvenidos, ya sea para programar o para traducir la página a otras lenguas.'
+    privacy_page:
+      title: Política de privacidad
+      body_html: "nolotiro.org (en adelante sitio web) pertenece y es administrado por:<br><br>
+aLabs<br> Embajadores, 35 Local 6 <br> 28012 Madrid, España<br> <br><br>
+Pueden contactar en el formulario de contacto habilitado a tal efecto en el sitio web. El acceso al sitio web, implica la plena aceptación de la presente política de privacidad y de los términos de uso.
+<br><br> En relación al cumplimiento de la Ley Orgánica 15/1999, de 13 de Diciembre, de Protección de Datos de Carácter Personal (LOPD), le informamos que este sitio web  almacena de forma automatizada los datos proporcionados en el formulario de usuario registrado al efecto de poder proporcionarle al usuario los servicios del sitio web de una forma personalizada como son: gestión de su cuenta de usuario, publicación de anuncios, y gestión de sistema de mensajes privados entre usuarios.  <br><br> El término mensajes privados se refiere a que la posibilidad de acceso a dichos mensajes privados será exclusivamente entre dos usuarios, sin posibilidad por parte de terceros usuarios a acceder a dicho contenido. Sin embargo , en la base de datos los mensajes se guardan en texto plano, pudiendo ser puestos a disposición de las fuerzas de seguridad en caso de comisión de delito o de requerimiento judicial.  <br><br> El usuario se abstendrá de publicar datos personales suyos o de terceros en los anuncios como pueden ser direcciones de email, teléfonos, direcciones postales, etc.  El sitio web, tomará las medidas necesarias para la preservación de los datos personales, aun cuando el usuario ignore estos términos de privacidad. Es por eso que hemos desarrollado un filtro de emails y telefonos en los anuncios para evitar que dicha información sea recopilada por sistemas automáticos y robots de indexación.  Esto no exime de la última responsabilidad del usuario en cuanto a la publicación de datos personales suyos o de terceros. Y se hace solamente porque creemos que muchos usuarios no son conscientes de la importancia de la preservación de sus datos personales.  <br><br> Formulario de contacto:<br> le informamos que los datos personales facilitados por el usuario en el formulario de contacto son guardados con la única finalidad de contacto con el usuario, estos datos no serán utilizados en ningún caso para el envio mensajes publicitarios así como tampoco serán cedidos a terceros.  <br> En cualquier momento puede ejercer los derechos de acceso, rectificación y cancelación de sus datos dirigiéndose por cualquiera de los medios de comunicacion indicados en el primer párrafo.  <br><br> Cookies de sesión:<br> El acceso a este sitio implica la utilización de cookies de sesión. Las cookies de sesión son pequeñas cantidades de información que se almacenan en el navegador utilizado por cada usuario para que el servidor recuerde cierta información que posteriormente pueda utilizar. Esta información permite identificarle a usted como un usuario concreto de forma anónima.  <br><br> Adicionalmente este sitio puede albergar elementos en el código fuente de las páginas que se utilizan para medir el tráfico de usuarios que visitan una página web y poder sacar un patrón de visitas de los usuarios. Esta información anónima puede ser compartida con empresas clientes, proveedores, patrocinadores y anunciantes.
+<br><br>
+Actualmente utilizamos los servicios de Google Analytics para la medición del tráfico de este sitio que puede capturar la información descrita anteriormente. Puede ver más información sobre la política de privacidad en el sitio web de Google:
+Google (Analytics): http://www.google.com/intl/es_ALL/privacypolicy.html
+<br><br>
+Este sitio también puede albergar publicidad propia, de afiliados, o de redes publicitarias. Esta publicidad se muestra mediante servidores publicitarios que también utilizan cookies para mostrar contenidos publicitarios afines a los usuarios. Cada uno de estos servidores publicitarios dispone de su propia política de privacidad, que puede ser consultada en sus propias páginas web.
+Actualmente este sitio alberga publicidad de Google Adsense: http://www.google.com/intl/es_ALL/privacypolicy.html"
+    mail:
+      automatic: Este es un mensaje automático. Por favor, no respondas a esta dirección de email.

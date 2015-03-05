@@ -17,9 +17,24 @@ es:
       sent: "Mensaje enviado"
       move: "Mensaje movido a %{mailbox}" 
       untrash: "Mensaje recuperado"
-    title: "Conversación con %{recipient} asunto %{subject}"
+    titles: 
+      index: "Mensajes de %{username}"
+      conversation: "Conversación con %{recipient} asunto %{subject}"
+    new:
+      title: "Nuevo mensaje privado para el usuario %{user}"
+      errors: "%{errors} prohibieron que se enviase este mensaje:"
+      legend: 
+      button: "Enviar"
     buttons:
       back: "< volver a mensajes"
       trash: "Mover mensaje a papelera"
       untrash: "Recuperar mensaje de papelera"
-
+      trash_selected: Borrar mensajes seleccionados
+    search: "Resultados de busqueda de %{search}"
+    table: 
+      delete: ¿Borrar?
+      sender: Enviado
+      reciever: Recibido
+      last: Último
+      subject: Asunto
+      date: Fecha
