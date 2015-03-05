@@ -69,6 +69,13 @@ class AdTest < ActiveSupport::TestCase
     assert_equal @ad.status_string, "entregado"
   end
 
+  test "ad check type_class" do
+    assert_equal @ad.type_class, "give"
+    @ad.type = 2
+    @ad.save
+    assert_equal @ad.type_class, "want"
+  end
+
   test "ad check status_class" do
     assert_equal @ad.status_class, "available"
     @ad.status = 2
