@@ -54,6 +54,21 @@ class AdTest < ActiveSupport::TestCase
     assert @ad.errors[:title].include?("es demasiado largo (100 caracteres máximo)")
   end
 
+  test "ad escape_privacy_data" do 
+    text = "si hay interés, por favor, contactar por email example@example.com, por sms 999999999, o whatsapp al 666666666"
+    expected_text = "si hay interés, por favor, contactar por email  , por sms  , o whatsapp al  "
+    assert_equal(@ad.escape_privacy_data(text), expected_text)
+  end
+
+  test "ad escaped title and body with escape_privacy_data" do 
+    text = "contactar por email example@example.com, por sms 999999999, o whatsapp al 666666666"
+    expected_text = "contactar por email  , por sms  , o whatsapp al  "
+    @ad.update_attribute(:body, text)
+    @ad.update_attribute(:title, text)
+    assert_equal(@ad.body, expected_text)
+    assert_equal(@ad.title, expected_text)
+  end
+
   test "ad check slug" do
     assert_equal @ad.slug, "ordenador-en-vallecas"
   end

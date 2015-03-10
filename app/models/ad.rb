@@ -62,6 +62,22 @@ class Ad < ActiveRecord::Base
     where('woeid_code = ?', woeid_code) 
   }
 
+  def escape_privacy_data text
+    if text
+      text = text.gsub(/([\._a-zA-Z0-9-]+@[\._a-zA-Z0-9-]+)/, ' ') 
+      text = text.gsub(/([9|6])+([0-9\s*]{8,})/, ' ') 
+      text
+    end
+  end
+
+  def body 
+    escape_privacy_data(read_attribute(:body))
+  end
+
+  def title 
+    escape_privacy_data(read_attribute(:title))
+  end
+
   def readed_counter
     readed_count || 0
   end
