@@ -1,218 +1,593 @@
-# French translations for Ruby on Rails
-# by Christian Lescuyer (christian@flyingcoders.com)
-# contributors:
-#  - Sebastien Grosjean - ZenCocoon.com
-#  - Bruno Michel - http://github.com/nono
-#  - Tsutomu Kuroda - http://github.com/kuroda (t-kuroda@oiax.jp)
-# Emended by Benjamin des Gachons and Patrick Chew : <http://www.fitima.org/docs/fiche.pdf>
-
 fr:
+  activemodel:
+    errors:
+      format: '%{attribute} %{message}'
+      messages:
+        accepted: doit être accepté(e)
+        blank: doit être rempli(e)
+        confirmation: ne concorde pas avec la confirmation
+        empty: doit être rempli(e)
+        equal_to: doit être égal à %{count}
+        even: doit être pair
+        exclusion: n'est pas disponible
+        greater_than: doit être supérieur à %{count}
+        greater_than_or_equal_to: doit être supérieur ou égal à %{count}
+        inclusion: n'est pas inclus(e) dans la liste
+        invalid: n'est pas valide
+        less_than: doit être inférieur à %{count}
+        less_than_or_equal_to: doit être inférieur ou égal à %{count}
+        not_a_number: n'est pas un nombre
+        not_an_integer: doit être un nombre entier
+        odd: doit être impair
+        record_invalid: 'La validation a échoué : %{errors}'
+        restrict_dependent_destroy:
+          many: 'Suppression impossible: d''autres enregistrements sont liés'
+          one: 'Suppression impossible: un autre enregistrement est lié'
+        taken: n'est pas disponible
+        too_long:
+          one: est trop long (pas plus d'un caractère)
+          other: est trop long (pas plus de %{count} caractères)
+        too_short:
+          one: est trop court (au moins un caractère)
+          other: est trop court (au moins %{count} caractères)
+        wrong_length:
+          one: ne fait pas la bonne longueur (doit comporter un seul caractère)
+          other: ne fait pas la bonne longueur (doit comporter %{count} caractères)
+      template:
+        body: 'Veuillez vérifier les champs suivants : '
+        header:
+          one: 'Impossible d''enregistrer ce(tte) %{model} : 1 erreur'
+          other: 'Impossible d''enregistrer ce(tte) %{model} : %{count} erreurs'
+  activerecord:
+    attributes:
+      user:
+        Contraseña: 
+        Recuérdame: 
+        Tu email: 
+      message:
+        subject: 
+    errors:
+      format: '%{attribute} %{message}'
+      messages:
+        accepted: doit être accepté(e)
+        blank: doit être rempli(e)
+        confirmation: ne concorde pas avec la confirmation
+        empty: doit être rempli(e)
+        equal_to: doit être égal à %{count}
+        even: doit être pair
+        exclusion: n'est pas disponible
+        greater_than: doit être supérieur à %{count}
+        greater_than_or_equal_to: doit être supérieur ou égal à %{count}
+        inclusion: n'est pas inclus(e) dans la liste
+        invalid: n'est pas valide
+        less_than: doit être inférieur à %{count}
+        less_than_or_equal_to: doit être inférieur ou égal à %{count}
+        not_a_number: n'est pas un nombre
+        not_an_integer: doit être un nombre entier
+        odd: doit être impair
+        record_invalid: 'La validation a échoué : %{errors}'
+        restrict_dependent_destroy:
+          many: 'Suppression impossible: d''autres enregistrements sont liés'
+          one: 'Suppression impossible: un autre enregistrement est lié'
+        taken: n'est pas disponible
+        too_long:
+          one: est trop long (pas plus d'un caractère)
+          other: est trop long (pas plus de %{count} caractères)
+        too_short:
+          one: est trop court (au moins un caractère)
+          other: est trop court (au moins %{count} caractères)
+        wrong_length:
+          one: ne fait pas la bonne longueur (doit comporter un seul caractère)
+          other: ne fait pas la bonne longueur (doit comporter %{count} caractères)
+      template:
+        body: 'Veuillez vérifier les champs suivants : '
+        header:
+          one: 'Impossible d''enregistrer ce(tte) %{model} : 1 erreur'
+          other: 'Impossible d''enregistrer ce(tte) %{model} : %{count} erreurs'
   date:
     abbr_day_names:
-      - dim
-      - lun
-      - mar
-      - mer
-      - jeu
-      - ven
-      - sam
+    - dim
+    - lun
+    - mar
+    - mer
+    - jeu
+    - ven
+    - sam
     abbr_month_names:
-      - ~
-      - jan.
-      - fév.
-      - mar.
-      - avr.
-      - mai
-      - juin
-      - juil.
-      - août
-      - sept.
-      - oct.
-      - nov.
-      - déc.
+    - 
+    - jan.
+    - fév.
+    - mar.
+    - avr.
+    - mai
+    - juin
+    - juil.
+    - août
+    - sept.
+    - oct.
+    - nov.
+    - déc.
     day_names:
-      - dimanche
-      - lundi
-      - mardi
-      - mercredi
-      - jeudi
-      - vendredi
-      - samedi
+    - dimanche
+    - lundi
+    - mardi
+    - mercredi
+    - jeudi
+    - vendredi
+    - samedi
     formats:
-      default: "%d/%m/%Y"
-      short: "%e %b"
-      long: "%e %B %Y"
+      default: '%d/%m/%Y'
+      long: '%e %B %Y'
+      short: '%e %b'
     month_names:
-      - ~
-      - janvier
-      - février
-      - mars
-      - avril
-      - mai
-      - juin
-      - juillet
-      - août
-      - septembre
-      - octobre
-      - novembre
-      - décembre
+    - 
+    - janvier
+    - février
+    - mars
+    - avril
+    - mai
+    - juin
+    - juillet
+    - août
+    - septembre
+    - octobre
+    - novembre
+    - décembre
     order:
-      - :day
-      - :month
-      - :year
+    - :day
+    - :month
+    - :year
   datetime:
     distance_in_words:
       about_x_hours:
-        one:   "environ une heure"
-        other: "environ %{count} heures"
+        one: environ une heure
+        other: environ %{count} heures
       about_x_months:
-        one:   "environ un mois"
-        other: "environ %{count} mois"
+        one: environ un mois
+        other: environ %{count} mois
       about_x_years:
-        one:   "environ un an"
-        other: "environ %{count} ans"
+        one: environ un an
+        other: environ %{count} ans
       almost_x_years:
-        one:   "presqu'un an"
-        other: "presque %{count} ans"
-      half_a_minute: "une demi-minute"
+        one: presqu'un an
+        other: presque %{count} ans
+      half_a_minute: une demi-minute
       less_than_x_minutes:
-        zero:  "moins d'une minute"
-        one:   "moins d'une minute"
-        other: "moins de %{count} minutes"
+        one: moins d'une minute
+        other: moins de %{count} minutes
+        zero: moins d'une minute
       less_than_x_seconds:
-        zero:  "moins d'une seconde"
-        one:   "moins d'une seconde"
-        other: "moins de %{count} secondes"
+        one: moins d'une seconde
+        other: moins de %{count} secondes
+        zero: moins d'une seconde
       over_x_years:
-        one:   "plus d'un an"
-        other: "plus de %{count} ans"
+        one: plus d'un an
+        other: plus de %{count} ans
       x_days:
-        one:   "1 jour"
-        other: "%{count} jours"
+        one: 1 jour
+        other: '%{count} jours'
       x_minutes:
-        one:   "1 minute"
-        other: "%{count} minutes"
+        one: 1 minute
+        other: '%{count} minutes'
       x_months:
-        one:   "1 mois"
-        other: "%{count} mois"
+        one: 1 mois
+        other: '%{count} mois'
       x_seconds:
-        one:   "1 seconde"
-        other: "%{count} secondes"
+        one: 1 seconde
+        other: '%{count} secondes'
     prompts:
-      day:    "Jour"
-      hour:   "Heure"
-      minute: "Minute"
-      month:  "Mois"
-      second: "Seconde"
-      year:   "Année"
-  errors: &errors
-    format: "%{attribute} %{message}"
-    messages: &errors_messages
-      accepted: "doit être accepté(e)"
-      blank: "doit être rempli(e)"
-      confirmation: "ne concorde pas avec la confirmation"
-      empty: "doit être rempli(e)"
-      equal_to: "doit être égal à %{count}"
-      even: "doit être pair"
-      exclusion: "n'est pas disponible"
-      greater_than: "doit être supérieur à %{count}"
-      greater_than_or_equal_to: "doit être supérieur ou égal à %{count}"
-      inclusion: "n'est pas inclus(e) dans la liste"
-      invalid: "n'est pas valide"
-      less_than: "doit être inférieur à %{count}"
-      less_than_or_equal_to: "doit être inférieur ou égal à %{count}"
-      not_a_number: "n'est pas un nombre"
-      not_an_integer: "doit être un nombre entier"
-      odd: "doit être impair"
-      record_invalid: "La validation a échoué : %{errors}"
+      day: Jour
+      hour: Heure
+      minute: Minute
+      month: Mois
+      second: Seconde
+      year: Année
+  devise:
+    confirmations:
+      confirmed: Votre compte a été confirmé avec succès. Vous êtes désormais connecté(e).
+      send_instructions: Vous allez recevoir sous quelques minutes un email comportant des instructions pour confirmer votre compte.
+      send_paranoid_instructions: Si votre email existe sur notre base de données, vous recevrez sous quelques minutes un message avec des instructions pour confirmer votre compte.
+    failure:
+      already_authenticated: Vous êtes déjà connecté(e).
+      inactive: Votre compte n’est pas encore activé.
+      invalid: Email ou mot de passe incorrect.
+      last_attempt: 
+      locked: Votre compte est verrouillé.
+      not_found_in_database: Email ou mot de passe incorrect.
+      timeout: Votre session est périmée, veuillez vous reconnecter pour continuer.
+      unauthenticated: Vous devez vous connecter ou vous enregistrer pour continuer.
+      unconfirmed: Vous devez confirmer votre compte par email.
+    mailer:
+      confirmation_instructions:
+        subject: Instructions de confirmation
+      reset_password_instructions:
+        subject: Instructions pour changer le mot de passe
+      unlock_instructions:
+        subject: Instructions pour déverrouiller le compte
+    omniauth_callbacks:
+      failure: 'Nous ne pouvons pas vous authentifier depuis %{kind} pour la raison suivante : ''%{reason}''.'
+      success: Autorisé avec succès par votre compte %{kind}.
+    passwords:
+      no_token: Vous ne pouvez pas accéder à cette page si vous n’y accédez pas depuis un email de réinitialisation de mot de passe. Si vous venez en effet d’un tel email, vérifiez que vous avez copié l’adresse URL en entier.
+      send_instructions: Vous allez recevoir sous quelques minutes un email vous indiquant comment réinitialiser votre mot de passe.
+      send_paranoid_instructions: Si votre email existe dans notre base de données, vous recevrez un lien vous permettant de récupérer votre mot de passe.
+      updated: Votre mot de passe a été modifié avec succès. Vous êtes maintenant connecté(e).
+      updated_not_active: Votre mot de passe a été modifié avec succès.
+    registrations:
+      destroyed: Au revoir ! Votre compte a été annulé avec succès. Nous espérons vous revoir bientôt.
+      signed_up: Bienvenue ! Vous vous êtes enregistré(e) avec succès.
+      signed_up_but_inactive: Vous vous êtes enregistré(e) avec succès. Cependant, nous n’avons pas pu vous connecter car votre compte n’a pas encore été activé.
+      signed_up_but_locked: Vous vous êtes enregistré(e) avec succès. Cependant, nous n’avons pas pu vous connecter car votre compte est verrouillé.
+      signed_up_but_unconfirmed: Un message avec un lien de confirmation vous a été envoyé par mail. Veuillez suivre ce lien pour activer votre compte.
+      update_needs_confirmation: Vous avez modifié votre compte avec succès, mais nous devons vérifier votre nouvelle adresse email. Veuillez consulter vos emails et cliquer sur le lien de confirmation pour finaliser votre nouvelle adresse.
+      updated: Votre compte a été modifié avec succès.
+    sessions:
+      signed_in: Connecté(e) avec succès.
+      signed_out: Déconnecté(e) avec succès.
+      user:
+        signed_in: 
+    unlocks:
+      send_instructions: Vous allez recevoir un email sous quelques minutes contenant les instructions nécessaires au déblocage de votre compte.
+      send_paranoid_instructions: Si votre compte existe, vous recevrez un email indiquant comment le déverrouiller sous quelques minutes.
+      unlocked: Votre compte a été débloqué avec succès. Veuillez vous connecter.
+  errors:
+    format: '%{attribute} %{message}'
+    messages:
+      accepted: doit être accepté(e)
+      already_confirmed: a déjà été confirmé(e)
+      blank: doit être rempli(e)
+      confirmation: ne concorde pas avec la confirmation
+      confirmation_period_expired: doit être confirmé(e) en %{period}, veuillez en demander un(e) autre
+      empty: doit être rempli(e)
+      equal_to: doit être égal à %{count}
+      even: doit être pair
+      exclusion: n'est pas disponible
+      expired: est périmé, veuillez en demander un autre
+      greater_than: doit être supérieur à %{count}
+      greater_than_or_equal_to: doit être supérieur ou égal à %{count}
+      inclusion: n'est pas inclus(e) dans la liste
+      invalid: n'est pas valide
+      less_than: doit être inférieur à %{count}
+      less_than_or_equal_to: doit être inférieur ou égal à %{count}
+      not_a_number: n'est pas un nombre
+      not_an_integer: doit être un nombre entier
+      not_found: n’a pas été trouvé(e)
+      not_locked: n’était pas verrouillé(e)
+      not_saved:
+        one: 'une erreur a empêché ce (ou cette) %{resource} d’être enregistré(e) :'
+        other: '%{count} erreurs ont empêché ce (ou cette) %{resource} d’être enregistré(e) :'
+      odd: doit être impair
+      record_invalid: 'La validation a échoué : %{errors}'
       restrict_dependent_destroy:
-        one: "Suppression impossible: un autre enregistrement est lié"
-        many: "Suppression impossible: d'autres enregistrements sont liés"
-      taken: "n'est pas disponible"
+        many: 'Suppression impossible: d''autres enregistrements sont liés'
+        one: 'Suppression impossible: un autre enregistrement est lié'
+      taken: n'est pas disponible
       too_long:
-        one: "est trop long (pas plus d'un caractère)"
-        other: "est trop long (pas plus de %{count} caractères)"
+        one: est trop long (pas plus d'un caractère)
+        other: est trop long (pas plus de %{count} caractères)
       too_short:
-        one: "est trop court (au moins un caractère)"
-        other: "est trop court (au moins %{count} caractères)"
+        one: est trop court (au moins un caractère)
+        other: est trop court (au moins %{count} caractères)
       wrong_length:
-        one: "ne fait pas la bonne longueur (doit comporter un seul caractère)"
-        other: "ne fait pas la bonne longueur (doit comporter %{count} caractères)"
-    template: &errors_template
-      body: "Veuillez vérifier les champs suivants : "
+        one: ne fait pas la bonne longueur (doit comporter un seul caractère)
+        other: ne fait pas la bonne longueur (doit comporter %{count} caractères)
+    template:
+      body: 'Veuillez vérifier les champs suivants : '
       header:
-        one:   "Impossible d'enregistrer ce(tte) %{model} : 1 erreur"
-        other: "Impossible d'enregistrer ce(tte) %{model} : %{count} erreurs"
+        one: 'Impossible d''enregistrer ce(tte) %{model} : 1 erreur'
+        other: 'Impossible d''enregistrer ce(tte) %{model} : %{count} erreurs'
+  hello: 
   helpers:
+    label:
+      user:
+        Contraseña: 
+        Recuérdame: 
+        Tu email: 
+      message:
+        subject: 
     select:
-      prompt: "Veuillez sélectionner"
+      prompt: Veuillez sélectionner
     submit:
-      create: "Créer un(e) %{model}"
-      submit: "Enregistrer ce(tte) %{model}"
-      update: "Modifier ce(tte) %{model}"
+      create: Créer un(e) %{model}
+      submit: Enregistrer ce(tte) %{model}
+      update: Modifier ce(tte) %{model}
+  mailboxer:
+    message_mailer:
+      subject_new: 
+      subject_reply: 
+      visit_html: 
+      visit_text: 
+      you_have_new_message: 
+      you_have_recieved_new_message: 
+    notification_mailer:
+      subject: 
+      visit_html: 
+      visit_text: 
+      you_have_new_reply: 
+      you_have_recieved_new_reply: 
+    buttons:
+      back: 
+      trash: 
+      trash_selected: 
+      untrash: 
+    new:
+      button: 
+      errors: 
+      legend: 
+      title: 
+      submit: 
+    notifications:
+      move: 
+      sent: 
+      untrash: 
+    search: 
+    table:
+      date: 
+      delete: 
+      last: 
+      reciever: 
+      sender: 
+      subject: 
+    titles:
+      conversation: 
+      index: 
+    title: 
+  nlt:
+    about: 
+    access_here: 
+    ads:
+      form:
+        body: 
+        comments_enabled: 
+        image_permitted_formats: 
+        please_ad_type: 
+        prohibited: 
+        select_an_image: 
+        status: 
+        title: 
+        to_publish: 
+        type_ad: 
+    all_ads: 
+    and: 
+    are_you_interested: 
+    available: 
+    blog: 
+    booked: 
+    by_user: 
+    captcha_error: 
+    change_city: 
+    choose_username: 
+    choose_your_pass: 
+    choose_your_pass_again: 
+    cities_in_the_world: 
+    contact: 
+    contact_form: 
+    contact_legend: 
+    contact_thanks: 
+    create_new_ad: 
+    delete_ad: 
+    delete_sure: 
+    delivered: 
+    developers: 
+    didn_t_receive_confirmation_instructions: 
+    didn_t_receive_unlock_instructions: 
+    edit_this_ad: 
+    faqs: 
+    fill_captcha: 
+    footer_explain: 
+    forgot_your_password: 
+    friends: 
+    give: 
+    help_translate: 
+    home_title: 
+    if_you_are_new: 
+    if_youre_already_an_user: 
+    keywords: 
+    last_published_gifts: 
+    member_since: 
+    messages: 
+    messages_tabs:
+      inbox: 
+      sent: 
+      trash: 
+    messages_title: 
+    new_user: 
+    password: 
+    permission_denied: 
+    please_fill_to_become_member: 
+    please_introduce: 
+    privacy: 
+    profile: 
+    publish_ad: 
+    published_ads: 
+    published_at_by_html: 
+    published_on: 
+    reads: 
+    register: 
+    register_here: 
+    remember_me: 
+    rss_suscribe: 
+    send: 
+    send_a_message: 
+    send_a_message_to: 
+    sending_this_form: 
+    share_this_ad: 
+    sign_in: 
+    sign_in_with_provider: 
+    sign_up: 
+    slogan: 
+    suggestions: 
+    to_publish_or_send_messages: 
+    tos: 
+    user_ads: 
+    user_edit_profile: 
+    user_profile: 
+    username: 
+    users_most_active: 
+    want: 
+    write_a_comment: 
+    your_email: 
+    about_page:
+      description_html: 
+      title: 
+    admin:
+      become_user: 
+      lock_user: 
+      unlock_user: 
+    all: 
+    back: 
+    change_town:
+      choose: 
+      choose_html: 
+      close_to: 
+      please: 
+      submit: 
+      town: 
+    change_your_city: 
+    click_to_large: 
+    comments:
+      do_click: 
+      flash_ko: 
+      flash_ok: 
+      label: 
+      subject: 
+      submit: 
+      title: 
+    cookie: 
+    faq:
+      answer_1_html: 
+      answer_2_html: 
+      answer_3_html: 
+      answer_4_html: 
+      answer_5_html: 
+      answer_6_html: 
+      answer_7_html: 
+      question_1: 
+      question_2: 
+      question_3: 
+      question_4: 
+      question_5: 
+      question_6: 
+      question_7: 
+      title: 
+    first_visit: 
+    gift_on: 
+    login: 
+    login_to_comment: 
+    logout: 
+    mail:
+      automatic: 
+    meta_description: 
+    meta_description_ad: 
+    no_results:
+      explain_html: 
+      phrase: 
+      publish_ad: 
+      subtitle: 
+      title: 
+      try: 
+    or: 
+    privacy_page:
+      body_html: 
+      title: 
+    publish_ad_on: 
+    published_on_html: 
+    search:
+      button: 
+      must_search: 
+      no_ads_message_html: 
+    searching_on_html: 
+    translate:
+      description_html: 
+      title: 
+    updating: 
+    view_ads_on: 
+    view_ads_on_your_city: 
+    welcome: 
+    welcome_message: 
   number:
     currency:
       format:
-        delimiter: " "
-        format: "%n %u"
+        delimiter: ' '
+        format: '%n %u'
         precision: 2
-        separator: ","
+        separator: ','
         significant: false
         strip_insignificant_zeros: false
-        unit: "€"
+        unit: €
     format:
-      delimiter: " "
+      delimiter: ' '
       precision: 3
-      separator: ","
+      separator: ','
       significant: false
       strip_insignificant_zeros: false
     human:
       decimal_units:
-        format: "%n %u"
+        format: '%n %u'
         units:
-          billion: "milliard"
-          million: "million"
-          quadrillion: "million de milliards"
-          thousand: "millier"
-          trillion: "billion"
-          unit: ""
+          billion: milliard
+          million: million
+          quadrillion: million de milliards
+          thousand: millier
+          trillion: billion
+          unit: 
       format:
-        delimiter: ""
+        delimiter: 
         precision: 2
         significant: true
         strip_insignificant_zeros: true
       storage_units:
-        format: "%n %u"
+        format: '%n %u'
         units:
           byte:
-            one:   "octet"
-            other: "octets"
-          gb: "Go"
-          kb: "ko"
-          mb: "Mo"
-          tb: "To"
+            one: octet
+            other: octets
+          gb: Go
+          kb: ko
+          mb: Mo
+          tb: To
     percentage:
       format:
-        delimiter: ""
+        delimiter: 
     precision:
       format:
-        delimiter: ""
+        delimiter: 
+  please_insert_email_and_password: 
+  recaptcha:
+    errors:
+      incorrect-captcha-sol: 
   support:
     array:
-      last_word_connector: " et "
-      two_words_connector: " et "
-      words_connector: ", "
+      last_word_connector: ' et '
+      two_words_connector: ' et '
+      words_connector: ', '
   time:
-    am: 'am'
+    am: am
     formats:
-      default: "%d %B %Y %H:%M:%S"
-      long: "%A %d %B %Y %H:%M"
-      short: "%d %b %H:%M"
-    pm: 'pm'
-  # remove these aliases after 'activemodel' and 'activerecord' namespaces are removed from Rails repository
-  activemodel:
-    errors:
-      <<: *errors
-  activerecord:
-    errors:
-      <<: *errors
+      default: '%d %B %Y %H:%M:%S'
+      long: '%A %d %B %Y %H:%M'
+      short: '%d %b %H:%M'
+    pm: pm
+  unauthorized:
+    manage:
+      all: 
+  will_paginate:
+    next_label: suivant →
+    page_entries_info:
+      multi_page: '%{model} %{from} - %{to} sur %{count} au total'
+      multi_page_html: '%{model} <strong>%{from} - %{to}</strong> sur <strong>%{count}</strong> au total'
+      single_page:
+        one: '%{count} %{model} affiché(e)'
+        other: '%{count} %{model} affiché(e)s'
+      single_page_html:
+        one: '%{count} %{model} affiché(e)'
+        other: '%{count} %{model} affiché(e)s'
+    page_gap: '&hellip;'
+    previous_label: ← précédent
+  mailer:
+    confirmation_reminder:
+      p1: 
+      p2: 
+    greetings: 
+    hello: 
+    signature: 

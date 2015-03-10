@@ -63,6 +63,6 @@
 
 <% content_for :action do %>
   <div class="ad_create_tab">
-    <a href="/es/ad/create">+ <%= t('nlt.publish_ad') %></a>
+    <%= link_to "+ #{ t('nlt.publish_ad') }", new_ad_path %>
   </div>
 <% end %>

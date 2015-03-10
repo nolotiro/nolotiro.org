@@ -36,7 +36,7 @@ $(document).ready(function(){
   if ( $('p.notice').length > 0 ) {
    if ( $('p.notice').html().trim() == "Bienvenido" ) {
      $('p.notice').hide(); 
-     $('#main').prepend('<p class="success">' + $('.js-welcome-message').html() + $('#js-username').html() + '</p>')
+     $('#main').prepend('<p class="success">' + $('.js-welcome-message').html() + " " + $('#js-username').html() + '</p>')
    }
   }
 

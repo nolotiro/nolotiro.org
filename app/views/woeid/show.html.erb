@@ -14,7 +14,7 @@
 <% content_for :action do %>
   <% if @woeid %>
     <div class="ad_create_tab">
-      <%= link_to new_ad_path, "+ #{t('nlt.publish_ad_on', woeid: @woeid)}" %>
+      <%= link_to "+ #{t('nlt.publish_ad_on', woeid: @woeid)}", new_ad_path %>
     </div>
   <% end %>
 <% end %>
