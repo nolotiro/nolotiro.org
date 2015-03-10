@@ -12,6 +12,9 @@ class Ad < ActiveRecord::Base
   validates :woeid_code, presence: true
   validates :ip, presence: true
 
+  validates :title, length: {maximum: 100}
+  validates :body, length: {maximum: 65000}
+
   validates :status,
     inclusion: { in: [1, 2, 3], message: "no es un estado válido" },
     presence: true
