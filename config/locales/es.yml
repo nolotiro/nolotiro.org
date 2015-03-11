@@ -294,6 +294,7 @@ es:
       move: Mensaje movido a %{mailbox}
       sent: Mensaje enviado
       untrash: Mensaje recuperado
+      trash: 
     search: Resultados de busqueda de %{search}
     table:
       date: Fecha
@@ -321,7 +322,7 @@ es:
         title: 'Título de tu anuncio:'
         to_publish: Para publicar tu anuncio, por favor, introduce estos datos
         type_ad: 'Tipo de anuncio:'
-    all_ads: todos los anunciones
+    all_ads: todos los anuncios
     and: y
     are_you_interested: ¿Te interesa?
     available: disponible
