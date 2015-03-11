@@ -506,6 +506,10 @@ fr:
     view_ads_on_your_city: 
     welcome: 
     welcome_message: 
+    es:
+      ads:
+        form:
+          prohibited: 
   number:
     currency:
       format:
@@ -557,6 +561,7 @@ fr:
   recaptcha:
     errors:
       incorrect-captcha-sol: 
+      verification_failed: 
   support:
     array:
       last_word_connector: ' et '
@@ -572,6 +577,7 @@ fr:
   unauthorized:
     manage:
       all: 
+    default: 
   will_paginate:
     next_label: suivant →
     page_entries_info:

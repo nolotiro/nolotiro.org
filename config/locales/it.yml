@@ -498,6 +498,10 @@ it:
     view_ads_on_your_city: 
     welcome: 
     welcome_message: 
+    es:
+      ads:
+        form:
+          prohibited: 
   number:
     currency:
       format:
@@ -549,6 +553,7 @@ it:
   recaptcha:
     errors:
       incorrect-captcha-sol: 
+      verification_failed: 
   support:
     array:
       last_word_connector: ' e '
@@ -564,6 +569,7 @@ it:
   unauthorized:
     manage:
       all: 
+    default: 
   will_paginate:
     next_label: successivo →
     page_entries_info:

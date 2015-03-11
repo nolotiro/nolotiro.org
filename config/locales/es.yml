@@ -349,7 +349,7 @@ es:
     edit_this_ad: Edita este anuncio
     faqs: preguntas frecuentes
     fill_captcha: Por favor rellena los siguientes carácteres
-    footer_explain: 'nolotiro.org es un sitio web donde regalo y busco regalos gratis de segunda mano : muebles, sillas, sofás, bicicletas, ordenadores portátiles, mesas, cocinas, lámparas, camas, ropa, juguetes, cunas o carros para bebes, teléfonos móviles y otras muchas cosas que ya no quieres y ya no necesitas para que las reutilicen otra gente a la que puede servirle o darle nueva vida.'
+    footer_explain: "nolotiro.org es un sitio web donde regalo y busco regalos gratis de segunda mano: muebles, sillas, sofás, bicicletas, ordenadores portátiles, mesas, cocinas, lámparas, camas, ropa, juguetes, cunas o carros para bebes, teléfonos móviles y otras muchas cosas que ya no quieres y ya no necesitas para que las reutilicen otra gente a la que puede servirle o darle nueva vida."
     forgot_your_password: ¿Has olvidado tu contraseña?
     friends: Amigos
     give: regalo
@@ -357,7 +357,7 @@ es:
     home_title: anuncios de regalos nuevos y de segunda mano
     if_you_are_new: Si eres un nuevo usuario, por favor
     if_youre_already_an_user: Si ya eres un usuario registrado, por favor
-    keywords: 'regalo segunda mano gratis '
+    keywords: regalo segunda mano gratis
     last_published_gifts: últimos regalos publicados
     member_since: Miembro desde
     messages: mensajes
@@ -373,8 +373,8 @@ es:
     please_introduce: 'Por favor, introduce los caracteres que veas:'
     privacy: política de privacidad
     profile: perfil
-    publish_ad: 'Publicando anuncio'
-    to_publish_ad: 'Publicar anuncio'
+    publish_ad: Publicando anuncio
+    to_publish_ad: Publicar anuncio
     published_ads: Anuncios publicados
     published_at_by_html: Publicado hace %{time} por el usuario %{user}
     published_on: Publicado hace %{date}
@@ -481,6 +481,10 @@ es:
     view_ads_on_your_city: Ver anuncios en tu ciudad o pueblo
     welcome: hola
     welcome_message: Bienvenido
+    es:
+      ads:
+        form:
+          prohibited: 
   number:
     currency:
       format:
@@ -532,6 +536,7 @@ es:
   recaptcha:
     errors:
       incorrect-captcha-sol: Hubo un error rellenando los caracteres del captcha.
+      verification_failed: Word verification response is incorrect, please try again.
   support:
     array:
       last_word_connector: ', y '
@@ -547,6 +552,7 @@ es:
   unauthorized:
     manage:
       all: Debes primero iniciar sesión o registrarte un usuario.
+    default: You are not authorized to access this page.
   will_paginate:
     next_label: siguiente →
     page_entries_info:

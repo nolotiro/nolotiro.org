@@ -480,6 +480,10 @@ pt:
     view_ads_on_your_city: 
     welcome: 
     welcome_message: 
+    es:
+      ads:
+        form:
+          prohibited: 
   number:
     currency:
       format:
@@ -539,6 +543,7 @@ pt:
   recaptcha:
     errors:
       incorrect-captcha-sol: 
+      verification_failed: 
   support:
     array:
       last_word_connector: ', e'
@@ -554,6 +559,7 @@ pt:
   unauthorized:
     manage:
       all: 
+    default: 
   will_paginate:
     next_label: próximo →
     page_entries_info:
