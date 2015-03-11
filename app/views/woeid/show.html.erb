@@ -16,6 +16,10 @@
     <div class="ad_create_tab">
       <%= link_to "+ #{t('nlt.publish_ad_on', woeid: @woeid)}", new_ad_path %>
     </div>
+  <% else %>
+    <div class="ad_create_tab">
+      <%= link_to "+ #{t('nlt.to_publish_ad')}", new_ad_path %>
+    </div>
   <% end %>
 <% end %>
 

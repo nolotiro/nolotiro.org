@@ -372,7 +372,8 @@ es:
     please_introduce: 'Por favor, introduce los caracteres que veas:'
     privacy: política de privacidad
     profile: perfil
-    publish_ad: 'Publicando anuncio '
+    publish_ad: 'Publicando anuncio'
+    to_publish_ad: 'Publicar anuncio'
     published_ads: Anuncios publicados
     published_at_by_html: Publicado hace %{time} por el usuario %{user}
     published_on: Publicado hace %{date}
