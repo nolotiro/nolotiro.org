@@ -38,15 +38,8 @@ namespace :deploy do
       within release_path do
         with rails_env:
           fetch(:rails_env) do execute :rake, 'db:migrate'
-          end
+        end
       end
-    end
-  end
-
-  desc 'Restart application'
-  task :restart do
-    on roles(:app), in: :sequence, wait: 5 do
-      sudo "/etc/init.d/unicorn_beta.nolotiro.org.sh restart"
     end
   end
 
