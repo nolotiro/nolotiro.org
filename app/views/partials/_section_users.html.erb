@@ -1,8 +1,22 @@
-<div class="section_users">
+<div class="section_users desktop">
   <h2><%= t('nlt.users_most_active') %></h2>
   <br>
   <ul>
-    <% AdHelper.get_users_ranking.each do |u| %>
+    <% AdHelper.get_users_ranking(20).each do |u| %>
+      <li>
+      <%= link_to listads_user_path u.id do %>
+        <%= u.username %> (<%= u.ads_count %>)
+      <% end %>
+      </li>
+    <% end %>
+  </ul>
+</div>
+
+<div class="section_users mobile">
+  <h2><%= t('nlt.users_most_active') %></h2>
+  <br>
+  <ul>
+    <% AdHelper.get_users_ranking(20).each do |u| %>
       <li>
       <%= link_to listads_user_path u.id do %>
         <%= u.username %> (<%= u.ads_count %>)
