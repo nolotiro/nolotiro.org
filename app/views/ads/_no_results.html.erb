@@ -3,8 +3,8 @@
   <h2><%= t('nlt.no_results.title') %></h2>
   <h3><%= t('nlt.no_results.subtitle') %></h3>
   <%= t('nlt.no_results.explain_html', 
-    publish: link_to(new_ad_path, t('nlt.no_results.publish_ad')),
-    change_location: link_to(location_change_path, location_suggest)
+    publish: link_to(t('nlt.no_results.publish_ad'), new_ad_path),
+    change_location: link_to(location_suggest, location_change_path)
   )%>
   <br>
 
@@ -12,7 +12,7 @@
     <%= t('nlt.no_results.try') %><br>
     <ul>
     <% get_location_options(woeid).each do |l| %>
-      <li><%= link_to location_change_path(location: l[0]), l[0] %></li>
+      <li><%= link_to l[0], location_change_path(location: l[0]) %></li>
     <% end %>
     </ul>
   <% end %>
