@@ -32,12 +32,12 @@ es:
           other: No se pudo guardar este/a %{model} porque se encontraron %{count} errores
   activerecord:
     attributes:
+      message:
+        subject: Subject
       user:
         Contraseña: Contraseña
         Recuérdame: Recuérdame
         Tu email: Tu email
-      message:
-        subject: Subject
     errors:
       format: '%{attribute} %{message}'
       messages:
@@ -253,12 +253,12 @@ es:
   hello: 
   helpers:
     label:
+      message:
+        subject: 
       user:
         Contraseña: 
         Recuérdame: 
         Tu email: 
-      message:
-        subject: 
     select:
       prompt: Por favor seleccione
     submit:
@@ -266,6 +266,11 @@ es:
       submit: Guardar %{model}
       update: Actualizar %{model}
   mailboxer:
+    buttons:
+      back: < volver a mensajes
+      trash: Mover mensaje a papelera
+      trash_selected: Borrar mensajes seleccionados
+      untrash: Recuperar mensaje de papelera
     message_mailer:
       subject_new: '[nolotiro.org] Nuevo mensaje: %{subject}'
       subject_reply: '[nolotiro.org] Nueva respuesta: %{subject}'
@@ -273,28 +278,23 @@ es:
       visit_text: Visita %{url} y ve a tu bandeja de entrada para responder
       you_have_new_message: Has recibido un nuevo mensaje
       you_have_recieved_new_message: Has recibido un nuevo mensaje
+    new:
+      button: Enviar
+      errors: '%{errors} prohibieron que se enviase este mensaje:'
+      legend: 
+      submit: 
+      title: Nuevo mensaje privado para el usuario %{user}
     notification_mailer:
       subject: '[nolotiro.org] Nueva notificación: %{subject}'
       visit_html: Visita %{url} y ve a tu bandeja de entrada para responder
       visit_text: Visita %{url} y ve a tu bandeja de entrada para responder
       you_have_new_reply: Has recibido una nueva respuesta
       you_have_recieved_new_reply: Has recibido una nueva respuesta
-    buttons:
-      back: < volver a mensajes
-      trash: Mover mensaje a papelera
-      trash_selected: Borrar mensajes seleccionados
-      untrash: Recuperar mensaje de papelera
-    new:
-      button: Enviar
-      submit: 
-      errors: '%{errors} prohibieron que se enviase este mensaje:'
-      legend: Nuevo mensaje
-      title: Nuevo mensaje privado para el usuario %{user}
     notifications:
       move: Mensaje movido a %{mailbox}
       sent: Mensaje enviado
-      untrash: Mensaje recuperado
       trash: 
+      untrash: Mensaje recuperado
     search: Resultados de busqueda de %{search}
     table:
       date: Fecha
@@ -303,13 +303,27 @@ es:
       reciever: Recibido
       sender: Enviado
       subject: Asunto
+    title: 
     titles:
       conversation: Conversación con %{recipient} asunto %{subject}
       index: Mensajes de %{username}
-    title: 
+  mailer:
+    confirmation_reminder:
+      p1: Hemos detectado que te has creado una cuenta en nolotiro.org y no la has confirmado.
+      p2: 'Esto significa que puedes haber tenido problemas para acceder a la página. Si quieres confirmar tu usuario (%{username}) puedes hacerlo con este enlace:'
+    greetings: Gracias y saludos,
+    hello: Hola,
+    signature: Equipo de nolotiro.org
   nlt:
     about: acerca de
+    about_page:
+      description_html: <b>¿Qué es nolotiro.org?</b><br> Es un sitio web donde ofrecer al público, las cosas que ya no quieres o ya no necesitas para que las recoja otra gente a la que puede servirle o serle de mucha utilidad. <br><br> <strong>Lee las <a href="/es/page/faqs">preguntas de uso frecuente</a> para saber mas detalles de la filosofia y objetivos del proyecto</strong> <br><br> <b>Ventajas de nolotiro.org:</b><br> La gran ventaja de nolotiro.org, es que sustituye la nostalgia/sentimiento de derroche, por la sensación de hacer algo por alguien. Logras deshacerte de esas cosas que no tirabas porque te daba pena, porque estaban nuevas, o porque... y que al final solo acumulaban polvo en algún rincón olvidadas u ocupaban espacio, sabiendo que alguien las va a sacar buen partido, porque si que las necesita verdaderamente. Por otra parte, nolotiro.org al estar organizado por zonas geográficas fomenta que las cosas que quieras dar, se queden cerca, no hay gastos de envío, ni desplazamientos, ni envios a países lejanos que nunca sabes si llegan, se lo das tú mismo a alguien de tu misma ciudad, que va a buscarlo en persona a un lugar pactado. <br><br> <b>A tener en cuenta:</b><br> NO HAY OPCIÓN DE INTERCAMBIO, esto no se basa en el trueque, ni en la compra, por que hay que fomentar el altruismo, dar las cosas por que sí, porque nos sobran. <br><br> <b>Explicación en versión literaria</b><br> <a href="http://www.marcianoduran.com.uy/?p=176">¿Porqué no lo tiro?</a> Por Marciano Durán <br><br> <b>Nolotiro.org funciona  gracias al trabajo de muchas <a href="http://www.youtube.com/watch?v=KMU0tzLwhbE">personas</a> que han creado el siguiente software libre:</b> <a href="http://framework.zend.com/">Zend Framework</a>, <a href="http://www.php.net/">PHP</a>, <a href="http://www.mysql.com/">MySQL</a>, <a href="http://developer.yahoo.com/geo/geoplanet/">Yahoo GeoPlanet API</a>, <a href="http://www.postfix.org/">Postfix</a>, <a href="http://www.debian.org/">Debian</a>, <a href="http://nginx.org/">Nginx</a>, <a href="http://sphinxsearch.com/">Sphinx</a> , y muchos mas, tantos que sería imposible nombrarlos todos aquí. <br><br> <b>El código fuente de nolotiro.org es código abierto</b> y está disponible para ser utilizado (bajo licencia Affero GPL 3).<br> Visita la <a href="https://github.com/alabs/nolotiro"> web para desarrolladores</a> para mas detalles (en inglés).<br> Los colaboradores son bienvenidos, ya sea para programar o para traducir la página a otras lenguas.
+      title: Acerca de nolotiro.org
     access_here: accede aquí
+    admin:
+      become_user: '[ADMIN] Cambiar a este usuario'
+      lock_user: '[ADMIN] Bloquear a este usuario'
+      unlock_user: '[ADMIN] Desbloquear a este usuario'
     ads:
       form:
         body: 'Cuerpo del anuncio:'
@@ -322,96 +336,17 @@ es:
         title: 'Título de tu anuncio:'
         to_publish: Para publicar tu anuncio, por favor, introduce estos datos
         type_ad: 'Tipo de anuncio:'
-    all_ads: todos los anuncios
+    all: todos
+    all_ads: todos los anunciones
     and: y
     are_you_interested: ¿Te interesa?
     available: disponible
+    back: volver a la página de inicio
     blog: blog
     booked: reservado
     by_user: 'por el usuario '
     captcha_error: Hubo un error con los caracteres que tenias que poner por seguridad, vuelve a rellenar las letras que veas (el captcha)
     change_city: cambiar ciudad
-    choose_username: Elige un nombre de usuario
-    choose_your_pass: Elige tu contraseña
-    choose_your_pass_again: Introduce tu contraseña (si, otra vez)
-    cities_in_the_world: ciudades del mundo que más reciclan
-    contact: contacto
-    contact_form: Formulario de contacto
-    contact_legend: Por favor, escribe tu mensaje
-    contact_thanks: ¡Mensaje enviado! Gracias por contactar con nolotiro.org
-    create_new_ad: Crea un nuevo anuncio
-    delete_ad: borrar anuncio
-    delete_sure: ¿Estás seguro que quieres borrarlo?
-    delivered: entregado
-    developers: desarrolladores
-    didn_t_receive_confirmation_instructions: ¿No has recibido las instrucciones de confirmación?
-    didn_t_receive_unlock_instructions: ¿No has recibido las instrucciones para el desbloqueo?
-    edit_this_ad: Edita este anuncio
-    faqs: preguntas frecuentes
-    fill_captcha: Por favor rellena los siguientes carácteres
-    footer_explain: 'nolotiro.org es un sitio web donde regalo y busco regalos gratis de segunda mano: muebles, sillas, sofás, bicicletas, ordenadores portátiles, mesas, cocinas, lámparas, camas, ropa, juguetes, cunas o carros para bebes, teléfonos móviles y otras muchas cosas que ya no quieres y ya no necesitas para que las reutilicen otra gente a la que puede servirle o darle nueva vida.'
-    forgot_your_password: ¿Has olvidado tu contraseña?
-    friends: Amigos
-    give: regalo
-    help_translate: ayuda a traducir
-    home_title: anuncios de regalos nuevos y de segunda mano
-    if_you_are_new: Si eres un nuevo usuario, por favor
-    if_youre_already_an_user: Si ya eres un usuario registrado, por favor
-    keywords: regalo segunda mano gratis
-    last_published_gifts: últimos regalos publicados
-    member_since: Miembro desde
-    messages: mensajes
-    messages_tabs:
-      inbox: Recibidos
-      sent: Enviados
-      trash: Papelera
-    messages_title: Mensajes
-    new_user: Nuevo usuario
-    password: Contraseña
-    permission_denied: No tienes permisos para realizar esta acción.
-    please_fill_to_become_member: Por favor, rellena este formulario para ser miembro de nolotiro
-    please_introduce: 'Por favor, introduce los caracteres que veas:'
-    privacy: política de privacidad
-    profile: perfil
-    publish_ad: Publicando anuncio
-    to_publish_ad: Publicar anuncio
-    published_ads: Anuncios publicados
-    published_at_by_html: Publicado hace %{time} por el usuario %{user}
-    published_on: Publicado hace %{date}
-    reads: lecturas
-    register: Regístrate
-    register_here: registrate aquí
-    remember_me: Recuérdame
-    rss_suscribe: Suscribirse via RSS
-    send: Enviar
-    send_a_message: + Envía un mensaje al anunciante
-    send_a_message_to: '+ Envía un mensaje a '
-    sending_this_form: Enviando este formulario, admites haber leido, comprendido, y estás conforme con nuestras
-    share_this_ad: Comparte este anuncio
-    sign_in: Acceder
-    sign_in_with_provider: Inicia sesión con otro proveedor
-    sign_up: Crear un usuario
-    slogan: no lo tiro, te lo regalo (sin condiciones)
-    suggestions: sugerencias
-    to_publish_or_send_messages: Para publicar anuncios o enviar mensajes accede a tu cuenta
-    tos: términos de uso
-    user_ads: anuncios
-    user_edit_profile: Editar perfil de usuario
-    user_profile: Perfil de usuario
-    username: Nombre de usuario
-    users_most_active: usuarios más activos
-    want: busco
-    write_a_comment: + Escribe un nuevo comentario
-    your_email: Tu email
-    about_page:
-      description_html: <b>¿Qué es nolotiro.org?</b><br> Es un sitio web donde ofrecer al público, las cosas que ya no quieres o ya no necesitas para que las recoja otra gente a la que puede servirle o serle de mucha utilidad. <br><br> <strong>Lee las <a href="/es/page/faqs">preguntas de uso frecuente</a> para saber mas detalles de la filosofia y objetivos del proyecto</strong> <br><br> <b>Ventajas de nolotiro.org:</b><br> La gran ventaja de nolotiro.org, es que sustituye la nostalgia/sentimiento de derroche, por la sensación de hacer algo por alguien. Logras deshacerte de esas cosas que no tirabas porque te daba pena, porque estaban nuevas, o porque... y que al final solo acumulaban polvo en algún rincón olvidadas u ocupaban espacio, sabiendo que alguien las va a sacar buen partido, porque si que las necesita verdaderamente. Por otra parte, nolotiro.org al estar organizado por zonas geográficas fomenta que las cosas que quieras dar, se queden cerca, no hay gastos de envío, ni desplazamientos, ni envios a países lejanos que nunca sabes si llegan, se lo das tú mismo a alguien de tu misma ciudad, que va a buscarlo en persona a un lugar pactado. <br><br> <b>A tener en cuenta:</b><br> NO HAY OPCIÓN DE INTERCAMBIO, esto no se basa en el trueque, ni en la compra, por que hay que fomentar el altruismo, dar las cosas por que sí, porque nos sobran. <br><br> <b>Explicación en versión literaria</b><br> <a href="http://www.marcianoduran.com.uy/?p=176">¿Porqué no lo tiro?</a> Por Marciano Durán <br><br> <b>Nolotiro.org funciona  gracias al trabajo de muchas <a href="http://www.youtube.com/watch?v=KMU0tzLwhbE">personas</a> que han creado el siguiente software libre:</b> <a href="http://framework.zend.com/">Zend Framework</a>, <a href="http://www.php.net/">PHP</a>, <a href="http://www.mysql.com/">MySQL</a>, <a href="http://developer.yahoo.com/geo/geoplanet/">Yahoo GeoPlanet API</a>, <a href="http://www.postfix.org/">Postfix</a>, <a href="http://www.debian.org/">Debian</a>, <a href="http://nginx.org/">Nginx</a>, <a href="http://sphinxsearch.com/">Sphinx</a> , y muchos mas, tantos que sería imposible nombrarlos todos aquí. <br><br> <b>El código fuente de nolotiro.org es código abierto</b> y está disponible para ser utilizado (bajo licencia Affero GPL 3).<br> Visita la <a href="https://github.com/alabs/nolotiro"> web para desarrolladores</a> para mas detalles (en inglés).<br> Los colaboradores son bienvenidos, ya sea para programar o para traducir la página a otras lenguas.
-      title: Acerca de nolotiro.org
-    admin:
-      become_user: '[ADMIN] Cambiar a este usuario'
-      lock_user: '[ADMIN] Bloquear a este usuario'
-      unlock_user: '[ADMIN] Desbloquear a este usuario'
-    all: todos
-    back: volver a la página de inicio
     change_town:
       choose: Elige tu ubicación
       choose_html: No se han encontrado ubicaciones con el nombre <b>%{location}</b>. Vuelve a intentarlo
@@ -420,6 +355,10 @@ es:
       submit: Enviar
       town: 'Ciudad:'
     change_your_city: Cambia tu ciudad
+    choose_username: Elige un nombre de usuario
+    choose_your_pass: Elige tu contraseña
+    choose_your_pass_again: Introduce tu contraseña (si, otra vez)
+    cities_in_the_world: ciudades del mundo que más reciclan
     click_to_large: Click para agrandar foto
     comments:
       do_click: 'Haz click en este enlace para responder el mensaje:'
@@ -429,7 +368,23 @@ es:
       subject: '[nolotiro.org] Tienes un nuevo comentario en el anuncio %{ad}'
       submit: Enviar
       title: Comentarios
+    contact: contacto
+    contact_form: Formulario de contacto
+    contact_legend: Por favor, escribe tu mensaje
+    contact_thanks: ¡Mensaje enviado! Gracias por contactar con nolotiro.org
     cookie: Utilizamos cookies para mejorar tu navegación en este sitio
+    create_new_ad: Crea un nuevo anuncio
+    delete_ad: borrar anuncio
+    delete_sure: ¿Estás seguro que quieres borrarlo?
+    delivered: entregado
+    developers: desarrolladores
+    didn_t_receive_confirmation_instructions: ¿No has recibido las instrucciones de confirmación?
+    didn_t_receive_unlock_instructions: ¿No has recibido las instrucciones para el desbloqueo?
+    edit_this_ad: Edita este anuncio
+    es:
+      ads:
+        form:
+          prohibited: 
     faq:
       answer_1_html: El propósito fundamental de esta web es el de deshacernos de los objetos que ya no utilizamos y nos estorban en casa.
       answer_2_html: 'Primero a ti directamente pudiéndote deshacer de esas cosas que ya no quieres, y siempre al que regalas algo implícitamente. Lo mejor es enfocarlo egoistamente y controlar la relación de causa-efecto que vamos a desencadenar regalando.<br> Si enfocamos dicho acto de regalar objetos desde una perspectiva  egoísta, la de deshacernos de cosas útiles, pero que nos molestan,porque nos estorban, porque van a ir a la basura, porque son objetos desahuciados ... siempre tendremos una buena experiencia, al no esperar nada mas que  librarnos de dichos objetos. <br> Y el saber que alguien le está dando uso o provecho reforzará esa experiencia como positiva. <br> Es decir: el acto de regalar cosas de valor o útiles siempre es algo positivo si no esperamos una recompensa moral o aplacar nuestra conciencia.'
@@ -446,15 +401,35 @@ es:
       question_6: ¿No está permitido el intercambio de objetos? que raro
       question_7: ¿Puedo enviar cosas a gente que no vive en mi ciudad?
       title: Preguntas frecuentes
+    faqs: preguntas frecuentes
+    fill_captcha: Por favor rellena los siguientes carácteres
     first_visit: nolotiro.org es una comunidad donde podemos deshacernos de los objetos que ya no utilizamos y nos estorban en casa.
+    footer_explain: 'nolotiro.org es un sitio web donde regalo y busco regalos gratis de segunda mano : muebles, sillas, sofás, bicicletas, ordenadores portátiles, mesas, cocinas, lámparas, camas, ropa, juguetes, cunas o carros para bebes, teléfonos móviles y otras muchas cosas que ya no quieres y ya no necesitas para que las reutilicen otra gente a la que puede servirle o darle nueva vida.'
+    forgot_your_password: ¿Has olvidado tu contraseña?
+    friends: Amigos
     gift_on: regalo en %{woeid}
+    give: regalo
+    help_translate: ayuda a traducir
+    home_title: anuncios de regalos nuevos y de segunda mano
+    if_you_are_new: Si eres un nuevo usuario, por favor
+    if_youre_already_an_user: Si ya eres un usuario registrado, por favor
+    keywords: 'regalo segunda mano gratis '
+    last_published_gifts: últimos regalos publicados
     login: acceder
     login_to_comment: accede para escribir un comentario
     logout: salir
     mail:
       automatic: Este es un mensaje automático. Por favor, no respondas a esta dirección de email.
+    member_since: Miembro desde
+    messages: mensajes
+    messages_tabs:
+      inbox: Recibidos
+      sent: Enviados
+      trash: Papelera
+    messages_title: Mensajes
     meta_description: 'nolotiro.org es un sitio web donde regalo y busco regalos gratis de segunda mano : muebles, sillas, sofás, bicicletas, ordenadores portátiles, mesas, cocinas, lámparas, camas, ropa, juguetes, cunas o carros para bebes, teléfonos móviles y otras muchas cosas que ya no quieres y ya no necesitas para que las reutilicen otra gente a la que puede servirle o darle nueva vida.'
     meta_description_ad: regalo segunda mano %{title} en %{woeid}. %{body}
+    new_user: Nuevo usuario
     no_results:
       explain_html: '<p>1. Sé el primero en %{publish}.</p> <p>2. Prueba a cambiar la ciudad por una mas grande que esté cerca de tu ubicación.</p> <p>3. Nuestro sistema de sugerencia de ubicación (basado en tu IP) dice que estas cerca de: <br> %{change_location} </p>'
       phrase: '"Un viaje de mil kilómetros comienza con un simple paso" Lao Tse.'
@@ -463,28 +438,59 @@ es:
       title: No hay anuncios para esta ubicación.
       try: 'O inténtalo con estas ciudades de nombre similar:'
     or: o
+    password: Contraseña
+    permission_denied: No tienes permisos para realizar esta acción.
+    please_fill_to_become_member: Por favor, rellena este formulario para ser miembro de nolotiro
+    please_introduce: 'Por favor, introduce los caracteres que veas:'
+    privacy: política de privacidad
     privacy_page:
       body_html: 'nolotiro.org (en adelante sitio web) pertenece y es administrado por:<br><br> aLabs<br> Embajadores, 35 Local 6 <br> 28012 Madrid, España<br> <br><br> Pueden contactar en el formulario de contacto habilitado a tal efecto en el sitio web. El acceso al sitio web, implica la plena aceptación de la presente política de privacidad y de los términos de uso. <br><br> En relación al cumplimiento de la Ley Orgánica 15/1999, de 13 de Diciembre, de Protección de Datos de Carácter Personal (LOPD), le informamos que este sitio web  almacena de forma automatizada los datos proporcionados en el formulario de usuario registrado al efecto de poder proporcionarle al usuario los servicios del sitio web de una forma personalizada como son: gestión de su cuenta de usuario, publicación de anuncios, y gestión de sistema de mensajes privados entre usuarios.  <br><br> El término mensajes privados se refiere a que la posibilidad de acceso a dichos mensajes privados será exclusivamente entre dos usuarios, sin posibilidad por parte de terceros usuarios a acceder a dicho contenido. Sin embargo , en la base de datos los mensajes se guardan en texto plano, pudiendo ser puestos a disposición de las fuerzas de seguridad en caso de comisión de delito o de requerimiento judicial.  <br><br> El usuario se abstendrá de publicar datos personales suyos o de terceros en los anuncios como pueden ser direcciones de email, teléfonos, direcciones postales, etc.  El sitio web, tomará las medidas necesarias para la preservación de los datos personales, aun cuando el usuario ignore estos términos de privacidad. Es por eso que hemos desarrollado un filtro de emails y telefonos en los anuncios para evitar que dicha información sea recopilada por sistemas automáticos y robots de indexación.  Esto no exime de la última responsabilidad del usuario en cuanto a la publicación de datos personales suyos o de terceros. Y se hace solamente porque creemos que muchos usuarios no son conscientes de la importancia de la preservación de sus datos personales.  <br><br> Formulario de contacto:<br> le informamos que los datos personales facilitados por el usuario en el formulario de contacto son guardados con la única finalidad de contacto con el usuario, estos datos no serán utilizados en ningún caso para el envio mensajes publicitarios así como tampoco serán cedidos a terceros.  <br> En cualquier momento puede ejercer los derechos de acceso, rectificación y cancelación de sus datos dirigiéndose por cualquiera de los medios de comunicacion indicados en el primer párrafo.  <br><br> Cookies de sesión:<br> El acceso a este sitio implica la utilización de cookies de sesión. Las cookies de sesión son pequeñas cantidades de información que se almacenan en el navegador utilizado por cada usuario para que el servidor recuerde cierta información que posteriormente pueda utilizar. Esta información permite identificarle a usted como un usuario concreto de forma anónima.  <br><br> Adicionalmente este sitio puede albergar elementos en el código fuente de las páginas que se utilizan para medir el tráfico de usuarios que visitan una página web y poder sacar un patrón de visitas de los usuarios. Esta información anónima puede ser compartida con empresas clientes, proveedores, patrocinadores y anunciantes. <br><br> Actualmente utilizamos los servicios de Google Analytics para la medición del tráfico de este sitio que puede capturar la información descrita anteriormente. Puede ver más información sobre la política de privacidad en el sitio web de Google: Google (Analytics): http://www.google.com/intl/es_ALL/privacypolicy.html <br><br> Este sitio también puede albergar publicidad propia, de afiliados, o de redes publicitarias. Esta publicidad se muestra mediante servidores publicitarios que también utilizan cookies para mostrar contenidos publicitarios afines a los usuarios. Cada uno de estos servidores publicitarios dispone de su propia política de privacidad, que puede ser consultada en sus propias páginas web. Actualmente este sitio alberga publicidad de Google Adsense: http://www.google.com/intl/es_ALL/privacypolicy.html'
       title: Política de privacidad
+    profile: perfil
+    publish_ad: 'Publicando anuncio '
     publish_ad_on: Publicar anuncio en %{woeid}
+    published_ads: Anuncios publicados
+    published_at_by_html: Publicado hace %{time} por el usuario %{user}
+    published_on: Publicado hace %{date}
     published_on_html: Publicado hace <abbr title='%{full_date}'>%{date}</abbr>
+    reads: lecturas
+    register: Regístrate
+    register_here: registrate aquí
+    remember_me: Recuérdame
+    rss_suscribe: Suscribirse via RSS
     search:
       button: buscar
       must_search: Debes buscar por algo en algun lugar.
       no_ads_message_html: No hay anuncios que coincidan con la búsqueda <b>%{q}</b> en la ubicación %{woeid}.
     searching_on_html: Buscando <i>%{ @q }</i> en
+    send: Enviar
+    send_a_message: + Envía un mensaje al anunciante
+    send_a_message_to: '+ Envía un mensaje a '
+    sending_this_form: Enviando este formulario, admites haber leido, comprendido, y estás conforme con nuestras
+    share_this_ad: Comparte este anuncio
+    sign_in: Acceder
+    sign_in_with_provider: Inicia sesión con otro proveedor
+    sign_up: Crear un usuario
+    slogan: no lo tiro, te lo regalo (sin condiciones)
+    suggestions: sugerencias
+    to_publish_or_send_messages: Para publicar anuncios o enviar mensajes accede a tu cuenta
+    tos: términos de uso
     translate:
       description_html: Actualmente, Nolotiro.org está disponible en pocos idiomas, pero tú puedes ayudarnos a <a href="http://accounts.localeapp.com/projects/6872">traducirlo al tuyo</a>.
       title: Ayúdanos a traducir nolotiro.org a tu idioma
     updating: Estamos actualizando todo el sitio, por lo que en las próximas horas habrá retrasos con los mensajes entre los usuarios, las imágenes de un anuncio y la cantidad de anuncios de los usuarios. No te preocupes que "estamos trabajando en ellou".
+    user_ads: anuncios
+    user_edit_profile: Editar perfil de usuario
+    user_profile: Perfil de usuario
+    username: Nombre de usuario
+    users_most_active: usuarios más activos
     view_ads_on: Ver anuncios en %{location_suggest}
     view_ads_on_your_city: Ver anuncios en tu ciudad o pueblo
+    want: busco
     welcome: hola
     welcome_message: Bienvenido
-    es:
-      ads:
-        form:
-          prohibited: 
+    write_a_comment: + Escribe un nuevo comentario
+    your_email: Tu email
   number:
     currency:
       format:
@@ -550,9 +556,12 @@ es:
       short: '%d de %b %H:%M'
     pm: pm
   unauthorized:
+    default: You are not authorized to access this page.
+    i18n:
+      transliterate:
+        rule: 
     manage:
       all: Debes primero iniciar sesión o registrarte un usuario.
-    default: You are not authorized to access this page.
   will_paginate:
     next_label: siguiente →
     page_entries_info:
@@ -568,10 +577,3 @@ es:
         zero: No se encontraron %{model}
     page_gap: '&hellip;'
     previous_label: ← atrás
-  mailer:
-    confirmation_reminder:
-      p1: Hemos detectado que te has creado una cuenta en nolotiro.org y no la has confirmado.
-      p2: 'Esto significa que puedes haber tenido problemas para acceder a la página. Si quieres confirmar tu usuario (%{username}) puedes hacerlo con este enlace:'
-    greetings: Gracias y saludos,
-    hello: Hola,
-    signature: Equipo de nolotiro.org

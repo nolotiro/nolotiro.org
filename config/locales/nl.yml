@@ -1,4 +1,4 @@
-en:
+nl:
   activemodel:
     errors:
       format: 
@@ -97,65 +97,65 @@ en:
       year: 
   devise:
     confirmations:
-      confirmed: Your account was successfully confirmed.
-      send_instructions: You will receive an email with instructions about how to confirm your account in a few minutes.
-      send_paranoid_instructions: If your email address exists in our database, you will receive an email with instructions about how to confirm your account in a few minutes.
+      confirmed: 
+      send_instructions: 
+      send_paranoid_instructions: 
     failure:
-      already_authenticated: You are already signed in.
-      inactive: Your account is not activated yet.
-      invalid: Invalid email or password.
-      last_attempt: You have one more attempt before your account will be locked.
-      locked: Your account is locked.
-      not_found_in_database: Invalid email or password.
-      timeout: Your session expired. Please sign in again to continue.
-      unauthenticated: You need to sign in or sign up before continuing.
-      unconfirmed: You have to confirm your account before continuing.
+      already_authenticated: 
+      inactive: 
+      invalid: 
+      last_attempt: 
+      locked: 
+      not_found_in_database: 
+      timeout: 
+      unauthenticated: 
+      unconfirmed: 
     mailer:
       confirmation_instructions:
-        subject: Confirmation instructions
+        subject: 
       reset_password_instructions:
-        subject: Reset password instructions
+        subject: 
       unlock_instructions:
-        subject: Unlock Instructions
+        subject: 
     omniauth_callbacks:
-      failure: Could not authenticate you from %{kind} because "%{reason}".
-      success: Successfully authenticated from %{kind} account.
+      failure: 
+      success: 
     passwords:
-      no_token: You can't access this page without coming from a password reset email. If you do come from a password reset email, please make sure you used the full URL provided.
-      send_instructions: You will receive an email with instructions about how to reset your password in a few minutes.
-      send_paranoid_instructions: If your email address exists in our database, you will receive a password recovery link at your email address in a few minutes.
-      updated: Your password was changed successfully. You are now signed in.
-      updated_not_active: Your password was changed successfully.
+      no_token: 
+      send_instructions: 
+      send_paranoid_instructions: 
+      updated: 
+      updated_not_active: 
     registrations:
-      destroyed: Bye! Your account was successfully cancelled. We hope to see you again soon.
-      signed_up: Welcome! You have signed up successfully.
-      signed_up_but_inactive: You have signed up successfully. However, we could not sign you in because your account is not yet activated.
-      signed_up_but_locked: You have signed up successfully. However, we could not sign you in because your account is locked.
-      signed_up_but_unconfirmed: A message with a confirmation link has been sent to your email address. Please open the link to activate your account.
-      update_needs_confirmation: You updated your account successfully, but we need to verify your new email address. Please check your email and click on the confirm link to finalize confirming your new email address.
-      updated: You updated your account successfully.
+      destroyed: 
+      signed_up: 
+      signed_up_but_inactive: 
+      signed_up_but_locked: 
+      signed_up_but_unconfirmed: 
+      update_needs_confirmation: 
+      updated: 
     sessions:
-      signed_in: Signed in successfully.
-      signed_out: Signed out successfully.
+      signed_in: 
+      signed_out: 
       user:
         signed_in: 
     unlocks:
-      send_instructions: You will receive an email with instructions about how to unlock your account in a few minutes.
-      send_paranoid_instructions: If your account exists, you will receive an email with instructions about how to unlock it in a few minutes.
-      unlocked: Your account has been unlocked successfully. Please sign in to continue.
+      send_instructions: 
+      send_paranoid_instructions: 
+      unlocked: 
   errors:
     format: 
     messages:
       accepted: 
-      already_confirmed: was already confirmed, please try signing in
+      already_confirmed: 
       blank: 
       confirmation: 
-      confirmation_period_expired: needs to be confirmed within %{period}, please request a new one
+      confirmation_period_expired: 
       empty: 
       equal_to: 
       even: 
       exclusion: 
-      expired: has expired, please request a new one
+      expired: 
       greater_than: 
       greater_than_or_equal_to: 
       inclusion: 
@@ -164,11 +164,9 @@ en:
       less_than_or_equal_to: 
       not_a_number: 
       not_an_integer: 
-      not_found: not found
-      not_locked: was not locked
-      not_saved:
-        one: '1 error prohibited this %{resource} from being saved:'
-        other: '%{count} errors prohibited this %{resource} from being saved:'
+      not_found: 
+      not_locked: 
+      not_saved: 
       odd: 
       record_invalid: 
       restrict_dependent_destroy: 
@@ -179,7 +177,7 @@ en:
     template:
       body: 
       header: 
-  hello: Hello world
+  hello: 
   helpers:
     label:
       message:
@@ -287,7 +285,7 @@ en:
     choose_username: 
     choose_your_pass: 
     choose_your_pass_again: 
-    cities_in_the_world: cities in the world that recicle the most
+    cities_in_the_world: 
     click_to_large: 
     comments:
       do_click: 
@@ -333,7 +331,7 @@ en:
     faqs: 
     fill_captcha: 
     first_visit: 
-    footer_explain: nolotiro.org is a website where you can give away things you no longer want or no longer need to pick them up other people who may serve or be of much use.
+    footer_explain: 
     forgot_your_password: 
     friends: 
     gift_on: 
@@ -343,7 +341,7 @@ en:
     if_you_are_new: 
     if_youre_already_an_user: 
     keywords: 
-    last_published_gifts: last published gifts
+    last_published_gifts: 
     login: 
     login_to_comment: 
     logout: 
@@ -400,7 +398,7 @@ en:
     sign_in: 
     sign_in_with_provider: 
     sign_up: 
-    slogan: don't dump that, give it to your neighbor
+    slogan: 
     suggestions: 
     to_publish_or_send_messages: 
     tos: 
@@ -412,7 +410,7 @@ en:
     user_edit_profile: 
     user_profile: 
     username: 
-    users_most_active: users most active
+    users_most_active: 
     view_ads_on: 
     view_ads_on_your_city: 
     want: 
