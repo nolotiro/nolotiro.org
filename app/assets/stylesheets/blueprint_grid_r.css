@@ -1,6 +1,6 @@
-/* -------------------------------------------------------------- 
+/* --------------------------------------------------------------
  *
- * http://azimat.net/blog/260/making-blueprint-css-framework-responsive/ 
+ * http://azimat.net/blog/260/making-blueprint-css-framework-responsive/
  *
  *
    grid-r.css
@@ -14,7 +14,7 @@
 .container {
   width: 950px;
   margin: 0 auto;
- 
+
 }
 
 
@@ -82,7 +82,7 @@
   width: 768px;
   margin: 0 auto;
 }
-    
+
 .span-1 {width: 22px;}
 .span-2 {width: 54px;}
 .span-3 {width: 86px;}
@@ -107,7 +107,7 @@
 .span-22 {width: 694px;}
 .span-23 {width: 726px;}
 .span-24 {width: 758px;}
-   
+
 .column,.span-1, .span-2, .span-3, .span-4, .span-5, .span-6, .span-7, .span-8, .span-9, .span-10, .span-11, .span-12, .span-13, .span-14, .span-15, .span-16, .span-17, .span-18, .span-19, .span-20, .span-21, .span-22, .span-23, .span-24 {
   float: left;
   margin-right: 5px;
@@ -148,13 +148,19 @@ margin: 0;
 .span-24 {
      width: 100%;
 }
+.span-19,
+.span-15{
+  width: 95%;
+  margin-left: 2%;
+  margin-right: 2%;}
 
- 
  }
 
-@media only screen and (min-width: 480px) and (max-width: 767px) {
-        .container { width: 420px; }
- 
+@media only screen and (min-width: 320px) and (max-width: 767px) {
+        .container { width: 95%;
+                     margin-left: 2%;
+                     margin-right: 2%; }
+
 .span-1,
 .span-2,
 .span-3,
@@ -182,8 +188,8 @@ margin: 0;
      width: 420px;
      margin: 0;
 }
-  
-        
+
+
 }
 
 /* Use a .box to create a padded box inside a column.  */
@@ -225,6 +231,3 @@ hr.space {
    apply to column that should drop below previous ones. */
 
 .clear { clear:both; }
-
-
-
