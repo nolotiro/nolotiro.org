@@ -6,7 +6,7 @@ module AdHelper
   end
 
   def self.get_locations_ranking
-    Ad.give.group_by(&:woeid_code).map{ |w,a| [w, a.count] }.sort_by{|k| k[1]}.reverse.take(80) 
+    Ad.give.group_by(&:woeid_code).map{ |w,a| [WoeidHelper.convert_woeid_name(w), w, a.count] }.sort_by{|k| k[2]}.reverse.take(80) 
   end
 
 end
