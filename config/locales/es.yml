@@ -452,7 +452,7 @@ es:
     published_ads: Anuncios publicados
     published_at_by_html: Publicado hace %{time} por el usuario %{user}
     published_on: Publicado hace %{date}
-    published_on_html: Publicado hace <abbr title='%{full_date}'>%{date}</abbr>
+    published_on_html: Publicado hace <abbr class='js-moment' title='%{date}'>%{date}</abbr>
     reads: lecturas
     register: Regístrate
     register_here: registrate aquí
