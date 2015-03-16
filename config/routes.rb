@@ -27,7 +27,9 @@ NolotiroOrg::Application.routes.draw do
 
     # locations lists
     get '/woeid/:id/:type', to: 'woeid#show', as: 'ads_woeid'
+    get '/woeid/:id/:type/page/:page', to: redirect('/woeid/%{id}/%{type}?page=%{page}')
     get '/woeid/:id/:type/status/:status', to: 'woeid#show', as: 'ads_woeid_status'
+    get '/woeid/:id/:type/page/:page/status/:status', to: redirect('/woeid/%{id}/%{type}/status/%{status}?page=%{page}')
 
     # location change
     scope '/location' do
