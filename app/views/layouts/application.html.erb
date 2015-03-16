@@ -3,11 +3,11 @@
   <head>
     <title><%=h yield(:meta_title) %> - nolotiro.org</title>
     <%= favicon_link_tag 'favicon.ico' %>
-    <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+    <%= stylesheet_link_tag    "application", media: "all" %>
 
     <script src="//www.google.com/jsapi"></script>
     <%= airbrake_javascript_notifier %>
-    <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+    <%= javascript_include_tag "application" %>
 
     <%= csrf_meta_tags %>
 
@@ -82,6 +82,12 @@
 
       </div>
 
+      <% unless I18n.locale == :es %>
+        <div id="advice_langtest" class="advice">
+          This language translation is in testing phase. If you find a missing or wrong translation, <%= link_to "please report it", "http://accounts.localeapp.com/projects/6872" %>.
+        </div>
+      <% end %>
+
       <% flash.each do |name, msg| %>
         <% if msg.is_a?(String) %>
           <p class="<%= name %>">
@@ -90,20 +96,19 @@
         <% end %>
       <% end %>
       
-      <div class="info js-alert-first-visit hide">
+      <div class="info js-alert-cookie hide" data-cookie-name="alert-first-visit">
         <%= t('nlt.first_visit') %>
-        <a href="#" class="js-close-first-visit alert-close">x</a> 
+        <a href="#" class="js-alert-close alert-close">x</a> 
       </div>                                                                                        
-      <% unless I18n.locale == :es %>
-        <div id="advice_langtest" class="advice">
-          This language translation is in testing phase. If you find a missing or wrong translation, <%= link_to "please report it", "http://accounts.localeapp.com/projects/6872" %>.
-      </div>
-    <% end %>
-
-
-      <div class="notice">
+      <div class="info js-alert-cookie hide" data-cookie-name="alert-cookies">
+        <%= t('nlt.cookie') %>
+        <a href="#" class="js-alert-close alert-close">x</a> 
+      </div>                                                                                        
+      <div class="notice js-alert-cookie hide" data-cookie-name="alert-updating">
         <%= t('nlt.updating') %>
-      </div>         
+        <a href="#" class="js-alert-close alert-close">x</a> 
+      </div>                                                                                        
+      <div class="hide js-welcome-message"><%= t('nlt.welcome_message') %></div>
 
       <%= yield %>
 
@@ -112,8 +117,6 @@
     <% end %>
 
     </div>
-    <div class="hide js-cookie-message"><%= t('nlt.cookie') %></div>
-    <div class="hide js-welcome-message"><%= t('nlt.welcome_message') %></div>
 
     <script>
 (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

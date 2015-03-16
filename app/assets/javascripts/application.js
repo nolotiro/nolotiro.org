@@ -16,24 +16,32 @@
 //= require moment-with-locales
 // require turbolinks
 //= require_tree .
+//
 
+function rememeberClosedAlerts() {
+  //<div class="info js-alert-cookie hide" data-cookie-name="alert-first-visit">
+  //  <%= t('nlt.first_visit') %>
+  //  <a href="#" class="js-alert-close alert-close">x</a> 
+  //</div>                                                                                        
+  $('.js-alert-cookie').each( function(){
+    var $el = $(this);
+    var cookie = $(this).attr('data-cookie-name');
+    if (! readCookie(cookie) ) { $el.show('slow'); } 
+  });
+
+  $('.js-alert-close').on('click', function(e){
+    e.preventDefault();
+    var $alert = $(this).parent('.js-alert-cookie');
+    var cookie = $alert.attr('data-cookie-name'); 
+    $alert.hide('slow');
+    createCookie(cookie, true, 90); 
+  });
+
+}
 
 $(document).ready(function(){
 
-  // alert cookies (bottom) 
-  // http://www.primebox.co.uk/projects/jquery-cookiebar/ 
-  $.cookieBar({
-    message: $('.js-cookie-message').html(),
-    acceptText: 'OK'
-  });
-  if (! readCookie('alert-first-visit-close') )  { $('.js-alert-first-visit').show('slow'); } 
-
-  // alert first visit
-  $('.js-close-first-visit').on('click', function(e){
-    e.preventDefault();
-    $(this).parent().hide('slow');
-    createCookie('alert-first-visit-close', true, 90); 
-  })
+  rememeberClosedAlerts(); 
 
   // alert welcome message
   if ( $('p.notice').length > 0 ) {
