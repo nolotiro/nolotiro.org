@@ -281,8 +281,8 @@ es:
     new:
       button: Enviar
       errors: '%{errors} prohibieron que se enviase este mensaje:'
-      legend: 
-      submit: 
+      legend: Enviar mensaje
+      submit: Enviar
       title: Nuevo mensaje privado para el usuario %{user}
     notification_mailer:
       subject: '[nolotiro.org] Nueva notificación: %{subject}'
@@ -325,17 +325,19 @@ es:
       lock_user: '[ADMIN] Bloquear a este usuario'
       unlock_user: '[ADMIN] Desbloquear a este usuario'
     ads:
+      created: Hemos creado el anuncio
       form:
         body: 'Cuerpo del anuncio:'
         comments_enabled: Permitir comentarios públicos
         image_permitted_formats: 'Formatos permitidos: gif, jpg, png. Max: 1Mb de tamaño.'
         please_ad_type: por favor, selecciona el tipo de anuncio
-        prohibited: prohibited this ad from being saved
+        prohibited: prohibieron que se guardase este anuncio
         select_an_image: Selecciona una imagen para tu anuncion (opcional).
         status: Estado
         title: 'Título de tu anuncio:'
         to_publish: Para publicar tu anuncio, por favor, introduce estos datos
         type_ad: 'Tipo de anuncio:'
+      new: 
     all: todos
     all_ads: todos los anunciones
     and: y
@@ -381,10 +383,6 @@ es:
     didn_t_receive_confirmation_instructions: ¿No has recibido las instrucciones de confirmación?
     didn_t_receive_unlock_instructions: ¿No has recibido las instrucciones para el desbloqueo?
     edit_this_ad: Edita este anuncio
-    es:
-      ads:
-        form:
-          prohibited: 
     faq:
       answer_1_html: El propósito fundamental de esta web es el de deshacernos de los objetos que ya no utilizamos y nos estorban en casa.
       answer_2_html: 'Primero a ti directamente pudiéndote deshacer de esas cosas que ya no quieres, y siempre al que regalas algo implícitamente. Lo mejor es enfocarlo egoistamente y controlar la relación de causa-efecto que vamos a desencadenar regalando.<br> Si enfocamos dicho acto de regalar objetos desde una perspectiva  egoísta, la de deshacernos de cosas útiles, pero que nos molestan,porque nos estorban, porque van a ir a la basura, porque son objetos desahuciados ... siempre tendremos una buena experiencia, al no esperar nada mas que  librarnos de dichos objetos. <br> Y el saber que alguien le está dando uso o provecho reforzará esa experiencia como positiva. <br> Es decir: el acto de regalar cosas de valor o útiles siempre es algo positivo si no esperamos una recompensa moral o aplacar nuestra conciencia.'
