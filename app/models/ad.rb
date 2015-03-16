@@ -163,11 +163,7 @@ class Ad < ActiveRecord::Base
   end
 
   def meta_title
-    if self.is_give? 
-      "#{I18n.t('nlt.keywords')} #{self.title} #{self.woeid_name}"
-    else
-      "busco #{self.title} #{self.woeid_name}"
-    end
+    "#{I18n.t('nlt.keywords')} #{self.title} #{self.woeid_name}"
   end
 
 end
