@@ -4,7 +4,7 @@
       <%= form_for(@ad, :html => {:multipart => true}) do |f| %>
         <% if @ad.errors.any? %>
         <div id="error_explanation">
-        <h2><%= pluralize(@ad.errors.count, "error") %> <%= t 'nlt.es.ads.form.prohibited' %>:</h2>
+        <h2><%= pluralize(@ad.errors.count, "error") %> <%= t 'nlt.ads.form.prohibited' %>:</h2>
         <ul>
           <% @ad.errors.full_messages.each do |msg| %>
             <li><%= msg %></li>
@@ -67,7 +67,7 @@
           <%= f.check_box :comments_enabled %>
         </span>
 
-        <% unless @ad.id %>
+        <% unless params[:action] == "edit" %>
           <dt id="captcha-input-label">
           <label for="captcha-input" class="required">
             <%= t('nlt.please_introduce') %>

@@ -46,8 +46,8 @@ class AdsController < ApplicationController
     @ad.status = 1
 
     respond_to do |format|
-      if @ad.save and verify_recaptcha(:model => @ad, :message => t('nlt.captcha_error'))
-        format.html { redirect_to @ad, notice: 'Ad was successfully created.' }
+      if verify_recaptcha(:model => @ad, :message => t('nlt.captcha_error')) && @ad.save
+        format.html { redirect_to adslug_path(@ad, slug: @ad.slug), notice: t('nlt.ads.created') }
         format.json { render action: 'show', status: :created, location: @ad }
       else
         format.html { render action: 'new' }
