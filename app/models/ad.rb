@@ -12,6 +12,9 @@ class Ad < ActiveRecord::Base
   validates :woeid_code, presence: true
   validates :ip, presence: true
 
+  validates :title, length: {maximum: 100}
+  validates :body, length: {maximum: 65000}
+
   validates :status,
     inclusion: { in: [1, 2, 3], message: "no es un estado válido" },
     presence: true
@@ -26,7 +29,7 @@ class Ad < ActiveRecord::Base
   # the "type" column is no longer need it by rails, so we don't care about it
   self.inheritance_column = nil 
 
-  default_scope { order('created_at DESC') }
+  default_scope { order('ads.created_at DESC') }
 
   acts_as_paranoid
 
@@ -50,14 +53,30 @@ class Ad < ActiveRecord::Base
   scope :delivered, -> { where(status: 3) }
 
   scope :by_status, lambda {|status|
-    return scoped unless status.present?
+    return all unless status.present?
     where('status = ?', status) 
   }
 
   scope :by_woeid_code, lambda {|woeid_code|
-    return scoped unless woeid_code.present?
+    return all unless woeid_code.present?
     where('woeid_code = ?', woeid_code) 
   }
+
+  def escape_privacy_data text
+    if text
+      text = text.gsub(/([\._a-zA-Z0-9-]+@[\._a-zA-Z0-9-]+)/, ' ') 
+      text = text.gsub(/([9|6])+([0-9\s*]{8,})/, ' ') 
+      text
+    end
+  end
+
+  def body 
+    escape_privacy_data(read_attribute(:body))
+  end
+
+  def title 
+    escape_privacy_data(read_attribute(:title))
+  end
 
   def readed_counter
     readed_count || 0
@@ -89,6 +108,17 @@ class Ad < ActiveRecord::Base
       I18n.t('nlt.want')
     else
       I18n.t('nlt.give')
+    end 
+  end
+
+  def type_class
+    case type
+    when 1
+      "give"
+    when 2
+      "want"
+    else
+      "give"
     end 
   end
 
@@ -133,11 +163,7 @@ class Ad < ActiveRecord::Base
   end
 
   def meta_title
-    if self.is_give? 
-      "#{I18n.t('nlt.keywords')} #{self.title} #{self.woeid_name}"
-    else
-      "busco #{self.title} #{self.woeid_name}"
-    end
+    "#{I18n.t('nlt.keywords')} #{self.title} #{self.woeid_name}"
   end
 
 end

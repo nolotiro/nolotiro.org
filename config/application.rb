@@ -12,5 +12,6 @@ module NolotiroOrg
     config.i18n.default_locale = :es
     config.i18n.enforce_available_locales = true
     I18n.config.enforce_available_locales = true
+    ActionMailer::Base.layout "mail"
   end
 end

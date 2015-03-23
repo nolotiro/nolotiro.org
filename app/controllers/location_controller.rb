@@ -10,9 +10,7 @@ class LocationController < ApplicationController
   # GET /es/location/change2?location=:location
   def list
     # list possible locations 
-
     @location_suggest = get_location_suggest
-
     if params[:location]
       locations = WoeidHelper.search_by_name params[:location]
       if not locations.nil? and locations.count == 1
@@ -25,7 +23,12 @@ class LocationController < ApplicationController
 
   # POST /es/location/change2
   def change
-    set_location params[:location]
+    if params[:location].to_i == 0 
+      locations = WoeidHelper.search_by_name params[:location]
+      set_location locations[0][1]
+    else
+      set_location params[:location]
+    end
   end
 
   private

@@ -11,7 +11,7 @@ class GeoHelperTest < ActionView::TestCase
 
   test "should suggest location with ip address" do
     suggestion = GeoHelper.suggest "87.221.25.121"
-    assert_equal("Aranjuez, Madrid, España", suggestion)
+    assert_equal("Alcorcón, Madrid, España", suggestion)
   end
 
 end

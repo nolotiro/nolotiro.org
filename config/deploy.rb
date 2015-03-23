@@ -14,7 +14,7 @@ set :deploy_via, :remote_cache
 
 set :ssh_options, { :forward_agent => true }
 
-set :linked_files, %w{config/database.yml config/app_config.yml config/newrelic.yml vendor/geolite/GeoLiteCity.dat}
+set :linked_files, %w{config/database.yml config/secrets.yml config/newrelic.yml vendor/geolite/GeoLiteCity.dat}
 set :linked_dirs, %w{bin db/sphinx log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system public/legacy}
 
 set :keep_releases, 5
@@ -38,23 +38,16 @@ namespace :deploy do
       within release_path do
         with rails_env:
           fetch(:rails_env) do execute :rake, 'db:migrate'
-          end
+        end
       end
     end
   end
 
-  desc 'Restart application'
-  task :restart do
-    on roles(:app), in: :sequence, wait: 5 do
-      sudo "/etc/init.d/unicorn_beta.nolotiro.org.sh restart"
-    end
-  end
-
-  after :restart, :clear_cache do
+  before :restart, :clear_cache do
     on roles(:web), in: :groups, limit: 3, wait: 10 do
-#      within release_path do
-#        execute :rake, 'cache:clear'
-#      end
+      within release_path do
+        execute :rake, 'nolotiro:cache:clear'
+      end
     end
   end
 

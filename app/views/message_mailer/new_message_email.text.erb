@@ -1,0 +1,10 @@
+<%= I18n.t("mailboxer.message_mailer.you_have_new_message") %>: <%= @subject %>
+===============================================
+
+<%= I18n.t("mailboxer.message_mailer.you_have_recieved_new_message") %>
+
+-----------------------------------------------
+<%= @message.body.html_safe? ? @message.body : strip_tags(@message.body) %>
+-----------------------------------------------
+
+<%= I18n.t("mailboxer.message_mailer.visit_text", url: root_url) %>

@@ -1,30 +1,28 @@
 class AdsController < ApplicationController
   before_action :set_ad, only: [:show, :edit, :update, :destroy]
-  load_and_authorize_resource
   caches_action :list, :show, layout: false, unless: :current_user
   caches_action :index, :cache_path => Proc.new { |c| c.params }, unless: :current_user
+  load_and_authorize_resource
 
   # GET /
   def index
     if user_signed_in? 
-      if current_user.woeid?
-        redirect_to ads_woeid_path(id: current_user.woeid, type: 'give')
-      else
-        redirect_to location_ask_path
-      end
+      url = current_user.woeid? ? ads_woeid_path(id: current_user.woeid, type: 'give') : location_ask_path
+      redirect_to url
     else
       list
     end
   end
 
   def list
-    @ads = Ad.available.includes(:user).paginate(:page => params[:page])
+    @ads = Ad.give.available.includes(:user).paginate(:page => params[:page])
     @location = get_location_suggest
   end
 
   # GET /ads/1
   # GET /ads/1.json
   def show
+    redirect_to ads_path unless @ad.user
   end
 
   # GET /ads/new
@@ -48,8 +46,8 @@ class AdsController < ApplicationController
     @ad.status = 1
 
     respond_to do |format|
-      if @ad.save and verify_recaptcha(:model => @ad, :message => t('nlt.captcha_error'))
-        format.html { redirect_to @ad, notice: 'Ad was successfully created.' }
+      if verify_recaptcha(:model => @ad, :message => t('nlt.captcha_error')) && @ad.save
+        format.html { redirect_to adslug_path(@ad, slug: @ad.slug), notice: t('nlt.ads.created') }
         format.json { render action: 'show', status: :created, location: @ad }
       else
         format.html { render action: 'new' }

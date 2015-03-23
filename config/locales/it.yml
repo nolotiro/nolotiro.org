@@ -1,4 +1,85 @@
 it:
+  activemodel:
+    errors:
+      format: '%{attribute} %{message}'
+      messages:
+        accepted: deve essere accettata
+        blank: non può essere lasciato in bianco
+        confirmation: non coincide con la conferma
+        empty: non può essere vuoto
+        equal_to: deve essere uguale a %{count}
+        even: deve essere pari
+        exclusion: è riservato
+        greater_than: deve essere superiore a %{count}
+        greater_than_or_equal_to: deve essere superiore o uguale a %{count}
+        inclusion: non è incluso nella lista
+        invalid: non è valido
+        less_than: deve essere meno di %{count}
+        less_than_or_equal_to: deve essere meno o uguale a %{count}
+        not_a_number: non è un numero
+        not_an_integer: non è un intero
+        odd: deve essere dispari
+        record_invalid: 'Validazione fallita: %{errors}'
+        restrict_dependent_destroy: 
+        taken: è già in uso
+        too_long:
+          one: è troppo lungo (il massimo è 1 carattere)
+          other: è troppo lungo (il massimo è %{count} caratteri)
+        too_short:
+          one: è troppo corto (il minimo è 1 carattere)
+          other: è troppo corto (il minimo è %{count} caratteri)
+        wrong_length:
+          one: è della lunghezza sbagliata (deve essere di 1 carattere)
+          other: è della lunghezza sbagliata (deve essere di %{count} caratteri)
+      template:
+        body: 'Per favore ricontrolla i seguenti campi:'
+        header:
+          one: 'Non posso salvare questo %{model}: 1 errore'
+          other: 'Non posso salvare questo %{model}: %{count} errori.'
+  activerecord:
+    attributes:
+      message:
+        subject: 
+      user:
+        Contraseña: 
+        Recuérdame: 
+        Tu email: 
+    errors:
+      format: '%{attribute} %{message}'
+      messages:
+        accepted: deve essere accettata
+        blank: non può essere lasciato in bianco
+        confirmation: non coincide con la conferma
+        empty: non può essere vuoto
+        equal_to: deve essere uguale a %{count}
+        even: deve essere pari
+        exclusion: è riservato
+        greater_than: deve essere superiore a %{count}
+        greater_than_or_equal_to: deve essere superiore o uguale a %{count}
+        inclusion: non è incluso nella lista
+        invalid: non è valido
+        less_than: deve essere meno di %{count}
+        less_than_or_equal_to: deve essere meno o uguale a %{count}
+        not_a_number: non è un numero
+        not_an_integer: non è un intero
+        odd: deve essere dispari
+        record_invalid: 'Validazione fallita: %{errors}'
+        restrict_dependent_destroy: 
+        taken: è già in uso
+        too_long:
+          one: è troppo lungo (il massimo è 1 carattere)
+          other: è troppo lungo (il massimo è %{count} caratteri)
+        too_short:
+          one: è troppo corto (il minimo è 1 carattere)
+          other: è troppo corto (il minimo è %{count} caratteri)
+        wrong_length:
+          one: è della lunghezza sbagliata (deve essere di 1 carattere)
+          other: è della lunghezza sbagliata (deve essere di %{count} caratteri)
+      template:
+        body: 'Per favore ricontrolla i seguenti campi:'
+        header:
+          one: 'Non posso salvare questo %{model}: 1 errore'
+          other: 'Non posso salvare questo %{model}: %{count} errori.'
   date:
     abbr_day_names:
     - dom
@@ -9,7 +90,7 @@ it:
     - ven
     - sab
     abbr_month_names:
-    -
+    - 
     - gen
     - feb
     - mar
@@ -31,11 +112,11 @@ it:
     - venerdì
     - sabato
     formats:
-      default: ! '%d/%m/%Y'
-      long: ! '%d %B %Y'
-      short: ! '%d %b'
+      default: '%d/%m/%Y'
+      long: '%d %B %Y'
+      short: '%d %b'
     month_names:
-    -
+    - 
     - gennaio
     - febbraio
     - marzo
@@ -78,16 +159,16 @@ it:
         other: oltre %{count} anni
       x_days:
         one: 1 giorno
-        other: ! '%{count} giorni'
+        other: '%{count} giorni'
       x_minutes:
         one: 1 minuto
-        other: ! '%{count} minuti'
+        other: '%{count} minuti'
       x_months:
         one: 1 mese
-        other: ! '%{count} mesi'
+        other: '%{count} mesi'
       x_seconds:
         one: 1 secondo
-        other: ! '%{count} secondi'
+        other: '%{count} secondi'
     prompts:
       day: Giorno
       hour: Ora
@@ -95,16 +176,67 @@ it:
       month: Mese
       second: Secondi
       year: Anno
-  errors: &errors
-    format: ! '%{attribute} %{message}'
+  devise:
+    confirmations:
+      confirmed: Il tuo account è stato correttamente confermato. Ora sei collegato.
+      send_instructions: Riceverai un messaggio email con le istruzioni per confermare il tuo account entro qualche minuto.
+      send_paranoid_instructions: Se la tua e-mail esiste nel nostro database, riceverai un messaggio email con le istruzioni per confermare il tuo account entro qualche minuto.
+    failure:
+      already_authenticated: Hai già effettuato l'accesso.
+      inactive: Il tuo account non è stato ancora attivato.
+      invalid: Indirizzo email o password non validi.
+      last_attempt: 
+      locked: Il tuo account è bloccato.
+      not_found_in_database: Email o password non validi.
+      timeout: Sessione scaduta, accedere nuovamente per continuare.
+      unauthenticated: Devi accedere o registrarti per continuare.
+      unconfirmed: Devi confermare il tuo account per continuare.
+    mailer:
+      confirmation_instructions:
+        subject: Istruzioni per la conferma
+      reset_password_instructions:
+        subject: Istruzioni per reimpostare la password
+      unlock_instructions:
+        subject: Istruzioni per sbloccare l'account
+    omniauth_callbacks:
+      failure: Non è stato possibile autorizzarti da %{kind} perchè "%{reason}".
+      success: Autorizzato con successo dall'account %{kind}.
+    passwords:
+      no_token: Puoi accedere a questa pagina solamente dalla email di reset della password. Se vieni dalla email controlla di aver inserito l'url completo riportato nella email.
+      send_instructions: Riceverai un messaggio email con le istruzioni per reimpostare la tua password entro qualche minuto.
+      send_paranoid_instructions: Se la tua e-mail esiste nel nostro database, riceverai un messaggio email contentente un link per il ripristino della password
+      updated: La tua password è stata cambiata. Ora sei collegato.
+      updated_not_active: La tua password è stata cambiata.
+    registrations:
+      destroyed: Arrivederci! L'account è stato cancellato. Speriamo di rivederci presto.
+      signed_up: Iscrizione eseguita correttamente. Se abilitata, una conferma è stata inviata al tuo indirizzo email.
+      signed_up_but_inactive: Iscrizione eseguita correttamente. Però non puoi accedere in quanto il tuo account non è ancora attivo.
+      signed_up_but_locked: Iscrizione eseguita correttamente. Però non puoi accedere in quanto il tuo account è bloccato.
+      signed_up_but_unconfirmed: Ti è stato inviato un messaggio con un link di conferma. Ti invitiamo a visitare il link per attivare il tuo account.
+      update_needs_confirmation: Il tuo account è stato aggiornato, ma dobbiamo verificare la tua email. Ti invitiamo a consultare la tua email e cliccare sul link di conferma.
+      updated: Il tuo account è stato aggiornato.
+    sessions:
+      signed_in: Accesso effettuato con successo.
+      signed_out: Sei uscito correttamente.
+      user:
+        signed_in: 
+    unlocks:
+      send_instructions: Riceverai un messaggio email con le istruzioni per sbloccare il tuo account entro qualche minuto.
+      send_paranoid_instructions: Se la tua e-mail esiste nel nostro database, riceverai un messaggio email con le istruzioni per sbloccare il tuo account entro qualche minuto.
+      unlocked: Il tuo account è stato correttamente sbloccato. Ora sei collegato.
+  errors:
+    format: '%{attribute} %{message}'
     messages:
       accepted: deve essere accettata
+      already_confirmed: è stato già confermato
       blank: non può essere lasciato in bianco
       confirmation: non coincide con la conferma
+      confirmation_period_expired: deve essere confermato entro %{period}, richiedi una nuova conferma
       empty: non può essere vuoto
       equal_to: deve essere uguale a %{count}
       even: deve essere pari
       exclusion: è riservato
+      expired: è scaduto, si prega di richiederne uno nuovo
       greater_than: deve essere superiore a %{count}
       greater_than_or_equal_to: deve essere superiore o uguale a %{count}
       inclusion: non è incluso nella lista
@@ -113,8 +245,14 @@ it:
       less_than_or_equal_to: deve essere meno o uguale a %{count}
       not_a_number: non è un numero
       not_an_integer: non è un intero
+      not_found: non trovato
+      not_locked: non era bloccato
+      not_saved:
+        one: 'Non posso salvare questo %{resource}: 1 errore'
+        other: 'Non posso salvare questo %{resource}: %{count} errori.'
       odd: deve essere dispari
-      record_invalid: ! 'Validazione fallita: %{errors}'
+      record_invalid: 'Validazione fallita: %{errors}'
+      restrict_dependent_destroy: 
       taken: è già in uso
       too_long:
         one: è troppo lungo (il massimo è 1 carattere)
@@ -126,50 +264,285 @@ it:
         one: è della lunghezza sbagliata (deve essere di 1 carattere)
         other: è della lunghezza sbagliata (deve essere di %{count} caratteri)
     template:
-      body: ! 'Per favore ricontrolla i seguenti campi:'
+      body: 'Per favore ricontrolla i seguenti campi:'
       header:
-        one: ! 'Non posso salvare questo %{model}: 1 errore'
-        other: ! 'Non posso salvare questo %{model}: %{count} errori.'
+        one: 'Non posso salvare questo %{model}: 1 errore'
+        other: 'Non posso salvare questo %{model}: %{count} errori.'
+  hello: 
   helpers:
+    label:
+      message:
+        subject: 
+      user:
+        Contraseña: 
+        Recuérdame: 
+        Tu email: 
     select:
       prompt: Per favore, seleziona
     submit:
       create: Crea %{model}
       submit: Invia %{model}
       update: Aggiorna %{model}
+  mailboxer:
+    buttons:
+      back: 
+      trash: 
+      trash_selected: 
+      untrash: 
+    message_mailer:
+      subject_new: 
+      subject_reply: 
+      visit_html: 
+      visit_text: 
+      you_have_new_message: 
+      you_have_recieved_new_message: 
+    new:
+      button: 
+      errors: 
+      legend: 
+      submit: 
+      title: 
+    notification_mailer:
+      subject: 
+      visit_html: 
+      visit_text: 
+      you_have_new_reply: 
+      you_have_recieved_new_reply: 
+    notifications:
+      move: 
+      sent: 
+      trash: 
+      untrash: 
+    search: 
+    table:
+      date: 
+      delete: 
+      last: 
+      reciever: 
+      sender: 
+      subject: 
+    title: 
+    titles:
+      conversation: 
+      index: 
+  mailer:
+    confirmation_reminder:
+      p1: 
+      p2: 
+    greetings: 
+    hello: 
+    signature: 
+  nlt:
+    about: 
+    about_page:
+      description_html: 
+      title: 
+    access_here: 
+    admin:
+      become_user: 
+      lock_user: 
+      unlock_user: 
+    ads:
+      form:
+        body: 
+        comments_enabled: 
+        image_permitted_formats: 
+        please_ad_type: 
+        prohibited: 
+        select_an_image: 
+        status: 
+        title: 
+        to_publish: 
+        type_ad: 
+      new: 
+    all: 
+    all_ads: 
+    and: 
+    are_you_interested: 
+    available: 
+    back: 
+    blog: 
+    booked: 
+    by_user: 
+    captcha_error: 
+    change_city: 
+    change_town:
+      choose: 
+      choose_html: 
+      close_to: 
+      please: 
+      submit: 
+      town: 
+    change_your_city: 
+    choose_username: 
+    choose_your_pass: 
+    choose_your_pass_again: 
+    cities_in_the_world: 
+    click_to_large: 
+    comments:
+      do_click: 
+      flash_ko: 
+      flash_ok: 
+      label: 
+      subject: 
+      submit: 
+      title: 
+    contact: 
+    contact_form: 
+    contact_legend: 
+    contact_thanks: 
+    cookie: 
+    create_new_ad: 
+    delete_ad: 
+    delete_sure: 
+    delivered: 
+    developers: 
+    didn_t_receive_confirmation_instructions: 
+    didn_t_receive_unlock_instructions: 
+    edit_this_ad: 
+    es:
+      ads:
+        form:
+          prohibited: 
+    faq:
+      answer_1_html: 
+      answer_2_html: 
+      answer_3_html: 
+      answer_4_html: 
+      answer_5_html: 
+      answer_6_html: 
+      answer_7_html: 
+      question_1: 
+      question_2: 
+      question_3: 
+      question_4: 
+      question_5: 
+      question_6: 
+      question_7: 
+      title: 
+    faqs: 
+    fill_captcha: 
+    first_visit: 
+    footer_explain: 
+    forgot_your_password: 
+    friends: 
+    gift_on: 
+    give: 
+    help_translate: 
+    home_title: 
+    if_you_are_new: 
+    if_youre_already_an_user: 
+    keywords: 
+    last_published_gifts: 
+    login: 
+    login_to_comment: 
+    logout: 
+    mail:
+      automatic: 
+    member_since: 
+    messages: 
+    messages_tabs:
+      inbox: 
+      sent: 
+      trash: 
+    messages_title: 
+    meta_description: 
+    meta_description_ad: 
+    new_user: 
+    no_results:
+      explain_html: 
+      phrase: 
+      publish_ad: 
+      subtitle: 
+      title: 
+      try: 
+    or: 
+    password: 
+    permission_denied: 
+    please_fill_to_become_member: 
+    please_introduce: 
+    privacy: 
+    privacy_page:
+      body_html: 
+      title: 
+    profile: 
+    publish_ad: 
+    publish_ad_on: 
+    published_ads: 
+    published_at_by_html: 
+    published_on: 
+    published_on_html: 
+    reads: 
+    register: 
+    register_here: 
+    remember_me: 
+    rss_suscribe: 
+    search:
+      button: 
+      must_search: 
+      no_ads_message_html: 
+    searching_on_html: 
+    send: 
+    send_a_message: 
+    send_a_message_to: 
+    sending_this_form: 
+    share_this_ad: 
+    sign_in: 
+    sign_in_with_provider: 
+    sign_up: 
+    slogan: 
+    suggestions: 
+    to_publish_or_send_messages: 
+    tos: 
+    translate:
+      description_html: 
+      title: 
+    updating: 
+    user_ads: 
+    user_edit_profile: 
+    user_profile: 
+    username: 
+    users_most_active: 
+    view_ads_on: 
+    view_ads_on_your_city: 
+    want: 
+    welcome: 
+    welcome_message: 
+    write_a_comment: 
+    your_email: 
   number:
     currency:
       format:
         delimiter: .
-        format: ! '%n %u'
+        format: '%n %u'
         precision: 2
-        separator: ! ','
+        separator: ','
         significant: false
         strip_insignificant_zeros: false
         unit: €
     format:
       delimiter: .
       precision: 2
-      separator: ! ','
+      separator: ','
       significant: false
       strip_insignificant_zeros: false
     human:
       decimal_units:
-        format: ! '%n %u'
+        format: '%n %u'
         units:
           billion: Miliardi
           million: Milioni
           quadrillion: Biliardi
           thousand: Mila
           trillion: Bilioni
-          unit: ''
+          unit: 
       format:
-        delimiter: ''
+        delimiter: 
         precision: 1
         significant: true
         strip_insignificant_zeros: true
       storage_units:
-        format: ! '%n %u'
+        format: '%n %u'
         units:
           byte:
             one: Byte
@@ -180,26 +553,40 @@ it:
           tb: TB
     percentage:
       format:
-        delimiter: ''
+        delimiter: 
     precision:
       format:
-        delimiter: ''
+        delimiter: 
+  please_insert_email_and_password: 
+  recaptcha:
+    errors:
+      incorrect-captcha-sol: 
+      verification_failed: 
   support:
     array:
-      last_word_connector: ! ' e '
-      two_words_connector: ! ' e '
-      words_connector: ! ', '
+      last_word_connector: ' e '
+      two_words_connector: ' e '
+      words_connector: ', '
   time:
     am: am
     formats:
-      default: ! '%a %d %b %Y, %H:%M:%S %z'
-      long: ! '%d %B %Y %H:%M'
-      short: ! '%d %b %H:%M'
+      default: '%a %d %b %Y, %H:%M:%S %z'
+      long: '%d %B %Y %H:%M'
+      short: '%d %b %H:%M'
     pm: pm
-  # remove these aliases after 'activemodel' and 'activerecord' namespaces are removed from Rails repository
-  activemodel:
-    errors:
-      <<: *errors
-  activerecord:
-    errors:
-      <<: *errors
+  unauthorized:
+    default: 
+    i18n:
+      transliterate:
+        rule: 
+    manage:
+      all: 
+  will_paginate:
+    next_label: successivo →
+    page_entries_info:
+      multi_page: 
+      multi_page_html: 
+      single_page: 
+      single_page_html: 
+    page_gap: '&hellip;'
+    previous_label: ← precedente

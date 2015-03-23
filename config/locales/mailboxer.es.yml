@@ -1,7 +1,0 @@
-es:
-  mailboxer:
-    message_mailer:
-      subject_new: "[nolotiro.org] Nuevo mensaje: %{subject}"
-      subject_reply: "[nolotiro.org] Nueva respuesta: %{subject}"
-    notification_mailer:
-      subject: "[nolotiro.org] Nueva notificación: %{subject}"

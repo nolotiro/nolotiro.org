@@ -1,13 +1,13 @@
-<%= content_for(:meta_title, 'Elige tu ubicación') %>
+<%= content_for(:meta_title, t('nlt.change_town.choose')) %>
 
 <div id="default_header_section">
-  <h1>Elige tu ubicación</h1>
+  <h1><%= t('nlt.change_town.choose') %></h1>
 </div>
 
 <div id="main">
   <div class="span-16">
     <% if @location_asked.nil? %>
-      <p class="error">No se han encontrado ubicaciones con el nombre <b><%= params[:location] %></b>. Vuelve a intentarlo</p>
+      <p class="error"><%= t('nlt.change_town.choose_html', location: params[:location]) %></p>
       <%= render :partial =>"ask_form", :locals => {location_suggest: @location_suggest} %>
     <% else %>
       <%= form_tag({action: "change"}) do %>
@@ -19,7 +19,7 @@
             </dd>
             <dt id="submit-label">&nbsp;</dt>
             <dd id="submit-element">
-            <%= submit_tag("Elige tu ubicación") %>
+            <%= submit_tag(t('nlt.change_town.choose')) %>
             </dd>
           </dl>
         </fieldset>

@@ -6,9 +6,9 @@
 
 <div id="main">
   <div class="span-19">
-    <%= render :partial => "users/tabnav", :locals => {:user => current_user, :active => "message"} %>
+    <%= render partial: "users/tabnav", locals: {user: current_user, active: "message"} %>
     <% @last_threads.each do |thread| %>
-      <%= render :partial => "thread", :locals => {:thread => thread} %>
+      <%= render partial: "thread", locals: {thread: thread} %>
     <% end %>
   </div>
   <div class="google_ads">

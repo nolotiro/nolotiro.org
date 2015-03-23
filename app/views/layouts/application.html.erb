@@ -1,20 +1,20 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%=h yield(:meta_title) %> - nolotiro.org</title>
+    <title><%= yield(:meta_title) %> - nolotiro.org</title>
     <%= favicon_link_tag 'favicon.ico' %>
-    <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+    <%= stylesheet_link_tag    "application", media: "all" %>
 
     <script src="//www.google.com/jsapi"></script>
     <%= airbrake_javascript_notifier %>
-    <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+    <%= javascript_include_tag "application" %>
 
     <%= csrf_meta_tags %>
 
     <% if content_for?(:meta_description) %>
       <%= yield(:meta_description) %>
     <% else%>
-      <meta name="description" content="nolotiro.org es un sitio web donde regalo y busco regalos gratis de segunda mano : muebles, sillas, sofás, bicicletas, ordenadores portátiles, mesas, cocinas, lámparas, camas, ropa, juguetes, cunas o carros para bebes, teléfonos móviles y otras muchas cosas que ya no quieres y ya no necesitas para que las reutilicen otra gente a la que puede servirle o darle nueva vida." />
+      <meta name="description" content="<%= t('nlt.meta_description') %>" />
     <% end %>
 
     <% if content_for?(:meta_extra) %>
@@ -82,6 +82,12 @@
 
       </div>
 
+      <% unless I18n.locale == :es %>
+        <div id="advice_langtest" class="advice">
+          This language translation is in testing phase. If you find a missing or wrong translation, <%= link_to "please report it", "http://accounts.localeapp.com/projects/6872" %>.
+        </div>
+      <% end %>
+
       <% flash.each do |name, msg| %>
         <% if msg.is_a?(String) %>
           <p class="<%= name %>">
@@ -90,20 +96,19 @@
         <% end %>
       <% end %>
       
-      <div class="info js-alert-first-visit hide">
-        nolotiro.org es una comunidad donde podemos deshacernos de los objetos que ya no utilizamos y nos estorban en casa.   
-        <a href="#" class="js-close-first-visit alert-close">x</a> 
+      <div class="info js-alert-cookie hide" data-cookie-name="alert-first-visit">
+        <%= t('nlt.first_visit') %>
+        <a href="#" class="js-alert-close alert-close">x</a> 
       </div>                                                                                        
-      <% unless I18n.locale == :es %>
-        <div id="advice_langtest" class="advice">
-          This language translation is in testing phase. If you find a missing or wrong translation, <%= link_to "please report it", "http://accounts.localeapp.com/projects/6872" %>.
-      </div>
-    <% end %>
-
-
-      <div class="notice">
-        Estamos actualizando todo el sitio, por lo que en las próximas horas habrá retrasos con los mensajes entre los usuarios, las imágenes de un anuncio y la cantidad de anuncios de los usuarios. No te preocupes que "estamos trabajando en ellou".
-      </div>         
+      <div class="info js-alert-cookie hide" data-cookie-name="alert-cookies">
+        <%= t('nlt.cookie') %>
+        <a href="#" class="js-alert-close alert-close">x</a> 
+      </div>                                                                                        
+      <div class="notice js-alert-cookie hide" data-cookie-name="alert-updating">
+        <%= t('nlt.updating') %>
+        <a href="#" class="js-alert-close alert-close">x</a> 
+      </div>                                                                                        
+      <div class="hide js-welcome-message"><%= t('nlt.welcome_message') %></div>
 
       <%= yield %>
 

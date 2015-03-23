@@ -48,6 +48,27 @@ class AdTest < ActiveSupport::TestCase
     assert @ad.errors[:status].include?("no es un estado válido")
   end
 
+  test "ad validates lenght" do
+    @ad.title = "a" * 200
+    assert_not @ad.save
+    assert @ad.errors[:title].include?("es demasiado largo (100 caracteres máximo)")
+  end
+
+  test "ad escape_privacy_data" do 
+    text = "si hay interés, por favor, contactar por email example@example.com, por sms 999999999, o whatsapp al 666666666"
+    expected_text = "si hay interés, por favor, contactar por email  , por sms  , o whatsapp al  "
+    assert_equal(@ad.escape_privacy_data(text), expected_text)
+  end
+
+  test "ad escaped title and body with escape_privacy_data" do 
+    text = "contactar por email example@example.com, por sms 999999999, o whatsapp al 666666666"
+    expected_text = "contactar por email  , por sms  , o whatsapp al  "
+    @ad.update_attribute(:body, text)
+    @ad.update_attribute(:title, text)
+    assert_equal(@ad.body, expected_text)
+    assert_equal(@ad.title, expected_text)
+  end
+
   test "ad check slug" do
     assert_equal @ad.slug, "ordenador-en-vallecas"
   end
@@ -67,6 +88,13 @@ class AdTest < ActiveSupport::TestCase
     @ad.status = 3
     @ad.save
     assert_equal @ad.status_string, "entregado"
+  end
+
+  test "ad check type_class" do
+    assert_equal @ad.type_class, "give"
+    @ad.type = 2
+    @ad.save
+    assert_equal @ad.type_class, "want"
   end
 
   test "ad check status_class" do
@@ -94,7 +122,8 @@ class AdTest < ActiveSupport::TestCase
     assert_equal @ad.meta_title, "regalo segunda mano gratis  ordenador en Vallecas Madrid, Madrid, España"
     @ad.type = 2
     @ad.save
-    assert_equal @ad.meta_title, "busco ordenador en Vallecas Madrid, Madrid, España"
+    assert_equal @ad.meta_title, "regalo segunda mano gratis  ordenador en Vallecas Madrid, Madrid, España"
+    #assert_equal @ad.meta_title, "busco ordenador en Vallecas Madrid, Madrid, España"
   end
 
 #  Disabling IP validation. Some legacy IP are bad (8.8.8.1, 24.2.2.2) 

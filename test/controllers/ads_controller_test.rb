@@ -32,8 +32,7 @@ class AdsControllerTest < ActionController::TestCase
   end
 
   test "should not create ad if not signed in" do
-    ad_new = FactoryGirl.build(:ad)
-    post :create, ad: ad_new
+    post :create, ad: { body: "Es una Ferrari de esas rojas, muy linda.", ip: '8.8.8.8', title: 'Regalo Ferrari', type: 1, woeid_code: '788273' }
     assert_redirected_to new_user_session_url
   end
 
@@ -44,7 +43,7 @@ class AdsControllerTest < ActionController::TestCase
       post :create, ad: { body: "Es una Ferrari de esas rojas, muy linda.", ip: '8.8.8.8', title: 'Regalo Ferrari', type: 1, woeid_code: '788273' }
     end
 
-    assert_redirected_to ad_path(assigns(:ad))
+    assert_redirected_to adslug_path(assigns(:ad), slug: "regalo-ferrari")
   end
 
   test "should show ad" do

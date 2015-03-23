@@ -1,14 +1,14 @@
-<% content_for(:meta_title,  "#{@ad.meta_title}") %>
+<% content_for(:meta_title,  @ad.meta_title) %>
 <% content_for :meta_description do %>
-  <meta name="description" content="regalo segunda mano <%= @ad.title %> en <%= @ad.woeid_name %>. <%= @ad.body %>" />
+  <meta name="description" content="<%= t('nlt.meta_description_ad', title: @ad.title, woeid: @ad.woeid_name, body: @ad.body) %>" />
 <% end %>
 
 <div id="default_header_section">
   <h2>
-    <a href="/es/woeid/<%= @ad.woeid_code %>/give">
+    <%= link_to ads_woeid_path(id: @ad.woeid_code, type: @ad.type_class) do %>
       <%= @ad.woeid_name %> &gt;
       <%= @ad.type_string %>
-    </a>
+    <% end %>
   </h2>
   <h1><%= @ad.title %></h1>
 </div>
@@ -18,7 +18,7 @@
     <div class="ad_excerpt_show">
       <% if @ad.image.exists? %>
         <div class="ad_list_image">
-          <%= link_to image_tag(@ad.image.url(:thumb), :alt => @ad.title), @ad.image.url, :rel => 'superbox[image]', :alt => "Click para agrandar foto" %>
+          <%= link_to image_tag(@ad.image.url(:thumb), :alt => @ad.title), @ad.image.url, :rel => 'superbox[image]', :alt => t('nlt.click_to_large') %>
         </div>
       <% end %>
       <% if can? :update, @ad %>
@@ -44,7 +44,7 @@
       <%= t('nlt.are_you_interested') %>
       <%= link_to message_new_with_subject_path(user_id: @ad.user.id, subject: @ad.title.parameterize), :class => "world_link" do %>
         <%= t('nlt.send_a_message') %>
-        <%= image_tag "email_send.png", :alt => "send a mesage" %>
+        <%= image_tag "email_send.png", :alt => t('nlt.send_a_message') %>
       <% end %>
 
       <br><br>
@@ -63,6 +63,6 @@
 
 <% content_for :action do %>
   <div class="ad_create_tab">
-    <a href="/es/ad/create">+ Publicar anuncio</a>
+    <%= link_to "+ #{ t('nlt.publish_ad') }", new_ad_path %>
   </div>
 <% end %>

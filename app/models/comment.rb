@@ -7,4 +7,6 @@ class Comment < ActiveRecord::Base
   validates :user_owner, presence: true
   validates :ip, presence: true
 
+  validates :body, length: {maximum: 4096}
+
 end

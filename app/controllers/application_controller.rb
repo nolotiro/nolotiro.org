@@ -8,14 +8,6 @@ class ApplicationController < ActionController::Base
   before_action :set_locale
   before_filter :configure_permitted_parameters, if: :devise_controller?
 
-  # bug cancan rails 4 ForbbidenAttributesError
-  # https://github.com/ryanb/cancan/issues/835
-  before_filter do
-    resource = controller_name.singularize.to_sym
-    method = "#{resource}_params"
-    params[resource] &&= send(method) if respond_to?(method, true)
-  end
-
   rescue_from CanCan::AccessDenied do |exception|
     if user_signed_in? 
       redirect_to root_url, :alert => t('nlt.permission_denied')
@@ -36,7 +28,7 @@ class ApplicationController < ActionController::Base
   end
    
   def set_locale
-      I18n.locale = params[:locale] || I18n.default_locale
+    I18n.locale = params[:locale] || I18n.default_locale
   end
 
   def default_url_options(options={})
@@ -57,6 +49,5 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:username, :email, :password, :password_confirmation, :remember_me) }
     devise_parameter_sanitizer.for(:sign_in) { |u| u.permit(:username, :email, :password, :remember_me) }
   end
-
 
 end

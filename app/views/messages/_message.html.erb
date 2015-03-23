@@ -12,7 +12,7 @@
       <div class="bubble bg-bubble-me">
         <%= message.body %>
         <div class="message-date"> hace
-          <%= time_ago_in_words message.created_at %>
+          <abbr class="js-moment" title="<%= message.created_at %>"><%= message.created_at %></abbr>
         </div>
       </div>
     </div>
@@ -31,7 +31,7 @@
       <div class="bubble">
         <%= message.body %>
         <div class="message-date"> hace
-          <%= time_ago_in_words message.created_at %>
+          <abbr class="js-moment" title="<%= message.created_at %>"><%= message.created_at %></abbr>
         </div>
       </div>
     </div>

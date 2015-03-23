@@ -1,18 +1,16 @@
-- content_for :meta_title, "Conversación con #{@conversation.recipients.first.username} asunto #{@conversation.subject}"
-
-#actions
-  - if @conversation.is_trashed?(current_user)
-    = link_to "Untrash", untrash_message_path(@conversation), class: :button, method: :post
-  - else
-    = link_to "Trash", trash_message_path(@conversation), class: :button, method: :delete
+- title = t("mailboxer.titles.conversation", recipient: @conversation.recipients.first.username, subject: @conversation.subject) 
+- content_for :meta_title, title 
 
 #default_header_section
   %h5 
-    = link_to "< volver a mensajes", messages_path
+    = link_to t("mailboxer.buttons.back"), messages_path
   %h1
-    = "Conversación con #{@conversation.recipients.first.username} asunto #{@conversation.subject}"
-  - unless @conversation.thread_id.zero?
-    = link_to "Ver conversación antigua", legacy_message_show_path(@conversation.thread_id, @conversation.subject)
+    = title
+  =# link_to "Ver conversación antigua", legacy_message_show_path(@conversation.thread_id, @conversation.subject)
+  - if @conversation.is_trashed?(current_user)
+    = link_to t("mailboxer.buttons.untrash"), untrash_message_path(@conversation), class: :button, method: :post
+  - else
+    = link_to t("mailboxer.buttons.trash"), trash_message_path(@conversation), class: :button, method: :delete
 
 #main
   .span-15

@@ -3,7 +3,7 @@
 <div id="main">
   <div class="section_ads">
     <h2><%= t('nlt.last_published_gifts') %></h2>
-    <% cache ['ads-list', *@ads] do %>
+    <% cache cache_key_for('ads_list_' + @ads.pluck(:id).to_s, current_user) do %>
       <% @ads.each_with_index do |ad,i| %>
         <%= render :partial => "ad", :locals => { :ad => ad, :i => i } %>
       <% end %>
@@ -24,14 +24,16 @@
   <div class="home_location_change">
     <div class="ad_create_tab ad_create_tab_home">
       <% if @location_suggest.nil? %>
-        <%= link_to "Ver anuncios en tu ciudad o pueblo", location_ask_path %>
+        <%= link_to t('nlt.view_ads_on_your_city'), location_ask_path %>
       <% else %>
-        <%= link_to "Ver anuncios en #{@location_suggest}", location_change_path(location: @location_suggest) %>
-        <a href="/es/location/change2/?location=<%= @location_suggest %>"> Ver anuncios en <%= @location_suggest %></a>
+        <%= link_to t('nlt.view_ads_on', location_suggest: @location_suggest), location_change_path(location: @location_suggest) %>
+        <%= link_to location_change_path(location: location_suggest) do %>
+          <%= t('nlt.view_ads_on', location_suggest: @location_suggest) %></a>
+        <% end %>
       <% end %>
     </div>
     <p class="ad_change_location_home">
-      <%= link_to "cambiar ciudad", location_ask_path %>
+      <%= link_to t('nlt.change_city'), location_ask_path %>
     </p>
   </div>
 <% end %>

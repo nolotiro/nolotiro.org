@@ -1,18 +1,22 @@
-<div class="google_ads">    
-  <% if Rails.env.development? %>
-    <img src="http://placehold.it/<%= ad_width %>x<%= ad_height %>">
-  <% else %>
-    <div id="adsense-<%= id %>"></div>    
-    <script>    
-    window.MyAdSense.newAd(document.getElementById("adsense-<%= id %>"), {          
-      'ad_slot': "<%= ad_slot %>",    
-      'ad_width': <%= ad_width %>,    
-      'ad_height': <%= ad_height %>    
-    });    
-    </script>    
-  <% end %>
-
-  <% if ad_height == 600%>
-    <%= link_to(image_tag("ad_puntoabierto.gif", style: "width:140px; margin-top: 20px; display: block; margin-left: auto; margin-right: auto;", title: "Punto Abierto - Comunicación, Social Media y Web"), "http://puntoabierto.net/") %>
-<% end %>
-</div>    
+<div class="google_ads">
+  <%# if Rails.env.development? %>
+    <!--<img src="http://placehold.it/<%= ad_width %>x<%= ad_height %>"> -->
+  <%# else %>
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <ins class="adsbygoogle"
+      style="display:inline-block;"
+      data-format="auto"
+      data-ad-client="ca-pub-5360961269901609"
+      data-ad-slot="4409975977"></ins>
+    <script>
+      (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+    <!--
+      window.MyAdSense.newAd(document.getElementById("adsense-<%= id %>"), {
+        'ad_slot': "<%= ad_slot %>",
+        'ad_width': <%= ad_width %>,
+        'ad_height': <%= ad_height %>
+      });
+    -->
+  <%# end %>
+</div>

@@ -2,25 +2,23 @@
 <% if user_signed_in? %>
   <% cache("user_" + current_user.id.to_s) do %>
     <div class="user_login_box">
-      hola,
+      <%= t('nlt.welcome') %>,
       <b>
         <%= link_to current_user.username, profile_path(current_user), id: 'js-username' %>
       </b> | 
       <% unread_messages_count = current_user.unread_messages_count %>
-      <a title="<%= unread_messages_count  %> unread mensajes" href="/es/message/list">
+      <%= link_to messages_list_path, title: "#{unread_messages_count}" do %>
         <%= image_tag "icons/ico_email.gif" %>
         &nbsp;<b><%= unread_messages_count %></b>
-      </a> |
-      <%= link_to "salir", destroy_user_session_path, :method => :delete %>
+      <% end %>
+      |
+      <%= link_to t('nlt.logout'), destroy_user_session_path, :method => :delete %>
     </div>
   <% end %>
 <% else %>
   <div class="user_login_box">
-    <%= link_to "nuevo usuario", new_user_registration_path, "data-no-turbolink" => true %>
-    o
-    <a href="/es/auth/login">
-      acceder
-    </a>
+    <%= link_to t('nlt.new_user'), new_user_registration_path, "data-no-turbolink" => true %>
+    <%= t('nlt.or') %>
+    <%= link_to t('nlt.login'), new_user_session_path, "data-no-turbolink" => true %>
   </div>
-
 <% end %>

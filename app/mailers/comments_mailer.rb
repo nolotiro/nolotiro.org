@@ -1,12 +1,12 @@
 class CommentsMailer < ActionMailer::Base
-  layout "mail"
+  default from: Rails.application.secrets.emails["default_from"]
 
   def create(ad_id, comment)
     @comment = comment
     @ad = Ad.find ad_id
     mail(
       to: @ad.user.email,
-      subject: "[nolotiro.org] Tienes un nuevo comentario en el anuncio #{@ad.title}"
+      subject: t('nlt.comments.subject', ad: @ad.title)
     )
   end
 

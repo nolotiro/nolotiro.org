@@ -1,5 +1,4 @@
 class ContactMailer < ActionMailer::Base
-  layout "mail"
   default from: Rails.application.secrets.emails["default_from"]
 
   def contact_form(email, message, request)

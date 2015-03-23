@@ -1,16 +1,31 @@
-<div class="section_locations">
+<% cache('section_locations') do %>
 
-  <h2><%= t('nlt.cities_in_the_world') %></h2>
-  <br>
-
-  <ul>
-    <% AdHelper.get_locations_ranking.each do |loc| %>
-      <li>
-      <%= link_to ads_woeid_path(loc[0], :type => "give") do %>
-        <%= WoeidHelper.convert_woeid_name loc[0] %> (<%= loc[1] %>) 
+  <div class="section_locations desktop">
+    <h2><%= t('nlt.cities_in_the_world') %></h2>
+    <br>
+    <ul>
+      <% AdHelper.get_locations_ranking(80).each do |loc| %>
+        <li>
+          <%= link_to ads_woeid_path(loc[1], :type => "give") do %>
+            <%= loc[0] %> (<%= loc[2] %>) 
+          <% end %>
+        </li>
       <% end %>
-      </li>
-    <% end %>
-  </ul>
+    </ul>
+  </div>
 
-</div>
+  <div class="section_locations mobile">
+    <h2><%= t('nlt.cities_in_the_world') %></h2>
+    <br>
+    <ul>
+      <% AdHelper.get_locations_ranking(20).each do |loc| %>
+        <li>
+          <%= link_to ads_woeid_path(loc[1], :type => "give") do %>
+            <%= loc[0] %> (<%= loc[2] %>) 
+          <% end %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+
+<% end %>

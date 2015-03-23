@@ -1,0 +1,10 @@
+<%= I18n.t("mailboxer.notification_mailer.you_have_new_reply") %>: <%= @subject %>
+===============================================
+
+<%= I18n.t("mailboxer.notification_mailer.you_have_recieved_new_reply") %>
+
+-----------------------------------------------
+<%= @message.body.html_safe? ? @message.body : strip_tags(@message.body) %>
+-----------------------------------------------
+
+<%= I18n.t("mailboxer.notification_mailer.visit_text", url: root_url) %>
