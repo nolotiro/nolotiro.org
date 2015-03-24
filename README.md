@@ -112,3 +112,11 @@ http://beta.nolotiro.org/api/v1/ad/153735
 
 * Ads: 97206
 * Images: 75384
+
+## 3erd Party
+
+* Core based on [Ruby On Rail](http://rubyonrails.org/)
+* [Yahoo! Geo Planet API](http://developer.yahoo.com/geo/geoplanet/) - This project is strong WOEID integration centered.
+* [jQuery](http://jquery.com/) for Javascript.
+* [GeoLite data API by Maxmind](http://www.maxmind.com/app/geolitecity) to auto detect user location.
+* Logo by [Silvestre Herrera](http://www.silvestre.com.ar/) under GPL License.
