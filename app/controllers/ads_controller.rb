@@ -15,7 +15,9 @@ class AdsController < ApplicationController
   end
 
   def list
-    @ads = Ad.give.available.includes(:user).paginate(:page => params[:page])
+    @ads = Rails.cache.fetch("ads_list_#{params[:page]}") do 
+      Ad.give.available.includes(:user).paginate(:page => params[:page])
+    end
     @location = get_location_suggest
   end
 
@@ -83,7 +85,9 @@ class AdsController < ApplicationController
   private
   # Use callbacks to share common setup or constraints between actions.
   def set_ad
-    @ad = Ad.includes(:comments).includes(:user).find(params[:id])
+    @ad = Rails.cache.fetch("set_ad_#{params[:id]}") do 
+      Ad.includes(:comments).includes(:user).find(params[:id])
+    end
   end
 
   # Never trust parameters from the scary internet, only allow the white list through.
