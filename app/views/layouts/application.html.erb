@@ -58,7 +58,7 @@
 
       <div id="header">
 
-        <% cache('select_language_box') do %>
+        <% cache("select_language_box_#{I18n.locale}") do %>
           <%= render :partial => "partials/select_language_box" %>
         <% end %>
 
@@ -84,7 +84,7 @@
 
       <% unless I18n.locale == :es %>
         <div id="advice_langtest" class="advice">
-          This language translation is in testing phase. If you find a missing or wrong translation, <%= link_to "please report it", "http://accounts.localeapp.com/projects/6872" %>.
+          This language translation is in testing phase. If you find a missing or wrong translation, <%= link_to "please report it", "http://accounts.localeapp.com/projects/6872/translations?in_locale=#{ i18n_to_localeapp_in_locale(I18n.locale) }" %>.
         </div>
       <% end %>
 
