@@ -18,18 +18,12 @@ end
 group :development, :test do
 
   gem 'factory_girl_rails', '~> 4.0'        # test: factories 
-  #gem 'turn'                                # test: color output 
-  gem 'minitest-reporters'
+  gem 'minitest-reporters'                  # test: color output 
   gem 'database_cleaner'                    # test: for not having duplicity
-
   gem 'byebug'                              # dev: debugger
   gem 'zeus', '>= 0.13.4.pre2'              # dev: speed up sthings
   gem 'commands'                            # dev: rake commands in console 
-  # rails-footnotes: using github master
-  #                  until this issue is in gem repo
-  #                  https://github.com/josevalim/rails-footnotes/pull/93
-  #
-  gem 'rails-footnotes', '>= 4.0.0', '<5'
+  gem 'rails-footnotes', '~> 4.0'           # dev: debug messages on HTML
   gem 'better_errors'                       # dev: better errors
   gem 'binding_of_caller'                   # dev: better errors
   gem 'mailcatcher'                         # dev: mailbox 
