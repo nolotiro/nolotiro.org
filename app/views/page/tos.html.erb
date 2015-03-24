@@ -1,12 +1,16 @@
-<%= content_for :meta_title, "Términos de uso" %>
+<%= content_for :meta_title, t('nlt.tos_page.title') %>
 
 <div id="location_header_section">
-<h1>Términos de uso</h1><br>
-<b><a href="/"> « volver a la página de inicio</a></b>
+  <h1><%= t('nlt.tos_page.title') %></h1><br>
+  <b><a href="/"> « <%= t('nlt.back') %></a></b>
 </div>
 
 <div id="main">
-<div class="span-18">
-TODO 
-</div>
+  <div class="span-18">
+    <div class="ad_excerpt">
+      <%= t('nlt.tos_page.body_html') %>
+    </div>
+  </div> 
+  <div class="google_ads">
+  </div>
 </div>
