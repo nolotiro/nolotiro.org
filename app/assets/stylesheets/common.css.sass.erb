@@ -955,7 +955,7 @@ a#tab_active
 .container
   margin-top: 3px
 
-$langs: <%= APP_CONFIG["langs"] %>
+$langs: <%= Rails.application.secrets["langs"] %>
 
 =flags-countries
   @each $l in $langs

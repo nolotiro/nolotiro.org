@@ -9,7 +9,7 @@ class LegacyRoutingTest < ActionDispatch::IntegrationTest
     @admin = FactoryGirl.create(:admin)
   end
 
-  APP_CONFIG["langs"].split(' ').each do |l|
+  Rails.application.secrets["langs"].split(' ').each do |l|
     test "should i18n for #{l} work" do
       assert_routing "/#{l}", {controller: "ads", action: "index", locale: l}
       get "/#{l}"

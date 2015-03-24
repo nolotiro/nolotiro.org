@@ -1,5 +1,5 @@
 class UserMailer < ActionMailer::Base
-  default from: APP_CONFIG["default_from_email"]
+  default from: Rails.application.secrets.emails["default_from"]
 
   def confirmation_reminder(resource)
     @resource = resource

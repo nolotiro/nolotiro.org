@@ -10,7 +10,7 @@ module WoeidHelper
     if Rails.cache.fetch(key)
       return Rails.cache.fetch(key)
     else
-      GeoPlanet.appid = APP_CONFIG["geoplanet_app_id"]
+      GeoPlanet.appid = Rails.application.secrets["geoplanet_app_id"]
       place_raw = GeoPlanet::Place.new(woeid.to_i, :lang => :es)
       place = "#{place_raw.name}, #{place_raw.admin1}, #{place_raw.country}"
       Rails.cache.write(key, place)
@@ -29,7 +29,7 @@ module WoeidHelper
     if Rails.cache.fetch(key)
       return Rails.cache.fetch(key)
     else
-      GeoPlanet.appid = APP_CONFIG["geoplanet_app_id"]
+      GeoPlanet.appid = Rails.application.secrets["geoplanet_app_id"]
       locations = GeoPlanet::Place.search(name, :lang => :es, :count => 0)
       if locations.nil? 
         places = nil

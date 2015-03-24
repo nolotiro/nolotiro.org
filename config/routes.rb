@@ -11,7 +11,7 @@ NolotiroOrg::Application.routes.draw do
   end
 
   # i18n
-  scope "(:locale)", locale: /#{APP_CONFIG["langs_routes"]}/ do
+  scope "(:locale)", locale: /#{Rails.application.secrets["langs_routes"]}/ do
 
     root 'ads#index'
 

@@ -35,8 +35,8 @@ class Ad < ActiveRecord::Base
 
   has_attached_file :image,
     :styles => {:thumb => "100x90>"},
-    :content_type => { :content_type => ["image/jpg", "image/gif", "image/png"] }
-  process_in_background :image 
+    :content_type => { :content_type => ["image/jpg", "image/gif", "image/png"] },
+  process_in_background: :image 
 
   validates_attachment_size :image, :in => 0.megabytes..1.megabytes
 
@@ -44,7 +44,7 @@ class Ad < ActiveRecord::Base
   scope :want, -> { where(type: 2) }
 
   scope :by_type, lambda {|type|
-    return scoped unless type.present?
+    return scope unless type.present?
     where('type = ?', type) 
   }
 
@@ -53,12 +53,12 @@ class Ad < ActiveRecord::Base
   scope :delivered, -> { where(status: 3) }
 
   scope :by_status, lambda {|status|
-    return scoped unless status.present?
+    return all unless status.present?
     where('status = ?', status) 
   }
 
   scope :by_woeid_code, lambda {|woeid_code|
-    return scoped unless woeid_code.present?
+    return all unless woeid_code.present?
     where('woeid_code = ?', woeid_code) 
   }
 

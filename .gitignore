@@ -17,6 +17,7 @@
 
 config/app_config.yml
 config/database.yml
+config/secrets.yml
 
 # photos / images
 public/legacy/uploads/ads/original/*

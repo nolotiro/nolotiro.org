@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '~> 4.0.5'
+gem 'rails', '~> 4.1.6'
 gem 'sqlite3'
 gem 'haml-rails'
 gem 'sass-rails', '~> 4.0.0'
@@ -18,17 +18,12 @@ end
 group :development, :test do
 
   gem 'factory_girl_rails', '~> 4.0'        # test: factories 
-  gem 'turn'                                # test: color output
+  gem 'minitest-reporters'                  # test: color output 
   gem 'database_cleaner'                    # test: for not having duplicity
-
   gem 'byebug'                              # dev: debugger
   gem 'zeus', '>= 0.13.4.pre2'              # dev: speed up sthings
   gem 'commands'                            # dev: rake commands in console 
-  # rails-footnotes: using github master
-  #                  until this issue is in gem repo
-  #                  https://github.com/josevalim/rails-footnotes/pull/93
-  #
-  gem 'rails-footnotes', '>= 4.0.0', '<5'
+  gem 'rails-footnotes', '~> 4.0'           # dev: debug messages on HTML
   gem 'better_errors'                       # dev: better errors
   gem 'binding_of_caller'                   # dev: better errors
   gem 'mailcatcher'                         # dev: mailbox 
@@ -63,7 +58,7 @@ gem 'will_paginate', '~> 3.0'                       # pagination
 gem 'devise'                                        # users
 gem 'devise-async', github: 'mhfs/devise-async'     # send mails async
 gem 'cancancan', '~> 1.10'                          # authorization# authorization# authorization
-gem 'paperclip', '~> 3.0'                           # images
+gem 'paperclip', '~> 4.0'                           # images
 gem 'delayed_paperclip'                             # images processing in bacground
 gem 'recaptcha', :require => 'recaptcha/rails'      # captcha
 gem 'airbrake'                                      # exception notification
