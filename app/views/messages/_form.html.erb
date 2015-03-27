@@ -1,4 +1,4 @@
-<%= form_tag message_reply_path(thread, thread.other_user(user)) do  %>
+<%= form_tag mailboxer_message_reply_path(thread, thread.other_user(user)) do  %>
   <dl class="zend_form">
     <dd id="body-element">
     <%= text_area_tag :body, '', :size => "80x3" %>

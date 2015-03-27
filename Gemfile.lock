@@ -1,4 +1,13 @@
 GIT
+  remote: git://github.com/div/mailboxer.git
+  revision: 41c9d8de2e0ad4dc511718074228d40a1ba96ebe
+  branch: rails42-foreigner
+  specs:
+    mailboxer (0.12.4)
+      carrierwave (>= 0.5.8)
+      rails (>= 3.2.0)
+
+GIT
   remote: git://github.com/mhfs/devise-async.git
   revision: 7a584de37c729fe8fe163f8213839f731e3de289
   specs:
@@ -129,8 +138,6 @@ GEM
     factory_girl_rails (4.4.1)
       factory_girl (~> 4.4.0)
       railties (>= 3.0.0)
-    foreigner (1.6.1)
-      activerecord (>= 3.0.0)
     geoip (1.4.0)
     geoplanet (0.2.7)
       json (>= 1.1.3)
@@ -171,10 +178,6 @@ GEM
       nokogiri (>= 1.5.9)
     mail (2.6.3)
       mime-types (>= 1.16, < 3)
-    mailboxer (0.11.0)
-      carrierwave (>= 0.5.8)
-      foreigner (>= 0.9.1)
-      rails (> 3.0.0)
     mailcatcher (0.2.4)
       eventmachine
       haml
@@ -377,7 +380,7 @@ DEPENDENCIES
   jbuilder (~> 1.2)
   jquery-rails
   localeapp
-  mailboxer
+  mailboxer!
   mailcatcher
   minitest-reporters
   mysql2

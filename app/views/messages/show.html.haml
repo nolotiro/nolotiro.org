@@ -3,14 +3,14 @@
 
 #default_header_section
   %h5 
-    = link_to t("mailboxer.buttons.back"), messages_path
+    = link_to t("mailboxer.buttons.back"), mailboxer_messages_path
   %h1
     = title
   =# link_to "Ver conversación antigua", legacy_message_show_path(@conversation.thread_id, @conversation.subject)
   - if @conversation.is_trashed?(current_user)
-    = link_to t("mailboxer.buttons.untrash"), untrash_message_path(@conversation), class: :button, method: :post
+    = link_to t("mailboxer.buttons.untrash"), untrash_mailboxer_message_path(@conversation), class: :button, method: :post
   - else
-    = link_to t("mailboxer.buttons.trash"), trash_message_path(@conversation), class: :button, method: :delete
+    = link_to t("mailboxer.buttons.trash"), trash_mailboxer_message_path(@conversation), class: :button, method: :delete
 
 #main
   .span-15

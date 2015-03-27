@@ -9,7 +9,7 @@
     = render partial: "messages/tabmessages", locals: {box: @box} 
     - if @search
       %h2=t('mailboxer.search', search: @search)
-    = form_tag trash_messages_path, method: :delete do
+    = form_tag trash_mailboxer_messages_path, method: :delete do
       = hidden_field_tag 'current_box', @box
       %table#mail-list
         %thead
@@ -40,7 +40,7 @@
               %td.sender
                 = m.last_sender
               %td.mail-subject
-                = link_to message_path(m) do
+                = link_to mailboxer_message_path(m) do
                   = m.subject 
               %td.timestamp
                 = l m.messages.last.created_at, format: "a las %H:%M del %d-%m-%Y "

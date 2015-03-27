@@ -65,7 +65,11 @@ gem 'recaptcha', :require => 'recaptcha/rails'      # captcha
 gem 'airbrake'                                      # exception notification
 gem 'paranoia', '~> 2.0'                            # don't really delete a model
 gem 'ipaddress'                                     # ip address validation
-gem 'mailboxer'                                     # messaging
 gem 'rb-readline'                                   # fix rails console error
 gem 'localeapp'                                     # i18n interface
 gem 'blueprint-rails'                               # blueprint css framework
+
+# https://github.com/mailboxer/mailboxer/issues/316
+gem 'mailboxer', :git => 'git://github.com/div/mailboxer.git', :branch => 'rails42-foreigner'
+#gem 'mailboxer'                                     # messaging
+#

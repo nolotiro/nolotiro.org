@@ -11,7 +11,7 @@
     [<%= thread[0].unreaded_messages_count %>]
   </div>
   <div class="thread-subject">
-    <%= link_to thread[0].subject, message_show_path(id: thread[0].id, subject: thread[0].subject) %>
+    <%= link_to thread[0].subject, mailboxer_message_show_path(id: thread[0].id, subject: thread[0].subject) %>
   </div>
   <div class="thread-date">
     <%= distance_of_time_in_words_to_now thread[0].messages.last.created_at %>

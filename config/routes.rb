@@ -76,7 +76,7 @@ NolotiroOrg::Application.routes.draw do
     get '/search', to: 'search#search', as: 'search'
 
     # messaging
-    resources :messages do
+    resources :mailboxer_messages, controller: :messages, path: "/messages/" do
       member do
         delete 'trash'
         post 'untrash'
