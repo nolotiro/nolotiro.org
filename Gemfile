@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '~> 4.1.6'
+gem 'rails', '~> 4.2.1'
 gem 'sqlite3'
 gem 'haml-rails'
 gem 'sass-rails', '~> 4.0.0'
@@ -21,11 +21,12 @@ group :development, :test do
   gem 'minitest-reporters'                  # test: color output 
   gem 'database_cleaner'                    # test: for not having duplicity
   gem 'byebug'                              # dev: debugger
-  gem 'zeus', '>= 0.13.4.pre2'              # dev: speed up sthings
+  gem 'spring'                              # dev: speed up things
   gem 'commands'                            # dev: rake commands in console 
   gem 'rails-footnotes', '~> 4.0'           # dev: debug messages on HTML
-  gem 'better_errors'                       # dev: better errors
-  gem 'binding_of_caller'                   # dev: better errors
+  gem 'web-console', '~> 2.0'               # dev: better errors
+  #gem 'better_errors'                       # dev: better errors
+  #gem 'binding_of_caller'                   # dev: better errors
   gem 'mailcatcher'                         # dev: mailbox 
 
 end

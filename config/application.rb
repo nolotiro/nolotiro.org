@@ -13,5 +13,10 @@ module NolotiroOrg
     config.i18n.enforce_available_locales = true
     I18n.config.enforce_available_locales = true
     ActionMailer::Base.layout "mail"
+
+    # Do not swallow errors in after_commit/after_rollback callbacks.
+    config.active_record.raise_in_transactional_callbacks = true
+
+    config.active_job.queue_adapter = :resque
   end
 end

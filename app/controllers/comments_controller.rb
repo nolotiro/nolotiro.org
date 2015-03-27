@@ -12,7 +12,7 @@ class CommentsController < ApplicationController
       ip: request.remote_ip,
     })
     if comment.save
-      CommentsMailer.create(params[:id], params[:body]).deliver
+      CommentsMailer.create(params[:id], params[:body]).deliver_later
       redirect_to(ad_path(params[:id]), notice: t('nlt.comments.flash_ok'))
     else
       redirect_to(:back, flash: {error: t('nlt.comments.flash_ko')}) 

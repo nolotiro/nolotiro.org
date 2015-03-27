@@ -14,6 +14,7 @@ class LegacyRoutingTest < ActionDispatch::IntegrationTest
       assert_routing "/#{l}", {controller: "ads", action: "index", locale: l}
       get "/#{l}"
       assert_response :success, "couldn't GET /#{l}"
+      I18n.default_locale = :es
     end
   end
 

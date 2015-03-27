@@ -5,10 +5,6 @@ require 'minitest/spec'
 require "minitest/reporters"
 Minitest::Reporters.use!
 
-if ENV.keys.grep(/ZEUS/).any?
-  require 'minitest/unit'
-  MiniTest::Unit.class_variable_set("@@installed_at_exit", true)
-end
 
 #class ActiveSupport::TestCase
 #  ActiveRecord::Migration.check_pending!
