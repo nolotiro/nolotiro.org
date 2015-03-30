@@ -5,6 +5,8 @@ cache:
   apt: true
   directories: 
     - vendor/geolite
+services: 
+  - redis-server
 rvm:
   - 2.0.0
 before_install:
