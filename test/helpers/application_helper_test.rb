@@ -3,8 +3,8 @@ require 'test_helper'
 class ApplicationHelperTest < ActionView::TestCase
 
   test "should get_location_options" do
-    result = get_location_options 766273
-    expected_result = [["Madrid, Madrid, España (1 anuncios)", 766273], ["Madrid, Cundinamarca, Colombia (0 anuncios)", 361938], ["Madrid, Virginia, Estados Unidos (0 anuncios)", 2444047], ["Madrid, Colima, México (0 anuncios)", 132644], ["Madrid, Nueva York, Estados Unidos (0 anuncios)", 2444049], ["Madrid, Nuevo México, Estados Unidos (0 anuncios)", 2444048], ["Madrid, Iowa, Estados Unidos (0 anuncios)", 2444050], ["Madrid, Nebraska, Estados Unidos (0 anuncios)", 2444046], ["Madrid, Kentucky, Estados Unidos (0 anuncios)", 2444044], ["Madrid, Territorio de Alabama, Estados Unidos (0 anuncios)", 2444051], ["Madrid, Caraga, Filipinas (0 anuncios)", 1199420], ["Madrid, Maine, Estados Unidos (0 anuncios)", 2444045], ["Madrid, Östergötland, Suecia (0 anuncios)", 897980], ["Madrid, Andalucía, España (0 anuncios)", 90234640], ["Madrid, Colorado, Estados Unidos (0 anuncios)", 55959908], ["Madrid, Saskatchewan, Canadá (0 anuncios)", 23403504], ["Madrid, Isla de Francia, Francia (0 anuncios)", 90794566], ["Madrid, Murcia, España (0 anuncios)", 90268074], ["Madrid, Murcia, España (0 anuncios)", 90266634], ["Madrid, Andalucía, España (0 anuncios)", 90262795], ["Madrid, Coahuila de Zaragoza, México (0 anuncios)", 90289822]]
+    result = get_location_options 766275
+    expected_result = [["Madridanos, Castilla y León, España (0 anuncios)", 766275]]
     assert_equal expected_result, result
 
     result = get_location_options 716271

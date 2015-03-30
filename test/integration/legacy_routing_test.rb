@@ -65,18 +65,14 @@ class LegacyRoutingTest < ActionDispatch::IntegrationTest
   end
 
   test "should route messaging" do 
-
     get '/es/message/list'
     assert_redirected_to new_user_session_url
-
     get "/es/message/show/XXX/subject/XXX"
     assert_redirected_to new_user_session_url
-
-    post_via_redirect 'user/login', 'user[email]' => @user.email, 'user[password]' => @user.password
+    post_via_redirect new_user_session_url, 'user[email]' => @user.email, 'user[password]' => @user.password
     get '/es/message/list'
     assert_routing "/es/messages", {controller: "messages", action: "index", locale: "es"}
     assert_routing "/es/message/show/XXX/subject/XXX", {controller: "messages", action: "show", locale: "es", id: "XXX", subject: "XXX"}
-    
   end
 
   test "should route auth" do 
