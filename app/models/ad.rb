@@ -34,9 +34,10 @@ class Ad < ActiveRecord::Base
   acts_as_paranoid
 
   has_attached_file :image,
-    :styles => {:thumb => "100x90>"},
-    :content_type => { :content_type => ["image/jpg", "image/gif", "image/png"] },
-  process_in_background: :image 
+    styles: {thumb: "100x90>"},
+    process_in_background: :image 
+
+  validates_attachment :image, content_type: { content_type: ["image/jpg", "image/jpeg", "image/png", "image/gif"] }
 
   validates_attachment_size :image, :in => 0.megabytes..1.megabytes
 
