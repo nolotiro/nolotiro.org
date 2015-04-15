@@ -31,10 +31,6 @@ group :development, :test do
 
 end
 
-group :production do
-  gem 'newrelic_rpm'                        # prod: monitoring
-end
-
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 
@@ -45,6 +41,7 @@ gem 'capistrano-rvm'
 gem 'capistrano-rails'
 gem 'capistrano-bundler'
 
+gem 'newrelic_rpm'                                  # monitoring
 gem 'actionpack-page_caching'                       # caching
 gem 'actionpack-action_caching'                     # caching
 gem 'unicorn'                                       # webserver
