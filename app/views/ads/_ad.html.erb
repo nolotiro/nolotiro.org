@@ -19,6 +19,11 @@
       {id: "ads-ad-4", ad_slot: "3690709263", ad_width: 468, ad_height: 60}
     %>
   <% end %>
+  <% if i == 25 %>
+    <%= render partial: "partials/google_adsense", locals:
+      {id: "ads-ad-3", ad_slot: "3690709263", ad_width: 468, ad_height: 60}
+    %>
+  <% end %>
 <% end %>
 
 <% if ad.user %>
@@ -45,7 +50,7 @@
     </h4>
     <div class="ad_excerpt_woeid">
       <%= link_to ads_woeid_path(id: ad.woeid_code, type: ad.type_class) do %>
-        <%= WoeidHelper.convert_woeid_name ad.woeid_code %> &gt; 
+        <%= WoeidHelper.convert_woeid_name ad.woeid_code %> &gt;
         <%= ad.type_string %>
       <% end %>
     </div>

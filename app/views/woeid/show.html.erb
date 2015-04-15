@@ -7,7 +7,7 @@
 
 <% unless @search or @all %>
   <% content_for :meta_extra do %>
-    <link rel=”alternate” type=”application/rss+xml” title=”nolotiro.org - <%= @woeid %>” href=”<%= rss_type_url(woeid: @id, type: @type, status: @status) %>” /> 
+    <link rel=”alternate” type=”application/rss+xml” title=”nolotiro.org - <%= @woeid %>” href=”<%= rss_type_url(woeid: @id, type: @type, status: @status) %>” />
   <% end %>
 <% end %>
 
@@ -26,7 +26,7 @@
 <div id="location_header_section">
   <% if @all %>
     <span class="give-want">
-      <%= link_to t('nlt.give'), ads_listall_path(type: 'give'), 
+      <%= link_to t('nlt.give'), ads_listall_path(type: 'give'),
         :class => @type == "give" ? "actual" : "''" %>
       &nbsp;
       <%= link_to t('nlt.want'), ads_listall_path(type: 'want'), :class => @type == "want" ? "actual" : "''" %>
@@ -56,7 +56,7 @@
       <br>
       <%= render :partial => "ads/search", :locals => {:woeid => @id, :ad_type => @type, :q => @q} %>
       <%= link_to location_ask_path, :class => "world_link" do %>
-        <%= image_tag "change_location.png", :alt => "change location" %> 
+        <%= image_tag "change_location.png", :alt => "change location" %>
         <%= t('nlt.change_city') %>
       <% end %>
     </div>
@@ -71,9 +71,9 @@
 
     <% if @ads.any? %>
       <% cache cache_key_for("list_" + @ads.pluck(:id).to_s, current_user) do %>
-        <% @ads.each do |ad| %>
+        <% @ads.each_with_index do |ad,i| %>
           <% cache cache_key_for("ad_" + ad.to_s, current_user) do %>
-            <%= render :partial => "ads/ad", :locals => { :ad => ad } %>
+            <%= render :partial => "ads/ad", :locals => { :ad => ad, :i => i } %>
           <% end %>
         <% end %>
         <%= will_paginate @ads, :page_links => false %>
@@ -93,17 +93,5 @@
           <% end %>
         </div>
       <% end %>
-    </div> 
+    </div>
   </div>
-
-  <%= render partial: "partials/google_adsense", locals:
-    {id: "woeid-show", ad_slot: "6783776462", ad_width: 160, ad_height: 600}
-  %>
-
-  <%= render partial: "partials/google_adsense", locals:
-    {id: "woeid-show", ad_slot: "6783776462", ad_width: 160, ad_height: 600}
-  %>
-
-  <%= render partial: "partials/google_adsense", locals:
-    {id: "woeid-show", ad_slot: "6783776462", ad_width: 160, ad_height: 600}
-  %>
