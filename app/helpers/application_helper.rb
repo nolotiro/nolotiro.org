@@ -1,5 +1,13 @@
 module ApplicationHelper
 
+  def escape_privacy_data text
+    if text
+      text = text.gsub(/([\._a-zA-Z0-9-]+@[\._a-zA-Z0-9-]+)/, ' ') 
+      text = text.gsub(/([9|6])+([0-9\s*]{8,})/, ' ') 
+      text
+    end
+  end
+
   def get_location_options(woeid)
     # receives a woeid, returns a list of names like it
     WoeidHelper.search_by_name(WoeidHelper.convert_woeid_name(woeid).split(',')[0])

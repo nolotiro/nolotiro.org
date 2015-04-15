@@ -9,4 +9,8 @@ class Comment < ActiveRecord::Base
 
   validates :body, length: {maximum: 4096}
 
+  def body 
+    ApplicationController.helpers.escape_privacy_data(read_attribute(:body))
+  end
+
 end
