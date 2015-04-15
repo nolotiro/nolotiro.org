@@ -85,10 +85,10 @@ class Legacy::Message < ActiveRecord::Base
     # 1. Busca todos los Receipts por receiver_id basandose en el user_from y user_to del MessageLegacy
     # Agrupa todos sus Receipts por los notification_id que los dos tienen
     # (si dos usuarios tienen el mismo notification_id tuvieron una conversación)
-    notification_ids = Receipt.where("receiver_id=? OR receiver_id=?", from, to).distinct.count(group: :notification_id).select{|k,v| v > 1}.keys 
+    notification_ids = Mailboxer::Receipt.where("receiver_id=? OR receiver_id=?", from, to).distinct.count(group: :notification_id).select{|k,v| v > 1}.keys 
     # 2. De ese resultado filtramos los que coincidan con el Subject, devolvemos la Conversation
     notification_ids.each do |n|
-      notification = Notification.find_by_id n
+      notification = Mailboxer::Notification.find_by_id n
       if notification.subject == subject
         return notification.conversation 
       else 
