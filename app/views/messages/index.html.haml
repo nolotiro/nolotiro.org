@@ -9,40 +9,45 @@
     = render partial: "messages/tabmessages", locals: {box: @box} 
     - if @search
       %h2=t('mailboxer.search', search: @search)
-    = form_tag trash_mailboxer_messages_path, method: :delete do
-      = hidden_field_tag 'current_box', @box
-      %table#mail-list
-        %thead
-          %tr 
-            - unless @box == 'trash'
-              %td=t('mailboxer.table.delete')
-            - else 
-              %td
-            %td
-            %td=t('mailboxer.table.sender')
-            %td=t('mailboxer.table.reciever')
-            %td=t('mailboxer.table.last')
-            %td{style: "width: 300px;"}=t('mailboxer.table.subject')
-            %td=t('mailboxer.table.date')
-        %tbody
-          - @messages.each do |m|
-            %tr{ class: "mail #{ 'unread' if m.is_unread?(current_user) }" }
+    - if @messages.count > 0
+      = form_tag trash_mailboxer_messages_path, method: :delete do
+        = hidden_field_tag 'current_box', @box
+        %table#mail-list
+          %thead
+            %tr 
               - unless @box == 'trash'
-                %td{style: "float:left;width:20px;"}
-                  = check_box_tag '', m.id, false, class: 'delete_multiple_checkbox', name: "conversations[]"
+                %td=t('mailboxer.table.delete')
               - else 
-                %td 
-              %td.star.icon.nobookmark{style: "float:left;width:20px;"}  
-              %td.sender
-                = m.messages.first.recipients.first.username
-              %td.sender
-                = m.messages.first.recipients.second.username
-              %td.sender
-                = m.last_sender
-              %td.mail-subject
-                = link_to mailboxer_message_path(m) do
-                  = m.subject 
-              %td.timestamp
-                = l m.messages.last.created_at, format: "a las %H:%M del %d-%m-%Y "
-      - unless @box == 'trash'
-        = submit_tag t('mailboxer.buttons.trash_selected'), id: 'delete_multiple_button'
+                %td
+              %td
+              %td=t('mailboxer.table.sender')
+              %td=t('mailboxer.table.reciever')
+              %td=t('mailboxer.table.last')
+              %td{style: "width: 300px;"}=t('mailboxer.table.subject')
+              %td=t('mailboxer.table.date')
+          %tbody
+            - @messages.each do |m|
+              %tr{ class: "mail #{ 'unread' if m.is_unread?(current_user) }" }
+                - unless @box == 'trash'
+                  %td{style: "float:left;width:20px;"}
+                    = check_box_tag '', m.id, false, class: 'delete_multiple_checkbox', name: "conversations[]"
+                - else 
+                  %td 
+                %td.star.icon.nobookmark{style: "float:left;width:20px;"}  
+                %td.sender
+                  = m.messages.first.recipients.first.username
+                %td.sender
+                  = m.messages.first.recipients.second.username
+                %td.sender
+                  = m.last_sender
+                %td.mail-subject
+                  = link_to mailboxer_message_path(m) do
+                    = m.subject 
+                %td.timestamp
+                  = l m.messages.last.created_at, format: "a las %H:%M del %d-%m-%Y "
+        - unless @box == 'trash'
+          = submit_tag t('mailboxer.buttons.trash_selected'), id: 'delete_multiple_button'
+    - else
+      %p
+        .info
+          = t("mailboxer.table.none")

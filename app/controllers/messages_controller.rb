@@ -53,6 +53,7 @@ class MessagesController < ApplicationController
     end
     @message = Mailboxer::Message.new conversation_id: @conversation.id
     current_user.mark_as_read(@conversation)
+    expire_fragment "unread_messages_count_#{current_user.id}"
   end
 
   def move

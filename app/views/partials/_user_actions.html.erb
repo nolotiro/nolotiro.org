@@ -1,20 +1,18 @@
 
 <% if user_signed_in? %>
-  <% cache("user_" + current_user.id.to_s) do %>
-    <div class="user_login_box">
-      <%= t('nlt.welcome') %>,
-      <b>
-        <%= link_to current_user.username, profile_path(current_user), id: 'js-username' %>
-      </b> | 
-      <% unread_messages_count = current_user.unread_messages_count %>
-      <%= link_to messages_list_path, title: "#{unread_messages_count}" do %>
-        <%= image_tag "icons/ico_email.gif" %>
-        &nbsp;<b><%= unread_messages_count %></b>
-      <% end %>
-      |
-      <%= link_to t('nlt.logout'), destroy_user_session_path, :method => :delete %>
-    </div>
-  <% end %>
+  <div class="user_login_box">
+    <%= t('nlt.welcome') %>,
+    <b>
+      <%= link_to current_user.username, profile_path(current_user), id: 'js-username' %>
+    </b> | 
+    <% unread_messages_count = current_user.unread_messages_count %>
+    <%= link_to messages_list_path, title: "#{unread_messages_count}" do %>
+      <%= image_tag "icons/ico_email.gif" %>
+      &nbsp;<b><%= unread_messages_count %></b>
+    <% end %>
+    |
+    <%= link_to t('nlt.logout'), destroy_user_session_path, :method => :delete %>
+  </div>
 <% else %>
   <div class="user_login_box">
     <%= link_to t('nlt.new_user'), new_user_registration_path, "data-no-turbolink" => true %>
