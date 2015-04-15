@@ -179,6 +179,7 @@ form.searchbox
     background-color: #fff
 
 .google_ads
+  width: 468px
   padding: 10px
   background-color: #fff
   display: block
@@ -989,6 +990,9 @@ $langs: <%= APP_CONFIG["langs"] %>
 .mobile
   display: none
 
+.first-visit
+  margin-top: 3em
+
 //@media only screen and (min-width: 768px) and (max-width: 959px)
 //@media only screen and (min-width: 480px) and (max-width: 767px)
 
@@ -997,6 +1001,7 @@ $langs: <%= APP_CONFIG["langs"] %>
     padding: 0px
     width: 95%
     padding-left: 4%
+    margin-top: 40px
 
   .site-name
     width: 50%
@@ -1004,9 +1009,6 @@ $langs: <%= APP_CONFIG["langs"] %>
 
   .ad_create_tab a
     margin-top: 25px
-
-  .ad_create_tab
-    right: 25px
 
   div.info.js-alert-first-visit.hide
     margin-top: 5em
@@ -1030,8 +1032,11 @@ $langs: <%= APP_CONFIG["langs"] %>
     right: 25px
 
   .google_ads
-    margin-bottom: 0px
-    padding-bottom: 0px
+    width: 100%
+    padding: 0px
+    margin: 0px
+    display: inline-block
+
 
   #social-butttons
     margin-left: -20px
@@ -1061,6 +1066,8 @@ $langs: <%= APP_CONFIG["langs"] %>
 
   #main
     width: 95%
+    margin-left: auto
+    margin-right: auto
 
   .span-18
     margin-left: 10px
@@ -1079,24 +1086,44 @@ $langs: <%= APP_CONFIG["langs"] %>
   .give-want
     float: none
 
-  .container
-    width: 100%
-
   .span-16
     width: 100%
 
   #default_header_section
-    padding-left: 10px
+    width: 90%
+    margin-left: 4%
 
   .home_location_change
     margin-top: 1em
 
   .notice
-    margin-top: 6em
+    margin-top: 1em
     width: 90%
+    margin-left: 4%
 
   .mobile
     display: inline-block
+    margin: 0px
+    padding-left: 4%
 
   .desktop
     display: none
+
+  #header
+    display: inline-block
+
+  .info
+    width: 90%
+    margin-left: 4%
+
+  #header
+    margin-bottom: 20px
+
+
+@media only screen and (max-width: 568px)
+  .google_ads
+    width: 310px
+
+@media only screen and (min-width: 768px) and (max-width: 2000px)
+  .google_ads
+    display: inline-block

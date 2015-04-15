@@ -150,14 +150,14 @@ margin: 0;
 }
 .span-19,
 .span-15{
-  width: 95%;
-  margin-left: 2%;
-  margin-right: 2%;}
+  width: 95% !important;
+  margin-left: 2% !important;
+  margin-right: 2% !important;}
 
  }
 
 @media only screen and (min-width: 320px) and (max-width: 767px) {
-        .container { width: 95%;
+        .container { width: 93%;
                      margin-left: 2%;
                      margin-right: 2%; }
 
@@ -185,7 +185,7 @@ margin: 0;
 .span-22,
 .span-23,
 .span-24 {
-     width: 420px;
+     width: 100%;
      margin: 0;
 }
 
