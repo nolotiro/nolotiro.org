@@ -182,7 +182,7 @@ form.searchbox
   width: 468px
   padding: 10px
   background-color: #fff
-  display: block
+  display: inline-block
   text-align: center
   margin: 10px auto 20px
 
@@ -993,6 +993,11 @@ $langs: <%= Rails.application.secrets["langs"] %>
 .first-visit
   margin-top: 3em
 
+.ads-show
+  float: right
+  width: 300px
+  height: 250px
+
 //@media only screen and (min-width: 768px) and (max-width: 959px)
 //@media only screen and (min-width: 480px) and (max-width: 767px)
 
@@ -1001,7 +1006,6 @@ $langs: <%= Rails.application.secrets["langs"] %>
     padding: 0px
     width: 95%
     padding-left: 4%
-    margin-top: 40px
 
   .site-name
     width: 50%
@@ -1097,7 +1101,6 @@ $langs: <%= Rails.application.secrets["langs"] %>
     margin-top: 1em
 
   .notice
-    margin-top: 1em
     width: 90%
     margin-left: 4%
 
@@ -1117,13 +1120,12 @@ $langs: <%= Rails.application.secrets["langs"] %>
     margin-left: 4%
 
   #header
-    margin-bottom: 20px
+    margin-bottom: 20%
 
+@media only screen and (min-width: 500px) and (max-width: 768px)
+  #header
+    margin-bottom: 15%
 
 @media only screen and (max-width: 568px)
   .google_ads
     width: 310px
-
-@media only screen and (min-width: 768px) and (max-width: 2000px)
-  .google_ads
-    display: inline-block
