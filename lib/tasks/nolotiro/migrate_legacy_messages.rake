@@ -35,7 +35,7 @@ namespace :nolotiro do
         task :all => :environment do
           messages = Legacy::Message.where(is_migrated: false).order(:created_at)
           messages.find_each do |message| 
-            Resque.enqueue(LegacyMessagesMigratorWorker, message.thread_id) unless message.thread_id == 0
+            LegacyMessagesMigratorWorker.perform_async(message.thread_id) unless message.thread_id == 0
           end
         end
 
@@ -43,9 +43,7 @@ namespace :nolotiro do
         task :last_months => :environment do
           messages = Legacy::Message.where(is_migrated: false).where(['created_at > ?', 2.month.ago]).order('created_at DESC')
           messages.find_each do |message|
-            # messages without threads (legacy)
-            Resque.enqueue(LegacyMessagesMigratorWorker, message.thread_id) unless message.thread_id == 0
-            #puts message.id 
+            LegacyMessagesMigratorWorker.perform_async(message.thread_id) unless message.thread_id == 0
             #Legacy::MessageThread.find(message.thread_id).migrate!
           end
         end
@@ -60,7 +58,7 @@ namespace :nolotiro do
           #
           #messages_ids = [] 
           #Legacy::Message.find(messages_ids).each do |m|
-          #  Resque.enqueue(LegacyMessagesMigratorWorker, m.thread_id) unless m.is_migrated
+          #  LegacyMessagesMigratorWorker.perform_async(message.thread_id) unless message.thread_id == 0
           #end
           #
         end
