@@ -6,7 +6,7 @@
     = link_to t("mailboxer.buttons.back"), mailboxer_messages_path
   %h1
     = title
-  =# link_to "Ver conversación antigua", legacy_message_show_path(@conversation.thread_id, @conversation.subject)
+  = link_to "Ver conversación antigua", legacy_message_show_path(@conversation.thread_id, @conversation.subject)
   - if @conversation.is_trashed?(current_user)
     = link_to t("mailboxer.buttons.untrash"), untrash_mailboxer_message_path(@conversation), class: :button, method: :post
   - else

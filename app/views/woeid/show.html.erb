@@ -70,14 +70,12 @@
       <% end %>
 
     <% if @ads.any? %>
-      <% cache cache_key_for("list_#{I18n.locale}_" + @ads.pluck(:id).to_s, current_user) do %>
-        <% @ads.each_with_index do |ad,i| %>
-          <% cache cache_key_for("ad_#{I18n.locale}_" + ad.to_s, current_user) do %>
-            <%= render :partial => "ads/ad", :locals => { :ad => ad, :i => i } %>
-          <% end %>
+      <% @ads.each_with_index do |ad,i| %>
+        <% cache cache_key_for("ad_#{I18n.locale}_" + ad.id.to_s, current_user), skip_digest: true do %>
+          <%= render :partial => "ads/ad", :locals => { :ad => ad, :i => i } %>
         <% end %>
-        <%= will_paginate @ads, :page_links => false %>
       <% end %>
+      <%= will_paginate @ads, :page_links => false %>
     <% else %>
       <% if defined? @no_results_search %>
         <%= render :partial => "ads/no_results_search", :locals => { :location_suggest => @location_suggest, :location_options => @location_options } %>

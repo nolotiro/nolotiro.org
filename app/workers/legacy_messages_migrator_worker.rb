@@ -1,9 +1,9 @@
 class LegacyMessagesMigratorWorker
   @queue = :legacy_messages_migrator_worker
 
-  def self.perform(message_id)
-    m = Legacy::Message.find message_id
-    m.start_or_reply_conversation
+  def self.perform(thread_message_id)
+    thread = Legacy::MessageThread.find thread_message_id
+    thread.migrate!
   end
 
 end
