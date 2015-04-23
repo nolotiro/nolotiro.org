@@ -8,6 +8,28 @@ class UserTest < ActiveSupport::TestCase
     @admin = FactoryGirl.create(:admin)
   end
 
+  test "should uniqueness validation on username work" do 
+    user1 = FactoryGirl.build(:user, username: "Username") 
+    assert user1.valid?
+    assert user1.save
+
+    user2 = FactoryGirl.build(:user, username: "Username") 
+    assert_not user2.valid?
+    assert_not user2.save
+    assert user2.errors[:username].include? "ya está en uso"
+  end
+
+  test "should uniqueness validation on email work" do 
+    user1 = FactoryGirl.build(:user, email: "larryfoster@example.com") 
+    assert user1.valid?
+    assert user1.save
+
+    user2 = FactoryGirl.build(:user, email: "larryfoster@example.com") 
+    assert_not user2.valid?
+    assert_not user2.save
+    assert user2.errors[:email].include? "ya está en uso"
+  end
+
   test "should roles work" do 
     assert_equal @user.admin?, false
     assert_equal @admin.admin?, true

@@ -11,6 +11,8 @@ class User < ActiveRecord::Base
   has_many :legacy_sent_messages, :class_name=> 'Legacy::Message', :foreign_key=>'user_from', :dependent=>:destroy
   has_many :legacy_recieved_messages, :class_name=> 'Legacy::Message', :foreign_key=>'user_to', :dependent=>:destroy
 
+  validates :username, uniqueness: true
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :confirmable, :database_authenticatable, :async, :registerable,
