@@ -14,7 +14,7 @@ class User < ActiveRecord::Base
   validates :username, uniqueness: true
 
   # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable and :omniauthable
+  # :lockable, :timeoutable and :omniauthable
   devise :confirmable, :database_authenticatable, :async, :registerable,
     :recoverable, :rememberable, :trackable, :validatable
 
@@ -33,7 +33,7 @@ class User < ActiveRecord::Base
   end
 
   def unread_messages_count 
-    Rails.cache.fetch("unread_messages_count_#{self.id}") do 
+    Rails.cache.fetch("unread_messages_count_#{self.id}", skip_digest: true) do 
       self.mailbox.receipts.where(is_read: false).count
     end
   end
