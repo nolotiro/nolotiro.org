@@ -3,7 +3,7 @@
   <h5><%= link_to "< volver a mensajes", messages_list_path %></h5>
   <h1><%= @thread.subject %></h1>
   <% unless @thread.conversation_id.zero? %>
-    <%= link_to "Ver conversación migrada", message_path(@thread.conversation_id) %> 
+    <%= link_to "Ver conversación migrada", mailboxer_message_path(@thread.conversation_id) %> 
   <% end %>
 </div>
 
