@@ -2,9 +2,17 @@ ENV["RAILS_ENV"] ||= "test"
 require File.expand_path('../../config/environment', __FILE__)
 require 'rails/test_help'
 require 'minitest/spec'
-require "minitest/reporters"
+require 'minitest/reporters'
+require 'minitest/rails/capybara'
 Minitest::Reporters.use!
 
+include Warden::Test::Helpers
+Warden.test_mode!
+
+class ActionController::TestCase
+  include Devise::TestHelpers
+  include FactoryGirl::Syntax::Methods
+end
 
 #class ActiveSupport::TestCase
 #  ActiveRecord::Migration.check_pending!

@@ -17,6 +17,7 @@ end
 
 group :development, :test do
 
+  gem 'minitest-rails-capybara'             # test: features
   gem 'factory_girl_rails', '~> 4.0'        # test: factories 
   gem 'minitest-reporters'                  # test: color output 
   gem 'database_cleaner'                    # test: for not having duplicity
