@@ -52,7 +52,7 @@ class AdminControllerTest < ActionController::TestCase
     sign_in @admin
     get :lock, id: @user.id
     assert_redirected_to profile_url(@user)
-    assert_equal("Successfully locked user Pepito. The user can't log in.", flash[:notice])
+    assert_equal("Successfully locked user #{@user.username}. The user can't log in.", flash[:notice])
     user = User.find @user.id
     assert_equal(user.active_for_authentication?, false)
     get :unlock, id: @user.id
@@ -60,7 +60,7 @@ class AdminControllerTest < ActionController::TestCase
     user = User.find @user.id
     assert_equal(user.locked?, false)
     assert_equal(user.active_for_authentication?, true)
-    assert_equal("Successfully unlocked user Pepito. The user can log in.", flash[:notice])
+    assert_equal("Successfully unlocked user #{@user.username}. The user can log in.", flash[:notice])
   end
 
 end
