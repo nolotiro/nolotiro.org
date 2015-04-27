@@ -38,4 +38,10 @@ class WoeidControllerTest < ActionController::TestCase
     assert_response :success
   end
 
+  test "should get 404 on unexisting WOEID" do 
+    skip
+    get :show, type: "want", id: "222222"
+    assert_response :error
+  end
+
 end

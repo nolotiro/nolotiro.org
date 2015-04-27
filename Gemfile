@@ -17,6 +17,7 @@ end
 
 group :development, :test do
 
+  gem 'minitest-rails-capybara'             # test: features
   gem 'factory_girl_rails', '~> 4.0'        # test: factories 
   gem 'minitest-reporters'                  # test: color output 
   gem 'database_cleaner'                    # test: for not having duplicity
@@ -49,6 +50,9 @@ gem 'mysql2'                                        # mysql
 gem 'thinking-sphinx'                               # sphinxsearch
 gem 'redis-rails'                                   # redis cache
 gem 'resque', github: 'resque/resque', branch: '1-x-stable', require: 'resque/server'              # job workers redis
+gem 'sidekiq'
+gem 'sinatra', require: false
+gem 'slim'
 
 gem 'geoplanet'                                     # yahoo woeid geoplanet
 gem 'geoip'                                         # geolite city
