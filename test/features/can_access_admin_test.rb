@@ -9,23 +9,23 @@ feature "CanAccessAdmin" do
   #  page.wont_have_content "Goobye All!"
   #end
 
-  scenario "should not get /admin/resque as a anonymous user" do
-    visit "/admin/resque"
+  scenario "should not get /admin/jobs as a anonymous user" do
+    visit "/admin/jobs"
     assert_equal 404, page.status_code
   end
 
-  scenario "should not get /admin/resque as a normal user" do
+  scenario "should not get /admin/jobs as a normal user" do
     @user = FactoryGirl.create(:user)
     login_as @user
-    visit "/admin/resque"
+    visit "/admin/jobs"
     page.must_redirect_to root_url
     assert_equal "No tienes permisos para realizar esta acción.", flash[:alert]
   end
 
-  scenario "should get /admin/resque as admin" do
+  scenario "should get /admin/jobs as admin" do
     @admin = FactoryGirl.create(:admin)
     login_as @admin
-    visit "/admin/resque"
+    visit "/admin/jobs"
     page.must_have_content "Colas"
   end
 
