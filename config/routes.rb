@@ -60,7 +60,7 @@ NolotiroOrg::Application.routes.draw do
 
     scope '/admin' do 
       authenticate :user, lambda { |u| u.admin? } do
-        mount Sidekiq::Web, at: "/sidekiq"
+        mount Sidekiq::Web, at: "/jobs"
       end
       get '/become/:id', to: 'admin#become', as: 'become_user' 
       get '/lock/:id', to: 'admin#lock', as: 'lock_user' 
