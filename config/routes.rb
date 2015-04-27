@@ -1,3 +1,5 @@
+require 'sidekiq/web'
+
 NolotiroOrg::Application.routes.draw do
 
   get '/', to: redirect('/es')
@@ -57,9 +59,8 @@ NolotiroOrg::Application.routes.draw do
     post '/deletefriend/:id', to: 'friendships#destroy', as: 'destroy_friend'
 
     scope '/admin' do 
-      # config/initializers/admin.rb
-      constraints CanAccessResque do
-        mount Resque::Server, :at => "/resque"
+      authenticate :user, lambda { |u| u.admin? } do
+        mount Sidekiq::Web, at: "/jobs"
       end
       get '/become/:id', to: 'admin#become', as: 'become_user' 
       get '/lock/:id', to: 'admin#lock', as: 'lock_user' 

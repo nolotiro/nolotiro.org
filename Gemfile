@@ -53,6 +53,9 @@ gem 'mysql2'                                        # mysql
 gem 'thinking-sphinx'                               # sphinxsearch
 gem 'redis-rails'                                   # redis cache
 gem 'resque', github: 'resque/resque', branch: '1-x-stable', require: 'resque/server'              # job workers redis
+gem 'sidekiq'
+gem 'sinatra', require: false
+gem 'slim'
 
 gem 'geoplanet'                                     # yahoo woeid geoplanet
 gem 'geoip'                                         # geolite city

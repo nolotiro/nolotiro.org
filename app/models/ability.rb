@@ -7,7 +7,6 @@ class Ability
     user ||= User.new # guest user (not logged in)
     if user.admin?
       can :manage, :all
-      can :manage, Resque
       can :lock, Admin
       can :unlock, Admin
       can :become, Admin
