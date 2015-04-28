@@ -19,8 +19,6 @@ set :linked_dirs, %w{bin db/sphinx log tmp/pids tmp/cache tmp/sockets vendor/bun
 
 set :keep_releases, 5
 
-set :rvm_type, :user
-
 # Logical flow for deploying an app
 after  'deploy:finished',            'thinking_sphinx:index'
 after  'deploy:finished',            'thinking_sphinx:restart'

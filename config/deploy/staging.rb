@@ -1,9 +1,12 @@
+server 'beta.nolotiro.org', user: 'ruby-data', roles: %w{db web app}
+
 set :stage, :staging
 set :rails_env, 'staging' 
-server 'beta.nolotiro.org', user: 'ruby-data', roles: %w{db web app}
 set :deploy_to, '/var/www/beta.nolotiro.org'
 set :branch, "staging"
-set :rvm_ruby_version, '2.1.2@nolotiro-staging'
+
+set :rbenv_type, :user
+set :rbenv_ruby, '2.1.2'
 
 namespace :deploy do
 

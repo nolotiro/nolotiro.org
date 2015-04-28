@@ -1,7 +1,6 @@
 source 'https://rubygems.org'
 
 gem 'rails', '~> 4.2.1'
-gem 'sqlite3'
 gem 'haml-rails'
 gem 'sass-rails', '~> 4.0.0'
 gem 'uglifier', '>= 1.3.0'
@@ -16,7 +15,7 @@ group :doc do
 end
 
 group :development, :test do
-
+  gem 'sqlite3'                             # test: database
   gem 'minitest-rails-capybara'             # test: features
   gem 'factory_girl_rails', '~> 4.0'        # test: factories 
   gem 'minitest-reporters'                  # test: color output 
@@ -29,7 +28,6 @@ group :development, :test do
   #gem 'better_errors'                       # dev: better errors
   #gem 'binding_of_caller'                   # dev: better errors
   gem 'mailcatcher'                         # dev: mailbox 
-
 end
 
 group :production do
@@ -42,7 +40,7 @@ end
 
 # deploy
 gem 'capistrano', '~> 3.0'
-gem 'capistrano-rvm'
+gem 'capistrano-rbenv'
 gem 'capistrano-rails'
 gem 'capistrano-bundler'
 
