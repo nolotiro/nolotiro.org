@@ -33,9 +33,7 @@ class User < ActiveRecord::Base
   end
 
   def unread_messages_count 
-    Rails.cache.fetch("unread_messages_count_#{self.id}", skip_digest: true) do 
-      self.mailbox.receipts.where(is_read: false).count
-    end
+    self.mailbox.receipts.where(is_read: false).count
   end
 
   def admin?

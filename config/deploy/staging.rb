@@ -13,26 +13,24 @@ namespace :deploy do
   desc 'Start application'
   task :start do
     on roles(:app), in: :sequence, wait: 5 do
-      sudo "/etc/init.d/unicorn_beta.nolotiro.org.sh start"
+      sudo "service god start"
     end
   end
 
   desc 'Stop application'
   task :stop do
     on roles(:app), in: :sequence, wait: 5 do
-      sudo "/etc/init.d/unicorn_beta.nolotiro.org.sh stop"
+      sudo "service god stop"
     end
   end
 
   desc 'Restart application'
   task :restart do
     on roles(:app), in: :sequence, wait: 5 do
-      sudo "/etc/init.d/god restart"
-      sudo "/etc/init.d/unicorn_beta.nolotiro.org.sh stop"
+      sudo "service god restart"
       within release_path do
         execute :rake, 'nolotiro:cache:clear'
       end
-      sudo "/etc/init.d/unicorn_beta.nolotiro.org.sh start"
     end
   end
 
