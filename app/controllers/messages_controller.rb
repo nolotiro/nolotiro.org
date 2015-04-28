@@ -33,7 +33,7 @@ class MessagesController < ApplicationController
       end
       receipt = current_user.reply_to_conversation(@conversation, @message.body, nil, true, true, @message.attachment)
     else
-      @message.recipients = User.find(params[:message][:recipients])
+      @message.recipients = User.find(params[:mailboxer_message][:recipients])
       unless @message.valid?
         return render :new
       end
@@ -100,7 +100,7 @@ class MessagesController < ApplicationController
   private 
   # Never trust parameters from the scary internet, only allow the white list through.
   def message_params
-    params.require(:message).permit(:conversation_id, :body, :subject, :recipients, :sender_id)
+    params.require(:mailboxer_message).permit(:conversation_id, :body, :subject, :recipients, :sender_id)
   end
 
 end
