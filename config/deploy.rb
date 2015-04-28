@@ -36,6 +36,30 @@ namespace :deploy do
     end
   end
 
+  desc 'Start application'
+  task :start do
+    on roles(:app), in: :sequence, wait: 5 do
+      sudo "service god start"
+    end
+  end
+
+  desc 'Stop application'
+  task :stop do
+    on roles(:app), in: :sequence, wait: 5 do
+      sudo "service god stop"
+    end
+  end
+
+  desc 'Restart application'
+  task :restart do
+    on roles(:app), in: :sequence, wait: 5 do
+      sudo "service god restart"
+      within release_path do
+        execute :rake, 'nolotiro:cache:clear'
+      end
+    end
+  end
+
   before :restart, :clear_cache do
     on roles(:web), in: :groups, limit: 3, wait: 10 do
       within release_path do
