@@ -1,6 +1,8 @@
 class AdsController < ApplicationController
+  include ApplicationHelper
+
   before_action :set_ad, only: [:show, :edit, :update, :destroy]
-  caches_action :list, :show, layout: false, unless: :current_user
+  caches_action :list, :show, layout: false, unless: :current_user, skip_digest: true
   caches_action :index, :cache_path => Proc.new { |c| c.params }, unless: :current_user
   load_and_authorize_resource
 
@@ -63,6 +65,7 @@ class AdsController < ApplicationController
   def update
     respond_to do |format|
       if @ad.update(ad_params)
+        expire_fragment(  cache_key_for( "ad_#{I18n.locale}_" + @ad.id.to_s, current_user ) )
         format.html { redirect_to @ad, notice: 'Ad was successfully updated.' }
         format.json { head :no_content }
       else
@@ -85,9 +88,9 @@ class AdsController < ApplicationController
   private
   # Use callbacks to share common setup or constraints between actions.
   def set_ad
-    @ad = Rails.cache.fetch("set_ad_#{params[:id]}") do 
-      Ad.includes(:comments).includes(:user).find(params[:id])
-    end
+    #@ad = Rails.cache.fetch("set_ad_#{params[:id]}") do 
+    @ad = Ad.includes(:comments).includes(:user).find(params[:id])
+    #end
   end
 
   # Never trust parameters from the scary internet, only allow the white list through.

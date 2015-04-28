@@ -4,7 +4,6 @@ class CommentsController < ApplicationController
 
   # POST /comment/create/ad_id/:id
   def create
-    expire_action(controller: '/ads', action: 'show')
     comment = Comment.new({
       ads_id: params[:id],
       body: params[:body],
@@ -12,6 +11,7 @@ class CommentsController < ApplicationController
       ip: request.remote_ip,
     })
     if comment.save
+      expire_action(controller: 'ads', action: 'show', ad: comment.ad )
       CommentsMailer.create(params[:id], params[:body]).deliver_later
       redirect_to(ad_path(params[:id]), notice: t('nlt.comments.flash_ok'))
     else
