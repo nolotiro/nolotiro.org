@@ -55,11 +55,11 @@
     </div>
     <%= render :partial => "comments/show", :locals => {:ad => @ad} %>
   </div>
+
+  <%= render partial: "partials/google_adsense", :locals => { :class_name => "rectangular_ad" } %>
+
 </div>
 
-<%= render partial: "partials/google_adsense", locals:
-  {id: "ads-show", ad_slot: "5167442460", ad_width: 300, ad_height: 250}
-%>
 
 <% content_for :action do %>
   <div class="ad_create_tab">
