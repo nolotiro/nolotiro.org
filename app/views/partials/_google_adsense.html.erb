@@ -1,4 +1,8 @@
-<div class="google_ads">
+<% if defined? class_name %>
+  <div class="google_ads <%= class_name %>">
+<% else %>
+  <div class="google_ads">
+<% end %>
 
     <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
     <!-- nolotiro-responsive -->
@@ -9,9 +13,9 @@
         data-ad-format="auto">
     </ins>
     <script>
+      window.setTimeout(function(){
         (adsbygoogle = window.adsbygoogle || []).push({});
+      }, 200); 
     </script>
-
-
 
 </div>
