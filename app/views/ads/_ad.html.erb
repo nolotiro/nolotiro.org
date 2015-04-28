@@ -1,28 +1,15 @@
 <% if defined? i %>
-  <% if i == 5 %>
-    <%= render partial: "partials/google_adsense", locals:
-      {id: "ads-ad-1", ad_slot: "3690709263", ad_width: 468, ad_height: 60}
-    %>
+  <% if i == 6 %>
+    <%= render partial: "partials/google_adsense"%>
   <% end %>
-  <% if i == 10 %>
-    <%= render partial: "partials/google_adsense", locals:
-      {id: "ads-ad-2", ad_slot: "3690709263", ad_width: 468, ad_height: 60}
-    %>
+  <% if i == 12 %>
+    <%= render partial: "partials/google_adsense"%>
   <% end %>
-  <% if i == 20 %>
-    <%= render partial: "partials/google_adsense", locals:
-      {id: "ads-ad-3", ad_slot: "3690709263", ad_width: 468, ad_height: 60}
-    %>
+  <% if i == 18 %>
+    <%= render partial: "partials/google_adsense"%>
   <% end %>
-  <% if i == 15 %>
-    <%= render partial: "partials/google_adsense", locals:
-      {id: "ads-ad-4", ad_slot: "3690709263", ad_width: 468, ad_height: 60}
-    %>
-  <% end %>
-  <% if i == 25 %>
-    <%= render partial: "partials/google_adsense", locals:
-      {id: "ads-ad-3", ad_slot: "3690709263", ad_width: 468, ad_height: 60}
-    %>
+  <% if i == 24 %>
+    <%= render partial: "partials/google_adsense"%>
   <% end %>
 <% end %>
 
@@ -71,4 +58,10 @@
       &nbsp;&nbsp;
     </div>
   </div>
+<% end %>
+
+<% if defined? i %>
+  <% if params[:action] == "show" and params[:controller] == "woeid" and i == 0 %>
+    <%= render :partial => "partials/google_adsense", :locals => { :class_name => "vertical_ad" }  %>
+  <% end %>
 <% end %>
