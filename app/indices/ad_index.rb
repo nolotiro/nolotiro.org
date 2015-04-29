@@ -7,5 +7,6 @@ ThinkingSphinx::Index.define :ad, :with => :active_record do
   has woeid_code
   has status
   has type
+  has created_at
 end
 

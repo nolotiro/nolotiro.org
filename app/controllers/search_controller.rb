@@ -19,6 +19,7 @@ class SearchController < ApplicationController
         @ads = Ad.search @q,
           page: params[:page],
           star: true,
+          order: "created_at DESC", 
           without: {status: 3},
           with: {woeid_code: @id, type: @type}
       end
