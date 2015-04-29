@@ -4,8 +4,8 @@
 
 This is the next revision of nolotiro.org, this time in Ruby On Rails.
 
-* Ruby: 2.0.0p247
-* Rails: 4.0.1
+* Ruby: 2.2.2
+* Rails: 4.2.1
 
 ## Installation
 
