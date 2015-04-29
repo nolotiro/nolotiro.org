@@ -68,6 +68,7 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
+    addressable (2.3.8)
     airbrake (3.1.16)
       builder
       multi_json
@@ -104,6 +105,9 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
+    capybara-webkit (1.5.1)
+      capybara (>= 2.3.0, < 2.5.0)
+      json
     carrierwave (0.10.0)
       activemodel (>= 3.2.0)
       activesupport (>= 3.2.0)
@@ -140,7 +144,7 @@ GEM
       thread_safe (~> 0.1)
       warden (~> 1.2.3)
     erubis (2.7.0)
-    eventmachine (1.0.3)
+    eventmachine (1.0.7)
     execjs (2.2.0)
     factory_girl (4.4.0)
       activesupport (>= 3.0.0)
@@ -176,6 +180,8 @@ GEM
       thor (>= 0.14, < 2.0)
     json (1.8.2)
     kgio (2.9.2)
+    launchy (2.4.3)
+      addressable (~> 2.3)
     libv8 (3.16.14.3)
     localeapp (0.7.2)
       gli
@@ -404,6 +410,8 @@ DEPENDENCIES
   capistrano-bundler
   capistrano-rails
   capistrano-rbenv
+  capybara
+  capybara-webkit
   coffee-rails (~> 4.0.0)
   commands
   database_cleaner
@@ -417,6 +425,7 @@ DEPENDENCIES
   ipaddress
   jbuilder (~> 1.2)
   jquery-rails
+  launchy
   localeapp
   mailboxer!
   mailcatcher

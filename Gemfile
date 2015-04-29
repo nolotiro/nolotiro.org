@@ -17,6 +17,9 @@ end
 group :development, :test do
   gem 'sqlite3'                             # test: database
   gem 'minitest-rails-capybara'             # test: features
+  gem 'capybara'                            # test: features
+  gem 'capybara-webkit'                     # test: features - js: true
+  gem 'launchy'                             # test: features - save_and_open_page helper
   gem 'factory_girl_rails', '~> 4.0'        # test: factories 
   gem 'minitest-reporters'                  # test: color output 
   gem 'database_cleaner'                    # test: for not having duplicity
