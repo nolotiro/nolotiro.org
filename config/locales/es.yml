@@ -464,7 +464,7 @@ es:
       button: buscar
       must_search: Debes buscar por algo en algun lugar.
       no_ads_message_html: No hay anuncios que coincidan con la búsqueda <b>%{q}</b> en la ubicación %{woeid}.
-    searching_on_html: Buscando <i>%{ @q }</i> en
+    searching_on_html: Buscando <i>%{q}</i> en
     send: Enviar
     send_a_message: + Envía un mensaje al anunciante
     send_a_message_to: '+ Envía un mensaje a '
