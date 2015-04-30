@@ -293,7 +293,7 @@ es:
     notifications:
       move: Mensaje movido a %{mailbox}
       sent: Mensaje enviado
-      trash: 
+      trash: Mensaje movido a papelera
       untrash: Mensaje recuperado
     search: Resultados de busqueda de %{search}
     table:
