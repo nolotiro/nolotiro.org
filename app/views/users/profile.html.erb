@@ -49,15 +49,17 @@
           </li>
         <% end %>
 
-        <% if user_signed_in? and current_user.is_friend? @user %>
-          <%= link_to destroy_friend_path(@user.id), class: 'world_link', method: 'post' do %>
-            <%= t('nlt.user_profile.delete_friend', username: @user.username) %>
-            <%= image_tag "friend_delete.png", alt: "Delete friend"%>
-          <% end %>
-        <% else %>
-          <%= link_to add_friend_path(@user.id), class: 'world_link', method: 'post' do %>
-            <%= t('nlt.user_profile.add_friend', username: @user.username) %>
-            <%= image_tag "friend_add.png", alt: "Add friend"%>
+        <% if user_signed_in? %>
+          <% if current_user.is_friend? @user %>
+            <%= link_to destroy_friend_path(@user.id), class: 'world_link', method: 'post' do %>
+              <%= t('nlt.user_profile.delete_friend', username: @user.username) %>
+              <%= image_tag "friend_delete.png", alt: "Delete friend"%>
+            <% end %>
+          <% else %>
+            <%= link_to add_friend_path(@user.id), class: 'world_link', method: 'post' do %>
+              <%= t('nlt.user_profile.add_friend', username: @user.username) %>
+              <%= image_tag "friend_add.png", alt: "Add friend"%>
+            <% end %>
           <% end %>
         <% end %>
 

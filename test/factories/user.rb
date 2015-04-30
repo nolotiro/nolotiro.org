@@ -20,7 +20,7 @@ FactoryGirl.define do
 
   # This will use the User class (Admin would have been guessed)
   factory :admin, class: User do
-    username "Admin"
+    username
     email 'admin@gmail.com'
     lang 'es'
     password '12435968770'
@@ -29,7 +29,7 @@ FactoryGirl.define do
   end
 
   factory :non_confirmed_user, class: User do
-    username "Pepito"
+    username
     email 
     lang 'es'
     password '123456789'
