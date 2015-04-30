@@ -11,10 +11,7 @@ feature "CanAccessAdmin" do
   scenario "should not get /admin/jobs as a normal user" do
     @user = FactoryGirl.create(:user)
     login_as @user
-    visit "/admin/jobs"
-    save_and_open_page
-    #page.must_redirect_to root_url
-    assert_equal 404, page.status_code
+    assert_raises(ActionController::RoutingError) { visit "/admin/jobs" }
   end
 
   scenario "should get /admin/jobs as admin" do

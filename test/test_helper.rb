@@ -32,15 +32,7 @@ class ActionDispatch::Routing::RouteSet
   end
 end
 
-# FIX Capybara error: SQLite3::BusyException: database is locked  
-# http://atlwendy.ghost.io/capybara-database-locked/
-class ActiveRecord::Base
-  mattr_accessor :shared_connection
-  @@shared_connection = nil
-
-  def self.connection
-    @@shared_connection || retrieve_connection
-  end
+# https://github.com/blowmage/minitest-rails-capybara/issues/6
+class Capybara::Rails::TestCase
+  before { self.use_transactional_fixtures = !metadata[:js] }
 end
-
-Rails.application.config.consider_all_requests_local = false
