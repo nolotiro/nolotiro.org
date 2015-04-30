@@ -178,14 +178,6 @@ form.searchbox
     font-weight: bold
     background-color: #fff
 
-.google_ads
-  width: 468px
-  padding: 10px
-  background-color: #fff
-  display: inline-block
-  text-align: center
-  margin: 10px auto 20px
-
 .ad_create_tab
   position: absolute
   right: 0px
@@ -203,7 +195,14 @@ form.searchbox
   font-weight: bold !important
 
 .ad_create_tab a
-  background: transparent image-url("btn_new_ad.png") no-repeat scroll 100% 0
+  background: #97dc3c
+  background: -moz-linear-gradient(top, #73C017 31%, #67B213 67%, #51990C 87%)
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(31%,#73C017), color-stop(67%,#67B213), color-stop(87%,#51990C))
+  background: -webkit-linear-gradient(top, #73C017 31%,#67B213 67%,#51990C 87%)
+  background: -o-linear-gradient(top, #73C017 31%,#67B213 67%,#51990C 87%)
+  background: -ms-linear-gradient(top, #73C017 31%,#67B213 67%,#51990C 87%)
+  background: linear-gradient(to bottom, #73C017 31%,#67B213 67%,#51990C 87%)
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#73C017', endColorstr='#51990C',GradientType=0 )
   height: 24px
   overflow: hidden
   color: #fff
@@ -998,6 +997,16 @@ $langs: <%= Rails.application.secrets["langs"] %>
   width: 300px
   height: 250px
 
+//Google Ads
+
+.google_ads
+  width: 468px
+  padding: 10px
+  background-color: #fff
+  display: inline-block
+  text-align: center
+  margin: 10px auto 20px
+
 .vertical_ad
   float: right
   width: 160px
@@ -1010,10 +1019,9 @@ $langs: <%= Rails.application.secrets["langs"] %>
   height: 250px
   position: absolute
 
-
-
-//@media only screen and (min-width: 768px) and (max-width: 959px)
-//@media only screen and (min-width: 480px) and (max-width: 767px)
+@media only screen and (min-width: 779px)
+  .span-15
+    height: 300px
 
 @media only screen and (max-width: 779px)
   .section_ads
@@ -1025,8 +1033,8 @@ $langs: <%= Rails.application.secrets["langs"] %>
     width: 50%
     padding-top: 20px
 
-  .ad_create_tab a
-    margin-top: 25px
+  .ad_create_tab_home a
+    height: 24px !important
 
   div.info.js-alert-first-visit.hide
     margin-top: 5em
@@ -1136,10 +1144,36 @@ $langs: <%= Rails.application.secrets["langs"] %>
   #header
     margin-bottom: 20%
 
-@media only screen and (min-width: 500px) and (max-width: 768px)
+  .rectangular_ad
+    height: 60px
+    float: left
+    position: relative
+
+  .vertical_ad
+    float: left
+    position: relative
+    height: 250px
+    width: 310px
+
+  .ad_create_tab
+    position: relative
+    float: right
+
+  textarea
+    width: 95% !important
+
+@media only screen and (min-width: 568px) and (max-width: 779px)
   #header
     margin-bottom: 15%
 
-@media only screen and (max-width: 568px)
+
+@media only screen and (max-width: 500px)
   .google_ads
     width: 310px
+
+  .rectangular_ad
+    width: 310px
+
+@media only screen and (max-width: 400px)
+  .ad_create_tab a
+    height: 45px
