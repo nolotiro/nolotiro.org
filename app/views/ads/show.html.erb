@@ -1,4 +1,4 @@
-<%= content_for(:meta_title, "#{I18n.t('nlt.keywords')} #{self.title} #{self.woeid_name}") %>
+<%= content_for(:meta_title, "#{I18n.t('nlt.keywords')} #{@ad.title} #{@ad.woeid_name}") %>
 <%= content_for :meta_description do %>
   <meta name="description" content="<%= t('nlt.meta_description_ad', title: @ad.title, woeid: @ad.woeid_name, body: @ad.body) %>" />
 <% end %>
