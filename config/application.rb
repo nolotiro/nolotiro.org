@@ -22,7 +22,7 @@ module NolotiroOrg
     # No usar TLS para conectar al SMTP ya 
     # que no tenemos un certificado válido
     config.action_mailer.smtp_settings = {
-      enable_starttls_auto: => false
+      enable_starttls_auto: false
     }
   end
 end
