@@ -501,10 +501,10 @@ es:
     welcome_message: Bienvenido
     write_a_comment: + Escribe un nuevo comentario
     your_email: Tu email
-  profile: 
-    friend:
-      add: agregar a %{username} tu lista de amigos
-      delete: eliminar %{username} de tu lista de amigos
+    profile_actions: 
+      friend:
+        add: agregar %{username} a tu lista de amigos
+        delete: eliminar %{username} de tu lista de amigos
   number:
     currency:
       format:
