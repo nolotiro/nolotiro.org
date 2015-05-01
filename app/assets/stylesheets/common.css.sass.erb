@@ -1019,6 +1019,10 @@ $langs: <%= Rails.application.secrets["langs"] %>
   height: 250px
   position: absolute
 
+#mailboxer_message_body
+  width: 90%
+  height: 100px
+
 @media only screen and (min-width: 779px)
   .span-15
     height: 300px
@@ -1159,13 +1163,12 @@ $langs: <%= Rails.application.secrets["langs"] %>
     position: relative
     float: right
 
-  textarea
+  #ad_body, textarea
     width: 95% !important
 
 @media only screen and (min-width: 568px) and (max-width: 779px)
   #header
     margin-bottom: 15%
-
 
 @media only screen and (max-width: 500px)
   .google_ads
@@ -1173,6 +1176,14 @@ $langs: <%= Rails.application.secrets["langs"] %>
 
   .rectangular_ad
     width: 310px
+    height: 100%
+    display: inline-block
+
+  .message-from-left, .message-from-right
+    display: none
+
+  .message-container-left, .message-container-right
+    margin: 0px
 
 @media only screen and (max-width: 400px)
   .ad_create_tab a
