@@ -1,8 +1,8 @@
-<%= t('.greeting', :recipient => @resource.email, :default => "Welcome #{@resource.email}!") %>
+<%= t('nlt.hello_to', :recipient => @resource.email) %>
 
-<%= t('.instruction', :default => "You can confirm your account email through the link below:") %>
+<%= t('devise.confirmations.instructions') %>
 
-<%= link_to t('.action', :default => "Confirm my account"),
+<%= link_to t('devise.confirmations.action'),
          confirmation_url(@resource, :confirmation_token => @resource.confirmation_token) %>
 
 <%= confirmation_url(@resource, :confirmation_token => @resource.confirmation_token) %>
