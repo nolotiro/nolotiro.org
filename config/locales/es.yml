@@ -493,9 +493,10 @@ es:
     welcome_message: Bienvenido
     write_a_comment: + Escribe un nuevo comentario
     your_email: Tu email
-  user_profile: 
-    add_friend: agregar a tu lista de amigos
-    delete_friend: eliminar de tu lista de amigos
+  profile: 
+    friend:
+      add: agregar a %{username} tu lista de amigos
+      delete: eliminar %{username} de tu lista de amigos
   number:
     currency:
       format:
