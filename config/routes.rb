@@ -99,17 +99,17 @@ NolotiroOrg::Application.routes.draw do
       post '/reply/:id/to/:user_id', to: 'messages#reply', as: 'message_reply'
     end
 
-    # messaging legacy
-    scope '/legacy/message' do
-      get  '/received', to: redirect('/es/legacy/message/list'), as: 'legacy_messages_received'
-      get  '/list', to: 'legacy/messages#list', as: 'legacy_messages_list'
-      get  '/show/:id/subject/:subject', to: 'legacy/messages#show', as: 'legacy_message_show'
-      get  '/create/id_user_to/:user_id', to: 'legacy/messages#new', as: 'legacy_message_new'
-      get  '/create/id_user_to/:user_id/subject/:subject', to: "legacy/messages#new", as: 'legacy_message_new_with_subject'
-      post '/create/id_user_to/:user_id', to: 'legacy/messages#create', as: 'legacy_message_create'
-      post '/create/id_user_to/:user_id/subject/:subject', to: "legacy/messages#create", as: 'legacy_message_create_with_subject'
-      post '/reply/:id/to/:user_id', to: 'legacy/messages#reply', as: 'legacy_message_reply'
-    end
+    ## messaging legacy
+    #scope '/legacy/message' do
+    #  get  '/received', to: redirect('/es/legacy/message/list'), as: 'legacy_messages_received'
+    #  get  '/list', to: 'legacy/messages#list', as: 'legacy_messages_list'
+    #  get  '/show/:id/subject/:subject', to: 'legacy/messages#show', as: 'legacy_message_show'
+    #  get  '/create/id_user_to/:user_id', to: 'legacy/messages#new', as: 'legacy_message_new'
+    #  get  '/create/id_user_to/:user_id/subject/:subject', to: "legacy/messages#new", as: 'legacy_message_new_with_subject'
+    #  post '/create/id_user_to/:user_id', to: 'legacy/messages#create', as: 'legacy_message_create'
+    #  post '/create/id_user_to/:user_id/subject/:subject', to: "legacy/messages#create", as: 'legacy_message_create_with_subject'
+    #  post '/reply/:id/to/:user_id', to: 'legacy/messages#reply', as: 'legacy_message_reply'
+    #end
 
     # rss
     # nolotirov2 - legacy 
