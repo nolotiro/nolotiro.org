@@ -51,7 +51,7 @@
       <%= t('nlt.by_user') %>
       <%= link_to ad.user.username, listads_user_path(ad.user) %>
     </span>
-    <div><p><%= truncate ad.body, length: 300, separator: ' ' %></p></div>
+    <div><p><%= truncate ad.body, length: 200, separator: ' ' %></p></div>
     <div class="ad_meta_info">
       <b><%= link_to t('nlt.send_a_message'), message_new_with_subject_path(user_id: ad.user.id, subject: ad.slug) %></b>
       <b><%= link_to t('nlt.write_a_comment'), adslug_path(ad,ad.slug) %></b>

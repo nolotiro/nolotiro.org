@@ -1,3 +1,5 @@
+<% content_for :meta_title, t('nlt.contact_form') %>
+
 <div id="default_header_section">
   <h2><%= t('nlt.contact_form') %></h2>
 </div>
@@ -20,17 +22,19 @@
         <% end %>
 
         <dl class="zend_form">
-          <dt id="email-label">
-          <%= f.label :email, :class => "required" %>
-          </dt>
-          <dd id="email-element">
-          <%= f.text_field :email, :required => "required" %>
-          </dd>
+          <% unless user_signed_in? %>
+            <dt id="email-label">
+              <%= f.label :email, :class => "required" %>
+            </dt>
+            <dd id="email-element">
+              <%= f.text_field :email, :type => :email, :required => "required" %>
+            </dd>
+          <% end %>
           <dt id="message-label">
-          <%= f.label :message, "Message", :class => "required" %><br />
+            <%= f.label :message, :class => "required" %><br />
           </dt>
           <dd id="message-element">
-          <%= f.text_area :message, :size => "24x10" %>
+            <%= f.text_area :message, :size => "24x10" %>
           </dd>
           <dt id="captcha-input-label">
           <label for="captcha-input" class="required">
@@ -42,7 +46,7 @@
           </dd>
           <dt id="submit-label">&nbsp;</dt>
           <dd id="submit-element">
-          <%= f.submit t('nlt.send') %>
+            <%= f.submit t('nlt.send') %>
           </dd>
         </dl>    
       </fieldset>
