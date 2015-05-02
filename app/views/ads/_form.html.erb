@@ -4,7 +4,8 @@
       <%= form_for(@ad, :html => {:multipart => true}) do |f| %>
         <% if @ad.errors.any? %>
         <div id="error_explanation">
-        <h2><%= pluralize(@ad.errors.count, "error") %> <%= t 'nlt.ads.form.prohibited' %>:</h2>
+        <h2><%= t('nlt.save_failed') %></h2>
+
         <ul>
           <% @ad.errors.full_messages.each do |msg| %>
             <li><%= msg %></li>
