@@ -13,7 +13,7 @@ class Ad < ActiveRecord::Base
   validates :ip, presence: true
 
   validates :title, length: {minimum: 10, maximum: 100}
-  validates :body, length: {minimum: 30, maximum: 65000}
+  validates :body, length: {minimum: 30, maximum: 500}
 
   validates :status,
     inclusion: { in: [1, 2, 3], message: "no es un estado válido" },
