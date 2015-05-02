@@ -171,6 +171,7 @@ es:
       confirmed: Tu cuenta ha sido satisfactoriamente confirmada.
       send_instructions: Vas a recibir un correo con instrucciones sobre cómo confirmar tu cuenta en unos pocos minutos.
       send_paranoid_instructions: Si tu correo existe en nuestra base de datos, vas a recibir un correo con instrucciones sobre cómo confirmar tu cuenta en unos pocos minutos.
+      resend: Reenviar instrucciones de confirmación
     failure:
       already_authenticated: Ya has iniciado una sesión.
       inactive: Tu cuenta aún no ha sido activada.
@@ -281,10 +282,12 @@ es:
     message_mailer:
       subject_new: '[nolotiro.org] Nuevo mensaje: %{subject}'
       subject_reply: '[nolotiro.org] Nueva respuesta: %{subject}'
-      visit_html: Visita %{url} y ve a tu bandeja de entrada para responder
-      visit_text: Visita %{url} y ve a tu bandeja de entrada para responder
+      visit: Ver conversación y responder mensaje
       you_have_new_message: Has recibido un nuevo mensaje
       you_have_recieved_new_message: Has recibido un nuevo mensaje
+      message:
+        subject: Asunto
+        body: Mensaje
     new:
       button: Enviar
       errors: '%{errors} prohibieron que se enviase este mensaje:'
@@ -321,9 +324,10 @@ es:
       p2: 'Esto significa que puedes haber tenido problemas para acceder a la página. Si quieres confirmar tu usuario (%{username}) puedes hacerlo con este enlace:'
     greetings: Gracias y saludos,
     hello: Hola,
-    hello_to: Hola %{recipient},
     signature: Equipo de nolotiro.org
   nlt:
+    readed_count: "%{count} lecturas"
+    hello_to: Hola %{recipient},
     about: acerca de
     about_page:
       description_html: <b>¿Qué es nolotiro.org?</b><br> Es un sitio web donde ofrecer al público, las cosas que ya no quieres o ya no necesitas para que las recoja otra gente a la que puede servirle o serle de mucha utilidad. <br><br> <strong>Lee las <a href="/es/page/faqs">preguntas de uso frecuente</a> para saber mas detalles de la filosofia y objetivos del proyecto</strong> <br><br> <b>Ventajas de nolotiro.org:</b><br> La gran ventaja de nolotiro.org, es que sustituye la nostalgia/sentimiento de derroche, por la sensación de hacer algo por alguien. Logras deshacerte de esas cosas que no tirabas porque te daba pena, porque estaban nuevas, o porque... y que al final solo acumulaban polvo en algún rincón olvidadas u ocupaban espacio, sabiendo que alguien las va a sacar buen partido, porque si que las necesita verdaderamente. Por otra parte, nolotiro.org al estar organizado por zonas geográficas fomenta que las cosas que quieras dar, se queden cerca, no hay gastos de envío, ni desplazamientos, ni envios a países lejanos que nunca sabes si llegan, se lo das tú mismo a alguien de tu misma ciudad, que va a buscarlo en persona a un lugar pactado. <br><br> <b>A tener en cuenta:</b><br> NO HAY OPCIÓN DE INTERCAMBIO, esto no se basa en el trueque, ni en la compra, por que hay que fomentar el altruismo, dar las cosas por que sí, porque nos sobran. <br><br> <b>Explicación en versión literaria</b><br> <a href="http://www.marcianoduran.com.uy/?p=176">¿Porqué no lo tiro?</a> Por Marciano Durán <br><br> <b>Nolotiro.org funciona  gracias al trabajo de muchas <a href="http://www.youtube.com/watch?v=KMU0tzLwhbE">personas</a> que han creado el siguiente software libre:</b> <a href="http://framework.zend.com/">Zend Framework</a>, <a href="http://www.php.net/">PHP</a>, <a href="http://www.mysql.com/">MySQL</a>, <a href="http://developer.yahoo.com/geo/geoplanet/">Yahoo GeoPlanet API</a>, <a href="http://www.postfix.org/">Postfix</a>, <a href="http://www.debian.org/">Debian</a>, <a href="http://nginx.org/">Nginx</a>, <a href="http://sphinxsearch.com/">Sphinx</a> , y muchos mas, tantos que sería imposible nombrarlos todos aquí. <br><br> <b>El código fuente de nolotiro.org es código abierto</b> y está disponible para ser utilizado (bajo licencia Affero GPL 3).<br> Visita la <a href="https://github.com/alabs/nolotiro"> web para desarrolladores</a> para mas detalles (en inglés).<br> Los colaboradores son bienvenidos, ya sea para programar o para traducir la página a otras lenguas.
@@ -459,6 +463,7 @@ es:
     profile: perfil
     publish_ad: 'Publicando anuncio '
     publish_ad_on: Publicar anuncio en %{woeid}
+    to_publish_ad: Publicar anuncio
     published_ads: Anuncios publicados
     published_at_by_html: Publicado hace %{time} por el usuario %{user}
     published_on: Publicado hace %{date}
