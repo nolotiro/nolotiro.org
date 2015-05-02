@@ -54,8 +54,8 @@
     <div><p><%= ad.body %></p></div>
     <div class="ad_meta_info">
       <b><%= link_to t('nlt.send_a_message'), message_new_with_subject_path(user_id: ad.user.id, subject: ad.slug) %></b>
-      &nbsp;&nbsp;&nbsp;<b><%= link_to t('nlt.write_a_comment'), adslug_path(ad,ad.slug) %></b>
-      &nbsp;&nbsp;
+      <b><%= link_to t('nlt.write_a_comment'), adslug_path(ad,ad.slug) %></b>
+      &nbsp;&nbsp; <%= t('nlt.readed_count', count: ad.readed_counter) %>
     </div>
   </div>
 <% end %>
