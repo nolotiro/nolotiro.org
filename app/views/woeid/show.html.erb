@@ -75,7 +75,7 @@
           <%= render :partial => "ads/ad", :locals => { :ad => ad, :i => i } %>
         <% end %>
       <% end %>
-      <%= will_paginate @ads, :page_links => false %>
+      <%= render partial: "partials/pagination", locals: { items: @ads } %>
     <% else %>
       <% if defined? @no_results_search %>
         <%= render :partial => "ads/no_results_search", :locals => { :location_suggest => @location_suggest, :location_options => @location_options } %>

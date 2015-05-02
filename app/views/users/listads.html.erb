@@ -10,7 +10,7 @@
     <% @ads.each do |ad| %>
       <%= render :partial => "ads/ad", :locals => { :ad => ad } %>
     <% end %>
-    <%= will_paginate @ads, :page_links => false %>
+    <%= render partial: "partials/pagination", locals: { items: @ads } %>
   </div>
 </div>
 
