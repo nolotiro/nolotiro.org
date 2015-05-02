@@ -10,7 +10,11 @@
         style="display:block"
         data-ad-client="ca-pub-5360961269901609"
         data-ad-slot="7495332060"
-        data-ad-format="auto">
+        <% if defined? data_format %>
+          data-ad-format="<%= data_format %>">
+        <% else %>
+          data-ad-format="auto">
+        <% end %>
     </ins>
     <script>
         (adsbygoogle = window.adsbygoogle || []).push({});
