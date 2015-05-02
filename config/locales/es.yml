@@ -310,6 +310,7 @@ es:
       sent: Mensaje enviado
       trash: Mensaje movido a papelera
       untrash: Mensaje recuperado
+      error_same_user: No puedes enviarte un mensaje a tí mismo
     search: Resultados de busqueda de %{search}
     table:
       date: Fecha
@@ -319,7 +320,6 @@ es:
       sender: Enviado
       subject: Asunto
       none: No tienes mensajes de este tipo
-    title: 
     titles:
       conversation: Conversación con %{recipient} asunto %{subject}
       index: Mensajes de %{username}
