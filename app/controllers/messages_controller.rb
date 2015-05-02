@@ -23,29 +23,41 @@ class MessagesController < ApplicationController
   def create
     @message = Mailboxer::Message.new message_params
     @message.sender = current_user
+    # FIXME: this should be on model (validation)
+    if @message.sender.id == params[:mailboxer_message][:recipients].to_i
+      return redirect_to message_create_url(user_id: params[:mailboxer_message][:recipients].to_i), notice: I18n.t("mailboxer.notifications.error_same_user")
+    end
     if @message.conversation_id
       @conversation = Mailboxer::Conversation.find(@message.conversation_id)
       #@conversation = current_user.mailbox.conversations.find(@message.conversation_id)
       # FIXME: ACL should be on app/models/ability.rb
       unless @conversation.is_participant?(current_user) or current_user.admin?
-        flash[:alert] = I18n.t('nlt.permission_denied')
+        flash.now[:alert] = I18n.t('nlt.permission_denied')
         return redirect_to root_path
       end
       receipt = current_user.reply_to_conversation(@conversation, @message.body, nil, true, true, @message.attachment)
     else
-      @message.recipients = User.find(params[:message][:recipients])
+      @message.recipients = User.find(params[:mailboxer_message][:recipients])
       unless @message.valid?
         return render :new
       end
       receipt = current_user.send_message(@message.recipients, @message.body, @message.subject, true, @message.attachment)
     end
-    flash[:notice] = I18n.t "mailboxer.notifications.sent" 
+    flash.now[:notice] = I18n.t "mailboxer.notifications.sent" 
     redirect_to mailboxer_message_path(receipt.conversation)
   end
 
+  # GET /messages/:ID
+  # GET /message/show/:ID/subject/SUBJECT
   def show
+    # TODO: refactor this 
     @conversation = Mailboxer::Conversation.find_by_id(params[:id])
     #@conversation = current_user.mailbox.conversations.find(params[:id])
+    # if not found, it could be a legacy URL with a ID for a legacy thread 
+    if @conversation.nil? 
+      @conversation = Legacy::MessageThread.find(params[:id]).conversation
+    end
+    raise ActiveRecord::RecordNotFound if @conversation.nil?
     # FIXME: ACL should be on app/models/ability.rb
     unless @conversation.is_participant?(current_user) or current_user.admin?
       flash[:alert] = I18n.t('nlt.permission_denied')
@@ -53,7 +65,6 @@ class MessagesController < ApplicationController
     end
     @message = Mailboxer::Message.new conversation_id: @conversation.id
     current_user.mark_as_read(@conversation)
-    expire_fragment "unread_messages_count_#{current_user.id}"
   end
 
   def move
@@ -93,7 +104,7 @@ class MessagesController < ApplicationController
   private 
   # Never trust parameters from the scary internet, only allow the white list through.
   def message_params
-    params.require(:message).permit(:conversation_id, :body, :subject, :recipients, :sender_id)
+    params.require(:mailboxer_message).permit(:conversation_id, :body, :subject, :recipients, :sender_id)
   end
 
 end

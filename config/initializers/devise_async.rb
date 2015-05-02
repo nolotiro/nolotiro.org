@@ -1,1 +1,1 @@
-Devise::Async.backend = :resque
+Devise::Async.backend = :sidekiq

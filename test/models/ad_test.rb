@@ -5,6 +5,7 @@ class AdTest < ActiveSupport::TestCase
  
   setup do
     @ad = FactoryGirl.create(:ad)
+    I18n.default_locale = :es
   end
 
   test "ad requires everything" do

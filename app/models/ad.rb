@@ -12,8 +12,8 @@ class Ad < ActiveRecord::Base
   validates :woeid_code, presence: true
   validates :ip, presence: true
 
-  validates :title, length: {maximum: 100}
-  validates :body, length: {maximum: 65000}
+  validates :title, length: {minimum: 10, maximum: 100}
+  validates :body, length: {minimum: 30, maximum: 500}
 
   validates :status,
     inclusion: { in: [1, 2, 3], message: "no es un estado válido" },
@@ -72,10 +72,10 @@ class Ad < ActiveRecord::Base
   end
 
   def readed_counter
-    readed_count || 0
+    readed_count || 1
   end
 
-  def increment_readed_count
+  def increment_readed_count!
     # Is this premature optimization?
     # AdIncrementReadedCountWorker.new(self.id)
     Ad.increment_counter(:readed_count, self.id)

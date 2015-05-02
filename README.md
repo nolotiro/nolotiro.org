@@ -4,8 +4,8 @@
 
 This is the next revision of nolotiro.org, this time in Ruby On Rails.
 
-* Ruby: 2.0.0p247
-* Rails: 4.0.1
+* Ruby: 2.2.2
+* Rails: 4.2.1
 
 ## Installation
 
@@ -33,6 +33,7 @@ To install it you should do something like:
     $ bundle
     $ cp config/app_config.yml.example config/app_config.yml
     $ cp config/database.yml.example config/database.yml
+    $ rake db:schema:load
     $ rails s
 
 The database we use is legacy, a MySQL with the schema of [v2](https://github.com/alabs/nolotiro)
@@ -64,19 +65,7 @@ and configure it in the relevant environment in *config/app_config.yml* (keys
 
 ## Development environment magic
 
-To speed up things in development we recommend using zeus.
-
-    $ gem install zeus
-    $ zeus start 
-
-And leave that console, restart it only when making change in Factories and when
-trange things start to happen (TODO: install and configure guard). Then you can 
-execute very fast (less than 1-2 seconds) some rails commands: 
-
-    $ zeus server
-    $ zeus console
-
-Also we recommend using mailcatcher. This doesn't send external emails during
+For the emails we recommend using mailcatcher. This doesn't send external emails during
 development, and you can see them in a nice web interface. The SMTP port is 
 already configured to it (1025).
 
@@ -107,11 +96,6 @@ http://beta.nolotiro.org/api/v1/woeid/list
 http://beta.nolotiro.org/api/v1/woeid/766273/give
 http://beta.nolotiro.org/api/v1/woeid/766273/give?page=2
 http://beta.nolotiro.org/api/v1/ad/153735
-
-## stats 12/11/2013
-
-* Ads: 97206
-* Images: 75384
 
 ## 3erd Party
 

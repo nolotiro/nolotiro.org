@@ -19,11 +19,10 @@ set :linked_dirs, %w{bin db/sphinx log tmp/pids tmp/cache tmp/sockets vendor/bun
 
 set :keep_releases, 5
 
-set :rvm_type, :user
-
 # Logical flow for deploying an app
 after  'deploy:finished',            'thinking_sphinx:index'
 after  'deploy:finished',            'thinking_sphinx:restart'
+after  'deploy:finished',            'deploy:restart'
 
 namespace :deploy do
 
@@ -38,10 +37,49 @@ namespace :deploy do
     end
   end
 
+  desc 'Start application'
+  task :start do
+    on roles(:app), in: :sequence, wait: 5 do
+
+      # starting nginx / passenger
+      sudo "service nginx start"
+
+      # starting sidekiq / unicorn 
+      sudo "service god start"
+
+    end
+  end
+
+  desc 'Stop application'
+  task :stop do
+    on roles(:app), in: :sequence, wait: 5 do
+
+      # stoping nginx / passenger
+      sudo "service nginx stop"
+
+      # stoping sidekiq / unicorn 
+      sudo "service god stop"
+
+    end
+  end
+
+  desc 'Restart application'
+  task :restart do
+    on roles(:app), in: :sequence, wait: 5 do
+      # restarting nginx / passenger
+      sudo "service nginx restart"
+
+      # restarting sidekiq / unicorn 
+      sudo "service god restart"
+    end
+  end
+
   before :restart, :clear_cache do
     on roles(:web), in: :groups, limit: 3, wait: 10 do
       within release_path do
-        execute :rake, 'nolotiro:cache:clear'
+        with rails_env: fetch(:rails_env) do 
+          execute :rake, 'nolotiro:cache:clear'
+        end
       end
     end
   end
