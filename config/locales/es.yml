@@ -35,9 +35,11 @@ es:
       message:
         subject: Subject
       user:
-        Contraseña: Contraseña
-        Recuérdame: Recuérdame
-        Tu email: Tu email
+        password: Contraseña nueva
+        password_confirmation: Contraseña nueva (repetir)
+        current_password: Contraseña actual
+        remember: Recuérdame
+        email: Correo electrónico
       ad:
         body: Cuerpo del anuncio
         subject: Título del anuncio
@@ -331,6 +333,12 @@ es:
     hello: Hola,
     signature: Equipo de nolotiro.org
   nlt:
+    profile_edit: Editar perfil
+    leave_blank: (déjala en blanco si no quieres cambiarla)
+    we_need_your_password: (necesitamos tu contraseña para confirmar tus cambios)
+    cancel_my_account: Cancelar mi cuenta
+    want_to_leave: ¿Quieres borrar tu usuario?
+    update: Guardar
     readed_count: "%{count} lecturas"
     hello_to: Hola %{recipient},
     about: acerca de
