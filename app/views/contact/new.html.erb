@@ -12,7 +12,7 @@
 
         <% if @contact.errors.any? %>
           <div class="error_messages">
-            <h2><%= pluralize(@contact.errors.count, "error") %> prohibited this message from being saved:</h2>
+            <h2><%= t('nlt.save_failed') %></h2>
             <ul>
               <% @contact.errors.full_messages.each do |msg| %>
                 <li><%= msg %></li>

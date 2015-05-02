@@ -10,8 +10,7 @@
       <legend>Por favor, escribe tu mensaje</legend>
         <% if @message.errors.any? %>
           <div class="error">
-            <h2><%= pluralize(@message.errors.count, "error") %> prohibited this message from being saved:</h2>
-
+            <h2><%= t('nlt.save_failed') %></h2>
             <ul>
               <% @message.errors.full_messages.each do |msg| %>
                 <li><%= msg %></li>

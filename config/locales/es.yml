@@ -30,6 +30,10 @@ es:
         header:
           one: No se pudo guardar este/a %{model} porque se encontró 1 error
           other: No se pudo guardar este/a %{model} porque se encontraron %{count} errores
+    attributes:
+      contact: 
+        email: Correo electrónico
+        message: Mensaje
   activerecord:
     attributes:
       message:
@@ -40,14 +44,13 @@ es:
         current_password: Contraseña actual
         remember: Recuérdame
         email: Correo electrónico
-      contact: 
-        email: Correo electrónico
-        message: Mensaje
       ad:
-        body: Cuerpo del anuncio
-        subject: Título del anuncio
-        type: Tipo de anuncio
-        image: Imagen del anuncio
+        body: Cuerpo
+        subject: Título
+        type: Tipo
+        image: Imagen
+        image_content_type: Tipo de contenido de imagen
+        image_file_size: Tamaño de imagen
     errors:
       format: '%{attribute} %{message}'
       messages:
@@ -300,7 +303,7 @@ es:
         body: Mensaje
     new:
       button: Enviar
-      errors: '%{errors} prohibieron que se enviase este mensaje:'
+      errors: 'Hay un problema, revisa esto:'
       legend: Enviar mensaje
       submit: Enviar
       title: Nuevo mensaje privado para el usuario %{user}
@@ -336,6 +339,7 @@ es:
     hello: Hola,
     signature: Equipo de nolotiro.org
   nlt:
+    save_failed: 'Hay un problema, revisa esto:'
     profile_edit: Editar perfil
     leave_blank: (déjala en blanco si no quieres cambiarla)
     we_need_your_password: (necesitamos tu contraseña para confirmar tus cambios)
@@ -343,6 +347,10 @@ es:
     want_to_leave: ¿Quieres borrar tu usuario?
     update: Guardar
     readed_count: "%{count} lecturas"
+    comments_count: 
+      zero: " "
+      one: ", %{count} comentario"
+      other: ", %{count} comentarios"
     hello_to: Hola %{recipient},
     about: acerca de
     about_page:
@@ -354,13 +362,14 @@ es:
       lock_user: '[ADMIN] Bloquear a este usuario'
       unlock_user: '[ADMIN] Desbloquear a este usuario'
     ads:
+      updated: Hemos actualizado el anuncio
       created: Hemos creado el anuncio
       form:
         body: 'Cuerpo del anuncio:'
         comments_enabled: Permitir comentarios públicos
         image_permitted_formats: 'Formatos permitidos: gif, jpg, png. Max: 1Mb de tamaño.'
         please_ad_type: por favor, selecciona el tipo de anuncio
-        prohibited: prohibieron que se guardase este anuncio
+        prohibited: 'Hay un problema, revisa esto:'
         select_an_image: Selecciona una imagen para tu anuncio (opcional).
         status: Estado
         title: 'Título de tu anuncio:'
