@@ -24,6 +24,7 @@ NolotiroOrg::Application.routes.draw do
       get '/edit/id/:id', to: 'ads#edit', :as => 'ads_edit'
       get '/listall/ad_type/:type', to: 'woeid#show', as: "ads_listall" 
       get '/listall/ad_type/:type/status/:status', to: 'woeid#show', as: 'ads_listall_status'
+      get '/listall/page/:page/ad_type/:type', to: redirect('/ad/listall/ad_type/%{type}?page=%{page}')
       get '/listuser/id/:id', to: 'users#listads', as: 'listads_user'
     end
 
