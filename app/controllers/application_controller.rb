@@ -16,17 +16,17 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  # after a user sing ins
   def after_sign_in_path_for(resource)
-    # go to their location if they have one
-    if current_user.woeid?
-      ads_woeid_path(id: current_user.woeid, type: 'give')
+    # https://github.com/plataformatec/devise/wiki/How-To:-Redirect-to-a-specific-page-on-successful-sign-in
+    sign_in_url = new_user_session_url
+    if request.referer == sign_in_url
+      super
     else
-    # or ask for the location
-      location_ask_path
+      initial_path = current_user.woeid? ? ads_woeid_path(id: current_user.woeid, type: 'give') : location_ask_path
+      stored_location_for(resource) || request.referer || initial_path
     end
   end
-   
+
   def set_locale
     I18n.locale = params[:locale] || I18n.default_locale
   end

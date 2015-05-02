@@ -38,8 +38,8 @@
       <br>
       <p><%= @ad.body %></p>
       <div class="ad_meta_info">
+        <%= t('nlt.readed_count', count: @ad.readed_counter) %>
       </div>
-      &nbsp;
 
       <%= t('nlt.are_you_interested') %>
       <%= link_to message_new_with_subject_path(user_id: @ad.user.id, subject: @ad.title.parameterize), :class => "world_link" do %>

@@ -3,6 +3,6 @@
 <%= t('devise.confirmations.instructions') %>
 
 <%= link_to t('devise.confirmations.action'),
-         confirmation_url(@resource, :confirmation_token => @resource.confirmation_token) %>
+         confirmation_url(@resource, :confirmation_token => @token) %>
 
-<%= confirmation_url(@resource, :confirmation_token => @resource.confirmation_token) %>
+<%= confirmation_url(@resource, :confirmation_token => @token) %>
