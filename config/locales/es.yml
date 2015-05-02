@@ -354,6 +354,7 @@ es:
       lock_user: '[ADMIN] Bloquear a este usuario'
       unlock_user: '[ADMIN] Desbloquear a este usuario'
     ads:
+      updated: Hemos actualizado el anuncio
       created: Hemos creado el anuncio
       form:
         body: 'Cuerpo del anuncio:'

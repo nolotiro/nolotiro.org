@@ -67,7 +67,7 @@ class AdsController < ApplicationController
     respond_to do |format|
       if @ad.update(ad_params)
         expire_fragment(  cache_key_for( "ad_#{I18n.locale}_" + @ad.id.to_s, current_user ) )
-        format.html { redirect_to @ad, notice: 'Ad was successfully updated.' }
+        format.html { redirect_to @ad, notice: t('nlt.ads.updated') }
         format.json { head :no_content }
       else
         format.html { render action: 'edit', alert: @ad.errors }
