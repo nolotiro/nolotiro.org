@@ -18,12 +18,14 @@
           </li>
         <% end %>
 
-        <li>
-          <%= link_to message_new_path @user.id, :class => "world_link" do %>
-            <%= t('nlt.send_a_message_to') %> <%= @user.username %>
-            <%= image_tag "email_send.png", :alt => "send a mesage" %>
-          <% end %>
-        </li>
+        <% unless current_user == @user %>
+          <li>
+            <%= link_to message_new_path @user.id, :class => "world_link" do %>
+              <%= t('nlt.send_a_message_to') %> <%= @user.username %>
+              <%= image_tag "email_send.png", :alt => "send a mesage" %>
+            <% end %>
+          </li>
+        <% end %>
 
         <% if user_signed_in? %>
           <li>
@@ -47,12 +49,12 @@
           <% if @user.locked? %>
             <%= link_to unlock_user_path(@user.id), data: {confirm: "¿Estas seguro que quieres desbloquear a este usuario? Podrá volver iniciar sesión."} do %>
               <%= t('nlt.admin.unlock_user') %>
-              <%= image_tag "neu/24x24/actions/add.png", :alt => "send a mesage" %>
+              <%= image_tag "neu/24x24/actions/add.png" %>
             <% end %>
           <% else %>
             <%= link_to lock_user_path(@user.id), data: {confirm: "¿Estas seguro que quieres bloquear a este usuario? No podrá iniciar sesión."} do %>
               <%= t('nlt.admin.lock_user') %>
-              <%= image_tag "neu/24x24/actions/remove.png", :alt => "send a mesage" %>
+              <%= image_tag "neu/24x24/actions/remove.png" %>
             <% end %>
           <% end %>
         </li>
