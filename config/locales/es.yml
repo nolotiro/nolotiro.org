@@ -38,6 +38,11 @@ es:
         Contraseña: Contraseña
         Recuérdame: Recuérdame
         Tu email: Tu email
+      ad:
+        body: Cuerpo del anuncio
+        subject: Título del anuncio
+        type: Tipo de anuncio
+        image: Imagen del anuncio
     errors:
       format: '%{attribute} %{message}'
       messages:
