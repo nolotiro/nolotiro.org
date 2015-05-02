@@ -2,8 +2,8 @@ class AdsController < ApplicationController
   include ApplicationHelper
 
   before_action :set_ad, only: [:show, :edit, :update, :destroy]
-  caches_action :list, :show, layout: false, unless: :current_user, skip_digest: true
-  caches_action :index, :cache_path => Proc.new { |c| c.params }, unless: :current_user
+  #caches_action :list, :show, layout: false, unless: :current_user, skip_digest: true
+  #caches_action :index, :cache_path => Proc.new { |c| c.params }, unless: :current_user
   load_and_authorize_resource
 
   # GET /
