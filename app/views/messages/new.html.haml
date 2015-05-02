@@ -1,8 +1,8 @@
-- title = t('mailboxer.new.title', user: @recipient.username) 
+- title = t('mailboxer.new.title', user: @recipient.username)
 - content_for :meta_title, title
 
 #default_header_section
-  %h1 
+  %h1
     = title
 #main
   .span-16
@@ -10,7 +10,7 @@
       %fieldset
         %legend= t('mailboxer.new.legend')
         -if @message.errors.any?
-          .error 
+          .error
             %h2= t('mailboxer.new.errors', errors: pluralize(@message.errors.count, "error"))
             %ul
               -@message.errors.full_messages.each do |msg|
@@ -28,4 +28,4 @@
         = f.hidden_field :recipients
         = f.submit t('mailboxer.new.submit')
 
-= render partial: "partials/google_adsense", locals: {id: "messages-new", ad_slot: "9737242867", ad_width: 300, ad_height: 250}
+= render partial: "partials/google_adsense", locals: {:class_name => "rectangular_ad"}
