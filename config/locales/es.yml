@@ -347,6 +347,10 @@ es:
     want_to_leave: ¿Quieres borrar tu usuario?
     update: Guardar
     readed_count: "%{count} lecturas"
+    comments_count: 
+      zero: " "
+      one: ", %{count} comentario"
+      other: ", %{count} comentarios"
     hello_to: Hola %{recipient},
     about: acerca de
     about_page:
