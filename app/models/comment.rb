@@ -7,7 +7,7 @@ class Comment < ActiveRecord::Base
   validates :user_owner, presence: true
   validates :ip, presence: true
 
-  validates :body, length: {maximum: 4096}
+  validates :body, length: {maximum: 1000}
 
   def body 
     ApplicationController.helpers.escape_privacy_data(read_attribute(:body))

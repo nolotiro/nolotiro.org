@@ -1,12 +1,17 @@
-<h2><%= t('.resend_confirmation_instructions', :default => 'Resend confirmation instructions') %></h2>
+<% content_for(:meta_title, t('devise.confirmations.resend')) %>
 
-<%= form_for(resource, :as => resource_name, :url => confirmation_path(resource_name), :html => { :method => :post }) do |f| %>
-  <%= devise_error_messages! %>
+<div id="default_header_section">
+  <h1><%= t('devise.confirmations.resend') %></h1>
+</div>
 
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email %></div>
-
-  <div><%= f.submit t('.resend_confirmation_instructions', :default => 'Resend confirmation instructions') %></div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+<div class="span-16">
+  <%= form_for(resource, :as => resource_name, :url => confirmation_path(resource_name), :html => { :method => :post }) do |f| %>
+    <fieldset>
+      <%= devise_error_messages! %>
+      <div><%= f.label :email %><br />
+        <%= f.email_field :email %></div>
+      <div><%= f.submit t('devise.confirmations.resend') %></div>
+    </fieldset>
+  <% end %>
+  <%= render "devise/shared/links" %>
+</div>

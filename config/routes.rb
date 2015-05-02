@@ -1,3 +1,5 @@
+require 'sidekiq/web'
+
 NolotiroOrg::Application.routes.draw do
 
   get '/', to: redirect('/es')
@@ -22,6 +24,7 @@ NolotiroOrg::Application.routes.draw do
       get '/edit/id/:id', to: 'ads#edit', :as => 'ads_edit'
       get '/listall/ad_type/:type', to: 'woeid#show', as: "ads_listall" 
       get '/listall/ad_type/:type/status/:status', to: 'woeid#show', as: 'ads_listall_status'
+      get '/listall/page/:page/ad_type/:type', to: redirect('/ad/listall/ad_type/%{type}?page=%{page}')
       get '/listuser/id/:id', to: 'users#listads', as: 'listads_user'
     end
 
@@ -57,9 +60,8 @@ NolotiroOrg::Application.routes.draw do
     post '/deletefriend/:id', to: 'friendships#destroy', as: 'destroy_friend'
 
     scope '/admin' do 
-      # config/initializers/admin.rb
-      constraints CanAccessResque do
-        mount Resque::Server, :at => "/resque"
+      authenticate :user, lambda { |u| u.admin? } do
+        mount Sidekiq::Web, at: "/jobs"
       end
       get '/become/:id', to: 'admin#become', as: 'become_user' 
       get '/lock/:id', to: 'admin#lock', as: 'lock_user' 
@@ -86,6 +88,8 @@ NolotiroOrg::Application.routes.draw do
       end
     end
 
+    post 'messages/search', to: 'messages#search', as: "search_mailboxer_messages"
+
     # messaging legacy
     scope '/message' do
       get  '/received', to: redirect('/es/message/list'), as: 'messages_received'
@@ -98,17 +102,17 @@ NolotiroOrg::Application.routes.draw do
       post '/reply/:id/to/:user_id', to: 'messages#reply', as: 'message_reply'
     end
 
-    # messaging legacy
-    scope '/legacy/message' do
-      get  '/received', to: redirect('/es/legacy/message/list'), as: 'legacy_messages_received'
-      get  '/list', to: 'legacy/messages#list', as: 'legacy_messages_list'
-      get  '/show/:id/subject/:subject', to: 'legacy/messages#show', as: 'legacy_message_show'
-      get  '/create/id_user_to/:user_id', to: 'legacy/messages#new', as: 'legacy_message_new'
-      get  '/create/id_user_to/:user_id/subject/:subject', to: "legacy/messages#new", as: 'legacy_message_new_with_subject'
-      post '/create/id_user_to/:user_id', to: 'legacy/messages#create', as: 'legacy_message_create'
-      post '/create/id_user_to/:user_id/subject/:subject', to: "legacy/messages#create", as: 'legacy_message_create_with_subject'
-      post '/reply/:id/to/:user_id', to: 'legacy/messages#reply', as: 'legacy_message_reply'
-    end
+    ## messaging legacy
+    #scope '/legacy/message' do
+    #  get  '/received', to: redirect('/es/legacy/message/list'), as: 'legacy_messages_received'
+    #  get  '/list', to: 'legacy/messages#list', as: 'legacy_messages_list'
+    #  get  '/show/:id/subject/:subject', to: 'legacy/messages#show', as: 'legacy_message_show'
+    #  get  '/create/id_user_to/:user_id', to: 'legacy/messages#new', as: 'legacy_message_new'
+    #  get  '/create/id_user_to/:user_id/subject/:subject', to: "legacy/messages#new", as: 'legacy_message_new_with_subject'
+    #  post '/create/id_user_to/:user_id', to: 'legacy/messages#create', as: 'legacy_message_create'
+    #  post '/create/id_user_to/:user_id/subject/:subject', to: "legacy/messages#create", as: 'legacy_message_create_with_subject'
+    #  post '/reply/:id/to/:user_id', to: 'legacy/messages#reply', as: 'legacy_message_reply'
+    #end
 
     # rss
     # nolotirov2 - legacy 

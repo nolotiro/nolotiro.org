@@ -13,5 +13,5 @@ Mailboxer.setup do |config|
   #Configures if you use or not a search engine and wich one are you using
   #Supported enignes: [:solr,:sphinx]
   config.search_enabled = false
-  config.search_engine = :solr
+  config.search_engine = :sphinx
 end

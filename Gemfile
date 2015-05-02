@@ -1,7 +1,6 @@
 source 'https://rubygems.org'
 
 gem 'rails', '~> 4.2.1'
-gem 'sqlite3'
 gem 'haml-rails'
 gem 'sass-rails', '~> 4.0.0'
 gem 'uglifier', '>= 1.3.0'
@@ -16,7 +15,11 @@ group :doc do
 end
 
 group :development, :test do
-
+  gem 'sqlite3'                             # test: database
+  gem 'minitest-rails-capybara'             # test: features
+  gem 'capybara'                            # test: features
+  gem 'capybara-webkit'                     # test: features - js: true
+  gem 'launchy'                             # test: features - save_and_open_page helper
   gem 'factory_girl_rails', '~> 4.0'        # test: factories 
   gem 'minitest-reporters'                  # test: color output 
   gem 'database_cleaner'                    # test: for not having duplicity
@@ -28,7 +31,6 @@ group :development, :test do
   #gem 'better_errors'                       # dev: better errors
   #gem 'binding_of_caller'                   # dev: better errors
   gem 'mailcatcher'                         # dev: mailbox 
-
 end
 
 group :production do
@@ -41,7 +43,7 @@ end
 
 # deploy
 gem 'capistrano', '~> 3.0'
-gem 'capistrano-rvm'
+gem 'capistrano-rbenv'
 gem 'capistrano-rails'
 gem 'capistrano-bundler'
 
@@ -52,6 +54,9 @@ gem 'mysql2'                                        # mysql
 gem 'thinking-sphinx'                               # sphinxsearch
 gem 'redis-rails'                                   # redis cache
 gem 'resque', github: 'resque/resque', branch: '1-x-stable', require: 'resque/server'              # job workers redis
+gem 'sidekiq'
+gem 'sinatra', require: false
+gem 'slim'
 
 gem 'geoplanet'                                     # yahoo woeid geoplanet
 gem 'geoip'                                         # geolite city

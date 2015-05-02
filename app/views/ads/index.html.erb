@@ -3,7 +3,7 @@
 <div id="main">
   <div class="section_ads">
     <h2><%= t('nlt.last_published_gifts') %></h2>
-    <% cache cache_key_for('ads_list_' + @ads.pluck(:id).to_s, current_user) do %>
+    <% cache cache_key_for("ads_list_#{I18n.locale}" + @ads.pluck(:id).to_s, current_user) do %>
       <% @ads.each_with_index do |ad,i| %>
         <%= render :partial => "ad", :locals => { :ad => ad, :i => i } %>
       <% end %>
@@ -12,11 +12,11 @@
   </div>
 </div>
 
-<% cache('section_locations') do %>
+<% cache("section_locations_#{I18n.locale}") do %>
   <%= render :partial => "partials/section_locations" %>
 <% end %>
 
-<% cache('section_users') do %>
+<% cache("section_users_#{I18n.locale}") do %>
   <%= render :partial => "partials/section_users" %>
 <% end %>
 

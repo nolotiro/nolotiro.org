@@ -3,7 +3,7 @@
 <%= t('mailer.confirmation_reminder.p1') %>
 <%= t('mailer.confirmation_reminder.p2', username: @resource.username) %>
 
-<%= user_confirmation_url @resource.confirmation_token %>
+<%= user_confirmation_url @token %>
 
 <%= t('mailer.greetings') %>
 <%= t('mailer.signature') %>

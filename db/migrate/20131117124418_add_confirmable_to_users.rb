@@ -18,6 +18,10 @@ class AddConfirmableToUsers < ActiveRecord::Migration
     # to the new confirmable model 
     User.all.where(:token => "" ).update_all(confirmed_at: Time.now)
 
+    # nolotiro v2 legacy - migrate users with active = 1 but with token (???) 
+    # possible legacy bug on some users
+    User.where(active: 1).where(confirmed_at: nil).update_all(confirmed_at: Time.now)
+
     remove_columns :users, :token
 
   end
