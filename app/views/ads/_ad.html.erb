@@ -1,4 +1,4 @@
-<% if defined? i %>
+<% if defined? i and params[:controller] != "woeid" %>
   <% if i == 6 %>
     <%= render partial: "partials/google_adsense"%>
   <% end %>
@@ -61,7 +61,10 @@
 <% end %>
 
 <% if defined? i %>
-  <% if params[:action] == "show" and params[:controller] == "woeid" and i == 0 %>
+  <% if params[:action] == "show" and params[:controller] == "woeid" and i == 15 %>
+    <%= render :partial => "partials/google_adsense", :locals => { :class_name => "vertical_ad" }  %>
+  <% end %>
+  <% if params[:action] == "show" and params[:controller] == "woeid" and i == 16 %>
     <%= render :partial => "partials/google_adsense", :locals => { :class_name => "vertical_ad" }  %>
   <% end %>
 <% end %>

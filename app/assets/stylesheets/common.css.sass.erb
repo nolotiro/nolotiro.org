@@ -243,6 +243,7 @@ form.searchbox
   float: right
   padding-left: 4px
   width: 100px
+  padding-top: 10px
 
 .no_results
   display: block
@@ -655,6 +656,7 @@ dl, dd
   padding-top: 0
   width: 100%
   text-align: left
+  height: auto
 
 #footer
   font-size: 1em
@@ -1067,7 +1069,6 @@ $langs: <%= Rails.application.secrets["langs"] %>
     margin: 0px
     display: inline-block
 
-
   #social-butttons
     margin-left: -20px
 
@@ -1140,13 +1141,12 @@ $langs: <%= Rails.application.secrets["langs"] %>
 
   #header
     display: inline-block
+    margin-bottom: 5%
+    margin-top: 2%
 
   .info
     width: 90%
     margin-left: 4%
-
-  #header
-    margin-bottom: 20%
 
   .rectangular_ad
     height: 60px
@@ -1166,16 +1166,15 @@ $langs: <%= Rails.application.secrets["langs"] %>
   #ad_body, textarea
     width: 95% !important
 
-@media only screen and (min-width: 568px) and (max-width: 779px)
-  #header
-    margin-bottom: 15%
+  .ad_create_tab_home
+    top: 43px
 
 @media only screen and (max-width: 500px)
   .google_ads
-    width: 310px
+    width: 300px
 
   .rectangular_ad
-    width: 310px
+    width: 300px
     height: 100%
     display: inline-block
 
