@@ -45,6 +45,7 @@ es:
         remember: Recuérdame
         email: Correo electrónico
       ad:
+        title: Título
         body: Cuerpo
         subject: Título
         type: Tipo
