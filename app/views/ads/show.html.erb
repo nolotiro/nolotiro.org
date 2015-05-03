@@ -54,11 +54,13 @@
       </div>
     </div>
     <%= render :partial => "comments/show", :locals => {:ad => @ad} %>
+
   </div>
 
-  <%= render partial: "partials/google_adsense", :locals => { :class_name => "rectangular_ad", :data_format => "rectangular" } %>
-
 </div>
+
+<%= render partial: "partials/google_adsense", :locals => { :class_name => "rectangular_ad", :data_format => "rectangular, horizontal" } %>
+
 
 
 <% content_for :action do %>
