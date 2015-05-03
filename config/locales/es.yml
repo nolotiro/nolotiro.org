@@ -309,8 +309,6 @@ es:
       title: Nuevo mensaje privado para el usuario %{user}
     notification_mailer:
       subject: '[nolotiro.org] Nueva notificación: %{subject}'
-      visit_html: Visita %{url} y ve a tu bandeja de entrada para responder
-      visit_text: Visita %{url} y ve a tu bandeja de entrada para responder
       you_have_new_reply: Has recibido una nueva respuesta
       you_have_recieved_new_reply: Has recibido una nueva respuesta
     notifications:

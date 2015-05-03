@@ -12,10 +12,10 @@
 <b><%= I18n.t("mailboxer.message_mailer.message.body") %></b>
 <blockquote>
   <p>
-  <%= @message.body %>k
+  <%= @message.body %>
   </p>
 </blockquote>
 
 <p>
-<%= link_to t('mailboxer.message_mailer.visit'), mailboxer_message_url(id: @message.conversation.id) %>
+  <%= link_to t('mailboxer.message_mailer.visit'), mailboxer_message_url(id: @message.conversation.id) %>
 </p>

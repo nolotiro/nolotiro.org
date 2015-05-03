@@ -1,12 +1,21 @@
-<h1><%= I18n.t("mailboxer.message_mailer.you_have_new_message") %>: <%= @subject %></h1>
-<p>
-  <%= I18n.t("mailboxer.message_mailer.you_have_recieved_new_message") %>
-</p>
+<h1>
+  <%= I18n.t("mailboxer.message_mailer.you_have_new_message") %>
+</h1>
+
+<b><%= I18n.t("mailboxer.message_mailer.message.subject") %></b>
 <blockquote>
   <p>
-    <%= raw @message.body %>
+  <%= @message.subject %>
   </p>
 </blockquote>
+
+<b><%= I18n.t("mailboxer.message_mailer.message.body") %></b>
+<blockquote>
+  <p>
+  <%= @message.body %>
+  </p>
+</blockquote>
+
 <p>
-  <%= raw I18n.t("mailboxer.message_mailer.visit_html", url: link_to(root_url, root_url)) %>
+  <%= link_to t("mailboxer.message_mailer.visit"), mailboxer_message_url(id: @message.conversation.id) %>
 </p>
