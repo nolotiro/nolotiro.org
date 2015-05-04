@@ -45,6 +45,7 @@ es:
         remember: Recuérdame
         email: Correo electrónico
       ad:
+        title: Título
         body: Cuerpo
         subject: Título
         type: Tipo
@@ -371,6 +372,8 @@ es:
         select_an_image: Selecciona una imagen para tu anuncio (opcional).
         status: Estado
         title: 'Título de tu anuncio:'
+        title_max: Máximo 100 caracteres
+        body_max: Máximo 500 caracteres
         to_publish: Para publicar tu anuncio, por favor, introduce estos datos
         type_ad: 'Tipo de anuncio:'
       new: 

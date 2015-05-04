@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'bundler', '>= 1.8.4'
 gem 'rails', '~> 4.2.1'
 gem 'haml-rails'
 gem 'sass-rails', '~> 4.0.0'
@@ -74,3 +75,8 @@ gem 'blueprint-rails'                               # blueprint css framework
 # https://github.com/mailboxer/mailboxer/issues/316
 #gem 'mailboxer'                                     # messaging
 gem 'mailboxer', :git => 'git://github.com/div/mailboxer.git', :branch => 'rails42-foreigner' 
+
+source 'https://rails-assets.org' do
+  gem 'rails-assets-bootstrap'
+end
+

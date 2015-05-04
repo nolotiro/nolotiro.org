@@ -11,8 +11,10 @@ class CommentsController < ApplicationController
       ip: request.remote_ip,
     })
     if comment.save
+      if comment.ad.user != current_user
+        CommentsMailer.create(params[:id], params[:body]).deliver_later
+      end
       expire_action(controller: 'ads', action: 'show', ad: comment.ad )
-      CommentsMailer.create(params[:id], params[:body]).deliver_later
       redirect_to(ad_path(params[:id]), notice: t('nlt.comments.flash_ok'))
     else
       redirect_to(:back, flash: {error: t('nlt.comments.flash_ko')}) 
