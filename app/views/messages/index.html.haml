@@ -24,7 +24,7 @@
               %td=t('mailboxer.table.reciever')
               %td=t('mailboxer.table.last')
               %td{style: "width: 300px;"}=t('mailboxer.table.subject')
-              %td=t('mailboxer.table.date')
+              %td{style: "width: 250px;"}=t('mailboxer.table.date')
           %tbody
             - @messages.each do |m|
               %tr{ class: "mail #{ 'unread' if m.is_unread?(current_user) }" }
@@ -41,10 +41,9 @@
                 %td.sender
                   = m.last_sender
                 %td.mail-subject
-                  = link_to mailboxer_message_path(m) do
-                    = m.subject 
+                  = link_to m.subject, mailboxer_message_path(m)
                 %td.timestamp
-                  = l m.messages.last.created_at, format: "a las %H:%M del %d-%m-%Y "
+                  = l m.messages.last.created_at, format: "%H:%M %d-%m-%Y "
         - unless @box == 'trash'
           = submit_tag t('mailboxer.buttons.trash_selected'), id: 'delete_multiple_button'
       = will_paginate @messages
