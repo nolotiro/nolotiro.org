@@ -16,9 +16,9 @@ class User < ActiveRecord::Base
     length: { minimum: 3 }
 
   # Include default devise modules. Others available are:
-  # :lockable, :timeoutable and :omniauthable
+  # :timeoutable and :omniauthable
   devise :confirmable, :database_authenticatable, :async, :registerable,
-    :recoverable, :rememberable, :trackable, :validatable
+    :recoverable, :rememberable, :trackable, :validatable, :lockable
 
   acts_as_messageable
 
