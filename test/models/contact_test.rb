@@ -21,7 +21,7 @@ class ContactTest < ActiveSupport::TestCase
   end
 
   test "contact send mail" do
-    c = Contact.new :email => "bla@bla.com", :message => "yeaaahhh"
+    c = Contact.new :email => "bla@bla.com", :message => "yyeaaahhhyeaaahhhyeaaahhhyeaaahhhyeaaahhhyeaaahhhyeaaahhhyeaaahhhyeaaahhhyeaaahhhyeaaahhhyeaaahhhyeaaahhheaaahhh"
     assert c.valid?
   end
 
