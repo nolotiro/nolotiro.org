@@ -51,14 +51,20 @@
         <%= f.label :title,  t('nlt.ads.form.title'), :class => "required" %> 
         </dt>
         <dd id="title-element">
-        <%= f.text_field :title, required: true %>
+        <%= f.text_field :title, required: true, maxlength: 100, size: 45 %>
+        <p class="description">
+        <%= t 'nlt.ads.form.title_max' %>
+        </p>
         </dd>
 
         <dt id="body-label">
         <%= f.label :body,  t('nlt.ads.form.body'), :class => "required" %> 
         </dt>
         <dd id="body-element">
-        <%= f.text_area :body, :rows => 24, :cols => 80, :required => true %>
+        <%= f.text_area :body, :rows => 24, :cols => 80, :required => true, :maxlength => 500 %>
+        <p class="description">
+        <%= t 'nlt.ads.form.body_max' %>
+        </p>
         </dd>
 
         <dt id="comments_enabled-label">
