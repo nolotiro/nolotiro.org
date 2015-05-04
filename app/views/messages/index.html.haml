@@ -47,6 +47,7 @@
                   = l m.messages.last.created_at, format: "a las %H:%M del %d-%m-%Y "
         - unless @box == 'trash'
           = submit_tag t('mailboxer.buttons.trash_selected'), id: 'delete_multiple_button'
+      = will_paginate @messages
     - else
       %p
         .info
