@@ -63,6 +63,8 @@ class Ad < ActiveRecord::Base
     where('woeid_code = ?', woeid_code) 
   }
 
+  self.per_page = 20
+
   def body 
     ApplicationController.helpers.escape_privacy_data(read_attribute(:body))
   end
