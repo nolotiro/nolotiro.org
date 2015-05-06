@@ -5,10 +5,6 @@
     <%= favicon_link_tag 'favicon.ico' %>
     <%= stylesheet_link_tag    "application", media: "all" %>
 
-    <script src="//www.google.com/jsapi"></script>
-    <%= airbrake_javascript_notifier %>
-    <%= javascript_include_tag "application" %>
-
     <%= csrf_meta_tags %>
 
     <% if content_for?(:meta_description) %>
@@ -127,6 +123,12 @@
       ga('create', 'UA-141609-7', 'auto');
       ga('send', 'pageview');
     </script>
+    
+    <script src="//www.google.com/jsapi"></script>
+    <%= airbrake_javascript_notifier %>
+    <%= javascript_include_tag "application" %>
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
 
   </body>
 </html>

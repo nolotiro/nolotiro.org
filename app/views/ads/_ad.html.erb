@@ -1,14 +1,11 @@
 <% if defined? i %>
   <% if i == 6 %>
-    <%= render partial: "partials/google_adsense"%>
+    <%= render partial: "partials/google_adsense", :locals => {:data_format => "rectangular, horizontal"} %>
   <% end %>
   <% if i == 12 %>
-    <%= render partial: "partials/google_adsense"%>
+    <%= render partial: "partials/google_adsense", :locals => {:data_format => "rectangular, horizontal"} %>
   <% end %>
-  <% if i == 18 %>
-    <%= render partial: "partials/google_adsense"%>
-  <% end %>
-  <% if i == 24 and params[:controller] != "woeid" %>
+  <% if i == 18 and params[:controller] != "woeid" %>
     <%= render partial: "partials/google_adsense"%>
   <% end %>
 <% end %>
@@ -61,7 +58,7 @@
 <% end %>
 
 <% if defined? i %>
-  <% if params[:action] == "show" and params[:controller] == "woeid" and i == 15 %>
+  <% if params[:action] == "show" and params[:controller] == "woeid" and i == 0 %>
     <%= render :partial => "partials/google_adsense", :locals => { :class_name => "vertical_ad" }  %>
   <% end %>
 <% end %>
