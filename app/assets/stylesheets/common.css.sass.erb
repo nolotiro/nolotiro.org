@@ -203,7 +203,6 @@ form.searchbox
   background: -ms-linear-gradient(top, #73C017 31%,#67B213 67%,#51990C 87%)
   background: linear-gradient(to bottom, #73C017 31%,#67B213 67%,#51990C 87%)
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#73C017', endColorstr='#51990C',GradientType=0 )
-  height: 24px
   overflow: hidden
   color: #fff
   font-size: 1.2em
@@ -740,7 +739,7 @@ dl, dd
   padding-left: 20px
   border: 1px solid #ddd
   margin-bottom: 20px
-  h2 
+  h2
     font-size: 1em
     font-weight: bold
     margin-bottom: 1.5em
@@ -1175,6 +1174,19 @@ $langs: <%= Rails.application.secrets["langs"] %>
 
   .ad_create_tab_home
     top: 43px
+
+  .links-right
+    float: right
+    display: inline-block
+    position: relative
+
+  .links-left
+    float: left
+    display: inline-block
+    position: relative
+
+  .ad_excerpt
+    border-bottom: 1px solid #DDD  				 	 	 	    		  	   		  		
 
 @media only screen and (max-width: 500px)
   .google_ads
