@@ -1,7 +1,7 @@
 fr:
   activemodel:
     errors:
-      format: '%{attribute} %{message}'
+      format: "%{attribute} %{message}"
       messages:
         accepted: doit être accepté(e)
         blank: doit être rempli(e)
@@ -47,7 +47,7 @@ fr:
         Recuérdame: 
         Tu email: 
     errors:
-      format: '%{attribute} %{message}'
+      format: "%{attribute} %{message}"
       messages:
         accepted: doit être accepté(e)
         blank: doit être rempli(e)
@@ -116,9 +116,9 @@ fr:
     - vendredi
     - samedi
     formats:
-      default: '%d/%m/%Y'
-      long: '%e %B %Y'
-      short: '%e %b'
+      default: "%d/%m/%Y"
+      long: "%e %B %Y"
+      short: "%e %b"
     month_names:
     - 
     - janvier
@@ -165,16 +165,16 @@ fr:
         other: plus de %{count} ans
       x_days:
         one: 1 jour
-        other: '%{count} jours'
+        other: "%{count} jours"
       x_minutes:
         one: 1 minute
-        other: '%{count} minutes'
+        other: "%{count} minutes"
       x_months:
         one: 1 mois
-        other: '%{count} mois'
+        other: "%{count} mois"
       x_seconds:
         one: 1 seconde
-        other: '%{count} secondes'
+        other: "%{count} secondes"
     prompts:
       day: Jour
       hour: Heure
@@ -231,7 +231,7 @@ fr:
       send_paranoid_instructions: Si votre compte existe, vous recevrez un email indiquant comment le déverrouiller sous quelques minutes.
       unlocked: Votre compte a été débloqué avec succès. Veuillez vous connecter.
   errors:
-    format: '%{attribute} %{message}'
+    format: "%{attribute} %{message}"
     messages:
       accepted: doit être accepté(e)
       already_confirmed: a déjà été confirmé(e)
@@ -255,7 +255,7 @@ fr:
       not_locked: n’était pas verrouillé(e)
       not_saved:
         one: 'une erreur a empêché ce (ou cette) %{resource} d’être enregistré(e) :'
-        other: '%{count} erreurs ont empêché ce (ou cette) %{resource} d’être enregistré(e) :'
+        other: "%{count} erreurs ont empêché ce (ou cette) %{resource} d’être enregistré(e) :"
       odd: doit être impair
       record_invalid: 'La validation a échoué : %{errors}'
       restrict_dependent_destroy:
@@ -276,15 +276,10 @@ fr:
       header:
         one: 'Impossible d''enregistrer ce(tte) %{model} : 1 erreur'
         other: 'Impossible d''enregistrer ce(tte) %{model} : %{count} erreurs'
-  hello: 
   helpers:
     label:
       message:
         subject: 
-      user:
-        Contraseña: 
-        Recuérdame: 
-        Tu email: 
     select:
       prompt: Veuillez sélectionner
     submit:
@@ -329,7 +324,6 @@ fr:
       reciever: 
       sender: 
       subject: 
-    title: 
     titles:
       conversation: 
       index: 
@@ -362,7 +356,6 @@ fr:
         title: 
         to_publish: 
         type_ad: 
-      new: 
     all: 
     all_ads: 
     and: 
@@ -408,10 +401,6 @@ fr:
     didn_t_receive_confirmation_instructions: 
     didn_t_receive_unlock_instructions: 
     edit_this_ad: 
-    es:
-      ads:
-        form:
-          prohibited: 
     faq:
       answer_1_html: 
       answer_2_html: 
@@ -521,22 +510,22 @@ fr:
   number:
     currency:
       format:
-        delimiter: ' '
-        format: '%n %u'
+        delimiter: " "
+        format: "%n %u"
         precision: 2
-        separator: ','
+        separator: ","
         significant: false
         strip_insignificant_zeros: false
-        unit: €
+        unit: "€"
     format:
-      delimiter: ' '
+      delimiter: " "
       precision: 3
-      separator: ','
+      separator: ","
       significant: false
       strip_insignificant_zeros: false
     human:
       decimal_units:
-        format: '%n %u'
+        format: "%n %u"
         units:
           billion: milliard
           million: million
@@ -550,7 +539,7 @@ fr:
         significant: true
         strip_insignificant_zeros: true
       storage_units:
-        format: '%n %u'
+        format: "%n %u"
         units:
           byte:
             one: octet
@@ -565,40 +554,36 @@ fr:
     precision:
       format:
         delimiter: 
-  please_insert_email_and_password: 
   recaptcha:
     errors:
       incorrect-captcha-sol: 
       verification_failed: 
   support:
     array:
-      last_word_connector: ' et '
-      two_words_connector: ' et '
-      words_connector: ', '
+      last_word_connector: " et "
+      two_words_connector: " et "
+      words_connector: ", "
   time:
     am: am
     formats:
-      default: '%d %B %Y %H:%M:%S'
-      long: '%A %d %B %Y %H:%M'
-      short: '%d %b %H:%M'
+      default: "%d %B %Y %H:%M:%S"
+      long: "%A %d %B %Y %H:%M"
+      short: "%d %b %H:%M"
     pm: pm
   unauthorized:
     default: 
-    i18n:
-      transliterate:
-        rule: 
     manage:
       all: 
   will_paginate:
     next_label: suivant →
     page_entries_info:
-      multi_page: '%{model} %{from} - %{to} sur %{count} au total'
-      multi_page_html: '%{model} <strong>%{from} - %{to}</strong> sur <strong>%{count}</strong> au total'
+      multi_page: "%{model} %{from} - %{to} sur %{count} au total"
+      multi_page_html: "%{model} <strong>%{from} - %{to}</strong> sur <strong>%{count}</strong> au total"
       single_page:
-        one: '%{count} %{model} affiché(e)'
-        other: '%{count} %{model} affiché(e)s'
+        one: "%{count} %{model} affiché(e)"
+        other: "%{count} %{model} affiché(e)s"
       single_page_html:
-        one: '%{count} %{model} affiché(e)'
-        other: '%{count} %{model} affiché(e)s'
-    page_gap: '&hellip;'
-    previous_label: ← précédent
+        one: "%{count} %{model} affiché(e)"
+        other: "%{count} %{model} affiché(e)s"
+    page_gap: "&hellip;"
+    previous_label: "← précédent"

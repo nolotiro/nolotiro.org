@@ -177,15 +177,10 @@ nl:
     template:
       body: 
       header: 
-  hello: 
   helpers:
     label:
       message:
         subject: 
-      user:
-        Contraseña: 
-        Recuérdame: 
-        Tu email: 
     select:
       prompt: 
     submit:
@@ -230,7 +225,6 @@ nl:
       reciever: 
       sender: 
       subject: 
-    title: 
     titles:
       conversation: 
       index: 
@@ -263,7 +257,6 @@ nl:
         title: 
         to_publish: 
         type_ad: 
-      new: 
     all: 
     all_ads: 
     and: 
@@ -309,10 +302,6 @@ nl:
     didn_t_receive_confirmation_instructions: 
     didn_t_receive_unlock_instructions: 
     edit_this_ad: 
-    es:
-      ads:
-        form:
-          prohibited: 
     faq:
       answer_1_html: 
       answer_2_html: 
@@ -464,7 +453,6 @@ nl:
     precision:
       format:
         delimiter: 
-  please_insert_email_and_password: 
   recaptcha:
     errors:
       incorrect-captcha-sol: 
@@ -483,9 +471,6 @@ nl:
     pm: 
   unauthorized:
     default: 
-    i18n:
-      transliterate:
-        rule: 
     manage:
       all: 
   will_paginate:

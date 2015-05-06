@@ -168,7 +168,7 @@ en:
       not_locked: was not locked
       not_saved:
         one: '1 error prohibited this %{resource} from being saved:'
-        other: '%{count} errors prohibited this %{resource} from being saved:'
+        other: "%{count} errors prohibited this %{resource} from being saved:"
       odd: 
       record_invalid: 
       restrict_dependent_destroy: 
@@ -179,15 +179,10 @@ en:
     template:
       body: 
       header: 
-  hello: Hello world
   helpers:
     label:
       message:
         subject: 
-      user:
-        Contraseña: 
-        Recuérdame: 
-        Tu email: 
     select:
       prompt: 
     submit:
@@ -232,7 +227,6 @@ en:
       reciever: 
       sender: 
       subject: 
-    title: 
     titles:
       conversation: 
       index: 
@@ -265,7 +259,6 @@ en:
         title: 
         to_publish: 
         type_ad: 
-      new: 
     all: 
     all_ads: 
     and: 
@@ -311,10 +304,6 @@ en:
     didn_t_receive_confirmation_instructions: 
     didn_t_receive_unlock_instructions: 
     edit_this_ad: 
-    es:
-      ads:
-        form:
-          prohibited: 
     faq:
       answer_1_html: 
       answer_2_html: 
@@ -466,7 +455,6 @@ en:
     precision:
       format:
         delimiter: 
-  please_insert_email_and_password: 
   recaptcha:
     errors:
       incorrect-captcha-sol: 
@@ -485,9 +473,6 @@ en:
     pm: 
   unauthorized:
     default: 
-    i18n:
-      transliterate:
-        rule: 
     manage:
       all: 
   will_paginate:
