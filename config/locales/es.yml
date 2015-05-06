@@ -1,7 +1,7 @@
 es:
   activemodel:
     errors:
-      format: '%{attribute} %{message}'
+      format: "%{attribute} %{message}"
       messages:
         accepted: debe ser aceptado
         blank: no puede estar en blanco
@@ -20,7 +20,9 @@ es:
         not_an_integer: debe ser un entero
         odd: debe ser impar
         record_invalid: 'La validación falló: %{errors}'
-        restrict_dependent_destroy: 
+        restrict_dependent_destroy:
+          one: No se puede eliminar el registro porque existe un(a) %{record} dependiente
+          many: No se puede eliminar el registro porque existen %{record} dependientes
         taken: ya está en uso
         too_long: es demasiado largo (%{count} caracteres máximo)
         too_short: es demasiado corto (%{count} caracteres mínimo)
@@ -31,7 +33,7 @@ es:
           one: No se pudo guardar este/a %{model} porque se encontró 1 error
           other: No se pudo guardar este/a %{model} porque se encontraron %{count} errores
     attributes:
-      contact: 
+      contact:
         email: Correo electrónico
         message: Mensaje
   activerecord:
@@ -53,7 +55,7 @@ es:
         image_content_type: Tipo de contenido de imagen
         image_file_size: Tamaño de imagen
     errors:
-      format: '%{attribute} %{message}'
+      format: "%{attribute} %{message}"
       messages:
         accepted: debe ser aceptado
         blank: no puede estar en blanco
@@ -72,7 +74,9 @@ es:
         not_an_integer: debe ser un entero
         odd: debe ser impar
         record_invalid: 'La validación falló: %{errors}'
-        restrict_dependent_destroy: 
+        restrict_dependent_destroy:
+          one: No se puede eliminar el registro porque existe un(a) %{record} dependiente
+          many: No se puede eliminar el registro porque existen %{record} dependientes
         taken: ya está en uso
         too_long: es demasiado largo (%{count} caracteres máximo)
         too_short: es demasiado corto (%{count} caracteres mínimo)
@@ -114,9 +118,9 @@ es:
     - viernes
     - sábado
     formats:
-      default: '%d/%m/%Y'
-      long: '%d de %B de %Y'
-      short: '%d de %b'
+      default: "%d/%m/%Y"
+      long: "%d de %B de %Y"
+      short: "%d de %b"
     month_names:
     - 
     - enero
@@ -161,16 +165,16 @@ es:
         other: más de %{count} años
       x_days:
         one: 1 día
-        other: '%{count} días'
+        other: "%{count} días"
       x_minutes:
         one: 1 minuto
-        other: '%{count} minutos'
+        other: "%{count} minutos"
       x_months:
         one: 1 mes
-        other: '%{count} meses'
+        other: "%{count} meses"
       x_seconds:
         one: 1 segundo
-        other: '%{count} segundos'
+        other: "%{count} segundos"
     prompts:
       day: Día
       hour: Hora
@@ -198,19 +202,19 @@ es:
       unconfirmed: Tienes que confirmar tu cuenta para poder continuar.
     mailer:
       confirmation_instructions:
-        subject: '[nolotiro.org] Instrucciones de confirmación'
+        subject: "[nolotiro.org] Instrucciones de confirmación"
       reset_password_instructions:
-        subject: '[nolotiro.org] Instrucciones de recuperación de contraseña'
+        subject: "[nolotiro.org] Instrucciones de recuperación de contraseña"
       unlock_instructions:
-        subject: '[nolotiro.org] Instrucciones para desbloquear'
+        subject: "[nolotiro.org] Instrucciones para desbloquear"
     omniauth_callbacks:
       failure: No has sido autorizado en la cuenta %{kind} porque "%{reason}".
       success: Has sido autorizado satisfactoriamente de la cuenta %{kind}.
     passwords:
       instructions: Por favor, introduce tu email y te enviaremos un enlace de acceso directo para cambiar tu contraseña.
       action: Cambiar contraseña
-      follow_instructions: Alguien ha pedido cambiar tu contraseña de nolotiro.org. Si no has sido puedes ignorar este correo. Tu contraseña no cambiará hasta que accedas al enlace y crees una nueva. 
-      forgot: ¿Has olvidado tu contraseña?
+      follow_instructions: Alguien ha pedido cambiar tu contraseña de nolotiro.org. Si no has sido puedes ignorar este correo. Tu contraseña no cambiará hasta que accedas al enlace y crees una nueva.
+      forgot: "¿Has olvidado tu contraseña?"
       send: Enviar por correo
       no_token: No puedes acceder a esta página si no es a través de un un enlace para resetear tu contraseña. Si has llegado hasta aquí desde el email para resetear tu contraseña, por favor asegúrate de que la URL introducida está completa.
       send_instructions: Vas a recibir un correo con instrucciones sobre cómo resetear tu contraseña en unos pocos minutos.
@@ -229,13 +233,13 @@ es:
       signed_in: Bienvenido
       signed_out: Sesión finalizada.
       user:
-        signed_in: 
+        signed_in: Has iniciado sesión.
     unlocks:
       send_instructions: Vas a recibir instrucciones para desbloquear tu cuenta en unos pocos minutos.
       send_paranoid_instructions: Si tu cuenta existe, vas a recibir instrucciones para desbloquear tu cuenta en unos pocos minutos.
       unlocked: Tu cuenta fue desbloqueada. Tu cuenta fue desbloqueada. Ya puedes iniciar sesión.
   errors:
-    format: '%{attribute} %{message}'
+    format: "%{attribute} %{message}"
     messages:
       accepted: debe ser aceptado
       already_confirmed: ya fue confirmada, por favor intenta iniciar sesión
@@ -259,10 +263,12 @@ es:
       not_locked: no estaba bloqueada
       not_saved:
         one: 'Un error ocurrió al tratar de guardar %{resource}:'
-        other: '%{count} errores ocurrieron al tratar de guardar %{resource}:'
+        other: "%{count} errores ocurrieron al tratar de guardar %{resource}:"
       odd: debe ser impar
       record_invalid: 'La validación falló: %{errors}'
-      restrict_dependent_destroy: 
+      restrict_dependent_destroy:
+        one: No se puede eliminar el registro porque existe un(a) %{record} dependiente
+        many: No se puede eliminar el registro porque existen %{record} dependientes
       taken: ya está en uso
       too_long: es demasiado largo (%{count} caracteres máximo)
       too_short: es demasiado corto (%{count} caracteres mínimo)
@@ -272,15 +278,10 @@ es:
       header:
         one: No se pudo guardar este/a %{model} porque se encontró 1 error
         other: No se pudo guardar este/a %{model} porque se encontraron %{count} errores
-  hello: 
   helpers:
     label:
       message:
-        subject: 
-      user:
-        Contraseña: 
-        Recuérdame: 
-        Tu email: 
+        subject: Asunto
     select:
       prompt: Por favor seleccione
     submit:
@@ -289,13 +290,13 @@ es:
       update: Actualizar %{model}
   mailboxer:
     buttons:
-      back: < volver a mensajes
+      back: "< volver a mensajes"
       trash: Mover mensaje a papelera
       trash_selected: Borrar mensajes seleccionados
       untrash: Recuperar mensaje de papelera
     message_mailer:
-      subject_new: '[nolotiro.org] Nuevo mensaje: %{subject}'
-      subject_reply: '[nolotiro.org] Nueva respuesta: %{subject}'
+      subject_new: "[nolotiro.org] Nuevo mensaje: %{subject}"
+      subject_reply: "[nolotiro.org] Nueva respuesta: %{subject}"
       visit: Ver conversación y responder mensaje
       you_have_new_message: Has recibido un nuevo mensaje
       you_have_recieved_new_message: Has recibido un nuevo mensaje
@@ -309,7 +310,7 @@ es:
       submit: Enviar
       title: Nuevo mensaje privado para el usuario %{user}
     notification_mailer:
-      subject: '[nolotiro.org] Nueva notificación: %{subject}'
+      subject: "[nolotiro.org] Nueva notificación: %{subject}"
       you_have_new_reply: Has recibido una nueva respuesta
       you_have_recieved_new_reply: Has recibido una nueva respuesta
     notifications:
@@ -321,8 +322,8 @@ es:
     search: Resultados de busqueda de %{search}
     table:
       date: Fecha
-      delete: ¿Borrar?
-      last: Último
+      delete: "¿Borrar?"
+      last: "Último"
       reciever: Recibido
       sender: Enviado
       subject: Asunto
@@ -335,18 +336,19 @@ es:
       p1: Hemos detectado que te has creado una cuenta en nolotiro.org y no la has confirmado.
       p2: 'Esto significa que puedes haber tenido problemas para acceder a la página. Si quieres confirmar tu usuario (%{username}) puedes hacerlo con este enlace:'
     greetings: Gracias y saludos,
-    hello: Hola,
+    hello: 'Hola,'
     signature: Equipo de nolotiro.org
   nlt:
+    please_insert_email_and_password: Por favor pon tu email y contraseña.
     save_failed: 'Hay un problema, revisa esto:'
     profile_edit: Editar perfil
-    leave_blank: (déjala en blanco si no quieres cambiarla)
-    we_need_your_password: (necesitamos tu contraseña para confirmar tus cambios)
+    leave_blank: "(déjala en blanco si no quieres cambiarla)"
+    we_need_your_password: "(necesitamos tu contraseña para confirmar tus cambios)"
     cancel_my_account: Cancelar mi cuenta
-    want_to_leave: ¿Quieres borrar tu usuario?
+    want_to_leave: "¿Quieres borrar tu usuario?"
     update: Guardar
     readed_count: "%{count} lecturas"
-    comments_count: 
+    comments_count:
       zero: " "
       one: ", %{count} comentario"
       other: ", %{count} comentarios"
@@ -357,9 +359,9 @@ es:
       title: Acerca de nolotiro.org
     access_here: accede aquí
     admin:
-      become_user: '[ADMIN] Cambiar a este usuario'
-      lock_user: '[ADMIN] Bloquear a este usuario'
-      unlock_user: '[ADMIN] Desbloquear a este usuario'
+      become_user: "[ADMIN] Cambiar a este usuario"
+      lock_user: "[ADMIN] Bloquear a este usuario"
+      unlock_user: "[ADMIN] Desbloquear a este usuario"
     ads:
       updated: Hemos actualizado el anuncio
       created: Hemos creado el anuncio
@@ -376,11 +378,10 @@ es:
         body_max: Máximo 500 caracteres
         to_publish: Para publicar tu anuncio, por favor, introduce estos datos
         type_ad: 'Tipo de anuncio:'
-      new: 
     all: todos
     all_ads: todos los anuncios
     and: y
-    are_you_interested: ¿Te interesa?
+    are_you_interested: "¿Te interesa?"
     available: disponible
     back: volver a la página de inicio
     blog: blog
@@ -406,21 +407,21 @@ es:
       flash_ko: Hubo un error al guardar tu comentario. Revisalo y envialo de nuevo
       flash_ok: Comentario guardado
       label: Tu comentario
-      subject: '[nolotiro.org] Tienes un nuevo comentario en el anuncio %{ad}'
+      subject: "[nolotiro.org] Tienes un nuevo comentario en el anuncio %{ad}"
       submit: Enviar
       title: Comentarios
     contact: contacto
     contact_form: Formulario de contacto
     contact_legend: Por favor, escribe tu mensaje
-    contact_thanks: ¡Mensaje enviado! Gracias por contactar con nolotiro.org
+    contact_thanks: "¡Mensaje enviado! Gracias por contactar con nolotiro.org"
     cookie: Utilizamos cookies para mejorar tu navegación en este sitio
     create_new_ad: Crea un nuevo anuncio
     delete_ad: borrar anuncio
-    delete_sure: ¿Estás seguro que quieres borrarlo?
+    delete_sure: "¿Estás seguro que quieres borrarlo?"
     delivered: entregado
     developers: desarrolladores
-    didn_t_receive_confirmation_instructions: ¿No has recibido las instrucciones de confirmación?
-    didn_t_receive_unlock_instructions: ¿No has recibido las instrucciones para el desbloqueo?
+    didn_t_receive_confirmation_instructions: "¿No has recibido las instrucciones de confirmación?"
+    didn_t_receive_unlock_instructions: "¿No has recibido las instrucciones para el desbloqueo?"
     edit_this_ad: Edita este anuncio
     faq:
       answer_1_html: El propósito fundamental de esta web es el de deshacernos de los objetos que ya no utilizamos y nos estorban en casa.
@@ -430,19 +431,19 @@ es:
       answer_5_html: 'Sólo hay 2 clases de anuncios: Los de Regalo, en los que ofreces objetos que te estorban o ya no quieres tener. Y los anuncios de Quiero, que sirven para dar pistas e inspirar a la gente sobre que clase de objetos quiere otra gente utilizar o poseer.<br> <strong>Los anuncios de cambio, venta , pidiendo dinero, comerciales, de empleo, medicamentos,etc no están permitidos.</strong> Y son borrados en cuanto un moderador los detecta, en caso de publicar repetidamente anuncios no deseados, se puede proceder al bloqueo de la cuenta del usuario.'
       answer_6_html: 'El trueque es un sistema que funciona muy bien en formato físico, esto es, dos personas cara a cara , viendo los objetos y hablando en vivo y en directo. Pero en internet el trueque es muy susceptible de terminar en engaños o insatisfacciones y discusiones eternas.<br> Además como has podido leer anteriormente , aquí se dan objetos sin condiciones y el trueque tiene el condicionamiento del quid pro quo, es decir: tu me das y yo te doy algo igual.'
       answer_7_html: Sorprendentemente mucha gente lo hace, y no hay nada malo en que se hagan envíos, pero debes tener un mínimo de precaución con la seriedad del receptor, ha habido casos en que alguien de muy buena fe ha realizado un envío pagando los gastos y luego ha resultado que se le ha devuelto el paquete. Lo ideal es que no se hagan, se debe fomentar que los objetos circulen lo mas cerca posible, ahorrando energía, y puede servir para conocer mejor a la gente de tu misma ciudad.<br> Esperamos que en la nueva versión , que hemos enfocado a un concepto local, se consiga.<br> <a href="http://en.wikipedia.org/wiki/Think_Globally,_Act_Locally">Piensa globalmente, actúa localmente.</a>
-      question_1: ¿Cuál es el propósito de este proyecto?
+      question_1: "¿Cuál es el propósito de este proyecto?"
       question_2: Entonces ...¿Esta web no es para ayudar a los demás?
       question_3: Pero a mi me gustaría regalar mis cosas a alguien que realmente lo necesitj
-      question_4: ¿Es verdad que hay gente que luego vende las cosas que regalan aquí?
-      question_5: ¿Qué clase de anuncios puedo publicar en nolotiro?
-      question_6: ¿No está permitido el intercambio de objetos? que raro
-      question_7: ¿Puedo enviar cosas a gente que no vive en mi ciudad?
+      question_4: "¿Es verdad que hay gente que luego vende las cosas que regalan aquí?"
+      question_5: "¿Qué clase de anuncios puedo publicar en nolotiro?"
+      question_6: "¿No está permitido el intercambio de objetos? que raro"
+      question_7: "¿Puedo enviar cosas a gente que no vive en mi ciudad?"
       title: Preguntas frecuentes
     faqs: preguntas frecuentes
     fill_captcha: Por favor rellena los siguientes carácteres
     first_visit: nolotiro.org es una comunidad donde podemos deshacernos de los objetos que ya no utilizamos y nos estorban en casa.
     footer_explain: 'nolotiro.org es un sitio web donde regalo y busco regalos gratis de segunda mano : muebles, sillas, sofás, bicicletas, ordenadores portátiles, mesas, cocinas, lámparas, camas, ropa, juguetes, cunas o carros para bebes, teléfonos móviles y otras muchas cosas que ya no quieres y ya no necesitas para que las reutilicen otra gente a la que puede servirle o darle nueva vida.'
-    forgot_your_password: ¿Has olvidado tu contraseña?
+    forgot_your_password: "¿Has olvidado tu contraseña?"
     friends: Amigos
     gift_on: regalo en %{woeid}
     give: regalo
@@ -451,7 +452,7 @@ es:
     if_you_are_new: Si eres un nuevo usuario, por favor
     if_youre_already_an_user: Si ya eres un usuario registrado, por favor
     keywords: 'regalo segunda mano gratis '
-    last_published_gifts: últimos regalos publicados
+    last_published_gifts: "últimos regalos publicados"
     login: acceder
     login_to_comment: accede para escribir un comentario
     logout: salir
@@ -468,7 +469,7 @@ es:
     meta_description_ad: regalo segunda mano %{title} en %{woeid}. %{body}
     new_user: nuevo usuario
     no_results:
-      explain_html: '<p>1. Sé el primero en %{publish}.</p> <p>2. Prueba a cambiar la ciudad por una mas grande que esté cerca de tu ubicación.</p> <p>3. Nuestro sistema de sugerencia de ubicación (basado en tu IP) dice que estas cerca de: <br> %{change_location} </p>'
+      explain_html: "<p>1. Sé el primero en %{publish}.</p> <p>2. Prueba a cambiar la ciudad por una mas grande que esté cerca de tu ubicación.</p> <p>3. Nuestro sistema de sugerencia de ubicación (basado en tu IP) dice que estas cerca de: <br> %{change_location} </p>"
       phrase: '"Un viaje de mil kilómetros comienza con un simple paso" Lao Tse.'
       publish_ad: publicar un anuncio en esta ciudad
       subtitle: Puedes probar alguna de estas cosas
@@ -505,8 +506,8 @@ es:
       no_ads_message_html: No hay anuncios que coincidan con la búsqueda <b>%{q}</b> en la ubicación %{woeid}.
     searching_on_html: Buscando <i>%{q}</i> en
     send: Enviar
-    send_a_message: + Envía un mensaje al anunciante
-    send_a_message_to: 'envía un mensaje a '
+    send_a_message: "+ Envía un mensaje privado al anunciante"
+    send_a_message_to: 'envía un mensaje privado a '
     sending_this_form: Enviando este formulario, admites haber leido, comprendido, y estás conforme con nuestras
     share_this_ad: Comparte este anuncio
     sign_in: Acceder
@@ -530,45 +531,45 @@ es:
     want: busco
     welcome: hola
     welcome_message: Bienvenido
-    write_a_comment: + Escribe un nuevo comentario
+    write_a_comment: "+ Escribe un nuevo comentario"
     your_email: Tu email
-    profile_actions: 
+    profile_actions:
       friend:
         add: agregar %{username} a tu lista de amigos
         delete: eliminar %{username} de tu lista de amigos
   number:
     currency:
       format:
-        delimiter: .
-        format: '%n %u'
+        delimiter: "."
+        format: "%n %u"
         precision: 2
-        separator: ','
+        separator: ","
         significant: false
         strip_insignificant_zeros: false
-        unit: €
+        unit: "€"
     format:
-      delimiter: .
+      delimiter: "."
       precision: 3
-      separator: ','
+      separator: ","
       significant: false
       strip_insignificant_zeros: false
     human:
       decimal_units:
-        format: '%n %u'
+        format: "%n %u"
         units:
           billion: mil millones
           million: millón
           quadrillion: mil billones
           thousand: mil
           trillion: billón
-          unit: 
+          unit: " "
       format:
-        delimiter: 
+        delimiter: "."
         precision: 1
         significant: true
         strip_insignificant_zeros: true
       storage_units:
-        format: '%n %u'
+        format: "%n %u"
         units:
           byte:
             one: Byte
@@ -579,32 +580,28 @@ es:
           tb: TB
     percentage:
       format:
-        delimiter: 
+        delimiter: "."
     precision:
       format:
-        delimiter: 
-  please_insert_email_and_password: 
+        delimiter: "."
   recaptcha:
     errors:
       incorrect-captcha-sol: Hubo un error rellenando los caracteres del captcha.
       verification_failed: Word verification response is incorrect, please try again.
   support:
     array:
-      last_word_connector: ', y '
-      two_words_connector: ' y '
-      words_connector: ', '
+      last_word_connector: ", y "
+      two_words_connector: " y "
+      words_connector: ", "
   time:
     am: am
     formats:
-      default: '%A, %d de %B de %Y %H:%M:%S %z'
-      long: '%d de %B de %Y %H:%M'
-      short: '%d de %b %H:%M'
+      default: "%A, %d de %B de %Y %H:%M:%S %z"
+      long: "%d de %B de %Y %H:%M"
+      short: "%d de %b %H:%M"
     pm: pm
   unauthorized:
-    default: You are not authorized to access this page.
-    i18n:
-      transliterate:
-        rule: 
+    default: No estás autorizado para acceder a esta página.
     manage:
       all: Debes primero iniciar sesión o registrarte un usuario.
   will_paginate:
@@ -620,5 +617,5 @@ es:
         one: Mostrando <b>1</b> %{model}
         other: Mostrando en <b>total&nbsp;%{count}</b> %{model}
         zero: No se encontraron %{model}
-    page_gap: '&hellip;'
-    previous_label: ← atrás
+    page_gap: "&hellip;"
+    previous_label: "← atrás"
