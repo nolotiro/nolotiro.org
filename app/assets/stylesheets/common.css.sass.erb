@@ -1197,6 +1197,26 @@ $langs: <%= Rails.application.secrets["langs"] %>
   .message-container-left, .message-container-right
     margin: 0px
 
-@media only screen and (max-width: 400px)
-  .ad_create_tab a
-    height: 45px
+  .home_location_change
+    position: relative
+    display: inline-block
+    width: 100%
+    margin-top: 0px
+    top: 0px
+
+@media only screen and (max-width: 350px)
+  .ad_create_tab_home a
+    height: 50px !important
+
+  .ad_change_location_home
+    top: 50px
+
+  .ad_create_tab
+    top: 0px !important
+
+  .home_location_change
+    position: relative
+    display: inline-block
+    width: 100%
+    margin-top: 0px
+    top: 0px

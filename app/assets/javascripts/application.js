@@ -29,6 +29,14 @@ function rememeberClosedAlerts() {
 
 $(document).ready(function(){
 
+  // alert cookies (bottom) 
+  // http://www.primebox.co.uk/projects/jquery-cookiebar/ 
+  $.cookieBar({
+    message: $('.js-cookie-message').html(),
+    acceptText: 'OK'
+  });
+  if (! readCookie('alert-first-visit-close') )  { $('.js-alert-first-visit').show('slow'); } 
+
   rememeberClosedAlerts(); 
 
   // alert welcome message
