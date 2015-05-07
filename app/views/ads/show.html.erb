@@ -61,10 +61,8 @@
 
 <%= render partial: "partials/google_adsense", :locals => { :class_name => "rectangular_ad", :data_format => "rectangular" } %>
 
-
-
 <% content_for :action do %>
   <div class="ad_create_tab">
-    <%= link_to "+ #{ t('nlt.publish_ad') }", new_ad_path %>
+    <%= link_to "+ #{ t('nlt.publish_ad_on', woeid: @ad.woeid_name) }", new_ad_path(type: @ad.type) %>
   </div>
 <% end %>

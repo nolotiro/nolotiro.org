@@ -44,7 +44,7 @@
         <%= f.label :type,  t('nlt.ads.form.type_ad'), :class => "required" %> 
         </dt>
         <dd id="type-element">
-        <%= f.select(:type, options_for_select([["#{t('nlt.give')}...", 1], ["#{t('nlt.want')}...", 2]]), selected: @ad.type)  %>
+        <%= f.select(:type, options_for_select([["#{t('nlt.give')}...", 1], ["#{t('nlt.want')}...", 2]], selected: @ad.type ? @ad.type : params[:type]))  %>
         </dd>
 
         <dt id="title-label">
