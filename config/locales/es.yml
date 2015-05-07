@@ -606,7 +606,7 @@ es:
     manage:
       all: Debes primero iniciar sesión o registrarte un usuario.
   will_paginate:
-    next_label: siguiente →
+    next_label: →
     page_entries_info:
       multi_page: Mostrando %{model} %{from} - %{to} de %{count} en total
       multi_page_html: Mostrando %{model} <b>%{from}&nbsp;-&nbsp;%{to}</b> de <b>%{count}</b> en total
@@ -619,4 +619,4 @@ es:
         other: Mostrando en <b>total&nbsp;%{count}</b> %{model}
         zero: No se encontraron %{model}
     page_gap: "&hellip;"
-    previous_label: "← atrás"
+    previous_label: "←"
