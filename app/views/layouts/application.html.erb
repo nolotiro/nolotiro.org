@@ -96,21 +96,19 @@
         <%= t('nlt.first_visit') %>
         <a href="#" class="js-alert-close alert-close">x</a>
       </div>
-      <div class="info js-alert-cookie hide" data-cookie-name="alert-cookies">
-        <%= t('nlt.cookie') %>
-        <a href="#" class="js-alert-close alert-close">x</a>
-      </div>
+
       <div class="notice js-alert-cookie hide" data-cookie-name="alert-updating">
         <%= t('nlt.updating') %>
         <a href="#" class="js-alert-close alert-close">x</a>
       </div>
+
       <div class="hide js-welcome-message"><%= t('nlt.welcome_message') %></div>
 
       <%= yield %>
 
       <% cache do %>
         <%= render :partial => "partials/footer", :locals => { :url => "http://nolotiro.org" } %>
-    <% end %>
+      <% end %>
 
     </div>
 
@@ -129,6 +127,7 @@
     <%= javascript_include_tag "application" %>
     <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
+    <div class="hide js-cookie-message"><%= t('nlt.cookie') %></div>
 
   </body>
 </html>
