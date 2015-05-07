@@ -35,7 +35,7 @@ class User < ActiveRecord::Base
   end
 
   def unread_messages_count 
-    self.mailbox.receipts.where(is_read: false).count
+    self.mailbox.inbox.unread(self).count
   end
 
   def admin?
