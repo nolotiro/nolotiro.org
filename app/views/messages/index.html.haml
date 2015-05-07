@@ -3,10 +3,10 @@
 
 #default_header_section
   %h1=title
-#main 
-  .span-19 
-    = render partial: "users/tabnav", locals: {user: current_user} 
-    = render partial: "messages/tabmessages", locals: {box: @box} 
+#main
+  .span-19
+    = render partial: "users/tabnav", locals: {user: current_user}
+    = render partial: "messages/tabmessages", locals: {box: @box}
     - if @search
       %h2=t('mailboxer.search', search: @search)
     - if @messages.count > 0
@@ -14,10 +14,10 @@
         = hidden_field_tag 'current_box', @box
         %table#mail-list
           %thead
-            %tr 
+            %tr
               - unless @box == 'trash'
                 %td=t('mailboxer.table.delete')
-              - else 
+              - else
                 %td
               %td
               %td=t('mailboxer.table.sender')
@@ -31,9 +31,9 @@
                 - unless @box == 'trash'
                   %td{style: "float:left;width:20px;"}
                     = check_box_tag '', m.id, false, class: 'delete_multiple_checkbox', name: "conversations[]"
-                - else 
-                  %td 
-                %td.star.icon.nobookmark{style: "float:left;width:20px;"}  
+                - else
+                  %td
+                %td.star.icon.nobookmark{style: "float:left;width:20px;"}
                 %td.sender
                   = m.messages.first.recipients.first.username
                 %td.sender
@@ -51,3 +51,5 @@
       %p
         .info
           = t("mailboxer.table.none")
+
+    = render :partial => "partials/google_adsense"
