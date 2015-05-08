@@ -67,7 +67,7 @@
   <div id="main">
     <div class="span-18">
       <% if @type == "give" %>
-        <%= render :partial => "filter_status", :locals => {:status => @status, :id => @id, :all => @all} %>
+        <%= render :partial => "woeid/filter_status", :locals => {:status => @status, :id => @id, :all => @all} %>
       <% end %>
 
     <% if @ads.any? %>
