@@ -153,7 +153,8 @@ margin: 0;
 .span-15{
   width: 95% !important;
   margin-left: 2% !important;
-  margin-right: 2% !important;}
+  margin-right: 2% !important;
+  height: auto !important;}
 
  }
 
