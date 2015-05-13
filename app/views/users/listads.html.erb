@@ -5,7 +5,7 @@
 </div>
 
 <div id="main">
-  <div class="span-19">
+  <div class="span-19" id="list-ads-profile">
     <%= render partial: "users/tabnav", locals: {user: @user} %>
     <% @ads.each do |ad| %>
       <%= render :partial => "ads/ad", :locals => { :ad => ad } %>
