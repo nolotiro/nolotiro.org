@@ -8,7 +8,9 @@
         <%= render :partial => "ad", :locals => { :ad => ad, :i => i } %>
       <% end %>
     <% end %>
-    <%= render partial: "partials/pagination", locals: { items: @ads } %>
+    <br>
+    <br>
+    <b> <%= link_to t('nlt.view_more_ads'), ads_listall_path(type: :give, page: 2) %> </b>
   </div>
 </div>
 
