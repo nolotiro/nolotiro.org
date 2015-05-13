@@ -507,7 +507,8 @@ es:
       no_ads_message_html: No hay anuncios que coincidan con la búsqueda <b>%{q}</b> en la ubicación %{woeid}.
     searching_on_html: Buscando <i>%{q}</i> en
     send: Enviar
-    send_a_message: "+ Envía un mensaje privado al anunciante"
+    send_a_message: "+ Envía un mensaje al anunciante"
+    send_a_private_message: "+ Envía un mensaje privado al anunciante"
     send_a_message_to: 'envía un mensaje privado a '
     sending_this_form: Enviando este formulario, admites haber leido, comprendido, y estás conforme con nuestras
     share_this_ad: Comparte este anuncio

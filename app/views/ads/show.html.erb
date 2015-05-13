@@ -43,7 +43,7 @@
 
       <%= t('nlt.are_you_interested') %>
       <%= link_to message_new_with_subject_path(user_id: @ad.user.id, subject: @ad.title.parameterize), :class => "world_link" do %>
-        <%= t('nlt.send_a_message') %>
+        <%= t('nlt.send_a_private_message') %>
         <%= image_tag "email_send.png", :alt => t('nlt.send_a_message') %>
       <% end %>
 
