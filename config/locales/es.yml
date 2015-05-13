@@ -340,6 +340,7 @@ es:
     hello: Hola,
     signature: Equipo de nolotiro.org
   nlt:
+    view_more_ads: "ver más anuncios >"
     please_insert_email_and_password: Por favor pon tu email y contraseña.
     save_failed: 'Hay un problema, revisa esto:'
     profile_edit: Editar perfil
