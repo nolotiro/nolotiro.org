@@ -16,9 +16,9 @@ class User < ActiveRecord::Base
     length: { minimum: 3 }
 
   # Include default devise modules. Others available are:
-  # :lockable, :timeoutable and :omniauthable
+  # :timeoutable and :omniauthable
   devise :confirmable, :database_authenticatable, :async, :registerable,
-    :recoverable, :rememberable, :trackable, :validatable
+    :recoverable, :rememberable, :trackable, :validatable, :lockable
 
   acts_as_messageable
 
@@ -35,7 +35,7 @@ class User < ActiveRecord::Base
   end
 
   def unread_messages_count 
-    self.mailbox.receipts.where(is_read: false).count
+    self.mailbox.inbox.unread(self).count
   end
 
   def admin?

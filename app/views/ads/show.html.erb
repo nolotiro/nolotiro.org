@@ -38,12 +38,12 @@
       <br>
       <p><%= @ad.body %></p>
       <div class="ad_meta_info">
-        <%= t('nlt.readed_count', count: @ad.readed_counter) %><%= t('nlt.comments_count', count: @ad.comments.count) %>
+        <%= t('nlt.readed_count', count: @ad.readed_counter) %><%= t('nlt.comments_count', count: @ad.comments_count) %>
       </div>
 
       <%= t('nlt.are_you_interested') %>
       <%= link_to message_new_with_subject_path(user_id: @ad.user.id, subject: @ad.title.parameterize), :class => "world_link" do %>
-        <%= t('nlt.send_a_message') %>
+        <%= t('nlt.send_a_private_message') %>
         <%= image_tag "email_send.png", :alt => t('nlt.send_a_message') %>
       <% end %>
 
@@ -61,10 +61,8 @@
 
 <%= render partial: "partials/google_adsense", :locals => { :class_name => "rectangular_ad", :data_format => "rectangular" } %>
 
-
-
 <% content_for :action do %>
   <div class="ad_create_tab">
-    <%= link_to "+ #{ t('nlt.publish_ad') }", new_ad_path %>
+    <%= link_to "+ #{ t('nlt.publish_ad_on', woeid: @ad.woeid_name) }", new_ad_path(type: @ad.type) %>
   </div>
 <% end %>

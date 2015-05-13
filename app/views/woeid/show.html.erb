@@ -12,13 +12,14 @@
 <% end %>
 
 <% content_for :action do %>
+  <% type_n = @type == "want" ? 2 : 1 %>
   <% if @woeid %>
     <div class="ad_create_tab">
-      <%= link_to "+ #{t('nlt.publish_ad_on', woeid: @woeid)}", new_ad_path %>
+      <%= link_to "+ #{t('nlt.publish_ad_on', woeid: @woeid)}", new_ad_path(type: type_n) %>
     </div>
   <% else %>
     <div class="ad_create_tab">
-      <%= link_to "+ #{t('nlt.to_publish_ad')}", new_ad_path %>
+      <%= link_to "+ #{t('nlt.to_publish_ad')}", new_ad_path(type: type_n) %>
     </div>
   <% end %>
 <% end %>
@@ -66,7 +67,7 @@
   <div id="main">
     <div class="span-18">
       <% if @type == "give" %>
-        <%= render :partial => "filter_status", :locals => {:status => @status, :id => @id, :all => @all} %>
+        <%= render :partial => "woeid/filter_status", :locals => {:status => @status, :id => @id, :all => @all} %>
       <% end %>
 
     <% if @ads.any? %>

@@ -12,6 +12,9 @@ class PageController < ApplicationController
   def privacy
   end
 
+  def legal
+  end
+
   def translate
   end
 

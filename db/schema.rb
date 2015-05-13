@@ -11,18 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150326174031) do
+ActiveRecord::Schema.define(version: 20150504103704) do
 
   create_table "ads", force: :cascade do |t|
-    t.string   "title",              limit: 100,   null: false
-    t.text     "body",               limit: 65535, null: false
-    t.integer  "user_owner",         limit: 4,     null: false
-    t.integer  "type",               limit: 4,     null: false
-    t.integer  "woeid_code",         limit: 4,     null: false
-    t.datetime "created_at",                       null: false
-    t.string   "ip",                 limit: 15,    null: false
+    t.string   "title",              limit: 100,               null: false
+    t.text     "body",               limit: 65535,             null: false
+    t.integer  "user_owner",         limit: 4,                 null: false
+    t.integer  "type",               limit: 4,                 null: false
+    t.integer  "woeid_code",         limit: 4,                 null: false
+    t.datetime "created_at",                                   null: false
+    t.string   "ip",                 limit: 15,                null: false
     t.string   "photo",              limit: 100
-    t.integer  "status",             limit: 4,     null: false
+    t.integer  "status",             limit: 4,                 null: false
     t.integer  "comments_enabled",   limit: 4
     t.datetime "deleted_at"
     t.datetime "updated_at"
@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(version: 20150326174031) do
     t.integer  "image_file_size",    limit: 4
     t.datetime "image_updated_at"
     t.integer  "readed_count",       limit: 4
+    t.integer  "comments_count",     limit: 4,     default: 0
   end
 
   add_index "ads", ["deleted_at"], name: "index_ads_on_deleted_at", using: :btree
@@ -177,6 +178,9 @@ ActiveRecord::Schema.define(version: 20150326174031) do
     t.string   "confirmation_token",     limit: 255
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
+    t.integer  "failed_attempts",        limit: 4
+    t.string   "unlock_token",           limit: 255
+    t.datetime "locked_at"
   end
 
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true, using: :btree

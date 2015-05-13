@@ -17,9 +17,12 @@ NolotiroOrg::Application.routes.draw do
 
     root 'ads#index'
 
+    # FIXME: type on ads#create instead of params
+    # FIXME: nolotirov2 legacy - redirect from /es/ad/create
     resources :ads, path: 'ad', path_names: { new: 'create' }
     
     scope '/ad' do
+      #get '/create', to: redirect('/ad/create/type/1')
       get '/:id/:slug', to: 'ads#show', :as => 'adslug'
       get '/edit/id/:id', to: 'ads#edit', :as => 'ads_edit'
       get '/listall/ad_type/:type', to: 'woeid#show', as: "ads_listall" 
@@ -130,6 +133,7 @@ NolotiroOrg::Application.routes.draw do
       get '/tos', to: 'page#tos', as: 'tos'
       get '/about', to: 'page#about', as: 'about'
       get '/privacy', to: 'page#privacy', as: 'privacy'
+      get '/legal', to: 'page#legal', as: 'legal'
       get '/translate', to: 'page#translate', as: 'translate'
     end
 

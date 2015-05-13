@@ -17,7 +17,7 @@
                 %li '#{ msg }'
         %dl.zend_form
           %dt#subject-label
-            = f.label :subject
+            = f.label :subject, t('mailboxer.new.subject')
           %dd#subject-element
             -if params['subject']
               = f.text_field :subject, value: params['subject']
