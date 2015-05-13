@@ -1043,6 +1043,10 @@ $langs: <%= Rails.application.secrets["langs"] %>
 #social-butttons
   display: inline-block
 
+@media only screen and (min-width: 960px)
+  .pagination
+    width: 30% !important
+
 @media only screen and (min-width: 779px)
   .span-15
     height: auto
@@ -1181,6 +1185,10 @@ $langs: <%= Rails.application.secrets["langs"] %>
 
   .ad_create_tab_home
     top: 43px
+
+@media only screen and (max-width: 530px)
+  .pagination
+    width: 85% !important
 
 @media only screen and (max-width: 500px)
   .google_ads
