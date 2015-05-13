@@ -13,7 +13,7 @@
     = link_to t("mailboxer.buttons.trash"), trash_mailboxer_message_path(@conversation), class: :button, method: :delete
 
 #main
-  .span-15
+  .span-15#messages-thread
     - @conversation.messages.each do |mes|
       = render :partial => "message", :locals => {:message => mes}
     = render :partial => "reply", :locals => {:message => @message}
