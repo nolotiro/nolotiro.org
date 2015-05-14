@@ -5,6 +5,7 @@
   %h1=title
 #main
   .span-19#list-messages-profile
+    = render :partial => "partials/google_adsense", locals: {:class_name => "vertical_ad"}
     = render partial: "users/tabnav", locals: {user: current_user}
     = render partial: "messages/tabmessages", locals: {box: @box}
     - if @search
@@ -51,5 +52,3 @@
       %p
         .info
           = t("mailboxer.table.none")
-
-      = render :partial => "partials/google_adsense", locals: {:class_name => "vertical_ad"}
