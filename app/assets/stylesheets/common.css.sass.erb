@@ -1023,6 +1023,7 @@ $langs: <%= Rails.application.secrets["langs"] %>
 .rectangular_ad
   float: right
   width: 300px
+  height: 270px
   position: absolute
 
 #mailboxer_message_body
@@ -1043,8 +1044,11 @@ $langs: <%= Rails.application.secrets["langs"] %>
 #social-butttons
   display: inline-block
 
-#messages-thread, #list-ads-profile, #list-messages-profile
+#list-ads-profile, #list-messages-profile
   min-height: 600px
+
+#messages-thread
+  min-height: 300px
 
 @media only screen and (min-width: 960px)
   .pagination
