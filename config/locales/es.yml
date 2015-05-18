@@ -96,7 +96,7 @@ es:
     - vie
     - sáb
     abbr_month_names:
-    - 
+    -
     - ene
     - feb
     - mar
@@ -122,7 +122,7 @@ es:
       long: "%d de %B de %Y"
       short: "%d de %b"
     month_names:
-    - 
+    -
     - enero
     - febrero
     - marzo
@@ -612,7 +612,7 @@ es:
     manage:
       all: Debes primero iniciar sesión o registrarte un usuario.
   will_paginate:
-    next_label: →
+    next_label: "<span class='mobile'>→</span> <span class='desktop'>Siguiente →</span>"
     page_entries_info:
       multi_page: Mostrando %{model} %{from} - %{to} de %{count} en total
       multi_page_html: Mostrando %{model} <b>%{from}&nbsp;-&nbsp;%{to}</b> de <b>%{count}</b> en total
@@ -625,4 +625,4 @@ es:
         other: Mostrando en <b>total&nbsp;%{count}</b> %{model}
         zero: No se encontraron %{model}
     page_gap: "&hellip;"
-    previous_label: "←"
+    previous_label: "<span class='mobile'>←</span><span class='desktop'>← Anterior</span>"
