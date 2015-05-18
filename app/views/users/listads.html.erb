@@ -6,7 +6,7 @@
 
 <div id="main">
   <div class="span-19" id="list-ads-profile">
-    <%= render partial: "partials/google_adsense", :locals => {:class_name => "vertical_ad"}  %>
+    <%= render partial: "partials/google_adsense", :locals => {:class_name => "vertical_ad mobile"}  %>
     <%= render partial: "users/tabnav", locals: {user: @user} %>
 
     <% if @ads.count > 0 %>
@@ -20,5 +20,7 @@
     <% end %>
     <%= render partial: "partials/pagination", locals: { items: @ads } %>
   </div>
+    <%= render partial: "partials/google_adsense", :locals => {:class_name => "vertical_ad desktop"}  %>
+
 
 </div>
