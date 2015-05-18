@@ -11,16 +11,11 @@
       <% @ads.each do |ad| %>
         <%= render :partial => "ads/ad", :locals => { :ad => ad } %>
       <% end %>
+      <%= render partial: "partials/pagination", locals: { items: @ads } %>
     <% else %>
-      <p>
-      <div class="info"> <%= t("nlt.no_results.on_user") %> </div>
-      </p>
-    <%= render partial: "partials/google_adsense", :locals => {:class_name => "vertical_ad mobile"}  %>
-    <% @ads.each do |ad| %>
-      <%= render :partial => "ads/ad", :locals => { :ad => ad } %>
+      <p> <div class="info"> <%= t("nlt.no_results.on_user") %> </div> </p>
     <% end %>
-    <%= render partial: "partials/pagination", locals: { items: @ads } %>
+    <%= render partial: "partials/google_adsense", :locals => {:class_name => "vertical_ad mobile"}  %>
   </div>
-    <%= render partial: "partials/google_adsense", :locals => {:class_name => "vertical_ad desktop"}  %>
-
+  <%= render partial: "partials/google_adsense", :locals => {:class_name => "vertical_ad desktop"}  %>
 </div>
