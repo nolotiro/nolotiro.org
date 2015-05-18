@@ -6,8 +6,8 @@
 
 <div id="main">
   <div class="span-19" id="list-ads-profile">
-    <%= render partial: "partials/google_adsense", :locals => {:class_name => "vertical_ad mobile"}  %>
     <%= render partial: "users/tabnav", locals: {user: @user} %>
+    <%= render partial: "partials/google_adsense", :locals => {:class_name => "vertical_ad mobile"}  %>
     <% @ads.each do |ad| %>
       <%= render :partial => "ads/ad", :locals => { :ad => ad } %>
     <% end %>
