@@ -994,7 +994,7 @@ $langs: <%= Rails.application.secrets["langs"] %>
     margin-bottom: 30px
 
 .mobile
-  display: none
+  display: none !important
 
 .first-visit
   margin-top: 3em
@@ -1049,10 +1049,6 @@ $langs: <%= Rails.application.secrets["langs"] %>
 
 #messages-thread
   min-height: 300px
-
-@media only screen and (min-width: 960px)
-  .pagination
-    width: 30% !important
 
 @media only screen and (min-width: 779px)
   .span-15
@@ -1156,12 +1152,12 @@ $langs: <%= Rails.application.secrets["langs"] %>
     margin-left: 4%
 
   .mobile
-    display: inline-block
+    display: inline-block !important
     margin: 0px
     padding-left: 4%
 
   .desktop
-    display: none
+    display: none !important
 
   #header
     display: inline-block
