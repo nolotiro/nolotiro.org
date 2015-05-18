@@ -8,8 +8,15 @@
   <div class="span-19" id="list-ads-profile">
     <%= render partial: "partials/google_adsense", :locals => {:class_name => "vertical_ad"}  %>
     <%= render partial: "users/tabnav", locals: {user: @user} %>
-    <% @ads.each do |ad| %>
-      <%= render :partial => "ads/ad", :locals => { :ad => ad } %>
+
+    <% if @ads.count > 0 %>
+      <% @ads.each do |ad| %>
+        <%= render :partial => "ads/ad", :locals => { :ad => ad } %>
+      <% end %>
+    <% else %>
+      <p>
+      <div class="info"> <%= t("nlt.no_results.on_user") %> </div>
+      </p>
     <% end %>
     <%= render partial: "partials/pagination", locals: { items: @ads } %>
   </div>

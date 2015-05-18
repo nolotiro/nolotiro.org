@@ -476,6 +476,7 @@ es:
       publish_ad: publicar un anuncio en esta ciudad
       subtitle: Puedes probar alguna de estas cosas
       title: No hay anuncios para esta ubicación.
+      on_user: No hay anuncios publicados por este usuario.
       try: 'O inténtalo con estas ciudades de nombre similar:'
     or: o
     password: Contraseña
