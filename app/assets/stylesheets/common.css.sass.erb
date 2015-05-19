@@ -184,7 +184,7 @@ form.searchbox
 .ad_create_tab
   position: absolute
   right: 0px
-  top: 43px
+  top: 55px
 
 .ad_create_tab_home
   position: absolute
@@ -192,10 +192,9 @@ form.searchbox
   top: 0px
 
 .ad_change_location_home
-  position: absolute
-  right: 0px
-  top: 35px
+  text-align: right
   font-weight: bold !important
+  margin-bottom: 20px
 
 .ad_create_tab a
   background: #97dc3c
@@ -214,7 +213,7 @@ form.searchbox
   padding-left: 10px
   padding-right: 10px
   padding-top: 5px
-  padding-bottom: 2px
+  padding-bottom: 5px
   text-align: center
   width: auto
   display: block
@@ -1047,9 +1046,6 @@ $langs: <%= Rails.application.secrets["langs"] %>
 #social-butttons
   display: inline-block
 
-#list-ads-profile, #list-messages-profile
-  min-height: 600px
-
 #messages-thread
   min-height: 300px
 
@@ -1072,9 +1068,6 @@ $langs: <%= Rails.application.secrets["langs"] %>
   .site-name
     width: 50%
     padding-top: 20px
-
-  .ad_create_tab_home a
-    height: 24px !important
 
   div.info.js-alert-first-visit.hide
     margin-top: 5em
