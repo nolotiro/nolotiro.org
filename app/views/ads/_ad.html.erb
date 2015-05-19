@@ -60,10 +60,10 @@
 <% end %>
 
 <% if defined? i %>
-  <% if params[:action] == "show" and params[:controller] == "woeid" and i == 0 %>
-    <%= render :partial => "partials/google_adsense", :locals => {:class_name => "vertical_ad mobile"}  %>
+  <% if params[:action] == "show" and params[:controller] == "woeid" and i == 5 %>
+    <%= render :partial => "partials/google_adsense", :locals => {:class_name => "rectangular_ad mobile"}  %>
   <% end %>
-  <% if params[:action] == "show" and params[:controller] == "woeid" and i == 1 %>
-    <%= render :partial => "partials/google_adsense", :locals => {:class_name => "vertical_ad second_vertical mobile"}  %>
+  <% if params[:action] == "show" and params[:controller] == "woeid" and i == 15 %>
+    <%= render :partial => "partials/google_adsense", :locals => {:class_name => "rectangular_ad mobile"}  %>
   <% end %>
 <% end %>
