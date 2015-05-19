@@ -2,6 +2,7 @@
 //= require jquery_ujs
 //= require jquery.cookiebar
 //= require moment-with-locales
+//= require moment-timezone
 // require turbolinks
 //= require_tree .
 //
@@ -51,7 +52,7 @@ $(document).ready(function(){
   var lang = $('.lang.active').data('langcode');
   moment.locale(lang);
   $('.js-moment').each( function(){
-    $(this).html(moment($(this).html(), "YYYY-MM-DD h:mm:ss").fromNow()); 
+    $(this).html(moment($(this).html(), "YYYY-MM-DD h:mm:ss").tz('Europe/Madrid').fromNow()); 
   });
 
 }); 
