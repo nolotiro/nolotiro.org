@@ -50,6 +50,19 @@
 
   </head>
   <body>
+
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+    <!-- TODO i18n -->
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/es_ES/sdk.js#xfbml=1&version=v2.3&appId=400046993432649";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+
     <div class="container">
 
       <div id="header">
@@ -125,7 +138,6 @@
     <script src="//www.google.com/jsapi"></script>
     <%= airbrake_javascript_notifier %>
     <%= javascript_include_tag "application" %>
-    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
     <div class="hide js-cookie-message"><%= t('nlt.cookie') %></div>
 

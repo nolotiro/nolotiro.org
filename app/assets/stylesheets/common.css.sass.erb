@@ -54,6 +54,9 @@ h2
   font-weight: bold
   padding-left: 0px
 
+textarea
+  resize: none
+
 #rememberme-label
   display: none
 
@@ -385,6 +388,8 @@ form.searchbox
   text-align: left
   font-size: 11px
   margin-top: 5px
+  b
+    margin-right: 10px
 
 .edit_ad
   padding-left: 18px
@@ -1051,9 +1056,6 @@ $langs: <%= Rails.application.secrets["langs"] %>
 .section_ads .ad_excerpt_home
   border-bottom: none
 
-.ad_meta_info b
-  margin-left: 5px
-
 @media only screen and (min-width: 779px)
   .span-15
     height: auto
@@ -1176,6 +1178,7 @@ $langs: <%= Rails.application.secrets["langs"] %>
     height: 60px
     float: left
     position: relative
+    margin-top: 20px
 
   .vertical_ad
     float: left
@@ -1184,21 +1187,27 @@ $langs: <%= Rails.application.secrets["langs"] %>
     width: 310px
     margin-left: 25px
 
-  .ad_create_tab
-    position: relative
-    float: right
+  #header
+    .ad_create_tab
+      position: static
+      margin-top: 40px
+    .ad_create_tab_home
+      top: 43px
 
   #ad_body, textarea
     width: 95% !important
-
-  .ad_create_tab_home
-    top: 43px
 
 @media only screen and (max-width: 530px)
   .pagination
     width: 85% !important
 
 @media only screen and (max-width: 500px)
+
+  #header
+    .ad_create_tab
+      position: static
+      margin-top: 30px
+
   .google_ads
     width: 300px
 
@@ -1221,14 +1230,14 @@ $langs: <%= Rails.application.secrets["langs"] %>
     top: 0px
 
 @media only screen and (max-width: 350px)
-  .ad_create_tab_home a
-    height: 50px !important
 
   .ad_change_location_home
     top: 50px
 
-  .ad_create_tab
-    top: 0px !important
+  #header
+    .ad_create_tab
+      position: static
+      margin-top: 50px
 
   .home_location_change
     position: relative

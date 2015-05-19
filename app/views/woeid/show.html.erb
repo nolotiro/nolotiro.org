@@ -65,7 +65,7 @@
   </div>
 
   <div id="main">
-    <div class="span-18">
+    <div class="span-17">
       <% if @type == "give" %>
         <%= render :partial => "woeid/filter_status", :locals => {:status => @status, :id => @id, :all => @all} %>
       <% end %>
@@ -92,9 +92,9 @@
           <% end %>
         </div>
       <% end %>
-    </div><!-- /span-18 -->
-    <div class="span-5 desktop">
+    </div><!-- /span-17 -->
+    <div class="span-6 desktop">
       <%= render :partial => "partials/google_adsense", :locals => {:class_name => "vertical_ad"}  %>
-      <%= render :partial => "partials/google_adsense", :locals => {:class_name => "vertical_ad second_vertical"}  %>
-    </div><!-- /span-5 -->
+      <%= render :partial => "partials/google_adsense", :locals => {:class_name => "vertical_ad"}  %>
+    </div><!-- /span-6 -->
   </div>
