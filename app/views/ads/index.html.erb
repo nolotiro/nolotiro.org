@@ -23,8 +23,11 @@
 <% end %>
 
 <% content_for :action do %>
-  <div class="home_location_change">
-    <div class="ad_create_tab ad_create_tab_home">
+  <div>
+    <div class="ad_change_location_home">
+      <%= link_to t('nlt.change_city'), location_ask_path %>
+    </div>
+    <div class="ad_create_tab">
       <% if @location_suggest.nil? %>
         <%= link_to t('nlt.view_ads_on_your_city'), location_ask_path %>
       <% else %>
@@ -34,8 +37,5 @@
         <% end %>
       <% end %>
     </div>
-    <p class="ad_change_location_home">
-      <%= link_to t('nlt.change_city'), location_ask_path %>
-    </p>
   </div>
 <% end %>
