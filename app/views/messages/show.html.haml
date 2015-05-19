@@ -17,4 +17,6 @@
     - @conversation.messages.each do |mes|
       = render :partial => "message", :locals => {:message => mes}
     = render :partial => "reply", :locals => {:message => @message}
+
+  .span-8
     = render :partial => "partials/google_adsense", :locals => {:class_name => "rectangular_ad", :data_format => "rectangular"}

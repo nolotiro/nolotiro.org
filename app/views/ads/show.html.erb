@@ -59,7 +59,8 @@
 
 </div>
 
-<%= render partial: "partials/google_adsense", :locals => { :class_name => "rectangular_ad"} %>
+<%= render partial: "partials/google_adsense", :locals => { :class_name => "rectangular_ad desktop", :data_format => "rectangle" } %>
+<%= render partial: "partials/google_adsense", :locals => { :class_name => "rectangular_ad mobile" } %>
 
 <% content_for :action do %>
   <div class="ad_create_tab">

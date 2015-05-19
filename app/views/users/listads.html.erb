@@ -19,5 +19,7 @@
       <p> <div class="info"> <%= t("nlt.no_results.on_user") %> </div> </p>
     <% end %>
   </div>
-  <%= render partial: "partials/google_adsense", :locals => {:class_name => "vertical_ad desktop"}  %>
+  <div class="span-5">
+    <%= render partial: "partials/google_adsense", :locals => {:class_name => "vertical_ad desktop"}  %>
+  </div>
 </div>
