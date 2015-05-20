@@ -1,9 +1,9 @@
 <% if defined? i %>
   <% if i == 6 %>
-    <%= render partial: "partials/google_adsense", :locals => {:data_format => "rectangular, horizontal"} %>
+    <%= render partial: "partials/google_adsense", :locals => {:data_format => "horizontal"} %>
   <% end %>
   <% if i == 12 %>
-    <%= render partial: "partials/google_adsense", :locals => {:data_format => "rectangular, horizontal"} %>
+    <%= render partial: "partials/google_adsense", :locals => {:data_format => "horizontal"} %>
   <% end %>
   <% if i == 18 and params[:controller] != "woeid" %>
     <%= render partial: "partials/google_adsense"%>
