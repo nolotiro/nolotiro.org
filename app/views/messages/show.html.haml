@@ -19,4 +19,6 @@
     = render :partial => "reply", :locals => {:message => @message}
 
   .span-8
-    = render :partial => "partials/google_adsense", :locals => {:class_name => "rectangular_ad", :data_format => "rectangular"}
+    = render partial: "partials/google_adsense", :locals => { :class_name => "rectangular_ad desktop", :data_format => "rectangle" }
+    = render partial: "partials/google_adsense", :locals => { :class_name => "rectangular_ad mobile" }
+    %br 
