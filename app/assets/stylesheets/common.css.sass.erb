@@ -1055,10 +1055,16 @@ $langs: <%= Rails.application.secrets["langs"] %>
 .mobile_ad_specific
   display: none
 
+.desktop_ad_specific
+  display: initial
+
 .rectangular_ad_specific
   float: right
   width: 300px
   height: 270px
+
+.ad_excerpt_show .sharelinks #social-butttons
+  float: left
 
 @media only screen and (max-width: 1047px)
   .desktop_ad_specific
@@ -1068,7 +1074,8 @@ $langs: <%= Rails.application.secrets["langs"] %>
     display: inline-block !important
 
   .rectangular_ad_specific
-    height: 60px
+    height: 60px !important
+    width: 100%
     float: left
     position: relative
     margin-top: 20px
@@ -1152,7 +1159,7 @@ $langs: <%= Rails.application.secrets["langs"] %>
     width: 95%
 
   #location_header_section
-    width: 90%
+    width: 100%
 
   .give-want
     float: none
@@ -1161,7 +1168,7 @@ $langs: <%= Rails.application.secrets["langs"] %>
     width: 100%
 
   #default_header_section
-    width: 90%
+    width: 100%
     margin-left: 4%
 
   .home_location_change
@@ -1210,6 +1217,11 @@ $langs: <%= Rails.application.secrets["langs"] %>
 
   #ad_body, textarea
     width: 95% !important
+
+@media only screen and (min-width: 500px) and (max-width: 779px)
+  .ad_create_tab
+    width: 75%
+    float: right
 
 @media only screen and (max-width: 530px)
   .pagination
