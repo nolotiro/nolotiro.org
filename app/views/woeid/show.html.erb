@@ -28,9 +28,9 @@
   <% if @all %>
     <span class="give-want">
       <%= link_to t('nlt.give'), ads_listall_path(type: 'give'),
-        :class => @type == "give" ? "actual" : "''" %>
+        :class => "actual" if @type == "give" %>
       &nbsp;
-      <%= link_to t('nlt.want'), ads_listall_path(type: 'want'), :class => @type == "want" ? "actual" : "''" %>
+      <%= link_to t('nlt.want'), ads_listall_path(type: 'want'), :class => "actual" if @type == "want" %>
     </span>
   <div class="location_name">
     <h1><%= t('nlt.all_ads') %></h1>
@@ -38,9 +38,9 @@
   </div>
   <% else %>
     <span class="give-want">
-      <%= link_to t('nlt.give'), ads_woeid_path(id: @id, type: 'give'), :class => @type == "give" ? "actual" : "''" %>
+      <%= link_to t('nlt.give'), ads_woeid_path(id: @id, type: 'give'), :class => "actual" if @type == "give" %>
       &nbsp;
-      <%= link_to t('nlt.want'), ads_woeid_path(id: @id, type: 'want'), :class => @type == "want" ? "actual" : "''" %>
+      <%= link_to t('nlt.want'), ads_woeid_path(id: @id, type: 'want'), :class => "actual" if @type == "want" %>
     </span>
     <div class="location_name">
       <h1>
