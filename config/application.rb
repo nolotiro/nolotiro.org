@@ -8,7 +8,7 @@ Bundler.require(:default, Rails.env)
 
 module NolotiroOrg
   class Application < Rails::Application
-    config.time_zone = 'Madrid'
+    config.time_zone = 'UTC'
     config.i18n.default_locale = :es
     config.i18n.enforce_available_locales = true
     I18n.config.enforce_available_locales = true
