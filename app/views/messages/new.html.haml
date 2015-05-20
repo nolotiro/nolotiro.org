@@ -5,7 +5,7 @@
   %h1
     = title
 #main
-  .span-16
+  .span-14
     = form_for @message do |f|
       %fieldset
         %legend= t('mailboxer.new.legend')
@@ -27,5 +27,6 @@
             = f.text_area :body, size: '80x3', required: true
         = f.hidden_field :recipients
         = f.submit t('mailboxer.new.submit')
-
-= render partial: "partials/google_adsense", locals: {:class_name => "rectangular_ad"}
+  .span-9
+    = render partial: "partials/google_adsense", :locals => { :class_name => "rectangular_ad desktop", :data_format => "rectangle" }
+    = render partial: "partials/google_adsense", :locals => { :class_name => "rectangular_ad mobile" }
