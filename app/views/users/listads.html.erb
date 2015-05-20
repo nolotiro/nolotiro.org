@@ -8,7 +8,7 @@
   <div class="span-18" id="list-ads-profile">
     <%= render partial: "users/tabnav", locals: {user: @user} %>
     <div class="span-5 mobile">
-      <%= render partial: "partials/google_adsense", :locals => {:class_name => "rectangular_ad mobile"}  %>
+      <%= render partial: "partials/google_adsense", :locals => {:class_name => "rectangular_ad mobile", :data_format => "horizontal" }  %>
     </div>
     <% if @ads.count > 0 %>
       <% @ads.each do |ad| %>
