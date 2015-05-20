@@ -6,7 +6,7 @@
     <%= render partial: "partials/google_adsense", :locals => {:data_format => "horizontal"} %>
   <% end %>
   <% if i == 18 and params[:controller] != "woeid" %>
-    <%= render partial: "partials/google_adsense"%>
+    <%= render partial: "partials/google_adsense", :locals => {:data_format => "horizontal"} %>
   <% end %>
 <% end %>
 
