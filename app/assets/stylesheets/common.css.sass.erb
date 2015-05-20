@@ -1052,6 +1052,27 @@ $langs: <%= Rails.application.secrets["langs"] %>
 .section_ads .ad_excerpt_home
   border-bottom: none
 
+.mobile_ad_specific
+  display: none
+
+.rectangular_ad_specific
+  float: right
+  width: 300px
+  height: 270px
+
+@media only screen and (max-width: 1047px)
+  .desktop_ad_specific
+    display: none !important
+
+  .mobile_ad_specific
+    display: inline-block !important
+
+  .rectangular_ad_specific
+    height: 60px
+    float: left
+    position: relative
+    margin-top: 20px
+
 @media only screen and (min-width: 779px)
   .span-15
     height: auto
