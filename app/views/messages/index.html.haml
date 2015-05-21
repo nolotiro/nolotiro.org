@@ -23,11 +23,13 @@
                   - else
                     %td
                   %td.sender
-                    = other_username( current_user.username, m.messages.first.recipients.first.username, m.messages.first.recipients.second.username ) 
+                    = cache "other_username-#{current_user.id}_#{m.id}" do 
+                      = other_username( current_user.username, m ) 
                   %td.mail-subject
                     = link_to m.subject, mailboxer_message_path(m)
                   %td.timestamp
-                    %abbr.js-moment{title: m.messages.last.created_at}=m.messages.last.created_at
+                    = cache "moment-#{m.messages}" do 
+                      %abbr.js-moment{title: m.messages.last.created_at}=m.messages.last.created_at
         - unless @box == 'trash'
           = submit_tag t('mailboxer.buttons.trash_selected'), id: 'delete_multiple_button'
       = will_paginate @messages

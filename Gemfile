@@ -32,6 +32,7 @@ group :development, :test do
   #gem 'better_errors'                       # dev: better errors
   #gem 'binding_of_caller'                   # dev: better errors
   gem 'mailcatcher'                         # dev: mailbox 
+  gem 'bullet'                              # dev: n+1 query problem alert 
 end
 
 # Use ActiveModel has_secure_password
