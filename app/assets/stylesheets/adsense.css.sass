@@ -1,0 +1,48 @@
+
+//Google Ads
+
+.google_ads
+  width: 468px
+  padding: 10px
+  background-color: #fff
+  display: inline-block
+  text-align: center
+  margin: 10px auto 20px
+
+.vertical_ad
+  width: 160px
+  height: 600px
+  float: right
+
+.rectangular_ad
+  width: 300px
+  height: 270px
+
+@media only screen and (max-width: 779px)
+  .rectangular_ad
+    width: 468px !important
+    height: 60px !important
+    position: relative
+    margin-top: 20px
+
+  .vertical_ad
+    position: relative
+    height: 250px
+    width: 310px
+    margin-left: 25px
+
+  .google_ads
+    width: 100%
+    padding: 0px
+    margin: 0px
+    display: inline-block
+
+@media only screen and (max-width: 500px)
+  .google_ads
+    width: 300px
+
+  .rectangular_ad
+    width: 250px !important
+    height: 60px !important
+    display: block
+

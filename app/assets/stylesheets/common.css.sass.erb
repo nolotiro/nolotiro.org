@@ -292,7 +292,6 @@ form.searchbox
   padding-bottom: 5px
 
 .ad_excerpt_show
-  width: 100%
   display: block
   float: left
 
@@ -405,6 +404,8 @@ form.searchbox
   text-align: right
   font-size: .7em
   margin-bottom: 15px
+  #social-butttons
+    float: left
 
 .ad_comments
   padding-left: 18px
@@ -1008,26 +1009,6 @@ $langs: <%= Rails.application.secrets["langs"] %>
   width: 300px
   height: 250px
 
-//Google Ads
-
-.google_ads
-  width: 468px
-  padding: 10px
-  background-color: #fff
-  display: inline-block
-  text-align: center
-  margin: 10px auto 20px
-
-.vertical_ad
-  float: right
-  width: 160px
-  height: 600px
-
-.rectangular_ad
-  float: right
-  width: 300px
-  height: 270px
-
 #mailboxer_message_body
   width: 90%
   height: 100px
@@ -1051,41 +1032,6 @@ $langs: <%= Rails.application.secrets["langs"] %>
 
 .section_ads .ad_excerpt_home
   border-bottom: none
-
-.mobile_ad_specific
-  display: none
-
-.desktop_ad_specific
-  display: initial
-
-.rectangular_ad_specific
-  float: right
-  width: 300px
-  height: 270px
-
-.ad_excerpt_show .sharelinks #social-butttons
-  float: left
-
-@media only screen and (max-width: 1047px)
-  .desktop_ad_specific
-    display: none !important
-
-  .mobile_ad_specific
-    display: inline-block !important
-
-  .rectangular_ad_specific
-    height: 60px !important
-    width: 100%
-    float: left
-    position: relative
-    margin-top: 20px
-
-@media only screen and (min-width: 779px)
-  .span-15
-    height: auto
-
-  .second_vertical
-    margin-top: 550px
 
 @media only screen and (max-width: 779px)
   .section_ads
@@ -1118,12 +1064,6 @@ $langs: <%= Rails.application.secrets["langs"] %>
     top: 5px
     right: 25px
 
-  .google_ads
-    width: 100%
-    padding: 0px
-    margin: 0px
-    display: inline-block
-
   #social-butttons
     margin-left: -20px
 
@@ -1135,7 +1075,6 @@ $langs: <%= Rails.application.secrets["langs"] %>
   #twitter-button
     margin: 0px 30px 0px 10px
     padding: 0px
-    width: 32%
 
   .ad_excerpt
     padding: 0px
@@ -1143,7 +1082,6 @@ $langs: <%= Rails.application.secrets["langs"] %>
     width: 95%
 
   #main
-    width: 95%
     margin-left: auto
     margin-right: auto
 
@@ -1161,9 +1099,6 @@ $langs: <%= Rails.application.secrets["langs"] %>
   #location_header_section
     width: 100%
 
-  .give-want
-    float: none
-
   .span-16
     width: 100%
 
@@ -1180,8 +1115,6 @@ $langs: <%= Rails.application.secrets["langs"] %>
 
   .mobile
     display: inline-block !important
-    margin: 0px
-    padding-left: 4%
 
   .desktop
     display: none !important
@@ -1194,19 +1127,6 @@ $langs: <%= Rails.application.secrets["langs"] %>
   .info
     width: 90%
     margin-left: 4%
-
-  .rectangular_ad
-    height: 60px
-    float: left
-    position: relative
-    margin-top: 20px
-
-  .vertical_ad
-    float: left
-    position: relative
-    height: 250px
-    width: 310px
-    margin-left: 25px
 
   #header
     .ad_create_tab
@@ -1227,20 +1147,15 @@ $langs: <%= Rails.application.secrets["langs"] %>
   .pagination
     width: 85% !important
 
+  .give-want
+    display: block
+
 @media only screen and (max-width: 500px)
 
   #header
     .ad_create_tab
       position: static
       margin-top: 30px
-
-  .google_ads
-    width: 300px
-
-  .rectangular_ad
-    width: 300px
-    height: 100%
-    display: inline-block
 
   .message-from-left, .message-from-right
     display: none
