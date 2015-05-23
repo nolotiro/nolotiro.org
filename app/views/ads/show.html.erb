@@ -13,8 +13,8 @@
   <h1><%= @ad.title %></h1>
 </div>
 
-<div id="main">
-  <div class="span-15">
+<div id="main" class="row">
+  <div class="col-md-8">
     <div class="ad_excerpt_show">
       <% if @ad.image.exists? %>
         <div class="ad_list_image">
@@ -56,11 +56,12 @@
     <%= render :partial => "comments/show", :locals => {:ad => @ad} %>
 
   </div>
+  <div class="col-md-4">
+    <%= render partial: "partials/google_adsense", locals: { data_format: "rectangle", class_name: "rectangular_ad desktop" } %>
+    <%= render partial: "partials/google_adsense", locals: { data_format: "horizontal", class_name: "mobile" } %>
+  </div>
 
 </div>
-
-<%= render partial: "partials/google_adsense", :locals => { :class_name => "rectangular_ad_specific desktop_ad_specific", :data_format => "rectangle" } %>
-<%= render partial: "partials/google_adsense", :locals => { :class_name => "rectangular_ad_specific mobile_ad_specific", :data_format => "horizontal" } %>
 
 <% content_for :action do %>
   <div class="ad_create_tab">
