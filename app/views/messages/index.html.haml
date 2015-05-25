@@ -23,12 +23,12 @@
                   - else
                     %td
                   %td.sender
-                    = cache "other_username-#{current_user.id}_#{m.id}" do 
-                      = other_username( current_user.username, m ) 
+                    = cache "other_username-#{current_user.id}_#{m.id}" do
+                      = other_username( current_user.username, m )
                   %td.mail-subject
                     = link_to m.subject, mailboxer_message_path(m)
                   %td.timestamp
-                    = cache "moment-#{m.messages}" do 
+                    = cache "moment-#{m.messages}" do
                       %abbr.js-moment{title: m.messages.last.created_at}=m.messages.last.created_at
         - unless @box == 'trash'
           = submit_tag t('mailboxer.buttons.trash_selected'), id: 'delete_multiple_button'
@@ -39,4 +39,6 @@
           = t("mailboxer.table.none")
 
     = render :partial => "partials/google_adsense", locals: {:class_name => "rectangular_ad mobile"}
-  = render :partial => "partials/google_adsense", locals: {:class_name => "vertical_ad desktop"}
+
+  .span-4
+    = render :partial => "partials/google_adsense", locals: {:class_name => "vertical_ad desktop"}
