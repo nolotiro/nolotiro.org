@@ -72,9 +72,7 @@
 
     <% if @ads.any? %>
       <% @ads.each_with_index do |ad,i| %>
-        <% cache cache_key_for("ad_#{I18n.locale}_" + ad.id.to_s, current_user), skip_digest: true do %>
-          <%= render :partial => "ads/ad", :locals => { :ad => ad, :i => i } %>
-        <% end %>
+        <%= render :partial => "ads/ad", :locals => { :ad => ad, :i => i } %>
       <% end %>
       <%= render partial: "partials/pagination", locals: { items: @ads } %>
     <% else %>
