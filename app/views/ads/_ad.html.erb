@@ -48,7 +48,7 @@
 <% end %>
 
 <% if defined? i %>
-  <% if i == 5 or i == 15 %>
+  <% if [ 5, 10, 15 ].include? i %>
     <%= render partial: "partials/google_adsense", locals: {class_name: "rectangular_ad mobile", data_format: "horizontal"}  %>
     <%= render partial: "partials/google_adsense", locals: {class_name: "desktop"} %>
   <% end %>
