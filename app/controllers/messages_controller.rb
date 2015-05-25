@@ -1,5 +1,7 @@
 class MessagesController < ApplicationController
 
+  require 'will_paginate/array'
+
   before_filter :authenticate_user!
 
   def index
@@ -8,6 +10,7 @@ class MessagesController < ApplicationController
     @messages = current_user.mailbox.sentbox if @box == 'sent'
     @messages = current_user.mailbox.trash if @box == 'trash'
     @messages = current_user.mailbox.archive if @box == 'archive'
+    @messages = @messages.sort_by {|m| m.messages.last.created_at}.reverse
     @messages = @messages.paginate(:page => params[:page], :total_entries => @messages.to_a.size)
     session[:last_mailbox] = @box
   end
