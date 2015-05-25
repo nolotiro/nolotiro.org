@@ -24,7 +24,7 @@
             -else
               = f.text_field :subject
           %dd#body-element
-            = f.text_area :body, size: '80x3', maxlength: 2500, required: true
+            = f.text_area :body, size: '80x3', maxlength: 1500, required: true
             %p.description
               = t 'mailboxer.new.body_max'
         = f.hidden_field :recipients

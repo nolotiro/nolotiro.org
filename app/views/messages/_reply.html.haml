@@ -9,7 +9,7 @@
       #reply
         = form_for message do |f|
           = f.hidden_field :conversation_id
-          = f.text_area :body, size: '80x3', maxlength: 2500
+          = f.text_area :body, size: '80x3', maxlength: 1500
           %p.description
             = t 'mailboxer.new.body_max'
           = f.submit t('mailboxer.new.button')
