@@ -48,13 +48,8 @@
 <% end %>
 
 <% if defined? i %>
-  <% if params[:controller] != "woeid" and ( i == 6 or i == 12 or i == 18 ) %>
-    <%= render partial: "partials/google_adsense", locals: {data_format: "horizontal", class_name: "desktop"} %>
-  <% end %>
-  <% if params[:action] == "show" and params[:controller] == "woeid" and i == 5 %>
+  <% if i == 5 or i == 15 %>
     <%= render partial: "partials/google_adsense", locals: {class_name: "rectangular_ad mobile", data_format: "horizontal"}  %>
-  <% end %>
-  <% if params[:action] == "show" and params[:controller] == "woeid" and i == 15 %>
-    <%= render partial: "partials/google_adsense", locals: {class_name: "rectangular_ad mobile", data_format: "horizontal"}  %>
+    <%= render partial: "partials/google_adsense", locals: {class_name: "desktop"} %>
   <% end %>
 <% end %>
