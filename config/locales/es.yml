@@ -310,7 +310,7 @@ es:
       subject: Tema
       submit: Enviar
       title: Nuevo mensaje privado para el usuario %{user}
-      body_max: Máximo 2500 caracteres
+      body_max: Máximo 1500 caracteres
     notification_mailer:
       subject: "[nolotiro.org] Nueva notificación: %{subject}"
       you_have_new_reply: Has recibido una nueva respuesta
