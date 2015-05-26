@@ -5,7 +5,7 @@
 </div>
 
 <div id="main">
-  <div class="span-16">
+  <div class="col-md-8">
     <% if @location_asked.nil? %>
       <p class="error"><%= t('nlt.change_town.choose_html', location: params[:location]) %></p>
       <%= render :partial =>"ask_form", :locals => {location_suggest: @location_suggest} %>
@@ -26,7 +26,7 @@
       <% end %>
     <% end %>
   </div>
-  <div class="span-7">
+  <div class="col-md-4">
     <%= render partial: "partials/google_adsense", :locals => {:class_name => "rectangular_ad"}  %>
   </div>
 </div>

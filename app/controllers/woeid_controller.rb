@@ -41,7 +41,7 @@ class WoeidController < ApplicationController
     if not @ads.any?
       @location_suggest = get_location_suggest # no results
       if @woeid
-        @location_options = WoeidHelper.search_by_name(@woeid.short)
+        @location_options = WoeidHelper.search_by_name(@woeid[:short])
       end
     end
     render "show"
