@@ -1,12 +1,12 @@
-<%= content_for(:meta_title, "#{I18n.t('nlt.keywords')} #{@ad.title} #{@ad.woeid_name}") %>
+<%= content_for(:meta_title, "#{I18n.t('nlt.keywords')} #{@ad.title} #{@ad.woeid_name[:full]}") %>
 <%= content_for :meta_description do %>
-  <meta name="description" content="<%= t('nlt.meta_description_ad', title: @ad.title, woeid: @ad.woeid_name, body: @ad.body) %>" />
+  <meta name="description" content="<%= t('nlt.meta_description_ad', title: @ad.title, woeid: @ad.woeid_name[:full], body: @ad.body) %>" />
 <% end %>
 
 <div id="default_header_section">
   <h2>
     <%= link_to ads_woeid_path(id: @ad.woeid_code, type: @ad.type_class) do %>
-      <%= @ad.woeid_name %> &gt;
+      <%= @ad.woeid_name[:full] %> &gt;
       <%= @ad.type_string %>
     <% end %>
   </h2>
@@ -65,6 +65,6 @@
 
 <% content_for :action do %>
   <div class="ad_create_tab">
-    <%= link_to "+ #{ t('nlt.publish_ad_on', woeid: @ad.woeid_name) }", new_ad_path(type: @ad.type) %>
+    <%= link_to "+ #{ t('nlt.publish_ad_on', woeid: @ad.woeid_name[:short]) }", new_ad_path(type: @ad.type) %>
   </div>
 <% end %>
