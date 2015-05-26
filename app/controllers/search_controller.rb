@@ -9,18 +9,18 @@ class SearchController < ApplicationController
     @id = params[:woeid] || params[:woeid_code]
     @id = current_user.woeid if user_signed_in? and @id.nil?
 
-    if @id.nil? 
-      redirect_to location_ask_path 
-    else 
+    if @id.nil?
+      redirect_to location_ask_path
+    else
       @woeid = WoeidHelper.convert_woeid_name @id
       if params[:q].nil?
         @ads = []
-      else 
+      else
         @q = Riddle::Query.escape(params[:q])
         @ads = Ad.search @q,
           page: params[:page],
           star: true,
-          order: "created_at DESC", 
+          order: "created_at DESC",
           without: {status: 3},
           with: {woeid_code: @id, type: type_n}
       end
