@@ -72,7 +72,7 @@
 
     <% if @ads.any? %>
       <% @ads.each_with_index do |ad,i| %>
-        <%= render :partial => "ads/ad", :locals => { :ad => ad, :i => i } %>
+        <%= render :partial => "ads/ad", :locals => { :ad => ad, :i => i, :show_ads => false } %>
       <% end %>
       <%= render partial: "partials/pagination", locals: { items: @ads } %>
     <% else %>
