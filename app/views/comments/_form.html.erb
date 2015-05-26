@@ -17,7 +17,7 @@
         </label>
       </dt>
       <dd id="body-element">
-        <%= text_area_tag("body", "", size: "80x24") %>
+        <%= text_area_tag("body", "", size: "80x24", maxlength: 1000) %>
         <p class="description">
         <%= t 'nlt.comments.body_max' %>
         </p>
