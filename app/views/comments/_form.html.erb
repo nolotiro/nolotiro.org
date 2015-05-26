@@ -1,17 +1,31 @@
 <div class="ad_comment_form">
 	<%= form_tag(create_comment_path(ad)) do %>
-	<dl class="zend_form">
-		<dt id="body-label">
-			<label for="body" class="optional">
-        <%= t('nlt.comments.label') %>
-			</label>
-		</dt>
-		<dd id="body-element">
-			<%= text_area_tag("body", "", size: "80x24") %>
-		</dd>
-		<dt id="submit-label">&nbsp;</dt><dd id="submit-element">
-		<%= submit_tag t('nlt.comments.submit') %>
-	</dd>
-</dl>
-<% end %>
+    <% if @comment.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= t('nlt.save_failed') %></h2>
+        <ul>
+          <% @comment.errors.full_messages.each do |msg| %>
+              <li><%= msg %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+    <dl class="zend_form">
+      <dt id="body-label">
+        <label for="body" class="optional">
+          <%= t('nlt.comments.label') %>
+        </label>
+      </dt>
+      <dd id="body-element">
+        <%= text_area_tag("body", "", size: "80x24") %>
+        <p class="description">
+        <%= t 'nlt.comments.body_max' %>
+        </p>
+      </dd>
+      <dt id="submit-label">&nbsp;</dt>
+      <dd id="submit-element">
+        <%= submit_tag t('nlt.comments.submit') %>
+      </dd>
+    </dl>
+  <% end %>
 </div>

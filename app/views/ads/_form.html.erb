@@ -3,16 +3,15 @@
     <fieldset>
       <%= form_for(@ad, :html => {:multipart => true}) do |f| %>
         <% if @ad.errors.any? %>
-        <div id="error_explanation">
-        <h2><%= t('nlt.save_failed') %></h2>
-
-        <ul>
-          <% @ad.errors.full_messages.each do |msg| %>
-            <li><%= msg %></li>
+          <div id="error_explanation">
+            <h2><%= t('nlt.save_failed') %></h2>
+            <ul>
+              <% @ad.errors.full_messages.each do |msg| %>
+                  <li><%= msg %></li>
+              <% end %>
+            </ul>
+          </div>
         <% end %>
-        </ul>
-      </div>
-    <% end %>
       <dl class="zend_form">
 
         <% if @ad.image.exists? %>
