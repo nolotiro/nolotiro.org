@@ -34,7 +34,7 @@ module WoeidHelper
       if locations.nil?
         places = nil
       else
-        places = locations.map {|l| ["#{WoeidHelper.convert_woeid_name(l.woeid)} (#{Ad.where(woeid_code: l.woeid).count} anuncios)", l.woeid] }
+        places = locations.map {|l| ["#{WoeidHelper.convert_woeid_name(l.woeid)[:full]} (#{Ad.where(woeid_code: l.woeid).count} anuncios)", l.woeid] }
       end
       Rails.cache.write(key, places)
       return places

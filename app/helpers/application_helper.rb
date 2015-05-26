@@ -10,7 +10,7 @@ module ApplicationHelper
 
   def get_location_options(woeid)
     # receives a woeid, returns a list of names like it
-    WoeidHelper.search_by_name(@woeid[:full])
+    WoeidHelper.search_by_name(woeid.to_s)
   end
 
   def cache_key_for(key, current_user)
