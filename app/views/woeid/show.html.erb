@@ -7,15 +7,15 @@
 
 <% unless @search or @all %>
   <% content_for :meta_extra do %>
-    <link rel=”alternate” type=”application/rss+xml” title=”nolotiro.org - <%= @woeid %>” href=”<%= rss_type_url(woeid: @id, type: @type, status: @status) %>” />
+    <link rel=”alternate” type=”application/rss+xml” title=”nolotiro.org - <%= @woeid[:full] %>” href=”<%= rss_type_url(woeid: @id, type: @type, status: @status) %>” />
   <% end %>
 <% end %>
 
 <% content_for :action do %>
   <% type_n = @type == "want" ? 2 : 1 %>
-  <% if @woeid %>
+  <% if @woeid%>
     <div class="ad_create_tab">
-      <%= link_to "+ #{t('nlt.publish_ad_on', woeid: @woeid)}", new_ad_path(type: type_n) %>
+      <%= link_to "+ #{t('nlt.publish_ad_on', woeid: @woeid[:short])}", new_ad_path(type: type_n) %>
     </div>
   <% else %>
     <div class="ad_create_tab">
@@ -52,7 +52,7 @@
         <% else %>
           <%= t('nlt.want') %>
         <% end %>
-        - <%= @woeid %>
+        - <%= @woeid[:full] %>
       </h1>
       <br>
       <%= render :partial => "ads/search", :locals => {:woeid => @id, :ad_type => @type, :q => @q} %>
@@ -86,7 +86,7 @@
         <div class="rss">
           <%= link_to rss_type_path(:woeid => @id, :type => "give") do %>
             <%= image_tag "icons/rss.png", :alt => t("nlt.rss_suscribe") %>
-            &nbsp; <%= t('nlt.rss_suscribe') %> - <%= @woeid %>
+            &nbsp; <%= t('nlt.rss_suscribe') %> - <%= @woeid[:full] %>
           <% end %>
         </div>
       <% end %>
