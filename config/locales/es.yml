@@ -54,6 +54,8 @@ es:
         image: Imagen
         image_content_type: Tipo de contenido de imagen
         image_file_size: Tamaño de imagen
+      comment:
+        body: comentario
     errors:
       format: "%{attribute} %{message}"
       messages:
@@ -413,6 +415,7 @@ es:
       subject: "[nolotiro.org] Tienes un nuevo comentario en el anuncio %{ad}"
       submit: Enviar
       title: Comentarios
+      body_max: Máximo 1000 caracteres
     contact: contacto
     contact_form: Formulario de contacto
     contact_legend: Por favor, escribe tu mensaje
