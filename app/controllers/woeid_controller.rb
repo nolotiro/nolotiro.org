@@ -6,10 +6,10 @@ class WoeidController < ApplicationController
   # GET /es/woeid/:id/:type/status/:status
   # GET /es/ad/listall/ad_type/:type
   # GET /es/ad/listall/ad_type/:type/status/:status
-  def show 
+  def show
     @id = params[:id]
     @type = params[:type]
-    @status = params[:status].nil? ? 'available' : params[:status] 
+    @status = params[:status].nil? ? 'available' : params[:status]
 
     case @status
     when 'available'
@@ -20,7 +20,7 @@ class WoeidController < ApplicationController
       st = 3
     else
       st = 1
-    end 
+    end
     case @type
     when 'give'
       ty = 1
@@ -28,21 +28,21 @@ class WoeidController < ApplicationController
       ty = 2
     else
       ty = 1
-    end 
+    end
 
     @ads = Ad.includes(:user).by_type(ty).by_status(st).by_woeid_code(@id).paginate(:page => params[:page])
 
-    if params.has_key?(:id) 
+    if params.has_key?(:id)
       @woeid = WoeidHelper.convert_woeid_name params[:id]
     else
       @all = true # se trata de un listall
     end
-      
+
     if not @ads.any?
       @location_suggest = get_location_suggest # no results
       if @woeid
-        @location_options = WoeidHelper.search_by_name(WoeidHelper.convert_woeid_name(params[:id]).split(',')[0])
-      end 
+        @location_options = WoeidHelper.search_by_name(@woeid[:short])
+      end
     end
     render "show"
   end
