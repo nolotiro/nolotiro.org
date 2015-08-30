@@ -1,5 +1,10 @@
-<% content_for(:title, @woeid[:full]) %>
-<% content_for(:meta_title, t('nlt.keywords') + @woeid[:full]) %>
+<% if @all %>
+  <% content_for(:title, t('nlt.all_ads')) %>
+  <% content_for(:meta_title, t('nlt.all_ads')) %>
+<% else %>
+  <% content_for(:title, @woeid[:full]) %>
+  <% content_for(:meta_title, t('nlt.keywords') + @woeid[:full]) %>
+<% end %>
 
 <% content_for :meta_description do %>
   <meta name="description" content="<%= t('nlt.gift_on', woeid: @woeid) %>. <%= t('nlt.meta_description') %>" />
