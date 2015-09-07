@@ -1,5 +1,9 @@
 fr:
   activemodel:
+    attributes:
+      contact:
+        email: 
+        message: 
     errors:
       format: "%{attribute} %{message}"
       messages:
@@ -40,12 +44,25 @@ fr:
           other: 'Impossible d''enregistrer ce(tte) %{model} : %{count} erreurs'
   activerecord:
     attributes:
+      ad:
+        body: 
+        image: 
+        image_content_type: 
+        image_file_size: 
+        subject: 
+        title: 
+        type: 
       message:
         subject: 
       user:
         Contraseña: 
         Recuérdame: 
         Tu email: 
+        current_password: 
+        email: 
+        password: 
+        password_confirmation: 
+        remember: 
     errors:
       format: "%{attribute} %{message}"
       messages:
@@ -184,7 +201,10 @@ fr:
       year: Année
   devise:
     confirmations:
+      action: 
       confirmed: Votre compte a été confirmé avec succès. Vous êtes désormais connecté(e).
+      instructions: 
+      resend: 
       send_instructions: Vous allez recevoir sous quelques minutes un email comportant des instructions pour confirmer votre compte.
       send_paranoid_instructions: Si votre email existe sur notre base de données, vous recevrez sous quelques minutes un message avec des instructions pour confirmer votre compte.
     failure:
@@ -208,7 +228,12 @@ fr:
       failure: 'Nous ne pouvons pas vous authentifier depuis %{kind} pour la raison suivante : ''%{reason}''.'
       success: Autorisé avec succès par votre compte %{kind}.
     passwords:
+      action: 
+      follow_instructions: 
+      forgot: 
+      instructions: 
       no_token: Vous ne pouvez pas accéder à cette page si vous n’y accédez pas depuis un email de réinitialisation de mot de passe. Si vous venez en effet d’un tel email, vérifiez que vous avez copié l’adresse URL en entier.
+      send: 
       send_instructions: Vous allez recevoir sous quelques minutes un email vous indiquant comment réinitialiser votre mot de passe.
       send_paranoid_instructions: Si votre email existe dans notre base de données, vous recevrez un lien vous permettant de récupérer votre mot de passe.
       updated: Votre mot de passe a été modifié avec succès. Vous êtes maintenant connecté(e).
@@ -293,8 +318,12 @@ fr:
       trash_selected: 
       untrash: 
     message_mailer:
+      message:
+        body: 
+        subject: 
       subject_new: 
       subject_reply: 
+      visit: 
       visit_html: 
       visit_text: 
       you_have_new_message: 
@@ -312,6 +341,7 @@ fr:
       you_have_new_reply: 
       you_have_recieved_new_reply: 
     notifications:
+      error_same_user: 
       move: 
       sent: 
       trash: 
@@ -321,6 +351,7 @@ fr:
       date: 
       delete: 
       last: 
+      none: 
       reciever: 
       sender: 
       subject: 
@@ -345,8 +376,10 @@ fr:
       lock_user: 
       unlock_user: 
     ads:
+      created: 
       form:
         body: 
+        body_max: 
         comments_enabled: 
         image_permitted_formats: 
         please_ad_type: 
@@ -354,8 +387,10 @@ fr:
         select_an_image: 
         status: 
         title: 
+        title_max: 
         to_publish: 
         type_ad: 
+      updated: 
     all: 
     all_ads: 
     and: 
@@ -365,6 +400,7 @@ fr:
     blog: 
     booked: 
     by_user: 
+    cancel_my_account: 
     captcha_error: 
     change_city: 
     change_town:
@@ -388,6 +424,7 @@ fr:
       subject: 
       submit: 
       title: 
+    comments_count: 
     contact: 
     contact_form: 
     contact_legend: 
@@ -425,12 +462,14 @@ fr:
     friends: 
     gift_on: 
     give: 
+    hello_to: 
     help_translate: 
     home_title: 
     if_you_are_new: 
     if_youre_already_an_user: 
     keywords: 
     last_published_gifts: 
+    leave_blank: 
     login: 
     login_to_comment: 
     logout: 
@@ -457,23 +496,31 @@ fr:
     password: 
     permission_denied: 
     please_fill_to_become_member: 
+    please_insert_email_and_password: 
     please_introduce: 
     privacy: 
     privacy_page:
       body_html: 
       title: 
     profile: 
+    profile_actions:
+      friend:
+        add: 
+        delete: 
+    profile_edit: 
     publish_ad: 
     publish_ad_on: 
     published_ads: 
     published_at_by_html: 
     published_on: 
     published_on_html: 
+    readed_count: 
     reads: 
     register: 
     register_here: 
     remember_me: 
     rss_suscribe: 
+    save_failed: 
     search:
       button: 
       must_search: 
@@ -489,11 +536,16 @@ fr:
     sign_up: 
     slogan: 
     suggestions: 
+    to_publish_ad: 
     to_publish_or_send_messages: 
     tos: 
+    tos_page:
+      body_html: 
+      title: 
     translate:
       description_html: 
       title: 
+    update: 
     updating: 
     user_ads: 
     user_edit_profile: 
@@ -503,6 +555,8 @@ fr:
     view_ads_on: 
     view_ads_on_your_city: 
     want: 
+    want_to_leave: 
+    we_need_your_password: 
     welcome: 
     welcome_message: 
     write_a_comment: 

@@ -1,11 +1,15 @@
 ca:
   activemodel:
+    attributes:
+      contact:
+        email: Correu electrònic
+        message: Missatge
     errors:
       format: "%{attribute} %{message}"
       messages:
         accepted: ha de ser acceptat
         blank: no pot estar en blanc
-        confirmation: no coincideix
+        confirmation: no coincideix amb la confirmació
         empty: no pot estar buit
         equal_to: ha de ser igual a %{count}
         even: ha de ser parell
@@ -18,9 +22,13 @@ ca:
         less_than_or_equal_to: ha de ser menor o igual a %{count}
         not_a_number: no és un número
         not_an_integer: ha de ser un enter
-        odd: ha de ser senar
+        odd: ha de ser imparell
         record_invalid: 'La validació ha fallat: %{errors}'
-        restrict_dependent_destroy: 
+        restrict_dependent_destroy:
+          one: No es pot eliminar el registre perquè existeix un(a) %{record} dependent
+          other: |2-
+
+            No es pot eliminar el registre perquè existeixen dependents
         taken: no està disponible
         too_long: "és massa llarg (%{count} caràcters màxim)"
         too_short: "és massa curt (%{count} caràcters mínim)"
@@ -32,18 +40,31 @@ ca:
           other: No s'ha pogut desar aquest/a %{model} perquè hi ha hagut %{count} errors
   activerecord:
     attributes:
+      ad:
+        body: Cos
+        image: Imatge
+        image_content_type: Tipus de contingut d'imatge
+        image_file_size: 
+        subject: Títol
+        title: Títol
+        type: Tipus
       message:
-        subject: 
+        subject: Assumpte
       user:
-        Contraseña: 
-        Recuérdame: 
-        Tu email: 
+        Contraseña: Contrasenya
+        Recuérdame: Recorda'm
+        Tu email: El teu correu electrònic
+        current_password: Contrasenya actual
+        email: Correu electrònic
+        password: Contrasenya nova
+        password_confirmation: Contrasenya nova (repetir)
+        remember: Recorda'm
     errors:
       format: "%{attribute} %{message}"
       messages:
         accepted: ha de ser acceptat
         blank: no pot estar en blanc
-        confirmation: no coincideix
+        confirmation: no coincideix amb la confirmació
         empty: no pot estar buit
         equal_to: ha de ser igual a %{count}
         even: ha de ser parell
@@ -56,7 +77,7 @@ ca:
         less_than_or_equal_to: ha de ser menor o igual a %{count}
         not_a_number: no és un número
         not_an_integer: ha de ser un enter
-        odd: ha de ser senar
+        odd: ha de ser imparell
         record_invalid: 'La validació ha fallat: %{errors}'
         restrict_dependent_destroy: 
         taken: no està disponible
@@ -166,15 +187,18 @@ ca:
       year: any
   devise:
     confirmations:
+      action: 
       confirmed: El teu compte ha estat confirmat correctament.  S'ha iniciat la sessió.
+      instructions: Per favor confirma el teu compte de correu accedint al següent enllaç
+      resend: Reexpedir instruccions de confirmació
       send_instructions: En breu rebràs un correu electrònic amb instruccions sobre com confirmar el teu compte.
       send_paranoid_instructions: Si la teva adreça electrònica existeix a la base de dades, rebràs un correu electrònic amb instruccions sobre com confirmar el teu compte.
     failure:
       already_authenticated: Ja estàs identificat.
       inactive: El teu compte encara no ha estat activat.
       invalid: Correu electrònic o contrasenya invàlids.
-      last_attempt: 
-      locked: El teu compte està bloquejat.
+      last_attempt: Vés amb compte que si segueixes intentant et bloquejarem el compte per 3 hores. Has oblidat la teva contrasenya? Recupera-la.
+      locked: El teu compte està bloquejat. Pots tornar a accedir dins de 3 hores.
       not_found_in_database: Correu electrònic o contrasenya invàlids.
       timeout: La teva sessió ha caducat. Si us plau, torna a iniciar sessió per a continuar.
       unauthenticated: Has d'iniciar sessió o bé registrar-te abans de continuar.
@@ -183,14 +207,19 @@ ca:
       confirmation_instructions:
         subject: Instruccions de confirmació
       reset_password_instructions:
-        subject: Instruccions de regeneració de contrasenya
+        subject: "[nolotiro.org] Instruccions de regeneració de contrasenya"
       unlock_instructions:
-        subject: Instruccions de desbloqueig
+        subject: "[nolotiro.org] Instruccions de desbloqueig"
     omniauth_callbacks:
       failure: No hem pogut autoritzar el compte des de %{kind} perquè "%{reason}".
       success: Autoritzat satisfactoriament el compte des de %{kind}.
     passwords:
+      action: Canviar contrassenya
+      follow_instructions: Algú ha demanat canviar la teva contrasenya de nolotiro.org. Si no has estat pots ignorar aquest correu. La teva contrasenya no canviarà fins que accedeixis a l'enllaç i creïs una nova.
+      forgot: Has oblidat la teva contrasenya?
+      instructions: 
       no_token: Només pots accedir a aquesta pàgina des d'un correu electrònic de recuperació de la contrasenya. Si realment has fet servir l'enllaç del correu electrònic, comprova que has utilitzat la URL completa.
+      send: 
       send_instructions: En breu rebràs un correu electrònic amb instruccions sobre com restablir la teva contrasenya.
       send_paranoid_instructions: Si la teva adreça electrònica existeix a la base de dades, rebràs un correu electrònic amb un enllaç per reestablir la contrasenya.
       updated: La teva contrasenya ha estat canviada correctament. S'ha iniciat la sessió.
@@ -267,8 +296,12 @@ ca:
       trash_selected: 
       untrash: 
     message_mailer:
+      message:
+        body: 
+        subject: 
       subject_new: 
       subject_reply: 
+      visit: 
       visit_html: 
       visit_text: 
       you_have_new_message: 
@@ -286,6 +319,7 @@ ca:
       you_have_new_reply: 
       you_have_recieved_new_reply: 
     notifications:
+      error_same_user: 
       move: 
       sent: 
       trash: 
@@ -295,6 +329,7 @@ ca:
       date: 
       delete: 
       last: 
+      none: 
       reciever: 
       sender: 
       subject: 
@@ -319,8 +354,10 @@ ca:
       lock_user: 
       unlock_user: 
     ads:
+      created: 
       form:
         body: 
+        body_max: 
         comments_enabled: 
         image_permitted_formats: 
         please_ad_type: 
@@ -328,8 +365,10 @@ ca:
         select_an_image: 
         status: 
         title: 
+        title_max: 
         to_publish: 
         type_ad: 
+      updated: 
     all: 
     all_ads: 
     and: 
@@ -339,6 +378,7 @@ ca:
     blog: 
     booked: 
     by_user: 
+    cancel_my_account: 
     captcha_error: 
     change_city: 
     change_town:
@@ -362,6 +402,7 @@ ca:
       subject: 
       submit: 
       title: 
+    comments_count: 
     contact: 
     contact_form: 
     contact_legend: 
@@ -399,12 +440,14 @@ ca:
     friends: 
     gift_on: 
     give: 
+    hello_to: 
     help_translate: 
     home_title: 
     if_you_are_new: 
     if_youre_already_an_user: 
     keywords: 
     last_published_gifts: 
+    leave_blank: 
     login: 
     login_to_comment: 
     logout: 
@@ -431,23 +474,31 @@ ca:
     password: 
     permission_denied: 
     please_fill_to_become_member: 
+    please_insert_email_and_password: 
     please_introduce: 
     privacy: 
     privacy_page:
       body_html: 
       title: 
     profile: 
+    profile_actions:
+      friend:
+        add: 
+        delete: 
+    profile_edit: 
     publish_ad: 
     publish_ad_on: 
     published_ads: 
     published_at_by_html: 
     published_on: 
     published_on_html: 
+    readed_count: 
     reads: 
     register: 
     register_here: 
     remember_me: 
     rss_suscribe: 
+    save_failed: 
     search:
       button: 
       must_search: 
@@ -463,11 +514,16 @@ ca:
     sign_up: 
     slogan: 
     suggestions: 
+    to_publish_ad: 
     to_publish_or_send_messages: 
     tos: 
+    tos_page:
+      body_html: 
+      title: 
     translate:
       description_html: 
       title: 
+    update: 
     updating: 
     user_ads: 
     user_edit_profile: 
@@ -477,6 +533,8 @@ ca:
     view_ads_on: 
     view_ads_on_your_city: 
     want: 
+    want_to_leave: 
+    we_need_your_password: 
     welcome: 
     welcome_message: 
     write_a_comment: 
