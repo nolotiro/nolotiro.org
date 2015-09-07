@@ -1031,6 +1031,9 @@ $langs: <%= Rails.application.secrets["langs"] %>
 .section_ads .ad_excerpt_home
   border-bottom: none
 
+legend
+  max-width: 100%
+
 @media only screen and (max-width: 779px)
   .section_ads
     padding: 0px
@@ -1080,8 +1083,8 @@ $langs: <%= Rails.application.secrets["langs"] %>
     width: 95%
 
   #main
-    margin-left: auto
-    margin-right: auto
+    margin-left: 2%
+    margin-right: 2%
 
   .span-18
     margin-left: 10px
@@ -1114,13 +1117,20 @@ $langs: <%= Rails.application.secrets["langs"] %>
   .mobile
     display: inline-block !important
 
+  .section_locations
+    margin-left: 2%
+    margin-right: 2%
+
+  .section_users
+    margin-left: 2%
+    margin-right: 2%
+
   .desktop
     display: none !important
 
   #header
     display: inline-block
     margin-bottom: 5%
-    margin-top: 2%
 
   .info
     width: 90%
@@ -1130,6 +1140,8 @@ $langs: <%= Rails.application.secrets["langs"] %>
     .ad_create_tab
       position: static
       margin-top: 40px
+      margin-left: 5%
+      margin-right: 5%
     .ad_create_tab_home
       top: 43px
 
