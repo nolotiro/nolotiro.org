@@ -1032,8 +1032,8 @@ $langs: <%= Rails.application.secrets["langs"] %>
 .section_ads .ad_excerpt_home
   border-bottom: none
 
-legend
-  max-width: 100%
+.col-md-8 form fieldset legend
+  max-width: 40%
 
 @media only screen and (max-width: 779px)
   .section_ads
@@ -1157,8 +1157,11 @@ legend
     width: 75%
     float: right
 
-@media only screen and (max-width: 530px)
+@media only screen and (max-width: 595px)
+  .col-md-8 form fieldset legend
+    max-width: 75%
 
+@media only screen and (max-width: 530px)
   .give-want
     display: block
 
