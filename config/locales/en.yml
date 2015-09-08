@@ -1,103 +1,188 @@
 en:
   activemodel:
+    attributes:
+      contact:
+        email: Email address
+        message: Message
     errors:
-      format: 
+      format: "%{attribute} %{message}"
       messages:
-        accepted: 
-        blank: 
-        confirmation: 
-        empty: 
-        equal_to: 
-        even: 
-        exclusion: 
-        greater_than: 
-        greater_than_or_equal_to: 
-        inclusion: 
-        invalid: 
-        less_than: 
-        less_than_or_equal_to: 
-        not_a_number: 
-        not_an_integer: 
-        odd: 
-        record_invalid: 
-        restrict_dependent_destroy: 
-        taken: 
-        too_long: 
-        too_short: 
-        wrong_length: 
+        accepted: must be accepted
+        blank: can not be empty
+        confirmation: doesn't match with the confirmation
+        empty: can not be empty
+        equal_to: must be equal to %{count}
+        even: It must be even
+        exclusion: it is reserved
+        greater_than: must be greater than %{count}
+        greater_than_or_equal_to: must be greater than or equal to %{count}
+        inclusion: not included in the list
+        invalid: not valid
+        less_than: must be less than %{count}
+        less_than_or_equal_to: must be less than or equal to %{count}
+        not_a_number: is not a number
+        not_an_integer: must be an integer
+        odd: must be odd
+        record_invalid: 'Validation failed: %{errors}'
+        restrict_dependent_destroy: It is not possible to delete the record because exists one pending %{record}
+        taken: has been already taken
+        too_long: it is too long (%{count} maximum characters
+        too_short: it is too short (%{count} minimum characters
+        wrong_length: doesnt have the right length (%{count} exact characters)
       template:
-        body: 
-        header: 
+        body: 'Errors have been found in the following fields:'
+        header:
+          one: It is not possible to save this %{model} because there is 1 mistake
+          other: It is not possible to save this %{model} because there are %{count} mistakes
   activerecord:
     attributes:
+      ad:
+        body: Body
+        image: Image
+        image_content_type: 'Type of image''s content '
+        image_file_size: Size of the image
+        subject: Title
+        title: Title
+        type: Type
       message:
-        subject: 
+        subject: Subject
       user:
-        Contraseña: 
-        Recuérdame: 
-        Tu email: 
+        Contraseña: Password
+        Recuérdame: Remember me
+        Tu email: Your e-mail
+        current_password: Current password
+        email: E-mail
+        password: New password
+        password_confirmation: New password (repeat)
+        remember: Remember me
     errors:
       format: 
       messages:
-        accepted: 
-        blank: 
-        confirmation: 
-        empty: 
-        equal_to: 
-        even: 
-        exclusion: 
-        greater_than: 
-        greater_than_or_equal_to: 
-        inclusion: 
-        invalid: 
-        less_than: 
-        less_than_or_equal_to: 
-        not_a_number: 
-        not_an_integer: 
-        odd: 
-        record_invalid: 
-        restrict_dependent_destroy: 
-        taken: 
-        too_long: 
-        too_short: 
-        wrong_length: 
+        accepted: Must be accepted
+        blank: can not be empty
+        confirmation: doesn't match the confirmation
+        empty: can not be empty
+        equal_to: should be equal to %{count}
+        even: should be even
+        exclusion: it is reserved
+        greater_than: shoulb be higher than %{count}
+        greater_than_or_equal_to: should be equal or higher than %{count}
+        inclusion: it is not included in the list
+        invalid: not valid
+        less_than: should be lower than %{count}
+        less_than_or_equal_to: should be lower or equal to %{count}
+        not_a_number: should be a number
+        not_an_integer: should be a whole number
+        odd: should be odd
+        record_invalid: 'The validation failed: %{errors}'
+        restrict_dependent_destroy: It is not possible to delete the record because there is a pending %{record}
+        taken: it is already taken
+        too_long: it is too long (%{count} maximum characters)
+        too_short: It is too short (%{count} minimum characters)
+        wrong_length: It doesn't have the correct length (should be %{count} characters)
       template:
-        body: 
-        header: 
+        body: 'There are problems in the following fields:'
+        header:
+          one: It is not possible to save this %{model} because there is one error
+          other: It is not possible to save this %{model} because there are %{count} errors
   date:
-    abbr_day_names: 
-    abbr_month_names: 
-    day_names: 
+    abbr_day_names:
+    - Sun
+    - Mon
+    - Tue
+    - Wed
+    - Thu
+    - Fri
+    - Sat
+    abbr_month_names:
+    - Jan
+    - Feb
+    - Mar
+    - Apr
+    - May
+    - Jun
+    - Jul
+    - Aug
+    - Sept
+    - Oct
+    - Nov
+    - Dec
+    day_names:
+    - Sunday
+    - Monday
+    - Tuesday
+    - Wednesday
+    - Thursday
+    - Friday
+    - Saturday
     formats:
-      default: 
-      long: 
-      short: 
-    month_names: 
-    order: 
+      default: "%d/%m/%Y"
+      long: "%d of %B of %Y"
+      short: "%d of %b"
+    month_names:
+    - 
+    - January
+    - February
+    - March
+    - April
+    - May
+    - June
+    - July
+    - August
+    - September
+    - October
+    - November
+    - December
+    order: "--- \n- : day\n- : month\n- : year"
   datetime:
     distance_in_words:
-      about_x_hours: 
-      about_x_months: 
-      about_x_years: 
-      almost_x_years: 
-      half_a_minute: 
-      less_than_x_minutes: 
-      less_than_x_seconds: 
-      over_x_years: 
-      x_days: 
-      x_minutes: 
-      x_months: 
-      x_seconds: 
+      about_x_hours:
+        one: about 1 hour
+        other: about %{count} hours
+      about_x_months:
+        one: about 1 month
+        other: about %{count} months
+      about_x_years:
+        one: about 1 year
+        other: about %{count} years
+      almost_x_years:
+        one: over 1 year
+        other: over %{count} years
+      half_a_minute: half a minute
+      less_than_x_minutes:
+        one: less than 1 minute
+        other: less than %{count} minutes
+      less_than_x_seconds:
+        one: less than 1 second
+        other: less than %{count} seconds
+      over_x_years:
+        one: more than 1 year
+        other: more than %{count} years
+      x_days:
+        one: 1 day
+        other: "%{count} days"
+      x_minutes:
+        one: 1 minute
+        other: "%{count} minutes"
+      x_months:
+        one: 1 month
+        other: "%{count} months"
+      x_seconds:
+        one: 1 second
+        other: "%{count} seconds"
     prompts:
-      day: 
-      hour: 
-      minute: 
-      month: 
-      second: 
-      year: 
+      day: Day
+      hour: Hour
+      minute: Minutes
+      month: Month
+      second: Seconds
+      year: Year
   devise:
     confirmations:
+      action: Confirm my account
       confirmed: Your account was successfully confirmed.
+      instructions: 'Please confirm your email by accessing the following link:'
+      resend: Resend confirmation's instructions
       send_instructions: You will receive an email with instructions about how to confirm your account in a few minutes.
       send_paranoid_instructions: If your email address exists in our database, you will receive an email with instructions about how to confirm your account in a few minutes.
     failure:
@@ -121,7 +206,12 @@ en:
       failure: Could not authenticate you from %{kind} because "%{reason}".
       success: Successfully authenticated from %{kind} account.
     passwords:
+      action: Change Password
+      follow_instructions: Someone asked nolotiro.org about change your password. If it's not you then you can ignore this mail. Your password will not change until you access the link and create a new one.
+      forgot: Did you forget your password?
+      instructions: Please, enter your email address and we will send you a shortcut link to change your password.
       no_token: You can't access this page without coming from a password reset email. If you do come from a password reset email, please make sure you used the full URL provided.
+      send: Send by email
       send_instructions: You will receive an email with instructions about how to reset your password in a few minutes.
       send_paranoid_instructions: If your email address exists in our database, you will receive a password recovery link at your email address in a few minutes.
       updated: Your password was changed successfully. You are now signed in.
@@ -138,7 +228,7 @@ en:
       signed_in: Signed in successfully.
       signed_out: Signed out successfully.
       user:
-        signed_in: 
+        signed_in: You are signed.
     unlocks:
       send_instructions: You will receive an email with instructions about how to unlock your account in a few minutes.
       send_paranoid_instructions: If your account exists, you will receive an email with instructions about how to unlock it in a few minutes.
@@ -146,309 +236,350 @@ en:
   errors:
     format: 
     messages:
-      accepted: 
+      accepted: must be accepted
       already_confirmed: was already confirmed, please try signing in
-      blank: 
-      confirmation: 
+      blank: can not be blank
+      confirmation: does not match the confirmation
       confirmation_period_expired: needs to be confirmed within %{period}, please request a new one
-      empty: 
-      equal_to: 
-      even: 
-      exclusion: 
+      empty: can not be empty
+      equal_to: must be equal to %{count}
+      even: must be even
+      exclusion: it is reserved
       expired: has expired, please request a new one
-      greater_than: 
-      greater_than_or_equal_to: 
-      inclusion: 
-      invalid: 
-      less_than: 
-      less_than_or_equal_to: 
-      not_a_number: 
-      not_an_integer: 
+      greater_than: must be bigger than %{count}
+      greater_than_or_equal_to: should be higher or equal to %{count}
+      inclusion: It is not included in the list
+      invalid: not valid
+      less_than: must be less than %{count}
+      less_than_or_equal_to: must be less or equal to %{count}
+      not_a_number: is not a number
+      not_an_integer: should be a whole number
       not_found: not found
       not_locked: was not locked
       not_saved:
         one: '1 error prohibited this %{resource} from being saved:'
         other: "%{count} errors prohibited this %{resource} from being saved:"
-      odd: 
-      record_invalid: 
-      restrict_dependent_destroy: 
-      taken: 
-      too_long: 
-      too_short: 
-      wrong_length: 
+      odd: must be odd
+      record_invalid: 'validation fail: %{errors}'
+      restrict_dependent_destroy:
+        one: It is not possible to delete the record because there is one dependent %{record}
+        other: It is not possible to delete the record because there are dependent %{record}
+      taken: it is already taken
+      too_long: It is too long (%{count} characters maximum)
+      too_short: it is too short (%{count}minimum characters)
+      wrong_length: it doesn't have the correct lenght (should be equal to %{count} characters)
     template:
-      body: 
-      header: 
+      body: 'Problems were found with the following fields:'
+      header:
+        one: It is not possible to save this %{model} because there is 1 error
+        other: It is not possible to save this %{model} because there are %{count} error
   helpers:
     label:
       message:
-        subject: 
+        subject: Subject
     select:
-      prompt: 
+      prompt: Please select
     submit:
-      create: 
-      submit: 
-      update: 
+      create: New %{model}
+      submit: Save %{model}
+      update: Update %{model}
   mailboxer:
     buttons:
-      back: 
-      trash: 
-      trash_selected: 
-      untrash: 
+      back: "< back to messages"
+      trash: Move message to trash
+      trash_selected: Delete selected messages
+      untrash: Restore messages from trash
     message_mailer:
-      subject_new: 
-      subject_reply: 
-      visit_html: 
-      visit_text: 
-      you_have_new_message: 
-      you_have_recieved_new_message: 
+      message:
+        body: Message
+        subject: Subject
+      subject_new: "[nolotiro.org] New message: %{subject}"
+      subject_reply: "[nolotiro.org] New reply: %{subject}"
+      visit: View conversation and reply
+      visit_html: Visit %{url} and go to your inbox to reply
+      visit_text: Visit %{url} and go to your inbox to reply
+      you_have_new_message: You have a new message
+      you_have_recieved_new_message: You have a new message
     new:
-      button: 
-      errors: 
-      legend: 
-      submit: 
-      title: 
+      button: Send
+      errors: 'There is a problem, please check this:'
+      legend: Send message
+      submit: Send
+      title: New private message for user %{user}
     notification_mailer:
-      subject: 
-      visit_html: 
-      visit_text: 
-      you_have_new_reply: 
-      you_have_recieved_new_reply: 
+      subject: "[nolotiro.org] New notification: %{subject}"
+      visit_html: Visit %{url} and go to your inbox to reply
+      visit_text: Visit %{url} and go to your inbox to reply
+      you_have_new_reply: You have a new answer
+      you_have_recieved_new_reply: You have a new answer
     notifications:
-      move: 
-      sent: 
-      trash: 
-      untrash: 
-    search: 
+      error_same_user: You can not send a message to yourself
+      move: Message moved to %{mailbox}
+      sent: Sent message
+      trash: Message moved to trash
+      untrash: Recovered message
+    search: Search results %{search}
     table:
-      date: 
-      delete: 
-      last: 
-      reciever: 
-      sender: 
-      subject: 
+      date: Date
+      delete: Delete?
+      last: Last
+      none: You do not have this type of messages
+      reciever: Received
+      sender: Sent
+      subject: Subject
     titles:
-      conversation: 
-      index: 
+      conversation: Conversation with %{recipient} subject %{subject}
+      index: Message from %{username}
   mailer:
     confirmation_reminder:
-      p1: 
-      p2: 
-    greetings: 
-    hello: 
-    signature: 
+      p1: We have detected that you have created an account on nolotiro.org and you have not confirmed yet.
+      p2: 'That means maybe you had problems trying to registering in nolotiro. If you want yo confirm your user (%{username}) click this link: '
+    greetings: Thank you! Cheers!
+    hello: Hi,
+    signature: nolotiro.org team
   nlt:
-    about: 
+    about: about
     about_page:
       description_html: 
-      title: 
-    access_here: 
+      title: About nolotiro.org
+    access_here: access here
     admin:
-      become_user: 
-      lock_user: 
-      unlock_user: 
+      become_user: "[ADMIN] Modify this user"
+      lock_user: "[ADMIN] Block this user"
+      unlock_user: "[ADMIN] Unblock this user"
     ads:
+      created: We have created the ad
       form:
-        body: 
-        comments_enabled: 
-        image_permitted_formats: 
-        please_ad_type: 
-        prohibited: 
-        select_an_image: 
-        status: 
-        title: 
-        to_publish: 
-        type_ad: 
-    all: 
-    all_ads: 
-    and: 
-    are_you_interested: 
-    available: 
-    back: 
-    blog: 
-    booked: 
-    by_user: 
-    captcha_error: 
-    change_city: 
+        body: 'Body of the ad:'
+        body_max: Maximum 500 characters
+        comments_enabled: Allow public comments
+        image_permitted_formats: 'Supported formats: gif, jpg, png. Max size:1 Mb'
+        please_ad_type: Please, choose the type of ad
+        prohibited: 'There is a problem, please review this:'
+        select_an_image: Choose an image for you ad (optional)
+        status: Status
+        title: 'Title of you ad:'
+        title_max: Maximum 100 characters
+        to_publish: To publish your ad, please complete this fields
+        type_ad: 'Type of ad:'
+      updated: We have updated your ad
+    all: all
+    all_ads: all ads
+    and: and
+    are_you_interested: are you interested?
+    available: available
+    back: Back to the main page
+    blog: blog
+    booked: reserved
+    by_user: by user
+    cancel_my_account: Cancel my account
+    captcha_error: Does not match, please, enter captcha's characters again
+    change_city: change city
     change_town:
-      choose: 
-      choose_html: 
-      close_to: 
-      please: 
-      submit: 
-      town: 
-    change_your_city: 
-    choose_username: 
-    choose_your_pass: 
-    choose_your_pass_again: 
+      choose: Choose your location
+      choose_html: There are no locations with the name <b>%{location}</b>. Please try it again
+      close_to: 'Our suggested location''s system (based on your IP) indicates us that you are close to:'
+      please: Please, indicate your city
+      submit: Send
+      town: 'City:'
+    change_your_city: change your city
+    choose_username: choose username
+    choose_your_pass: choose your password
+    choose_your_pass_again: choose your password (yes, once again)
     cities_in_the_world: cities in the world that recicle the most
-    click_to_large: 
+    click_to_large: Click to large the photo
     comments:
-      do_click: 
-      flash_ko: 
-      flash_ok: 
-      label: 
-      subject: 
-      submit: 
-      title: 
-    contact: 
-    contact_form: 
-    contact_legend: 
-    contact_thanks: 
-    cookie: 
-    create_new_ad: 
-    delete_ad: 
-    delete_sure: 
-    delivered: 
-    developers: 
-    didn_t_receive_confirmation_instructions: 
-    didn_t_receive_unlock_instructions: 
-    edit_this_ad: 
+      do_click: Please click this link to reply the message
+      flash_ko: It is not possible to save your comment, there is an error, please review it and send your comment again
+      flash_ok: Saved comment
+      label: Your comment
+      subject: "[nolotiro.org] You have a new comment in you ad %{ad}"
+      submit: Send
+      title: Comments
+    comments_count:
+      one: ", %{count} comment"
+      other: ", %{count} comments"
+    contact: Contact
+    contact_form: Contact's form
+    contact_legend: Please, write your message
+    contact_thanks: Sent message! Thanks for contact nolotiro.org
+    cookie: We use cookies in order to improve your navigation in this site
+    create_new_ad: Create a new ad
+    delete_ad: Delete ad
+    delete_sure: Are you sure you want to delete it?
+    delivered: Delivered
+    developers: Developers
+    didn_t_receive_confirmation_instructions: Didn't receive the confirmation's instructions?
+    didn_t_receive_unlock_instructions: Didn't receive the unblocking's instructions?
+    edit_this_ad: Edit this ad
     faq:
-      answer_1_html: 
+      answer_1_html: |2-
+
+        The fundamental purpose of this website is to get rid of items you no longer use and hinder you at home.
       answer_2_html: 
       answer_3_html: 
       answer_4_html: 
       answer_5_html: 
       answer_6_html: 
       answer_7_html: 
-      question_1: 
-      question_2: 
-      question_3: 
-      question_4: 
-      question_5: 
-      question_6: 
-      question_7: 
-      title: 
-    faqs: 
-    fill_captcha: 
-    first_visit: 
+      question_1: What is the goal of this project?
+      question_2: So.. ¿Isn't this web to help other people?
+      question_3: But, I would like to give my stuff as a present to someone who really need it
+      question_4: Is it  true that some people sell the stuff given by free in this site?
+      question_5: What kind of ads can i publish on this site?
+      question_6: |2-
+
+        Is it not allowed to exchange objects? thats weird
+      question_7: Can I send things to people who do not live in my city?
+      title: FAQ
+    faqs: FAQ
+    fill_captcha: Please enter the following characters
+    first_visit: nolotiro.org it is a community where we can get rid of items you no longer use and hinder you at home.
     footer_explain: nolotiro.org is a website where you can give away things you no longer want or no longer need to pick them up other people who may serve or be of much use.
-    forgot_your_password: 
-    friends: 
-    gift_on: 
-    give: 
-    help_translate: 
-    home_title: 
-    if_you_are_new: 
-    if_youre_already_an_user: 
-    keywords: 
+    forgot_your_password: Forgot your password?
+    friends: Friends
+    gift_on: Gift on%{woeid}
+    give: gift
+    hello_to: Hello %{recipient},
+    help_translate: help us to translate
+    home_title: new and second hand gift's ads
+    if_you_are_new: If you are a new user, please
+    if_youre_already_an_user: If you are a registered user, please
+    keywords: gift second hand free
     last_published_gifts: last published gifts
-    login: 
-    login_to_comment: 
-    logout: 
+    leave_blank: "(leave it empty if you do not want to change it)"
+    login: login
+    login_to_comment: log in to write a comment
+    logout: logout
     mail:
-      automatic: 
-    member_since: 
-    messages: 
+      automatic: This is an automatic message, please do not answer to this email address
+    member_since: Member since
+    messages: messages
     messages_tabs:
-      inbox: 
-      sent: 
-      trash: 
-    messages_title: 
+      inbox: Inbox
+      sent: Sent
+      trash: Trash
+    messages_title: Messages
     meta_description: 
-    meta_description_ad: 
-    new_user: 
+    meta_description_ad: second hand gift %{title} in %{woeid}. %{body}
+    new_user: New user
     no_results:
       explain_html: 
       phrase: 
-      publish_ad: 
-      subtitle: 
-      title: 
-      try: 
-    or: 
-    password: 
-    permission_denied: 
-    please_fill_to_become_member: 
-    please_introduce: 
-    privacy: 
+      publish_ad: Post an ad in this city
+      subtitle: You can try some of this stuff
+      title: There are no results in this location
+      try: Or you can try it in cities with similar name
+    or: or
+    password: Password
+    permission_denied: You don't have permissions
+    please_fill_to_become_member: Please, fill this form to become a member
+    please_insert_email_and_password: Please, insert your email and password
+    please_introduce: Please, insert the following characters
+    privacy: 'Privacy policy '
     privacy_page:
       body_html: 
-      title: 
-    profile: 
-    publish_ad: 
-    publish_ad_on: 
-    published_ads: 
-    published_at_by_html: 
-    published_on: 
-    published_on_html: 
-    reads: 
-    register: 
-    register_here: 
-    remember_me: 
-    rss_suscribe: 
+      title: Privacy Policy
+    profile: profile
+    profile_actions:
+      friend:
+        add: 'Add %{username} to your friend''s list '
+        delete: Delete %{username} from your friend's list
+    profile_edit: Edit profile
+    publish_ad: Publishing ad
+    publish_ad_on: Publish ad in %{woeid}
+    published_ads: Published ads
+    published_at_by_html: Published on %{time} by user %{user}
+    published_on: Published since %{date}
+    published_on_html: Published on <abbr class='js-moment' title='%{date}'>%{date}</abbr>
+    readed_count: "%{count} views"
+    reads: views
+    register: Register
+    register_here: Register here
+    remember_me: Remember me
+    rss_suscribe: Suscribe via RSS
+    save_failed: 'There is problem, please revied this:'
     search:
-      button: 
-      must_search: 
-      no_ads_message_html: 
-    searching_on_html: 
-    send: 
-    send_a_message: 
-    send_a_message_to: 
+      button: search
+      must_search: You must look for something somewhere
+      no_ads_message_html: There are no matching ads with your search <b>%{q}</b> on %{woeid}.
+    searching_on_html: Searching <i>%{q}</i> on
+    send: Send
+    send_a_message: "+ Send a private message to this user"
+    send_a_message_to: Send a private message to
     sending_this_form: 
-    share_this_ad: 
-    sign_in: 
-    sign_in_with_provider: 
-    sign_up: 
+    share_this_ad: Share this ad
+    sign_in: Sign in
+    sign_in_with_provider: Sign in with other provider
+    sign_up: Sign up
     slogan: don't dump that, give it to your neighbor
-    suggestions: 
-    to_publish_or_send_messages: 
-    tos: 
+    suggestions: Suggestions
+    to_publish_ad: Create ad
+    to_publish_or_send_messages: To publish ads or send messages please login
+    tos: Terms and conditions
+    tos_page:
+      body_html: ALL
+      title: Terms and conditions
     translate:
       description_html: 
-      title: 
+      title: Help us to translate nolotiro.org
+    update: Save
     updating: 
-    user_ads: 
-    user_edit_profile: 
-    user_profile: 
-    username: 
+    user_ads: Ads
+    user_edit_profile: Edit user's profile
+    user_profile: Profile
+    username: Username
     users_most_active: users most active
-    view_ads_on: 
-    view_ads_on_your_city: 
-    want: 
-    welcome: 
-    welcome_message: 
-    write_a_comment: 
-    your_email: 
+    view_ads_on: View ads in %{location_suggest}
+    view_ads_on_your_city: View ads from your city or town
+    want: I want
+    want_to_leave: Do you want to delete your user?
+    we_need_your_password: "(we need your password to confirm your edition)"
+    welcome: Welcome
+    welcome_message: Welcome
+    write_a_comment: "+ Write a new comment"
+    your_email: Your email
   number:
     currency:
       format:
         delimiter: 
-        format: 
-        precision: 
+        format: "%n %u"
+        precision: 2
         separator: 
-        significant: 
-        strip_insignificant_zeros: 
+        significant: false
+        strip_insignificant_zeros: false
         unit: 
     format:
       delimiter: 
-      precision: 
+      precision: 3
       separator: 
-      significant: 
-      strip_insignificant_zeros: 
+      significant: false
+      strip_insignificant_zeros: false
     human:
       decimal_units:
-        format: 
+        format: "%n %u"
         units:
-          billion: 
-          million: 
-          quadrillion: 
-          thousand: 
-          trillion: 
+          billion: billion
+          million: million
+          quadrillion: trillion
+          thousand: one thousand
+          trillion: billion
           unit: 
       format:
         delimiter: 
-        precision: 
-        significant: 
-        strip_insignificant_zeros: 
+        precision: 1
+        significant: true
+        strip_insignificant_zeros: true
       storage_units:
-        format: 
+        format: "%n %u"
         units:
-          byte: 
-          gb: 
-          kb: 
-          mb: 
-          tb: 
+          byte:
+            one: Byte
+            other: Bytes
+          gb: GB
+          kb: KB
+          mb: MB
+          tb: TB
     percentage:
       format:
         delimiter: 
@@ -457,30 +588,30 @@ en:
         delimiter: 
   recaptcha:
     errors:
-      incorrect-captcha-sol: 
-      verification_failed: 
+      incorrect-captcha-sol: There is a mistake in your captcha's answer
+      verification_failed: Word verification response is incorrect, please try again.
   support:
     array:
-      last_word_connector: 
-      two_words_connector: 
+      last_word_connector: ", and"
+      two_words_connector: and
       words_connector: 
   time:
-    am: 
+    am: am
     formats:
       default: 
       long: 
       short: 
-    pm: 
+    pm: pm
   unauthorized:
-    default: 
+    default: You are not authorized to enter this url
     manage:
-      all: 
+      all: First, you must login or sign up
   will_paginate:
-    next_label: 
+    next_label: next →
     page_entries_info:
-      multi_page: 
+      multi_page: Showing %{model} %{from} - %{to} of %{count} total
       multi_page_html: 
       single_page: 
       single_page_html: 
-    page_gap: 
-    previous_label: 
+    page_gap: "&hellip;"
+    previous_label: "←back"

@@ -1,8 +1,8 @@
 <% woeid_name = WoeidHelper.convert_woeid_name current_user.woeid %>
-<%= content_for(:meta_title, "#{t('nlt.publish_ad')} - #{woeid_name}" ) %>
+<%= content_for(:meta_title, "#{t('nlt.publish_ad')} - #{woeid_name[:full]}" ) %>
 
 <div id="default_header_section">
-  <h1><%= t 'nlt.publish_ad' %> - <%= woeid_name %></h1>
+  <h1><%= t 'nlt.publish_ad' %> - <%= woeid_name[:full] %></h1>
   <br>
   <%= link_to location_ask_path, :class => "world_link" do %>
     <%= image_tag "change_location.png", :alt => "change location" %> 

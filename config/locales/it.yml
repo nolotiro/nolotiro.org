@@ -1,5 +1,9 @@
 it:
   activemodel:
+    attributes:
+      contact:
+        email: 
+        message: 
     errors:
       format: "%{attribute} %{message}"
       messages:
@@ -38,12 +42,25 @@ it:
           other: 'Non posso salvare questo %{model}: %{count} errori.'
   activerecord:
     attributes:
+      ad:
+        body: 
+        image: 
+        image_content_type: 
+        image_file_size: 
+        subject: 
+        title: 
+        type: 
       message:
         subject: 
       user:
         Contraseña: 
         Recuérdame: 
         Tu email: 
+        current_password: 
+        email: 
+        password: 
+        password_confirmation: 
+        remember: 
     errors:
       format: "%{attribute} %{message}"
       messages:
@@ -178,7 +195,10 @@ it:
       year: Anno
   devise:
     confirmations:
+      action: 
       confirmed: Il tuo account è stato correttamente confermato. Ora sei collegato.
+      instructions: 
+      resend: 
       send_instructions: Riceverai un messaggio email con le istruzioni per confermare il tuo account entro qualche minuto.
       send_paranoid_instructions: Se la tua e-mail esiste nel nostro database, riceverai un messaggio email con le istruzioni per confermare il tuo account entro qualche minuto.
     failure:
@@ -202,7 +222,12 @@ it:
       failure: Non è stato possibile autorizzarti da %{kind} perchè "%{reason}".
       success: Autorizzato con successo dall'account %{kind}.
     passwords:
+      action: 
+      follow_instructions: 
+      forgot: 
+      instructions: 
       no_token: Puoi accedere a questa pagina solamente dalla email di reset della password. Se vieni dalla email controlla di aver inserito l'url completo riportato nella email.
+      send: 
       send_instructions: Riceverai un messaggio email con le istruzioni per reimpostare la tua password entro qualche minuto.
       send_paranoid_instructions: Se la tua e-mail esiste nel nostro database, riceverai un messaggio email contentente un link per il ripristino della password
       updated: La tua password è stata cambiata. Ora sei collegato.
@@ -285,8 +310,12 @@ it:
       trash_selected: 
       untrash: 
     message_mailer:
+      message:
+        body: 
+        subject: 
       subject_new: 
       subject_reply: 
+      visit: 
       visit_html: 
       visit_text: 
       you_have_new_message: 
@@ -304,6 +333,7 @@ it:
       you_have_new_reply: 
       you_have_recieved_new_reply: 
     notifications:
+      error_same_user: 
       move: 
       sent: 
       trash: 
@@ -313,6 +343,7 @@ it:
       date: 
       delete: 
       last: 
+      none: 
       reciever: 
       sender: 
       subject: 
@@ -337,8 +368,10 @@ it:
       lock_user: 
       unlock_user: 
     ads:
+      created: 
       form:
         body: 
+        body_max: 
         comments_enabled: 
         image_permitted_formats: 
         please_ad_type: 
@@ -346,8 +379,10 @@ it:
         select_an_image: 
         status: 
         title: 
+        title_max: 
         to_publish: 
         type_ad: 
+      updated: 
     all: 
     all_ads: 
     and: 
@@ -357,6 +392,7 @@ it:
     blog: 
     booked: 
     by_user: 
+    cancel_my_account: 
     captcha_error: 
     change_city: 
     change_town:
@@ -380,6 +416,7 @@ it:
       subject: 
       submit: 
       title: 
+    comments_count: 
     contact: 
     contact_form: 
     contact_legend: 
@@ -417,12 +454,14 @@ it:
     friends: 
     gift_on: 
     give: 
+    hello_to: 
     help_translate: 
     home_title: 
     if_you_are_new: 
     if_youre_already_an_user: 
     keywords: 
     last_published_gifts: 
+    leave_blank: 
     login: 
     login_to_comment: 
     logout: 
@@ -449,23 +488,31 @@ it:
     password: 
     permission_denied: 
     please_fill_to_become_member: 
+    please_insert_email_and_password: 
     please_introduce: 
     privacy: 
     privacy_page:
       body_html: 
       title: 
     profile: 
+    profile_actions:
+      friend:
+        add: 
+        delete: 
+    profile_edit: 
     publish_ad: 
     publish_ad_on: 
     published_ads: 
     published_at_by_html: 
     published_on: 
     published_on_html: 
+    readed_count: 
     reads: 
     register: 
     register_here: 
     remember_me: 
     rss_suscribe: 
+    save_failed: 
     search:
       button: 
       must_search: 
@@ -481,11 +528,16 @@ it:
     sign_up: 
     slogan: 
     suggestions: 
+    to_publish_ad: 
     to_publish_or_send_messages: 
     tos: 
+    tos_page:
+      body_html: 
+      title: 
     translate:
       description_html: 
       title: 
+    update: 
     updating: 
     user_ads: 
     user_edit_profile: 
@@ -495,6 +547,8 @@ it:
     view_ads_on: 
     view_ads_on_your_city: 
     want: 
+    want_to_leave: 
+    we_need_your_password: 
     welcome: 
     welcome_message: 
     write_a_comment: 

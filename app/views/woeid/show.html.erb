@@ -70,6 +70,9 @@
   </div>
 
   <div id="main">
+    <div class="span-17 mobile">
+      <%= render :partial => "partials/google_adsense", :locals => {:class_name => "rectangular_ad mobile"}  %>
+    </div>
     <div class="span-17">
       <% if @type == "give" %>
         <%= render :partial => "woeid/filter_status", :locals => {:status => @status, :id => @id, :all => @all} %>
@@ -100,4 +103,7 @@
       <%= render :partial => "partials/google_adsense", :locals => {:class_name => "vertical_ad"}  %>
       <%= render :partial => "partials/google_adsense", :locals => {:class_name => "vertical_ad"}  %>
     </div><!-- /span-6 -->
+    <div class="span-17 mobile">
+      <%= render :partial => "partials/google_adsense", :locals => {:class_name => "rectangular_ad mobile"}  %>
+    </div>
   </div>
