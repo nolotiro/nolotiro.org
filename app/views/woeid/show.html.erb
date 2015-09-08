@@ -71,7 +71,7 @@
 
   <div id="main">
     <div class="span-17 mobile">
-      <%= render :partial => "partials/google_adsense", :locals => {:class_name => "rectangular_ad mobile"}  %>
+      <%= render partial: "partials/google_adsense", locals: { data_format: "horizontal", class_name: "rectangular_ad mobile"}  %>
     </div>
     <div class="span-17">
       <% if @type == "give" %>
@@ -100,10 +100,10 @@
       <% end %>
     </div><!-- /span-17 -->
     <div class="span-6 desktop">
-      <%= render :partial => "partials/google_adsense", :locals => {:class_name => "vertical_ad"}  %>
-      <%= render :partial => "partials/google_adsense", :locals => {:class_name => "vertical_ad"}  %>
+      <%= render partial: "partials/google_adsense", locals: { class_name: "vertical_ad"}  %>
+      <%= render partial: "partials/google_adsense", locals: { class_name: "vertical_ad"}  %>
     </div><!-- /span-6 -->
     <div class="span-17 mobile">
-      <%= render :partial => "partials/google_adsense", :locals => {:class_name => "rectangular_ad mobile"}  %>
+      <%= render partial: "partials/google_adsense", locals: { data_format: "horizontal", class_name: "rectangular_ad mobile"}  %>
     </div>
   </div>
