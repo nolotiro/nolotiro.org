@@ -159,7 +159,7 @@ margin: 0;
  }
 
 @media only screen and (min-width: 320px) and (max-width: 767px) {
-        .container { width: 100%;
+        .container { width: 98%;
                      padding: 0px; }
 
 .span-1,
