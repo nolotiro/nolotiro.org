@@ -661,7 +661,7 @@ dl, dd
 #main
   margin: 0px
   padding-top: 0
-  width: 95%
+  width: 97%
   text-align: left
   height: auto
 
@@ -1154,6 +1154,10 @@ $langs: <%= Rails.application.secrets["langs"] %>
 
   #list-ads-profile .info
     display: inline-block
+
+@media only screen and (min-width: 780px)
+  .span-6.desktop
+    margin-right: 0px !important
 
 @media only screen and (min-width: 500px) and (max-width: 779px)
   .ad_create_tab
