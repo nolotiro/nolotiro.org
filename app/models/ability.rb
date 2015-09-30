@@ -25,7 +25,7 @@ class Ability
       cannot :lock, Admin
       cannot :unlock, Admin
       cannot :become, Admin
-      can [:edit, :update], Ad, :user_owner => user.id 
+      can [:edit, :update, :destroy], Ad, :user_owner => user.id
     end
     can :read, :all
   end
