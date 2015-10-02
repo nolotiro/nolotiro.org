@@ -56,7 +56,7 @@ en:
         password_confirmation: New password (repeat)
         remember: Remember me
     errors:
-      format: 
+      format: "%{attribute} %{message}"
       messages:
         accepted: Must be accepted
         blank: can not be empty
@@ -234,7 +234,7 @@ en:
       send_paranoid_instructions: If your account exists, you will receive an email with instructions about how to unlock it in a few minutes.
       unlocked: Your account has been unlocked successfully. Please sign in to continue.
   errors:
-    format: 
+    format: "%{attribute} %{message}"
     messages:
       accepted: must be accepted
       already_confirmed: was already confirmed, please try signing in
@@ -340,7 +340,7 @@ en:
   nlt:
     about: about
     about_page:
-      description_html: 
+      description_html: <b>What is nolotiro.org?</b><br> It is a web site where you can offer stuff you don't need anymore so other people who need it can get it for free. <br><br> <strong>Read the <a href="/es/page/faqs">frecuently asked questions</a> to know more details about the philosophy and goals of the project</strong> <br><br> <b>Advantages of nolotiro.org:</b><br> The big advantage of nolotiro.org, is that replace the nostalgy/feelings of dumping for the feeling of making something for someone.  You can get rid off that stuff you don't dump it because you feel sad, or because it was new, or because just were getting dusty. On the other hand, nolotiro.org is organized by geographical zones encouraging that your stuff stays in your zone without shipping costs, couriers, etc.. <br><br> <b>Please, be aware:</b><br> THERE IS NO EXCHANGE OPTION, this is not based on exchange, nor buying, because we want to encourage altruism, give stuff for free, because we don't need it. <br><br> <b> Explanation (spanish)</b><br> <a href="http://www.marcianoduran.com.uy/?p=176">¿Why y don't dump it?</a> By Marciano Durán <br><br> <b>Nolotiro.org works thank to the effort of many <a href="http://www.youtube.com/watch?v=KMU0tzLwhbE">people</a> who have developed the following open source software:</b> <a href="http://rubyonrails.org/">Ruby On Rails</a>, <a href="http://www.mysql.com/">MySQL</a>, <a href="http://developer.yahoo.com/geo/geoplanet/">Yahoo GeoPlanet API</a>, <a href="http://www.postfix.org/">Postfix</a>, <a href="http://www.ubuntu.org/">Ubuntu</a>, <a href="http://nginx.org/">Nginx</a>, <a href="http://sphinxsearch.com/">Sphinx</a> , and many more, so many that is not possible to name then here. <br><br> <b> The source code of nolotiro.org is open code</b> and it is avaialble to be used under (Affero GPL 3 license).<br> Visit <a href="https://github.com/alabs/nolotiro.org"> website for developers</a> to get more details.<br> Contributors are welcome to develope or translate this site in other languajes.
       title: About nolotiro.org
     access_here: access here
     admin:
@@ -360,13 +360,13 @@ en:
         status: Status
         title: 'Title of you ad:'
         title_max: Maximum 100 characters
-        to_publish: To publish your ad, please complete this fields
+        to_publish: To post your ad, please complete this fields
         type_ad: 'Type of ad:'
       updated: We have updated your ad
     all: all
     all_ads: all ads
     and: and
-    are_you_interested: are you interested?
+    are_you_interested: Are you interested?
     available: available
     back: Back to the main page
     blog: blog
@@ -386,7 +386,7 @@ en:
     choose_username: choose username
     choose_your_pass: choose your password
     choose_your_pass_again: choose your password (yes, once again)
-    cities_in_the_world: cities in the world that recicle the most
+    cities_in_the_world: best recycling cities
     click_to_large: Click to large the photo
     comments:
       do_click: Please click this link to reply the message
@@ -407,7 +407,7 @@ en:
     create_new_ad: Create a new ad
     delete_ad: Delete ad
     delete_sure: Are you sure you want to delete it?
-    delivered: Delivered
+    delivered: delivered
     developers: Developers
     didn_t_receive_confirmation_instructions: Didn't receive the confirmation's instructions?
     didn_t_receive_unlock_instructions: Didn't receive the unblocking's instructions?
@@ -435,10 +435,10 @@ en:
     faqs: FAQ
     fill_captcha: Please enter the following characters
     first_visit: nolotiro.org it is a community where we can get rid of items you no longer use and hinder you at home.
-    footer_explain: nolotiro.org is a website where you can give away things you no longer want or no longer need to pick them up other people who may serve or be of much use.
+    footer_explain: 'nolotiro.org is a website where you can give stuff for free or find free second hand stuff: furniture, chairs, bicycles, computers, laptops, tables, beds, clothe, toys, mobile phones and many other stuff you don''t want or need, so other people can recycle it and give it a new life.'
     forgot_your_password: Forgot your password?
     friends: Friends
-    gift_on: Gift on%{woeid}
+    gift_on: gift on%{woeid}
     give: gift
     hello_to: Hello %{recipient},
     help_translate: help us to translate
@@ -446,9 +446,9 @@ en:
     if_you_are_new: If you are a new user, please
     if_youre_already_an_user: If you are a registered user, please
     keywords: gift second hand free
-    last_published_gifts: last published gifts
+    last_published_gifts: last posted gifts
     leave_blank: "(leave it empty if you do not want to change it)"
-    login: login
+    login: log in
     login_to_comment: log in to write a comment
     logout: logout
     mail:
@@ -462,11 +462,11 @@ en:
     messages_title: Messages
     meta_description: 
     meta_description_ad: second hand gift %{title} in %{woeid}. %{body}
-    new_user: New user
+    new_user: sign up
     no_results:
-      explain_html: 
-      phrase: 
-      publish_ad: Post an ad in this city
+      explain_html: "<p>1. Be the first to %{publish}.</p> <p>2. Try a bigger city close to your location.</p> <p>3. Our city suggestion system IP based tell us you are close to: <br> %{change_location} </p>"
+      phrase: '"The journey of a thousand miles begins with one step" Lao Tse.'
+      publish_ad: post an ad in this city
       subtitle: You can try some of this stuff
       title: There are no results in this location
       try: Or you can try it in cities with similar name
@@ -486,12 +486,12 @@ en:
         add: 'Add %{username} to your friend''s list '
         delete: Delete %{username} from your friend's list
     profile_edit: Edit profile
-    publish_ad: Publishing ad
-    publish_ad_on: Publish ad in %{woeid}
-    published_ads: Published ads
-    published_at_by_html: Published on %{time} by user %{user}
-    published_on: Published since %{date}
-    published_on_html: Published on <abbr class='js-moment' title='%{date}'>%{date}</abbr>
+    publish_ad: Posting ad
+    publish_ad_on: Post ad in %{woeid}
+    published_ads: Posted ads
+    published_at_by_html: Posted %{time} ago by user %{user}
+    published_on: Posted since %{date}
+    published_on_html: Posted <abbr class='js-moment' title='%{date}'>%{date}</abbr>
     readed_count: "%{count} views"
     reads: views
     register: Register
@@ -506,16 +506,16 @@ en:
     searching_on_html: Searching <i>%{q}</i> on
     send: Send
     send_a_message: "+ Send a private message to this user"
-    send_a_message_to: Send a private message to
+    send_a_message_to: send a private message to
     sending_this_form: 
     share_this_ad: Share this ad
     sign_in: Sign in
     sign_in_with_provider: Sign in with other provider
     sign_up: Sign up
-    slogan: don't dump that, give it to your neighbor
+    slogan: don't dump it, give it to your neighbor
     suggestions: Suggestions
     to_publish_ad: Create ad
-    to_publish_or_send_messages: To publish ads or send messages please login
+    to_publish_or_send_messages: To post ads or send messages please log in
     tos: Terms and conditions
     tos_page:
       body_html: ALL
@@ -525,11 +525,11 @@ en:
       title: Help us to translate nolotiro.org
     update: Save
     updating: 
-    user_ads: Ads
+    user_ads: ads
     user_edit_profile: Edit user's profile
     user_profile: Profile
     username: Username
-    users_most_active: users most active
+    users_most_active: most active users
     view_ads_on: View ads in %{location_suggest}
     view_ads_on_your_city: View ads from your city or town
     want: I want
@@ -605,7 +605,7 @@ en:
   unauthorized:
     default: You are not authorized to enter this url
     manage:
-      all: First, you must login or sign up
+      all: First, you must log in or sign up
   will_paginate:
     next_label: next →
     page_entries_info:
