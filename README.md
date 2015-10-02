@@ -2,6 +2,8 @@
 
 [![Build Status](https://travis-ci.org/alabs/nolotiro.org.png?branch=master)](https://travis-ci.org/alabs/nolotiro.org)
 
+[![Dependency Status](https://gemnasium.com/alabs/nolotiro.org.svg)](https://gemnasium.com/alabs/nolotiro.org)
+
 This is the next revision of nolotiro.org, this time in Ruby On Rails.
 
 * Ruby: 2.2.2
