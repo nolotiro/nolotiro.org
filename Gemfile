@@ -1,7 +1,9 @@
 source 'https://rubygems.org'
 
+ruby '2.2.2'
+
 gem 'bundler', '>= 1.8.4'
-gem 'rails', '~> 4.2.1'
+gem 'rails', '~> 4.2'
 gem 'haml-rails'
 gem 'sass-rails', '~> 4.0.0'
 gem 'uglifier', '>= 1.3.0'
@@ -72,6 +74,8 @@ gem 'ipaddress'                                     # ip address validation
 gem 'rb-readline'                                   # fix rails console error
 gem 'localeapp'                                     # i18n interface
 gem 'blueprint-rails'                               # blueprint css framework
+gem 'activeadmin', github: 'activeadmin'            # admin backend
+gem 'active_skin'                                   # admin backend skin
 
 # https://github.com/mailboxer/mailboxer/issues/316
 #gem 'mailboxer'                                     # messaging

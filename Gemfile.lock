@@ -1,4 +1,22 @@
 GIT
+  remote: git://github.com/activeadmin/activeadmin.git
+  revision: b44b4f4896ef78b50c35c82a343356d68b937cde
+  specs:
+    activeadmin (1.0.0.pre2)
+      arbre (~> 1.0, >= 1.0.2)
+      bourbon
+      coffee-rails
+      formtastic (~> 3.1)
+      formtastic_i18n
+      inherited_resources (~> 1.6)
+      jquery-rails
+      jquery-ui-rails
+      kaminari (~> 0.15)
+      rails (>= 3.2, < 5.0)
+      ransack (~> 1.3)
+      sass-rails
+
+GIT
   remote: git://github.com/div/mailboxer.git
   revision: 41c9d8de2e0ad4dc511718074228d40a1ba96ebe
   branch: rails42-foreigner
@@ -53,6 +71,7 @@ GEM
       erubis (~> 2.7.0)
       rails-dom-testing (~> 1.0, >= 1.0.5)
       rails-html-sanitizer (~> 1.0, >= 1.0.1)
+    active_skin (0.0.9)
     activejob (4.2.1)
       activesupport (= 4.2.1)
       globalid (>= 0.3.0)
@@ -74,6 +93,8 @@ GEM
       builder
       multi_json
     ansi (1.4.3)
+    arbre (1.0.3)
+      activesupport (>= 3.0.0)
     arel (6.0.0)
     bcrypt (3.1.10)
     binding_of_caller (0.7.2)
@@ -81,6 +102,9 @@ GEM
     blueprint-rails (0.2.0)
       railties (>= 3.0, < 5.0)
       thor (>= 0.14, < 2.0)
+    bourbon (3.2.4)
+      sass (~> 3.2)
+      thor
     builder (3.2.2)
     bullet (4.14.7)
       activesupport (>= 3.0.0)
@@ -157,6 +181,9 @@ GEM
     factory_girl_rails (4.4.1)
       factory_girl (~> 4.4.0)
       railties (>= 3.0.0)
+    formtastic (3.1.3)
+      actionpack (>= 3.2.13)
+    formtastic_i18n (0.4.1)
     geoip (1.4.0)
     geoplanet (0.2.7)
       json (>= 1.1.3)
@@ -171,11 +198,19 @@ GEM
       activesupport (>= 4.0.1)
       haml (>= 3.1, < 5.0)
       railties (>= 4.0.1)
+    has_scope (0.6.0)
+      actionpack (>= 3.2, < 5)
+      activesupport (>= 3.2, < 5)
     hike (1.2.3)
     hitimes (1.2.2)
     http-cookie (1.0.2)
       domain_name (~> 0.5)
     i18n (0.7.0)
+    inherited_resources (1.6.0)
+      actionpack (>= 3.2, < 5)
+      has_scope (~> 0.6.0.rc)
+      railties (>= 3.2, < 5)
+      responders
     innertube (1.1.0)
     ipaddress (0.8.0)
     jbuilder (1.5.3)
@@ -186,7 +221,12 @@ GEM
     jquery-rails (3.1.0)
       railties (>= 3.0, < 5.0)
       thor (>= 0.14, < 2.0)
+    jquery-ui-rails (5.0.5)
+      railties (>= 3.2.16)
     json (1.8.2)
+    kaminari (0.16.3)
+      actionpack (>= 3.0.0)
+      activesupport (>= 3.0.0)
     kgio (2.9.2)
     launchy (2.4.3)
       addressable (~> 2.3)
@@ -253,6 +293,8 @@ GEM
       mime-types
     paranoia (2.0.2)
       activerecord (~> 4.0)
+    polyamorous (1.2.0)
+      activerecord (>= 3.0)
     rack (1.6.0)
     rack-protection (1.5.3)
       rack
@@ -289,6 +331,12 @@ GEM
       thor (>= 0.18.1, < 2.0)
     raindrops (0.13.0)
     rake (10.4.2)
+    ransack (1.7.0)
+      actionpack (>= 3.0)
+      activerecord (>= 3.0)
+      activesupport (>= 3.0)
+      i18n
+      polyamorous (~> 1.2)
     rb-readline (0.5.1)
     rdoc (4.1.1)
       json (~> 1.4)
@@ -347,7 +395,7 @@ GEM
       temple (~> 0.7.3)
       tilt (>= 1.3.3, < 2.1)
     slop (3.6.0)
-    spring (1.3.4)
+    spring (1.4.0)
     sprockets (2.11.0)
       hike (~> 1.2)
       multi_json (~> 1.0)
@@ -420,6 +468,8 @@ PLATFORMS
 DEPENDENCIES
   actionpack-action_caching
   actionpack-page_caching
+  active_skin
+  activeadmin!
   airbrake
   blueprint-rails
   bullet
@@ -455,7 +505,7 @@ DEPENDENCIES
   newrelic_rpm
   paperclip (~> 4.0)
   paranoia (~> 2.0)
-  rails (~> 4.2.1)
+  rails (~> 4.2)
   rails-assets-bootstrap!
   rails-footnotes (~> 4.0)
   rb-readline
@@ -475,3 +525,6 @@ DEPENDENCIES
   unicorn
   web-console (~> 2.0)
   will_paginate (~> 3.0)
+
+BUNDLED WITH
+   1.10.6

@@ -16,6 +16,10 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def access_denied exception
+    redirect_to root_url, :alert => exception.message
+  end
+
   def after_sign_in_path_for(resource)
     # https://github.com/plataformatec/devise/wiki/How-To:-Redirect-to-a-specific-page-on-successful-sign-in
     sign_in_url = new_user_session_url
