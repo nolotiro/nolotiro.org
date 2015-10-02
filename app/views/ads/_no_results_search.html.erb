@@ -5,7 +5,7 @@
       <% if defined? @q %>
         <%= t('nlt.search.no_ads_message_html', 
               q: @q, 
-              woeid: link_to(WoeidHelper.convert_woeid_name(@id), ads_woeid_path(@id, type: "give"))) 
+              woeid: link_to(WoeidHelper.convert_woeid_name(@id)[:full], ads_woeid_path(@id, type: "give"))) 
         %>
       <% else %>
         <%= t('nlt.search.must_search') %>
