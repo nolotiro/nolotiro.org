@@ -39,7 +39,9 @@
     <div><p><%= truncate ad.body, length: 200, separator: ' ' %></p></div>
     <div class="ad_meta_info">
       <b><%= link_to t('nlt.send_a_message'), message_new_with_subject_path(user_id: ad.user.id, subject: ad.slug) %></b>
-      <b><%= link_to t('nlt.write_a_comment'), adslug_path(ad,ad.slug) %></b>
+      <% if ad.comments_enabled? %>
+        <b><%= link_to t('nlt.write_a_comment'), adslug_path(ad,ad.slug) %></b>
+      <% end %>
       <span class="right small">
         &nbsp;&nbsp; <%= t('nlt.readed_count', count: ad.readed_counter) %><%= t('nlt.comments_count', count: ad.comments_count) %>
       </span>
