@@ -5,11 +5,17 @@
 </div>
 
 <div id="main">
-  <div class="span-18" id="list-ads-profile">
+
+  <div class="span-17" id="list-ads-profile">
+
     <%= render partial: "users/tabnav", locals: {user: @user} %>
+
     <div class="span-5 mobile">
-      <%= render partial: "partials/google_adsense", :locals => {:class_name => "rectangular_ad mobile", :data_format => "horizontal" }  %>
+      <div class="google_ad_wrapper">
+        <%= render partial: "partials/google_adsense", locals: { class_name: "mobile google_adsense_336_280", ad_slot: "7225596067"}  %>
+      </div>
     </div>
+
     <% if @ads.count > 0 %>
       <% @ads.each do |ad| %>
         <%= render :partial => "ads/ad", :locals => { :ad => ad } %>
@@ -18,10 +24,25 @@
     <% else %>
       <p> <div class="info"> <%= t("nlt.no_results.on_user") %> </div> </p>
     <% end %>
+
   </div>
 
   <div class="span-5 desktop">
-    <%= render partial: "partials/google_adsense", :locals => {:class_name => "vertical_ad desktop"}  %>
+    <div class="google_ad_wrapper">
+      <%= render partial: "partials/google_adsense", locals: { class_name: "google_adsense_600_160", ad_slot: "6783776462"}  %>
+    </div>
+    <div class="google_ad_wrapper">
+      <%= render partial: "partials/google_adsense", locals: { class_name: "google_adsense_600_160", ad_slot: "6783776462"}  %>
+    </div>
+    <div class="google_ad_wrapper">
+      <%= render partial: "partials/google_adsense", locals: { class_name: "google_adsense_600_160", ad_slot: "6783776462"}  %>
+    </div>
+  </div>
+
+  <div class="span-5 mobile">
+    <div class="google_ad_wrapper">
+      <%= render partial: "partials/google_adsense", locals: { class_name: "mobile google_adsense_336_280", ad_slot: "7225596067"}  %>
+    </div>
   </div>
 
 </div>

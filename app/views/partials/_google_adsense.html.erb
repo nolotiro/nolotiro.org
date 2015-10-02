@@ -1,22 +1,5 @@
-<% if defined? class_name %>
-  <div class="google_ads <%= class_name %>">
-<% else %>
-  <div class="google_ads">
-<% end %>
-
-    <!-- nolotiro-responsive -->
-    <ins class="adsbygoogle"
-        style="display:block"
-        data-ad-client="ca-pub-5360961269901609"
-        data-ad-slot="7495332060"
-        <% if defined? data_format %>
-          data-ad-format="<%= data_format %>">
-        <% else %>
-          data-ad-format="auto">
-        <% end %>
-    </ins>
-    <script>
-          (adsbygoogle = window.adsbygoogle || []).push({});
-    </script>
-
-</div>
+  <ins class="adsbygoogle <%= class_name %>"
+       style="display:inline-block;"
+       data-ad-adtest="on"
+       data-ad-client="ca-pub-5360961269901609"
+       data-ad-slot="<%= ad_slot %>"></ins>

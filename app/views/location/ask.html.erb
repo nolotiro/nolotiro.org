@@ -9,7 +9,7 @@
     <%= render partial: "ask_form", :locals => { location_suggest: @location_suggest } %>
   </div>
   <div class="col-md-4">
-    <%= render partial: "partials/google_adsense", locals: { data_format: "rectangle", class_name: "rectangular_ad desktop" } %>
-    <%= render partial: "partials/google_adsense", locals: { data_format: "horizontal", class_name: "mobile" } %>
+    <%= render partial: "partials/google_adsense", locals: { class_name: "desktop google_adsense_600_160", ad_slot: "6783776462"}  %>
+    <%= render partial: "partials/google_adsense", locals: { class_name: "mobile google_adsense_336_280", ad_slot: "7225596067"}  %>
   </div>
 </div>

@@ -30,5 +30,5 @@
         = f.hidden_field :recipients
         = f.submit t('mailboxer.new.submit')
   .span-9
-    = render partial: "partials/google_adsense", :locals => { :class_name => "rectangular_ad desktop", :data_format => "rectangle" }
-    = render partial: "partials/google_adsense", :locals => { :class_name => "rectangular_ad mobile" }
+    = render partial: "partials/google_adsense", locals: { class_name: "desktop google_adsense_336_280", ad_slot: "7225596067"}
+    = render partial: "partials/google_adsense", locals: { class_name: "mobile google_adsense_336_280", ad_slot: "7225596067"}
