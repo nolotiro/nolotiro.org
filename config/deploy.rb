@@ -1,5 +1,5 @@
 set :application, 'nolotiro.org'
-set :repo_url, 'git@github.com:alabs/nolotiro.org.git'
+set :repo_url, 'https://github.com/alabs/nolotiro.org'
 
 # ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }
 
