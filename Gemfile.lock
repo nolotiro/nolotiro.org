@@ -254,7 +254,7 @@ GEM
       ruby-progressbar
     mono_logger (1.1.0)
     multi_json (1.11.2)
-    mysql2 (0.4.1)
+    mysql2 (0.3.20)
     net-scp (1.2.1)
       net-ssh (>= 2.6.5)
     net-ssh (3.0.1)
@@ -465,7 +465,7 @@ DEPENDENCIES
   mailcatcher
   minitest-rails-capybara
   minitest-reporters
-  mysql2
+  mysql2 (~> 0.3.18)
   newrelic_rpm
   paperclip (~> 4.0)
   paranoia (~> 2.0)
