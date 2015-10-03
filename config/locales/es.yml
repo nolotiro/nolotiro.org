@@ -98,7 +98,7 @@ es:
     - vie
     - sáb
     abbr_month_names:
-    -
+    - 
     - ene
     - feb
     - mar
@@ -124,7 +124,7 @@ es:
       long: "%d de %B de %Y"
       short: "%d de %b"
     month_names:
-    -
+    - 
     - enero
     - febrero
     - marzo
@@ -343,7 +343,7 @@ es:
     hello: Hola,
     signature: Equipo de nolotiro.org
   nlt:
-    view_more_ads: "ver más anuncios >"
+    view_more_ads: ver más anuncios >
     please_insert_email_and_password: Por favor pon tu email y contraseña.
     save_failed: 'Hay un problema, revisa esto:'
     profile_edit: Editar perfil
@@ -492,7 +492,7 @@ es:
       body_html: TODO
     legal_page:
       title: Información legal
-      body_html: "Nombre: Asociación aLabs. <br>Inscrita en el registro de asociaciones de la Comunidad de Madrid con número 32.022. <br>CIF: G86139847<br> C/Duque de Alba, 13 (28012) Madrid."
+      body_html: 'Nombre: Asociación aLabs. <br>Inscrita en el registro de asociaciones de la Comunidad de Madrid con número 32.022. <br>CIF: G86139847<br> C/Duque de Alba, 13 (28012) Madrid.'
     privacy: política de privacidad
     legal_notice: aviso legal
     privacy_page:
