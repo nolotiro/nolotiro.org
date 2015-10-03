@@ -2,6 +2,7 @@ require 'sidekiq/web'
 
 NolotiroOrg::Application.routes.draw do
 
+  ActiveAdmin.routes(self)
   get '/', to: redirect('/es')
 
   scope '/api' do
@@ -130,7 +131,7 @@ NolotiroOrg::Application.routes.draw do
 
     scope '/page' do
       get '/faqs', to: 'page#faqs', as: 'faqs'
-      get '/tos', to: 'page#tos', as: 'tos'
+      get '/tos', to: redirect('/page/privacy')
       get '/about', to: 'page#about', as: 'about'
       get '/privacy', to: 'page#privacy', as: 'privacy'
       get '/legal', to: 'page#legal', as: 'legal'

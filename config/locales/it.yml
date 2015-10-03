@@ -2,8 +2,8 @@ it:
   activemodel:
     attributes:
       contact:
-        email: 
-        message: 
+        email: E mail
+        message: Messaggio
     errors:
       format: "%{attribute} %{message}"
       messages:
@@ -24,7 +24,9 @@ it:
         not_an_integer: non è un intero
         odd: deve essere dispari
         record_invalid: 'Validazione fallita: %{errors}'
-        restrict_dependent_destroy: 
+        restrict_dependent_destroy:
+          one: Non è possibile cancellare il registro perché esiste un %{record} dipendente
+          other: Non è possibile cancellare il registro perché esistono %{record} dipendente
         taken: "è già in uso"
         too_long:
           one: "è troppo lungo (il massimo è 1 carattere)"
@@ -43,24 +45,24 @@ it:
   activerecord:
     attributes:
       ad:
-        body: 
-        image: 
-        image_content_type: 
-        image_file_size: 
-        subject: 
-        title: 
-        type: 
+        body: Corpo
+        image: Immagine
+        image_content_type: Tipo del contenuto della immagine
+        image_file_size: Formato della immagine
+        subject: Titolo
+        title: Titolo
+        type: Tipo
       message:
-        subject: 
+        subject: Soggetto
       user:
-        Contraseña: 
-        Recuérdame: 
-        Tu email: 
-        current_password: 
-        email: 
-        password: 
-        password_confirmation: 
-        remember: 
+        Contraseña: Password
+        Recuérdame: Ricordami
+        Tu email: La tua email
+        current_password: Password atuale
+        email: email
+        password: Password nuova
+        password_confirmation: Ripete di nuovo la password
+        remember: Ricordami
     errors:
       format: "%{attribute} %{message}"
       messages:
@@ -81,7 +83,9 @@ it:
         not_an_integer: non è un intero
         odd: deve essere dispari
         record_invalid: 'Validazione fallita: %{errors}'
-        restrict_dependent_destroy: 
+        restrict_dependent_destroy:
+          one: No è possibile cancellare il registro perché esiste un %{record} dipendente
+          other: Non è possibile cancellare il registro perché esistono %{record} dipendenti
         taken: "è già in uso"
         too_long:
           one: "è troppo lungo (il massimo è 1 carattere)"
@@ -195,10 +199,10 @@ it:
       year: Anno
   devise:
     confirmations:
-      action: 
+      action: Conferma il tuo account
       confirmed: Il tuo account è stato correttamente confermato. Ora sei collegato.
-      instructions: 
-      resend: 
+      instructions: 'Per favore conferma il tuo email accedendo al seguente link:'
+      resend: Invia un altra volta le istruzione di conferma
       send_instructions: Riceverai un messaggio email con le istruzioni per confermare il tuo account entro qualche minuto.
       send_paranoid_instructions: Se la tua e-mail esiste nel nostro database, riceverai un messaggio email con le istruzioni per confermare il tuo account entro qualche minuto.
     failure:
@@ -318,30 +322,30 @@ it:
       visit: 
       visit_html: 
       visit_text: 
-      you_have_new_message: 
-      you_have_recieved_new_message: 
+      you_have_new_message: Hai ricevuto un nuovo messaggio
+      you_have_recieved_new_message: Hai ricevuto un nuovo messaggio
     new:
-      button: 
-      errors: 
-      legend: 
-      submit: 
-      title: 
+      button: Invia
+      errors: 'C''è stato un problema, controlla questo:'
+      legend: Invia il messaggio
+      submit: Invia
+      title: Nuovo messaggio privato per l'utente %{user}
     notification_mailer:
-      subject: 
-      visit_html: 
-      visit_text: 
-      you_have_new_reply: 
-      you_have_recieved_new_reply: 
+      subject: "[nolotiro.org] Nuova notifica: %{subject}"
+      visit_html: Visita %{url} e vai a la tua posta in arrivo per rispondere
+      visit_text: Visita %{url} e vai a la tua posta in arrivo per rispondere
+      you_have_new_reply: Hai ricevuto una nuova risposta
+      you_have_recieved_new_reply: Hai ricevuto una nuova risposta
     notifications:
-      error_same_user: 
-      move: 
-      sent: 
-      trash: 
-      untrash: 
-    search: 
+      error_same_user: No puoi inviare un messaggio a te stesso
+      move: Messaggio mosso a %{mailbox}
+      sent: Messaggio inviato
+      trash: Messaggio mosso al cestino
+      untrash: Messaggio ricuperato
+    search: Risultati della ricerca su %{search}
     table:
-      date: 
-      delete: 
+      date: Data
+      delete: Cancellare?
       last: 
       none: 
       reciever: 
@@ -370,12 +374,12 @@ it:
     ads:
       created: 
       form:
-        body: 
-        body_max: 
-        comments_enabled: 
-        image_permitted_formats: 
-        please_ad_type: 
-        prohibited: 
+        body: Corpo del annuncio
+        body_max: Massimo 500 caratteri
+        comments_enabled: 'Permmete commenti publici '
+        image_permitted_formats: 'Formatti permessi: gif, jpg, png. Massimo: 1Mb di dimensione'
+        please_ad_type: per favore, seleziona il tipo di annuncio
+        prohibited: 'C''e un problema, controlla questo:'
         select_an_image: 
         status: 
         title: 

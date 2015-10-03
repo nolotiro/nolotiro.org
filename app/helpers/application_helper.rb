@@ -13,11 +13,6 @@ module ApplicationHelper
     WoeidHelper.search_by_name(woeid.to_s)
   end
 
-  def cache_key_for(key, current_user)
-    key += current_user ? "user_" + current_user.admin?.to_s : "user_nil"
-    Digest::MD5.hexdigest(key)
-  end
-
   def i18n_to_localeapp_in_locale(locale)
     langs = {
       gl: 20650,

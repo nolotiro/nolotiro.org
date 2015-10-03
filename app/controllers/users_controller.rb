@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   def listads
     # ads lists for user
     @user = User.find(params[:id])
-    @ads = @user.ads.paginate(:page => params[:page])
+    @ads = @user.ads.includes(:user).paginate(:page => params[:page])
   end
 
   # GET '/profile/:username'

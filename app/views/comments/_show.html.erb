@@ -1,6 +1,6 @@
 <% if ad.comments_enabled? %>
   <% if ad.comments.any? %>
-    <%= render :partial => "comments/list", :locals => {:comments => ad.comments} %>
+    <%= render :partial => "comments/list", :locals => {:comments => ad.comments.includes(:user)} %>
   <% end %>
   <% if user_signed_in? %>
     <%= render :partial => "comments/form", :locals => {:ad => ad.id} %>

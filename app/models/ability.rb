@@ -7,9 +7,8 @@ class Ability
     user ||= User.new # guest user (not logged in)
     if user.admin?
       can :manage, :all
-      can :lock, Admin
-      can :unlock, Admin
-      can :become, Admin
+      can [:lock, :unlock, :become], Admin
+      can :manage, ActiveAdmin
     end
     # if the user is a real user (non anon)
     unless user.username.nil?
@@ -26,6 +25,7 @@ class Ability
       cannot :unlock, Admin
       cannot :become, Admin
       can [:edit, :update, :destroy], Ad, :user_owner => user.id
+      cannot :manage, ActiveAdmin
     end
     can :read, :all
   end

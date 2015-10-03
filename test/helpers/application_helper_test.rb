@@ -19,20 +19,6 @@ class ApplicationHelperTest < ActionView::TestCase
   #  assert_equal expected_result, result
   end
 
-  test "should cache_key_for" do
-    result1 = cache_key_for "123", User.new
-    result2 = cache_key_for "123", User.new
-    assert_equal result1, result2
-    assert_equal "f97ead06c958e1e778e65e99d7de7f67", result1
-    assert_equal "f97ead06c958e1e778e65e99d7de7f67", result2
-
-    result3 = cache_key_for "123", FactoryGirl.create(:user)
-    result4 = cache_key_for "123", FactoryGirl.create(:admin)
-    assert_not_equal result3, result4
-    assert_equal "f97ead06c958e1e778e65e99d7de7f67", result3
-    assert_equal "38ed13109ed92bc1eb89b82c8345ed01", result4
-  end
-
   test "should i18n_to_localeapp_in_locale" do
     assert_equal 20647, i18n_to_localeapp_in_locale(:en)
     assert_equal 24068, i18n_to_localeapp_in_locale(:nl)

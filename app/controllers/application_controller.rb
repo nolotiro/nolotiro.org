@@ -16,6 +16,10 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def access_denied exception
+    redirect_to root_url, :alert => exception.message
+  end
+
   def after_sign_in_path_for(resource)
     # https://github.com/plataformatec/devise/wiki/How-To:-Redirect-to-a-specific-page-on-successful-sign-in
     sign_in_url = new_user_session_url
@@ -34,6 +38,14 @@ class ApplicationController < ActionController::Base
   def default_url_options(options={})
     #logger.debug "default_url_options is passed options: #{options.inspect}\n"
     { locale: I18n.locale }
+  end
+  
+  def authenticate_active_admin_user!
+    authenticate_user!
+    unless current_user.admin?
+      flash[:alert] = t('nlt.permission_denied')
+      redirect_to root_path
+    end
   end
 
   private
