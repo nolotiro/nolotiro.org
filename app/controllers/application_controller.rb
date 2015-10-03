@@ -39,6 +39,14 @@ class ApplicationController < ActionController::Base
     #logger.debug "default_url_options is passed options: #{options.inspect}\n"
     { locale: I18n.locale }
   end
+  
+  def authenticate_active_admin_user!
+    authenticate_user!
+    unless current_user.admin?
+      flash[:alert] = t('nlt.permission_denied')
+      redirect_to root_path
+    end
+  end
 
   private
 
