@@ -1,6 +1,25 @@
 # encoding : utf-8
 class Ad < ActiveRecord::Base
 
+  include Rakismet::Model
+
+  # https://github.com/joshfrench/rakismet
+  #
+  # author        : name submitted with the comment
+  # author_url    : URL submitted with the comment
+  # author_email  : email submitted with the comment
+  # comment_type  : Defaults to comment but you can set it to trackback, pingback, or something more appropriate
+  # content       : the content submitted
+  # permalink     : the permanent URL for the entry the comment belongs to
+  # user_ip       : IP address used to submit this comment
+  # user_agent    : user agent string
+  # referrer      : referring URL (note the spelling)
+  
+  rakismet_attrs  author: proc { user.username },
+    author_email: proc { user.email },
+    user_ip: proc { ip },
+    content: proc { body }
+
   require 'ipaddress'
 
   belongs_to :user, foreign_key: 'user_owner', :counter_cache => true

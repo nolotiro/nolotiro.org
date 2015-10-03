@@ -76,6 +76,7 @@ gem 'localeapp'                                     # i18n interface
 gem 'blueprint-rails'                               # blueprint css framework
 gem 'activeadmin', github: 'activeadmin'            # admin backend
 gem 'active_skin'                                   # admin backend skin
+gem 'rakismet'                                      # antispam
 
 # https://github.com/mailboxer/mailboxer/issues/316
 #gem 'mailboxer'                                     # messaging

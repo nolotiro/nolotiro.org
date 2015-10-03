@@ -3,7 +3,7 @@ ActiveAdmin.register User do
   filter :email
   filter :username
   filter :last_sign_in_ip
-  filter :created_at
+  filter :ads_count
   filter :created_at
 
   index do 
@@ -14,6 +14,7 @@ ActiveAdmin.register User do
     column :email 
     column :confirmed_at 
     column :last_sign_in_ip 
+    column :ads_count 
     column :created_at 
     actions
   end

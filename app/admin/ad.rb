@@ -25,8 +25,27 @@ ActiveAdmin.register Ad do
     actions
   end
 
+  sidebar "Acciones", only: [:show, :edit] do
+    dl do
+      dt "¿Es SPAM?"
+      dd ad.spam? 
+    end
+    link_to "Marcar como spam", mark_as_spam_ad_admin_path, class: "btn btn-danger"
+    link_to "Marcar como NO spam", mark_as_ham_ad_admin_path, class: "btn btn-primary"
+  end
+
   action_item :view, only: :show do 
     link_to "Ver en la web", ad_path(ad)
+  end
+
+  member_action :mark_as_spam, method: :post do 
+    @ad = Ad.find params[:id]
+    @ad.spam!
+  end
+
+  member_action :mark_as_ham, method: :post do 
+    @ad = Ad.find params[:id]
+    @ad.ham!
   end
 
 end

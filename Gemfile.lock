@@ -331,6 +331,7 @@ GEM
       thor (>= 0.18.1, < 2.0)
     raindrops (0.13.0)
     rake (10.4.2)
+    rakismet (1.5.1)
     ransack (1.7.0)
       actionpack (>= 3.0)
       activerecord (>= 3.0)
@@ -508,6 +509,7 @@ DEPENDENCIES
   rails (~> 4.2)
   rails-assets-bootstrap!
   rails-footnotes (~> 4.0)
+  rakismet
   rb-readline
   recaptcha
   redis-rails
