@@ -67,7 +67,6 @@ class AdsController < ApplicationController
   def update
     respond_to do |format|
       if @ad.update(ad_params)
-        expire_fragment(  cache_key_for( "ad_#{I18n.locale}_" + @ad.id.to_s, current_user ) )
         format.html { redirect_to @ad, notice: t('nlt.ads.updated') }
         format.json { head :no_content }
       else
@@ -91,7 +90,7 @@ class AdsController < ApplicationController
   # Use callbacks to share common setup or constraints between actions.
   def set_ad
     #@ad = Rails.cache.fetch("set_ad_#{params[:id]}") do 
-    @ad = Ad.includes(:comments).includes(:user).find(params[:id])
+    @ad = Ad.includes(:comments, :user).find(params[:id])
     #end
   end
 
