@@ -9,11 +9,6 @@ class PageControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "should get tos" do
-    get :tos
-    assert_response :success
-  end
-
   test "should get about" do
     get :about
     assert_response :success
