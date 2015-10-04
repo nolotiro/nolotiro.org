@@ -9,14 +9,17 @@
   <br>
 
   <% unless woeid.nil? %>
-    <%= t('nlt.no_results.try') %><br>
-    <ul>
-    <% get_location_options(@woeid).each do |l| %>
-      <li>
-        <%= link_to l[0], location_change_path(location: l[0]) %>
-      </li>
+    <% locations = get_location_options(@woeid) %>
+    <% if locations %>
+      <%= t('nlt.no_results.try') %><br>
+      <ul>
+      <% locations.each do |l| %>
+        <li>
+          <%= link_to l[0], location_change_path(location: l[0]) %>
+        </li>
+      <% end %>
+      </ul>
     <% end %>
-    </ul>
   <% end %>
 
   <h5>
