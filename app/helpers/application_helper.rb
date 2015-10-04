@@ -4,6 +4,10 @@ module ApplicationHelper
     if text
       text = text.gsub(/([\._a-zA-Z0-9-]+@[\._a-zA-Z0-9-]+)/, ' ')
       text = text.gsub(/([9|6])+([0-9\s*]{8,})/, ' ')
+      text = text.gsub(/whatsapp/, ' ')
+      text = text.gsub(/whatsup/, ' ')
+      text = text.gsub(/watsup/, ' ')
+      text = text.gsub(/guasap/, ' ')
       text
     end
   end
