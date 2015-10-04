@@ -25,19 +25,23 @@ module WoeidHelper
     # return places: list. format: [[full name, woeid, ad_count], ...]
     #                      example: [["Madrid, Madrid, España (2444 anuncios)",766273],["Madrid, Comunidad de Madrid, España (444 anuncios)",12578024],["Madrid, Cundinamarca, Colombia (0 anuncios)",361938]]
     #
-    key = 'location_' + name
-    if Rails.cache.fetch(key)
-      return Rails.cache.fetch(key)
-    else
-      GeoPlanet.appid = Rails.application.secrets["geoplanet_app_id"]
-      locations = GeoPlanet::Place.search(name, :lang => :es, :count => 0)
-      if locations.nil?
-        places = nil
+    if name
+      key = 'location_' + name
+      if Rails.cache.fetch(key)
+        return Rails.cache.fetch(key)
       else
-        places = locations.map {|l| ["#{WoeidHelper.convert_woeid_name(l.woeid)[:full]} (#{Ad.where(woeid_code: l.woeid).count} anuncios)", l.woeid] }
+        GeoPlanet.appid = Rails.application.secrets["geoplanet_app_id"]
+        locations = GeoPlanet::Place.search(name, :lang => :es, :count => 0)
+        if locations.nil?
+          places = nil
+        else
+          places = locations.map {|l| ["#{WoeidHelper.convert_woeid_name(l.woeid)[:full]} (#{Ad.where(woeid_code: l.woeid).count} anuncios)", l.woeid] }
+        end
+        Rails.cache.write(key, places)
+        return places
       end
-      Rails.cache.write(key, places)
-      return places
+    else
+      nil
     end
   end
 

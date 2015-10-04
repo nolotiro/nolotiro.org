@@ -25,7 +25,11 @@ class LocationController < ApplicationController
   def change
     if params[:location].to_i == 0 
       locations = WoeidHelper.search_by_name params[:location]
-      set_location locations[0][1]
+      if locations 
+        set_location locations[0][1]
+      else
+        redirect_to location_ask_path, alert: "Hubo un error con el cambio de su ubicación. Inténtelo de nuevo."
+      end
     else
       set_location params[:location]
     end
