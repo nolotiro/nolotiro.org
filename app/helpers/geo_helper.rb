@@ -11,8 +11,13 @@ module GeoHelper
 
   def self.suggest ip_address
     c = GeoIP.new(Rails.root.to_s + '/vendor/geolite/GeoLiteCity.dat').country(ip_address)
-    # cutre translator from Spain to España
-    "#{c.city_name}, #{c.real_region_name}, #{c.country_name}".force_encoding("ISO-8859-1").encode("UTF-8").gsub("Spain", "España")
+    # FIXME: use other APIs when there isn't an IP address mapped
+    if c.nil? 
+      "Madrid, Madrid, España"
+    else
+      # cutre translator from Spain to España
+      "#{c.city_name}, #{c.real_region_name}, #{c.country_name}".gsub("Spain", "España")
+    end
   end
 
 end

@@ -20,6 +20,7 @@ end
 class MiniTest::Spec
   before :each do
     I18n.default_locale = :es
+    I18n.locale = :es
     DatabaseCleaner.start
   end
   after :each do
