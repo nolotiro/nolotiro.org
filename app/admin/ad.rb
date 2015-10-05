@@ -30,8 +30,11 @@ ActiveAdmin.register Ad do
       dt "¿Es SPAM?"
       dd ad.spam? 
     end
-    link_to "Marcar como spam", mark_as_spam_ad_admin_path, class: "btn btn-danger"
-    link_to "Marcar como NO spam", mark_as_ham_ad_admin_path, class: "btn btn-primary"
+    ul do 
+      li link_to "Marcar como spam", mark_as_spam_admin_ad_path, class: "button"
+      li
+      li link_to "Marcar como NO spam", mark_as_ham_admin_ad_path, class: "button"
+    end
   end
 
   action_item :view, only: :show do 
