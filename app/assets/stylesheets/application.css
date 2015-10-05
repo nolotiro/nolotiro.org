@@ -12,6 +12,7 @@
 
  * http://rails-assets.org
  *= require bootstrap
+ *= require font-awesome
 
  *= require blueprint
  *= require jquery.cookiebar
