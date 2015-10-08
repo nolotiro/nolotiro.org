@@ -44,7 +44,11 @@ class WoeidController < ApplicationController
         @location_options = WoeidHelper.search_by_name(@woeid[:short])
       end
     end
-    render "show"
+    if @woeid.nil? and not @all
+      raise ActionController::RoutingError.new('Not Found') 
+    else
+      render "show"
+    end
   end
 
 end
