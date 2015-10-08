@@ -209,7 +209,7 @@ it:
       already_authenticated: Hai già effettuato l'accesso.
       inactive: Il tuo account non è stato ancora attivato.
       invalid: Indirizzo email o password non validi.
-      last_attempt: 
+      last_attempt: Attenzione, se continui a provarci provvederemo a bloccare l'account per 3 ore. Hai dimenticato la tua password?. Recuperarla
       locked: Il tuo account è bloccato.
       not_found_in_database: Email o password non validi.
       timeout: Sessione scaduta, accedere nuovamente per continuare.
@@ -226,12 +226,12 @@ it:
       failure: Non è stato possibile autorizzarti da %{kind} perchè "%{reason}".
       success: Autorizzato con successo dall'account %{kind}.
     passwords:
-      action: 
-      follow_instructions: 
-      forgot: 
-      instructions: 
+      action: Cambia la password
+      follow_instructions: 'Qualcuno a chiesto di cambiare la password di nolotiro.org. Se non sei stato tu puoi ignorare questa email. La password non cambierà fino a quando non accedi al link per crearne una nuova. '
+      forgot: Hai dimenticato la password?
+      instructions: Per favore, scrive la tua email e te invieremo un link di acceso diretto per cambiare la tua password.
       no_token: Puoi accedere a questa pagina solamente dalla email di reset della password. Se vieni dalla email controlla di aver inserito l'url completo riportato nella email.
-      send: 
+      send: Invia email
       send_instructions: Riceverai un messaggio email con le istruzioni per reimpostare la tua password entro qualche minuto.
       send_paranoid_instructions: Se la tua e-mail esiste nel nostro database, riceverai un messaggio email contentente un link per il ripristino della password
       updated: La tua password è stata cambiata. Ora sei collegato.
@@ -248,7 +248,7 @@ it:
       signed_in: Accesso effettuato con successo.
       signed_out: Sei uscito correttamente.
       user:
-        signed_in: 
+        signed_in: Acceso eseguito
     unlocks:
       send_instructions: Riceverai un messaggio email con le istruzioni per sbloccare il tuo account entro qualche minuto.
       send_paranoid_instructions: Se la tua e-mail esiste nel nostro database, riceverai un messaggio email con le istruzioni per sbloccare il tuo account entro qualche minuto.
@@ -281,7 +281,9 @@ it:
         other: 'Non posso salvare questo %{resource}: %{count} errori.'
       odd: deve essere dispari
       record_invalid: 'Validazione fallita: %{errors}'
-      restrict_dependent_destroy: 
+      restrict_dependent_destroy:
+        one: Non si può cancellare il registro perché esiste un %{record} dipendente
+        other: Non si può cancellare il registro perché esistono %{record} dipendente
       taken: "è già in uso"
       too_long:
         one: "è troppo lungo (il massimo è 1 carattere)"
@@ -300,7 +302,7 @@ it:
   helpers:
     label:
       message:
-        subject: 
+        subject: Oggetto
     select:
       prompt: Per favore, seleziona
     submit:
@@ -309,19 +311,19 @@ it:
       update: Aggiorna %{model}
   mailboxer:
     buttons:
-      back: 
-      trash: 
-      trash_selected: 
-      untrash: 
+      back: "< torna al messaggio"
+      trash: Sposta messaggio nel cestino
+      trash_selected: Cancellare i messaggi selezionati
+      untrash: Ricupera i messaggi del cestino
     message_mailer:
       message:
-        body: 
-        subject: 
-      subject_new: 
-      subject_reply: 
-      visit: 
-      visit_html: 
-      visit_text: 
+        body: Messaggio
+        subject: Oggetto
+      subject_new: "[nolotiro.org] Nuovo messaggio: %{subject}"
+      subject_reply: "[nolotiro.org] Nuova risposta: %{subject}"
+      visit: Guarda la converzazione e risponde al messaggio
+      visit_html: Vai a %{url} e guarda nella tua posta in arrivo per rispondere
+      visit_text: Vai a %{url} e guarda nella tua posta in arrivo per rispondere
       you_have_new_message: Hai ricevuto un nuovo messaggio
       you_have_recieved_new_message: Hai ricevuto un nuovo messaggio
     new:
@@ -346,33 +348,33 @@ it:
     table:
       date: Data
       delete: Cancellare?
-      last: 
-      none: 
-      reciever: 
-      sender: 
-      subject: 
+      last: ultimo
+      none: Non hai messaggi di questo tipo
+      reciever: Ricevuto
+      sender: Inviato
+      subject: Oggetto
     titles:
-      conversation: 
-      index: 
+      conversation: Conversazione con %{recipient} oggetto %{subject}
+      index: Messaggio di %{username}
   mailer:
     confirmation_reminder:
-      p1: 
+      p1: Abbiamo rivelato che hai creato un account in nolotiro.org che non è stato confermato.
       p2: 
-    greetings: 
-    hello: 
-    signature: 
+    greetings: 'Grazie e saluti, '
+    hello: 'Ciao, '
+    signature: il team di nolotiro.org
   nlt:
-    about: 
+    about: su di noi
     about_page:
-      description_html: 
-      title: 
-    access_here: 
+      description_html: <b>¿Che cos'è nolotiro.org?</b><br> è un sito dove è possibile offrire al pubblico le cose che non vuoi più o che non ti servono più, così persone a cui servono le possono prendere o esserli di molta utilità.<br><br> <strong>Leggi le <a href="/es/page/faqs">domanti frequenti</a> per sapere di più sulla filosofia e gli obiettivi del progetto</strong> <br><br> <b>Vantaggi di nolotiro.org:</b><br> Il vantaggio più grande di nolotiro.org, è che sostituisce la nostalgia/sentimento di spreco, per una sensazione di fare qualcosa per qualcuno. Riesci a sbarazzarti di cose che non buttavi perché sentivi tristezza, perché erano nuove, o perché... e alla fine solo restavano in un angolo dimenticati utilizzando spazio, sapendo che a qualcun altro poteva servirle, che le serviva veramente. Da un'altra parte nolotiro.org è stato organizzato in aree geografiche, così le cose rimangono vicino, non ci sono spesse di spedizione, ne spostamenti, ne meno spedizione ad altri paesi lontani con la possibilità che non arrivino mai a destinazione, lo puoi dare in persona a qualcuno della tua stessa città, che può prenderlo in un luogo precedentemente concordato. <br><br> <b>Devi fare attenzione:</b><br> NON C'E NESSUNA OPZIONE DI SCAMBIO, questo non è basato nel baratto, ne l'acquisto, perché si debe fomentare il altruismo, dare le cose perché si, perché abbiamo troppo. <br><br> <b>Spiegazione in versione letteraria in spagnolo</b><br> <a href="http://www.marcianoduran.com.uy/?p=176">Perché non lo butto?</a> Per Marciano Durán <br><br> <b>Nolotiro.org funziona grazie al lavoro de molte <a href="http://www.youtube.com/watch?v=KMU0tzLwhbE">persone</a> che hanno sviluppato il seguente software libero:</b> <a href="http://rubyonrails.org/">Ruby On Rails</a>, <a href="http://www.mysql.com/">MySQL</a>, <a href="http://developer.yahoo.com/geo/geoplanet/">Yahoo GeoPlanet API</a>, <a href="http://www.postfix.org/">Postfix</a>, <a href="http://www.ubuntu.org/">Ubuntu</a>, <a href="http://nginx.org/">Nginx</a>, <a href="http://sphinxsearch.com/">Sphinx</a>, e tanti altri, tanti che sarebbe impossibile nominarli tutti cui. <br><br> <b>Il codice fonte di nolotiro.org è un codice aperto</b> ed è disponibile per essere utilizzato (sotto licenza Affero GPL 3).<br> Vai su <a href="https://github.com/alabs/nolotiro.org"> web per sviluppatori</a> per altri informazioni (in inglese).<br> I collaboratori sono benvenuti, sia per programmare o per tradurre il sito in altre lingue.
+      title: Su nolotiro.org
+    access_here: accedi qui
     admin:
-      become_user: 
-      lock_user: 
-      unlock_user: 
+      become_user: "[ADMIN] Passare a questo utente "
+      lock_user: "[ADMIN] Bloccare a questo utente"
+      unlock_user: "[ADMIN] Sbloccare a questo utente"
     ads:
-      created: 
+      created: 'Abbiamo creato l''annuncio '
       form:
         body: Corpo del annuncio
         body_max: Massimo 500 caratteri
@@ -380,38 +382,38 @@ it:
         image_permitted_formats: 'Formatti permessi: gif, jpg, png. Massimo: 1Mb di dimensione'
         please_ad_type: per favore, seleziona il tipo di annuncio
         prohibited: 'C''e un problema, controlla questo:'
-        select_an_image: 
-        status: 
-        title: 
-        title_max: 
-        to_publish: 
-        type_ad: 
-      updated: 
-    all: 
-    all_ads: 
-    and: 
-    are_you_interested: 
-    available: 
-    back: 
-    blog: 
-    booked: 
-    by_user: 
-    cancel_my_account: 
-    captcha_error: 
-    change_city: 
+        select_an_image: Seleziona una immagine per il tuo annuncio (opzionale).
+        status: Stato
+        title: 'Titolo del tuo annuncio: '
+        title_max: 'Massimo 100 caratteri '
+        to_publish: Per pubblicare il tuo annuncio, per favore, scrive questi datti
+        type_ad: 'Tipo di annuncio:'
+      updated: Abbiamo aggiornato il tuo annuncio
+    all: tutti
+    all_ads: tutti gli annunci
+    and: e
+    are_you_interested: Sei interessato?
+    available: disponibile
+    back: torna alla pagina iniziale
+    blog: blog
+    booked: riservato
+    by_user: per l'utente
+    cancel_my_account: Cancella il mio account
+    captcha_error: 'Forse hai sbagliato a scrivere i caratteri del captcha visto che non coincidono con l''immagine, provaci ancora  '
+    change_city: cambia città
     change_town:
-      choose: 
-      choose_html: 
-      close_to: 
-      please: 
-      submit: 
-      town: 
-    change_your_city: 
-    choose_username: 
-    choose_your_pass: 
-    choose_your_pass_again: 
-    cities_in_the_world: 
-    click_to_large: 
+      choose: Sceglie il luogo
+      choose_html: Nessuna posizione trovate con il nome <b>%{location}</b>. Riprova
+      close_to: 'Nostro sistema di posizione (basato nella tua IP) ci indica che sei vicino a:'
+      please: Per favore, scrive la tua città
+      submit: Inviare
+      town: 'Città:'
+    change_your_city: Cambia la tua città
+    choose_username: Sceglie un nome di utente
+    choose_your_pass: Sceglie la tua password
+    choose_your_pass_again: Scrive la password (si, un'altra volta)
+    cities_in_the_world: città del mondo che reciclano di piu
+    click_to_large: Clicca per ingrandire la foto
     comments:
       do_click: 
       flash_ko: 
@@ -420,22 +422,24 @@ it:
       subject: 
       submit: 
       title: 
-    comments_count: 
+    comments_count:
+      one: ", %{count} commento"
+      other: ", %{count} commenti"
     contact: 
-    contact_form: 
-    contact_legend: 
-    contact_thanks: 
-    cookie: 
-    create_new_ad: 
-    delete_ad: 
-    delete_sure: 
-    delivered: 
-    developers: 
-    didn_t_receive_confirmation_instructions: 
-    didn_t_receive_unlock_instructions: 
-    edit_this_ad: 
+    contact_form: Formulario di contatto
+    contact_legend: Per favore, scrive il tuo messaggio
+    contact_thanks: Messaggio inviato! Grazie per contattare con nolotiro.org
+    cookie: Usiamo cookies per migliorare la navigazione in questo sito
+    create_new_ad: Crea un nuovo annuncio
+    delete_ad: cancella annuncio
+    delete_sure: Sei sicuro che lo vuoi cancellare?
+    delivered: consegnato
+    developers: svilupatori
+    didn_t_receive_confirmation_instructions: Non hai ricevuto le istruzione di conferma?
+    didn_t_receive_unlock_instructions: Non hai ricevuto le istruzione per sblocco?
+    edit_this_ad: Editare questo annuncio
     faq:
-      answer_1_html: 
+      answer_1_html: Lo scopo fondamentale di questo sito è quello di sbarazzarsi di oggetti non più utilizzati e che ci ostacolano in casa
       answer_2_html: 
       answer_3_html: 
       answer_4_html: 
@@ -447,26 +451,26 @@ it:
       question_3: 
       question_4: 
       question_5: 
-      question_6: 
-      question_7: 
-      title: 
-    faqs: 
-    fill_captcha: 
-    first_visit: 
+      question_6: Non è permesso il scambio di oggetti? che strano
+      question_7: Posso inviare cose a gente che non abita nella mia città?
+      title: Domande frequenti
+    faqs: domande frequenti
+    fill_captcha: Si prega di compilare i seguenti caratteri
+    first_visit: 'nolotiro.org è una comunità dove è possibile sbarazzarci di oggetti che non utilizziamo più e ci ostacolano a casa. '
     footer_explain: 
-    forgot_your_password: 
-    friends: 
-    gift_on: 
-    give: 
-    hello_to: 
-    help_translate: 
-    home_title: 
-    if_you_are_new: 
-    if_youre_already_an_user: 
-    keywords: 
-    last_published_gifts: 
-    leave_blank: 
-    login: 
+    forgot_your_password: Hai dimenticato la tua password?
+    friends: Amici
+    gift_on: regalo in %{woeid}
+    give: regalo
+    hello_to: Ciao %{recipient},
+    help_translate: aiuta a tradurre
+    home_title: 'annunci di regali nuovi e di seconda mano '
+    if_you_are_new: Se sei un utente nuovo, per favore
+    if_youre_already_an_user: Si sei un utente registrato, per favore
+    keywords: regalato seconda mano gratis
+    last_published_gifts: ultimi regali pubblicati
+    leave_blank: "(Lasciala in bianco se non la vuoi cambiare)"
+    login: accedi
     login_to_comment: 
     logout: 
     mail:
