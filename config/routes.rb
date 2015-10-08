@@ -13,6 +13,8 @@ NolotiroOrg::Application.routes.draw do
     end
   end
 
+ devise_for :users, only: :omniauth_callbacks, controllers: {omniauth_callbacks: 'callbacks'}
+
   # i18n
   scope "(:locale)", locale: /#{Rails.application.secrets["langs_routes"]}/ do
 
@@ -51,7 +53,8 @@ NolotiroOrg::Application.routes.draw do
     get '/user/forgot', to: redirect('/es/user/reset/new')
 
     devise_for :users,
-      :controllers => { :registrations => 'registrations' },
+      skip: :omniauth_callbacks,
+      controllers: { registrations: 'registrations' },
       path: 'user',
       path_names: {
         sign_up: 'register',

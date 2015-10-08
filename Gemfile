@@ -65,6 +65,9 @@ gem 'geoip'                                         # geolite city
 gem 'will_paginate', '~> 3.0'                       # pagination
 gem 'devise'                                        # users
 gem 'devise-async', github: 'mhfs/devise-async'     # send mails async
+gem 'omniauth'                                      # users login with providers
+gem 'omniauth-facebook'                             # users login with facebook
+gem 'omniauth-google-oauth2'                        # users login with google
 gem 'cancancan', '~> 1.10'                          # authorization# authorization# authorization
 gem 'paperclip', '~> 4.0'                           # images
 gem 'delayed_paperclip'                             # images processing in bacground
@@ -77,6 +80,7 @@ gem 'blueprint-rails'                               # blueprint css framework
 gem 'activeadmin', github: 'activeadmin'            # admin backend
 gem 'active_skin'                                   # admin backend skin
 gem 'rakismet'                                      # antispam
+gem 'font-awesome-rails'                            # font-awesome icons
 
 # https://github.com/mailboxer/mailboxer/issues/316
 #gem 'mailboxer'                                     # messaging

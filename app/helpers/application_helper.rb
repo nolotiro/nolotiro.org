@@ -32,4 +32,17 @@ module ApplicationHelper
     langs[locale]
   end
 
+  def convert_provider provider
+    provider = :google if provider == :google_oauth2
+    provider.to_s.titleize
+  end
+
+  def convert_provider_fa provider
+    case provider
+      when :google_oauth2 then "fa-google-plus-square"
+      when :facebook then "fa-facebook-square"
+      else "fa-facebook-square"
+    end
+  end
+
 end
