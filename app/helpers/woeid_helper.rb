@@ -11,10 +11,14 @@ module WoeidHelper
       return Rails.cache.fetch(key)
     else
       GeoPlanet.appid = Rails.application.secrets["geoplanet_app_id"]
-      place_raw = GeoPlanet::Place.new(woeid.to_i, :lang => :es)
-      place = { full: "#{place_raw.name}, #{place_raw.admin1}, #{place_raw.country}" , short: "#{place_raw.name}" }
-      Rails.cache.write(key, place)
-      return place
+      begin
+        place_raw = GeoPlanet::Place.new(woeid.to_i, :lang => :es)
+        place = { full: "#{place_raw.name}, #{place_raw.admin1}, #{place_raw.country}" , short: "#{place_raw.name}" }
+        Rails.cache.write(key, place)
+        return place
+      rescue
+        return nil
+      end
     end
   end
 
