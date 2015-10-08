@@ -14,7 +14,7 @@
 </div>
 
 <div id="main" class="row">
-  <div class="col-md-6">
+  <div class="span-12">
     <div class="ad_excerpt_show">
       <% if @ad.image.exists? %>
         <div class="ad_list_image">
@@ -56,7 +56,7 @@
     <%= render :partial => "comments/show", :locals => {:ad => @ad} %>
 
   </div>
-  <div class="col-md-6">
+  <div class="span-10">
       <%= render partial: "partials/google_adsense", locals: { class_name: "desktop google_adsense_336_280", ad_slot: "7225596067"}  %>
       <%= render partial: "partials/google_adsense", locals: { class_name: "mobile google_adsense_336_280", ad_slot: "7225596067"}  %>
   </div>
