@@ -8,6 +8,8 @@ module ApplicationHelper
       text = text.gsub(/whatsup/, ' ')
       text = text.gsub(/watsup/, ' ')
       text = text.gsub(/guasap/, ' ')
+      text = text.gsub(/wuassap/, ' ')
+      text = text.gsub(/wuasap/, ' ')
       text
     end
   end
