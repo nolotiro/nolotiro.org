@@ -121,6 +121,13 @@ class AdTest < ActiveSupport::TestCase
     #assert_equal @ad.meta_title, "busco ordenador en Vallecas Madrid, Madrid, España"
   end
 
+  test "ad body shoudl store emoji" do 
+    body = 'What a nice emoji😀!What a nice emoji😀!What a nice emoji😀!What a nice emoji😀!What a nice emoji😀!'
+    @ad.body = body
+    @ad.save 
+    assert_equal @ad.body, body
+  end
+
 #  Disabling IP validation. Some legacy IP are bad (8.8.8.1, 24.2.2.2) 
 #  test "ad validates ip address - fail" do
 #    @ad.ip = '999.99.9.9'

@@ -60,6 +60,9 @@ class Ad < ActiveRecord::Base
 
   validates_attachment_size :image, :in => 0.megabytes..1.megabytes
 
+  #before_save :titleize_title if self.title? and /[[:upper:]]/.match(self.title)
+  #before_save :titleize_body if self.body and /[[:upper:]]/.match(self.body)
+
   scope :give, -> { where(type: 1) }
   scope :want, -> { where(type: 2) }
 

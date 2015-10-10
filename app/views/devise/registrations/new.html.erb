@@ -7,67 +7,85 @@
 </div>
 
 <div class="span-16">
-  <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
-    <fieldset>
-      <legend><%= t 'nlt.please_fill_to_become_member' %></legend>  
-      <%= devise_error_messages! %>
-      <dl class="zend_form">
-        <dt id="email-label">
-        <label for="email" class="required">
-          <%= t 'nlt.your_email' %>
-        </label>
-        </dt>
-        <dd id="email-element">
-        <%= f.email_field :email, :autofocus => true, :required => true %>
-        </dd>
-        <dt id="password1-label">
-        <label for="password1" class="required">
-          <%= t 'nlt.choose_your_pass' %>
-        </label>
-        </dt>
-        <dd id="password1-element">
-        <%= f.password_field :password, :required => true %>
-        </dd>
-        <dt id="password2-label">
-        <label for="password2" class="required">
-          <%= t 'nlt.choose_your_pass_again' %>
-        </label>
-        </dt>
-        <dd id="password2-element">
-        <%= f.password_field :password_confirmation, :required => true %>
-        </dd>
-        <dt id="username-label">
-        <label for="username" class="required">
-          <%= t 'nlt.choose_username' %>
-        </label>
-        </dt>
-        <dd id="username-element">
-        <%= f.text_field :username, :required => true %>
-        </dd>
-        <dt id="captcha-input-label">
-        <label for="captcha-input" class="required">
-          <%= t 'nlt.fill_captcha' %>
-        </label>
-        </dt>
-        <dd id="captcha-element">
-          <%= recaptcha_tags(:display => { :theme => "white" }, ajax: true)%>
-        </dd>
-        <dd id="hidden-elements">
-        <!-- FIXME: this doesn't work -->
-        <%= f.hidden_field :lang, :value => I18n.locale.to_s %>
-        </dd>
-        <dt id="submit-label">&nbsp;</dt>
-        <dd id="submit-element">
-        <%= f.submit t('nlt.register') %>
-        </dd>
-      </dl>
 
-          <%= t 'nlt.sending_this_form' %>
-          <%= link_to t('nlt.tos'), tos_path %>
-          <%= t 'nlt.and' %>
-          <%= link_to t('nlt.privacy'), privacy_path %>.
+  <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+
+    <fieldset>
+
+      <div class="col-md-6">
+        <legend><%= t 'nlt.please_fill_to_become_member' %></legend>  
+        <%= devise_error_messages! %>
+        <dl class="zend_form">
+          <dt id="email-label">
+          <label for="email" class="required">
+            <%= t 'nlt.your_email' %>
+          </label>
+          </dt>
+          <dd id="email-element">
+          <%= f.email_field :email, :autofocus => true, :required => true %>
+          </dd>
+          <dt id="password1-label">
+          <label for="password1" class="required">
+            <%= t 'nlt.choose_your_pass' %>
+          </label>
+          </dt>
+          <dd id="password1-element">
+          <%= f.password_field :password, :required => true %>
+          </dd>
+          <dt id="password2-label">
+          <label for="password2" class="required">
+            <%= t 'nlt.choose_your_pass_again' %>
+          </label>
+          </dt>
+          <dd id="password2-element">
+          <%= f.password_field :password_confirmation, :required => true %>
+          </dd>
+          <dt id="username-label">
+          <label for="username" class="required">
+            <%= t 'nlt.choose_username' %>
+          </label>
+          </dt>
+          <dd id="username-element">
+          <%= f.text_field :username, :required => true %>
+          </dd>
+          <dt id="captcha-input-label">
+          <label for="captcha-input" class="required">
+            <%= t 'nlt.fill_captcha' %>
+          </label>
+          </dt>
+          <dd id="captcha-element">
+            <%= recaptcha_tags(:display => { :theme => "white" }, ajax: true)%>
+          </dd>
+          <dd id="hidden-elements">
+          <!-- FIXME: this doesn't work -->
+          <%= f.hidden_field :lang, :value => I18n.locale.to_s %>
+          </dd>
+          <dt id="submit-label">&nbsp;</dt>
+          <dd id="submit-element">
+          <%= f.submit t('nlt.register') %>
+          </dd>
+        </dl>
+        <%= t 'nlt.sending_this_form' %>
+        <%= link_to t('nlt.tos'), tos_path %>
+        <%= t 'nlt.and' %>
+        <%= link_to t('nlt.privacy'), privacy_path %>.
+      </div>
+
+      <div class="col-md-6">
+        <%- if devise_mapping.omniauthable? %>
+          <%- resource_class.omniauth_providers.each do |provider| %>
+            <% prov = convert_provider( provider ) %>
+            <%= link_to user_omniauth_authorize_path(provider: provider), class: "btn btn-info login-with-#{prov.downcase}" do %>
+              <%= t('nlt.sign_in_with_provider', :provider => prov, :default => "Sign in with #{provider.to_s.titleize}") %>
+              <i class="fa <%= convert_provider_fa(provider) %>"></i>
+            <% end %>
+              <br />
+          <% end -%>
+        <% end -%>
+      </div>
+
     </fieldset>
+
   <% end %>
 
 </div>
-
