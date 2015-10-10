@@ -543,7 +543,7 @@ es:
     want: busco
     welcome: hola
     welcome_message: Bienvenido
-    write_a_comment: "+ Escribe un nuevo comentario"
+    write_a_comment: "+ Escribe un comentario"
     your_email: Tu email
     profile_actions:
       friend:
