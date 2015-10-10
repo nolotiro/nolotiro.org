@@ -5,6 +5,7 @@ ActiveAdmin.register User do
   filter :last_sign_in_ip
   filter :ads_count
   filter :created_at
+  filter :confirmed_at
 
   index do 
     selectable_column

@@ -399,7 +399,7 @@ en:
     comments_count:
       one: ", %{count} comment"
       other: ", %{count} comments"
-    contact: Contact
+    contact: contact
     contact_form: Contact's form
     contact_legend: Please, write your message
     contact_thanks: Sent message! Thanks for contact nolotiro.org
@@ -408,7 +408,7 @@ en:
     delete_ad: Delete ad
     delete_sure: Are you sure you want to delete it?
     delivered: delivered
-    developers: Developers
+    developers: developers
     didn_t_receive_confirmation_instructions: Didn't receive the confirmation's instructions?
     didn_t_receive_unlock_instructions: Didn't receive the unblocking's instructions?
     edit_this_ad: Edit this ad
@@ -476,7 +476,7 @@ en:
     please_fill_to_become_member: Please, fill this form to become a member
     please_insert_email_and_password: Please, insert your email and password
     please_introduce: Please, insert the following characters
-    privacy: 'Privacy policy '
+    privacy: privacy policy
     privacy_page:
       body_html: 
       title: Privacy Policy
@@ -513,7 +513,7 @@ en:
     sign_in_with_provider: Sign in with other provider
     sign_up: Sign up
     slogan: don't dump it, give it to your neighbor
-    suggestions: Suggestions
+    suggestions: suggestions
     to_publish_ad: Create ad
     to_publish_or_send_messages: To post ads or send messages please log in
     tos: Terms and conditions
@@ -532,10 +532,10 @@ en:
     users_most_active: most active users
     view_ads_on: View ads in %{location_suggest}
     view_ads_on_your_city: View ads from your city or town
-    want: I want
+    want: want
     want_to_leave: Do you want to delete your user?
     we_need_your_password: "(we need your password to confirm your edition)"
-    welcome: Welcome
+    welcome: welcome
     welcome_message: Welcome
     write_a_comment: "+ Write a new comment"
     your_email: Your email
