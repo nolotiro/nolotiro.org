@@ -19,8 +19,7 @@ class User < ActiveRecord::Base
   # :timeoutable and :omniauthable
   devise :confirmable, :database_authenticatable, :async, :registerable,
     :recoverable, :rememberable, :trackable, :validatable, :lockable, 
-    :omniauthable, omniauth_providers: [:google_oauth2]
-    #:omniauthable, omniauth_providers: [:facebook, :google_oauth2]
+    :omniauthable, omniauth_providers: [:facebook, :google_oauth2]
 
   acts_as_messageable
 
