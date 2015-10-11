@@ -1,4 +1,4 @@
-ActiveAdmin.register Mailboxer::Receipt do
+ActiveAdmin.register Mailboxer::Conversation do
   menu parent: "Mensajería"
   filter :created_at
   index do 

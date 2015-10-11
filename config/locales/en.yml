@@ -537,7 +537,7 @@ en:
     we_need_your_password: "(we need your password to confirm your edition)"
     welcome: welcome
     welcome_message: Welcome
-    write_a_comment: "+ Write a new comment"
+    write_a_comment: "+ Write a comment"
     your_email: Your email
   number:
     currency:
