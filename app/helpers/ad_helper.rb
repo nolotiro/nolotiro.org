@@ -1,8 +1,12 @@
 # encoding : utf-8
 module AdHelper
 
-  def self.get_users_ranking(limit=20)
-    User.order("ads_count DESC").select('username, ads_count, id').limit(limit)
+  def self.get_users_ranking(limit=20, last_week=false)
+    if last_week
+      User.last_week.order("ads_count DESC").select('username, ads_count, id').limit(limit)
+    else
+      User.order("ads_count DESC").select('username, ads_count, id').limit(limit)
+    end
   end
 
   def self.get_locations_ranking(limit=20)
