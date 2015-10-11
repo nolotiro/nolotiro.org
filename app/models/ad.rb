@@ -85,6 +85,8 @@ class Ad < ActiveRecord::Base
     where('woeid_code = ?', woeid_code) 
   }
 
+  scope :last_week, lambda { where("created_at >= :date", :date => 1.week.ago) } 
+
   self.per_page = 20
 
   def body 
