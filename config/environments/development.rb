@@ -32,13 +32,15 @@ NolotiroOrg::Application.configure do
   config.assets.precompile += %w( common.css.sass )
 
   # for devise
-  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+  config.action_mailer.default_url_options = { :host => 'localhost:8080' }
 
   # for mailcatcher
   config.action_mailer.smtp_settings = { :address => "127.0.0.1", :port => 1025 }
 
   # for images on mailer
-  config.action_controller.asset_host = 'http://localhost:3000'
+  config.action_controller.asset_host = 'http://localhost:8080'
   config.action_mailer.asset_host = config.action_controller.asset_host
 
+  # Para Vagrant
+  config.web_console.whitelisted_ips = '10.0.2.2'
 end
