@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151001175712) do
+ActiveRecord::Schema.define(version: 20151017041533) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace",     limit: 255
@@ -95,34 +95,34 @@ ActiveRecord::Schema.define(version: 20151001175712) do
 
   create_table "mailboxer_notifications", force: :cascade do |t|
     t.string   "type",                 limit: 255
-    t.text     "body",                 limit: 16777215
-    t.string   "subject",              limit: 255,      default: ""
+    t.text     "body",                 limit: 65535
+    t.string   "subject",              limit: 255,   default: ""
     t.integer  "sender_id",            limit: 4
     t.string   "sender_type",          limit: 255
     t.integer  "conversation_id",      limit: 4
-    t.boolean  "draft",                limit: 1,        default: false
-    t.datetime "updated_at",                                            null: false
-    t.datetime "created_at",                                            null: false
+    t.boolean  "draft",                              default: false
+    t.datetime "updated_at",                                         null: false
+    t.datetime "created_at",                                         null: false
     t.integer  "notified_object_id",   limit: 4
     t.string   "notified_object_type", limit: 255
     t.string   "notification_code",    limit: 255
     t.string   "attachment",           limit: 255
-    t.boolean  "global",               limit: 1,        default: false
+    t.boolean  "global",                             default: false
     t.datetime "expires"
   end
 
   add_index "mailboxer_notifications", ["conversation_id"], name: "index_mailboxer_notifications_on_conversation_id", using: :btree
-  add_index "mailboxer_notifications", ["notified_object_id", "notified_object_type"], name: "index_mailboxer_notifications_on_notified_object_id_and_type", using: :btree
-  add_index "mailboxer_notifications", ["sender_id", "sender_type"], name: "index_mailboxer_notifications_on_sender_id_and_sender_type", using: :btree
-  add_index "mailboxer_notifications", ["type"], name: "index_mailboxer_notifications_on_type", using: :btree
+  add_index "mailboxer_notifications", ["notified_object_id", "notified_object_type"], name: "index_mailboxer_notifications_on_notified_object_id_and_type", length: {"notified_object_id"=>nil, "notified_object_type"=>191}, using: :btree
+  add_index "mailboxer_notifications", ["sender_id", "sender_type"], name: "index_mailboxer_notifications_on_sender_id_and_sender_type", length: {"sender_id"=>nil, "sender_type"=>191}, using: :btree
+  add_index "mailboxer_notifications", ["type"], name: "index_mailboxer_notifications_on_type", length: {"type"=>191}, using: :btree
 
   create_table "mailboxer_receipts", force: :cascade do |t|
     t.integer  "receiver_id",     limit: 4
     t.string   "receiver_type",   limit: 255
     t.integer  "notification_id", limit: 4,                   null: false
-    t.boolean  "is_read",         limit: 1,   default: false
-    t.boolean  "trashed",         limit: 1,   default: false
-    t.boolean  "deleted",         limit: 1,   default: false
+    t.boolean  "is_read",                     default: false
+    t.boolean  "trashed",                     default: false
+    t.boolean  "deleted",                     default: false
     t.string   "mailbox_type",    limit: 25
     t.datetime "created_at",                                  null: false
     t.datetime "updated_at",                                  null: false
@@ -148,7 +148,7 @@ ActiveRecord::Schema.define(version: 20151001175712) do
     t.text     "body",        limit: 65535,                 null: false
     t.integer  "readed",      limit: 4,     default: 0,     null: false
     t.datetime "updated_at"
-    t.boolean  "is_migrated", limit: 1,     default: false
+    t.boolean  "is_migrated",               default: false
   end
 
   add_index "messages_legacy", ["thread_id"], name: "thread_id", using: :btree
