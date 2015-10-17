@@ -13,6 +13,11 @@ module ApplicationHelper
       text = text.gsub(/wuasap/, ' ')
       text = text.gsub(/wassap/, ' ')
       text = text.gsub(/wasap/, ' ')
+      text = text.gsub(/guassapp/, ' ')
+      text = text.gsub(/guassap/, ' ')
+      text = text.gsub(/guasapp/, ' ')
+      text = text.gsub(/guasap/, ' ')
+      text = text.gsub(/guasp/, ' ')
       text
     end
   end

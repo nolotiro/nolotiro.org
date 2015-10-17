@@ -391,7 +391,7 @@ es:
     back: volver a la página de inicio
     blog: blog
     booked: reservado
-    by_user: 'por el usuario '
+    by_user: 'por '
     captcha_error: Posiblemente has introducido mal los caracteres del captcha ya que no coindicen con la imagen, vuelve a introducirlos
     change_city: cambiar ciudad
     change_town:
