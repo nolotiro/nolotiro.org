@@ -9,39 +9,39 @@ This is the next revision of nolotiro.org, this time in Ruby On Rails.
 * Ruby: 2.2.3
 * Rails: 4.2.1
 
-## Installation
+## Automatic Installation
 
-### Automatic
+You need to install [VirtualBox](https://www.virtualbox.org/) and [Vagrant](https://www.vagrantup.com/):
 
-Using Vagrant (VirtualBox or LXC), you need to install it:
+Then from the root directory of the project, execute:
 
 ```
-gem install vagrant
-vagrant box add precise32 http://files.vagrantup.com/precise32.box
 vagrant up
+ ```
+
+When finished, you need to log in to the virtual machine with the command:
+
+```
+vagrant ssh
 ```
 
-You can access with: 
+To end you should start the application server:
+
+```
+cd /vagrant
+bundle exec rails s -b 0.0.0.0
+```
+
+You can then access the web application in this addresses:
 
 http://localhost:8080
 http://localhost:8081
 
-### Manual
+## Manual Installation
 
-Check out the script in bin/bootstrap.sh - that's the same that vagrant uses. 
+Check out the script in bin/bootstrap.sh - that's the same that Vagrant uses.
 
-We recommend using RVM or rbenv to set up the gems. 
-
-To install it you should do something like: 
-
-```
-bundle
-cp config/app_config.yml.example config/app_config.yml
-cp config/database.yml.example config/database.yml
-cp config/secrets.yml.example config/secrets.yml
-rake db:schema:load
-rails s
-```
+## More information
 
 The database we use is legacy, a MySQL with the schema of [v2](https://github.com/alabs/nolotiro)
 
