@@ -5,9 +5,10 @@
 #   gem 'sqlite3'
 development:
   adapter: mysql2
+  encoding: utf8mb4
   database: nolotirov3_dev
   username: travis
-  password: 
+  password:
   pool: 5
   timeout: 5000
 
@@ -16,16 +17,18 @@ development:
 # Do not set this db to the same as development or production.
 test:
   adapter: mysql2
+  encoding: utf8mb4
   database: nolotirov3_test
   username: travis
-  password: 
+  password:
   pool: 5
   timeout: 5000
 
 production:
   adapter: mysql2
+  encoding: utf8mb4
   database: nolotirov3_prod
   username: travis
-  password: 
+  password:
   pool: 5
   timeout: 5000
