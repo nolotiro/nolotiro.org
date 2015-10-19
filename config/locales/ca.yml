@@ -44,7 +44,7 @@ ca:
         body: Cos
         image: Imatge
         image_content_type: Tipus de contingut d'imatge
-        image_file_size: 
+        image_file_size: Mida de la imatge
         subject: Títol
         title: Títol
         type: Tipus
@@ -79,7 +79,7 @@ ca:
         not_an_integer: ha de ser un enter
         odd: ha de ser imparell
         record_invalid: 'La validació ha fallat: %{errors}'
-        restrict_dependent_destroy: 
+        restrict_dependent_destroy: No es pot eliminar el registre perquè hi ha un(a) %{record} dependent
         taken: no està disponible
         too_long: "és massa llarg (%{count} caràcters màxim)"
         too_short: "és massa curt (%{count} caràcters mínim)"
@@ -187,7 +187,7 @@ ca:
       year: any
   devise:
     confirmations:
-      action: 
+      action: Confirmar el meu compte
       confirmed: El teu compte ha estat confirmat correctament.  S'ha iniciat la sessió.
       instructions: Per favor confirma el teu compte de correu accedint al següent enllaç
       resend: Reexpedir instruccions de confirmació
@@ -217,9 +217,9 @@ ca:
       action: Canviar contrassenya
       follow_instructions: Algú ha demanat canviar la teva contrasenya de nolotiro.org. Si no has estat pots ignorar aquest correu. La teva contrasenya no canviarà fins que accedeixis a l'enllaç i creïs una nova.
       forgot: Has oblidat la teva contrasenya?
-      instructions: 
+      instructions: Si us plau, introdueix el teu email i t'enviarem un enllaç d'accés directe per canviar la teva contrasenya.
       no_token: Només pots accedir a aquesta pàgina des d'un correu electrònic de recuperació de la contrasenya. Si realment has fet servir l'enllaç del correu electrònic, comprova que has utilitzat la URL completa.
-      send: 
+      send: Envia per correu
       send_instructions: En breu rebràs un correu electrònic amb instruccions sobre com restablir la teva contrasenya.
       send_paranoid_instructions: Si la teva adreça electrònica existeix a la base de dades, rebràs un correu electrònic amb un enllaç per reestablir la contrasenya.
       updated: La teva contrasenya ha estat canviada correctament. S'ha iniciat la sessió.
@@ -236,7 +236,7 @@ ca:
       signed_in: Sessió iniciada correctament.
       signed_out: Sessió tancada correctament.
       user:
-        signed_in: 
+        signed_in: Heu entrat.
     unlocks:
       send_instructions: En breu rebràs un correu electrònic amb instruccions sobre com desbloquejar el teu compte.
       send_paranoid_instructions: Si el teu compte existeix, rebràs un correu electrònic amb instruccions sobre com desbloquejar-lo.
@@ -269,7 +269,9 @@ ca:
         other: "%{count} errors han evitat que %{resource} es pugui desar:"
       odd: ha de ser senar
       record_invalid: 'La validació ha fallat: %{errors}'
-      restrict_dependent_destroy: 
+      restrict_dependent_destroy:
+        one: No es pot eliminar el registre perquè hi ha un(a) %{record} dependent
+        other: No es pot eliminar el registre perquè existeixen %{record} dependents
       taken: no està disponible
       too_long: "és massa llarg (%{count} caràcters màxim)"
       too_short: "és massa curt (%{count} caràcters mínim)"
@@ -282,7 +284,7 @@ ca:
   helpers:
     label:
       message:
-        subject: 
+        subject: Assumpte
     select:
       prompt: Si us plau tria
     submit:
@@ -291,254 +293,256 @@ ca:
       update: Actualitzar %{model}
   mailboxer:
     buttons:
-      back: 
-      trash: 
-      trash_selected: 
-      untrash: 
+      back: "<Tornar a missatges"
+      trash: Mou missatge a paperera
+      trash_selected: Esborrar missatges seleccionats
+      untrash: Recuperar missatge de paperera
     message_mailer:
       message:
-        body: 
-        subject: 
-      subject_new: 
-      subject_reply: 
-      visit: 
-      visit_html: 
-      visit_text: 
-      you_have_new_message: 
-      you_have_recieved_new_message: 
+        body: missatge
+        subject: Assumpte
+      subject_new: "[nolotiro.org] Missatge nou :%{subject}"
+      subject_reply: "[nolotiro.org] Nova resposta: %{subject}"
+      visit: Veure conversa i respondre missatge
+      visit_html: Visita %{url} i veu a la teva safata d'entrada per respondre
+      visit_text: Visita %{url} i veu a la teva safata d'entrada per respondre
+      you_have_new_message: Has rebut un nou missatge
+      you_have_recieved_new_message: Has rebut un nou missatge
     new:
-      button: 
-      errors: 
-      legend: 
-      submit: 
-      title: 
+      button: Enviar
+      errors: 'Hi ha un problema, revisa això:'
+      legend: Enviar missatge
+      submit: Enviar
+      title: Nou missatge privat per a l'usuari %{user}
     notification_mailer:
-      subject: 
-      visit_html: 
-      visit_text: 
-      you_have_new_reply: 
-      you_have_recieved_new_reply: 
+      subject: "[nolotiro.org] Nova notificació: %{subject}"
+      visit_html: Visita %{url} i veu a la teva safata d'entrada per respondre
+      visit_text: Visita %{url} i veu a la teva safata d'entrada per respondre
+      you_have_new_reply: Has rebut una nova resposta
+      you_have_recieved_new_reply: Has rebut una nova resposta
     notifications:
-      error_same_user: 
-      move: 
-      sent: 
-      trash: 
-      untrash: 
-    search: 
+      error_same_user: No pots enviar-me un missatge a tu mateix
+      move: Missatge mogut a %{mailbox}
+      sent: missatge enviat
+      trash: Missatge mogut a paperera
+      untrash: missatge recuperat
+    search: Resultats de cerca de %{search}
     table:
-      date: 
-      delete: 
-      last: 
-      none: 
-      reciever: 
-      sender: 
-      subject: 
+      date: Fecha
+      delete: Esborrar?
+      last: "Últim"
+      none: No tens missatges d'aquest tipus
+      reciever: Rebut
+      sender: Enviat
+      subject: Assumpte
     titles:
-      conversation: 
-      index: 
+      conversation: Conversa amb %{recipient} assumpte %{subject}
+      index: Missatges de %{username}
   mailer:
     confirmation_reminder:
-      p1: 
-      p2: 
-    greetings: 
-    hello: 
-    signature: 
+      p1: Hem detectat que t'has creat un compte a nolotiro.org i no l'has confirmat.
+      p2: 'Això vol dir que pots haver tingut problemes per accedir a la pàgina. Si vols confirmar la teva usuari (%{username}) pots fer-ho amb aquest enllaç:'
+    greetings: Gràcies i salutacions,
+    hello: Hola,
+    signature: Equip de nolotiro.org
   nlt:
-    about: 
+    about: sobre
     about_page:
-      description_html: 
-      title: 
-    access_here: 
+      description_html: '<b>Què és nolotiro.org?</b><br> És un lloc web on oferir al públic, les coses que ja no vols o ja no necessites perquè les reculli una altra gent a la qual pot servir o ser-li de molta utilitat. qual <strong> Llegeix les <a href="/es/page/faqs"> preguntes d''ús freqüent </a> per saber mes detalls de la filosofia i objectius del projecte </strong> <br> <br> <b> Avantatges de nolotiro.org: </b> a La gran avantatge d''nolotiro.org, és que substitueix la nostàlgia / sentiment de malbaratament, per la sensació de fer alguna cosa per algú. Aconsegueixes desfer d''aquestes coses que no tiraves perquè et feia pena, perquè estaven noves, o perquè ... i que al final només acumulaven pols en algun racó oblidades o ocupaven espai, sabent que algú les va a treure bon partit, perquè si que les necessita veritablement. D''altra banda, nolotiro.org en estar organitzat per zones geogràfiques fomenta que les coses que vulguis donar, es quedin a prop, no hi ha despeses d''enviament, ni desplaçaments, ni enviaments a països llunyans que mai saps si arriben, li dones tu mateix a algú de la teva mateixa ciutat, que va a buscar en persona a un lloc pactat. qual <b> A tenir en compte: </b> <br> NO HI HA OPCIÓ D''INTERCANVI, això no es basa en la barata, ni en la compra, per que cal fomentar l''altruisme, donar les coses per que sí, perquè ens sobren. qual <b> Explicació en versió literària </ b> Economia nie href="http://www.marcianoduran.com.uy/?p=176"> Perquè no ho tir? </a> Per Marcià Durán qual <b> Nolotiro.org funciona gràcies al treball de moltes <a href="http://www.youtube.com/watch?v=KMU0tzLwhbE"> persones </a > que han creat el següent programari lliure: </b> <a href="http://rubyonrails.org/"> Ruby On Rails </a>, <a href = "http://www.mysql.com / "> MySQL </a>, <a href="http://developer.yahoo.com/geo/geoplanet/"> Yahoo GeoPlanet API </a>, <a href =" http: //www.postfix .org / "> Postfix </a>, <a href="http://www.ubuntu.org/"> Ubuntu </a>, <a href="http://nginx.org/"> Nginx </a>, <a href="http://sphinxsearch.com/"> Sphinx </a>, i molts mes, tants que seria impossible anomenar-los tots aquí. qual <b> El codi font d''nolotiro.org és codi obert </b> i està disponible per a ser utilitzat (sota llicència Affero GPL 3). <br> Visita la <a href = "https: / /github.com/alabs/nolotiro.org "> web per a desenvolupadors </a> per més detalls (en anglès).: Els col·laboradors són benvinguts, ja sigui per programar o per traduir la pàgina a altres llengües.'
+      title: Sobre nolotiro.org
+    access_here: accedeix aquí
     admin:
-      become_user: 
-      lock_user: 
-      unlock_user: 
+      become_user: "[ADMIN] Canviar a aquest usuari"
+      lock_user: "[ADMIN] Bloquejar a aquest usuari"
+      unlock_user: "[ADMIN] Desbloca a aquest usuari"
     ads:
-      created: 
+      created: Hem creat l'anunci
       form:
-        body: 
-        body_max: 
-        comments_enabled: 
-        image_permitted_formats: 
-        please_ad_type: 
-        prohibited: 
-        select_an_image: 
-        status: 
-        title: 
-        title_max: 
-        to_publish: 
-        type_ad: 
-      updated: 
-    all: 
-    all_ads: 
-    and: 
-    are_you_interested: 
-    available: 
-    back: 
-    blog: 
-    booked: 
-    by_user: 
-    cancel_my_account: 
-    captcha_error: 
-    change_city: 
+        body: 'Cos de l''anunci:'
+        body_max: Màxim 500 caràcters
+        comments_enabled: Permetre comentaris públics
+        image_permitted_formats: 'Formats permesos: gif, jpg, png. Max: 1Mb de mida.'
+        please_ad_type: si us plau, selecciona el tipus d'anunci
+        prohibited: 'Hi ha un problema, revisa això:'
+        select_an_image: Selecciona una imatge per al teu anunci (opcional).
+        status: Estat
+        title: 'Título de tu anuncio:'
+        title_max: Màxim 100 caràcters
+        to_publish: Per publicar el teu anunci, si us plau, introdueix aquestes dades
+        type_ad: 'Tipus d''anunci:'
+      updated: Hem actualitzat l'anunci
+    all: tots
+    all_ads: tots els anuncis
+    and: i
+    are_you_interested: T'interessa?
+    available: disponible
+    back: tornar a la pàgina d'inici
+    blog: bloc
+    booked: reservat
+    by_user: per l'usuari
+    cancel_my_account: Cancel·lar el meu compte
+    captcha_error: Possiblement has introduït malament els caràcters del captcha ja que no coindicen amb la imatge, torna a introduir-
+    change_city: canviar ciutat
     change_town:
-      choose: 
-      choose_html: 
-      close_to: 
-      please: 
-      submit: 
-      town: 
-    change_your_city: 
-    choose_username: 
-    choose_your_pass: 
-    choose_your_pass_again: 
-    cities_in_the_world: 
-    click_to_large: 
+      choose: Tria la teva ubicació
+      choose_html: No s'han trobat ubicacions amb el nom <b>%{location}</b>. Torna a intentar-
+      close_to: 'El nostre sistema de suggeriment d''ubicació (basat en la teva IP) diu que aquestes prop de:'
+      please: Si us plau, escriu la teva ciutat
+      submit: Enviar
+      town: 'Ciutat:'
+    change_your_city: Canvia la teva ciutat
+    choose_username: Tria un nom d'usuari
+    choose_your_pass: Tria la contrasenya
+    choose_your_pass_again: Introdueix la teva contrasenya (si, un altre cop)
+    cities_in_the_world: ciutats del món que més reciclen
+    click_to_large: Cliqueu per fer més gran foto
     comments:
-      do_click: 
-      flash_ko: 
-      flash_ok: 
-      label: 
-      subject: 
-      submit: 
-      title: 
-    comments_count: 
-    contact: 
-    contact_form: 
-    contact_legend: 
-    contact_thanks: 
-    cookie: 
-    create_new_ad: 
-    delete_ad: 
-    delete_sure: 
-    delivered: 
-    developers: 
-    didn_t_receive_confirmation_instructions: 
-    didn_t_receive_unlock_instructions: 
-    edit_this_ad: 
+      do_click: 'Fes clic en aquest enllaç per respondre el missatge:'
+      flash_ko: Hi va haver un error en desar el teu comentari. Revisa-ho i enviar-lo de nou
+      flash_ok: comentari guardat
+      label: El teu comentari
+      subject: "[nolotiro.org] Tens un nou comentari a l'anunci %{ad}"
+      submit: Enviar
+      title: comentaris
+    comments_count:
+      one: ", %{count} comentari"
+      other: ", %{count} comentaris"
+    contact: contacte
+    contact_form: Formulari de contacte
+    contact_legend: Si us plau, escriu el teu missatge
+    contact_thanks: "¡Missatge enviat! Gràcies per contactar amb nolotiro.org"
+    cookie: Utilitzem cookies per millorar la teva navegació en aquest lloc
+    create_new_ad: Crea un nou anunci
+    delete_ad: esborrar anunci
+    delete_sure: Estàs segur que vols esborrar-ho?
+    delivered: lliurat
+    developers: desenvolupadors
+    didn_t_receive_confirmation_instructions: No has rebut les instruccions de confirmació?
+    didn_t_receive_unlock_instructions: No has rebut les instruccions per al desbloqueig?
+    edit_this_ad: Edita aquest anunci
     faq:
-      answer_1_html: 
-      answer_2_html: 
-      answer_3_html: 
-      answer_4_html: 
-      answer_5_html: 
-      answer_6_html: 
-      answer_7_html: 
-      question_1: 
-      question_2: 
-      question_3: 
-      question_4: 
-      question_5: 
-      question_6: 
-      question_7: 
-      title: 
-    faqs: 
-    fill_captcha: 
-    first_visit: 
-    footer_explain: 
-    forgot_your_password: 
-    friends: 
-    gift_on: 
-    give: 
-    hello_to: 
-    help_translate: 
-    home_title: 
-    if_you_are_new: 
-    if_youre_already_an_user: 
-    keywords: 
-    last_published_gifts: 
-    leave_blank: 
-    login: 
-    login_to_comment: 
-    logout: 
+      answer_1_html: El propòsit fonamental d'aquesta web és el de desfer-nos dels objectes que ja no fem servir i ens fan nosa a casa.
+      answer_2_html: 'Primer a tu directament demanant desfer d''aquestes coses que ja no vols, i sempre al que regales alguna cosa implícitament. El millor és enfocar-egoistament i controlar la relació de causa-efecte que anem a desencadenar regalant. <br> Si enfoquem l''acte de regalar objectes des d''una perspectiva egoista, la de desfer-nos de coses útils, però que ens molesten, perquè ens fan nosa, perquè van a anar a les escombraries, perquè són objectes desnonats ... sempre tindrem una bona experiència, en no esperar res més que lliurar-nos d''aquests objectes. <br> I el saber que algú li està donant ús o profit reforçarà aquesta experiència com a positiva. <br> És a dir: l''acte de regalar coses de valor o útils sempre és una cosa positiva si no esperem una recompensa moral o aplacar la nostra consciència.'
+      answer_3_html: En aquest lloc web tu tens poder absolut sobre la decisió de a qui, on i quan regales els teus objectes. <br> Per descomptat que l'idoni és regalar alguna cosa a la persona que mes ho necessiti. <br> No cal malinterpretar la forma en què fem servir la paraula egoisme aquí. Però poder saber si la persona a la qual li donarem un objecte s'ho mereix és una tasca molt difícil, i fomenta un tipus de conductes que deriven en males experiències i judicis de valor que poden fer molt de mal.
+      answer_4_html: 'Encara que les probabilitats que traficants de peluixos de segona mà rondin per aquesta web són força remotes, si així fos ... no importaria el mes mínim si el teu enfocament és el d''desfer-te de coses que tu no vols (el egoista). <br > Com ho sents: NO IMPORTA, és mes, encara que no ho creguis segueixes fent alguna cosa bona. <br> Si vas regalar objectes perquè no usaves i no sabies que fer amb ells, però tampoc els volies tirar a les escombraries has fet bé. <br> t''has fet bé a tu, i has tornat aquest objecte al <a href="http://www.lapetiteclaudine.com/archives/009217.html"> món de les coses útils, </a> estalviant diners a gent i energia, generant riquesa (encara que sigui poca, és riquesa). Si per contra aquesta resposta no et convenç llavors no hauries de regalar res aquí i vendre-ho o donar-lo a alguna ONG, on fan un seguiment i selecció d''aquesta gent necessitada (nosaltres no podem garantir aquest procés).'
+      answer_5_html: 'Només hi ha 2 classes d''anuncis: Els de Regal, en els que ofereixes objectes que et destorben o ja no vols tenir. I els anuncis de Vull, que serveixen per donar pistes i inspirar a la gent sobre que classe d''objectes vol una altra gent utilitzar o posseir. <br> <strong> Els anuncis de canvi, venda, demanant diners, comercials, d''ocupació, medicaments , etc no estan permesos. </strong> I són esborrats quant un moderador els detecta, en cas de publicar repetidament anuncis no desitjats, es pot procedir al bloqueig del compte de l''usuari.'
+      answer_6_html: 'El troc és un sistema que funciona molt bé en format físic, és a dir, dues persones cara a cara, veient els objectes i parlant en viu i en directe. Però a internet la barata és molt susceptible d''acabar a enganys o insatisfaccions i discussions eternes. <br> A més com has pogut llegir anteriorment, aquí es donen objectes sense condicions i la barata té el condicionament de l''quid pro quo, és a dir: el teu em dónes i jo et dono una cosa igual.'
+      answer_7_html: 'El troc és un sistema que funciona molt bé en format físic, és a dir, dues persones cara a cara, veient els objectes i parlant en viu i en directe. Però a internet la barata és molt susceptible d''acabar a enganys o insatisfaccions i discussions eternes. <br> A més com has pogut llegir anteriorment, aquí es donen objectes sense condicions i la barata té el condicionament de l''quid pro quo, és a dir: el teu em dónes i jo et dono una cosa igual.'
+      question_1: Quin és el propòsit d'aquest projecte?
+      question_2: Llavors ... Aquest web no és per ajudar els altres?
+      question_3: Però a mi m'agradaria regalar les meves coses a algú que realment ho necessiti
+      question_4: "És veritat que hi ha gent que després venen les coses que regalen aquí?"
+      question_5: Quina classe d'anuncis puc publicar a nolotiro?
+      question_6: "¿No està permès l'intercanvi d'objectes? que estrany"
+      question_7: Puc enviar coses a gent que no viu a la meva ciutat?
+      title: Preguntes freqüents
+    faqs: preguntes freqüents
+    fill_captcha: Si us plau ompli els següents caràcters
+    first_visit: nolotiro.org és una comunitat on podem desfer-nos dels objectes que ja no fem servir i ens fan nosa a casa.
+    footer_explain: 'nolotiro.org és un lloc web on regalar i buscar regals de franc de segona mà: mobles, cadires, sofàs, bicicletes, ordinadors portàtils, taules, cuines, llums, llits, roba, joguines, bressols o carros per a nadons, telèfons mòbils i altres moltes coses que ja no vols i no necessites per a que les reutilitzin altra gent a la qual pot servir o donar-li nova vida.'
+    forgot_your_password: Ha oblidat la seva contrasenya?
+    friends: Amics
+    gift_on: regal en %{woeid}
+    give: regal
+    hello_to: Hola %{recipient},
+    help_translate: ajuda a traduir
+    home_title: anuncis de regals nous i de segona mà
+    if_you_are_new: Si ets un nou usuari, si us plau
+    if_youre_already_an_user: Si ja ets un usuari registrat, si us plau
+    keywords: regal segona mà gratis
+    last_published_gifts: "últims regals publicats"
+    leave_blank: "(deixa-la en blanc si no vols canviar-la)"
+    login: accedir
+    login_to_comment: accedeix per escriure un comentari
+    logout: sortir
     mail:
-      automatic: 
-    member_since: 
-    messages: 
+      automatic: Aquest és un missatge automàtic. Si us plau, no responguis a aquesta adreça de correu electrònic.
+    member_since: membre des de
+    messages: missatges
     messages_tabs:
-      inbox: 
-      sent: 
-      trash: 
-    messages_title: 
-    meta_description: 
-    meta_description_ad: 
-    new_user: 
+      inbox: Rebuts
+      sent: Enviats
+      trash: Paperera
+    messages_title: Missatges
+    meta_description: 'nolotiro.org és un lloc web on regalar i buscar regals de franc de segona mà: mobles, cadires, sofàs, bicicletes, ordinadors portàtils, taules, cuines, llums, llits, roba, joguines, bressols o carros per a nadons, telèfons mòbils i altres moltes coses que ja no vols i no necessites per a que les reutilitzin altra gent a la qual pot servir o donar-li nova vida.'
+    meta_description_ad: regal segona mà %{title} a %{woeid}. %{body}
+    new_user: nou usuari
     no_results:
-      explain_html: 
-      phrase: 
-      publish_ad: 
-      subtitle: 
-      title: 
-      try: 
-    or: 
-    password: 
-    permission_denied: 
-    please_fill_to_become_member: 
-    please_insert_email_and_password: 
-    please_introduce: 
-    privacy: 
+      explain_html: "<p> 1. Sigues el primer a %{publish}.</p> <p>2. Prova a canviar la ciutat per una més gran que estigui a prop de la teva ubicació. </p> <p> 3. El nostre sistema de suggeriment d'ubicació (basat en la teva IP) diu que aquestes prop de: <br> %{change_location} </p>"
+      phrase: '"Un viatge de mil quilòmetres comença amb un simple pas" Lao Tse.'
+      publish_ad: publicar un anunci en aquesta ciutat
+      subtitle: Pots provar alguna d'aquestes coses
+      title: No hi ha anuncis per a aquesta ubicació.
+      try: 'O intenta-ho amb aquestes ciutats de nom similar:'
+    or: o
+    password: Contrasenya
+    permission_denied: No tens permisos per a realitzar aquesta acció.
+    please_fill_to_become_member: Si us plau, ompli aquest formulari per ser membre de nolotiro
+    please_insert_email_and_password: Si us plau posa el teu email i contrasenya.
+    please_introduce: 'Si us plau, introdueix els caràcters que vegis:'
+    privacy: política de privacitat
     privacy_page:
-      body_html: 
-      title: 
-    profile: 
+      body_html: 'nolotiro.org (en endavant lloc web) pertany i és administrat per: qual aLabs de C / Duc d''Alba, 13 de 28012 Madrid, Espanya qual s''anuncia Podeu contactar en el formulari de contacte habilitat a aquest efecte en el lloc web. L''accés al lloc web, implica la plena acceptació de la present política de privacitat i dels termes d''ús. qual En relació al compliment de la Llei Orgànica 15/1999, de 13 de desembre, de Protecció de Dades de Caràcter Personal (LOPD), l''informem que aquesta pàgina web emmagatzema de forma automatitzada les dades proporcionades en el formulari d''usuari registrat a l''efecte de poder proporcionar-li al usuari els serveis del lloc web d''una manera personalitzada com són: gestió del seu compte d''usuari, publicació d''anuncis, i gestió de sistema de missatges privats entre usuaris. qual El terme missatges privats es refereix al fet que la possibilitat d''accés a aquests missatges privats serà exclusivament entre dos usuaris, sense possibilitat per part de tercers usuaris a accedir a aquest contingut. No obstant això, a la base de dades dels missatges es guarden en text pla, podent ser posats a disposició de les forces de seguretat en cas de comissió de delicte o de requeriment judicial. qual L''usuari s''abstindrà de publicar dades personals seus o de tercers en els anuncis com poden ser adreces de correu electrònic, telèfons, adreces postals, etc. El lloc web, prendrà les mesures necessàries per a la preservació de les dades personals, tot i que l''usuari ignori aquests termes de privacitat. És per això que hem desenvolupat un filtre d''emails i telèfons en els anuncis per evitar que aquesta informació sigui recopilada per sistemes automàtics i robots d''indexació. Això no eximeix de l''última responsabilitat de l''usuari pel que fa a la publicació de dades personals seus o de tercers. I es fa només perquè creiem que molts usuaris no són conscients de la importància de la preservació de les seves dades personals. qual Formulari de contacte: <br> l''informem que les dades personals facilitades per l''usuari en el formulari de contacte són guardats amb l''única finalitat de contacte amb l''usuari, aquestes dades no seran utilitzades en cap cas per al enviament missatges publicitaris així com tampoc seran cedides a tercers. Pis En qualsevol moment pot exercir els drets d''accés, rectificació i cancel·lació de les seves dades dirigint-se per qualsevol dels mitjans de comunicació indicats en el primer paràgraf. qual Galetes de sessió: <br> L''accés a aquest lloc implica l''utilització de cookies de sessió. Les galetes de sessió són petites quantitats d''informació que s''emmagatzemen en el navegador utilitzat per cada usuari perquè el servidor recordi certa informació que posteriorment pugui utilitzar. Aquesta informació permet identificar a vostè com un usuari concret de forma anònima. qual Addicionalment aquest lloc pot albergar elements en el codi font de les pàgines que s''utilitzen per mesurar el trànsit d''usuaris que visiten una pàgina web i poder treure un patró de visites dels usuaris. Aquesta informació anònima pot ser compartida amb empreses clients, proveïdors, patrocinadors i anunciants. qual Actualment utilitzem els serveis de Google Analytics per al mesurament del trànsit d''aquest lloc que pot capturar la informació descrita anteriorment. Podeu veure més informació sobre la política de privacitat en el lloc web de Google: Google (Analytics): http://www.google.com/intl/es_ALL/privacypolicy.html qual Aquest lloc pot albergar publicitat pròpia, d''afiliats, o de xarxes publicitàries. Aquesta publicitat es mostra mitjançant servidors publicitaris que també utilitzen cookies per mostrar continguts publicitaris afins als usuaris. Cadascun d''aquests servidors publicitaris disposa de la seva pròpia política de privacitat, que pot ser consultada en les seves pròpies pàgines web. Actualment aquest lloc alberga publicitat de Google Adsense: http://www.google.com/intl/es_ALL/privacypolicy.html'
+      title: Política de privacitat
+    profile: perfil
     profile_actions:
       friend:
-        add: 
-        delete: 
-    profile_edit: 
-    publish_ad: 
-    publish_ad_on: 
-    published_ads: 
-    published_at_by_html: 
-    published_on: 
-    published_on_html: 
-    readed_count: 
-    reads: 
-    register: 
-    register_here: 
-    remember_me: 
-    rss_suscribe: 
-    save_failed: 
+        add: afegir %{username} a la llista d'amics
+        delete: afegir %{username} a la llista d'amics
+    profile_edit: Edita perfil
+    publish_ad: Publicant anunci
+    publish_ad_on: Publicar anunci en %{woeid}
+    published_ads: Anuncis publicats
+    published_at_by_html: Publicat fa %{time} per l'usuari %{user}
+    published_on: Publicat fa %{date}
+    published_on_html: Publicat <abbr class ='js-moment' title='%{date}'>%{date}</abbr>
+    readed_count: "%{count} lectures"
+    reads: lectures
+    register: Registra't
+    register_here: registra't aquí
+    remember_me: Recordar
+    rss_suscribe: Subscriure via RSS
+    save_failed: 'Hi ha un problema, revisa això:'
     search:
-      button: 
-      must_search: 
-      no_ads_message_html: 
-    searching_on_html: 
-    send: 
-    send_a_message: 
-    send_a_message_to: 
-    sending_this_form: 
-    share_this_ad: 
-    sign_in: 
-    sign_in_with_provider: 
-    sign_up: 
-    slogan: 
-    suggestions: 
-    to_publish_ad: 
-    to_publish_or_send_messages: 
-    tos: 
+      button: buscar
+      must_search: Has de buscar per alguna cosa en algun lloc.
+      no_ads_message_html: No hi ha anuncis que coincideixin amb la cerca <b>%{q}</b> en la ubicació %{woeid}.
+    searching_on_html: Buscant <i>%{q}</i> a
+    send: Enviar
+    send_a_message: "+ Envia un missatge privat a l'anunciant"
+    send_a_message_to: envia un missatge privat a
+    sending_this_form: Enviant aquest formulari, admeten haver llegit, comprès, i estàs d'acord amb les nostres
+    share_this_ad: Comparteix aquest anunci
+    sign_in: Accedir
+    sign_in_with_provider: Inicia sessió amb un altre proveïdor
+    sign_up: Crear un usuari
+    slogan: no ho tir, t'ho regal (sense condicions)
+    suggestions: suggeriments
+    to_publish_ad: Publicar anunci
+    to_publish_or_send_messages: Per publicar anuncis o enviar missatges accedeix al teu compte
+    tos: termes d'ús
     tos_page:
-      body_html: 
-      title: 
+      body_html: TODO
+      title: Termes d'ús
     translate:
-      description_html: 
-      title: 
-    update: 
-    updating: 
-    user_ads: 
-    user_edit_profile: 
-    user_profile: 
-    username: 
-    users_most_active: 
-    view_ads_on: 
-    view_ads_on_your_city: 
-    want: 
-    want_to_leave: 
-    we_need_your_password: 
-    welcome: 
-    welcome_message: 
-    write_a_comment: 
-    your_email: 
+      description_html: Actualment, Nolotiro.org està disponible en pocs idiomes, però tu pots ajudar-nos a <a href="http://accounts.localeapp.com/projects/6872">traduir-lo al teu</a>.
+      title: Ajuda'ns a traduir nolotiro.org a la teva llengua
+    update: Guardar
+    updating: Estem actualitzant tot el lloc, de manera que en les pròximes hores hi haurà retards amb els missatges entre els usuaris, les imatges d'un anunci i la quantitat d'anuncis dels usuaris. No et preocupis que "estem treballant en ellou".
+    user_ads: anuncis
+    user_edit_profile: Edita perfil d'usuari
+    user_profile: Perfil d'usuari
+    username: Nom d'usuari
+    users_most_active: usuaris més actius
+    view_ads_on: Veure anuncis en %{location_suggest}
+    view_ads_on_your_city: Veure anuncis a la teva ciutat o poble
+    want: busco
+    want_to_leave: Vols esborrar el teu usuari?
+    we_need_your_password: "(necessitem la contrasenya per confirmar els canvis)"
+    welcome: hola
+    welcome_message: Benvingut
+    write_a_comment: "+ Escriu un nou comentari"
+    your_email: El teu email
   number:
     currency:
       format:
@@ -566,7 +570,7 @@ ca:
           trillion: trilió
           unit: 
       format:
-        delimiter: 
+        delimiter: "."
         precision: 1
         significant: true
         strip_insignificant_zeros: true
@@ -582,14 +586,14 @@ ca:
           tb: TB
     percentage:
       format:
-        delimiter: 
+        delimiter: "."
     precision:
       format:
-        delimiter: 
+        delimiter: "."
   recaptcha:
     errors:
-      incorrect-captcha-sol: 
-      verification_failed: 
+      incorrect-captcha-sol: Hi va haver un error omplint els caràcters del captcha.
+      verification_failed: Resposta de verificació de la paraula no és correcta, si us plau intenti de nou.
   support:
     array:
       last_word_connector: ", i "
@@ -603,9 +607,9 @@ ca:
       short: "%d de %b %H:%M"
     pm: pm
   unauthorized:
-    default: 
+    default: No aquestes autoritzat paràgraf accedir a aquest this page.
     manage:
-      all: 
+      all: Has primer iniciar sessió o registrar usuari un.
   will_paginate:
     next_label: Següent &#8594;
     page_entries_info:

@@ -6,6 +6,7 @@ ActiveAdmin.register User do
   filter :ads_count
   filter :created_at
   filter :confirmed_at
+  filter :current_sign_in_at
 
   index do 
     selectable_column
@@ -15,6 +16,7 @@ ActiveAdmin.register User do
     column :email 
     column :confirmed_at 
     column :last_sign_in_ip 
+    column :current_sign_in_at
     column :ads_count 
     column :created_at 
     actions

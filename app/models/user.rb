@@ -23,6 +23,8 @@ class User < ActiveRecord::Base
 
   acts_as_messageable
 
+  scope :last_week, lambda { where("created_at >= :date", :date => 1.week.ago) } 
+
   def self.from_omniauth(auth) 
     where(email: auth.info.email).first_or_create do |user|
       user.email = auth.info.email

@@ -82,7 +82,7 @@
 
     <% if @ads.any? %>
       <% @ads.each_with_index do |ad,i| %>
-        <%= render :partial => "ads/ad", :locals => { :ad => ad, :i => i, :show_ads => false } %>
+        <%= render :partial => "ads/ad", :locals => { :ad => ad, :i => i, :show_ads => true } %>
       <% end %>
       <%= render partial: "partials/pagination", locals: { items: @ads } %>
     <% else %>
@@ -102,12 +102,6 @@
       <% end %>
     </div><!-- /span-17 -->
     <div class="span-6 desktop">
-      <div class="google_ad_wrapper">
-        <%= render partial: "partials/google_adsense", locals: { class_name: "google_adsense_600_160", ad_slot: "6783776462"}  %>
-      </div>
-      <div class="google_ad_wrapper">
-        <%= render partial: "partials/google_adsense", locals: { class_name: "google_adsense_600_160", ad_slot: "6783776462"}  %>
-      </div>
       <div class="google_ad_wrapper">
         <%= render partial: "partials/google_adsense", locals: { class_name: "google_adsense_600_160", ad_slot: "6783776462"}  %>
       </div>
