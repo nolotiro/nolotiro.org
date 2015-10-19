@@ -535,6 +535,7 @@ es:
     user_profile: Perfil de usuario
     username: Nombre de usuario
     users_most_active: usuarios más activos
+    users_most_active_last_week: usuarios más activos en la última semana
     view_ads_on: Ver anuncios en %{location_suggest}
     view_ads_on_your_city: Ver anuncios en tu ciudad o pueblo
     want: busco

@@ -16,7 +16,7 @@
   <h2><%= t('nlt.users_most_active_last_week') %></h2>
   <br>
   <ul>
-    <% AdHelper.get_users_ranking(20, true).each do |u| %>
+    <% AdHelper.get_users_ranking(5, true).each do |u| %>
       <li>
     <%= link_to listads_user_path u.id do %>
       <%= u.username %> (<%= u.ads_count %>)
