@@ -12,6 +12,9 @@ Warden.test_mode!
 DatabaseCleaner.strategy = :transaction
 #DatabaseCleaner.strategy = :truncation
 
+# Ensure sphinx directories exist for the test environment
+ThinkingSphinx::Test.init
+
 class ActionController::TestCase
   include Devise::TestHelpers
   include FactoryGirl::Syntax::Methods
