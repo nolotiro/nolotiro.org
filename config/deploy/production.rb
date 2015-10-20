@@ -6,4 +6,4 @@ set :deploy_to, '/var/www/nolotiro.org'
 set :branch, "production"
 
 set :rbenv_type, :user
-set :rbenv_ruby, '2.2.2'
+set :rbenv_ruby, '2.2.3'
