@@ -45,11 +45,13 @@ cd /vagrant
 bundle install
 
 cp config/app_config.yml.example config/app_config.yml
-#cp config/database.yml.example config/database.yml
+cp config/database.yml.example config/database.yml
 
 mysql -uroot -p${MYSQL_PASS} << EOF
-CREATE DATABASE nolotirov3; 
-GRANT ALL PRIVILEGES ON nolotirov3.* TO nolotirov3@localhost IDENTIFIED BY 'nolotirov3pass';
+CREATE DATABASE nolotirov3_dev;
+GRANT ALL PRIVILEGES ON nolotirov3_dev.* TO nolotirov3@localhost IDENTIFIED BY 'nolotirov3pass';
+CREATE DATABASE nolotirov3_test;
+GRANT ALL PRIVILEGES ON nolotirov3_test.* TO nolotirov3@localhost IDENTIFIED BY 'nolotirov3pass';
 FLUSH PRIVILEGES;
 EOF
 
