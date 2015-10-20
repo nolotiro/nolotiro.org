@@ -1,7 +1,5 @@
 defaults: &defaults
   geoplanet_app_id: "dj0yJmk9VXY4UnllWWh2cERFJmQ9WVdrOWFXRjBkbEpOTm1zbWNHbzlNQS0tJnM9Y29uc3VtZXJzZWNyZXQmeD1mMQ--"
-  recaptcha_public_key: ""
-  recaptcha_private_key: ""
   contact_email1: "@"
   contact_email2: "@"
   default_from_email: "noreply@nolotiro.org"
