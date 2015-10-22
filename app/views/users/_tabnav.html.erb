@@ -7,7 +7,11 @@
     </li>
   <% end %>
   <li>
-  <%= link_to_unless_current t('nlt.profile'), profile_path(user) %>
+  <% if request.fullpath =~ /\/profile\// %>
+    <%= t('nlt.profile') %>
+  <% else %>
+    <%= link_to t('nlt.profile'), profile_path(user) %>
+  <% end %>
   </li>
   <li>
   <%= link_to_unless_current t('nlt.user_ads'), listads_user_path(user) %>
