@@ -45,3 +45,6 @@ log/*.sphinx.pid
 
 #localeapp
 log/localeapp.yml
+
+# For Rubymine (Jetbrains IDE)
+.idea
