@@ -15,9 +15,11 @@ This is the next revision of nolotiro.org, this time in Ruby On Rails.
 
 Using Vagrant (VirtualBox or LXC), you need to install it:
 
-    $ gem install vagrant
-    $ vagrant box add precise32 http://files.vagrantup.com/precise32.box
-    $ vagrant up
+```
+gem install vagrant
+vagrant box add precise32 http://files.vagrantup.com/precise32.box
+vagrant up
+```
 
 You can access with: 
 
@@ -32,11 +34,14 @@ We recommend using RVM or rbenv to set up the gems.
 
 To install it you should do something like: 
 
-    $ bundle
-    $ cp config/app_config.yml.example config/app_config.yml
-    $ cp config/database.yml.example config/database.yml
-    $ rake db:schema:load
-    $ rails s
+```
+bundle
+cp config/app_config.yml.example config/app_config.yml
+cp config/database.yml.example config/database.yml
+cp config/secrets.yml.example config/secrets.yml
+rake db:schema:load
+rails s
+```
 
 The database we use is legacy, a MySQL with the schema of [v2](https://github.com/alabs/nolotiro)
 
@@ -46,20 +51,26 @@ so you need to register, create a new app and configure it in the relevant envir
 
 For the GeoLocation we use [GeoLiteCity](http://dev.maxmind.com/geoip/legacy/geolite/). 
 
-    $ cd vendor/geolite
-    $ wget http://geolite.maxmind.com/download/geoip/database/GeoLiteCity.dat.gz
-    $ gunzip GeoLiteCity.dat.gz
+```
+cd vendor/geolite
+wget http://geolite.maxmind.com/download/geoip/database/GeoLiteCity.dat.gz
+gunzip GeoLiteCity.dat.gz
+```
 
 For the search we use Sphinx, so you'll need to install it: 
 
-    $ sudo apt-get install sphinxsearch
-    $ rake ts:index
-    $ rake ts:start
+```
+sudo apt-get install sphinxsearch
+bundle exec rake ts:index
+bundle exec rake ts:start
+```
 
 For delayed tasks (like sending emails) we use Resque, that uses Redis. Also we use Redis to cache things. 
 
-    $ sudo apt-get install redis-server
-    $ rake resque:work QUEUE='*'
+```
+sudo apt-get install redis-server
+rake resque:work QUEUE='*'
+```
 
 For recaptcha you need to [signup](https://www.google.com/recaptcha/admin/create)
 and configure it in the relevant environment in *config/secrets.yml* (keys
@@ -71,11 +82,16 @@ For the emails we recommend using mailcatcher. This doesn't send external emails
 development, and you can see them in a nice web interface. The SMTP port is 
 already configured to it (1025).
 
-    $ mailcatcher
-    $ open http://localhost:1080
+```
+mailcatcher
+open http://localhost:1080
+```
 
 We use a special task for the colors: 
-    $ rake color_routes
+
+```
+rake color_routes
+```
 
 We use better_errors when giving a 500 in development env. 
 
