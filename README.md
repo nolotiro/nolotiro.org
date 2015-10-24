@@ -49,7 +49,7 @@ For the WOEID we use [Yahoo GeoPlanet](http://developer.yahoo.com/geo/geoplanet/
 so you need to register, create a new app and configure it in the relevant environment in
 *config/app_config.yml* (key *geoplanet_app_id*)
 
-For the GeoLocation we use [GeoLiteCity](http://dev.maxmind.com/geoip/legacy/geolite/). 
+For the GeoLocation we use [GeoLiteCity](http://dev.maxmind.com/geoip/legacy/geolite/).
 
 ```
 cd vendor/geolite
@@ -57,7 +57,7 @@ wget http://geolite.maxmind.com/download/geoip/database/GeoLiteCity.dat.gz
 gunzip GeoLiteCity.dat.gz
 ```
 
-For the search we use Sphinx, so you'll need to install it: 
+For the search we use Sphinx, so you'll need to install it:
 
 ```
 sudo apt-get install sphinxsearch
@@ -65,7 +65,7 @@ bundle exec rake ts:index
 bundle exec rake ts:start
 ```
 
-For delayed tasks (like sending emails) we use Resque, that uses Redis. Also we use Redis to cache things. 
+For delayed tasks (like sending emails) we use Resque, that uses Redis. Also we use Redis to cache things.
 
 ```
 sudo apt-get install redis-server
@@ -79,7 +79,7 @@ and configure it in the relevant environment in *config/secrets.yml* (keys
 ## Development environment magic
 
 For the emails we recommend using mailcatcher. This doesn't send external emails during
-development, and you can see them in a nice web interface. The SMTP port is 
+development, and you can see them in a nice web interface. The SMTP port is
 already configured to it (1025).
 
 ```
@@ -93,24 +93,24 @@ We use a special task for the colors:
 rake color_routes
 ```
 
-We use better_errors when giving a 500 in development env. 
+We use better_errors when giving a 500 in development env.
 
 We use rails_footnotes in development so below the footer you have
-some useful information (SQL queries executed and such). 
+some useful information (SQL queries executed and such).
 
 Happy hacking!
 
-## i18n 
+## i18n
 
 For the localization and translation interface we use [LocaleApp](http://accounts.localeapp.com/projects/6872).
 
-## API 
+## API
 
 ### v1
 
-Example URLs: 
+Example URLs:
 
-http://beta.nolotiro.org/api/v1/woeid/list 
+http://beta.nolotiro.org/api/v1/woeid/list
 http://beta.nolotiro.org/api/v1/woeid/766273/give
 http://beta.nolotiro.org/api/v1/woeid/766273/give?page=2
 http://beta.nolotiro.org/api/v1/ad/153735
