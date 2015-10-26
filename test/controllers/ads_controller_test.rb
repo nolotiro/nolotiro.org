@@ -108,13 +108,24 @@ class AdsControllerTest < ActionController::TestCase
     assert_redirected_to new_user_session_url
   end
 
-  test "should not destroy ad as normal user" do
+  test "should not destroy non-owned ads as normal user" do
     sign_in @user
     assert_difference('Ad.count', 0) do
       delete :destroy, id: @ad
     end
 
     assert_redirected_to root_path
+  end
+
+  test "should destroy owned ads as normal user" do
+    @ad.user_owner = @user.id
+    @ad.save
+    sign_in @user
+    assert_difference('Ad.count', -1) do
+      delete :destroy, id: @ad
+    end
+
+    assert_redirected_to ads_path
   end
 
   test "should destroy ad as admin user" do

@@ -73,7 +73,6 @@ gem 'paperclip', '~> 4.0'                           # images
 gem 'delayed_paperclip'                             # images processing in bacground
 gem 'recaptcha', :require => 'recaptcha/rails'      # captcha
 gem 'airbrake'                                      # exception notification
-gem 'paranoia', '~> 2.0'                            # don't really delete a model
 gem 'ipaddress'                                     # ip address validation
 gem 'localeapp'                                     # i18n interface
 gem 'blueprint-rails'                               # blueprint css framework
