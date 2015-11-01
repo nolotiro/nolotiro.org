@@ -566,7 +566,6 @@ DEPENDENCIES
   sinatra
   slim
   spring
-  sqlite3
   therubyracer
   thinking-sphinx
   uglifier (>= 1.3.0)

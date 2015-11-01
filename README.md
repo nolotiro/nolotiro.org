@@ -6,37 +6,42 @@
 
 This is the next revision of nolotiro.org, this time in Ruby On Rails.
 
-* Ruby: 2.2.2
+* Ruby: 2.2.3
 * Rails: 4.2.1
 
-## Installation
+## Automatic Installation
 
-### Automatic
+You need to install [VirtualBox](https://www.virtualbox.org/) and [Vagrant](https://www.vagrantup.com/):
 
-Using Vagrant (VirtualBox or LXC), you need to install it:
+Then from the root directory of the project, execute:
 
-    $ gem install vagrant
-    $ vagrant box add precise32 http://files.vagrantup.com/precise32.box
-    $ vagrant up
+```
+vagrant up
+ ```
 
-You can access with: 
+When finished, you need to log in to the virtual machine with the command:
+
+```
+vagrant ssh
+```
+
+To end you should start the application server:
+
+```
+cd /vagrant
+bundle exec rails s -b 0.0.0.0
+```
+
+You can then access the web application in this addresses:
 
 http://localhost:8080
 http://localhost:8081
 
-### Manual
+## Manual Installation
 
-Check out the script in bin/bootstrap.sh - that's the same that vagrant uses. 
+Check out the script in bin/bootstrap.sh - that's the same that Vagrant uses.
 
-We recommend using RVM or rbenv to set up the gems. 
-
-To install it you should do something like: 
-
-    $ bundle
-    $ cp config/app_config.yml.example config/app_config.yml
-    $ cp config/database.yml.example config/database.yml
-    $ rake db:schema:load
-    $ rails s
+## More information
 
 The database we use is legacy, a MySQL with the schema of [v2](https://github.com/alabs/nolotiro)
 
@@ -44,57 +49,68 @@ For the WOEID we use [Yahoo GeoPlanet](http://developer.yahoo.com/geo/geoplanet/
 so you need to register, create a new app and configure it in the relevant environment in
 *config/app_config.yml* (key *geoplanet_app_id*)
 
-For the GeoLocation we use [GeoLiteCity](http://dev.maxmind.com/geoip/legacy/geolite/). 
+For the GeoLocation we use [GeoLiteCity](http://dev.maxmind.com/geoip/legacy/geolite/).
 
-    $ cd vendor/geolite
-    $ wget http://geolite.maxmind.com/download/geoip/database/GeoLiteCity.dat.gz
-    $ gunzip GeoLiteCity.dat.gz
+```
+cd vendor/geolite
+wget http://geolite.maxmind.com/download/geoip/database/GeoLiteCity.dat.gz
+gunzip GeoLiteCity.dat.gz
+```
 
-For the search we use Sphinx, so you'll need to install it: 
+For the search we use Sphinx, so you'll need to install it:
 
-    $ sudo apt-get install sphinxsearch
-    $ rake ts:index
-    $ rake ts:start
+```
+sudo apt-get install sphinxsearch
+bundle exec rake ts:index
+bundle exec rake ts:start
+```
 
-For delayed tasks (like sending emails) we use Resque, that uses Redis. Also we use Redis to cache things. 
+For delayed tasks (like sending emails) we use Resque, that uses Redis. Also we use Redis to cache things.
 
-    $ sudo apt-get install redis-server
-    $ rake resque:work QUEUE='*'
+```
+sudo apt-get install redis-server
+rake resque:work QUEUE='*'
+```
 
 For recaptcha you need to [signup](https://www.google.com/recaptcha/admin/create)
-and configure it in the relevant environment in *config/app_config.yml* (keys 
-*recaptcha_public_key* and *recaptcha_private_key*)
+and configure it in the relevant environment in *config/secrets.yml* (keys
+*recaptcha.public_key* and *recaptcha.private_key*)
 
 ## Development environment magic
 
 For the emails we recommend using mailcatcher. This doesn't send external emails during
-development, and you can see them in a nice web interface. The SMTP port is 
+development, and you can see them in a nice web interface. The SMTP port is
 already configured to it (1025).
 
-    $ mailcatcher
-    $ open http://localhost:1080
+```
+mailcatcher
+open http://localhost:1080
+```
 
 We use a special task for the colors: 
-    $ rake color_routes
 
-We use better_errors when giving a 500 in development env. 
+```
+rake color_routes
+```
+
+We use better_errors when giving a 500 in development env.
 
 We use rails_footnotes in development so below the footer you have
-some useful information (SQL queries executed and such). 
+some useful information (SQL queries executed and such).
 
 Happy hacking!
 
-## i18n 
+## i18n
 
 For the localization and translation interface we use [LocaleApp](http://accounts.localeapp.com/projects/6872).
 
-## API 
+## API
 
 ### v1
 
-Example URLs: 
+Example URLs:
 
-http://beta.nolotiro.org/api/v1/woeid/list 
+http://beta.nolotiro.org/api/v1/woeid/list
 http://beta.nolotiro.org/api/v1/woeid/766273/give
 http://beta.nolotiro.org/api/v1/woeid/766273/give?page=2
 http://beta.nolotiro.org/api/v1/ad/153735

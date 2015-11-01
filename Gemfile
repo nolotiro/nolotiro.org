@@ -19,7 +19,6 @@ group :doc do
 end
 
 group :development, :test do
-  gem 'sqlite3'                             # test: database
   gem 'minitest-rails-capybara'             # test: features
   gem 'capybara'                            # test: features
   gem 'capybara-webkit'                     # test: features - js: true
