@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '2.2.2'
+ruby '2.2.3'
 
 gem 'bundler', '>= 1.8.4'
 gem 'rails', '~> 4.2'
@@ -24,18 +24,18 @@ group :development, :test do
   gem 'capybara'                            # test: features
   gem 'capybara-webkit'                     # test: features - js: true
   gem 'launchy'                             # test: features - save_and_open_page helper
-  gem 'factory_girl_rails', '~> 4.0'        # test: factories 
-  gem 'minitest-reporters'                  # test: color output 
+  gem 'factory_girl_rails', '~> 4.0'        # test: factories
+  gem 'minitest-reporters'                  # test: color output
   gem 'database_cleaner'                    # test: for not having duplicity
   gem 'byebug'                              # dev: debugger
   gem 'spring'                              # dev: speed up things
-  gem 'commands'                            # dev: rake commands in console 
+  gem 'commands'                            # dev: rake commands in console
   gem 'rails-footnotes', '~> 4.0'           # dev: debug messages on HTML
   gem 'web-console', '~> 2.0'               # dev: better errors
   #gem 'better_errors'                       # dev: better errors
   #gem 'binding_of_caller'                   # dev: better errors
-  gem 'mailcatcher'                         # dev: mailbox 
-  gem 'bullet'                              # dev: n+1 query problem alert 
+  gem 'mailcatcher'                         # dev: mailbox
+  gem 'bullet'                              # dev: n+1 query problem alert
 end
 
 # Use ActiveModel has_secure_password
@@ -84,9 +84,8 @@ gem 'font-awesome-rails'                            # font-awesome icons
 
 # https://github.com/mailboxer/mailboxer/issues/316
 #gem 'mailboxer'                                     # messaging
-gem 'mailboxer', :git => 'git://github.com/div/mailboxer.git', :branch => 'rails42-foreigner' 
+gem 'mailboxer', :git => 'git://github.com/div/mailboxer.git', :branch => 'rails42-foreigner'
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-bootstrap'
 end
-
