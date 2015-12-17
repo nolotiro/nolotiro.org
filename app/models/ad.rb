@@ -50,8 +50,6 @@ class Ad < ActiveRecord::Base
 
   default_scope { order('ads.created_at DESC') }
 
-  acts_as_paranoid
-
   has_attached_file :image,
     styles: {thumb: "100x90>"},
     process_in_background: :image 

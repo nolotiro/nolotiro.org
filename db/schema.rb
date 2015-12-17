@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151001175712) do
+ActiveRecord::Schema.define(version: 20151026224220) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace",     limit: 255
@@ -39,7 +39,6 @@ ActiveRecord::Schema.define(version: 20151001175712) do
     t.string   "photo",              limit: 100
     t.integer  "status",             limit: 4,                 null: false
     t.integer  "comments_enabled",   limit: 4
-    t.datetime "deleted_at"
     t.datetime "updated_at"
     t.string   "image_file_name",    limit: 255
     t.string   "image_content_type", limit: 255
@@ -49,7 +48,6 @@ ActiveRecord::Schema.define(version: 20151001175712) do
     t.integer  "comments_count",     limit: 4,     default: 0
   end
 
-  add_index "ads", ["deleted_at"], name: "index_ads_on_deleted_at", using: :btree
   add_index "ads", ["status"], name: "index_ads_on_status", using: :btree
   add_index "ads", ["woeid_code"], name: "woeid", using: :btree
 
@@ -100,14 +98,14 @@ ActiveRecord::Schema.define(version: 20151001175712) do
     t.integer  "sender_id",            limit: 4
     t.string   "sender_type",          limit: 255
     t.integer  "conversation_id",      limit: 4
-    t.boolean  "draft",                limit: 1,        default: false
+    t.boolean  "draft",                                 default: false
     t.datetime "updated_at",                                            null: false
     t.datetime "created_at",                                            null: false
     t.integer  "notified_object_id",   limit: 4
     t.string   "notified_object_type", limit: 255
     t.string   "notification_code",    limit: 255
     t.string   "attachment",           limit: 255
-    t.boolean  "global",               limit: 1,        default: false
+    t.boolean  "global",                                default: false
     t.datetime "expires"
   end
 
@@ -120,9 +118,9 @@ ActiveRecord::Schema.define(version: 20151001175712) do
     t.integer  "receiver_id",     limit: 4
     t.string   "receiver_type",   limit: 255
     t.integer  "notification_id", limit: 4,                   null: false
-    t.boolean  "is_read",         limit: 1,   default: false
-    t.boolean  "trashed",         limit: 1,   default: false
-    t.boolean  "deleted",         limit: 1,   default: false
+    t.boolean  "is_read",                     default: false
+    t.boolean  "trashed",                     default: false
+    t.boolean  "deleted",                     default: false
     t.string   "mailbox_type",    limit: 25
     t.datetime "created_at",                                  null: false
     t.datetime "updated_at",                                  null: false
@@ -148,7 +146,7 @@ ActiveRecord::Schema.define(version: 20151001175712) do
     t.text     "body",        limit: 65535,                 null: false
     t.integer  "readed",      limit: 4,     default: 0,     null: false
     t.datetime "updated_at"
-    t.boolean  "is_migrated", limit: 1,     default: false
+    t.boolean  "is_migrated",               default: false
   end
 
   add_index "messages_legacy", ["thread_id"], name: "thread_id", using: :btree
