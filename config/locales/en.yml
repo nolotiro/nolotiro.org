@@ -460,7 +460,7 @@ en:
       sent: Sent
       trash: Trash
     messages_title: Messages
-    meta_description: 
+    meta_description: nolotiro.org is a website where I give free gifts and seeking second-hand furniture, chairs, sofas, bicycles, laptops, tables, stoves, lamps, beds, clothes, toys, baby cribs or cars, mobile phones and other many things you no longer want and no longer need to make the reuse other people who may serve or give new life.
     meta_description_ad: second hand gift %{title} in %{woeid}. %{body}
     new_user: sign up
     no_results:
@@ -478,7 +478,7 @@ en:
     please_introduce: Please, insert the following characters
     privacy: privacy policy
     privacy_page:
-      body_html: 
+      body_html: 'nolotiro.org (hereinafter website) is owned and managed by: <br> <br> aLabs <br> C / Duque de Alba, 13 <br> 28012 Madrid, Spain <br> <br> can contact in the contact form enabled for this purpose on the website. Access to the website implies full acceptance of the present privacy policy and terms of use. <br> <br> In relation to compliance with the Organic Law 15/1999, of December 13, Protection of Personal Data (Act), we inform you that this website stores automated data provided on the form registered user to effect the user to provide website services in a personalized way, such as: managing your user account, ads, and management system of private messages between users. <br> The term private messages refers to the possibility of access to such private messages will be exclusively between two users without possibility third party users to access such content. However, database messages are stored in plain text and can be made available to law enforcement in case of commission of crime or injunction. <br> The user shall not publish or third parties own personal data in ads such as email addresses, phone numbers, addresses, etc. The website, will take the necessary measures for the preservation of personal data, even if the user ignores these terms of privacy. That''s why we developed a filter emails and telephone listings to prevent such information from being collected by automatic systems and robots of indexing. This does not remove the ultimate responsibility of the user as to the publication of his personal data or third parties. And it is only because we believe that many users are unaware of the importance of the preservation of their personal data. <br> <br> Contact form: <br> we inform you that the personal data provided by the user in the contact form is saved for the sole purpose of contact with the user, these data will not be used under any circumstances for sending advertising messages nor be disclosed to third parties. <br> At any time you can exercise your right of access, rectification and deletion of data by any of the media mentioned in the first paragraph. <br> <br> Session Cookies: <br> Access to this site involves the use of session cookies. Session cookies are small pieces of information that are stored on the browser used by each user for the server to remember certain information that can be used later. This information can identify you as an individual user anonymously. <br> <br> addition this site can accommodate elements in the source code of the pages that are used to measure the traffic of users who visit a website and can draw a pattern of user visits. This anonymous information can be shared with corporate customers, suppliers, sponsors and advertisers. <br> <br> services currently use Google Analytics to measure the traffic on this site that can capture the information described above. You can see more information about the privacy policy on the website of Google: Google (Analytics): http://www.google.com/intl/es_ALL/privacypolicy.html <br> <br> This site also can host advertising own, affiliate or advertising networks. This advertisement is shown through servers that also use cookies to display content related advertising to users. Each of these servers advertising has its own privacy policy, which can be consulted on their own web pages. Currently this site contains advertising from Google Adsense: http://www.google.com/intl/es_ALL/privacypolicy.html'
       title: Privacy Policy
     profile: profile
     profile_actions:
@@ -507,7 +507,7 @@ en:
     send: Send
     send_a_message: "+ Send a private message to this user"
     send_a_message_to: send a private message to
-    sending_this_form: 
+    sending_this_form: By submitting this form, you admit to having read, understood, and you agree with our
     share_this_ad: Share this ad
     sign_in: Sign in
     sign_in_with_provider: Sign in with other provider
@@ -521,15 +521,16 @@ en:
       body_html: ALL
       title: Terms and conditions
     translate:
-      description_html: 
+      description_html: Currently, Nolotiro.org is available in a few languages, but you can help us translate <a href="http://accounts.localeapp.com/projects/6872"> </a> to yours.
       title: Help us to translate nolotiro.org
     update: Save
-    updating: 
+    updating: We are updating the entire site, so in the next few hours there will be delays with messages between users, images of an ad and the number of ads to users. Do not worry that "we are working on itou".
     user_ads: ads
     user_edit_profile: Edit user's profile
     user_profile: Profile
     username: Username
     users_most_active: most active users
+    users_most_active_last_week: 
     view_ads_on: View ads in %{location_suggest}
     view_ads_on_your_city: View ads from your city or town
     want: want
@@ -598,9 +599,9 @@ en:
   time:
     am: am
     formats:
-      default: 
-      long: 
-      short: 
+      default: "%A, %d de %B de %Y %H:%M:%S %z"
+      long: "%d de %B de %Y %H:%M"
+      short: "%d de %b %H:%M"
     pm: pm
   unauthorized:
     default: You are not authorized to enter this url
@@ -610,8 +611,12 @@ en:
     next_label: next →
     page_entries_info:
       multi_page: Showing %{model} %{from} - %{to} of %{count} total
-      multi_page_html: 
-      single_page: 
-      single_page_html: 
+      multi_page_html: Showing %{model} <b>%{from}&nbsp;-&nbsp;%{to}</b> de <b>%{count}</b> en total
+      single_page:
+        one: Showing 1 %{model}
+        other: Showing total %{count} %{model}
+      single_page_html:
+        one: Showing <b>1</b> %{model}
+        other: Showing <b>total&nbsp;%{count}</b> %{model}
     page_gap: "&hellip;"
     previous_label: "←back"

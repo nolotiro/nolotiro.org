@@ -2,8 +2,8 @@ nl:
   activemodel:
     attributes:
       contact:
-        email: 
-        message: 
+        email: E-mail
+        message: Bericht
     errors:
       format: 
       messages:
@@ -13,7 +13,7 @@ nl:
         empty: 
         equal_to: 
         even: 
-        exclusion: 
+        exclusion: is gereserveerd
         greater_than: 
         greater_than_or_equal_to: 
         inclusion: 
@@ -82,36 +82,91 @@ nl:
         body: 
         header: 
   date:
-    abbr_day_names: 
-    abbr_month_names: 
-    day_names: 
+    abbr_day_names:
+    - zon
+    - mon
+    - die
+    - woe
+    - don
+    - vri
+    - zat
+    abbr_month_names:
+    - 
+    - jan
+    - feb
+    - maa
+    - apr
+    - mei
+    - jun
+    - jul
+    - aug
+    - sep
+    - okt
+    - nov
+    - dec
+    day_names:
+    - zondag
+    - maandag
+    - diensdag
+    - woensdag
+    - donderdag
+    - vrijdag
+    - zaterdag
     formats:
       default: 
       long: 
       short: 
-    month_names: 
-    order: 
+    month_names:
+    - 
+    - januari
+    - februari
+    - maart
+    - april
+    - mei
+    - juni
+    - juli
+    - augustus
+    - septiember
+    - oktober
+    - november
+    - december
+    order:
+    - :dag
+    - :maand
+    - :jaar
   datetime:
     distance_in_words:
-      about_x_hours: 
-      about_x_months: 
+      about_x_hours:
+        one: rond één uur
+        other: ongeveer %{count} uren
+      about_x_months:
+        one: rond 1 maand
+        other: ongeveer %{count} manden
       about_x_years: 
-      almost_x_years: 
+      almost_x_years:
+        one: bijna 1 jaar
+        other: bijna %{count} jaar
       half_a_minute: 
       less_than_x_minutes: 
       less_than_x_seconds: 
       over_x_years: 
-      x_days: 
-      x_minutes: 
-      x_months: 
+      x_days:
+        one: 1 dag
+        other: "%{count} dagen"
+      x_minutes:
+        one: 1 minuut
+        other: "%{count} minuten"
+      x_months:
+        one: 1 maand
+        other: "%{count} manden"
       x_seconds: 
     prompts:
-      day: 
-      hour: 
+      day: Dag
+      hour: Uur
       minute: 
-      month: 
+      month: Maand
       second: 
-      year: 
+      year: Jaar
   devise:
     confirmations:
       action: 
@@ -453,6 +508,7 @@ nl:
     user_profile: 
     username: 
     users_most_active: 
+    users_most_active_last_week: 
     view_ads_on: 
     view_ads_on_your_city: 
     want: 
@@ -467,17 +523,17 @@ nl:
       format:
         delimiter: 
         format: 
-        precision: 
+        precision: 2
         separator: 
         significant: 
         strip_insignificant_zeros: 
         unit: 
     format:
       delimiter: 
-      precision: 
+      precision: 3
       separator: 
-      significant: 
-      strip_insignificant_zeros: 
+      significant: false
+      strip_insignificant_zeros: false
     human:
       decimal_units:
         format: 
@@ -490,15 +546,17 @@ nl:
           unit: 
       format:
         delimiter: 
-        precision: 
+        precision: 1
         significant: 
         strip_insignificant_zeros: 
       storage_units:
         format: 
         units:
-          byte: 
-          gb: 
-          kb: 
+          byte:
+            one: Byte
+            other: Bytes
+          gb: GB
+          kb: KB
           mb: 
           tb: 
     percentage:

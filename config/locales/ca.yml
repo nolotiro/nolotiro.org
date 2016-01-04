@@ -393,7 +393,7 @@ ca:
     change_your_city: Canvia la teva ciutat
     choose_username: Tria un nom d'usuari
     choose_your_pass: Tria la contrasenya
-    choose_your_pass_again: Introdueix la teva contrasenya (si, un altre cop)
+    choose_your_pass_again: Introdueix la teva contrasenya (altre cop)
     cities_in_the_world: ciutats del món que més reciclen
     click_to_large: Cliqueu per fer més gran foto
     comments:
@@ -534,6 +534,7 @@ ca:
     user_profile: Perfil d'usuari
     username: Nom d'usuari
     users_most_active: usuaris més actius
+    users_most_active_last_week: 
     view_ads_on: Veure anuncis en %{location_suggest}
     view_ads_on_your_city: Veure anuncis a la teva ciutat o poble
     want: busco
