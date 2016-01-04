@@ -46,6 +46,9 @@ es:
         subject: Título
         title: Título
         type: Tipo
+      contact:
+        email: Correo electrónico
+        message: Mensaje
       message:
         subject: Subject
       user:
@@ -306,6 +309,7 @@ es:
       you_have_new_message: Has recibido un nuevo mensaje
       you_have_recieved_new_message: Has recibido un nuevo mensaje
     new:
+      body_max: Máximo 1500 carácteres
       button: Enviar
       errors: 'Hay un problema, revisa esto:'
       legend: Enviar mensaje
@@ -394,6 +398,7 @@ es:
     cities_in_the_world: ciudades del mundo que más reciclan
     click_to_large: Click para agrandar foto
     comments:
+      body_max: Máximo 1000 caracteres
       do_click: 'Haz click en este enlace para responder el mensaje:'
       flash_ko: Hubo un error al guardar tu comentario. Revisalo y envialo de nuevo
       flash_ok: Comentario guardado
@@ -450,6 +455,11 @@ es:
     keywords: 'regalo segunda mano gratis '
     last_published_gifts: "últimos regalos publicados"
     leave_blank: "(déjala en blanco si no quieres cambiarla)"
+    legal_notice: aviso legal
+    legal_page:
+      title: Aviso legal
+      body_html: 'Nombre: Asociación aLabs. <br>Inscrita en el registro de asociaciones de la Comunidad de Madrid con número 32.022. <br>CIF: G86139847<br> C/Duque de Alba, 13 (28012) Madrid.'
+
     login: acceder
     login_to_comment: accede para escribir un comentario
     logout: salir
@@ -467,6 +477,7 @@ es:
     new_user: nuevo usuario
     no_results:
       explain_html: "<p>1. Sé el primero en %{publish}.</p> <p>2. Prueba a cambiar la ciudad por una mas grande que esté cerca de tu ubicación.</p> <p>3. Nuestro sistema de sugerencia de ubicación (basado en tu IP) dice que estas cerca de: <br> %{change_location} </p>"
+      on_user: No hay anuncios publicados por este usuario. 
       phrase: '"Un viaje de mil kilómetros comienza con un simple paso" Lao Tse.'
       publish_ad: publicar un anuncio en esta ciudad
       subtitle: Puedes probar alguna de estas cosas
@@ -508,6 +519,7 @@ es:
     searching_on_html: Buscando <i>%{q}</i> en
     send: Enviar
     send_a_message: "+ Envía un mensaje privado al anunciante"
+    send_a_private_message: "+ Envía un mensaje privado al anunciante"
     send_a_message_to: 'envía un mensaje privado a '
     sending_this_form: Enviando este formulario, admites haber leido, comprendido, y estás conforme con nuestras
     share_this_ad: Comparte este anuncio
