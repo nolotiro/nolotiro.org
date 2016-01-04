@@ -65,11 +65,11 @@ bundle exec rake ts:index
 bundle exec rake ts:start
 ```
 
-For delayed tasks (like sending emails) we use Resque, that uses Redis. Also we use Redis to cache things.
+For delayed tasks (like sending emails) we use Sidekiq, that uses Redis. Also we use Redis to cache things.
 
 ```
 sudo apt-get install redis-server
-rake resque:work QUEUE='*'
+bundle exec sidekiq
 ```
 
 For recaptcha you need to [signup](https://www.google.com/recaptcha/admin/create)

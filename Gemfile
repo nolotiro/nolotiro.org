@@ -37,6 +37,10 @@ group :development, :test do
   gem 'bullet'                              # dev: n+1 query problem alert
 end
 
+group :production, :staging do 
+  gem 'airbrake'                                      # exception notification
+end
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 
@@ -54,8 +58,7 @@ gem 'unicorn'                                       # webserver
 gem 'mysql2', '~> 0.3.18'                           # database adapter
 gem 'thinking-sphinx'                               # sphinxsearch
 gem 'redis-rails'                                   # redis cache
-gem 'resque', github: 'resque/resque', branch: '1-x-stable', require: 'resque/server'              # job workers redis
-gem 'sidekiq'
+gem 'sidekiq'                                       # job workers
 gem 'sinatra', require: false
 gem 'slim'
 
@@ -71,7 +74,6 @@ gem 'cancancan', '~> 1.10'                          # authorization# authorizati
 gem 'paperclip', '~> 4.0'                           # images
 gem 'delayed_paperclip'                             # images processing in bacground
 gem 'recaptcha', :require => 'recaptcha/rails'      # captcha
-gem 'airbrake'                                      # exception notification
 gem 'ipaddress'                                     # ip address validation
 gem 'localeapp'                                     # i18n interface
 gem 'blueprint-rails'                               # blueprint css framework
