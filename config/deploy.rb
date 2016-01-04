@@ -19,7 +19,11 @@ set :linked_dirs, %w{bin db/sphinx log tmp/pids tmp/cache tmp/sockets vendor/bun
 
 set :keep_releases, 5
 
+set :ci_client, "travis"
+set :ci_repository, "alabs/nolotiro.org"
+
 # Logical flow for deploying an app
+before 'deploy', 'ci:verify'
 after  'deploy:finished',            'thinking_sphinx:index'
 after  'deploy:finished',            'thinking_sphinx:restart'
 after  'deploy:finished',            'deploy:restart'
