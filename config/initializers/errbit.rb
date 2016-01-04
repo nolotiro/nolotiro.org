@@ -1,6 +1,6 @@
 if Rails.env.production? or Rails.env.staging?
   Airbrake.configure do |config|
-    config.project_key = Rails.application.secrets.airbrake["apikey"]
+    config.api_key = Rails.application.secrets.airbrake["apikey"]
     config.host    = Rails.application.secrets.airbrake["host"]
     config.port    = Rails.application.secrets.airbrake["port"]
     config.secure  = config.port == 443
