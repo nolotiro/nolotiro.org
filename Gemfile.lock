@@ -77,9 +77,9 @@ GEM
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
     addressable (2.4.0)
-    airbrake (5.0.2)
-      airbrake-ruby (~> 1.0)
-    airbrake-ruby (1.0.2)
+    airbrake (4.3.1)
+      builder
+      multi_json
     ansi (1.5.0)
     arbre (1.0.3)
       activesupport (>= 3.0.0)
@@ -474,7 +474,7 @@ DEPENDENCIES
   actionpack-page_caching
   active_skin
   activeadmin!
-  airbrake
+  airbrake (~> 4.0)
   blueprint-rails
   bullet
   bundler (>= 1.8.4)

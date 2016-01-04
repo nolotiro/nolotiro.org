@@ -38,7 +38,7 @@ group :development, :test do
 end
 
 group :production, :staging do 
-  gem 'airbrake'                                      # exception notification
+  gem 'airbrake', '~> 4.0'                  # exception notification
 end
 
 # Use ActiveModel has_secure_password
