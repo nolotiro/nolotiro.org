@@ -5,7 +5,7 @@
   %h1
     = title
 #main
-  .span-14
+  .span-13
     = form_for @message do |f|
       %fieldset
         %legend= t('mailboxer.new.legend')
@@ -29,6 +29,8 @@
               = t 'mailboxer.new.body_max'
         = f.hidden_field :recipients
         = f.submit t('mailboxer.new.submit')
-  .span-9
+  .span-1
+    %br
+  .span-8
     = render partial: "partials/google_adsense", locals: { class_name: "desktop google_adsense_336_280", ad_slot: "7225596067"}
     = render partial: "partials/google_adsense", locals: { class_name: "mobile google_adsense_336_280", ad_slot: "7225596067"}
