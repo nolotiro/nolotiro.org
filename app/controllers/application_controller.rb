@@ -22,8 +22,7 @@ class ApplicationController < ActionController::Base
 
   def after_sign_in_path_for(resource)
     # https://github.com/plataformatec/devise/wiki/How-To:-Redirect-to-a-specific-page-on-successful-sign-in
-    sign_in_url = new_user_session_url
-    if request.referer == sign_in_url
+    if request.referer and ["user/reset/edit", new_user_session_url].any? {|w| request.referer.include? w }
       super
     else
       initial_path = current_user.woeid? ? ads_woeid_path(id: current_user.woeid, type: 'give') : location_ask_path
