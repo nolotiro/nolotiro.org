@@ -1,9 +1,14 @@
 <% if message.sender == message.conversation.messages.first.sender %>
   <div class="message-excerpt">
     <div class="message-from-left">
-      <%= link_to profile_path(message.sender) do %>
+      <% if message.sender %>
+        <%= link_to profile_path(message.sender) do %>
+          <%= image_tag "contact.png" %>
+          <%= message.sender.username %>
+        <% end %>
+      <% else %>
         <%= image_tag "contact.png" %>
-        <%= message.sender.username %>
+        [borrado]
       <% end %>
     </div>
     <div class="message-container-right">
