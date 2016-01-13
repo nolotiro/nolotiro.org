@@ -1,7 +1,49 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
+# coding: utf-8
+# Default admin user (change password after first deploy to a server!)
 #
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+
+def create_user(role = 0, email = Faker::Internet.email, username = Faker::Name.name)
+  pwd = '12345678'
+  puts "    #{email}"
+  User.create!(
+    username: username, 
+	  email: email, 
+		role: role, 
+		password: pwd, 
+		password_confirmation: pwd, 
+		confirmed_at: Time.now, 
+		lang: 'es', 
+		woeid: 766273 
+	)
+end
+
+def create_ad(user)
+	ad = Ad.create(
+		user: user,
+		title: Faker::Hipster.sentence(3).truncate(60),
+		created_at: rand((Time.now - 1.week) .. Time.now),
+		body: Faker::Hipster.paragraphs,
+		type: 1,
+		status: 1,
+		woeid_code: 766273,
+		image: Faker::Placeholdit.image,
+	  ip: "28.3.2.4"
+	)
+	ad
+end
+
+
+(1..10).each do |i|
+  create_user
+end
+
+create_user(1)
+
+puts "Creating Ads"
+
+(1..30).each do |i|
+  user = User.offset(rand(User.count)).first
+	ad = create_ad(user)
+  puts "    #{ad.title}"
+end
+

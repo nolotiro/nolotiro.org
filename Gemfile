@@ -82,6 +82,7 @@ gem 'activeadmin', github: 'activeadmin'            # admin backend
 gem 'active_skin'                                   # admin backend skin
 gem 'rakismet'                                      # antispam
 gem 'font-awesome-rails'                            # font-awesome icons
+gem 'faker'
 
 # https://github.com/mailboxer/mailboxer/issues/316
 #gem 'mailboxer'                                     # messaging
