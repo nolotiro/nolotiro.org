@@ -7,9 +7,9 @@
         <% end %>
       </div>
     <% end %>
-    <% if can? :update, ad %>
-      <%= render "ads/actions", ad: ad %>
-    <% end %>
+
+    <%= render "ads/actions", ad: ad %>
+
     <h4>
       <%= link_to adslug_path(ad,ad.slug) do %>
         <%= ad.title %>
