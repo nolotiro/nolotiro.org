@@ -47,7 +47,7 @@ class AdsController < ApplicationController
   # POST /ads/1/bump
   def bump
     respond_to do |format|
-      @ad.touch
+      @ad.touch(:published_at)
 
       format.html { redirect_to @ad, notice: t('nlt.ads.bumped') }
       format.json { head :no_content }
@@ -61,6 +61,7 @@ class AdsController < ApplicationController
     @ad.user_owner = current_user.id
     @ad.ip = request.remote_ip
     @ad.status = 1
+    @ad.published_at = Time.zone.now
 
     respond_to do |format|
       if verify_recaptcha(:model => @ad, :message => t('nlt.captcha_error')) && @ad.save

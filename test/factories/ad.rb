@@ -9,6 +9,7 @@ FactoryGirl.define do
     ip "28.3.2.4"
     created_at "2013-11-01T10:41:00+01:00" 
     user
+    published_at { created_at }
   end
 
 end
