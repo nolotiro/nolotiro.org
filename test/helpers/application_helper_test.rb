@@ -19,11 +19,19 @@ class ApplicationHelperTest < ActionView::TestCase
   #  assert_equal expected_result, result
   end
 
-  test "should i18n_to_localeapp_in_locale" do
+  test "should i18n_to_localeapp_in_locale, :en" do
     assert_equal 20647, i18n_to_localeapp_in_locale(:en)
-    assert_equal 24068, i18n_to_localeapp_in_locale(:nl)
-    assert_equal 20645, i18n_to_localeapp_in_locale(:de)
-    assert_equal 20649, i18n_to_localeapp_in_locale(:it)
   end
 
+  test "should i18n_to_localeapp_in_locale, :nl" do
+    assert_equal 24068, i18n_to_localeapp_in_locale(:nl)
+  end
+
+  test "should i18n_to_localeapp_in_locale, :de" do
+    assert_equal 20645, i18n_to_localeapp_in_locale(:de)
+  end
+
+  test "should i18n_to_localeapp_in_locale, :it" do
+    assert_equal 20649, i18n_to_localeapp_in_locale(:it)
+  end
 end
