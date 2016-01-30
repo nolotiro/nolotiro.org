@@ -1,7 +1,7 @@
 class AdsController < ApplicationController
   include ApplicationHelper
 
-  before_action :set_ad, only: [:show, :edit, :update, :destroy]
+  before_action :set_ad, only: [:show, :edit, :update, :bump, :destroy]
   #caches_action :list, :show, layout: false, unless: :current_user, skip_digest: true
   #caches_action :index, :cache_path => Proc.new { |c| c.params }, unless: :current_user
   load_and_authorize_resource
@@ -42,6 +42,16 @@ class AdsController < ApplicationController
 
   # GET /ads/1/edit
   def edit
+  end
+
+  # POST /ads/1/bump
+  def bump
+    respond_to do |format|
+      @ad.touch
+
+      format.html { redirect_to @ad, notice: t('nlt.ads.bumped') }
+      format.json { head :no_content }
+    end
   end
 
   # POST /ads

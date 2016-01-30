@@ -22,12 +22,7 @@
         </div>
       <% end %>
       <% if can? :update, @ad %>
-        <div class="ad_edit">
-          <%= link_to ads_edit_path(@ad.id) do %>
-            <%= image_tag "edit_ad.png", :alt => t('nlt.edit_this_ad') %>
-            &nbsp; <%= t('nlt.edit_this_ad') %>
-          <% end %>
-        </div>
+        <%= render "ads/actions", ad: @ad %>
       <% end %>
       <% if @ad.is_give? %>
         <span class="ad_status <%= @ad.status_class %>"><%= @ad.status_string %></span>
