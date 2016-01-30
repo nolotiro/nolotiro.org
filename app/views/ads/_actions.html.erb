@@ -1,13 +1,15 @@
-<div class="ad_edit">
-  <%= link_to ads_edit_path(ad.id) do %>
-    <%= image_tag "edit_ad.png", :alt => t('nlt.edit_this_ad') %>
-    &nbsp; <%= t('nlt.edit_this_ad') %>
-  <% end %>
-</div>
+<ul class="ad_actions">
+  <li>
+    <%= link_to ads_edit_path(ad.id) do %>
+      <%= image_tag "edit_ad.png", :alt => t('nlt.edit_this_ad') %>
+      &nbsp; <%= t('nlt.edit_this_ad') %>
+    <% end %>
+  </li>
 
-<div class="ad_edit">
-  <%= link_to ads_bump_path(ad.id), method: :post do %>
-    <%= image_tag "edit_ad.png", :alt => t('nlt.bump_this_ad') %>
-    &nbsp; <%= t('nlt.bump_this_ad') %>
-  <% end %>
-</div>
+  <li>
+    <%= link_to ads_bump_path(ad.id), method: :post do %>
+      <%= image_tag "edit_ad.png", :alt => t('nlt.bump_this_ad') %>
+      &nbsp; <%= t('nlt.bump_this_ad') %>
+    <% end %>
+  </li>
+</ul>
