@@ -12,7 +12,7 @@
     <% if can?(:bump, ad) %>
       <li>
         <%= link_to ads_bump_path(ad.id), method: :post do %>
-          <%= image_tag "edit_ad.png", :alt => t('nlt.bump_this_ad') %>
+          <%= image_tag "bump_ad.png", :alt => t('nlt.bump_this_ad') %>
           &nbsp; <%= t('nlt.bump_this_ad') %>
         <% end %>
       </li>
