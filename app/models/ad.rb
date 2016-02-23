@@ -52,8 +52,8 @@ class Ad < ActiveRecord::Base
 
   has_attached_file :image,
     styles: {thumb: "100x90>"},
-    process_in_background: :image
-    #url: "/system/img/:id/:basename.:extension"
+    process_in_background: :image,
+    url: "/system/img/:attachment/:id_partition/:style/:filename"
 
   validates_attachment :image, content_type: { content_type: ["image/jpg", "image/jpeg", "image/png", "image/gif"] }
 
