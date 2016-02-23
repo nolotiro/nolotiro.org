@@ -51,6 +51,38 @@ class AdsControllerTest < ActionController::TestCase
     assert_response :success
   end
 
+  test "only ad owner should bump ads" do
+    @ad.published_at = 6.days.ago
+    @ad.save
+    sign_in @user
+    post :bump, id: @ad
+    assert_equal 6.days.ago.to_date, @ad.reload.published_at.to_date
+    assert_response :redirect
+    assert_redirected_to root_path
+  end
+
+  test "should not bump ads too recent" do
+    @ad.user_owner = @user.id
+    @ad.published_at = 4.days.ago
+    @ad.save
+    sign_in @user
+    post :bump, id: @ad
+    assert_equal 4.days.ago.to_date, @ad.reload.published_at.to_date
+    assert_response :redirect
+    assert_redirected_to root_path
+  end
+
+  test "should bump adds old enough" do
+    @ad.user_owner = @user.id
+    @ad.published_at = 6.days.ago
+    @ad.save
+    sign_in @user
+    post :bump, id: @ad
+    assert_equal Time.zone.now.to_date, @ad.reload.published_at.to_date
+    assert_response :redirect
+    assert_redirected_to ads_woeid_path(id: @user.woeid, type: @ad.type)
+  end
+
   test "should not edit any ad as normal user" do
     @ad.user_owner = @admin.id
     @ad.save

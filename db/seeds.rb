@@ -18,10 +18,12 @@ def create_user(role = 0, email = Faker::Internet.email, username = Faker::Name.
 end
 
 def create_ad(user)
+	timestamp = rand((Time.now - 1.week) .. Time.now)
 	ad = Ad.create(
 		user: user,
 		title: Faker::Hipster.sentence(3).truncate(60),
-		created_at: rand((Time.now - 1.week) .. Time.now),
+		created_at: timestamp,
+		published_at: timestamp,
 		body: Faker::Hipster.paragraphs,
 		type: 1,
 		status: 1,

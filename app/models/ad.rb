@@ -48,7 +48,7 @@ class Ad < ActiveRecord::Base
   # the "type" column is no longer need it by rails, so we don't care about it
   self.inheritance_column = nil 
 
-  default_scope { order('ads.created_at DESC') }
+  default_scope { order('ads.published_at DESC') }
 
   has_attached_file :image,
     styles: {thumb: "100x90>"},
@@ -188,4 +188,7 @@ class Ad < ActiveRecord::Base
     "#{I18n.t('nlt.keywords')} #{self.title} #{self.woeid_name}"
   end
 
+  def bumpable?
+    published_at <= 5.days.ago
+  end
 end

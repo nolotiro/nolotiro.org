@@ -28,6 +28,7 @@ NolotiroOrg::Application.routes.draw do
       #get '/create', to: redirect('/ad/create/type/1')
       get '/:id/:slug', to: 'ads#show', :as => 'adslug'
       get '/edit/id/:id', to: 'ads#edit', :as => 'ads_edit'
+      post '/bump/id/:id', to: 'ads#bump', :as => 'ads_bump'
       get '/listall/ad_type/:type', to: 'woeid#show', as: "ads_listall" 
       get '/listall/ad_type/:type/status/:status', to: 'woeid#show', as: 'ads_listall_status'
       get '/listall/page/:page/ad_type/:type', to: redirect('/ad/listall/ad_type/%{type}?page=%{page}')
