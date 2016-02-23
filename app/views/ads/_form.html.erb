@@ -57,10 +57,10 @@
         </dd>
 
         <dt id="body-label">
-        <%= f.label :body,  t('nlt.ads.form.body'), :class => "required" %> 
+	<%= f.label :body,  t('nlt.ads.form.body'), :class => "required", :id => "adbo", :for => "adbo" %> 
         </dt>
         <dd id="body-element">
-        <%= f.text_area :body, :rows => 24, :cols => 80, :required => true, :maxlength => 500 %>
+	<%= f.text_area :body, :rows => 24, :cols => 80, :required => true, :maxlength => 500, :id => "adbo" %>
         <p class="description">
         <%= t 'nlt.ads.form.body_max' %>
         </p>
