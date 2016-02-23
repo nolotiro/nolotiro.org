@@ -7,14 +7,9 @@
         <% end %>
       </div>
     <% end %>
-    <% if can? :update, ad %>
-      <div class="ad_edit">
-        <%= link_to ads_edit_path(ad.id) do %>
-          <%= image_tag "edit_ad.png", :alt => t('nlt.edit_this_ad') %>
-          &nbsp; <%= t('nlt.edit_this_ad') %>
-        <% end %>
-      </div>
-    <% end %>
+
+    <%= render "ads/actions", ad: ad %>
+
     <h4>
       <%= link_to adslug_path(ad,ad.slug) do %>
         <%= ad.title %>
@@ -32,7 +27,7 @@
       </span>
     <% end %>
     <span class="ad_date">
-      <%= t('nlt.published_on_html', date: ad.created_at) %>
+      <%= t('nlt.published_on_html', date: ad.published_at) %>
       <%= t('nlt.by_user') %>
       <%= link_to ad.user.username, listads_user_path(ad.user) %>
     </span>

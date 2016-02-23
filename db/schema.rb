@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151026224220) do
+ActiveRecord::Schema.define(version: 20160130175954) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace",     limit: 255
@@ -46,6 +46,7 @@ ActiveRecord::Schema.define(version: 20151026224220) do
     t.datetime "image_updated_at"
     t.integer  "readed_count",       limit: 4
     t.integer  "comments_count",     limit: 4,     default: 0
+    t.datetime "published_at",                                 null: false
   end
 
   add_index "ads", ["status"], name: "index_ads_on_status", using: :btree

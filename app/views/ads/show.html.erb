@@ -21,19 +21,14 @@
           <%= link_to image_tag(@ad.image.url(:thumb), :alt => @ad.title), @ad.image.url, :rel => 'superbox[image]', :alt => t('nlt.click_to_large') %>
         </div>
       <% end %>
-      <% if can? :update, @ad %>
-        <div class="ad_edit">
-          <%= link_to ads_edit_path(@ad.id) do %>
-            <%= image_tag "edit_ad.png", :alt => t('nlt.edit_this_ad') %>
-            &nbsp; <%= t('nlt.edit_this_ad') %>
-          <% end %>
-        </div>
-      <% end %>
+
+      <%= render "ads/actions", ad: @ad %>
+
       <% if @ad.is_give? %>
         <span class="ad_status <%= @ad.status_class %>"><%= @ad.status_string %></span>
       <% end %>
       <span class="ad_date">
-        <%= t('nlt.published_at_by_html', time: distance_of_time_in_words_to_now(@ad.created_at), user: link_to(@ad.user.username, listads_user_path(@ad.user))) %>
+        <%= t('nlt.published_at_by_html', time: distance_of_time_in_words_to_now(@ad.published_at), user: link_to(@ad.user.username, listads_user_path(@ad.user))) %>
       </span>
       <br>
       <p><%= @ad.body %></p>

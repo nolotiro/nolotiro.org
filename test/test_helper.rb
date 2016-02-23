@@ -18,15 +18,14 @@ ThinkingSphinx::Test.init
 class ActionController::TestCase
   include Devise::TestHelpers
   include FactoryGirl::Syntax::Methods
-end
 
-class MiniTest::Spec
-  before :each do
+  def setup
     I18n.default_locale = :es
     I18n.locale = :es
     DatabaseCleaner.start
   end
-  after :each do
+
+  def teardown
     DatabaseCleaner.clean
   end
 end

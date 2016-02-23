@@ -25,6 +25,7 @@ class Ability
       cannot :unlock, Admin
       cannot :become, Admin
       can [:edit, :update, :destroy], Ad, :user_owner => user.id
+      can(:bump, Ad) { |ad| ad.user_owner == user.id && ad.bumpable? }
       cannot :manage, ActiveAdmin
     end
     can :read, :all

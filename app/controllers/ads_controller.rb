@@ -1,7 +1,7 @@
 class AdsController < ApplicationController
   include ApplicationHelper
 
-  before_action :set_ad, only: [:show, :edit, :update, :destroy]
+  before_action :set_ad, only: [:show, :edit, :update, :bump, :destroy]
   #caches_action :list, :show, layout: false, unless: :current_user, skip_digest: true
   #caches_action :index, :cache_path => Proc.new { |c| c.params }, unless: :current_user
   load_and_authorize_resource
@@ -44,6 +44,16 @@ class AdsController < ApplicationController
   def edit
   end
 
+  # POST /ads/1/bump
+  def bump
+    respond_to do |format|
+      @ad.touch(:published_at)
+
+      format.html { redirect_to ads_woeid_path(id: current_user.woeid, type: @ad.type), notice: t('nlt.ads.bumped') }
+      format.json { head :no_content }
+    end
+  end
+
   # POST /ads
   # POST /ads.json
   def create
@@ -51,6 +61,7 @@ class AdsController < ApplicationController
     @ad.user_owner = current_user.id
     @ad.ip = request.remote_ip
     @ad.status = 1
+    @ad.published_at = Time.zone.now
 
     respond_to do |format|
       if verify_recaptcha(:model => @ad, :message => t('nlt.captcha_error')) && @ad.save
