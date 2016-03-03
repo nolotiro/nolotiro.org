@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="<%= locale %>">
   <head>
     <title><%= yield(:meta_title) %> - nolotiro.org</title>
+    <meta charset="utf-8" /> 
     <%= favicon_link_tag 'favicon.ico' %>
     <%= stylesheet_link_tag    "application", media: "all" %>
 
@@ -19,6 +20,7 @@
 
     <meta name='viewport' content='width=device-width, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no' />
 
+    <link rel="alternate" href="<%= url_for %>" hreflang="x-default" />
     <% Rails.application.secrets["langs"].split(' ').each do |l|  %>
       <link rel="alternate" hreflang="<%= l %>" href="<%= url_for(locale: l) %>" />
     <% end %>
