@@ -20,9 +20,9 @@
 
     <meta name='viewport' content='width=device-width, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no' />
 
-    <link rel="alternate" href="<%= url_for %>" hreflang="x-default" />
+    <link rel="alternate" href="<%= url_for(locale: nil, only_path: false) %>" hreflang="x-default" />
     <% Rails.application.secrets["langs"].split(' ').each do |l|  %>
-      <link rel="alternate" hreflang="<%= l %>" href="<%= url_for(locale: l) %>" />
+      <link rel="alternate" hreflang="<%= l %>" href="<%= url_for(locale: l, only_path: false) %>" />
     <% end %>
 
     <!--
