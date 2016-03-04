@@ -80,7 +80,6 @@ GEM
     airbrake (4.3.1)
       builder
       multi_json
-    ansi (1.5.0)
     arbre (1.0.3)
       activesupport (>= 3.0.0)
     arel (6.0.3)
@@ -271,11 +270,6 @@ GEM
       minitest-capybara (~> 0.7.0)
       minitest-metadata (~> 0.5.0)
       minitest-rails (~> 2.1)
-    minitest-reporters (1.1.7)
-      ansi
-      builder
-      minitest (>= 5.0)
-      ruby-progressbar
     multi_json (1.11.2)
     multi_xml (0.5.5)
     multipart-post (2.0.0)
@@ -389,7 +383,6 @@ GEM
       mime-types (>= 1.16, < 3.0)
       netrc (~> 0.7)
     riddle (1.5.12)
-    ruby-progressbar (1.7.5)
     ruby_parser (3.7.2)
       sexp_processor (~> 4.1)
     sass (3.2.19)
@@ -515,7 +508,6 @@ DEPENDENCIES
   mailboxer!
   mailcatcher
   minitest-rails-capybara
-  minitest-reporters
   mysql2 (~> 0.3.18)
   newrelic_rpm
   omniauth
