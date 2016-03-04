@@ -7,7 +7,7 @@ FactoryGirl.define do
     status 1
     woeid_code 766273
     ip "28.3.2.4"
-    created_at "2013-11-01T10:41:00+01:00" 
+    created_at { Time.zone.now }
     user
     published_at { created_at }
   end
