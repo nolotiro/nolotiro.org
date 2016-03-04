@@ -25,6 +25,18 @@ class User < ActiveRecord::Base
 
   scope :last_week, lambda { where("created_at >= :date", :date => 1.week.ago) } 
 
+  scope :top_overall, ->(limit = 20) do
+    select("users.id, users.username, COUNT(ads.id) as n_ads")
+      .joins(:ads)
+      .group("ads.user_owner")
+      .order("n_ads DESC")
+      .limit(limit)
+  end
+
+  scope :top_last_week, ->(limit = 20) do
+    top_overall.where("published_at >= :date", date: 1.week.ago)
+  end
+
   def self.from_omniauth(auth) 
     where(email: auth.info.email).first_or_create do |user|
       user.email = auth.info.email
