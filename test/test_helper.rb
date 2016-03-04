@@ -13,8 +13,7 @@ DatabaseCleaner.strategy = :transaction
 # Ensure sphinx directories exist for the test environment
 ThinkingSphinx::Test.init
 
-class ActionController::TestCase
-  include Devise::TestHelpers
+class ActiveSupport::TestCase
   include FactoryGirl::Syntax::Methods
 
   def setup
@@ -26,6 +25,10 @@ class ActionController::TestCase
   def teardown
     DatabaseCleaner.clean
   end
+end
+
+class ActionController::TestCase
+  include Devise::TestHelpers
 end
 
 class ActionDispatch::Routing::RouteSet
