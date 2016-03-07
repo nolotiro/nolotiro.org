@@ -2,10 +2,10 @@
   <h2><%= t('nlt.users_most_active_last_week') %></h2>
   <br>
   <ul>
-    <% AdHelper.get_users_ranking(80, true).each do |u| %>
+    <% User.top_last_week(80).each do |u| %>
       <li>
     <%= link_to listads_user_path u.id do %>
-      <%= u.username %> (<%= u.ads_count %>)
+      <%= u.username %> (<%= u.n_ads %>)
   <% end %>
     </li>
   <% end %>
@@ -16,10 +16,10 @@
   <h2><%= t('nlt.users_most_active_last_week') %></h2>
   <br>
   <ul>
-    <% AdHelper.get_users_ranking(5, true).each do |u| %>
+    <% User.top_last_week(5).each do |u| %>
       <li>
     <%= link_to listads_user_path u.id do %>
-      <%= u.username %> (<%= u.ads_count %>)
+      <%= u.username %> (<%= u.n_ads %>)
   <% end %>
     </li>
   <% end %>
@@ -31,10 +31,10 @@
   <h2><%= t('nlt.users_most_active') %></h2>
   <br>
   <ul>
-    <% AdHelper.get_users_ranking(80).each do |u| %>
+    <% User.top_overall(80).each do |u| %>
       <li>
     <%= link_to listads_user_path u.id do %>
-      <%= u.username %> (<%= u.ads_count %>)
+      <%= u.username %> (<%= u.n_ads %>)
   <% end %>
     </li>
   <% end %>
@@ -45,10 +45,10 @@
   <h2><%= t('nlt.users_most_active') %></h2>
   <br>
   <ul>
-    <% AdHelper.get_users_ranking(20).each do |u| %>
+    <% User.top_overall(20).each do |u| %>
       <li>
     <%= link_to listads_user_path u.id do %>
-      <%= u.username %> (<%= u.ads_count %>)
+      <%= u.username %> (<%= u.n_ads %>)
   <% end %>
     </li>
   <% end %>

@@ -83,3 +83,52 @@ class UserTest < ActiveSupport::TestCase
   end
 
 end
+
+class UserScopesTest < ActiveSupport::TestCase
+  setup do
+    3.times { FactoryGirl.create(:ad, user: user1) }
+    2.times { FactoryGirl.create(:ad, user: user2) }
+  end
+
+  test "top overall gives all time top ad publishers" do
+    FactoryGirl.create(:ad, user: user3)
+
+    results = User.top_overall
+
+    assert_equal(3, results.length)
+
+    assert_count(results.first, user1.id, user1.username, 3)
+    assert_count(results.second, user2.id, user2.username, 2)
+    assert_count(results.third, user3.id, user3.username, 1)
+  end
+
+  test "top last week gives last week's top publishers" do
+    FactoryGirl.create(:ad, user: user3, published_at: 8.days.ago)
+
+    results = User.top_last_week
+
+    assert_equal(2, results.length)
+    assert_count(results.first, user1.id, user1.username, 3)
+    assert_count(results.second, user2.id, user2.username, 2)
+  end
+
+  private
+
+  def assert_count(user, id, username, n_ads)
+    assert_equal id, user.id
+    assert_equal username, user.username
+    assert_equal n_ads, user.n_ads
+  end
+
+  def user1
+    @user1 ||= FactoryGirl.create(:user, username: 'user1')
+  end
+
+  def user2
+    @user2 ||= FactoryGirl.create(:user, username: 'user2')
+  end
+
+  def user3
+    @user3 ||= FactoryGirl.create(:user, username: 'user3')
+  end
+end
