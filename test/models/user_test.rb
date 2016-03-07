@@ -16,7 +16,7 @@ class UserTest < ActiveSupport::TestCase
     user2 = FactoryGirl.build(:user, username: "Username") 
     assert_not user2.valid?
     assert_not user2.save
-    assert user2.errors[:username].include? "ya está en uso"
+    assert user2.errors[:username].include? I18n.t('activemodel.errors.messages.taken')
   end
 
   test "should uniqueness validation on email work" do 
@@ -27,14 +27,14 @@ class UserTest < ActiveSupport::TestCase
     user2 = FactoryGirl.build(:user, email: "larryfoster@example.com") 
     assert_not user2.valid?
     assert_not user2.save
-    assert user2.errors[:email].include? "ya está en uso"
+    assert user2.errors[:email].include? I18n.t('activemodel.errors.messages.taken')
   end
 
   test "shouldn't let a password with 4 characters - minimal 5" do 
     @user.password = "1234"
     @user.password = "1234"
     assert_not @user.valid?
-    assert @user.errors[:password].include? "es demasiado corto (5 caracteres mínimo)"
+    assert @user.errors[:password].include? I18n.t('activemodel.errors.messages.too_short', count: 5)
   end
 
   test "should let a password with 5 characters" do 
@@ -46,7 +46,7 @@ class UserTest < ActiveSupport::TestCase
   test "shouldn't let a username with 2 characters - minimal 3" do 
     @user.username = "12"
     assert_not @user.valid?
-    assert @user.errors[:username].include? "es demasiado corto (3 caracteres mínimo)"
+    assert @user.errors[:username].include? I18n.t('activemodel.errors.messages.too_short', count: 3)
   end
 
   test "should let a username with 3 characters" do 
