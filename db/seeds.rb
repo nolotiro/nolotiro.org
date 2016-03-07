@@ -24,7 +24,7 @@ def create_ad(user)
     title: Faker::Hipster.sentence(3).truncate(60),
     created_at: timestamp,
     published_at: timestamp,
-    body: Faker::Hipster.paragraphs,
+    body: Faker::Hipster.paragraphs.join("\n"),
     type: 1,
     status: 1,
     woeid_code: 766273,
