@@ -263,7 +263,7 @@ form.searchbox
 .filter_status
   z-index: 20
   float: left
-  padding: 10px 18px 12px 18px
+  padding: 10px 18px 12px 0
   width: 100% !important
 
 /* styles for adds
@@ -395,7 +395,6 @@ form.searchbox
 
 .rss
   float: left
-  padding-left: 18px
   margin-bottom: 10px
 
 .sharelinks
@@ -652,9 +651,8 @@ dl, dd
 
 #header
   margin-top: 0px
-  width: 95%
   margin-left: 0px
-  margin-right: 20px
+  margin-right: 0px
   margin-bottom: 60px
   position: relative
   text-align: left
@@ -692,16 +690,24 @@ dl, dd
   margin-right: 50px
 
 .links-right
+  display: inline-block
+  float: right
   text-align: right
   margin-bottom: 10px
-  right: 10px
+  position: relative
+  width: 70%
 
 .links-left
+  display: inline-block
+  float: left
   text-align: left
-  left: 10px
+  position: relative
 
 /**
  * Header Area.
+
+.site-logo
+  margin-left: 60px
 
 .site-name
   z-index: -130
@@ -709,7 +715,6 @@ dl, dd
   border: none
   margin-top: 0px
   padding-top: 10px
-  margin-left: 74px
   width: 380px
   font-size: 2em
   line-height: 1
@@ -718,13 +723,12 @@ dl, dd
   img
     position: absolute
     top: 16px
-    left: 20px
+    left: 0
 
 .site-slogan
   float: left
   font-size: 1em
   padding-top: 1px
-  margin-left: 74px
 
 #location_header_section
   z-index: 100
@@ -1018,19 +1022,9 @@ $langs: <%= Rails.application.secrets["langs"] %>
   width: 90%
   height: 100px
 
-.links-right
-  float: right
-  display: inline-block
-  position: relative
-  width: 50%
-
-.links-left
-  float: left
-  display: inline-block
-  position: relative
-
 #social-butttons
   display: inline-block
+  width: 30%
 
 #messages-thread
   min-height: 300px
@@ -1154,6 +1148,7 @@ $langs: <%= Rails.application.secrets["langs"] %>
   .info
     width: 90%
     margin-left: 4%
+    clear: both
 
   #header
     .ad_create_tab

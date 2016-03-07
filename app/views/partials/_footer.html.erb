@@ -1,6 +1,8 @@
 <div id="footer">
 
-  <%= render :partial => "partials/social_buttons", :locals => { :url => url } %>
+  <div id="social-butttons">
+    <%= render :partial => "partials/social_buttons", :locals => { :url => url } %>
+  </div>
 
   <div class="links-right">
     <%= link_to t('nlt.about'), about_path %> |
@@ -14,8 +16,6 @@
       <%= image_tag("alabs.png", :alt => "aLabs logo") %>
     </a>
   </div>
-
-  <br>
 
   <div id="info" class="innerWrap clearfix">
     <p><%= t('nlt.footer_explain') %></p>

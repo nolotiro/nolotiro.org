@@ -84,16 +84,18 @@
 
         <%= render :partial => "partials/user_actions" %>
 
-        <div class="site-name">
-          <%= link_to root_path, :title => "nolotiro.org home", "data-no-turbolink" => true do %>
-            <%= image_tag "nolotiro_logo.png", :alt => "nolotiro.org", :id => "logo" %>
-            nolotiro.org
-            <%=h yield(:title) %>
-          <% end %>
-        </div>
+        <div class="site-logo">
+          <div class="site-name">
+            <%= link_to root_path, :title => "nolotiro.org home", "data-no-turbolink" => true do %>
+              <%= image_tag "nolotiro_logo.png", :alt => "nolotiro.org", :id => "logo" %>
+              nolotiro.org
+              <%=h yield(:title) %>
+            <% end %>
+          </div>
 
-        <div class="site-slogan">
-          <%= t('nlt.slogan') %>
+          <div class="site-slogan">
+            <%= t('nlt.slogan') %>
+          </div>
         </div>
 
         <% if content_for?(:action) %>
