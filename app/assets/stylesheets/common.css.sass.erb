@@ -691,13 +691,20 @@ dl, dd
   margin-right: 50px
 
 .links-right
+  display: inline-block
+  float: right
   text-align: right
   margin-bottom: 10px
+  position: relative
   right: 10px
+  width: 50%
 
 .links-left
+  display: inline-block
+  float: left
   text-align: left
   left: 10px
+  position: relative
 
 /**
  * Header Area.
@@ -1016,17 +1023,6 @@ $langs: <%= Rails.application.secrets["langs"] %>
 #mailboxer_message_body
   width: 90%
   height: 100px
-
-.links-right
-  float: right
-  display: inline-block
-  position: relative
-  width: 50%
-
-.links-left
-  float: left
-  display: inline-block
-  position: relative
 
 #social-butttons
   display: inline-block
