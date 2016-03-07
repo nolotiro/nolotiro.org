@@ -31,7 +31,7 @@
         <%= t('nlt.published_at_by_html', time: distance_of_time_in_words_to_now(@ad.published_at), user: link_to(@ad.user.username, listads_user_path(@ad.user))) %>
       </span>
       <br>
-      <p><%= @ad.body %></p>
+      <p><%= simple_format(@ad.body) %></p>
       <div class="ad_meta_info">
         <%= t('nlt.readed_count', count: @ad.readed_counter) %><%= t('nlt.comments_count', count: @ad.comments_count) %>
       </div>
