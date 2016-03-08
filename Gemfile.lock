@@ -16,15 +16,6 @@ GIT
       ransack (~> 1.3)
       sass-rails
 
-GIT
-  remote: git://github.com/div/mailboxer.git
-  revision: 41c9d8de2e0ad4dc511718074228d40a1ba96ebe
-  branch: rails42-foreigner
-  specs:
-    mailboxer (0.12.4)
-      carrierwave (>= 0.5.8)
-      rails (>= 3.2.0)
-
 GEM
   remote: https://rubygems.org/
   remote: https://rails-assets.org/
@@ -164,6 +155,8 @@ GEM
       multipart-post (>= 1.2, < 3)
     font-awesome-rails (4.5.0.0)
       railties (>= 3.2, < 5.0)
+    foreigner (1.7.4)
+      activerecord (>= 3.0.0)
     formtastic (3.1.3)
       actionpack (>= 3.2.13)
     formtastic_i18n (0.4.1)
@@ -236,6 +229,10 @@ GEM
       nokogiri (>= 1.5.9)
     mail (2.6.3)
       mime-types (>= 1.16, < 3)
+    mailboxer (0.13.0)
+      carrierwave (>= 0.5.8)
+      foreigner (>= 0.9.1)
+      rails (>= 3.2.0)
     mailcatcher (0.6.2)
       activesupport (>= 4.0.0, < 5)
       eventmachine (= 1.0.8)
@@ -497,7 +494,7 @@ DEPENDENCIES
   jquery-rails
   launchy
   localeapp
-  mailboxer!
+  mailboxer (= 0.13.0)
   mailcatcher
   minitest-rails-capybara
   mysql2 (~> 0.3.18)
