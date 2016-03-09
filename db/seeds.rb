@@ -1,6 +1,4 @@
 # coding: utf-8
-# Default admin user (change password after first deploy to a server!)
-#
 
 def create_user(role = 0, email = Faker::Internet.email, username = Faker::Name.name)
   pwd = '12345678'
