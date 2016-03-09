@@ -12,11 +12,11 @@
   </div>
 </div>
 
-<% cache("section_locations_#{I18n.locale}") do %>
+<% cache("ads/location-ranks-#{Ad.cache_digest}") do %>
   <%= render :partial => "partials/section_locations" %>
 <% end %>
 
-<% cache("section_users_#{I18n.locale}") do %>
+<% cache("ads/user-ranks-#{Ad.cache_digest}") do %>
   <%= render :partial => "partials/section_users" %>
 <% end %>
 
