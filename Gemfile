@@ -82,9 +82,7 @@ gem 'rakismet'                                      # antispam
 gem 'font-awesome-rails'                            # font-awesome icons
 gem 'faker'
 
-# https://github.com/mailboxer/mailboxer/issues/316
-#gem 'mailboxer'                                     # messaging
-gem 'mailboxer', :git => 'git://github.com/div/mailboxer.git', :branch => 'rails42-foreigner'
+gem 'mailboxer', '0.13.0'                           # messaging
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-bootstrap'
