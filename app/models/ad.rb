@@ -88,6 +88,10 @@ class Ad < ActiveRecord::Base
 
   self.per_page = 20
 
+  def self.cache_digest
+    Ad.maximum(:created_at).strftime("%d%m%y%H%M%s")
+  end
+
   def body 
     ApplicationController.helpers.escape_privacy_data(read_attribute(:body))
   end
