@@ -66,7 +66,6 @@ gem 'geoplanet'                                     # yahoo woeid geoplanet
 gem 'geoip'                                         # geolite city
 gem 'will_paginate', '~> 3.0'                       # pagination
 gem 'devise'                                        # users
-gem 'devise-async', github: 'mhfs/devise-async'     # send mails async
 gem 'omniauth'                                      # users login with providers
 gem 'omniauth-facebook'                             # users login with facebook
 gem 'omniauth-google-oauth2'                        # users login with google
