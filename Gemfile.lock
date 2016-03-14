@@ -468,7 +468,6 @@ DEPENDENCIES
   airbrake (~> 4.0)
   blueprint-rails
   bullet
-  bundler (>= 1.8.4)
   byebug
   cancancan (~> 1.10)
   capistrano (~> 3.0)
