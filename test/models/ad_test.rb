@@ -48,7 +48,7 @@ class AdTest < ActiveSupport::TestCase
     assert @ad.errors[:status].include?("no es un estado válido")
   end
 
-  test "ad validates lenght" do
+  test "ad validates length of title" do
     @ad.title = "a" * 200
     assert_not @ad.save
     assert @ad.errors[:title].include?("es demasiado largo (100 caracteres máximo)")
@@ -61,6 +61,11 @@ class AdTest < ActiveSupport::TestCase
     @ad.update_attribute(:title, text)
     assert_equal(@ad.body, expected_text)
     assert_equal(@ad.title, expected_text)
+  end
+
+  test "ad validates length of body" do
+    assert_not @ad.update(body: "a" * 1001)
+    assert @ad.errors[:body].include?("es demasiado largo (1000 caracteres máximo)")
   end
 
   test "ad check slug" do
