@@ -48,3 +48,5 @@ log/localeapp.yml
 
 # For Rubymine (Jetbrains IDE)
 .idea
+
+.DS_Store
