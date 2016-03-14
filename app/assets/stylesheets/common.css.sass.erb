@@ -224,8 +224,13 @@ form.searchbox
   overflow: hidden
 
   li
-    padding-right: 36px
     float: left
+
+    &:first-child
+      padding-right: 36px
+
+    &:last-child
+      padding-right: 0
 
 .ad_status
   display: inline-block
