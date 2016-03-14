@@ -48,10 +48,15 @@ class AdTest < ActiveSupport::TestCase
     assert @ad.errors[:status].include?("no es un estado válido")
   end
 
-  test "ad validates length of title" do
+  test "ad validates maximum length of title" do
     @ad.title = "a" * 200
     assert_not @ad.save
     assert @ad.errors[:title].include?("es demasiado largo (100 caracteres máximo)")
+  end
+
+  test "ad validates minimum length of title" do
+    assert_not @ad.update(title: "a" * 5)
+    assert @ad.errors[:title].include?("es demasiado corto (6 caracteres mínimo)")
   end
 
   test "ad escaped title and body with escape_privacy_data" do 
