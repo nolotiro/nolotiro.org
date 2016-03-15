@@ -102,7 +102,7 @@ class AdsController < ApplicationController
   # Use callbacks to share common setup or constraints between actions.
   def set_ad
     #@ad = Rails.cache.fetch("set_ad_#{params[:id]}") do 
-    @ad = Ad.includes(:comments, :user).find(params[:id])
+    @ad = Ad.find(params[:id])
     #end
   end
 
