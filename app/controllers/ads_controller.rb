@@ -2,8 +2,7 @@ class AdsController < ApplicationController
   include ApplicationHelper
 
   before_action :set_ad, only: [:show, :edit, :update, :bump, :destroy]
-  #caches_action :list, :show, layout: false, unless: :current_user, skip_digest: true
-  #caches_action :index, :cache_path => Proc.new { |c| c.params }, unless: :current_user
+
   load_and_authorize_resource
 
   # GET /
@@ -101,9 +100,7 @@ class AdsController < ApplicationController
   private
   # Use callbacks to share common setup or constraints between actions.
   def set_ad
-    #@ad = Rails.cache.fetch("set_ad_#{params[:id]}") do 
-    @ad = Ad.includes(:comments, :user).find(params[:id])
-    #end
+    @ad = Ad.find(params[:id])
   end
 
   # Never trust parameters from the scary internet, only allow the white list through.
