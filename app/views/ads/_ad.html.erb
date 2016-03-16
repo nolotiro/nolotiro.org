@@ -1,5 +1,7 @@
 <% if ad.user %>
   <div class="ad_excerpt_home">
+    <%= render "ads/actions", ad: ad %>
+
     <% if ad.image.exists? %>
       <div class="ad_list_image">
         <%= link_to adslug_path(ad,ad.slug) do %>
@@ -7,8 +9,6 @@
         <% end %>
       </div>
     <% end %>
-
-    <%= render "ads/actions", ad: ad %>
 
     <h4>
       <%= link_to adslug_path(ad,ad.slug) do %>

@@ -2,7 +2,6 @@ source 'https://rubygems.org'
 
 ruby '2.3.0'
 
-gem 'bundler', '>= 1.8.4'
 gem 'rails', '~> 4.2'
 gem 'haml-rails'
 gem 'sass-rails', '~> 4.0.0'
