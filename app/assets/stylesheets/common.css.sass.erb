@@ -285,7 +285,13 @@ form.searchbox
   font-weight: bold
   margin-bottom: 3px
 
+=word-break
+  word-break: break-all
+  word-break: break-word
+
 .ad_excerpt
+  +word-break
+
   float: left
   border-bottom: 1px solid #DDD
   padding: 14px 18px 22px 18px
@@ -305,6 +311,8 @@ form.searchbox
   padding-bottom: 5px
 
 .ad_excerpt_show
+  +word-break
+
   display: block
   float: left
 
@@ -753,6 +761,8 @@ dl, dd
   margin-top: 8px
 
 #default_header_section
+  +word-break
+
   display: block
   background-color: #FFFFCC
   padding-top: 16px
@@ -760,7 +770,6 @@ dl, dd
   padding-left: 20px
   border: 1px solid #ddd
   margin-bottom: 20px
-  word-break: break-all
   h2
     font-size: 1em
     font-weight: bold

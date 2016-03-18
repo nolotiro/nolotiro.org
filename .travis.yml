@@ -28,5 +28,8 @@ before_script:
   - mysql -e 'create database nolotirov3_test;'
   - cp config/secrets.yml.example config/secrets.yml
   - cp config/database.yml.travis config/database.yml
+branches:
+  only:
+    - master
 env:
   - DATABASE=mysql2 SPHINX_BIN=/usr/bin/ SPHINX_VERSION=2.0.4
