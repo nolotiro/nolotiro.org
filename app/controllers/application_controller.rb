@@ -47,8 +47,6 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  private
-
   def get_location_suggest 
     ip_address = GeoHelper.get_ip_address request
     GeoHelper.suggest ip_address
