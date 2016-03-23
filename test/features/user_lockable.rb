@@ -3,7 +3,7 @@ include Warden::Test::Helpers
 
 feature "UserLockable" do
 
-  scenario "should lock after 10 tries on user", js: true do
+  scenario "should lock after 10 tries on user" do
 
     @user = FactoryGirl.create(:user)
 
