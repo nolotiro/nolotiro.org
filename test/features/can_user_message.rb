@@ -16,7 +16,7 @@ feature "CanUserMessage" do
     page.must_have_content body
     page.must_have_content "Mover mensaje a papelera"
 
-    send_message("What a nice emoji😀!What a nice emoji😀!What a nice emoji😀!What a nice emoji😀!What a nice emoji😀!")
+    send_message("What a nice emoji😀!")
     page.must_have_content reply
   end
 
