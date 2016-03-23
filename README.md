@@ -25,17 +25,29 @@ When finished, you need to log in to the virtual machine with the command:
 vagrant ssh
 ```
 
-To end you should start the application server:
+Copy the database config templates:
 
 ```
 cd /vagrant
+cp config/database.yml.example config/database.yml
+cp config/secrets.yml.example config/secrets.yml
+```
+
+Now populate the database with fake data to work
+```
+bundle exec rake db:drop db:setup
+```
+
+
+Finally you should start the application server:
+```
 bundle exec rails s -b 0.0.0.0
 ```
 
-You can then access the web application in this addresses:
+You can then access the web application in this url (port 3000):
 
-http://localhost:8080
-http://localhost:8081
+http://localhost:3000
+
 
 ## Manual Installation
 
