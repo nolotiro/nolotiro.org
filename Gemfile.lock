@@ -475,7 +475,6 @@ DEPENDENCIES
   capistrano-ci
   capistrano-rails
   capistrano-rbenv
-  capybara
   capybara-webkit
   coffee-rails (~> 4.0.0)
   commands
