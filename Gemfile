@@ -21,7 +21,6 @@ group :development, :test do
   gem 'minitest-rails-capybara'             # test: features
   gem 'launchy'                             # test: features - save_and_open_page helper
   gem 'factory_girl_rails', '~> 4.0'        # test: factories
-  gem 'database_cleaner'                    # test: for not having duplicity
   gem 'byebug'                              # dev: debugger
   gem 'spring'                              # dev: speed up things
   gem 'commands'                            # dev: rake commands in console
