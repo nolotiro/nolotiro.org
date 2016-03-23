@@ -19,7 +19,6 @@ feature "UserLockable" do
     fill_in "user_email", with: @user.email
     fill_in "user_password", with: "trololololo" 
     click_button "Acceder"
-    save_and_open_page
     page.must_have_content "Bloqueado"
 
   end

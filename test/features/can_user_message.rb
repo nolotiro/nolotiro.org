@@ -21,7 +21,6 @@ feature "CanUserMessage" do
     reply = "What a nice emoji😀!What a nice emoji😀!What a nice emoji😀!What a nice emoji😀!What a nice emoji😀!"
     fill_in "mailboxer_message_body", with: reply
     click_button "Enviar"
-    save_and_open_page
     page.must_have_content reply
   end
 
