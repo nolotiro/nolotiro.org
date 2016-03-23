@@ -16,7 +16,7 @@ feature "UserLockable" do
     page.must_have_content I18n.t('devise.failure.last_attempt')
 
     login(@user.email, "trololololo")
-    page.must_have_content "Bloqueado"
+    page.must_have_content I18n.t('devise.failure.locked')
   end
 
   private
