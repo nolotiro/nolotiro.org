@@ -96,7 +96,6 @@ class UserScopesTest < ActiveSupport::TestCase
     results = User.top_overall
 
     assert_equal(3, results.length)
-
     assert_count(results.first, user1.id, user1.username, 3)
     assert_count(results.second, user2.id, user2.username, 2)
     assert_count(results.third, user3.id, user3.username, 1)
