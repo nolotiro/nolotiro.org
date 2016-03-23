@@ -11,18 +11,19 @@ feature "CanUserMessage" do
     login_as @user1
 
     visit message_new_path(@user2)
-    body = "hola trololo"
-    fill_in "mailboxer_message_subject", with: "hola mundo"
-    fill_in "mailboxer_message_body", with: body
-    click_button "Enviar"
+
+    send_message("hola trololo", "hola mundo")
     page.must_have_content body
     page.must_have_content "Mover mensaje a papelera"
 
-    reply = "What a nice emoji😀!What a nice emoji😀!What a nice emoji😀!What a nice emoji😀!What a nice emoji😀!"
-    fill_in "mailboxer_message_body", with: reply
-    click_button "Enviar"
+    send_message("What a nice emoji😀!What a nice emoji😀!What a nice emoji😀!What a nice emoji😀!What a nice emoji😀!")
     page.must_have_content reply
   end
 
+  def send_message(body, subject = nil)
+    fill_in("mailboxer_message_subject", with: subject) if subject
+    fill_in "mailboxer_message_body", with: body
+    click_button "Enviar"
+  end
 end
 
