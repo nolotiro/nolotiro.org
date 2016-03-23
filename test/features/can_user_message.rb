@@ -2,22 +2,35 @@ require "test_helper"
 include Warden::Test::Helpers
 
 feature "CanUserMessage" do
-
-  scenario "should message another user", js: true do
-
+  before do
     @user1 = FactoryGirl.create(:user)
     @user2 = FactoryGirl.create(:user)
 
     login_as @user1
 
     visit message_new_path(@user2)
+  end
 
+  it "should message another user", js: true do
     send_message("hola trololo", "hola mundo")
-    page.must_have_content body
-    page.must_have_content "Mover mensaje a papelera"
 
-    send_message("What a nice emoji😀!")
-    page.must_have_content reply
+    page.must_have_content "hola trololo"
+    page.must_have_content "Mover mensaje a papelera"
+  end
+
+  it "should message another user using emojis", js: true do
+    skip "emojis not supported"
+    send_message("What a nice emoji😀!", "hola mundo")
+
+    page.must_have_content "What a nice emoji😀!"
+    page.must_have_content "Mover mensaje a papelera"
+  end
+
+  it "should reply to a message", js: true do
+    send_message("hola trololo", "hola mundo")
+    send_message("hola trululu")
+
+    page.must_have_content "hola trululu"
   end
 
   def send_message(body, subject = nil)
