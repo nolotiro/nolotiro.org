@@ -28,6 +28,7 @@ class User < ActiveRecord::Base
   scope :top_overall, ->(limit = 20) do
     select("users.id, users.username, COUNT(ads.id) as n_ads")
       .joins(:ads)
+      .merge(Ad.give)
       .group("ads.user_owner")
       .order("n_ads DESC")
       .limit(limit)
