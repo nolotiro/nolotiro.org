@@ -7,7 +7,7 @@ feature "UserLockable" do
 
     @user = FactoryGirl.create(:user)
 
-    (1..10).each do |n|
+    (1..9).each do |n|
       login(@user.email, "trololololo")
       page.must_have_content I18n.t('devise.failure.not_found_in_database')
     end
