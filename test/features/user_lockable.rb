@@ -8,18 +8,21 @@ feature "UserLockable" do
     @user = FactoryGirl.create(:user)
 
     (1..10).each do |n|
-      visit new_user_session_path
-      fill_in "user_email", with: @user.email
-      fill_in "user_password", with: "trololololo" 
-      click_button "Acceder"
+      login(@user.email, "trololololo")
       page.must_have_content I18n.t('devise.failure.not_found_in_database')
     end
 
+    login(@user.email, "trololololo")
+    page.must_have_content "Bloqueado"
+  end
+
+  private
+
+  def login(username, password)
     visit new_user_session_path
     fill_in "user_email", with: @user.email
     fill_in "user_password", with: "trololololo" 
     click_button "Acceder"
-    page.must_have_content "Bloqueado"
 
   end
 
