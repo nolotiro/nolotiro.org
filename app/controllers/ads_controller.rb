@@ -58,6 +58,7 @@ class AdsController < ApplicationController
   def create
     @ad = Ad.new(ad_params)
     @ad.user_owner = current_user.id
+    @ad.woeid_code = current_user.woeid
     @ad.ip = request.remote_ip
     @ad.status = 1
     @ad.published_at = Time.zone.now
@@ -105,6 +106,6 @@ class AdsController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def ad_params
-    params.require(:ad).permit(:title, :body, :type, :status, :woeid_code, :comments_enabled, :image)
+    params.require(:ad).permit(:title, :body, :type, :status, :comments_enabled, :image)
   end
 end
