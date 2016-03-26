@@ -52,6 +52,9 @@ es:
       message:
         subject: Subject
       user:
+        Contraseña: Contraseña
+        Recuérdame: Recuérdame
+        Tu email: Tu email
         current_password: Contraseña actual
         email: Correo electrónico
         password: Contraseña nueva

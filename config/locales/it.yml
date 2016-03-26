@@ -415,17 +415,17 @@ it:
     cities_in_the_world: città del mondo che reciclano di piu
     click_to_large: Clicca per ingrandire la foto
     comments:
-      do_click: 
-      flash_ko: 
-      flash_ok: 
-      label: 
+      do_click: 'Clicca sul link per rispondere al messaggio:'
+      flash_ko: Si è verificato un errore durante il salvataggio il tuo commento. Controllare e rinviarlo
+      flash_ok: Commento salvato
+      label: Il tuo commento
       subject: 
-      submit: 
-      title: 
+      submit: Inviare
+      title: Commenti
     comments_count:
       one: ", %{count} commento"
       other: ", %{count} commenti"
-    contact: 
+    contact: contatto
     contact_form: Formulario di contatto
     contact_legend: Per favore, scrive il tuo messaggio
     contact_thanks: Messaggio inviato! Grazie per contattare con nolotiro.org
@@ -446,11 +446,11 @@ it:
       answer_5_html: 
       answer_6_html: 
       answer_7_html: 
-      question_1: 
-      question_2: 
-      question_3: 
+      question_1: Qual è il fine di questo progetto?
+      question_2: Quindi ... Questo sito non è quello di aiutare gli altri?
+      question_3: Ma mi piace dare la mia roba a qualcuno che veramente ne ha bisogno
       question_4: 
-      question_5: 
+      question_5: Che tipo di annunci posso pubblicare in nolotiro?
       question_6: Non è permesso il scambio di oggetti? che strano
       question_7: Posso inviare cose a gente che non abita nella mia città?
       title: Domande frequenti
@@ -471,34 +471,34 @@ it:
     last_published_gifts: ultimi regali pubblicati
     leave_blank: "(Lasciala in bianco se non la vuoi cambiare)"
     login: accedi
-    login_to_comment: 
-    logout: 
+    login_to_comment: l'accesso a scrivere un commento
+    logout: uscire
     mail:
-      automatic: 
-    member_since: 
-    messages: 
+      automatic: Questo è un messaggio automatico. Si prega di non rispondere a questo indirizzo email.
+    member_since: membro dal
+    messages: messaggi
     messages_tabs:
-      inbox: 
-      sent: 
-      trash: 
-    messages_title: 
+      inbox: ricevuto
+      sent: Inviati
+      trash: Cestino
+    messages_title: Messaggi
     meta_description: 
-    meta_description_ad: 
-    new_user: 
+    meta_description_ad: rivendita regali %{title} en %{woeid}. %{body}
+    new_user: nuovo utente
     no_results:
       explain_html: 
       phrase: 
-      publish_ad: 
-      subtitle: 
-      title: 
-      try: 
-    or: 
-    password: 
-    permission_denied: 
-    please_fill_to_become_member: 
-    please_insert_email_and_password: 
-    please_introduce: 
-    privacy: 
+      publish_ad: pubblicare un annuncio in questa città
+      subtitle: Si può provare una qualsiasi di queste cose
+      title: Nessun annuncio per questa posizione.
+      try: 'Oppure provate queste città con nome simile:'
+    or: o
+    password: password
+    permission_denied: Non si dispone dell'autorizzazione per eseguire questa azione.
+    please_fill_to_become_member: Si prega di compilare questo modulo per essere un membro di nolotiro
+    please_insert_email_and_password: Metta prego la tua email e la password.
+    please_introduce: 'Inserisci i caratteri che vedi:'
+    privacy: politica sulla privacy
     privacy_page:
       body_html: 
       title: 
@@ -509,43 +509,43 @@ it:
         delete: 
     profile_edit: 
     publish_ad: 
-    publish_ad_on: 
-    published_ads: 
-    published_at_by_html: 
-    published_on: 
-    published_on_html: 
-    readed_count: 
-    reads: 
-    register: 
-    register_here: 
-    remember_me: 
+    publish_ad_on: Inserisci annunci a %{woeid}
+    published_ads: annunci pubblicati
+    published_at_by_html: Pubblicato fa %{time} dall'utente %{user}
+    published_on: Pubblicato fa %{date}
+    published_on_html: Pubblicato <abbr class='js-moment' title='%{date}'>%{date}</abbr>
+    readed_count: "%{count} lettures"
+    reads: lettures
+    register: Iscriviti
+    register_here: registrati qui
+    remember_me: Ricordare il login
     rss_suscribe: 
     save_failed: 
     search:
-      button: 
-      must_search: 
+      button: ricerca
+      must_search: Si dovrebbe cercare qualcosa da qualche parte.
       no_ads_message_html: 
     searching_on_html: 
-    send: 
-    send_a_message: 
-    send_a_message_to: 
-    sending_this_form: 
-    share_this_ad: 
-    sign_in: 
-    sign_in_with_provider: 
-    sign_up: 
-    slogan: 
-    suggestions: 
-    to_publish_ad: 
+    send: Inviare
+    send_a_message: "+ Invia un messaggio privato a inserzionista"
+    send_a_message_to: 'envia un messaggio privato a '
+    sending_this_form: Inviando questo modulo, ammette di aver letto, compreso, e si è soddisfatti con il nostro
+    share_this_ad: Condividi questo annuncio
+    sign_in: Login
+    sign_in_with_provider: Accedi con un altro provider
+    sign_up: Creare un utente
+    slogan: Non buttare, io regalo (senza condizioni)
+    suggestions: suggerimenti
+    to_publish_ad: Pubblicare anuncio
     to_publish_or_send_messages: 
-    tos: 
+    tos: condizioni di utilizzo
     tos_page:
-      body_html: 
-      title: 
+      body_html: TODO
+      title: Condizioni di utilizzo
     translate:
       description_html: 
-      title: 
-    update: 
+      title: Aiutaci a tradurre nolotiro.org la lingua
+    update: salvare
     updating: 
     user_ads: 
     user_edit_profile: 
@@ -554,14 +554,14 @@ it:
     users_most_active: 
     users_most_active_last_week: 
     view_ads_on: 
-    view_ads_on_your_city: 
-    want: 
+    view_ads_on_your_city: Mostra annunci nella vostra città o paese
+    want: ricerca
     want_to_leave: 
     we_need_your_password: 
-    welcome: 
-    welcome_message: 
-    write_a_comment: 
-    your_email: 
+    welcome: ciao
+    welcome_message: Benvenuti
+    write_a_comment: "+ Scrivi un commento"
+    your_email: la tua email
   number:
     currency:
       format:
@@ -611,7 +611,7 @@ it:
         delimiter: 
   recaptcha:
     errors:
-      incorrect-captcha-sol: 
+      incorrect-captcha-sol: C'è stato un errore riempire i caratteri captcha.
       verification_failed: 
   support:
     array:
@@ -628,7 +628,7 @@ it:
   unauthorized:
     default: 
     manage:
-      all: 
+      all: "È necessario prima effettuare il login o registrare un utente."
   will_paginate:
     next_label: successivo →
     page_entries_info:
