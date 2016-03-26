@@ -54,16 +54,10 @@ cp config/app_config.yml.example config/app_config.yml
 cp config/database.yml.example config/database.yml
 cp config/secrets.yml.example config/secrets.yml
 
-sudo -u vagrant -i mysql << EOF
-CREATE DATABASE nolotirov3_dev;
-GRANT ALL PRIVILEGES ON nolotirov3_dev.* TO nolotirov3@localhost IDENTIFIED BY 'nolotirov3pass';
-CREATE DATABASE nolotirov3_test;
-GRANT ALL PRIVILEGES ON nolotirov3_test.* TO nolotirov3@localhost IDENTIFIED BY 'nolotirov3pass';
-FLUSH PRIVILEGES;
-EOF
-
 chown vagrant:vagrant config/*.yml
 
 # TODO: db:seeds
-sudo -u vagrant /home/vagrant/.rbenv/shims/bundle exec rake db:schema:load
+sudo -u vagrant /home/vagrant/.rbenv/shims/bundle exec rake db:drop
+sudo -u vagrant /home/vagrant/.rbenv/shims/bundle exec rake db:setup
 sudo -u vagrant /home/vagrant/.rbenv/shims/bundle exec rake ts:index
+sudo -u vagrant /home/vagrant/.rbenv/shims/bundle exec rake ts:restart
