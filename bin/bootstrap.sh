@@ -9,7 +9,7 @@ apt-get update
 debconf-set-selections <<< "mysql-server-5.5 mysql-server/root_password password ${MYSQL_PASS}"
 debconf-set-selections <<< "mysql-server-5.5 mysql-server/root_password_again password ${MYSQL_PASS}"
 # Servers
-apt-get install -y sphinxsearch curl redis-server mysql-server-5.5 libmysqlclient-dev sqlite3 libsqlite3-dev
+apt-get install -y sphinxsearch curl redis-server mysql-server-5.5 libmysqlclient-dev sqlite3 libsqlite3-dev imagemagick
 # Para compilar Ruby con rbenv
 apt-get install -y git-core make build-essential libssl-dev libreadline6-dev zlib1g-dev libyaml-dev libssl-dev libc6-dev
 # Borrar la cache de los paquetes
@@ -22,8 +22,9 @@ password = ${MYSQL_PASS}
 EOF
 
 # GeoLiteCity
-if [ ! -f /vagrant/vendor/geolite/GeoLiteCity.dat ] ; then
-  sudo -u vagrant wget --quiet --output-document gelolite.download.log $GEOLITE_URL -O /vagrant/vendor/geolite/GeoLiteCity.dat.gz
+if [ ! -f /vagrant/vendor/geolite/GeoLiteCity.dat ]
+then
+  sudo -u vagrant wget --quiet --output-document geolite.download.log $GEOLITE_URL -O /vagrant/vendor/geolite/GeoLiteCity.dat.gz
   cd /vagrant/vendor/geolite/
   sudo -u vagrant gunzip GeoLiteCity.dat.gz
 fi
@@ -51,16 +52,10 @@ cp config/app_config.yml.example config/app_config.yml
 cp config/database.yml.example config/database.yml
 cp config/secrets.yml.example config/secrets.yml
 
-sudo -u vagrant -i mysql << EOF
-CREATE DATABASE nolotirov3_dev;
-GRANT ALL PRIVILEGES ON nolotirov3_dev.* TO nolotirov3@localhost IDENTIFIED BY 'nolotirov3pass';
-CREATE DATABASE nolotirov3_test;
-GRANT ALL PRIVILEGES ON nolotirov3_test.* TO nolotirov3@localhost IDENTIFIED BY 'nolotirov3pass';
-FLUSH PRIVILEGES;
-EOF
-
 chown vagrant:vagrant config/*.yml
 
 # TODO: db:seeds
-sudo -u vagrant /home/vagrant/.rbenv/shims/bundle exec rake db:schema:load
+sudo -u vagrant /home/vagrant/.rbenv/shims/bundle exec rake db:drop
+sudo -u vagrant /home/vagrant/.rbenv/shims/bundle exec rake db:setup
 sudo -u vagrant /home/vagrant/.rbenv/shims/bundle exec rake ts:index
+sudo -u vagrant /home/vagrant/.rbenv/shims/bundle exec rake ts:restart
