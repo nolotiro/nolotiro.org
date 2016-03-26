@@ -12,8 +12,6 @@ debconf-set-selections <<< "mysql-server-5.5 mysql-server/root_password_again pa
 apt-get install -y sphinxsearch curl redis-server mysql-server-5.5 libmysqlclient-dev sqlite3 libsqlite3-dev imagemagick
 # Para compilar Ruby con rbenv
 apt-get install -y git-core make build-essential libssl-dev libreadline6-dev zlib1g-dev libyaml-dev libssl-dev libc6-dev
-# Para capybara-webkit
-apt-get install -y g++ qt5-default libqt5webkit5-dev
 # Borrar la cache de los paquetes
 apt-get clean
 

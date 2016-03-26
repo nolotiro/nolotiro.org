@@ -2,7 +2,7 @@
 <html lang="<%= locale %>">
   <head>
     <title><%= yield(:meta_title) %> - nolotiro.org</title>
-    <meta charset="utf-8" /> 
+    <meta charset="utf-8" />
     <%= favicon_link_tag 'favicon.ico' %>
     <%= stylesheet_link_tag    "application", media: "all" %>
 
@@ -141,7 +141,7 @@
       <%= yield %>
 
       <% cache do %>
-        <%= render :partial => "partials/footer", :locals => { :url => "http://nolotiro.org" } %>
+        <%= render :partial => "partials/footer", :locals => { :url => "https://nolotiro.org" } %>
       <% end %>
 
     </div>
@@ -155,7 +155,7 @@
       ga('create', 'UA-141609-7', 'auto');
       ga('send', 'pageview');
     </script>
-    
+
     <script src="//www.google.com/jsapi"></script>
 
     <%= javascript_include_tag "application" %>
