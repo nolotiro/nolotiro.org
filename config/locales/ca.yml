@@ -1,4 +1,7 @@
+---
 ca:
+  active_admin:
+    dashboard: 
   activemodel:
     attributes:
       contact:
@@ -30,8 +33,8 @@ ca:
 
             No es pot eliminar el registre perquè existeixen dependents
         taken: no està disponible
-        too_long: "és massa llarg (%{count} caràcters màxim)"
-        too_short: "és massa curt (%{count} caràcters mínim)"
+        too_long: és massa llarg (%{count} caràcters màxim)
+        too_short: és massa curt (%{count} caràcters mínim)
         wrong_length: no té la longitud correcta (%{count} caràcters exactament)
       template:
         body: 'Hi ha hagut problemes amb els següents camps:'
@@ -48,6 +51,9 @@ ca:
         subject: Títol
         title: Títol
         type: Tipus
+      contact:
+        email: 
+        message: 
       message:
         subject: Assumpte
       user:
@@ -81,8 +87,8 @@ ca:
         record_invalid: 'La validació ha fallat: %{errors}'
         restrict_dependent_destroy: No es pot eliminar el registre perquè hi ha un(a) %{record} dependent
         taken: no està disponible
-        too_long: "és massa llarg (%{count} caràcters màxim)"
-        too_short: "és massa curt (%{count} caràcters mínim)"
+        too_long: és massa llarg (%{count} caràcters màxim)
+        too_short: és massa curt (%{count} caràcters mínim)
         wrong_length: no té la longitud correcta (%{count} caràcters exactament)
       template:
         body: 'Hi ha hagut problemes amb els següents camps:'
@@ -209,12 +215,19 @@ ca:
       reset_password_instructions:
         subject: "[nolotiro.org] Instruccions de regeneració de contrasenya"
       unlock_instructions:
+        action: 
+        greeting: 
+        instruction: 
+        message: 
         subject: "[nolotiro.org] Instruccions de desbloqueig"
     omniauth_callbacks:
       failure: No hem pogut autoritzar el compte des de %{kind} perquè "%{reason}".
       success: Autoritzat satisfactoriament el compte des de %{kind}.
     passwords:
       action: Canviar contrassenya
+      edit:
+        confirm_new_password: 
+        new_password: 
       follow_instructions: Algú ha demanat canviar la teva contrasenya de nolotiro.org. Si no has estat pots ignorar aquest correu. La teva contrasenya no canviarà fins que accedeixis a l'enllaç i creïs una nova.
       forgot: Has oblidat la teva contrasenya?
       instructions: Si us plau, introdueix el teu email i t'enviarem un enllaç d'accés directe per canviar la teva contrasenya.
@@ -238,6 +251,8 @@ ca:
       user:
         signed_in: Heu entrat.
     unlocks:
+      new:
+        resend_unlock_instructions: 
       send_instructions: En breu rebràs un correu electrònic amb instruccions sobre com desbloquejar el teu compte.
       send_paranoid_instructions: Si el teu compte existeix, rebràs un correu electrònic amb instruccions sobre com desbloquejar-lo.
       unlocked: El teu compte ha estat desbloquejat correctament. S'ha iniciat la sessió.
@@ -273,8 +288,8 @@ ca:
         one: No es pot eliminar el registre perquè hi ha un(a) %{record} dependent
         other: No es pot eliminar el registre perquè existeixen %{record} dependents
       taken: no està disponible
-      too_long: "és massa llarg (%{count} caràcters màxim)"
-      too_short: "és massa curt (%{count} caràcters mínim)"
+      too_long: és massa llarg (%{count} caràcters màxim)
+      too_short: és massa curt (%{count} caràcters mínim)
       wrong_length: no té la longitud correcta (%{count} caràcters exactament)
     template:
       body: 'Hi ha hagut problemes amb els següents camps:'
@@ -309,9 +324,11 @@ ca:
       you_have_new_message: Has rebut un nou missatge
       you_have_recieved_new_message: Has rebut un nou missatge
     new:
+      body_max: 
       button: Enviar
       errors: 'Hi ha un problema, revisa això:'
       legend: Enviar missatge
+      subject: 
       submit: Enviar
       title: Nou missatge privat per a l'usuari %{user}
     notification_mailer:
@@ -330,7 +347,7 @@ ca:
     table:
       date: Fecha
       delete: Esborrar?
-      last: "Últim"
+      last: Últim
       none: No tens missatges d'aquest tipus
       reciever: Rebut
       sender: Enviat
@@ -356,6 +373,7 @@ ca:
       lock_user: "[ADMIN] Bloquejar a aquest usuari"
       unlock_user: "[ADMIN] Desbloca a aquest usuari"
     ads:
+      bumped: 
       created: Hem creat l'anunci
       form:
         body: 'Cos de l''anunci:'
@@ -379,6 +397,7 @@ ca:
     back: tornar a la pàgina d'inici
     blog: bloc
     booked: reservat
+    bump_this_ad: 
     by_user: per l'usuari
     cancel_my_account: Cancel·lar el meu compte
     captcha_error: Possiblement has introduït malament els caràcters del captcha ja que no coindicen amb la imatge, torna a introduir-
@@ -397,6 +416,7 @@ ca:
     cities_in_the_world: ciutats del món que més reciclen
     click_to_large: Cliqueu per fer més gran foto
     comments:
+      body_max: 
       do_click: 'Fes clic en aquest enllaç per respondre el missatge:'
       flash_ko: Hi va haver un error en desar el teu comentari. Revisa-ho i enviar-lo de nou
       flash_ok: comentari guardat
@@ -431,7 +451,7 @@ ca:
       question_1: Quin és el propòsit d'aquest projecte?
       question_2: Llavors ... Aquest web no és per ajudar els altres?
       question_3: Però a mi m'agradaria regalar les meves coses a algú que realment ho necessiti
-      question_4: "És veritat que hi ha gent que després venen les coses que regalen aquí?"
+      question_4: És veritat que hi ha gent que després venen les coses que regalen aquí?
       question_5: Quina classe d'anuncis puc publicar a nolotiro?
       question_6: "¿No està permès l'intercanvi d'objectes? que estrany"
       question_7: Puc enviar coses a gent que no viu a la meva ciutat?
@@ -450,8 +470,12 @@ ca:
     if_you_are_new: Si ets un nou usuari, si us plau
     if_youre_already_an_user: Si ja ets un usuari registrat, si us plau
     keywords: regal segona mà gratis
-    last_published_gifts: "últims regals publicats"
+    last_published_gifts: últims regals publicats
     leave_blank: "(deixa-la en blanc si no vols canviar-la)"
+    legal_notice: 
+    legal_page:
+      body_html: 
+      title: 
     login: accedir
     login_to_comment: accedeix per escriure un comentari
     logout: sortir
@@ -469,6 +493,7 @@ ca:
     new_user: nou usuari
     no_results:
       explain_html: "<p> 1. Sigues el primer a %{publish}.</p> <p>2. Prova a canviar la ciutat per una més gran que estigui a prop de la teva ubicació. </p> <p> 3. El nostre sistema de suggeriment d'ubicació (basat en la teva IP) diu que aquestes prop de: <br> %{change_location} </p>"
+      on_user: 
       phrase: '"Un viatge de mil quilòmetres comença amb un simple pas" Lao Tse.'
       publish_ad: publicar un anunci en aquesta ciutat
       subtitle: Pots provar alguna d'aquestes coses
@@ -511,6 +536,7 @@ ca:
     send: Enviar
     send_a_message: "+ Envia un missatge privat a l'anunciant"
     send_a_message_to: envia un missatge privat a
+    send_a_private_message: 
     sending_this_form: Enviant aquest formulari, admeten haver llegit, comprès, i estàs d'acord amb les nostres
     share_this_ad: Comparteix aquest anunci
     sign_in: Accedir
@@ -537,6 +563,7 @@ ca:
     users_most_active_last_week: usuaris més actius en la darrera setmana
     view_ads_on: Veure anuncis en %{location_suggest}
     view_ads_on_your_city: Veure anuncis a la teva ciutat o poble
+    view_more_ads: 
     want: busco
     want_to_leave: Vols esborrar el teu usuari?
     we_need_your_password: "(necessitem la contrasenya per confirmar els canvis)"
