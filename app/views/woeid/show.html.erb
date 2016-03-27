@@ -49,14 +49,9 @@
     </span>
     <div class="location_name">
       <h1>
-        <% if @search %>
-          <%= t('nlt.searching_on_html', q: @q) %>
-        <% end %>
-        <% if @type == "give" %>
-          <%= t('nlt.give') %>
-        <% else %>
-          <%= t('nlt.want') %>
-        <% end %>
+        <%= t('nlt.searching_on_html', q: @q) if @search %>
+
+        <%= @type == "give" ? t('nlt.give') : t('nlt.want') %>
         - <%= @woeid[:full] %>
       </h1>
       <br>
