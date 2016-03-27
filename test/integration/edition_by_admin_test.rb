@@ -1,7 +1,7 @@
 require "test_helper"
 include Warden::Test::Helpers
 
-feature "Editions by Admin" do
+class EditionsByAdmin < ActionDispatch::IntegrationTest
   before do
     @ad = FactoryGirl.create(:ad, woeid_code: 766273, type: 1)
     @admin = FactoryGirl.create(:admin, woeid: 766272)

@@ -5,7 +5,7 @@ require_relative '../config/environment'
 require 'rails/test_help'
 
 require 'minitest/pride'
-require 'minitest/rails/capybara'
+require 'capybara/rails'
 
 # Ensure sphinx directories exist for the test environment
 ThinkingSphinx::Test.init
@@ -29,4 +29,9 @@ class ActionDispatch::Routing::RouteSet
   def default_url_options(options={})
     {:locale => I18n.default_locale }
   end
+end
+
+class ActionDispatch::IntegrationTest
+  # Make the Capybara DSL available in all integration tests
+  include Capybara::DSL
 end
