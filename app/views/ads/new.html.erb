@@ -1,4 +1,4 @@
-<% woeid_name = WoeidHelper.convert_woeid_name current_user.woeid %>
+<% woeid_name = WoeidHelper.convert_woeid_name(current_user.woeid, params[:locale] %>
 <%= content_for(:meta_title, "#{t('nlt.publish_ad')} - #{woeid_name[:full]}" ) %>
 
 <div id="default_header_section">

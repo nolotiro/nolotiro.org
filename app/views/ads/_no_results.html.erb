@@ -9,7 +9,7 @@
   <br>
 
   <% unless woeid.nil? %>
-    <% locations = get_location_options(@woeid) %>
+    <% locations = get_location_options(@woeid, @locale) %>
     <% if locations %>
       <%= t('nlt.no_results.try') %><br>
       <ul>

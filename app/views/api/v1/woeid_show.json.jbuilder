@@ -1,5 +1,5 @@
 json.woeid_id  @woeid
-json.woeid_name WoeidHelper.convert_woeid_name(@woeid)[:full]
+json.woeid_name WoeidHelper.convert_woeid_name(@woeid,'es')[:full]
 json.ads @ads do |ad|
   json.id ad.id
   json.title ad.title

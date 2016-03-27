@@ -6,13 +6,14 @@ class SearchController < ApplicationController
     @type = params[:ad_type]
     type_n =  params[:ad_type] == "give" ? 1 : 2
 
+    @locale = params[:locale]
     @id = params[:woeid] || params[:woeid_code]
     @id = current_user.woeid if user_signed_in? and @id.nil?
 
     if @id.nil?
       redirect_to location_ask_path
     else
-      @woeid = WoeidHelper.convert_woeid_name @id
+      @woeid = WoeidHelper.convert_woeid_name( @id, @locale)
       if params[:q].nil?
         @ads = []
       else
