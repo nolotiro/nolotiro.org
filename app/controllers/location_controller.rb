@@ -24,7 +24,7 @@ class LocationController < ApplicationController
   # POST /es/location/change2
   def change
     if params[:location].to_i == 0 
-      locations = WoeidHelper.search_by_name params(location, locale)
+      locations = WoeidHelper.search_by_name(params[:location], params[:locale])
       if locations 
         set_location locations[0][1]
       else
