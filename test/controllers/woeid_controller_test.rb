@@ -8,12 +8,6 @@ class WoeidControllerTest < ActionController::TestCase
     @ad = FactoryGirl.create(:ad)
   end
 
-  test "should get listall - want" do 
-    assert_generates '/ad/listall/ad_type/want', {controller: 'woeid', action: 'show', type: 'want' }
-    get :show, {type: 'want'}
-    assert_response :success
-  end
-
   test "should get listall and give (available, delivered, booked)" do 
     get :show, type: "give", status: "available"
     assert_response :success

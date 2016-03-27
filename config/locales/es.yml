@@ -480,7 +480,7 @@ es:
     new_user: nuevo usuario
     no_results:
       explain_html: "<p>1. Sé el primero en %{publish}.</p> <p>2. Prueba a cambiar la ciudad por una mas grande que esté cerca de tu ubicación.</p> <p>3. Nuestro sistema de sugerencia de ubicación (basado en tu IP) dice que estas cerca de: <br> %{change_location} </p>"
-      on_user: No hay anuncios publicados por este usuario. 
+      on_user: No hay anuncios de este tipo publicados por este usuario.
       phrase: '"Un viaje de mil kilómetros comienza con un simple paso" Lao Tse.'
       publish_ad: publicar un anuncio en esta ciudad
       subtitle: Puedes probar alguna de estas cosas
