@@ -1,7 +1,7 @@
 require "test_helper"
 include Warden::Test::Helpers
 
-feature "CanUserMessage" do
+class CanUserMessage < ActionDispatch::IntegrationTest
   before do
     @user1 = FactoryGirl.create(:user)
     @user2 = FactoryGirl.create(:user)
