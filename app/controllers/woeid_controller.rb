@@ -19,8 +19,6 @@ class WoeidController < ApplicationController
 
     if params.has_key?(:id)
       @woeid = WoeidHelper.convert_woeid_name( params[:id], params[:locale])
-    else
-      @all = true # se trata de un listall
     end
 
     if not @ads.any?
