@@ -5,7 +5,7 @@ class AnalyticsWorker
   sidekiq_options queue: 'analytics_worker'
 
   def perform(object_id, nlt_action, options={})
-    if Rails.env.development?
+    if Rails.env.production?
 
       case nlt_action
 
