@@ -4,7 +4,7 @@ module WoeidHelper
     # search by woeid, return place
     #
     # param woeid: integer. example: 244444
-    # param locale: string, pass the parms locale from app params
+    # param locale: string, usually the I18n.locale or params['locale'] from app params
     # return place: string. format: "City, State, Country"
     #
     key = 'woeid_' + locale.to_s + '_' + woeid.to_s
@@ -31,7 +31,7 @@ module WoeidHelper
     #                      example: [["Madrid, Madrid, España (2444 anuncios)",766273],["Madrid, Comunidad de Madrid, España (444 anuncios)",12578024],["Madrid, Cundinamarca, Colombia (0 anuncios)",361938]]
     #
     if name && locale
-      key = 'location_' + locale + '_' + name
+      key = 'location_' + locale.to_s + '_' + name
       if Rails.cache.fetch(key)
         return Rails.cache.fetch(key)
       else
