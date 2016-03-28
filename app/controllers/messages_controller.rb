@@ -19,7 +19,7 @@ class MessagesController < ApplicationController
     @message = Mailboxer::Message.new
     @recipient = User.find(params[:user_id])
     if params[:user_id]
-      @message.recipients = @recipient.id 
+      @message.recipients = @recipient.id
     end
   end
 
@@ -46,18 +46,21 @@ class MessagesController < ApplicationController
       end
       receipt = current_user.send_message(@message.recipients, @message.body, @message.subject, true, @message.attachment)
     end
-    flash.now[:notice] = I18n.t "mailboxer.notifications.sent" 
+    # Generate Analytics Event
+    AnalyticsWorker.perform_async nil, 'message_created', {'username' => User.find(@message.sender_id).username}
+
+    flash.now[:notice] = I18n.t "mailboxer.notifications.sent"
     redirect_to mailboxer_message_path(receipt.conversation)
   end
 
   # GET /messages/:ID
   # GET /message/show/:ID/subject/SUBJECT
   def show
-    # TODO: refactor this 
+    # TODO: refactor this
     @conversation = Mailboxer::Conversation.find_by_id(params[:id])
     #@conversation = current_user.mailbox.conversations.find(params[:id])
-    # if not found, it could be a legacy URL with a ID for a legacy thread 
-    if @conversation.nil? 
+    # if not found, it could be a legacy URL with a ID for a legacy thread
+    if @conversation.nil?
       @conversation = Legacy::MessageThread.find(params[:id]).conversation
     end
     raise ActiveRecord::RecordNotFound if @conversation.nil?
@@ -104,7 +107,7 @@ class MessagesController < ApplicationController
     render :index
   end
 
-  private 
+  private
   # Never trust parameters from the scary internet, only allow the white list through.
   def message_params
     params.require(:mailboxer_message).permit(:conversation_id, :body, :subject, :recipients, :sender_id)

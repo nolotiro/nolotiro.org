@@ -111,7 +111,7 @@ it:
     - ven
     - sab
     abbr_month_names:
-    - 
+    -
     - gen
     - feb
     - mar
@@ -137,7 +137,7 @@ it:
       long: "%d %B %Y"
       short: "%d %b"
     month_names:
-    - 
+    -
     - gennaio
     - febbraio
     - marzo
@@ -359,7 +359,7 @@ it:
   mailer:
     confirmation_reminder:
       p1: Abbiamo rivelato che hai creato un account in nolotiro.org che non è stato confermato.
-      p2: 
+      p2:
     greetings: 'Grazie e saluti, '
     hello: 'Ciao, '
     signature: il team di nolotiro.org
@@ -389,6 +389,18 @@ it:
         to_publish: Per pubblicare il tuo annuncio, per favore, scrive questi datti
         type_ad: 'Tipo di annuncio:'
       updated: Abbiamo aggiornato il tuo annuncio
+      published:
+      delivered:
+    analytics:
+      give_published:
+      want_published:
+      ad_delivered:
+      ad_destroyed:
+      user_created:
+      user_destroyed:
+      ad_new_city:
+      comment_created:
+      message_sent:
     all: tutti
     all_ads: tutti gli annunci
     and: e
@@ -415,17 +427,17 @@ it:
     cities_in_the_world: città del mondo che reciclano di piu
     click_to_large: Clicca per ingrandire la foto
     comments:
-      do_click: 
-      flash_ko: 
-      flash_ok: 
-      label: 
-      subject: 
-      submit: 
-      title: 
+      do_click:
+      flash_ko:
+      flash_ok:
+      label:
+      subject:
+      submit:
+      title:
     comments_count:
       one: ", %{count} commento"
       other: ", %{count} commenti"
-    contact: 
+    contact:
     contact_form: Formulario di contatto
     contact_legend: Per favore, scrive il tuo messaggio
     contact_thanks: Messaggio inviato! Grazie per contattare con nolotiro.org
@@ -440,24 +452,24 @@ it:
     edit_this_ad: Editare questo annuncio
     faq:
       answer_1_html: Lo scopo fondamentale di questo sito è quello di sbarazzarsi di oggetti non più utilizzati e che ci ostacolano in casa
-      answer_2_html: 
-      answer_3_html: 
-      answer_4_html: 
-      answer_5_html: 
-      answer_6_html: 
-      answer_7_html: 
-      question_1: 
-      question_2: 
-      question_3: 
-      question_4: 
-      question_5: 
+      answer_2_html:
+      answer_3_html:
+      answer_4_html:
+      answer_5_html:
+      answer_6_html:
+      answer_7_html:
+      question_1:
+      question_2:
+      question_3:
+      question_4:
+      question_5:
       question_6: Non è permesso il scambio di oggetti? che strano
       question_7: Posso inviare cose a gente che non abita nella mia città?
       title: Domande frequenti
     faqs: domande frequenti
     fill_captcha: Si prega di compilare i seguenti caratteri
     first_visit: 'nolotiro.org è una comunità dove è possibile sbarazzarci di oggetti che non utilizziamo più e ci ostacolano a casa. '
-    footer_explain: 
+    footer_explain:
     forgot_your_password: Hai dimenticato la tua password?
     friends: Amici
     gift_on: regalo in %{woeid}
@@ -471,97 +483,97 @@ it:
     last_published_gifts: ultimi regali pubblicati
     leave_blank: "(Lasciala in bianco se non la vuoi cambiare)"
     login: accedi
-    login_to_comment: 
-    logout: 
+    login_to_comment:
+    logout:
     mail:
-      automatic: 
-    member_since: 
-    messages: 
+      automatic:
+    member_since:
+    messages:
     messages_tabs:
-      inbox: 
-      sent: 
-      trash: 
-    messages_title: 
-    meta_description: 
-    meta_description_ad: 
-    new_user: 
+      inbox:
+      sent:
+      trash:
+    messages_title:
+    meta_description:
+    meta_description_ad:
+    new_user:
     no_results:
-      explain_html: 
-      phrase: 
-      publish_ad: 
-      subtitle: 
-      title: 
-      try: 
-    or: 
-    password: 
-    permission_denied: 
-    please_fill_to_become_member: 
-    please_insert_email_and_password: 
-    please_introduce: 
-    privacy: 
+      explain_html:
+      phrase:
+      publish_ad:
+      subtitle:
+      title:
+      try:
+    or:
+    password:
+    permission_denied:
+    please_fill_to_become_member:
+    please_insert_email_and_password:
+    please_introduce:
+    privacy:
     privacy_page:
-      body_html: 
-      title: 
-    profile: 
+      body_html:
+      title:
+    profile:
     profile_actions:
       friend:
-        add: 
-        delete: 
-    profile_edit: 
-    publish_ad: 
-    publish_ad_on: 
-    published_ads: 
-    published_at_by_html: 
-    published_on: 
-    published_on_html: 
-    readed_count: 
-    reads: 
-    register: 
-    register_here: 
-    remember_me: 
-    rss_suscribe: 
-    save_failed: 
+        add:
+        delete:
+    profile_edit:
+    publish_ad:
+    publish_ad_on:
+    published_ads:
+    published_at_by_html:
+    published_on:
+    published_on_html:
+    readed_count:
+    reads:
+    register:
+    register_here:
+    remember_me:
+    rss_suscribe:
+    save_failed:
     search:
-      button: 
-      must_search: 
-      no_ads_message_html: 
-    searching_on_html: 
-    send: 
-    send_a_message: 
-    send_a_message_to: 
-    sending_this_form: 
-    share_this_ad: 
-    sign_in: 
-    sign_in_with_provider: 
-    sign_up: 
-    slogan: 
-    suggestions: 
-    to_publish_ad: 
-    to_publish_or_send_messages: 
-    tos: 
+      button:
+      must_search:
+      no_ads_message_html:
+    searching_on_html:
+    send:
+    send_a_message:
+    send_a_message_to:
+    sending_this_form:
+    share_this_ad:
+    sign_in:
+    sign_in_with_provider:
+    sign_up:
+    slogan:
+    suggestions:
+    to_publish_ad:
+    to_publish_or_send_messages:
+    tos:
     tos_page:
-      body_html: 
-      title: 
+      body_html:
+      title:
     translate:
-      description_html: 
-      title: 
-    update: 
-    updating: 
-    user_ads: 
-    user_edit_profile: 
-    user_profile: 
-    username: 
-    users_most_active: 
-    users_most_active_last_week: 
-    view_ads_on: 
-    view_ads_on_your_city: 
-    want: 
-    want_to_leave: 
-    we_need_your_password: 
-    welcome: 
-    welcome_message: 
-    write_a_comment: 
-    your_email: 
+      description_html:
+      title:
+    update:
+    updating:
+    user_ads:
+    user_edit_profile:
+    user_profile:
+    username:
+    users_most_active:
+    users_most_active_last_week:
+    view_ads_on:
+    view_ads_on_your_city:
+    want:
+    want_to_leave:
+    we_need_your_password:
+    welcome:
+    welcome_message:
+    write_a_comment:
+    your_email:
   number:
     currency:
       format:
@@ -587,9 +599,9 @@ it:
           quadrillion: Biliardi
           thousand: Mila
           trillion: Bilioni
-          unit: 
+          unit:
       format:
-        delimiter: 
+        delimiter:
         precision: 1
         significant: true
         strip_insignificant_zeros: true
@@ -605,14 +617,14 @@ it:
           tb: TB
     percentage:
       format:
-        delimiter: 
+        delimiter:
     precision:
       format:
-        delimiter: 
+        delimiter:
   recaptcha:
     errors:
-      incorrect-captcha-sol: 
-      verification_failed: 
+      incorrect-captcha-sol:
+      verification_failed:
   support:
     array:
       last_word_connector: " e "
@@ -626,15 +638,15 @@ it:
       short: "%d %b %H:%M"
     pm: pm
   unauthorized:
-    default: 
+    default:
     manage:
-      all: 
+      all:
   will_paginate:
     next_label: successivo →
     page_entries_info:
-      multi_page: 
-      multi_page_html: 
-      single_page: 
-      single_page_html: 
+      multi_page:
+      multi_page_html:
+      single_page:
+      single_page_html:
     page_gap: "&hellip;"
     previous_label: "← precedente"

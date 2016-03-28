@@ -7,7 +7,7 @@ class AdsController < ApplicationController
 
   # GET /
   def index
-    if user_signed_in? 
+    if user_signed_in?
       url = current_user.woeid? ? ads_woeid_path(id: current_user.woeid, type: 'give') : location_ask_path
       redirect_to url
     else
@@ -16,7 +16,7 @@ class AdsController < ApplicationController
   end
 
   def list
-    @ads = Rails.cache.fetch("ads_list_#{params[:page]}") do 
+    @ads = Rails.cache.fetch("ads_list_#{params[:page]}") do
       Ad.give.available.includes(:user).paginate(:page => params[:page])
     end
     @location = get_location_suggest
@@ -34,7 +34,7 @@ class AdsController < ApplicationController
   def new
     @ad = Ad.new
     @ad.comments_enabled = true
-    if current_user.woeid.nil? 
+    if current_user.woeid.nil?
       redirect_to location_ask_path
     end
   end
@@ -65,6 +65,8 @@ class AdsController < ApplicationController
 
     respond_to do |format|
       if verify_recaptcha(:model => @ad, :message => t('nlt.captcha_error')) && @ad.save
+        # Generate Analytics Event
+        AnalyticsWorker.perform_async @ad.id, 'create_ad'
         format.html { redirect_to adslug_path(@ad, slug: @ad.slug), notice: t('nlt.ads.created') }
         format.json { render action: 'show', status: :created, location: @ad }
       else
@@ -79,6 +81,8 @@ class AdsController < ApplicationController
   def update
     respond_to do |format|
       if @ad.update(ad_params)
+        # Generate Analytics Event
+        AnalyticsWorker.perform_async @ad.id, 'update_ad' if @ad.status_class == 'delivered'
         format.html { redirect_to @ad, notice: t('nlt.ads.updated') }
         format.json { head :no_content }
       else
@@ -91,7 +95,13 @@ class AdsController < ApplicationController
   # DELETE /ads/1
   # DELETE /ads/1.json
   def destroy
+    old_object_id = @ad.id
+    old_object_title = @ad.title
     @ad.destroy
+    # Generate Analytics Event
+    if @ad.destroyed?
+       AnalyticsWorker.perform_async old_object_id, 'destroy_ad', {'title' => old_object_title}
+    end
     respond_to do |format|
       format.html { redirect_to ads_url }
       format.json { head :no_content }

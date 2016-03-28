@@ -5,82 +5,82 @@ nl:
         email: E-mail
         message: Bericht
     errors:
-      format: 
+      format:
       messages:
-        accepted: 
-        blank: 
-        confirmation: 
-        empty: 
-        equal_to: 
-        even: 
+        accepted:
+        blank:
+        confirmation:
+        empty:
+        equal_to:
+        even:
         exclusion: is gereserveerd
-        greater_than: 
-        greater_than_or_equal_to: 
-        inclusion: 
-        invalid: 
-        less_than: 
-        less_than_or_equal_to: 
-        not_a_number: 
-        not_an_integer: 
-        odd: 
-        record_invalid: 
-        restrict_dependent_destroy: 
-        taken: 
-        too_long: 
-        too_short: 
-        wrong_length: 
+        greater_than:
+        greater_than_or_equal_to:
+        inclusion:
+        invalid:
+        less_than:
+        less_than_or_equal_to:
+        not_a_number:
+        not_an_integer:
+        odd:
+        record_invalid:
+        restrict_dependent_destroy:
+        taken:
+        too_long:
+        too_short:
+        wrong_length:
       template:
-        body: 
-        header: 
+        body:
+        header:
   activerecord:
     attributes:
       ad:
-        body: 
-        image: 
-        image_content_type: 
-        image_file_size: 
-        subject: 
-        title: 
-        type: 
+        body:
+        image:
+        image_content_type:
+        image_file_size:
+        subject:
+        title:
+        type:
       message:
-        subject: 
+        subject:
       user:
-        Contraseña: 
-        Recuérdame: 
-        Tu email: 
-        current_password: 
-        email: 
-        password: 
-        password_confirmation: 
-        remember: 
+        Contraseña:
+        Recuérdame:
+        Tu email:
+        current_password:
+        email:
+        password:
+        password_confirmation:
+        remember:
     errors:
-      format: 
+      format:
       messages:
-        accepted: 
-        blank: 
-        confirmation: 
-        empty: 
-        equal_to: 
-        even: 
-        exclusion: 
-        greater_than: 
-        greater_than_or_equal_to: 
-        inclusion: 
-        invalid: 
-        less_than: 
-        less_than_or_equal_to: 
-        not_a_number: 
-        not_an_integer: 
-        odd: 
-        record_invalid: 
-        restrict_dependent_destroy: 
-        taken: 
-        too_long: 
-        too_short: 
-        wrong_length: 
+        accepted:
+        blank:
+        confirmation:
+        empty:
+        equal_to:
+        even:
+        exclusion:
+        greater_than:
+        greater_than_or_equal_to:
+        inclusion:
+        invalid:
+        less_than:
+        less_than_or_equal_to:
+        not_a_number:
+        not_an_integer:
+        odd:
+        record_invalid:
+        restrict_dependent_destroy:
+        taken:
+        too_long:
+        too_short:
+        wrong_length:
       template:
-        body: 
-        header: 
+        body:
+        header:
   date:
     abbr_day_names:
     - zon
@@ -91,7 +91,7 @@ nl:
     - vri
     - zat
     abbr_month_names:
-    - 
+    -
     - jan
     - feb
     - maa
@@ -113,11 +113,11 @@ nl:
     - vrijdag
     - zaterdag
     formats:
-      default: 
-      long: 
-      short: 
+      default:
+      long:
+      short:
     month_names:
-    - 
+    -
     - januari
     - februari
     - maart
@@ -142,14 +142,14 @@ nl:
       about_x_months:
         one: rond 1 maand
         other: ongeveer %{count} manden
-      about_x_years: 
+      about_x_years:
       almost_x_years:
         one: bijna 1 jaar
         other: bijna %{count} jaar
-      half_a_minute: 
-      less_than_x_minutes: 
-      less_than_x_seconds: 
-      over_x_years: 
+      half_a_minute:
+      less_than_x_minutes:
+      less_than_x_seconds:
+      over_x_years:
       x_days:
         one: 1 dag
         other: "%{count} dagen"
@@ -159,438 +159,450 @@ nl:
       x_months:
         one: 1 maand
         other: "%{count} manden"
-      x_seconds: 
+      x_seconds:
     prompts:
       day: Dag
       hour: Uur
-      minute: 
+      minute:
       month: Maand
-      second: 
+      second:
       year: Jaar
   devise:
     confirmations:
-      action: 
-      confirmed: 
-      instructions: 
-      resend: 
-      send_instructions: 
-      send_paranoid_instructions: 
+      action:
+      confirmed:
+      instructions:
+      resend:
+      send_instructions:
+      send_paranoid_instructions:
     failure:
-      already_authenticated: 
-      inactive: 
-      invalid: 
-      last_attempt: 
-      locked: 
-      not_found_in_database: 
-      timeout: 
-      unauthenticated: 
-      unconfirmed: 
+      already_authenticated:
+      inactive:
+      invalid:
+      last_attempt:
+      locked:
+      not_found_in_database:
+      timeout:
+      unauthenticated:
+      unconfirmed:
     mailer:
       confirmation_instructions:
-        subject: 
+        subject:
       reset_password_instructions:
-        subject: 
+        subject:
       unlock_instructions:
-        subject: 
+        subject:
     omniauth_callbacks:
-      failure: 
-      success: 
+      failure:
+      success:
     passwords:
-      action: 
-      follow_instructions: 
-      forgot: 
-      instructions: 
-      no_token: 
-      send: 
-      send_instructions: 
-      send_paranoid_instructions: 
-      updated: 
-      updated_not_active: 
+      action:
+      follow_instructions:
+      forgot:
+      instructions:
+      no_token:
+      send:
+      send_instructions:
+      send_paranoid_instructions:
+      updated:
+      updated_not_active:
     registrations:
-      destroyed: 
-      signed_up: 
-      signed_up_but_inactive: 
-      signed_up_but_locked: 
-      signed_up_but_unconfirmed: 
-      update_needs_confirmation: 
-      updated: 
+      destroyed:
+      signed_up:
+      signed_up_but_inactive:
+      signed_up_but_locked:
+      signed_up_but_unconfirmed:
+      update_needs_confirmation:
+      updated:
     sessions:
-      signed_in: 
-      signed_out: 
+      signed_in:
+      signed_out:
       user:
-        signed_in: 
+        signed_in:
     unlocks:
-      send_instructions: 
-      send_paranoid_instructions: 
-      unlocked: 
+      send_instructions:
+      send_paranoid_instructions:
+      unlocked:
   errors:
-    format: 
+    format:
     messages:
-      accepted: 
-      already_confirmed: 
-      blank: 
-      confirmation: 
-      confirmation_period_expired: 
-      empty: 
-      equal_to: 
-      even: 
-      exclusion: 
-      expired: 
-      greater_than: 
-      greater_than_or_equal_to: 
-      inclusion: 
-      invalid: 
-      less_than: 
-      less_than_or_equal_to: 
-      not_a_number: 
-      not_an_integer: 
-      not_found: 
-      not_locked: 
-      not_saved: 
-      odd: 
-      record_invalid: 
-      restrict_dependent_destroy: 
-      taken: 
-      too_long: 
-      too_short: 
-      wrong_length: 
+      accepted:
+      already_confirmed:
+      blank:
+      confirmation:
+      confirmation_period_expired:
+      empty:
+      equal_to:
+      even:
+      exclusion:
+      expired:
+      greater_than:
+      greater_than_or_equal_to:
+      inclusion:
+      invalid:
+      less_than:
+      less_than_or_equal_to:
+      not_a_number:
+      not_an_integer:
+      not_found:
+      not_locked:
+      not_saved:
+      odd:
+      record_invalid:
+      restrict_dependent_destroy:
+      taken:
+      too_long:
+      too_short:
+      wrong_length:
     template:
-      body: 
-      header: 
+      body:
+      header:
   helpers:
     label:
       message:
-        subject: 
+        subject:
     select:
-      prompt: 
+      prompt:
     submit:
-      create: 
-      submit: 
-      update: 
+      create:
+      submit:
+      update:
   mailboxer:
     buttons:
-      back: 
-      trash: 
-      trash_selected: 
-      untrash: 
+      back:
+      trash:
+      trash_selected:
+      untrash:
     message_mailer:
       message:
-        body: 
-        subject: 
-      subject_new: 
-      subject_reply: 
-      visit: 
-      visit_html: 
-      visit_text: 
-      you_have_new_message: 
-      you_have_recieved_new_message: 
+        body:
+        subject:
+      subject_new:
+      subject_reply:
+      visit:
+      visit_html:
+      visit_text:
+      you_have_new_message:
+      you_have_recieved_new_message:
     new:
-      button: 
-      errors: 
-      legend: 
-      submit: 
-      title: 
+      button:
+      errors:
+      legend:
+      submit:
+      title:
     notification_mailer:
-      subject: 
-      visit_html: 
-      visit_text: 
-      you_have_new_reply: 
-      you_have_recieved_new_reply: 
+      subject:
+      visit_html:
+      visit_text:
+      you_have_new_reply:
+      you_have_recieved_new_reply:
     notifications:
-      error_same_user: 
-      move: 
-      sent: 
-      trash: 
-      untrash: 
-    search: 
+      error_same_user:
+      move:
+      sent:
+      trash:
+      untrash:
+    search:
     table:
-      date: 
-      delete: 
-      last: 
-      none: 
-      reciever: 
-      sender: 
-      subject: 
+      date:
+      delete:
+      last:
+      none:
+      reciever:
+      sender:
+      subject:
     titles:
-      conversation: 
-      index: 
+      conversation:
+      index:
   mailer:
     confirmation_reminder:
-      p1: 
-      p2: 
-    greetings: 
-    hello: 
-    signature: 
+      p1:
+      p2:
+    greetings:
+    hello:
+    signature:
   nlt:
-    about: 
+    about:
     about_page:
-      description_html: 
-      title: 
-    access_here: 
+      description_html:
+      title:
+    access_here:
     admin:
-      become_user: 
-      lock_user: 
-      unlock_user: 
+      become_user:
+      lock_user:
+      unlock_user:
     ads:
-      created: 
+      created:
       form:
-        body: 
-        body_max: 
-        comments_enabled: 
-        image_permitted_formats: 
-        please_ad_type: 
-        prohibited: 
-        select_an_image: 
-        status: 
-        title: 
-        title_max: 
-        to_publish: 
-        type_ad: 
-      updated: 
-    all: 
-    all_ads: 
-    and: 
-    are_you_interested: 
-    available: 
-    back: 
-    blog: 
-    booked: 
-    by_user: 
-    cancel_my_account: 
-    captcha_error: 
-    change_city: 
+        body:
+        body_max:
+        comments_enabled:
+        image_permitted_formats:
+        please_ad_type:
+        prohibited:
+        select_an_image:
+        status:
+        title:
+        title_max:
+        to_publish:
+        type_ad:
+      updated:
+      publsihed:
+      delivered:
+    analytics:
+      give_published:
+      want_published:
+      ad_delivered:
+      ad_destroyed:
+      user_created:
+      user_destroyed:
+      ad_new_city:
+      comment_created:
+      message_sent:
+    all:
+    all_ads:
+    and:
+    are_you_interested:
+    available:
+    back:
+    blog:
+    booked:
+    by_user:
+    cancel_my_account:
+    captcha_error:
+    change_city:
     change_town:
-      choose: 
-      choose_html: 
-      close_to: 
-      please: 
-      submit: 
-      town: 
-    change_your_city: 
-    choose_username: 
-    choose_your_pass: 
-    choose_your_pass_again: 
-    cities_in_the_world: 
-    click_to_large: 
+      choose:
+      choose_html:
+      close_to:
+      please:
+      submit:
+      town:
+    change_your_city:
+    choose_username:
+    choose_your_pass:
+    choose_your_pass_again:
+    cities_in_the_world:
+    click_to_large:
     comments:
-      do_click: 
-      flash_ko: 
-      flash_ok: 
-      label: 
-      subject: 
-      submit: 
-      title: 
-    comments_count: 
-    contact: 
-    contact_form: 
-    contact_legend: 
-    contact_thanks: 
-    cookie: 
-    create_new_ad: 
-    delete_ad: 
-    delete_sure: 
-    delivered: 
-    developers: 
-    didn_t_receive_confirmation_instructions: 
-    didn_t_receive_unlock_instructions: 
-    edit_this_ad: 
+      do_click:
+      flash_ko:
+      flash_ok:
+      label:
+      subject:
+      submit:
+      title:
+    comments_count:
+    contact:
+    contact_form:
+    contact_legend:
+    contact_thanks:
+    cookie:
+    create_new_ad:
+    delete_ad:
+    delete_sure:
+    delivered:
+    developers:
+    didn_t_receive_confirmation_instructions:
+    didn_t_receive_unlock_instructions:
+    edit_this_ad:
     faq:
-      answer_1_html: 
-      answer_2_html: 
-      answer_3_html: 
-      answer_4_html: 
-      answer_5_html: 
-      answer_6_html: 
-      answer_7_html: 
-      question_1: 
-      question_2: 
-      question_3: 
-      question_4: 
-      question_5: 
-      question_6: 
-      question_7: 
-      title: 
-    faqs: 
-    fill_captcha: 
-    first_visit: 
-    footer_explain: 
-    forgot_your_password: 
-    friends: 
-    gift_on: 
-    give: 
-    hello_to: 
-    help_translate: 
-    home_title: 
-    if_you_are_new: 
-    if_youre_already_an_user: 
-    keywords: 
-    last_published_gifts: 
-    leave_blank: 
-    login: 
-    login_to_comment: 
-    logout: 
+      answer_1_html:
+      answer_2_html:
+      answer_3_html:
+      answer_4_html:
+      answer_5_html:
+      answer_6_html:
+      answer_7_html:
+      question_1:
+      question_2:
+      question_3:
+      question_4:
+      question_5:
+      question_6:
+      question_7:
+      title:
+    faqs:
+    fill_captcha:
+    first_visit:
+    footer_explain:
+    forgot_your_password:
+    friends:
+    gift_on:
+    give:
+    hello_to:
+    help_translate:
+    home_title:
+    if_you_are_new:
+    if_youre_already_an_user:
+    keywords:
+    last_published_gifts:
+    leave_blank:
+    login:
+    login_to_comment:
+    logout:
     mail:
-      automatic: 
-    member_since: 
-    messages: 
+      automatic:
+    member_since:
+    messages:
     messages_tabs:
-      inbox: 
-      sent: 
-      trash: 
-    messages_title: 
-    meta_description: 
-    meta_description_ad: 
-    new_user: 
+      inbox:
+      sent:
+      trash:
+    messages_title:
+    meta_description:
+    meta_description_ad:
+    new_user:
     no_results:
-      explain_html: 
-      phrase: 
-      publish_ad: 
-      subtitle: 
-      title: 
-      try: 
-    or: 
-    password: 
-    permission_denied: 
-    please_fill_to_become_member: 
-    please_insert_email_and_password: 
-    please_introduce: 
-    privacy: 
+      explain_html:
+      phrase:
+      publish_ad:
+      subtitle:
+      title:
+      try:
+    or:
+    password:
+    permission_denied:
+    please_fill_to_become_member:
+    please_insert_email_and_password:
+    please_introduce:
+    privacy:
     privacy_page:
-      body_html: 
-      title: 
-    profile: 
+      body_html:
+      title:
+    profile:
     profile_actions:
       friend:
-        add: 
-        delete: 
-    profile_edit: 
-    publish_ad: 
-    publish_ad_on: 
-    published_ads: 
-    published_at_by_html: 
-    published_on: 
-    published_on_html: 
-    readed_count: 
-    reads: 
-    register: 
-    register_here: 
-    remember_me: 
-    rss_suscribe: 
-    save_failed: 
+        add:
+        delete:
+    profile_edit:
+    publish_ad:
+    publish_ad_on:
+    published_ads:
+    published_at_by_html:
+    published_on:
+    published_on_html:
+    readed_count:
+    reads:
+    register:
+    register_here:
+    remember_me:
+    rss_suscribe:
+    save_failed:
     search:
-      button: 
-      must_search: 
-      no_ads_message_html: 
-    searching_on_html: 
-    send: 
-    send_a_message: 
-    send_a_message_to: 
-    sending_this_form: 
-    share_this_ad: 
-    sign_in: 
-    sign_in_with_provider: 
-    sign_up: 
-    slogan: 
-    suggestions: 
-    to_publish_ad: 
-    to_publish_or_send_messages: 
-    tos: 
+      button:
+      must_search:
+      no_ads_message_html:
+    searching_on_html:
+    send:
+    send_a_message:
+    send_a_message_to:
+    sending_this_form:
+    share_this_ad:
+    sign_in:
+    sign_in_with_provider:
+    sign_up:
+    slogan:
+    suggestions:
+    to_publish_ad:
+    to_publish_or_send_messages:
+    tos:
     tos_page:
-      body_html: 
-      title: 
+      body_html:
+      title:
     translate:
-      description_html: 
-      title: 
-    update: 
-    updating: 
-    user_ads: 
-    user_edit_profile: 
-    user_profile: 
-    username: 
-    users_most_active: 
-    users_most_active_last_week: 
-    view_ads_on: 
-    view_ads_on_your_city: 
-    want: 
-    want_to_leave: 
-    we_need_your_password: 
-    welcome: 
-    welcome_message: 
-    write_a_comment: 
-    your_email: 
+      description_html:
+      title:
+    update:
+    updating:
+    user_ads:
+    user_edit_profile:
+    user_profile:
+    username:
+    users_most_active:
+    users_most_active_last_week:
+    view_ads_on:
+    view_ads_on_your_city:
+    want:
+    want_to_leave:
+    we_need_your_password:
+    welcome:
+    welcome_message:
+    write_a_comment:
+    your_email:
   number:
     currency:
       format:
-        delimiter: 
-        format: 
+        delimiter:
+        format:
         precision: 2
-        separator: 
-        significant: 
-        strip_insignificant_zeros: 
-        unit: 
+        separator:
+        significant:
+        strip_insignificant_zeros:
+        unit:
     format:
-      delimiter: 
+      delimiter:
       precision: 3
-      separator: 
+      separator:
       significant: false
       strip_insignificant_zeros: false
     human:
       decimal_units:
-        format: 
+        format:
         units:
-          billion: 
-          million: 
-          quadrillion: 
-          thousand: 
-          trillion: 
-          unit: 
+          billion:
+          million:
+          quadrillion:
+          thousand:
+          trillion:
+          unit:
       format:
-        delimiter: 
+        delimiter:
         precision: 1
-        significant: 
-        strip_insignificant_zeros: 
+        significant:
+        strip_insignificant_zeros:
       storage_units:
-        format: 
+        format:
         units:
           byte:
             one: Byte
             other: Bytes
           gb: GB
           kb: KB
-          mb: 
-          tb: 
+          mb:
+          tb:
     percentage:
       format:
-        delimiter: 
+        delimiter:
     precision:
       format:
-        delimiter: 
+        delimiter:
   recaptcha:
     errors:
-      incorrect-captcha-sol: 
-      verification_failed: 
+      incorrect-captcha-sol:
+      verification_failed:
   support:
     array:
-      last_word_connector: 
-      two_words_connector: 
-      words_connector: 
+      last_word_connector:
+      two_words_connector:
+      words_connector:
   time:
-    am: 
+    am:
     formats:
-      default: 
-      long: 
-      short: 
-    pm: 
+      default:
+      long:
+      short:
+    pm:
   unauthorized:
-    default: 
+    default:
     manage:
-      all: 
+      all:
   will_paginate:
-    next_label: 
+    next_label:
     page_entries_info:
-      multi_page: 
-      multi_page_html: 
-      single_page: 
-      single_page_html: 
-    page_gap: 
-    previous_label: 
+      multi_page:
+      multi_page_html:
+      single_page:
+      single_page_html:
+    page_gap:
+    previous_label:

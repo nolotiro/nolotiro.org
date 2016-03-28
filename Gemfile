@@ -33,7 +33,7 @@ group :development, :test do
   gem 'bullet'                              # dev: n+1 query problem alert
 end
 
-group :production, :staging do 
+group :production, :staging do
   gem 'airbrake', '~> 4.0'                  # exception notification
 end
 
@@ -80,6 +80,7 @@ gem 'font-awesome-rails'                            # font-awesome icons
 gem 'faker'
 
 gem 'mailboxer', '0.13.0'                           # messaging
+gem 'gabba'                                         # Enviar eventos a Google Analytics desde el servidor
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-bootstrap'
