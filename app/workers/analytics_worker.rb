@@ -2,6 +2,8 @@ class AnalyticsWorker
 
   include Sidekiq::Worker
 
+  sidekiq_options queue: 'analytics_worker'
+
   def perform(object_id, nlt_action, options={})
     if Rails.env.development?
 
