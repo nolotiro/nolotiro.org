@@ -9,7 +9,7 @@ class AdHelperTest < ActionView::TestCase
   end
 
   test "should get locations ranking" do
-    locations = AdHelper.get_locations_ranking(1,'es')
+    locations = AdHelper.get_locations_ranking(1)
     assert_equal(locations, [["Madrid, Madrid, España", 766273, 1]]) 
   end
 

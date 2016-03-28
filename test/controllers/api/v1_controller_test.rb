@@ -11,7 +11,7 @@ class Api::V1ControllerTest < ActionController::TestCase
   test "should get woeid list on api v1" do
     get :woeid_list, format: 'json'
     body = JSON.parse(@response.body)
-    body_expected = {"locations"=>[{"woeid_id"=>766273, "woeid_name"=>"Madrid, Madrid, Spain", "ads_count"=>1}]}
+    body_expected = {"locations"=>[{"woeid_id"=>766273, "woeid_name"=>"Madrid, Madrid, España", "ads_count"=>1}]}
     assert_equal(body_expected, body)
     assert_equal(766273, body["locations"][0]["woeid_id"])
     assert_response :success

@@ -16,7 +16,7 @@ class Api::V1Controller < ApplicationController
   end
 
   def woeid_list
-    @section_locations = AdHelper.get_locations_ranking(1000,params[:locale])
+   @section_locations = AdHelper.get_locations_ranking
   end
 
 end
