@@ -22,9 +22,9 @@ module ApplicationHelper
     end
   end
 
-  def get_location_options(woeid, locale)
+  def get_location_options(woeid)
     # receives a woeid, returns a list of names like it
-    WoeidHelper.search_by_name(woeid.to_s, locale)
+    WoeidHelper.search_by_name(woeid.to_s)
   end
 
   def i18n_to_localeapp_in_locale(locale)

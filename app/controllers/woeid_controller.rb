@@ -18,13 +18,13 @@ class WoeidController < ApplicationController
               .paginate(:page => params[:page])
 
     if params.has_key?(:id)
-      @woeid = WoeidHelper.convert_woeid_name( params[:id], params[:locale])
+      @woeid = WoeidHelper.convert_woeid_name params[:id]
     end
 
     if not @ads.any?
       @location_suggest = get_location_suggest # no results
       if @woeid
-        @location_options = WoeidHelper.search_by_name(@woeid[:short], params[:locale])
+        @location_options = WoeidHelper.search_by_name(@woeid[:short])
       end
     end
   end

@@ -115,11 +115,11 @@ class Ad < ActiveRecord::Base
   end
 
   def woeid_name
-    WoeidHelper.convert_woeid_name(self.woeid_code,'es')[:full]
+    WoeidHelper.convert_woeid_name(self.woeid_code)[:full]
   end
 
   def woeid_name_short
-    WoeidHelper.convert_woeid_name(self.woeid_code,'es')[:short]
+    WoeidHelper.convert_woeid_name(self.woeid_code)[:short]
   end
 
   def full_title 
