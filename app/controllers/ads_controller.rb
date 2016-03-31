@@ -66,7 +66,11 @@ class AdsController < ApplicationController
     respond_to do |format|
       if verify_recaptcha(:model => @ad, :message => t('nlt.captcha_error')) && @ad.save
         # Generate Analytics Event
-        AnalyticsWorker.perform_async @ad.id, 'create_ad'
+        AnalyticsCreateAdWorker.perform_async @ad.id
+        # First ad in this City
+        if Ad.where(woeid_code: @ad.woeid_code).count == 1
+          AnalyticsFirstCityAdWorker.perform_async @ad.id
+        end
         format.html { redirect_to adslug_path(@ad, slug: @ad.slug), notice: t('nlt.ads.created') }
         format.json { render action: 'show', status: :created, location: @ad }
       else
@@ -81,8 +85,7 @@ class AdsController < ApplicationController
   def update
     respond_to do |format|
       if @ad.update(ad_params)
-        # Generate Analytics Event
-        AnalyticsWorker.perform_async @ad.id, 'update_ad' if @ad.status_class == 'delivered'
+        AnalyticsDeliveredAdWorker.perform_async @ad.id if @ad.status_class == 'delivered'
         format.html { redirect_to @ad, notice: t('nlt.ads.updated') }
         format.json { head :no_content }
       else
@@ -95,12 +98,9 @@ class AdsController < ApplicationController
   # DELETE /ads/1
   # DELETE /ads/1.json
   def destroy
-    old_object_id = @ad.id
-    old_object_title = @ad.title
-    @ad.destroy
-    # Generate Analytics Event
-    if @ad.destroyed?
-       AnalyticsWorker.perform_async old_object_id, 'destroy_ad', {'title' => old_object_title}
+    title = @ad.title
+    if @ad.destroy
+      AnalyticsDestroyedAdWorker.perform_async title
     end
     respond_to do |format|
       format.html { redirect_to ads_url }

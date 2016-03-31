@@ -90,7 +90,7 @@ class AnalyticsWorker
 
   def send_to_google(category, action, label, gid=nil)
     my_analytics_id = Rails.application.secrets["google_analytics_id"]
-    Gabba::Gabba.new(my_analytics_id, "nolotiro.org")
+    Gabba::Gabba.new(my_analytics_id, Rails.application.secrets["app_host"])
         .event(category, action, label, gid, true)
   end
 end

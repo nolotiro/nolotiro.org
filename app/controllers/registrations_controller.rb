@@ -4,7 +4,7 @@ class RegistrationsController < Devise::RegistrationsController
       super
       if resource.save
         # Generate Analytics event
-        AnalyticsWorker.perform_async resource.id, 'user_created'
+        AnalyticsCreateUserWorker.perform_async resource.id
       end
     else
       build_resource

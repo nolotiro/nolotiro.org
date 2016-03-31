@@ -14,12 +14,15 @@ module NolotiroOrg
     I18n.config.enforce_available_locales = true
     ActionMailer::Base.layout "mail"
 
+    # Librerías propias que no caben en otro lado
+    config.autoload_paths << Rails.root.join('lib')
+
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
 
     config.active_job.queue_adapter = :sidekiq
-    
-    # No usar TLS para conectar al SMTP ya 
+
+    # No usar TLS para conectar al SMTP ya
     # que no tenemos un certificado válido
     config.action_mailer.smtp_settings = {
       enable_starttls_auto: false
