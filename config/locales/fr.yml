@@ -1,4 +1,7 @@
+---
 fr:
+  active_admin:
+    dashboard: 
   activemodel:
     attributes:
       contact:
@@ -52,6 +55,9 @@ fr:
         subject: 
         title: 
         type: 
+      contact:
+        email: 
+        message: 
       message:
         subject: 
       user:
@@ -223,12 +229,19 @@ fr:
       reset_password_instructions:
         subject: Instructions pour changer le mot de passe
       unlock_instructions:
+        action: 
+        greeting: 
+        instruction: 
+        message: 
         subject: Instructions pour déverrouiller le compte
     omniauth_callbacks:
       failure: 'Nous ne pouvons pas vous authentifier depuis %{kind} pour la raison suivante : ''%{reason}''.'
       success: Autorisé avec succès par votre compte %{kind}.
     passwords:
       action: 
+      edit:
+        confirm_new_password: 
+        new_password: 
       follow_instructions: 
       forgot: 
       instructions: 
@@ -252,6 +265,8 @@ fr:
       user:
         signed_in: 
     unlocks:
+      new:
+        resend_unlock_instructions: 
       send_instructions: Vous allez recevoir un email sous quelques minutes contenant les instructions nécessaires au déblocage de votre compte.
       send_paranoid_instructions: Si votre compte existe, vous recevrez un email indiquant comment le déverrouiller sous quelques minutes.
       unlocked: Votre compte a été débloqué avec succès. Veuillez vous connecter.
@@ -329,9 +344,11 @@ fr:
       you_have_new_message: 
       you_have_recieved_new_message: 
     new:
+      body_max: 
       button: 
       errors: 
       legend: 
+      subject: 
       submit: 
       title: 
     notification_mailer:
@@ -376,6 +393,7 @@ fr:
       lock_user: 
       unlock_user: 
     ads:
+      bumped: 
       created: 
       form:
         body: 
@@ -399,6 +417,7 @@ fr:
     back: 
     blog: 
     booked: 
+    bump_this_ad: 
     by_user: 
     cancel_my_account: 
     captcha_error: 
@@ -417,6 +436,7 @@ fr:
     cities_in_the_world: 
     click_to_large: 
     comments:
+      body_max: 
       do_click: 
       flash_ko: 
       flash_ok: 
@@ -424,7 +444,9 @@ fr:
       subject: 
       submit: 
       title: 
-    comments_count: 
+    comments_count:
+      one: 
+      other: 
     contact: 
     contact_form: 
     contact_legend: 
@@ -470,6 +492,10 @@ fr:
     keywords: 
     last_published_gifts: 
     leave_blank: 
+    legal_notice: 
+    legal_page:
+      body_html: 
+      title: 
     login: 
     login_to_comment: 
     logout: 
@@ -487,6 +513,7 @@ fr:
     new_user: 
     no_results:
       explain_html: 
+      on_user: 
       phrase: 
       publish_ad: 
       subtitle: 
@@ -529,6 +556,7 @@ fr:
     send: 
     send_a_message: 
     send_a_message_to: 
+    send_a_private_message: 
     sending_this_form: 
     share_this_ad: 
     sign_in: 
@@ -555,6 +583,7 @@ fr:
     users_most_active_last_week: 
     view_ads_on: 
     view_ads_on_your_city: 
+    view_more_ads: 
     want: 
     want_to_leave: 
     we_need_your_password: 

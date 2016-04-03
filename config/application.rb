@@ -18,7 +18,10 @@ module NolotiroOrg
     config.active_record.raise_in_transactional_callbacks = true
 
     config.active_job.queue_adapter = :sidekiq
-    
+
+    # Enable locale fallbacks
+    config.i18n.fallbacks = true
+
     # No usar TLS para conectar al SMTP ya 
     # que no tenemos un certificado válido
     config.action_mailer.smtp_settings = {
