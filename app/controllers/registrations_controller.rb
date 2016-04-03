@@ -17,7 +17,7 @@ class RegistrationsController < Devise::RegistrationsController
 
   def destroy
     # Generate Analytics event
-    AnalyticsWorker.perform_async resource.id, 'user_destroyed', {'username' => resource.username }
+    AnalyticsDestroyUserWorker.perform_async resource.username
     super
   end
 end

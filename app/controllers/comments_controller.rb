@@ -13,7 +13,7 @@ class CommentsController < ApplicationController
     })
     if @comment.save
       # Generate Analytics Event
-      AnalyticsWorker.perform_async @comment.id, 'comment_created'
+      AnalyticsCreateCommentWorker.perform_async @comment.id
       if @comment.ad.user != current_user
         CommentsMailer.create(params[:id], params[:body]).deliver_later
       end

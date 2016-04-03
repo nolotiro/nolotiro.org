@@ -47,7 +47,7 @@ class MessagesController < ApplicationController
       receipt = current_user.send_message(@message.recipients, @message.body, @message.subject, true, @message.attachment)
     end
     # Generate Analytics Event
-    AnalyticsWorker.perform_async nil, 'message_created', {'username' => User.find(@message.sender_id).username}
+    AnalyticsCreateMessageWorker.perform_async @message.id
 
     flash.now[:notice] = I18n.t "mailboxer.notifications.sent"
     redirect_to mailboxer_message_path(receipt.conversation)
