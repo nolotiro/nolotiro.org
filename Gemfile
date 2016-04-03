@@ -31,6 +31,7 @@ group :development, :test do
   #gem 'binding_of_caller'                   # dev: better errors
   gem 'mailcatcher'                         # dev: mailbox
   gem 'bullet'                              # dev: n+1 query problem alert
+  gem 'pry-rails'			    # dev: a better console 
 end
 
 group :production, :staging do

@@ -113,6 +113,7 @@ GEM
       activesupport (>= 3.0)
     cocaine (0.5.8)
       climate_control (>= 0.0.3, < 1.0)
+    coderay (1.1.1)
     coffee-rails (4.0.1)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0, < 5.0)
@@ -239,6 +240,7 @@ GEM
       skinny (~> 0.2.3)
       sqlite3 (~> 1.3)
       thin (~> 1.5.0)
+    method_source (0.8.2)
     middleware (0.1.0)
     mime-types (2.99.1)
     mimemagic (0.3.0)
@@ -298,6 +300,12 @@ GEM
       mimemagic (= 0.3.0)
     polyamorous (1.3.0)
       activerecord (>= 3.0)
+    pry (0.10.3)
+      coderay (~> 1.1.0)
+      method_source (~> 0.8.1)
+      slop (~> 3.4)
+    pry-rails (0.3.4)
+      pry (>= 0.9.10)
     rack (1.6.4)
     rack-protection (1.5.3)
       rack
@@ -398,6 +406,7 @@ GEM
     slim (3.0.6)
       temple (~> 0.7.3)
       tilt (>= 1.3.3, < 2.1)
+    slop (3.6.0)
     spring (1.6.4)
     sprockets (2.12.4)
       hike (~> 1.2)
@@ -499,6 +508,7 @@ DEPENDENCIES
   omniauth-facebook
   omniauth-google-oauth2
   paperclip (~> 4.0)
+  pry-rails
   rails (~> 4.2)
   rails-assets-bootstrap!
   rails-footnotes (~> 4.0)
