@@ -4,11 +4,8 @@ class AnalyticsCreateMessageWorker
 
   sidekiq_options queue: 'analytics_worker'
 
-  def perform(message_id)
-    message = Message.find(message_id)
-    username = User.find(message.sender_id).username
-
-    category = message.class.name
+  def perform(username)
+    category = 'Message'
     action = I18n.t('nlt.analytics.message_sent')
     label = username
 
