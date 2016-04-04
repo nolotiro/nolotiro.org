@@ -10,14 +10,12 @@ class CanAccessAdmin < ActionDispatch::IntegrationTest
   end
 
   it "should not get /admin/jobs as a normal user" do
-    @user = FactoryGirl.create(:user)
-    login_as @user
+    login_as user
     assert_raises(ActionController::RoutingError) { visit "/admin/jobs" }
   end
 
   it "should get /admin/jobs as admin" do
-    @admin = FactoryGirl.create(:admin)
-    login_as @admin
+    login_as admin
     visit "/admin/jobs"
     page.must_have_content "Sidekiq"
     page.must_have_content "Redis"
@@ -30,17 +28,24 @@ class CanAccessAdmin < ActionDispatch::IntegrationTest
   end
 
   it "should not get /admin as a normal user" do
-    @user = FactoryGirl.create(:user)
-    login_as @user
+    login_as user
     visit "/admin"
     page.must_have_content I18n.t('nlt.permission_denied')
   end
 
   it "should get /admin as admin" do
-    @admin = FactoryGirl.create(:admin)
-    login_as @admin
+    login_as admin
     visit "/admin"
     page.must_have_content "Últimos anuncios publicados"
   end
 
+  private
+
+  def user
+    @user ||= FactoryGirl.create(:user)
+  end
+
+  def admin
+    @admin ||= FactoryGirl.create(:admin)
+  end
 end
