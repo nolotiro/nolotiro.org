@@ -6,13 +6,15 @@ module WoeidHelper
     # param woeid: integer. example: 244444
     # return place: string. format: "City, State, Country"
     #
-    key = 'woeid_' + woeid.to_s
+
+    locale = I18n.locale;
+    key = 'woeid_' + locale.to_s + '_' + woeid.to_s
     if Rails.cache.fetch(key)
       return Rails.cache.fetch(key)
     else
       GeoPlanet.appid = Rails.application.secrets["geoplanet_app_id"]
       begin
-        place_raw = GeoPlanet::Place.new(woeid.to_i, :lang => :es)
+        place_raw = GeoPlanet::Place.new(woeid.to_i, :lang => locale)
         place = { full: "#{place_raw.name}, #{place_raw.admin1}, #{place_raw.country}" , short: "#{place_raw.name}" }
         Rails.cache.write(key, place)
         return place
@@ -29,13 +31,15 @@ module WoeidHelper
     # return places: list. format: [[full name, woeid, ad_count], ...]
     #                      example: [["Madrid, Madrid, España (2444 anuncios)",766273],["Madrid, Comunidad de Madrid, España (444 anuncios)",12578024],["Madrid, Cundinamarca, Colombia (0 anuncios)",361938]]
     #
+
+    locale = I18n.locale;	
     if name
-      key = 'location_' + name
+      key = 'location_' + locale.to_s + '_' + name
       if Rails.cache.fetch(key)
         return Rails.cache.fetch(key)
       else
         GeoPlanet.appid = Rails.application.secrets["geoplanet_app_id"]
-        locations = GeoPlanet::Place.search(name, :lang => :es, :count => 0)
+        locations = GeoPlanet::Place.search(name, :lang => locale, :type => 7, :count => 0)
         if locations.nil?
           places = nil
         else
