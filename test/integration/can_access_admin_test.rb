@@ -1,7 +1,9 @@
 require "test_helper"
-include Warden::Test::Helpers
+require "integration/concerns/authentication"
 
 class CanAccessAdmin < ActionDispatch::IntegrationTest
+  include Authentication
+
   it "should not get /admin/jobs as a anonymous user" do
     visit "/admin/jobs"
     page.must_have_content "Para publicar anuncios o enviar mensajes accede a tu cuenta"

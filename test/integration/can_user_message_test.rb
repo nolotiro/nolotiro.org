@@ -1,7 +1,9 @@
 require "test_helper"
-include Warden::Test::Helpers
+require "integration/concerns/authentication"
 
 class CanUserMessage < ActionDispatch::IntegrationTest
+  include Authentication
+
   before do
     @user1 = FactoryGirl.create(:user)
     @user2 = FactoryGirl.create(:user)
