@@ -5,12 +5,12 @@ class CanUserMessage < ActionDispatch::IntegrationTest
   include Authentication
 
   before do
-    @user1 = FactoryGirl.create(:user)
-    @user2 = FactoryGirl.create(:user)
+    user1 = FactoryGirl.create(:user)
+    user2 = FactoryGirl.create(:user)
 
-    login_as @user1
+    login_as user1
 
-    visit message_new_path(@user2)
+    visit message_new_path(user2)
   end
 
   it "should message another user" do
