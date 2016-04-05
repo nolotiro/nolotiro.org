@@ -1,0 +1,20 @@
+AllCops:
+  Exclude:
+    - db/schema.rb
+    - db/migrate/*.rb
+
+  DisplayCopNames: true
+
+  DisplayStyleGuide: true
+
+Performance/Casecmp:
+  Enabled: false
+
+Style/Lambda:
+  Enabled: false
+
+Style/ModuleFunction:
+  EnforcedStyle: extend_self
+
+Rails:
+  Enabled: true
