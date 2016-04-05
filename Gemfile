@@ -53,6 +53,7 @@ group :development do
   gem 'capistrano-bundler'
   gem 'capistrano-ci'
   gem 'capistrano-pending'
+  gem 'rubocop', '0.41.1'
 end
 
 gem 'http_accept_language'
