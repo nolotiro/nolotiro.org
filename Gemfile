@@ -24,8 +24,6 @@ group :development, :test do
   gem 'spring'                              # dev: speed up things
   gem 'commands'                            # dev: rake commands in console
   gem 'web-console', '~> 2.0'               # dev: better errors
-  #gem 'better_errors'                       # dev: better errors
-  #gem 'binding_of_caller'                   # dev: better errors
   gem 'mailcatcher'                         # dev: mailbox
   gem 'bullet'                              # dev: n+1 query problem alert
 end
@@ -40,9 +38,6 @@ end
 group :production, :staging do 
   gem 'airbrake', '~> 4.0'                  # exception notification
 end
-
-# Use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.1.2'
 
 
 # deploy
