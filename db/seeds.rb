@@ -1,11 +1,11 @@
 # coding: utf-8
 
-def create_user(role = 0, email = Faker::Internet.email, username = Faker::Name.name)
+def create_user(role = 0)
   pwd = '12345678'
   puts "    #{email}"
   User.create!(
-    username: username,
-    email: email,
+    username: Faker::Name.name,
+    email: Faker::Internet.email,
     role: role,
     password: pwd,
     password_confirmation: pwd,
