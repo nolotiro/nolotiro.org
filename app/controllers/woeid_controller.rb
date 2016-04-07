@@ -16,12 +16,11 @@ class WoeidController < ApplicationController
               .public_send(@status)
               .by_woeid_code(@id)
               .paginate(:page => params[:page])
-
-    if params.has_key?(:id)
-      @woeid = WoeidHelper.convert_woeid_name params[:id]
-    end
-
-    if not @ads.any?
+    @woeid = WoeidHelper.convert_woeid_name params[:id]
+    
+    if @woeid == "not_town" || (params[:id].present? == true && @id.match(/^(\d)+$/) == nil) 
+	redirect_to :controller => 'location', :action => 'ask'
+    elsif not @ads.any?
       @location_suggest = get_location_suggest # no results
       if @woeid
         @location_options = WoeidHelper.search_by_name(@woeid[:short])
