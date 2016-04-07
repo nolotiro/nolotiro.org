@@ -41,11 +41,8 @@ end
 
 create_user(1)
 
-puts "Creating Ads"
-
 (1..30).each do |i|
   user = User.offset(rand(User.count)).first
-  ad = create_ad(user)
-  puts "    #{ad.title}"
+  create_ad(user)
 end
 
