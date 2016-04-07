@@ -1,4 +1,7 @@
+---
 gl:
+  active_admin:
+    dashboard: 
   activemodel:
     attributes:
       contact:
@@ -26,8 +29,8 @@ gl:
         record_invalid:
         restrict_dependent_destroy:
         taken: non está dispoñible
-        too_long: "é demasiado longo (non máis de %{count} carácteres)"
-        too_short: "é demasiado curto (non menos de %{count} carácteres)"
+        too_long: é demasiado longo (non máis de %{count} carácteres)
+        too_short: é demasiado curto (non menos de %{count} carácteres)
         wrong_length: non ten a lonxitude correcta (debe ser de %{count} carácteres)
       template:
         body: 'Atopáronse os seguintes problemas:'
@@ -37,13 +40,16 @@ gl:
   activerecord:
     attributes:
       ad:
-        body:
-        image:
-        image_content_type:
-        image_file_size:
-        subject:
-        title:
-        type:
+        body: 
+        image: 
+        image_content_type: 
+        image_file_size: 
+        subject: 
+        title: 
+        type: 
+      contact:
+        email: 
+        message: 
       message:
         subject:
       user:
@@ -77,8 +83,8 @@ gl:
         record_invalid:
         restrict_dependent_destroy:
         taken: non está dispoñible
-        too_long: "é demasiado longo (non máis de %{count} carácteres)"
-        too_short: "é demasiado curto (non menos de %{count} carácteres)"
+        too_long: é demasiado longo (non máis de %{count} carácteres)
+        too_short: é demasiado curto (non menos de %{count} carácteres)
         wrong_length: non ten a lonxitude correcta (debe ser de %{count} carácteres)
       template:
         body: 'Atopáronse os seguintes problemas:'
@@ -150,6 +156,8 @@ gl:
         one: aproximadamente 1 ano
         other: "%{count} anos"
       almost_x_years:
+        one: 
+        other: 
       half_a_minute: medio minuto
       less_than_x_minutes:
         one: 1 minuto
@@ -206,21 +214,28 @@ gl:
       reset_password_instructions:
         subject:
       unlock_instructions:
-        subject:
+        action: 
+        greeting: 
+        instruction: 
+        message: 
+        subject: 
     omniauth_callbacks:
       failure:
       success:
     passwords:
-      action:
-      follow_instructions:
-      forgot:
-      instructions:
-      no_token:
-      send:
-      send_instructions:
-      send_paranoid_instructions:
-      updated:
-      updated_not_active:
+      action: 
+      edit:
+        confirm_new_password: 
+        new_password: 
+      follow_instructions: 
+      forgot: 
+      instructions: 
+      no_token: 
+      send: 
+      send_instructions: 
+      send_paranoid_instructions: 
+      updated: 
+      updated_not_active: 
     registrations:
       destroyed:
       signed_up:
@@ -235,9 +250,11 @@ gl:
       user:
         signed_in:
     unlocks:
-      send_instructions:
-      send_paranoid_instructions:
-      unlocked:
+      new:
+        resend_unlock_instructions: 
+      send_instructions: 
+      send_paranoid_instructions: 
+      unlocked: 
   errors:
     format: "%{attribute} %{message}"
     messages:
@@ -258,16 +275,20 @@ gl:
       less_than: debe ser menor que %{count}
       less_than_or_equal_to: debe ser menor ou igual que %{count}
       not_a_number: non é un número
-      not_an_integer:
-      not_found:
-      not_locked:
+      not_an_integer: 
+      not_found: 
+      not_locked: 
       not_saved:
+        one: 
+        other: 
       odd: debe ser par
-      record_invalid:
+      record_invalid: 
       restrict_dependent_destroy:
+        one: 
+        other: 
       taken: non está dispoñible
-      too_long: "é demasiado longo (non máis de %{count} carácteres)"
-      too_short: "é demasiado curto (non menos de %{count} carácteres)"
+      too_long: é demasiado longo (non máis de %{count} carácteres)
+      too_short: é demasiado curto (non menos de %{count} carácteres)
       wrong_length: non ten a lonxitude correcta (debe ser de %{count} carácteres)
     template:
       body: 'Atopáronse os seguintes problemas:'
@@ -302,11 +323,13 @@ gl:
       you_have_new_message:
       you_have_recieved_new_message:
     new:
-      button:
-      errors:
-      legend:
-      submit:
-      title:
+      body_max: 
+      button: 
+      errors: 
+      legend: 
+      subject: 
+      submit: 
+      title: 
     notification_mailer:
       subject:
       visit_html:
@@ -349,45 +372,35 @@ gl:
       lock_user:
       unlock_user:
     ads:
-      created:
+      bumped: 
+      created: 
       form:
-        body:
-        body_max:
-        comments_enabled:
-        image_permitted_formats:
-        please_ad_type:
-        prohibited:
-        select_an_image:
-        status:
-        title:
-        title_max:
-        to_publish:
-        type_ad:
-      updated:
-      published:
-      delivered:
-    analytics:
-      give_published:
-      want_published:
-      ad_delivered:
-      ad_destroyed:
-      user_created:
-      user_destroyed:
-      ad_new_city:
-      comment_created:
-      message_sent:
-    all:
-    all_ads:
-    and:
-    are_you_interested:
-    available:
-    back:
-    blog:
-    booked:
-    by_user:
-    cancel_my_account:
-    captcha_error:
-    change_city:
+        body: 
+        body_max: 
+        comments_enabled: 
+        image_permitted_formats: 
+        please_ad_type: 
+        prohibited: 
+        select_an_image: 
+        status: 
+        title: 
+        title_max: 
+        to_publish: 
+        type_ad: 
+      updated: 
+    all: 
+    all_ads: 
+    and: 
+    are_you_interested: 
+    available: 
+    back: 
+    blog: 
+    booked: 
+    bump_this_ad: 
+    by_user: 
+    cancel_my_account: 
+    captcha_error: 
+    change_city: 
     change_town:
       choose:
       choose_html:
@@ -402,62 +415,69 @@ gl:
     cities_in_the_world:
     click_to_large:
     comments:
-      do_click:
-      flash_ko:
-      flash_ok:
-      label:
-      subject:
-      submit:
-      title:
+      body_max: 
+      do_click: 
+      flash_ko: 
+      flash_ok: 
+      label: 
+      subject: 
+      submit: 
+      title: 
     comments_count:
-    contact:
-    contact_form:
-    contact_legend:
-    contact_thanks:
-    cookie:
-    create_new_ad:
-    delete_ad:
-    delete_sure:
-    delivered:
-    developers:
-    didn_t_receive_confirmation_instructions:
-    didn_t_receive_unlock_instructions:
-    edit_this_ad:
+      one: 
+      other: 
+    contact: 
+    contact_form: 
+    contact_legend: 
+    contact_thanks: 
+    cookie: 
+    create_new_ad: 
+    delete_ad: 
+    delete_sure: 
+    delivered: 
+    developers: 
+    didn_t_receive_confirmation_instructions: 
+    didn_t_receive_unlock_instructions: 
+    edit_this_ad: 
     faq:
-      answer_1_html:
-      answer_2_html:
-      answer_3_html:
-      answer_4_html:
-      answer_5_html:
-      answer_6_html:
-      answer_7_html:
-      question_1:
-      question_2:
-      question_3:
-      question_4:
-      question_5:
-      question_6:
-      question_7:
-      title:
-    faqs:
-    fill_captcha:
-    first_visit:
-    footer_explain:
-    forgot_your_password:
-    friends:
-    gift_on:
-    give:
-    hello_to:
-    help_translate:
-    home_title:
-    if_you_are_new:
-    if_youre_already_an_user:
-    keywords:
-    last_published_gifts:
-    leave_blank:
-    login:
-    login_to_comment:
-    logout:
+      answer_1_html: 
+      answer_2_html: 
+      answer_3_html: 
+      answer_4_html: 
+      answer_5_html: 
+      answer_6_html: 
+      answer_7_html: 
+      question_1: 
+      question_2: 
+      question_3: 
+      question_4: 
+      question_5: 
+      question_6: 
+      question_7: 
+      title: 
+    faqs: 
+    fill_captcha: 
+    first_visit: 
+    footer_explain: 
+    forgot_your_password: 
+    friends: 
+    gift_on: 
+    give: 
+    hello_to: 
+    help_translate: 
+    home_title: 
+    if_you_are_new: 
+    if_youre_already_an_user: 
+    keywords: 
+    last_published_gifts: 
+    leave_blank: 
+    legal_notice: 
+    legal_page:
+      body_html: 
+      title: 
+    login: 
+    login_to_comment: 
+    logout: 
     mail:
       automatic:
     member_since:
@@ -471,19 +491,20 @@ gl:
     meta_description_ad:
     new_user:
     no_results:
-      explain_html:
-      phrase:
-      publish_ad:
-      subtitle:
-      title:
-      try:
-    or:
-    password:
-    permission_denied:
-    please_fill_to_become_member:
-    please_insert_email_and_password:
-    please_introduce:
-    privacy:
+      explain_html: 
+      on_user: 
+      phrase: 
+      publish_ad: 
+      subtitle: 
+      title: 
+      try: 
+    or: 
+    password: 
+    permission_denied: 
+    please_fill_to_become_member: 
+    please_insert_email_and_password: 
+    please_introduce: 
+    privacy: 
     privacy_page:
       body_html:
       title:
@@ -507,46 +528,48 @@ gl:
     rss_suscribe:
     save_failed:
     search:
-      button:
-      must_search:
-      no_ads_message_html:
-    searching_on_html:
-    send:
-    send_a_message:
-    send_a_message_to:
-    sending_this_form:
-    share_this_ad:
-    sign_in:
-    sign_in_with_provider:
-    sign_up:
-    slogan:
-    suggestions:
-    to_publish_ad:
-    to_publish_or_send_messages:
-    tos:
+      button: 
+      must_search: 
+      no_ads_message_html: 
+    searching_on_html: 
+    send: 
+    send_a_message: 
+    send_a_message_to: 
+    send_a_private_message: 
+    sending_this_form: 
+    share_this_ad: 
+    sign_in: 
+    sign_in_with_provider: 
+    sign_up: 
+    slogan: 
+    suggestions: 
+    to_publish_ad: 
+    to_publish_or_send_messages: 
+    tos: 
     tos_page:
       body_html:
       title:
     translate:
-      description_html:
-      title:
-    update:
-    updating:
-    user_ads:
-    user_edit_profile:
-    user_profile:
-    username:
-    users_most_active:
-    users_most_active_last_week:
-    view_ads_on:
-    view_ads_on_your_city:
-    want:
-    want_to_leave:
-    we_need_your_password:
-    welcome:
-    welcome_message:
-    write_a_comment:
-    your_email:
+      description_html: 
+      title: 
+    update: 
+    updating: 
+    user_ads: 
+    user_edit_profile: 
+    user_profile: 
+    username: 
+    users_most_active: 
+    users_most_active_last_week: 
+    view_ads_on: 
+    view_ads_on_your_city: 
+    view_more_ads: 
+    want: 
+    want_to_leave: 
+    we_need_your_password: 
+    welcome: 
+    welcome_message: 
+    write_a_comment: 
+    your_email: 
   number:
     currency:
       format:
@@ -617,9 +640,13 @@ gl:
   will_paginate:
     next_label:
     page_entries_info:
-      multi_page:
-      multi_page_html:
+      multi_page: 
+      multi_page_html: 
       single_page:
+        one: 
+        other: 
       single_page_html:
-    page_gap:
-    previous_label:
+        one: 
+        other: 
+    page_gap: 
+    previous_label: 

@@ -10,6 +10,8 @@
 
     <%= render partial: "users/tabnav", locals: {user: @user} %>
 
+    <%= render "woeid/filter_status" %>
+
     <div class="span-5 mobile">
       <div class="google_ad_wrapper">
         <%= render partial: "partials/google_adsense", locals: { class_name: "mobile google_adsense_336_280", ad_slot: "7225596067"}  %>
@@ -22,7 +24,7 @@
       <% end %>
       <%= render partial: "partials/pagination", locals: { items: @ads } %>
     <% else %>
-      <p> <div class="info"> <%= t("nlt.no_results.on_user") %> </div> </p>
+      <div class="info"> <%= t("nlt.no_results.on_user") %> </div>
     <% end %>
 
   </div>

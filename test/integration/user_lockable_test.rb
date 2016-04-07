@@ -1,10 +1,10 @@
 require "test_helper"
-include Warden::Test::Helpers
+require "integration/concerns/authentication"
 
-feature "UserLockable" do
+class UserLockable < ActionDispatch::IntegrationTest
+  include Authentication
 
-  scenario "should lock after 10 tries on user" do
-
+  it "should lock after 10 tries on user" do
     @user = FactoryGirl.create(:user)
 
     (1..8).each do |n|
@@ -18,15 +18,4 @@ feature "UserLockable" do
     login(@user.email, "trololololo")
     page.must_have_content I18n.t('devise.failure.locked')
   end
-
-  private
-
-  def login(username, password)
-    visit new_user_session_path
-    fill_in "user_email", with: @user.email
-    fill_in "user_password", with: "trololololo" 
-    click_button "Acceder"
-
-  end
-
 end

@@ -1,4 +1,7 @@
+---
 en:
+  active_admin:
+    dashboard: 
   activemodel:
     attributes:
       contact:
@@ -44,6 +47,9 @@ en:
         subject: Title
         title: Title
         type: Type
+      contact:
+        email: 
+        message: 
       message:
         subject: Subject
       user:
@@ -201,12 +207,19 @@ en:
       reset_password_instructions:
         subject: Reset password instructions
       unlock_instructions:
+        action: 
+        greeting: 
+        instruction: 
+        message: 
         subject: Unlock Instructions
     omniauth_callbacks:
       failure: Could not authenticate you from %{kind} because "%{reason}".
       success: Successfully authenticated from %{kind} account.
     passwords:
       action: Change Password
+      edit:
+        confirm_new_password: 
+        new_password: 
       follow_instructions: Someone asked nolotiro.org about change your password. If it's not you then you can ignore this mail. Your password will not change until you access the link and create a new one.
       forgot: Did you forget your password?
       instructions: Please, enter your email address and we will send you a shortcut link to change your password.
@@ -230,6 +243,8 @@ en:
       user:
         signed_in: You are signed.
     unlocks:
+      new:
+        resend_unlock_instructions: 
       send_instructions: You will receive an email with instructions about how to unlock your account in a few minutes.
       send_paranoid_instructions: If your account exists, you will receive an email with instructions about how to unlock it in a few minutes.
       unlocked: Your account has been unlocked successfully. Please sign in to continue.
@@ -301,9 +316,11 @@ en:
       you_have_new_message: You have a new message
       you_have_recieved_new_message: You have a new message
     new:
+      body_max: 
       button: Send
       errors: 'There is a problem, please check this:'
       legend: Send message
+      subject: 
       submit: Send
       title: New private message for user %{user}
     notification_mailer:
@@ -348,6 +365,7 @@ en:
       lock_user: "[ADMIN] Block this user"
       unlock_user: "[ADMIN] Unblock this user"
     ads:
+      bumped: 
       created: We have created the ad
       form:
         body: 'Body of the ad:'
@@ -383,6 +401,7 @@ en:
     back: Back to the main page
     blog: blog
     booked: reserved
+    bump_this_ad: 
     by_user: by user
     cancel_my_account: Cancel my account
     captcha_error: Does not match, please, enter captcha's characters again
@@ -401,6 +420,7 @@ en:
     cities_in_the_world: best recycling cities
     click_to_large: Click to large the photo
     comments:
+      body_max: 
       do_click: Please click this link to reply the message
       flash_ko: It is not possible to save your comment, there is an error, please review it and send your comment again
       flash_ok: Saved comment
@@ -460,6 +480,10 @@ en:
     keywords: gift second hand free
     last_published_gifts: last posted gifts
     leave_blank: "(leave it empty if you do not want to change it)"
+    legal_notice: 
+    legal_page:
+      body_html: 
+      title: 
     login: log in
     login_to_comment: log in to write a comment
     logout: logout
@@ -477,6 +501,7 @@ en:
     new_user: sign up
     no_results:
       explain_html: "<p>1. Be the first to %{publish}.</p> <p>2. Try a bigger city close to your location.</p> <p>3. Our city suggestion system IP based tell us you are close to: <br> %{change_location} </p>"
+      on_user: 
       phrase: '"The journey of a thousand miles begins with one step" Lao Tse.'
       publish_ad: post an ad in this city
       subtitle: You can try some of this stuff
@@ -519,6 +544,7 @@ en:
     send: Send
     send_a_message: "+ Send a private message to this user"
     send_a_message_to: send a private message to
+    send_a_private_message: 
     sending_this_form: By submitting this form, you admit to having read, understood, and you agree with our
     share_this_ad: Share this ad
     sign_in: Sign in
@@ -545,6 +571,7 @@ en:
     users_most_active_last_week:
     view_ads_on: View ads in %{location_suggest}
     view_ads_on_your_city: View ads from your city or town
+    view_more_ads: 
     want: want
     want_to_leave: Do you want to delete your user?
     we_need_your_password: "(we need your password to confirm your edition)"

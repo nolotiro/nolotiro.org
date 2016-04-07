@@ -1,4 +1,4 @@
-<% if @all %>
+<% if @woeid.nil? %>
   <% content_for(:title, t('nlt.all_ads')) %>
   <% content_for(:meta_title, t('nlt.all_ads')) %>
 <% else %>
@@ -10,7 +10,7 @@
   <meta name="description" content="<%= t('nlt.gift_on', woeid: @woeid) %>. <%= t('nlt.meta_description') %>" />
 <% end %>
 
-<% unless @search or @all %>
+<% unless @search or @woeid.nil? %>
   <% content_for :meta_extra do %>
     <link rel="alternate" type="application/rss+xml" title="nolotiro.org - <%= @woeid[:full] %>" href="<%= rss_type_url(woeid: @id, type: @type, status: @status) %>" />
   <% end %>
@@ -30,55 +30,46 @@
 <% end %>
 
 <div id="location_header_section">
-  <% if @all %>
-    <span class="give-want">
-      <%= link_to t('nlt.give'), ads_listall_path(type: 'give'),
-        :class => @type == "give" ? "actual" : "''" %>
-      &nbsp;
-      <%= link_to t('nlt.want'), ads_listall_path(type: 'want'), :class => @type == "want" ? "actual" : "''" %>
-    </span>
+  <span class="give-want">
+    <%= link_to t('nlt.give'), url_for(type: 'give'), :class => @type == "give" ? "actual" : "''" %>
+    &nbsp;
+    <%= link_to t('nlt.want'), url_for(type: 'want'), :class => @type == "want" ? "actual" : "''" %>
+  </span>
+
   <div class="location_name">
-    <h1><%= t('nlt.all_ads') %></h1>
-    <br>
-  </div>
-  <% else %>
-    <span class="give-want">
-      <%= link_to t('nlt.give'), ads_woeid_path(id: @id, type: 'give'), :class => @type == "give" ? "actual" : "''" %>
-      &nbsp;
-      <%= link_to t('nlt.want'), ads_woeid_path(id: @id, type: 'want'), :class => @type == "want" ? "actual" : "''" %>
-    </span>
-    <div class="location_name">
-      <h1>
-        <% if @search %>
-          <%= t('nlt.searching_on_html', q: @q) %>
-        <% end %>
-        <% if @type == "give" %>
-          <%= t('nlt.give') %>
-        <% else %>
-          <%= t('nlt.want') %>
-        <% end %>
+    <h1>
+      <% if @woeid.nil? %>
+        <%= t('nlt.all_ads') %>
+      <% else %>
+        <%= t('nlt.searching_on_html', q: @q) if @search %>
+
+        <%= @type == "give" ? t('nlt.give') : t('nlt.want') %>
         - <%= @woeid[:full] %>
-      </h1>
+      <% end %>
+    </h1>
+
+    <% if @woeid %>
       <br>
       <%= render :partial => "ads/search", :locals => {:woeid => @id, :ad_type => @type, :q => @q} %>
       <%= link_to location_ask_path, :class => "world_link" do %>
         <%= image_tag "change_location.png", :alt => "change location" %>
         <%= t('nlt.change_city') %>
       <% end %>
+    <% end %>
+  </div>
+</div>
+
+<div id="main">
+  <div class="span-17 mobile">
+    <div class="google_ad_wrapper">
+      <%= render partial: "partials/google_adsense", locals: { class_name: "google_adsense_336_280", ad_slot: "7225596067"}  %>
     </div>
-  <% end %>
   </div>
 
-  <div id="main">
-    <div class="span-17 mobile">
-      <div class="google_ad_wrapper">
-        <%= render partial: "partials/google_adsense", locals: { class_name: "google_adsense_336_280", ad_slot: "7225596067"}  %>
-      </div>
-    </div>
-    <div class="span-17">
-      <% if @type == "give" %>
-        <%= render :partial => "woeid/filter_status", :locals => {:status => @status, :id => @id, :all => @all} %>
-      <% end %>
+  <div class="span-17">
+    <% if @type == "give" %>
+      <%= render "woeid/filter_status" %>
+    <% end %>
 
     <% if @ads.any? %>
       <% @ads.each_with_index do |ad,i| %>
@@ -92,23 +83,26 @@
         <%= render :partial => "ads/no_results", :locals => { :location_suggest => @location_suggest, :location_options => @location_options, :woeid => @id } %>
       <% end %>
     <% end %>
-      <% if @woeid %>
-        <div class="rss">
-          <%= link_to rss_type_path(:woeid => @id, :type => "give") do %>
-            <%= image_tag "icons/rss.png", :alt => t("nlt.rss_suscribe") %>
-            &nbsp; <%= t('nlt.rss_suscribe') %> - <%= @woeid[:full] %>
-          <% end %>
-        </div>
-      <% end %>
-    </div><!-- /span-17 -->
-    <div class="span-6 desktop">
-      <div class="google_ad_wrapper">
-        <%= render partial: "partials/google_adsense", locals: { class_name: "google_adsense_600_160", ad_slot: "6783776462"}  %>
+
+    <% if @woeid %>
+      <div class="rss">
+        <%= link_to rss_type_path(:woeid => @id, :type => "give") do %>
+          <%= image_tag "icons/rss.png", :alt => t("nlt.rss_suscribe") %>
+          &nbsp; <%= t('nlt.rss_suscribe') %> - <%= @woeid[:full] %>
+        <% end %>
       </div>
-    </div><!-- /span-6 -->
-    <div class="span-17 mobile">
-      <div class="google_ad_wrapper">
-        <%= render partial: "partials/google_adsense", locals: { class_name: "google_adsense_336_280", ad_slot: "7225596067"}  %>
-      </div>
+    <% end %>
+  </div><!-- /span-17 -->
+
+  <div class="span-6 desktop">
+    <div class="google_ad_wrapper">
+      <%= render partial: "partials/google_adsense", locals: { class_name: "google_adsense_600_160", ad_slot: "6783776462"}  %>
+    </div>
+  </div><!-- /span-6 -->
+
+  <div class="span-17 mobile">
+    <div class="google_ad_wrapper">
+      <%= render partial: "partials/google_adsense", locals: { class_name: "google_adsense_336_280", ad_slot: "7225596067"}  %>
     </div>
   </div>
+</div>

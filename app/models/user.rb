@@ -30,6 +30,7 @@ class User < ActiveRecord::Base
       .joins(:ads)
       .merge(Ad.give)
       .group("ads.user_owner")
+      .unscope(:order)
       .order("n_ads DESC")
       .limit(limit)
   end

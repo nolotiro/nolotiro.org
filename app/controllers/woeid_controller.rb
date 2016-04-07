@@ -8,34 +8,17 @@ class WoeidController < ApplicationController
   # GET /es/ad/listall/ad_type/:type/status/:status
   def show
     @id = params[:id]
-    @type = params[:type]
-    @status = params[:status].nil? ? 'available' : params[:status]
+    @type = type_scope
+    @status = status_scope
 
-    case @status
-    when 'available'
-      st = 1
-    when 'booked'
-      st = 2
-    when 'delivered'
-      st = 3
-    else
-      st = 1
-    end
-    case @type
-    when 'give'
-      ty = 1
-    when 'want'
-      ty = 2
-    else
-      ty = 1
-    end
-
-    @ads = Ad.includes(:user).by_type(ty).by_status(st).by_woeid_code(@id).paginate(:page => params[:page])
+    @ads = Ad.includes(:user)
+              .public_send(@type)
+              .public_send(@status)
+              .by_woeid_code(@id)
+              .paginate(:page => params[:page])
 
     if params.has_key?(:id)
       @woeid = WoeidHelper.convert_woeid_name params[:id]
-    else
-      @all = true # se trata de un listall
     end
 
     if not @ads.any?
@@ -44,11 +27,11 @@ class WoeidController < ApplicationController
         @location_options = WoeidHelper.search_by_name(@woeid[:short])
       end
     end
-    if @woeid.nil? and not @all
-      raise ActionController::RoutingError.new('Not Found') 
-    else
-      render "show"
-    end
   end
 
+  private
+
+  def type_scope
+    params[:type] == 'want' ? params[:type] : 'give'
+  end
 end
