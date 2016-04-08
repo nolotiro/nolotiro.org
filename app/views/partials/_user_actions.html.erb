@@ -15,8 +15,8 @@
   </div>
 <% else %>
   <div class="user_login_box">
-    <%= link_to t('nlt.new_user'), new_user_registration_path, "data-no-turbolink" => true %>
+    <%= link_to t('nlt.new_user'), new_user_registration_path %>
     <%= t('nlt.or') %>
-    <%= link_to t('nlt.login'), new_user_session_path, "data-no-turbolink" => true %>
+    <%= link_to t('nlt.login'), new_user_session_path %>
   </div>
 <% end %>
