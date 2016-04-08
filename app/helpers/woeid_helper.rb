@@ -14,9 +14,9 @@ module WoeidHelper
     else
       GeoPlanet.appid = Rails.application.secrets["geoplanet_app_id"]
 	begin
-            place_raw = GeoPlanet::Place.new(woeid.to_i, :lang => locale)
-            is_town = place_raw.placetype_code
-	    if is_town.to_i == 7
+        place_raw = GeoPlanet::Place.new(woeid.to_i, :lang => locale)
+        
+        if place_raw.placetype_code == 7 #placetype of "Town"
                 place = { full: "#{place_raw.name}, #{place_raw.admin1}, #{place_raw.country}" , short: "#{place_raw.name}" }
                 Rails.cache.write(key, place)
                 return place
