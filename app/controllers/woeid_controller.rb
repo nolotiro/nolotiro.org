@@ -19,10 +19,12 @@ class WoeidController < ApplicationController
 
     if params[:id].present?
         @woeid = WoeidHelper.convert_woeid_name params[:id]
-    end    
+    end
 
-    if @woeid == "not_town" || (params[:id].present? == true && @id.match(/^(\d)+$/) == nil) 
-	redirect_to :controller => 'location', :action => 'ask'
+    if @woeid == "not_town" || (params[:id].present? == true && @id.match(/^(\d)+$/) == nil)
+      redirect_to :controller => 'location', :action => 'ask'
+    elsif @woeid == "not_valid_woeid"
+      render :file => "#{Rails.root}/public/404.html",  :status => 404
     elsif not @ads.any?
       @location_suggest = get_location_suggest # no results
       if @woeid
