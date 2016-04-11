@@ -55,8 +55,8 @@ class AdTest < ActiveSupport::TestCase
   end
 
   test "ad validates minimum length of title" do
-    assert_not @ad.update(title: "a" * 5)
-    assert @ad.errors[:title].include?("es demasiado corto (6 caracteres mínimo)")
+    assert_not @ad.update(title: "a" * 3)
+    assert @ad.errors[:title].include?("es demasiado corto (4 caracteres mínimo)")
   end
 
   test "ad escaped title and body with escape_privacy_data" do 
