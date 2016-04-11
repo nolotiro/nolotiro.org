@@ -521,7 +521,6 @@ it:
     password: password
     permission_denied: Non si dispone dell'autorizzazione per eseguire questa azione.
     please_fill_to_become_member: Si prega di compilare questo modulo per essere un membro di nolotiro
-    please_insert_email_and_password: Metta prego la tua email e la password.
     please_introduce: 'Inserisci i caratteri che vedi:'
     privacy: politica sulla privacy
     privacy_page:
