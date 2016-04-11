@@ -13,8 +13,10 @@ class AuthenticatedAdListing < ActionDispatch::IntegrationTest
     create(:ad, title: 'res_mad', woeid_code: 766_273, status: 2)
     create(:ad, title: 'del_mad', woeid_code: 766_273, status: 3)
 
-    @user = create(:user, woeid: 766_273)
-    with_pagination(1) { login(@user.email, @user.password) }
+    with_pagination(1) do
+      login_as create(:user, woeid: 766_273)
+      visit root_path
+    end
   end
 
   it 'lists first page of available ads in users location in home page' do
