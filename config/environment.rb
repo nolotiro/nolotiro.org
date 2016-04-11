@@ -2,4 +2,4 @@
 require_relative 'application'
 
 # Initialize the Rails application.
-NolotiroOrg::Application.initialize!
+Rails.application.initialize!
