@@ -18,7 +18,7 @@
               - @messages.each do |m|
                 %tr{ class: "mail #{ 'unread' if m.is_unread?(current_user) }" }
                   - unless @box == 'trash'
-                    %td{style: "float:left;width:20px;"}
+                    %td
                       = check_box_tag '', m.id, false, class: 'delete_multiple_checkbox', name: "conversations[]"
                   - else
                     %td
