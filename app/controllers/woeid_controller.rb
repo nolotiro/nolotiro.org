@@ -21,7 +21,7 @@ class WoeidController < ApplicationController
         @woeid = WoeidHelper.convert_woeid_name params[:id]
     end
 
-    if @woeid == "not_town" || @woeid == "not_valid_woeid" || (params[:id].present? == true && @id.match(/^(\d)+$/) == nil)
+    if params[:id].present? == true && (@id.match(/^(\d)+$/) == nil || @woeid == nil)
       redirect_to :controller => 'location', :action => 'ask'
     elsif not @ads.any?
       @location_suggest = get_location_suggest # no results

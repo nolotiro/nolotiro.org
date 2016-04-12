@@ -21,10 +21,10 @@ module WoeidHelper
                 Rails.cache.write(key, place)
                 return place
           else
-            return "not_town"
+            return nil
           end
       rescue
-        return "not_valid_woeid"
+        return nil
       end
     end
   end
