@@ -221,7 +221,6 @@ en:
         confirm_new_password: 
         new_password: 
       follow_instructions: Someone asked nolotiro.org about change your password. If it's not you then you can ignore this mail. Your password will not change until you access the link and create a new one.
-      forgot: Did you forget your password?
       instructions: Please, enter your email address and we will send you a shortcut link to change your password.
       no_token: You can't access this page without coming from a password reset email. If you do come from a password reset email, please make sure you used the full URL provided.
       send: Send by email
@@ -511,7 +510,6 @@ en:
     password: Password
     permission_denied: You don't have permissions
     please_fill_to_become_member: Please, fill this form to become a member
-    please_insert_email_and_password: Please, insert your email and password
     please_introduce: Please, insert the following characters
     privacy: privacy policy
     privacy_page:

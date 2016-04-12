@@ -14,8 +14,8 @@ ActiveAdmin.register_page "Dashboard" do
               link_to ad.title, admin_ad_path(ad)
             end
             column :user
-            column :created_at do |ad|
-              time_ago_in_words ad.created_at
+            column :published_at do |ad|
+              time_ago_in_words ad.published_at
             end
           end
         end
@@ -23,7 +23,7 @@ ActiveAdmin.register_page "Dashboard" do
 
       column do
         panel "Últimos comentarios publicados" do
-          table_for Comment.includes(:ad, :user).last(30) do
+          table_for Comment.recent do
             column :id
             column :body do |com|
               link_to com.body, admin_comment_path(com)

@@ -241,7 +241,6 @@ it:
         confirm_new_password: 
         new_password: 
       follow_instructions: 'Qualcuno a chiesto di cambiare la password di nolotiro.org. Se non sei stato tu puoi ignorare questa email. La password non cambierà fino a quando non accedi al link per crearne una nuova. '
-      forgot: Hai dimenticato la password?
       instructions: Per favore, scrive la tua email e te invieremo un link di acceso diretto per cambiare la tua password.
       no_token: Puoi accedere a questa pagina solamente dalla email di reset della password. Se vieni dalla email controlla di aver inserito l'url completo riportato nella email.
       send: Invia email
@@ -533,7 +532,6 @@ it:
     password: password
     permission_denied: Non si dispone dell'autorizzazione per eseguire questa azione.
     please_fill_to_become_member: Si prega di compilare questo modulo per essere un membro di nolotiro
-    please_insert_email_and_password: Metta prego la tua email e la password.
     please_introduce: 'Inserisci i caratteri che vedi:'
     privacy: politica sulla privacy
     privacy_page:

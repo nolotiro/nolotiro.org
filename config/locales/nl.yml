@@ -225,7 +225,6 @@ nl:
         confirm_new_password: 
         new_password: 
       follow_instructions: 
-      forgot: 
       instructions: 
       no_token: 
       send: 
@@ -499,7 +498,6 @@ nl:
     password: 
     permission_denied: 
     please_fill_to_become_member: 
-    please_insert_email_and_password: 
     please_introduce: 
     privacy: 
     privacy_page:

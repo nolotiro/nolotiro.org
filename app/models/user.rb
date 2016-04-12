@@ -36,7 +36,7 @@ class User < ActiveRecord::Base
   end
 
   scope :top_last_week, ->(limit = 20) do
-    top_overall.where("published_at >= :date", date: 1.week.ago)
+    top_overall(limit).where("published_at >= :date", date: 1.week.ago)
   end
 
   def self.from_omniauth(auth) 
@@ -107,7 +107,7 @@ class User < ActiveRecord::Base
   end
 
 
-  def reset_password!(*args)
+  def reset_password(*args)
     self.legacy_password_hash = nil
     super
   end
