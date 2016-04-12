@@ -71,7 +71,6 @@ gem 'delayed_paperclip'                             # images processing in bacgr
 gem 'recaptcha', :require => 'recaptcha/rails'      # captcha
 gem 'ipaddress'                                     # ip address validation
 gem 'localeapp'                                     # i18n interface
-gem 'blueprint-rails'                               # blueprint css framework
 gem 'activeadmin', github: 'activeadmin'            # admin backend
 gem 'active_skin'                                   # admin backend skin
 gem 'rakismet'                                      # antispam

@@ -10,7 +10,7 @@
  *
  *= require bootstrap
  *= require font-awesome
- *= require blueprint
+ *= require blueprint_defaults
  *= require jquery.cookiebar
  *= require adsense
  *= require blueprint_grid_r

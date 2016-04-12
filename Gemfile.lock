@@ -71,9 +71,6 @@ GEM
     bcrypt (3.1.11)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
-    blueprint-rails (0.2.0)
-      railties (>= 3.0, < 5.0)
-      thor (>= 0.14, < 2.0)
     bourbon (3.2.4)
       sass (~> 3.2)
       thor
@@ -456,7 +453,6 @@ DEPENDENCIES
   active_skin
   activeadmin!
   airbrake (~> 4.0)
-  blueprint-rails
   bullet
   byebug
   cancancan (~> 1.10)
