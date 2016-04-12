@@ -16,5 +16,8 @@
 
  *= require blueprint
  *= require jquery.cookiebar
- *= require_tree .
+ *= require adsense
+ *= require blueprint_grid_r
+ *= require common
+ *= require pagination
  */
