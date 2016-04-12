@@ -225,7 +225,6 @@ pt:
         confirm_new_password: 
         new_password: 
       follow_instructions: 
-      forgot: 
       instructions: 
       no_token: Não pode aceder a esta página sem vir do email de redefinição da senha. Se vem dum email para redefinir a sena, por favor verifique que usou o URL completo que foi enviado.
       send: 

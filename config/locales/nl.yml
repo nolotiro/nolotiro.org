@@ -225,7 +225,6 @@ nl:
         confirm_new_password: 
         new_password: 
       follow_instructions: 
-      forgot: 
       instructions: 
       no_token: 
       send: 
