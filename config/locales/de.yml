@@ -225,7 +225,6 @@ de:
         confirm_new_password: 
         new_password: 
       follow_instructions: 
-      forgot: 
       instructions: 
       no_token: Sie können sich nicht auf dieser Seite anmelden, wenn Sie nicht von einer Passwort-Zurücksetzen-E-Mail kommen. Wenn Sie von solch einer E-Mail kommen, überprüfen Sie bitte, ob Sie die gesamte URL verwendeten.
       send: 
