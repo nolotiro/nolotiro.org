@@ -9,7 +9,7 @@ class Comment < ActiveRecord::Base
 
   validates :body, length: {maximum: 1000}
 
-  scope :recent, -> { includes(:ad, :user).limit(30) }
+  scope :recent, -> { includes(:ad, :user).order(created_at: :desc).limit(30) }
 
   def body 
     ApplicationController.helpers.escape_privacy_data(read_attribute(:body))
