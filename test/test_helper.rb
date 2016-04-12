@@ -23,6 +23,8 @@ end
 
 class ActionController::TestCase
   include Devise::TestHelpers
+
+  after { Rails.cache.clear }
 end
 
 class ActionDispatch::Routing::RouteSet
@@ -37,5 +39,6 @@ class ActionDispatch::IntegrationTest
 
   after do
     Capybara.reset_sessions!
+    Rails.cache.clear
   end
 end
