@@ -23,7 +23,7 @@ ActiveAdmin.register_page "Dashboard" do
 
       column do
         panel "Últimos comentarios publicados" do
-          table_for Comment.includes(:ad, :user).last(30) do
+          table_for Comment.recent do
             column :id
             column :body do |com|
               link_to com.body, admin_comment_path(com)
