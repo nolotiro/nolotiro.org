@@ -7,11 +7,11 @@ class AuthenticatedAdListing < ActionDispatch::IntegrationTest
   include Pagination
 
   before do
-    create(:ad, title: 'ava_mad_1', woeid_code: 766_273, status: 1)
-    create(:ad, title: 'ava_bar', woeid_code: 753_692, status: 1)
-    create(:ad, title: 'ava_mad_2', woeid_code: 766_273, status: 1)
-    create(:ad, title: 'res_mad', woeid_code: 766_273, status: 2)
-    create(:ad, title: 'del_mad', woeid_code: 766_273, status: 3)
+    create(:ad, :in_mad, title: 'ava_mad_1', status: 1)
+    create(:ad, :in_bar, title: 'ava_bar', status: 1)
+    create(:ad, :in_mad, title: 'ava_mad_2', status: 1)
+    create(:ad, :in_mad, title: 'res_mad', status: 2)
+    create(:ad, :in_mad, title: 'del_mad', status: 3)
 
     with_pagination(1) do
       login_as create(:user, woeid: 766_273)
