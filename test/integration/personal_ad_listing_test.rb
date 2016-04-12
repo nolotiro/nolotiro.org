@@ -9,8 +9,8 @@ class PersonalAdListing < ActionDispatch::IntegrationTest
   before do
     @user = create(:user)
 
-    create(:ad, user: @user, title: 'ava1', status: 1)
-    create(:ad, user: @user, title: 'ava2', status: 1)
+    create(:ad, user: @user, title: 'ava1', status: 1, published_at: 1.hour.ago)
+    create(:ad, user: @user, title: 'ava2', status: 1, published_at: 1.day.ago)
     create(:ad, user: @user, title: 'res1', status: 2)
     create(:ad, user: @user, title: 'del1', status: 3)
 
