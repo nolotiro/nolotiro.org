@@ -7,9 +7,9 @@ class AuthenticatedAdListing < ActionDispatch::IntegrationTest
   include Pagination
 
   before do
-    create(:ad, :in_mad, title: 'ava_mad_1', status: 1)
+    create(:ad, :in_mad, title: 'ava_mad1', status: 1)
     create(:ad, :in_bar, title: 'ava_bar', status: 1)
-    create(:ad, :in_mad, title: 'ava_mad_2', status: 1)
+    create(:ad, :in_mad, title: 'ava_mad2', status: 1)
     create(:ad, :in_mad, title: 'res_mad', status: 2)
     create(:ad, :in_mad, title: 'del_mad', status: 3)
 
@@ -20,13 +20,13 @@ class AuthenticatedAdListing < ActionDispatch::IntegrationTest
   end
 
   it 'lists first page of available ads in users location in home page' do
-    page.assert_selector '.ad_excerpt_home', count: 1, text: 'ava_mad_1'
+    page.assert_selector '.ad_excerpt_home', count: 1, text: 'ava_mad1'
   end
 
   it 'lists other pages of available ads in users location in home page' do
     with_pagination(1) { click_link 'siguiente' }
 
-    page.assert_selector '.ad_excerpt_home', count: 1, text: 'ava_mad_2'
+    page.assert_selector '.ad_excerpt_home', count: 1, text: 'ava_mad2'
   end
 
   it 'lists reserved ads in users location in home page' do
