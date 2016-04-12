@@ -14,8 +14,8 @@ ActiveAdmin.register_page "Dashboard" do
               link_to ad.title, admin_ad_path(ad)
             end
             column :user
-            column :created_at do |ad|
-              time_ago_in_words ad.created_at
+            column :published_at do |ad|
+              time_ago_in_words ad.published_at
             end
           end
         end
