@@ -9,11 +9,8 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
-
- * http://rails-assets.org
  *= require bootstrap
  *= require font-awesome
-
  *= require blueprint
  *= require jquery.cookiebar
  *= require adsense
