@@ -1,19 +1,8 @@
-<div class="filter_status">        
-  <% if all %>
-    <%= link_to t('nlt.all'), ads_listall_path(type: 'give'),
-      :class => status == "all" ? "actual" : "''" %>
-    <%= link_to t('nlt.available'), ads_listall_status_path(type: 'give', status: 'available'),
-      :class => status == "available" ? "actual" : "''" %>
-    <%= link_to t('nlt.booked'), ads_listall_status_path(type: 'give', status: 'booked'),
-      :class => status == "booked" ? "actual" : "''" %>
-    <%= link_to t('nlt.delivered'), ads_listall_status_path(type: 'give', status: 'delivered'),
-      :class => status == "delivered" ? "actual" : "''" %>
-  <% else %>
-    <%= link_to t('nlt.available'), ads_woeid_path(id: id, type: 'give'),
-      :class => status == "available" ? "actual" : "''" %>
-    <%= link_to t('nlt.booked'), ads_woeid_status_path(id: id, type: 'give', status: 'booked'), 
-      :class => status == "booked" ? "actual" : "''" %>
-    <%= link_to t('nlt.delivered'), ads_woeid_status_path(id: id, type: 'give', status: 'delivered'),
-      :class => status == "delivered" ? "actual" : "''" %>
-  <% end %>
+<div class="filter_status">
+  <%= link_to t('nlt.available'), url_for(type: 'give', status: 'available'),
+    :class => status_scope == "available" ? "actual" : "''" %>
+  <%= link_to t('nlt.booked'), url_for(type: 'give', status: 'booked'),
+    :class => status_scope == "booked" ? "actual" : "''" %>
+  <%= link_to t('nlt.delivered'), url_for(type: 'give', status: 'delivered'),
+    :class => status_scope == "delivered" ? "actual" : "''" %>
 </div>

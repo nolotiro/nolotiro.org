@@ -1,4 +1,7 @@
+---
 de:
+  active_admin:
+    dashboard: 
   activemodel:
     attributes:
       contact:
@@ -44,6 +47,9 @@ de:
         subject: 
         title: 
         type: 
+      contact:
+        email: 
+        message: 
       message:
         subject: 
       user:
@@ -205,14 +211,20 @@ de:
       reset_password_instructions:
         subject: Anleitung für das Zurücksetzen Ihres Passworts
       unlock_instructions:
+        action: 
+        greeting: 
+        instruction: 
+        message: 
         subject: Anleitung für die Account-Freischaltung
     omniauth_callbacks:
       failure: Sie konnten nicht mit Ihrem %{kind}-Account angemeldet werden, weil "%{reason}".
       success: Sie haben sich erfolgreich mit Ihrem %{kind}-Account angemeldet.
     passwords:
       action: 
+      edit:
+        confirm_new_password: 
+        new_password: 
       follow_instructions: 
-      forgot: 
       instructions: 
       no_token: Sie können sich nicht auf dieser Seite anmelden, wenn Sie nicht von einer Passwort-Zurücksetzen-E-Mail kommen. Wenn Sie von solch einer E-Mail kommen, überprüfen Sie bitte, ob Sie die gesamte URL verwendeten.
       send: 
@@ -234,6 +246,8 @@ de:
       user:
         signed_in: 
     unlocks:
+      new:
+        resend_unlock_instructions: 
       send_instructions: Sie erhalten in wenigen Minuten eine E-Mail mit der Anleitung, wie Sie Ihren Account entsperren können.
       send_paranoid_instructions: Falls Ihre E-Mail-Adresse in unserer Datenbank existiert, erhalten Sie in wenigen Minuten eine E-Mail mit der Anleitung, wie Sie Ihren Account entsperren können.
       unlocked: Ihr Account wurde entsperrt. Sie sind jetzt angemeldet.
@@ -265,7 +279,9 @@ de:
         other: 'Konnte %{resource} nicht speichern: %{count} Fehler.'
       odd: muss ungerade sein
       record_invalid: 'Gültigkeitsprüfung ist fehlgeschlagen: %{errors}'
-      restrict_dependent_destroy: 
+      restrict_dependent_destroy:
+        one: 
+        other: 
       taken: ist bereits vergeben
       too_long: ist zu lang (mehr als %{count} Zeichen)
       too_short: ist zu kurz (weniger als %{count} Zeichen)
@@ -303,9 +319,11 @@ de:
       you_have_new_message: 
       you_have_recieved_new_message: 
     new:
+      body_max: 
       button: 
       errors: 
       legend: 
+      subject: 
       submit: 
       title: 
     notification_mailer:
@@ -350,6 +368,7 @@ de:
       lock_user: 
       unlock_user: 
     ads:
+      bumped: 
       created: 
       form:
         body: 
@@ -373,6 +392,7 @@ de:
     back: 
     blog: 
     booked: 
+    bump_this_ad: 
     by_user: 
     cancel_my_account: 
     captcha_error: 
@@ -391,6 +411,7 @@ de:
     cities_in_the_world: 
     click_to_large: 
     comments:
+      body_max: 
       do_click: 
       flash_ko: 
       flash_ok: 
@@ -398,7 +419,9 @@ de:
       subject: 
       submit: 
       title: 
-    comments_count: 
+    comments_count:
+      one: 
+      other: 
     contact: 
     contact_form: 
     contact_legend: 
@@ -444,6 +467,10 @@ de:
     keywords: 
     last_published_gifts: 
     leave_blank: 
+    legal_notice: 
+    legal_page:
+      body_html: 
+      title: 
     login: 
     login_to_comment: 
     logout: 
@@ -461,6 +488,7 @@ de:
     new_user: 
     no_results:
       explain_html: 
+      on_user: 
       phrase: 
       publish_ad: 
       subtitle: 
@@ -470,7 +498,6 @@ de:
     password: 
     permission_denied: 
     please_fill_to_become_member: 
-    please_insert_email_and_password: 
     please_introduce: 
     privacy: 
     privacy_page:
@@ -503,6 +530,7 @@ de:
     send: 
     send_a_message: 
     send_a_message_to: 
+    send_a_private_message: 
     sending_this_form: 
     share_this_ad: 
     sign_in: 
@@ -529,6 +557,7 @@ de:
     users_most_active_last_week: 
     view_ads_on: 
     view_ads_on_your_city: 
+    view_more_ads: 
     want: 
     want_to_leave: 
     we_need_your_password: 

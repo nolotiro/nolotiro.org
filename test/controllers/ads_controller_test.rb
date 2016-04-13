@@ -1,5 +1,4 @@
 require 'test_helper'
-
 class AdsControllerTest < ActionController::TestCase
   # Test the CRUD scaffolded actions as anon, logged in user and admin
   #

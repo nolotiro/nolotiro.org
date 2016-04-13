@@ -1,4 +1,7 @@
+---
 gl:
+  active_admin:
+    dashboard: 
   activemodel:
     attributes:
       contact:
@@ -26,8 +29,8 @@ gl:
         record_invalid: 
         restrict_dependent_destroy: 
         taken: non está dispoñible
-        too_long: "é demasiado longo (non máis de %{count} carácteres)"
-        too_short: "é demasiado curto (non menos de %{count} carácteres)"
+        too_long: é demasiado longo (non máis de %{count} carácteres)
+        too_short: é demasiado curto (non menos de %{count} carácteres)
         wrong_length: non ten a lonxitude correcta (debe ser de %{count} carácteres)
       template:
         body: 'Atopáronse os seguintes problemas:'
@@ -44,6 +47,9 @@ gl:
         subject: 
         title: 
         type: 
+      contact:
+        email: 
+        message: 
       message:
         subject: 
       user:
@@ -77,8 +83,8 @@ gl:
         record_invalid: 
         restrict_dependent_destroy: 
         taken: non está dispoñible
-        too_long: "é demasiado longo (non máis de %{count} carácteres)"
-        too_short: "é demasiado curto (non menos de %{count} carácteres)"
+        too_long: é demasiado longo (non máis de %{count} carácteres)
+        too_short: é demasiado curto (non menos de %{count} carácteres)
         wrong_length: non ten a lonxitude correcta (debe ser de %{count} carácteres)
       template:
         body: 'Atopáronse os seguintes problemas:'
@@ -149,7 +155,9 @@ gl:
       about_x_years:
         one: aproximadamente 1 ano
         other: "%{count} anos"
-      almost_x_years: 
+      almost_x_years:
+        one: 
+        other: 
       half_a_minute: medio minuto
       less_than_x_minutes:
         one: 1 minuto
@@ -206,14 +214,20 @@ gl:
       reset_password_instructions:
         subject: 
       unlock_instructions:
+        action: 
+        greeting: 
+        instruction: 
+        message: 
         subject: 
     omniauth_callbacks:
       failure: 
       success: 
     passwords:
       action: 
+      edit:
+        confirm_new_password: 
+        new_password: 
       follow_instructions: 
-      forgot: 
       instructions: 
       no_token: 
       send: 
@@ -235,6 +249,8 @@ gl:
       user:
         signed_in: 
     unlocks:
+      new:
+        resend_unlock_instructions: 
       send_instructions: 
       send_paranoid_instructions: 
       unlocked: 
@@ -261,13 +277,17 @@ gl:
       not_an_integer: 
       not_found: 
       not_locked: 
-      not_saved: 
+      not_saved:
+        one: 
+        other: 
       odd: debe ser par
       record_invalid: 
-      restrict_dependent_destroy: 
+      restrict_dependent_destroy:
+        one: 
+        other: 
       taken: non está dispoñible
-      too_long: "é demasiado longo (non máis de %{count} carácteres)"
-      too_short: "é demasiado curto (non menos de %{count} carácteres)"
+      too_long: é demasiado longo (non máis de %{count} carácteres)
+      too_short: é demasiado curto (non menos de %{count} carácteres)
       wrong_length: non ten a lonxitude correcta (debe ser de %{count} carácteres)
     template:
       body: 'Atopáronse os seguintes problemas:'
@@ -302,9 +322,11 @@ gl:
       you_have_new_message: 
       you_have_recieved_new_message: 
     new:
+      body_max: 
       button: 
       errors: 
       legend: 
+      subject: 
       submit: 
       title: 
     notification_mailer:
@@ -349,6 +371,7 @@ gl:
       lock_user: 
       unlock_user: 
     ads:
+      bumped: 
       created: 
       form:
         body: 
@@ -372,6 +395,7 @@ gl:
     back: 
     blog: 
     booked: 
+    bump_this_ad: 
     by_user: 
     cancel_my_account: 
     captcha_error: 
@@ -390,6 +414,7 @@ gl:
     cities_in_the_world: 
     click_to_large: 
     comments:
+      body_max: 
       do_click: 
       flash_ko: 
       flash_ok: 
@@ -397,7 +422,9 @@ gl:
       subject: 
       submit: 
       title: 
-    comments_count: 
+    comments_count:
+      one: 
+      other: 
     contact: 
     contact_form: 
     contact_legend: 
@@ -443,6 +470,10 @@ gl:
     keywords: 
     last_published_gifts: 
     leave_blank: 
+    legal_notice: 
+    legal_page:
+      body_html: 
+      title: 
     login: 
     login_to_comment: 
     logout: 
@@ -460,6 +491,7 @@ gl:
     new_user: 
     no_results:
       explain_html: 
+      on_user: 
       phrase: 
       publish_ad: 
       subtitle: 
@@ -469,7 +501,6 @@ gl:
     password: 
     permission_denied: 
     please_fill_to_become_member: 
-    please_insert_email_and_password: 
     please_introduce: 
     privacy: 
     privacy_page:
@@ -502,6 +533,7 @@ gl:
     send: 
     send_a_message: 
     send_a_message_to: 
+    send_a_private_message: 
     sending_this_form: 
     share_this_ad: 
     sign_in: 
@@ -528,6 +560,7 @@ gl:
     users_most_active_last_week: 
     view_ads_on: 
     view_ads_on_your_city: 
+    view_more_ads: 
     want: 
     want_to_leave: 
     we_need_your_password: 
@@ -607,7 +640,11 @@ gl:
     page_entries_info:
       multi_page: 
       multi_page_html: 
-      single_page: 
-      single_page_html: 
+      single_page:
+        one: 
+        other: 
+      single_page_html:
+        one: 
+        other: 
     page_gap: 
     previous_label: 

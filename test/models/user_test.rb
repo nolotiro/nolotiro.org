@@ -90,13 +90,23 @@ class UserScopesTest < ActiveSupport::TestCase
     2.times { FactoryGirl.create(:ad, user: user2) }
   end
 
+  test "top overall ignores wanted ads from counts and results" do
+    FactoryGirl.create(:ad, user: user3, type: 2)
+    user2.ads.last.update(type: 2)
+
+    results = User.top_overall
+
+    assert_equal(2, results.length)
+    assert_count(results.first, user1.id, user1.username, 3)
+    assert_count(results.second, user2.id, user2.username, 1)
+  end
+
   test "top overall gives all time top ad publishers" do
     FactoryGirl.create(:ad, user: user3)
 
     results = User.top_overall
 
     assert_equal(3, results.length)
-
     assert_count(results.first, user1.id, user1.username, 3)
     assert_count(results.second, user2.id, user2.username, 2)
     assert_count(results.third, user3.id, user3.username, 1)
@@ -110,6 +120,13 @@ class UserScopesTest < ActiveSupport::TestCase
     assert_equal(2, results.length)
     assert_count(results.first, user1.id, user1.username, 3)
     assert_count(results.second, user2.id, user2.username, 2)
+  end
+
+  test 'top last week accepts argument with number of publishers requested' do
+    results = User.top_last_week(1)
+
+    assert_equal(1, results.length)
+    assert_count(results.first, user1.id, user1.username, 3)
   end
 
   private

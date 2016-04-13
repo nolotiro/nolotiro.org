@@ -1,4 +1,7 @@
+---
 eu:
+  active_admin:
+    dashboard: 
   activemodel:
     attributes:
       contact:
@@ -44,6 +47,9 @@ eu:
         subject: 
         title: 
         type: 
+      contact:
+        email: 
+        message: 
       message:
         subject: 
       user:
@@ -205,14 +211,20 @@ eu:
       reset_password_instructions:
         subject: 
       unlock_instructions:
+        action: 
+        greeting: 
+        instruction: 
+        message: 
         subject: 
     omniauth_callbacks:
       failure: 
       success: 
     passwords:
       action: 
+      edit:
+        confirm_new_password: 
+        new_password: 
       follow_instructions: 
-      forgot: 
       instructions: 
       no_token: 
       send: 
@@ -234,6 +246,8 @@ eu:
       user:
         signed_in: 
     unlocks:
+      new:
+        resend_unlock_instructions: 
       send_instructions: 
       send_paranoid_instructions: 
       unlocked: 
@@ -260,10 +274,14 @@ eu:
       not_an_integer: zenbaki osoa izan behar da
       not_found: 
       not_locked: 
-      not_saved: 
+      not_saved:
+        one: 
+        other: 
       odd: bakoitia izan behar du
       record_invalid: 'Balioztatze arazoa: %{errors}'
-      restrict_dependent_destroy: 
+      restrict_dependent_destroy:
+        one: 
+        other: 
       taken: hartuta dago
       too_long: luzeegia da (%{count} karaktere gehienez)
       too_short: laburregia da (%{count} karaktere gutxienez)
@@ -301,9 +319,11 @@ eu:
       you_have_new_message: 
       you_have_recieved_new_message: 
     new:
+      body_max: 
       button: 
       errors: 
       legend: 
+      subject: 
       submit: 
       title: 
     notification_mailer:
@@ -348,6 +368,7 @@ eu:
       lock_user: 
       unlock_user: 
     ads:
+      bumped: 
       created: 
       form:
         body: 
@@ -371,6 +392,7 @@ eu:
     back: 
     blog: 
     booked: 
+    bump_this_ad: 
     by_user: 
     cancel_my_account: 
     captcha_error: 
@@ -389,6 +411,7 @@ eu:
     cities_in_the_world: 
     click_to_large: 
     comments:
+      body_max: 
       do_click: 
       flash_ko: 
       flash_ok: 
@@ -396,7 +419,9 @@ eu:
       subject: 
       submit: 
       title: 
-    comments_count: 
+    comments_count:
+      one: 
+      other: 
     contact: 
     contact_form: 
     contact_legend: 
@@ -442,6 +467,10 @@ eu:
     keywords: 
     last_published_gifts: 
     leave_blank: 
+    legal_notice: 
+    legal_page:
+      body_html: 
+      title: 
     login: 
     login_to_comment: 
     logout: 
@@ -459,6 +488,7 @@ eu:
     new_user: 
     no_results:
       explain_html: 
+      on_user: 
       phrase: 
       publish_ad: 
       subtitle: 
@@ -468,7 +498,6 @@ eu:
     password: 
     permission_denied: 
     please_fill_to_become_member: 
-    please_insert_email_and_password: 
     please_introduce: 
     privacy: 
     privacy_page:
@@ -501,6 +530,7 @@ eu:
     send: 
     send_a_message: 
     send_a_message_to: 
+    send_a_private_message: 
     sending_this_form: 
     share_this_ad: 
     sign_in: 
@@ -527,6 +557,7 @@ eu:
     users_most_active_last_week: 
     view_ads_on: 
     view_ads_on_your_city: 
+    view_more_ads: 
     want: 
     want_to_leave: 
     we_need_your_password: 
@@ -606,7 +637,11 @@ eu:
     page_entries_info:
       multi_page: 
       multi_page_html: 
-      single_page: 
-      single_page_html: 
+      single_page:
+        one: 
+        other: 
+      single_page_html:
+        one: 
+        other: 
     page_gap: 
     previous_label: 

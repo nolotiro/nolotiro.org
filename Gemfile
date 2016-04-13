@@ -9,7 +9,6 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
 gem 'therubyracer', platforms: :ruby
 gem 'jquery-rails'
-#gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 gem 'rb-readline', '~> 0.5.0', :require => false
 
@@ -18,12 +17,10 @@ group :doc do
 end
 
 group :development, :test do
-  gem 'minitest-rails-capybara'             # test: features
-  gem 'capybara'                            # test: features
-  gem 'capybara-webkit'                     # test: features - js: true
+  gem 'minitest-spec-rails'                 # test: specs style out-of-the-box
+  gem 'capybara_minitest_spec'              # test: spec style expectations for capybara
   gem 'launchy'                             # test: features - save_and_open_page helper
   gem 'factory_girl_rails', '~> 4.0'        # test: factories
-  gem 'database_cleaner'                    # test: for not having duplicity
   gem 'byebug'                              # dev: debugger
   gem 'spring'                              # dev: speed up things
   gem 'commands'                            # dev: rake commands in console

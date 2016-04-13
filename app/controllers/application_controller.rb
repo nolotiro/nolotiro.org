@@ -47,6 +47,14 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def status_scope
+    return 'available' unless %w(booked delivered).include?(params[:status])
+
+    params[:status]
+  end
+
+  helper_method :status_scope
+
   protected
 
   def get_location_suggest 

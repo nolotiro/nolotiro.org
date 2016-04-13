@@ -1,5 +1,5 @@
 ActiveAdmin.register Ad do
-  permit_params :woeid_code
+  permit_params :woeid_code, :type
 
   filter :title
   filter :body

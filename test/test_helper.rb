@@ -5,10 +5,7 @@ require_relative '../config/environment'
 require 'rails/test_help'
 
 require 'minitest/pride'
-require 'minitest/rails/capybara'
-
-Capybara.javascript_driver = :webkit
-DatabaseCleaner.strategy = :transaction
+require 'capybara/rails'
 
 # Ensure sphinx directories exist for the test environment
 ThinkingSphinx::Test.init
@@ -16,14 +13,11 @@ ThinkingSphinx::Test.init
 class ActiveSupport::TestCase
   include FactoryGirl::Syntax::Methods
 
+  self.use_transactional_fixtures = true
+
   def setup
     I18n.default_locale = :es
     I18n.locale = :es
-    DatabaseCleaner.start
-  end
-
-  def teardown
-    DatabaseCleaner.clean
   end
 end
 
@@ -37,7 +31,11 @@ class ActionDispatch::Routing::RouteSet
   end
 end
 
-# https://github.com/blowmage/minitest-rails-capybara/issues/6
-class Capybara::Rails::TestCase
-  before { self.use_transactional_fixtures = !metadata[:js] }
+class ActionDispatch::IntegrationTest
+  # Make the Capybara DSL available in all integration tests
+  include Capybara::DSL
+
+  after do
+    Capybara.reset_sessions!
+  end
 end

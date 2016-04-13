@@ -23,19 +23,20 @@ When finished, you need to log in to the virtual machine with the command:
 
 ```
 vagrant ssh
+
 ```
 
-To end you should start the application server:
 
+Finally you should start the application server:
 ```
 cd /vagrant
 bundle exec rails s -b 0.0.0.0
 ```
 
-You can then access the web application in this addresses:
+Now you can access the web application at this url (port 3000):
 
-http://localhost:8080
-http://localhost:8081
+http://localhost:3000
+
 
 ## Manual Installation
 

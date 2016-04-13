@@ -1,18 +1,21 @@
 # coding: utf-8
 
-def create_user(role = 0, email = Faker::Internet.email, username = Faker::Name.name)
+def create_user(role = 0)
   pwd = '12345678'
   puts "    #{email}"
-  User.create!(
-    username: username,
-    email: email,
-    role: role,
-    password: pwd,
-    password_confirmation: pwd,
-    confirmed_at: Time.now,
-    lang: 'es',
-    woeid: 766273
-  )
+  loop do
+    user = User.new(
+      username: Faker::Name.name,
+      email: Faker::Internet.email,
+      role: role,
+      password: pwd,
+      password_confirmation: pwd,
+      confirmed_at: Time.now,
+      lang: 'es',
+      woeid: 766_273
+    )
+    return user if user.save
+  end
 end
 
 def create_ad(user)

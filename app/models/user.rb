@@ -28,13 +28,15 @@ class User < ActiveRecord::Base
   scope :top_overall, ->(limit = 20) do
     select("users.id, users.username, COUNT(ads.id) as n_ads")
       .joins(:ads)
+      .merge(Ad.give)
       .group("ads.user_owner")
+      .unscope(:order)
       .order("n_ads DESC")
       .limit(limit)
   end
 
   scope :top_last_week, ->(limit = 20) do
-    top_overall.where("published_at >= :date", date: 1.week.ago)
+    top_overall(limit).where("published_at >= :date", date: 1.week.ago)
   end
 
   def self.from_omniauth(auth) 
@@ -105,7 +107,7 @@ class User < ActiveRecord::Base
   end
 
 
-  def reset_password!(*args)
+  def reset_password(*args)
     self.legacy_password_hash = nil
     super
   end
