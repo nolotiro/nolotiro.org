@@ -383,7 +383,17 @@ pt:
         title_max: 
         to_publish: 
         type_ad: 
-      updated: 
+      updated:
+    analytics:
+      give_published:
+      want_published:
+      ad_delivered:
+      ad_destroyed:
+      user_created:
+      user_destroyed:
+      ad_new_city:
+      comment_created:
+      message_sent:
     all: 
     all_ads: 
     and: 
