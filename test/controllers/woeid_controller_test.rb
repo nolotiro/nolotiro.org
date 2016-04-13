@@ -8,7 +8,7 @@ class WoeidControllerTest < ActionController::TestCase
     @ad = FactoryGirl.create(:ad)
   end
 
-  test "should get listall and give (available, delivered, booked)" do 
+  test "should get listall and give (available, delivered, booked)" do
     get :show, type: "give", status: "available"
     assert_response :success
     get :show, type: "give", status: "booked"
@@ -18,7 +18,7 @@ class WoeidControllerTest < ActionController::TestCase
     assert_generates '/ad/listall/ad_type/give', {controller: 'woeid', action: 'show', type: 'give' }
   end
 
-  test "should get WOEID and give (available, delivered, booked)" do 
+  test "should get WOEID and give (available, delivered, booked)" do
     get :show, type: "give", status: "available", id: @ad.woeid_code
     assert_response :success
     get :show, type: "give", status: "booked", id: @ad.woeid_code
@@ -27,15 +27,9 @@ class WoeidControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "should get WOEID and want" do 
+  test "should get WOEID and want" do
     get :show, type: "want", id: @ad.woeid_code
     assert_response :success
-  end
-
-  test "should get 404 on unexisting WOEID" do 
-    skip
-    get :show, type: "want", id: "222222"
-    assert_response :error
   end
 
 end

@@ -14,10 +14,15 @@ module WoeidHelper
     else
       GeoPlanet.appid = Rails.application.secrets["geoplanet_app_id"]
       begin
-        place_raw = GeoPlanet::Place.new(woeid.to_i, :lang => locale)
-        place = { full: "#{place_raw.name}, #{place_raw.admin1}, #{place_raw.country}" , short: "#{place_raw.name}" }
-        Rails.cache.write(key, place)
-        return place
+          place_raw = GeoPlanet::Place.new(woeid.to_i, :lang => locale)
+
+          if place_raw.placetype_code == 7 #placetype of "Town"
+                place = { full: "#{place_raw.name}, #{place_raw.admin1}, #{place_raw.country}" , short: "#{place_raw.name}" }
+                Rails.cache.write(key, place)
+                return place
+          else
+            return nil
+          end
       rescue
         return nil
       end
@@ -32,7 +37,7 @@ module WoeidHelper
     #                      example: [["Madrid, Madrid, España (2444 anuncios)",766273],["Madrid, Comunidad de Madrid, España (444 anuncios)",12578024],["Madrid, Cundinamarca, Colombia (0 anuncios)",361938]]
     #
 
-    locale = I18n.locale;	
+    locale = I18n.locale;
     if name
       key = 'location_' + locale.to_s + '_' + name
       if Rails.cache.fetch(key)
