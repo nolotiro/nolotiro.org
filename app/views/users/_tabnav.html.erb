@@ -3,15 +3,13 @@
 <!-- TODO: active class in partials -->
   <% if user_signed_in? and user.id == current_user.id %>
     <li>
-    <%= link_to_unless_current t('nlt.messages'), messages_list_path %>
+    <%= link_to t('nlt.messages'), messages_list_path %>
     </li>
   <% end %>
   <li>
-    <%= link_to_unless request.fullpath =~ /\/profile\//,
-                       t('nlt.profile'),
-                       profile_path(user) %>
+    <%= link_to t('nlt.profile'), profile_path(user) %>
   </li>
   <li>
-  <%= link_to_unless_current t('nlt.user_ads'), listads_user_path(user) %>
+  <%= link_to t('nlt.user_ads'), listads_user_path(user) %>
   </li>
 </ul>
