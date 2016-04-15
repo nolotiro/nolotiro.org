@@ -817,11 +817,8 @@ ul#tabnav
       /* set additional spacing between tabs as desired
       text-decoration: none
       border-bottom: none
-  a:hover
+  a:hover, .active
     color: #000 !important
-
-a#tab_active
-  color: #000 !important
 
 /* end css tabs
 
@@ -1136,9 +1133,6 @@ $langs: <%= Rails.application.secrets["langs"] %>
 
   #ad_body, textarea
     width: 95% !important
-
-  #list-ads-profile .info
-    display: inline-block
 
 @media only screen and (min-width: 780px)
   .span-6.desktop

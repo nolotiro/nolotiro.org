@@ -1,4 +1,15 @@
 module ApplicationHelper
+  def messages_tab?
+    params[:controller] == 'messages'
+  end
+
+  def profile_tab?
+    params[:controller] == 'users' && params['action'] == 'profile'
+  end
+
+  def ad_tab?
+    params[:controller] == 'users' && params['action'] == 'listads'
+  end
 
   def escape_privacy_data text
     if text
