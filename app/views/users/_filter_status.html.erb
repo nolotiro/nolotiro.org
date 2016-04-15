@@ -1,0 +1,13 @@
+<div class="filter_status">
+  <!-- TODO: Once #213 is fixed we can simplify some checks here -->
+
+  <%= link_to t('nlt.available'), url_for(type: 'give', status: 'available'),
+    :class => type_scope == "give" && status_scope == "available" ? "actual" : "''" %>
+  <%= link_to t('nlt.booked'), url_for(type: 'give', status: 'booked'),
+    :class => type_scope == "give" && status_scope == "booked" ? "actual" : "''" %>
+  <%= link_to t('nlt.delivered'), url_for(type: 'give', status: 'delivered'),
+    :class => type_scope == "give" && status_scope == "delivered" ? "actual" : "''" %>
+
+  <%= link_to t('nlt.want'), url_for(type: 'want'),
+    :class => type_scope == "want" ? "actual" : "''" %>
+</div>

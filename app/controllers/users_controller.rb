@@ -4,9 +4,13 @@ class UsersController < ApplicationController
   def listads
     # ads lists for user
     @user = User.find(params[:id])
+    @type = type_scope
+    @status = status_scope
+
     @ads = @user.ads
                 .includes(:user)
-                .public_send(status_scope)
+                .public_send(@type)
+                .public_send(@status)
                 .paginate(:page => params[:page])
   end
 
