@@ -55,6 +55,10 @@ class ApplicationController < ActionController::Base
 
   helper_method :status_scope
 
+  def type_scope
+    params[:type] == 'want' ? params[:type] : 'give'
+  end
+
   private
 
   def get_location_suggest 

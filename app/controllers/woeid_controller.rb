@@ -30,10 +30,4 @@ class WoeidController < ApplicationController
       end
     end
   end
-
-  private
-
-  def type_scope
-    params[:type] == 'want' ? params[:type] : 'give'
-  end
 end
