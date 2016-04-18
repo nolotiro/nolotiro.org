@@ -1,3 +1,4 @@
+require_relative '../application'
 require 'localeapp/rails'
 
 Localeapp.configure do |config|
