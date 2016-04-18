@@ -4,7 +4,7 @@ ruby '2.3.0'
 
 gem 'rails', '~> 4.2'
 gem 'haml-rails'
-gem 'sass-rails', '~> 4.0.0'
+gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
 gem 'therubyracer', platforms: :ruby
@@ -71,7 +71,6 @@ gem 'delayed_paperclip'                             # images processing in bacgr
 gem 'recaptcha', :require => 'recaptcha/rails'      # captcha
 gem 'ipaddress'                                     # ip address validation
 gem 'localeapp'                                     # i18n interface
-gem 'blueprint-rails'                               # blueprint css framework
 gem 'activeadmin', github: 'activeadmin'            # admin backend
 gem 'active_skin'                                   # admin backend skin
 gem 'rakismet'                                      # antispam
@@ -80,6 +79,4 @@ gem 'faker'
 
 gem 'mailboxer', '0.13.0'                           # messaging
 
-source 'https://rails-assets.org' do
-  gem 'rails-assets-bootstrap'
-end
+gem 'bootstrap-sass', '~> 3.3'

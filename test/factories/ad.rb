@@ -10,6 +10,10 @@ FactoryGirl.define do
     created_at { Time.zone.now }
     user
     published_at { created_at }
+
+    trait(:in_mad) { woeid_code 766_273 }
+    trait(:in_bar) { woeid_code 753_692 }
+    trait(:in_ten) { woeid_code 773_692 }
   end
 
 end

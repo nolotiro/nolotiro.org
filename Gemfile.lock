@@ -19,7 +19,6 @@ GIT
 
 GEM
   remote: https://rubygems.org/
-  remote: https://rails-assets.org/
   specs:
     actionmailer (4.2.6)
       actionpack (= 4.2.6)
@@ -68,12 +67,14 @@ GEM
     arbre (1.0.3)
       activesupport (>= 3.0.0)
     arel (6.0.3)
+    autoprefixer-rails (6.3.6)
+      execjs
     bcrypt (3.1.11)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
-    blueprint-rails (0.2.0)
-      railties (>= 3.0, < 5.0)
-      thor (>= 0.14, < 2.0)
+    bootstrap-sass (3.3.6)
+      autoprefixer-rails (>= 5.2.1)
+      sass (>= 3.3.4)
     bourbon (3.2.4)
       sass (~> 3.2)
       thor
@@ -180,7 +181,6 @@ GEM
       actionpack (>= 3.2, < 5)
       activesupport (>= 3.2, < 5)
     hashie (3.4.3)
-    hike (1.2.3)
     html2haml (2.0.0)
       erubis (~> 2.7.0)
       haml (~> 4.0.0)
@@ -306,9 +306,6 @@ GEM
       bundler (>= 1.3.0, < 2.0)
       railties (= 4.2.6)
       sprockets-rails
-    rails-assets-bootstrap (3.3.6)
-      rails-assets-jquery (>= 1.9.1, < 3)
-    rails-assets-jquery (2.1.4)
     rails-deprecated_sanitizer (1.0.3)
       activesupport (>= 4.2.0.alpha)
     rails-dom-testing (1.0.7)
@@ -365,12 +362,13 @@ GEM
     riddle (1.5.12)
     ruby_parser (3.7.2)
       sexp_processor (~> 4.1)
-    sass (3.2.19)
-    sass-rails (4.0.5)
+    sass (3.4.22)
+    sass-rails (5.0.4)
       railties (>= 4.0.0, < 5.0)
-      sass (~> 3.2.2)
-      sprockets (~> 2.8, < 3.0)
-      sprockets-rails (~> 2.0)
+      sass (~> 3.1)
+      sprockets (>= 2.8, < 4.0)
+      sprockets-rails (>= 2.0, < 4.0)
+      tilt (>= 1.1, < 3)
     sdoc (0.4.1)
       json (~> 1.7, >= 1.7.7)
       rdoc (~> 4.0)
@@ -391,15 +389,13 @@ GEM
       temple (~> 0.7.3)
       tilt (>= 1.3.3, < 2.1)
     spring (1.6.4)
-    sprockets (2.12.4)
-      hike (~> 1.2)
-      multi_json (~> 1.0)
-      rack (~> 1.0)
-      tilt (~> 1.1, != 1.3.0)
-    sprockets-rails (2.3.3)
-      actionpack (>= 3.0)
-      activesupport (>= 3.0)
-      sprockets (>= 2.8, < 4.0)
+    sprockets (3.6.0)
+      concurrent-ruby (~> 1.0)
+      rack (> 1, < 3)
+    sprockets-rails (3.0.4)
+      actionpack (>= 4.0)
+      activesupport (>= 4.0)
+      sprockets (>= 3.0.0)
     sqlite3 (1.3.11)
     sshkit (1.8.1)
       net-scp (>= 1.1.2)
@@ -421,7 +417,7 @@ GEM
       riddle (>= 1.5.11)
     thor (0.19.1)
     thread_safe (0.3.5)
-    tilt (1.4.1)
+    tilt (2.0.2)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
     uglifier (2.7.2)
@@ -456,7 +452,7 @@ DEPENDENCIES
   active_skin
   activeadmin!
   airbrake (~> 4.0)
-  blueprint-rails
+  bootstrap-sass (~> 3.3)
   bullet
   byebug
   cancancan (~> 1.10)
@@ -491,13 +487,12 @@ DEPENDENCIES
   omniauth-google-oauth2
   paperclip (~> 4.0)
   rails (~> 4.2)
-  rails-assets-bootstrap!
   rails-footnotes (~> 4.0)
   rakismet
   rb-readline (~> 0.5.0)
   recaptcha
   redis-rails
-  sass-rails (~> 4.0.0)
+  sass-rails (~> 5.0)
   sdoc
   sidekiq
   sinatra

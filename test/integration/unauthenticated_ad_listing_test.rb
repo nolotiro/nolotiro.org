@@ -5,18 +5,10 @@ class UnauthenticatedAdListing < ActionDispatch::IntegrationTest
   include Pagination
 
   before do
-    create(:ad, title: 'ava_mad',
-                published_at: 1.hour.ago,
-                woeid_code: 766_273,
-                status: 1)
-
-    create(:ad, title: 'ava_bar',
-                published_at: 2.hour.ago,
-                woeid_code: 753_692,
-                status: 1)
-
-    create(:ad, title: 'res_mad', woeid_code: 766_273, status: 2)
-    create(:ad, title: 'del_ten', woeid_code: 773_692, status: 3)
+    create(:ad, :in_mad, title: 'ava_mad', published_at: 1.hour.ago, status: 1)
+    create(:ad, :in_bar, title: 'ava_bar', published_at: 2.hour.ago, status: 1)
+    create(:ad, :in_mad, title: 'res_mad', status: 2)
+    create(:ad, :in_ten, title: 'del_ten', status: 3)
 
     with_pagination(1) { visit root_path }
   end
