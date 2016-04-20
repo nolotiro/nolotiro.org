@@ -189,7 +189,7 @@ class Ad < ActiveRecord::Base
     end
   end
 
-  def is_give? 
+  def give?
     type == 1
   end
 

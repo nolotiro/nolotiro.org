@@ -30,7 +30,7 @@
         <% if user_signed_in? %>
           <% unless current_user == @user %>
             <li>
-            <% if current_user.is_friend? @user %>
+            <% if current_user.friend? @user %>
               <%= link_to destroy_friend_path(@user.id), class: 'world_link', method: 'post' do %>
                 <%= t('nlt.profile_actions.friend.delete', username: @user.username) %>
                 <%= image_tag "friend_delete.png", alt: "Delete friend"%>
