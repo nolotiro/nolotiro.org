@@ -8,18 +8,15 @@
   )%>
   <br>
 
-  <% unless @woeid.nil? %>
-    <% locations = get_location_options @woeid[:short] %>
-    <% if locations %>
-      <%= t('nlt.no_results.try') %><br>
-      <ul>
-      <% locations.each do |l| %>
+  <% if location_options.present? %>
+    <%= t('nlt.no_results.try') %><br>
+    <ul>
+      <% location_options.each do |l| %>
         <li>
           <%= link_to l[0], location_change_path(location: l[0]) %>
         </li>
       <% end %>
-      </ul>
-    <% end %>
+    </ul>
   <% end %>
 
   <h5>
