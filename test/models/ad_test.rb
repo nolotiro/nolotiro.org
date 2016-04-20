@@ -114,13 +114,10 @@ class AdTest < ActiveSupport::TestCase
     assert_equal @ad.status_class, "delivered"
   end
 
-  test "ad is_give? or is_want?" do
+  test 'ad is_give?' do
     @ad.type = 1
     @ad.save
     assert_equal @ad.is_give?, true
-    @ad.type = 2
-    @ad.save
-    assert_equal @ad.is_want?, true
   end
 
   test "ad meta_title for give ads" do

@@ -193,10 +193,6 @@ class Ad < ActiveRecord::Base
     type == 1
   end
 
-  def is_want? 
-    type == 2
-  end
-
   def meta_title
     "#{I18n.t('nlt.keywords')} #{self.title} #{self.woeid_name}"
   end
