@@ -19,7 +19,7 @@ class AdsController < ApplicationController
     @ads = Rails.cache.fetch("ads_list_#{params[:page]}") do 
       Ad.give.available.includes(:user).paginate(:page => params[:page])
     end
-    @location = get_location_suggest
+    @location_suggest = get_location_suggest
   end
 
   # GET /ads/1
