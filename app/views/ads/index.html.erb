@@ -30,9 +30,6 @@
         <%= link_to t('nlt.view_ads_on_your_city'), location_ask_path %>
       <% else %>
         <%= link_to t('nlt.view_ads_on', location_suggest: @location_suggest), location_change_path(location: @location_suggest) %>
-        <%= link_to location_change_path(location: location_suggest) do %>
-          <%= t('nlt.view_ads_on', location_suggest: @location_suggest) %></a>
-        <% end %>
       <% end %>
     </div>
   </div>
