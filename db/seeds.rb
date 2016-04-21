@@ -2,7 +2,6 @@
 
 def create_user(role = 0)
   pwd = '12345678'
-  puts "    #{email}"
   loop do
     user = User.new(
       username: Faker::Name.name,
