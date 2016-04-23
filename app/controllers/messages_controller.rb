@@ -56,10 +56,6 @@ class MessagesController < ApplicationController
     # TODO: refactor this 
     @conversation = Mailboxer::Conversation.find_by_id(params[:id])
     #@conversation = current_user.mailbox.conversations.find(params[:id])
-    # if not found, it could be a legacy URL with a ID for a legacy thread 
-    if @conversation.nil? 
-      @conversation = Legacy::MessageThread.find(params[:id]).conversation
-    end
     raise ActiveRecord::RecordNotFound if @conversation.nil?
     # FIXME: ACL should be on app/models/ability.rb
     unless @conversation.is_participant?(current_user) or current_user.admin?
