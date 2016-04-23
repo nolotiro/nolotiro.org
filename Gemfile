@@ -76,6 +76,7 @@ gem 'active_skin'                                   # admin backend skin
 gem 'rakismet'                                      # antispam
 gem 'font-awesome-rails'                            # font-awesome icons
 gem 'faker'
+gem 'ruby-progressbar'
 
 gem 'mailboxer', '0.13.0'                           # messaging
 
