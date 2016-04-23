@@ -52,6 +52,13 @@ cp config/app_config.yml.example config/app_config.yml
 cp config/database.yml.example config/database.yml
 cp config/secrets.yml.example config/secrets.yml
 
+sudo -u vagrant -i mysql << EOF
+CREATE USER 'nolotirov3'@'localhost' IDENTIFIED BY 'nolotirov3pass';
+GRANT ALL PRIVILEGES ON nolotirov3_dev.* TO nolotirov3@localhost IDENTIFIED BY 'nolotirov3pass';
+GRANT ALL PRIVILEGES ON nolotirov3_test.* TO nolotirov3@localhost IDENTIFIED BY 'nolotirov3pass';
+FLUSH PRIVILEGES;
+EOF
+
 chown vagrant:vagrant config/*.yml
 
 # TODO: db:seeds
