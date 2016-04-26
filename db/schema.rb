@@ -46,7 +46,6 @@ ActiveRecord::Schema.define(version: 20160423085940) do
     t.datetime "image_updated_at"
     t.integer  "readed_count",       limit: 4
     t.integer  "comments_count",     limit: 4,     default: 0
-    t.datetime "deleted_at"
     t.datetime "published_at",                                 null: false
   end
 
