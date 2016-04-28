@@ -37,19 +37,26 @@
       </div>
 
       <%= t('nlt.are_you_interested') %>
-      <%= link_to message_new_with_subject_path(user_id: @ad.user.id, subject: @ad.slug), :class => "world_link" do %>
-        <%= t('nlt.send_a_message') %>
-        <%= image_tag "email_send.png", :alt => t('nlt.send_a_message') %>
+
+      <% if @ad.status_class == 'available' %>
+        <%= link_to message_new_with_subject_path(user_id: @ad.user.id, subject: @ad.slug),
+                    :class => "world_link" do %>
+          <%= t('nlt.send_a_message') %>
+          <%= image_tag "email_send.png", :alt => t('nlt.send_a_message') %>
+        <% end %>
       <% end %>
 
       <br><br>
+
       <div class="sharelinks">
         <p style="text-align:left;margin-bottom:5px;"><%= t('nlt.share_this_ad') %>:</p>
         <%= render :partial => "partials/social_buttons", :locals => { :url => ad_url(@ad) } %>
       </div>
     </div>
-    <%= render :partial => "comments/show", :locals => {:ad => @ad} %>
 
+    <% if @ad.comments_enabled? && @ad.status_class != 'delivered' %>
+      <%= render :partial => "comments/show", :locals => {:ad => @ad} %>
+    <% end %>
   </div>
   <div class="span-10">
       <%= render partial: "partials/google_adsense", locals: { class_name: "desktop google_adsense_336_280", ad_slot: "7225596067"}  %>
