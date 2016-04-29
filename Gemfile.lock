@@ -336,7 +336,6 @@ GEM
       activesupport (>= 3.0)
       i18n
       polyamorous (~> 1.2)
-    rb-readline (0.5.3)
     rdoc (4.2.1)
       json (~> 1.4)
     recaptcha (1.0.2)
@@ -497,7 +496,6 @@ DEPENDENCIES
   rails (~> 4.2)
   rails-footnotes (~> 4.0)
   rakismet
-  rb-readline (~> 0.5.0)
   recaptcha
   redis-rails
   ruby-progressbar
