@@ -29,17 +29,18 @@ NolotiroOrg::Application.routes.draw do
       get '/:id/:slug', to: 'ads#show', :as => 'adslug'
       get '/edit/id/:id', to: 'ads#edit', :as => 'ads_edit'
       post '/bump/id/:id', to: 'ads#bump', :as => 'ads_bump'
-      get '/listall/ad_type/:type', to: 'woeid#show', as: "ads_listall" 
-      get '/listall/ad_type/:type/status/:status', to: 'woeid#show', as: 'ads_listall_status'
-      get '/listall/page/:page/ad_type/:type', to: redirect('/ad/listall/ad_type/%{type}?page=%{page}')
-      get '/listuser/id/:id', to: 'users#listads', as: 'listads_user'
+      get '/listall/ad_type/:type(/status/:status)(/page/:page)',
+          to: 'woeid#show',
+          as: 'ads_listall'
+      get '/listuser/id/:id(/type/:type)(/status/:status)(/page/:page)',
+          to: 'users#listads',
+          as: 'listads_user'
     end
 
     # locations lists
-    get '/woeid/:id/:type', to: 'woeid#show', as: 'ads_woeid'
-    get '/woeid/:id/:type/page/:page', to: redirect('/woeid/%{id}/%{type}?page=%{page}')
-    get '/woeid/:id/:type/status/:status', to: 'woeid#show', as: 'ads_woeid_status'
-    get '/woeid/:id/:type/page/:page/status/:status', to: redirect('/woeid/%{id}/%{type}/status/%{status}?page=%{page}')
+    get '/woeid/:id/:type(/status/:status)(/page/:page)',
+        to: 'woeid#show',
+        as: 'ads_woeid'
 
     # location change
     scope '/location' do
