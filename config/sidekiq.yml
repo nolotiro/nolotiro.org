@@ -3,3 +3,4 @@
   - default
   - mailer
   - mailers
+  - analytics_worker

@@ -117,7 +117,7 @@ it:
     - ven
     - sab
     abbr_month_names:
-    - 
+    -
     - gen
     - feb
     - mar
@@ -143,7 +143,7 @@ it:
       long: "%d %B %Y"
       short: "%d %b"
     month_names:
-    - 
+    -
     - gennaio
     - febbraio
     - marzo
@@ -375,7 +375,7 @@ it:
   mailer:
     confirmation_reminder:
       p1: Abbiamo rivelato che hai creato un account in nolotiro.org che non è stato confermato.
-      p2: 
+      p2:
     greetings: 'Grazie e saluti, '
     hello: 'Ciao, '
     signature: il team di nolotiro.org
@@ -406,6 +406,18 @@ it:
         to_publish: Per pubblicare il tuo annuncio, per favore, scrive questi datti
         type_ad: 'Tipo di annuncio:'
       updated: Abbiamo aggiornato il tuo annuncio
+      published:
+      delivered:
+    analytics:
+      give_published:
+      want_published:
+      ad_delivered:
+      ad_destroyed:
+      user_created:
+      user_destroyed:
+      ad_new_city:
+      comment_created:
+      message_sent:
     all: tutti
     all_ads: tutti gli annunci
     and: e
@@ -476,7 +488,7 @@ it:
     faqs: domande frequenti
     fill_captcha: Si prega di compilare i seguenti caratteri
     first_visit: 'nolotiro.org è una comunità dove è possibile sbarazzarci di oggetti che non utilizziamo più e ci ostacolano a casa. '
-    footer_explain: 
+    footer_explain:
     forgot_your_password: Hai dimenticato la tua password?
     friends: Amici
     gift_on: regalo in %{woeid}
@@ -523,9 +535,9 @@ it:
     please_introduce: 'Inserisci i caratteri che vedi:'
     privacy: politica sulla privacy
     privacy_page:
-      body_html: 
-      title: 
-    profile: 
+      body_html:
+      title:
+    profile:
     profile_actions:
       friend:
         add: 
@@ -612,9 +624,9 @@ it:
           quadrillion: Biliardi
           thousand: Mila
           trillion: Bilioni
-          unit: 
+          unit:
       format:
-        delimiter: 
+        delimiter:
         precision: 1
         significant: true
         strip_insignificant_zeros: true
@@ -630,10 +642,10 @@ it:
           tb: TB
     percentage:
       format:
-        delimiter: 
+        delimiter:
     precision:
       format:
-        delimiter: 
+        delimiter:
   recaptcha:
     errors:
       incorrect-captcha-sol: C'è stato un errore riempire i caratteri captcha.
@@ -651,7 +663,7 @@ it:
       short: "%d %b %H:%M"
     pm: pm
   unauthorized:
-    default: 
+    default:
     manage:
       all: "È necessario prima effettuare il login o registrare un utente."
   will_paginate:

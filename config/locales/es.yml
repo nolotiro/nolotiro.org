@@ -105,7 +105,7 @@ es:
     - vie
     - sáb
     abbr_month_names:
-    - 
+    -
     - ene
     - feb
     - mar
@@ -131,7 +131,7 @@ es:
       long: "%d de %B de %Y"
       short: "%d de %b"
     month_names:
-    - 
+    -
     - enero
     - febrero
     - marzo
@@ -388,6 +388,16 @@ es:
         to_publish: Para publicar tu anuncio, por favor, introduce estos datos
         type_ad: 'Tipo de anuncio:'
       updated: Hemos actualizado el anuncio
+    analytics:
+      give_published: Regalo publicado
+      want_published: Búsqueda publicada
+      ad_delivered: Regalo entregado
+      ad_destroyed: Anuncio borrado
+      user_created: Usuario creado
+      user_destroyed: Usuario eliminado
+      ad_new_city: Anuncio en ciudad nueva
+      comment_created: Comentario creado
+      message_sent: Mensaje enviado
     all: todos
     all_ads: todos los anuncios
     and: y

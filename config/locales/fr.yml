@@ -5,8 +5,8 @@ fr:
   activemodel:
     attributes:
       contact:
-        email: 
-        message: 
+        email:
+        message:
     errors:
       format: "%{attribute} %{message}"
       messages:
@@ -59,16 +59,16 @@ fr:
         email: 
         message: 
       message:
-        subject: 
+        subject:
       user:
-        Contraseña: 
-        Recuérdame: 
-        Tu email: 
-        current_password: 
-        email: 
-        password: 
-        password_confirmation: 
-        remember: 
+        Contraseña:
+        Recuérdame:
+        Tu email:
+        current_password:
+        email:
+        password:
+        password_confirmation:
+        remember:
     errors:
       format: "%{attribute} %{message}"
       messages:
@@ -117,7 +117,7 @@ fr:
     - ven
     - sam
     abbr_month_names:
-    - 
+    -
     - jan.
     - fév.
     - mar.
@@ -143,7 +143,7 @@ fr:
       long: "%e %B %Y"
       short: "%e %b"
     month_names:
-    - 
+    -
     - janvier
     - février
     - mars
@@ -207,17 +207,17 @@ fr:
       year: Année
   devise:
     confirmations:
-      action: 
+      action:
       confirmed: Votre compte a été confirmé avec succès. Vous êtes désormais connecté(e).
-      instructions: 
-      resend: 
+      instructions:
+      resend:
       send_instructions: Vous allez recevoir sous quelques minutes un email comportant des instructions pour confirmer votre compte.
       send_paranoid_instructions: Si votre email existe sur notre base de données, vous recevrez sous quelques minutes un message avec des instructions pour confirmer votre compte.
     failure:
       already_authenticated: Vous êtes déjà connecté(e).
       inactive: Votre compte n’est pas encore activé.
       invalid: Email ou mot de passe incorrect.
-      last_attempt: 
+      last_attempt:
       locked: Votre compte est verrouillé.
       not_found_in_database: Email ou mot de passe incorrect.
       timeout: Votre session est périmée, veuillez vous reconnecter pour continuer.
@@ -245,7 +245,7 @@ fr:
       follow_instructions: 
       instructions: 
       no_token: Vous ne pouvez pas accéder à cette page si vous n’y accédez pas depuis un email de réinitialisation de mot de passe. Si vous venez en effet d’un tel email, vérifiez que vous avez copié l’adresse URL en entier.
-      send: 
+      send:
       send_instructions: Vous allez recevoir sous quelques minutes un email vous indiquant comment réinitialiser votre mot de passe.
       send_paranoid_instructions: Si votre email existe dans notre base de données, vous recevrez un lien vous permettant de récupérer votre mot de passe.
       updated: Votre mot de passe a été modifié avec succès. Vous êtes maintenant connecté(e).
@@ -262,7 +262,7 @@ fr:
       signed_in: Connecté(e) avec succès.
       signed_out: Déconnecté(e) avec succès.
       user:
-        signed_in: 
+        signed_in:
     unlocks:
       new:
         resend_unlock_instructions: 
@@ -318,7 +318,7 @@ fr:
   helpers:
     label:
       message:
-        subject: 
+        subject:
     select:
       prompt: Veuillez sélectionner
     submit:
@@ -327,21 +327,21 @@ fr:
       update: Modifier ce(tte) %{model}
   mailboxer:
     buttons:
-      back: 
-      trash: 
-      trash_selected: 
-      untrash: 
+      back:
+      trash:
+      trash_selected:
+      untrash:
     message_mailer:
       message:
-        body: 
-        subject: 
-      subject_new: 
-      subject_reply: 
-      visit: 
-      visit_html: 
-      visit_text: 
-      you_have_new_message: 
-      you_have_recieved_new_message: 
+        body:
+        subject:
+      subject_new:
+      subject_reply:
+      visit:
+      visit_html:
+      visit_text:
+      you_have_new_message:
+      you_have_recieved_new_message:
     new:
       body_max: 
       button: 
@@ -351,46 +351,46 @@ fr:
       submit: 
       title: 
     notification_mailer:
-      subject: 
-      visit_html: 
-      visit_text: 
-      you_have_new_reply: 
-      you_have_recieved_new_reply: 
+      subject:
+      visit_html:
+      visit_text:
+      you_have_new_reply:
+      you_have_recieved_new_reply:
     notifications:
-      error_same_user: 
-      move: 
-      sent: 
-      trash: 
-      untrash: 
-    search: 
+      error_same_user:
+      move:
+      sent:
+      trash:
+      untrash:
+    search:
     table:
-      date: 
-      delete: 
-      last: 
-      none: 
-      reciever: 
-      sender: 
-      subject: 
+      date:
+      delete:
+      last:
+      none:
+      reciever:
+      sender:
+      subject:
     titles:
-      conversation: 
-      index: 
+      conversation:
+      index:
   mailer:
     confirmation_reminder:
-      p1: 
-      p2: 
-    greetings: 
-    hello: 
-    signature: 
+      p1:
+      p2:
+    greetings:
+    hello:
+    signature:
   nlt:
-    about: 
+    about:
     about_page:
-      description_html: 
-      title: 
-    access_here: 
+      description_html:
+      title:
+    access_here:
     admin:
-      become_user: 
-      lock_user: 
-      unlock_user: 
+      become_user:
+      lock_user:
+      unlock_user:
     ads:
       bumped: 
       created: 
@@ -407,7 +407,17 @@ fr:
         title_max: 
         to_publish: 
         type_ad: 
-      updated: 
+      updated:
+    analytics:
+      give_published:
+      want_published:
+      ad_delivered:
+      ad_destroyed:
+      user_created:
+      user_destroyed:
+      ad_new_city:
+      comment_created:
+      message_sent:
     all: 
     all_ads: 
     and: 
@@ -422,18 +432,18 @@ fr:
     captcha_error: 
     change_city: 
     change_town:
-      choose: 
-      choose_html: 
-      close_to: 
-      please: 
-      submit: 
-      town: 
-    change_your_city: 
-    choose_username: 
-    choose_your_pass: 
-    choose_your_pass_again: 
-    cities_in_the_world: 
-    click_to_large: 
+      choose:
+      choose_html:
+      close_to:
+      please:
+      submit:
+      town:
+    change_your_city:
+    choose_username:
+    choose_your_pass:
+    choose_your_pass_again:
+    cities_in_the_world:
+    click_to_large:
     comments:
       body_max: 
       do_click: 
@@ -499,17 +509,17 @@ fr:
     login_to_comment: 
     logout: 
     mail:
-      automatic: 
-    member_since: 
-    messages: 
+      automatic:
+    member_since:
+    messages:
     messages_tabs:
-      inbox: 
-      sent: 
-      trash: 
-    messages_title: 
-    meta_description: 
-    meta_description_ad: 
-    new_user: 
+      inbox:
+      sent:
+      trash:
+    messages_title:
+    meta_description:
+    meta_description_ad:
+    new_user:
     no_results:
       explain_html: 
       on_user: 
@@ -525,27 +535,27 @@ fr:
     please_introduce: 
     privacy: 
     privacy_page:
-      body_html: 
-      title: 
-    profile: 
+      body_html:
+      title:
+    profile:
     profile_actions:
       friend:
-        add: 
-        delete: 
-    profile_edit: 
-    publish_ad: 
-    publish_ad_on: 
-    published_ads: 
-    published_at_by_html: 
-    published_on: 
-    published_on_html: 
-    readed_count: 
-    reads: 
-    register: 
-    register_here: 
-    remember_me: 
-    rss_suscribe: 
-    save_failed: 
+        add:
+        delete:
+    profile_edit:
+    publish_ad:
+    publish_ad_on:
+    published_ads:
+    published_at_by_html:
+    published_on:
+    published_on_html:
+    readed_count:
+    reads:
+    register:
+    register_here:
+    remember_me:
+    rss_suscribe:
+    save_failed:
     search:
       button: 
       must_search: 
@@ -566,8 +576,8 @@ fr:
     to_publish_or_send_messages: 
     tos: 
     tos_page:
-      body_html: 
-      title: 
+      body_html:
+      title:
     translate:
       description_html: 
       title: 
@@ -614,9 +624,9 @@ fr:
           quadrillion: million de milliards
           thousand: millier
           trillion: billion
-          unit: 
+          unit:
       format:
-        delimiter: 
+        delimiter:
         precision: 2
         significant: true
         strip_insignificant_zeros: true
@@ -632,14 +642,14 @@ fr:
           tb: To
     percentage:
       format:
-        delimiter: 
+        delimiter:
     precision:
       format:
-        delimiter: 
+        delimiter:
   recaptcha:
     errors:
-      incorrect-captcha-sol: 
-      verification_failed: 
+      incorrect-captcha-sol:
+      verification_failed:
   support:
     array:
       last_word_connector: " et "
@@ -653,9 +663,9 @@ fr:
       short: "%d %b %H:%M"
     pm: pm
   unauthorized:
-    default: 
+    default:
     manage:
-      all: 
+      all:
   will_paginate:
     next_label: suivant →
     page_entries_info:

@@ -14,6 +14,9 @@ module NolotiroOrg
     I18n.config.enforce_available_locales = true
     ActionMailer::Base.layout "mail"
 
+    # Librerías propias que no caben en otro lado
+    config.autoload_paths << Rails.root.join('lib')
+
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
 

@@ -105,7 +105,7 @@ ca:
     - Dv
     - Ds
     abbr_month_names:
-    - 
+    -
     - Gen
     - Feb
     - Mar
@@ -131,7 +131,7 @@ ca:
       long: "%d de %B de %Y"
       short: "%d de %b"
     month_names:
-    - 
+    -
     - Gener
     - Febrer
     - Març
@@ -388,6 +388,16 @@ ca:
         to_publish: Per publicar el teu anunci, si us plau, introdueix aquestes dades
         type_ad: 'Tipus d''anunci:'
       updated: Hem actualitzat l'anunci
+    analytics:
+      give_published:
+      want_published:
+      ad_delivered:
+      ad_destroyed:
+      user_created:
+      user_destroyed:
+      ad_new_city:
+      comment_created:
+      message_sent:
     all: tots
     all_ads: tots els anuncis
     and: i
@@ -594,7 +604,7 @@ ca:
           quadrillion: quadrilió
           thousand: mil
           trillion: trilió
-          unit: 
+          unit:
       format:
         delimiter: "."
         precision: 1

@@ -5,8 +5,8 @@ eu:
   activemodel:
     attributes:
       contact:
-        email: 
-        message: 
+        email:
+        message:
     errors:
       format: "%{attribute} %{message}"
       messages:
@@ -27,7 +27,7 @@ eu:
         not_an_integer: zenbaki osoa izan behar da
         odd: bakoitia izan behar du
         record_invalid: 'Balioztatze arazoa: %{errors}'
-        restrict_dependent_destroy: 
+        restrict_dependent_destroy:
         taken: hartuta dago
         too_long: luzeegia da (%{count} karaktere gehienez)
         too_short: laburregia da (%{count} karaktere gutxienez)
@@ -51,16 +51,16 @@ eu:
         email: 
         message: 
       message:
-        subject: 
+        subject:
       user:
-        Contraseña: 
-        Recuérdame: 
-        Tu email: 
-        current_password: 
-        email: 
-        password: 
-        password_confirmation: 
-        remember: 
+        Contraseña:
+        Recuérdame:
+        Tu email:
+        current_password:
+        email:
+        password:
+        password_confirmation:
+        remember:
     errors:
       format: "%{attribute} %{message}"
       messages:
@@ -81,7 +81,7 @@ eu:
         not_an_integer: zenbaki osoa izan behar da
         odd: bakoitia izan behar du
         record_invalid: 'Balioztatze arazoa: %{errors}'
-        restrict_dependent_destroy: 
+        restrict_dependent_destroy:
         taken: hartuta dago
         too_long: luzeegia da (%{count} karaktere gehienez)
         too_short: laburregia da (%{count} karaktere gutxienez)
@@ -101,7 +101,7 @@ eu:
     - Osti
     - Lar
     abbr_month_names:
-    - 
+    -
     - Urt
     - Ots
     - Mar
@@ -127,7 +127,7 @@ eu:
       long: "%Y(e)ko %Bk %e"
       short: "%b %e"
     month_names:
-    - 
+    -
     - Urtarrila
     - Otsaila
     - Martxoa
@@ -189,27 +189,27 @@ eu:
       year: Urte
   devise:
     confirmations:
-      action: 
-      confirmed: 
-      instructions: 
-      resend: 
-      send_instructions: 
-      send_paranoid_instructions: 
+      action:
+      confirmed:
+      instructions:
+      resend:
+      send_instructions:
+      send_paranoid_instructions:
     failure:
-      already_authenticated: 
-      inactive: 
-      invalid: 
-      last_attempt: 
-      locked: 
-      not_found_in_database: 
-      timeout: 
-      unauthenticated: 
-      unconfirmed: 
+      already_authenticated:
+      inactive:
+      invalid:
+      last_attempt:
+      locked:
+      not_found_in_database:
+      timeout:
+      unauthenticated:
+      unconfirmed:
     mailer:
       confirmation_instructions:
-        subject: 
+        subject:
       reset_password_instructions:
-        subject: 
+        subject:
       unlock_instructions:
         action: 
         greeting: 
@@ -217,8 +217,8 @@ eu:
         message: 
         subject: 
     omniauth_callbacks:
-      failure: 
-      success: 
+      failure:
+      success:
     passwords:
       action: 
       edit:
@@ -233,18 +233,18 @@ eu:
       updated: 
       updated_not_active: 
     registrations:
-      destroyed: 
-      signed_up: 
-      signed_up_but_inactive: 
-      signed_up_but_locked: 
-      signed_up_but_unconfirmed: 
-      update_needs_confirmation: 
-      updated: 
+      destroyed:
+      signed_up:
+      signed_up_but_inactive:
+      signed_up_but_locked:
+      signed_up_but_unconfirmed:
+      update_needs_confirmation:
+      updated:
     sessions:
-      signed_in: 
-      signed_out: 
+      signed_in:
+      signed_out:
       user:
-        signed_in: 
+        signed_in:
     unlocks:
       new:
         resend_unlock_instructions: 
@@ -255,15 +255,15 @@ eu:
     format: "%{attribute} %{message}"
     messages:
       accepted: onartuta izan behar da
-      already_confirmed: 
+      already_confirmed:
       blank: ezin da zuriz utzi
       confirmation: ez dator bat konfirmazioarekin
-      confirmation_period_expired: 
+      confirmation_period_expired:
       empty: ezin da hutsik egon
       equal_to: "%{count} izan behar da"
       even: bikoitia izan behar du
       exclusion: erreserbatuta dago
-      expired: 
+      expired:
       greater_than: "%{count} baino handiagoa izan behar da"
       greater_than_or_equal_to: "%{count} baino handiago edo berdin izan behar da"
       inclusion: ez da zerrendako aukera bat
@@ -294,7 +294,7 @@ eu:
   helpers:
     label:
       message:
-        subject: 
+        subject:
     select:
       prompt: Mesedez, aukeratu
     submit:
@@ -303,21 +303,21 @@ eu:
       update: "%{model}a eguneratu"
   mailboxer:
     buttons:
-      back: 
-      trash: 
-      trash_selected: 
-      untrash: 
+      back:
+      trash:
+      trash_selected:
+      untrash:
     message_mailer:
       message:
-        body: 
-        subject: 
-      subject_new: 
-      subject_reply: 
-      visit: 
-      visit_html: 
-      visit_text: 
-      you_have_new_message: 
-      you_have_recieved_new_message: 
+        body:
+        subject:
+      subject_new:
+      subject_reply:
+      visit:
+      visit_html:
+      visit_text:
+      you_have_new_message:
+      you_have_recieved_new_message:
     new:
       body_max: 
       button: 
@@ -327,46 +327,46 @@ eu:
       submit: 
       title: 
     notification_mailer:
-      subject: 
-      visit_html: 
-      visit_text: 
-      you_have_new_reply: 
-      you_have_recieved_new_reply: 
+      subject:
+      visit_html:
+      visit_text:
+      you_have_new_reply:
+      you_have_recieved_new_reply:
     notifications:
-      error_same_user: 
-      move: 
-      sent: 
-      trash: 
-      untrash: 
-    search: 
+      error_same_user:
+      move:
+      sent:
+      trash:
+      untrash:
+    search:
     table:
-      date: 
-      delete: 
-      last: 
-      none: 
-      reciever: 
-      sender: 
-      subject: 
+      date:
+      delete:
+      last:
+      none:
+      reciever:
+      sender:
+      subject:
     titles:
-      conversation: 
-      index: 
+      conversation:
+      index:
   mailer:
     confirmation_reminder:
-      p1: 
-      p2: 
-    greetings: 
-    hello: 
-    signature: 
+      p1:
+      p2:
+    greetings:
+    hello:
+    signature:
   nlt:
-    about: 
+    about:
     about_page:
-      description_html: 
-      title: 
-    access_here: 
+      description_html:
+      title:
+    access_here:
     admin:
-      become_user: 
-      lock_user: 
-      unlock_user: 
+      become_user:
+      lock_user:
+      unlock_user:
     ads:
       bumped: 
       created: 
@@ -383,7 +383,17 @@ eu:
         title_max: 
         to_publish: 
         type_ad: 
-      updated: 
+      updated:
+    analytics:
+      give_published:
+      want_published:
+      ad_delivered:
+      ad_destroyed:
+      user_created:
+      user_destroyed:
+      ad_new_city:
+      comment_created:
+      message_sent:
     all: 
     all_ads: 
     and: 
@@ -398,18 +408,18 @@ eu:
     captcha_error: 
     change_city: 
     change_town:
-      choose: 
-      choose_html: 
-      close_to: 
-      please: 
-      submit: 
-      town: 
-    change_your_city: 
-    choose_username: 
-    choose_your_pass: 
-    choose_your_pass_again: 
-    cities_in_the_world: 
-    click_to_large: 
+      choose:
+      choose_html:
+      close_to:
+      please:
+      submit:
+      town:
+    change_your_city:
+    choose_username:
+    choose_your_pass:
+    choose_your_pass_again:
+    cities_in_the_world:
+    click_to_large:
     comments:
       body_max: 
       do_click: 
@@ -475,17 +485,17 @@ eu:
     login_to_comment: 
     logout: 
     mail:
-      automatic: 
-    member_since: 
-    messages: 
+      automatic:
+    member_since:
+    messages:
     messages_tabs:
-      inbox: 
-      sent: 
-      trash: 
-    messages_title: 
-    meta_description: 
-    meta_description_ad: 
-    new_user: 
+      inbox:
+      sent:
+      trash:
+    messages_title:
+    meta_description:
+    meta_description_ad:
+    new_user:
     no_results:
       explain_html: 
       on_user: 
@@ -501,27 +511,27 @@ eu:
     please_introduce: 
     privacy: 
     privacy_page:
-      body_html: 
-      title: 
-    profile: 
+      body_html:
+      title:
+    profile:
     profile_actions:
       friend:
-        add: 
-        delete: 
-    profile_edit: 
-    publish_ad: 
-    publish_ad_on: 
-    published_ads: 
-    published_at_by_html: 
-    published_on: 
-    published_on_html: 
-    readed_count: 
-    reads: 
-    register: 
-    register_here: 
-    remember_me: 
-    rss_suscribe: 
-    save_failed: 
+        add:
+        delete:
+    profile_edit:
+    publish_ad:
+    publish_ad_on:
+    published_ads:
+    published_at_by_html:
+    published_on:
+    published_on_html:
+    readed_count:
+    reads:
+    register:
+    register_here:
+    remember_me:
+    rss_suscribe:
+    save_failed:
     search:
       button: 
       must_search: 
@@ -542,8 +552,8 @@ eu:
     to_publish_or_send_messages: 
     tos: 
     tos_page:
-      body_html: 
-      title: 
+      body_html:
+      title:
     translate:
       description_html: 
       title: 
@@ -590,9 +600,9 @@ eu:
           quadrillion: Kuatrilioi
           thousand: Mila
           trillion: Trilioi
-          unit: 
+          unit:
       format:
-        delimiter: 
+        delimiter:
         precision: 3
         significant: true
         strip_insignificant_zeros: true
@@ -608,14 +618,14 @@ eu:
           tb: TB
     percentage:
       format:
-        delimiter: 
+        delimiter:
     precision:
       format:
-        delimiter: 
+        delimiter:
   recaptcha:
     errors:
-      incorrect-captcha-sol: 
-      verification_failed: 
+      incorrect-captcha-sol:
+      verification_failed:
   support:
     array:
       last_word_connector: " eta "
@@ -629,11 +639,11 @@ eu:
       short: "%b %e, %H:%M"
     pm: pm
   unauthorized:
-    default: 
+    default:
     manage:
-      all: 
+      all:
   will_paginate:
-    next_label: 
+    next_label:
     page_entries_info:
       multi_page: 
       multi_page_html: 

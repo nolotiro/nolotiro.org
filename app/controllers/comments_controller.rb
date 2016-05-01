@@ -12,6 +12,8 @@ class CommentsController < ApplicationController
       ip: request.remote_ip,
     })
     if @comment.save
+      # Generate Analytics Event
+      AnalyticsCreateCommentWorker.perform_async @comment.id
       if @comment.ad.user != current_user
         CommentsMailer.create(params[:id], params[:body]).deliver_later
       end

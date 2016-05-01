@@ -30,9 +30,10 @@ group :development, :test do
   #gem 'binding_of_caller'                   # dev: better errors
   gem 'mailcatcher'                         # dev: mailbox
   gem 'bullet'                              # dev: n+1 query problem alert
+  gem 'pry-rails'			    # dev: a better console 
 end
 
-group :production, :staging do 
+group :production, :staging do
   gem 'airbrake', '~> 4.0'                  # exception notification
 end
 
@@ -79,5 +80,6 @@ gem 'faker'
 gem 'ruby-progressbar'
 
 gem 'mailboxer', '0.13.0'                           # messaging
+gem 'gabba'                                         # Enviar eventos a Google Analytics desde el servidor
 
 gem 'bootstrap-sass', '~> 3.3'

@@ -5,8 +5,8 @@ gl:
   activemodel:
     attributes:
       contact:
-        email: 
-        message: 
+        email:
+        message:
     errors:
       format: "%{attribute} %{message}"
       messages:
@@ -24,10 +24,10 @@ gl:
         less_than: debe ser menor que %{count}
         less_than_or_equal_to: debe ser menor ou igual que %{count}
         not_a_number: non é un número
-        not_an_integer: 
+        not_an_integer:
         odd: debe ser par
-        record_invalid: 
-        restrict_dependent_destroy: 
+        record_invalid:
+        restrict_dependent_destroy:
         taken: non está dispoñible
         too_long: é demasiado longo (non máis de %{count} carácteres)
         too_short: é demasiado curto (non menos de %{count} carácteres)
@@ -51,16 +51,16 @@ gl:
         email: 
         message: 
       message:
-        subject: 
+        subject:
       user:
-        Contraseña: 
-        Recuérdame: 
-        Tu email: 
-        current_password: 
-        email: 
-        password: 
-        password_confirmation: 
-        remember: 
+        Contraseña:
+        Recuérdame:
+        Tu email:
+        current_password:
+        email:
+        password:
+        password_confirmation:
+        remember:
     errors:
       format: "%{attribute} %{message}"
       messages:
@@ -78,10 +78,10 @@ gl:
         less_than: debe ser menor que %{count}
         less_than_or_equal_to: debe ser menor ou igual que %{count}
         not_a_number: non é un número
-        not_an_integer: 
+        not_an_integer:
         odd: debe ser par
-        record_invalid: 
-        restrict_dependent_destroy: 
+        record_invalid:
+        restrict_dependent_destroy:
         taken: non está dispoñible
         too_long: é demasiado longo (non máis de %{count} carácteres)
         too_short: é demasiado curto (non menos de %{count} carácteres)
@@ -101,7 +101,7 @@ gl:
     - Ven
     - Sab
     abbr_month_names:
-    - 
+    -
     - Xan
     - Feb
     - Mar
@@ -127,7 +127,7 @@ gl:
       long: "%A %e de %B de %Y"
       short: "%e %b"
     month_names:
-    - 
+    -
     - Xaneiro
     - Febreiro
     - Marzo
@@ -184,35 +184,35 @@ gl:
         one: 1 segundo
         other: "%{count} segundos"
     prompts:
-      day: 
-      hour: 
-      minute: 
-      month: 
-      second: 
-      year: 
+      day:
+      hour:
+      minute:
+      month:
+      second:
+      year:
   devise:
     confirmations:
-      action: 
-      confirmed: 
-      instructions: 
-      resend: 
-      send_instructions: 
-      send_paranoid_instructions: 
+      action:
+      confirmed:
+      instructions:
+      resend:
+      send_instructions:
+      send_paranoid_instructions:
     failure:
-      already_authenticated: 
-      inactive: 
-      invalid: 
-      last_attempt: 
-      locked: 
-      not_found_in_database: 
-      timeout: 
-      unauthenticated: 
-      unconfirmed: 
+      already_authenticated:
+      inactive:
+      invalid:
+      last_attempt:
+      locked:
+      not_found_in_database:
+      timeout:
+      unauthenticated:
+      unconfirmed:
     mailer:
       confirmation_instructions:
-        subject: 
+        subject:
       reset_password_instructions:
-        subject: 
+        subject:
       unlock_instructions:
         action: 
         greeting: 
@@ -220,8 +220,8 @@ gl:
         message: 
         subject: 
     omniauth_callbacks:
-      failure: 
-      success: 
+      failure:
+      success:
     passwords:
       action: 
       edit:
@@ -236,18 +236,18 @@ gl:
       updated: 
       updated_not_active: 
     registrations:
-      destroyed: 
-      signed_up: 
-      signed_up_but_inactive: 
-      signed_up_but_locked: 
-      signed_up_but_unconfirmed: 
-      update_needs_confirmation: 
-      updated: 
+      destroyed:
+      signed_up:
+      signed_up_but_inactive:
+      signed_up_but_locked:
+      signed_up_but_unconfirmed:
+      update_needs_confirmation:
+      updated:
     sessions:
-      signed_in: 
-      signed_out: 
+      signed_in:
+      signed_out:
       user:
-        signed_in: 
+        signed_in:
     unlocks:
       new:
         resend_unlock_instructions: 
@@ -258,15 +258,15 @@ gl:
     format: "%{attribute} %{message}"
     messages:
       accepted: debe ser aceptado
-      already_confirmed: 
+      already_confirmed:
       blank: non pode estar en blanco
       confirmation: non coincide coa confirmación
-      confirmation_period_expired: 
+      confirmation_period_expired:
       empty: non pode estar valeiro
       equal_to: debe ser igual a %{count}
       even: debe ser impar
       exclusion: xa existe
-      expired: 
+      expired:
       greater_than: debe ser maior que %{count}
       greater_than_or_equal_to: debe ser maior ou igual que %{count}
       inclusion: non está incluido na lista
@@ -297,30 +297,30 @@ gl:
   helpers:
     label:
       message:
-        subject: 
+        subject:
     select:
-      prompt: 
+      prompt:
     submit:
-      create: 
-      submit: 
-      update: 
+      create:
+      submit:
+      update:
   mailboxer:
     buttons:
-      back: 
-      trash: 
-      trash_selected: 
-      untrash: 
+      back:
+      trash:
+      trash_selected:
+      untrash:
     message_mailer:
       message:
-        body: 
-        subject: 
-      subject_new: 
-      subject_reply: 
-      visit: 
-      visit_html: 
-      visit_text: 
-      you_have_new_message: 
-      you_have_recieved_new_message: 
+        body:
+        subject:
+      subject_new:
+      subject_reply:
+      visit:
+      visit_html:
+      visit_text:
+      you_have_new_message:
+      you_have_recieved_new_message:
     new:
       body_max: 
       button: 
@@ -330,46 +330,46 @@ gl:
       submit: 
       title: 
     notification_mailer:
-      subject: 
-      visit_html: 
-      visit_text: 
-      you_have_new_reply: 
-      you_have_recieved_new_reply: 
+      subject:
+      visit_html:
+      visit_text:
+      you_have_new_reply:
+      you_have_recieved_new_reply:
     notifications:
-      error_same_user: 
-      move: 
-      sent: 
-      trash: 
-      untrash: 
-    search: 
+      error_same_user:
+      move:
+      sent:
+      trash:
+      untrash:
+    search:
     table:
-      date: 
-      delete: 
-      last: 
-      none: 
-      reciever: 
-      sender: 
-      subject: 
+      date:
+      delete:
+      last:
+      none:
+      reciever:
+      sender:
+      subject:
     titles:
-      conversation: 
-      index: 
+      conversation:
+      index:
   mailer:
     confirmation_reminder:
-      p1: 
-      p2: 
-    greetings: 
-    hello: 
-    signature: 
+      p1:
+      p2:
+    greetings:
+    hello:
+    signature:
   nlt:
-    about: 
+    about:
     about_page:
-      description_html: 
-      title: 
-    access_here: 
+      description_html:
+      title:
+    access_here:
     admin:
-      become_user: 
-      lock_user: 
-      unlock_user: 
+      become_user:
+      lock_user:
+      unlock_user:
     ads:
       bumped: 
       created: 
@@ -386,7 +386,17 @@ gl:
         title_max: 
         to_publish: 
         type_ad: 
-      updated: 
+      updated:
+    analytics:
+      give_published:
+      want_published:
+      ad_delivered:
+      ad_destroyed:
+      user_created:
+      user_destroyed:
+      ad_new_city:
+      comment_created:
+      message_sent:
     all: 
     all_ads: 
     and: 
@@ -401,18 +411,18 @@ gl:
     captcha_error: 
     change_city: 
     change_town:
-      choose: 
-      choose_html: 
-      close_to: 
-      please: 
-      submit: 
-      town: 
-    change_your_city: 
-    choose_username: 
-    choose_your_pass: 
-    choose_your_pass_again: 
-    cities_in_the_world: 
-    click_to_large: 
+      choose:
+      choose_html:
+      close_to:
+      please:
+      submit:
+      town:
+    change_your_city:
+    choose_username:
+    choose_your_pass:
+    choose_your_pass_again:
+    cities_in_the_world:
+    click_to_large:
     comments:
       body_max: 
       do_click: 
@@ -478,17 +488,17 @@ gl:
     login_to_comment: 
     logout: 
     mail:
-      automatic: 
-    member_since: 
-    messages: 
+      automatic:
+    member_since:
+    messages:
     messages_tabs:
-      inbox: 
-      sent: 
-      trash: 
-    messages_title: 
-    meta_description: 
-    meta_description_ad: 
-    new_user: 
+      inbox:
+      sent:
+      trash:
+    messages_title:
+    meta_description:
+    meta_description_ad:
+    new_user:
     no_results:
       explain_html: 
       on_user: 
@@ -504,27 +514,27 @@ gl:
     please_introduce: 
     privacy: 
     privacy_page:
-      body_html: 
-      title: 
-    profile: 
+      body_html:
+      title:
+    profile:
     profile_actions:
       friend:
-        add: 
-        delete: 
-    profile_edit: 
-    publish_ad: 
-    publish_ad_on: 
-    published_ads: 
-    published_at_by_html: 
-    published_on: 
-    published_on_html: 
-    readed_count: 
-    reads: 
-    register: 
-    register_here: 
-    remember_me: 
-    rss_suscribe: 
-    save_failed: 
+        add:
+        delete:
+    profile_edit:
+    publish_ad:
+    publish_ad_on:
+    published_ads:
+    published_at_by_html:
+    published_on:
+    published_on_html:
+    readed_count:
+    reads:
+    register:
+    register_here:
+    remember_me:
+    rss_suscribe:
+    save_failed:
     search:
       button: 
       must_search: 
@@ -545,8 +555,8 @@ gl:
     to_publish_or_send_messages: 
     tos: 
     tos_page:
-      body_html: 
-      title: 
+      body_html:
+      title:
     translate:
       description_html: 
       title: 
@@ -588,14 +598,14 @@ gl:
       decimal_units:
         format: "%n %u"
         units:
-          billion: 
-          million: 
-          quadrillion: 
-          thousand: 
-          trillion: 
-          unit: 
+          billion:
+          million:
+          quadrillion:
+          thousand:
+          trillion:
+          unit:
       format:
-        delimiter: 
+        delimiter:
         precision: 1
         significant: true
         strip_insignificant_zeros: true
@@ -611,32 +621,32 @@ gl:
           tb: TB
     percentage:
       format:
-        delimiter: 
+        delimiter:
     precision:
       format:
-        delimiter: 
+        delimiter:
   recaptcha:
     errors:
-      incorrect-captcha-sol: 
-      verification_failed: 
+      incorrect-captcha-sol:
+      verification_failed:
   support:
     array:
       last_word_connector: " e "
       two_words_connector: " e "
       words_connector: ", "
   time:
-    am: 
+    am:
     formats:
       default: "%A, %e de %B de %Y ás %H:%M"
       long: "%A %e de %B de %Y ás %H:%M"
       short: "%e/%m, %H:%M"
-    pm: 
+    pm:
   unauthorized:
-    default: 
+    default:
     manage:
-      all: 
+      all:
   will_paginate:
-    next_label: 
+    next_label:
     page_entries_info:
       multi_page: 
       multi_page_html: 

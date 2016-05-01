@@ -126,7 +126,7 @@ en:
       long: "%d of %B of %Y"
       short: "%d of %b"
     month_names:
-    - 
+    -
     - January
     - February
     - March
@@ -380,6 +380,18 @@ en:
         to_publish: To post your ad, please complete this fields
         type_ad: 'Type of ad:'
       updated: We have updated your ad
+      published:
+      delivered:
+    analytics:
+      give_published:
+      want_published:
+      ad_delivered:
+      ad_destroyed:
+      user_created:
+      user_destroyed:
+      ad_new_city:
+      comment_created:
+      message_sent:
     all: all
     all_ads: all ads
     and: and
@@ -554,7 +566,7 @@ en:
     user_profile: Profile
     username: Username
     users_most_active: most active users
-    users_most_active_last_week: 
+    users_most_active_last_week:
     view_ads_on: View ads in %{location_suggest}
     view_ads_on_your_city: View ads from your city or town
     view_more_ads: 
@@ -568,17 +580,17 @@ en:
   number:
     currency:
       format:
-        delimiter: 
+        delimiter:
         format: "%n %u"
         precision: 2
-        separator: 
+        separator:
         significant: false
         strip_insignificant_zeros: false
-        unit: 
+        unit:
     format:
-      delimiter: 
+      delimiter:
       precision: 3
-      separator: 
+      separator:
       significant: false
       strip_insignificant_zeros: false
     human:
@@ -590,9 +602,9 @@ en:
           quadrillion: trillion
           thousand: one thousand
           trillion: billion
-          unit: 
+          unit:
       format:
-        delimiter: 
+        delimiter:
         precision: 1
         significant: true
         strip_insignificant_zeros: true
@@ -608,10 +620,10 @@ en:
           tb: TB
     percentage:
       format:
-        delimiter: 
+        delimiter:
     precision:
       format:
-        delimiter: 
+        delimiter:
   recaptcha:
     errors:
       incorrect-captcha-sol: There is a mistake in your captcha's answer
@@ -620,7 +632,7 @@ en:
     array:
       last_word_connector: ", and"
       two_words_connector: and
-      words_connector: 
+      words_connector:
   time:
     am: am
     formats:
