@@ -31,8 +31,8 @@ public/assets/*
 # gedit temp files
 *~
 
-# geolitecity.dat
-vendor/geolite/GeoLiteCity.dat
+# GeoLiteCity DB
+vendor/geolite/*
 
 # thinking-sphinx
 config/*.sphinx.conf
