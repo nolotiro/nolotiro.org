@@ -6,9 +6,7 @@
   <% content_for(:meta_title, t('nlt.keywords') + @woeid[:full]) %>
 <% end %>
 
-<% content_for :meta_description do %>
-  <meta name="description" content="<%= t('nlt.gift_on', woeid: @woeid) %>. <%= t('nlt.meta_description') %>" />
-<% end %>
+<% content_for(:meta_description, t('nlt.gift_on', woeid: @woeid)) %>
 
 <% unless @search or @woeid.nil? %>
   <% content_for :meta_extra do %>
