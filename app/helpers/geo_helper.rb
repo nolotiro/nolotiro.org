@@ -10,14 +10,23 @@ module GeoHelper
   end
 
   def self.suggest ip_address
-    c = GeoIP.new(Rails.root.to_s + '/vendor/geolite/GeoLiteCity.dat').country(ip_address)
+    return unless ip_address
+
+    db = MaxMindDB.new(Rails.root.to_s + '/vendor/geolite/GeoLite2-City.mmdb')
+    suggestion = db.lookup(ip_address)
     # FIXME: use other APIs when there isn't an IP address mapped
-    if c.nil? 
-      "Madrid, Madrid, España"
-    else
-      # cutre translator from Spain to España
-      "#{c.city_name}, #{c.real_region_name}, #{c.country_name}".gsub("Spain", "España")
-    end
+    return "Madrid, Madrid, España" unless suggestion.found?
+
+    city = suggestion.city
+    city_name = city.name(I18n.locale) || city.name('en')
+
+    region = suggestion.subdivisions[0]
+    region_name = region ? (region.name(I18n.locale) || region.name('en')) : ''
+
+    country = suggestion.country
+    country_name = country.name(I18n.locale) || country.name('en')
+
+    "#{city_name}, #{region_name}, #{country_name}"
   end
 
 end

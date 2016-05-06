@@ -3,8 +3,6 @@ language: ruby
 cache:
   bundler: true
   apt: true
-  directories:
-    - vendor/geolite
 services:
   - redis-server
 rvm:
@@ -14,7 +12,6 @@ before_install:
   - gem install bundler
   - sudo apt-get update
   - sudo apt-get install -y sphinxsearch
-  - cd vendor/geolite/ && wget --quiet --output-document gelolite.download.log http://geolite.maxmind.com/download/geoip/database/GeoLiteCity.dat.gz -O GeoLiteCity.dat.gz && gunzip -f GeoLiteCity.dat.gz && cd -
 script:
   - RAILS_ENV=test bundle exec rake db:drop db:create db:schema:load
   - mkdir -p tmp/cache
@@ -22,6 +19,7 @@ script:
   - RAILS_ENV=test bundle exec rake ts:configure
   - RAILS_ENV=test bundle exec rake ts:index
   - RAILS_ENV=test bundle exec rake ts:start
+  - bundle exec rake nolotiro:download_maxmind_db
   - bundle exec rake db:test:prepare
   - bundle exec rake test
 before_script:

@@ -11,7 +11,13 @@ class GeoHelperTest < ActionView::TestCase
 
   test "should suggest location with ip address" do
     suggestion = GeoHelper.suggest "8.8.8.8"
-    assert_equal("Mountain View, California, United States", suggestion)
+    assert_equal("Mountain View, California, Estados Unidos", suggestion)
   end
 
+  test "should suggest properly translated locations" do
+    I18n.locale = :en
+    suggestion = GeoHelper.suggest "8.8.8.8"
+    assert_equal("Mountain View, California, United States", suggestion)
+    I18n.locale = :es
+  end
 end
