@@ -30,4 +30,14 @@ class WoeidController < ApplicationController
       end
     end
   end
+
+  private
+
+  def status_scope
+    return 'available' unless %w(booked delivered).include?(params[:status])
+
+    params[:status]
+  end
+
+  helper_method :status_scope
 end

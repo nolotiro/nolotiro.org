@@ -22,6 +22,12 @@ class PersonalAdListing < ActionDispatch::IntegrationTest
     click_link 'anuncios'
   end
 
+  it 'lists all give ads in a separate tab in user profile' do
+    click_link 'todos'
+
+    page.assert_selector '.ad_excerpt_home', count: 4
+  end
+
   it 'lists wanted ads in a separate tab in user profile' do
     click_link 'busco'
 

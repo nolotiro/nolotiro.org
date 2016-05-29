@@ -10,8 +10,9 @@ class UsersController < ApplicationController
     @ads = @user.ads
                 .includes(:user)
                 .public_send(@type)
-                .public_send(@status)
                 .paginate(:page => params[:page])
+
+    @ads = @ads.public_send(@status) if @status
   end
 
   # GET '/profile/:username'
@@ -24,4 +25,13 @@ class UsersController < ApplicationController
     end
   end
 
+  private
+
+  def status_scope
+    return unless %w(available booked delivered).include?(params[:status])
+
+    params[:status]
+  end
+
+  helper_method :status_scope
 end
