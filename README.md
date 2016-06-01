@@ -50,12 +50,10 @@ For the WOEID we use [Yahoo GeoPlanet](http://developer.yahoo.com/geo/geoplanet/
 so you need to register, create a new app and configure it in the relevant environment in
 *config/app_config.yml* (key *geoplanet_app_id*)
 
-For the GeoLocation we use [GeoLiteCity](http://dev.maxmind.com/geoip/legacy/geolite/).
+For the GeoLocation we use [GeoLite2] City. To download the database, run
 
 ```
-cd vendor/geolite
-wget http://geolite.maxmind.com/download/geoip/database/GeoLiteCity.dat.gz
-gunzip GeoLiteCity.dat.gz
+bin/rake nolotiro:download_maxmind_db
 ```
 
 For the search we use Sphinx, so you'll need to install it:
@@ -121,5 +119,7 @@ http://beta.nolotiro.org/api/v1/ad/153735
 * Core based on [Ruby On Rail](http://rubyonrails.org/)
 * [Yahoo! Geo Planet API](http://developer.yahoo.com/geo/geoplanet/) - This project is strong WOEID integration centered.
 * [jQuery](http://jquery.com/) for Javascript.
-* [GeoLite data API by Maxmind](http://www.maxmind.com/app/geolitecity) to auto detect user location.
+* [GeoLite2] data API by Maxmind to auto detect user location.
 * Logo by [Silvestre Herrera](http://www.silvestre.com.ar/) under GPL License.
+
+[Geolite2]: https://dev.maxmind.com/geoip/geoip2/geolite2/
