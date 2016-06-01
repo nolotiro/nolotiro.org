@@ -33,7 +33,11 @@ class WoeidController < ApplicationController
 
   private
 
-  def type_scope
-    params[:type] == 'want' ? params[:type] : 'give'
+  def status_scope
+    return 'available' unless %w(booked delivered).include?(params[:status])
+
+    params[:status]
   end
+
+  helper_method :status_scope
 end

@@ -47,13 +47,11 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  def status_scope
-    return 'available' unless %w(booked delivered).include?(params[:status])
-
-    params[:status]
+  def type_scope
+    params[:type] == 'want' ? params[:type] : 'give'
   end
 
-  helper_method :status_scope
+  helper_method :type_scope
 
   private
 

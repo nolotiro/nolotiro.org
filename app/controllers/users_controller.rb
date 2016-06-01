@@ -4,10 +4,15 @@ class UsersController < ApplicationController
   def listads
     # ads lists for user
     @user = User.find(params[:id])
+    @type = type_scope
+    @status = status_scope
+
     @ads = @user.ads
                 .includes(:user)
-                .public_send(status_scope)
+                .public_send(@type)
                 .paginate(:page => params[:page])
+
+    @ads = @ads.public_send(@status) if @status
   end
 
   # GET '/profile/:username'
@@ -20,4 +25,13 @@ class UsersController < ApplicationController
     end
   end
 
+  private
+
+  def status_scope
+    return unless %w(available booked delivered).include?(params[:status])
+
+    params[:status]
+  end
+
+  helper_method :status_scope
 end

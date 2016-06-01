@@ -3,8 +3,8 @@
 
 #default_header_section
   %h1=title
-#main.row
-  .col-md-10#list-messages-profile
+#main
+  .span-18
     = render partial: "users/tabnav", locals: {user: current_user}
     = render partial: "messages/tabmessages", locals: {box: @box}
     - if @search
