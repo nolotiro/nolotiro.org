@@ -94,7 +94,7 @@ namespace :deploy do
   task :pending do
     on roles(:app) do
       within repo_path do
-        info `git diff #{strategy.fetch_revision} origin/master`
+        info `git diff #{fetch(:branch)}..#{fetch(:current_revision)}`
       end
     end
   end
