@@ -8,11 +8,7 @@
 
     <%= csrf_meta_tags %>
 
-    <% if content_for?(:meta_description) %>
-      <%= yield(:meta_description) %>
-    <% else%>
-      <meta name="description" content="<%= t('nlt.meta_description') %>" />
-    <% end %>
+    <%= meta_description %>
 
     <% if content_for?(:meta_extra) %>
       <%= yield(:meta_extra) %>

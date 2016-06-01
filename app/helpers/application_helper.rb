@@ -11,6 +11,14 @@ module ApplicationHelper
     params[:controller] == 'users' && params['action'] == 'listads'
   end
 
+  def meta_description
+    general = t('nlt.meta_description')
+    specific = content_for(:meta_description) if content_for?(:meta_description)
+    content = specific ? "#{specific}. #{general}" : general
+
+    tag :meta, name: 'description', content: content
+  end
+
   def escape_privacy_data text
     if text
       text = text.gsub(/([\._a-zA-Z0-9-]+@[\._a-zA-Z0-9-]+)/, ' ')
