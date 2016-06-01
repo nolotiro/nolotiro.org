@@ -23,9 +23,9 @@ master branch, and to keep everyone involved in the development.
   symbol to let the other contributors know it is ready to be reviewed again.
 
 - If a branch needs/wants to be tested in staging before being merged, it can be
-  deployed to staging using `BRANCH=branch_name bundle exec cap staging
-  deploy`. Just remember that once the code is merged into master, it can (and
-  should) be deployed any time.
+  deployed to staging using `BRANCH=branch_name bin/cap staging deploy`. Just
+  remember that once the code is merged into master, it can (and should) be
+  deployed any time.
 
 - If your PR fixes a github issue, you can include the issue number in the
   branch name to better communicate this. Also, if you include the words

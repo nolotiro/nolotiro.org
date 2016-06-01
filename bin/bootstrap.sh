@@ -53,8 +53,8 @@ EOF
 chown vagrant:vagrant config/*.yml
 
 # TODO: db:seeds
-sudo -u vagrant /home/vagrant/.rbenv/shims/bundle exec rake db:drop
-sudo -u vagrant /home/vagrant/.rbenv/shims/bundle exec rake db:setup
-sudo -u vagrant /home/vagrant/.rbenv/shims/bundle exec rake ts:index
-sudo -u vagrant /home/vagrant/.rbenv/shims/bundle exec rake ts:restart
-sudo -u vagrant /home/vagrant/.rbenv/shims/bundle exec rake nolotiro:download_maxmind_db
+sudo -u vagrant bin/rake db:drop
+sudo -u vagrant bin/rake db:setup
+sudo -u vagrant bin/rake ts:index
+sudo -u vagrant bin/rake ts:restart
+sudo -u vagrant bin/rake nolotiro:download_maxmind_db
