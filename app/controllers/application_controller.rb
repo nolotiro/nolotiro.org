@@ -53,14 +53,12 @@ class ApplicationController < ActionController::Base
 
   helper_method :type_scope
 
-  private
+  protected
 
   def get_location_suggest 
     ip_address = GeoHelper.get_ip_address request
     GeoHelper.suggest ip_address
   end
-
-  protected
 
   def configure_permitted_parameters
     devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:username, :email, :password, :password_confirmation, :remember_me) }
