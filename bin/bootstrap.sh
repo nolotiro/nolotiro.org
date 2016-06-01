@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 # http://docs.vagrantup.com/v2/getting-started/provisioning.html
 
-GEOLITE_URL="http://geolite.maxmind.com/download/geoip/database/GeoLiteCity.dat.gz "
 MYSQL_PASS="sincondiciones"
 
 # TODO: check installed packages
@@ -20,14 +19,6 @@ cat > /home/vagrant/.my.cnf <<EOF
 user = root
 password = ${MYSQL_PASS}
 EOF
-
-# GeoLiteCity
-if [ ! -f /vagrant/vendor/geolite/GeoLiteCity.dat ]
-then
-  sudo -u vagrant wget --quiet --output-document geolite.download.log $GEOLITE_URL -O /vagrant/vendor/geolite/GeoLiteCity.dat.gz
-  cd /vagrant/vendor/geolite/
-  sudo -u vagrant gunzip GeoLiteCity.dat.gz
-fi
 
 # install rbenv and ruby-build
 sudo -u vagrant -i git clone git://github.com/sstephenson/rbenv.git /home/vagrant/.rbenv
@@ -62,7 +53,8 @@ EOF
 chown vagrant:vagrant config/*.yml
 
 # TODO: db:seeds
-sudo -u vagrant /home/vagrant/.rbenv/shims/bundle exec rake db:drop
-sudo -u vagrant /home/vagrant/.rbenv/shims/bundle exec rake db:setup
-sudo -u vagrant /home/vagrant/.rbenv/shims/bundle exec rake ts:index
-sudo -u vagrant /home/vagrant/.rbenv/shims/bundle exec rake ts:restart
+sudo -u vagrant bin/rake db:drop
+sudo -u vagrant bin/rake db:setup
+sudo -u vagrant bin/rake ts:index
+sudo -u vagrant bin/rake ts:restart
+sudo -u vagrant bin/rake nolotiro:download_maxmind_db

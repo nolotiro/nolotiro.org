@@ -30,7 +30,7 @@ vagrant ssh
 Finally you should start the application server:
 ```
 cd /vagrant
-bundle exec rails s -b 0.0.0.0
+bin/rails s -b 0.0.0.0
 ```
 
 Now you can access the web application at this url (port 3000):
@@ -62,8 +62,8 @@ For the search we use Sphinx, so you'll need to install it:
 
 ```
 sudo apt-get install sphinxsearch
-bundle exec rake ts:index
-bundle exec rake ts:start
+bin/rake ts:index
+bin/rake ts:start
 ```
 
 For delayed tasks (like sending emails) we use Sidekiq, that uses Redis. Also we use Redis to cache things.

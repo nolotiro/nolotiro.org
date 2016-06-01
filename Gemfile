@@ -59,7 +59,7 @@ gem 'sinatra', require: false
 gem 'slim'
 
 gem 'geoplanet'                                     # yahoo woeid geoplanet
-gem 'geoip'                                         # geolite city
+gem 'maxminddb'                                     # geolite city v2
 gem 'will_paginate', '~> 3.0'                       # pagination
 gem 'devise'                                        # users
 gem 'omniauth'                                      # users login with providers
