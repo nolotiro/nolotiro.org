@@ -64,6 +64,8 @@ GEM
     airbrake (4.3.1)
       builder
       multi_json
+    airbrussh (1.0.2)
+      sshkit (>= 1.6.1, != 1.7.0)
     arbre (1.0.3)
       activesupport (>= 3.0.0)
     arel (6.0.3)
@@ -84,16 +86,19 @@ GEM
       uniform_notifier (~> 1.9.0)
     byebug (8.2.2)
     cancancan (1.13.1)
-    capistrano (3.4.0)
+    capistrano (3.5.0)
+      airbrussh (>= 1.0.0)
+      capistrano-harrow
       i18n
       rake (>= 10.0.0)
-      sshkit (~> 1.3)
+      sshkit (>= 1.9.0)
     capistrano-bundler (1.1.4)
       capistrano (~> 3.1)
       sshkit (~> 1.2)
     capistrano-ci (0.0.5)
       capistrano (>= 2.5.5)
       httparty
+    capistrano-harrow (0.5.1)
     capistrano-rails (1.1.5)
       capistrano (~> 3.1)
       capistrano-bundler (~> 1.1)
@@ -256,7 +261,7 @@ GEM
     mysql2 (0.3.20)
     net-scp (1.2.1)
       net-ssh (>= 2.6.5)
-    net-ssh (3.0.2)
+    net-ssh (3.1.1)
     netrc (0.11.0)
     newrelic_rpm (3.14.1.311)
     nokogiri (1.6.7.2)
@@ -398,7 +403,7 @@ GEM
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
     sqlite3 (1.3.11)
-    sshkit (1.8.1)
+    sshkit (1.10.0)
       net-scp (>= 1.1.2)
       net-ssh (>= 2.8.0)
     temple (0.7.6)
