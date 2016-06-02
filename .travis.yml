@@ -19,7 +19,6 @@ script:
   - RAILS_ENV=test bin/rake ts:index
   - RAILS_ENV=test bin/rake ts:start
   - bin/rake nolotiro:download_maxmind_db
-  - bin/rake db:test:prepare
   - bin/rake test
 before_script:
   - mysql -e 'create database nolotirov3_test;'
