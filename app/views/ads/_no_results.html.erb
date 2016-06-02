@@ -8,8 +8,8 @@
   )%>
   <br>
 
-  <% unless woeid.nil? %>
-    <% locations = get_location_options @woeid %>
+  <% unless @woeid.nil? %>
+    <% locations = get_location_options @woeid[:short] %>
     <% if locations %>
       <%= t('nlt.no_results.try') %><br>
       <ul>
