@@ -21,9 +21,11 @@ module ActionDispatch
     end
   end
 
-  class Routing::RouteSet
-    def default_url_options(options={})
-      {:locale => I18n.default_locale }
+  module Routing
+    class RouteSet
+      def default_url_options(options={})
+        {:locale => I18n.default_locale }
+      end
     end
   end
 end
