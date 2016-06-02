@@ -31,8 +31,9 @@ module WoeidHelper
     # search by name, return possible places
     #
     # param name: string. example: "Madrid"
-    # return places: list. format: [[full name, woeid, ad_count], ...]
-    #                      example: [["Madrid, Madrid, España (2444 anuncios)",766273],["Madrid, Comunidad de Madrid, España (444 anuncios)",12578024],["Madrid, Cundinamarca, Colombia (0 anuncios)",361938]]
+    # return places: list.
+    #        format: [[full name, woeid, ad_count], ...]
+    #        example: [["Madrid, Madrid, Spain (2444 anuncios)",766273]]
     #
 
     if name

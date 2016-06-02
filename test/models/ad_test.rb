@@ -163,17 +163,5 @@ class AdTest < ActiveSupport::TestCase
     assert_equal 0, @ad.readed_count
   end
 
-#  Disabling IP validation. Some legacy IP are bad (8.8.8.1, 24.2.2.2) 
-#  test "ad validates ip address - fail" do
-#    @ad.ip = '999.99.9.9'
-#    @ad.valid?
-#    assert @ad.errors[:ip].include?("No es una IP válida")
-#  end
-#
-#  test "ad validates ip address - success" do
-#    @ad.ip = '2.2.2.2'
-#    assert @ad.valid?
-#  end
-
 end
 

@@ -27,8 +27,7 @@ module NolotiroOrg
     #
     config.autoload_paths += %W(#{config.root}/lib)
 
-    # No usar TLS para conectar al SMTP ya 
-    # que no tenemos un certificado válido
+    # Don't use TLS for SMTP since we don't yet have a valid certificate
     config.action_mailer.smtp_settings = {
       enable_starttls_auto: false
     }
