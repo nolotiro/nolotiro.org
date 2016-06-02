@@ -9,24 +9,21 @@ module WoeidHelper
 
     locale = I18n.locale;
     key = 'woeid_' + locale.to_s + '_' + woeid.to_s
-    if Rails.cache.fetch(key)
-      return Rails.cache.fetch(key)
-    else
-      GeoPlanet.appid = Rails.application.secrets["geoplanet_app_id"]
-      begin
-          place_raw = GeoPlanet::Place.new(woeid.to_i, :lang => locale)
-          place = YahooLocation.new(place_raw)
+    value = Rails.cache.fetch(key)
+    return value if value
 
-          if place.town?
-                value = { full: place.fullname , short: place.name }
-                Rails.cache.write(key, value)
-                return value
-          else
-            return nil
-          end
-      rescue GeoPlanet::NotFound
-        return nil
-      end
+    GeoPlanet.appid = Rails.application.secrets["geoplanet_app_id"]
+    begin
+        place_raw = GeoPlanet::Place.new(woeid.to_i, :lang => locale)
+        place = YahooLocation.new(place_raw)
+
+        return nil unless place.town?
+
+        value = { full: place.fullname , short: place.name }
+        Rails.cache.write(key, value)
+        return value
+    rescue GeoPlanet::NotFound
+      return nil
     end
   end
 

@@ -8,13 +8,13 @@ class LocationController < ApplicationController
   # POST /es/location/change
   # GET /es/location/change2?location=:location
   def list
-    if params[:location]
-      locations = WoeidHelper.search_by_name(params[:location])
-      if not locations.nil? and locations.count == 1
-        save_location locations[0].woeid
-      else
-        @locations = locations
-      end
+    return unless params[:location]
+
+    locations = WoeidHelper.search_by_name(params[:location])
+    if not locations.nil? and locations.count == 1
+      save_location locations[0].woeid
+    else
+      @locations = locations
     end
   end
 

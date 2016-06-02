@@ -184,9 +184,7 @@ class Ad < ActiveRecord::Base
   end
 
   def valid_ip_address
-    unless IPAddress.valid?(ip)
-      errors.add(:ip, "No es una IP válida")
-    end
+    errors.add(:ip, "No es una IP válida") unless IPAddress.valid?(ip)
   end
 
   def give?

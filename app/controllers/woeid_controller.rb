@@ -21,10 +21,12 @@ class WoeidController < ApplicationController
 
     if @id.present? == true && @woeid == nil
       raise ActionController::RoutingError.new('Not Found')
-    elsif not @ads.any?
-      if @woeid
-        @location_options = WoeidHelper.search_by_name(@woeid[:short])
-      end
+    end
+
+    return if @ads.any?
+
+    if @woeid
+      @location_options = WoeidHelper.search_by_name(@woeid[:short])
     end
   end
 end

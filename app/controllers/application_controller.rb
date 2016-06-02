@@ -32,10 +32,10 @@ class ApplicationController < ActionController::Base
 
   def authenticate_active_admin_user!
     authenticate_user!
-    unless current_user.admin?
-      flash[:alert] = t('nlt.permission_denied')
-      redirect_to root_path
-    end
+    return if current_user.admin?
+
+    flash[:alert] = t('nlt.permission_denied')
+    redirect_to root_path
   end
 
   def type_scope

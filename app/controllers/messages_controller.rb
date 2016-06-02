@@ -20,9 +20,7 @@ class MessagesController < ApplicationController
   def new
     @message = Mailboxer::Message.new
     @recipient = User.find(params[:user_id])
-    if params[:user_id]
-      @message.recipients = @recipient.id 
-    end
+    @message.recipients = @recipient.id if params[:user_id]
   end
 
   def create
