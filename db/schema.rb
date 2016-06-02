@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160130175954) do
+ActiveRecord::Schema.define(version: 20160423085940) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace",     limit: 255
@@ -63,12 +63,6 @@ ActiveRecord::Schema.define(version: 20160130175954) do
 
   add_index "comments", ["ads_id"], name: "ads_id", using: :btree
 
-  create_table "commentsAdCount", primary_key: "id_comment", force: :cascade do |t|
-    t.integer "count", limit: 4
-  end
-
-  add_index "commentsAdCount", ["id_comment", "count"], name: "idAd_comments", using: :btree
-
   create_table "friendships", id: false, force: :cascade do |t|
     t.integer "user_id",   limit: 4, null: false
     t.integer "friend_id", limit: 4, null: false
@@ -89,7 +83,6 @@ ActiveRecord::Schema.define(version: 20160130175954) do
     t.string   "subject",    limit: 255, default: ""
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
-    t.integer  "thread_id",  limit: 4,   default: 0
   end
 
   create_table "mailboxer_notifications", force: :cascade do |t|
@@ -130,45 +123,6 @@ ActiveRecord::Schema.define(version: 20160130175954) do
   add_index "mailboxer_receipts", ["notification_id"], name: "index_mailboxer_receipts_on_notification_id", using: :btree
   add_index "mailboxer_receipts", ["receiver_id", "receiver_type"], name: "index_mailboxer_receipts_on_receiver_id_and_receiver_type", using: :btree
 
-  create_table "messages_deleted", id: false, force: :cascade do |t|
-    t.integer "id_user",    limit: 4, null: false
-    t.integer "id_message", limit: 4, null: false
-  end
-
-  add_index "messages_deleted", ["id_user", "id_message"], name: "iduser_idmessage", unique: true, using: :btree
-
-  create_table "messages_legacy", force: :cascade do |t|
-    t.integer  "thread_id",   limit: 4,                     null: false
-    t.datetime "created_at",                                null: false
-    t.integer  "user_from",   limit: 4
-    t.integer  "user_to",     limit: 4
-    t.string   "ip",          limit: 15,                    null: false
-    t.string   "subject",     limit: 100,                   null: false
-    t.text     "body",        limit: 65535,                 null: false
-    t.integer  "readed",      limit: 4,     default: 0,     null: false
-    t.datetime "updated_at"
-    t.boolean  "is_migrated",               default: false
-  end
-
-  add_index "messages_legacy", ["thread_id"], name: "thread_id", using: :btree
-  add_index "messages_legacy", ["user_from"], name: "user_from", using: :btree
-  add_index "messages_legacy", ["user_to"], name: "user_to", using: :btree
-
-  create_table "readedAdCount", primary_key: "id_ad", force: :cascade do |t|
-    t.integer "counter", limit: 4, null: false
-  end
-
-  add_index "readedAdCount", ["id_ad", "counter"], name: "id_ad_counter", unique: true, using: :btree
-
-  create_table "threads", force: :cascade do |t|
-    t.string  "subject",         limit: 100,             null: false
-    t.integer "last_speaker",    limit: 4
-    t.integer "unread",          limit: 4,   default: 0, null: false
-    t.integer "conversation_id", limit: 4,   default: 0
-  end
-
-  add_index "threads", ["last_speaker"], name: "last_speaker", using: :btree
-
   create_table "users", force: :cascade do |t|
     t.string   "username",               limit: 32,                   null: false
     t.string   "legacy_password_hash",   limit: 255
@@ -204,8 +158,4 @@ ActiveRecord::Schema.define(version: 20160130175954) do
   add_foreign_key "mailboxer_conversation_opt_outs", "mailboxer_conversations", column: "conversation_id", name: "mb_opt_outs_on_conversations_id"
   add_foreign_key "mailboxer_notifications", "mailboxer_conversations", column: "conversation_id", name: "notifications_on_conversation_id"
   add_foreign_key "mailboxer_receipts", "mailboxer_notifications", column: "notification_id", name: "receipts_on_notification_id"
-  add_foreign_key "messages_legacy", "threads", name: "messages_legacy_ibfk_1", on_delete: :cascade
-  add_foreign_key "messages_legacy", "users", column: "user_from", name: "messages_legacy_ibfk_2", on_delete: :nullify
-  add_foreign_key "messages_legacy", "users", column: "user_to", name: "messages_legacy_ibfk_3", on_delete: :nullify
-  add_foreign_key "threads", "users", column: "last_speaker", name: "threads_ibfk_1", on_delete: :nullify
 end

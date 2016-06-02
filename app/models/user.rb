@@ -8,9 +8,6 @@ class User < ActiveRecord::Base
 
   before_save :default_lang
 
-  has_many :legacy_sent_messages, :class_name=> 'Legacy::Message', :foreign_key=>'user_from', :dependent=>:destroy
-  has_many :legacy_recieved_messages, :class_name=> 'Legacy::Message', :foreign_key=>'user_to', :dependent=>:destroy
-
   validates :username,
     uniqueness: true,
     length: { minimum: 3 }
