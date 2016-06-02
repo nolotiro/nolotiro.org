@@ -32,6 +32,10 @@ group :development, :test do
   gem 'bullet'                              # dev: n+1 query problem alert
 end
 
+group :test do
+  gem 'database_cleaner', '~> 1.5'
+end
+
 group :production, :staging do 
   gem 'airbrake', '~> 4.0'                  # exception notification
 end

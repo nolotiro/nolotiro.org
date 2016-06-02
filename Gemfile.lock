@@ -136,6 +136,7 @@ GEM
     concurrent-ruby (1.0.0)
     connection_pool (2.2.0)
     daemons (1.2.3)
+    database_cleaner (1.5.3)
     debug_inspector (0.0.2)
     delayed_paperclip (2.9.1)
       paperclip (>= 3.3)
@@ -470,6 +471,7 @@ DEPENDENCIES
   capybara_minitest_spec
   coffee-rails (~> 4.0.0)
   commands
+  database_cleaner (~> 1.5)
   delayed_paperclip
   devise
   factory_girl_rails (~> 4.0)

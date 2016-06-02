@@ -7,17 +7,26 @@ require 'rails/test_help'
 require 'minitest/pride'
 require 'capybara/rails'
 
+# Configure database cleaning
+DatabaseCleaner.clean_with(:truncation)
+DatabaseCleaner.strategy = :truncation
+
 # Ensure sphinx directories exist for the test environment
 ThinkingSphinx::Test.init
 
 class ActiveSupport::TestCase
   include FactoryGirl::Syntax::Methods
 
-  self.use_transactional_fixtures = true
+  self.use_transactional_fixtures = false
 
   def setup
+    DatabaseCleaner.start
     I18n.default_locale = :es
     I18n.locale = :es
+  end
+
+  def teardown
+    DatabaseCleaner.clean
   end
 end
 
