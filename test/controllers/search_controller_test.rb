@@ -8,7 +8,6 @@ class SearchControllerTest < ActionController::TestCase
     @ad = FactoryGirl.create(:ad)
     @user = FactoryGirl.create(:user)
     ThinkingSphinx::Test.index 'ad_core', 'ad_delta'
-    ThinkingSphinx::Test.start
   end
 
   test "should work search with a WOEID param" do 
