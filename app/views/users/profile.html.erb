@@ -49,12 +49,12 @@
       <% if can? :lock, @user %>
         <li>
           <% if @user.locked? %>
-            <%= link_to unlock_user_path(@user.id), data: {confirm: "¿Estas seguro que quieres desbloquear a este usuario? Podrá volver iniciar sesión."} do %>
+            <%= link_to unlock_user_path(@user.id), data: {confirm: "¿Estás seguro que quieres desbloquear a este usuario? Podrá volver iniciar sesión."} do %>
               <%= t('nlt.admin.unlock_user') %>
               <%= image_tag "neu/24x24/actions/add.png" %>
             <% end %>
           <% else %>
-            <%= link_to lock_user_path(@user.id), data: {confirm: "¿Estas seguro que quieres bloquear a este usuario? No podrá iniciar sesión."} do %>
+            <%= link_to lock_user_path(@user.id), data: {confirm: "¿Estás seguro que quieres bloquear a este usuario? No podrá iniciar sesión."} do %>
               <%= t('nlt.admin.lock_user') %>
               <%= image_tag "neu/24x24/actions/remove.png" %>
             <% end %>
