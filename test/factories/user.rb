@@ -15,7 +15,7 @@ FactoryGirl.define do
     password '123456789'
     role 0
     woeid 766273
-    confirmed_at          Time.now
+    confirmed_at          Time.zone.now
   end
 
   # This will use the User class (Admin would have been guessed)
@@ -25,7 +25,7 @@ FactoryGirl.define do
     lang 'es'
     password '12435968770'
     role 1
-    confirmed_at          Time.now
+    confirmed_at          Time.zone.now
   end
 
   factory :non_confirmed_user, class: User do

@@ -9,7 +9,7 @@ def create_user(role = 0)
       role: role,
       password: pwd,
       password_confirmation: pwd,
-      confirmed_at: Time.now,
+      confirmed_at: Time.zone.now,
       lang: 'es',
       woeid: 766_273
     )
@@ -18,7 +18,7 @@ def create_user(role = 0)
 end
 
 def create_ad(user)
-  timestamp = rand((Time.now - 1.week) .. Time.now)
+  timestamp = rand((Time.zone.now - 1.week) .. Time.zone.now)
   ad = Ad.create(
     user: user,
     title: Faker::Hipster.sentence(3).truncate(60),
