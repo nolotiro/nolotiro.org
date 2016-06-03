@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '2.3.0'
+ruby '2.3.1'
 
 gem 'rails', '~> 4.2'
 gem 'haml-rails'
@@ -35,7 +35,7 @@ group :test do
   gem 'database_cleaner', '~> 1.5'
 end
 
-group :production, :staging do 
+group :production, :staging do
   gem 'airbrake', '~> 4.0'                  # exception notification
 end
 
