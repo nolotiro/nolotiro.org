@@ -6,7 +6,7 @@
 
 This is the next revision of nolotiro.org, this time in Ruby On Rails.
 
-* Ruby: 2.3.0
+* Ruby: 2.3.1
 * Rails: 4.2.6
 
 ## Automatic Installation
