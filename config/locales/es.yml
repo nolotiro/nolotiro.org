@@ -144,6 +144,10 @@ es:
       timeout: Tu sesión expiró, por favor inicia sesión nuevamente para continuar.
       unauthenticated: Tienes que iniciar sesión o registrarte para poder continuar.
       unconfirmed: Tienes que confirmar tu cuenta para poder continuar.
+      not_facebook_confirmed_email: >-
+        No pudimos registrarte por Facebook porque no tienes una dirección de
+        correo electrónico confirmada. Añade una dirección de correo a tu cuenta
+        de Facebook o regístrate con tu email
     mailer:
       confirmation_instructions:
         subject: "[nolotiro.org] Instrucciones de confirmación"
