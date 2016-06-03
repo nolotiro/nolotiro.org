@@ -112,9 +112,6 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
-    capybara_minitest_spec (1.0.5)
-      capybara (>= 2)
-      minitest (>= 4)
     carrierwave (0.10.0)
       activemodel (>= 3.2.0)
       activesupport (>= 3.2.0)
@@ -469,7 +466,7 @@ DEPENDENCIES
   capistrano-ci
   capistrano-rails
   capistrano-rbenv
-  capybara_minitest_spec
+  capybara
   coffee-rails (~> 4.0.0)
   commands
   database_cleaner (~> 1.5)
