@@ -252,7 +252,7 @@ GEM
     mime-types (2.99.1)
     mimemagic (0.3.0)
     mini_portile2 (2.0.0)
-    minitest (5.8.4)
+    minitest (5.9.0)
     minitest-spec-rails (5.3.0)
       minitest (~> 5.0)
       rails (>= 4.1)
