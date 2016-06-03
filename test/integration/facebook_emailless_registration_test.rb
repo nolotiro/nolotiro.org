@@ -25,4 +25,8 @@ class FacebookEmaillessRegistrationTest < ActionDispatch::IntegrationTest
 
     assert page.has_content?(content)
   end
+
+  it "autofills form with user's Facebook name" do
+    assert page.has_selector?('input[value=pepe]')
+  end
 end

@@ -45,7 +45,7 @@
           </label>
           </dt>
           <dd id="username-element">
-          <%= f.text_field :username, :required => true %>
+          <%= f.text_field :username, :required => true, :value => params[:username] %>
           </dd>
           <dt id="captcha-input-label">
           <label for="captcha-input" class="required">
