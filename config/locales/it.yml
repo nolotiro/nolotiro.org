@@ -556,7 +556,7 @@ it:
     sending_this_form: Inviando questo modulo, ammette di aver letto, compreso, e si è soddisfatti con il nostro
     share_this_ad: Condividi questo annuncio
     sign_in: Login
-    sign_in_with_provider: Accedi con un altro provider
+    sign_in_with_provider: Accedi con %{provider}
     sign_up: Creare un utente
     slogan: Non buttare, io regalo (senza condizioni)
     suggestions: suggerimenti

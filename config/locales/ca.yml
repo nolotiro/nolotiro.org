@@ -538,7 +538,7 @@ ca:
     sending_this_form: Enviant aquest formulari, admeten haver llegit, comprès, i estàs d'acord amb les nostres
     share_this_ad: Comparteix aquest anunci
     sign_in: Accedir
-    sign_in_with_provider: Inicia sessió amb un altre proveïdor
+    sign_in_with_provider: Inicia sessió amb %{provider}
     sign_up: Crear un usuari
     slogan: no ho tir, t'ho regal (sense condicions)
     suggestions: suggeriments
