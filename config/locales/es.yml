@@ -404,7 +404,7 @@ es:
     change_town:
       choose: Elige tu ubicación
       choose_html: No se han encontrado ubicaciones con el nombre <b>%{location}</b>. Vuelve a intentarlo
-      close_to: 'Nuestro sistema de sugerencia de ubicación (basado en tu IP) dice que estas cerca de:'
+      close_to: 'Nuestro sistema de sugerencia de ubicación (basado en tu IP) dice que estás cerca de:'
       please: Por favor, escribe tu ciudad
       submit: Enviar
       town: 'Ciudad:'
@@ -492,7 +492,7 @@ es:
     meta_description_ad: regalo segunda mano %{title} en %{woeid}. %{body}
     new_user: nuevo usuario
     no_results:
-      explain_html: "<p>1. Sé el primero en %{publish}.</p> <p>2. Prueba a cambiar la ciudad por una mas grande que esté cerca de tu ubicación.</p> <p>3. Nuestro sistema de sugerencia de ubicación (basado en tu IP) dice que estas cerca de: <br> %{change_location} </p>"
+      explain_html: "<p>1. Sé el primero en %{publish}.</p> <p>2. Prueba a cambiar la ciudad por una mas grande que esté cerca de tu ubicación.</p> <p>3. Nuestro sistema de sugerencia de ubicación (basado en tu IP) dice que estás cerca de: <br> %{change_location} </p>"
       on_user: No hay anuncios de este tipo publicados por este usuario.
       phrase: '"Un viaje de mil kilómetros comienza con un simple paso" Lao Tse.'
       publish_ad: publicar un anuncio en esta ciudad
