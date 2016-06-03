@@ -15,12 +15,20 @@ class LocationControllerTest < ActionController::TestCase
   end
 
   test "should get location suggestion list" do
-    get :list, location: "Madrid"
+    # @todo We use a location without similar names to avoid touching the yahoo
+    # API to resolve names for each similar city. Make this fast in another
+    # way, either by caching resolved names in DB or mocking connections to the
+    # Yahoo API
+    get :list, location: "asdf"
     assert_response :success
   end
 
   test "should get location suggestion list (with post)" do
-    post :list, location: "Madrid"
+    # @todo We use a location without similar names to avoid touching the yahoo
+    # API to resolve names for each similar city. Make this fast in another
+    # way, either by caching resolved names in DB or mocking connections to the
+    # Yahoo API
+    post :list, location: "asdf"
     assert_response :success
   end
 
