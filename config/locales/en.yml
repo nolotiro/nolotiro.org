@@ -534,7 +534,7 @@ en:
     sending_this_form: By submitting this form, you admit to having read, understood, and you agree with our
     share_this_ad: Share this ad
     sign_in: Sign in
-    sign_in_with_provider: Sign in with other provider
+    sign_in_with_provider: Sign in with %{provider}
     sign_up: Sign up
     slogan: don't dump it, give it to your neighbor
     suggestions: suggestions

@@ -539,7 +539,7 @@ es:
     sending_this_form: Enviando este formulario, admites haber leido, comprendido, y estás conforme con nuestras
     share_this_ad: Comparte este anuncio
     sign_in: Acceder
-    sign_in_with_provider: Inicia sesión con otro proveedor
+    sign_in_with_provider: Inicia sesión con %{provider}
     sign_up: Crear un usuario
     slogan: no lo tiro, te lo regalo (sin condiciones)
     suggestions: sugerencias

@@ -43,7 +43,7 @@
           <%- resource_class.omniauth_providers.each do |provider| %>
             <% prov = convert_provider( provider ) %>
             <%= link_to user_omniauth_authorize_path(provider: provider), class: "btn btn-info login-with-#{prov.downcase}" do %>
-              <%= t('nlt.sign_in_with_provider', :provider => prov, :default => "Sign in with #{provider.to_s.titleize}") %>
+              <%= t('nlt.sign_in_with_provider', :provider => prov) %>
               <i class="fa <%= convert_provider_fa(provider) %>"></i>
             <% end %>
               <br />
