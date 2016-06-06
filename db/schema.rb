@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160606130724) do
+ActiveRecord::Schema.define(version: 20160606130725) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace",     limit: 255
@@ -69,6 +69,14 @@ ActiveRecord::Schema.define(version: 20160606130724) do
   end
 
   add_index "friendships", ["user_id", "friend_id"], name: "iduser_idfriend", unique: true, using: :btree
+
+  create_table "identities", force: :cascade do |t|
+    t.string  "provider", limit: 255
+    t.string  "uid",      limit: 255
+    t.integer "user_id",  limit: 4
+  end
+
+  add_index "identities", ["user_id"], name: "index_identities_on_user_id", using: :btree
 
   create_table "mailboxer_conversation_opt_outs", force: :cascade do |t|
     t.integer "unsubscriber_id",   limit: 4
@@ -155,6 +163,7 @@ ActiveRecord::Schema.define(version: 20160606130724) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "identities", "users"
   add_foreign_key "mailboxer_conversation_opt_outs", "mailboxer_conversations", column: "conversation_id", name: "mb_opt_outs_on_conversations_id"
   add_foreign_key "mailboxer_notifications", "mailboxer_conversations", column: "conversation_id", name: "notifications_on_conversation_id"
   add_foreign_key "mailboxer_receipts", "mailboxer_notifications", column: "notification_id", name: "receipts_on_notification_id"

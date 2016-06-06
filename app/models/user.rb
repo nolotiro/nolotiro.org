@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  has_many :identities, dependent: :destroy
 
   has_many :ads, foreign_key: 'user_owner'
   has_many :comments, foreign_key: 'user_owner'
