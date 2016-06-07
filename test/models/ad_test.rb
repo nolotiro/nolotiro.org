@@ -4,7 +4,7 @@ class AdTest < ActiveSupport::TestCase
   require 'test_helper'
 
   setup do
-    @ad = FactoryGirl.create(:ad)
+    @ad = FactoryGirl.create(:ad, woeid_code: 455825)
   end
 
   test "ad requires everything" do
@@ -123,11 +123,13 @@ class AdTest < ActiveSupport::TestCase
   test "ad meta_title" do
     @ad.type = 1
     @ad.save
-    assert_equal "regalo segunda mano gratis  ordenador en Vallecas Madrid, Madrid, España", @ad.meta_title
+    title = "regalo segunda mano gratis  ordenador en Vallecas Río de Janeiro, Rio de Janeiro, Brasil"
+    assert_equal title, @ad.meta_title
     @ad.type = 2
     @ad.save
-    assert_equal "regalo segunda mano gratis  ordenador en Vallecas Madrid, Madrid, España", @ad.meta_title
-    #assert_equal "busco ordenador en Vallecas Madrid, Madrid, España", @ad.meta_title
+    title = "regalo segunda mano gratis  ordenador en Vallecas Río de Janeiro, Rio de Janeiro, Brasil"
+    #title = "busco ordenador en Vallecas Río de Janeiro, Rio de Janeiro, Brasil"
+    assert_equal title, @ad.meta_title
   end
 
   test "ad body shoudl store emoji" do 

@@ -43,11 +43,7 @@ class CanAccessAdmin < ActionDispatch::IntegrationTest
   private
 
   def user
-    # @todo We use a location (Río de Janeiro) with no similar names to avoid
-    # touching the yahoo API to resolve names for each similar city. Make this
-    # fast in another way, either by caching resolved names in DB or mocking
-    # connections to the Yahoo API
-    @user ||= FactoryGirl.create(:user, woeid: 455825)
+    @user ||= FactoryGirl.create(:user)
   end
 
   def admin
