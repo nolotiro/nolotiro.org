@@ -1,4 +1,3 @@
----
 es:
   active_admin:
     dashboard: 
@@ -165,6 +164,7 @@ es:
         confirm_new_password: 
         new_password: 
       follow_instructions: Alguien ha pedido cambiar tu contraseña de nolotiro.org. Si no has sido puedes ignorar este correo. Tu contraseña no cambiará hasta que accedas al enlace y crees una nueva.
+      forgot: "¿Has olvidado tu contraseña?"
       instructions: Por favor, introduce tu email y te enviaremos un enlace de acceso directo para cambiar tu contraseña.
       no_token: No puedes acceder a esta página si no es a través de un un enlace para resetear tu contraseña. Si has llegado hasta aquí desde el email para resetear tu contraseña, por favor asegúrate de que la URL introducida está completa.
       send: Enviar por correo
@@ -398,6 +398,7 @@ es:
     password: Contraseña
     permission_denied: No tienes permisos para realizar esta acción.
     please_fill_to_become_member: Por favor, rellena este formulario para ser miembro de nolotiro
+    please_insert_email_and_password: Por favor pon tu email y contraseña.
     please_introduce: 'Por favor, introduce los caracteres que veas:'
     privacy: política de privacidad
     privacy_page:

@@ -1,4 +1,3 @@
----
 ca:
   active_admin:
     dashboard: 
@@ -165,6 +164,7 @@ ca:
         confirm_new_password: 
         new_password: 
       follow_instructions: Algú ha demanat canviar la teva contrasenya de nolotiro.org. Si no has estat pots ignorar aquest correu. La teva contrasenya no canviarà fins que accedeixis a l'enllaç i creïs una nova.
+      forgot: Has oblidat la teva contrasenya?
       instructions: Si us plau, introdueix el teu email i t'enviarem un enllaç d'accés directe per canviar la teva contrasenya.
       no_token: Només pots accedir a aquesta pàgina des d'un correu electrònic de recuperació de la contrasenya. Si realment has fet servir l'enllaç del correu electrònic, comprova que has utilitzat la URL completa.
       send: Envia per correu
@@ -398,6 +398,7 @@ ca:
     password: Contrasenya
     permission_denied: No tens permisos per a realitzar aquesta acció.
     please_fill_to_become_member: Si us plau, ompli aquest formulari per ser membre de nolotiro
+    please_insert_email_and_password: Si us plau posa el teu email i contrasenya.
     please_introduce: 'Si us plau, introdueix els caràcters que vegis:'
     privacy: política de privacitat
     privacy_page:

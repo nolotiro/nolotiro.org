@@ -1,36 +1,37 @@
----
 gl:
   active_admin:
-    dashboard: 
+    dashboard: " "
   activemodel:
     attributes:
       contact:
-        email: 
-        message: 
+        email: Correo electrónico
+        message: Mensaxe
   activerecord:
     attributes:
       ad:
-        body: 
-        image: 
-        image_content_type: 
-        image_file_size: 
-        subject: 
-        title: 
-        type: 
+        body: Corpo
+        image: Imaxe
+        image_content_type: Tipo de contido de imaxe
+        image_file_size: Tamaño da imaxe
+        subject: Título
+        title: Título
+        type: Tipo
       contact:
-        email: 
-        message: 
+        email: Correo electrónico
+        message: Mensaxe
       message:
-        subject: 
+        subject: Asunto
       user:
-        Contraseña: 
-        Recuérdame: 
-        Tu email: 
-        current_password: 
-        email: 
-        password: 
-        password_confirmation: 
-        remember: 
+        Contraseña: Contrasinal
+        Recuérdame: Lémbrame
+        Tu email: Teu email
+        current_password: Contrasinal actual
+        email: Correo electrónico
+        password: 'Nova contrasinal
+
+'
+        password_confirmation: Nova contrasinal (repetir)
+        remember: Lémbrame
   date:
     abbr_day_names:
     - Dom
@@ -96,8 +97,8 @@ gl:
         one: aproximadamente 1 ano
         other: "%{count} anos"
       almost_x_years:
-        one: 
-        other: 
+        one: case un ano
+        other: case %{count} anos
       half_a_minute: medio minuto
       less_than_x_minutes:
         one: 1 minuto
@@ -124,190 +125,199 @@ gl:
         one: 1 segundo
         other: "%{count} segundos"
     prompts:
-      day: 
-      hour: 
-      minute: 
-      month: 
-      second: 
-      year: 
+      day: Día
+      hour: Hora
+      minute: Minutos
+      month: Mes
+      second: Segundos
+      year: Ano
   devise:
     confirmations:
-      action: 
-      confirmed: 
-      instructions: 
-      resend: 
-      send_instructions: 
-      send_paranoid_instructions: 
+      action: Confirmar miña conta
+      confirmed: A súa conta foi confirmada correctamente.
+      instructions: 'Por favor confirme o seu correo electrónico, accedendo á seguinte enlace:'
+      resend: Reenviar instrucións de confirmación
+      send_instructions: Recibirá un correo electrónico con instrucións sobre como confirmar a súa conta en poucos minutos.
+      send_paranoid_instructions: Se o correo existe no noso banco de datos, recibirá un correo electrónico con instrucións sobre como confirmar a súa conta en poucos minutos.
     failure:
-      already_authenticated: 
-      inactive: 
-      invalid: 
-      last_attempt: 
-      locked: 
-      not_found_in_database: 
-      timeout: 
-      unauthenticated: 
-      unconfirmed: 
+      already_authenticated: Xa conectado.
+      inactive: A súa conta non foi activada.
+      invalid: Correo-e ou contrasinal incorrecto.
+      last_attempt: Teña en conta que se continúa tentando bloquear a conta para 3 horas. Esqueceches o contrasinal? Recuperalo.
+      locked: A súa conta está bloqueada. Pode volver a entrar dentro de 3 horas.
+      not_found_in_database: Correo-e ou contrasinal incorrecto.
+      timeout: A sesión caducou, por favor, faga o login novo para continuar.
+      unauthenticated: Debe facer o login ou rexístrese para continuar.
+      unconfirmed: Ten que confirmar a súa conta para continuar.
     mailer:
       confirmation_instructions:
-        subject: 
+        subject: "[nolotiro.org] Instrucións para confirmación"
       reset_password_instructions:
-        subject: 
+        subject: "[nolotiro.org] recuperación Instrucións de contrasinal"
       unlock_instructions:
         action: 
         greeting: 
         instruction: 
         message: 
-        subject: 
+        subject: "[nolotiro.org] Como desbloquear"
     omniauth_callbacks:
       failure: 
       success: 
     passwords:
-      action: 
+      action: Cambio de contrasinal
       edit:
         confirm_new_password: 
         new_password: 
-      follow_instructions: 
-      instructions: 
-      no_token: 
-      send: 
-      send_instructions: 
-      send_paranoid_instructions: 
-      updated: 
-      updated_not_active: 
+      follow_instructions: Alguén pediu trocar a súa contrasinal de nolotiro.org. Se non foi pode ignorar este correo. O seu contrasinal non vai cambiar ata que acceder ao enlace e crear unha nova.
+      forgot: "¿Esqueceches o contrasinal?\n"
+      instructions: Introduce o teu correo-e e nós enviarémosche unha ligazón de acceso para cambiar o seu contrasinal.
+      no_token: Non pode acceder a esta páxina, se non a través dun enlace para restablecer o seu contrasinal. Se chegou aquí a partir do correo electrónico para redefinir o seu contrasinal, por favor, asegúrese de que o URL que inseriu é completa.
+      send: Enviar por correo
+      send_instructions: Recibirá un correo electrónico con instrucións sobre como axustar o teu contrasinal en poucos minutos.
+      send_paranoid_instructions: Se o correo existe no noso banco de datos, recibirá un correo electrónico con instrucións sobre como axustar o teu contrasinal na súa caixa de entrada.
+      updated: Cambio do contrasinal realizouse. Xa iniciou sesión.
+      updated_not_active: Cambio do contrasinal realizouse.
     registrations:
-      destroyed: 
-      signed_up: 
-      signed_up_but_inactive: 
-      signed_up_but_locked: 
-      signed_up_but_unconfirmed: 
-      update_needs_confirmation: 
-      updated: 
+      destroyed: Foi o pracer de telo connosco. A súa conta foi cancelada.
+      signed_up: Benvido. A súa conta foi creada.
+      signed_up_but_inactive: A súa conta foi creada correctamente. Con todo, non puido iniciar a sesión porque a súa conta aínda non está activada.
+      signed_up_but_locked: A súa conta foi creada correctamente. Con todo, non se puido iniciar sesión porque a súa conta está bloqueada.
+      signed_up_but_unconfirmed: El enviou unha mensaxe cun enlace de confirmación ao teu correo. Abre o enlace a activar a súa conta.
+      update_needs_confirmation: Actualizou correctamente a túa conta, pero ten que confirmar o seu novo correo electrónico. Por favor, comproba o teu correo e siga a ligazón de confirmación para completar a verificación do correo electrónico de novo.
+      updated: A súa conta foi actualizada.
     sessions:
-      signed_in: 
-      signed_out: 
+      signed_in: Benvido
+      signed_out: 'A sesión finalizou.
+
+'
       user:
         signed_in: 
     unlocks:
       new:
         resend_unlock_instructions: 
-      send_instructions: 
-      send_paranoid_instructions: 
-      unlocked: 
+      send_instructions: Recibirá instrucións para desbloquear a súa conta en poucos minutos.
+      send_paranoid_instructions: Se existe a túa conta, recibirá instrucións para desbloquear a súa conta en poucos minutos.
+      unlocked: A súa conta foi desbloqueada. A súa conta foi desbloqueada. Agora podes asinar.
   helpers:
     label:
       message:
-        subject: 
+        subject: Asunto
     select:
-      prompt: 
+      prompt: Por favor escolla
     submit:
-      create: 
-      submit: 
-      update: 
+      create: Crear %{model}
+      submit: Gardar %{model}
+      update: Actualizar %{model}
   mailboxer:
     buttons:
       back: 
-      trash: 
-      trash_selected: 
+      trash: Mover mensaxe a lixo
+      trash_selected: Eliminar mensaxes seleccionados
       untrash: 
     message_mailer:
       message:
-        body: 
-        subject: 
+        body: Mensaxe
+        subject: Asunto
       subject_new: 
       subject_reply: 
-      visit: 
+      visit: Ver conversa e responder o mensaxe
       visit_html: 
       visit_text: 
-      you_have_new_message: 
-      you_have_recieved_new_message: 
+      you_have_new_message: Recibiu unha mensaxe nova
+      you_have_recieved_new_message: Recibiu unha mensaxe nova
     new:
-      body_max: 
-      button: 
-      errors: 
-      legend: 
-      subject: 
-      submit: 
-      title: 
+      body_max: Máximo 1500 carácteres
+      button: Enviar
+      errors: 'Hai un problema, consulta isto:'
+      legend: Enviar mesaxe
+      subject: Tema
+      submit: Enviar
+      title: Nova mensaxe privada para o usuario %{user}
     notification_mailer:
-      subject: 
-      visit_html: 
-      visit_text: 
-      you_have_new_reply: 
-      you_have_recieved_new_reply: 
+      subject: "[nolotiro.org] nova notificación: %{subject}"
+      visit_html: 'Visita %{url} e ir á súa bandexa de entrada para responder
+
+'
+      visit_text: 'Visita %{url} e ir á súa bandexa de entrada para responder
+
+'
+      you_have_new_reply: Recibiu unha nova resposta
+      you_have_recieved_new_reply: Recibiu unha nova resposta
     notifications:
-      error_same_user: 
-      move: 
+      error_same_user: Non pode enviar unha mensaxe a si mesmo
+      move: Mensaxe movido a %{mailbox}
       sent: 
       trash: 
       untrash: 
     search: 
     table:
-      date: 
-      delete: 
-      last: 
+      date: Data
+      delete: Eliminar?
+      last: Último
       none: 
-      reciever: 
-      sender: 
-      subject: 
+      reciever: Recibido
+      sender: Enviado
+      subject: Asunto
     titles:
       conversation: 
       index: 
   mailer:
     confirmation_reminder:
-      p1: 
-      p2: 
-    greetings: 
-    hello: 
-    signature: 
+      p1: Detectamos que teña creado unha conta en nolotiro.org e vostede non confirmou.
+      p2: 'Isto significa que tivo problemas para acceder á páxina. Se quere confirmar o usuario (%{username}) pode con esta ligazón:'
+    greetings: Grazas e saludos,
+    hello: Ola,
+    signature: Equipo de nolotiro.org
   nlt:
-    about: 
+    about: acerca de
     about_page:
       description_html: 
-      title: 
-    access_here: 
+      title: Acerca de nolotiro.org
+    access_here: Entre aquí
     admin:
       become_user: 
       lock_user: 
       unlock_user: 
     ads:
       bumped: 
-      created: 
+      created: Creamos o anuncio
       form:
-        body: 
-        body_max: 
-        comments_enabled: 
-        image_permitted_formats: 
-        please_ad_type: 
-        prohibited: 
-        select_an_image: 
-        status: 
-        title: 
-        title_max: 
-        to_publish: 
-        type_ad: 
-      updated: 
-    all: 
-    all_ads: 
-    and: 
-    are_you_interested: 
-    available: 
-    back: 
-    blog: 
-    booked: 
+        body: 'Corpo do anuncio:'
+        body_max: Máximo 500 caracteres
+        comments_enabled: Permitir comentarios públicos
+        image_permitted_formats: 'Formatos permitidos: gif, jpg, png. Max: 1Mb de tamaño.'
+        please_ad_type: por favor , seleccione o tipo de anuncio
+        prohibited: 'Hai un problema, consulta isto:'
+        select_an_image: Seleccione unha imaxe para o súo regalo (opcional).
+        status: Estado
+        title: 'Título do anuncio:'
+        title_max: Máximo 100 caracteres
+        to_publish: 'Para publicar o súo regalo, debe introducir estes datos
+
+'
+        type_ad: 'Tipo de anuncio:'
+      updated: actualizamos o anuncio
+    all: todos
+    all_ads: todos os anuncios
+    and: e
+    are_you_interested: Interesado?
+    available: dispoñible
+    back: regresar á páxina de inicio
+    blog: blog
+    booked: reservado
     bump_this_ad: 
-    by_user: 
-    cancel_my_account: 
-    captcha_error: 
-    change_city: 
+    by_user: por
+    cancel_my_account: Cancelar a miña conta
+    captcha_error: Probablemente xa entrou un erro caracteres captcha e non coindicen coa imaxe , re- introducir
+    change_city: cambio cidades
     change_town:
-      choose: 
-      choose_html: 
-      close_to: 
-      please: 
-      submit: 
-      town: 
-    change_your_city: 
+      choose: Elixa a súa situación
+      choose_html: Non hai lugares atopados co nome <b>%{location}</b>. Téntao de novo
+      close_to: 'O noso sistema de suxestións (con base no seu IP) di que estas preto a:'
+      please: Por favor, introduza a súa cidade
+      submit: Enviar
+      town: 'Cidade:'
+    change_your_city: Cambiar de cidade
     choose_username: 
     choose_your_pass: 
     choose_your_pass_again: 
@@ -322,24 +332,24 @@ gl:
       subject: 
       submit: 
       title: 
-    comments_count:
-      one: 
-      other: 
-    contact: 
+    comments_count: 
+    contact: contacto
     contact_form: 
-    contact_legend: 
-    contact_thanks: 
-    cookie: 
-    create_new_ad: 
+    contact_legend: Por favor, Introduza a súa mensaxe
+    contact_thanks: 'Mensaxe enviada! Grazas por entrar en contacto nolotiro.org
+
+'
+    cookie: Usamos cookies para mellorar a súa navegación neste sitio
+    create_new_ad: Crear un novo anuncio
     delete_ad: 
     delete_sure: 
-    delivered: 
-    developers: 
+    delivered: dedicado
+    developers: desarrolladores
     didn_t_receive_confirmation_instructions: 
     didn_t_receive_unlock_instructions: 
-    edit_this_ad: 
+    edit_this_ad: Edita este anuncio
     faq:
-      answer_1_html: 
+      answer_1_html: O principal obxectivo deste sitio é para se librar de elementos que non usa máis e impiden connosco na casa.
       answer_2_html: 
       answer_3_html: 
       answer_4_html: 
@@ -355,27 +365,29 @@ gl:
       question_7: 
       title: 
     faqs: 
-    fill_captcha: 
-    first_visit: 
+    fill_captcha: Por favor, encha os seguintes caracteres
+    first_visit: nolotiro.org é unha comunidade onde podemos librar de elementos que non usa máis e impiden connosco na casa .
     footer_explain: 
-    forgot_your_password: 
-    friends: 
-    gift_on: 
-    give: 
-    hello_to: 
-    help_translate: 
+    forgot_your_password: Esqueceches o contrasinal?
+    friends: Amigos
+    gift_on: regalo en %{woeid}
+    give: regalo
+    hello_to: Ola %{recipient},
+    help_translate: axuda a traducir
     home_title: 
-    if_you_are_new: 
-    if_youre_already_an_user: 
-    keywords: 
-    last_published_gifts: 
+    if_you_are_new: Se vostede é un novo usuario, por favor
+    if_youre_already_an_user: Se xa é un usuario rexistrado, por favor
+    keywords: presente segunda man libre
+    last_published_gifts: 'últimos presentes publicados
+
+'
     leave_blank: 
-    legal_notice: 
+    legal_notice: aviso legal
     legal_page:
-      body_html: 
-      title: 
-    login: 
-    login_to_comment: 
+      body_html: 'Nome: Asociación aLabs . <br>Inscrita no Rexistro de asociacións da Comunidade de Madrid , co número 32022 . <br>CIF : G86139847<br> C/Duque de Alba, 13 ( 28012 ) Madrid.'
+      title: Aviso legal
+    login: acceder
+    login_to_comment: accede para escribir un comentario
     logout: 
     mail:
       automatic: 
@@ -397,27 +409,28 @@ gl:
       subtitle: 
       title: 
       try: 
-    or: 
-    password: 
+    or: o
+    password: Contrasinal
     permission_denied: 
-    please_fill_to_become_member: 
-    please_introduce: 
-    privacy: 
+    please_fill_to_become_member: Por favor, enche este formulario para facer membro do nolotiro
+    please_insert_email_and_password: Por favor, engada o seu correo electrónico e contrasinal.
+    please_introduce: 'Por favor, introduza os caracteres que aparecen:'
+    privacy: política de privacidade
     privacy_page:
       body_html: 
-      title: 
-    profile: 
+      title: Política de privacidade
+    profile: perfil
     profile_actions:
       friend:
         add: 
         delete: 
-    profile_edit: 
-    publish_ad: 
-    publish_ad_on: 
-    published_ads: 
-    published_at_by_html: 
-    published_on: 
-    published_on_html: 
+    profile_edit: Editar o perfil
+    publish_ad: Publicando anuncio
+    publish_ad_on: Publicar anuncio en %{woeid}
+    published_ads: Anuncios publicados
+    published_at_by_html: Publicado fai %{time} por el usuario %{user}
+    published_on: Publicado fai %{date}
+    published_on_html: Publicado <abbr class='js-moment' title='%{date}'>%{date}</abbr>
     readed_count: 
     reads: 
     register: 
@@ -434,28 +447,28 @@ gl:
     send_a_message: 
     send_a_message_to: 
     send_a_private_message: 
-    sending_this_form: 
-    share_this_ad: 
-    sign_in: 
-    sign_in_with_provider: 
-    sign_up: 
-    slogan: 
-    suggestions: 
-    to_publish_ad: 
+    sending_this_form: Ao enviar este formulario, vostede acepta que leu, entendeu e está feliz co noso
+    share_this_ad: Comparte este anuncio
+    sign_in: Acceder
+    sign_in_with_provider: Entrar co outro proveedor
+    sign_up: Crear un usuario
+    slogan: no lo tiro, te lo regalo (sin condiciones)
+    suggestions: suxestións
+    to_publish_ad: Publicar anuncio
     to_publish_or_send_messages: 
     tos: 
     tos_page:
-      body_html: 
-      title: 
+      body_html: TODO
+      title: Condicións de uso
     translate:
-      description_html: 
-      title: 
-    update: 
-    updating: 
-    user_ads: 
-    user_edit_profile: 
-    user_profile: 
-    username: 
+      description_html: Actualmente, nolotiro.org está dispoñible nalgunhas linguas, pero pode axudar a <a href="http://accounts.localeapp.com/projects/6872">traducir</a> .
+      title: Axúdanos a traducir nolotiro.org súa lingua
+    update: Gardar
+    updating: Estamos actualizando todo el sitio, por lo que en las próximas horas habrá retrasos con los mensajes entre los usuarios, las imágenes de un anuncio y la cantidad de anuncios de los usuarios. No te preocupes que "estamos trabajando en ellou".
+    user_ads: anuncios
+    user_edit_profile: Editar perfil de usuario
+    user_profile: Perfil de usuario
+    username: Nome de usuario
     users_most_active: 
     users_most_active_last_week: 
     view_ads_on: 
@@ -540,11 +553,7 @@ gl:
     page_entries_info:
       multi_page: 
       multi_page_html: 
-      single_page:
-        one: 
-        other: 
-      single_page_html:
-        one: 
-        other: 
+      single_page: 
+      single_page_html: 
     page_gap: 
     previous_label: 

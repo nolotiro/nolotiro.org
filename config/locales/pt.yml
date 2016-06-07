@@ -1,12 +1,11 @@
----
 pt:
   active_admin:
     dashboard: 
   activemodel:
     attributes:
       contact:
-        email: 
-        message: 
+        email: Correio eletrônico
+        message: Menssagem
   activerecord:
     attributes:
       ad:
@@ -165,6 +164,7 @@ pt:
         confirm_new_password: 
         new_password: 
       follow_instructions: 
+      forgot: 
       instructions: 
       no_token: Não pode aceder a esta página sem vir do email de redefinição da senha. Se vem dum email para redefinir a sena, por favor verifique que usou o URL completo que foi enviado.
       send: 
@@ -258,11 +258,11 @@ pt:
     hello: 
     signature: 
   nlt:
-    about: 
+    about: sobre
     about_page:
       description_html: 
       title: 
-    access_here: 
+    access_here: acesse aqui
     admin:
       become_user: 
       lock_user: 
@@ -284,19 +284,19 @@ pt:
         to_publish: 
         type_ad: 
       updated: 
-    all: 
-    all_ads: 
-    and: 
-    are_you_interested: 
-    available: 
-    back: 
-    blog: 
-    booked: 
-    bump_this_ad: 
-    by_user: 
-    cancel_my_account: 
+    all: todos
+    all_ads: todos os anúncios
+    and: e
+    are_you_interested: Está interessado?
+    available: disponível
+    back: voltar para a pagina de inicio
+    blog: blog
+    booked: reservado
+    bump_this_ad: Renovar este anúncio
+    by_user: por
+    cancel_my_account: Apagar minha conta
     captcha_error: 
-    change_city: 
+    change_city: escolher cidade
     change_town:
       choose: 
       choose_html: 
@@ -304,12 +304,12 @@ pt:
       please: 
       submit: 
       town: 
-    change_your_city: 
-    choose_username: 
-    choose_your_pass: 
-    choose_your_pass_again: 
-    cities_in_the_world: 
-    click_to_large: 
+    change_your_city: Escolha sua cidade
+    choose_username: Escolha un nome de usuário
+    choose_your_pass: Escolha sua senha
+    choose_your_pass_again: 'Insira sua senha (sim, de novo) '
+    cities_in_the_world: cidades do mondo que mais reciclam
+    click_to_large: Click para aumentar foto
     comments:
       body_max: 
       do_click: 
@@ -319,22 +319,20 @@ pt:
       subject: 
       submit: 
       title: 
-    comments_count:
-      one: 
-      other: 
-    contact: 
-    contact_form: 
-    contact_legend: 
-    contact_thanks: 
-    cookie: 
-    create_new_ad: 
-    delete_ad: 
-    delete_sure: 
-    delivered: 
-    developers: 
-    didn_t_receive_confirmation_instructions: 
-    didn_t_receive_unlock_instructions: 
-    edit_this_ad: 
+    comments_count: 
+    contact: contato
+    contact_form: Formulario de contato
+    contact_legend: Por favor, escriva sua mensagem
+    contact_thanks: Mensagem enviada! Obrigado por contatar com nolotiro.org
+    cookie: Utilizamos cookies para melhorar sua navegação neste site
+    create_new_ad: Cria um novo anúncio
+    delete_ad: apagar anúncio
+    delete_sure: Tem certeza que quer apagá-lo?
+    delivered: entregado
+    developers: desenvolvedores
+    didn_t_receive_confirmation_instructions: Você não recebeu instruções de confirmação?
+    didn_t_receive_unlock_instructions: Você não recebeu instruções para o desbloqueio?
+    edit_this_ad: Edita este anúncio
     faq:
       answer_1_html: 
       answer_2_html: 
@@ -351,9 +349,9 @@ pt:
       question_6: 
       question_7: 
       title: 
-    faqs: 
+    faqs: perguntas frequentes
     fill_captcha: 
-    first_visit: 
+    first_visit: nolotiro.org é uma comunidade onde podemos nos desapegar das coisas que já não utilizamos e atrapalham na casa.
     footer_explain: 
     forgot_your_password: 
     friends: 
@@ -398,6 +396,7 @@ pt:
     password: 
     permission_denied: 
     please_fill_to_become_member: 
+    please_insert_email_and_password: 
     please_introduce: 
     privacy: 
     privacy_page:
@@ -545,11 +544,7 @@ pt:
     page_entries_info:
       multi_page: Mostrando %{model} %{from} - %{to} de %{count} no total
       multi_page_html: Mostrando %{model} <b>%{from}&nbsp;-&nbsp;%{to}</b> de <b>%{count}</b> no total
-      single_page:
-        one: 
-        other: 
-      single_page_html:
-        one: 
-        other: 
+      single_page: 
+      single_page_html: 
     page_gap: "&hellip;"
     previous_label: "← anterior"

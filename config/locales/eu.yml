@@ -1,4 +1,3 @@
----
 eu:
   active_admin:
     dashboard: 
@@ -165,6 +164,7 @@ eu:
         confirm_new_password: 
         new_password: 
       follow_instructions: 
+      forgot: 
       instructions: 
       no_token: 
       send: 
@@ -319,9 +319,7 @@ eu:
       subject: 
       submit: 
       title: 
-    comments_count:
-      one: 
-      other: 
+    comments_count: 
     contact: 
     contact_form: 
     contact_legend: 
@@ -398,6 +396,7 @@ eu:
     password: 
     permission_denied: 
     please_fill_to_become_member: 
+    please_insert_email_and_password: 
     please_introduce: 
     privacy: 
     privacy_page:
@@ -537,11 +536,7 @@ eu:
     page_entries_info:
       multi_page: 
       multi_page_html: 
-      single_page:
-        one: 
-        other: 
-      single_page_html:
-        one: 
-        other: 
+      single_page: 
+      single_page_html: 
     page_gap: 
     previous_label: 

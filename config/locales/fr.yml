@@ -1,4 +1,3 @@
----
 fr:
   active_admin:
     dashboard: 
@@ -167,6 +166,7 @@ fr:
         confirm_new_password: 
         new_password: 
       follow_instructions: 
+      forgot: 
       instructions: 
       no_token: Vous ne pouvez pas accéder à cette page si vous n’y accédez pas depuis un email de réinitialisation de mot de passe. Si vous venez en effet d’un tel email, vérifiez que vous avez copié l’adresse URL en entier.
       send: 
@@ -321,9 +321,7 @@ fr:
       subject: 
       submit: 
       title: 
-    comments_count:
-      one: 
-      other: 
+    comments_count: 
     contact: 
     contact_form: 
     contact_legend: 
@@ -400,6 +398,7 @@ fr:
     password: 
     permission_denied: 
     please_fill_to_become_member: 
+    please_insert_email_and_password: 
     please_introduce: 
     privacy: 
     privacy_page:
