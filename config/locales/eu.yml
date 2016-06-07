@@ -320,6 +320,8 @@ eu:
       submit: 
       title: 
     comments_count: 
+      one: 
+      other: 
     contact: 
     contact_form: 
     contact_legend: 

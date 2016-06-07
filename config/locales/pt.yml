@@ -319,7 +319,9 @@ pt:
       subject: 
       submit: 
       title: 
-    comments_count: 
+    comments_count:
+      one: ", 1 comentário"
+      other: ", %{count} comentários"
     contact: contato
     contact_form: Formulario de contato
     contact_legend: Por favor, escriva sua mensagem

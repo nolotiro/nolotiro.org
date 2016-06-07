@@ -332,7 +332,9 @@ gl:
       subject: 
       submit: 
       title: 
-    comments_count: 
+    comments_count:
+      one: ", 1 comentario"
+      other: ", %{count} comentarios"
     contact: contacto
     contact_form: 
     contact_legend: Por favor, Introduza a súa mensaxe

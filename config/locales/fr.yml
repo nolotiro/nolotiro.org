@@ -321,7 +321,9 @@ fr:
       subject: 
       submit: 
       title: 
-    comments_count: 
+    comments_count:
+      one: ", 1 commentaire"
+      other: ", %{count} commentaires"
     contact: 
     contact_form: 
     contact_legend: 
