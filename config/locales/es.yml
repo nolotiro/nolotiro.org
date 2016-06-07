@@ -322,7 +322,6 @@ es:
     comments_count:
       one: ", %{count} comentario"
       other: ", %{count} comentarios"
-      zero: " "
     contact: contacto
     contact_form: Formulario de contacto
     contact_legend: Por favor, escribe tu mensaje
