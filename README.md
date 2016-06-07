@@ -60,8 +60,7 @@ For the search we use Sphinx, so you'll need to install it:
 
 ```
 sudo apt-get install sphinxsearch
-bin/rake ts:index
-bin/rake ts:start
+bin/rake ts:index ts:start
 ```
 
 For delayed tasks (like sending emails) we use Sidekiq, that uses Redis. Also we use Redis to cache things.
