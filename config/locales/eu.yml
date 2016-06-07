@@ -7,36 +7,6 @@ eu:
       contact:
         email: 
         message: 
-    errors:
-      format: "%{attribute} %{message}"
-      messages:
-        accepted: onartuta izan behar da
-        blank: ezin da zuriz utzi
-        confirmation: ez dator bat konfirmazioarekin
-        empty: ezin da hutsik egon
-        equal_to: "%{count} izan behar da"
-        even: bikoitia izan behar du
-        exclusion: erreserbatuta dago
-        greater_than: "%{count} baino handiagoa izan behar da"
-        greater_than_or_equal_to: "%{count} baino handiago edo berdin izan behar da"
-        inclusion: ez da zerrendako aukera bat
-        invalid: ez da zuzena
-        less_than: "%{count} baino txikiago izan behar da"
-        less_than_or_equal_to: "%{count} baino txikiago edo berdin izan behar da"
-        not_a_number: ez da zenbaki bat
-        not_an_integer: zenbaki osoa izan behar da
-        odd: bakoitia izan behar du
-        record_invalid: 'Balioztatze arazoa: %{errors}'
-        restrict_dependent_destroy: 
-        taken: hartuta dago
-        too_long: luzeegia da (%{count} karaktere gehienez)
-        too_short: laburregia da (%{count} karaktere gutxienez)
-        wrong_length: ez du luzeera zuzena (%{count} karaktere izan behar ditu)
-      template:
-        body: 'Arazoak egon dira ondoko eremuekin:'
-        header:
-          one: Errore batek ezinezkoa egin du %{model} hau gordetzea
-          other: "%{count} errorek ezinezkoa egiten dute %{model} hau gordetzea"
   activerecord:
     attributes:
       ad:
@@ -61,36 +31,6 @@ eu:
         password: 
         password_confirmation: 
         remember: 
-    errors:
-      format: "%{attribute} %{message}"
-      messages:
-        accepted: onartuta izan behar da
-        blank: ezin da zuriz utzi
-        confirmation: ez dator bat konfirmazioarekin
-        empty: ezin da hutsik egon
-        equal_to: "%{count} izan behar da"
-        even: bikoitia izan behar du
-        exclusion: erreserbatuta dago
-        greater_than: "%{count} baino handiagoa izan behar da"
-        greater_than_or_equal_to: "%{count} baino handiago edo berdin izan behar da"
-        inclusion: ez da zerrendako aukera bat
-        invalid: ez da zuzena
-        less_than: "%{count} baino txikiago izan behar da"
-        less_than_or_equal_to: "%{count} baino txikiago edo berdin izan behar da"
-        not_a_number: ez da zenbaki bat
-        not_an_integer: zenbaki osoa izan behar da
-        odd: bakoitia izan behar du
-        record_invalid: 'Balioztatze arazoa: %{errors}'
-        restrict_dependent_destroy: 
-        taken: hartuta dago
-        too_long: luzeegia da (%{count} karaktere gehienez)
-        too_short: laburregia da (%{count} karaktere gutxienez)
-        wrong_length: ez du luzeera zuzena (%{count} karaktere izan behar ditu)
-      template:
-        body: 'Arazoak egon dira ondoko eremuekin:'
-        header:
-          one: Errore batek ezinezkoa egin du %{model} hau gordetzea
-          other: "%{count} errorek ezinezkoa egiten dute %{model} hau gordetzea"
   date:
     abbr_day_names:
     - Igan
@@ -251,46 +191,6 @@ eu:
       send_instructions: 
       send_paranoid_instructions: 
       unlocked: 
-  errors:
-    format: "%{attribute} %{message}"
-    messages:
-      accepted: onartuta izan behar da
-      already_confirmed: 
-      blank: ezin da zuriz utzi
-      confirmation: ez dator bat konfirmazioarekin
-      confirmation_period_expired: 
-      empty: ezin da hutsik egon
-      equal_to: "%{count} izan behar da"
-      even: bikoitia izan behar du
-      exclusion: erreserbatuta dago
-      expired: 
-      greater_than: "%{count} baino handiagoa izan behar da"
-      greater_than_or_equal_to: "%{count} baino handiago edo berdin izan behar da"
-      inclusion: ez da zerrendako aukera bat
-      invalid: ez da zuzena
-      less_than: "%{count} baino txikiago izan behar da"
-      less_than_or_equal_to: "%{count} baino txikiago edo berdin izan behar da"
-      not_a_number: ez da zenbaki bat
-      not_an_integer: zenbaki osoa izan behar da
-      not_found: 
-      not_locked: 
-      not_saved:
-        one: 
-        other: 
-      odd: bakoitia izan behar du
-      record_invalid: 'Balioztatze arazoa: %{errors}'
-      restrict_dependent_destroy:
-        one: 
-        other: 
-      taken: hartuta dago
-      too_long: luzeegia da (%{count} karaktere gehienez)
-      too_short: laburregia da (%{count} karaktere gutxienez)
-      wrong_length: ez du luzeera zuzena (%{count} karaktere izan behar ditu)
-    template:
-      body: 'Arazoak egon dira ondoko eremuekin:'
-      header:
-        one: Errore batek ezinezkoa egin du %{model} hau gordetzea
-        other: "%{count} errorek ezinezkoa egiten dute %{model} hau gordetzea"
   helpers:
     label:
       message:

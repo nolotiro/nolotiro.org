@@ -7,44 +7,6 @@ it:
       contact:
         email: E mail
         message: Messaggio
-    errors:
-      format: "%{attribute} %{message}"
-      messages:
-        accepted: deve essere accettata
-        blank: non può essere lasciato in bianco
-        confirmation: non coincide con la conferma
-        empty: non può essere vuoto
-        equal_to: deve essere uguale a %{count}
-        even: deve essere pari
-        exclusion: è riservato
-        greater_than: deve essere superiore a %{count}
-        greater_than_or_equal_to: deve essere superiore o uguale a %{count}
-        inclusion: non è incluso nella lista
-        invalid: non è valido
-        less_than: deve essere meno di %{count}
-        less_than_or_equal_to: deve essere meno o uguale a %{count}
-        not_a_number: non è un numero
-        not_an_integer: non è un intero
-        odd: deve essere dispari
-        record_invalid: 'Validazione fallita: %{errors}'
-        restrict_dependent_destroy:
-          one: Non è possibile cancellare il registro perché esiste un %{record} dipendente
-          other: Non è possibile cancellare il registro perché esistono %{record} dipendente
-        taken: è già in uso
-        too_long:
-          one: è troppo lungo (il massimo è 1 carattere)
-          other: è troppo lungo (il massimo è %{count} caratteri)
-        too_short:
-          one: è troppo corto (il minimo è 1 carattere)
-          other: è troppo corto (il minimo è %{count} caratteri)
-        wrong_length:
-          one: è della lunghezza sbagliata (deve essere di 1 carattere)
-          other: è della lunghezza sbagliata (deve essere di %{count} caratteri)
-      template:
-        body: 'Per favore ricontrolla i seguenti campi:'
-        header:
-          one: 'Non posso salvare questo %{model}: 1 errore'
-          other: 'Non posso salvare questo %{model}: %{count} errori.'
   activerecord:
     attributes:
       ad:
@@ -69,44 +31,6 @@ it:
         password: Password nuova
         password_confirmation: Ripete di nuovo la password
         remember: Ricordami
-    errors:
-      format: "%{attribute} %{message}"
-      messages:
-        accepted: deve essere accettata
-        blank: non può essere lasciato in bianco
-        confirmation: non coincide con la conferma
-        empty: non può essere vuoto
-        equal_to: deve essere uguale a %{count}
-        even: deve essere pari
-        exclusion: è riservato
-        greater_than: deve essere superiore a %{count}
-        greater_than_or_equal_to: deve essere superiore o uguale a %{count}
-        inclusion: non è incluso nella lista
-        invalid: non è valido
-        less_than: deve essere meno di %{count}
-        less_than_or_equal_to: deve essere meno o uguale a %{count}
-        not_a_number: non è un numero
-        not_an_integer: non è un intero
-        odd: deve essere dispari
-        record_invalid: 'Validazione fallita: %{errors}'
-        restrict_dependent_destroy:
-          one: No è possibile cancellare il registro perché esiste un %{record} dipendente
-          other: Non è possibile cancellare il registro perché esistono %{record} dipendenti
-        taken: è già in uso
-        too_long:
-          one: è troppo lungo (il massimo è 1 carattere)
-          other: è troppo lungo (il massimo è %{count} caratteri)
-        too_short:
-          one: è troppo corto (il minimo è 1 carattere)
-          other: è troppo corto (il minimo è %{count} caratteri)
-        wrong_length:
-          one: è della lunghezza sbagliata (deve essere di 1 carattere)
-          other: è della lunghezza sbagliata (deve essere di %{count} caratteri)
-      template:
-        body: 'Per favore ricontrolla i seguenti campi:'
-        header:
-          one: 'Non posso salvare questo %{model}: 1 errore'
-          other: 'Non posso salvare questo %{model}: %{count} errori.'
   date:
     abbr_day_names:
     - dom
@@ -267,52 +191,6 @@ it:
       send_instructions: Riceverai un messaggio email con le istruzioni per sbloccare il tuo account entro qualche minuto.
       send_paranoid_instructions: Se la tua e-mail esiste nel nostro database, riceverai un messaggio email con le istruzioni per sbloccare il tuo account entro qualche minuto.
       unlocked: Il tuo account è stato correttamente sbloccato. Ora sei collegato.
-  errors:
-    format: "%{attribute} %{message}"
-    messages:
-      accepted: deve essere accettata
-      already_confirmed: è stato già confermato
-      blank: non può essere lasciato in bianco
-      confirmation: non coincide con la conferma
-      confirmation_period_expired: deve essere confermato entro %{period}, richiedi una nuova conferma
-      empty: non può essere vuoto
-      equal_to: deve essere uguale a %{count}
-      even: deve essere pari
-      exclusion: è riservato
-      expired: è scaduto, si prega di richiederne uno nuovo
-      greater_than: deve essere superiore a %{count}
-      greater_than_or_equal_to: deve essere superiore o uguale a %{count}
-      inclusion: non è incluso nella lista
-      invalid: non è valido
-      less_than: deve essere meno di %{count}
-      less_than_or_equal_to: deve essere meno o uguale a %{count}
-      not_a_number: non è un numero
-      not_an_integer: non è un intero
-      not_found: non trovato
-      not_locked: non era bloccato
-      not_saved:
-        one: 'Non posso salvare questo %{resource}: 1 errore'
-        other: 'Non posso salvare questo %{resource}: %{count} errori.'
-      odd: deve essere dispari
-      record_invalid: 'Validazione fallita: %{errors}'
-      restrict_dependent_destroy:
-        one: Non si può cancellare il registro perché esiste un %{record} dipendente
-        other: Non si può cancellare il registro perché esistono %{record} dipendente
-      taken: è già in uso
-      too_long:
-        one: è troppo lungo (il massimo è 1 carattere)
-        other: è troppo lungo (il massimo è %{count} caratteri)
-      too_short:
-        one: è troppo corto (il minimo è 1 carattere)
-        other: è troppo corto (il minimo è %{count} caratteri)
-      wrong_length:
-        one: è della lunghezza sbagliata (deve essere di 1 carattere)
-        other: è della lunghezza sbagliata (deve essere di %{count} caratteri)
-    template:
-      body: 'Per favore ricontrolla i seguenti campi:'
-      header:
-        one: 'Non posso salvare questo %{model}: 1 errore'
-        other: 'Non posso salvare questo %{model}: %{count} errori.'
   helpers:
     label:
       message:

@@ -7,36 +7,6 @@ nl:
       contact:
         email: E-mail
         message: Bericht
-    errors:
-      format: 
-      messages:
-        accepted: 
-        blank: 
-        confirmation: 
-        empty: 
-        equal_to: 
-        even: 
-        exclusion: is gereserveerd
-        greater_than: 
-        greater_than_or_equal_to: 
-        inclusion: 
-        invalid: 
-        less_than: 
-        less_than_or_equal_to: 
-        not_a_number: 
-        not_an_integer: 
-        odd: 
-        record_invalid: 
-        restrict_dependent_destroy: 
-        taken: 
-        too_long: 
-        too_short: 
-        wrong_length: 
-      template:
-        body: 
-        header:
-          one: 
-          other: 
   activerecord:
     attributes:
       ad:
@@ -61,36 +31,6 @@ nl:
         password: 
         password_confirmation: 
         remember: 
-    errors:
-      format: 
-      messages:
-        accepted: 
-        blank: 
-        confirmation: 
-        empty: 
-        equal_to: 
-        even: 
-        exclusion: 
-        greater_than: 
-        greater_than_or_equal_to: 
-        inclusion: 
-        invalid: 
-        less_than: 
-        less_than_or_equal_to: 
-        not_a_number: 
-        not_an_integer: 
-        odd: 
-        record_invalid: 
-        restrict_dependent_destroy: 
-        taken: 
-        too_long: 
-        too_short: 
-        wrong_length: 
-      template:
-        body: 
-        header:
-          one: 
-          other: 
   date:
     abbr_day_names:
     - zon
@@ -251,46 +191,6 @@ nl:
       send_instructions: 
       send_paranoid_instructions: 
       unlocked: 
-  errors:
-    format: 
-    messages:
-      accepted: 
-      already_confirmed: 
-      blank: 
-      confirmation: 
-      confirmation_period_expired: 
-      empty: 
-      equal_to: 
-      even: 
-      exclusion: 
-      expired: 
-      greater_than: 
-      greater_than_or_equal_to: 
-      inclusion: 
-      invalid: 
-      less_than: 
-      less_than_or_equal_to: 
-      not_a_number: 
-      not_an_integer: 
-      not_found: 
-      not_locked: 
-      not_saved:
-        one: 
-        other: 
-      odd: 
-      record_invalid: 
-      restrict_dependent_destroy:
-        one: 
-        other: 
-      taken: 
-      too_long: 
-      too_short: 
-      wrong_length: 
-    template:
-      body: 
-      header:
-        one: 
-        other: 
   helpers:
     label:
       message:

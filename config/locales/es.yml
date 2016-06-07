@@ -7,38 +7,6 @@ es:
       contact:
         email: Correo electrónico
         message: Mensaje
-    errors:
-      format: "%{attribute} %{message}"
-      messages:
-        accepted: debe ser aceptado
-        blank: no puede estar en blanco
-        confirmation: no coincide con la confirmación
-        empty: no puede estar vacío
-        equal_to: debe ser igual a %{count}
-        even: debe ser par
-        exclusion: está reservado
-        greater_than: debe ser mayor que %{count}
-        greater_than_or_equal_to: debe ser mayor que o igual a %{count}
-        inclusion: no está incluido en la lista
-        invalid: no es válido
-        less_than: debe ser menor que %{count}
-        less_than_or_equal_to: debe ser menor que o igual a %{count}
-        not_a_number: no es un número
-        not_an_integer: debe ser un entero
-        odd: debe ser impar
-        record_invalid: 'La validación falló: %{errors}'
-        restrict_dependent_destroy:
-          many: No se puede eliminar el registro porque existen %{record} dependientes
-          one: No se puede eliminar el registro porque existe un(a) %{record} dependiente
-        taken: ya está en uso
-        too_long: es demasiado largo (%{count} caracteres máximo)
-        too_short: es demasiado corto (%{count} caracteres mínimo)
-        wrong_length: no tiene la longitud correcta (%{count} caracteres exactos)
-      template:
-        body: 'Se encontraron problemas con los siguientes campos:'
-        header:
-          one: No se pudo guardar este/a %{model} porque se encontró 1 error
-          other: No se pudo guardar este/a %{model} porque se encontraron %{count} errores
   activerecord:
     attributes:
       ad:
@@ -63,38 +31,6 @@ es:
         password: Contraseña nueva
         password_confirmation: Contraseña nueva (repetir)
         remember: Recuérdame
-    errors:
-      format: "%{attribute} %{message}"
-      messages:
-        accepted: debe ser aceptado
-        blank: no puede estar en blanco
-        confirmation: no coincide con la confirmación
-        empty: no puede estar vacío
-        equal_to: debe ser igual a %{count}
-        even: debe ser par
-        exclusion: está reservado
-        greater_than: debe ser mayor que %{count}
-        greater_than_or_equal_to: debe ser mayor que o igual a %{count}
-        inclusion: no está incluido en la lista
-        invalid: no es válido
-        less_than: debe ser menor que %{count}
-        less_than_or_equal_to: debe ser menor que o igual a %{count}
-        not_a_number: no es un número
-        not_an_integer: debe ser un entero
-        odd: debe ser impar
-        record_invalid: 'La validación falló: %{errors}'
-        restrict_dependent_destroy:
-          many: No se puede eliminar el registro porque existen %{record} dependientes
-          one: No se puede eliminar el registro porque existe un(a) %{record} dependiente
-        taken: ya está en uso
-        too_long: es demasiado largo (%{count} caracteres máximo)
-        too_short: es demasiado corto (%{count} caracteres mínimo)
-        wrong_length: no tiene la longitud correcta (%{count} caracteres exactos)
-      template:
-        body: 'Se encontraron problemas con los siguientes campos:'
-        header:
-          one: No se pudo guardar este/a %{model} porque se encontró 1 error
-          other: No se pudo guardar este/a %{model} porque se encontraron %{count} errores
   date:
     abbr_day_names:
     - dom
@@ -255,46 +191,6 @@ es:
       send_instructions: Vas a recibir instrucciones para desbloquear tu cuenta en unos pocos minutos.
       send_paranoid_instructions: Si tu cuenta existe, vas a recibir instrucciones para desbloquear tu cuenta en unos pocos minutos.
       unlocked: Tu cuenta fue desbloqueada. Tu cuenta fue desbloqueada. Ya puedes iniciar sesión.
-  errors:
-    format: "%{attribute} %{message}"
-    messages:
-      accepted: debe ser aceptado
-      already_confirmed: ya fue confirmada, por favor intenta iniciar sesión
-      blank: no puede estar en blanco
-      confirmation: no coincide con la confirmación
-      confirmation_period_expired: necesita confirmarse dentro de %{period}, por favor solicita una nueva
-      empty: no puede estar vacío
-      equal_to: debe ser igual a %{count}
-      even: debe ser par
-      exclusion: está reservado
-      expired: ha expirado, por favor solicita una nueva
-      greater_than: debe ser mayor que %{count}
-      greater_than_or_equal_to: debe ser mayor que o igual a %{count}
-      inclusion: no está incluido en la lista
-      invalid: no es válido
-      less_than: debe ser menor que %{count}
-      less_than_or_equal_to: debe ser menor que o igual a %{count}
-      not_a_number: no es un número
-      not_an_integer: debe ser un entero
-      not_found: no se encontró
-      not_locked: no estaba bloqueada
-      not_saved:
-        one: 'Un error ocurrió al tratar de guardar %{resource}:'
-        other: "%{count} errores ocurrieron al tratar de guardar %{resource}:"
-      odd: debe ser impar
-      record_invalid: 'La validación falló: %{errors}'
-      restrict_dependent_destroy:
-        many: No se puede eliminar el registro porque existen %{record} dependientes
-        one: No se puede eliminar el registro porque existe un(a) %{record} dependiente
-      taken: ya está en uso
-      too_long: es demasiado largo (%{count} caracteres máximo)
-      too_short: es demasiado corto (%{count} caracteres mínimo)
-      wrong_length: no tiene la longitud correcta (%{count} caracteres exactos)
-    template:
-      body: 'Se encontraron problemas con los siguientes campos:'
-      header:
-        one: No se pudo guardar este/a %{model} porque se encontró 1 error
-        other: No se pudo guardar este/a %{model} porque se encontraron %{count} errores
   helpers:
     label:
       message:

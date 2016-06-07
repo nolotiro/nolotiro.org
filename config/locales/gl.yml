@@ -7,36 +7,6 @@ gl:
       contact:
         email: 
         message: 
-    errors:
-      format: "%{attribute} %{message}"
-      messages:
-        accepted: debe ser aceptado
-        blank: non pode estar en blanco
-        confirmation: non coincide coa confirmación
-        empty: non pode estar valeiro
-        equal_to: debe ser igual a %{count}
-        even: debe ser impar
-        exclusion: xa existe
-        greater_than: debe ser maior que %{count}
-        greater_than_or_equal_to: debe ser maior ou igual que %{count}
-        inclusion: non está incluido na lista
-        invalid: non é válido
-        less_than: debe ser menor que %{count}
-        less_than_or_equal_to: debe ser menor ou igual que %{count}
-        not_a_number: non é un número
-        not_an_integer: 
-        odd: debe ser par
-        record_invalid: 
-        restrict_dependent_destroy: 
-        taken: non está dispoñible
-        too_long: é demasiado longo (non máis de %{count} carácteres)
-        too_short: é demasiado curto (non menos de %{count} carácteres)
-        wrong_length: non ten a lonxitude correcta (debe ser de %{count} carácteres)
-      template:
-        body: 'Atopáronse os seguintes problemas:'
-        header:
-          one: 1 erro evitou que se poidese gardar o %{model}
-          other: "%{count} erros evitaron que se poidese gardar o %{model}"
   activerecord:
     attributes:
       ad:
@@ -61,36 +31,6 @@ gl:
         password: 
         password_confirmation: 
         remember: 
-    errors:
-      format: "%{attribute} %{message}"
-      messages:
-        accepted: debe ser aceptado
-        blank: non pode estar en blanco
-        confirmation: non coincide coa confirmación
-        empty: non pode estar valeiro
-        equal_to: debe ser igual a %{count}
-        even: debe ser impar
-        exclusion: xa existe
-        greater_than: debe ser maior que %{count}
-        greater_than_or_equal_to: debe ser maior ou igual que %{count}
-        inclusion: non está incluido na lista
-        invalid: non é válido
-        less_than: debe ser menor que %{count}
-        less_than_or_equal_to: debe ser menor ou igual que %{count}
-        not_a_number: non é un número
-        not_an_integer: 
-        odd: debe ser par
-        record_invalid: 
-        restrict_dependent_destroy: 
-        taken: non está dispoñible
-        too_long: é demasiado longo (non máis de %{count} carácteres)
-        too_short: é demasiado curto (non menos de %{count} carácteres)
-        wrong_length: non ten a lonxitude correcta (debe ser de %{count} carácteres)
-      template:
-        body: 'Atopáronse os seguintes problemas:'
-        header:
-          one: 1 erro evitou que se poidese gardar o %{model}
-          other: "%{count} erros evitaron que se poidese gardar o %{model}"
   date:
     abbr_day_names:
     - Dom
@@ -254,46 +194,6 @@ gl:
       send_instructions: 
       send_paranoid_instructions: 
       unlocked: 
-  errors:
-    format: "%{attribute} %{message}"
-    messages:
-      accepted: debe ser aceptado
-      already_confirmed: 
-      blank: non pode estar en blanco
-      confirmation: non coincide coa confirmación
-      confirmation_period_expired: 
-      empty: non pode estar valeiro
-      equal_to: debe ser igual a %{count}
-      even: debe ser impar
-      exclusion: xa existe
-      expired: 
-      greater_than: debe ser maior que %{count}
-      greater_than_or_equal_to: debe ser maior ou igual que %{count}
-      inclusion: non está incluido na lista
-      invalid: non é válido
-      less_than: debe ser menor que %{count}
-      less_than_or_equal_to: debe ser menor ou igual que %{count}
-      not_a_number: non é un número
-      not_an_integer: 
-      not_found: 
-      not_locked: 
-      not_saved:
-        one: 
-        other: 
-      odd: debe ser par
-      record_invalid: 
-      restrict_dependent_destroy:
-        one: 
-        other: 
-      taken: non está dispoñible
-      too_long: é demasiado longo (non máis de %{count} carácteres)
-      too_short: é demasiado curto (non menos de %{count} carácteres)
-      wrong_length: non ten a lonxitude correcta (debe ser de %{count} carácteres)
-    template:
-      body: 'Atopáronse os seguintes problemas:'
-      header:
-        one: 1 erro evitou que se poidese gardar o %{model}
-        other: "%{count} erros evitaron que se poidese gardar o %{model}"
   helpers:
     label:
       message:

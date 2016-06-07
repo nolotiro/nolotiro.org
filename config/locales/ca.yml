@@ -7,40 +7,6 @@ ca:
       contact:
         email: Correu electrònic
         message: Missatge
-    errors:
-      format: "%{attribute} %{message}"
-      messages:
-        accepted: ha de ser acceptat
-        blank: no pot estar en blanc
-        confirmation: no coincideix amb la confirmació
-        empty: no pot estar buit
-        equal_to: ha de ser igual a %{count}
-        even: ha de ser parell
-        exclusion: està reservat
-        greater_than: ha de ser més gran que %{count}
-        greater_than_or_equal_to: ha de ser més gran o igual a %{count}
-        inclusion: no està inclós a la llista
-        invalid: no és vàlid
-        less_than: ha de ser menor que %{count}
-        less_than_or_equal_to: ha de ser menor o igual a %{count}
-        not_a_number: no és un número
-        not_an_integer: ha de ser un enter
-        odd: ha de ser imparell
-        record_invalid: 'La validació ha fallat: %{errors}'
-        restrict_dependent_destroy:
-          one: No es pot eliminar el registre perquè existeix un(a) %{record} dependent
-          other: |2-
-
-            No es pot eliminar el registre perquè existeixen dependents
-        taken: no està disponible
-        too_long: és massa llarg (%{count} caràcters màxim)
-        too_short: és massa curt (%{count} caràcters mínim)
-        wrong_length: no té la longitud correcta (%{count} caràcters exactament)
-      template:
-        body: 'Hi ha hagut problemes amb els següents camps:'
-        header:
-          one: No s'ha pogut desar aquest/a %{model} perquè hi ha 1 error
-          other: No s'ha pogut desar aquest/a %{model} perquè hi ha hagut %{count} errors
   activerecord:
     attributes:
       ad:
@@ -65,36 +31,6 @@ ca:
         password: Contrasenya nova
         password_confirmation: Contrasenya nova (repetir)
         remember: Recorda'm
-    errors:
-      format: "%{attribute} %{message}"
-      messages:
-        accepted: ha de ser acceptat
-        blank: no pot estar en blanc
-        confirmation: no coincideix amb la confirmació
-        empty: no pot estar buit
-        equal_to: ha de ser igual a %{count}
-        even: ha de ser parell
-        exclusion: està reservat
-        greater_than: ha de ser més gran que %{count}
-        greater_than_or_equal_to: ha de ser més gran o igual a %{count}
-        inclusion: no està inclós a la llista
-        invalid: no és vàlid
-        less_than: ha de ser menor que %{count}
-        less_than_or_equal_to: ha de ser menor o igual a %{count}
-        not_a_number: no és un número
-        not_an_integer: ha de ser un enter
-        odd: ha de ser imparell
-        record_invalid: 'La validació ha fallat: %{errors}'
-        restrict_dependent_destroy: No es pot eliminar el registre perquè hi ha un(a) %{record} dependent
-        taken: no està disponible
-        too_long: és massa llarg (%{count} caràcters màxim)
-        too_short: és massa curt (%{count} caràcters mínim)
-        wrong_length: no té la longitud correcta (%{count} caràcters exactament)
-      template:
-        body: 'Hi ha hagut problemes amb els següents camps:'
-        header:
-          one: No s'ha pogut desar aquest/a %{model} perquè hi ha 1 error
-          other: No s'ha pogut desar aquest/a %{model} perquè hi ha hagut %{count} errors
   date:
     abbr_day_names:
     - Dg
@@ -255,46 +191,6 @@ ca:
       send_instructions: En breu rebràs un correu electrònic amb instruccions sobre com desbloquejar el teu compte.
       send_paranoid_instructions: Si el teu compte existeix, rebràs un correu electrònic amb instruccions sobre com desbloquejar-lo.
       unlocked: El teu compte ha estat desbloquejat correctament. S'ha iniciat la sessió.
-  errors:
-    format: "%{attribute} %{message}"
-    messages:
-      accepted: ha de ser acceptat
-      already_confirmed: ja està confirmat
-      blank: no pot estar en blanc
-      confirmation: no coincideix
-      confirmation_period_expired: necessita ser confirmat en %{period}, si us plau demana'n un de nou
-      empty: no pot estar buit
-      equal_to: ha de ser igual a %{count}
-      even: ha de ser parell
-      exclusion: està reservat
-      expired: ha caducat, si us plau demana'n un de nou
-      greater_than: ha de ser més gran que %{count}
-      greater_than_or_equal_to: ha de ser més gran o igual a %{count}
-      inclusion: no està inclós a la llista
-      invalid: no és vàlid
-      less_than: ha de ser menor que %{count}
-      less_than_or_equal_to: ha de ser menor o igual a %{count}
-      not_a_number: no és un número
-      not_an_integer: ha de ser un enter
-      not_found: no s'ha trobat
-      not_locked: no està bloquejat
-      not_saved:
-        one: '1 error ha evitat que %{resource} es pugui desar:'
-        other: "%{count} errors han evitat que %{resource} es pugui desar:"
-      odd: ha de ser senar
-      record_invalid: 'La validació ha fallat: %{errors}'
-      restrict_dependent_destroy:
-        one: No es pot eliminar el registre perquè hi ha un(a) %{record} dependent
-        other: No es pot eliminar el registre perquè existeixen %{record} dependents
-      taken: no està disponible
-      too_long: és massa llarg (%{count} caràcters màxim)
-      too_short: és massa curt (%{count} caràcters mínim)
-      wrong_length: no té la longitud correcta (%{count} caràcters exactament)
-    template:
-      body: 'Hi ha hagut problemes amb els següents camps:'
-      header:
-        one: No s'ha pogut desar aquest/a %{model} perquè hi ha 1 error
-        other: No s'ha pogut desar aquest/a %{model} perquè hi ha hagut %{count} errors
   helpers:
     label:
       message:
