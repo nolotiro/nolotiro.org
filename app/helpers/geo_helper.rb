@@ -2,11 +2,13 @@
 module GeoHelper
 
   def self.get_ip_address request
-    ip_address = Rails.application.secrets["debug_ip_address"].presence || request.remote_ip
-    if request.env['HTTP_X_FORWARDED_FOR']
-      ip_address = request.env['HTTP_X_FORWARDED_FOR'].split(',')[0] || ip_address
-    end
-    ip_address
+    debug_ip_address = Rails.application.secrets["debug_ip_address"]
+    return debug_ip_address if debug_ip_address.present?
+
+    ip_via_proxy = request.env['HTTP_X_FORWARDED_FOR']
+    return ip_via_proxy.split(',')[0] if ip_via_proxy
+
+    request.remote_ip
   end
 
   def self.suggest ip_address
