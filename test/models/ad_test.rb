@@ -123,11 +123,11 @@ class AdTest < ActiveSupport::TestCase
   test "ad meta_title" do
     @ad.type = 1
     @ad.save
-    assert_equal @ad.meta_title, "regalo segunda mano gratis  ordenador en Vallecas Madrid, Madrid, España"
+    assert_equal "regalo segunda mano gratis  ordenador en Vallecas Madrid, Madrid, España", @ad.meta_title
     @ad.type = 2
     @ad.save
-    assert_equal @ad.meta_title, "regalo segunda mano gratis  ordenador en Vallecas Madrid, Madrid, España"
-    #assert_equal @ad.meta_title, "busco ordenador en Vallecas Madrid, Madrid, España"
+    assert_equal "regalo segunda mano gratis  ordenador en Vallecas Madrid, Madrid, España", @ad.meta_title
+    #assert_equal "busco ordenador en Vallecas Madrid, Madrid, España", @ad.meta_title
   end
 
   test "ad body shoudl store emoji" do 
