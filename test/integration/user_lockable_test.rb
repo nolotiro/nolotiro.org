@@ -9,13 +9,13 @@ class UserLockable < ActionDispatch::IntegrationTest
 
     (1..8).each do |n|
       login(@user.email, "trololololo")
-      page.must_have_content I18n.t('devise.failure.not_found_in_database')
+      assert page.has_content?(I18n.t('devise.failure.not_found_in_database'))
     end
 
     login(@user.email, "trololololo")
-    page.must_have_content I18n.t('devise.failure.last_attempt')
+    assert page.has_content?(I18n.t('devise.failure.last_attempt'))
 
     login(@user.email, "trololololo")
-    page.must_have_content I18n.t('devise.failure.locked')
+    assert page.has_content?(I18n.t('devise.failure.locked'))
   end
 end
