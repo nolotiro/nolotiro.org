@@ -16,33 +16,25 @@
         <%= devise_error_messages! %>
         <dl class="zend_form">
           <dt id="email-label">
-          <label for="email" class="required">
-            <%= t 'nlt.your_email' %>
-          </label>
+            <%= f.label :email, t('nlt.your_email') %>
           </dt>
           <dd id="email-element">
           <%= f.email_field :email, :autofocus => true, :required => true %>
           </dd>
           <dt id="password1-label">
-          <label for="password1" class="required">
-            <%= t 'nlt.choose_your_pass' %>
-          </label>
+            <%= f.label :password, t('nlt.choose_your_pass') %>
           </dt>
           <dd id="password1-element">
           <%= f.password_field :password, :required => true %>
           </dd>
           <dt id="password2-label">
-          <label for="password2" class="required">
-            <%= t 'nlt.choose_your_pass_again' %>
-          </label>
+            <%= f.label :password_confirmation, t('nlt.choose_your_pass_again') %>
           </dt>
           <dd id="password2-element">
           <%= f.password_field :password_confirmation, :required => true %>
           </dd>
           <dt id="username-label">
-          <label for="username" class="required">
-            <%= t 'nlt.choose_username' %>
-          </label>
+            <%= f.label :username, t('nlt.choose_username') %>
           </dt>
           <dd id="username-element">
           <%= f.text_field :username, :required => true, :value => params[:username] %>
