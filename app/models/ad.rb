@@ -105,8 +105,6 @@ class Ad < ActiveRecord::Base
   end
 
   def increment_readed_count!
-    # Is this premature optimization?
-    # AdIncrementReadedCountWorker.new(self.id)
     Ad.increment_counter(:readed_count, self.id)
   end
 
