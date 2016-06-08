@@ -1,4 +1,3 @@
----
 it:
   active_admin:
     dashboard: 
@@ -7,44 +6,6 @@ it:
       contact:
         email: E mail
         message: Messaggio
-    errors:
-      format: "%{attribute} %{message}"
-      messages:
-        accepted: deve essere accettata
-        blank: non può essere lasciato in bianco
-        confirmation: non coincide con la conferma
-        empty: non può essere vuoto
-        equal_to: deve essere uguale a %{count}
-        even: deve essere pari
-        exclusion: è riservato
-        greater_than: deve essere superiore a %{count}
-        greater_than_or_equal_to: deve essere superiore o uguale a %{count}
-        inclusion: non è incluso nella lista
-        invalid: non è valido
-        less_than: deve essere meno di %{count}
-        less_than_or_equal_to: deve essere meno o uguale a %{count}
-        not_a_number: non è un numero
-        not_an_integer: non è un intero
-        odd: deve essere dispari
-        record_invalid: 'Validazione fallita: %{errors}'
-        restrict_dependent_destroy:
-          one: Non è possibile cancellare il registro perché esiste un %{record} dipendente
-          other: Non è possibile cancellare il registro perché esistono %{record} dipendente
-        taken: è già in uso
-        too_long:
-          one: è troppo lungo (il massimo è 1 carattere)
-          other: è troppo lungo (il massimo è %{count} caratteri)
-        too_short:
-          one: è troppo corto (il minimo è 1 carattere)
-          other: è troppo corto (il minimo è %{count} caratteri)
-        wrong_length:
-          one: è della lunghezza sbagliata (deve essere di 1 carattere)
-          other: è della lunghezza sbagliata (deve essere di %{count} caratteri)
-      template:
-        body: 'Per favore ricontrolla i seguenti campi:'
-        header:
-          one: 'Non posso salvare questo %{model}: 1 errore'
-          other: 'Non posso salvare questo %{model}: %{count} errori.'
   activerecord:
     attributes:
       ad:
@@ -56,8 +17,8 @@ it:
         title: Titolo
         type: Tipo
       contact:
-        email: 
-        message: 
+        email: posta elettronica
+        message: Messaggio
       message:
         subject: Soggetto
       user:
@@ -69,44 +30,6 @@ it:
         password: Password nuova
         password_confirmation: Ripete di nuovo la password
         remember: Ricordami
-    errors:
-      format: "%{attribute} %{message}"
-      messages:
-        accepted: deve essere accettata
-        blank: non può essere lasciato in bianco
-        confirmation: non coincide con la conferma
-        empty: non può essere vuoto
-        equal_to: deve essere uguale a %{count}
-        even: deve essere pari
-        exclusion: è riservato
-        greater_than: deve essere superiore a %{count}
-        greater_than_or_equal_to: deve essere superiore o uguale a %{count}
-        inclusion: non è incluso nella lista
-        invalid: non è valido
-        less_than: deve essere meno di %{count}
-        less_than_or_equal_to: deve essere meno o uguale a %{count}
-        not_a_number: non è un numero
-        not_an_integer: non è un intero
-        odd: deve essere dispari
-        record_invalid: 'Validazione fallita: %{errors}'
-        restrict_dependent_destroy:
-          one: No è possibile cancellare il registro perché esiste un %{record} dipendente
-          other: Non è possibile cancellare il registro perché esistono %{record} dipendenti
-        taken: è già in uso
-        too_long:
-          one: è troppo lungo (il massimo è 1 carattere)
-          other: è troppo lungo (il massimo è %{count} caratteri)
-        too_short:
-          one: è troppo corto (il minimo è 1 carattere)
-          other: è troppo corto (il minimo è %{count} caratteri)
-        wrong_length:
-          one: è della lunghezza sbagliata (deve essere di 1 carattere)
-          other: è della lunghezza sbagliata (deve essere di %{count} caratteri)
-      template:
-        body: 'Per favore ricontrolla i seguenti campi:'
-        header:
-          one: 'Non posso salvare questo %{model}: 1 errore'
-          other: 'Non posso salvare questo %{model}: %{count} errori.'
   date:
     abbr_day_names:
     - dom
@@ -241,6 +164,7 @@ it:
         confirm_new_password: 
         new_password: 
       follow_instructions: 'Qualcuno a chiesto di cambiare la password di nolotiro.org. Se non sei stato tu puoi ignorare questa email. La password non cambierà fino a quando non accedi al link per crearne una nuova. '
+      forgot: Hai dimenticato la password?
       instructions: Per favore, scrive la tua email e te invieremo un link di acceso diretto per cambiare la tua password.
       no_token: Puoi accedere a questa pagina solamente dalla email di reset della password. Se vieni dalla email controlla di aver inserito l'url completo riportato nella email.
       send: Invia email
@@ -267,52 +191,6 @@ it:
       send_instructions: Riceverai un messaggio email con le istruzioni per sbloccare il tuo account entro qualche minuto.
       send_paranoid_instructions: Se la tua e-mail esiste nel nostro database, riceverai un messaggio email con le istruzioni per sbloccare il tuo account entro qualche minuto.
       unlocked: Il tuo account è stato correttamente sbloccato. Ora sei collegato.
-  errors:
-    format: "%{attribute} %{message}"
-    messages:
-      accepted: deve essere accettata
-      already_confirmed: è stato già confermato
-      blank: non può essere lasciato in bianco
-      confirmation: non coincide con la conferma
-      confirmation_period_expired: deve essere confermato entro %{period}, richiedi una nuova conferma
-      empty: non può essere vuoto
-      equal_to: deve essere uguale a %{count}
-      even: deve essere pari
-      exclusion: è riservato
-      expired: è scaduto, si prega di richiederne uno nuovo
-      greater_than: deve essere superiore a %{count}
-      greater_than_or_equal_to: deve essere superiore o uguale a %{count}
-      inclusion: non è incluso nella lista
-      invalid: non è valido
-      less_than: deve essere meno di %{count}
-      less_than_or_equal_to: deve essere meno o uguale a %{count}
-      not_a_number: non è un numero
-      not_an_integer: non è un intero
-      not_found: non trovato
-      not_locked: non era bloccato
-      not_saved:
-        one: 'Non posso salvare questo %{resource}: 1 errore'
-        other: 'Non posso salvare questo %{resource}: %{count} errori.'
-      odd: deve essere dispari
-      record_invalid: 'Validazione fallita: %{errors}'
-      restrict_dependent_destroy:
-        one: Non si può cancellare il registro perché esiste un %{record} dipendente
-        other: Non si può cancellare il registro perché esistono %{record} dipendente
-      taken: è già in uso
-      too_long:
-        one: è troppo lungo (il massimo è 1 carattere)
-        other: è troppo lungo (il massimo è %{count} caratteri)
-      too_short:
-        one: è troppo corto (il minimo è 1 carattere)
-        other: è troppo corto (il minimo è %{count} caratteri)
-      wrong_length:
-        one: è della lunghezza sbagliata (deve essere di 1 carattere)
-        other: è della lunghezza sbagliata (deve essere di %{count} caratteri)
-    template:
-      body: 'Per favore ricontrolla i seguenti campi:'
-      header:
-        one: 'Non posso salvare questo %{model}: 1 errore'
-        other: 'Non posso salvare questo %{model}: %{count} errori.'
   helpers:
     label:
       message:
@@ -341,11 +219,11 @@ it:
       you_have_new_message: Hai ricevuto un nuovo messaggio
       you_have_recieved_new_message: Hai ricevuto un nuovo messaggio
     new:
-      body_max: 
+      body_max: 1500 caratteri massimo
       button: Invia
       errors: 'C''è stato un problema, controlla questo:'
       legend: Invia il messaggio
-      subject: 
+      subject: soggetto
       submit: Invia
       title: Nuovo messaggio privato per l'utente %{user}
     notification_mailer:
@@ -375,7 +253,7 @@ it:
   mailer:
     confirmation_reminder:
       p1: Abbiamo rivelato che hai creato un account in nolotiro.org che non è stato confermato.
-      p2: 
+      p2: 'Questo significa che hai avuto problemi di accesso alla pagina. Se si desidera confermare la utente (%{username}) è possibile con questo link:'
     greetings: 'Grazie e saluti, '
     hello: 'Ciao, '
     signature: il team di nolotiro.org
@@ -390,7 +268,7 @@ it:
       lock_user: "[ADMIN] Bloccare a questo utente"
       unlock_user: "[ADMIN] Sbloccare a questo utente"
     ads:
-      bumped: 
+      bumped: Abbiamo ripubblicato annuncio
       created: 'Abbiamo creato l''annuncio '
       form:
         body: Corpo del annuncio
@@ -414,7 +292,7 @@ it:
     back: torna alla pagina iniziale
     blog: blog
     booked: riservato
-    bump_this_ad: 
+    bump_this_ad: Repubblica questo annuncio
     by_user: per l'utente
     cancel_my_account: Cancella il mio account
     captcha_error: 'Forse hai sbagliato a scrivere i caratteri del captcha visto che non coincidono con l''immagine, provaci ancora  '
@@ -433,12 +311,12 @@ it:
     cities_in_the_world: città del mondo che reciclano di piu
     click_to_large: Clicca per ingrandire la foto
     comments:
-      body_max: 
+      body_max: 1000 caratteri massimo
       do_click: 'Clicca sul link per rispondere al messaggio:'
       flash_ko: Si è verificato un errore durante il salvataggio il tuo commento. Controllare e rinviarlo
       flash_ok: Commento salvato
       label: Il tuo commento
-      subject: 
+      subject: "[nolotiro.org] Hai un nuovo commento sull'annuncio %{ad}"
       submit: Inviare
       title: Commenti
     comments_count:
@@ -459,16 +337,16 @@ it:
     edit_this_ad: Editare questo annuncio
     faq:
       answer_1_html: Lo scopo fondamentale di questo sito è quello di sbarazzarsi di oggetti non più utilizzati e che ci ostacolano in casa
-      answer_2_html: 
-      answer_3_html: 
-      answer_4_html: 
-      answer_5_html: 
-      answer_6_html: 
-      answer_7_html: 
+      answer_2_html: 'Primero a ti directamente pudiéndote deshacer de esas cosas que ya no quieres, y siempre al que regalas algo implícitamente. Lo mejor es enfocarlo egoistamente y controlar la relación de causa-efecto que vamos a desencadenar regalando.<br> Si enfocamos dicho acto de regalar objetos desde una perspectiva  egoísta, la de deshacernos de cosas útiles, pero que nos molestan,porque nos estorban, porque van a ir a la basura, porque son objetos desahuciados ... siempre tendremos una buena experiencia, al no esperar nada mas que  librarnos de dichos objetos. <br> Y el saber que alguien le está dando uso o provecho reforzará esa experiencia como positiva. <br> Es decir: el acto de regalar cosas de valor o útiles siempre es algo positivo si no esperamos una recompensa moral o aplacar nuestra conciencia.'
+      answer_3_html: Su questo sito si ha potere assoluto sulla decisione di chi, dove e quando si dà via gli oggetti di valore. <br> Naturalmente l'ideale è quello di dare qualcosa alla persona che più bisogno. <br> Non fraintendere il senso usiamo la parola egoismo qui. Ma per sapere se la persona che si sta per dare un oggetto merita, è un compito molto difficile, e favorisce un tipo di comportamento che portano a cattive esperienze e giudizi di valore che possono fare molto male.
+      answer_4_html: 'Anche se le probabilità che i trafficanti usata animali farciti rotolarsi in questo web sono abbastanza remota, in tal caso ... non mi dispiacerebbe affatto se il vostro obiettivo è quello di sbarazzarsi delle cose che non si desidera (l''egoista). <Br > Come si sente: non importa di più, anche se non credo che continui a fare qualcosa di buona qualità Se hai dato oggetti perché indossavano e non sapeva che cosa fare con loro, ma nessuno dei due voleva gettare away''ve fatto bene <.. br> Hai fatto bene con te, e sei tornato quell''oggetto per <a href="http://www.lapetiteclaudine.com/archives/009217.html"> mondo di cose utili, risparmiando denaro </a> persone ed energia, generatori di ricchezza (anche se piccola, è ricchezza). Se, invece, questa risposta non vi convince, allora non si dovrebbe dare via niente qui e vendere o donare ad una ONG, dove si controllano e la selezione di queste persone in difficoltà (non possiamo garantire questo processo).'
+      answer_5_html: 'Ci sono solo 2 tipi di annunci: il dono, che offrono oggetti che ostacolino o non vogliono più. E voglio annunci, che servono a fornire indizi e ispirare le persone a che tipo di oggetti che si desidera che altre persone di utilizzare o possedere. <br> <Strong> annunci di cambiamento, vendita, chiedendo denaro da lavoro, commercio, farmaci ecc non sono ammessi. </ strong> e vengono cancellati non appena viene rilevato un moderatore, se indesiderato più volte la pubblicazione degli annunci, si può procedere per bloccare l''account utente.'
+      answer_6_html: Il baratto è un sistema che funziona molto bene in formato fisico, cioè, due persone faccia a faccia, guardando gli oggetti e parlare dal vivo e vivere. Ma baratto internet è molto probabile che finiscano in inganni e discussioni infinite o malcontenti <br> Inoltre, come avete letto sopra, qui gli oggetti sono dato senza condizioni e baratto ha il condizionamento di quid pro quo, vale a dire. Tu me do e do niente di simile.
+      answer_7_html: Sorprendentemente molte persone fanno, e non c'è niente di sbagliato con spedizioni vengono effettuate, ma devono avere un minimo di cautela con la serietà del ricevitore sono stati casi in cui qualcuno di buona fede ha fatto le spese di spedizione prepagata e poi ha un risultato che ha restituito il pacchetto. Idealmente, non fatto, dovrebbero essere incoraggiati a far circolare gli oggetti il più vicino possibile, il risparmio energetico, e può servire per conoscere meglio le persone della tua città. <br> Spero che nella nuova versione, ci siamo concentrati un concetto locale è raggiunto. <br> <a href="http://en.wikipedia.org/wiki/Think_Globally,_Act_Locally">pensare a livello globale.</a>
       question_1: Qual è il fine di questo progetto?
       question_2: Quindi ... Questo sito non è quello di aiutare gli altri?
       question_3: Ma mi piace dare la mia roba a qualcuno che veramente ne ha bisogno
-      question_4: 
+      question_4: E 'vero che ci sono persone che poi vendono le cose che danno via qui?
       question_5: Che tipo di annunci posso pubblicare in nolotiro?
       question_6: Non è permesso il scambio di oggetti? che strano
       question_7: Posso inviare cose a gente che non abita nella mia città?
@@ -476,7 +354,9 @@ it:
     faqs: domande frequenti
     fill_captcha: Conferma che non sei un robot
     first_visit: 'nolotiro.org è una comunità dove è possibile sbarazzarci di oggetti che non utilizziamo più e ci ostacolano a casa. '
-    footer_explain: 
+    footer_explain: 'nolotiro.org è un sito dove guardo per i regali dono gratuito e mobili di seconda mano, sedie, divani, biciclette, computer portatili, tavoli, stufe, lampade, letti, vestiti, giocattoli, lettini per bambini o automobili, telefoni cellulari e altri molte cose che si desidera non è più e non hanno più bisogno di fare il riutilizzo altre persone che possono servire o dare nuova vita.
+
+'
     forgot_your_password: Hai dimenticato la tua password?
     friends: Amici
     gift_on: regalo in %{woeid}
@@ -489,10 +369,10 @@ it:
     keywords: regalato seconda mano gratis
     last_published_gifts: ultimi regali pubblicati
     leave_blank: "(Lasciala in bianco se non la vuoi cambiare)"
-    legal_notice: 
+    legal_notice: note legali
     legal_page:
-      body_html: 
-      title: 
+      body_html: 'Nome: Associazione aLabs. <br> registrata nel registro delle associazioni della Comunità di Madrid con il numero 32022. <br> CIF: G86139847 <br> C / Duque de Alba, 13 (28012) Madrid.'
+      title: Note legali
     login: accedi
     login_to_comment: l'accesso a scrivere un commento
     logout: uscire
@@ -505,13 +385,15 @@ it:
       sent: Inviati
       trash: Cestino
     messages_title: Messaggi
-    meta_description: 
+    meta_description: 'nolotiro.org è un sito dove guardo per i regali dono gratuito e mobili di seconda mano, sedie, divani, biciclette, computer portatili, tavoli, stufe, lampade, letti, vestiti, giocattoli, lettini per bambini o automobili, telefoni cellulari e altri molte cose che si desidera non è più e non hanno più bisogno di fare il riutilizzo altre persone che possono servire o dare nuova vita.
+
+'
     meta_description_ad: rivendita regali %{title} en %{woeid}. %{body}
     new_user: nuovo utente
     no_results:
-      explain_html: 
-      on_user: 
-      phrase: 
+      explain_html: "<p>1. Puoi essere il primo a pubblicare a %{publish}.</p> <p>2. Prova a cambiare la città per una più grande si è vicino alla vostra posizione.</p> <p>3. La nostra posizione sistema di suggerimento (in base alla tua IP) dice che questi nei pressi di: <br> %{change_location} </p>"
+      on_user: Nessuna di tali annunci da questo utente.
+      phrase: '"Un viaggio di mille chilometri inizia con un singolo passo" Lao Tse.'
       publish_ad: pubblicare un annuncio in questa città
       subtitle: Si può provare una qualsiasi di queste cose
       title: Nessun annuncio per questa posizione.
@@ -520,17 +402,20 @@ it:
     password: password
     permission_denied: Non si dispone dell'autorizzazione per eseguire questa azione.
     please_fill_to_become_member: Si prega di compilare questo modulo per essere un membro di nolotiro
+    please_insert_email_and_password: Metta prego la tua email e la password.
     please_introduce: 'Inserisci i caratteri che vedi:'
     privacy: politica sulla privacy
     privacy_page:
-      body_html: 
-      title: 
-    profile: 
+      body_html: 'nolotiro.org (sito web di seguito) è di proprietà e gestito da: <br> aLabs <br> C / Duque de Alba, 13 <br> 28012 Madrid, Spagna <br> può contattare nel contatto modulo abilitato a tale scopo sul sito. L''accesso al sito comporta la piena accettazione del presente informativa sulla privacy e le condizioni d''uso. <br> In relazione al rispetto della legge 15/1999, del 13 dicembre, protezione dei dati personali (LOPD), si informa che questo sito memorizza i dati automatizzati forniti sul modulo si sono registrati all''utente di effettuare l''utente a fornire servizi di siti web in modo personalizzato, come ad esempio: gestire il proprio account utente, gli annunci, e il sistema di gestione di messaggi privati ​​tra utenti. <br> I messaggi privati ​​termine si riferisce alla possibilità di accesso a tali messaggi privati ​​sarà esclusivamente tra due utenti, senza alcuna possibilità di utenti di terze parti per accedere al contenuto. Tuttavia, nei messaggi di database vengono memorizzati in formato testo e può essere messo a disposizione delle forze di sicurezza in caso di commissione di reati o di ingiunzione. <br> L''utente non pubblica o di terzi dati personali che lo annunci, come indirizzi e-mail, numeri di telefono, indirizzi, ecc Il sito web, prendere le misure necessarie per la conservazione dei dati personali, anche se l''utente ignora queste condizioni di privacy. Ecco perché abbiamo sviluppato un e-mail filtro e telefono negli annunci per evitare che tali informazioni possano essere raccolte dai sistemi di indicizzazione automatica e robot. Questo non elimina la responsabilità ultima degli utenti per quanto riguarda la pubblicazione dei propri dati personali o di terzi. Ed è solo perché crediamo che molti utenti non sono consapevoli dell''importanza della conservazione dei propri dati personali. <br> Formulario di contatto: <br> si informa che i dati personali forniti dall''utente nel modulo di contatto vengono memorizzati per il solo scopo di contatto con l''utente, questi dati non possono essere utilizzati in ogni caso, per l''invio di messaggi pubblicitari, né essere ceduti a terzi. <br> In qualsiasi momento è possibile esercitare i diritti di accesso, rettifica e cancellazione dei dati da uno dei mezzi di comunicazione di cui al primo comma. <br> Sessione Cookie: <br> L''accesso a questo sito implica l''uso di cookies di sessione. I cookie di sessione sono piccoli pezzi di informazioni che vengono memorizzate nel browser utilizzato da ciascun utente per il server di ricordare alcune informazioni che possono essere utilizzati in seguito. Queste informazioni possono identificare l''utente come un utente specifico anonimo. <br> Inoltre, questo sito può ospitare elementi nel codice sorgente delle pagine che vengono utilizzati per misurare il traffico di utenti che visitano un sito web e può disegnare un modello di visite degli utenti. Queste informazioni anonime può essere condiviso con i clienti aziendali, fornitori, sponsor e inserzionisti. <br> attualmente usiamo i servizi di Google Analytics per misurare il traffico di questo sito in grado di catturare le informazioni di cui sopra. È possibile visualizzare ulteriori informazioni sulla politica sulla privacy sul sito web di Google: Google (Analytics): http://www.google.com/intl/es_ALL/privacypolicy.html <br> Questo sito può anche ospitare pubblicità reti proprio, affiliazione o pubblicitari. Questo annuncio è mostrato attraverso i server che utilizzano i cookie per visualizzare pubblicità relative contenuti agli utenti. Ognuno di questi server pubblicità ha una propria politica sulla privacy, che può essere consultato sulle proprie pagine web. Attualmente questo sito ospita pubblicità Google Adsense: http://www.google.com/intl/es_ALL/privacypolicy.html
+
+'
+      title: Politica sulla privacy
+    profile: profilo
     profile_actions:
       friend:
-        add: 
-        delete: 
-    profile_edit: 
+        add: aggiungere %{username} alla tua lista di amici
+        delete: rimuovere %{username} alla tua lista di amici
+    profile_edit: Modifica il profilo
     publish_ad: 
     publish_ad_on: Inserisci annunci a %{woeid}
     published_ads: annunci pubblicati
@@ -542,17 +427,17 @@ it:
     register: Iscriviti
     register_here: registrati qui
     remember_me: Ricordare il login
-    rss_suscribe: 
-    save_failed: 
+    rss_suscribe: Iscriviti via RSS
+    save_failed: 'C''è un problema, verificare questo:'
     search:
       button: ricerca
       must_search: Si dovrebbe cercare qualcosa da qualche parte.
       no_ads_message_html: 
-    searching_on_html: 
+    searching_on_html: Cercando <i>%{q}</i> in
     send: Inviare
     send_a_message: "+ Invia un messaggio privato a inserzionista"
     send_a_message_to: 'envia un messaggio privato a '
-    send_a_private_message: 
+    send_a_private_message: "+ Invia un messaggio privato al annunciante"
     sending_this_form: Inviando questo modulo, ammette di aver letto, compreso, e si è soddisfatti con il nostro
     share_this_ad: Condividi questo annuncio
     sign_in: Login
@@ -561,28 +446,28 @@ it:
     slogan: Non buttare, io regalo (senza condizioni)
     suggestions: suggerimenti
     to_publish_ad: Pubblicare anuncio
-    to_publish_or_send_messages: 
+    to_publish_or_send_messages: Per pubblicizzare o inviare Accesso al tuo account
     tos: condizioni di utilizzo
     tos_page:
       body_html: TODO
       title: Condizioni di utilizzo
     translate:
-      description_html: 
+      description_html: Attualmente, Nolotiro.org è disponibile in poche lingue, ma può aiutare <a href="http://accounts.localeapp.com/projects/6872">a tradurre tua</a>.
       title: Aiutaci a tradurre nolotiro.org la lingua
     update: salvare
-    updating: 
-    user_ads: 
-    user_edit_profile: 
-    user_profile: 
-    username: 
-    users_most_active: 
-    users_most_active_last_week: 
-    view_ads_on: 
+    updating: Stiamo aggiornando l'intero sito, in modo che nelle prossime ore saranno ritardi con messaggi tra gli utenti, le immagini di un annuncio e la quantità di annunci gli utenti. Non ti preoccupare che "stiamo lavorando su ellou".
+    user_ads: annunci
+    user_edit_profile: Modifica profilo utente
+    user_profile: Il profilo dell'utente
+    username: Nome degli utenti
+    users_most_active: utenti più attivi
+    users_most_active_last_week: utenti più attivi nell'ultima settimana
+    view_ads_on: Consultare gli annunci a %{location_suggest}
     view_ads_on_your_city: Mostra annunci nella vostra città o paese
-    view_more_ads: 
+    view_more_ads: vedere più avvisi >
     want: ricerca
-    want_to_leave: 
-    we_need_your_password: 
+    want_to_leave: Vuoi eliminare il tuo utente?
+    we_need_your_password: "(Abbiamo bisogno la password per confermare le modifiche)"
     welcome: ciao
     welcome_message: Benvenuti
     write_a_comment: "+ Scrivi un commento"
@@ -637,7 +522,7 @@ it:
   recaptcha:
     errors:
       incorrect-captcha-sol: C'è stato un errore riempire i caratteri captcha.
-      verification_failed: 
+      verification_failed: Risposta di verifica della parola non è corretta, si prega di riprovare.
   support:
     array:
       last_word_connector: " e "
@@ -651,19 +536,15 @@ it:
       short: "%d %b %H:%M"
     pm: pm
   unauthorized:
-    default: 
+    default: Non sei autorizzato ad accedere a questa pagina.
     manage:
-      all: "È necessario prima effettuare il login o registrare un utente."
+      all: È necessario prima effettuare il login o registrare un utente.
   will_paginate:
     next_label: successivo →
     page_entries_info:
       multi_page: 
       multi_page_html: 
-      single_page:
-        one: 
-        other: 
-      single_page_html:
-        one: 
-        other: 
+      single_page: 
+      single_page_html: 
     page_gap: "&hellip;"
     previous_label: "← precedente"

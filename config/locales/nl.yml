@@ -1,4 +1,3 @@
----
 nl:
   active_admin:
     dashboard: 
@@ -7,36 +6,6 @@ nl:
       contact:
         email: E-mail
         message: Bericht
-    errors:
-      format: 
-      messages:
-        accepted: 
-        blank: 
-        confirmation: 
-        empty: 
-        equal_to: 
-        even: 
-        exclusion: is gereserveerd
-        greater_than: 
-        greater_than_or_equal_to: 
-        inclusion: 
-        invalid: 
-        less_than: 
-        less_than_or_equal_to: 
-        not_a_number: 
-        not_an_integer: 
-        odd: 
-        record_invalid: 
-        restrict_dependent_destroy: 
-        taken: 
-        too_long: 
-        too_short: 
-        wrong_length: 
-      template:
-        body: 
-        header:
-          one: 
-          other: 
   activerecord:
     attributes:
       ad:
@@ -61,36 +30,6 @@ nl:
         password: 
         password_confirmation: 
         remember: 
-    errors:
-      format: 
-      messages:
-        accepted: 
-        blank: 
-        confirmation: 
-        empty: 
-        equal_to: 
-        even: 
-        exclusion: 
-        greater_than: 
-        greater_than_or_equal_to: 
-        inclusion: 
-        invalid: 
-        less_than: 
-        less_than_or_equal_to: 
-        not_a_number: 
-        not_an_integer: 
-        odd: 
-        record_invalid: 
-        restrict_dependent_destroy: 
-        taken: 
-        too_long: 
-        too_short: 
-        wrong_length: 
-      template:
-        body: 
-        header:
-          one: 
-          other: 
   date:
     abbr_day_names:
     - zon
@@ -152,22 +91,14 @@ nl:
       about_x_months:
         one: rond 1 maand
         other: ongeveer %{count} manden
-      about_x_years:
-        one: 
-        other: 
+      about_x_years: 
       almost_x_years:
         one: bijna 1 jaar
         other: bijna %{count} jaar
       half_a_minute: 
-      less_than_x_minutes:
-        one: 
-        other: 
-      less_than_x_seconds:
-        one: 
-        other: 
-      over_x_years:
-        one: 
-        other: 
+      less_than_x_minutes: 
+      less_than_x_seconds: 
+      over_x_years: 
       x_days:
         one: 1 dag
         other: "%{count} dagen"
@@ -177,9 +108,7 @@ nl:
       x_months:
         one: 1 maand
         other: "%{count} manden"
-      x_seconds:
-        one: 
-        other: 
+      x_seconds: 
     prompts:
       day: Dag
       hour: Uur
@@ -225,6 +154,7 @@ nl:
         confirm_new_password: 
         new_password: 
       follow_instructions: 
+      forgot: 
       instructions: 
       no_token: 
       send: 
@@ -251,46 +181,6 @@ nl:
       send_instructions: 
       send_paranoid_instructions: 
       unlocked: 
-  errors:
-    format: 
-    messages:
-      accepted: 
-      already_confirmed: 
-      blank: 
-      confirmation: 
-      confirmation_period_expired: 
-      empty: 
-      equal_to: 
-      even: 
-      exclusion: 
-      expired: 
-      greater_than: 
-      greater_than_or_equal_to: 
-      inclusion: 
-      invalid: 
-      less_than: 
-      less_than_or_equal_to: 
-      not_a_number: 
-      not_an_integer: 
-      not_found: 
-      not_locked: 
-      not_saved:
-        one: 
-        other: 
-      odd: 
-      record_invalid: 
-      restrict_dependent_destroy:
-        one: 
-        other: 
-      taken: 
-      too_long: 
-      too_short: 
-      wrong_length: 
-    template:
-      body: 
-      header:
-        one: 
-        other: 
   helpers:
     label:
       message:
@@ -498,6 +388,7 @@ nl:
     password: 
     permission_denied: 
     please_fill_to_become_member: 
+    please_insert_email_and_password: 
     please_introduce: 
     privacy: 
     privacy_page:
@@ -637,11 +528,7 @@ nl:
     page_entries_info:
       multi_page: 
       multi_page_html: 
-      single_page:
-        one: 
-        other: 
-      single_page_html:
-        one: 
-        other: 
+      single_page: 
+      single_page_html: 
     page_gap: 
     previous_label: 

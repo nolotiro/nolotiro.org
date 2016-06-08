@@ -1,4 +1,3 @@
----
 de:
   active_admin:
     dashboard: 
@@ -7,36 +6,6 @@ de:
       contact:
         email: 
         message: 
-    errors:
-      format: "%{attribute} %{message}"
-      messages:
-        accepted: muss akzeptiert werden
-        blank: muss ausgefüllt werden
-        confirmation: stimmt nicht mit der Bestätigung überein
-        empty: muss ausgefüllt werden
-        equal_to: muss genau %{count} sein
-        even: muss gerade sein
-        exclusion: ist nicht verfügbar
-        greater_than: muss größer als %{count} sein
-        greater_than_or_equal_to: muss größer oder gleich %{count} sein
-        inclusion: ist kein gültiger Wert
-        invalid: ist nicht gültig
-        less_than: muss kleiner als %{count} sein
-        less_than_or_equal_to: muss kleiner oder gleich %{count} sein
-        not_a_number: ist keine Zahl
-        not_an_integer: muss ganzzahlig sein
-        odd: muss ungerade sein
-        record_invalid: 'Gültigkeitsprüfung ist fehlgeschlagen: %{errors}'
-        restrict_dependent_destroy: 
-        taken: ist bereits vergeben
-        too_long: ist zu lang (mehr als %{count} Zeichen)
-        too_short: ist zu kurz (weniger als %{count} Zeichen)
-        wrong_length: hat die falsche Länge (muss genau %{count} Zeichen haben)
-      template:
-        body: 'Bitte überprüfen Sie die folgenden Felder:'
-        header:
-          one: 'Konnte %{model} nicht speichern: ein Fehler.'
-          other: 'Konnte %{model} nicht speichern: %{count} Fehler.'
   activerecord:
     attributes:
       ad:
@@ -61,36 +30,6 @@ de:
         password: 
         password_confirmation: 
         remember: 
-    errors:
-      format: "%{attribute} %{message}"
-      messages:
-        accepted: muss akzeptiert werden
-        blank: muss ausgefüllt werden
-        confirmation: stimmt nicht mit der Bestätigung überein
-        empty: muss ausgefüllt werden
-        equal_to: muss genau %{count} sein
-        even: muss gerade sein
-        exclusion: ist nicht verfügbar
-        greater_than: muss größer als %{count} sein
-        greater_than_or_equal_to: muss größer oder gleich %{count} sein
-        inclusion: ist kein gültiger Wert
-        invalid: ist nicht gültig
-        less_than: muss kleiner als %{count} sein
-        less_than_or_equal_to: muss kleiner oder gleich %{count} sein
-        not_a_number: ist keine Zahl
-        not_an_integer: muss ganzzahlig sein
-        odd: muss ungerade sein
-        record_invalid: 'Gültigkeitsprüfung ist fehlgeschlagen: %{errors}'
-        restrict_dependent_destroy: 
-        taken: ist bereits vergeben
-        too_long: ist zu lang (mehr als %{count} Zeichen)
-        too_short: ist zu kurz (weniger als %{count} Zeichen)
-        wrong_length: hat die falsche Länge (muss genau %{count} Zeichen haben)
-      template:
-        body: 'Bitte überprüfen Sie die folgenden Felder:'
-        header:
-          one: 'Konnte %{model} nicht speichern: ein Fehler.'
-          other: 'Konnte %{model} nicht speichern: %{count} Fehler.'
   date:
     abbr_day_names:
     - So
@@ -225,6 +164,7 @@ de:
         confirm_new_password: 
         new_password: 
       follow_instructions: 
+      forgot: 
       instructions: 
       no_token: Sie können sich nicht auf dieser Seite anmelden, wenn Sie nicht von einer Passwort-Zurücksetzen-E-Mail kommen. Wenn Sie von solch einer E-Mail kommen, überprüfen Sie bitte, ob Sie die gesamte URL verwendeten.
       send: 
@@ -251,46 +191,6 @@ de:
       send_instructions: Sie erhalten in wenigen Minuten eine E-Mail mit der Anleitung, wie Sie Ihren Account entsperren können.
       send_paranoid_instructions: Falls Ihre E-Mail-Adresse in unserer Datenbank existiert, erhalten Sie in wenigen Minuten eine E-Mail mit der Anleitung, wie Sie Ihren Account entsperren können.
       unlocked: Ihr Account wurde entsperrt. Sie sind jetzt angemeldet.
-  errors:
-    format: "%{attribute} %{message}"
-    messages:
-      accepted: muss akzeptiert werden
-      already_confirmed: wurde bereits bestätigt, bitte versuchen Sie, sich anzumelden
-      blank: muss ausgefüllt werden
-      confirmation: stimmt nicht mit der Bestätigung überein
-      confirmation_period_expired: musste innerhalb von %{period} bestätigt werden, bitte neu anfordern.
-      empty: muss ausgefüllt werden
-      equal_to: muss genau %{count} sein
-      even: muss gerade sein
-      exclusion: ist nicht verfügbar
-      expired: ist abgelaufen, bitte neu anfordern
-      greater_than: muss größer als %{count} sein
-      greater_than_or_equal_to: muss größer oder gleich %{count} sein
-      inclusion: ist kein gültiger Wert
-      invalid: ist nicht gültig
-      less_than: muss kleiner als %{count} sein
-      less_than_or_equal_to: muss kleiner oder gleich %{count} sein
-      not_a_number: ist keine Zahl
-      not_an_integer: muss ganzzahlig sein
-      not_found: nicht gefunden
-      not_locked: ist nicht gesperrt
-      not_saved:
-        one: 'Konnte %{resource} nicht speichern: ein Fehler.'
-        other: 'Konnte %{resource} nicht speichern: %{count} Fehler.'
-      odd: muss ungerade sein
-      record_invalid: 'Gültigkeitsprüfung ist fehlgeschlagen: %{errors}'
-      restrict_dependent_destroy:
-        one: 
-        other: 
-      taken: ist bereits vergeben
-      too_long: ist zu lang (mehr als %{count} Zeichen)
-      too_short: ist zu kurz (weniger als %{count} Zeichen)
-      wrong_length: hat die falsche Länge (muss genau %{count} Zeichen haben)
-    template:
-      body: 'Bitte überprüfen Sie die folgenden Felder:'
-      header:
-        one: 'Konnte %{model} nicht speichern: ein Fehler.'
-        other: 'Konnte %{model} nicht speichern: %{count} Fehler.'
   helpers:
     label:
       message:
@@ -498,6 +398,7 @@ de:
     password: 
     permission_denied: 
     please_fill_to_become_member: 
+    please_insert_email_and_password: 
     please_introduce: 
     privacy: 
     privacy_page:
