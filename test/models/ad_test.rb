@@ -140,6 +140,20 @@ class AdTest < ActiveSupport::TestCase
     assert_equal @ad.body, body
   end
 
+  test "ad bumping refreshes publication date" do
+    @ad.published_at = 1.week.ago
+    @ad.bump
+
+    assert_in_delta Time.zone.now.to_i, @ad.published_at.to_i, 1
+  end
+
+  test "ad bumping resets readed count" do
+    @ad.readed_count = 100
+    @ad.bump
+
+    assert_equal 0, @ad.readed_count
+  end
+
 #  Disabling IP validation. Some legacy IP are bad (8.8.8.1, 24.2.2.2) 
 #  test "ad validates ip address - fail" do
 #    @ad.ip = '999.99.9.9'
