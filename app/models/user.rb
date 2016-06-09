@@ -40,10 +40,13 @@ class User < ActiveRecord::Base
   def self.from_omniauth(auth) 
     where(email: auth.info.email).first_or_create do |user|
       user.email = auth.info.email
-      user.password = Devise.friendly_token[0,20] 
       user.username = auth.info.name
       user.confirm
     end
+  end
+
+  def password_required?
+    super && identities.none?
   end
 
   def name
