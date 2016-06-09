@@ -104,9 +104,11 @@ class Ad < ActiveRecord::Base
     readed_count || 1
   end
 
+  def reset_readed_count!
+    update_column(:readed_count, 0)
+  end
+
   def increment_readed_count!
-    # Is this premature optimization?
-    # AdIncrementReadedCountWorker.new(self.id)
     Ad.increment_counter(:readed_count, self.id)
   end
 
@@ -198,5 +200,11 @@ class Ad < ActiveRecord::Base
 
   def bumpable?
     published_at <= 5.days.ago
+  end
+
+  def bump
+    touch(:published_at)
+
+    reset_readed_count!
   end
 end
