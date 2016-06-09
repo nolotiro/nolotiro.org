@@ -10,6 +10,11 @@ module ActionDispatch
       Capybara.reset_sessions!
       Rails.cache.clear
     end
+
+    def assert_content(text)
+      msg = "Content '#{text}' was not found in page's content: '#{page.text}'"
+      assert page.has_content?(text), msg
+    end
   end
 
   class Routing::RouteSet

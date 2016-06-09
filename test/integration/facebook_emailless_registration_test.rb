@@ -17,13 +17,13 @@ class FacebookEmaillessRegistrationTest < ActionDispatch::IntegrationTest
       cuenta de Facebook o regístrate con tu email
     EOM
 
-    assert page.has_content?(message)
+    assert_content(message)
   end
 
   it 'redirects to email registration form' do
     content = 'Por favor, rellena este formulario para ser miembro de nolotiro'
 
-    assert page.has_content?(content)
+    assert_content(content)
   end
 
   it "autofills form with user's Facebook name" do
