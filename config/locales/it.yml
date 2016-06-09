@@ -274,7 +274,7 @@ it:
         body: Corpo del annuncio
         body_max: Massimo 500 caratteri
         comments_enabled: 'Permmete commenti publici '
-        image_permitted_formats: 'Formatti permessi: gif, jpg, png. Massimo: 1Mb di dimensione'
+        image_permitted_formats: 'Formatti permessi: gif, jpg, png. Massimo: 5Mb di dimensione'
         please_ad_type: per favore, seleziona il tipo di annuncio
         prohibited: 'C''e un problema, controlla questo:'
         select_an_image: Seleziona una immagine per il tuo annuncio (opzionale).
