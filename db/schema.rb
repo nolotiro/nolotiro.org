@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160423085940) do
+ActiveRecord::Schema.define(version: 20160603152006) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace",     limit: 255
@@ -124,20 +124,20 @@ ActiveRecord::Schema.define(version: 20160423085940) do
   add_index "mailboxer_receipts", ["receiver_id", "receiver_type"], name: "index_mailboxer_receipts_on_receiver_id_and_receiver_type", using: :btree
 
   create_table "users", force: :cascade do |t|
-    t.string   "username",               limit: 32,                   null: false
+    t.string   "username",               limit: 32,               null: false
     t.string   "legacy_password_hash",   limit: 255
-    t.string   "email",                  limit: 100,                  null: false
-    t.date     "created_at",                                          null: false
-    t.integer  "active",                 limit: 4,   default: 0,      null: false
+    t.string   "email",                  limit: 100,              null: false
+    t.date     "created_at",                                      null: false
+    t.integer  "active",                 limit: 4,   default: 0,  null: false
     t.integer  "locked",                 limit: 4
-    t.integer  "role",                   limit: 4,   default: 0,      null: false
-    t.integer  "woeid",                  limit: 4,   default: 766273, null: false
-    t.string   "lang",                   limit: 4,                    null: false
-    t.string   "encrypted_password",     limit: 255, default: "",     null: false
+    t.integer  "role",                   limit: 4,   default: 0,  null: false
+    t.integer  "woeid",                  limit: 4
+    t.string   "lang",                   limit: 4,                null: false
+    t.string   "encrypted_password",     limit: 255, default: "", null: false
     t.string   "reset_password_token",   limit: 255
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          limit: 4,   default: 0,      null: false
+    t.integer  "sign_in_count",          limit: 4,   default: 0,  null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip",     limit: 255
