@@ -1,11 +1,11 @@
 class CallbacksController < Devise::OmniauthCallbacksController
 
   def facebook
-    if oauth.info.email
+    if oauth_user
       sign_in_and_redirect
     else
-      redirect_to new_user_registration_path(username: oauth.info.name),
-                  alert: I18n.t('devise.failure.not_facebook_confirmed_email')
+      session['devise.omniauth_data'] = oauth
+      redirect_to new_user_registration_path
     end
   end
 
@@ -21,7 +21,7 @@ class CallbacksController < Devise::OmniauthCallbacksController
   end
 
   def oauth_user
-    @oauth_user ||= User.from_omniauth(oauth)
+    @oauth_user ||= OauthenticatorService.new(oauth).authenticate
   end
 
   def oauth

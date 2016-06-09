@@ -144,10 +144,6 @@ es:
       timeout: Tu sesión expiró, por favor inicia sesión nuevamente para continuar.
       unauthenticated: Tienes que iniciar sesión o registrarte para poder continuar.
       unconfirmed: Tienes que confirmar tu cuenta para poder continuar.
-      not_facebook_confirmed_email: >-
-        No pudimos registrarte por Facebook porque no tienes una dirección de
-        correo electrónico confirmada. Añade una dirección de correo a tu cuenta
-        de Facebook o regístrate con tu email
     mailer:
       confirmation_instructions:
         subject: "[nolotiro.org] Instrucciones de confirmación"
@@ -401,6 +397,7 @@ es:
     password: Contraseña
     permission_denied: No tienes permisos para realizar esta acción.
     please_fill_to_become_member: Por favor, rellena este formulario para ser miembro de nolotiro
+    please_fill_to_finalize_registration:  Por favor, rellena este formulario para finalizar el registro
     please_insert_email_and_password: Por favor pon tu email y contraseña.
     please_introduce: 'Por favor, introduce los caracteres que veas:'
     privacy: política de privacidad

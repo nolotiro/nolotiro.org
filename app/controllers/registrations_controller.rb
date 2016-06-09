@@ -1,6 +1,6 @@
 class RegistrationsController < Devise::RegistrationsController
   def create
-    if verify_recaptcha
+    if omniauth_registration? || verify_recaptcha
       super
     else
       build_resource
@@ -10,4 +10,10 @@ class RegistrationsController < Devise::RegistrationsController
       render :new
     end
   end
+
+  def omniauth_registration?
+    session['devise.omniauth_data']
+  end
+
+  helper_method :omniauth_registration?
 end

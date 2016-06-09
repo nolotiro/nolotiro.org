@@ -414,6 +414,7 @@ gl:
     password: Contrasinal
     permission_denied: 
     please_fill_to_become_member: Por favor, enche este formulario para facer membro do nolotiro
+    please_fill_to_finalize_registration:  Por favor, enche este formulario para finalizar o registro
     please_insert_email_and_password: Por favor, engada o seu correo electrónico e contrasinal.
     please_introduce: 'Por favor, introduza os caracteres que aparecen:'
     privacy: política de privacidade
