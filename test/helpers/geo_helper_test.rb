@@ -4,9 +4,10 @@ class GeoHelperTest < ActionView::TestCase
   include GeoHelper
 
   test "should get ip address" do
-    ip = "87.223.138.147"
-    @request.headers["REMOTE_ADDR"] = ip
-    assert_equal(ip, "87.223.138.147")
+    @request.headers["REMOTE_ADDR"] = "87.223.138.147"
+    ip = GeoHelper.get_ip_address(@request)
+
+    assert_equal("87.223.138.147", ip)
   end 
 
   test "should suggest location with ip address" do
