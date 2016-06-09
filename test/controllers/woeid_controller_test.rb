@@ -5,11 +5,7 @@ class WoeidControllerTest < ActionController::TestCase
   include Devise::TestHelpers
 
   setup do
-    # @todo We use a location (Río de Janeiro) with no similar names to avoid
-    # touching the yahoo API to resolve names for each similar city. Make this
-    # fast in another way, either by caching resolved names in DB or mocking
-    # connections to the Yahoo API
-    @ad = FactoryGirl.create(:ad, woeid_code: 455825)
+    @ad = FactoryGirl.create(:ad)
   end
 
   test "should get listall and give (available, delivered, booked)" do

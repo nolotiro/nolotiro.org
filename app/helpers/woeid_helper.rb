@@ -45,11 +45,9 @@ module WoeidHelper
       else
         GeoPlanet.appid = Rails.application.secrets["geoplanet_app_id"]
         locations = GeoPlanet::Place.search(name, :lang => locale, :type => 7, :count => 0)
-        if locations.nil?
-          places = nil
-        else
-          places = locations.map {|l| ["#{WoeidHelper.convert_woeid_name(l.woeid)[:full]} (#{Ad.where(woeid_code: l.woeid).count} anuncios)", l.woeid] }
-        end
+        return if locations.nil?
+
+        places = locations.map {|l| ["#{convert_woeid_name(l.woeid)[:full]} (#{Ad.where(woeid_code: l.woeid).count} anuncios)", l.woeid] }
         Rails.cache.write(key, places)
         return places
       end
