@@ -521,7 +521,7 @@ it:
   recaptcha:
     errors:
       incorrect-captcha-sol: C'è stato un errore riempire i caratteri captcha.
-      verification_failed: Risposta di verifica della parola non è corretta, si prega di riprovare.
+      verification_failed: C'è stato un error nella verificazione contro dei robot
   support:
     array:
       last_word_connector: " e "

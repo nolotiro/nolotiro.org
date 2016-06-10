@@ -515,7 +515,7 @@ en:
   recaptcha:
     errors:
       incorrect-captcha-sol: There is a mistake in your captcha's answer
-      verification_failed: Word verification response is incorrect, please try again.
+      verification_failed: Robot verification failed, try again
   support:
     array:
       last_word_connector: ", and"

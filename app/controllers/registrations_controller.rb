@@ -5,7 +5,7 @@ class RegistrationsController < Devise::RegistrationsController
     else
       build_resource
       clean_up_passwords(resource)
-      flash.now[:alert] = "Hubo un error rellenando los carácteres. Inténtalo de nuevo."
+      flash.now[:alert] = flash[:recaptcha_error]
       flash.delete :recaptcha_error
       render :new
     end

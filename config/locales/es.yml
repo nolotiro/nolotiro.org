@@ -519,7 +519,7 @@ es:
   recaptcha:
     errors:
       incorrect-captcha-sol: Hubo un error rellenando los caracteres del captcha.
-      verification_failed: Word verification response is incorrect, please try again.
+      verification_failed: Falló la verificación contra robots, prueba de nuevo
   support:
     array:
       last_word_connector: ", y "

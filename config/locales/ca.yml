@@ -515,7 +515,7 @@ ca:
   recaptcha:
     errors:
       incorrect-captcha-sol: Hi va haver un error omplint els caràcters del captcha.
-      verification_failed: Resposta de verificació de la paraula no és correcta, si us plau intenti de nou.
+      verification_failed: Ha fallat la verificació contra robots, intenta-ho de nou
   support:
     array:
       last_word_connector: ", i "
