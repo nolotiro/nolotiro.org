@@ -144,6 +144,7 @@ GEM
       responders
       thread_safe (~> 0.1)
       warden (~> 1.2.3)
+    devise-i18n (1.0.1)
     domain_name (0.5.25)
       unf (>= 0.0.5, < 1.0.0)
     erubis (2.7.0)
@@ -472,6 +473,7 @@ DEPENDENCIES
   database_cleaner (~> 1.5)
   delayed_paperclip
   devise
+  devise-i18n
   factory_girl_rails (~> 4.0)
   faker
   font-awesome-rails

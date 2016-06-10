@@ -16,23 +16,23 @@ class CanUserMessage < ActionDispatch::IntegrationTest
   it "should message another user" do
     send_message("hola trololo", "hola mundo")
 
-    assert page.has_content?("hola trololo")
-    assert page.has_content?("Mover mensaje a papelera")
+    assert_content("hola trololo")
+    assert_content("Mover mensaje a papelera")
   end
 
   it "should message another user using emojis" do
     skip "emojis not supported"
     send_message("What a nice emoji😀!", "hola mundo")
 
-    assert page.has_content?("What a nice emoji😀!")
-    assert page.has_content?("Mover mensaje a papelera")
+    assert_content("What a nice emoji😀!")
+    assert_content("Mover mensaje a papelera")
   end
 
   it "should reply to a message" do
     send_message("hola trololo", "hola mundo")
     send_message("hola trululu")
 
-    assert page.has_content?("hola trululu")
+    assert_content("hola trululu")
   end
 
   def send_message(body, subject = nil)
