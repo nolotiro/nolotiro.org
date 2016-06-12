@@ -19,41 +19,41 @@
             <%= f.label :email, t('nlt.your_email') %>
           </dt>
           <dd>
-          <%= f.email_field :email, :autofocus => true, :required => true %>
+            <%= f.email_field :email, :autofocus => true, :required => true %>
           </dd>
           <dt>
             <%= f.label :password, t('nlt.choose_your_pass') %>
           </dt>
           <dd>
-          <%= f.password_field :password, :required => true %>
+            <%= f.password_field :password, :required => true %>
           </dd>
           <dt>
             <%= f.label :password_confirmation, t('nlt.choose_your_pass_again') %>
           </dt>
           <dd>
-          <%= f.password_field :password_confirmation, :required => true %>
+            <%= f.password_field :password_confirmation, :required => true %>
           </dd>
           <dt>
             <%= f.label :username, t('nlt.choose_username') %>
           </dt>
           <dd>
-          <%= f.text_field :username, :required => true, :value => params[:username] %>
+            <%= f.text_field :username, :required => true, :value => params[:username] %>
           </dd>
           <dt>
-          <label for="captcha-input" class="required">
-            <%= t 'nlt.fill_captcha' %>
-          </label>
+            <label for="captcha-input" class="required">
+              <%= t 'nlt.fill_captcha' %>
+            </label>
           </dt>
           <dd>
             <%= recaptcha_tags(:display => { :theme => "white" }, ajax: true)%>
           </dd>
           <dd>
-          <!-- FIXME: this doesn't work -->
-          <%= f.hidden_field :lang, :value => I18n.locale.to_s %>
+            <!-- FIXME: this doesn't work -->
+            <%= f.hidden_field :lang, :value => I18n.locale.to_s %>
           </dd>
           <dt>&nbsp;</dt>
           <dd>
-          <%= f.submit t('nlt.register') %>
+            <%= f.submit t('nlt.register') %>
           </dd>
         </dl>
         <%= t 'nlt.sending_this_form' %>
