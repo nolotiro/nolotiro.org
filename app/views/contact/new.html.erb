@@ -21,31 +21,31 @@
           </div>
         <% end %>
 
-        <dl class="zend_form">
+        <dl>
           <% unless user_signed_in? %>
-            <dt id="email-label">
+            <dt>
               <%= f.label :email, :class => "required" %>
             </dt>
-            <dd id="email-element">
+            <dd>
               <%= f.text_field :email, :type => :email, :required => "required" %>
             </dd>
           <% end %>
-          <dt id="message-label">
+          <dt>
             <%= f.label :message, :class => "required" %><br />
           </dt>
-          <dd id="message-element">
+          <dd>
             <%= f.text_area :message, :size => "24x10" %>
           </dd>
-          <dt id="captcha-input-label">
+          <dt>
           <label for="captcha-input" class="required">
             <%= t('nlt.please_introduce') %>
           </label>
           </dt>
-          <dd id="captcha-element">
+          <dd>
             <%= recaptcha_tags(:display => { :theme => "white" }, ajax: true)%>
           </dd>
-          <dt id="submit-label">&nbsp;</dt>
-          <dd id="submit-element">
+          <dt>&nbsp;</dt>
+          <dd>
             <%= f.submit t('nlt.send') %>
           </dd>
         </dl>    

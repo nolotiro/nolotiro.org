@@ -14,45 +14,45 @@
 
       <div class="col-md-6">
         <%= devise_error_messages! %>
-        <dl class="zend_form">
-          <dt id="email-label">
+        <dl>
+          <dt>
             <%= f.label :email, t('nlt.your_email') %>
           </dt>
-          <dd id="email-element">
+          <dd>
           <%= f.email_field :email, :autofocus => true, :required => true %>
           </dd>
-          <dt id="password1-label">
+          <dt>
             <%= f.label :password, t('nlt.choose_your_pass') %>
           </dt>
-          <dd id="password1-element">
+          <dd>
           <%= f.password_field :password, :required => true %>
           </dd>
-          <dt id="password2-label">
+          <dt>
             <%= f.label :password_confirmation, t('nlt.choose_your_pass_again') %>
           </dt>
-          <dd id="password2-element">
+          <dd>
           <%= f.password_field :password_confirmation, :required => true %>
           </dd>
-          <dt id="username-label">
+          <dt>
             <%= f.label :username, t('nlt.choose_username') %>
           </dt>
-          <dd id="username-element">
+          <dd>
           <%= f.text_field :username, :required => true, :value => params[:username] %>
           </dd>
-          <dt id="captcha-input-label">
+          <dt>
           <label for="captcha-input" class="required">
             <%= t 'nlt.fill_captcha' %>
           </label>
           </dt>
-          <dd id="captcha-element">
+          <dd>
             <%= recaptcha_tags(:display => { :theme => "white" }, ajax: true)%>
           </dd>
-          <dd id="hidden-elements">
+          <dd>
           <!-- FIXME: this doesn't work -->
           <%= f.hidden_field :lang, :value => I18n.locale.to_s %>
           </dd>
-          <dt id="submit-label">&nbsp;</dt>
-          <dd id="submit-element">
+          <dt>&nbsp;</dt>
+          <dd>
           <%= f.submit t('nlt.register') %>
           </dd>
         </dl>

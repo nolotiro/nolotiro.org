@@ -3,17 +3,17 @@
     <legend>
       <%= t('nlt.change_town.please') %>
     </legend>
-    <dl class="zend_form">
-      <dt id="location-label">
+    <dl>
+      <dt>
       <label for="location" class="required">
         <%= t('nlt.change_town.town') %>
       </label>
       </dt>
-      <dd id="location-element">
+      <dd>
       <%= text_field_tag(:location) %>
       </dd>
-      <dt id="submit-label">&nbsp;</dt>
-      <dd id="submit-element">
+      <dt>&nbsp;</dt>
+      <dd>
       <%= submit_tag(t('nlt.change_town.submit')) %>
       </dd>
     </dl>
