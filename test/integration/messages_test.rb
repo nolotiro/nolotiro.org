@@ -1,7 +1,7 @@
 require "test_helper"
 require "integration/concerns/authentication"
 
-class CanUserMessage < ActionDispatch::IntegrationTest
+class MessagesTest < ActionDispatch::IntegrationTest
   include Authentication
 
   before do
