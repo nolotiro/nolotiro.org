@@ -19,7 +19,7 @@ ca:
       contact:
         email: 
         message: 
-      message:
+      mailboxer/message:
         subject: Assumpte
       user:
         Contraseña: Contrasenya

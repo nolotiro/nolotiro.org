@@ -19,7 +19,7 @@ eu:
       contact:
         email: 
         message: 
-      message:
+      mailboxer/message:
         subject: 
       user:
         Contraseña: 
