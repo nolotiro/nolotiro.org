@@ -75,4 +75,7 @@ module ApplicationHelper
     end
   end
 
+  def localized_url(locale)
+    url_for(locale: locale, only_path: false)
+  end
 end
