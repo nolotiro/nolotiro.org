@@ -13,6 +13,12 @@ class MessagesTest < ActionDispatch::IntegrationTest
     visit message_new_path(@user2)
   end
 
+  it 'shows errors when message has no subject' do
+    send_message('hola, user2')
+
+    assert_content('Título no puede estar en blanco')
+  end
+
   it 'shows the other user in the conversation header' do
     send_message('hola, user2', 'Cosas')
     assert_content('Conversación con user2')

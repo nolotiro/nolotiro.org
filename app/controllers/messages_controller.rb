@@ -40,7 +40,8 @@ class MessagesController < ApplicationController
       end
       receipt = current_user.reply_to_conversation(@conversation, @message.body, nil, true, true, @message.attachment)
     else
-      @message.recipients = User.find(params[:mailboxer_message][:recipients])
+      @recipient = User.find(params[:mailboxer_message][:recipients])
+      @message.recipients = @recipient
       unless @message.valid?
         return render :new
       end
