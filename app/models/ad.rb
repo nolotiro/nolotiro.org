@@ -57,7 +57,7 @@ class Ad < ActiveRecord::Base
 
   validates_attachment :image, content_type: { content_type: ["image/jpg", "image/jpeg", "image/png", "image/gif"] }
 
-  validates_attachment_size :image, :in => 0.megabytes..1.megabytes
+  validates_attachment_size :image, :in => 0.megabytes..5.megabytes
 
   #before_save :titleize_title if self.title? and /[[:upper:]]/.match(self.title)
   #before_save :titleize_body if self.body and /[[:upper:]]/.match(self.body)

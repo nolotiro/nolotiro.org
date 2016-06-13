@@ -278,7 +278,7 @@ es:
         body: 'Cuerpo del anuncio:'
         body_max: Máximo 500 caracteres
         comments_enabled: Permitir comentarios públicos
-        image_permitted_formats: 'Formatos permitidos: gif, jpg, png. Max: 1Mb de tamaño.'
+        image_permitted_formats: 'Formatos permitidos: gif, jpg, png. Max: 5Mb de tamaño.'
         please_ad_type: por favor, selecciona el tipo de anuncio
         prohibited: 'Hay un problema, revisa esto:'
         select_an_image: Selecciona una imagen para tu anuncio (opcional).

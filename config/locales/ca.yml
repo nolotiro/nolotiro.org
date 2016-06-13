@@ -274,7 +274,7 @@ ca:
         body: 'Cos de l''anunci:'
         body_max: Màxim 500 caràcters
         comments_enabled: Permetre comentaris públics
-        image_permitted_formats: 'Formats permesos: gif, jpg, png. Max: 1Mb de mida.'
+        image_permitted_formats: 'Formats permesos: gif, jpg, png. Max: 5Mb de mida.'
         please_ad_type: si us plau, selecciona el tipus d'anunci
         prohibited: 'Hi ha un problema, revisa això:'
         select_an_image: Selecciona una imatge per al teu anunci (opcional).

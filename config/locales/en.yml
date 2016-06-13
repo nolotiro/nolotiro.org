@@ -270,7 +270,7 @@ en:
         body: 'Body of the ad:'
         body_max: Maximum 500 characters
         comments_enabled: Allow public comments
-        image_permitted_formats: 'Supported formats: gif, jpg, png. Max size:1 Mb'
+        image_permitted_formats: 'Supported formats: gif, jpg, png. Max size: 5Mb'
         please_ad_type: Please, choose the type of ad
         prohibited: 'There is a problem, please review this:'
         select_an_image: Choose an image for you ad (optional)
