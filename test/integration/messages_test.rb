@@ -35,6 +35,8 @@ class MessagesTest < ActionDispatch::IntegrationTest
     assert_content("hola trululu")
   end
 
+  private
+
   def send_message(body, subject = nil)
     fill_in("mailboxer_message_subject", with: subject) if subject
     fill_in "mailboxer_message_body", with: body
