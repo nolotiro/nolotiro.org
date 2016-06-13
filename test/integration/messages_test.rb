@@ -2,7 +2,7 @@ require "test_helper"
 require "integration/concerns/authentication"
 
 class MessagesTest < ActionDispatch::IntegrationTest
-  include Authentication
+  include Warden::Test::Helpers
 
   before do
     user1 = FactoryGirl.create(:user)
