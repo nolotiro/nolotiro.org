@@ -64,7 +64,7 @@ class AdsController < ApplicationController
     @ad.published_at = Time.zone.now
 
     respond_to do |format|
-      if verify_recaptcha(:model => @ad, :message => t('nlt.captcha_error')) && @ad.save
+      if verify_recaptcha(:model => @ad, :message => recaptcha_error) && @ad.save
         format.html { redirect_to adslug_path(@ad, slug: @ad.slug), notice: t('nlt.ads.created') }
         format.json { render action: 'show', status: :created, location: @ad }
       else

@@ -299,7 +299,6 @@ es:
     bump_this_ad: Republica este anuncio
     by_user: 'por '
     cancel_my_account: Cancelar mi cuenta
-    captcha_error: Posiblemente has introducido mal los caracteres del captcha ya que no coindicen con la imagen, vuelve a introducirlos
     change_city: cambiar ciudad
     change_town:
       choose: Elige tu ubicación
