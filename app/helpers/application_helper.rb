@@ -76,6 +76,6 @@ module ApplicationHelper
   end
 
   def localized_url(locale)
-    url_for(locale: locale, only_path: false)
+    url_for(params.merge(locale: locale, only_path: false))
   end
 end
