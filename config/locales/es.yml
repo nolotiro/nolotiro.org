@@ -20,7 +20,7 @@ es:
         email: Correo electrónico
         message: Mensaje
       mailboxer/message:
-        subject: Subject
+        subject: Título
       user:
         Contraseña: Contraseña
         Recuérdame: Recuérdame
