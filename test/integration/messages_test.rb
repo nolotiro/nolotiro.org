@@ -13,14 +13,14 @@ class MessagesTest < ActionDispatch::IntegrationTest
     visit message_new_path(user2)
   end
 
-  it "should message another user" do
+  it "messages another user" do
     send_message("hola trololo", "hola mundo")
 
     assert_content("hola trololo")
     assert_content("Mover mensaje a papelera")
   end
 
-  it "should message another user using emojis" do
+  it "messages another user using emojis" do
     skip "emojis not supported"
     send_message("What a nice emoji😀!", "hola mundo")
 
@@ -28,7 +28,7 @@ class MessagesTest < ActionDispatch::IntegrationTest
     assert_content("Mover mensaje a papelera")
   end
 
-  it "should reply to a message" do
+  it "replies to a message" do
     send_message("hola trololo", "hola mundo")
     send_message("hola trululu")
 
