@@ -5,12 +5,22 @@ class MessagesTest < ActionDispatch::IntegrationTest
   include Warden::Test::Helpers
 
   before do
-    user1 = FactoryGirl.create(:user)
-    user2 = FactoryGirl.create(:user)
+    user1 = FactoryGirl.create(:user, username: 'user1')
+    @user2 = FactoryGirl.create(:user, username: 'user2')
 
     login_as user1
 
-    visit message_new_path(user2)
+    visit message_new_path(@user2)
+  end
+
+  it 'shows the other user in the conversation header' do
+    send_message('hola, user2', 'Cosas')
+    assert_content('Conversación con user2')
+
+    login_as @user2
+
+    visit mailboxer_message_path(Mailboxer::Message.first)
+    assert_content('Conversación con user1')
   end
 
   it "messages another user" do

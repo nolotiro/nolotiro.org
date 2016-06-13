@@ -1,9 +1,9 @@
 module MessageHelper
 
   def other_username( current_user, m )
-    if m.messages.first and m.messages.first.recipients.first and m.messages.first.recipients.second 
-      sender = m.messages.first.recipients.first.username
-      reciever = m.messages.first.recipients.second.username
+    if m.recipients and m.recipients.first and m.recipients.second 
+      sender = m.recipients.first
+      reciever = m.recipients.second
       if current_user == sender
         reciever
       else
