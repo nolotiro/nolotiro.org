@@ -19,6 +19,13 @@ class MessagesTest < ActionDispatch::IntegrationTest
     assert_content('Título no puede estar en blanco')
   end
 
+  it 'sends message after a previous error' do
+    send_message('hola, user2')
+    send_message('hola, user2', 'forgot the title')
+
+    assert_content('Conversación con user2 asunto forgot the title')
+  end
+
   it 'shows the other user in the conversation header' do
     send_message('hola, user2', 'Cosas')
     assert_content('Conversación con user2')
