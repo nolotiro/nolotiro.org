@@ -19,8 +19,8 @@ es:
       contact:
         email: Correo electrónico
         message: Mensaje
-      message:
-        subject: Subject
+      mailboxer/message:
+        subject: Título
       user:
         Contraseña: Contraseña
         Recuérdame: Recuérdame
