@@ -308,7 +308,6 @@ gl:
     bump_this_ad: 
     by_user: por
     cancel_my_account: Cancelar a miña conta
-    captcha_error: Probablemente xa entrou un erro caracteres captcha e non coindicen coa imaxe , re- introducir
     change_city: cambio cidades
     change_town:
       choose: Elixa a súa situación
@@ -415,6 +414,7 @@ gl:
     password: Contrasinal
     permission_denied: 
     please_fill_to_become_member: Por favor, enche este formulario para facer membro do nolotiro
+    please_fill_to_finalize_registration:  Por favor, enche este formulario para finalizar o registro
     please_insert_email_and_password: Por favor, engada o seu correo electrónico e contrasinal.
     please_introduce: 'Por favor, introduza os caracteres que aparecen:'
     privacy: política de privacidade

@@ -15,15 +15,15 @@
             %ul
               -@message.errors.full_messages.each do |msg|
                 %li '#{ msg }'
-        %dl.zend_form
-          %dt#subject-label
+        %dl
+          %dt
             = f.label :subject, t('mailboxer.new.subject')
-          %dd#subject-element
+          %dd
             -if params['subject']
               = f.text_field :subject, value: params['subject']
             -else
               = f.text_field :subject
-          %dd#body-element
+          %dd
             = f.text_area :body, size: '80x3', maxlength: 1500, required: true
             %p.description
               = t 'mailboxer.new.body_max'

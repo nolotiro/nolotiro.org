@@ -295,7 +295,6 @@ it:
     bump_this_ad: Repubblica questo annuncio
     by_user: per l'utente
     cancel_my_account: Cancella il mio account
-    captcha_error: 'Forse hai sbagliato a scrivere i caratteri del captcha visto che non coincidono con l''immagine, provaci ancora  '
     change_city: cambia città
     change_town:
       choose: Sceglie il luogo
@@ -402,6 +401,7 @@ it:
     password: password
     permission_denied: Non si dispone dell'autorizzazione per eseguire questa azione.
     please_fill_to_become_member: Si prega di compilare questo modulo per essere un membro di nolotiro
+    please_fill_to_finalize_registration:  Si prega di compilare questo module per finire l'inscrizione
     please_insert_email_and_password: Metta prego la tua email e la password.
     please_introduce: 'Inserisci i caratteri che vedi:'
     privacy: politica sulla privacy
@@ -521,7 +521,7 @@ it:
   recaptcha:
     errors:
       incorrect-captcha-sol: C'è stato un errore riempire i caratteri captcha.
-      verification_failed: Risposta di verifica della parola non è corretta, si prega di riprovare.
+      verification_failed: C'è stato un error nella verificazione contro dei robot
   support:
     array:
       last_word_connector: " e "

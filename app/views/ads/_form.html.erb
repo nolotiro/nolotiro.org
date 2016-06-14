@@ -12,7 +12,7 @@
             </ul>
           </div>
         <% end %>
-      <dl class="zend_form">
+      <dl>
 
         <% if @ad.image.exists? %>
           <div class="ad_list_image">
@@ -20,7 +20,7 @@
           </div>
         <% end %>
 
-        <dt id="photo-label">
+        <dt>
         <%= f.label :image,  t('nlt.ads.form.select_an_image'), :class => "optional" %> 
         </dt>
         <dd>
@@ -31,42 +31,42 @@
         </dd>
 
         <% if @ad.id %>
-          <dt id="status-label">
+          <dt>
           <%= f.label :status,  t('nlt.ads.form.status'), :class => "required" %> 
           </dt>
-          <dd id="status-element">
+          <dd>
           <%= f.select(:status, options_for_select([[t('nlt.available'), 1], [t('nlt.booked'), 2], [t('nlt.delivered'), 3]], selected: @ad.status))  %>
           </dd>
         <% end %>
 
-        <dt id="type-label">
+        <dt>
         <%= f.label :type,  t('nlt.ads.form.type_ad'), :class => "required" %> 
         </dt>
-        <dd id="type-element">
+        <dd>
         <%= f.select(:type, options_for_select([["#{t('nlt.give')}...", 1], ["#{t('nlt.want')}...", 2]], selected: @ad.type ? @ad.type : params[:type]))  %>
         </dd>
 
-        <dt id="title-label">
+        <dt>
         <%= f.label :title,  t('nlt.ads.form.title'), :class => "required" %> 
         </dt>
-        <dd id="title-element">
+        <dd>
         <%= f.text_field :title, required: true, maxlength: 100, size: 45 %>
         <p class="description">
         <%= t 'nlt.ads.form.title_max' %>
         </p>
         </dd>
 
-        <dt id="body-label">
+        <dt>
 	<%= f.label :body,  t('nlt.ads.form.body'), :class => "required", :id => "adbo", :for => "adbo" %> 
         </dt>
-        <dd id="body-element">
+        <dd>
 	<%= f.text_area :body, :rows => 24, :cols => 80, :required => true, :maxlength => 500, :id => "adbo" %>
         <p class="description">
         <%= t 'nlt.ads.form.body_max' %>
         </p>
         </dd>
 
-        <dt id="comments_enabled-label">
+        <dt>
         <%= f.label :comments_enabled,  t('nlt.ads.form.comments_enabled'), :class => "required" %> 
         </dt>
         <span class="element">
@@ -74,12 +74,12 @@
         </span>
 
         <% unless params[:action] == "edit" %>
-          <dt id="captcha-input-label">
+          <dt>
           <label for="captcha-input" class="required">
             <%= t('nlt.please_introduce') %>
           </label>
           </dt>
-          <dd id="captcha-element">
+          <dd>
             <%= recaptcha_tags(:display => { :theme => "white" }, ajax: true)%>
           </dd>
         <% end %>

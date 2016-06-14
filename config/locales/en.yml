@@ -291,7 +291,6 @@ en:
     bump_this_ad: 
     by_user: by user
     cancel_my_account: Cancel my account
-    captcha_error: Does not match, please, enter captcha's characters again
     change_city: change city
     change_town:
       choose: Choose your location
@@ -398,6 +397,7 @@ en:
     password: Password
     permission_denied: You don't have permissions
     please_fill_to_become_member: Please, fill this form to become a member
+    please_fill_to_finalize_registration: Please, fill this form to finalize registration
     please_insert_email_and_password: Please, insert your email and password
     please_introduce: Please, insert the following characters
     privacy: privacy policy
@@ -515,7 +515,7 @@ en:
   recaptcha:
     errors:
       incorrect-captcha-sol: There is a mistake in your captcha's answer
-      verification_failed: Word verification response is incorrect, please try again.
+      verification_failed: Robot verification failed, try again
   support:
     array:
       last_word_connector: ", and"

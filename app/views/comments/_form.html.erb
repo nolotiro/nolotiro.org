@@ -10,20 +10,20 @@
         </ul>
       </div>
     <% end %>
-    <dl class="zend_form">
-      <dt id="body-label">
+    <dl>
+      <dt>
         <label for="body" class="optional">
           <%= t('nlt.comments.label') %>
         </label>
       </dt>
-      <dd id="body-element">
+      <dd>
         <%= text_area_tag("body", "", size: "80x24", maxlength: 1000) %>
         <p class="description">
         <%= t 'nlt.comments.body_max' %>
         </p>
       </dd>
-      <dt id="submit-label">&nbsp;</dt>
-      <dd id="submit-element">
+      <dt>&nbsp;</dt>
+      <dd>
         <%= submit_tag t('nlt.comments.submit') %>
       </dd>
     </dl>

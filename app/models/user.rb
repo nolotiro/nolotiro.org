@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  has_many :identities, inverse_of: :user, dependent: :destroy
 
   has_many :ads, foreign_key: 'user_owner'
   has_many :comments, foreign_key: 'user_owner'
@@ -36,13 +37,21 @@ class User < ActiveRecord::Base
     top_overall(limit).where("published_at >= :date", date: 1.week.ago)
   end
 
-  def self.from_omniauth(auth) 
-    where(email: auth.info.email).first_or_create do |user|
-      user.email = auth.info.email
-      user.password = Devise.friendly_token[0,20] 
-      user.username = auth.info.name
-      user.confirm
+  def self.new_with_session(params, session)
+    oauth_session = session['devise.omniauth_data']
+    return super unless oauth_session
+
+    oauth = OmniAuth::AuthHash.new(oauth_session)
+
+    new do |u|
+      u.email = params[:email]
+      u.username = params[:username] || oauth.info.name
+      u.identities.build(provider: oauth.provider, uid: oauth.uid)
     end
+  end
+
+  def password_required?
+    super && identities.none?
   end
 
   def name

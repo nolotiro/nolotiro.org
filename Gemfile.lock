@@ -338,7 +338,7 @@ GEM
       polyamorous (~> 1.2)
     rdoc (4.2.1)
       json (~> 1.4)
-    recaptcha (1.0.2)
+    recaptcha (3.2.0)
       json
     redis (3.2.2)
     redis-actionpack (4.0.1)

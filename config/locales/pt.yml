@@ -295,7 +295,6 @@ pt:
     bump_this_ad: Renovar este anúncio
     by_user: por
     cancel_my_account: Apagar minha conta
-    captcha_error: 
     change_city: escolher cidade
     change_town:
       choose: 
@@ -398,6 +397,7 @@ pt:
     password: 
     permission_denied: 
     please_fill_to_become_member: 
+    please_fill_to_finalize_registration: 
     please_insert_email_and_password: 
     please_introduce: 
     privacy: 

@@ -1,6 +1,6 @@
 <%= form_tag mailboxer_message_reply_path(thread, thread.other_user(user)) do  %>
-  <dl class="zend_form">
-    <dd id="body-element">
+  <dl>
+    <dd>
     <%= text_area_tag :body, '', :size => "80x3", maxlength: 2500 %>
     </dd>
     <%= submit_tag t('mailboxer.new.button') %>

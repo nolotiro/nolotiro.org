@@ -1,59 +1,64 @@
 <% content_for(:meta_title, t('nlt.new_user')) %>
 
 <div id="default_header_section">
-  <h1><%= t 'nlt.please_fill_to_become_member' %></h1><br><br>
+  <h1><%= registration_header %></h1><br><br>
   (<%= t 'nlt.if_youre_already_an_user' %>&nbsp;
   <%= link_to t('nlt.access_here'), new_user_session_path, :title => "user login" %>)
 </div>
 
 <div class="span-16">
-
   <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
-
     <fieldset>
-
       <div class="col-md-6">
         <%= devise_error_messages! %>
-        <dl class="zend_form">
-          <dt id="email-label">
+        <dl>
+          <dt>
             <%= f.label :email, t('nlt.your_email') %>
           </dt>
-          <dd id="email-element">
-          <%= f.email_field :email, :autofocus => true, :required => true %>
+          <dd>
+            <%= f.email_field :email, :autofocus => true, :required => true %>
           </dd>
-          <dt id="password1-label">
-            <%= f.label :password, t('nlt.choose_your_pass') %>
-          </dt>
-          <dd id="password1-element">
-          <%= f.password_field :password, :required => true %>
-          </dd>
-          <dt id="password2-label">
-            <%= f.label :password_confirmation, t('nlt.choose_your_pass_again') %>
-          </dt>
-          <dd id="password2-element">
-          <%= f.password_field :password_confirmation, :required => true %>
-          </dd>
-          <dt id="username-label">
+
+          <% unless omniauth_registration? %>
+            <dt>
+              <%= f.label :password, t('nlt.choose_your_pass') %>
+            </dt>
+            <dd>
+              <%= f.password_field :password, :required => true %>
+            </dd>
+            <dt>
+              <%= f.label :password_confirmation, t('nlt.choose_your_pass_again') %>
+            </dt>
+            <dd>
+              <%= f.password_field :password_confirmation, :required => true %>
+            </dd>
+          <% end %>
+
+          <dt>
             <%= f.label :username, t('nlt.choose_username') %>
           </dt>
-          <dd id="username-element">
-          <%= f.text_field :username, :required => true, :value => params[:username] %>
+          <dd>
+            <%= f.text_field :username, :required => true %>
           </dd>
-          <dt id="captcha-input-label">
-          <label for="captcha-input" class="required">
-            <%= t 'nlt.fill_captcha' %>
-          </label>
-          </dt>
-          <dd id="captcha-element">
-            <%= recaptcha_tags(:display => { :theme => "white" }, ajax: true)%>
-          </dd>
-          <dd id="hidden-elements">
-          <!-- FIXME: this doesn't work -->
-          <%= f.hidden_field :lang, :value => I18n.locale.to_s %>
-          </dd>
-          <dt id="submit-label">&nbsp;</dt>
-          <dd id="submit-element">
-          <%= f.submit t('nlt.register') %>
+
+          <% unless omniauth_registration? %>
+            <dt>
+              <label for="captcha-input" class="required">
+                <%= t 'nlt.fill_captcha' %>
+              </label>
+            </dt>
+            <dd>
+              <%= recaptcha_tags(:display => { :theme => "white" }, ajax: true)%>
+            </dd>
+            <dd>
+              <!-- FIXME: this doesn't work -->
+              <%= f.hidden_field :lang, :value => I18n.locale.to_s %>
+            </dd>
+          <% end %>
+
+          <dt>&nbsp;</dt>
+          <dd>
+            <%= f.submit t('nlt.register') %>
           </dd>
         </dl>
         <%= t 'nlt.sending_this_form' %>
@@ -62,19 +67,21 @@
         <%= link_to t('nlt.privacy'), privacy_path %>.
       </div>
 
-      <div class="col-md-6">
-        <%- if devise_mapping.omniauthable? %>
-          <%- resource_class.omniauth_providers.each do |provider| %>
-            <% prov = convert_provider( provider ) %>
-            <%= link_to user_omniauth_authorize_path(provider: provider), class: "btn btn-info login-with-#{prov.downcase}" do %>
-              <%= t('nlt.sign_in_with_provider', :provider => prov) %>
-              <i class="fa <%= convert_provider_fa(provider) %>"></i>
-            <% end %>
-              <br />
+      <% unless omniauth_registration? %>
+        <div class="col-md-6">
+          <%- if devise_mapping.omniauthable? %>
+            <%- resource_class.omniauth_providers.each do |provider| %>
+              <% prov = convert_provider( provider ) %>
+              <%= link_to user_omniauth_authorize_path(provider: provider), class: "btn btn-info login-with-#{prov.downcase}" do %>
+                <%= t('nlt.sign_in_with_provider', :provider => prov) %>
+                <i class="fa <%= convert_provider_fa(provider) %>"></i>
+              <% end %>
+                <br />
+            <% end -%>
           <% end -%>
-        <% end -%>
-      </div>
 
+        </div>
+      <% end %>
     </fieldset>
 
   <% end %>

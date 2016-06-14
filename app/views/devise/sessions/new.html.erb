@@ -5,23 +5,23 @@
   <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
     <fieldset>
       <div class="col-md-6">
-        <dt id="email-label">
+        <dt>
         <label for="email" class="required">
           <%= f.label t 'nlt.your_email' %>
         </label>
         </dt>
 
-        <dd id="email-element">
+        <dd>
           <%= f.email_field :email, :autofocus => true %>
         </dd>
 
-        <dt id="password-label">
+        <dt>
         <label for="password" class="required">
           <%= f.label t 'nlt.password' %>
         </label>
         </dt>
 
-        <dd id="password-element">
+        <dd>
         <%= f.password_field :password %>
         </dd>
 

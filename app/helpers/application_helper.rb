@@ -78,4 +78,10 @@ module ApplicationHelper
   def localized_url(locale)
     url_for(params.merge(locale: locale, only_path: false))
   end
+
+  def registration_header
+    event = omniauth_registration? ? 'finalize_registration' : 'become_member'
+
+    t("nlt.please_fill_to_#{event}")
+  end
 end
