@@ -7,7 +7,7 @@ class AdTest < ActiveSupport::TestCase
   include WebMocking
 
   setup do
-    @ad = FactoryGirl.create(:ad, woeid_code: 455825)
+    @ad = FactoryGirl.create(:ad)
   end
 
   test "ad requires everything" do
@@ -127,8 +127,8 @@ class AdTest < ActiveSupport::TestCase
     mocking_yahoo_woeid_info(@ad.woeid_code) do
       @ad.type = 1
       @ad.save
-      title = 'regalo segunda mano gratis  ordenador en Vallecas Río de ' \
-              'Janeiro, Rio de Janeiro, Brasil'
+      title = 'regalo segunda mano gratis  ordenador en Vallecas Madrid, ' \
+              'Madrid, España'
       assert_equal title, @ad.meta_title
     end
   end
@@ -139,8 +139,7 @@ class AdTest < ActiveSupport::TestCase
     mocking_yahoo_woeid_info(@ad.woeid_code) do
       @ad.type = 2
       @ad.save
-      title = 'busco ordenador en Vallecas Río de Janeiro, Rio de Janeiro, ' \
-              'Brasil'
+      title = 'busco ordenador en Vallecas Madrid, Madrid, España'
       assert_equal title, @ad.meta_title
     end
   end

@@ -16,16 +16,16 @@ class LocationControllerTest < ActionController::TestCase
   end
 
   test "should get location suggestion list" do
-    mocking_yahoo_woeid_similar(@user.woeid) do
-      get :list, location: "Río de Janeiro"
-      assert_response :redirect
+    mocking_yahoo_woeid_similar("tenerife") do
+      get :list, location: "tenerife"
+      assert_response :success
     end
   end
 
   test "should get location suggestion list (with post)" do
-    mocking_yahoo_woeid_similar(@user.woeid) do
-      post :list, location: "Río de Janeiro"
-      assert_response :redirect
+    mocking_yahoo_woeid_similar("tenerife") do
+      post :list, location: "tenerife"
+      assert_response :success
     end
   end
 
