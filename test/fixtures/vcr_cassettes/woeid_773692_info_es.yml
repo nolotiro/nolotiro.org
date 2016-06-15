@@ -1,0 +1,135 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://where.yahooapis.com/v1/place/753692?appid=ccc2c6d8c5c9233d952dee39e4e4f05266d3ebc47b809498a7b071b500aefccd269423a8967b3d96700d5c1a630d59159b2b8f4d111714a8fb777362e548bc57&format=json&lang=es
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 15 Jun 2016 19:20:25 GMT
+      P3p:
+      - policyref="https://policies.yahoo.com/w3c/p3p.xml", CP="CAO DSP COR CUR ADM
+        DEV TAI PSA PSD IVAi IVDi CONi TELo OTPi OUR DELi SAMi OTRi UNRi PUBi IND
+        PHY ONL UNI PUR FIN COM NAV INT DEM CNT STA POL HEA PRE LOC GOV"
+      Content-Language:
+      - es
+      Access-Control-Allow-Origin:
+      - "*"
+      Cache-Control:
+      - max-age=86400,public
+      Expires:
+      - Thu, 16 Jun 2016 19:20:25 GMT
+      Vary:
+      - Accept-Encoding
+      Content-Encoding:
+      - gzip
+      Content-Length:
+      - '453'
+      Content-Type:
+      - application/json; charset=UTF-8
+      Age:
+      - '1'
+      Connection:
+      - keep-alive
+      Via:
+      - http/1.1 r1.ycpi.br1.yahoo.net (ApacheTrafficServer [cSsSfU])
+      Server:
+      - ATS
+      Y-Trace:
+      - BAEAQAAAAAD7aux0qsIlfgAAAAAAAAAAjqBCm.EuOsoAAAAAAAAAAAAFNVYDdCvmAAU1VgN5TJyPe1VkAAAAAA--
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAAA3WTTW/bMAyG/0qgcxZbkj/q3NYgQC8thq3AgMEXVtZiYbZo
+        yFK7LMh/n2QnjWd3N4F834cUKZ1I14CQZHsibyhVRbZ5yrOCrcf487GTT9D6
+        PPni5EuDZJZYgbWmD3aBlZfl5zXRo+EejJANavAegU5bc/TRfd9B6eL4J53E
+        bxTruaHYoJFVP2gCmOy/+fOlR8YTlhRp7ItB1SpNfX4HFhp3Q4+JBXmHrdOq
+        gmr12dlBzTW2MK3zafd8K0VZmt/FPLmWYrObjcHlBQy+Ki3UBDxlZjGj7J3J
+        P2LyBfPRNy5UB01o/z/cgvMi89wGhdfZI52h3+PLjq/7/ecdTFBsrNVh7wc9
+        noX028OgPpEGrLIudJTQDS8KmgerPlyCbENTXoTn8eJ3Xil9uMffwdejs/V3
+        2dslhNE4m0HinA5NaTS23sMHriS7y+JiZmMs5/Qc5m0kfAX9y0vDVbrxTPma
+        WNXKP6iHJ+AMdrKMHqEyKkz6mlsM7Yef6uoBDZhh05fRpVmc8CwJ+3VGeVlt
+        bbctozJ6q6WRmyPUiNCpfiOwLaNXWkbDpyqjcehhT6AP3ih7cj7/BTub2/yk
+        AwAA
+    http_version: 
+  recorded_at: Wed, 15 Jun 2016 19:20:25 GMT
+- request:
+    method: get
+    uri: http://where.yahooapis.com/v1/place/773692?appid=ccc2c6d8c5c9233d952dee39e4e4f05266d3ebc47b809498a7b071b500aefccd269423a8967b3d96700d5c1a630d59159b2b8f4d111714a8fb777362e548bc57&format=json&lang=es
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 15 Jun 2016 19:20:25 GMT
+      P3p:
+      - policyref="https://policies.yahoo.com/w3c/p3p.xml", CP="CAO DSP COR CUR ADM
+        DEV TAI PSA PSD IVAi IVDi CONi TELo OTPi OUR DELi SAMi OTRi UNRi PUBi IND
+        PHY ONL UNI PUR FIN COM NAV INT DEM CNT STA POL HEA PRE LOC GOV"
+      Content-Language:
+      - es
+      Access-Control-Allow-Origin:
+      - "*"
+      Cache-Control:
+      - max-age=86400,public
+      Expires:
+      - Thu, 16 Jun 2016 19:20:25 GMT
+      Vary:
+      - Accept-Encoding
+      Content-Encoding:
+      - gzip
+      Content-Length:
+      - '467'
+      Content-Type:
+      - application/json; charset=UTF-8
+      Age:
+      - '0'
+      Connection:
+      - keep-alive
+      Via:
+      - http/1.1 r3.ycpi.br1.yahoo.net (ApacheTrafficServer [cSsSfU])
+      Server:
+      - ATS
+      Y-Trace:
+      - BAEAQAAAAABhntrz6wLB7gAAAAAAAAAA6JgHC4v8W2sAAAAAAAAAAAAFNVYDejzxAAU1VgN_Ls2mln4KAAAAAA--
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAAA4WTTW/bMAyG/4qhcxbrI/7KrQ0CbIcNw1pgwOALa6uxMFs0
+        JLmdG+S/T4qbuZvX9iaI78uHpKgj6VuoJNkeySNKVZNtlom04Kvp/nbs5Rfo
+        fJx8HeRdi+SfQATOGRvsFdZelp1WRE+GG9AOop0ZnqJaRrdSS6PupU9Q4aCd
+        Gb1kb3soB0rvGcz3c0rnIYF81sjanjWBQvY3/vxcMBcbvikS6slQd0ozH/9k
+        W7DRDjQYBcE3RRapd9gNWtVQR1eDO1ciNHYwg2YM40mWU8EuGP5Wi5Ni2YnB
+        B6Ur9QogpZzR4gIQ7wLEAvDZd1OpHtrQ0yuQgrIi9ZAWK69zI3uL80e07OWy
+        D3/tzYu8fAL3aB2007mS/oExqI+kBafcEMrj+XqTslQEqz48X35g6ZqnGU3C
+        PO78ZtRKH67xV7BaHFzzXVq3zCNymi/zFKzgIY9G45o9/M+YZ8WmWDpF4gsI
+        L2IkfAP9k2xFaKmfzoytiFOdfEIdRnLlWj9HVZXxefNGMkcX4/uBGqKPaMKC
+        vtjlXCQ0z8IuD0Z5WeNcvy3jMn5spJHrERpE6JVdV9iV8QMr4/N3LONp/OHF
+        QB+8UVpyOv0G51yWAN4DAAA=
+    http_version: 
+  recorded_at: Wed, 15 Jun 2016 19:20:25 GMT
+recorded_with: VCR 3.0.3

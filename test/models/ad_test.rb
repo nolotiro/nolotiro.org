@@ -1,8 +1,10 @@
 # encoding : utf-8
 
 require 'test_helper'
+require 'support/web_mocking'
 
 class AdTest < ActiveSupport::TestCase
+  include WebMocking
 
   setup do
     @ad = FactoryGirl.create(:ad, woeid_code: 455825)
@@ -122,18 +124,25 @@ class AdTest < ActiveSupport::TestCase
   end
 
   test "ad meta_title for give ads" do
-    @ad.type = 1
-    @ad.save
-    title = "regalo segunda mano gratis  ordenador en Vallecas Río de Janeiro, Rio de Janeiro, Brasil"
-    assert_equal title, @ad.meta_title
+    mocking_yahoo_woeid_info(@ad.woeid_code) do
+      @ad.type = 1
+      @ad.save
+      title = 'regalo segunda mano gratis  ordenador en Vallecas Río de ' \
+              'Janeiro, Rio de Janeiro, Brasil'
+      assert_equal title, @ad.meta_title
+    end
   end
 
   test "ad meta_title for want ads" do
     skip
-    @ad.type = 2
-    @ad.save
-    title = "busco ordenador en Vallecas Río de Janeiro, Rio de Janeiro, Brasil"
-    assert_equal title, @ad.meta_title
+
+    mocking_yahoo_woeid_info(@ad.woeid_code) do
+      @ad.type = 2
+      @ad.save
+      title = 'busco ordenador en Vallecas Río de Janeiro, Rio de Janeiro, ' \
+              'Brasil'
+      assert_equal title, @ad.meta_title
+    end
   end
 
   test "ad body shoudl store emoji" do 

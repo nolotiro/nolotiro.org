@@ -1,0 +1,68 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://where.yahooapis.com/v1/place/766273?appid=ccc2c6d8c5c9233d952dee39e4e4f05266d3ebc47b809498a7b071b500aefccd269423a8967b3d96700d5c1a630d59159b2b8f4d111714a8fb777362e548bc57&format=json&lang=es
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 15 Jun 2016 12:15:41 GMT
+      P3p:
+      - policyref="https://policies.yahoo.com/w3c/p3p.xml", CP="CAO DSP COR CUR ADM
+        DEV TAI PSA PSD IVAi IVDi CONi TELo OTPi OUR DELi SAMi OTRi UNRi PUBi IND
+        PHY ONL UNI PUR FIN COM NAV INT DEM CNT STA POL HEA PRE LOC GOV"
+      Content-Language:
+      - es
+      Access-Control-Allow-Origin:
+      - "*"
+      Cache-Control:
+      - max-age=86400,public
+      Expires:
+      - Thu, 16 Jun 2016 12:15:41 GMT
+      Vary:
+      - Accept-Encoding
+      Content-Encoding:
+      - gzip
+      Content-Length:
+      - '437'
+      Content-Type:
+      - application/json; charset=UTF-8
+      Age:
+      - '25471'
+      Connection:
+      - keep-alive
+      Via:
+      - http/1.1 r3.ycpi.br1.yahoo.net (ApacheTrafficServer [cRs f ])
+      Server:
+      - ATS
+      Y-Trace:
+      - BAEAQAAAAABPc26IBh3F2AAAAAAAAAAA6JgHC4v8W2sAAAAAAAAAAAAFNVYCpLNTAAU1VgKktMVhFsrhAAAAAA--
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAAA3VTS4+bMBD+K5HP2WBs88qtXUXaS6qqrVSp4jILbrAKHmTM
+        btMo/7025MGu29toZr4H85kT6VuoJNmeyCtKVZNtlqYs4+u5/+3Yy0/QuTn5
+        PMrnFsm7wQqsNYOHV1i7tey8JnoG7KE2jnDtJqO25uhau6GHcqT0Zwz3/p3C
+        OlKvNO3Ieph2PCvZfXX1xSDjgokioU4J6k7peKk1dwLKR+xGrWqoVx9GOzng
+        GjtYCjzs7xIxS7KcMnGVYIEEC10bfFG6UgvSJWFKGS1unnlAyAPCvXNcqR5a
+        7/s/pPnFZYuV27PHN7e4NUOv1yzfZL7gYbNQj4OFdq4r6cJCv30iLVhlR29H
+        0I1gsWCFx+rDpfvAN2kWp57x2YVcK334iL89csDRNt/lYAMazpKCBzRZkefT
+        m0Jjmx38A5cwSvP4PS7hojj7axsJX0D/ItvEf04/17F731Z18g/qKfzRYC/L
+        6Ha56yw43A/UsHpCA2bK+XK+JKWCp8IHMRrl1hpr+20ZldFrI43cHKFBhF4N
+        mwq7MnqJy2j6icpoPrzPCvTBAeVAzue/JPr4cZQDAAA=
+    http_version: 
+  recorded_at: Wed, 15 Jun 2016 19:20:11 GMT
+recorded_with: VCR 3.0.3

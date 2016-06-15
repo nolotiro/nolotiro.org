@@ -33,6 +33,8 @@ group :development, :test do
 end
 
 group :test do
+  gem 'vcr', '~> 3.0'
+  gem 'webmock', '~> 2.0'
   gem 'database_cleaner', '~> 1.5'
 end
 

@@ -1,6 +1,8 @@
 require 'test_helper'
+require 'support/web_mocking'
 
 class LegacyRoutingTest < ActionDispatch::IntegrationTest
+  include WebMocking
 
   setup do
     @ad = FactoryGirl.create(:ad)
@@ -11,10 +13,12 @@ class LegacyRoutingTest < ActionDispatch::IntegrationTest
 
   Rails.application.secrets["langs"].split(' ').each do |l|
     test "should i18n for #{l} work" do
-      assert_routing "/#{l}", {controller: "ads", action: "index", locale: l}
-      get "/#{l}"
-      assert_response :success, "couldn't GET /#{l}"
-      I18n.locale = :es
+      mocking_yahoo_woeid_info(@ad.woeid_code, l) do
+        assert_routing "/#{l}", {controller: "ads", action: "index", locale: l}
+        get "/#{l}"
+        assert_response :success, "couldn't GET /#{l}"
+        I18n.locale = :es
+      end
     end
   end
 

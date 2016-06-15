@@ -1,8 +1,10 @@
 require 'test_helper'
 require 'integration/concerns/authentication'
 require 'integration/concerns/pagination'
+require 'support/web_mocking'
 
 class PersonalAdListing < ActionDispatch::IntegrationTest
+  include WebMocking
   include Authentication
   include Pagination
 
@@ -19,7 +21,7 @@ class PersonalAdListing < ActionDispatch::IntegrationTest
 
     login(@user.email, @user.password)
     within('.user_login_box') { click_link @user.username }
-    click_link 'anuncios'
+    mocking_yahoo_woeid_info(@user.woeid) { click_link 'anuncios' }
   end
 
   it 'lists all give ads in a separate tab in user profile' do

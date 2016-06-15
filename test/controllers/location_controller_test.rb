@@ -1,7 +1,8 @@
 require 'test_helper'
+require 'support/web_mocking'
 
 class LocationControllerTest < ActionController::TestCase
-
+  include WebMocking
   include Devise::TestHelpers
 
   setup do
@@ -15,13 +16,17 @@ class LocationControllerTest < ActionController::TestCase
   end
 
   test "should get location suggestion list" do
-    get :list, location: "Río de Janeiro"
-    assert_response :redirect
+    mocking_yahoo_woeid_similar(@user.woeid) do
+      get :list, location: "Río de Janeiro"
+      assert_response :redirect
+    end
   end
 
   test "should get location suggestion list (with post)" do
-    post :list, location: "Río de Janeiro"
-    assert_response :redirect
+    mocking_yahoo_woeid_similar(@user.woeid) do
+      post :list, location: "Río de Janeiro"
+      assert_response :redirect
+    end
   end
 
   test "should set location in my user" do
