@@ -43,15 +43,10 @@ class UserTest < ActiveSupport::TestCase
     assert @user.valid?
   end
 
-  test "shouldn't let a username with 2 characters - minimal 3" do 
-    @user.username = "12"
+  test "shouldn't let an empty username" do
+    @user.username = ""
     assert_not @user.valid?
-    assert @user.errors[:username].include? "es demasiado corto (3 caracteres mínimo)"
-  end
-
-  test "should let a username with 3 characters" do 
-    @user.username = "123"
-    assert @user.valid?
+    assert @user.errors[:username].include? "no puede estar en blanco"
   end
 
   test "should roles work" do 
