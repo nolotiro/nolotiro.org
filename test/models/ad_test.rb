@@ -1,8 +1,8 @@
 # encoding : utf-8
 
-class AdTest < ActiveSupport::TestCase
+require 'test_helper'
 
-  require 'test_helper'
+class AdTest < ActiveSupport::TestCase
 
   setup do
     @ad = FactoryGirl.create(:ad, woeid_code: 455825)
