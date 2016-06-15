@@ -1,4 +1,5 @@
 # encoding : utf-8
+
 class AdTest < ActiveSupport::TestCase
 
   require 'test_helper'
