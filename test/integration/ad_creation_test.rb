@@ -8,7 +8,7 @@ class AdCreationTest < ActionDispatch::IntegrationTest
 
   it 'can have pictures of 5 megabytes or less' do
     with_file_of_size(5.megabytes) do |path|
-      fill_ad_form(path)
+      submit_ad_form(path)
 
       page.assert_no_text('Imagen debe estar entre 0 Bytes y 5 MB')
     end
@@ -16,7 +16,7 @@ class AdCreationTest < ActionDispatch::IntegrationTest
 
   it 'cannot have pictures bigger than 5 megabytes' do
     with_file_of_size(6.megabytes) do |path|
-      fill_ad_form(path)
+      submit_ad_form(path)
 
       page.assert_text('Imagen debe estar entre 0 Bytes y 5 MB')
     end
@@ -24,7 +24,7 @@ class AdCreationTest < ActionDispatch::IntegrationTest
 
   private
 
-  def fill_ad_form(file_path)
+  def submit_ad_form(file_path)
     visit new_ad_path
     attach_file :image, file_path
     fill_in 'Título de tu anuncio:', with: 'File'
