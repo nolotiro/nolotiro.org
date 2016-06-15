@@ -120,11 +120,14 @@ class AdTest < ActiveSupport::TestCase
     assert_equal @ad.is_want?, true
   end
 
-  test "ad meta_title" do
+  test "ad meta_title for give ads" do
     @ad.type = 1
     @ad.save
     title = "regalo segunda mano gratis  ordenador en Vallecas Río de Janeiro, Rio de Janeiro, Brasil"
     assert_equal title, @ad.meta_title
+  end
+
+  test "ad meta_title for want ads" do
     @ad.type = 2
     @ad.save
     title = "regalo segunda mano gratis  ordenador en Vallecas Río de Janeiro, Rio de Janeiro, Brasil"
