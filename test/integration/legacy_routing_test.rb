@@ -22,13 +22,6 @@ class LegacyRoutingTest < ActionDispatch::IntegrationTest
     assert_routing '/', {controller: "ads", action: "index"}
   end
 
-  test "should route to given location" do
-    assert_routing '/ca', {controller: "ads", action: "index", locale: "ca"}
-    assert_routing '/en', {controller: "ads", action: "index", locale: "en"}
-    assert_routing '/es', {controller: "ads", action: "index", locale: "es"}
-    assert_routing '/fr', {controller: "ads", action: "index", locale: "fr"}
-  end
-
   test "should route to WOEID ads" do
     assert_routing '/es/woeid/766273/give', {controller: "woeid", action: "show", locale: "es", id: "766273", type: "give"}
     assert_routing '/es/woeid/766273/give/status/booked', {controller: "woeid", action: "show", locale: "es", id: "766273", type: "give", status: "booked"}
