@@ -10,16 +10,7 @@
   <div class="span-16">
     <%= form_for @contact do |f| %>
       <fieldset>
-        <% if @contact.errors.any? %>
-          <div id="error_explanation">
-            <h2><%= t('nlt.save_failed') %></h2>
-            <ul>
-              <% @contact.errors.full_messages.each do |msg| %>
-                <li><%= msg %></li>
-              <% end %>
-            </ul>
-          </div>
-        <% end %>
+        <%= errors_for(@contact) %>
 
         <dl>
           <% unless user_signed_in? %>

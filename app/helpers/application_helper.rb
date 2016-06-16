@@ -84,4 +84,18 @@ module ApplicationHelper
 
     t("nlt.please_fill_to_#{event}")
   end
+
+  def errors_for(object)
+    errs = object.errors
+    return unless errs.any?
+
+    content_tag(:div, id: 'error_explanation') do
+      header = content_tag(:h2, t('nlt.save_failed'))
+      list = content_tag(:ul) do
+        errs.full_messages.map { |m| content_tag(:li, m) }.join("\n").html_safe
+      end
+
+      header + list
+    end
+  end
 end
