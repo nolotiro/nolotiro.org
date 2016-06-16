@@ -16,20 +16,8 @@
           %table#mail-list.table.table-condensed
             %tbody
               - @conversations.each do |c|
-                %tr{ class: "mail #{ 'unread' if c.is_unread?(current_user) }" }
-                  - unless @box == 'trash'
-                    %td
-                      = check_box_tag '', c.id, false, class: 'delete_multiple_checkbox', name: "conversations[]"
-                  - else
-                    %td
-                  %td.sender
-                    = cache "other_username-#{current_user.id}_#{c.id}" do
-                      = interlocutor( current_user, c )
-                  %td.mail-subject
-                    = link_to c.subject, mailboxer_message_path(c)
-                  %td.timestamp
-                    = cache "moment-#{c.last_message.created_at}" do
-                      %abbr.js-moment{title: c.last_message.created_at}=c.last_message.created_at
+                = render partial: "messages/conversation",
+                         locals: { c: c, timestamp: c.last_message.created_at }
         - unless @box == 'trash'
           = submit_tag t('mailboxer.buttons.trash_selected'), id: 'delete_multiple_button'
       = will_paginate @conversations
