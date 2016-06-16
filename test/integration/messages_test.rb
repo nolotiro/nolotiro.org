@@ -49,6 +49,22 @@ class MessagesTest < ActionDispatch::IntegrationTest
     assert_content('Conversación con user1')
   end
 
+  it 'links to the other user in the conversation list' do
+    send_message(subject: 'Cosas', body: 'hola, user2')
+    visit messages_list_path(box: 'sent')
+
+    assert page.has_link?('user2'), 'No link to "user2" found'
+  end
+
+  it 'just shows a special label when the interlocutor is no longer there' do
+    send_message(subject: 'Cosas', body: 'hola, user2')
+    @user2.destroy
+    visit messages_list_path(box: 'sent')
+
+    assert_content '[borrado]'
+    refute page.has_link?('[borrado]')
+  end
+
   it "messages another user" do
     send_message(subject: "hola mundo", body: "hola trololo")
 
