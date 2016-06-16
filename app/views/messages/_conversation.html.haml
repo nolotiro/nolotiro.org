@@ -5,8 +5,7 @@
   - else
     %td
   %td.sender
-    = cache "other_username-#{current_user.id}_#{c.id}" do
-      = link_to_interlocutor(c)
+    = link_to_interlocutor(c)
   %td.mail-subject
     = link_to c.subject, mailboxer_message_path(c)
   %td.timestamp

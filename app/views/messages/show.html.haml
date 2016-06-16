@@ -14,7 +14,7 @@
 
 #main
   .span-14#messages-thread
-    - @conversation.messages.each do |mes|
+    - @conversation.messages.includes(:sender).each do |mes|
       = render :partial => "message", :locals => {:message => mes}
     = render :partial => "reply", :locals => {:message => @message}
   .span-8.mobile
