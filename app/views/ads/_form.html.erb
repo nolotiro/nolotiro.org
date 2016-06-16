@@ -1,7 +1,7 @@
 <div id="main">
   <div class="span-16">
-    <fieldset>
-      <%= form_for(@ad, :html => {:multipart => true}) do |f| %>
+    <%= form_for(@ad, :html => {:multipart => true}) do |f| %>
+      <fieldset>
         <%= errors_for(@ad) %>
 
         <dl>
@@ -80,7 +80,7 @@
             <%= f.submit t 'nlt.send' %>
           </dd>
         </dl>
-      <% end %>
-    </fieldset>
+      </fieldset>
+    <% end %>
   </div>
 </div>
