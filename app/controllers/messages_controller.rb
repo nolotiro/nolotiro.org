@@ -38,15 +38,19 @@ class MessagesController < ApplicationController
         flash.now[:alert] = I18n.t('nlt.permission_denied')
         return redirect_to root_path
       end
+
+      return render_invalid_for(interlocutor) unless @message.valid?
+
       receipt = current_user.reply_to_conversation(@conversation, @message.body, nil, true, true, @message.attachment)
     else
       recipient = User.find(recipient_id)
       return render_invalid_for(recipient) unless @message.valid?
 
       receipt = current_user.send_message([recipient], @message.body, @message.subject, true, @message.attachment)
+      @conversation = receipt.conversation
     end
     flash.now[:notice] = I18n.t "mailboxer.notifications.sent" 
-    redirect_to mailboxer_message_path(receipt.conversation)
+    redirect_to mailboxer_message_path(@conversation)
   end
 
   # GET /messages/:ID
@@ -113,5 +117,9 @@ class MessagesController < ApplicationController
     @recipient = recipient
     @message.recipients = @recipient.id
     render :new
+  end
+
+  def interlocutor
+    @conversation.last_message.recipients.delete(current_user)
   end
 end
