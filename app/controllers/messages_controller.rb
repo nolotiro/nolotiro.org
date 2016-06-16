@@ -6,12 +6,12 @@ class MessagesController < ApplicationController
 
   def index
     @box = params[:box] || 'inbox'
-    @messages = current_user.mailbox.inbox if @box == 'inbox'
-    @messages = current_user.mailbox.sentbox if @box == 'sent'
-    @messages = current_user.mailbox.trash if @box == 'trash'
-    @messages = current_user.mailbox.archive if @box == 'archive'
-    @messages = @messages.sort_by {|m| m.messages.last.created_at}.reverse
-    @messages = @messages.paginate(:page => params[:page], :total_entries => @messages.to_a.size)
+    @conversations = current_user.mailbox.inbox if @box == 'inbox'
+    @conversations = current_user.mailbox.sentbox if @box == 'sent'
+    @conversations = current_user.mailbox.trash if @box == 'trash'
+    @conversations = current_user.mailbox.archive if @box == 'archive'
+    @conversations = @conversations.sort_by {|c| c.messages.last.created_at}.reverse
+    @conversations = @conversations.paginate(:page => params[:page], :total_entries => @conversations.to_a.size)
     session[:last_mailbox] = @box
   end
 
@@ -99,7 +99,7 @@ class MessagesController < ApplicationController
 
   def search
     @search = params[:search]
-    @messages = current_user.search_messages(@search)
+    @conversations = current_user.search_messages(@search)
     render :index
   end
 
