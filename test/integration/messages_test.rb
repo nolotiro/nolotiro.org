@@ -27,13 +27,13 @@ class MessagesTest < ActionDispatch::IntegrationTest
 
   it 'sends message after a previous error' do
     send_message(body: 'hola, user2')
-    send_message(body: 'hola, user2', subject: 'forgot the title')
+    send_message(subject: 'forgot the title', body: 'hola, user2')
 
     assert_content('Conversación con user2 asunto forgot the title')
   end
 
   it 'shows the other user in the conversation header' do
-    send_message(body: 'hola, user2', subject: 'Cosas')
+    send_message(subject: 'Cosas', body: 'hola, user2')
     assert_content('Conversación con user2')
 
     login_as @user2
@@ -43,7 +43,7 @@ class MessagesTest < ActionDispatch::IntegrationTest
   end
 
   it "messages another user" do
-    send_message(body: "hola trololo", subject: "hola mundo")
+    send_message(subject: "hola mundo", body: "hola trololo")
 
     assert_content("hola trololo")
     assert_content("Mover mensaje a papelera")
@@ -51,14 +51,14 @@ class MessagesTest < ActionDispatch::IntegrationTest
 
   it "messages another user using emojis" do
     skip "emojis not supported"
-    send_message(body: "What a nice emoji😀!", subject: "hola mundo")
+    send_message(subject: "hola mundo", body: "What a nice emoji😀!")
 
     assert_content("What a nice emoji😀!")
     assert_content("Mover mensaje a papelera")
   end
 
   it "replies to a message" do
-    send_message(body: "hola trololo", subject: "hola mundo")
+    send_message(subject: "hola mundo", body: "hola trololo")
     send_message(body: "hola trululu")
 
     assert_content("hola trululu")
