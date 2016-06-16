@@ -40,12 +40,13 @@ class MessagesController < ApplicationController
       end
       receipt = current_user.reply_to_conversation(@conversation, @message.body, nil, true, true, @message.attachment)
     else
-      @recipient = User.find(recipient_id)
+      recipient = User.find(recipient_id)
       unless @message.valid?
+        @recipient = recipient
         @message.recipients = @recipient.id
         return render :new
       end
-      receipt = current_user.send_message([@recipient], @message.body, @message.subject, true, @message.attachment)
+      receipt = current_user.send_message([recipient], @message.body, @message.subject, true, @message.attachment)
     end
     flash.now[:notice] = I18n.t "mailboxer.notifications.sent" 
     redirect_to mailboxer_message_path(receipt.conversation)
