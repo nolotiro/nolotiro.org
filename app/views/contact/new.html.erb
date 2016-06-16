@@ -28,9 +28,9 @@
             <%= f.text_area :message, :size => "24x10" %>
           </dd>
           <dt>
-          <label for="captcha-input" class="required">
-            <%= t('nlt.please_introduce') %>
-          </label>
+            <label for="captcha-input" class="required">
+              <%= t('nlt.please_introduce') %>
+            </label>
           </dt>
           <dd>
             <%= recaptcha_tags(:display => { :theme => "white" }, ajax: true)%>

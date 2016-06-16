@@ -1,5 +1,5 @@
 <div class="ad_comment_form">
-	<%= form_tag(create_comment_path(ad)) do %>
+  <%= form_tag(create_comment_path(ad)) do %>
     <%= errors_for(@comment) %>
 
     <dl>
@@ -11,7 +11,7 @@
       <dd>
         <%= text_area_tag("body", "", size: "80x24", maxlength: 1000) %>
         <p class="description">
-        <%= t 'nlt.comments.body_max' %>
+          <%= t 'nlt.comments.body_max' %>
         </p>
       </dd>
       <dt>&nbsp;</dt>
