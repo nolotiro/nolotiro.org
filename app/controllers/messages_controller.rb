@@ -27,8 +27,8 @@ class MessagesController < ApplicationController
     @message = Mailboxer::Message.new message_params
     @message.sender = current_user
     # FIXME: this should be on model (validation)
-    if @message.sender.id == params[:mailboxer_message][:recipients].to_i
-      return redirect_to message_create_url(user_id: params[:mailboxer_message][:recipients].to_i), notice: I18n.t("mailboxer.notifications.error_same_user")
+    if @message.sender.id == recipient_id
+      return redirect_to message_create_url(user_id: recipient_id), notice: I18n.t("mailboxer.notifications.error_same_user")
     end
     if @message.conversation_id
       @conversation = Mailboxer::Conversation.find(@message.conversation_id)
@@ -40,7 +40,7 @@ class MessagesController < ApplicationController
       end
       receipt = current_user.reply_to_conversation(@conversation, @message.body, nil, true, true, @message.attachment)
     else
-      @recipient = User.find(params[:mailboxer_message][:recipients])
+      @recipient = User.find(recipient_id)
       unless @message.valid?
         @message.recipients = @recipient.id
         return render :new
@@ -107,4 +107,7 @@ class MessagesController < ApplicationController
     params.require(:mailboxer_message).permit(:conversation_id, :body, :subject, :recipients, :sender_id)
   end
 
+  def recipient_id
+    params[:mailboxer_message][:recipients].to_i
+  end
 end
