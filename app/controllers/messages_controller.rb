@@ -10,7 +10,7 @@ class MessagesController < ApplicationController
     @conversations = current_user.mailbox.sentbox if @box == 'sent'
     @conversations = current_user.mailbox.trash if @box == 'trash'
     @conversations = current_user.mailbox.archive if @box == 'archive'
-    @conversations = @conversations.sort_by {|c| c.messages.last.created_at}.reverse
+    @conversations = @conversations.sort_by {|c| c.last_message.created_at}.reverse
     @conversations = @conversations.paginate(:page => params[:page], :total_entries => @conversations.to_a.size)
     session[:last_mailbox] = @box
   end
