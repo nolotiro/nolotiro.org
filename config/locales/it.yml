@@ -21,6 +21,7 @@ it:
         message: Messaggio
       mailboxer/message:
         subject: Soggetto
+        body: Messaggio
       user:
         Contraseña: Password
         Recuérdame: Ricordami

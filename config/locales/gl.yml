@@ -21,6 +21,7 @@ gl:
         message: Mensaxe
       mailboxer/message:
         subject: Asunto
+        body: Mensaxe
       user:
         Contraseña: Contrasinal
         Recuérdame: Lémbrame
