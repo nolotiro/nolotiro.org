@@ -1,14 +1,17 @@
 require 'test_helper'
+require 'support/web_mocking'
 
 class AdHelperTest < ActionView::TestCase
-  include AdHelper
+  include WebMocking
 
-  setup { FactoryGirl.create(:ad, woeid_code: 455825) }
+  setup { @ad = FactoryGirl.create(:ad, woeid_code: 766273) }
 
   test "should get locations ranking" do
-    actual = AdHelper.get_locations_ranking(1)
-    expected = [["Río de Janeiro, Rio de Janeiro, Brasil", 455825, 1]]
-    assert_equal(expected, actual)
+    mocking_yahoo_woeid_info(766273) do
+      actual = AdHelper.get_locations_ranking(1)
+      expected = [["Madrid, Madrid, España", 766273, 1]]
+      assert_equal(expected, actual)
+    end
   end
 
 end

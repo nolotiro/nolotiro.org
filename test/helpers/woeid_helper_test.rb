@@ -1,18 +1,27 @@
 require 'test_helper'
+require 'support/web_mocking'
 
 class WoeidHelperTest < ActionView::TestCase
-  include WoeidHelper
+  include WebMocking
 
   test "should convert a WOEID to a place name in the given format" do
-    location = WoeidHelper.convert_woeid_name(455825)
-    assert_equal("Río de Janeiro, Rio de Janeiro, Brasil", location[:full])
-    assert_equal("Río de Janeiro", location[:short])
+    mocking_yahoo_woeid_info(766273) do
+      location = WoeidHelper.convert_woeid_name(766273)
+      assert_equal("Madrid, Madrid, España", location[:full])
+      assert_equal("Madrid", location[:short])
+    end
   end
 
   test "should search serveral cities with the same name" do
-    results = WoeidHelper.search_by_name("Río de Janeiro") 
-    expected_results = [["Río de Janeiro, Rio de Janeiro, Brasil (0 anuncios)", 455825]]
-    assert_equal(expected_results, results)
+    mocking_yahoo_woeid_similar("tenerife") do
+      actual = WoeidHelper.search_by_name("tenerife") 
+      expected = [
+        ["Tenerife, Magdalena, Colombia (0 anuncios)", 369486],
+        ["Tenerife, Cordoba, Colombia (0 anuncios)", 369485],
+        ["Santa Cruz de Tenerife, Islas Canarias, España (0 anuncios)", 773692]
+      ]
+      assert_equal(expected, actual)
+    end
   end
 
 end

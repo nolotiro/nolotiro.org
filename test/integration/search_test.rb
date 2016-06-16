@@ -1,7 +1,9 @@
 require 'test_helper'
 require 'support/sphinx'
+require 'support/web_mocking'
 
 class Search < ActionDispatch::IntegrationTest
+  include WebMocking
   include SphinxHelpers
 
   before do
@@ -12,7 +14,9 @@ class Search < ActionDispatch::IntegrationTest
 
     index
 
-    visit ads_woeid_path(766_273, type: 'give')
+    mocking_yahoo_woeid_info(766_273) do
+      visit ads_woeid_path(766_273, type: 'give')
+    end
   end
 
   after { ThinkingSphinx::Test.stop }

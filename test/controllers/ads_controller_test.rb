@@ -1,8 +1,8 @@
 require 'test_helper'
-class AdsControllerTest < ActionController::TestCase
-  # Test the CRUD scaffolded actions as anon, logged in user and admin
-  #
+require 'support/web_mocking'
 
+class AdsControllerTest < ActionController::TestCase
+  include WebMocking
   include Devise::TestHelpers
 
   setup do
@@ -12,10 +12,12 @@ class AdsControllerTest < ActionController::TestCase
   end
 
   test "should get index" do
-    @request.headers["REMOTE_ADDR"] = "87.223.138.147"
-    get :index
-    assert_response :success
-    assert_not_nil assigns(:ads)
+    mocking_yahoo_woeid_info(@ad.woeid_code) do
+      @request.headers["REMOTE_ADDR"] = "87.223.138.147"
+      get :index
+      assert_response :success
+      assert_not_nil assigns(:ads)
+    end
   end
 
   test "should not get new if not signed in" do
@@ -25,9 +27,11 @@ class AdsControllerTest < ActionController::TestCase
   end
 
   test "should get new if signed in" do
-    sign_in @user
-    get :new
-    assert_response :success
+    mocking_yahoo_woeid_info(@user.woeid) do
+      sign_in @user
+      get :new
+      assert_response :success
+    end
   end
 
   test "should not create ad if not signed in" do
@@ -46,8 +50,10 @@ class AdsControllerTest < ActionController::TestCase
   end
 
   test "should show ad" do
-    get :show, id: @ad.id
-    assert_response :success
+    mocking_yahoo_woeid_info(@ad.woeid_code) do
+      get :show, id: @ad.id
+      assert_response :success
+    end
   end
 
   test "only ad owner should bump ads" do

@@ -1,8 +1,10 @@
 require 'test_helper'
 require 'integration/concerns/authentication'
 require 'integration/concerns/pagination'
+require 'support/web_mocking'
 
 class AuthenticatedAdListing < ActionDispatch::IntegrationTest
+  include WebMocking
   include Authentication
   include Pagination
 
@@ -15,7 +17,8 @@ class AuthenticatedAdListing < ActionDispatch::IntegrationTest
 
     with_pagination(1) do
       login_as create(:user, woeid: 766_273)
-      visit root_path
+
+      mocking_yahoo_woeid_info(766_273) { visit root_path }
     end
   end
 
