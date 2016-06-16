@@ -41,11 +41,8 @@ class MessagesController < ApplicationController
       receipt = current_user.reply_to_conversation(@conversation, @message.body, nil, true, true, @message.attachment)
     else
       recipient = User.find(recipient_id)
-      unless @message.valid?
-        @recipient = recipient
-        @message.recipients = @recipient.id
-        return render :new
-      end
+      return render_invalid_for(recipient) unless @message.valid?
+
       receipt = current_user.send_message([recipient], @message.body, @message.subject, true, @message.attachment)
     end
     flash.now[:notice] = I18n.t "mailboxer.notifications.sent" 
@@ -110,5 +107,11 @@ class MessagesController < ApplicationController
 
   def recipient_id
     params[:mailboxer_message][:recipients].to_i
+  end
+
+  def render_invalid_for(recipient)
+    @recipient = recipient
+    @message.recipients = @recipient.id
+    render :new
   end
 end
