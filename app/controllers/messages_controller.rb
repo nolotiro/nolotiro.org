@@ -32,7 +32,7 @@ class MessagesController < ApplicationController
     end
     if @message.conversation_id
       @conversation = Mailboxer::Conversation.find(@message.conversation_id)
-      #@conversation = current_user.mailbox.conversations.find(@message.conversation_id)
+      #@conversation = conversations.find(@message.conversation_id)
       # FIXME: ACL should be on app/models/ability.rb
       unless @conversation.is_participant?(current_user) or current_user.admin?
         flash.now[:alert] = I18n.t('nlt.permission_denied')
@@ -60,7 +60,7 @@ class MessagesController < ApplicationController
   def show
     # TODO: refactor this 
     @conversation = Mailboxer::Conversation.find_by_id(params[:id])
-    #@conversation = current_user.mailbox.conversations.find(params[:id])
+    #@conversation = conversations.find(params[:id])
     raise ActiveRecord::RecordNotFound if @conversation.nil?
     # FIXME: ACL should be on app/models/ability.rb
     unless @conversation.is_participant?(current_user) or current_user.admin?
@@ -73,12 +73,12 @@ class MessagesController < ApplicationController
 
   def move
     mailbox = params[:mailbox]
-    conversation = current_user.mailbox.conversations.find(params[:id])
+    conversation = conversations.find(params[:id])
     if conversation
       current_user.send(mailbox, conversation)
       flash[:notice] = I18n.t "mailboxer.notifications.sent", mailbox: mailbox
     else
-      conversation = current_user.mailbox.conversations.find(params[:conversations])
+      conversation = conversations.find(params[:conversations])
       conversations.each { |c| current_user.send(mailbox, c) }
       flash[:notice] = I18n.t "mailboxer.notifications.sent", mailbox: mailbox
     end
@@ -86,14 +86,14 @@ class MessagesController < ApplicationController
   end
 
   def trash
-    conversation = current_user.mailbox.conversations.find(params[:id] || params[:conversations])
+    conversation = conversations.find(params[:id] || params[:conversations])
     current_user.trash(conversation)
     flash[:notice] = I18n.t "mailboxer.notifications.trash"
     redirect_to mailboxer_messages_path(:box => 'inbox')
   end
 
   def untrash
-    conversation = current_user.mailbox.conversations.find(params[:id])
+    conversation = conversations.find(params[:id])
     current_user.untrash(conversation)
     flash[:notice] = I18n.t "mailboxer.notifications.untrash"
     redirect_to mailboxer_messages_path(:box => 'inbox')
@@ -128,6 +128,10 @@ class MessagesController < ApplicationController
     @recipient = recipient
     @message.recipients = @recipient.id
     render :new
+  end
+
+  def conversations
+    current_user.mailbox.conversations
   end
 
   def interlocutor(conversation)
