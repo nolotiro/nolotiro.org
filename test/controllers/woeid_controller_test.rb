@@ -7,7 +7,7 @@ class WoeidControllerTest < ActionController::TestCase
   include Devise::Test::ControllerHelpers
 
   setup do
-    @ad = FactoryGirl.create(:ad)
+    @ad = create(:ad)
   end
 
   test 'should get listall and give (available, delivered, booked)' do

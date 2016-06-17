@@ -8,8 +8,8 @@ module SelfMessages
   def setup
     super
 
-    @user1 = FactoryGirl.create(:user, username: 'user1')
-    @user2 = FactoryGirl.create(:user, username: 'user2')
+    @user1 = create(:user, username: 'user1')
+    @user2 = create(:user, username: 'user2')
 
     login_as @user1
 

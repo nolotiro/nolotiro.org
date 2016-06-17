@@ -5,8 +5,8 @@ class FriendshipsControllerTest < ActionController::TestCase
   include Devise::Test::ControllerHelpers
 
   setup do
-    @user = FactoryGirl.create(:user)
-    @friend = FactoryGirl.create(:user, 'email' => 'jaimito@gmail.com', 'username' => 'jaimito')
+    @user = create(:user)
+    @friend = create(:user, 'email' => 'jaimito@gmail.com', 'username' => 'jaimito')
   end
 
   test 'should not create a friend as anonymous user' do

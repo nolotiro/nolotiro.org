@@ -8,7 +8,7 @@ class AdTest < ActiveSupport::TestCase
   include WebMocking
 
   setup do
-    @ad = FactoryGirl.create(:ad)
+    @ad = create(:ad)
   end
 
   test 'ad requires everything' do
@@ -170,7 +170,7 @@ class AdTest < ActiveSupport::TestCase
   end
 
   test 'associated comments are deleted when ad is deleted' do
-    FactoryGirl.create(:comment, ad: @ad)
+    create(:comment, ad: @ad)
 
     assert_difference(-> { Comment.count }, -1) { @ad.destroy }
   end

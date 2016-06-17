@@ -8,8 +8,8 @@ class EditionsByAdmin < ActionDispatch::IntegrationTest
   include Authentication
 
   before do
-    @ad = FactoryGirl.create(:ad, woeid_code: 766_273, type: 1)
-    login_as FactoryGirl.create(:admin, woeid: 766_272)
+    @ad = create(:ad, woeid_code: 766_273, type: 1)
+    login_as create(:admin, woeid: 766_272)
   end
 
   it 'changes only the edited attribute' do

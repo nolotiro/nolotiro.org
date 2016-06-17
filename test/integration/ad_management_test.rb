@@ -8,7 +8,7 @@ class AdManagementTest < ActionDispatch::IntegrationTest
   include Authentication
 
   before do
-    @user = FactoryGirl.create(:user)
+    @user = create(:user)
     login_as @user
   end
 

@@ -7,8 +7,8 @@ class FriendshipsTest < ActionDispatch::IntegrationTest
   include Authentication
 
   before do
-    @user = FactoryGirl.create(:user)
-    @friend = FactoryGirl.create(:user)
+    @user = create(:user)
+    @friend = create(:user)
 
     login_as @user
     visit profile_path(@friend)

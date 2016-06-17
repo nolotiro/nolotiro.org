@@ -6,7 +6,7 @@ class LinksForBookedAdsTest < ActionDispatch::IntegrationTest
   include WebMocking
 
   before do
-    @ad = FactoryGirl.create(:ad, status: 2, comments_enabled: true)
+    @ad = create(:ad, status: 2, comments_enabled: true)
     @woeid_code = @ad.woeid_code
   end
 

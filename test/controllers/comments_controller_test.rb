@@ -5,8 +5,8 @@ class CommentsControllerTest < ActionController::TestCase
   include Devise::Test::ControllerHelpers
 
   setup do
-    @ad = FactoryGirl.create(:ad)
-    @user = FactoryGirl.create(:user, 'email' => 'jaimito@gmail.com', 'username' => 'jaimito')
+    @ad = create(:ad)
+    @user = create(:user, 'email' => 'jaimito@gmail.com', 'username' => 'jaimito')
   end
 
   test 'should not create a comment as anonymous' do
