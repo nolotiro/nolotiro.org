@@ -25,7 +25,7 @@ class MessagesTest < ActionDispatch::IntegrationTest
     assert_content('Mensaje no puede estar en blanco')
   end
 
-   it 'shows errors when replying to conversation with empty message' do
+  it 'shows errors when replying to conversation with empty message' do
     send_message(subject: 'hola, user2', body: 'How you doing?')
     send_message(body: '')
 
