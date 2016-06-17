@@ -68,7 +68,7 @@ module ApplicationHelper
     content_tag(:div, id: 'error_explanation') do
       header = content_tag(:h2, t('nlt.save_failed'))
       list = content_tag(:ul) do
-        errs.full_messages.map { |m| content_tag(:li, m) }.join("\n").html_safe
+        safe_join(errs.full_messages.map { |m| content_tag(:li, m) }, "\n")
       end
 
       header + list
