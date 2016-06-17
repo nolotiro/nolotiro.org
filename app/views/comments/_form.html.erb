@@ -1,15 +1,7 @@
 <div class="ad_comment_form">
-	<%= form_tag(create_comment_path(ad)) do %>
-    <% if @comment.errors.any? %>
-      <div id="error_explanation">
-        <h2><%= t('nlt.save_failed') %></h2>
-        <ul>
-          <% @comment.errors.full_messages.each do |msg| %>
-              <li><%= msg %></li>
-          <% end %>
-        </ul>
-      </div>
-    <% end %>
+  <%= form_tag(create_comment_path(ad)) do %>
+    <%= errors_for(@comment) %>
+
     <dl>
       <dt>
         <label for="body" class="optional">
@@ -19,7 +11,7 @@
       <dd>
         <%= text_area_tag("body", "", size: "80x24", maxlength: 1000) %>
         <p class="description">
-        <%= t 'nlt.comments.body_max' %>
+          <%= t 'nlt.comments.body_max' %>
         </p>
       </dd>
       <dt>&nbsp;</dt>

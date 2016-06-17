@@ -2,24 +2,15 @@
 
 <div id="default_header_section">
   <h2><%= t('nlt.contact_form') %></h2>
+  <br>
+  <%= t('nlt.contact_legend') %>
 </div>
 
 <div id="main">
   <div class="span-16">
     <%= form_for @contact do |f| %>
       <fieldset>
-        <legend><%= t('nlt.contact_legend') %></legend>
-
-        <% if @contact.errors.any? %>
-          <div class="error_messages">
-            <h2><%= t('nlt.save_failed') %></h2>
-            <ul>
-              <% @contact.errors.full_messages.each do |msg| %>
-                <li><%= msg %></li>
-              <% end %>
-            </ul>
-          </div>
-        <% end %>
+        <%= errors_for(@contact) %>
 
         <dl>
           <% unless user_signed_in? %>
@@ -37,9 +28,9 @@
             <%= f.text_area :message, :size => "24x10" %>
           </dd>
           <dt>
-          <label for="captcha-input" class="required">
-            <%= t('nlt.please_introduce') %>
-          </label>
+            <label for="captcha-input" class="required">
+              <%= t('nlt.please_introduce') %>
+            </label>
           </dt>
           <dd>
             <%= recaptcha_tags(:display => { :theme => "white" }, ajax: true)%>
