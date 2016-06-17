@@ -85,6 +85,6 @@ gem 'font-awesome-rails'                            # font-awesome icons
 gem 'faker'
 gem 'ruby-progressbar'
 
-gem 'mailboxer', '0.13.0'                           # messaging
+gem 'mailboxer', github: 'mailboxer'                # messaging
 
 gem 'bootstrap-sass', '~> 3.3'

@@ -1,13 +1,9 @@
 module MessageHelper
 
-  def interlocutor( c )
-    c.recipients.find { |u| u != current_user }
-  end
-
   def interlocutor_username(c)
-    interlocutor = interlocutor(c)
+    other_user = interlocutor(c)
 
-    interlocutor ? interlocutor.username : '[borrado]'
+    other_user ? other_user.username : '[borrado]'
   end
 
   def link_to_interlocutor(c)

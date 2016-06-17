@@ -17,6 +17,15 @@ GIT
       sass-rails
       sprockets (< 4)
 
+GIT
+  remote: git://github.com/mailboxer/mailboxer.git
+  revision: d86062fdf62fff1286c01da7b6250fa2e89221b4
+  specs:
+    mailboxer (0.13.0)
+      carrierwave (>= 0.5.8)
+      foreigner (>= 0.9.1)
+      rails (>= 3.2.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -112,11 +121,12 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
-    carrierwave (0.10.0)
+    carrierwave (0.11.2)
       activemodel (>= 3.2.0)
       activesupport (>= 3.2.0)
       json (>= 1.7)
       mime-types (>= 1.16)
+      mimemagic (>= 0.3.0)
     climate_control (0.0.3)
       activesupport (>= 3.0)
     cocaine (0.5.8)
@@ -236,10 +246,6 @@ GEM
       nokogiri (>= 1.5.9)
     mail (2.6.4)
       mime-types (>= 1.16, < 4)
-    mailboxer (0.13.0)
-      carrierwave (>= 0.5.8)
-      foreigner (>= 0.9.1)
-      rails (>= 3.2.0)
     mailcatcher (0.6.2)
       activesupport (>= 4.0.0, < 5)
       eventmachine (= 1.0.8)
@@ -493,7 +499,7 @@ DEPENDENCIES
   jquery-rails
   launchy
   localeapp
-  mailboxer (= 0.13.0)
+  mailboxer!
   mailcatcher
   maxminddb
   minitest-spec-rails

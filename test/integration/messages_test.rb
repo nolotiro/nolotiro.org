@@ -32,11 +32,26 @@ class MessagesTest < ActionDispatch::IntegrationTest
     assert_content('Mensaje no puede estar en blanco')
   end
 
-  it 'sends message after a previous error' do
+  it 'sends a new message after a previous error' do
     send_message(body: 'hola, user2')
     send_message(subject: 'forgot the title', body: 'hola, user2')
 
     assert_content('Conversación con user2 asunto forgot the title')
+  end
+
+  it 'replies to conversation' do
+    send_message(subject: 'hola, user2', body: 'How you doing?')
+    send_message(body: 'hola, user1, nice to see you around')
+
+    page.assert_selector '.bubble', text: 'nice to see you around'
+  end
+
+  it 'replies to conversation after a previous error' do
+    send_message(subject: 'hola, user2', body: 'How you doing?')
+    send_message(body: '')
+    send_message(body: 'forgot to reply something')
+
+    page.assert_selector '.bubble', text: 'forgot to reply something'
   end
 
   it 'shows the other user in the conversation header' do

@@ -39,15 +39,17 @@ class MessagesController < ApplicationController
         return redirect_to root_path
       end
 
-      return render_invalid_for(interlocutor) unless @message.valid?
+      unless @message.valid?
+        return render_show_with(interlocutor(@conversation))
+      end
 
       receipt = current_user.reply_to_conversation(@conversation, @message.body, nil, true, true, @message.attachment)
     else
       recipient = User.find(recipient_id)
-      return render_invalid_for(recipient) unless @message.valid?
-
       receipt = current_user.send_message([recipient], @message.body, @message.subject, true, @message.attachment)
-      @conversation = receipt.conversation
+      @conversation = receipt.notification.conversation
+
+      return render_new_with(recipient, receipt) unless receipt.valid?
     end
     flash.now[:notice] = I18n.t "mailboxer.notifications.sent" 
     redirect_to mailboxer_message_path(@conversation)
@@ -113,13 +115,24 @@ class MessagesController < ApplicationController
     params[:mailboxer_message][:recipients].to_i
   end
 
-  def render_invalid_for(recipient)
+  def render_show_with(recipient)
+    @message.recipients = recipient.id
+    render :show
+  end
+
+  def render_new_with(recipient, receipt)
+    missing_subject = receipt.errors['notification.conversation.subject'].first
+    missing_body = receipt.errors['notification.body'].first
+    @message.errors.add(:subject, missing_subject) if missing_subject
+    @message.errors.add(:body, missing_body) if missing_body
     @recipient = recipient
     @message.recipients = @recipient.id
     render :new
   end
 
-  def interlocutor
-    @conversation.last_message.recipients.delete(current_user)
+  def interlocutor(conversation)
+    conversation.recipients.find { |u| u != current_user }
   end
+
+  helper_method :interlocutor
 end
