@@ -31,10 +31,8 @@ class MessagesController < ApplicationController
       return redirect_to message_create_url(user_id: recipient_id), notice: I18n.t("mailboxer.notifications.error_same_user")
     end
     if @message.conversation_id
-      @conversation = Mailboxer::Conversation.find(@message.conversation_id)
-      #@conversation = conversations.find(@message.conversation_id)
-      # FIXME: ACL should be on app/models/ability.rb
-      unless @conversation.is_participant?(current_user) or current_user.admin?
+      @conversation = conversations.find_by(id: @message.conversation_id)
+      unless @conversation
         return redirect_to root_path, alert: I18n.t('nlt.permission_denied')
       end
 
@@ -57,14 +55,11 @@ class MessagesController < ApplicationController
   # GET /messages/:ID
   # GET /message/show/:ID/subject/SUBJECT
   def show
-    # TODO: refactor this 
-    @conversation = Mailboxer::Conversation.find_by_id(params[:id])
-    #@conversation = conversations.find(params[:id])
-    raise ActiveRecord::RecordNotFound if @conversation.nil?
-    # FIXME: ACL should be on app/models/ability.rb
-    unless @conversation.is_participant?(current_user) or current_user.admin?
+    @conversation = conversations.find_by(id: params[:id])
+    unless @conversation
       return redirect_to root_path, alert: I18n.t('nlt.permission_denied')
     end
+
     @message = Mailboxer::Message.new conversation_id: @conversation.id
     current_user.mark_as_read(@conversation)
   end
