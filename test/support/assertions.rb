@@ -4,6 +4,16 @@ module Minitest
   # Custom Minitest assertions
   #
   module Assertions
+    def assert_link(name)
+      msg = "Link '#{name}' was not found in page's html: #{page.html}"
+      assert page.has_link?(name, exact: true), msg
+    end
+
+    def refute_link(name)
+      msg = "Link '#{name}' was found in page's html: #{page.html}"
+      refute page.has_link?(name, exact: true), msg
+    end
+
     def assert_content(text)
       msg = "Content '#{text}' was not found in page's content: '#{page.text}'"
       assert page.has_content?(text), msg

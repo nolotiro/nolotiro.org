@@ -175,6 +175,11 @@ en:
       signed_out: Signed out successfully.
       user:
         signed_in: You are signed.
+  blockings:
+    create:
+      success: User blocked
+    destroy:
+      success: User unblocked
   friendships:
     create:
       error: Error occurred when adding %{username} as a friend.
@@ -397,6 +402,10 @@ en:
       friend:
         add: 'Add %{username} to your friend''s list '
         delete: Delete %{username} from your friend's list
+      blocking:
+        add: 
+        confirm: 
+        delete: 
     publish_ad: Posting ad
     publish_ad_on: Post ad in %{woeid}
     published_ads: Posted ads

@@ -179,6 +179,11 @@ it:
       signed_out: Sei uscito correttamente.
       user:
         signed_in: Acceso eseguito
+  blockings:
+    create:
+      success: Utente bloccato
+    destroy:
+      success: Utente sbloccato
   friendships:
     create:
       error: C'è stato un'errore aggiungendo %{username} come amico.
@@ -403,6 +408,10 @@ it:
       friend:
         add: aggiungere %{username} alla tua lista di amici
         delete: rimuovere %{username} alla tua lista di amici
+      blocking:
+        add: 
+        confirm: 
+        delete: 
     publish_ad: 
     publish_ad_on: Inserisci annunci a %{woeid}
     published_ads: annunci pubblicati

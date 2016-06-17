@@ -4,6 +4,8 @@ class UsersController < ApplicationController
   def listads
     # ads lists for user
     @user = User.find(params[:id])
+    authorize(@user)
+
     @type = type_scope
     @status = status_scope
 
@@ -20,6 +22,7 @@ class UsersController < ApplicationController
     # public profile for user
     name_or_id = params[:username]
     @user = User.find_by_username(name_or_id) || User.find(name_or_id)
+    authorize(@user)
   end
 
   private

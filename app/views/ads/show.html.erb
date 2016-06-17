@@ -48,7 +48,8 @@
 
     <%= t('nlt.are_you_interested') %>
 
-    <% if @ad.status_class == 'available' %>
+    <% if @ad.status_class == 'available' &&
+          (current_user.nil? || current_user.whitelisting?(@ad.user)) %>
       <%= link_to new_conversation_path(recipient_id: @ad.user.id,
                                         subject: @ad.slug),
                   class: "world_link" do %>

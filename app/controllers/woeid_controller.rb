@@ -17,12 +17,12 @@ class WoeidController < ApplicationController
       raise ActionController::RoutingError, 'Not Found'
     end
 
-    @ads = Ad.includes(:user)
-             .public_send(@type)
-             .public_send(@status)
-             .by_woeid_code(@id)
-             .by_title(@q)
-             .paginate(page: page)
+    @ads = policy_scope(Ad).includes(:user)
+                           .public_send(@type)
+                           .public_send(@status)
+                           .by_woeid_code(@id)
+                           .by_title(@q)
+                           .paginate(page: page)
 
     return unless @id.present?
 

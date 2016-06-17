@@ -179,6 +179,11 @@ pt:
       signed_out: Saíu da sessão com sucesso.
       user:
         signed_in: Você está conectado
+  blockings:
+    create:
+      success: Usúario bloqueado
+    destroy:
+      success: Usúario desbloqueao
   friendships:
     create:
       error: Houve um erro ao adiccionar a %{username} como amigo.
@@ -397,6 +402,10 @@ pt:
       friend:
         add: adicionar %{username} a sua lista de amigos
         delete: excluir %{username} da sua lista de amigos
+      blocking:
+        add: 
+        confirm: 
+        delete: 
     publish_ad: Publicando anúncio
     publish_ad_on: Publicar anúncio em %{woeid}
     published_ads: Avisos publicados

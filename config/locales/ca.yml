@@ -179,6 +179,11 @@ ca:
       signed_out: Sessió tancada correctament.
       user:
         signed_in: Heu entrat.
+  blockings:
+    create:
+      success: Usuari bloquejat
+    destroy:
+      success: Usuari desbloquejat
   friendships:
     create:
       error: S'ha produït un error en afegir a %{username} com amic.
@@ -397,6 +402,10 @@ ca:
       friend:
         add: afegir %{username} a la llista d'amics
         delete: afegir %{username} a la llista d'amics
+      blocking:
+        add: bloquejar a %{username}
+        confirm: 
+        delete: desbloquejar a %{username}
     publish_ad: Publicant anunci
     publish_ad_on: Publicar anunci en %{woeid}
     published_ads: Anuncis publicats

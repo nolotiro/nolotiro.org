@@ -179,6 +179,11 @@ es:
       signed_out: Sesión finalizada.
       user:
         signed_in: Has iniciado sesión.
+  blockings:
+    create:
+      success: Usuario bloqueado
+    destroy:
+      success: Usuario desbloqueado
   friendships:
     create:
       error: Ocurrió un error al agregar a %{username} como amigo.
@@ -397,6 +402,10 @@ es:
       friend:
         add: agregar %{username} a tu lista de amigos
         delete: eliminar %{username} de tu lista de amigos
+      blocking:
+        add: bloquear a %{username}
+        confirm: "¿Seguro que deseas bloquear a %{username}? No podrá volverte a contactar ni a ver ninguno de tus anuncios."
+        delete: desbloquear a %{username}
     publish_ad: 'Publicando anuncio '
     publish_ad_on: Publicar anuncio en %{woeid}
     published_ads: Anuncios publicados

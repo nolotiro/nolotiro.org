@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160804192403) do
+ActiveRecord::Schema.define(version: 20160804225822) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace",     limit: 255
@@ -60,6 +60,14 @@ ActiveRecord::Schema.define(version: 20160804192403) do
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
   end
+
+  create_table "blockings", force: :cascade do |t|
+    t.integer "blocker_id", limit: 4, null: false
+    t.integer "blocked_id", limit: 4, null: false
+  end
+
+  add_index "blockings", ["blocked_id"], name: "fk_rails_8b7920d779", using: :btree
+  add_index "blockings", ["blocker_id"], name: "fk_rails_feb742f250", using: :btree
 
   create_table "comments", force: :cascade do |t|
     t.integer  "ads_id",     limit: 4,     null: false
@@ -175,6 +183,8 @@ ActiveRecord::Schema.define(version: 20160804192403) do
   add_index "users", ["username"], name: "index_users_on_username", unique: true, using: :btree
 
   add_foreign_key "ads", "users", column: "user_owner"
+  add_foreign_key "blockings", "users", column: "blocked_id"
+  add_foreign_key "blockings", "users", column: "blocker_id"
   add_foreign_key "comments", "ads", column: "ads_id"
   add_foreign_key "comments", "users", column: "user_owner"
   add_foreign_key "dismissals", "announcements"

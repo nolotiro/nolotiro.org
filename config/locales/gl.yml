@@ -186,6 +186,11 @@ gl:
 '
       user:
         signed_in: 
+  blockings:
+    create:
+      success: 
+    destroy:
+      success: 
   friendships:
     create:
       error: 
@@ -413,6 +418,10 @@ gl:
     profile_actions:
       friend:
         add: 
+        delete: 
+      blocking:
+        add: 
+        confirm: 
         delete: 
     publish_ad: Publicando anuncio
     publish_ad_on: Publicar anuncio en %{woeid}

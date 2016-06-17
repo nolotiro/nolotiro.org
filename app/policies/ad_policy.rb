@@ -11,4 +11,12 @@ class AdPolicy < ApplicationPolicy
   def destroy?
     user && (record.user == user || user.admin?)
   end
+
+  class Scope < ApplicationPolicy::Scope
+    def resolve
+      return scope unless user
+
+      scope.from_authors_whitelisting(user)
+    end
+  end
 end

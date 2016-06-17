@@ -102,6 +102,9 @@ NolotiroOrg::Application.routes.draw do
       "#{new_path}?q=#{query[:q]}"
     }
 
+    # blocking
+    resources :blockings, only: [:create, :destroy]
+
     # messaging
     resources :conversations, path: '/messages/' do
       member do

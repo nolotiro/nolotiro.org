@@ -181,6 +181,11 @@ fr:
       signed_out: Déconnecté(e) avec succès.
       user:
         signed_in: 
+  blockings:
+    create:
+      success: 
+    destroy:
+      success: 
   friendships:
     create:
       error: 
@@ -398,6 +403,10 @@ fr:
     profile_actions:
       friend:
         add: 
+        delete: 
+      blocking:
+        add: 
+        confirm: 
         delete: 
     publish_ad: 
     publish_ad_on: 

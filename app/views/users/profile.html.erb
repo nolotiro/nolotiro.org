@@ -18,7 +18,8 @@
           </li>
         <% end %>
 
-        <% unless current_user == @user %>
+        <% unless current_user == @user ||
+             (current_user && current_user.blocking?(@user)) %>
           <li>
             <%= link_to new_conversation_path(recipient_id: @user.id),
                         class: "world_link" do %>
@@ -42,6 +43,23 @@
                 <%= image_tag "friend_add.png", alt: "Add friend"%>
               <% end %>
             <% end %>
+            </li>
+
+            <li>
+              <% blocking = current_user.blocking?(@user) %>
+
+              <% if blocking %>
+                <%= link_to t('nlt.profile_actions.blocking.delete', username: @user.username),
+                            blocking,
+                            method: :delete,
+                            class: 'world_link' %>
+              <% else %>
+                <%= link_to t('nlt.profile_actions.blocking.add', username: @user.username),
+                            blockings_path(blocked_id: @user.id),
+                            data: { confirm: t('nlt.profile_actions.blocking.confirm', username: @user.username) },
+                            method: :post,
+                            class: 'world_link' %>
+              <% end %>
             </li>
           <% end %>
         <% end %>
