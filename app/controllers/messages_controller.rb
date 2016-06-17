@@ -35,8 +35,7 @@ class MessagesController < ApplicationController
       #@conversation = conversations.find(@message.conversation_id)
       # FIXME: ACL should be on app/models/ability.rb
       unless @conversation.is_participant?(current_user) or current_user.admin?
-        flash[:alert] = I18n.t('nlt.permission_denied')
-        return redirect_to root_path
+        return redirect_to root_path, alert: I18n.t('nlt.permission_denied')
       end
 
       unless @message.valid?
@@ -64,8 +63,7 @@ class MessagesController < ApplicationController
     raise ActiveRecord::RecordNotFound if @conversation.nil?
     # FIXME: ACL should be on app/models/ability.rb
     unless @conversation.is_participant?(current_user) or current_user.admin?
-      flash[:alert] = I18n.t('nlt.permission_denied')
-      return redirect_to root_path
+      return redirect_to root_path, alert: I18n.t('nlt.permission_denied')
     end
     @message = Mailboxer::Message.new conversation_id: @conversation.id
     current_user.mark_as_read(@conversation)
