@@ -21,6 +21,7 @@ pt:
         message: 
       mailboxer/message:
         subject: 
+        body: 
       user:
         Contraseña: 
         Recuérdame: 

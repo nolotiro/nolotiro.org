@@ -21,6 +21,7 @@ ca:
         message: 
       mailboxer/message:
         subject: Assumpte
+        body: Missatge
       user:
         Contraseña: Contrasenya
         Recuérdame: Recorda'm

@@ -14,20 +14,33 @@ class MessagesTest < ActionDispatch::IntegrationTest
   end
 
   it 'shows errors when message has no subject' do
-    send_message('hola, user2')
+    send_message(body: 'hola, user2')
 
     assert_content('Título no puede estar en blanco')
   end
 
+  it 'shows errors when creating conversation with empty message' do
+    send_message(subject: 'hola, user2')
+
+    assert_content('Mensaje no puede estar en blanco')
+  end
+
+   it 'shows errors when replying to conversation with empty message' do
+    send_message(subject: 'hola, user2', body: 'How you doing?')
+    send_message(body: '')
+
+    assert_content('Mensaje no puede estar en blanco')
+  end
+
   it 'sends message after a previous error' do
-    send_message('hola, user2')
-    send_message('hola, user2', 'forgot the title')
+    send_message(body: 'hola, user2')
+    send_message(subject: 'forgot the title', body: 'hola, user2')
 
     assert_content('Conversación con user2 asunto forgot the title')
   end
 
   it 'shows the other user in the conversation header' do
-    send_message('hola, user2', 'Cosas')
+    send_message(subject: 'Cosas', body: 'hola, user2')
     assert_content('Conversación con user2')
 
     login_as @user2
@@ -37,7 +50,7 @@ class MessagesTest < ActionDispatch::IntegrationTest
   end
 
   it "messages another user" do
-    send_message("hola trololo", "hola mundo")
+    send_message(subject: "hola mundo", body: "hola trololo")
 
     assert_content("hola trololo")
     assert_content("Mover mensaje a papelera")
@@ -45,24 +58,26 @@ class MessagesTest < ActionDispatch::IntegrationTest
 
   it "messages another user using emojis" do
     skip "emojis not supported"
-    send_message("What a nice emoji😀!", "hola mundo")
+    send_message(subject: "hola mundo", body: "What a nice emoji😀!")
 
     assert_content("What a nice emoji😀!")
     assert_content("Mover mensaje a papelera")
   end
 
   it "replies to a message" do
-    send_message("hola trololo", "hola mundo")
-    send_message("hola trululu")
+    send_message(subject: "hola mundo", body: "hola trololo")
+    send_message(body: "hola trululu")
 
     assert_content("hola trululu")
   end
 
   private
 
-  def send_message(body, subject = nil)
+  def send_message(params)
+    subject = params[:subject]
+
     fill_in("mailboxer_message_subject", with: subject) if subject
-    fill_in "mailboxer_message_body", with: body
+    fill_in "mailboxer_message_body", with: params[:body]
     click_button "Enviar"
   end
 end
