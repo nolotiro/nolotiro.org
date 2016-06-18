@@ -1,18 +1,17 @@
 module MessageHelper
 
-  def other_username( current_user, c )
-    if c.recipients and c.recipients.first and c.recipients.second 
-      sender = c.recipients.first
-      reciever = c.recipients.second
-      if current_user == sender
-        reciever
-      else
-        sender
-      end
-    else 
-      "[borrado]"
-    end
+  def interlocutor_username(c)
+    other_user = interlocutor(c)
+
+    other_user ? other_user.username : '[borrado]'
   end
 
+  def link_to_interlocutor(c)
+    interlocutor = interlocutor(c)
+    return '[borrado]' unless interlocutor
+
+    username = interlocutor.username
+    link_to username, profile_path(username)
+  end
 end
 

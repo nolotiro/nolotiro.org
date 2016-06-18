@@ -8,13 +8,8 @@
   .span-13
     = form_for @message do |f|
       %fieldset
-        %legend= t('mailboxer.new.legend')
-        -if @message.errors.any?
-          .error
-            %h2= t('mailboxer.new.errors', errors: pluralize(@message.errors.count, "error"))
-            %ul
-              -@message.errors.full_messages.each do |msg|
-                %li '#{ msg }'
+        = errors_for(@message)
+
         %dl
           %dt
             = f.label :subject, t('mailboxer.new.subject')

@@ -6,12 +6,14 @@ class MessagesController < ApplicationController
 
   def index
     @box = params[:box] || 'inbox'
-    @messages = current_user.mailbox.inbox if @box == 'inbox'
-    @messages = current_user.mailbox.sentbox if @box == 'sent'
-    @messages = current_user.mailbox.trash if @box == 'trash'
-    @messages = current_user.mailbox.archive if @box == 'archive'
-    @messages = @messages.sort_by {|m| m.messages.last.created_at}.reverse
-    @messages = @messages.paginate(:page => params[:page], :total_entries => @messages.to_a.size)
+    @conversations = current_user.mailbox.inbox if @box == 'inbox'
+    @conversations = current_user.mailbox.sentbox if @box == 'sent'
+    @conversations = current_user.mailbox.trash if @box == 'trash'
+    @conversations = current_user.mailbox.archive if @box == 'archive'
+    @conversations = @conversations.includes(:receipts)
+                                   .sort_by {|c| c.last_message.created_at}
+                                   .reverse
+    @conversations = @conversations.paginate(:page => params[:page], :total_entries => @conversations.to_a.size)
     session[:last_mailbox] = @box
   end
 
@@ -31,23 +33,22 @@ class MessagesController < ApplicationController
       return redirect_to message_create_url(user_id: recipient_id), notice: I18n.t("mailboxer.notifications.error_same_user")
     end
     if @message.conversation_id
-      @conversation = Mailboxer::Conversation.find(@message.conversation_id)
-      #@conversation = current_user.mailbox.conversations.find(@message.conversation_id)
-      # FIXME: ACL should be on app/models/ability.rb
-      unless @conversation.is_participant?(current_user) or current_user.admin?
-        flash.now[:alert] = I18n.t('nlt.permission_denied')
-        return redirect_to root_path
+      @conversation = conversations.find_by(id: @message.conversation_id)
+      unless @conversation
+        return redirect_to root_path, alert: I18n.t('nlt.permission_denied')
       end
 
-      return render_invalid_for(interlocutor) unless @message.valid?
+      unless @message.valid?
+        return render_show_with(interlocutor(@conversation))
+      end
 
       receipt = current_user.reply_to_conversation(@conversation, @message.body, nil, true, true, @message.attachment)
     else
       recipient = User.find(recipient_id)
-      return render_invalid_for(recipient) unless @message.valid?
-
       receipt = current_user.send_message([recipient], @message.body, @message.subject, true, @message.attachment)
-      @conversation = receipt.conversation
+      @conversation = receipt.notification.conversation
+
+      return render_new_with(recipient, receipt) unless receipt.valid?
     end
     flash.now[:notice] = I18n.t "mailboxer.notifications.sent" 
     redirect_to mailboxer_message_path(@conversation)
@@ -56,27 +57,23 @@ class MessagesController < ApplicationController
   # GET /messages/:ID
   # GET /message/show/:ID/subject/SUBJECT
   def show
-    # TODO: refactor this 
-    @conversation = Mailboxer::Conversation.find_by_id(params[:id])
-    #@conversation = current_user.mailbox.conversations.find(params[:id])
-    raise ActiveRecord::RecordNotFound if @conversation.nil?
-    # FIXME: ACL should be on app/models/ability.rb
-    unless @conversation.is_participant?(current_user) or current_user.admin?
-      flash[:alert] = I18n.t('nlt.permission_denied')
-      return redirect_to root_path
+    @conversation = conversations.find_by(id: params[:id])
+    unless @conversation
+      return redirect_to root_path, alert: I18n.t('nlt.permission_denied')
     end
+
     @message = Mailboxer::Message.new conversation_id: @conversation.id
     current_user.mark_as_read(@conversation)
   end
 
   def move
     mailbox = params[:mailbox]
-    conversation = current_user.mailbox.conversations.find(params[:id])
+    conversation = conversations.find(params[:id])
     if conversation
       current_user.send(mailbox, conversation)
       flash[:notice] = I18n.t "mailboxer.notifications.sent", mailbox: mailbox
     else
-      conversation = current_user.mailbox.conversations.find(params[:conversations])
+      conversation = conversations.find(params[:conversations])
       conversations.each { |c| current_user.send(mailbox, c) }
       flash[:notice] = I18n.t "mailboxer.notifications.sent", mailbox: mailbox
     end
@@ -84,14 +81,14 @@ class MessagesController < ApplicationController
   end
 
   def trash
-    conversation = current_user.mailbox.conversations.find(params[:id] || params[:conversations])
+    conversation = conversations.find(params[:id] || params[:conversations])
     current_user.trash(conversation)
     flash[:notice] = I18n.t "mailboxer.notifications.trash"
     redirect_to mailboxer_messages_path(:box => 'inbox')
   end
 
   def untrash
-    conversation = current_user.mailbox.conversations.find(params[:id])
+    conversation = conversations.find(params[:id])
     current_user.untrash(conversation)
     flash[:notice] = I18n.t "mailboxer.notifications.untrash"
     redirect_to mailboxer_messages_path(:box => 'inbox')
@@ -99,7 +96,7 @@ class MessagesController < ApplicationController
 
   def search
     @search = params[:search]
-    @messages = current_user.search_messages(@search)
+    @conversations = current_user.search_messages(@search)
     render :index
   end
 
@@ -113,13 +110,28 @@ class MessagesController < ApplicationController
     params[:mailboxer_message][:recipients].to_i
   end
 
-  def render_invalid_for(recipient)
+  def render_show_with(recipient)
+    @message.recipients = recipient.id
+    render :show
+  end
+
+  def render_new_with(recipient, receipt)
+    missing_subject = receipt.errors['notification.conversation.subject'].first
+    missing_body = receipt.errors['notification.body'].first
+    @message.errors.add(:subject, missing_subject) if missing_subject
+    @message.errors.add(:body, missing_body) if missing_body
     @recipient = recipient
     @message.recipients = @recipient.id
     render :new
   end
 
-  def interlocutor
-    @conversation.last_message.recipients.delete(current_user)
+  def conversations
+    current_user.mailbox.conversations
   end
+
+  def interlocutor(conversation)
+    conversation.recipients.find { |u| u != current_user }
+  end
+
+  helper_method :interlocutor
 end

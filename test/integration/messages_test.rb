@@ -25,18 +25,33 @@ class MessagesTest < ActionDispatch::IntegrationTest
     assert_content('Mensaje no puede estar en blanco')
   end
 
-   it 'shows errors when replying to conversation with empty message' do
+  it 'shows errors when replying to conversation with empty message' do
     send_message(subject: 'hola, user2', body: 'How you doing?')
     send_message(body: '')
 
     assert_content('Mensaje no puede estar en blanco')
   end
 
-  it 'sends message after a previous error' do
+  it 'sends a new message after a previous error' do
     send_message(body: 'hola, user2')
     send_message(subject: 'forgot the title', body: 'hola, user2')
 
     assert_content('Conversación con user2 asunto forgot the title')
+  end
+
+  it 'replies to conversation' do
+    send_message(subject: 'hola, user2', body: 'How you doing?')
+    send_message(body: 'hola, user1, nice to see you around')
+
+    page.assert_selector '.bubble', text: 'nice to see you around'
+  end
+
+  it 'replies to conversation after a previous error' do
+    send_message(subject: 'hola, user2', body: 'How you doing?')
+    send_message(body: '')
+    send_message(body: 'forgot to reply something')
+
+    page.assert_selector '.bubble', text: 'forgot to reply something'
   end
 
   it 'shows the other user in the conversation header' do
@@ -47,6 +62,22 @@ class MessagesTest < ActionDispatch::IntegrationTest
 
     visit mailboxer_message_path(Mailboxer::Message.first)
     assert_content('Conversación con user1')
+  end
+
+  it 'links to the other user in the conversation list' do
+    send_message(subject: 'Cosas', body: 'hola, user2')
+    visit messages_list_path(box: 'sent')
+
+    assert page.has_link?('user2'), 'No link to "user2" found'
+  end
+
+  it 'just shows a special label when the interlocutor is no longer there' do
+    send_message(subject: 'Cosas', body: 'hola, user2')
+    @user2.destroy
+    visit messages_list_path(box: 'sent')
+
+    assert_content '[borrado]'
+    refute page.has_link?('[borrado]')
   end
 
   it "messages another user" do
