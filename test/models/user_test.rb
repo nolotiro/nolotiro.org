@@ -16,7 +16,7 @@ class UserTest < ActiveSupport::TestCase
     user2 = FactoryGirl.build(:user, username: "Username") 
     assert_not user2.valid?
     assert_not user2.save
-    assert user2.errors[:username].include? "ya está en uso"
+    assert_includes user2.errors[:username], "ya está en uso"
   end
 
   test "has unique emails" do 
@@ -27,13 +27,14 @@ class UserTest < ActiveSupport::TestCase
     user2 = FactoryGirl.build(:user, email: "larryfoster@example.com") 
     assert_not user2.valid?
     assert_not user2.save
-    assert user2.errors[:email].include? "ya está en uso"
+    assert_includes user2.errors[:email], "ya está en uso"
   end
 
   test "has passwords no shorter than 5 characters" do 
     @user.password = "1234"
     assert_not @user.valid?
-    assert @user.errors[:password].include? "es demasiado corto (5 caracteres mínimo)"
+    assert_includes @user.errors[:password],
+                    "es demasiado corto (5 caracteres mínimo)"
 
     @user.password = "12345"
     assert @user.valid?
@@ -42,7 +43,7 @@ class UserTest < ActiveSupport::TestCase
   test "has non-empty usernames" do
     @user.username = ""
     assert_not @user.valid?
-    assert @user.errors[:username].include? "no puede estar en blanco"
+    assert_includes @user.errors[:username], "no puede estar en blanco"
   end
 
   test "roles work" do 
