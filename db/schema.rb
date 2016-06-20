@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160617143941) do
+ActiveRecord::Schema.define(version: 20160620123804) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace",     limit: 255
@@ -134,7 +134,7 @@ ActiveRecord::Schema.define(version: 20160617143941) do
   add_index "mailboxer_receipts", ["receiver_id", "receiver_type"], name: "index_mailboxer_receipts_on_receiver_id_and_receiver_type", using: :btree
 
   create_table "users", force: :cascade do |t|
-    t.string   "username",               limit: 32,               null: false
+    t.string   "username",               limit: 63,               null: false
     t.string   "legacy_password_hash",   limit: 255
     t.string   "email",                  limit: 100,              null: false
     t.date     "created_at",                                      null: false
