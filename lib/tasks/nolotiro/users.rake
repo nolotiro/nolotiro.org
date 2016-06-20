@@ -14,4 +14,11 @@ namespace :nolotiro do
       UPDATE users SET email = LOWER(email)
     SQL
   end
+
+  desc '[nolotiro] Remove duplicated usernames from users table'
+  task fix_duplicate_usernames: :environment do
+    require 'duplicate_username_migrator'
+
+    DuplicateUsernameMigrator.migrate!
+  end
 end

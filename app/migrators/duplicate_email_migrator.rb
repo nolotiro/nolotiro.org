@@ -29,9 +29,9 @@ class DuplicateEmailMigrator
   def migrate!
     update_references
 
-    User.where(id: duplicate_ids).destroy_all
+    duplicates.destroy_all
 
-    User.find(chosen_id).update(email: @email.downcase)
+    master.update(email: @email.downcase)
   end
 
   private
@@ -40,12 +40,24 @@ class DuplicateEmailMigrator
     @users ||= User.where("LOWER(email) = '#{@email}'")
   end
 
+  def chooser
+    @chooser ||= DuplicateEmailUserChooser.new(users)
+  end
+
+  def master
+    @master ||= chooser.master
+  end
+
+  def duplicates
+    @duplicates ||= chooser.duplicates
+  end
+
   def chosen_id
-    @chosen_id ||= DuplicateEmailUserChooser.new(users).choose
+    master.id
   end
 
   def duplicate_ids
-    @duplicate_ids ||= users.where.not(id: chosen_id).pluck(:id)
+    duplicates.pluck(:id)
   end
 
   def update_references
