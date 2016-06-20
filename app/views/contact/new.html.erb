@@ -3,7 +3,8 @@
 <div id="default_header_section">
   <h2><%= t('nlt.contact_form') %></h2>
   <br>
-  <%= t('nlt.contact_legend') %>
+  <%= t('nlt.contact_legend_html',
+        new_ad_link: link_to(t('nlt.here'), new_ad_path)) %>
 </div>
 
 <div id="main">

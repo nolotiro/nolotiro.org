@@ -337,7 +337,9 @@ gl:
       other: ", %{count} comentarios"
     contact: contacto
     contact_form: 
-    contact_legend: Por favor, Introduza a súa mensaxe
+    contact_legend_html: >-
+      Este formulario é para poñerse en contacto cos xestores de nolotiro.
+      Vostede quere publicar un anuncio? Prema %{new_ad_link}
     contact_thanks: 'Mensaxe enviada! Grazas por entrar en contacto nolotiro.org
 
 '
@@ -376,6 +378,7 @@ gl:
     give: regalo
     hello_to: Ola %{recipient},
     help_translate: axuda a traducir
+    here: aquí
     home_title: 
     if_you_are_new: Se vostede é un novo usuario, por favor
     if_youre_already_an_user: Se xa é un usuario rexistrado, por favor
