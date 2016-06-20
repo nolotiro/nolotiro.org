@@ -21,4 +21,9 @@ class GeoHelperTest < ActionView::TestCase
     assert_equal("Mountain View, California, United States", suggestion)
     I18n.locale = :es
   end
+
+  test "does not suggests a location unless it's city-specific" do
+    # This ip address is correctly resolved to Brazil, but not a specific city
+    assert_nil GeoHelper.suggest "186.237.37.253"
+  end
 end
