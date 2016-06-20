@@ -41,7 +41,9 @@
       <span class="right small">
         &nbsp;&nbsp;
         <%= t('nlt.readed_count', count: ad.readed_counter) %>
-        <%= t('nlt.comments_count', count: ad.comments_count) %>
+        <% if ad.comments_count > 0 %>
+          <%= t('nlt.comments_count', count: ad.comments_count) %>
+        <% end %>
       </span>
     </div>
   </div>
