@@ -30,13 +30,11 @@ class UserTest < ActiveSupport::TestCase
     assert user2.errors[:email].include? "ya está en uso"
   end
 
-  test "does not allow 4 character passwords" do 
+  test "has passwords no shorter than 5 characters" do 
     @user.password = "1234"
     assert_not @user.valid?
     assert @user.errors[:password].include? "es demasiado corto (5 caracteres mínimo)"
-  end
 
-  test "allows 5 character passwords" do 
     @user.password = "12345"
     assert @user.valid?
   end
