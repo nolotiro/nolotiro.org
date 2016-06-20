@@ -32,13 +32,11 @@ class UserTest < ActiveSupport::TestCase
 
   test "shouldn't let a password with 4 characters - minimal 5" do 
     @user.password = "1234"
-    @user.password = "1234"
     assert_not @user.valid?
     assert @user.errors[:password].include? "es demasiado corto (5 caracteres mínimo)"
   end
 
   test "should let a password with 5 characters" do 
-    @user.password = "12345"
     @user.password = "12345"
     assert @user.valid?
   end
