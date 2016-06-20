@@ -46,6 +46,16 @@ class UserTest < ActiveSupport::TestCase
     assert_includes @user.errors[:username], "no puede estar en blanco"
   end
 
+  test "has usernames no longer than 63 characters" do
+    @user.username = 'A' * 63
+    assert @user.valid?
+
+    @user.username = 'A' * 64
+    assert_not @user.valid?
+    assert_includes @user.errors[:username],
+                    'es demasiado largo (63 caracteres máximo)'
+  end
+
   test "roles work" do 
     assert_equal @user.admin?, false
     assert_equal @admin.admin?, true
