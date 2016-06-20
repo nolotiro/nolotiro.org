@@ -14,4 +14,11 @@ namespace :users do
       UPDATE users SET email = LOWER(email)
     SQL
   end
+
+  desc 'Remove duplicated usernames from users table'
+  task fix_duplicate_usernames: :environment do
+    require 'duplicate_username_fixer'
+
+    DuplicateUsernameFixer.fix!
+  end
 end
