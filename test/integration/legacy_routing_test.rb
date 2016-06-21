@@ -27,15 +27,32 @@ class LegacyRoutingTest < ActionDispatch::IntegrationTest
   end
 
   test "should route to WOEID ads" do
-    assert_routing '/es/woeid/766273/give', {controller: "woeid", action: "show", locale: "es", id: "766273", type: "give"}
-    assert_routing '/es/woeid/766273/give/status/booked', {controller: "woeid", action: "show", locale: "es", id: "766273", type: "give", status: "booked"}
-    assert_routing '/es/woeid/766273/give/status/reserved', {controller: "woeid", action: "show", locale: "es", id: "766273", type: "give", status: "reserved"}
-    assert_routing '/es/woeid/766273/want', {controller: "woeid", action: "show", locale: "es", id: "766273", type: "want"}
-    assert_routing '/es/ad/listall/ad_type/give', {controller: "woeid", action: "show", locale: "es", type: "give"}
-    assert_routing '/es/ad/listall/ad_type/give/status/available', {controller: "woeid", action: "show", locale: "es", type: "give", status: 'available'}
-    assert_routing '/es/ad/listall/ad_type/give/status/booked', {controller: "woeid", action: "show", locale: "es", type: "give", status: 'booked'}
-    assert_routing '/es/ad/listall/ad_type/give/status/delivered', {controller: "woeid", action: "show", locale: "es", type: "give", status: 'delivered'}
-    assert_routing '/es/ad/listall/ad_type/want', {controller: "woeid", action: "show", locale: "es", type: "want"}
+    assert_routing '/es/woeid/766273/give',
+                   {controller: "woeid", action: "show", locale: "es", id: "766273", type: "give"}
+
+    assert_routing '/es/woeid/766273/give/status/booked',
+                   {controller: "woeid", action: "show", locale: "es", id: "766273", type: "give", status: "booked"}
+
+    assert_routing '/es/woeid/766273/give/status/reserved',
+                   {controller: "woeid", action: "show", locale: "es", id: "766273", type: "give", status: "reserved"}
+
+    assert_routing '/es/woeid/766273/want',
+                   {controller: "woeid", action: "show", locale: "es", id: "766273", type: "want"}
+
+    assert_routing '/es/ad/listall/ad_type/give',
+                   {controller: "woeid", action: "show", locale: "es", type: "give"}
+
+    assert_routing '/es/ad/listall/ad_type/give/status/available',
+                   {controller: "woeid", action: "show", locale: "es", type: "give", status: 'available'}
+
+    assert_routing '/es/ad/listall/ad_type/give/status/booked',
+                   {controller: "woeid", action: "show", locale: "es", type: "give", status: 'booked'}
+
+    assert_routing '/es/ad/listall/ad_type/give/status/delivered',
+                   {controller: "woeid", action: "show", locale: "es", type: "give", status: 'delivered'}
+
+    assert_routing '/es/ad/listall/ad_type/want',
+                   {controller: "woeid", action: "show", locale: "es", type: "want"}
   end
 
   test "should route to location change" do
