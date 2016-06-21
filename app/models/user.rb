@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
   has_many :identities, inverse_of: :user, dependent: :destroy
 
-  has_many :ads, foreign_key: 'user_owner'
+  has_many :ads, foreign_key: 'user_owner', dependent: :destroy
   has_many :comments, foreign_key: 'user_owner'
 
   has_many :friendships

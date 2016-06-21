@@ -84,6 +84,11 @@ class UserTest < ActiveSupport::TestCase
     assert_equal(user.active_for_authentication?, false)
   end
 
+  test "associated ads are deleted when user is deleted" do
+    FactoryGirl.create(:ad, user: @user)
+
+    assert_difference(-> { Ad.count }, -1) { @user.destroy }
+  end
 end
 
 class UserScopesTest < ActiveSupport::TestCase
