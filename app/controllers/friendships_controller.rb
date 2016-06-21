@@ -5,12 +5,13 @@ class FriendshipsController < ApplicationController
   def create
     @friendship = current_user.friendships.build(:friend_id => params[:id])
     friend = User.find params[:id]
+    username = friend.username
     if @friendship.save
-      flash[:notice] = "Added #{friend.username} as a friend."
+      flash[:notice] = "Added #{username} as a friend."
     else
-      flash[:error] = "Error occurred when adding #{friend.username} as a friend."
+      flash[:error] = "Error occurred when adding #{username} as a friend."
     end
-    redirect_to profile_path(friend.username)
+    redirect_to profile_path(username)
   end
   
   def destroy
