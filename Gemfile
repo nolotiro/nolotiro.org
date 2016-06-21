@@ -57,7 +57,7 @@ gem 'newrelic_rpm'                                  # monitoring
 gem 'actionpack-page_caching'                       # caching
 gem 'actionpack-action_caching'                     # caching
 gem 'unicorn'                                       # webserver
-gem 'mysql2', '~> 0.3.18'                           # database adapter
+gem 'mysql2', '~> 0.4.4'                            # database adapter
 gem 'thinking-sphinx'                               # sphinxsearch
 gem 'redis-rails'                                   # redis cache
 gem 'sidekiq'                                       # job workers
