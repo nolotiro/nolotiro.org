@@ -450,7 +450,7 @@ es:
     to_publish_or_send_messages: Para publicar anuncios o enviar mensajes accede a tu cuenta
     tos: términos de uso
     tos_page:
-      body_html: TODO
+      body_html: 
       title: Términos de uso
     translate:
       description_html: Actualmente, Nolotiro.org está disponible en pocos idiomas, pero tú puedes ayudarnos a <a href="http://accounts.localeapp.com/projects/6872">traducirlo al tuyo</a>.

@@ -456,7 +456,7 @@ it:
     to_publish_or_send_messages: Per pubblicizzare o inviare Accesso al tuo account
     tos: condizioni di utilizzo
     tos_page:
-      body_html: TODO
+      body_html: 
       title: Condizioni di utilizzo
     translate:
       description_html: Attualmente, Nolotiro.org è disponibile in poche lingue, ma può aiutare <a href="http://accounts.localeapp.com/projects/6872">a tradurre tua</a>.
