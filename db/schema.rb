@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160621154215) do
+ActiveRecord::Schema.define(version: 20160621160507) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace",     limit: 255
@@ -63,7 +63,7 @@ ActiveRecord::Schema.define(version: 20160621154215) do
   end
 
   add_index "comments", ["ads_id"], name: "ads_id", using: :btree
-  add_index "comments", ["user_owner"], name: "fk_rails_e9eda2acf7", using: :btree
+  add_index "comments", ["user_owner"], name: "index_comments_on_user_owner", using: :btree
 
   create_table "friendships", id: false, force: :cascade do |t|
     t.integer "user_id",   limit: 4, null: false
@@ -168,6 +168,7 @@ ActiveRecord::Schema.define(version: 20160621154215) do
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
   add_foreign_key "ads", "users", column: "user_owner"
+  add_foreign_key "comments", "users", column: "user_owner"
   add_foreign_key "identities", "users"
   add_foreign_key "mailboxer_conversation_opt_outs", "mailboxer_conversations", column: "conversation_id", name: "mb_opt_outs_on_conversations_id"
   add_foreign_key "mailboxer_notifications", "mailboxer_conversations", column: "conversation_id", name: "notifications_on_conversation_id"

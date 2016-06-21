@@ -89,6 +89,12 @@ class UserTest < ActiveSupport::TestCase
 
     assert_difference(-> { Ad.count }, -1) { @user.destroy }
   end
+
+  test "associated comments are deleted when user is deleted" do
+    FactoryGirl.create(:comment, user: @user)
+
+    assert_difference(-> { Comment.count }, -1) { @user.destroy }
+  end
 end
 
 class UserScopesTest < ActiveSupport::TestCase
