@@ -18,4 +18,11 @@ class FriendshipsTest < ActionDispatch::IntegrationTest
 
     assert_content "Agregado #{@friend.username} como amigo"
   end
+
+  it "destroys friendships from target users' profile" do
+    click_link "agregar #{@friend.username} a tu lista de amigos"
+    click_link "eliminar #{@friend.username} de tu lista de amigos"
+
+    assert_content "Eliminado #{@friend.username} como amigo"
+  end
 end
