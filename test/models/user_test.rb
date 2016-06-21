@@ -8,7 +8,7 @@ class UserTest < ActiveSupport::TestCase
     @admin = FactoryGirl.create(:admin)
   end
 
-  test "should uniqueness validation on username work" do 
+  test "has unique usernames" do 
     user1 = FactoryGirl.build(:user, username: "Username") 
     assert user1.valid?
     assert user1.save
@@ -16,10 +16,10 @@ class UserTest < ActiveSupport::TestCase
     user2 = FactoryGirl.build(:user, username: "Username") 
     assert_not user2.valid?
     assert_not user2.save
-    assert user2.errors[:username].include? "ya está en uso"
+    assert_includes user2.errors[:username], "ya está en uso"
   end
 
-  test "should uniqueness validation on email work" do 
+  test "has unique emails" do 
     user1 = FactoryGirl.build(:user, email: "larryfoster@example.com") 
     assert user1.valid?
     assert user1.save
@@ -27,52 +27,59 @@ class UserTest < ActiveSupport::TestCase
     user2 = FactoryGirl.build(:user, email: "larryfoster@example.com") 
     assert_not user2.valid?
     assert_not user2.save
-    assert user2.errors[:email].include? "ya está en uso"
+    assert_includes user2.errors[:email], "ya está en uso"
   end
 
-  test "shouldn't let a password with 4 characters - minimal 5" do 
-    @user.password = "1234"
+  test "has passwords no shorter than 5 characters" do 
     @user.password = "1234"
     assert_not @user.valid?
-    assert @user.errors[:password].include? "es demasiado corto (5 caracteres mínimo)"
-  end
+    assert_includes @user.errors[:password],
+                    "es demasiado corto (5 caracteres mínimo)"
 
-  test "should let a password with 5 characters" do 
-    @user.password = "12345"
     @user.password = "12345"
     assert @user.valid?
   end
 
-  test "shouldn't let an empty username" do
+  test "has non-empty usernames" do
     @user.username = ""
     assert_not @user.valid?
-    assert @user.errors[:username].include? "no puede estar en blanco"
+    assert_includes @user.errors[:username], "no puede estar en blanco"
   end
 
-  test "should roles work" do 
+  test "has usernames no longer than 63 characters" do
+    @user.username = 'A' * 63
+    assert @user.valid?
+
+    @user.username = 'A' * 64
+    assert_not @user.valid?
+    assert_includes @user.errors[:username],
+                    'es demasiado largo (63 caracteres máximo)'
+  end
+
+  test "roles work" do 
     assert_equal @user.admin?, false
     assert_equal @admin.admin?, true
   end
 
-  test "should default lang work" do
+  test "default langs work" do
     @user.lang = nil
     @user.save
     assert_equal @user.lang, 'es'
   end
 
-  test "should lock! an user" do
+  test "locking works" do
     @user.lock!
     assert_equal @user.locked?, true
   end
 
-  test "should unlock! an user" do
+  test "unlocking works" do
     @user.locked = 1
     @user.save
     @user.unlock!
     assert_equal @user.locked?, false
   end
 
-  test "should need confirmation for a new user" do
+  test "requires confirmation for new users" do
     user = FactoryGirl.create(:non_confirmed_user)
     assert_equal(user.active_for_authentication?, false)
   end
