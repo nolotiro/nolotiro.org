@@ -21,6 +21,7 @@ module GeoHelper
 
     city = suggestion.city
     city_name = city.name(I18n.locale) || city.name('en')
+    return unless city_name
 
     region = suggestion.subdivisions[0]
     region_name = region ? (region.name(I18n.locale) || region.name('en')) : ''
