@@ -326,7 +326,7 @@ pt:
       submit: 
       title: 
     comments_count:
-      one: ", 1 comentário"
+      one: ", %{count} comentário"
       other: ", %{count} comentários"
     contact: contato
     contact_form: Formulario de contato

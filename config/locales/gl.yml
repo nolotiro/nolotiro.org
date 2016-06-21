@@ -339,7 +339,7 @@ gl:
       submit: 
       title: 
     comments_count:
-      one: ", 1 comentario"
+      one: ", %{count} comentario"
       other: ", %{count} comentarios"
     contact: contacto
     contact_form: 
