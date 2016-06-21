@@ -282,7 +282,7 @@ en:
         prohibited: 'There is a problem, please review this:'
         select_an_image: Choose an image for you ad (optional)
         status: Status
-        title: 'Title of you ad:'
+        title: 'Title of your ad:'
         title_max: Maximum 100 characters
         to_publish: To post your ad, please complete this fields
         type_ad: 'Type of ad:'
@@ -314,7 +314,7 @@ en:
     click_to_large: Click to large the photo
     comments:
       body_max: 
-      do_click: Please click this link to reply the message
+      do_click: 'Please click this link to reply:'
       flash_ko: It is not possible to save your comment, there is an error, please review it and send your comment again
       flash_ok: Saved comment
       label: Your comment
@@ -400,7 +400,7 @@ en:
       publish_ad: post an ad in this city
       subtitle: You can try some of this stuff
       title: There are no results in this location
-      try: Or you can try it in cities with similar name
+      try: 'Or you can try it in cities with similar name:'
     or: or
     password: Password
     permission_denied: You don't have permissions
