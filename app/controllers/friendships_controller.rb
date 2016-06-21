@@ -15,7 +15,7 @@ class FriendshipsController < ApplicationController
   end
   
   def destroy
-    @friendship = current_user.friendships.find(params[:id])
+    @friendship = current_user.friendships.find_by(:friend_id => params[:id])
     @friendship.destroy
     username = @friendship.friend.username
     flash[:notice] = I18n.t('friendships.destroy.success', username: username)
