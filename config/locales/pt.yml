@@ -20,8 +20,8 @@ pt:
         email: 
         message: 
       mailboxer/message:
-        subject: 
         body: 
+        subject: 
       user:
         Contraseña: 
         Recuérdame: 
@@ -330,9 +330,7 @@ pt:
       other: ", %{count} comentários"
     contact: contato
     contact_form: Formulario de contato
-    contact_legend_html: >-
-      Esta forma é para entrar em contato com os gerentes do nolotiro. Você quer
-      publicar um anúncio? Clique aqui.
+    contact_legend_html: 
     contact_thanks: Mensagem enviada! Obrigado por contatar com nolotiro.org
     cookie: Utilizamos cookies para melhorar sua navegação neste site
     create_new_ad: Cria um novo anúncio

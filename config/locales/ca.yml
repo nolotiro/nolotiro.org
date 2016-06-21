@@ -20,8 +20,8 @@ ca:
         email: 
         message: 
       mailboxer/message:
-        subject: Assumpte
         body: Missatge
+        subject: Assumpte
       user:
         Contraseña: Contrasenya
         Recuérdame: Recorda'm
@@ -330,9 +330,7 @@ ca:
       other: ", %{count} comentaris"
     contact: contacte
     contact_form: Formulari de contacte
-    contact_legend_html: >-
-      Aquest formulari és per a contactar amb les administradores de nolotiro.
-      Estàs buscant publicar un anunci? Fes click %{new_ad_link}.
+    contact_legend_html: Aquest formulari és per a contactar amb les administradores de nolotiro. Estàs buscant publicar un anunci? Fes click %{new_ad_link}.
     contact_thanks: "¡Missatge enviat! Gràcies per contactar amb nolotiro.org"
     cookie: Utilitzem cookies per millorar la teva navegació en aquest lloc
     create_new_ad: Crea un nou anunci

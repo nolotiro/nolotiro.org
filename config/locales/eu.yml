@@ -20,8 +20,8 @@ eu:
         email: 
         message: 
       mailboxer/message:
-        subject: 
         body: 
+        subject: 
       user:
         Contraseña: 
         Recuérdame: 

@@ -20,8 +20,8 @@ en:
         email: 
         message: 
       mailboxer/message:
-        subject: Subject
         body: Message
+        subject: Subject
       user:
         Contraseña: Password
         Recuérdame: Remember me
@@ -326,9 +326,7 @@ en:
       other: ", %{count} comments"
     contact: contact
     contact_form: Contact's form
-    contact_legend_html: >-
-      This form is to contact nolotiro administrators. Do you want to publish an
-      ad instead? Click %{new_ad_link}.
+    contact_legend_html: This form is to contact nolotiro administrators. Do you want to publish an ad instead? Click %{new_ad_link}.
     contact_thanks: Sent message! Thanks for contact nolotiro.org
     cookie: We use cookies in order to improve your navigation in this site
     create_new_ad: Create a new ad

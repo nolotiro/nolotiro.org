@@ -20,8 +20,8 @@ gl:
         email: Correo electrónico
         message: Mensaxe
       mailboxer/message:
-        subject: Asunto
         body: Mensaxe
+        subject: Asunto
       user:
         Contraseña: Contrasinal
         Recuérdame: Lémbrame
@@ -343,9 +343,7 @@ gl:
       other: ", %{count} comentarios"
     contact: contacto
     contact_form: 
-    contact_legend_html: >-
-      Este formulario é para poñerse en contacto cos xestores de nolotiro.
-      Vostede quere publicar un anuncio? Prema %{new_ad_link}
+    contact_legend_html: Este formulario é para poñerse en contacto cos xestores de nolotiro. Vostede quere publicar un anuncio? Prema %{new_ad_link}
     contact_thanks: 'Mensaxe enviada! Grazas por entrar en contacto nolotiro.org
 
 '
@@ -424,7 +422,7 @@ gl:
     password: Contrasinal
     permission_denied: 
     please_fill_to_become_member: Por favor, enche este formulario para facer membro do nolotiro
-    please_fill_to_finalize_registration:  Por favor, enche este formulario para finalizar o registro
+    please_fill_to_finalize_registration: Por favor, enche este formulario para finalizar o registro
     please_insert_email_and_password: Por favor, engada o seu correo electrónico e contrasinal.
     please_introduce: 'Por favor, introduza os caracteres que aparecen:'
     privacy: política de privacidade
