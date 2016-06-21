@@ -19,7 +19,7 @@ class FriendshipsController < ApplicationController
     @friendship.destroy
     username = @friendship.friend.username
     flash[:notice] = I18n.t('friendships.destroy.success', username: username)
-    redirect_to profile_path(friend.username)
+    redirect_to profile_path(username)
   end
 
 end
