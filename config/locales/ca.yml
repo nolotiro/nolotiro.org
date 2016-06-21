@@ -324,7 +324,9 @@ ca:
       other: ", %{count} comentaris"
     contact: contacte
     contact_form: Formulari de contacte
-    contact_legend: Si us plau, escriu el teu missatge
+    contact_legend_html: >-
+      Aquest formulari és per a contactar amb les administradores de nolotiro.
+      Estàs buscant publicar un anunci? Fes click %{new_ad_link}.
     contact_thanks: "¡Missatge enviat! Gràcies per contactar amb nolotiro.org"
     cookie: Utilitzem cookies per millorar la teva navegació en aquest lloc
     create_new_ad: Crea un nou anunci
@@ -361,6 +363,7 @@ ca:
     give: regal
     hello_to: Hola %{recipient},
     help_translate: ajuda a traduir
+    here: aquí
     home_title: anuncis de regals nous i de segona mà
     if_you_are_new: Si ets un nou usuari, si us plau
     if_youre_already_an_user: Si ja ets un usuari registrat, si us plau

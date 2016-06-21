@@ -324,7 +324,9 @@ it:
       other: ", %{count} commenti"
     contact: contatto
     contact_form: Formulario di contatto
-    contact_legend: Per favore, scrive il tuo messaggio
+    contact_legend_html: >-
+      Questo formulario é per contattare i gestori di nolotiro. Estái cercando
+      di pubblicare un annucio? Clicca %{new_ad_link}
     contact_thanks: Messaggio inviato! Grazie per contattare con nolotiro.org
     cookie: Usiamo cookies per migliorare la navigazione in questo sito
     create_new_ad: Crea un nuovo annuncio
@@ -363,6 +365,7 @@ it:
     give: regalo
     hello_to: Ciao %{recipient},
     help_translate: aiuta a tradurre
+    here: qui
     home_title: 'annunci di regali nuovi e di seconda mano '
     if_you_are_new: Se sei un utente nuovo, per favore
     if_youre_already_an_user: Si sei un utente registrato, per favore

@@ -324,7 +324,9 @@ pt:
       other: ", %{count} comentários"
     contact: contato
     contact_form: Formulario de contato
-    contact_legend: Por favor, escriva sua mensagem
+    contact_legend_html: >-
+      Esta forma é para entrar em contato com os gerentes do nolotiro. Você quer
+      publicar um anúncio? Clique aqui.
     contact_thanks: Mensagem enviada! Obrigado por contatar com nolotiro.org
     cookie: Utilizamos cookies para melhorar sua navegação neste site
     create_new_ad: Cria um novo anúncio
@@ -361,6 +363,7 @@ pt:
     give: 
     hello_to: 
     help_translate: 
+    here:
     home_title: 
     if_you_are_new: 
     if_youre_already_an_user: 

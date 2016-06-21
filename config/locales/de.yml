@@ -324,7 +324,7 @@ de:
       other: 
     contact: 
     contact_form: 
-    contact_legend: 
+    contact_legend_html: 
     contact_thanks: 
     cookie: 
     create_new_ad: 
@@ -361,6 +361,7 @@ de:
     give: 
     hello_to: 
     help_translate: 
+    here: 
     home_title: 
     if_you_are_new: 
     if_youre_already_an_user: 

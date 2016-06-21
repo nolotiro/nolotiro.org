@@ -324,7 +324,9 @@ es:
       other: ", %{count} comentarios"
     contact: contacto
     contact_form: Formulario de contacto
-    contact_legend: Por favor, escribe tu mensaje
+    contact_legend_html: >-
+      Este formulario es para contactar con las administradoras de nolotiro.
+      ¿Estas buscando publicar un anuncio? Haz click %{new_ad_link}.
     contact_thanks: "¡Mensaje enviado! Gracias por contactar con nolotiro.org"
     cookie: Utilizamos cookies para mejorar tu navegación en este sitio
     create_new_ad: Crea un nuevo anuncio
@@ -361,6 +363,7 @@ es:
     give: regalo
     hello_to: Hola %{recipient},
     help_translate: ayuda a traducir
+    here: aquí
     home_title: anuncios de regalos nuevos y de segunda mano
     if_you_are_new: Si eres un nuevo usuario, por favor
     if_youre_already_an_user: Si ya eres un usuario registrado, por favor

@@ -320,7 +320,9 @@ en:
       other: ", %{count} comments"
     contact: contact
     contact_form: Contact's form
-    contact_legend: Please, write your message
+    contact_legend_html: >-
+      This form is to contact nolotiro administrators. Do you want to publish an
+      ad instead? Click %{new_ad_link}.
     contact_thanks: Sent message! Thanks for contact nolotiro.org
     cookie: We use cookies in order to improve your navigation in this site
     create_new_ad: Create a new ad
@@ -361,6 +363,7 @@ en:
     give: gift
     hello_to: Hello %{recipient},
     help_translate: help us to translate
+    here: here
     home_title: new and second hand gift's ads
     if_you_are_new: If you are a new user, please
     if_youre_already_an_user: If you are a registered user, please
