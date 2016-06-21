@@ -5,6 +5,8 @@ class AdConstraint
   def matches?(request)
     params = request.path_parameters
 
+    return false unless valid_page?(params[:page])
+
     return false unless valid_combination?(params[:type], params[:status])
 
     true
@@ -21,6 +23,15 @@ class AdConstraint
       %w(give booked),
       %w(give delivered)
     ].include?([type, status])
+  end
 
+  def valid_page?(page)
+    page.nil? || positive_integer?(page)
+  end
+
+  def positive_integer?(str)
+    Integer(str).positive?
+  rescue
+    false
   end
 end
