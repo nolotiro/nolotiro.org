@@ -188,6 +188,12 @@ en:
       send_instructions: You will receive an email with instructions about how to unlock your account in a few minutes.
       send_paranoid_instructions: If your account exists, you will receive an email with instructions about how to unlock it in a few minutes.
       unlocked: Your account has been unlocked successfully. Please sign in to continue.
+  friendships:
+    create:
+      success: Added %{username} as a friend.
+      error: Error occurred when adding %{username} as a friend.
+    destroy:
+      success: Removed %{username} as a friend.
   helpers:
     label:
       message:

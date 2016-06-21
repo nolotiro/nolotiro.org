@@ -192,6 +192,12 @@ pt:
       send_instructions: Dentro de alguns minutos irá receber um email com as instruções para desbloquear a sua conta.
       send_paranoid_instructions: Se a sua conta existir, irá receber dentro de alguns minutos um email com instruções para a desbloquear.
       unlocked: A sua conta foi desbloqueada com sucesso. Agora está autenticado.
+  friendships:
+    create:
+      success: 
+      error: 
+    destroy:
+      success: 
   helpers:
     label:
       message:

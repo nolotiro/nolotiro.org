@@ -194,6 +194,12 @@ fr:
       send_instructions: Vous allez recevoir un email sous quelques minutes contenant les instructions nécessaires au déblocage de votre compte.
       send_paranoid_instructions: Si votre compte existe, vous recevrez un email indiquant comment le déverrouiller sous quelques minutes.
       unlocked: Votre compte a été débloqué avec succès. Veuillez vous connecter.
+  friendships:
+    create:
+      success: 
+      error: 
+    destroy:
+      success: 
   helpers:
     label:
       message:

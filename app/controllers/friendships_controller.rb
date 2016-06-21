@@ -7,9 +7,9 @@ class FriendshipsController < ApplicationController
     friend = User.find params[:id]
     username = friend.username
     if @friendship.save
-      flash[:notice] = "Added #{username} as a friend."
+      flash[:notice] = I18n.t('friendships.create.success', username: username)
     else
-      flash[:error] = "Error occurred when adding #{username} as a friend."
+      flash[:error] = I18n.t('friendships.create.error', username: username)
     end
     redirect_to profile_path(username)
   end
@@ -18,7 +18,7 @@ class FriendshipsController < ApplicationController
     @friendship = current_user.friendships.find(params[:id])
     @friendship.destroy
     username = @friendship.friend.username
-    flash[:notice] = "Removed #{username} as a friend."
+    flash[:notice] = I18n.t('friendships.destroy.success', username: username)
     redirect_to profile_path(friend.username)
   end
 

@@ -192,6 +192,12 @@ eu:
       send_instructions: 
       send_paranoid_instructions: 
       unlocked: 
+  friendships:
+    create:
+      success: 
+      error: 
+    destroy:
+      success: 
   helpers:
     label:
       message:

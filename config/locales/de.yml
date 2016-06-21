@@ -192,6 +192,12 @@ de:
       send_instructions: Sie erhalten in wenigen Minuten eine E-Mail mit der Anleitung, wie Sie Ihren Account entsperren können.
       send_paranoid_instructions: Falls Ihre E-Mail-Adresse in unserer Datenbank existiert, erhalten Sie in wenigen Minuten eine E-Mail mit der Anleitung, wie Sie Ihren Account entsperren können.
       unlocked: Ihr Account wurde entsperrt. Sie sind jetzt angemeldet.
+  friendships:
+    create:
+      success: 
+      error: 
+    destroy:
+      success: 
   helpers:
     label:
       message:
