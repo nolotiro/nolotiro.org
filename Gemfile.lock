@@ -108,6 +108,8 @@ GEM
       capistrano (>= 2.5.5)
       httparty
     capistrano-harrow (0.5.1)
+    capistrano-pending (0.1.1)
+      capistrano (>= 3.2.0)
     capistrano-rails (1.1.5)
       capistrano (~> 3.1)
       capistrano-bundler (~> 1.1)
@@ -480,6 +482,7 @@ DEPENDENCIES
   capistrano (~> 3.0)
   capistrano-bundler
   capistrano-ci
+  capistrano-pending
   capistrano-rails
   capistrano-rbenv
   capybara

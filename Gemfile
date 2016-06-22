@@ -52,6 +52,7 @@ gem 'capistrano-rbenv'
 gem 'capistrano-rails'
 gem 'capistrano-bundler'
 gem 'capistrano-ci'
+gem 'capistrano-pending'
 
 gem 'newrelic_rpm'                                  # monitoring
 gem 'actionpack-page_caching'                       # caching

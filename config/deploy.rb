@@ -89,13 +89,4 @@ namespace :deploy do
   end
 
   after :finishing, 'deploy:cleanup'
-
-  desc "Show changes to be deployed"
-  task :pending do
-    on roles(:app) do
-      within repo_path do
-        info `git diff #{strategy.fetch_revision}..#{fetch(:branch)}`
-      end
-    end
-  end
 end
