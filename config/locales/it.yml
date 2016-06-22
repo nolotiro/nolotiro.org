@@ -20,8 +20,8 @@ it:
         email: posta elettronica
         message: Messaggio
       mailboxer/message:
-        subject: Soggetto
         body: Messaggio
+        subject: Soggetto
       user:
         Contraseña: Password
         Recuérdame: Ricordami
@@ -330,9 +330,7 @@ it:
       other: ", %{count} commenti"
     contact: contatto
     contact_form: Formulario di contatto
-    contact_legend_html: >-
-      Questo formulario é per contattare i gestori di nolotiro. Estái cercando
-      di pubblicare un annucio? Clicca %{new_ad_link}
+    contact_legend_html: Questo formulario é per contattare i gestori di nolotiro. Estái cercando di pubblicare un annucio? Clicca %{new_ad_link}
     contact_thanks: Messaggio inviato! Grazie per contattare con nolotiro.org
     cookie: Usiamo cookies per migliorare la navigazione in questo sito
     create_new_ad: Crea un nuovo annuncio
@@ -411,7 +409,7 @@ it:
     password: password
     permission_denied: Non si dispone dell'autorizzazione per eseguire questa azione.
     please_fill_to_become_member: Si prega di compilare questo modulo per essere un membro di nolotiro
-    please_fill_to_finalize_registration:  Si prega di compilare questo module per finire l'inscrizione
+    please_fill_to_finalize_registration: Si prega di compilare questo module per finire l'inscrizione
     please_insert_email_and_password: Metta prego la tua email e la password.
     please_introduce: 'Inserisci i caratteri che vedi:'
     privacy: politica sulla privacy
@@ -458,13 +456,13 @@ it:
     to_publish_or_send_messages: Per pubblicizzare o inviare Accesso al tuo account
     tos: condizioni di utilizzo
     tos_page:
-      body_html: TODO
+      body_html: 
       title: Condizioni di utilizzo
     translate:
       description_html: Attualmente, Nolotiro.org è disponibile in poche lingue, ma può aiutare <a href="http://accounts.localeapp.com/projects/6872">a tradurre tua</a>.
       title: Aiutaci a tradurre nolotiro.org la lingua
     update: salvare
-    updating: Stiamo aggiornando l'intero sito, in modo che nelle prossime ore saranno ritardi con messaggi tra gli utenti, le immagini di un annuncio e la quantità di annunci gli utenti. Non ti preoccupare che "stiamo lavorando su ellou".
+    updating: Stiamo aggiornando l'intero sito, in modo che nelle prossime ore saranno ritardi con messaggi tra gli utenti, le immagini di un annuncio e la quantità di annunci gli utenti. Non ti preoccupare che stiamo lavorandoci
     user_ads: annunci
     user_edit_profile: Modifica profilo utente
     user_profile: Il profilo dell'utente

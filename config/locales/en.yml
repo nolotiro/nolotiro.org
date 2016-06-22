@@ -20,8 +20,8 @@ en:
         email: 
         message: 
       mailboxer/message:
-        subject: Subject
         body: Message
+        subject: Subject
       user:
         Contraseña: Password
         Recuérdame: Remember me
@@ -282,7 +282,7 @@ en:
         prohibited: 'There is a problem, please review this:'
         select_an_image: Choose an image for you ad (optional)
         status: Status
-        title: 'Title of you ad:'
+        title: 'Title of your ad:'
         title_max: Maximum 100 characters
         to_publish: To post your ad, please complete this fields
         type_ad: 'Type of ad:'
@@ -314,7 +314,7 @@ en:
     click_to_large: Click to large the photo
     comments:
       body_max: 
-      do_click: Please click this link to reply the message
+      do_click: 'Please click this link to reply:'
       flash_ko: It is not possible to save your comment, there is an error, please review it and send your comment again
       flash_ok: Saved comment
       label: Your comment
@@ -326,9 +326,7 @@ en:
       other: ", %{count} comments"
     contact: contact
     contact_form: Contact's form
-    contact_legend_html: >-
-      This form is to contact nolotiro administrators. Do you want to publish an
-      ad instead? Click %{new_ad_link}.
+    contact_legend_html: This form is to contact nolotiro administrators. Do you want to publish an ad instead? Click %{new_ad_link}.
     contact_thanks: Sent message! Thanks for contact nolotiro.org
     cookie: We use cookies in order to improve your navigation in this site
     create_new_ad: Create a new ad
@@ -402,7 +400,7 @@ en:
       publish_ad: post an ad in this city
       subtitle: You can try some of this stuff
       title: There are no results in this location
-      try: Or you can try it in cities with similar name
+      try: 'Or you can try it in cities with similar name:'
     or: or
     password: Password
     permission_denied: You don't have permissions
@@ -452,13 +450,13 @@ en:
     to_publish_or_send_messages: To post ads or send messages please log in
     tos: Terms and conditions
     tos_page:
-      body_html: ALL
+      body_html: 
       title: Terms and conditions
     translate:
       description_html: Currently, Nolotiro.org is available in a few languages, but you can help us translate <a href="http://accounts.localeapp.com/projects/6872"> </a> to yours.
       title: Help us to translate nolotiro.org
     update: Save
-    updating: We are updating the entire site, so in the next few hours there will be delays with messages between users, images of an ad and the number of ads to users. Do not worry that "we are working on itou".
+    updating: We are updating the entire site, so in the next few hours there will be delays with messages between users, images of an ad and the number of ads to users. Do not worry, we are working on it
     user_ads: ads
     user_edit_profile: Edit user's profile
     user_profile: Profile

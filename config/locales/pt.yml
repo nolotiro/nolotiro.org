@@ -9,28 +9,28 @@ pt:
   activerecord:
     attributes:
       ad:
-        body: 
-        image: 
+        body: Corpo
+        image: Imagem
         image_content_type: 
-        image_file_size: 
-        subject: 
+        image_file_size: Tamanho da imagem
+        subject: Título
         title: 
-        type: 
+        type: Tipo
       contact:
-        email: 
-        message: 
+        email: Correio eletrônico
+        message: Mensagem
       mailboxer/message:
-        subject: 
         body: 
+        subject: 
       user:
-        Contraseña: 
-        Recuérdame: 
-        Tu email: 
-        current_password: 
-        email: 
-        password: 
-        password_confirmation: 
-        remember: 
+        Contraseña: Senha
+        Recuérdame: Lembre-me
+        Tu email: Seu e-mail
+        current_password: Senha atual
+        email: Correio eletrônico
+        password: Nova senha
+        password_confirmation: Nova senha (repetir)
+        remember: Lembre-me
   date:
     abbr_day_names:
     - Dom
@@ -129,7 +129,7 @@ pt:
       year: Ano
   devise:
     confirmations:
-      action: 
+      action: Confirmar minha conta
       confirmed: A sua conta foi confirmada com sucesso. Agora está autenticado.
       instructions: 
       resend: 
@@ -268,29 +268,29 @@ pt:
     about: sobre
     about_page:
       description_html: 
-      title: 
+      title: Sobre o nolotiro.org
     access_here: acesse aqui
     admin:
-      become_user: 
-      lock_user: 
-      unlock_user: 
+      become_user: "[ADMIN] Mudar para este usuário"
+      lock_user: "[ADMIN] Bloquear este usuário"
+      unlock_user: "[ADMIN] Desbloquear este usuario"
     ads:
-      bumped: 
-      created: 
+      bumped: Anúncio republicado
+      created: Anúncio criado
       form:
-        body: 
-        body_max: 
-        comments_enabled: 
-        image_permitted_formats: 
-        please_ad_type: 
-        prohibited: 
-        select_an_image: 
-        status: 
-        title: 
-        title_max: 
-        to_publish: 
-        type_ad: 
-      updated: 
+        body: 'Corpo de anúncio:'
+        body_max: 500 caracteres, no máximo
+        comments_enabled: Permitir comentários públicos
+        image_permitted_formats: gif, jpg, png somente. No máximo 1Mb de tamanho.
+        please_ad_type: por favor, seleciona o tipo do anúncio
+        prohibited: 'Há um problema, verificar isso:'
+        select_an_image: Adicionar uma imagem para o anúncio (opcional).
+        status: Estado
+        title: 'Titulo do anúncio:'
+        title_max: 100 caracteres, no máximo
+        to_publish: Para republicar o anúncio, por favor, insere esses dados
+        type_ad: 'Tipo do anúncio:'
+      updated: Anúncio atualizado
     all: todos
     all_ads: todos os anúncios
     and: e
@@ -304,12 +304,12 @@ pt:
     cancel_my_account: Apagar minha conta
     change_city: escolher cidade
     change_town:
-      choose: 
-      choose_html: 
-      close_to: 
-      please: 
-      submit: 
-      town: 
+      choose: Escolhe sua localização
+      choose_html: Não foram encontradas localizações com o nome <b>%{location}</b>. Tente de novo
+      close_to: 'Nosso sistema de sugestões de localização (baseado no seu IP) disse que você está perto de:'
+      please: Por favor, insira sua cidade
+      submit: Enviar
+      town: 'Cidade:'
     change_your_city: Escolha sua cidade
     choose_username: Escolha un nome de usuário
     choose_your_pass: Escolha sua senha
@@ -317,22 +317,20 @@ pt:
     cities_in_the_world: cidades do mondo que mais reciclam
     click_to_large: Click para aumentar foto
     comments:
-      body_max: 
-      do_click: 
-      flash_ko: 
-      flash_ok: 
-      label: 
-      subject: 
-      submit: 
-      title: 
+      body_max: Máximo 1000 caracteres
+      do_click: 'Faz click neste link para responder a mensagem:'
+      flash_ko: Houve um erro ao salvar o seu comentario. Confira e envié-lo de novo
+      flash_ok: O comentário foi salvado
+      label: Seu comentário
+      subject: "[nolotiro.org] Você tem um novo comentário no seu anúncio %{ad}"
+      submit: Enviar
+      title: Comentários
     comments_count:
-      one: ", 1 comentário"
+      one: ", %{count} comentário"
       other: ", %{count} comentários"
     contact: contato
     contact_form: Formulario de contato
-    contact_legend_html: >-
-      Esta forma é para entrar em contato com os gerentes do nolotiro. Você quer
-      publicar um anúncio? Clique aqui.
+    contact_legend_html: 
     contact_thanks: Mensagem enviada! Obrigado por contatar com nolotiro.org
     cookie: Utilizamos cookies para melhorar sua navegação neste site
     create_new_ad: Cria um novo anúncio
@@ -344,137 +342,139 @@ pt:
     didn_t_receive_unlock_instructions: Você não recebeu instruções para o desbloqueio?
     edit_this_ad: Edita este anúncio
     faq:
-      answer_1_html: 
+      answer_1_html: O objectivo fundamental deste site é nos livrar dos objetos que já não usamos e ficam nos estorvando em casa.
       answer_2_html: 
       answer_3_html: 
       answer_4_html: 
       answer_5_html: 
       answer_6_html: 
       answer_7_html: 
-      question_1: 
-      question_2: 
-      question_3: 
-      question_4: 
-      question_5: 
-      question_6: 
-      question_7: 
-      title: 
+      question_1: Qual é o propósito deste projeto?
+      question_2: Então... Este site não é para ajudar os outros?
+      question_3: Mas eu gostaria dar de graça minhas coisas para alguém que realmente o precisa
+      question_4: É verdade que tem pessoas que vendem as coisas que dão de presente aqui?
+      question_5: Que tipo de anúncios posso publicar no nolotiro?
+      question_6: Não está permitido o intercâmbio de objetos? Extraño
+      question_7: Posso enviar coisas à gente que não mora na minha cidade?
+      title: Perguntas frequentes
     faqs: perguntas frequentes
-    fill_captcha: 
+    fill_captcha: Confirma que você não é um robô
     first_visit: nolotiro.org é uma comunidade onde podemos nos desapegar das coisas que já não utilizamos e atrapalham na casa.
-    footer_explain: 
-    forgot_your_password: 
-    friends: 
-    gift_on: 
-    give: 
-    hello_to: 
-    help_translate: 
-    here:
-    home_title: 
-    if_you_are_new: 
-    if_youre_already_an_user: 
-    keywords: 
-    last_published_gifts: 
-    leave_blank: 
-    legal_notice: 
+    footer_explain: 'nolotiro.org é um site onde dou presentes e busco presentes grátis de segunda mão: móveis, cadeiras, sofás, bicicletas, notebooks, mesas, fogões, camas, roupas, brinquedos, berços ou carrinhos de bebe, celulares e muito mais que você já não precisa para que sejam reutilizados por outras pessoas.'
+    forgot_your_password: Você esqueceu sua senha?
+    friends: Amigos
+    gift_on: dou presente em %{woeid}
+    give: dou presente
+    hello_to: Olá %{recipient},
+    help_translate: ajuda a traduzir
+    here: 
+    home_title: anúncios de presentes novos e de segunda mão
+    if_you_are_new: Se você é um novo usuário, por favor
+    if_youre_already_an_user: Si você já está cadastrado, por favor
+    keywords: presente segunda mão grátis
+    last_published_gifts: últimos presentes publicados
+    leave_blank: "(deixar em branco se você não quer mudá-la)"
+    legal_notice: aviso legal
     legal_page:
       body_html: 
-      title: 
-    login: 
-    login_to_comment: 
-    logout: 
+      title: Aviso legal
+    login: acessar
+    login_to_comment: acessar para escrever um comentário
+    logout: sair
     mail:
-      automatic: 
-    member_since: 
-    messages: 
+      automatic: Este é uma mensagem automática. Por favor, não responda a este email.
+    member_since: Membro desde
+    messages: mensagens
     messages_tabs:
-      inbox: 
-      sent: 
-      trash: 
-    messages_title: 
-    meta_description: 
-    meta_description_ad: 
-    new_user: 
+      inbox: Recebidos
+      sent: Enviados
+      trash: Lixeira
+    messages_title: Mensagens
+    meta_description: 'nolotiro.org é um site web onde posso dar presentes e procurar presentes de segunda mão: movéis, cadeiras, sofás, bicicletas, computadores pessoais, mesas, fogões, abajures, camas, roupa, brinquedos, berços ou carrinhos para bebes, celulares e mais outras coisas que você já não quer e não precisa para que sejam reutilizadas por outras pessoas.'
+    meta_description_ad: presentes de segunda mão %{title} em %{woeid}. %{body}
+    new_user: novo usuário
     no_results:
-      explain_html: 
-      on_user: 
-      phrase: 
-      publish_ad: 
-      subtitle: 
-      title: 
-      try: 
-    or: 
-    password: 
-    permission_denied: 
-    please_fill_to_become_member: 
+      explain_html: "<p>1. Seja o primeiro em %{publish}.</p> <p>2. Tenta trocar a cidade por uma outra mayor que esteja perto da sua localização. <p/> <p>3. Nosso sistema de sugestões de localização (baseado na sua IP) disse que voc[e está perto de <br> %{change_location}"
+      on_user: Não existem anúncios de este tipo publicados por este usuário.
+      phrase: '"Uma viagem de mil quilômetros começa com um simples passo" Lao Tse'
+      publish_ad: publicar um anúncio em esta cidade
+      subtitle: Você pode tentar com alguma de estas coisas
+      title: Não existem anúncios para esta localização.
+      try: 'Ou tente com estas cidades com nomes semelhantes:'
+    or: ou
+    password: Senha
+    permission_denied: Você não tem permissão para executar esta ação
+    please_fill_to_become_member: Por favor, preencha este formulário para se tornar um miembro do nolotiro
     please_fill_to_finalize_registration: 
-    please_insert_email_and_password: 
-    please_introduce: 
-    privacy: 
+    please_insert_email_and_password: Por favor insira o seu email e a senha
+    please_introduce: Por favor, insira os caracteres que você vê
+    privacy: política de privacidade
     privacy_page:
       body_html: 
-      title: 
-    profile: 
+      title: Politica de privacidade
+    profile: perfil
     profile_actions:
       friend:
-        add: 
-        delete: 
-    profile_edit: 
-    publish_ad: 
-    publish_ad_on: 
-    published_ads: 
-    published_at_by_html: 
-    published_on: 
-    published_on_html: 
-    readed_count: 
-    reads: 
-    register: 
-    register_here: 
-    remember_me: 
-    rss_suscribe: 
-    save_failed: 
+        add: adicionar %{username} a sua lista de amigos
+        delete: excluir %{username} da sua lista de amigos
+    profile_edit: Editar perfil
+    publish_ad: Publicando anúncio
+    publish_ad_on: Publicar anúncio em %{woeid}
+    published_ads: Avisos publicados
+    published_at_by_html: Publicado há %{time} pelo usuário %{user}
+    published_on: Publicado há %{date}
+    published_on_html: Publicado <abbr class='js-moment' title='%{date}'>%{date}</abbr>
+    readed_count:
+      one: "%{count} leitura"
+      other: "%{count] leituras"
+    reads: leituras
+    register: Registre-se
+    register_here: cadastre-se aqui
+    remember_me: Lembrar-me
+    rss_suscribe: Subscreva-se via RSS
+    save_failed: 'Há um problema, confira isto:'
     search:
-      button: 
-      must_search: 
-      no_ads_message_html: 
-    searching_on_html: 
-    send: 
-    send_a_message: 
-    send_a_message_to: 
-    sending_this_form: 
-    share_this_ad: 
-    sign_in: 
-    sign_in_with_provider: 
-    sign_up: 
-    slogan: 
-    suggestions: 
-    to_publish_ad: 
-    to_publish_or_send_messages: 
-    tos: 
+      button: buscar
+      must_search: Procura alguma coisa em algum lugar
+      no_ads_message_html: Não existem anúncios que concordem com sua búsqueda <b>%{q}</b> na localização %{woeid}.
+    searching_on_html: Buscando <i>%{q}</i> em
+    send: Enviar
+    send_a_message: "+ Envia uma mensagem privada ao anunciante"
+    send_a_message_to: envia uma mensagem privada a
+    sending_this_form: Enviando este formulário, você admite ter lido, entendido, e concorda com nossas
+    share_this_ad: Compartilha este anúncio
+    sign_in: Accesar
+    sign_in_with_provider: Fazer login com %{provider}
+    sign_up: Criar usuário
+    slogan: não jogo fora, te dou de presente (sem condições)
+    suggestions: sugestões
+    to_publish_ad: Publicar anúncio
+    to_publish_or_send_messages: Para publicar anúncios ou enviar mensagens faça login na sua conta
+    tos: termos de uso
     tos_page:
       body_html: 
-      title: 
+      title: Termos de uso
     translate:
-      description_html: 
-      title: 
-    update: 
-    updating: 
-    user_ads: 
-    user_edit_profile: 
-    user_profile: 
-    username: 
-    users_most_active: 
-    users_most_active_last_week: 
-    view_ads_on: 
-    view_ads_on_your_city: 
-    view_more_ads: 
-    want: 
-    want_to_leave: 
-    we_need_your_password: 
-    welcome: 
-    welcome_message: 
-    write_a_comment: 
-    your_email: 
+      description_html: Atualmente, Nolotiro.org está disponível em poucas línguas, mas você pode nos ajudar a <a href="http://accounts.localeapp.com/projects/6872">traduzi-lo à sua</a>.
+      title: Ajude-nos a traduzir nolotiro.org ao sua língua
+    update: Salvar
+    updating: Estamos atualizando o site, nas próximas horas haverá demoras nas mensagens entre os usuários e nas imagens e na quantidade de anúncios. Não se preocupe que nós estamos trabalhando nisso
+    user_ads: anúncios
+    user_edit_profile: Editar perfil de usuário
+    user_profile: Perfil de usuário
+    username: Nome de usuário
+    users_most_active: Usuários mais ativos
+    users_most_active_last_week: usuários mais ativos nas últimas semanas
+    view_ads_on: Ver anúncios em %{location_suggest}
+    view_ads_on_your_city: Ver anúncios na sua cidade
+    view_more_ads: ver mais anúncios >
+    want: procuro
+    want_to_leave: Você quer apagar o seu usuário?
+    we_need_your_password: "(precisamos sua senha para confirmar mudanças)"
+    welcome: olá
+    welcome_message: Bem-vindo
+    write_a_comment: "+ Escreve um comentário"
+    your_email: Seu email
   number:
     currency:
       format:

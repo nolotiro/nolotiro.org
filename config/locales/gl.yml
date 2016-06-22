@@ -20,8 +20,8 @@ gl:
         email: Correo electrónico
         message: Mensaxe
       mailboxer/message:
-        subject: Asunto
         body: Mensaxe
+        subject: Asunto
       user:
         Contraseña: Contrasinal
         Recuérdame: Lémbrame
@@ -339,13 +339,11 @@ gl:
       submit: 
       title: 
     comments_count:
-      one: ", 1 comentario"
+      one: ", %{count} comentario"
       other: ", %{count} comentarios"
     contact: contacto
     contact_form: 
-    contact_legend_html: >-
-      Este formulario é para poñerse en contacto cos xestores de nolotiro.
-      Vostede quere publicar un anuncio? Prema %{new_ad_link}
+    contact_legend_html: Este formulario é para poñerse en contacto cos xestores de nolotiro. Vostede quere publicar un anuncio? Prema %{new_ad_link}
     contact_thanks: 'Mensaxe enviada! Grazas por entrar en contacto nolotiro.org
 
 '
@@ -424,7 +422,7 @@ gl:
     password: Contrasinal
     permission_denied: 
     please_fill_to_become_member: Por favor, enche este formulario para facer membro do nolotiro
-    please_fill_to_finalize_registration:  Por favor, enche este formulario para finalizar o registro
+    please_fill_to_finalize_registration: Por favor, enche este formulario para finalizar o registro
     please_insert_email_and_password: Por favor, engada o seu correo electrónico e contrasinal.
     please_introduce: 'Por favor, introduza os caracteres que aparecen:'
     privacy: política de privacidade
@@ -469,13 +467,13 @@ gl:
     to_publish_or_send_messages: 
     tos: 
     tos_page:
-      body_html: TODO
+      body_html: 
       title: Condicións de uso
     translate:
       description_html: Actualmente, nolotiro.org está dispoñible nalgunhas linguas, pero pode axudar a <a href="http://accounts.localeapp.com/projects/6872">traducir</a> .
       title: Axúdanos a traducir nolotiro.org súa lingua
     update: Gardar
-    updating: Estamos actualizando todo el sitio, por lo que en las próximas horas habrá retrasos con los mensajes entre los usuarios, las imágenes de un anuncio y la cantidad de anuncios de los usuarios. No te preocupes que "estamos trabajando en ellou".
+    updating: Estamos actualizando todo el sitio, por lo que en las próximas horas habrá retrasos con los mensajes entre los usuarios, las imágenes de un anuncio y la cantidad de anuncios de los usuarios. No te preocupes que estamos trabajando en ello
     user_ads: anuncios
     user_edit_profile: Editar perfil de usuario
     user_profile: Perfil de usuario

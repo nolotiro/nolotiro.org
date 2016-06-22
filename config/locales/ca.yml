@@ -20,8 +20,8 @@ ca:
         email: 
         message: 
       mailboxer/message:
-        subject: Assumpte
         body: Missatge
+        subject: Assumpte
       user:
         Contraseña: Contrasenya
         Recuérdame: Recorda'm
@@ -330,9 +330,7 @@ ca:
       other: ", %{count} comentaris"
     contact: contacte
     contact_form: Formulari de contacte
-    contact_legend_html: >-
-      Aquest formulari és per a contactar amb les administradores de nolotiro.
-      Estàs buscant publicar un anunci? Fes click %{new_ad_link}.
+    contact_legend_html: Aquest formulari és per a contactar amb les administradores de nolotiro. Estàs buscant publicar un anunci? Fes click %{new_ad_link}.
     contact_thanks: "¡Missatge enviat! Gràcies per contactar amb nolotiro.org"
     cookie: Utilitzem cookies per millorar la teva navegació en aquest lloc
     create_new_ad: Crea un nou anunci
@@ -452,13 +450,13 @@ ca:
     to_publish_or_send_messages: Per publicar anuncis o enviar missatges accedeix al teu compte
     tos: termes d'ús
     tos_page:
-      body_html: TODO
+      body_html: 
       title: Termes d'ús
     translate:
       description_html: Actualment, Nolotiro.org està disponible en pocs idiomes, però tu pots ajudar-nos a <a href="http://accounts.localeapp.com/projects/6872">traduir-lo al teu</a>.
       title: Ajuda'ns a traduir nolotiro.org a la teva llengua
     update: Guardar
-    updating: Estem actualitzant tot el lloc, de manera que en les pròximes hores hi haurà retards amb els missatges entre els usuaris, les imatges d'un anunci i la quantitat d'anuncis dels usuaris. No et preocupis que "estem treballant en ellou".
+    updating: Estem actualitzant tot el lloc, de manera que en les pròximes hores hi haurà retards amb els missatges entre els usuaris, les imatges d'un anunci i la quantitat d'anuncis dels usuaris. No et preocupis que estem treballant en ello
     user_ads: anuncis
     user_edit_profile: Edita perfil d'usuari
     user_profile: Perfil d'usuari

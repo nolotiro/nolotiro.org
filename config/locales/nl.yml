@@ -20,8 +20,8 @@ nl:
         email: 
         message: 
       mailboxer/message:
-        subject: 
         body: 
+        subject: 
       user:
         Contraseña: 
         Recuérdame: 
@@ -357,7 +357,7 @@ nl:
     give: 
     hello_to: 
     help_translate: 
-    here:
+    here: 
     home_title: 
     if_you_are_new: 
     if_youre_already_an_user: 
