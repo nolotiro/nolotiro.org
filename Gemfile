@@ -47,12 +47,14 @@ end
 
 
 # deploy
-gem 'capistrano', '~> 3.0'
-gem 'capistrano-rbenv'
-gem 'capistrano-rails'
-gem 'capistrano-bundler'
-gem 'capistrano-ci'
-gem 'capistrano-pending'
+group :development do
+  gem 'capistrano', '~> 3.0'
+  gem 'capistrano-rbenv'
+  gem 'capistrano-rails'
+  gem 'capistrano-bundler'
+  gem 'capistrano-ci'
+  gem 'capistrano-pending'
+end
 
 gem 'newrelic_rpm'                                  # monitoring
 gem 'actionpack-page_caching'                       # caching
