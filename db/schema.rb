@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160621160507) do
+ActiveRecord::Schema.define(version: 20160621215609) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace",     limit: 255
@@ -65,7 +65,7 @@ ActiveRecord::Schema.define(version: 20160621160507) do
   add_index "comments", ["ads_id"], name: "ads_id", using: :btree
   add_index "comments", ["user_owner"], name: "index_comments_on_user_owner", using: :btree
 
-  create_table "friendships", id: false, force: :cascade do |t|
+  create_table "friendships", force: :cascade do |t|
     t.integer "user_id",   limit: 4, null: false
     t.integer "friend_id", limit: 4, null: false
   end

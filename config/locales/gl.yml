@@ -199,6 +199,12 @@ gl:
       send_instructions: Recibirá instrucións para desbloquear a súa conta en poucos minutos.
       send_paranoid_instructions: Se existe a túa conta, recibirá instrucións para desbloquear a súa conta en poucos minutos.
       unlocked: A súa conta foi desbloqueada. A súa conta foi desbloqueada. Agora podes asinar.
+  friendships:
+    create:
+      success: 
+      error: 
+    destroy:
+      success: 
   helpers:
     label:
       message:

@@ -192,6 +192,12 @@ es:
       send_instructions: Vas a recibir instrucciones para desbloquear tu cuenta en unos pocos minutos.
       send_paranoid_instructions: Si tu cuenta existe, vas a recibir instrucciones para desbloquear tu cuenta en unos pocos minutos.
       unlocked: Tu cuenta fue desbloqueada. Tu cuenta fue desbloqueada. Ya puedes iniciar sesión.
+  friendships:
+    create:
+      success: Agregado %{username} como amigo.
+      error: Ocurrió un error al agregar a %{username} como amigo.
+    destroy:
+      success: Eliminado %{username} como amigo.
   helpers:
     label:
       message:
