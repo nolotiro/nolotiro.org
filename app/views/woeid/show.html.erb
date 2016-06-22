@@ -69,9 +69,8 @@
     <% end %>
 
     <% if @ads.any? %>
-      <% @ads.each_with_index do |ad,i| %>
-        <%= render :partial => "ads/ad", :locals => { :ad => ad, :i => i, :show_ads => true } %>
-      <% end %>
+      <%= render partial: 'ads/list_with_adsense', locals: { ads: @ads } %>
+
       <%= render partial: "partials/pagination", locals: { items: @ads } %>
     <% else %>
       <% if defined? @no_results_search %>
