@@ -13,5 +13,3 @@ require 'capistrano/rails'
 require 'thinking_sphinx/capistrano'
 
 require 'capistrano/ci/recipes'
-
-Dir.glob('lib/capistrano/tasks/*.cap').each { |r| import r }
