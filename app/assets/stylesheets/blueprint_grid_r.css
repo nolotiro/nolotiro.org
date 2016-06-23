@@ -10,15 +10,6 @@
 
 -------------------------------------------------------------- */
 
-/* A container should group all your columns. */
-.container {
-  width: 950px;
-  margin: 0 auto;
-
-}
-
-
-
 /* Use this class on any .span / container to see the grid. */
 .showgrid {
   background: url(src/grid.png);
@@ -78,11 +69,6 @@
 
     @media only screen and (min-width: 768px) and (max-width: 959px) {
 
-.container {
-  width: 768px;
-  margin: 0 auto;
-}
-
 .span-1 {width: 22px;}
 .span-2 {width: 54px;}
 .span-3 {width: 86px;}
@@ -117,7 +103,6 @@
     }
 
  @media only screen and (max-width: 479px) {
-.container { width: 100%; }
 .column, .span-1, .span-2, .span-3, .span-4, .span-5, .span-6, .span-7, .span-8, .span-9, .span-10, .span-11, .span-12, .span-13, .span-14, .span-15, .span-16, .span-17, .span-18, .span-19, .span-20, .span-21, .span-22, .span-23, .span-24 {
 margin: 0;
 }
@@ -159,8 +144,6 @@ margin: 0;
  }
 
 @media only screen and (min-width: 320px) and (max-width: 767px) {
-        .container { width: 98%;
-                     padding: 0px; }
 
 .span-1,
 .span-2,
@@ -212,23 +195,3 @@ hr.space {
   color: #fff;
   visibility: hidden;
 }
-
-
-/* Clearing floats without extra markup
-   Based on How To Clear Floats Without Structural Markup by PiE
-   [http://www.positioniseverything.net/easyclearing.html] */
-
-.clearfix:after, .container:after {
-  content: "\0020";
-  display: block;
-  height: 0;
-  clear: both;
-  visibility: hidden;
-  overflow:hidden;
-}
-.clearfix, .container {display: block;}
-
-/* Regular clearing
-   apply to column that should drop below previous ones. */
-
-.clear { clear:both; }
