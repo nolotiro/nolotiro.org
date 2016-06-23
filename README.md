@@ -93,9 +93,6 @@ rake color_routes
 
 We use better_errors when giving a 500 in development env.
 
-We use rails_footnotes in development so below the footer you have
-some useful information (SQL queries executed and such).
-
 Happy hacking!
 
 ## i18n

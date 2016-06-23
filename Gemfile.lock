@@ -326,8 +326,6 @@ GEM
       activesupport (>= 4.2.0.beta, < 5.0)
       nokogiri (~> 1.6.0)
       rails-deprecated_sanitizer (>= 1.0.1)
-    rails-footnotes (4.1.7)
-      rails (>= 3.2)
     rails-html-sanitizer (1.0.3)
       loofah (~> 2.0)
     rails-i18n (4.0.8)
@@ -513,7 +511,6 @@ DEPENDENCIES
   omniauth-google-oauth2
   paperclip (~> 4.0)
   rails (~> 4.2)
-  rails-footnotes (~> 4.0)
   rails-i18n (~> 4.0)
   rakismet
   recaptcha

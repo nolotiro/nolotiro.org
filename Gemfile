@@ -24,7 +24,6 @@ group :development, :test do
   gem 'byebug'                              # dev: debugger
   gem 'spring'                              # dev: speed up things
   gem 'commands'                            # dev: rake commands in console
-  gem 'rails-footnotes', '~> 4.0'           # dev: debug messages on HTML
   gem 'web-console', '~> 2.0'               # dev: better errors
   #gem 'better_errors'                       # dev: better errors
   #gem 'binding_of_caller'                   # dev: better errors
