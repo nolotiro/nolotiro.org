@@ -81,7 +81,6 @@ gem 'recaptcha', :require => 'recaptcha/rails'      # captcha
 gem 'ipaddress'                                     # ip address validation
 gem 'localeapp'                                     # i18n interface
 gem 'activeadmin', github: 'activeadmin'            # admin backend
-gem 'active_skin'                                   # admin backend skin
 gem 'rakismet'                                      # antispam
 gem 'font-awesome-rails'                            # font-awesome icons
 gem 'faker'
