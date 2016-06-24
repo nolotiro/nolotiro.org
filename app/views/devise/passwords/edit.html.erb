@@ -4,7 +4,7 @@
   <h1><%= t('devise.passwords.action') %></h1>
 </div>
 
-<div class="span-16">
+<div class="col-md-8">
   <%= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :put }) do |f| %>
     <fieldset>
       <%= devise_error_messages! %>

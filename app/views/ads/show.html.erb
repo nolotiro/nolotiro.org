@@ -14,7 +14,7 @@
 </div>
 
 <div id="main" class="row">
-  <div class="span-12">
+  <div class="col-md-6">
     <div class="ad_excerpt_show">
       <%= render "ads/actions", ad: @ad %>
 
@@ -58,7 +58,7 @@
       <%= render :partial => "comments/show", :locals => {:ad => @ad} %>
     <% end %>
   </div>
-  <div class="span-10">
+  <div class="col-md-5">
       <%= render partial: "partials/google_adsense", locals: { class_name: "google_adsense_336_280", ad_slot: "7225596067"}  %>
   </div>
 

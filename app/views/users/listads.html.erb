@@ -6,13 +6,13 @@
 
 <div id="main">
 
-  <div class="span-18">
+  <div class="col-md-9">
 
     <%= render partial: "users/tabnav", locals: {user: @user} %>
 
     <%= render "filter_status" %>
 
-    <div class="span-5 mobile">
+    <div class="col-md-3 mobile">
       <div class="google_ad_wrapper">
         <%= render partial: "partials/google_adsense", locals: { class_name: "mobile google_adsense_336_280", ad_slot: "7225596067"}  %>
       </div>
@@ -29,7 +29,7 @@
 
   </div>
 
-  <div class="span-4 desktop">
+  <div class="col-md-2 desktop">
     <div class="google_ad_lateral_wrapper">
       <%= render partial: "partials/google_adsense", locals: { class_name: "google_adsense_600_160", ad_slot: "6783776462"}  %>
     </div>
@@ -41,7 +41,7 @@
     </div>
   </div>
 
-  <div class="span-5 mobile">
+  <div class="col-md-3 mobile">
     <div class="google_ad_wrapper">
       <%= render partial: "partials/google_adsense", locals: { class_name: "mobile google_adsense_336_280", ad_slot: "7225596067"}  %>
     </div>

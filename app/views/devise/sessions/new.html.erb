@@ -1,7 +1,7 @@
 <%= render :partial => "partials/you_have_to_sign_in" %>
 <% content_for(:meta_title, t('nlt.sign_in')) %>
 
-<div class="span-16">
+<div class="col-md-8">
   <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
     <fieldset>
       <div class="col-md-6">

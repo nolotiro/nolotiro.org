@@ -13,11 +13,11 @@
     = link_to t("mailboxer.buttons.trash"), trash_mailboxer_message_path(@conversation), class: :button, method: :delete
 
 #main
-  .span-14#messages-thread
+  .col-md-7#messages-thread
     - @conversation.messages.includes(:sender).each do |mes|
       = render :partial => "message", :locals => {:message => mes}
     = render :partial => "reply", :locals => {:message => @message}
-  .span-8.mobile
+  .col-md-4.mobile
     = render partial: "partials/google_adsense", locals: { class_name: "google_adsense_336_280", ad_slot: "7225596067"}
-  .span-7.desktop.google_ad_lateral_wrapper
+  .col-md-4.desktop.google_ad_lateral_wrapper
     = render partial: "partials/google_adsense", locals: { class_name: "google_adsense_300_250", ad_slot: "8702329269"}
