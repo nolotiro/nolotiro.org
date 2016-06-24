@@ -1,7 +1,7 @@
 set :application, 'nolotiro.org'
 set :repo_url, 'https://github.com/alabs/nolotiro.org'
 
-# ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }
+ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }
 
 set :scm, :git
 
@@ -17,6 +17,7 @@ set :ssh_options, { :forward_agent => true }
 set :linked_files, %w{config/database.yml config/secrets.yml config/newrelic.yml}
 set :linked_dirs, %w{db/sphinx log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system public/legacy vendor/geolite}
 
+set :bundle_binstubs, nil
 set :keep_releases, 5
 
 set :ci_client, "travis"
@@ -89,13 +90,4 @@ namespace :deploy do
   end
 
   after :finishing, 'deploy:cleanup'
-
-  desc "Show changes to be deployed"
-  task :pending do
-    on roles(:app) do
-      within repo_path do
-        info `git diff #{strategy.fetch_revision}..#{fetch(:branch)}`
-      end
-    end
-  end
 end
