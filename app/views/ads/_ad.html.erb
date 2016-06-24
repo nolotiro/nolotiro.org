@@ -46,12 +46,3 @@
     </span>
   </div>
 </div>
-
-<% if defined? i %>
-  <% if [ 5, 10, 15 ].include? i and ( defined? show_ads and show_ads ) %>
-    <hr>
-    <%= render partial: "partials/google_adsense", locals: { class_name: "desktop google_adsense_336_280", ad_slot: "7225596067"}  %>
-    <%= render partial: "partials/google_adsense", locals: { class_name: "mobile google_adsense_320_100", ad_slot: "1977811266"}  %>
-    <hr>
-  <% end %>
-<% end %>

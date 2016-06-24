@@ -3,9 +3,7 @@
 <div id="main">
   <div class="section_ads">
     <h2><%= t('nlt.last_published_gifts') %></h2>
-    <% @ads.each_with_index do |ad,i| %>
-      <%= render :partial => "ad", :locals => { :ad => ad, :i => i, :show_ads => true } %>
-    <% end %>
+    <%= render partial: 'ads/list_with_adsense', locals: { ads: @ads } %>
     <br>
     <br>
     <b> <%= link_to t('nlt.view_more_ads'), ads_listall_path(type: :give, page: 2) %> </b>

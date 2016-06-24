@@ -555,7 +555,6 @@ dl, dd
   margin: 0px !important
 
 .ad_excerpt_home
-  float: left
   padding-top: 14px
   padding-bottom: 10px
   width: 100%
@@ -923,9 +922,6 @@ $langs: <%= Rails.application.secrets["langs"] %>
     margin-top: 10px
     margin-bottom: 30px
 
-.mobile
-  display: none !important
-
 .first-visit
   margin-top: 3em
 
@@ -944,9 +940,6 @@ $langs: <%= Rails.application.secrets["langs"] %>
 
 #messages-thread
   min-height: 300px
-
-.section_ads .ad_excerpt_home
-  border-bottom: none
 
 .col-md-8 form fieldset legend
   max-width: 40%
@@ -1043,9 +1036,6 @@ $langs: <%= Rails.application.secrets["langs"] %>
   .notice
     width: 90%
 
-  .mobile
-    display: inline-block !important
-
   .section_locations
     margin-left: 2%
     margin-right: 2%
@@ -1081,6 +1071,9 @@ $langs: <%= Rails.application.secrets["langs"] %>
 @media only screen and (min-width: 780px)
   .span-6.desktop
     margin-right: 0px !important
+
+  .mobile
+    display: none !important
 
 @media only screen and (min-width: 500px) and (max-width: 779px)
   .ad_create_tab
