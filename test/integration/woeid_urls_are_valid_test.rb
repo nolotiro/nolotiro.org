@@ -13,7 +13,7 @@ class WoeidUrlParamValid < ActionDispatch::IntegrationTest
   end
 
   it "redirects if woeid is not a valid woeid" do
-    get '/es/woeid/222222/give' #woeid does not exists
+    get '/es/woeid/222222/give' #woeid does not exist
     assert_redirected_to '/es/location/change'
   end
 
