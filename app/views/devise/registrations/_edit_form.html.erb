@@ -1,0 +1,26 @@
+<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
+  <fieldset>
+    <h3><%= t('nlt.profile_edit') %></h3>
+    <%= devise_error_messages! %>
+
+    <div><%= f.label :email %><br />
+    <%= f.email_field :email %></div>
+
+    <div><%= f.label :password %> <i>(<%= t('nlt.leave_blank') %>)</i><br />
+    <%= f.password_field :password, :autocomplete => "off" %></div>
+
+    <div><%= f.label :password_confirmation %><br />
+    <%= f.password_field :password_confirmation %></div>
+
+    <div><%= f.label :current_password %> <i>(<%= t('nlt.we_need_your_password') %>)</i><br />
+    <%= f.password_field :current_password %></div>
+
+    <div><%= f.submit t('nlt.update') %></div>
+  </fieldset>
+<% end %>
+
+<fieldset>
+  <h3><%= t('nlt.cancel_my_account') %></h3>
+
+  <p><%= t('nlt.want_to_leave') %>? <%= link_to t('nlt.cancel_my_account'), registration_path(resource_name), :data => { :confirm => t('nlt.delete_sure') }, :method => :delete %>.</p>
+</fieldset>

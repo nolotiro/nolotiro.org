@@ -10,20 +10,7 @@
       <p class="error"><%= t('nlt.change_town.choose_html', location: params[:location]) %></p>
       <%= render :partial =>"ask_form", :locals => {location_suggest: @location_suggest} %>
     <% else %>
-      <%= form_tag({action: "change"}) do %>
-        <fieldset><legend></legend>
-          <dl>
-            <dt>&nbsp;</dt>
-            <dd>
-            <%= select_tag(:location, options_for_select(@location_asked)) %>
-            </dd>
-            <dt>&nbsp;</dt>
-            <dd>
-            <%= submit_tag(t('nlt.change_town.choose')) %>
-            </dd>
-          </dl>
-        </fieldset>
-      <% end %>
+      <%= render "list_form", location_asked: @location_asked %>
     <% end %>
   </div>
   <div class="col-md-4">

@@ -1,0 +1,18 @@
+= form_for message do |f|
+  %fieldset
+    = errors_for(message)
+
+    %dl
+      %dt
+        = f.label :subject, t('mailboxer.new.subject')
+      %dd
+        -if params['subject']
+          = f.text_field :subject, value: params['subject']
+        -else
+          = f.text_field :subject
+      %dd
+        = f.text_area :body, size: '80x3', maxlength: 1500, required: true
+        %p.description
+          = t 'mailboxer.new.body_max'
+    = f.hidden_field :recipients
+    = f.submit t('mailboxer.new.submit')
