@@ -10,9 +10,11 @@ class LinksForBookedAdsTest < ActionDispatch::IntegrationTest
   end
 
   it 'does not show message link in listings' do
-    visit ads_woeid_path(id: @woeid_code, type: 'give', status: 'booked')
+    mocking_yahoo_woeid_info(@woeid_code) do
+      visit ads_woeid_path(id: @woeid_code, type: 'give', status: 'booked')
 
-    refute page.has_content?('Envía un mensaje privado al anunciante')
+      refute page.has_content?('Envía un mensaje privado al anunciante')
+    end
   end
 
   it 'does not show message link in ads' do

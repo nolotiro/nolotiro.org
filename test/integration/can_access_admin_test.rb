@@ -1,8 +1,10 @@
 require "test_helper"
 require "integration/concerns/authentication"
+require "support/web_mocking"
 
 class CanAccessAdmin < ActionDispatch::IntegrationTest
   include Authentication
+  include WebMocking
 
   it "should not get /admin/jobs as a anonymous user" do
     visit "/admin/jobs"
@@ -29,7 +31,7 @@ class CanAccessAdmin < ActionDispatch::IntegrationTest
 
   it "should not get /admin as a normal user" do
     login_as user
-    visit "/admin"
+    mocking_yahoo_woeid_info(user.woeid) { visit "/admin" }
     assert_content I18n.t('nlt.permission_denied')
   end
 

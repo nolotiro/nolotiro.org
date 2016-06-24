@@ -20,7 +20,7 @@ class WoeidController < ApplicationController
     @woeid = WoeidHelper.convert_woeid_name(@id) if @id.present?
 
     if @id.present? == true && @woeid == nil
-      redirect_to :controller => 'location', :action => 'ask'
+      raise ActionController::RoutingError.new('Not Found')
     elsif not @ads.any?
       @location_suggest = get_location_suggest # no results
       if @woeid

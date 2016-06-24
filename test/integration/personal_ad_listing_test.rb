@@ -19,9 +19,11 @@ class PersonalAdListing < ActionDispatch::IntegrationTest
 
     create(:ad, title: "something else to ensure it's filtered out")
 
-    login(@user.email, @user.password)
-    within('.user_login_box') { click_link @user.username }
-    mocking_yahoo_woeid_info(@user.woeid) { click_link 'anuncios' }
+    mocking_yahoo_woeid_info(@user.woeid) do
+      login(@user.email, @user.password)
+      within('.user_login_box') { click_link @user.username }
+      click_link 'anuncios'
+    end
   end
 
   it 'lists all give ads in a separate tab in user profile' do

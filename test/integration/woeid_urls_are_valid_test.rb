@@ -2,9 +2,10 @@ require "test_helper"
 
 class WoeidUrlParamValid < ActionDispatch::IntegrationTest
 
-  it "redirects if woeid is not type town" do
-    get '/es/woeid/23424801/give' #woeid of Ecuador Country
-    assert_redirected_to '/es/location/change'
+  it "returns a hard 404 error if woeid is not type town" do
+    assert_raise(ActionController::RoutingError) do
+      get '/es/woeid/23424801/give' #woeid of Ecuador Country
+    end
   end
 
   it "returns a hard 404 error if woeid is not an integer" do
@@ -13,9 +14,10 @@ class WoeidUrlParamValid < ActionDispatch::IntegrationTest
     end
   end
 
-  it "redirects if woeid is not a valid woeid" do
-    get '/es/woeid/222222/give' #woeid does not exist
-    assert_redirected_to '/es/location/change'
+  it "returns a hard 404 error if woeid is not a valid woeid" do
+    assert_raise(ActionController::RoutingError) do
+      get '/es/woeid/222222/give' #woeid does not exist
+    end
   end
 
 end
