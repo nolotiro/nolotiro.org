@@ -40,7 +40,8 @@ NolotiroOrg::Application.routes.draw do
       # locations lists
       get '/woeid/:id/:type(/status/:status)(/page/:page)',
           to: 'woeid#show',
-          as: 'ads_woeid'
+          as: 'ads_woeid',
+          constraints: { id: /\d+/ }
     end
 
     # location change

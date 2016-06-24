@@ -7,9 +7,10 @@ class WoeidUrlParamValid < ActionDispatch::IntegrationTest
     assert_redirected_to '/es/location/change'
   end
 
-  it "redirects if woeid is not an integer" do
-    get '/es/woeid/234LOOOOOOOOOOOOL24801/give'
-    assert_redirected_to '/es/location/change'
+  it "returns a hard 404 error if woeid is not an integer" do
+    assert_raise(ActionController::RoutingError) do
+      get '/es/woeid/234LOOOOOOOOOOOOL24801/give'
+    end
   end
 
   it "redirects if woeid is not a valid woeid" do
