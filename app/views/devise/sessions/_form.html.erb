@@ -21,13 +21,10 @@
       <%= f.password_field :password %>
       </dd>
 
-      <% if devise_mapping.rememberable? -%>
-        <dd id="rememberme-element">
-          <%= f.check_box :remember_me %> 
-          <%= f.label t 'nlt.remember_me' %>
-        </dd>
-
-      <% end -%>
+      <dd id="rememberme-element">
+        <%= f.check_box :remember_me %> 
+        <%= f.label t 'nlt.remember_me' %>
+      </dd>
 
       <div><%= f.submit t('nlt.sign_in') %></div>
 
@@ -35,15 +32,13 @@
     </div>
 
     <div class="col-md-6">
-      <%- if devise_mapping.omniauthable? %>
-        <%- resource_class.omniauth_providers.each do |provider| %>
-          <% prov = convert_provider( provider ) %>
-          <%= link_to user_omniauth_authorize_path(provider: provider), class: "btn btn-info login-with-#{prov.downcase}" do %>
-            <%= t('nlt.sign_in_with_provider', :provider => prov) %>
-            <i class="fa <%= convert_provider_fa(provider) %>"></i>
-          <% end %>
-            <br />
-        <% end -%>
+      <%- resource_class.omniauth_providers.each do |provider| %>
+        <% prov = convert_provider( provider ) %>
+        <%= link_to user_omniauth_authorize_path(provider: provider), class: "btn btn-info login-with-#{prov.downcase}" do %>
+          <%= t('nlt.sign_in_with_provider', :provider => prov) %>
+          <i class="fa <%= convert_provider_fa(provider) %>"></i>
+        <% end %>
+          <br />
       <% end -%>
     </div>
   </fieldset>
