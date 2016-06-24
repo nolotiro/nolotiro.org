@@ -26,7 +26,6 @@ NolotiroOrg::Application.routes.draw do
     
     constraints(AdConstraint.new) do
       scope '/ad' do
-        #get '/create', to: redirect('/ad/create/type/1')
         get '/:id/:slug', to: 'ads#show', :as => 'adslug'
         get '/edit/id/:id', to: 'ads#edit', :as => 'ads_edit'
         post '/bump/id/:id', to: 'ads#bump', :as => 'ads_bump'
