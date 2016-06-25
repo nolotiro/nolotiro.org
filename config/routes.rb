@@ -24,23 +24,25 @@ NolotiroOrg::Application.routes.draw do
     # FIXME: nolotirov2 legacy - redirect from /es/ad/create
     resources :ads, path: 'ad', path_names: { new: 'create' }
     
-    scope '/ad' do
-      #get '/create', to: redirect('/ad/create/type/1')
-      get '/:id/:slug', to: 'ads#show', :as => 'adslug'
-      get '/edit/id/:id', to: 'ads#edit', :as => 'ads_edit'
-      post '/bump/id/:id', to: 'ads#bump', :as => 'ads_bump'
-      get '/listall/ad_type/:type(/status/:status)(/page/:page)',
-          to: 'woeid#show',
-          as: 'ads_listall'
-      get '/listuser/id/:id(/type/:type)(/status/:status)(/page/:page)',
-          to: 'users#listads',
-          as: 'listads_user'
-    end
+    constraints(AdConstraint.new) do
+      scope '/ad' do
+        get '/:id/:slug', to: 'ads#show', :as => 'adslug'
+        get '/edit/id/:id', to: 'ads#edit', :as => 'ads_edit'
+        post '/bump/id/:id', to: 'ads#bump', :as => 'ads_bump'
+        get '/listall/ad_type/:type(/status/:status)(/page/:page)',
+            to: 'woeid#show',
+            as: 'ads_listall'
+        get '/listuser/id/:id(/type/:type)(/status/:status)(/page/:page)',
+            to: 'users#listads',
+            as: 'listads_user'
+      end
 
-    # locations lists
-    get '/woeid/:id/:type(/status/:status)(/page/:page)',
-        to: 'woeid#show',
-        as: 'ads_woeid'
+      # locations lists
+      get '/woeid/:id/:type(/status/:status)(/page/:page)',
+          to: 'woeid#show',
+          as: 'ads_woeid',
+          constraints: { id: /\d+/ }
+    end
 
     # location change
     scope '/location' do
