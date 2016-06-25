@@ -1,6 +1,6 @@
 <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
   <fieldset>
-    <div class="col-md-6">
+    <div class="col-md-6 col-sm-6">
       <dt>
         <label for="email" class="required">
           <%= f.label t 'nlt.your_email' %>
@@ -31,7 +31,7 @@
       <%= render "devise/shared/links" %>
     </div>
 
-    <div class="col-md-6">
+    <div class="col-md-6 col-sm-6">
       <%- resource_class.omniauth_providers.each do |provider| %>
         <% prov = convert_provider( provider ) %>
         <%= link_to user_omniauth_authorize_path(provider: provider), class: "btn btn-info login-with-#{prov.downcase}" do %>

@@ -4,13 +4,13 @@
   <h1><%= t('nlt.change_your_city') %></h1>
 </div>
 
-<div class="col-md-8">
+<div class="col-md-8 col-sm-8">
   <div class="row">
     <%= render partial: "ask_form", :locals => { location_suggest: @location_suggest } %>
   </div>
 </div>
 
-<div class="col-md-4">
+<div class="col-md-4 col-sm-4">
   <%= render partial: "partials/google_adsense", locals: { class_name: "desktop google_adsense_600_160", ad_slot: "6783776462"}  %>
   <%= render partial: "partials/google_adsense", locals: { class_name: "mobile google_adsense_336_280", ad_slot: "7225596067"}  %>
 </div>

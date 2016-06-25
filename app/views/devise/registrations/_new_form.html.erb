@@ -1,6 +1,6 @@
 <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
   <fieldset>
-    <div class="col-md-6">
+    <div class="col-md-6 col-sm-6">
       <%= devise_error_messages! %>
       <dl>
         <dt>
@@ -59,7 +59,7 @@
     </div>
 
     <% unless omniauth_registration? %>
-      <div class="col-md-6">
+      <div class="col-md-6 col-sm-6">
         <%- if devise_mapping.omniauthable? %>
           <%- resource_class.omniauth_providers.each do |provider| %>
             <% prov = convert_provider( provider ) %>
