@@ -17,12 +17,10 @@ class WoeidController < ApplicationController
               .by_woeid_code(@id)
               .paginate(:page => params[:page])
 
-    if params[:id].present?
-        @woeid = WoeidHelper.convert_woeid_name params[:id]
-    end
+    @woeid = WoeidHelper.convert_woeid_name(@id) if @id.present?
 
-    if params[:id].present? == true && (@id.match(/^(\d)+$/) == nil || @woeid == nil)
-      redirect_to :controller => 'location', :action => 'ask'
+    if @id.present? == true && @woeid == nil
+      raise ActionController::RoutingError.new('Not Found')
     elsif not @ads.any?
       @location_suggest = get_location_suggest # no results
       if @woeid
