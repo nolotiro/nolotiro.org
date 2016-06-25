@@ -574,7 +574,7 @@ dl, dd
   margin-top: 0px
   margin-left: 0px
   margin-right: 0px
-  margin-bottom: 60px
+  margin-bottom: 40px
   position: relative
   text-align: left
 
@@ -621,14 +621,14 @@ dl, dd
  * Header Area.
 
 .site-logo
+  @include clearfix
   margin-left: 60px
+  padding-top: 30px
 
 .site-name
   z-index: -130
   /*below search form
   border: none
-  margin-top: 0px
-  padding-top: 10px
   width: 380px
   font-size: 2em
   line-height: 1
@@ -636,7 +636,7 @@ dl, dd
   font-family: Georgia, "Times New Roman", Times, serif
   img
     position: absolute
-    top: 16px
+    top: 36px
     left: 0
 
 .site-slogan
@@ -959,7 +959,6 @@ $langs: <%= Rails.application.secrets["langs"] %>
 
   .site-name
     width: 50%
-    padding-top: 20px
 
   div.info.js-alert-first-visit.hide
     margin-top: 5em
