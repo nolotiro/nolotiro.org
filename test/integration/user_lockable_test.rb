@@ -7,7 +7,7 @@ class UserLockable < ActionDispatch::IntegrationTest
   it "should lock after 10 tries on user" do
     @user = FactoryGirl.create(:user)
 
-    (1..8).each do |n|
+    8.times do
       login(@user.email, "trololololo")
       assert_content(I18n.t('devise.failure.not_found_in_database'))
     end

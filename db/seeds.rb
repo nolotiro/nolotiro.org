@@ -35,13 +35,11 @@ def create_ad(user)
 end
 
 
-(1..10).each do |i|
-  create_user
-end
+10.times { create_user }
 
 create_user(1)
 
-(1..30).each do |i|
+30.times do
   user = User.offset(rand(User.count)).first
   create_ad(user)
 end
