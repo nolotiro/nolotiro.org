@@ -17,7 +17,6 @@ script:
   - bin/rake nolotiro:download_maxmind_db
   - bin/rake test
 before_script:
-  - mysql -e 'create database nolotirov3_test;'
   - cp config/secrets.yml.example config/secrets.yml
   - cp config/database.yml.travis config/database.yml
 branches:
