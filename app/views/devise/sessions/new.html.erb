@@ -1,11 +1,11 @@
+<% content_for(:meta_title, t('nlt.sign_in')) %>
+
 <div id="default_header_section">
   <h1><%= t('nlt.to_publish_or_send_messages') %></h1>
   <br><br>
   (<%= t 'nlt.if_you_are_new' %>
   <%= link_to t('nlt.register_here'), new_user_registration_path, :title => "user register" %>)
 </div>
-
-<% content_for(:meta_title, t('nlt.sign_in')) %>
 
 <div class="col-md-8 col-sm-8">
   <div class="row">
