@@ -1019,13 +1019,6 @@ $langs: <%= Rails.application.secrets["langs"] %>
     margin-left: 4%
     clear: both
 
-  #header
-    .ad_create_tab
-      position: static
-      margin-top: 40px
-      margin-left: 5%
-      margin-right: 5%
-
   #ad_body, textarea
     width: 95% !important
 
@@ -1033,21 +1026,18 @@ $langs: <%= Rails.application.secrets["langs"] %>
   .mobile
     display: none !important
 
-@media only screen and (min-width: 500px) and (max-width: 779px)
-  .ad_create_tab
-    width: 75%
-    float: right
-
 @media only screen and (max-width: 530px)
   .give-want
     display: block
 
-@media only screen and (max-width: 500px)
-
   #header
     .ad_create_tab
       position: static
-      margin-top: 30px
+      margin-top: 40px
+      margin-left: 5%
+      margin-right: 5%
+
+@media only screen and (max-width: 500px)
 
   .message-from-left, .message-from-right
     display: none
@@ -1070,11 +1060,6 @@ $langs: <%= Rails.application.secrets["langs"] %>
 
   .ad_change_location_home
     top: 50px
-
-  #header
-    .ad_create_tab
-      position: static
-      margin-top: 50px
 
   .home_location_change
     position: relative
