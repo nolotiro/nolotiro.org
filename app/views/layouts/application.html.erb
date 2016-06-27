@@ -126,7 +126,9 @@
 
       <div class="hide js-welcome-message"><%= t('nlt.welcome_message') %></div>
 
-      <%= yield %>
+      <div id="main">
+        <%= yield %>
+      </div>
 
       <% cache do %>
         <%= render :partial => "partials/footer", :locals => { :url => "https://nolotiro.org" } %>

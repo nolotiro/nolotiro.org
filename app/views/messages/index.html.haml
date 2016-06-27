@@ -3,8 +3,9 @@
 
 #default_header_section
   %h1=title
-#main
-  .col-md-9
+
+.col-md-9
+  .row
     = render partial: "users/tabnav", locals: {user: current_user}
     = render partial: "messages/tabmessages", locals: {box: @box}
     - if @search
@@ -28,5 +29,5 @@
 
     = render partial: "partials/google_adsense", locals: { class_name: "mobile google_adsense_336_280", ad_slot: "7225596067"}
 
-  .col-md-1
-    = render partial: "partials/google_adsense", locals: { class_name: "desktop google_adsense_600_160", ad_slot: "6783776462"}
+.col-md-1
+  = render partial: "partials/google_adsense", locals: { class_name: "desktop google_adsense_600_160", ad_slot: "6783776462"}

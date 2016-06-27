@@ -4,9 +4,10 @@
 #default_header_section
   %h1
     = title
-#main
-  .col-md-7
+
+.col-md-7
+  .row
     = render "form", message: @message
 
-  .col-md-5
-    = render partial: "partials/google_adsense", locals: { class_name: "google_adsense_336_280", ad_slot: "7225596067"}
+.col-md-5
+  = render partial: "partials/google_adsense", locals: { class_name: "google_adsense_336_280", ad_slot: "7225596067"}

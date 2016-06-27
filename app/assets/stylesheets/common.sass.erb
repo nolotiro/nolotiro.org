@@ -266,10 +266,14 @@ form.searchbox
   padding-bottom: 5px
 
 .ad_excerpt_show
+  @include make-row
   +word-break
 
   display: block
   float: left
+
+.ad_excerpt_comments
+  @include make-row
 
 .delete_message
   display: inline-block
@@ -647,6 +651,7 @@ dl, dd
   padding-top: 1px
 
 #location_header_section
+  @include make-md-column(12)
   z-index: 100
   display: block
   background-color: #E5F2FF
@@ -662,6 +667,7 @@ dl, dd
   margin-top: 8px
 
 #default_header_section
+  @include make-md-column(12)
   +word-break
 
   display: block

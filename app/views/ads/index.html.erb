@@ -1,13 +1,11 @@
 <% content_for(:meta_title, t('nlt.home_title')) %>
 
-<div id="main">
-  <div class="section_ads">
-    <h2><%= t('nlt.last_published_gifts') %></h2>
-    <%= render partial: 'ads/list_with_adsense', locals: { ads: @ads } %>
-    <br>
-    <br>
-    <b> <%= link_to t('nlt.view_more_ads'), ads_listall_path(type: :give, page: 2) %> </b>
-  </div>
+<div class="section_ads">
+  <h2><%= t('nlt.last_published_gifts') %></h2>
+  <%= render partial: 'ads/list_with_adsense', locals: { ads: @ads } %>
+  <br>
+  <br>
+  <b> <%= link_to t('nlt.view_more_ads'), ads_listall_path(type: :give, page: 2) %> </b>
 </div>
 
 <% cache("ads/#{I18n.locale}/location-ranks-#{Ad.cache_digest}") do %>

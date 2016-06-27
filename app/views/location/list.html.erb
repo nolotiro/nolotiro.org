@@ -4,8 +4,8 @@
   <h1><%= t('nlt.change_town.choose') %></h1>
 </div>
 
-<div id="main">
-  <div class="col-md-8">
+<div class="col-md-8">
+  <div class="row">
     <% if @location_asked.nil? %>
       <p class="error"><%= t('nlt.change_town.choose_html', location: params[:location]) %></p>
       <%= render :partial =>"ask_form", :locals => {location_suggest: @location_suggest} %>
@@ -13,7 +13,8 @@
       <%= render "list_form", location_asked: @location_asked %>
     <% end %>
   </div>
-  <div class="col-md-4">
-    <%= render partial: "partials/google_adsense", locals: { class_name: "google_adsense_336_280", ad_slot: "7225596067"}  %>
-  </div>
+</div>
+
+<div class="col-md-4">
+  <%= render partial: "partials/google_adsense", locals: { class_name: "google_adsense_336_280", ad_slot: "7225596067"}  %>
 </div>

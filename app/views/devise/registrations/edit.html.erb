@@ -1,10 +1,9 @@
-
 <div id="default_header_section">
   <h1><%= t('nlt.user_profile') %> - <%= @user.username %></h1>
 </div>
 
-<div id="main">
-  <div class="col-md-9">
+<div class="col-md-9">
+  <div class="row">
     <%= render partial: "users/tabnav", locals: {user: @user} %>
     <div class="ad_excerpt">
       <%= render 'edit_form' %>
