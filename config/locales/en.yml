@@ -397,7 +397,9 @@ en:
     meta_description_ad: second hand gift %{title} in %{woeid}. %{body}
     new_user: sign up
     no_results:
-      explain_html: "<p>1. Be the first to %{publish}.</p> <p>2. Try a bigger city close to your location.</p> <p>3. Our city suggestion system IP based tell us you are close to: <br> %{change_location} </p>"
+      first_to_publish_html: "1. Be the first to %{publish}."
+      switch_to_bigger_city: "2. Try a bigger city close to your location."
+      switch_to_guessed_city_html: "3. Our city suggestion system IP based tell us you are close to: <br> %{change_location}"
       on_user: 
       phrase: '"The journey of a thousand miles begins with one step" Lao Tse.'
       publish_ad: post an ad in this city

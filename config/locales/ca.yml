@@ -397,7 +397,9 @@ ca:
     meta_description_ad: regal segona mà %{title} a %{woeid}. %{body}
     new_user: nou usuari
     no_results:
-      explain_html: "<p> 1. Sigues el primer a %{publish}.</p> <p>2. Prova a canviar la ciutat per una més gran que estigui a prop de la teva ubicació. </p> <p> 3. El nostre sistema de suggeriment d'ubicació (basat en la teva IP) diu que aquestes prop de: <br> %{change_location} </p>"
+      first_to_publish_html: "1. Sigues el primer a %{publish}."
+      switch_to_bigger_city: "2. Prova a canviar la ciutat per una més gran que estigui a prop de la teva ubicació."
+      switch_to_guessed_city_html: "3. El nostre sistema de suggeriment d'ubicació (basat en la teva IP) diu que aquestes prop de: <br> %{change_location}"
       on_user: 
       phrase: '"Un viatge de mil quilòmetres comença amb un simple pas" Lao Tse.'
       publish_ad: publicar un anunci en aquesta ciutat
