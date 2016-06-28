@@ -24,15 +24,15 @@ class LocationController < ApplicationController
 
   # POST /es/location/change2
   def change
-    if !positive_integer?(params[:location])
+    if positive_integer?(params[:location])
+      set_location params[:location]
+    else
       locations = WoeidHelper.search_by_name(params[:location])
       if locations 
         set_location locations[0][1]
       else
         redirect_to location_ask_path, alert: "Hubo un error con el cambio de su ubicación. Inténtelo de nuevo."
       end
-    else
-      set_location params[:location]
     end
   end
 
