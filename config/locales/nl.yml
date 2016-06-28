@@ -352,7 +352,6 @@ nl:
       title: 
     faqs: 
     fill_captcha: 
-    first_visit: 
     footer_explain: 
     forgot_your_password: 
     friends: 
@@ -447,7 +446,6 @@ nl:
       description_html: 
       title: 
     update: 
-    updating: 
     user_ads: 
     user_edit_profile: 
     user_profile: 
@@ -461,7 +459,6 @@ nl:
     want_to_leave: 
     we_need_your_password: 
     welcome: 
-    welcome_message: 
     write_a_comment: 
     your_email: 
   number:

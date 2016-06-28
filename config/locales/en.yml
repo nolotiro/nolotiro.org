@@ -362,7 +362,6 @@ en:
       title: FAQ
     faqs: FAQ
     fill_captcha: Confirm you're not a robot
-    first_visit: nolotiro.org it is a community where we can get rid of items you no longer use and hinder you at home.
     footer_explain: 'nolotiro.org is a website where you can give stuff for free or find free second hand stuff: furniture, chairs, bicycles, computers, laptops, tables, beds, clothe, toys, mobile phones and many other stuff you don''t want or need, so other people can recycle it and give it a new life.'
     forgot_your_password: Forgot your password?
     friends: Friends
@@ -457,7 +456,6 @@ en:
       description_html: Currently, Nolotiro.org is available in a few languages, but you can help us translate <a href="http://accounts.localeapp.com/projects/6872"> </a> to yours.
       title: Help us to translate nolotiro.org
     update: Save
-    updating: We are updating the entire site, so in the next few hours there will be delays with messages between users, images of an ad and the number of ads to users. Do not worry, we are working on it
     user_ads: ads
     user_edit_profile: Edit user's profile
     user_profile: Profile
@@ -471,7 +469,6 @@ en:
     want_to_leave: Do you want to delete your user?
     we_need_your_password: "(we need your password to confirm your edition)"
     welcome: welcome
-    welcome_message: Welcome
     write_a_comment: "+ Write a comment"
     your_email: Your email
   number:

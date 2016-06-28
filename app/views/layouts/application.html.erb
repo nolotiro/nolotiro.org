@@ -109,18 +109,6 @@
         </div>
       <% end %>
 
-      <div class="info js-alert-cookie hide first-visit" data-cookie-name="alert-first-visit">
-        <%= t('nlt.first_visit') %>
-        <a href="#" class="js-alert-close alert-close">x</a>
-      </div>
-
-      <div class="notice js-alert-cookie hide" data-cookie-name="alert-updating">
-        <%= t('nlt.updating') %>
-        <a href="#" class="js-alert-close alert-close">x</a>
-      </div>
-
-      <div class="hide js-welcome-message"><%= t('nlt.welcome_message') %></div>
-
       <div id="main">
         <% flash.each do |name, msg| %>
           <% if msg.is_a?(String) %>

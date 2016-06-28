@@ -362,7 +362,6 @@ ca:
       title: Preguntes freqüents
     faqs: preguntes freqüents
     fill_captcha: Confirma que no ets un robot
-    first_visit: nolotiro.org és una comunitat on podem desfer-nos dels objectes que ja no fem servir i ens fan nosa a casa.
     footer_explain: 'nolotiro.org és un lloc web on regalar i buscar regals de franc de segona mà: mobles, cadires, sofàs, bicicletes, ordinadors portàtils, taules, cuines, llums, llits, roba, joguines, bressols o carros per a nadons, telèfons mòbils i altres moltes coses que ja no vols i no necessites per a que les reutilitzin altra gent a la qual pot servir o donar-li nova vida.'
     forgot_your_password: Ha oblidat la seva contrasenya?
     friends: Amics
@@ -457,7 +456,6 @@ ca:
       description_html: Actualment, Nolotiro.org està disponible en pocs idiomes, però tu pots ajudar-nos a <a href="http://accounts.localeapp.com/projects/6872">traduir-lo al teu</a>.
       title: Ajuda'ns a traduir nolotiro.org a la teva llengua
     update: Guardar
-    updating: Estem actualitzant tot el lloc, de manera que en les pròximes hores hi haurà retards amb els missatges entre els usuaris, les imatges d'un anunci i la quantitat d'anuncis dels usuaris. No et preocupis que estem treballant en ello
     user_ads: anuncis
     user_edit_profile: Edita perfil d'usuari
     user_profile: Perfil d'usuari
@@ -471,7 +469,6 @@ ca:
     want_to_leave: Vols esborrar el teu usuari?
     we_need_your_password: "(necessitem la contrasenya per confirmar els canvis)"
     welcome: hola
-    welcome_message: Benvingut
     write_a_comment: "+ Escriu un nou comentari"
     your_email: El teu email
   number:
