@@ -11,10 +11,15 @@
     <%= t('nlt.no_results.switch_to_bigger_city') %>
   </p>
 
-  <p>
-    <%= t('nlt.no_results.switch_to_guessed_city_html',
-          change_location: link_to(location_suggest, location_change_path)) %>
-  </p>
+  <% if location_suggest %>
+    <p>
+      <% link = link_to(location_suggest,
+                        location_change_path(location: location_suggest)) %>
+
+      <%= t('nlt.no_results.switch_to_guessed_city_html',
+            change_location: link) %>
+    </p>
+  <% end %>
 
   <% if location_options.present? %>
     <%= t('nlt.no_results.try') %><br>
