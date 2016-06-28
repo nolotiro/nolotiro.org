@@ -11,7 +11,8 @@ module GeoHelper
     request.remote_ip
   end
 
-  def self.suggest ip_address
+  def self.suggest request
+    ip_address = get_ip_address(request)
     return unless ip_address
 
     db = MaxMindDB.new(Rails.root.to_s + '/vendor/geolite/GeoLite2-City.mmdb')

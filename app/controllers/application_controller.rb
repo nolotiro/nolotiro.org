@@ -74,8 +74,7 @@ class ApplicationController < ActionController::Base
   protected
 
   def get_location_suggest 
-    ip_address = GeoHelper.get_ip_address request
-    GeoHelper.suggest ip_address
+    GeoHelper.suggest request
   end
 
   def configure_permitted_parameters

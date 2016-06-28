@@ -11,19 +11,24 @@ class GeoHelperTest < ActionView::TestCase
   end 
 
   test "suggests location from ip address" do
-    suggestion = GeoHelper.suggest "8.8.8.8"
+    @request.headers["REMOTE_ADDR"] = "8.8.8.8"
+    suggestion = GeoHelper.suggest @request
+
     assert_equal("Mountain View, California, Estados Unidos", suggestion)
   end
 
   test "suggests properly translated locations" do
+    @request.headers["REMOTE_ADDR"] = "8.8.8.8"
     I18n.locale = :en
-    suggestion = GeoHelper.suggest "8.8.8.8"
+    suggestion = GeoHelper.suggest @request
     assert_equal("Mountain View, California, United States", suggestion)
     I18n.locale = :es
   end
 
   test "does not suggests a location unless it's city-specific" do
+    @request.headers["REMOTE_ADDR"] = "186.237.37.253"
+
     # This ip address is correctly resolved to Brazil, but not a specific city
-    assert_nil GeoHelper.suggest "186.237.37.253"
+    assert_nil GeoHelper.suggest @request
   end
 end
