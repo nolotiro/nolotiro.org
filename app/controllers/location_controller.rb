@@ -3,15 +3,11 @@ class LocationController < ApplicationController
 
   # GET /es/location/change
   def ask
-    # show form for asking possible locations
-    @location_suggest = get_location_suggest
   end
 
   # POST /es/location/change
   # GET /es/location/change2?location=:location
   def list
-    # list possible locations 
-    @location_suggest = get_location_suggest
     if params[:location]
       locations = WoeidHelper.search_by_name(params[:location])
       if not locations.nil? and locations.count == 1

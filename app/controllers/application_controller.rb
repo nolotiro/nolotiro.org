@@ -71,11 +71,13 @@ class ApplicationController < ActionController::Base
 
   helper_method :status_scope
 
-  protected
-
-  def get_location_suggest 
-    GeoHelper.suggest request
+  def location_suggest 
+    @location_suggest ||= GeoHelper.suggest request
   end
+
+  helper_method :location_suggest
+
+  protected
 
   def configure_permitted_parameters
     devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:username, :email, :password, :password_confirmation, :remember_me) }
