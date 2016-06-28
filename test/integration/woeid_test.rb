@@ -1,6 +1,6 @@
 require "test_helper"
 
-class WoeidUrlParamValid < ActionDispatch::IntegrationTest
+class WoeidTest < ActionDispatch::IntegrationTest
 
   it "returns a hard 404 error if woeid is not type town" do
     assert_raise(ActionController::RoutingError) do
