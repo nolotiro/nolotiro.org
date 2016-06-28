@@ -1,4 +1,5 @@
 class LocationController < ApplicationController
+  include StringUtils
 
   # GET /es/location/change
   def ask
@@ -23,7 +24,7 @@ class LocationController < ApplicationController
 
   # POST /es/location/change2
   def change
-    if params[:location].to_i == 0 
+    if !positive_integer?(params[:location])
       locations = WoeidHelper.search_by_name(params[:location])
       if locations 
         set_location locations[0][1]
