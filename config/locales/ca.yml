@@ -276,6 +276,9 @@ ca:
       unlock_user: "[ADMIN] Desbloca a aquest usuari"
     ads:
       bumped: 
+      count:
+        one: "%{count} anunci"
+        other: "%{count} anuncis"
       created: Hem creat l'anunci
       form:
         body: 'Cos de l''anunci:'

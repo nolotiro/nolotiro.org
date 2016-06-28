@@ -287,6 +287,9 @@ gl:
       unlock_user: 
     ads:
       bumped: 
+      count:
+        one: "%{count} anuncio"
+        other: "%{count} anuncios"
       created: Creamos o anuncio
       form:
         body: 'Corpo do anuncio:'

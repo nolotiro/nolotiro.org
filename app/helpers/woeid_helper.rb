@@ -49,7 +49,7 @@ module WoeidHelper
 
         places = locations.map do |l|
           name = convert_woeid_name(l.woeid)[:full]
-          count = "#{Ad.where(woeid_code: l.woeid).count} anuncios"
+          count = I18n.t('nlt.ads.count', count: Ad.where(woeid_code: l.woeid).count)
 
           ["#{name} (#{count})", l.woeid]
         end

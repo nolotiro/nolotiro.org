@@ -276,6 +276,9 @@ pt:
       unlock_user: "[ADMIN] Desbloquear este usuario"
     ads:
       bumped: Anúncio republicado
+      count:
+        one: "%{count} anúncio"
+        other: "%{count} anúncios"
       created: Anúncio criado
       form:
         body: 'Corpo de anúncio:'

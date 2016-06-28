@@ -276,6 +276,9 @@ it:
       unlock_user: "[ADMIN] Sbloccare a questo utente"
     ads:
       bumped: Abbiamo ripubblicato annuncio
+      count:
+        one: "%{count} annuncio"
+        other: "%{count} annunci"
       created: 'Abbiamo creato l''annuncio '
       form:
         body: Corpo del annuncio

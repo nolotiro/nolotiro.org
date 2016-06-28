@@ -278,6 +278,9 @@ fr:
       unlock_user: 
     ads:
       bumped: 
+      count:
+        one: 
+        other: 
       created: 
       form:
         body: 
