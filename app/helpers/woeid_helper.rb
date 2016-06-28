@@ -45,15 +45,15 @@ module WoeidHelper
         return Rails.cache.fetch(key)
       else
         GeoPlanet.appid = Rails.application.secrets["geoplanet_app_id"]
-        locations = GeoPlanet::Place.search(name, :lang => locale, :type => 7, :count => 0)
-        return if locations.nil?
+        raw_locations = GeoPlanet::Place.search(name, :lang => I18n.locale, :type => 7, :count => 0)
+        return if raw_locations.nil?
 
-        places = locations.map do |l|
-          l = YahooLocation.new(l)
-          name = l.fullname
-          count = I18n.t('nlt.ads.count', count: l.ads_count)
+        places = raw_locations.map do |raw_location|
+          location = YahooLocation.new(raw_location)
+          name = location.fullname
+          count = I18n.t('nlt.ads.count', count: location.ads_count)
 
-          ["#{name} (#{count})", l.woeid]
+          ["#{name} (#{count})", location.woeid]
         end
         Rails.cache.write(key, places)
         return places
