@@ -12,7 +12,7 @@ class WoeidHelperTest < ActionView::TestCase
     end
   end
 
-  test "searches serveral cities with the same name" do
+  test "suggests cities with similar names" do
     mocking_yahoo_woeid_similar("tenerife") do
       actual = WoeidHelper.search_by_name("tenerife") 
       expected = [
