@@ -1,0 +1,62 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://where.yahooapis.com/v1/place/222222?appid=ccc2c6d8c5c9233d952dee39e4e4f05266d3ebc47b809498a7b071b500aefccd269423a8967b3d96700d5c1a630d59159b2b8f4d111714a8fb777362e548bc57&format=json&lang=es
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Date:
+      - Tue, 28 Jun 2016 11:44:39 GMT
+      P3p:
+      - policyref="https://policies.yahoo.com/w3c/p3p.xml", CP="CAO DSP COR CUR ADM
+        DEV TAI PSA PSD IVAi IVDi CONi TELo OTPi OUR DELi SAMi OTRi UNRi PUBi IND
+        PHY ONL UNI PUR FIN COM NAV INT DEM CNT STA POL HEA PRE LOC GOV"
+      Content-Language:
+      - en-US
+      Access-Control-Allow-Origin:
+      - "*"
+      Cache-Control:
+      - max-age=86400,public
+      Expires:
+      - Wed, 29 Jun 2016 11:44:39 GMT
+      Vary:
+      - Accept-Encoding
+      Content-Encoding:
+      - gzip
+      Content-Length:
+      - '168'
+      Content-Type:
+      - application/json; charset=UTF-8
+      Age:
+      - '2'
+      Connection:
+      - keep-alive
+      Via:
+      - http/1.1 r1.ycpi.br1.yahoo.net (ApacheTrafficServer [cSsSfU])
+      Server:
+      - ATS
+      Y-Trace:
+      - BAEAQAAAAAC_rS_suwEzPwAAAAAAAAAAjqBCm.EuOsoAAAAAAAAAAAAFNlUpe06OAAU2VSmBS082RLLQAAAAAA--
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAAA22OMQvCMBSE/8rjzdqodOqqrg6KW5aQPk0g5oWX1Cql/91Q
+        EBdvu7vv4CYkERbsJhzEY4eulNRppdU4js3bOGaTfG4sP7R6brVa8KxVu2lx
+        hcHEex1RXF8v1faUrfhUPMeaVgTOlHkQS3BgynDiAseXz2Vhi/GhYnseQg+x
+        VjcfeyiOQL6r3xtHQv/+pGAsabVbhPP8AXyYVoTRAAAA
+    http_version: 
+  recorded_at: Tue, 28 Jun 2016 11:44:40 GMT
+recorded_with: VCR 3.0.3

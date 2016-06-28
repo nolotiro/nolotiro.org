@@ -24,7 +24,7 @@ module WoeidHelper
           else
             return nil
           end
-      rescue
+      rescue GeoPlanet::NotFound
         return nil
       end
     end

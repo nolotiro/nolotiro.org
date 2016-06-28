@@ -1,10 +1,14 @@
 require "test_helper"
+require "support/web_mocking"
 
 class WoeidTest < ActionDispatch::IntegrationTest
+  include WebMocking
 
   it "returns a hard 404 error if woeid is not type town" do
-    assert_raise(ActionController::RoutingError) do
-      get '/es/woeid/23424801/give' #woeid of Ecuador Country
+    mocking_yahoo_woeid_info(23424801) do
+      assert_raise(ActionController::RoutingError) do
+        get '/es/woeid/23424801/give' #woeid of Ecuador Country
+      end
     end
   end
 
@@ -15,8 +19,10 @@ class WoeidTest < ActionDispatch::IntegrationTest
   end
 
   it "returns a hard 404 error if woeid is not a valid woeid" do
-    assert_raise(ActionController::RoutingError) do
-      get '/es/woeid/222222/give' #woeid does not exist
+    mocking_yahoo_woeid_info(222222) do
+      assert_raise(ActionController::RoutingError) do
+        get '/es/woeid/222222/give' #woeid does not exist
+      end
     end
   end
 

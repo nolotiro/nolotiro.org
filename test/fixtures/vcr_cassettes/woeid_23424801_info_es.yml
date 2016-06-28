@@ -1,0 +1,65 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://where.yahooapis.com/v1/place/23424801?appid=ccc2c6d8c5c9233d952dee39e4e4f05266d3ebc47b809498a7b071b500aefccd269423a8967b3d96700d5c1a630d59159b2b8f4d111714a8fb777362e548bc57&format=json&lang=es
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 28 Jun 2016 11:44:39 GMT
+      P3p:
+      - policyref="https://policies.yahoo.com/w3c/p3p.xml", CP="CAO DSP COR CUR ADM
+        DEV TAI PSA PSD IVAi IVDi CONi TELo OTPi OUR DELi SAMi OTRi UNRi PUBi IND
+        PHY ONL UNI PUR FIN COM NAV INT DEM CNT STA POL HEA PRE LOC GOV"
+      Content-Language:
+      - es
+      Access-Control-Allow-Origin:
+      - "*"
+      Cache-Control:
+      - max-age=86400,public
+      Expires:
+      - Wed, 29 Jun 2016 11:44:39 GMT
+      Vary:
+      - Accept-Encoding
+      Content-Encoding:
+      - gzip
+      Content-Length:
+      - '311'
+      Content-Type:
+      - application/json; charset=UTF-8
+      Age:
+      - '0'
+      Connection:
+      - keep-alive
+      Via:
+      - http/1.1 r2.ycpi.br1.yahoo.net (ApacheTrafficServer [cSsSfU])
+      Server:
+      - ATS
+      Y-Trace:
+      - BAEAQAAAAAB7iKZXYReQSwAAAAAAAAAAlI_BR6r0OagAAAAAAAAAAAAFNlUpc2mqAAU2VSl5nTpwtcypAAAAAA--
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAAA21Ry07DMBD8FeRzcWznVXoE9YoQQuKSy+JYjUXqjewNJary
+        79ikFRBxm33MzD7ObOhBG7Y7sxMa27KdygtVbIXcLJWXaTCPcIwd7AmaUQjT
+        Braq3QCRD0lDYxs7pZo3zC2kvR6hRR8pGkdHfvov9yNAUXJltWiy/UPEqxmj
+        DbRH62SsswtWv3C+4B419JYm+Te8dA4YCPoFaxPHwWRxZj2QpTF530peb2VZ
+        Jao7XJP1lktRVVUdp3iLe7TWHe7xM1EDjtS9mkArnZILWefFX507yatKqiLd
+        DD11e1jzJC/KQsmVfcmVEKLO53QFb+AZ3HvsTY/DYQnEho3extU6omHXZE12
+        6ow3fIIOEQYbuMZjk33IJvt+aJNdL5vOBO4QqSawef4CNxCTjCcCAAA=
+    http_version: 
+  recorded_at: Tue, 28 Jun 2016 11:44:39 GMT
+recorded_with: VCR 3.0.3
