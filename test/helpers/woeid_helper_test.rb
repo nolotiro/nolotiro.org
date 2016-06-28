@@ -4,6 +4,8 @@ require 'support/web_mocking'
 class WoeidHelperTest < ActionView::TestCase
   include WebMocking
 
+  after { Rails.cache.clear }
+
   test "converts a WOEID to a place name in the given format" do
     mocking_yahoo_woeid_info(766273) do
       location = WoeidHelper.convert_woeid_name(766273)
