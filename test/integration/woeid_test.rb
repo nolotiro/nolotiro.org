@@ -18,10 +18,10 @@ class WoeidTest < ActionDispatch::IntegrationTest
     end
   end
 
-  it "returns a hard 404 error if woeid is not a valid woeid" do
+  it "returns a hard 404 error if woeid does not exist" do
     mocking_yahoo_woeid_info(222222) do
       assert_raise(ActionController::RoutingError) do
-        get '/es/woeid/222222/give' #woeid does not exist
+        get '/es/woeid/222222/give'
       end
     end
   end
