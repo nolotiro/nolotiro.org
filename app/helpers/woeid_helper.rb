@@ -15,11 +15,12 @@ module WoeidHelper
       GeoPlanet.appid = Rails.application.secrets["geoplanet_app_id"]
       begin
           place_raw = GeoPlanet::Place.new(woeid.to_i, :lang => locale)
+          place = YahooLocation.new(place_raw)
 
-          if place_raw.placetype_code == 7 #placetype of "Town"
-                place = { full: "#{place_raw.name}, #{place_raw.admin1}, #{place_raw.country}" , short: "#{place_raw.name}" }
-                Rails.cache.write(key, place)
-                return place
+          if place.town?
+                value = { full: place.fullname , short: place.name }
+                Rails.cache.write(key, value)
+                return value
           else
             return nil
           end
@@ -48,8 +49,9 @@ module WoeidHelper
         return if locations.nil?
 
         places = locations.map do |l|
-          name = convert_woeid_name(l.woeid)[:full]
-          count = I18n.t('nlt.ads.count', count: Ad.where(woeid_code: l.woeid).count)
+          l = YahooLocation.new(l)
+          name = l.fullname
+          count = I18n.t('nlt.ads.count', count: l.ads_count)
 
           ["#{name} (#{count})", l.woeid]
         end
