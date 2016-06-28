@@ -47,7 +47,12 @@ module WoeidHelper
         locations = GeoPlanet::Place.search(name, :lang => locale, :type => 7, :count => 0)
         return if locations.nil?
 
-        places = locations.map {|l| ["#{convert_woeid_name(l.woeid)[:full]} (#{Ad.where(woeid_code: l.woeid).count} anuncios)", l.woeid] }
+        places = locations.map do |l|
+          name = convert_woeid_name(l.woeid)[:full]
+          count = "#{Ad.where(woeid_code: l.woeid).count} anuncios"
+
+          ["#{name} (#{count})", l.woeid]
+        end
         Rails.cache.write(key, places)
         return places
       end
