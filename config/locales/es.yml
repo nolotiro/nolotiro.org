@@ -398,7 +398,7 @@ es:
     new_user: nuevo usuario
     no_results:
       first_to_publish_html: "1. Sé el primero en %{publish}."
-      switch_to_bigger_city: "2. Prueba a cambiar la ciudad por una mas grande que esté cerca de tu ubicación."
+      switch_to_bigger_city: "2. Prueba a cambiar la ciudad por una más grande que esté cerca de tu ubicación."
       switch_to_guessed_city_html: "3. Nuestro sistema de sugerencia de ubicación (basado en tu IP) dice que estás cerca de: <br> %{change_location}"
       on_user: No hay anuncios de este tipo publicados por este usuario.
       phrase: '"Un viaje de mil kilómetros comienza con un simple paso" Lao Tse.'
