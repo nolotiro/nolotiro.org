@@ -38,25 +38,18 @@ module WoeidHelper
     #                      example: [["Madrid, Madrid, España (2444 anuncios)",766273],["Madrid, Comunidad de Madrid, España (444 anuncios)",12578024],["Madrid, Cundinamarca, Colombia (0 anuncios)",361938]]
     #
 
-    locale = I18n.locale;
     if name
-      key = 'location_' + locale.to_s + '_' + name
-      if Rails.cache.fetch(key)
-        return Rails.cache.fetch(key)
-      else
-        GeoPlanet.appid = Rails.application.secrets["geoplanet_app_id"]
-        raw_locations = GeoPlanet::Place.search(name, :lang => I18n.locale, :type => 7, :count => 0)
-        return if raw_locations.nil?
+      GeoPlanet.appid = Rails.application.secrets["geoplanet_app_id"]
+      raw_locations = GeoPlanet::Place.search(name, :lang => I18n.locale, :type => 7, :count => 0)
+      return if raw_locations.nil?
 
-        places = raw_locations.map do |raw_location|
-          location = YahooLocation.new(raw_location)
-          name = location.fullname
-          count = I18n.t('nlt.ads.count', count: location.ads_count)
+      raw_locations.map do |raw_location|
+        location = YahooLocation.new(raw_location)
 
-          ["#{name} (#{count})", location.woeid]
-        end
-        Rails.cache.write(key, places)
-        return places
+        name = location.fullname
+        count = I18n.t('nlt.ads.count', count: location.ads_count)
+
+        ["#{name} (#{count})", location.woeid]
       end
     else
       nil
