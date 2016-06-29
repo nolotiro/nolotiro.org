@@ -3,7 +3,6 @@ require 'sidekiq/web'
 NolotiroOrg::Application.routes.draw do
 
   ActiveAdmin.routes(self)
-  get '/', to: redirect('/es')
 
   scope '/api' do
     scope '/v1' do
