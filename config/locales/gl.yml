@@ -540,6 +540,10 @@ gl:
     precision:
       format:
         delimiter: 
+  oauth:
+    errors:
+      email_not_provided: 
+      duplicated_username: 
   recaptcha:
     errors:
       incorrect-captcha-sol: 

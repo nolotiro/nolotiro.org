@@ -523,6 +523,10 @@ ca:
     precision:
       format:
         delimiter: "."
+  oauth:
+    errors:
+      email_not_provided: 
+      duplicated_username: 
   recaptcha:
     errors:
       incorrect-captcha-sol: Hi va haver un error omplint els caràcters del captcha.

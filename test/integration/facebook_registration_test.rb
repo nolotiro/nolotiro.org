@@ -15,8 +15,9 @@ class FacebookRegistrationTest < ActionDispatch::IntegrationTest
   it 'redirects to a form when facebook account has no email' do
     login_via_facebook(name: 'pepe')
 
-    content = 'Por favor, rellena este formulario para finalizar el registro'
-    assert_content(content)
+    assert_content <<~MSG
+      Necesitamos que indiques una dirección de email para completar el registro
+    MSG
   end
 
   it 'autofills username when facebook account has no email' do

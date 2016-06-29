@@ -523,6 +523,10 @@ es:
     precision:
       format:
         delimiter: "."
+  oauth:
+    errors:
+      email_not_provided: Necesitamos que indiques una dirección de email para completar el registro.
+      duplicated_username: Tu nombre de usuario de %{provider} ya se encuentra en nuestra base de datos. Si te has registrado ya usando otra red social o mediante email y contraseña, por favor, inicia sesión de esa manera. En caso contrario, indica otro nombre de usuario para completar el registro.
   recaptcha:
     errors:
       incorrect-captcha-sol: Hubo un error rellenando los caracteres del captcha.

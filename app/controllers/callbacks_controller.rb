@@ -1,11 +1,11 @@
 class CallbacksController < Devise::OmniauthCallbacksController
 
   def facebook
-    if oauth_user
+    if oauth_user.valid?
       sign_in_and_redirect
     else
       session['devise.omniauth_data'] = oauth
-      redirect_to new_user_registration_path
+      redirect_to new_user_registration_path, alert: flash_message
     end
   end
 
@@ -15,7 +15,16 @@ class CallbacksController < Devise::OmniauthCallbacksController
 
   private
 
+  def flash_message
+    if oauth_user.errors.keys.include?(:email)
+      I18n.t('oauth.errors.email_not_provided')
+    else
+      I18n.t('oauth.errors.duplicated_username', provider: oauth['provider'])
+    end
+  end
+
   def sign_in_and_redirect
+    oauth_user.save!
     sign_in oauth_user
     redirect_to root_url
   end

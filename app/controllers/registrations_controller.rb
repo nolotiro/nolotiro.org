@@ -18,4 +18,10 @@ class RegistrationsController < Devise::RegistrationsController
   end
 
   helper_method :omniauth_registration?
+
+  def omniauth_email?
+    omniauth_registration? && session['devise.omniauth_data']['info']['email']
+  end
+
+  helper_method :omniauth_email?
 end

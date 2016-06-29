@@ -529,6 +529,10 @@ it:
     precision:
       format:
         delimiter: 
+  oauth:
+    errors:
+      email_not_provided: Abbiamo bisigno di un indirizzo de correo electronico per completare l'iscrizione.
+      duplicated_username: Il tuo username di %{provider} è gia nella nostra basi de dati. Se ti sei iscrito usando un'altra rete sociale oppure email e password, fai login usando quello. Altrimenti, inserisci un'altro username.
   recaptcha:
     errors:
       incorrect-captcha-sol: C'è stato un errore riempire i caratteri captcha.

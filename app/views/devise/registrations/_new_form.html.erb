@@ -3,12 +3,14 @@
     <div class="col-md-6 col-sm-6">
       <%= devise_error_messages! %>
       <dl>
-        <dt>
-          <%= f.label :email, t('nlt.your_email') %>
-        </dt>
-        <dd>
-          <%= f.email_field :email, :autofocus => true, :required => true %>
-        </dd>
+        <% unless omniauth_email? %>
+          <dt>
+            <%= f.label :email, t('nlt.your_email') %>
+          </dt>
+          <dd>
+            <%= f.email_field :email, :autofocus => true, :required => true %>
+          </dd>
+        <% end %>
 
         <% unless omniauth_registration? %>
           <dt>

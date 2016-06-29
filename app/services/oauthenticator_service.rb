@@ -10,19 +10,20 @@ class OauthenticatorService
     identity = Identity.find_by(provider: provider, uid: uid)
     return identity.user if identity
 
-    return unless email
-
     user = User.find_or_initialize_by(email: email) do |u|
       u.username = username
       u.confirmed_at = Time.zone.now
     end
 
     user.identities.build(provider: provider, uid: uid)
-    user.save!
     user
   end
 
   private
+
+  def ambiguous_info?
+    email.nil? || User.exists?(username: username)
+  end
 
   def provider
     @oauth.provider
