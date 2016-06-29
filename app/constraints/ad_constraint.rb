@@ -2,6 +2,8 @@
 # Routes constraints for Ad routes
 #
 class AdConstraint
+  include StringUtils
+
   def matches?(request)
     params = request.path_parameters
 
@@ -27,11 +29,5 @@ class AdConstraint
 
   def valid_page?(page)
     page.nil? || positive_integer?(page)
-  end
-
-  def positive_integer?(str)
-    Integer(str).positive?
-  rescue
-    false
   end
 end

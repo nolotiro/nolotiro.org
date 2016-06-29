@@ -22,6 +22,11 @@ module NolotiroOrg
     # Enable locale fallbacks
     config.i18n.fallbacks = true
 
+    #
+    # Custom libraries autoloaded
+    #
+    config.autoload_paths += %W(#{config.root}/lib)
+
     # No usar TLS para conectar al SMTP ya 
     # que no tenemos un certificado válido
     config.action_mailer.smtp_settings = {
