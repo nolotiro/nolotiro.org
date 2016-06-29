@@ -8,17 +8,6 @@ class ApplicationHelperTest < ActionView::TestCase
     assert_equal(escape_privacy_data(text), expected_text)
   end
 
-  test "should get_location_options" do
-    skip
-  #  result = get_location_options 766275
-  #  expected_result = [["7662, Transisalania, Países Bajos (0 anuncios)", 12852904], ["766, Orissa, India (0 anuncios)", 24551724], ["76, Región Noroeste de Singapur, Singapur (0 anuncios)", 24703068]]
-  #  assert_equal expected_result, result
-
-  #  result = get_location_options 716271
-  #  expected_result = [["Gordale, Liguria, Italia (0 anuncios)", 716271]]
-  #  assert_equal expected_result, result
-  end
-
   test "should i18n_to_localeapp_in_locale, :en" do
     assert_equal 20647, i18n_to_localeapp_in_locale(:en)
   end

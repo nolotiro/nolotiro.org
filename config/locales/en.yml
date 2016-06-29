@@ -272,6 +272,9 @@ en:
       unlock_user: "[ADMIN] Unblock this user"
     ads:
       bumped: 
+      count:
+        one: "%{count} ad"
+        other: "%{count} ads"
       created: We have created the ad
       form:
         body: 'Body of the ad:'

@@ -4,7 +4,9 @@ require 'support/web_mocking'
 class WoeidHelperTest < ActionView::TestCase
   include WebMocking
 
-  test "should convert a WOEID to a place name in the given format" do
+  after { Rails.cache.clear }
+
+  test "converts a WOEID to a place name in the given format" do
     mocking_yahoo_woeid_info(766273) do
       location = WoeidHelper.convert_woeid_name(766273)
       assert_equal("Madrid, Madrid, España", location[:full])
@@ -12,7 +14,7 @@ class WoeidHelperTest < ActionView::TestCase
     end
   end
 
-  test "should search serveral cities with the same name" do
+  test "suggests cities with similar names" do
     mocking_yahoo_woeid_similar("tenerife") do
       actual = WoeidHelper.search_by_name("tenerife") 
       expected = [

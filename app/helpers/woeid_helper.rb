@@ -15,15 +15,16 @@ module WoeidHelper
       GeoPlanet.appid = Rails.application.secrets["geoplanet_app_id"]
       begin
           place_raw = GeoPlanet::Place.new(woeid.to_i, :lang => locale)
+          place = YahooLocation.new(place_raw)
 
-          if place_raw.placetype_code == 7 #placetype of "Town"
-                place = { full: "#{place_raw.name}, #{place_raw.admin1}, #{place_raw.country}" , short: "#{place_raw.name}" }
-                Rails.cache.write(key, place)
-                return place
+          if place.town?
+                value = { full: place.fullname , short: place.name }
+                Rails.cache.write(key, value)
+                return value
           else
             return nil
           end
-      rescue
+      rescue GeoPlanet::NotFound
         return nil
       end
     end
@@ -37,19 +38,18 @@ module WoeidHelper
     #                      example: [["Madrid, Madrid, España (2444 anuncios)",766273],["Madrid, Comunidad de Madrid, España (444 anuncios)",12578024],["Madrid, Cundinamarca, Colombia (0 anuncios)",361938]]
     #
 
-    locale = I18n.locale;
     if name
-      key = 'location_' + locale.to_s + '_' + name
-      if Rails.cache.fetch(key)
-        return Rails.cache.fetch(key)
-      else
-        GeoPlanet.appid = Rails.application.secrets["geoplanet_app_id"]
-        locations = GeoPlanet::Place.search(name, :lang => locale, :type => 7, :count => 0)
-        return if locations.nil?
+      GeoPlanet.appid = Rails.application.secrets["geoplanet_app_id"]
+      raw_locations = GeoPlanet::Place.search(name, :lang => I18n.locale, :type => 7, :count => 0)
+      return if raw_locations.nil?
 
-        places = locations.map {|l| ["#{convert_woeid_name(l.woeid)[:full]} (#{Ad.where(woeid_code: l.woeid).count} anuncios)", l.woeid] }
-        Rails.cache.write(key, places)
-        return places
+      raw_locations.map do |raw_location|
+        location = YahooLocation.new(raw_location)
+
+        name = location.fullname
+        count = I18n.t('nlt.ads.count', count: location.ads_count)
+
+        ["#{name} (#{count})", location.woeid]
       end
     else
       nil
