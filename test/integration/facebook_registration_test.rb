@@ -38,8 +38,7 @@ class FacebookRegistrationTest < ActionDispatch::IntegrationTest
   it 'allows overriding facebook name when facebook account has no email' do
     register_through_facebook_when_missing_email('pepe', 'pepito')
 
-    assert_equal 'pepito', User.first.username
-    assert_equal 1, User.count
+    assert_equal ['pepito'], User.pluck(:username)
   end
 
   it 'requires user to confirm email when facebook account has no email' do
