@@ -3,8 +3,9 @@
 
 #default_header_section
   %h1=title
-#main
-  .span-18
+
+.col-md-9.col-sm-9
+  .row
     = render partial: "users/tabnav", locals: {user: current_user}
     = render partial: "messages/tabmessages", locals: {box: @box}
     - if @search
@@ -26,7 +27,7 @@
         .info
           = t("mailboxer.table.none")
 
+.col-md-3.col-sm-3
+  .row
     = render partial: "partials/google_adsense", locals: { class_name: "mobile google_adsense_336_280", ad_slot: "7225596067"}
-
-  .span-2
     = render partial: "partials/google_adsense", locals: { class_name: "desktop google_adsense_600_160", ad_slot: "6783776462"}

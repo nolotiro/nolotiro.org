@@ -1,0 +1,78 @@
+<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+  <fieldset>
+    <div class="col-md-6 col-sm-6">
+      <%= devise_error_messages! %>
+      <dl>
+        <dt>
+          <%= f.label :email, t('nlt.your_email') %>
+        </dt>
+        <dd>
+          <%= f.email_field :email, :autofocus => true, :required => true %>
+        </dd>
+
+        <% unless omniauth_registration? %>
+          <dt>
+            <%= f.label :password, t('nlt.choose_your_pass') %>
+          </dt>
+          <dd>
+            <%= f.password_field :password, :required => true %>
+          </dd>
+          <dt>
+            <%= f.label :password_confirmation, t('nlt.choose_your_pass_again') %>
+          </dt>
+          <dd>
+            <%= f.password_field :password_confirmation, :required => true %>
+          </dd>
+        <% end %>
+
+        <dt>
+          <%= f.label :username, t('nlt.choose_username') %>
+        </dt>
+        <dd>
+          <%= f.text_field :username, :required => true %>
+        </dd>
+
+        <% unless omniauth_registration? %>
+          <dt>
+            <label for="captcha-input" class="required">
+              <%= t 'nlt.fill_captcha' %>
+            </label>
+          </dt>
+          <dd>
+            <%= recaptcha_tags(:display => { :theme => "white" }, ajax: true)%>
+          </dd>
+          <dd>
+            <!-- FIXME: this doesn't work -->
+            <%= f.hidden_field :lang, :value => I18n.locale.to_s %>
+          </dd>
+        <% end %>
+
+        <dt>&nbsp;</dt>
+        <dd>
+          <%= f.submit t('nlt.register') %>
+        </dd>
+      </dl>
+      <%= t 'nlt.sending_this_form' %>
+      <%= link_to t('nlt.tos'), tos_path %>
+      <%= t 'nlt.and' %>
+      <%= link_to t('nlt.privacy'), privacy_path %>.
+    </div>
+
+    <% unless omniauth_registration? %>
+      <div class="col-md-6 col-sm-6">
+        <%- if devise_mapping.omniauthable? %>
+          <%- resource_class.omniauth_providers.each do |provider| %>
+            <% prov = convert_provider( provider ) %>
+            <%= link_to user_omniauth_authorize_path(provider: provider), class: "btn btn-info login-with-#{prov.downcase}" do %>
+              <%= t('nlt.sign_in_with_provider', :provider => prov) %>
+              <i class="fa <%= convert_provider_fa(provider) %>"></i>
+            <% end %>
+              <br />
+          <% end -%>
+        <% end -%>
+
+      </div>
+    <% end %>
+  </fieldset>
+
+<% end %>

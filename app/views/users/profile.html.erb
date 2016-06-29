@@ -4,8 +4,8 @@
   <h1><%= t('nlt.user_profile') %> - <%= @user.username %></h1>
 </div>
 
-<div id="main">
-  <div class="span-18">
+<div class="col-md-9 col-sm-9">
+  <div class="row">
     <%= render partial: "users/tabnav", locals: {user: @user} %>
     <div class="ad_excerpt">
       <h4><%= t('nlt.username') %>: <%= @user.username %></h4>

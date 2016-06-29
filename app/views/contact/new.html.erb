@@ -7,42 +7,8 @@
         new_ad_link: link_to(t('nlt.here'), new_ad_path)) %>
 </div>
 
-<div id="main">
-  <div class="span-16">
-    <%= form_for @contact do |f| %>
-      <fieldset>
-        <%= errors_for(@contact) %>
-
-        <dl>
-          <% unless user_signed_in? %>
-            <dt>
-              <%= f.label :email, :class => "required" %>
-            </dt>
-            <dd>
-              <%= f.text_field :email, :type => :email, :required => "required" %>
-            </dd>
-          <% end %>
-          <dt>
-            <%= f.label :message, :class => "required" %><br />
-          </dt>
-          <dd>
-            <%= f.text_area :message, :size => "24x10" %>
-          </dd>
-          <dt>
-            <label for="captcha-input" class="required">
-              <%= t('nlt.please_introduce') %>
-            </label>
-          </dt>
-          <dd>
-            <%= recaptcha_tags(:display => { :theme => "white" }, ajax: true)%>
-          </dd>
-          <dt>&nbsp;</dt>
-          <dd>
-            <%= f.submit t('nlt.send') %>
-          </dd>
-        </dl>    
-      </fieldset>
-    <% end %>
+<div class="col-md-8 col-sm-8">
+  <div class="row">
+    <%= render 'form', contact: @contact %>
   </div>
-
 </div>

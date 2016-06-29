@@ -4,18 +4,14 @@
   <h1><%= t 'nlt.published_ads' %>  -  <%= @user.username %></h1>
 </div>
 
-<div id="main">
-
-  <div class="span-18">
-
+<div class="col-md-9 col-sm-9">
+  <div class="row">
     <%= render partial: "users/tabnav", locals: {user: @user} %>
 
     <%= render "filter_status" %>
 
-    <div class="span-5 mobile">
-      <div class="google_ad_wrapper">
-        <%= render partial: "partials/google_adsense", locals: { class_name: "mobile google_adsense_336_280", ad_slot: "7225596067"}  %>
-      </div>
+    <div class="google_ad_wrapper mobile">
+      <%= render partial: "partials/google_adsense", locals: { class_name: "mobile google_adsense_336_280", ad_slot: "7225596067"}  %>
     </div>
 
     <% if @ads.count > 0 %>
@@ -26,25 +22,15 @@
     <% else %>
       <div class="info"> <%= t("nlt.no_results.on_user") %> </div>
     <% end %>
-
   </div>
+</div>
 
-  <div class="span-4 desktop">
-    <div class="google_ad_lateral_wrapper">
-      <%= render partial: "partials/google_adsense", locals: { class_name: "google_adsense_600_160", ad_slot: "6783776462"}  %>
-    </div>
-    <div class="google_ad_lateral_wrapper">
-      <%= render partial: "partials/google_adsense", locals: { class_name: "google_adsense_600_160", ad_slot: "6783776462"}  %>
-    </div>
-    <div class="google_ad_lateral_wrapper">
-      <%= render partial: "partials/google_adsense", locals: { class_name: "google_adsense_600_160", ad_slot: "6783776462"}  %>
-    </div>
+<div class="col-md-3 col-sm-3">
+  <%= render partial: "partials/google_adsense", locals: { class_name: "desktop google_adsense_600_160", ad_slot: "6783776462"}  %>
+  <%= render partial: "partials/google_adsense", locals: { class_name: "desktop google_adsense_600_160", ad_slot: "6783776462"}  %>
+  <%= render partial: "partials/google_adsense", locals: { class_name: "desktop google_adsense_600_160", ad_slot: "6783776462"}  %>
+
+  <div class="google_ad_wrapper mobile">
+    <%= render partial: "partials/google_adsense", locals: { class_name: "mobile google_adsense_336_280", ad_slot: "7225596067"}  %>
   </div>
-
-  <div class="span-5 mobile">
-    <div class="google_ad_wrapper">
-      <%= render partial: "partials/google_adsense", locals: { class_name: "mobile google_adsense_336_280", ad_slot: "7225596067"}  %>
-    </div>
-  </div>
-
 </div>

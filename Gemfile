@@ -5,7 +5,6 @@ ruby '2.3.1'
 gem 'rails', '~> 4.2'
 gem 'rails-i18n', '~> 4.0'
 gem 'haml-rails'
-gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
 gem 'therubyracer', platforms: :ruby
@@ -24,7 +23,6 @@ group :development, :test do
   gem 'byebug'                              # dev: debugger
   gem 'spring'                              # dev: speed up things
   gem 'commands'                            # dev: rake commands in console
-  gem 'rails-footnotes', '~> 4.0'           # dev: debug messages on HTML
   gem 'web-console', '~> 2.0'               # dev: better errors
   #gem 'better_errors'                       # dev: better errors
   #gem 'binding_of_caller'                   # dev: better errors
@@ -82,7 +80,6 @@ gem 'recaptcha', :require => 'recaptcha/rails'      # captcha
 gem 'ipaddress'                                     # ip address validation
 gem 'localeapp'                                     # i18n interface
 gem 'activeadmin', github: 'activeadmin'            # admin backend
-gem 'active_skin'                                   # admin backend skin
 gem 'rakismet'                                      # antispam
 gem 'font-awesome-rails'                            # font-awesome icons
 gem 'faker'
@@ -91,3 +88,4 @@ gem 'ruby-progressbar'
 gem 'mailboxer', github: 'mailboxer'                # messaging
 
 gem 'bootstrap-sass', '~> 3.3'
+gem 'sass-rails', '~> 5.0'

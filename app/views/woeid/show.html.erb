@@ -56,14 +56,14 @@
   </div>
 </div>
 
-<div id="main">
-  <div class="span-17 mobile">
-    <div class="google_ad_wrapper">
-      <%= render partial: "partials/google_adsense", locals: { class_name: "google_adsense_336_280", ad_slot: "7225596067"}  %>
-    </div>
+<div class="col-md-12 mobile">
+  <div class="google_ad_wrapper">
+    <%= render partial: "partials/google_adsense", locals: { class_name: "google_adsense_336_280", ad_slot: "7225596067"}  %>
   </div>
+</div>
 
-  <div class="span-17">
+<div class="col-md-9 col-sm-9">
+  <div class="row">
     <% if @type == "give" %>
       <%= render "woeid/filter_status" %>
     <% end %>
@@ -88,17 +88,12 @@
         <% end %>
       </div>
     <% end %>
-  </div><!-- /span-17 -->
+  </div>
+</div>
 
-  <div class="span-6 desktop">
-    <div class="google_ad_lateral_wrapper">
-      <%= render partial: "partials/google_adsense", locals: { class_name: "google_adsense_600_160", ad_slot: "6783776462"}  %>
-    </div>
-  </div><!-- /span-6 -->
-
-  <div class="span-17 mobile">
-    <div class="google_ad_wrapper">
-      <%= render partial: "partials/google_adsense", locals: { class_name: "google_adsense_336_280", ad_slot: "7225596067"}  %>
-    </div>
+<div class="col-md-3 col-sm-3">
+  <div class="google_ad_wrapper">
+    <%= render partial: "partials/google_adsense", locals: { class_name: "desktop google_adsense_600_160", ad_slot: "6783776462"}  %>
+    <%= render partial: "partials/google_adsense", locals: { class_name: "mobile google_adsense_336_280", ad_slot: "7225596067"}  %>
   </div>
 </div>

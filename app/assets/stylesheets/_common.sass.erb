@@ -22,7 +22,6 @@ a
 
 .user_login_box
   position: relative
-  margin-top: -0.4em
   font-size: 1em
   background-color: #FFFFCC
   border-bottom: 1px solid #ddd
@@ -143,11 +142,6 @@ form.searchbox
   right: 0px
   top: 55px
 
-.ad_create_tab_home
-  position: absolute
-  right: 0px
-  top: 0px
-
 .ad_change_location_home
   text-align: right
   font-weight: bold !important
@@ -231,11 +225,6 @@ form.searchbox
 
 /* styles for adds
 
-.ad_excerpt_title
-  font-size: 1.3em
-  font-weight: bold
-  margin-bottom: 3px
-
 .ad_excerpt_woeid
   font-size: 1em
   font-weight: bold
@@ -267,10 +256,14 @@ form.searchbox
   padding-bottom: 5px
 
 .ad_excerpt_show
+  @include make-row
   +word-break
 
   display: block
   float: left
+
+.ad_excerpt_comments
+  @include make-row
 
 .delete_message
   display: inline-block
@@ -354,6 +347,7 @@ form.searchbox
   text-align: right
 
 .ad_meta_info
+  @include clearfix
   position: relative
   display: block
   padding: 3px
@@ -539,7 +533,6 @@ form.searchbox
   position: relative
   display: inline-block
   padding: 10px
-  padding-left: 24px
   width: 468px
 
 .home_location_change
@@ -570,16 +563,9 @@ dl, dd
   margin-top: 0px
   margin-left: 0px
   margin-right: 0px
-  margin-bottom: 60px
+  margin-bottom: 40px
   position: relative
   text-align: left
-
-#main
-  margin: 0px
-  padding-top: 0
-  width: 97%
-  text-align: left
-  height: auto
 
 #footer
   font-size: 1em
@@ -624,14 +610,14 @@ dl, dd
  * Header Area.
 
 .site-logo
+  @include clearfix
   margin-left: 60px
+  padding-top: 30px
 
 .site-name
   z-index: -130
   /*below search form
   border: none
-  margin-top: 0px
-  padding-top: 10px
   width: 380px
   font-size: 2em
   line-height: 1
@@ -639,7 +625,7 @@ dl, dd
   font-family: Georgia, "Times New Roman", Times, serif
   img
     position: absolute
-    top: 16px
+    top: 36px
     left: 0
 
 .site-slogan
@@ -648,6 +634,7 @@ dl, dd
   padding-top: 1px
 
 #location_header_section
+  @include make-md-column(12)
   z-index: 100
   display: block
   background-color: #E5F2FF
@@ -663,6 +650,7 @@ dl, dd
   margin-top: 8px
 
 #default_header_section
+  @include make-md-column(12)
   +word-break
 
   display: block
@@ -888,9 +876,6 @@ ul#tabnav
   border: 1px silver solid
   padding: 4px
 
-.container
-  margin-top: 3px
-
 $langs: <%= Rails.application.secrets["langs"] %>
 
 =flags-countries
@@ -941,9 +926,6 @@ $langs: <%= Rails.application.secrets["langs"] %>
 #messages-thread
   min-height: 300px
 
-.col-md-8 form fieldset legend
-  max-width: 40%
-
 .btn.login-with-facebook
   background-color: #3b5998
   color: white
@@ -958,7 +940,7 @@ $langs: <%= Rails.application.secrets["langs"] %>
   font-weight: bold
   border-color: #d62d20
 
-@media only screen and (max-width: 779px)
+@media only screen and (max-width: 767px)
   .section_ads
     padding: 0px
     width: 95%
@@ -966,7 +948,6 @@ $langs: <%= Rails.application.secrets["langs"] %>
 
   .site-name
     width: 50%
-    padding-top: 20px
 
   div.info.js-alert-first-visit.hide
     margin-top: 5em
@@ -974,10 +955,6 @@ $langs: <%= Rails.application.secrets["langs"] %>
   .user_login_box
     float: left !important
     right: 0 !important
-
-  .span-15
-    width: 95%
-    padding-left: 4%
 
   #default_header_section br
     display: none
@@ -1006,14 +983,6 @@ $langs: <%= Rails.application.secrets["langs"] %>
     margin: 10px 10px
     width: 95%
 
-  #main
-    margin-left: 2%
-    margin-right: 2%
-
-  .span-18
-    margin-left: 10px
-    margin-top: 10px
-
   #contact_message
     width: 95%
 
@@ -1024,17 +993,11 @@ $langs: <%= Rails.application.secrets["langs"] %>
   #location_header_section
     width: 100%
 
-  .span-16
-    width: 100%
-
   #default_header_section
     width: 100%
 
   .home_location_change
     margin-top: 1em
-
-  .notice
-    width: 90%
 
   .section_locations
     margin-left: 2%
@@ -1048,7 +1011,6 @@ $langs: <%= Rails.application.secrets["langs"] %>
     display: none !important
 
   #header
-    display: inline-block
     margin-bottom: 5%
 
   .info
@@ -1056,44 +1018,25 @@ $langs: <%= Rails.application.secrets["langs"] %>
     margin-left: 4%
     clear: both
 
+  #ad_body, textarea
+    width: 95% !important
+
+@media only screen and (min-width: 768px)
+  .mobile
+    display: none !important
+
+@media only screen and (max-width: 530px)
+  .give-want
+    display: block
+
   #header
     .ad_create_tab
       position: static
       margin-top: 40px
       margin-left: 5%
       margin-right: 5%
-    .ad_create_tab_home
-      top: 43px
-
-  #ad_body, textarea
-    width: 95% !important
-
-@media only screen and (min-width: 780px)
-  .span-6.desktop
-    margin-right: 0px !important
-
-  .mobile
-    display: none !important
-
-@media only screen and (min-width: 500px) and (max-width: 779px)
-  .ad_create_tab
-    width: 75%
-    float: right
-
-@media only screen and (max-width: 595px)
-  .col-md-8 form fieldset legend
-    max-width: 75%
-
-@media only screen and (max-width: 530px)
-  .give-want
-    display: block
 
 @media only screen and (max-width: 500px)
-
-  #header
-    .ad_create_tab
-      position: static
-      margin-top: 30px
 
   .message-from-left, .message-from-right
     display: none
@@ -1116,11 +1059,6 @@ $langs: <%= Rails.application.secrets["langs"] %>
 
   .ad_change_location_home
     top: 50px
-
-  #header
-    .ad_create_tab
-      position: static
-      margin-top: 50px
 
   .home_location_change
     position: relative

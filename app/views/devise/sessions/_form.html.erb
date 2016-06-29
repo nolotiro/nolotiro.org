@@ -1,0 +1,45 @@
+<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+  <fieldset>
+    <div class="col-md-6 col-sm-6">
+      <dt>
+        <label for="email" class="required">
+          <%= f.label t 'nlt.your_email' %>
+        </label>
+      </dt>
+
+      <dd>
+        <%= f.email_field :email, :autofocus => true %>
+      </dd>
+
+      <dt>
+      <label for="password" class="required">
+        <%= f.label t 'nlt.password' %>
+      </label>
+      </dt>
+
+      <dd>
+      <%= f.password_field :password %>
+      </dd>
+
+      <dd id="rememberme-element">
+        <%= f.check_box :remember_me %> 
+        <%= f.label t 'nlt.remember_me' %>
+      </dd>
+
+      <div><%= f.submit t('nlt.sign_in') %></div>
+
+      <%= render "devise/shared/links" %>
+    </div>
+
+    <div class="col-md-6 col-sm-6">
+      <%- resource_class.omniauth_providers.each do |provider| %>
+        <% prov = convert_provider( provider ) %>
+        <%= link_to user_omniauth_authorize_path(provider: provider), class: "btn btn-info login-with-#{prov.downcase}" do %>
+          <%= t('nlt.sign_in_with_provider', :provider => prov) %>
+          <i class="fa <%= convert_provider_fa(provider) %>"></i>
+        <% end %>
+          <br />
+      <% end -%>
+    </div>
+  </fieldset>
+<% end %>

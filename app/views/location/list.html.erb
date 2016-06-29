@@ -4,29 +4,17 @@
   <h1><%= t('nlt.change_town.choose') %></h1>
 </div>
 
-<div id="main">
-  <div class="col-md-8">
+<div class="col-md-8 col-sm-8">
+  <div class="row">
     <% if @location_asked.nil? %>
       <p class="error"><%= t('nlt.change_town.choose_html', location: params[:location]) %></p>
       <%= render :partial =>"ask_form", :locals => {location_suggest: @location_suggest} %>
     <% else %>
-      <%= form_tag({action: "change"}) do %>
-        <fieldset><legend></legend>
-          <dl>
-            <dt>&nbsp;</dt>
-            <dd>
-            <%= select_tag(:location, options_for_select(@location_asked)) %>
-            </dd>
-            <dt>&nbsp;</dt>
-            <dd>
-            <%= submit_tag(t('nlt.change_town.choose')) %>
-            </dd>
-          </dl>
-        </fieldset>
-      <% end %>
+      <%= render "list_form", location_asked: @location_asked %>
     <% end %>
   </div>
-  <div class="col-md-4">
-    <%= render partial: "partials/google_adsense", locals: { class_name: "google_adsense_336_280", ad_slot: "7225596067"}  %>
-  </div>
+</div>
+
+<div class="col-md-4 col-sm-4">
+  <%= render partial: "partials/google_adsense", locals: { class_name: "google_adsense_336_280", ad_slot: "7225596067"}  %>
 </div>
