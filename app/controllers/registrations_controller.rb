@@ -11,6 +11,8 @@ class RegistrationsController < Devise::RegistrationsController
     end
   end
 
+  private
+
   def omniauth_registration?
     session['devise.omniauth_data']
   end
