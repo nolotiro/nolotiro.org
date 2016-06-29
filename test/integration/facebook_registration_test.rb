@@ -29,12 +29,10 @@ class FacebookRegistrationTest < ActionDispatch::IntegrationTest
   it 'finishes registration when facebook account has no email' do
     register_through_facebook_when_missing_email('pepe')
 
-    msg = <<-TEXT
+    assert_content <<-TEXT
       Se ha enviado un mensaje con un enlace de confirmación a tu correo
       electrónico.
     TEXT
-
-    assert_content msg
   end
 
   it 'allows overriding facebook name when facebook account has no email' do
