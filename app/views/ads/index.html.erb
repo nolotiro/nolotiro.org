@@ -7,7 +7,7 @@
     </div>
     <div class="ad_create_tab">
       <% if location_suggest %>
-        <%= link_to t('nlt.view_ads_on', location_suggest: location_suggest), location_change_path(location: location_suggest) %>
+        <%= link_to t('nlt.view_ads_on', location: location_suggest), location_change_path(location: location_suggest) %>
       <% else %>
         <%= link_to t('nlt.view_ads_on_your_city'), location_ask_path %>
       <% end %>

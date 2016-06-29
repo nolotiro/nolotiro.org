@@ -464,7 +464,7 @@ en:
     username: Username
     users_most_active: most active users
     users_most_active_last_week: 
-    view_ads_on: View ads in %{location_suggest}
+    view_ads_on: View ads in %{location}
     view_ads_on_your_city: View ads from your city or town
     view_more_ads: 
     want: want

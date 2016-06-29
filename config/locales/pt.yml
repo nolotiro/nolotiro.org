@@ -466,7 +466,7 @@ pt:
     username: Nome de usuário
     users_most_active: Usuários mais ativos
     users_most_active_last_week: usuários mais ativos nas últimas semanas
-    view_ads_on: Ver anúncios em %{location_suggest}
+    view_ads_on: Ver anúncios em %{location}
     view_ads_on_your_city: Ver anúncios na sua cidade
     view_more_ads: ver mais anúncios >
     want: procuro
