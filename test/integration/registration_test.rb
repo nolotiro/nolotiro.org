@@ -16,7 +16,7 @@ class RegistrationTest < ActionDispatch::IntegrationTest
   end
 
   it 'sends a confirmation email' do
-    assert_content <<-TEXT
+    assert_content <<~TEXT
       Se ha enviado un mensaje con un enlace de confirmación a tu correo
       electrónico.
     TEXT
