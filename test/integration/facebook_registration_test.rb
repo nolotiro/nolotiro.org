@@ -64,7 +64,6 @@ class FacebookRegistrationTest < ActionDispatch::IntegrationTest
     end
 
     assert_content 'hola, pepito'
-    assert_equal 1, User.count
   end
 
   private
