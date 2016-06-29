@@ -20,17 +20,10 @@ module GeoHelper
     # FIXME: use other APIs when there isn't an IP address mapped
     return unless suggestion.found?
 
-    city = suggestion.city
-    city_name = city.name(I18n.locale) || city.name('en')
-    return unless city_name
+    location = MaxMindLocation.new(suggestion)
+    return unless location.city
 
-    region = suggestion.subdivisions[0]
-    region_name = region ? (region.name(I18n.locale) || region.name('en')) : ''
-
-    country = suggestion.country
-    country_name = country.name(I18n.locale) || country.name('en')
-
-    "#{city_name}, #{region_name}, #{country_name}"
+    location.fullname
   end
 
 end
