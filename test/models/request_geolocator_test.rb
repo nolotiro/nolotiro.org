@@ -1,26 +1,25 @@
 require 'test_helper'
 
-class GeoHelperTest < ActionView::TestCase
-  include GeoHelper
-
+class RequestGeolocatorTest < ActionView::TestCase
   test "extracts ip address from request headers" do
     @request.headers["REMOTE_ADDR"] = "87.223.138.147"
-    ip = GeoHelper.get_ip_address(@request)
+    ip = RequestGeolocator.new(@request).ip_address
 
     assert_equal("87.223.138.147", ip)
   end 
 
   test "suggests location from ip address" do
     @request.headers["REMOTE_ADDR"] = "8.8.8.8"
-    suggestion = GeoHelper.suggest @request
+    suggestion = RequestGeolocator.new(@request).suggest
 
     assert_equal("Mountain View, California, Estados Unidos", suggestion)
   end
 
   test "suggests properly translated locations" do
     @request.headers["REMOTE_ADDR"] = "8.8.8.8"
+
     I18n.locale = :en
-    suggestion = GeoHelper.suggest @request
+    suggestion = RequestGeolocator.new(@request).suggest
     assert_equal("Mountain View, California, United States", suggestion)
     I18n.locale = :es
   end
@@ -29,6 +28,6 @@ class GeoHelperTest < ActionView::TestCase
     @request.headers["REMOTE_ADDR"] = "186.237.37.253"
 
     # This ip address is correctly resolved to Brazil, but not a specific city
-    assert_nil GeoHelper.suggest @request
+    assert_nil RequestGeolocator.new(@request).suggest
   end
 end

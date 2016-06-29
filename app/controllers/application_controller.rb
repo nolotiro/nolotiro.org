@@ -72,7 +72,7 @@ class ApplicationController < ActionController::Base
   helper_method :status_scope
 
   def location_suggest 
-    @location_suggest ||= GeoHelper.suggest request
+    @location_suggest ||= RequestGeolocator.new(request).suggest
   end
 
   helper_method :location_suggest
