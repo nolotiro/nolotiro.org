@@ -21,13 +21,13 @@ class RegistrationTest < ActionDispatch::IntegrationTest
       electrónico.
     TEXT
 
-    assert page.has_content?(msg)
+    assert_content msg
   end
 
   it 'redirects to change city page after first login' do
     User.first.confirm
     login('nolotiro@example.com', '111111')
 
-    assert page.has_content?('Cambia tu ciudad')
+    assert_content 'Cambia tu ciudad'
   end
 end

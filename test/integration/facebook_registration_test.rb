@@ -9,7 +9,7 @@ class FacebookRegistrationTest < ActionDispatch::IntegrationTest
   it 'properly authenticates user when facebook account has an email' do
     login_via_facebook(name: 'pepe', email: 'pepe@facebook.com')
 
-    assert page.has_content?('hola, pepe')
+    assert_content 'hola, pepe'
   end
 
   it 'redirects to a form when facebook account has no email' do
