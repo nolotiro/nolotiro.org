@@ -144,14 +144,13 @@ form.searchbox
     background-color: #fff
 
 .ad_create_tab
-  position: absolute
-  right: 0px
-  top: 55px
+  @include clearfix
 
 .ad_change_location_home
+  @include clearfix
   text-align: right
   font-weight: bold !important
-  margin-bottom: 20px
+  margin-bottom: 5px
 
 .ad_create_tab a
   background: #97dc3c
@@ -548,6 +547,7 @@ dl, dd
  * Layout.
 
 #header
+  @include make-row
   margin-top: 0px
   margin-left: 0px
   margin-right: 0px
@@ -597,28 +597,59 @@ dl, dd
 /**
  * Header Area.
 
+.actions-row
+  margin-top: 40px
+
+@media only screen and (max-width: 767px)
+  .site-logo
+    width: 100%
+
+  .page-actions
+    margin: 30px auto 0
+    width: 80%
+
+    .ad_create_tab
+      width: 100%
+
+@media only screen and (min-width: 768px)
+  .site-logo
+    width: 50%
+    float: left
+
+  .page-actions
+    width: 50%
+    float: right
+
+    .ad_create_tab
+      width: 80%
+      float: right
+
+    .ad_change_location_home
+      float: right
+      height: 17px
+
 .site-logo
   @include clearfix
-  margin-left: 60px
-  padding-top: 30px
+  background: image-url('nolotiro_logo.png') no-repeat 0 0
+  a
+    display: block
+    padding-left: 60px
+    height: 48px
 
 .site-name
   z-index: -130
   border: none
-  width: 380px
   font-size: 2em
   line-height: 1
   margin-bottom: 0.01em
   font-family: Georgia, "Times New Roman", Times, serif
-  img
-    position: absolute
-    top: 36px
-    left: 0
 
 .site-slogan
   float: left
   font-size: 1em
   padding-top: 1px
+  color: black
+  text-decoration: none
 
 #location_header_section
   @include make-md-column(12)
@@ -938,10 +969,6 @@ $langs: <%= I18n.available_locales.join(" ") %>
   #location_header_section br
     display: none
 
-  .ad_change_location_home
-    top: 5px
-    right: 25px
-
   #social-butttons
     margin-left: -20px
 
@@ -1002,13 +1029,6 @@ $langs: <%= I18n.available_locales.join(" ") %>
   .give-want
     display: block
 
-  #header
-    .ad_create_tab
-      position: static
-      margin-top: 40px
-      margin-left: 5%
-      margin-right: 5%
-
 @media only screen and (max-width: 500px)
 
   .message-from-left, .message-from-right
@@ -1020,8 +1040,3 @@ $langs: <%= I18n.available_locales.join(" ") %>
 @media only screen and (max-width: 365px)
   #cookie-bar
     height: 54px
-
-@media only screen and (max-width: 350px)
-
-  .ad_change_location_home
-    top: 50px

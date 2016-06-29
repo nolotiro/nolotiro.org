@@ -1,18 +1,19 @@
 <% content_for(:meta_title, t('nlt.home_title')) %>
 
 <% content_for :action do %>
-  <div>
-    <div class="ad_change_location_home">
+  <div class="ad_change_location_home">
+    <% if location_suggest %>
       <%= link_to t('nlt.change_city'), location_ask_path %>
-    </div>
-    <div class="ad_create_tab">
-      <% if location_suggest %>
-        <% title = t('nlt.view_ads_on', location: location_suggest.city) %>
-        <%= link_to_change_location location_suggest.fullname, title %>
-      <% else %>
-        <%= link_to t('nlt.view_ads_on_your_city'), location_ask_path %>
-      <% end %>
-    </div>
+    <% end %>
+  </div>
+
+  <div class="ad_create_tab">
+    <% if location_suggest %>
+      <% title = t('nlt.view_ads_on', location: location_suggest.city) %>
+      <%= link_to_change_location location_suggest.fullname, title %>
+    <% else %>
+      <%= link_to t('nlt.view_ads_on_your_city'), location_ask_path %>
+    <% end %>
   </div>
 <% end %>
 
