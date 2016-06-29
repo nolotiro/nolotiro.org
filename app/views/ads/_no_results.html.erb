@@ -13,11 +13,9 @@
 
   <% if location_suggest %>
     <p>
-      <% link = link_to(location_suggest,
-                        location_change_path(location: location_suggest)) %>
 
       <%= t('nlt.no_results.switch_to_guessed_city_html',
-            change_location: link) %>
+            change_location: link_to_change_location(location_suggest)) %>
     </p>
   <% end %>
 
@@ -26,7 +24,7 @@
     <ul>
       <% location_options.each do |l| %>
         <li>
-          <%= link_to l[0], location_change_path(location: l[0]) %>
+          <%= link_to_change_location l[0] %>
         </li>
       <% end %>
     </ul>

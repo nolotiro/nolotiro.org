@@ -87,4 +87,10 @@ module ApplicationHelper
       header + list
     end
   end
+
+  def link_to_change_location(place, name = nil)
+    title = name || place
+
+    link_to title, location_change_path(location: place)
+  end
 end

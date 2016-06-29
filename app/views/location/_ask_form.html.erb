@@ -19,8 +19,7 @@
       <%= t('nlt.change_town.close_to') %>
       <br>
       <b>
-        <%= link_to location_suggest,
-                    location_change_path(location: location_suggest) %>
+        <%= link_to_change_location location_suggest %>
       </b>
     <% end %>
   </fieldset>
