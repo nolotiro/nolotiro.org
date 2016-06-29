@@ -14,7 +14,7 @@ class OauthenticatorService
 
     user = User.find_or_initialize_by(email: email) do |u|
       u.username = username
-      u.confirm
+      u.confirmed_at = Time.zone.now
     end
 
     user.identities.build(provider: provider, uid: uid)
