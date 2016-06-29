@@ -13,9 +13,9 @@
 
   <% if location_suggest %>
     <p>
-
+      <% link = link_to_change_location(location_suggest.fullname) %>
       <%= t('nlt.no_results.switch_to_guessed_city_html',
-            change_location: link_to_change_location(location_suggest)) %>
+            change_location: link) %>
     </p>
   <% end %>
 

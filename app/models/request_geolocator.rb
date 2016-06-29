@@ -25,7 +25,7 @@ class RequestGeolocator
     location = MaxMindLocation.new(suggestion)
     return unless location.city
 
-    location.fullname
+    location
   end
 
 end

@@ -12,7 +12,8 @@ class RequestGeolocatorTest < ActionView::TestCase
     @request.headers["REMOTE_ADDR"] = "8.8.8.8"
     suggestion = RequestGeolocator.new(@request).suggest
 
-    assert_equal "Mountain View, California, Estados Unidos", suggestion
+    assert_equal "Mountain View, California, Estados Unidos",
+                 suggestion.fullname
   end
 
   test "suggests properly translated locations" do
@@ -20,7 +21,7 @@ class RequestGeolocatorTest < ActionView::TestCase
 
     I18n.locale = :en
     suggestion = RequestGeolocator.new(@request).suggest
-    assert_equal "Mountain View, California, United States", suggestion
+    assert_equal "Mountain View, California, United States", suggestion.fullname
     I18n.locale = :es
   end
 
