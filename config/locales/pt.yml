@@ -11,17 +11,17 @@ pt:
       ad:
         body: Corpo
         image: Imagem
-        image_content_type: 
+        image_content_type: Tipo de conteúdo da imagem
         image_file_size: Tamanho da imagem
         subject: Título
-        title: 
+        title: Título
         type: Tipo
       contact:
         email: Correio eletrônico
         message: Mensagem
       mailboxer/message:
-        body: 
-        subject: 
+        body: Mensagem
+        subject: Título
       user:
         Contraseña: Senha
         Recuérdame: Lembre-me
@@ -131,15 +131,15 @@ pt:
     confirmations:
       action: Confirmar minha conta
       confirmed: A sua conta foi confirmada com sucesso. Agora está autenticado.
-      instructions: 
-      resend: 
+      instructions: 'Por favor, confirme a sua conta de e-mail acessando no seguinte link:'
+      resend: Encaminhar instruções de confrimação
       send_instructions: Dentro de alguns minutos irá receber um email com instruções para confirmar  sua conta.
       send_paranoid_instructions: Se o seu email existir na nossa base de dados, irá receber dentro de alguns minutos um email com instruções para confirmar a sua conta.
     failure:
       already_authenticated: Já se encontra autenticado.
       inactive: A sua conta ainda não foi activada.
       invalid: O endereço de email ou a palavra-passe são inválidos.
-      last_attempt: 
+      last_attempt: Tenha cuidado, se você continúa a sua conta será bloqueada por 3 horas. Esqueceu a sua senha? Recuperá-la
       locked: A sua conta está bloqueada.
       not_found_in_database: O endereço de email ou a palavra-passe são inválidos.
       timeout: A sua sessão expirou, por favor autentique-se novamente para continuar.
@@ -160,15 +160,15 @@ pt:
       failure: Could not authorize you from %{kind} because "%{reason}".
       success: Successfully authorized from %{kind} account.
     passwords:
-      action: 
+      action: Trocar a senha
       edit:
         confirm_new_password: 
         new_password: 
-      follow_instructions: 
-      forgot: 
-      instructions: 
+      follow_instructions: 'Alguem solicitou mudar a sua senha de nolotiro.org. Se você não foi, pode ignorar este e-mail. Sua senha não mudará até você não acceder ao link e trocar ela por uma nova. '
+      forgot: Esquceu a sua senha?
+      instructions: Por favor, insira o seu email para enviar-lhe um link de acceso direto para mudar a sua senha.
       no_token: Não pode aceder a esta página sem vir do email de redefinição da senha. Se vem dum email para redefinir a sena, por favor verifique que usou o URL completo que foi enviado.
-      send: 
+      send: Enviar por e-mail
       send_instructions: Dentro de alguns minutos irá receber um email com instruções de reinicialização da palavra-passe.
       send_paranoid_instructions: Se o seu e-mail existir na nossa base de dados, irá receber dentro de alguns minutos um e-mail com instruções para recuperar a sua senha.
       updated: A sua palavra-passe foi alterada com sucesso. Agora está autenticado.
@@ -185,7 +185,7 @@ pt:
       signed_in: Autenticação efectuada com sucesso.
       signed_out: Saíu da sessão com sucesso.
       user:
-        signed_in: 
+        signed_in: Você está conectado
     unlocks:
       new:
         resend_unlock_instructions: 
@@ -194,14 +194,14 @@ pt:
       unlocked: A sua conta foi desbloqueada com sucesso. Agora está autenticado.
   friendships:
     create:
-      error: 
-      success: 
+      error: Houve um erro ao adiccionar a %{username} como amigo.
+      success: Adicionado %{username} como amigo.
     destroy:
-      success: 
+      success: Excluído %{username} como amigo
   helpers:
     label:
       message:
-        subject: 
+        subject: Assunto
     select:
       prompt: Por favor seleccione
     submit:
@@ -210,64 +210,64 @@ pt:
       update: Actualizar %{model}
   mailboxer:
     buttons:
-      back: 
-      trash: 
-      trash_selected: 
-      untrash: 
+      back: "< voltar a mensagens"
+      trash: Mover mensagem à lixeira
+      trash_selected: Apagar mensagens selecionados
+      untrash: Recuperar mensagem da lixeira
     message_mailer:
       message:
-        body: 
-        subject: 
-      subject_new: 
-      subject_reply: 
-      visit: 
-      visit_html: 
-      visit_text: 
-      you_have_new_message: 
-      you_have_recieved_new_message: 
+        body: Mensagem
+        subject: Assunto
+      subject_new: "[nolotiro.org] Nova mensagem: %{subject}"
+      subject_reply: "[nolotiro.org] Nova resposta: %{subject}"
+      visit: Ver conversa e responder mensagem
+      visit_html: Clique em %{url} e ingrese na sua caixa de entrada para responder
+      visit_text: Clique em %{url} e ingrese na sua caixa de entrada para responder
+      you_have_new_message: Você recebeu uma nova mensagem
+      you_have_recieved_new_message: Você recebeu uma nova mensagem
     new:
-      body_max: 
-      button: 
-      errors: 
-      legend: 
-      subject: 
-      submit: 
-      title: 
+      body_max: Máximo 1500 caracteres
+      button: Enviar
+      errors: 'Há um problema, verifique isto:'
+      legend: Enviar mensagem
+      subject: Assunto
+      submit: Enviar
+      title: Nova mensagem privada para o usuário %{user}
     notification_mailer:
-      subject: 
-      visit_html: 
-      visit_text: 
-      you_have_new_reply: 
-      you_have_recieved_new_reply: 
+      subject: "[nolotiro.org} Nova notificação: %{subject}"
+      visit_html: Clique em %{url} e ingrese na sua caixa de entrada para responder
+      visit_text: Clique em %{url} e ingrese na sua caixa de entrada para responder
+      you_have_new_reply: Você têm uma nova resposta
+      you_have_recieved_new_reply: Você têm uma nova resposta
     notifications:
-      error_same_user: 
-      move: 
-      sent: 
-      trash: 
-      untrash: 
-    search: 
+      error_same_user: Você não pode enviar uma mensagem para você mesmo
+      move: Mensagem movida à %{mailbox}
+      sent: Mensagem enviada
+      trash: Mensagem movida à lixeira
+      untrash: Mensagem recuperada
+    search: Resultados da busca de %{search}
     table:
-      date: 
-      delete: 
-      last: 
-      none: 
-      reciever: 
-      sender: 
-      subject: 
+      date: Data
+      delete: Apagar?
+      last: Último
+      none: Você não têm mensagens de este tipo
+      reciever: Recebido
+      sender: Enviado
+      subject: Assunto
     titles:
-      conversation: 
-      index: 
+      conversation: Conversa com %{recipient} assunto %{subject}
+      index: Mensagens de %{username}
   mailer:
     confirmation_reminder:
-      p1: 
-      p2: 
-    greetings: 
-    hello: 
-    signature: 
+      p1: Detectamos que você criou uma nova conta em nolotiro.org que ainda não foi confirmada.
+      p2: 'Isto significa que você pode ter tido problemas para acessar ao site. Se você quer confirmar o seu usuário (%{username}) pode fazé-lo neste link:'
+    greetings: Atenciosamente
+    hello: Olá,
+    signature: O equipe do nolotiro.org
   nlt:
     about: sobre
     about_page:
-      description_html: 
+      description_html: <b>O que é nolotiro.org?</b><br> É um site web onde você pode oferecer ao publico, as coisas que você já não quer ou que já não precisa para que as pegue uma outra pessoa que possa lhe servir ou possa dá-lhe uma melhor utilidade. <br><br> <strong>Leia as <a href="/es/page/faqs">perguntas frecuentes:</a> para conhecer mais detalhes da filosofia e dos objetivos do projeto</strong> <br><br> <b>Vantagens e desvantagens do nolotiro.org:</b><br> A grande vantagem do nolotiro.org, é que substitui o sentimento de nostalgia, pela sensação de fazer algo por alguém mais. Você consegue se livrar de essas coisas que não jogava fora porque sentia pena, porque achava que ainda estavam novas, ou porque você não sabia o que fazer com elas e que no final só ficavam acumulando pó esquecidas em algum canto ou ocupavam um espaço valioso. Aliás, ao estar organizado por zonas geográficas, nolotiro.org fomenta que as coisas que você quer dar, fiquem perto, não tem gastos de envio, nem deslocamento, nem encomendas para países distantes que nunca tem certeza de que vão chegar, você mesmo entrega para alguém da sua cidade, que vai pegar o presente num local acordado. <br><br> <b>Para ter em conta:</b><br> NÃO TEM OPÇÃO DE TROCA, isto não se basa em permutar objetos, nem na compra, a idéia é fomentar o altruísmo, dar as coisas porque sim, porque não precisamos delas. <br><br> <b>Explicação em versão literária</b><br> <a href="http://www.marcianoduran.com.uy/?p=176">Por qué no lo tiro?</a> Por Marciano Durán <br><br> <b>Nolotiro.org funciona graças ao trabalho de muitas <a href="http://www.youtube.com/watch?v=KMU0tzLwhbE">pessoas</a> que criaram o seguinte software livre:</b> <a href="http://rubyonrails.org/">Ruby On Rails</a>, <a href="http://www.mysql.com/">MySQL</a>, <a href="http://developer.yahoo.com/geo/geoplanet/">Yahoo GeoPlanet API</a>, <a href="http://www.postfix.org/">Postfix</a>, <a href="http://www.ubuntu.org/">Ubuntu</a>, <a href="http://nginx.org/">Nginx</a>, <a href="http://sphinxsearch.com/">Sphinx</a> , e muitos mais, tantos que seria impossível de nomear  todos aqui. <br><br> <b>O código fonte do nolotiro.org é um código aberto</b> e está disponível para ser utilizado (baixo licencia Affero GPL 3).<br> Visite o <a href="https://github.com/alabs/nolotiro.org"> site para desenvolvedores </a> para mais detalhes (em inglês).<br> Os colaboradores são bem-vindos, seja para programar como para traduzir o site em outras línguas
       title: Sobre o nolotiro.org
     access_here: acesse aqui
     admin:
@@ -333,7 +333,7 @@ pt:
       other: ", %{count} comentários"
     contact: contato
     contact_form: Formulario de contato
-    contact_legend_html: 
+    contact_legend_html: Este formulário é para contatar com os administradores do nolotiro. Você está procurando publicar um anúncio? Clique %{new_ad_link}.
     contact_thanks: Mensagem enviada! Obrigado por contatar com nolotiro.org
     cookie: Utilizamos cookies para melhorar sua navegação neste site
     create_new_ad: Cria um novo anúncio
@@ -347,10 +347,10 @@ pt:
     faq:
       answer_1_html: O objectivo fundamental deste site é nos livrar dos objetos que já não usamos e ficam nos estorvando em casa.
       answer_2_html: 
-      answer_3_html: 
+      answer_3_html: Neste site, você tem o poder absoluto sobre a decissão de a quem, onde e quando dá de presente os seus objetos.<br> Claro que o ideal é entregá-los a pessoas que realmente precisem deles.<br> Não tem que interpretar mal o jeito em que nós usamos a palavra egoísmo aqui. Mas poder saber se a pessoa à que vamos a dar o presente realmente merece recebé-lo é uma tarefa muito difícil, e promove um tipo de conduta que derivam em experiências ruins e juizos de valor que podem fazer muito mal.
       answer_4_html: 
       answer_5_html: 
-      answer_6_html: 
+      answer_6_html: 'A troca direta é um sistema que funciona muito bem em formato físico, isto é, duas pessoas cara a cara, vendo os objetos e falando ao vivo e em direto. Mas na internet, a troca pode acabar em decepção ou insatisfações e discussões intermináveis.<br> Além disso, como você já tem lido anteriormente, aqui se dão como presentes objetos sem condições e a troca tem como condicionamento o quid pro quo: você me da e eu te dou algo igual.'
       answer_7_html: 
       question_1: Qual é o propósito deste projeto?
       question_2: Então... Este site não é para ajudar os outros?
@@ -370,7 +370,7 @@ pt:
     give: dou presente
     hello_to: Olá %{recipient},
     help_translate: ajuda a traduzir
-    here: 
+    here: aqui
     home_title: anúncios de presentes novos e de segunda mão
     if_you_are_new: Se você é um novo usuário, por favor
     if_youre_already_an_user: Si você já está cadastrado, por favor
@@ -379,7 +379,7 @@ pt:
     leave_blank: "(deixar em branco se você não quer mudá-la)"
     legal_notice: aviso legal
     legal_page:
-      body_html: 
+      body_html: 'Nome: Asociaçã aLabs. <br>Inscrita en el registro de asociaciones de la Comunidad de Madrid con número 32.022. <br>CIF: G86139847<br> C/Duque de Alba, 13 (28012) Madrid.'
       title: Aviso legal
     login: acessar
     login_to_comment: acessar para escrever um comentário
@@ -428,7 +428,7 @@ pt:
     published_on_html: Publicado <abbr class='js-moment' title='%{date}'>%{date}</abbr>
     readed_count:
       one: "%{count} leitura"
-      other: "%{count] leituras"
+      other: "%{count} leituras"
     reads: leituras
     register: Registre-se
     register_here: cadastre-se aqui
@@ -535,8 +535,8 @@ pt:
       duplicated_username: 
   recaptcha:
     errors:
-      incorrect-captcha-sol: 
-      verification_failed: 
+      incorrect-captcha-sol: Houve um erro preenchendo os caracteres do captcha.
+      verification_failed: Falha na verificação contra robots, tenta de novo
   support:
     array:
       last_word_connector: ", e"
@@ -550,15 +550,19 @@ pt:
       short: "%d/%m, %H:%M hs"
     pm: pm
   unauthorized:
-    default: 
+    default: Você não está autorizado a acessar esta página.
     manage:
-      all: 
+      all: Primeiro você tem que iniciar sessão ou registrar um usuário.
   will_paginate:
     next_label: próximo →
     page_entries_info:
       multi_page: Mostrando %{model} %{from} - %{to} de %{count} no total
       multi_page_html: Mostrando %{model} <b>%{from}&nbsp;-&nbsp;%{to}</b> de <b>%{count}</b> no total
-      single_page: 
-      single_page_html: 
+      single_page:
+        one: Mostrando 1 %{model}
+        other: Mostrando em total %{count} %{model}
+      single_page_html:
+        one: Mostrando <b>1</b> %{model}
+        other: Mostrando em <b>total&nbsp;%{count}</b> %{model}
     page_gap: "&hellip;"
     previous_label: "← anterior"
