@@ -24,7 +24,7 @@
     <ul>
       <% location_options.each do |location| %>
         <li>
-          <%= link_to_change_location location.label %>
+          <%= link_to_change_location location.fullname, location.label %>
         </li>
       <% end %>
     </ul>
