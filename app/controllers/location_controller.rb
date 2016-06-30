@@ -13,7 +13,7 @@ class LocationController < ApplicationController
       if not locations.nil? and locations.count == 1
         set_location locations[0][1]
       else
-        @location_asked = locations
+        @locations = locations
       end
     end
   end
