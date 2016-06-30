@@ -197,7 +197,7 @@ it:
       success: Aggiunto %{username} come amico.
       error: C'è stato un'errore aggiungendo %{username} come amico.
     destroy:
-      sucesss: Cancellato %{username} come amico.
+      success: Cancellato %{username} come amico.
   helpers:
     label:
       message:
