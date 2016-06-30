@@ -42,9 +42,10 @@ class User < ActiveRecord::Base
     oauth = OmniAuth::AuthHash.new(oauth_session)
 
     new do |u|
-      u.email = params[:email]
+      u.email = params[:email] || oauth.info.email
       u.username = params[:username] || oauth.info.name
       u.identities.build(provider: oauth.provider, uid: oauth.uid)
+      u.confirmed_at = Time.zone.now if oauth.info.email
     end
   end
 

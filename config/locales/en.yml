@@ -408,7 +408,6 @@ en:
     password: Password
     permission_denied: You don't have permissions
     please_fill_to_become_member: Please, fill this form to become a member
-    please_fill_to_finalize_registration: Please, fill this form to finalize registration
     please_insert_email_and_password: Please, insert your email and password
     please_introduce: Please, insert the following characters
     privacy: privacy policy
@@ -523,6 +522,10 @@ en:
     precision:
       format:
         delimiter: 
+  oauth:
+    errors:
+      email_not_provided: We need you to provide us with an email address to complete the registration process
+      duplicated_username: The username provided by %{provider} is already in our database. If you already registered through another social network or through email & password, please login using those. Otherwise just specify another username.
   recaptcha:
     errors:
       incorrect-captcha-sol: There is a mistake in your captcha's answer

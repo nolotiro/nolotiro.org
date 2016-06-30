@@ -408,7 +408,6 @@ pt:
     password: Senha
     permission_denied: Você não tem permissão para executar esta ação
     please_fill_to_become_member: Por favor, preencha este formulário para se tornar um miembro do nolotiro
-    please_fill_to_finalize_registration: 
     please_insert_email_and_password: Por favor insira o seu email e a senha
     please_introduce: Por favor, insira os caracteres que você vê
     privacy: política de privacidade
@@ -533,6 +532,10 @@ pt:
     precision:
       format:
         delimiter: 
+  oauth:
+    errors:
+      email_not_provided: 
+      duplicated_username: 
   recaptcha:
     errors:
       incorrect-captcha-sol: 

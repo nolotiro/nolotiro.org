@@ -408,7 +408,6 @@ ca:
     password: Contrasenya
     permission_denied: No tens permisos per a realitzar aquesta acció.
     please_fill_to_become_member: Si us plau, ompli aquest formulari per ser membre de nolotiro
-    please_fill_to_finalize_registration: Si us plau, completa aquest formulari per finalitzar el registre
     please_insert_email_and_password: Si us plau posa el teu email i contrasenya.
     please_introduce: 'Si us plau, introdueix els caràcters que vegis:'
     privacy: política de privacitat
@@ -523,6 +522,10 @@ ca:
     precision:
       format:
         delimiter: "."
+  oauth:
+    errors:
+      email_not_provided: 
+      duplicated_username: 
   recaptcha:
     errors:
       incorrect-captcha-sol: Hi va haver un error omplint els caràcters del captcha.

@@ -13,7 +13,7 @@ class LinksForAvailableAdsTest < ActionDispatch::IntegrationTest
     mocking_yahoo_woeid_info(@woeid_code) do
       visit ads_woeid_path(id: @woeid_code, type: 'give', status: 'available')
 
-      assert page.has_content?('Envía un mensaje privado al anunciante')
+      assert_content 'Envía un mensaje privado al anunciante'
     end
   end
 
@@ -21,7 +21,7 @@ class LinksForAvailableAdsTest < ActionDispatch::IntegrationTest
     mocking_yahoo_woeid_info(@woeid_code) do
       visit ad_path(@ad)
 
-      assert page.has_content?('Envía un mensaje privado al anunciante')
+      assert_content 'Envía un mensaje privado al anunciante'
     end
   end
 
@@ -29,7 +29,7 @@ class LinksForAvailableAdsTest < ActionDispatch::IntegrationTest
     mocking_yahoo_woeid_info(@woeid_code) do
       visit ad_path(@ad)
 
-      assert page.has_content?('accede para escribir un comentario')
+      assert_content 'accede para escribir un comentario'
     end
   end
 end

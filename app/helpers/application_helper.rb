@@ -74,12 +74,6 @@ module ApplicationHelper
     url_for(params.merge(locale: locale, only_path: false))
   end
 
-  def registration_header
-    event = omniauth_registration? ? 'finalize_registration' : 'become_member'
-
-    t("nlt.please_fill_to_#{event}")
-  end
-
   def errors_for(object)
     errs = object.errors
     return unless errs.any?

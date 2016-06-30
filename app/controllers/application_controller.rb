@@ -20,14 +20,11 @@ class ApplicationController < ActionController::Base
     redirect_to root_url, :alert => exception.message
   end
 
-  def after_sign_in_path_for(resource)
-    # https://github.com/plataformatec/devise/wiki/How-To:-Redirect-to-a-specific-page-on-successful-sign-in
-    if request.referer and ["user/reset/edit", new_user_session_url].any? {|w| request.referer.include? w }
-      super
-    else
-      initial_path = current_user.woeid? ? ads_woeid_path(id: current_user.woeid, type: 'give') : location_ask_path
-      stored_location_for(resource) || request.referer || initial_path
-    end
+  def signed_in_root_path(resource)
+    woeid = resource.woeid
+    return ads_woeid_path(id: woeid, type: 'give') if woeid
+
+    location_ask_path
   end
 
   def set_locale

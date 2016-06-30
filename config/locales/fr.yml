@@ -410,7 +410,6 @@ fr:
     password: 
     permission_denied: 
     please_fill_to_become_member: 
-    please_fill_to_finalize_registration: 
     please_insert_email_and_password: 
     please_introduce: 
     privacy: 
@@ -525,6 +524,10 @@ fr:
     precision:
       format:
         delimiter: 
+  oauth:
+    errors:
+      email_not_provided: 
+      duplicated_username: 
   recaptcha:
     errors:
       incorrect-captcha-sol: 

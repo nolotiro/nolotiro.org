@@ -408,7 +408,6 @@ es:
     password: Contraseña
     permission_denied: No tienes permisos para realizar esta acción.
     please_fill_to_become_member: Por favor, rellena este formulario para ser miembro de nolotiro
-    please_fill_to_finalize_registration: Por favor, rellena este formulario para finalizar el registro
     please_insert_email_and_password: Por favor pon tu email y contraseña.
     please_introduce: 'Por favor, introduce los caracteres que veas:'
     privacy: política de privacidad
@@ -523,6 +522,10 @@ es:
     precision:
       format:
         delimiter: "."
+  oauth:
+    errors:
+      email_not_provided: Necesitamos que indiques una dirección de email para completar el registro.
+      duplicated_username: Tu nombre de usuario de %{provider} ya se encuentra en nuestra base de datos. Si te has registrado ya usando otra red social o mediante email y contraseña, por favor, inicia sesión de esa manera. En caso contrario, indica otro nombre de usuario para completar el registro.
   recaptcha:
     errors:
       incorrect-captcha-sol: Hubo un error rellenando los caracteres del captcha.
