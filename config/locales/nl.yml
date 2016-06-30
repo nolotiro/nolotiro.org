@@ -184,8 +184,8 @@ nl:
       unlocked: 
   friendships:
     create:
-      success: 
       error: 
+      success: 
     destroy:
       success: 
   helpers:

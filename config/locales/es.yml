@@ -194,8 +194,8 @@ es:
       unlocked: Tu cuenta fue desbloqueada. Tu cuenta fue desbloqueada. Ya puedes iniciar sesión.
   friendships:
     create:
-      success: Agregado %{username} como amigo.
       error: Ocurrió un error al agregar a %{username} como amigo.
+      success: Agregado %{username} como amigo.
     destroy:
       success: Eliminado %{username} como amigo.
   helpers:

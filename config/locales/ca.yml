@@ -194,8 +194,8 @@ ca:
       unlocked: El teu compte ha estat desbloquejat correctament. S'ha iniciat la sessió.
   friendships:
     create:
-      success: Agregat %{username} com amic.
       error: S'ha produït un error en afegir a %{username} com amic.
+      success: Agregat %{username} com amic.
     destroy:
       success: Eliminat %{username} com amic.
   helpers:

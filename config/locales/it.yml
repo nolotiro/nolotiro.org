@@ -194,8 +194,8 @@ it:
       unlocked: Il tuo account è stato correttamente sbloccato. Ora sei collegato.
   friendships:
     create:
-      success: Aggiunto %{username} come amico.
       error: C'è stato un'errore aggiungendo %{username} come amico.
+      success: Aggiunto %{username} come amico.
     destroy:
       success: Cancellato %{username} come amico.
   helpers:
