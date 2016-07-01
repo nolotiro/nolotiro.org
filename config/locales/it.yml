@@ -401,7 +401,9 @@ it:
     meta_description_ad: rivendita regali %{title} en %{woeid}. %{body}
     new_user: nuovo utente
     no_results:
-      explain_html: "<p>1. Puoi essere il primo a pubblicare a %{publish}.</p> <p>2. Prova a cambiare la città per una più grande si è vicino alla vostra posizione.</p> <p>3. La nostra posizione sistema di suggerimento (in base alla tua IP) dice che questi nei pressi di: <br> %{change_location} </p>"
+      first_to_publish_html: "1. Puoi essere il primo a %{publish}."
+      switch_to_bigger_city: "2. Prova a cambiare la città per una più grande vicino da te."
+      switch_to_guessed_city_html: "3. Il nostro sistema di suggerimento (in base alla tua IP) dice che ti trovi vicino a: <br> %{change_location}"
       on_user: Nessuna di tali annunci da questo utente.
       phrase: '"Un viaggio di mille chilometri inizia con un singolo passo" Lao Tse.'
       publish_ad: pubblicare un annuncio in questa città
@@ -468,7 +470,7 @@ it:
     username: Nome degli utenti
     users_most_active: utenti più attivi
     users_most_active_last_week: utenti più attivi nell'ultima settimana
-    view_ads_on: Consultare gli annunci a %{location_suggest}
+    view_ads_on: Consultare gli annunci a %{location}
     view_ads_on_your_city: Mostra annunci nella vostra città o paese
     view_more_ads: vedere più avvisi >
     want: ricerca

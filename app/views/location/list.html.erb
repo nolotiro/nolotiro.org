@@ -6,11 +6,12 @@
 
 <div class="col-md-8 col-sm-8">
   <div class="row">
-    <% if @location_asked.nil? %>
+    <% if @locations.nil? %>
       <p class="error"><%= t('nlt.change_town.choose_html', location: params[:location]) %></p>
-      <%= render :partial =>"ask_form", :locals => {location_suggest: @location_suggest} %>
+      <%= render :partial =>"ask_form" %>
     <% else %>
-      <%= render "list_form", location_asked: @location_asked %>
+      <%= render "list_form",
+                 locations: @locations.map { |l| [l.label, l.woeid] } %>
     <% end %>
   </div>
 </div>

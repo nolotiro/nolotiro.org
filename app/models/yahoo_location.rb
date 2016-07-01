@@ -14,8 +14,8 @@ class YahooLocation
     @place.name
   end
 
-  def ads_count
-    Ad.where(woeid_code: woeid).count
+  def label
+    "#{fullname} (#{I18n.t('nlt.ads.count', count: ads_count)})"
   end
 
   def woeid
@@ -24,5 +24,11 @@ class YahooLocation
 
   def town?
     @place.placetype_code == 7
+  end
+
+  private
+
+  def ads_count
+    @ads_count ||= Ad.where(woeid_code: woeid).count
   end
 end

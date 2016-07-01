@@ -3,21 +3,17 @@ class LocationController < ApplicationController
 
   # GET /es/location/change
   def ask
-    # show form for asking possible locations
-    @location_suggest = get_location_suggest
   end
 
   # POST /es/location/change
   # GET /es/location/change2?location=:location
   def list
-    # list possible locations 
-    @location_suggest = get_location_suggest
     if params[:location]
       locations = WoeidHelper.search_by_name(params[:location])
       if not locations.nil? and locations.count == 1
-        set_location locations[0][1]
+        set_location locations[0].woeid
       else
-        @location_asked = locations
+        @locations = locations
       end
     end
   end
@@ -29,7 +25,7 @@ class LocationController < ApplicationController
     else
       locations = WoeidHelper.search_by_name(params[:location])
       if locations 
-        set_location locations[0][1]
+        set_location locations[0].woeid
       else
         redirect_to location_ask_path, alert: "Hubo un error con el cambio de su ubicación. Inténtelo de nuevo."
       end

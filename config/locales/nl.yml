@@ -387,7 +387,9 @@ nl:
     meta_description_ad: 
     new_user: 
     no_results:
-      explain_html: 
+      first_to_publish_html: 
+      switch_to_bigger_city: 
+      switch_to_guessed_city_html: 
       on_user: 
       phrase: 
       publish_ad: 

@@ -17,12 +17,15 @@ class WoeidHelperTest < ActionView::TestCase
   test "suggests cities with similar names" do
     mocking_yahoo_woeid_similar("tenerife") do
       actual = WoeidHelper.search_by_name("tenerife") 
-      expected = [
-        ["Tenerife, Magdalena, Colombia (0 anuncios)", 369486],
-        ["Tenerife, Cordoba, Colombia (0 anuncios)", 369485],
-        ["Santa Cruz de Tenerife, Islas Canarias, España (0 anuncios)", 773692]
+
+      names = [
+        "Tenerife, Magdalena, Colombia (0 anuncios)",
+        "Tenerife, Cordoba, Colombia (0 anuncios)",
+        "Santa Cruz de Tenerife, Islas Canarias, España (0 anuncios)"
       ]
-      assert_equal(expected, actual)
+      assert_equal names, actual.map(&:label)
+
+      assert_equal [369486, 369485, 773692], actual.map(&:woeid)
     end
   end
 

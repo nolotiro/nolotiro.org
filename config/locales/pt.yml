@@ -397,7 +397,9 @@ pt:
     meta_description_ad: presentes de segunda mão %{title} em %{woeid}. %{body}
     new_user: novo usuário
     no_results:
-      explain_html: "<p>1. Seja o primeiro em %{publish}.</p> <p>2. Tenta trocar a cidade por uma outra mayor que esteja perto da sua localização. <p/> <p>3. Nosso sistema de sugestões de localização (baseado na sua IP) disse que voc[e está perto de <br> %{change_location}"
+      first_to_publish_html: "1. Seja o primeiro em %{publish}."
+      switch_to_bigger_city:  "2. Tenta trocar a cidade por uma outra mayor que esteja perto da sua localização."
+      switch_to_guessed_city_html: "3. Nosso sistema de sugestões de localização (baseado na sua IP) disse que voçê está perto de <br> %{change_location}"
       on_user: Não existem anúncios de este tipo publicados por este usuário.
       phrase: '"Uma viagem de mil quilômetros começa com um simples passo" Lao Tse'
       publish_ad: publicar um anúncio em esta cidade
@@ -464,7 +466,7 @@ pt:
     username: Nome de usuário
     users_most_active: Usuários mais ativos
     users_most_active_last_week: usuários mais ativos nas últimas semanas
-    view_ads_on: Ver anúncios em %{location_suggest}
+    view_ads_on: Ver anúncios em %{location}
     view_ads_on_your_city: Ver anúncios na sua cidade
     view_more_ads: ver mais anúncios >
     want: procuro

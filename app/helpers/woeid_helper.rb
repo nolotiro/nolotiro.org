@@ -43,14 +43,7 @@ module WoeidHelper
       raw_locations = GeoPlanet::Place.search(name, :lang => I18n.locale, :type => 7, :count => 0)
       return if raw_locations.nil?
 
-      raw_locations.map do |raw_location|
-        location = YahooLocation.new(raw_location)
-
-        name = location.fullname
-        count = I18n.t('nlt.ads.count', count: location.ads_count)
-
-        ["#{name} (#{count})", location.woeid]
-      end
+      raw_locations.map { |raw_location| YahooLocation.new(raw_location) }
     else
       nil
     end
