@@ -241,7 +241,6 @@ es:
       you_have_recieved_new_reply: Has recibido una nueva respuesta
     notifications:
       error_same_user: No puedes enviarte un mensaje a tí mismo
-      move: Mensaje movido a %{mailbox}
       sent: Mensaje enviado
       trash: Mensaje movido a papelera
       untrash: Mensaje recuperado

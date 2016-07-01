@@ -241,7 +241,6 @@ ca:
       you_have_recieved_new_reply: Has rebut una nova resposta
     notifications:
       error_same_user: No pots enviar-me un missatge a tu mateix
-      move: Missatge mogut a %{mailbox}
       sent: missatge enviat
       trash: Missatge mogut a paperera
       untrash: missatge recuperat

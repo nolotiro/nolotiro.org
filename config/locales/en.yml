@@ -237,7 +237,6 @@ en:
       you_have_recieved_new_reply: You have a new answer
     notifications:
       error_same_user: You can not send a message to yourself
-      move: Message moved to %{mailbox}
       sent: Sent message
       trash: Message moved to trash
       untrash: Recovered message

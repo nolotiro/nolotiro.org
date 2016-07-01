@@ -243,7 +243,6 @@ fr:
       you_have_recieved_new_reply: 
     notifications:
       error_same_user: 
-      move: 
       sent: 
       trash: 
       untrash: 
