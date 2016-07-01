@@ -401,8 +401,6 @@ gl:
       automatic: 
     member_since: 
     messages: 
-    messages_tabs:
-      inbox: 
     messages_title: 
     meta_description: 
     meta_description_ad: 

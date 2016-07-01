@@ -384,8 +384,6 @@ pt:
       automatic: Este é uma mensagem automática. Por favor, não responda a este email.
     member_since: Membro desde
     messages: mensagens
-    messages_tabs:
-      inbox: Recebidos
     messages_title: Mensagens
     meta_description: 'nolotiro.org é um site web onde posso dar presentes e procurar presentes de segunda mão: movéis, cadeiras, sofás, bicicletas, computadores pessoais, mesas, fogões, abajures, camas, roupa, brinquedos, berços ou carrinhos para bebes, celulares e mais outras coisas que você já não quer e não precisa para que sejam reutilizadas por outras pessoas.'
     meta_description_ad: presentes de segunda mão %{title} em %{woeid}. %{body}

@@ -384,8 +384,6 @@ es:
       automatic: Este es un mensaje automático. Por favor, no respondas a esta dirección de email.
     member_since: Miembro desde
     messages: mensajes
-    messages_tabs:
-      inbox: Recibidos
     messages_title: Mensajes
     meta_description: 'nolotiro.org es un sitio web donde regalo y busco regalos gratis de segunda mano : muebles, sillas, sofás, bicicletas, ordenadores portátiles, mesas, cocinas, lámparas, camas, ropa, juguetes, cunas o carros para bebes, teléfonos móviles y otras muchas cosas que ya no quieres y ya no necesitas para que las reutilicen otra gente a la que puede servirle o darle nueva vida.'
     meta_description_ad: regalo segunda mano %{title} en %{woeid}. %{body}

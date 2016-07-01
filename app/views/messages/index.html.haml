@@ -7,7 +7,6 @@
 .col-md-9.col-sm-9
   .row
     = render partial: "users/tabnav", locals: {user: current_user}
-    = render partial: "messages/tabmessages"
     - if @conversations.count > 0
       = form_tag trash_mailboxer_messages_path, method: :delete do
         .table-responsive
