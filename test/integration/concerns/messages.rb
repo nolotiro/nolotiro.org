@@ -97,6 +97,28 @@ module Messages
     assert_content 'Borrar mensaje'
   end
 
+  def test_deletes_a_single_message_and_shows_an_confirmation_flash
+    send_message(subject: 'hola mundo', body: 'What a nice message!')
+    click_link 'Borrar mensaje'
+
+    refute_content 'hola mundo'
+    assert_content 'Mensaje borrado'
+  end
+
+  def test_deletes_multiple_messages_by_checkbox
+    send_message(subject: 'hola mundo', body: 'What a nice message!')
+    visit message_new_path(@user2)
+    send_message(subject: 'hola marte', body: 'What a nice message!')
+
+    visit messages_list_path(box: 'sent')
+    check("delete-conversation-#{Mailboxer::Conversation.first.id}")
+    click_button 'Borrar mensajes seleccionados'
+    visit messages_list_path(box: 'sent')
+
+    refute_content 'hola mundo'
+    assert_content 'hola marte'
+  end
+
   def test_replies_to_a_message
     send_message(subject: 'hola mundo', body: 'hola trololo')
     send_message(body: 'hola trululu')
