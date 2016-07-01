@@ -23,7 +23,6 @@ class AdsController < ApplicationController
   # GET /ads/1
   # GET /ads/1.json
   def show
-    redirect_to ads_path unless @ad.user
     @comment = Comment.new
     @ad.increment_readed_count!
   end
