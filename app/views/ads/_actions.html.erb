@@ -1,6 +1,6 @@
-<% if can?(:update, ad) || can?(:bump, ad) %>
+<% if policy(ad).update? || policy(ad).bump? %>
   <ul class="ad_actions">
-    <% if can?(:update, ad) %>
+    <% if policy(ad).update? %>
       <li>
         <%= link_to ads_edit_path(ad.id) do %>
           <%= image_tag "edit_ad.png", alt: t('nlt.edit_this_ad') %>
@@ -9,7 +9,7 @@
       </li>
     <% end %>
 
-    <% if can?(:bump, ad) %>
+    <% if policy(ad).bump? %>
       <li>
         <%= link_to ads_bump_path(ad.id), method: :post do %>
           <%= image_tag "bump_ad.png", alt: t('nlt.bump_this_ad') %>

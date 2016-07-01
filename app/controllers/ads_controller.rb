@@ -3,8 +3,7 @@ class AdsController < ApplicationController
   include ApplicationHelper
 
   before_action :set_ad, only: [:show, :edit, :update, :bump, :destroy]
-
-  load_and_authorize_resource
+  before_action :authenticate_user!, except: [:index, :list, :show]
 
   # GET /
   def index
@@ -34,6 +33,7 @@ class AdsController < ApplicationController
     else
       @ad = Ad.new
       @ad.comments_enabled = true
+      authorize(@ad)
     end
   end
 
@@ -60,6 +60,7 @@ class AdsController < ApplicationController
     @ad.ip = request.remote_ip
     @ad.status = 1
     @ad.published_at = Time.zone.now
+    authorize(@ad)
 
     respond_to do |format|
       if verify_recaptcha(model: @ad) && @ad.save
@@ -101,6 +102,8 @@ class AdsController < ApplicationController
   # Use callbacks to share common setup or constraints between actions.
   def set_ad
     @ad = Ad.find(params[:id])
+    authorize(@ad)
+    @ad
   end
 
   # Never trust parameters from the scary internet, only allow the white list through.

@@ -72,7 +72,7 @@ gem 'devise-i18n', github: 'tigrish/devise-i18n'    # devise translations
 gem 'omniauth'                                      # users login with providers
 gem 'omniauth-facebook'                             # users login with facebook
 gem 'omniauth-google-oauth2'                        # users login with google
-gem 'cancancan', '~> 1.10'                          # authorization# authorization# authorization
+gem 'pundit'                                        # authorization# authorization# authorization
 gem 'paperclip', '~> 4.0'                           # images
 gem 'delayed_paperclip'                             # images processing in background
 gem 'recaptcha', require: 'recaptcha/rails' # captcha

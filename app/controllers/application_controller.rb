@@ -3,6 +3,7 @@ require 'concerns/multi_lingualizable'
 
 class ApplicationController < ActionController::Base
   include MultiLingualizable
+  include Pundit
 
   # TODO: comment captcha for ad creation/edition
 
@@ -12,7 +13,7 @@ class ApplicationController < ActionController::Base
 
   before_action :configure_permitted_parameters, if: :devise_controller?
 
-  rescue_from CanCan::AccessDenied do |exception|
+  rescue_from Pundit::NotAuthorizedError do |exception|
     if user_signed_in?
       redirect_to root_url, alert: t('nlt.permission_denied')
     else

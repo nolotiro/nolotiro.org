@@ -46,8 +46,7 @@
           <% end %>
         <% end %>
 
-
-      <% if can? :lock, @user %>
+      <% if policy(:admin).lock? %>
         <li>
           <% if @user.locked? %>
             <%= link_to unlock_user_path(@user.id), data: {confirm: "¿Estás seguro que quieres desbloquear a este usuario? Podrá volver iniciar sesión."} do %>
@@ -65,7 +64,7 @@
 
       <% unless user_signed_in? and @user == current_user %>  
 
-        <% if can? :become, @user %>
+        <% if policy(:admin).become? %>
           <li>
             <%= link_to t('nlt.admin.become_user'), become_user_path(@user.id) %>
           </li>
