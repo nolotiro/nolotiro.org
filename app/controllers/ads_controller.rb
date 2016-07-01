@@ -29,9 +29,12 @@ class AdsController < ApplicationController
 
   # GET /ads/new
   def new
-    @ad = Ad.new
-    @ad.comments_enabled = true
-    redirect_to location_ask_path if current_user.woeid.nil?
+    if current_user.woeid.nil?
+      redirect_to location_ask_path
+    else
+      @ad = Ad.new
+      @ad.comments_enabled = true
+    end
   end
 
   # GET /ads/1/edit
