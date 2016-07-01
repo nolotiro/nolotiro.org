@@ -93,8 +93,6 @@ NolotiroOrg::Application.routes.draw do
       end
     end
 
-    post 'messages/search', to: 'messages#search', as: 'search_mailboxer_messages'
-
     # messaging legacy
     scope '/message' do
       get  '/received', to: redirect('/es/message/list'), as: 'messages_received'

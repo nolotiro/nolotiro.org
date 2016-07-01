@@ -77,12 +77,6 @@ class MessagesController < ApplicationController
     redirect_to mailboxer_messages_path(box: 'inbox')
   end
 
-  def search
-    @search = params[:search]
-    @conversations = current_user.search_messages(@search)
-    render :index
-  end
-
   private
 
   # Never trust parameters from the scary internet, only allow the white list through.

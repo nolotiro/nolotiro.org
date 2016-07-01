@@ -6,5 +6,3 @@
     = link_to_unless_current t('nlt.messages_tabs.sent'), mailboxer_messages_path(box: 'sent')
   %li
     = link_to_unless_current t('nlt.messages_tabs.trash'), mailboxer_messages_path(box: 'trash') 
-
-=# form_tag search_mailboxer_messages_path do %input{ type: 'search', placeholder: t('nlt.search'), name: 'search' }
