@@ -17,9 +17,7 @@ class AdsController < ApplicationController
   end
 
   def list
-    @ads = Rails.cache.fetch("ads_list_#{params[:page]}") do
-      Ad.give.available.includes(:user).paginate(page: params[:page])
-    end
+    @ads = Ad.give.available.includes(:user).paginate(page: params[:page])
   end
 
   # GET /ads/1
