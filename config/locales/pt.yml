@@ -211,9 +211,8 @@ pt:
   mailboxer:
     buttons:
       back: "< voltar a mensagens"
-      trash: Mover mensagem à lixeira
+      trash: Apagar mensagem
       trash_selected: Apagar mensagens selecionados
-      untrash: Recuperar mensagem da lixeira
     message_mailer:
       message:
         body: Mensagem
@@ -242,8 +241,7 @@ pt:
     notifications:
       error_same_user: Você não pode enviar uma mensagem para você mesmo
       sent: Mensagem enviada
-      trash: Mensagem movida à lixeira
-      untrash: Mensagem recuperada
+      trash: Mensagem apagada
     search: Resultados da busca de %{search}
     table:
       date: Data
@@ -389,7 +387,6 @@ pt:
     messages_tabs:
       inbox: Recebidos
       sent: Enviados
-      trash: Lixeira
     messages_title: Mensagens
     meta_description: 'nolotiro.org é um site web onde posso dar presentes e procurar presentes de segunda mão: movéis, cadeiras, sofás, bicicletas, computadores pessoais, mesas, fogões, abajures, camas, roupa, brinquedos, berços ou carrinhos para bebes, celulares e mais outras coisas que você já não quer e não precisa para que sejam reutilizadas por outras pessoas.'
     meta_description_ad: presentes de segunda mão %{title} em %{woeid}. %{body}

@@ -1,9 +1,6 @@
 %tr{ class: "mail #{ 'unread' if c.is_unread?(current_user) }" }
-  - unless @box == 'trash'
-    %td
-      = check_box_tag '', c.id, false, class: 'delete_multiple_checkbox', name: "conversations[]"
-  - else
-    %td
+  %td
+    = check_box_tag '', c.id, false, class: 'delete_multiple_checkbox', name: "conversations[]"
   %td.sender
     = link_to_interlocutor(c)
   %td.mail-subject

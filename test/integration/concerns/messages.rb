@@ -86,7 +86,7 @@ module Messages
     send_message(subject: 'hola mundo', body: 'hola trololo')
 
     assert_content('hola trololo')
-    assert_content('Mover mensaje a papelera')
+    assert_content('Borrar mensaje')
   end
 
   def test_messages_another_user_using_emojis
@@ -94,7 +94,7 @@ module Messages
     send_message(subject: 'hola mundo', body: 'What a nice emoji😀!')
 
     assert_content('What a nice emoji😀!')
-    assert_content('Mover mensaje a papelera')
+    assert_content('Borrar mensaje')
   end
 
   def test_replies_to_a_message

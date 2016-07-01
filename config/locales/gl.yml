@@ -218,9 +218,8 @@ gl:
   mailboxer:
     buttons:
       back: 
-      trash: Mover mensaxe a lixo
+      trash: Eliminar mensaxe
       trash_selected: Eliminar mensaxes seleccionados
-      untrash: 
     message_mailer:
       message:
         body: Mensaxe
@@ -254,7 +253,6 @@ gl:
       error_same_user: Non pode enviar unha mensaxe a si mesmo
       sent: 
       trash: 
-      untrash: 
     search: 
     table:
       date: Data
@@ -406,7 +404,6 @@ gl:
     messages_tabs:
       inbox: 
       sent: 
-      trash: 
     messages_title: 
     meta_description: 
     meta_description_ad: 

@@ -203,7 +203,6 @@ nl:
       back: 
       trash: 
       trash_selected: 
-      untrash: 
     message_mailer:
       message:
         body: 
@@ -233,7 +232,6 @@ nl:
       error_same_user: 
       sent: 
       trash: 
-      untrash: 
     search: 
     table:
       date: 
@@ -379,7 +377,6 @@ nl:
     messages_tabs:
       inbox: 
       sent: 
-      trash: 
     messages_title: 
     meta_description: 
     meta_description_ad: 

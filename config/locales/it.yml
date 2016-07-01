@@ -211,9 +211,8 @@ it:
   mailboxer:
     buttons:
       back: "< torna al messaggio"
-      trash: Sposta messaggio nel cestino
+      trash: Cancellare il messaggio
       trash_selected: Cancellare i messaggi selezionati
-      untrash: Ricupera i messaggi del cestino
     message_mailer:
       message:
         body: Messaggio
@@ -242,8 +241,7 @@ it:
     notifications:
       error_same_user: No puoi inviare un messaggio a te stesso
       sent: Messaggio inviato
-      trash: Messaggio mosso al cestino
-      untrash: Messaggio ricuperato
+      trash: Messaggio cancellato
     search: Risultati della ricerca su %{search}
     table:
       date: Data
@@ -391,7 +389,6 @@ it:
     messages_tabs:
       inbox: ricevuto
       sent: Inviati
-      trash: Cestino
     messages_title: Messaggi
     meta_description: 'nolotiro.org è un sito dove guardo per i regali dono gratuito e mobili di seconda mano, sedie, divani, biciclette, computer portatili, tavoli, stufe, lampade, letti, vestiti, giocattoli, lettini per bambini o automobili, telefoni cellulari e altri molte cose che si desidera non è più e non hanno più bisogno di fare il riutilizzo altre persone che possono servire o dare nuova vita.
 

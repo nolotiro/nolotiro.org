@@ -8,7 +8,6 @@ class MessagesController < ApplicationController
     @box = params[:box] || 'inbox'
     @conversations = current_user.mailbox.inbox if @box == 'inbox'
     @conversations = current_user.mailbox.sentbox if @box == 'sent'
-    @conversations = current_user.mailbox.trash if @box == 'trash'
     @conversations = @conversations.includes(:receipts)
                                    .sort_by { |c| c.last_message.created_at }
                                    .reverse
@@ -67,13 +66,6 @@ class MessagesController < ApplicationController
     conversation = conversations.find(params[:id] || params[:conversations])
     current_user.trash(conversation)
     flash[:notice] = I18n.t 'mailboxer.notifications.trash'
-    redirect_to mailboxer_messages_path(box: 'inbox')
-  end
-
-  def untrash
-    conversation = conversations.find(params[:id])
-    current_user.untrash(conversation)
-    flash[:notice] = I18n.t 'mailboxer.notifications.untrash'
     redirect_to mailboxer_messages_path(box: 'inbox')
   end
 

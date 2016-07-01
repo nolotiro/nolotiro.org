@@ -86,7 +86,6 @@ NolotiroOrg::Application.routes.draw do
     resources :mailboxer_messages, controller: :messages, path: '/messages/' do
       member do
         delete 'trash'
-        post 'untrash'
       end
       collection do
         delete 'trash'

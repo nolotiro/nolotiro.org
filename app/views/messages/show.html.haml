@@ -7,10 +7,7 @@
     = link_to t("mailboxer.buttons.back"), mailboxer_messages_path
   %h1
     = title
-  - if @conversation.is_trashed?(current_user)
-    = link_to t("mailboxer.buttons.untrash"), untrash_mailboxer_message_path(@conversation), class: :button, method: :post
-  - else
-    = link_to t("mailboxer.buttons.trash"), trash_mailboxer_message_path(@conversation), class: :button, method: :delete
+  = link_to t("mailboxer.buttons.trash"), trash_mailboxer_message_path(@conversation), class: :button, method: :delete
 
 .col-md-7.col-sm-7#messages-thread
   - @conversation.messages.includes(:sender).each do |mes|

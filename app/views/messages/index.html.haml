@@ -17,8 +17,7 @@
               - @conversations.each do |c|
                 = render partial: "messages/conversation",
                          locals: { c: c, timestamp: c.last_message.created_at }
-        - unless @box == 'trash'
-          = submit_tag t('mailboxer.buttons.trash_selected'), id: 'delete_multiple_button'
+        = submit_tag t('mailboxer.buttons.trash_selected'), id: 'delete_multiple_button'
       = will_paginate @conversations
     - else
       %p
