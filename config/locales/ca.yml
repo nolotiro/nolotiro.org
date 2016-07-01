@@ -194,8 +194,8 @@ ca:
       unlocked: El teu compte ha estat desbloquejat correctament. S'ha iniciat la sessió.
   friendships:
     create:
-      success: Agregat %{username} com amic.
       error: S'ha produït un error en afegir a %{username} com amic.
+      success: Agregat %{username} com amic.
     destroy:
       success: Eliminat %{username} com amic.
   helpers:
@@ -451,9 +451,6 @@ ca:
     to_publish_ad: Publicar anunci
     to_publish_or_send_messages: Per publicar anuncis o enviar missatges accedeix al teu compte
     tos: termes d'ús
-    tos_page:
-      body_html: 
-      title: Termes d'ús
     translate:
       description_html: Actualment, Nolotiro.org està disponible en pocs idiomes, però tu pots ajudar-nos a <a href="http://accounts.localeapp.com/projects/6872">traduir-lo al teu</a>.
       title: Ajuda'ns a traduir nolotiro.org a la teva llengua

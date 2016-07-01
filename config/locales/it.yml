@@ -194,10 +194,10 @@ it:
       unlocked: Il tuo account è stato correttamente sbloccato. Ora sei collegato.
   friendships:
     create:
-      success: Aggiunto %{username} come amico.
       error: C'è stato un'errore aggiungendo %{username} come amico.
+      success: Aggiunto %{username} come amico.
     destroy:
-      sucesss: Cancellato %{username} come amico.
+      success: Cancellato %{username} come amico.
   helpers:
     label:
       message:
@@ -457,9 +457,6 @@ it:
     to_publish_ad: Pubblicare anuncio
     to_publish_or_send_messages: Per pubblicizzare o inviare Accesso al tuo account
     tos: condizioni di utilizzo
-    tos_page:
-      body_html: 
-      title: Condizioni di utilizzo
     translate:
       description_html: Attualmente, Nolotiro.org è disponibile in poche lingue, ma può aiutare <a href="http://accounts.localeapp.com/projects/6872">a tradurre tua</a>.
       title: Aiutaci a tradurre nolotiro.org la lingua

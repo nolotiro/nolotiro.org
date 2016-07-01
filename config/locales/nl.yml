@@ -184,8 +184,8 @@ nl:
       unlocked: 
   friendships:
     create:
-      success: 
       error: 
+      success: 
     destroy:
       success: 
   helpers:
@@ -441,9 +441,6 @@ nl:
     to_publish_ad: 
     to_publish_or_send_messages: 
     tos: 
-    tos_page:
-      body_html: 
-      title: 
     translate:
       description_html: 
       title: 

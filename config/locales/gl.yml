@@ -201,8 +201,8 @@ gl:
       unlocked: A súa conta foi desbloqueada. A súa conta foi desbloqueada. Agora podes asinar.
   friendships:
     create:
-      success: 
       error: 
+      success: 
     destroy:
       success: 
   helpers:
@@ -467,10 +467,7 @@ gl:
     suggestions: suxestións
     to_publish_ad: Publicar anuncio
     to_publish_or_send_messages: 
-    tos: 
-    tos_page:
-      body_html: 
-      title: Condicións de uso
+    tos: condicións de uso
     translate:
       description_html: Actualmente, nolotiro.org está dispoñible nalgunhas linguas, pero pode axudar a <a href="http://accounts.localeapp.com/projects/6872">traducir</a> .
       title: Axúdanos a traducir nolotiro.org súa lingua
