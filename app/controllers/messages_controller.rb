@@ -9,7 +9,6 @@ class MessagesController < ApplicationController
     @conversations = current_user.mailbox.inbox if @box == 'inbox'
     @conversations = current_user.mailbox.sentbox if @box == 'sent'
     @conversations = current_user.mailbox.trash if @box == 'trash'
-    @conversations = current_user.mailbox.archive if @box == 'archive'
     @conversations = @conversations.includes(:receipts)
                                    .sort_by { |c| c.last_message.created_at }
                                    .reverse
