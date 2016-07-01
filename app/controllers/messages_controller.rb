@@ -5,14 +5,13 @@ class MessagesController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @box = params[:box] || 'inbox'
-    @conversations = current_user.mailbox.inbox if @box == 'inbox'
-    @conversations = current_user.mailbox.sentbox if @box == 'sent'
-    @conversations = @conversations.includes(:receipts)
-                                   .sort_by { |c| c.last_message.created_at }
-                                   .reverse
+    @conversations = current_user.mailbox
+                                 .conversations(mailbox_type: 'not_trash')
+                                 .includes(:receipts)
+                                 .sort_by { |c| c.last_message.created_at }
+                                 .reverse
+
     @conversations = @conversations.paginate(page: params[:page], total_entries: @conversations.to_a.size)
-    session[:last_mailbox] = @box
   end
 
   def new
@@ -66,7 +65,7 @@ class MessagesController < ApplicationController
     conversation = conversations.find(params[:id] || params[:conversations])
     current_user.trash(conversation)
     flash[:notice] = I18n.t 'mailboxer.notifications.trash'
-    redirect_to mailboxer_messages_path(box: 'inbox')
+    redirect_to mailboxer_messages_path
   end
 
   private

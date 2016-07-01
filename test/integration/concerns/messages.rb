@@ -68,7 +68,7 @@ module Messages
 
   def test_links_to_the_other_user_in_the_conversation_list
     send_message(subject: 'Cosas', body: 'hola, user2')
-    visit messages_list_path(box: 'sent')
+    visit messages_list_path
 
     assert page.has_link?('user2'), 'No link to "user2" found'
   end
@@ -76,7 +76,7 @@ module Messages
   def test_just_shows_a_special_label_when_the_interlocutor_is_no_longer_there
     send_message(subject: 'Cosas', body: 'hola, user2')
     @user2.destroy
-    visit messages_list_path(box: 'sent')
+    visit messages_list_path
 
     assert_content '[borrado]'
     refute page.has_link?('[borrado]')
@@ -110,10 +110,9 @@ module Messages
     visit message_new_path(@user2)
     send_message(subject: 'hola marte', body: 'What a nice message!')
 
-    visit messages_list_path(box: 'sent')
+    visit messages_list_path
     check("delete-conversation-#{Mailboxer::Conversation.first.id}")
     click_button 'Borrar mensajes seleccionados'
-    visit messages_list_path(box: 'sent')
 
     refute_content 'hola mundo'
     assert_content 'hola marte'

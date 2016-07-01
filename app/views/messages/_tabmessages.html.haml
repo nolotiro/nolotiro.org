@@ -1,6 +1,4 @@
 <!-- TODO: can an user edit or view messages from another user? -->
 %ul#tabnav
   %li
-    = link_to_unless_current t('nlt.messages_tabs.inbox'), ( mailboxer_messages_path(box: 'inbox') || mailboxer_messages_path ) 
-  %li
-    = link_to_unless_current t('nlt.messages_tabs.sent'), mailboxer_messages_path(box: 'sent')
+    = link_to_unless_current t('nlt.messages_tabs.inbox'), mailboxer_messages_path 

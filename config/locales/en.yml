@@ -386,7 +386,6 @@ en:
     messages: messages
     messages_tabs:
       inbox: Inbox
-      sent: Sent
     messages_title: Messages
     meta_description: nolotiro.org is a website where I give free gifts and seeking second-hand furniture, chairs, sofas, bicycles, laptops, tables, stoves, lamps, beds, clothes, toys, baby cribs or cars, mobile phones and other many things you no longer want and no longer need to make the reuse other people who may serve or give new life.
     meta_description_ad: second hand gift %{title} in %{woeid}. %{body}
