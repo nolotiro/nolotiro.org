@@ -18,27 +18,27 @@ module Messages
   def test_shows_errors_when_message_has_no_subject
     send_message(body: 'hola, user2')
 
-    assert_content('Título no puede estar en blanco')
+    assert_content 'Título no puede estar en blanco'
   end
 
   def test_prevents_from_creating_conversation_with_empty_message
     send_message(subject: 'hola, user2')
 
-    assert_content('Nuevo mensaje privado para el usuario user2')
+    assert_content 'Nuevo mensaje privado para el usuario user2'
   end
 
   def test_shows_errors_when_replying_to_conversation_with_empty_message
     send_message(subject: 'hola, user2', body: 'How you doing?')
     send_message(body: '')
 
-    assert_content('Mensaje no puede estar en blanco')
+    assert_content 'Mensaje no puede estar en blanco'
   end
 
   def test_sends_a_new_message_after_a_previous_error
     send_message(body: 'hola, user2')
     send_message(subject: 'forgot the title', body: 'hola, user2')
 
-    assert_content('Conversación con user2 asunto forgot the title')
+    assert_content 'Conversación con user2 asunto forgot the title'
   end
 
   def test_replies_to_conversation
@@ -58,12 +58,12 @@ module Messages
 
   def test_shows_the_other_user_in_the_conversation_header
     send_message(subject: 'Cosas', body: 'hola, user2')
-    assert_content('Conversación con user2')
+    assert_content 'Conversación con user2'
 
     login_as @user2
 
     visit mailboxer_message_path(Mailboxer::Message.first)
-    assert_content('Conversación con user1')
+    assert_content 'Conversación con user1'
   end
 
   def test_links_to_the_other_user_in_the_conversation_list
@@ -85,23 +85,23 @@ module Messages
   def test_messages_another_user
     send_message(subject: 'hola mundo', body: 'hola trololo')
 
-    assert_content('hola trololo')
-    assert_content('Borrar mensaje')
+    assert_content 'hola trololo'
+    assert_content 'Borrar mensaje'
   end
 
   def test_messages_another_user_using_emojis
     skip 'emojis not supported'
     send_message(subject: 'hola mundo', body: 'What a nice emoji😀!')
 
-    assert_content('What a nice emoji😀!')
-    assert_content('Borrar mensaje')
+    assert_content 'What a nice emoji😀'
+    assert_content 'Borrar mensaje'
   end
 
   def test_replies_to_a_message
     send_message(subject: 'hola mundo', body: 'hola trololo')
     send_message(body: 'hola trululu')
 
-    assert_content('hola trululu')
+    assert_content 'hola trululu'
   end
 
   private
