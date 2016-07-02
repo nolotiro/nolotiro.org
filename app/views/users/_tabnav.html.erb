@@ -1,6 +1,6 @@
 <ul id="tabnav">
   <!-- TODO: can an user edit or view messages from another user? -->
-  <% if user_signed_in? and user.id == current_user.id %>
+  <% if user_signed_in? and user == current_user %>
     <li>
       <%= link_to t('nlt.messages'),
                   conversations_path,
