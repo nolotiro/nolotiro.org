@@ -1,10 +1,11 @@
-require "test_helper"
 require "integration/concerns/authentication"
 
-class MessagesTest < ActionDispatch::IntegrationTest
+module Messages
   include Warden::Test::Helpers
 
-  before do
+  def setup
+    super
+
     user1 = FactoryGirl.create(:user, username: 'user1')
     @user2 = FactoryGirl.create(:user, username: 'user2')
 
@@ -13,40 +14,40 @@ class MessagesTest < ActionDispatch::IntegrationTest
     visit message_new_path(@user2)
   end
 
-  it 'shows errors when message has no subject' do
+  def test_shows_errors_when_message_has_no_subject
     send_message(body: 'hola, user2')
 
     assert_content('Título no puede estar en blanco')
   end
 
-  it 'shows errors when creating conversation with empty message' do
+  def test_prevents_from_creating_conversation_with_empty_message
     send_message(subject: 'hola, user2')
 
-    assert_content('Mensaje no puede estar en blanco')
+    assert_content('Nuevo mensaje privado para el usuario user2')
   end
 
-  it 'shows errors when replying to conversation with empty message' do
+  def test_shows_errors_when_replying_to_conversation_with_empty_message
     send_message(subject: 'hola, user2', body: 'How you doing?')
     send_message(body: '')
 
     assert_content('Mensaje no puede estar en blanco')
   end
 
-  it 'sends a new message after a previous error' do
+  def test_sends_a_new_message_after_a_previous_error
     send_message(body: 'hola, user2')
     send_message(subject: 'forgot the title', body: 'hola, user2')
 
     assert_content('Conversación con user2 asunto forgot the title')
   end
 
-  it 'replies to conversation' do
+  def test_replies_to_conversation
     send_message(subject: 'hola, user2', body: 'How you doing?')
     send_message(body: 'hola, user1, nice to see you around')
 
     page.assert_selector '.bubble', text: 'nice to see you around'
   end
 
-  it 'replies to conversation after a previous error' do
+  def test_replies_to_conversation_after_a_previous_error
     send_message(subject: 'hola, user2', body: 'How you doing?')
     send_message(body: '')
     send_message(body: 'forgot to reply something')
@@ -54,7 +55,7 @@ class MessagesTest < ActionDispatch::IntegrationTest
     page.assert_selector '.bubble', text: 'forgot to reply something'
   end
 
-  it 'shows the other user in the conversation header' do
+  def test_shows_the_other_user_in_the_conversation_header
     send_message(subject: 'Cosas', body: 'hola, user2')
     assert_content('Conversación con user2')
 
@@ -64,14 +65,14 @@ class MessagesTest < ActionDispatch::IntegrationTest
     assert_content('Conversación con user1')
   end
 
-  it 'links to the other user in the conversation list' do
+  def test_links_to_the_other_user_in_the_conversation_list
     send_message(subject: 'Cosas', body: 'hola, user2')
     visit messages_list_path(box: 'sent')
 
     assert page.has_link?('user2'), 'No link to "user2" found'
   end
 
-  it 'just shows a special label when the interlocutor is no longer there' do
+  def test_just_shows_a_special_label_when_the_interlocutor_is_no_longer_there
     send_message(subject: 'Cosas', body: 'hola, user2')
     @user2.destroy
     visit messages_list_path(box: 'sent')
@@ -80,14 +81,14 @@ class MessagesTest < ActionDispatch::IntegrationTest
     refute page.has_link?('[borrado]')
   end
 
-  it "messages another user" do
+  def test_messages_another_user
     send_message(subject: "hola mundo", body: "hola trololo")
 
     assert_content("hola trololo")
     assert_content("Mover mensaje a papelera")
   end
 
-  it "messages another user using emojis" do
+  def test_messages_another_user_using_emojis
     skip "emojis not supported"
     send_message(subject: "hola mundo", body: "What a nice emoji😀!")
 
@@ -95,7 +96,7 @@ class MessagesTest < ActionDispatch::IntegrationTest
     assert_content("Mover mensaje a papelera")
   end
 
-  it "replies to a message" do
+  def test_replies_to_a_message
     send_message(subject: "hola mundo", body: "hola trololo")
     send_message(body: "hola trululu")
 
@@ -112,4 +113,3 @@ class MessagesTest < ActionDispatch::IntegrationTest
     click_button "Enviar"
   end
 end
-

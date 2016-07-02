@@ -130,6 +130,7 @@ GEM
       mimemagic (>= 0.3.0)
     climate_control (0.0.3)
       activesupport (>= 3.0)
+    cliver (0.3.2)
     cocaine (0.5.8)
       climate_control (>= 0.0.3, < 1.0)
     coffee-rails (4.0.1)
@@ -302,7 +303,13 @@ GEM
       cocaine (~> 0.5.5)
       mime-types
       mimemagic (= 0.3.0)
+    phantomjs (2.1.1.0)
     pkg-config (1.1.7)
+    poltergeist (1.9.0)
+      capybara (~> 2.1)
+      cliver (~> 0.3.1)
+      multi_json (~> 1.0)
+      websocket-driver (>= 0.2.0)
     polyamorous (1.3.0)
       activerecord (>= 3.0)
     rack (1.6.4)
@@ -405,7 +412,7 @@ GEM
     slim (3.0.6)
       temple (~> 0.7.3)
       tilt (>= 1.3.3, < 2.1)
-    spring (1.7.1)
+    spring (1.7.2)
     sprockets (3.6.2)
       concurrent-ruby (~> 1.0)
       rack (> 1, < 3)
@@ -459,6 +466,9 @@ GEM
       addressable (>= 2.3.6)
       crack (>= 0.3.2)
       hashdiff
+    websocket-driver (0.6.3)
+      websocket-extensions (>= 0.1.0)
+    websocket-extensions (0.1.2)
     will_paginate (3.1.0)
     xpath (2.0.0)
       nokogiri (~> 1.3)
@@ -509,6 +519,8 @@ DEPENDENCIES
   omniauth-facebook
   omniauth-google-oauth2
   paperclip (~> 4.0)
+  phantomjs
+  poltergeist
   rails (~> 4.2)
   rails-i18n (~> 4.0)
   rakismet
