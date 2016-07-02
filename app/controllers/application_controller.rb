@@ -36,9 +36,13 @@ class ApplicationController < ActionController::Base
   end
 
   def browser_locale
-    return unless request.env['HTTP_ACCEPT_LANGUAGE'].present?
+    accept_language_header = request.env['HTTP_ACCEPT_LANGUAGE']
+    return unless accept_language_header.present?
 
-    lang = request.env['HTTP_ACCEPT_LANGUAGE'][/^[a-z]{2}/].to_sym
+    parsed_lang = accept_language_header[/^[a-z]{2}/]
+    return unless parsed_lang
+
+    lang = parsed_lang.to_sym
     return unless I18n.available_locales.include?(lang)
 
     lang

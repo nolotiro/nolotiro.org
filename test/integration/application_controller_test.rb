@@ -28,4 +28,10 @@ class ApplicationControllerTest < ActionDispatch::IntegrationTest
 
     assert_equal I18n.default_locale, I18n.locale
   end
+
+  it 'falls back to default locale if no param & unguessable browser locale' do
+    get root_path(locale: nil), {}, 'HTTP_ACCEPT_LANGUAGE' => '*'
+
+    assert_equal I18n.default_locale, I18n.locale
+  end
 end
