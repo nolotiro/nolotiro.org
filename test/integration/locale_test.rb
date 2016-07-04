@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class ApplicationControllerTest < ActionDispatch::IntegrationTest
+class LocaleTest < ActionDispatch::IntegrationTest
   before { @old_locale = I18n.locale }
 
   after { I18n.locale = @old_locale }
