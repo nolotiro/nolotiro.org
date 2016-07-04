@@ -11,14 +11,6 @@ require 'support/unit'
 require 'support/controller'
 require 'support/integration'
 
-require 'vcr'
-
-VCR.configure do |config|
-  config.cassette_library_dir = 'test/fixtures/vcr_cassettes'
-  config.hook_into :webmock
-  config.ignore_localhost = true
-end
-
 # Configure database cleaning
 DatabaseCleaner.clean_with(:truncation)
 DatabaseCleaner.strategy = :truncation
