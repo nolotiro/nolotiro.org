@@ -15,7 +15,7 @@ NolotiroOrg::Application.routes.draw do
  devise_for :users, only: :omniauth_callbacks, controllers: {omniauth_callbacks: 'callbacks'}
 
   # i18n
-  scope "(:locale)", locale: /#{Rails.application.secrets["langs_routes"]}/ do
+  scope "(:locale)", locale: /#{I18n.available_locales.join("|")}/ do
 
     root 'ads#index'
 

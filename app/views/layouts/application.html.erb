@@ -17,7 +17,7 @@
     <meta name='viewport' content='width=device-width, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no' />
 
     <link rel="alternate" href="<%= localized_url(nil) %>" hreflang="x-default" />
-    <% Rails.application.secrets["langs"].split(' ').each do |l|  %>
+    <% I18n.available_locales.each do |l|  %>
       <link rel="alternate" hreflang="<%= l %>" href="<%= localized_url(l) %>" />
     <% end %>
 

@@ -11,7 +11,7 @@ class LegacyRoutingTest < ActionDispatch::IntegrationTest
     @admin = FactoryGirl.create(:admin)
   end
 
-  Rails.application.secrets["langs"].split(' ').each do |l|
+  I18n.available_locales.map(&:to_s).each do |l|
     test "should i18n for #{l} work" do
       mocking_yahoo_woeid_info(@ad.woeid_code, l) do
         assert_routing "/#{l}", {controller: "ads", action: "index", locale: l}

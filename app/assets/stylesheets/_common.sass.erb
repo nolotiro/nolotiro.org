@@ -875,7 +875,7 @@ ul#tabnav
   border: 1px silver solid
   padding: 4px
 
-$langs: <%= Rails.application.secrets["langs"] %>
+$langs: <%= I18n.available_locales.join(" ") %>
 
 =flags-countries
   @each $l in $langs
