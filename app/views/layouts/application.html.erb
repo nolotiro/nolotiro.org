@@ -65,10 +65,7 @@
     <div class="container">
 
       <div id="header">
-
-        <% cache("select_language_box_#{I18n.locale}_#{request.original_url}") do %>
-          <%= render :partial => "partials/select_language_box" %>
-        <% end %>
+        <%= render :partial => "partials/select_language_box" %>
 
         <%= render :partial => "partials/user_actions" %>
 
