@@ -1,8 +1,13 @@
 require 'phantomjs'
+require 'support/web_mocking'
 
 Capybara.register_driver :poltergeist_mobile do |app|
-  Capybara::Poltergeist::Driver.new(app, window_size: [320, 480],
-                                         phantomjs: Phantomjs.path)
+  Capybara::Poltergeist::Driver.new(
+    app,
+    window_size: [320, 480],
+    url_blacklist: WebMocking.js_resource_blacklist,
+    phantomjs: Phantomjs.path
+  )
 end
 
 class MobileIntegrationTest < ActionDispatch::IntegrationTest
