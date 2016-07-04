@@ -11,7 +11,6 @@ module NolotiroOrg
     config.time_zone = 'UTC'
     config.i18n.default_locale = :es
     config.i18n.enforce_available_locales = true
-    I18n.config.enforce_available_locales = true
     config.i18n.available_locales = %i(ca de en es eu fr gl it nl pt)
     ActionMailer::Base.layout "mail"
 
