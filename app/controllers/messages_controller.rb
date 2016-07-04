@@ -2,7 +2,7 @@ class MessagesController < ApplicationController
 
   require 'will_paginate/array'
 
-  before_filter :authenticate_user!
+  before_action :authenticate_user!
 
   def index
     @box = params[:box] || 'inbox'

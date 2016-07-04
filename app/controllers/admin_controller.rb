@@ -1,6 +1,6 @@
 class AdminController < ApplicationController
 
-  before_filter :authenticate_user!
+  before_action :authenticate_user!
   authorize_resource :class => false
   
   def become
