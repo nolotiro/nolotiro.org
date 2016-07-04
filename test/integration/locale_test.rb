@@ -11,13 +11,13 @@ class LocaleTest < ActionDispatch::IntegrationTest
     assert_equal :pt, I18n.locale
   end
 
-  it 'assigns locale from browser if no param' do
+  it 'assigns locale from browser if no locale param' do
     get root_path(locale: nil), {}, 'HTTP_ACCEPT_LANGUAGE' => 'it'
 
     assert_equal :it, I18n.locale
   end
 
-  it 'falls back to default locale if no param or browser locale' do
+  it 'falls back to default locale if no locale in param or browser' do
     get root_path(locale: nil)
 
     assert_equal I18n.default_locale, I18n.locale
