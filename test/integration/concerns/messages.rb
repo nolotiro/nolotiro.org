@@ -112,6 +112,7 @@ module Messages
 
     visit messages_list_path
     check("delete-conversation-#{Mailboxer::Conversation.first.id}")
+    dismiss_cookie_bar
     click_button 'Borrar mensajes seleccionados'
 
     refute_content 'hola mundo'
@@ -126,6 +127,14 @@ module Messages
   end
 
   private
+
+  #
+  # Sometimes cookie bar gets in the middle of our tests.
+  # Just dismiss the alert for now.
+  #
+  def dismiss_cookie_bar
+    within('#cookie-bar') { click_link 'OK' }
+  end
 
   def send_message(params)
     subject = params[:subject]
