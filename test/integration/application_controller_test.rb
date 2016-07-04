@@ -11,26 +11,14 @@ class ApplicationControllerTest < ActionDispatch::IntegrationTest
     assert_equal :pt, I18n.locale
   end
 
-  it 'assigns locale from browser if no param & browser locale available' do
+  it 'assigns locale from browser if no param' do
     get root_path(locale: nil), {}, 'HTTP_ACCEPT_LANGUAGE' => 'it'
 
     assert_equal :it, I18n.locale
   end
 
-  it 'fallback to default locale if no param & browser locale unavailable' do
-    get root_path(locale: nil), {}, 'HTTP_ACCEPT_LANGUAGE' => 'ch'
-
-    assert_equal I18n.default_locale, I18n.locale
-  end
-
-  it 'falls back to default locale if no param & no browser locale' do
+  it 'falls back to default locale if no param or browser locale' do
     get root_path(locale: nil)
-
-    assert_equal I18n.default_locale, I18n.locale
-  end
-
-  it 'falls back to default locale if no param & unguessable browser locale' do
-    get root_path(locale: nil), {}, 'HTTP_ACCEPT_LANGUAGE' => '*'
 
     assert_equal I18n.default_locale, I18n.locale
   end
