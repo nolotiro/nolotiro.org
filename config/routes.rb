@@ -51,10 +51,6 @@ NolotiroOrg::Application.routes.draw do
       post '/change2', to: 'location#change'
     end
 
-    # auth
-    get '/auth/login', to: redirect('/es/user/login')
-    get '/user/forgot', to: redirect('/es/user/reset/new')
-
     devise_for :users,
       skip: :omniauth_callbacks,
       controllers: { registrations: 'registrations' },

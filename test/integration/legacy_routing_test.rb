@@ -95,12 +95,6 @@ class LegacyRoutingTest < ActionDispatch::IntegrationTest
 
   test "should route auth" do 
     assert_routing '/es/user/register', {action: "new", controller: "registrations", locale: "es"}
-
-    get '/es/auth/login'
-    assert_redirected_to new_user_session_url
-
-    get '/es/user/forgot'
-    assert_redirected_to new_user_password_url
   end
 
   test "should get ads" do
