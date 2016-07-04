@@ -135,11 +135,6 @@ NolotiroOrg::Application.routes.draw do
     # contact
     get '/contact', to: 'contact#new', as: 'contacts'
     post '/contact', to: 'contact#create'
-
-    # i18n legacy
-    # do nothing, the locale is in the link
-    get '/index/setlang', to: redirect('/')
-
   end
 
 end
