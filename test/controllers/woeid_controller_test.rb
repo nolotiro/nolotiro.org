@@ -3,7 +3,7 @@ require 'support/web_mocking'
 
 class WoeidControllerTest < ActionController::TestCase
   include WebMocking
-  include Devise::TestHelpers
+  include Devise::Test::ControllerHelpers
 
   setup do
     @ad = FactoryGirl.create(:ad)

@@ -32,14 +32,16 @@
     </div>
 
     <div class="col-md-6 col-sm-6">
-      <%- resource_class.omniauth_providers.each do |provider| %>
-        <% prov = convert_provider( provider ) %>
-        <%= link_to user_omniauth_authorize_path(provider: provider), class: "btn btn-info login-with-#{prov.downcase}" do %>
-          <%= t('nlt.sign_in_with_provider', :provider => prov) %>
-          <i class="fa <%= convert_provider_fa(provider) %>"></i>
-        <% end %>
-          <br />
-      <% end -%>
+      <%= link_to user_facebook_omniauth_authorize_path, class: "btn btn-info login-with-facebook" do %>
+        <%= t('nlt.sign_in_with_provider', :provider => 'Facebook') %>
+        <i class="fa fa-facebook-square"></i>
+      <% end %>
+      <br />
+
+      <%= link_to user_google_oauth2_omniauth_authorize_path, class: "btn btn-info login-with-google" do %>
+        <%= t('nlt.sign_in_with_provider', :provider => 'Google') %>
+        <i class="fa fa-google-plus-square"></i>
+      <% end %>
     </div>
   </fieldset>
 <% end %>

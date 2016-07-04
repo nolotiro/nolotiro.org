@@ -2,7 +2,7 @@ module OauthHelpers
   def login_via_facebook(attrs)
     OmniAuth.config.test_mode = true
     mock_facebook(attrs)
-    visit user_omniauth_authorize_path(provider: 'facebook')
+    visit user_facebook_omniauth_authorize_path
   end
 
   private
