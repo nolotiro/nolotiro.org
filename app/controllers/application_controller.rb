@@ -28,11 +28,24 @@ class ApplicationController < ActionController::Base
   end
 
   def set_locale
-    I18n.locale = params_locale || browser_locale || default_locale
+    session[:locale] = params[:lang] if valid_locale?(params[:lang])
+
+    I18n.locale =
+      params_locale || session_locale || browser_locale || default_locale
+  end
+
+  def valid_locale?(code)
+    return false unless code.present?
+
+    I18n.available_locales.include?(code.to_sym)
   end
 
   def params_locale
     params[:locale].presence
+  end
+
+  def session_locale
+    session[:locale].presence
   end
 
   def browser_locale
