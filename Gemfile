@@ -56,6 +56,7 @@ group :development do
   gem 'capistrano-pending'
 end
 
+gem 'http_accept_language'
 gem 'newrelic_rpm'                                  # monitoring
 gem 'actionpack-action_caching'                     # caching
 gem 'unicorn'                                       # webserver

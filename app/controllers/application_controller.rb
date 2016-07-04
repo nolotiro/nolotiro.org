@@ -28,24 +28,14 @@ class ApplicationController < ActionController::Base
   end
 
   def set_locale
-    I18n.locale = params_locale || browser_locale || I18n.default_locale
+    I18n.locale =
+      params_locale ||
+      http_accept_language.compatible_language_from(I18n.available_locales) ||
+      I18n.default_locale
   end
 
   def params_locale
     params[:locale].presence
-  end
-
-  def browser_locale
-    accept_language_header = request.env['HTTP_ACCEPT_LANGUAGE']
-    return unless accept_language_header.present?
-
-    parsed_lang = accept_language_header[/^[a-z]{2}/]
-    return unless parsed_lang
-
-    lang = parsed_lang.to_sym
-    return unless I18n.available_locales.include?(lang)
-
-    lang
   end
 
   def default_url_options(options={})
