@@ -35,7 +35,6 @@ group :test do
   gem 'webmock', '~> 2.0'
   gem 'database_cleaner', '~> 1.5'
   gem 'poltergeist'
-  gem 'phantomjs'
 end
 
 group :production, :staging do 
@@ -56,8 +55,8 @@ group :development do
   gem 'capistrano-pending'
 end
 
+gem 'http_accept_language'
 gem 'newrelic_rpm'                                  # monitoring
-gem 'actionpack-page_caching'                       # caching
 gem 'actionpack-action_caching'                     # caching
 gem 'unicorn'                                       # webserver
 gem 'mysql2', '~> 0.4.4'                            # database adapter

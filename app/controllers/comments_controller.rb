@@ -1,6 +1,6 @@
 class CommentsController < ApplicationController
 
-  before_filter :authenticate_user!
+  before_action :authenticate_user!
 
   # POST /comment/create/ad_id/:id
   def create

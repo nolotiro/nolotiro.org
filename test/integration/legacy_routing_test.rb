@@ -11,7 +11,7 @@ class LegacyRoutingTest < ActionDispatch::IntegrationTest
     @admin = FactoryGirl.create(:admin)
   end
 
-  Rails.application.secrets["langs"].split(' ').each do |l|
+  I18n.available_locales.map(&:to_s).each do |l|
     test "should i18n for #{l} work" do
       mocking_yahoo_woeid_info(@ad.woeid_code, l) do
         assert_routing "/#{l}", {controller: "ads", action: "index", locale: l}
@@ -95,12 +95,6 @@ class LegacyRoutingTest < ActionDispatch::IntegrationTest
 
   test "should route auth" do 
     assert_routing '/es/user/register', {action: "new", controller: "registrations", locale: "es"}
-
-    get '/es/auth/login'
-    assert_redirected_to new_user_session_url
-
-    get '/es/user/forgot'
-    assert_redirected_to new_user_password_url
   end
 
   test "should get ads" do

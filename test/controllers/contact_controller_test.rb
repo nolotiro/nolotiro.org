@@ -2,7 +2,7 @@ require 'test_helper'
 
 class ContactControllerTest < ActionController::TestCase
 
-  include Devise::TestHelpers
+  include Devise::Test::ControllerHelpers
 
   test "should get contact form" do
     get :new

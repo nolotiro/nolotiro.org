@@ -3,7 +3,7 @@ require 'support/web_mocking'
 
 class LocationControllerTest < ActionController::TestCase
   include WebMocking
-  include Devise::TestHelpers
+  include Devise::Test::ControllerHelpers
 
   setup do
     @user = FactoryGirl.create(:user)

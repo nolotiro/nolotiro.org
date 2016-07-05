@@ -1,12 +1,15 @@
+require 'concerns/multi_lingualizable'
+
 class ApplicationController < ActionController::Base
+  include MultiLingualizable
+
   # TODO: comment captcha for ad creation/edition
   
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
-  before_action :set_locale
-  before_filter :configure_permitted_parameters, if: :devise_controller?
+  before_action :configure_permitted_parameters, if: :devise_controller?
 
   rescue_from CanCan::AccessDenied do |exception|
     if user_signed_in? 
@@ -27,32 +30,6 @@ class ApplicationController < ActionController::Base
     location_ask_path
   end
 
-  def set_locale
-    I18n.locale = params_locale || browser_locale || I18n.default_locale
-  end
-
-  def params_locale
-    params[:locale].presence
-  end
-
-  def browser_locale
-    accept_language_header = request.env['HTTP_ACCEPT_LANGUAGE']
-    return unless accept_language_header.present?
-
-    parsed_lang = accept_language_header[/^[a-z]{2}/]
-    return unless parsed_lang
-
-    lang = parsed_lang.to_sym
-    return unless I18n.available_locales.include?(lang)
-
-    lang
-  end
-
-  def default_url_options(options={})
-    #logger.debug "default_url_options is passed options: #{options.inspect}\n"
-    { locale: I18n.locale }
-  end
-  
   def authenticate_active_admin_user!
     authenticate_user!
     unless current_user.admin?
@@ -84,7 +61,7 @@ class ApplicationController < ActionController::Base
   protected
 
   def configure_permitted_parameters
-    devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:username, :email, :password, :password_confirmation, :remember_me) }
-    devise_parameter_sanitizer.for(:sign_in) { |u| u.permit(:username, :email, :password, :remember_me) }
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:username, :email, :password, :password_confirmation, :remember_me])
+    devise_parameter_sanitizer.permit(:sign_in, keys: [:username, :email, :password, :remember_me])
   end
 end

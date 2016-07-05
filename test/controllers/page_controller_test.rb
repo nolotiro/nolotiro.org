@@ -2,7 +2,7 @@ require 'test_helper'
 
 class PageControllerTest < ActionController::TestCase
 
-  include Devise::TestHelpers
+  include Devise::Test::ControllerHelpers
 
   test "should get faqs" do
     get :faqs

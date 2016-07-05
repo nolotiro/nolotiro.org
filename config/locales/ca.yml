@@ -130,7 +130,7 @@ ca:
   devise:
     confirmations:
       action: Confirmar el meu compte
-      confirmed: El teu compte ha estat confirmat correctament.  S'ha iniciat la sessió.
+      confirmed: El teu compte ha estat confirmat correctament.
       instructions: Per favor confirma el teu compte de correu accedint al següent enllaç
       resend: Reexpedir instruccions de confirmació
       send_instructions: En breu rebràs un correu electrònic amb instruccions sobre com confirmar el teu compte.

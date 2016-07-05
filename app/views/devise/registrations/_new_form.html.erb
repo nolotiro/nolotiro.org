@@ -67,17 +67,7 @@
 
     <% unless omniauth_registration? %>
       <div class="col-md-6 col-sm-6">
-        <%- if devise_mapping.omniauthable? %>
-          <%- resource_class.omniauth_providers.each do |provider| %>
-            <% prov = convert_provider( provider ) %>
-            <%= link_to user_omniauth_authorize_path(provider: provider), class: "btn btn-info login-with-#{prov.downcase}" do %>
-              <%= t('nlt.sign_in_with_provider', :provider => prov) %>
-              <i class="fa <%= convert_provider_fa(provider) %>"></i>
-            <% end %>
-              <br />
-          <% end -%>
-        <% end -%>
-
+        <%= render "devise/shared/omniauth_links" %>
       </div>
     <% end %>
   </fieldset>

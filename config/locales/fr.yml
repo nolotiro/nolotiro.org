@@ -132,7 +132,7 @@ fr:
   devise:
     confirmations:
       action: 
-      confirmed: Votre compte a été confirmé avec succès. Vous êtes désormais connecté(e).
+      confirmed: Votre compte a été confirmé avec succès.
       instructions: 
       resend: 
       send_instructions: Vous allez recevoir sous quelques minutes un email comportant des instructions pour confirmer votre compte.
