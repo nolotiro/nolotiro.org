@@ -20,12 +20,12 @@ class Ability
       #can :create, :show, Conversation do |conversation|
       #  conversation.is_participant? user
       #end
-      can :list, Mailboxer::Message, :user_from => user.id
-      can :list, Mailboxer::Message, :user_to => user.id
+      can :list, Mailboxer::Message, user_from: user.id
+      can :list, Mailboxer::Message, user_to: user.id
       cannot :lock, Admin
       cannot :unlock, Admin
       cannot :become, Admin
-      can [:edit, :update, :destroy], Ad, :user_owner => user.id
+      can [:edit, :update, :destroy], Ad, user_owner: user.id
       can(:bump, Ad) { |ad| ad.user_owner == user.id && ad.bumpable? }
       cannot :manage, ActiveAdmin
     end

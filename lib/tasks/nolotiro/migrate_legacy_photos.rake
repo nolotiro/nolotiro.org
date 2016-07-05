@@ -4,7 +4,7 @@ namespace :nolotiro do
     namespace :images do
 
       desc '[nolotiro] Migrate all the legacy photos'
-      task :start => :environment do
+      task start: :environment do
         # nolotiro v2 legacy
         # missing photos :/
         files = [

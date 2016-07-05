@@ -22,7 +22,7 @@ class Ad < ActiveRecord::Base
 
   require 'ipaddress'
 
-  belongs_to :user, foreign_key: 'user_owner', :counter_cache => true
+  belongs_to :user, foreign_key: 'user_owner', counter_cache: true
   has_many :comments, class_name: 'Comment', foreign_key: 'ads_id'
 
   validates :title, presence: true
@@ -57,7 +57,7 @@ class Ad < ActiveRecord::Base
 
   validates_attachment :image, content_type: { content_type: ['image/jpg', 'image/jpeg', 'image/png', 'image/gif'] }
 
-  validates_attachment_size :image, :in => 0.megabytes..5.megabytes
+  validates_attachment_size :image, in: 0.megabytes..5.megabytes
 
   #before_save :titleize_title if self.title? and /[[:upper:]]/.match(self.title)
   #before_save :titleize_body if self.body and /[[:upper:]]/.match(self.body)
@@ -84,7 +84,7 @@ class Ad < ActiveRecord::Base
     where('woeid_code = ?', woeid_code)
   }
 
-  scope :last_week, lambda { where('created_at >= :date', :date => 1.week.ago) }
+  scope :last_week, lambda { where('created_at >= :date', date: 1.week.ago) }
 
   self.per_page = 20
 

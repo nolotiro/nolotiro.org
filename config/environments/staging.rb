@@ -76,7 +76,7 @@ NolotiroOrg::Application.configure do
   config.log_formatter = ::Logger::Formatter.new
 
   # for devise
-  config.action_mailer.default_url_options = { :host => 'beta.nolotiro.org' }
+  config.action_mailer.default_url_options = { host: 'beta.nolotiro.org' }
 
   # for mailcatcher
   #config.action_mailer.delivery_method = :smtp

@@ -14,8 +14,8 @@ module Api
       @woeid = params[:id]
       @page = params[:page]
       @ads = ads.available
-                .where(:woeid_code => @woeid)
-                .paginate(:page => params[:page])
+                .where(woeid_code: @woeid)
+                .paginate(page: params[:page])
     end
 
     def woeid_list

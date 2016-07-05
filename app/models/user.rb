@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
   has_many :comments, foreign_key: 'user_owner', dependent: :destroy
 
   has_many :friendships
-  has_many :friends, :through => :friendships
+  has_many :friends, through: :friendships
 
   before_save :default_lang
 
@@ -20,7 +20,7 @@ class User < ActiveRecord::Base
 
   acts_as_messageable
 
-  scope :last_week, lambda { where('created_at >= :date', :date => 1.week.ago) }
+  scope :last_week, lambda { where('created_at >= :date', date: 1.week.ago) }
 
   scope :top_overall, ->(limit = 20) do
     select('users.id, users.username, COUNT(ads.id) as n_ads')

@@ -26,9 +26,9 @@ NolotiroOrg::Application.routes.draw do
 
     constraints(AdConstraint.new) do
       scope '/ad' do
-        get '/:id/:slug', to: 'ads#show', :as => 'adslug'
-        get '/edit/id/:id', to: 'ads#edit', :as => 'ads_edit'
-        post '/bump/id/:id', to: 'ads#bump', :as => 'ads_bump'
+        get '/:id/:slug', to: 'ads#show', as: 'adslug'
+        get '/edit/id/:id', to: 'ads#edit', as: 'ads_edit'
+        post '/bump/id/:id', to: 'ads#bump', as: 'ads_bump'
         get '/listall/ad_type/:type(/status/:status)(/page/:page)',
             to: 'woeid#show',
             as: 'ads_listall'

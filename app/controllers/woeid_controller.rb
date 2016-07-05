@@ -15,7 +15,7 @@ class WoeidController < ApplicationController
               .public_send(@type)
               .public_send(@status)
               .by_woeid_code(@id)
-              .paginate(:page => params[:page])
+              .paginate(page: params[:page])
 
     @woeid = WoeidHelper.convert_woeid_name(@id) if @id.present?
 

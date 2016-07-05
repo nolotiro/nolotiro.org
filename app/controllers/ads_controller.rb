@@ -18,7 +18,7 @@ class AdsController < ApplicationController
 
   def list
     @ads = Rails.cache.fetch("ads_list_#{params[:page]}") do
-      Ad.give.available.includes(:user).paginate(:page => params[:page])
+      Ad.give.available.includes(:user).paginate(page: params[:page])
     end
   end
 
@@ -62,7 +62,7 @@ class AdsController < ApplicationController
     @ad.published_at = Time.zone.now
 
     respond_to do |format|
-      if verify_recaptcha(:model => @ad) && @ad.save
+      if verify_recaptcha(model: @ad) && @ad.save
         format.html { redirect_to adslug_path(@ad, slug: @ad.slug), notice: t('nlt.ads.created') }
         format.json { render action: 'show', status: :created, location: @ad }
       else

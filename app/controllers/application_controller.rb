@@ -14,14 +14,14 @@ class ApplicationController < ActionController::Base
 
   rescue_from CanCan::AccessDenied do |exception|
     if user_signed_in?
-      redirect_to root_url, :alert => t('nlt.permission_denied')
+      redirect_to root_url, alert: t('nlt.permission_denied')
     else
-      redirect_to new_user_session_url, :alert => exception.message
+      redirect_to new_user_session_url, alert: exception.message
     end
   end
 
   def access_denied exception
-    redirect_to root_url, :alert => exception.message
+    redirect_to root_url, alert: exception.message
   end
 
   def signed_in_root_path(resource)

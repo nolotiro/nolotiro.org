@@ -1,5 +1,5 @@
 # frozen_string_literal: true
-ThinkingSphinx::Index.define :ad, :with => :active_record do
+ThinkingSphinx::Index.define :ad, with: :active_record do
 
   indexes title
   indexes body
