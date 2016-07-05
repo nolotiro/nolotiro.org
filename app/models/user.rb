@@ -112,7 +112,6 @@ class User < ActiveRecord::Base
     end
   end
 
-
   def reset_password(*args)
     self.legacy_password_hash = nil
     super

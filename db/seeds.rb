@@ -35,7 +35,6 @@ def create_ad(user)
   ad
 end
 
-
 10.times { create_user }
 
 create_user(1)

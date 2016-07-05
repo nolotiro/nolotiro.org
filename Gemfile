@@ -40,7 +40,6 @@ group :production, :staging do
   gem 'airbrake', '~> 4.0'                  # exception notification
 end
 
-
 # deploy
 group :development do
   gem 'capistrano', '~> 3.0'
