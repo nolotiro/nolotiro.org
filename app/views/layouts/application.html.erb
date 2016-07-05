@@ -71,28 +71,7 @@
     <div class="container">
 
       <div id="header">
-        <%= render :partial => "partials/select_language_box" %>
-
-        <%= render :partial => "partials/user_actions" %>
-
-        <div class="site-logo">
-          <div class="site-name">
-            <%= link_to root_path, :title => "nolotiro.org home" do %>
-              <%= image_tag "nolotiro_logo.png", :alt => "nolotiro.org", :id => "logo" %>
-              nolotiro.org
-              <%=h yield(:title) %>
-            <% end %>
-          </div>
-
-          <div class="site-slogan">
-            <%= t('nlt.slogan') %>
-          </div>
-        </div>
-
-        <% if content_for?(:action) %>
-          <%= yield(:action) %>
-        <% end %>
-
+        <%= render "partials/header" %>
       </div>
 
       <div class="desktop">
