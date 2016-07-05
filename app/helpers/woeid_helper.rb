@@ -42,8 +42,6 @@ module WoeidHelper
       return if raw_locations.nil?
 
       raw_locations.map { |raw_location| YahooLocation.new(raw_location) }
-    else
-      nil
     end
   end
 end
