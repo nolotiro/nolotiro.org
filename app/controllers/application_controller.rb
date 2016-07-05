@@ -20,7 +20,7 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  def access_denied exception
+  def access_denied(exception)
     redirect_to root_url, alert: exception.message
   end
 

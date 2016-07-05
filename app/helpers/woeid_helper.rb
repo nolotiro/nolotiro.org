@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 module WoeidHelper
 
-  def self.convert_woeid_name woeid
+  def self.convert_woeid_name(woeid)
     # search by woeid, return place
     #
     # param woeid: integer. example: 244444
@@ -28,7 +28,7 @@ module WoeidHelper
     end
   end
 
-  def self.search_by_name name
+  def self.search_by_name(name)
     # search by name, return possible places
     #
     # param name: string. example: "Madrid"

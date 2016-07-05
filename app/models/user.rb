@@ -91,7 +91,7 @@ class User < ActiveRecord::Base
     self.lang ||= 'es'
   end
 
-  def friend? user
+  def friend?(user)
     friends.where(id: user.id).count > 0 ? true : false
   end
 

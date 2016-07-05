@@ -35,7 +35,7 @@ class LocationController < ApplicationController
 
   private
 
-  def save_location woeid
+  def save_location(woeid)
     # receives woeid, set location for user
     if user_signed_in?
       current_user.woeid = woeid
