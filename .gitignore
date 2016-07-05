@@ -7,10 +7,6 @@
 # Ignore bundler config.
 /.bundle
 
-# Ignore the default SQLite database.
-/db/*.sqlite3
-/db/*.sqlite3-journal
-
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
@@ -23,13 +19,6 @@ config/secrets.yml
 public/legacy/uploads/ads/original/*
 public/system/*
 public/assets/*
-
-# vim temp files
-*.swp
-*.swo
-
-# gedit temp files
-*~
 
 # GeoLiteCity DB
 vendor/geolite/*
@@ -45,9 +34,6 @@ log/*.sphinx.pid
 
 #localeapp
 log/localeapp.yml
-
-# For Rubymine (Jetbrains IDE)
-.idea
 
 # Phanthomjs executable
 bin/phantomjs
