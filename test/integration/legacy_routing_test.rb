@@ -78,7 +78,7 @@ class LegacyRoutingTest < ActionDispatch::IntegrationTest
   end
 
   test 'should route user profile' do
-    assert_routing "/es/profile/#{@user.id}", controller: 'users', action: 'profile', locale: 'es', username: "#{@user.id}"
+    assert_routing "/es/profile/#{@user.id}", controller: 'users', action: 'profile', locale: 'es', username: (@user.id).to_s
     assert_routing "/es/profile/#{@user.username}", controller:'users', action: 'profile', locale: 'es', username: @user.username
     assert_routing "/es/ad/listuser/id/#{@user.id}", controller: 'users', action: 'listads', locale: 'es', id: @user.id.to_s
   end
@@ -100,7 +100,7 @@ class LegacyRoutingTest < ActionDispatch::IntegrationTest
 
   test 'should get ads' do
     assert_routing '/es/ad/create', action: 'new', controller: 'ads', locale: 'es'
-    assert_routing "/es/ad/#{@ad.id}/#{@ad.slug}", controller: 'ads', action: 'show', locale: 'es', id: "#{@ad.id}", slug: 'ordenador-en-vallecas'
+    assert_routing "/es/ad/#{@ad.id}/#{@ad.slug}", controller: 'ads', action: 'show', locale: 'es', id: (@ad.id).to_s, slug: 'ordenador-en-vallecas'
 
     # sign_in @user
     # get "/es/ad/edit/id/#{@ad.id}"
