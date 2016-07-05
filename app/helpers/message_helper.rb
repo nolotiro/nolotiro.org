@@ -1,6 +1,5 @@
 # frozen_string_literal: true
 module MessageHelper
-
   def interlocutor_username(c)
     other_user = interlocutor(c)
 
