@@ -7,7 +7,7 @@ module WoeidHelper
     # return place: string. format: "City, State, Country"
     #
 
-    locale = I18n.locale;
+    locale = I18n.locale
     key = 'woeid_' + locale.to_s + '_' + woeid.to_s
     value = Rails.cache.fetch(key)
     return value if value
