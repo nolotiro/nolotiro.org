@@ -25,8 +25,6 @@ class WoeidController < ApplicationController
 
     return if @ads.any?
 
-    if @woeid
-      @location_options = WoeidHelper.search_by_name(@woeid[:short])
-    end
+    @location_options = WoeidHelper.search_by_name(@woeid[:short]) if @woeid
   end
 end
