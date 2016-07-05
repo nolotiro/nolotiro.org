@@ -14,16 +14,16 @@ module WoeidHelper
 
     GeoPlanet.appid = Rails.application.secrets['geoplanet_app_id']
     begin
-        place_raw = GeoPlanet::Place.new(woeid.to_i, lang: locale)
-        place = YahooLocation.new(place_raw)
+      place_raw = GeoPlanet::Place.new(woeid.to_i, lang: locale)
+      place = YahooLocation.new(place_raw)
 
-        return nil unless place.town?
+      return nil unless place.town?
 
-        value = { full: place.fullname , short: place.name }
-        Rails.cache.write(key, value)
-        return value
-    rescue GeoPlanet::NotFound
-      return nil
+      value = { full: place.fullname , short: place.name }
+      Rails.cache.write(key, value)
+      return value
+  rescue GeoPlanet::NotFound
+    return nil
     end
   end
 
