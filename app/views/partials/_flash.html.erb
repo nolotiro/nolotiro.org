@@ -1,0 +1,7 @@
+<% flash.each do |name, msg| %>
+  <% if msg.is_a?(String) %>
+    <div class="col-md-12 <%= name %>">
+      <%= msg %>
+    </div>
+  <% end %>
+<% end %>
