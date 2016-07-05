@@ -8,7 +8,7 @@ class AdsController < ApplicationController
 
   # GET /
   def index
-    if user_signed_in? 
+    if user_signed_in?
       url = current_user.woeid? ? ads_woeid_path(id: current_user.woeid, type: 'give') : location_ask_path
       redirect_to url
     else
@@ -17,7 +17,7 @@ class AdsController < ApplicationController
   end
 
   def list
-    @ads = Rails.cache.fetch("ads_list_#{params[:page]}") do 
+    @ads = Rails.cache.fetch("ads_list_#{params[:page]}") do
       Ad.give.available.includes(:user).paginate(:page => params[:page])
     end
   end
@@ -34,7 +34,7 @@ class AdsController < ApplicationController
   def new
     @ad = Ad.new
     @ad.comments_enabled = true
-    redirect_to location_ask_path if current_user.woeid.nil? 
+    redirect_to location_ask_path if current_user.woeid.nil?
   end
 
   # GET /ads/1/edit

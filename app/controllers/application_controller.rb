@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
   include MultiLingualizable
 
   # TODO: comment captcha for ad creation/edition
-  
+
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
@@ -13,7 +13,7 @@ class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
 
   rescue_from CanCan::AccessDenied do |exception|
-    if user_signed_in? 
+    if user_signed_in?
       redirect_to root_url, :alert => t('nlt.permission_denied')
     else
       redirect_to new_user_session_url, :alert => exception.message
@@ -53,7 +53,7 @@ class ApplicationController < ActionController::Base
 
   helper_method :status_scope
 
-  def location_suggest 
+  def location_suggest
     @location_suggest ||= RequestGeolocator.new(request).suggest
   end
 

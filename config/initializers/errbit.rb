@@ -22,7 +22,7 @@ end
 #  config.api_key = Rails.application.secrets.airbrake["apikey"]
 #  config.host    = Rails.application.secrets.airbrake["host"]
 #  config.port    = Rails.application.secrets.airbrake["port"]
-#  config.async do |notice| 
+#  config.async do |notice|
 #    AirbrakeDeliveryWorker.perform_async(notice.to_xml)
 #  end
 #end

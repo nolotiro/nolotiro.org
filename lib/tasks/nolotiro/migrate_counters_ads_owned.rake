@@ -1,5 +1,5 @@
 # frozen_string_literal: true
-namespace :nolotiro do 
+namespace :nolotiro do
   namespace :migrate do
     namespace :counters do
       desc '[nolotiro] Reprocess the User ads_count'

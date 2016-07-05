@@ -23,7 +23,7 @@ class MessagesControllerTest < ActionController::TestCase
   end
 
   test 'should create a message, show it and let the other user reply it' do
-    # user1 signs in and sends a message to user2 
+    # user1 signs in and sends a message to user2
     sign_in @user1
     assert_difference('Mailboxer::Conversation.count') do
       post :create, mailboxer_message: { recipients: @user2, body: 'lo sigues teniendo? ', subject: 'interesado en el ordenador' }
@@ -34,9 +34,9 @@ class MessagesControllerTest < ActionController::TestCase
     sign_out @user1
     sign_in @user2
     get :show, id: m.id
-    # TODO: assert flash 
-    # TODO: assert mailer 
-    # TODO: user2 signs in, read the message and reply it 
+    # TODO: assert flash
+    # TODO: assert mailer
+    # TODO: user2 signs in, read the message and reply it
     # TODO: user3 can't access that conversation
   end
 

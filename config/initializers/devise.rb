@@ -136,7 +136,7 @@ Devise.setup do |config|
 
   # ==> Configuration for :validatable
   # Range for password length. Default is 8..128.
-  # nolotiro v2 - legacy 
+  # nolotiro v2 - legacy
   config.password_length = 5..128
 
   # Email regex used to validate email formats. It simply asserts that

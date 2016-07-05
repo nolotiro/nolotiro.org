@@ -95,7 +95,7 @@ class AdsControllerTest < ActionController::TestCase
     sign_in @user
     get :edit, id: @ad
     assert_response :redirect
-    assert_redirected_to root_path 
+    assert_redirected_to root_path
   end
 
   test 'should edit my own ad as normal user' do

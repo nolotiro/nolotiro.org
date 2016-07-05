@@ -11,17 +11,17 @@ class UsersControllerTest < ActionController::TestCase
   end
 
   test 'should get user profile by username' do
-    get :profile, username: @user.username 
+    get :profile, username: @user.username
     assert_response :success
   end
 
   test 'should get user profile by id' do
-    get :profile, username: @user.id 
+    get :profile, username: @user.id
     assert_response :success
   end
 
   test 'should get user ad list' do
-    get :listads, id: @user.id 
+    get :listads, id: @user.id
     assert_response :success
   end
 

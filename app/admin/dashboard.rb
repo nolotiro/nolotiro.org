@@ -9,7 +9,7 @@ ActiveAdmin.register_page 'Dashboard' do
     columns do
       column do
         panel 'Últimos anuncios publicados' do
-          table_for Ad.includes(:user).limit(90) do 
+          table_for Ad.includes(:user).limit(90) do
             column :id
             column :title do |ad|
               link_to ad.title, admin_ad_path(ad)

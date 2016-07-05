@@ -25,7 +25,7 @@ class LocationController < ApplicationController
       save_location params[:location]
     else
       locations = WoeidHelper.search_by_name(params[:location])
-      if locations 
+      if locations
         save_location locations[0].woeid
       else
         redirect_to location_ask_path, alert: 'Hubo un error con el cambio de su ubicación. Inténtelo de nuevo.'
@@ -37,7 +37,7 @@ class LocationController < ApplicationController
 
   def save_location woeid
     # receives woeid, set location for user
-    if user_signed_in? 
+    if user_signed_in?
       current_user.woeid = woeid
       current_user.save
     end

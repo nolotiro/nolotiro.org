@@ -2,7 +2,7 @@
 server 'beta.nolotiro.org', user: 'ruby-data', roles: %w{db web app}
 
 set :stage, :staging
-set :rails_env, 'staging' 
+set :rails_env, 'staging'
 set :deploy_to, '/var/www/beta.nolotiro.org'
 
 set :rbenv_type, :user

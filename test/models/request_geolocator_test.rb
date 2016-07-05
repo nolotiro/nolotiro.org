@@ -7,7 +7,7 @@ class RequestGeolocatorTest < ActionView::TestCase
     ip = RequestGeolocator.new(@request).ip_address
 
     assert_equal '87.223.138.147', ip
-  end 
+  end
 
   test 'suggests location from ip address' do
     @request.headers['REMOTE_ADDR'] = '8.8.8.8'

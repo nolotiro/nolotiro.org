@@ -23,7 +23,7 @@ NolotiroOrg::Application.routes.draw do
     # FIXME: type on ads#create instead of params
     # FIXME: nolotirov2 legacy - redirect from /es/ad/create
     resources :ads, path: 'ad', path_names: { new: 'create' }
-    
+
     constraints(AdConstraint.new) do
       scope '/ad' do
         get '/:id/:slug', to: 'ads#show', :as => 'adslug'
@@ -66,13 +66,13 @@ NolotiroOrg::Application.routes.draw do
     post '/addfriend/id/:id', to: 'friendships#create', as: 'add_friend'
     post '/deletefriend/:id', to: 'friendships#destroy', as: 'destroy_friend'
 
-    scope '/admin' do 
+    scope '/admin' do
       authenticate :user, lambda { |u| u.admin? } do
         mount Sidekiq::Web, at: '/jobs'
       end
-      get '/become/:id', to: 'admin#become', as: 'become_user' 
-      get '/lock/:id', to: 'admin#lock', as: 'lock_user' 
-      get '/unlock/:id', to: 'admin#unlock', as: 'unlock_user' 
+      get '/become/:id', to: 'admin#become', as: 'become_user'
+      get '/lock/:id', to: 'admin#lock', as: 'lock_user'
+      get '/unlock/:id', to: 'admin#unlock', as: 'unlock_user'
     end
 
     get '/user/edit/id/:id', to: redirect('/es/user/edit'), as: 'user_edit'
@@ -81,7 +81,7 @@ NolotiroOrg::Application.routes.draw do
     # comments
     post '/comment/create/ad_id/:id', to: 'comments#create', as: 'create_comment'
 
-    # search 
+    # search
     get '/search', to: 'search#search', as: 'search'
 
     # messaging
@@ -110,7 +110,7 @@ NolotiroOrg::Application.routes.draw do
     end
 
     # rss
-    # nolotirov2 - legacy 
+    # nolotirov2 - legacy
     # FIX: las URLs legacy vienen asi
     # /en                     /rss/feed/woeid/766273                     /ad_type/give
     # Lo solucionamos en el nginx.conf y una configuracion para hacer el search and replace

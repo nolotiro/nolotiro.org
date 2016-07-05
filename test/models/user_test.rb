@@ -9,29 +9,29 @@ class UserTest < ActiveSupport::TestCase
     @admin = FactoryGirl.create(:admin)
   end
 
-  test 'has unique usernames' do 
-    user1 = FactoryGirl.build(:user, username: 'Username') 
+  test 'has unique usernames' do
+    user1 = FactoryGirl.build(:user, username: 'Username')
     assert user1.valid?
     assert user1.save
 
-    user2 = FactoryGirl.build(:user, username: 'Username') 
+    user2 = FactoryGirl.build(:user, username: 'Username')
     assert_not user2.valid?
     assert_not user2.save
     assert_includes user2.errors[:username], 'ya está en uso'
   end
 
-  test 'has unique emails' do 
-    user1 = FactoryGirl.build(:user, email: 'larryfoster@example.com') 
+  test 'has unique emails' do
+    user1 = FactoryGirl.build(:user, email: 'larryfoster@example.com')
     assert user1.valid?
     assert user1.save
 
-    user2 = FactoryGirl.build(:user, email: 'larryfoster@example.com') 
+    user2 = FactoryGirl.build(:user, email: 'larryfoster@example.com')
     assert_not user2.valid?
     assert_not user2.save
     assert_includes user2.errors[:email], 'ya está en uso'
   end
 
-  test 'has passwords no shorter than 5 characters' do 
+  test 'has passwords no shorter than 5 characters' do
     @user.password = '1234'
     assert_not @user.valid?
     assert_includes @user.errors[:password],
@@ -57,7 +57,7 @@ class UserTest < ActiveSupport::TestCase
                     'es demasiado largo (63 caracteres máximo)'
   end
 
-  test 'roles work' do 
+  test 'roles work' do
     assert_equal @user.admin?, false
     assert_equal @admin.admin?, true
   end

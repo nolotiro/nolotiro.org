@@ -1,11 +1,11 @@
 # frozen_string_literal: true
-namespace :nolotiro do 
-  namespace :migrate do 
+namespace :nolotiro do
+  namespace :migrate do
     namespace :images do
 
       desc '[nolotiro] Migrate all the legacy photos'
       task :start => :environment do
-        # nolotiro v2 legacy 
+        # nolotiro v2 legacy
         # missing photos :/
         files = [
           '35fa6b901391b306fec4ce241df300f4.jpg',
@@ -19,12 +19,12 @@ namespace :nolotiro do
         ]
         # Touch missing photos
         files.each do |f|
-          File.open(Rails.root.to_s + '/public/legacy/uploads/ads/original/' + f, 'w') {} 
+          File.open(Rails.root.to_s + '/public/legacy/uploads/ads/original/' + f, 'w') {}
         end
-        ads = Ad.where.not(photo: nil).where(image_file_name: nil) 
+        ads = Ad.where.not(photo: nil).where(image_file_name: nil)
         ads.find_each do |ad|
-          # For all Ads if they have photo we are going to the original photo file and 
-          # save it as image; the photo attribute after the conversion is nil 
+          # For all Ads if they have photo we are going to the original photo file and
+          # save it as image; the photo attribute after the conversion is nil
           filename = Rails.root.to_s + '/public/legacy/uploads/ads/original/' + ad.photo
           #  if File.file?(filename)
           file = File.new(filename, 'r')

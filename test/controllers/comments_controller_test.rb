@@ -19,7 +19,7 @@ class CommentsControllerTest < ActionController::TestCase
   end
 
   test 'should create a comment as a user' do
-    sign_in @user 
+    sign_in @user
     assert_difference('Comment.count', 1) do
       post :create, id: @ad.id, body: 'hola mundo'
     end

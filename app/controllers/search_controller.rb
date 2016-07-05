@@ -25,7 +25,7 @@ class SearchController < ApplicationController
           without: {status: 3},
           with: {woeid_code: @id, type: type_n}
       end
-      begin 
+      begin
         @no_results_search = true if @ads.count == 0
       rescue ThinkingSphinx::SphinxError
         @ads = []

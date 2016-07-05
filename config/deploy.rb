@@ -50,7 +50,7 @@ namespace :deploy do
       # starting nginx / passenger
       sudo 'service nginx start'
 
-      # starting sidekiq / unicorn 
+      # starting sidekiq / unicorn
       sudo 'service god start'
 
     end
@@ -63,7 +63,7 @@ namespace :deploy do
       # stoping nginx / passenger
       sudo 'service nginx stop'
 
-      # stoping sidekiq / unicorn 
+      # stoping sidekiq / unicorn
       sudo 'service god stop'
 
     end
@@ -75,7 +75,7 @@ namespace :deploy do
       # restarting nginx / passenger
       sudo 'service nginx restart'
 
-      # restarting sidekiq / unicorn 
+      # restarting sidekiq / unicorn
       sudo 'service god restart'
     end
   end
@@ -83,7 +83,7 @@ namespace :deploy do
   before :restart, :clear_cache do
     on roles(:web), in: :groups, limit: 3, wait: 10 do
       within release_path do
-        with rails_env: fetch(:rails_env) do 
+        with rails_env: fetch(:rails_env) do
           execute :rake, 'nolotiro:cache:clear'
         end
       end

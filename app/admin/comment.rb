@@ -21,7 +21,7 @@ ActiveAdmin.register Comment, as: 'AdComment' do
     actions
   end
 
-  action_item :view, only: :show do 
+  action_item :view, only: :show do
     link_to 'Ver en la web', ad_path(ad_comment.ad)
   end
 

@@ -17,7 +17,7 @@ class WoeidHelperTest < ActionView::TestCase
 
   test 'suggests cities with similar names' do
     mocking_yahoo_woeid_similar('tenerife') do
-      actual = WoeidHelper.search_by_name('tenerife') 
+      actual = WoeidHelper.search_by_name('tenerife')
 
       names = [
         'Tenerife, Magdalena, Colombia (0 anuncios)',

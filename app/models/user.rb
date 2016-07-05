@@ -15,12 +15,12 @@ class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :timeoutable and :omniauthable
   devise :confirmable, :database_authenticatable, :registerable,
-    :recoverable, :rememberable, :trackable, :validatable, :lockable, 
+    :recoverable, :rememberable, :trackable, :validatable, :lockable,
     :omniauthable, omniauth_providers: [:facebook, :google_oauth2]
 
   acts_as_messageable
 
-  scope :last_week, lambda { where('created_at >= :date', :date => 1.week.ago) } 
+  scope :last_week, lambda { where('created_at >= :date', :date => 1.week.ago) }
 
   scope :top_overall, ->(limit = 20) do
     select('users.id, users.username, COUNT(ads.id) as n_ads')
@@ -66,7 +66,7 @@ class User < ActiveRecord::Base
     email
   end
 
-  def unread_messages_count 
+  def unread_messages_count
     self.mailbox.inbox.unread(self).count
   end
 
@@ -96,7 +96,7 @@ class User < ActiveRecord::Base
   end
 
   # nolotirov2 legacy: auth migration - from zend md5 to devise
-  # https://github.com/plataformatec/devise/wiki/How-To:-Migration-legacy-database 
+  # https://github.com/plataformatec/devise/wiki/How-To:-Migration-legacy-database
   def valid_password?(password)
     if self.legacy_password_hash.present?
       if ::Digest::MD5.hexdigest(password).upcase == self.legacy_password_hash.upcase

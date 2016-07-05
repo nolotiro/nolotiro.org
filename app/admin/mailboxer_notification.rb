@@ -9,7 +9,7 @@ ActiveAdmin.register Mailboxer::Notification do
   filter :sender_id, as: :string
   filter :conversation_id, as: :string
 
-  index do 
+  index do
     selectable_column
     column :subject
     column :sender

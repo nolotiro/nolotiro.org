@@ -36,7 +36,7 @@ group :test do
   gem 'poltergeist'
 end
 
-group :production, :staging do 
+group :production, :staging do
   gem 'airbrake', '~> 4.0'                  # exception notification
 end
 

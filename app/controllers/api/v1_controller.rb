@@ -13,7 +13,7 @@ module Api
         ads = Ad.want
       end
       @woeid = params[:id]
-      @page = params[:page] 
+      @page = params[:page]
       @ads = ads.available
                 .where(:woeid_code => @woeid)
                 .paginate(:page => params[:page])

@@ -49,7 +49,7 @@ class MessagesController < ApplicationController
 
       return render_new_with(recipient, receipt) unless receipt.valid?
     end
-    flash.now[:notice] = I18n.t 'mailboxer.notifications.sent' 
+    flash.now[:notice] = I18n.t 'mailboxer.notifications.sent'
     redirect_to mailboxer_message_path(@conversation)
   end
 
@@ -85,7 +85,7 @@ class MessagesController < ApplicationController
     render :index
   end
 
-  private 
+  private
   # Never trust parameters from the scary internet, only allow the white list through.
   def message_params
     params.require(:mailboxer_message).permit(:conversation_id, :body, :subject, :recipients, :sender_id)

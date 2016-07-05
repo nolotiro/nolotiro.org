@@ -11,7 +11,7 @@ FactoryGirl.define do
 
   factory :user do
     username
-    email 
+    email
     lang 'es'
     password '123456789'
     role 0
@@ -31,7 +31,7 @@ FactoryGirl.define do
 
   factory :non_confirmed_user, class: User do
     username
-    email 
+    email
     lang 'es'
     password '123456789'
     role 0

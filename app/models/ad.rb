@@ -15,7 +15,7 @@ class Ad < ActiveRecord::Base
   # user_ip       : IP address used to submit this comment
   # user_agent    : user agent string
   # referrer      : referring URL (note the spelling)
-  
+
   rakismet_attrs  author: proc { user.username },
     author_email: proc { user.email },
     user_ip: proc { ip },
@@ -47,7 +47,7 @@ class Ad < ActiveRecord::Base
 
   # legacy database: has a column with value "type", rails doesn't like that
   # the "type" column is no longer need it by rails, so we don't care about it
-  self.inheritance_column = nil 
+  self.inheritance_column = nil
 
   default_scope { order('ads.published_at DESC') }
 
@@ -68,7 +68,7 @@ class Ad < ActiveRecord::Base
 
   scope :by_type, lambda {|type|
     return scope unless type.present?
-    where('type = ?', type) 
+    where('type = ?', type)
   }
 
   scope :available, -> { where(status: 1) }
@@ -77,15 +77,15 @@ class Ad < ActiveRecord::Base
 
   scope :by_status, lambda {|status|
     return all unless status.present?
-    where('status = ?', status) 
+    where('status = ?', status)
   }
 
   scope :by_woeid_code, lambda {|woeid_code|
     return all unless woeid_code.present?
-    where('woeid_code = ?', woeid_code) 
+    where('woeid_code = ?', woeid_code)
   }
 
-  scope :last_week, lambda { where('created_at >= :date', :date => 1.week.ago) } 
+  scope :last_week, lambda { where('created_at >= :date', :date => 1.week.ago) }
 
   self.per_page = 20
 
@@ -96,11 +96,11 @@ class Ad < ActiveRecord::Base
     last_ad_creation.strftime('%d%m%y%H%M%s')
   end
 
-  def body 
+  def body
     ApplicationController.helpers.escape_privacy_data(read_attribute(:body))
   end
 
-  def title 
+  def title
     ApplicationController.helpers.escape_privacy_data(read_attribute(:title))
   end
 
@@ -132,7 +132,7 @@ class Ad < ActiveRecord::Base
     @woeid ||= WoeidHelper.convert_woeid_name(self.woeid_code)
   end
 
-  def full_title 
+  def full_title
     self.type_string + ' segunda mano ' + self.title + ' ' + self.woeid_name
   end
 
@@ -144,7 +144,7 @@ class Ad < ActiveRecord::Base
       I18n.t('nlt.want')
     else
       I18n.t('nlt.give')
-    end 
+    end
   end
 
   def type_class
@@ -155,7 +155,7 @@ class Ad < ActiveRecord::Base
       'want'
     else
       'give'
-    end 
+    end
   end
 
   def status_class
@@ -163,12 +163,12 @@ class Ad < ActiveRecord::Base
     when 1
       'available'
     when 2
-      'booked' 
+      'booked'
     when 3
-      'delivered' 
+      'delivered'
     else
       'available'
-    end 
+    end
   end
 
   def status_string
@@ -176,12 +176,12 @@ class Ad < ActiveRecord::Base
     when 1
       I18n.t('nlt.available')
     when 2
-      I18n.t('nlt.booked') 
+      I18n.t('nlt.booked')
     when 3
-      I18n.t('nlt.delivered') 
+      I18n.t('nlt.delivered')
     else
       I18n.t('nlt.available')
-    end 
+    end
   end
 
   def valid_ip_address

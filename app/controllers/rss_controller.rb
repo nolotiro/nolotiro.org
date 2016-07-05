@@ -6,7 +6,7 @@ class RssController < ApplicationController
   # GET '/rss/feed/woeid/:woeid/ad_type/:type'
   # GET '/rss/feed/woeid/:woeid/ad_type/give/status/:status'
   def feed
-    # rss filter 
+    # rss filter
     ads = Ad
     ads = params[:type] == 'want' ? ads.want : ads.give
     ads = ads.where(:woeid_code => params[:woeid])
