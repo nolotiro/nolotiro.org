@@ -19,7 +19,7 @@ class WoeidControllerTest < ActionController::TestCase
       get :show, type: 'give', status: 'delivered'
       assert_response :success
       assert_generates '/ad/listall/ad_type/give',
-                       {controller: 'woeid', action: 'show', type: 'give' }
+                       { controller: 'woeid', action: 'show', type: 'give' }
     end
   end
 

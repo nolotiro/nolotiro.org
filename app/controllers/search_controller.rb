@@ -22,8 +22,8 @@ class SearchController < ApplicationController
           page: params[:page],
           star: true,
           order: 'created_at DESC',
-          without: {status: 3},
-          with: {woeid_code: @id, type: type_n}
+          without: { status: 3 },
+          with: { woeid_code: @id, type: type_n }
       end
       begin
         @no_results_search = true if @ads.count == 0

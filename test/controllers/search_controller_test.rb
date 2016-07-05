@@ -13,7 +13,7 @@ class SearchControllerTest < ActionController::TestCase
 
   test 'should work search with a WOEID param' do
     mocking_yahoo_woeid_info(@ad.woeid_code) do
-      get :search, {q: 'ordenador', woeid: @ad.woeid_code}
+      get :search, { q: 'ordenador', woeid: @ad.woeid_code }
       assert_response :success
     end
   end

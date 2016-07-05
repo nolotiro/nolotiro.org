@@ -32,8 +32,8 @@ class Ad < ActiveRecord::Base
   validates :woeid_code, presence: true
   validates :ip, presence: true
 
-  validates :title, length: {minimum: 4, maximum: 100}
-  validates :body, length: {minimum: 30, maximum: 1000}
+  validates :title, length: { minimum: 4, maximum: 100 }
+  validates :body, length: { minimum: 30, maximum: 1000 }
 
   validates :status,
     inclusion: { in: [1, 2, 3], message: 'no es un estado válido' },
@@ -52,7 +52,7 @@ class Ad < ActiveRecord::Base
   default_scope { order('ads.published_at DESC') }
 
   has_attached_file :image,
-    styles: {thumb: '100x90>'},
+    styles: { thumb: '100x90>' },
     process_in_background: :image,
     url: '/system/img/:attachment/:id_partition/:style/:filename'
 

@@ -8,7 +8,7 @@ class Comment < ActiveRecord::Base
   validates :user_owner, presence: true
   validates :ip, presence: true
 
-  validates :body, length: {maximum: 1000}
+  validates :body, length: { maximum: 1000 }
 
   scope :recent, -> { includes(:ad, :user).order(created_at: :desc).limit(30) }
 
