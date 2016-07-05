@@ -7,7 +7,7 @@ module MultiLingualizable
   included { before_action :set_locale }
 
   class_methods do
-    def default_url_options(_options={})
+    def default_url_options(_options = {})
       { locale: I18n.locale }
     end
   end
