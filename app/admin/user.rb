@@ -27,5 +27,4 @@ ActiveAdmin.register User do
   action_item :view, only: :show do
     link_to 'Ver en la web', profile_path(user)
   end
-
 end

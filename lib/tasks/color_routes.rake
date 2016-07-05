@@ -11,7 +11,6 @@ EMW="\033[1;37m"
 NOCOLOR = "\033[0m"
 
 task color_routes: :environment do
-
   Rails.application.reload_routes!
   all_routes = Rails.application.routes.routes.to_a
   all_routes.reject! { |route| route.verb.nil? || route.path.spec.to_s == '/assets' }

@@ -52,5 +52,4 @@ ActiveAdmin.register Ad do
     @ad.ham!
     redirect_to admin_ad_path(@ad), notice: 'Este anuncio esta marcado como HAM (no es SPAM)'
   end
-
 end

@@ -1,6 +1,5 @@
 # frozen_string_literal: true
 ActiveAdmin.register Mailboxer::Notification do
-
   menu parent: 'Mensajería'
 
   filter :created_at
@@ -16,5 +15,4 @@ ActiveAdmin.register Mailboxer::Notification do
     column :conversation
     actions
   end
-
 end

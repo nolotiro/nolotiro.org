@@ -1,6 +1,5 @@
 # frozen_string_literal: true
 FactoryGirl.define do
-
   factory :ad do
     title 'ordenador en Vallecas'
     body 'pentium 9 con monitor de plasma de 90 pulgadas. pasar a recoger'
@@ -16,5 +15,4 @@ FactoryGirl.define do
     trait(:in_bar) { woeid_code 753_692 }
     trait(:in_ten) { woeid_code 773_692 }
   end
-
 end

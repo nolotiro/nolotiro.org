@@ -2,7 +2,6 @@
 namespace :nolotiro do
   namespace :migrate do
     namespace :images do
-
       desc '[nolotiro] Migrate all the legacy photos'
       task start: :environment do
         # nolotiro v2 legacy
@@ -34,7 +33,6 @@ namespace :nolotiro do
           file.close
           #  end
         end
-
       end
     end
   end

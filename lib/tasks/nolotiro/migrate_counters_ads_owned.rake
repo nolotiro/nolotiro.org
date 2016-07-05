@@ -9,7 +9,6 @@ namespace :nolotiro do
           User.reset_counters(u.id, :ads)
         end
       end
-
     end
   end
 end

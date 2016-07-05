@@ -1,6 +1,5 @@
 # frozen_string_literal: true
 FactoryGirl.define do
-
   sequence :email do |n|
     "foo#{n}@example.com"
   end
@@ -37,5 +36,4 @@ FactoryGirl.define do
     role 0
     woeid 766_273
   end
-
 end

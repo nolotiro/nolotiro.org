@@ -1,6 +1,5 @@
 # frozen_string_literal: true
 ActiveAdmin.register Comment, as: 'AdComment' do
-
   # permit_params
 
   filter :created_at
@@ -24,6 +23,5 @@ ActiveAdmin.register Comment, as: 'AdComment' do
   action_item :view, only: :show do
     link_to 'Ver en la web', ad_path(ad_comment.ad)
   end
-
 end
 

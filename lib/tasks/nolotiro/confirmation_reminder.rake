@@ -6,5 +6,4 @@ namespace :nolotiro do
       UserMailer.confirmation_reminder(user).deliver
     end
   end
-
 end

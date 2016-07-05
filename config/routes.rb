@@ -2,7 +2,6 @@
 require 'sidekiq/web'
 
 NolotiroOrg::Application.routes.draw do
-
   ActiveAdmin.routes(self)
 
   scope '/api' do
@@ -17,7 +16,6 @@ NolotiroOrg::Application.routes.draw do
 
   # i18n
   scope '(:locale)', locale: /#{I18n.available_locales.join("|")}/ do
-
     root 'ads#index'
 
     # FIXME: type on ads#create instead of params
@@ -133,5 +131,4 @@ NolotiroOrg::Application.routes.draw do
     get '/contact', to: 'contact#new', as: 'contacts'
     post '/contact', to: 'contact#create'
   end
-
 end

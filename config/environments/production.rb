@@ -81,5 +81,4 @@ NolotiroOrg::Application.configure do
   # for images on mailer
   config.action_controller.asset_host = 'https://nolotiro.org'
   config.action_mailer.asset_host = config.action_controller.asset_host
-
 end

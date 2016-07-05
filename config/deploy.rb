@@ -31,7 +31,6 @@ after  'deploy:finished',            'thinking_sphinx:restart'
 after  'deploy:finished',            'deploy:restart'
 
 namespace :deploy do
-
   desc 'Perform migrations'
   task :migrations do
     on roles(:db) do
@@ -46,26 +45,22 @@ namespace :deploy do
   desc 'Start application'
   task :start do
     on roles(:app), in: :sequence, wait: 5 do
-
       # starting nginx / passenger
       sudo 'service nginx start'
 
       # starting sidekiq / unicorn
       sudo 'service god start'
-
     end
   end
 
   desc 'Stop application'
   task :stop do
     on roles(:app), in: :sequence, wait: 5 do
-
       # stoping nginx / passenger
       sudo 'service nginx stop'
 
       # stoping sidekiq / unicorn
       sudo 'service god stop'
-
     end
   end
 
