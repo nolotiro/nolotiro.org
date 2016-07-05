@@ -13,5 +13,4 @@ class ContactMailer < ActionMailer::Base
       subject: "nolotiro.org - contact from #{email}"
     )
   end
-
 end

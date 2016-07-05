@@ -2,7 +2,6 @@
 require 'test_helper'
 
 class PageControllerTest < ActionController::TestCase
-
   include Devise::Test::ControllerHelpers
 
   test 'should get faqs' do
@@ -29,5 +28,4 @@ class PageControllerTest < ActionController::TestCase
     get :legal
     assert_response :success
   end
-
 end

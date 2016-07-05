@@ -2,7 +2,6 @@
 require 'test_helper'
 
 class AdminControllerTest < ActionController::TestCase
-
   include Devise::Test::ControllerHelpers
 
   setup do
@@ -63,5 +62,4 @@ class AdminControllerTest < ActionController::TestCase
     assert_equal(user.active_for_authentication?, true)
     assert_equal("Successfully unlocked user #{@user.username}. The user can log in.", flash[:notice])
   end
-
 end

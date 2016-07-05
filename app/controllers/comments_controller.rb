@@ -1,6 +1,5 @@
 # frozen_string_literal: true
 class CommentsController < ApplicationController
-
   before_action :authenticate_user!
 
   # POST /comment/create/ad_id/:id
@@ -22,5 +21,4 @@ class CommentsController < ApplicationController
       render template: 'ads/show'
     end
   end
-
 end

@@ -1,6 +1,5 @@
 # frozen_string_literal: true
 class Contact
-
   include ActiveModel::Validations
   include ActiveModel::Conversion
   extend ActiveModel::Naming
@@ -23,5 +22,4 @@ class Contact
   def persisted?
     false
   end
-
 end

@@ -31,5 +31,4 @@ class Ability
     end
     can :read, :all
   end
-
 end

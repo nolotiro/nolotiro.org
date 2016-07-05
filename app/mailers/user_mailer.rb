@@ -9,5 +9,4 @@ class UserMailer < ActionMailer::Base
       subject: '[nolotiro.org] Falta que confirmes tu cuenta'
     )
   end
-
 end

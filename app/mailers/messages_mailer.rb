@@ -11,5 +11,4 @@ class MessagesMailer < ActionMailer::Base
       subject: "[nolotiro.org] Tienes un nuevo mensaje del usuario #{@from_username}"
     )
   end
-
 end

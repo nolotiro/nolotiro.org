@@ -15,5 +15,4 @@ class Comment < ActiveRecord::Base
   def body
     ApplicationController.helpers.escape_privacy_data(read_attribute(:body))
   end
-
 end

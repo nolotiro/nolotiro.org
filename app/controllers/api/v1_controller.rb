@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 module Api
   class V1Controller < ApplicationController
-
     def ad_show
       @ad = Ad.find params[:id]
     end
@@ -22,6 +21,5 @@ module Api
     def woeid_list
      @section_locations = AdHelper.get_locations_ranking
     end
-
   end
 end

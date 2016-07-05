@@ -38,5 +38,4 @@ class SearchControllerTest < ActionController::TestCase
     assert_response :redirect
     assert_redirected_to location_ask_path
   end
-
 end

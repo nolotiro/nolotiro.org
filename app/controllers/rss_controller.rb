@@ -1,6 +1,5 @@
 # frozen_string_literal: true
 class RssController < ApplicationController
-
   layout false
 
   # GET '/rss/feed/woeid/:woeid/ad_type/:type'
@@ -24,5 +23,4 @@ class RssController < ApplicationController
 
     @ads = ads.limit(30)
   end
-
 end

@@ -2,7 +2,6 @@
 require 'test_helper'
 
 class CommentTest < ActiveSupport::TestCase
-
   test 'comment requires everything' do
     c = Comment.new
     c.valid?
@@ -19,5 +18,4 @@ class CommentTest < ActiveSupport::TestCase
     comment.body = text
     assert_equal(comment.body, expected_text)
   end
-
 end

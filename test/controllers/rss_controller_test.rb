@@ -2,7 +2,6 @@
 require 'test_helper'
 
 class RssControllerTest < ActionController::TestCase
-
   setup do
     @ad = FactoryGirl.create(:ad)
   end
@@ -31,5 +30,4 @@ class RssControllerTest < ActionController::TestCase
     get :feed, woeid: @ad.woeid_code, type: 'want', format: 'rss'
     assert_response :success
   end
-
 end

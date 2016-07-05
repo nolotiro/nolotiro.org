@@ -106,5 +106,4 @@ class LegacyRoutingTest < ActionDispatch::IntegrationTest
     #get "/es/ad/edit/id/#{@ad.id}"
     #assert_redirected_to edit_ad_url(@ad)
   end
-
 end

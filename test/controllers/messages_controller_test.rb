@@ -2,7 +2,6 @@
 require 'test_helper'
 
 class MessagesControllerTest < ActionController::TestCase
-
   include Devise::Test::ControllerHelpers
 
   setup do
@@ -69,5 +68,4 @@ class MessagesControllerTest < ActionController::TestCase
     post :create, mailboxer_message: { recipients: @user1, sender: @user2, body: 'lo sigues teniendo? ', subject: 'interesado en el ordenador' }
     # TODO: finish
   end
-
 end

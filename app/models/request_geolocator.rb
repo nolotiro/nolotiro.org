@@ -28,5 +28,4 @@ class RequestGeolocator
 
     location
   end
-
 end

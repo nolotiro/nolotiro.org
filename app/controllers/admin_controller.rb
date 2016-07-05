@@ -1,6 +1,5 @@
 # frozen_string_literal: true
 class AdminController < ApplicationController
-
   before_action :authenticate_user!
   authorize_resource :class => false
 
@@ -24,5 +23,4 @@ class AdminController < ApplicationController
     flash[:notice] = "Successfully unlocked user #{user.username}. The user can log in."
     redirect_to profile_url(user)
   end
-
 end

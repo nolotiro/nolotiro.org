@@ -29,5 +29,4 @@ class WoeidHelperTest < ActionView::TestCase
       assert_equal [369486, 369485, 773692], actual.map(&:woeid)
     end
   end
-
 end

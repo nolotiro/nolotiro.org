@@ -2,7 +2,6 @@
 require 'test_helper'
 
 class ContactControllerTest < ActionController::TestCase
-
   include Devise::Test::ControllerHelpers
 
   test 'should get contact form' do
@@ -15,5 +14,4 @@ class ContactControllerTest < ActionController::TestCase
     assert_redirected_to root_path
     assert_equal( I18n.t('nlt.contact_thanks'), flash[:notice] )
   end
-
 end

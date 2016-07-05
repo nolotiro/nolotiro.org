@@ -2,7 +2,6 @@
 require 'test_helper'
 
 class FriendshipsControllerTest < ActionController::TestCase
-
   include Devise::Test::ControllerHelpers
 
   setup do
@@ -26,5 +25,4 @@ class FriendshipsControllerTest < ActionController::TestCase
     post :create, id: @friend.id
     assert_redirected_to profile_path(@friend.username)
   end
-
 end

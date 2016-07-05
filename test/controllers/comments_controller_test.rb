@@ -2,7 +2,6 @@
 require 'test_helper'
 
 class CommentsControllerTest < ActionController::TestCase
-
   include Devise::Test::ControllerHelpers
 
   setup do
@@ -26,5 +25,4 @@ class CommentsControllerTest < ActionController::TestCase
     assert_response :redirect
     assert_redirected_to ad_path(@ad)
   end
-
 end

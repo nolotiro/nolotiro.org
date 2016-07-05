@@ -10,5 +10,4 @@ class CommentsMailer < ActionMailer::Base
       subject: t('nlt.comments.subject', ad: @ad.title)
     )
   end
-
 end

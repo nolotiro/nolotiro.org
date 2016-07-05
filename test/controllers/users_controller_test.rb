@@ -2,7 +2,6 @@
 require 'test_helper'
 
 class UsersControllerTest < ActionController::TestCase
-
   include Devise::Test::ControllerHelpers
 
   setup do
@@ -24,5 +23,4 @@ class UsersControllerTest < ActionController::TestCase
     get :listads, id: @user.id
     assert_response :success
   end
-
 end

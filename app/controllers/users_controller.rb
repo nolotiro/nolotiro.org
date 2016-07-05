@@ -1,6 +1,5 @@
 # frozen_string_literal: true
 class UsersController < ApplicationController
-
   # GET '/ad/listuser/id/:id'
   def listads
     # ads lists for user

@@ -44,5 +44,4 @@ class LocationController < ApplicationController
     cookies[:location] = woeid
     redirect_to ads_woeid_path(id: woeid, type: 'give')
   end
-
 end

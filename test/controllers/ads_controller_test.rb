@@ -174,5 +174,4 @@ class AdsControllerTest < ActionController::TestCase
 
     assert_redirected_to ads_path
   end
-
 end

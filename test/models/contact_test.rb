@@ -2,7 +2,6 @@
 require 'test_helper'
 
 class ContactTest < ActiveSupport::TestCase
-
   test 'contact requires message' do
     c = Contact.new
     c.valid?
@@ -25,5 +24,4 @@ class ContactTest < ActiveSupport::TestCase
     c = Contact.new :email => 'bla@bla.com', :message => 'yyeaaahhhyeaaahhhyeaaahhhyeaaahhhyeaaahhhyeaaahhhyeaaahhhyeaaahhhyeaaahhhyeaaahhhyeaaahhhyeaaahhhyeaaahhheaaahhh'
     assert c.valid?
   end
-
 end

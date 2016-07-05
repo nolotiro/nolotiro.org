@@ -42,5 +42,4 @@ class LocationControllerTest < ActionController::TestCase
     assert_response :redirect
     assert_redirected_to ads_woeid_path(288888, type: 'give')
   end
-
 end

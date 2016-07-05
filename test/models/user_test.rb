@@ -2,7 +2,6 @@
 require 'test_helper'
 
 class UserTest < ActiveSupport::TestCase
-
   setup do
     @ad = FactoryGirl.create(:ad)
     @user = FactoryGirl.create(:user, 'email' => 'jaimito@gmail.com', 'username' => 'jaimito')

@@ -1,6 +1,5 @@
 # frozen_string_literal: true
 class FriendshipsController < ApplicationController
-
   before_action :authenticate_user!
 
   def create
@@ -22,5 +21,4 @@ class FriendshipsController < ApplicationController
     flash[:notice] = I18n.t('friendships.destroy.success', username: username)
     redirect_to profile_path(username)
   end
-
 end

@@ -14,5 +14,4 @@ class AdHelperTest < ActionView::TestCase
       assert_equal(expected, actual)
     end
   end
-
 end

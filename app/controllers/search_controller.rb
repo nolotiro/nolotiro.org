@@ -1,6 +1,5 @@
 # frozen_string_literal: true
 class SearchController < ApplicationController
-
   # GET /search
   def search
     @search = true
@@ -35,5 +34,4 @@ class SearchController < ApplicationController
     end
 
   end
-
 end
