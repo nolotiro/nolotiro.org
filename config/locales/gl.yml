@@ -1,6 +1,6 @@
 gl:
   active_admin:
-    dashboard: " "
+    dashboard: 
   activemodel:
     attributes:
       contact:

@@ -1,6 +1,6 @@
 en:
   active_admin:
-    dashboard: 
+    dashboard: Dashboard
   activemodel:
     attributes:
       contact:
