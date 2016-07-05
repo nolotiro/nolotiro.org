@@ -79,7 +79,7 @@ class LegacyRoutingTest < ActionDispatch::IntegrationTest
 
   test 'should route user profile' do
     assert_routing "/es/profile/#{@user.id}", controller: 'users', action: 'profile', locale: 'es', username: (@user.id).to_s
-    assert_routing "/es/profile/#{@user.username}", controller:'users', action: 'profile', locale: 'es', username: @user.username
+    assert_routing "/es/profile/#{@user.username}", controller: 'users', action: 'profile', locale: 'es', username: @user.username
     assert_routing "/es/ad/listuser/id/#{@user.id}", controller: 'users', action: 'listads', locale: 'es', id: @user.id.to_s
   end
 
