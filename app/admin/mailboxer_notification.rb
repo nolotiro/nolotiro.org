@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 ActiveAdmin.register Mailboxer::Notification do
 
   menu parent: 'Mensajería'

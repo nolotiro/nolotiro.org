@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 class FriendshipsController < ApplicationController
 
   before_action :authenticate_user!

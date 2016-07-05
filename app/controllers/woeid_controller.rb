@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 class WoeidController < ApplicationController
 
   #caches_action :show, :cache_path => Proc.new { |c| c.params }, unless: :current_user

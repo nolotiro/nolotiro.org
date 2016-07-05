@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 #
 # Wrapper around MaxMind DB search results
 #

@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 namespace :nolotiro do
   namespace :cache do
     desc '[nolotiro.org] Clears Rails cache'

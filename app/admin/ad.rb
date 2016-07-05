@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 ActiveAdmin.register Ad do
   permit_params :woeid_code, :type
 

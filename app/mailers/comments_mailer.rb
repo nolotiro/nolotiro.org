@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 class CommentsMailer < ActionMailer::Base
   default from: Rails.application.secrets.emails['default_from']
 

@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 ActiveAdmin.register Comment, as: 'AdComment' do
 
   # permit_params

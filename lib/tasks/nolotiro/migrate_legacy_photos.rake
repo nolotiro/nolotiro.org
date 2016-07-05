@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 namespace :nolotiro do 
   namespace :migrate do 
     namespace :images do

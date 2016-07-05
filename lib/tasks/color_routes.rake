@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 desc 'Pretty version on rails rake routes.'
 
 EMK="\033[1;30m"

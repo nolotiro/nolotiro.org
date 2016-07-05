@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 server 'nolotiro.org', user: 'ruby-data', roles: %w{db web app}
 
 set :stage, :production

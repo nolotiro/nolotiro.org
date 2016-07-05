@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 Rails.application.config.middleware.use OmniAuth::Builder do
   provider :facebook,
            Rails.application.secrets.omniauth['facebook']['app_id'],

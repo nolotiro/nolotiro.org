@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 require 'sidekiq/web'
 
 NolotiroOrg::Application.routes.draw do

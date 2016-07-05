@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 root = '/var/www/nolotiro.org/current'
 working_directory root
 pid "#{root}/tmp/pids/unicorn.pid"
