@@ -51,15 +51,15 @@ NolotiroOrg::Application.routes.draw do
     end
 
     devise_for :users,
-      skip: :omniauth_callbacks,
-      controllers: { registrations: 'registrations' },
-      path: 'user',
-      path_names: {
-        sign_up: 'register',
-        sign_in: 'login',
-        sign_out: 'logout',
-        password: 'reset'
-    }
+               skip: :omniauth_callbacks,
+               controllers: { registrations: 'registrations' },
+               path: 'user',
+               path_names: {
+                 sign_up: 'register',
+                 sign_in: 'login',
+                 sign_out: 'logout',
+                 password: 'reset'
+             }
 
     post '/addfriend/id/:id', to: 'friendships#create', as: 'add_friend'
     post '/deletefriend/:id', to: 'friendships#destroy', as: 'destroy_friend'

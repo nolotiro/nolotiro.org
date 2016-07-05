@@ -35,12 +35,12 @@ class Ad < ActiveRecord::Base
   validates :body, length: { minimum: 30, maximum: 1000 }
 
   validates :status,
-    inclusion: { in: [1, 2, 3], message: 'no es un estado válido' },
-    presence: true
+            inclusion: { in: [1, 2, 3], message: 'no es un estado válido' },
+            presence: true
 
   validates :type,
-    inclusion: { in: [1, 2], message: 'no es un tipo válido' },
-    presence: true
+            inclusion: { in: [1, 2], message: 'no es un tipo válido' },
+            presence: true
 
   # validate :valid_ip_address
 
@@ -51,9 +51,9 @@ class Ad < ActiveRecord::Base
   default_scope { order('ads.published_at DESC') }
 
   has_attached_file :image,
-    styles: { thumb: '100x90>' },
-    process_in_background: :image,
-    url: '/system/img/:attachment/:id_partition/:style/:filename'
+                    styles: { thumb: '100x90>' },
+                    process_in_background: :image,
+                    url: '/system/img/:attachment/:id_partition/:style/:filename'
 
   validates_attachment :image, content_type: { content_type: ['image/jpg', 'image/jpeg', 'image/png', 'image/gif'] }
 
