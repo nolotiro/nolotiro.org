@@ -15,8 +15,8 @@ set :deploy_via, :remote_cache
 
 set :ssh_options, forward_agent: true
 
-set :linked_files, %w{config/database.yml config/secrets.yml config/newrelic.yml}
-set :linked_dirs, %w{db/sphinx log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system public/legacy vendor/geolite}
+set :linked_files, %w(config/database.yml config/secrets.yml config/newrelic.yml)
+set :linked_dirs, %w(db/sphinx log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system public/legacy vendor/geolite)
 
 set :bundle_binstubs, nil
 set :keep_releases, 5
