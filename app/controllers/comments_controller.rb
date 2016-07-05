@@ -5,7 +5,7 @@ class CommentsController < ApplicationController
   # POST /comment/create/ad_id/:id
   def create
     @ad = Ad.find params[:id]
-    @comment = Comment.new(      ads_id: params[:id],
+    @comment = Comment.new( ads_id: params[:id],
       body: params[:body],
       user_owner: current_user.id,
       ip: request.remote_ip)

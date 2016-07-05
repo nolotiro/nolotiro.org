@@ -74,7 +74,7 @@ gem 'omniauth-google-oauth2'                        # users login with google
 gem 'cancancan', '~> 1.10'                          # authorization# authorization# authorization
 gem 'paperclip', '~> 4.0'                           # images
 gem 'delayed_paperclip'                             # images processing in background
-gem 'recaptcha', require: 'recaptcha/rails'      # captcha
+gem 'recaptcha', require: 'recaptcha/rails' # captcha
 gem 'ipaddress'                                     # ip address validation
 gem 'localeapp'                                     # i18n interface
 gem 'activeadmin', github: 'activeadmin'            # admin backend
