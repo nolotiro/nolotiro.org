@@ -7,9 +7,9 @@ module Api
 
     def woeid_show
       ads = if params[:type] == 'give'
-        Ad.give
-      else
-        Ad.want
+              Ad.give
+            else
+              Ad.want
             end
       @woeid = params[:id]
       @page = params[:page]

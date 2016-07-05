@@ -22,8 +22,8 @@ module WoeidHelper
       value = { full: place.fullname, short: place.name }
       Rails.cache.write(key, value)
       return value
-  rescue GeoPlanet::NotFound
-    return nil
+    rescue GeoPlanet::NotFound
+      return nil
     end
   end
 
