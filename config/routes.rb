@@ -130,5 +130,10 @@ NolotiroOrg::Application.routes.draw do
     # contact
     get '/contact', to: 'contact#new', as: 'contacts'
     post '/contact', to: 'contact#create'
+
+    # dismissing
+    resources :announcements, only: [] do
+      resources :dismissals, only: :create
+    end
   end
 end
