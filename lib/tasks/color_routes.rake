@@ -29,7 +29,7 @@ task color_routes: :environment do
     group.each do |route|
       name = EMC + route.name.to_s.rjust(max_widths[:names]) + NOCOLOR
       verb = EMY + route.verb.inspect.gsub(/^.{2}|.{2}$/, '').center(max_widths[:verbs]) + NOCOLOR
-      path = EMR + route.path.spec.to_s.ljust(max_widths[:paths]).gsub(/\.?:\w+/){|s|EMB + s + EMR} + NOCOLOR
+      path = EMR + route.path.spec.to_s.ljust(max_widths[:paths]).gsub(/\.?:\w+/){ |s|EMB + s + EMR } + NOCOLOR
       action = EMW + route.defaults[:action].to_s.ljust(max_widths[:actions]) + NOCOLOR
 
       puts "#{name} | #{verb} | #{path} | #{action}"
