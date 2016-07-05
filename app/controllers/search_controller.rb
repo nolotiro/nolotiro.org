@@ -32,6 +32,5 @@ class SearchController < ApplicationController
       end
       render 'woeid/show'
     end
-
   end
 end
