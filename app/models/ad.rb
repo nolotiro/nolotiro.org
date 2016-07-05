@@ -96,11 +96,11 @@ class Ad < ActiveRecord::Base
   end
 
   def body
-    ApplicationController.helpers.escape_privacy_data(read_attribute(:body))
+    ApplicationController.helpers.escape_privacy_data(self[:body])
   end
 
   def title
-    ApplicationController.helpers.escape_privacy_data(read_attribute(:title))
+    ApplicationController.helpers.escape_privacy_data(self[:title])
   end
 
   def readed_counter
