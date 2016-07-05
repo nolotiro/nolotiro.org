@@ -6,11 +6,11 @@ module Api
     end
 
     def woeid_show
-      if params[:type] == 'give'
-        ads = Ad.give
+      ads = if params[:type] == 'give'
+        Ad.give
       else
-        ads = Ad.want
-      end
+        Ad.want
+            end
       @woeid = params[:id]
       @page = params[:page]
       @ads = ads.available
