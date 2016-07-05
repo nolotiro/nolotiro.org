@@ -19,7 +19,7 @@ class WoeidController < ApplicationController
 
     @woeid = WoeidHelper.convert_woeid_name(@id) if @id.present?
 
-    if @id.present? == true && @woeid == nil
+    if @id.present? == true && @woeid.nil?
       raise ActionController::RoutingError.new('Not Found')
     end
 
