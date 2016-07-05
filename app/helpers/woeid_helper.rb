@@ -19,7 +19,7 @@ module WoeidHelper
 
       return nil unless place.town?
 
-      value = { full: place.fullname , short: place.name }
+      value = { full: place.fullname, short: place.name }
       Rails.cache.write(key, value)
       return value
   rescue GeoPlanet::NotFound
