@@ -67,7 +67,7 @@ class User < ActiveRecord::Base
   end
 
   def unread_messages_count
-    self.mailbox.inbox.unread(self).count
+    mailbox.inbox.unread(self).count
   end
 
   def admin?
@@ -76,15 +76,15 @@ class User < ActiveRecord::Base
 
   # this method is called by devise to check for "active" state of the model
   def active_for_authentication?
-    super and self.locked != 1
+    super and locked != 1
   end
 
   def unlock!
-    self.update_column('locked', 0)
+    update_column('locked', 0)
   end
 
   def lock!
-    self.update_column('locked', 1)
+    update_column('locked', 1)
   end
 
   def default_lang
@@ -92,17 +92,17 @@ class User < ActiveRecord::Base
   end
 
   def friend? user
-    self.friends.where(id: user.id).count > 0 ? true : false
+    friends.where(id: user.id).count > 0 ? true : false
   end
 
   # nolotirov2 legacy: auth migration - from zend md5 to devise
   # https://github.com/plataformatec/devise/wiki/How-To:-Migration-legacy-database
   def valid_password?(password)
-    if self.legacy_password_hash.present?
-      if ::Digest::MD5.hexdigest(password).upcase == self.legacy_password_hash.upcase
+    if legacy_password_hash.present?
+      if ::Digest::MD5.hexdigest(password).upcase == legacy_password_hash.upcase
         self.password = password
         self.legacy_password_hash = nil
-        self.save!
+        save!
         true
       else
         false

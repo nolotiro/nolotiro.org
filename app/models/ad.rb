@@ -112,7 +112,7 @@ class Ad < ActiveRecord::Base
   end
 
   def increment_readed_count!
-    Ad.increment_counter(:readed_count, self.id)
+    Ad.increment_counter(:readed_count, id)
   end
 
   def slug
@@ -128,11 +128,11 @@ class Ad < ActiveRecord::Base
   end
 
   def woeid
-    @woeid ||= WoeidHelper.convert_woeid_name(self.woeid_code)
+    @woeid ||= WoeidHelper.convert_woeid_name(woeid_code)
   end
 
   def full_title
-    self.type_string + ' segunda mano ' + self.title + ' ' + self.woeid_name
+    type_string + ' segunda mano ' + title + ' ' + woeid_name
   end
 
   def type_string
@@ -192,7 +192,7 @@ class Ad < ActiveRecord::Base
   end
 
   def meta_title
-    "#{I18n.t('nlt.keywords')} #{self.title} #{self.woeid_name}"
+    "#{I18n.t('nlt.keywords')} #{title} #{woeid_name}"
   end
 
   def bumpable?
