@@ -74,7 +74,7 @@ class User < ActiveRecord::Base
     role == 1
   end
 
-  #this method is called by devise to check for "active" state of the model
+  # this method is called by devise to check for "active" state of the model
   def active_for_authentication?
     super and self.locked != 1
   end

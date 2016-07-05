@@ -4,11 +4,11 @@ ActiveAdmin.register Comment, as: 'AdComment' do
 
   filter :created_at
 
-  #controller do
+  # controller do
   #  def scoped_collection
   #    super.includes :ad, :user
   #  end
-  #end
+  # end
 
   index do
     selectable_column

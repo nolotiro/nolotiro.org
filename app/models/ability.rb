@@ -17,9 +17,9 @@ class Ability
       can :create, Comment
       can :create, Mailboxer::Message
       # FIXME: not working on messages_controller.rb
-      #can :create, :show, Conversation do |conversation|
+      # can :create, :show, Conversation do |conversation|
       #  conversation.is_participant? user
-      #end
+      # end
       can :list, Mailboxer::Message, user_from: user.id
       can :list, Mailboxer::Message, user_to: user.id
       cannot :lock, Admin

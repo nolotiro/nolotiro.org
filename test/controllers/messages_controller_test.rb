@@ -29,7 +29,7 @@ class MessagesControllerTest < ActionController::TestCase
     end
     m = Mailboxer::Conversation.last
     assert_redirected_to mailboxer_message_path(id: m.id)
-    #asmailboxer_sert_redirected_to message_show_path(id: m.id, subject: m.subject )
+    # asmailboxer_sert_redirected_to message_show_path(id: m.id, subject: m.subject )
     sign_out @user1
     sign_in @user2
     get :show, id: m.id

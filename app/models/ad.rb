@@ -42,7 +42,7 @@ class Ad < ActiveRecord::Base
     inclusion: { in: [1, 2], message: 'no es un tipo válido' },
     presence: true
 
-  #validate :valid_ip_address
+  # validate :valid_ip_address
 
   # legacy database: has a column with value "type", rails doesn't like that
   # the "type" column is no longer need it by rails, so we don't care about it
@@ -59,8 +59,8 @@ class Ad < ActiveRecord::Base
 
   validates_attachment_size :image, in: 0.megabytes..5.megabytes
 
-  #before_save :titleize_title if self.title? and /[[:upper:]]/.match(self.title)
-  #before_save :titleize_body if self.body and /[[:upper:]]/.match(self.body)
+  # before_save :titleize_title if self.title? and /[[:upper:]]/.match(self.title)
+  # before_save :titleize_body if self.body and /[[:upper:]]/.match(self.body)
 
   scope :give, -> { where(type: 1) }
   scope :want, -> { where(type: 2) }

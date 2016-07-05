@@ -8,7 +8,7 @@ class WoeidTest < ActionDispatch::IntegrationTest
   it 'returns a hard 404 error if woeid is not type town' do
     mocking_yahoo_woeid_info(23_424_801) do
       assert_raise(ActionController::RoutingError) do
-        get '/es/woeid/23424801/give' #woeid of Ecuador Country
+        get '/es/woeid/23424801/give' # woeid of Ecuador Country
       end
     end
   end

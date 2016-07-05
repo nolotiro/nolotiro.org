@@ -8,7 +8,7 @@ if Rails.env.production? or Rails.env.staging?
   end
 end
 
-#class AirbrakeDeliveryWorker
+# class AirbrakeDeliveryWorker
 #  include Airbrake
 #  include Sidekiq::Worker
 #  sidekiq_options queue: :airbrake, retry: false
@@ -16,13 +16,13 @@ end
 #  def perform(notice)
 #    Airbrake.sender.send_to_airbrake notice
 #  end
-#end
+# end
 #
-#Airbrake.configure do |config|
+# Airbrake.configure do |config|
 #  config.api_key = Rails.application.secrets.airbrake["apikey"]
 #  config.host    = Rails.application.secrets.airbrake["host"]
 #  config.port    = Rails.application.secrets.airbrake["port"]
 #  config.async do |notice|
 #    AirbrakeDeliveryWorker.perform_async(notice.to_xml)
 #  end
-#end
+# end
