@@ -12,7 +12,7 @@ class LocationController < ApplicationController
     return unless params[:location]
 
     locations = WoeidHelper.search_by_name(params[:location])
-    if (not locations.nil?) && locations.count == 1
+    if (!locations.nil?) && locations.count == 1
       save_location locations[0].woeid
     else
       @locations = locations
