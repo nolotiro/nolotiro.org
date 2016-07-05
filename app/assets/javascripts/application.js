@@ -2,7 +2,6 @@
 //= require jquery_ujs
 //= require jquery.cookiebar
 //= require moment-with-locales
-//= require_tree .
 
 $(document).ready(function(){
 
