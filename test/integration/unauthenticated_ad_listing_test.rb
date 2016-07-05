@@ -9,7 +9,7 @@ class UnauthenticatedAdListing < ActionDispatch::IntegrationTest
 
   before do
     create(:ad, :in_mad, title: 'ava_mad', published_at: 1.hour.ago, status: 1)
-    create(:ad, :in_bar, title: 'ava_bar', published_at: 2.hour.ago, status: 1)
+    create(:ad, :in_bar, title: 'ava_bar', published_at: 2.hours.ago, status: 1)
     create(:ad, :in_mad, title: 'res_mad', status: 2)
     create(:ad, :in_ten, title: 'del_ten', status: 3)
 
