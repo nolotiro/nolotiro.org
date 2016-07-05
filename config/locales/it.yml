@@ -130,7 +130,7 @@ it:
   devise:
     confirmations:
       action: Conferma il tuo account
-      confirmed: Il tuo account è stato correttamente confermato. Ora sei collegato.
+      confirmed: Il tuo account è stato correttamente confermato.
       instructions: 'Per favore conferma il tuo email accedendo al seguente link:'
       resend: Invia un altra volta le istruzione di conferma
       send_instructions: Riceverai un messaggio email con le istruzioni per confermare il tuo account entro qualche minuto.
