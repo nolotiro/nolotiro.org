@@ -13,7 +13,7 @@ class LocaleTest < ActionDispatch::IntegrationTest
   end
 
   it 'assigns locale from param if available' do
-    get root_path(locale: 'pt'), {}, 'HTTP_ACCEPT_LANGUAGE' => 'it'
+    get root_path(locale: 'pt')
 
     assert_equal :pt, I18n.locale
   end
