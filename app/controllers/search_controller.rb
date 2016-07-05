@@ -7,7 +7,7 @@ class SearchController < ApplicationController
     type_n = params[:ad_type] == 'give' ? 1 : 2
 
     @id = params[:woeid] || params[:woeid_code]
-    @id = current_user.woeid if user_signed_in? and @id.nil?
+    @id = current_user.woeid if user_signed_in? && @id.nil?
 
     if @id.nil?
       redirect_to location_ask_path
