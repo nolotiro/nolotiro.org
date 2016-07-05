@@ -59,9 +59,7 @@ phantomjs's linux x86_64 binary within the repo itself.
 
 The database we use is legacy, a MySQL with the schema of [v2](https://github.com/alabs/nolotiro)
 
-For the WOEID we use [Yahoo GeoPlanet](http://developer.yahoo.com/geo/geoplanet/),
-so you need to register, create a new app and configure it in the relevant environment in
-*config/app_config.yml* (key *geoplanet_app_id*)
+For the WOEID we use [Yahoo GeoPlanet](http://developer.yahoo.com/geo/geoplanet/).
 
 For the GeoLocation we use [GeoLite2] City. To download the database, run
 
