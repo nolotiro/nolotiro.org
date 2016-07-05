@@ -19,7 +19,7 @@ def create_user(role = 0)
 end
 
 def create_ad(user)
-  timestamp = rand((Time.zone.now - 1.week) .. Time.zone.now)
+  timestamp = rand((Time.zone.now - 1.week)..Time.zone.now)
   ad = Ad.create(
     user: user,
     title: Faker::Hipster.sentence(3).truncate(60),
