@@ -11,22 +11,22 @@ class AdsControllerTest < ActionController::TestCase
     @admin = FactoryGirl.create(:admin)
   end
 
-  test "should get index" do
+  test 'should get index' do
     mocking_yahoo_woeid_info(@ad.woeid_code) do
-      @request.headers["REMOTE_ADDR"] = "87.223.138.147"
+      @request.headers['REMOTE_ADDR'] = '87.223.138.147'
       get :index
       assert_response :success
       assert_not_nil assigns(:ads)
     end
   end
 
-  test "should not get new if not signed in" do
+  test 'should not get new if not signed in' do
     get :new
     assert_response :redirect
     assert_redirected_to new_user_session_url
   end
 
-  test "should get new if signed in" do
+  test 'should get new if signed in' do
     mocking_yahoo_woeid_info(@user.woeid) do
       sign_in @user
       get :new
@@ -34,29 +34,29 @@ class AdsControllerTest < ActionController::TestCase
     end
   end
 
-  test "should not create ad if not signed in" do
-    post :create, ad: { body: "Es una Ferrari de esas rojas, muy linda.", ip: '8.8.8.8', title: 'Regalo Ferrari', type: 1, woeid_code: '788273' }
+  test 'should not create ad if not signed in' do
+    post :create, ad: { body: 'Es una Ferrari de esas rojas, muy linda.', ip: '8.8.8.8', title: 'Regalo Ferrari', type: 1, woeid_code: '788273' }
     assert_redirected_to new_user_session_url
   end
 
-  test "should create ad if logged in" do
+  test 'should create ad if logged in' do
     sign_in @user
 
     assert_difference('Ad.count') do
-      post :create, ad: { body: "Es una Ferrari de esas rojas, muy linda.", ip: '8.8.8.8', title: 'Regalo Ferrari', type: 1, woeid_code: '788273' }
+      post :create, ad: { body: 'Es una Ferrari de esas rojas, muy linda.', ip: '8.8.8.8', title: 'Regalo Ferrari', type: 1, woeid_code: '788273' }
     end
 
-    assert_redirected_to adslug_path(assigns(:ad), slug: "regalo-ferrari")
+    assert_redirected_to adslug_path(assigns(:ad), slug: 'regalo-ferrari')
   end
 
-  test "should show ad" do
+  test 'should show ad' do
     mocking_yahoo_woeid_info(@ad.woeid_code) do
       get :show, id: @ad.id
       assert_response :success
     end
   end
 
-  test "only ad owner should bump ads" do
+  test 'only ad owner should bump ads' do
     @ad.published_at = 6.days.ago
     @ad.save
     sign_in @user
@@ -66,7 +66,7 @@ class AdsControllerTest < ActionController::TestCase
     assert_redirected_to root_path
   end
 
-  test "should not bump ads too recent" do
+  test 'should not bump ads too recent' do
     @ad.user_owner = @user.id
     @ad.published_at = 4.days.ago
     @ad.save
@@ -77,7 +77,7 @@ class AdsControllerTest < ActionController::TestCase
     assert_redirected_to root_path
   end
 
-  test "should bump adds old enough" do
+  test 'should bump adds old enough' do
     @ad.user_owner = @user.id
     @ad.published_at = 6.days.ago
     @ad.save
@@ -88,7 +88,7 @@ class AdsControllerTest < ActionController::TestCase
     assert_redirected_to ads_woeid_path(id: @user.woeid, type: @ad.type)
   end
 
-  test "should not edit any ad as normal user" do
+  test 'should not edit any ad as normal user' do
     @ad.user_owner = @admin.id
     @ad.save
     sign_in @user
@@ -97,7 +97,7 @@ class AdsControllerTest < ActionController::TestCase
     assert_redirected_to root_path 
   end
 
-  test "should edit my own ad as normal user" do
+  test 'should edit my own ad as normal user' do
     @ad.user_owner = @user.id
     @ad.save
     sign_in @user
@@ -105,13 +105,13 @@ class AdsControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "should get edit as admin user" do
+  test 'should get edit as admin user' do
     sign_in @admin
     get :edit, id: @ad
     assert_response :success
   end
 
-  test "should not update other user ad if normal user" do
+  test 'should not update other user ad if normal user' do
     @ad.user_owner = @admin.id
     @ad.save
     sign_in @user
@@ -119,7 +119,7 @@ class AdsControllerTest < ActionController::TestCase
     assert_redirected_to root_url
   end
 
-  test "should update own ads as normal user" do
+  test 'should update own ads as normal user' do
     sign_in @user
     @ad.user_owner = @user.id
     @ad.save
@@ -131,13 +131,13 @@ class AdsControllerTest < ActionController::TestCase
     assert_equal body, @ad.body
   end
 
-  test "should update any ad as admin" do
+  test 'should update any ad as admin' do
     sign_in @admin
     patch :update, id: @ad, ad: { body: @ad.body, ip: @ad.ip, title: @ad.title, type: @ad.type, user_owner: @ad.user_owner, woeid_code: @ad.woeid_code }
     assert_redirected_to ad_path(assigns(:ad))
   end
 
-  test "should not destroy ad as anonymous" do
+  test 'should not destroy ad as anonymous' do
     assert_difference('Ad.count', 0) do
       delete :destroy, id: @ad
     end
@@ -145,7 +145,7 @@ class AdsControllerTest < ActionController::TestCase
     assert_redirected_to new_user_session_url
   end
 
-  test "should not destroy non-owned ads as normal user" do
+  test 'should not destroy non-owned ads as normal user' do
     sign_in @user
     assert_difference('Ad.count', 0) do
       delete :destroy, id: @ad
@@ -154,7 +154,7 @@ class AdsControllerTest < ActionController::TestCase
     assert_redirected_to root_path
   end
 
-  test "should destroy owned ads as normal user" do
+  test 'should destroy owned ads as normal user' do
     @ad.user_owner = @user.id
     @ad.save
     sign_in @user
@@ -165,7 +165,7 @@ class AdsControllerTest < ActionController::TestCase
     assert_redirected_to ads_path
   end
 
-  test "should destroy ad as admin user" do
+  test 'should destroy ad as admin user' do
     sign_in @admin
     assert_difference('Ad.count', -1) do
       delete :destroy, id: @ad

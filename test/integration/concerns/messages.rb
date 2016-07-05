@@ -1,4 +1,4 @@
-require "integration/concerns/authentication"
+require 'integration/concerns/authentication'
 
 module Messages
   include Warden::Test::Helpers
@@ -82,25 +82,25 @@ module Messages
   end
 
   def test_messages_another_user
-    send_message(subject: "hola mundo", body: "hola trololo")
+    send_message(subject: 'hola mundo', body: 'hola trololo')
 
-    assert_content("hola trololo")
-    assert_content("Mover mensaje a papelera")
+    assert_content('hola trololo')
+    assert_content('Mover mensaje a papelera')
   end
 
   def test_messages_another_user_using_emojis
-    skip "emojis not supported"
-    send_message(subject: "hola mundo", body: "What a nice emoji😀!")
+    skip 'emojis not supported'
+    send_message(subject: 'hola mundo', body: 'What a nice emoji😀!')
 
-    assert_content("What a nice emoji😀!")
-    assert_content("Mover mensaje a papelera")
+    assert_content('What a nice emoji😀!')
+    assert_content('Mover mensaje a papelera')
   end
 
   def test_replies_to_a_message
-    send_message(subject: "hola mundo", body: "hola trololo")
-    send_message(body: "hola trululu")
+    send_message(subject: 'hola mundo', body: 'hola trololo')
+    send_message(body: 'hola trululu')
 
-    assert_content("hola trululu")
+    assert_content('hola trululu')
   end
 
   private
@@ -108,8 +108,8 @@ module Messages
   def send_message(params)
     subject = params[:subject]
 
-    fill_in("mailboxer_message_subject", with: subject) if subject
-    fill_in "mailboxer_message_body", with: params[:body]
-    click_button "Enviar"
+    fill_in('mailboxer_message_subject', with: subject) if subject
+    fill_in 'mailboxer_message_body', with: params[:body]
+    click_button 'Enviar'
   end
 end

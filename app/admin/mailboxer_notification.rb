@@ -1,6 +1,6 @@
 ActiveAdmin.register Mailboxer::Notification do
 
-  menu parent: "Mensajería"
+  menu parent: 'Mensajería'
 
   filter :created_at
   filter :body

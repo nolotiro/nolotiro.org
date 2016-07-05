@@ -1,5 +1,5 @@
 class ContactMailer < ActionMailer::Base
-  default from: Rails.application.secrets.emails["default_from"]
+  default from: Rails.application.secrets.emails['default_from']
 
   def contact_form(email, message, request)
     @email = email
@@ -8,7 +8,7 @@ class ContactMailer < ActionMailer::Base
     @message =  message
     mail(
       from: email,
-      to: Rails.application.secrets.emails["contact"],
+      to: Rails.application.secrets.emails['contact'],
       subject: "nolotiro.org - contact from #{email}"
     )
   end

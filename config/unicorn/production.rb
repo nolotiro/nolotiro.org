@@ -1,10 +1,10 @@
-root = "/var/www/nolotiro.org/current"
+root = '/var/www/nolotiro.org/current'
 working_directory root
 pid "#{root}/tmp/pids/unicorn.pid"
 stderr_path "#{root}/log/unicorn.log"
 stdout_path "#{root}/log/unicorn.log"
 
-listen "/tmp/unicorn.nolotiro.org.sock"
+listen '/tmp/unicorn.nolotiro.org.sock'
 worker_processes 8
 timeout 30
 preload_app true
@@ -12,5 +12,5 @@ preload_app true
 # Force the bundler gemfile environment variable to
 # reference the capistrano "current" symlink
 before_exec do |_|
-  ENV["BUNDLE_GEMFILE"] = File.join(root, 'Gemfile')
+  ENV['BUNDLE_GEMFILE'] = File.join(root, 'Gemfile')
 end

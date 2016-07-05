@@ -15,7 +15,7 @@ NolotiroOrg::Application.routes.draw do
  devise_for :users, only: :omniauth_callbacks, controllers: {omniauth_callbacks: 'callbacks'}
 
   # i18n
-  scope "(:locale)", locale: /#{I18n.available_locales.join("|")}/ do
+  scope '(:locale)', locale: /#{I18n.available_locales.join("|")}/ do
 
     root 'ads#index'
 
@@ -67,7 +67,7 @@ NolotiroOrg::Application.routes.draw do
 
     scope '/admin' do 
       authenticate :user, lambda { |u| u.admin? } do
-        mount Sidekiq::Web, at: "/jobs"
+        mount Sidekiq::Web, at: '/jobs'
       end
       get '/become/:id', to: 'admin#become', as: 'become_user' 
       get '/lock/:id', to: 'admin#lock', as: 'lock_user' 
@@ -84,7 +84,7 @@ NolotiroOrg::Application.routes.draw do
     get '/search', to: 'search#search', as: 'search'
 
     # messaging
-    resources :mailboxer_messages, controller: :messages, path: "/messages/" do
+    resources :mailboxer_messages, controller: :messages, path: '/messages/' do
       member do
         delete 'trash'
         post 'untrash'
@@ -94,7 +94,7 @@ NolotiroOrg::Application.routes.draw do
       end
     end
 
-    post 'messages/search', to: 'messages#search', as: "search_mailboxer_messages"
+    post 'messages/search', to: 'messages#search', as: 'search_mailboxer_messages'
 
     # messaging legacy
     scope '/message' do
@@ -102,9 +102,9 @@ NolotiroOrg::Application.routes.draw do
       get  '/list', to: 'messages#index', as: 'messages_list'
       get  '/show/:id/subject/:subject', to: 'messages#show', as: 'message_show'
       get  '/create/id_user_to/:user_id', to: 'messages#new', as: 'message_new'
-      get  '/create/id_user_to/:user_id/subject/:subject', to: "messages#new", as: 'message_new_with_subject'
+      get  '/create/id_user_to/:user_id/subject/:subject', to: 'messages#new', as: 'message_new_with_subject'
       post '/create/id_user_to/:user_id', to: 'messages#create', as: 'message_create'
-      post '/create/id_user_to/:user_id/subject/:subject', to: "messages#create", as: 'message_create_with_subject'
+      post '/create/id_user_to/:user_id/subject/:subject', to: 'messages#create', as: 'message_create_with_subject'
       post '/reply/:id/to/:user_id', to: 'messages#reply', as: 'message_reply'
     end
 

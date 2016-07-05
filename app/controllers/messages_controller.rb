@@ -28,7 +28,7 @@ class MessagesController < ApplicationController
     @message.sender = current_user
     # FIXME: this should be on model (validation)
     if @message.sender.id == recipient_id
-      return redirect_to message_create_url(user_id: recipient_id), notice: I18n.t("mailboxer.notifications.error_same_user")
+      return redirect_to message_create_url(user_id: recipient_id), notice: I18n.t('mailboxer.notifications.error_same_user')
     end
     if @message.conversation_id
       @conversation = conversations.find_by(id: @message.conversation_id)
@@ -48,7 +48,7 @@ class MessagesController < ApplicationController
 
       return render_new_with(recipient, receipt) unless receipt.valid?
     end
-    flash.now[:notice] = I18n.t "mailboxer.notifications.sent" 
+    flash.now[:notice] = I18n.t 'mailboxer.notifications.sent' 
     redirect_to mailboxer_message_path(@conversation)
   end
 
@@ -67,14 +67,14 @@ class MessagesController < ApplicationController
   def trash
     conversation = conversations.find(params[:id] || params[:conversations])
     current_user.trash(conversation)
-    flash[:notice] = I18n.t "mailboxer.notifications.trash"
+    flash[:notice] = I18n.t 'mailboxer.notifications.trash'
     redirect_to mailboxer_messages_path(:box => 'inbox')
   end
 
   def untrash
     conversation = conversations.find(params[:id])
     current_user.untrash(conversation)
-    flash[:notice] = I18n.t "mailboxer.notifications.untrash"
+    flash[:notice] = I18n.t 'mailboxer.notifications.untrash'
     redirect_to mailboxer_messages_path(:box => 'inbox')
   end
 

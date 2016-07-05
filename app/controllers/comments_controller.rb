@@ -18,7 +18,7 @@ class CommentsController < ApplicationController
       expire_action(controller: 'ads', action: 'show', ad: @comment.ad )
       redirect_to(ad_path(params[:id]), notice: t('nlt.comments.flash_ok'))
     else
-      render template: "ads/show"
+      render template: 'ads/show'
     end
   end
 

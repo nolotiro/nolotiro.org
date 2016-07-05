@@ -1,5 +1,5 @@
 ActiveAdmin.register Mailboxer::Receipt do
-  menu parent: "Mensajería"
+  menu parent: 'Mensajería'
   filter :created_at
   index do 
     selectable_column

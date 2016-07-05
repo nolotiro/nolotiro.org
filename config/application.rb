@@ -12,7 +12,7 @@ module NolotiroOrg
     config.i18n.default_locale = :es
     config.i18n.enforce_available_locales = true
     config.i18n.available_locales = %i(ca de en es eu fr gl it nl pt)
-    ActionMailer::Base.layout "mail"
+    ActionMailer::Base.layout 'mail'
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true

@@ -20,8 +20,8 @@ set :linked_dirs, %w{db/sphinx log tmp/pids tmp/cache tmp/sockets vendor/bundle 
 set :bundle_binstubs, nil
 set :keep_releases, 5
 
-set :ci_client, "travis"
-set :ci_repository, "alabs/nolotiro.org"
+set :ci_client, 'travis'
+set :ci_repository, 'alabs/nolotiro.org'
 
 # Logical flow for deploying an app
 before 'deploy', 'ci:verify'
@@ -47,10 +47,10 @@ namespace :deploy do
     on roles(:app), in: :sequence, wait: 5 do
 
       # starting nginx / passenger
-      sudo "service nginx start"
+      sudo 'service nginx start'
 
       # starting sidekiq / unicorn 
-      sudo "service god start"
+      sudo 'service god start'
 
     end
   end
@@ -60,10 +60,10 @@ namespace :deploy do
     on roles(:app), in: :sequence, wait: 5 do
 
       # stoping nginx / passenger
-      sudo "service nginx stop"
+      sudo 'service nginx stop'
 
       # stoping sidekiq / unicorn 
-      sudo "service god stop"
+      sudo 'service god stop'
 
     end
   end
@@ -72,10 +72,10 @@ namespace :deploy do
   task :restart do
     on roles(:app), in: :sequence, wait: 5 do
       # restarting nginx / passenger
-      sudo "service nginx restart"
+      sudo 'service nginx restart'
 
       # restarting sidekiq / unicorn 
-      sudo "service god restart"
+      sudo 'service god restart'
     end
   end
 

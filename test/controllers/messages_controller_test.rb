@@ -6,26 +6,26 @@ class MessagesControllerTest < ActionController::TestCase
 
   setup do
     @ad = FactoryGirl.create(:ad)
-    @user1 = FactoryGirl.create(:user, "email" => "davidbowie@gmail.com", "username" => "davidbowie")
-    @user2 = FactoryGirl.create(:user, "email" => "marcbolan@gmail.com", "username" => "trex")
+    @user1 = FactoryGirl.create(:user, 'email' => 'davidbowie@gmail.com', 'username' => 'davidbowie')
+    @user2 = FactoryGirl.create(:user, 'email' => 'marcbolan@gmail.com', 'username' => 'trex')
   end
 
-  test "should redirect to signup to create a message as anon" do
+  test 'should redirect to signup to create a message as anon' do
     get :new, user_id: @user1.id
     assert_redirected_to new_user_session_url
   end
 
-  test "should get form to create a message as an user" do
+  test 'should get form to create a message as an user' do
     sign_in @user1
     get :new, user_id: @user2.id
     assert_response :success
   end
 
-  test "should create a message, show it and let the other user reply it" do
+  test 'should create a message, show it and let the other user reply it' do
     # user1 signs in and sends a message to user2 
     sign_in @user1
     assert_difference('Mailboxer::Conversation.count') do
-      post :create, mailboxer_message: { recipients: @user2, body: "lo sigues teniendo? ", subject: "interesado en el ordenador" }
+      post :create, mailboxer_message: { recipients: @user2, body: 'lo sigues teniendo? ', subject: 'interesado en el ordenador' }
     end
     m = Mailboxer::Conversation.last
     assert_redirected_to mailboxer_message_path(id: m.id)
@@ -39,33 +39,33 @@ class MessagesControllerTest < ActionController::TestCase
     # TODO: user3 can't access that conversation
   end
 
-  test "should get list of conversations as user" do
+  test 'should get list of conversations as user' do
     sign_in @user1
     get :index
     assert_response :success
   end
 
-  test "should not get list of conversations as anon" do
+  test 'should not get list of conversations as anon' do
     get :index
     assert_redirected_to new_user_session_url
   end
 
-  test "should not get list of conversations to/from another user" do
+  test 'should not get list of conversations to/from another user' do
     sign_in @user1
     assert_difference('Mailboxer::Conversation.count') do
-      post :create, mailboxer_message: { recipients: @user2, body: "lo sigues teniendo? ", subject: "interesado en el ordenador" }
+      post :create, mailboxer_message: { recipients: @user2, body: 'lo sigues teniendo? ', subject: 'interesado en el ordenador' }
     end
     m = Mailboxer::Conversation.last
     sign_out @user1
-    user3 = FactoryGirl.create(:user, "email" => "brianeno@gmail.com", "username" => "eno")
+    user3 = FactoryGirl.create(:user, 'email' => 'brianeno@gmail.com', 'username' => 'eno')
     sign_in user3
     get :show, id: m.id
-    assert_equal "No tienes permisos para realizar esta acción.", flash[:alert]
+    assert_equal 'No tienes permisos para realizar esta acción.', flash[:alert]
   end
 
-  test "should not permit sender param for message" do
+  test 'should not permit sender param for message' do
     sign_in @user1
-    post :create, mailboxer_message: { recipients: @user1, sender: @user2, body: "lo sigues teniendo? ", subject: "interesado en el ordenador" }
+    post :create, mailboxer_message: { recipients: @user1, sender: @user2, body: 'lo sigues teniendo? ', subject: 'interesado en el ordenador' }
     # TODO: finish
   end
 

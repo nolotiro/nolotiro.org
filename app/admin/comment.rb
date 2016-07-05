@@ -1,4 +1,4 @@
-ActiveAdmin.register Comment, as: "AdComment" do
+ActiveAdmin.register Comment, as: 'AdComment' do
 
   # permit_params
 
@@ -21,7 +21,7 @@ ActiveAdmin.register Comment, as: "AdComment" do
   end
 
   action_item :view, only: :show do 
-    link_to "Ver en la web", ad_path(ad_comment.ad)
+    link_to 'Ver en la web', ad_path(ad_comment.ad)
   end
 
 end

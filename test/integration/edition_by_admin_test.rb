@@ -1,5 +1,5 @@
-require "test_helper"
-require "integration/concerns/authentication"
+require 'test_helper'
+require 'integration/concerns/authentication'
 require 'support/web_mocking'
 
 class EditionsByAdmin < ActionDispatch::IntegrationTest
@@ -11,11 +11,11 @@ class EditionsByAdmin < ActionDispatch::IntegrationTest
     login_as FactoryGirl.create(:admin, woeid: 766272)
   end
 
-  it "changes only the edited attribute" do
+  it 'changes only the edited attribute' do
     mocking_yahoo_woeid_info(@ad.woeid_code) do
       visit ads_edit_path(@ad)
-      select "busco...", from: "ad_type"
-      click_button "Enviar"
+      select 'busco...', from: 'ad_type'
+      click_button 'Enviar'
 
       assert_equal 766273, @ad.reload.woeid_code
       assert_equal 2, @ad.reload.type

@@ -1,5 +1,5 @@
 class MessagesMailer < ActionMailer::Base
-  default from: Rails.application.secrets.emails["default_from"]
+  default from: Rails.application.secrets.emails['default_from']
 
   def create(to_email, from_username, subject, message)
     @from_username = from_username

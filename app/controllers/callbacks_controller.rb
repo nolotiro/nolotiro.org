@@ -34,6 +34,6 @@ class CallbacksController < Devise::OmniauthCallbacksController
   end
 
   def oauth
-    request.env["omniauth.auth"]
+    request.env['omniauth.auth']
   end
 end

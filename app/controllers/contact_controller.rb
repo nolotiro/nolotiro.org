@@ -15,7 +15,7 @@ class ContactController < ApplicationController
       ContactMailer.contact_form(@contact.email, @contact.message, request).deliver_now
       redirect_to root_url, notice: t('nlt.contact_thanks')
     else
-      render "new"
+      render 'new'
     end
   end
 

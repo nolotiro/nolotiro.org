@@ -27,7 +27,7 @@ class LocationController < ApplicationController
       if locations 
         save_location locations[0].woeid
       else
-        redirect_to location_ask_path, alert: "Hubo un error con el cambio de su ubicación. Inténtelo de nuevo."
+        redirect_to location_ask_path, alert: 'Hubo un error con el cambio de su ubicación. Inténtelo de nuevo.'
       end
     end
   end

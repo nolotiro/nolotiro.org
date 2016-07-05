@@ -12,7 +12,7 @@ module WoeidHelper
     value = Rails.cache.fetch(key)
     return value if value
 
-    GeoPlanet.appid = Rails.application.secrets["geoplanet_app_id"]
+    GeoPlanet.appid = Rails.application.secrets['geoplanet_app_id']
     begin
         place_raw = GeoPlanet::Place.new(woeid.to_i, :lang => locale)
         place = YahooLocation.new(place_raw)
@@ -37,7 +37,7 @@ module WoeidHelper
     #
 
     if name
-      GeoPlanet.appid = Rails.application.secrets["geoplanet_app_id"]
+      GeoPlanet.appid = Rails.application.secrets['geoplanet_app_id']
       raw_locations = GeoPlanet::Place.search(name, :lang => I18n.locale, :type => 7, :count => 0)
       return if raw_locations.nil?
 

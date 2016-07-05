@@ -35,11 +35,11 @@ class Ad < ActiveRecord::Base
   validates :body, length: {minimum: 30, maximum: 1000}
 
   validates :status,
-    inclusion: { in: [1, 2, 3], message: "no es un estado válido" },
+    inclusion: { in: [1, 2, 3], message: 'no es un estado válido' },
     presence: true
 
   validates :type,
-    inclusion: { in: [1, 2], message: "no es un tipo válido" },
+    inclusion: { in: [1, 2], message: 'no es un tipo válido' },
     presence: true
 
   #validate :valid_ip_address
@@ -51,11 +51,11 @@ class Ad < ActiveRecord::Base
   default_scope { order('ads.published_at DESC') }
 
   has_attached_file :image,
-    styles: {thumb: "100x90>"},
+    styles: {thumb: '100x90>'},
     process_in_background: :image,
-    url: "/system/img/:attachment/:id_partition/:style/:filename"
+    url: '/system/img/:attachment/:id_partition/:style/:filename'
 
-  validates_attachment :image, content_type: { content_type: ["image/jpg", "image/jpeg", "image/png", "image/gif"] }
+  validates_attachment :image, content_type: { content_type: ['image/jpg', 'image/jpeg', 'image/png', 'image/gif'] }
 
   validates_attachment_size :image, :in => 0.megabytes..5.megabytes
 
@@ -84,7 +84,7 @@ class Ad < ActiveRecord::Base
     where('woeid_code = ?', woeid_code) 
   }
 
-  scope :last_week, lambda { where("created_at >= :date", :date => 1.week.ago) } 
+  scope :last_week, lambda { where('created_at >= :date', :date => 1.week.ago) } 
 
   self.per_page = 20
 
@@ -92,7 +92,7 @@ class Ad < ActiveRecord::Base
     last_ad_creation = Ad.maximum(:created_at)
     return '0' * 20 unless last_ad_creation
 
-    last_ad_creation.strftime("%d%m%y%H%M%s")
+    last_ad_creation.strftime('%d%m%y%H%M%s')
   end
 
   def body 
@@ -132,7 +132,7 @@ class Ad < ActiveRecord::Base
   end
 
   def full_title 
-    self.type_string + " segunda mano " + self.title + ' ' + self.woeid_name
+    self.type_string + ' segunda mano ' + self.title + ' ' + self.woeid_name
   end
 
   def type_string
@@ -149,11 +149,11 @@ class Ad < ActiveRecord::Base
   def type_class
     case type
     when 1
-      "give"
+      'give'
     when 2
-      "want"
+      'want'
     else
-      "give"
+      'give'
     end 
   end
 
@@ -184,7 +184,7 @@ class Ad < ActiveRecord::Base
   end
 
   def valid_ip_address
-    errors.add(:ip, "No es una IP válida") unless IPAddress.valid?(ip)
+    errors.add(:ip, 'No es una IP válida') unless IPAddress.valid?(ip)
   end
 
   def give?

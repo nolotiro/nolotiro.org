@@ -19,20 +19,20 @@ class User < ActiveRecord::Base
 
   acts_as_messageable
 
-  scope :last_week, lambda { where("created_at >= :date", :date => 1.week.ago) } 
+  scope :last_week, lambda { where('created_at >= :date', :date => 1.week.ago) } 
 
   scope :top_overall, ->(limit = 20) do
-    select("users.id, users.username, COUNT(ads.id) as n_ads")
+    select('users.id, users.username, COUNT(ads.id) as n_ads')
       .joins(:ads)
       .merge(Ad.give)
-      .group("ads.user_owner")
+      .group('ads.user_owner')
       .unscope(:order)
-      .order("n_ads DESC")
+      .order('n_ads DESC')
       .limit(limit)
   end
 
   scope :top_last_week, ->(limit = 20) do
-    top_overall(limit).where("published_at >= :date", date: 1.week.ago)
+    top_overall(limit).where('published_at >= :date', date: 1.week.ago)
   end
 
   def self.new_with_session(params, session)
@@ -87,7 +87,7 @@ class User < ActiveRecord::Base
   end
 
   def default_lang
-    self.lang ||= "es"
+    self.lang ||= 'es'
   end
 
   def friend? user

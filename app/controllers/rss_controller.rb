@@ -7,7 +7,7 @@ class RssController < ApplicationController
   def feed
     # rss filter 
     ads = Ad
-    ads = params[:type] == "want" ? ads.want : ads.give
+    ads = params[:type] == 'want' ? ads.want : ads.give
     ads = ads.where(:woeid_code => params[:woeid])
 
     ads = case params[:status]

@@ -5,7 +5,7 @@ class RequestGeolocator
   end
 
   def ip_address
-    debug_ip_address = Rails.application.secrets["debug_ip_address"]
+    debug_ip_address = Rails.application.secrets['debug_ip_address']
     return debug_ip_address if debug_ip_address.present?
 
     ip_via_proxy = @request.env['HTTP_X_FORWARDED_FOR']
