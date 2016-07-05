@@ -45,15 +45,15 @@ module ApplicationHelper
 
   def i18n_to_localeapp_in_locale(locale)
     langs = {
-      gl: 20650,
-      pt: 20648,
-      nl: 24068,
-      it: 20649,
-      fr: 20646,
-      eu: 20651,
-      en: 20647,
-      de: 20645,
-      ca: 20644
+      gl: 20_650,
+      pt: 20_648,
+      nl: 24_068,
+      it: 20_649,
+      fr: 20_646,
+      eu: 20_651,
+      en: 20_647,
+      de: 20_645,
+      ca: 20_644
     }
     langs[locale]
   end

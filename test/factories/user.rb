@@ -15,7 +15,7 @@ FactoryGirl.define do
     lang 'es'
     password '123456789'
     role 0
-    woeid 766273
+    woeid 766_273
     confirmed_at          Time.zone.now
   end
 
@@ -35,7 +35,7 @@ FactoryGirl.define do
     lang 'es'
     password '123456789'
     role 0
-    woeid 766273
+    woeid 766_273
   end
 
 end

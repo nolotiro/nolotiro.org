@@ -8,8 +8,8 @@ class WoeidHelperTest < ActionView::TestCase
   after { Rails.cache.clear }
 
   test 'converts a WOEID to a place name in the given format' do
-    mocking_yahoo_woeid_info(766273) do
-      location = WoeidHelper.convert_woeid_name(766273)
+    mocking_yahoo_woeid_info(766_273) do
+      location = WoeidHelper.convert_woeid_name(766_273)
       assert_equal('Madrid, Madrid, España', location[:full])
       assert_equal('Madrid', location[:short])
     end
@@ -26,7 +26,7 @@ class WoeidHelperTest < ActionView::TestCase
       ]
       assert_equal names, actual.map(&:label)
 
-      assert_equal [369486, 369485, 773692], actual.map(&:woeid)
+      assert_equal [369_486, 369_485, 773_692], actual.map(&:woeid)
     end
   end
 end

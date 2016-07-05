@@ -28,7 +28,7 @@ def create_ad(user)
     body: Faker::Hipster.paragraphs.join("\n"),
     type: 1,
     status: 1,
-    woeid_code: 766273,
+    woeid_code: 766_273,
     image: Faker::Placeholdit.image,
     ip: '28.3.2.4'
   )

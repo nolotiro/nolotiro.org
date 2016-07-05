@@ -32,14 +32,14 @@ class LocationControllerTest < ActionController::TestCase
 
   test 'should set location in my user' do
     sign_in @user
-    post :change, location: 288888
+    post :change, location: 288_888
     assert_response :redirect
-    assert_redirected_to ads_woeid_path(288888, type: 'give')
+    assert_redirected_to ads_woeid_path(288_888, type: 'give')
   end
 
   test 'should set location in my session' do
-    post :change, location: 288888
+    post :change, location: 288_888
     assert_response :redirect
-    assert_redirected_to ads_woeid_path(288888, type: 'give')
+    assert_redirected_to ads_woeid_path(288_888, type: 'give')
   end
 end
