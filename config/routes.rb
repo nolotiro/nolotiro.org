@@ -59,7 +59,7 @@ NolotiroOrg::Application.routes.draw do
                  sign_in: 'login',
                  sign_out: 'logout',
                  password: 'reset'
-             }
+               }
 
     post '/addfriend/id/:id', to: 'friendships#create', as: 'add_friend'
     post '/deletefriend/:id', to: 'friendships#destroy', as: 'destroy_friend'
