@@ -48,3 +48,6 @@ log/localeapp.yml
 
 # For Rubymine (Jetbrains IDE)
 .idea
+
+# Phanthomjs executable
+bin/phantomjs

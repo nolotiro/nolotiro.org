@@ -1,4 +1,3 @@
-require 'phantomjs/poltergeist'
 require 'capybara/poltergeist'
 require 'support/desktop_integration'
 require 'support/mobile_integration'

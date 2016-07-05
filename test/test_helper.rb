@@ -6,6 +6,7 @@ require 'rails/test_help'
 
 require 'minitest/pride'
 require 'capybara/rails'
+require 'support/phantomjs'
 
 require 'support/unit'
 require 'support/controller'
@@ -17,3 +18,6 @@ DatabaseCleaner.strategy = :truncation
 
 # Ensure sphinx directories exist for the test environment
 ThinkingSphinx::Test.init
+
+# Ensure phantomjs executable is available
+Phantomjs.check

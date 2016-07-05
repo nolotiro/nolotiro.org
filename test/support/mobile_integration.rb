@@ -1,4 +1,3 @@
-require 'phantomjs'
 require 'support/web_mocking'
 
 Capybara.register_driver :poltergeist_mobile do |app|

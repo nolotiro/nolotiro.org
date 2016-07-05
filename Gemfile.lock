@@ -301,7 +301,6 @@ GEM
       cocaine (~> 0.5.5)
       mime-types
       mimemagic (= 0.3.0)
-    phantomjs (2.1.1.0)
     pkg-config (1.1.7)
     poltergeist (1.10.0)
       capybara (~> 2.1)
@@ -516,7 +515,6 @@ DEPENDENCIES
   omniauth-facebook
   omniauth-google-oauth2
   paperclip (~> 4.0)
-  phantomjs
   poltergeist
   rails (~> 4.2)
   rails-i18n (~> 4.0)

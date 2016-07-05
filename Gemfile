@@ -35,7 +35,6 @@ group :test do
   gem 'webmock', '~> 2.0'
   gem 'database_cleaner', '~> 1.5'
   gem 'poltergeist'
-  gem 'phantomjs'
 end
 
 group :production, :staging do 
