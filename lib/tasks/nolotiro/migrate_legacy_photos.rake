@@ -14,7 +14,7 @@ namespace :nolotiro do
           'faede1067a93230f4193c140cee11daf.jpg',
           '7979d7671e6cd39d9e8f4b73a7a0732f.JPG',
           'e4536de7d08ccb7b3c7fcb0f5d2bbfea.JPG',
-          '24f4a054684cc9b33385a20d00a206f9.jpg',
+          '24f4a054684cc9b33385a20d00a206f9.jpg'
         ]
         # Touch missing photos
         files.each do |f|
