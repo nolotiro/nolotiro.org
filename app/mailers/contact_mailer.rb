@@ -6,7 +6,7 @@ class ContactMailer < ActionMailer::Base
     @email = email
     @ip_address = RequestGeolocator.new(request).ip_address
     @ua = request.user_agent
-    @message =  message
+    @message = message
     mail(
       from: email,
       to: Rails.application.secrets.emails['contact'],

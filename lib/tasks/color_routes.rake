@@ -1,13 +1,13 @@
 # frozen_string_literal: true
 desc 'Pretty version on rails rake routes.'
 
-EMK="\033[1;30m"
-EMR="\033[1;31m"
-EMY="\033[1;33m"
-EMB="\033[1;34m"
-EMM="\033[1;35m"
-EMC="\033[1;36m"
-EMW="\033[1;37m"
+EMK = "\033[1;30m"
+EMR = "\033[1;31m"
+EMY = "\033[1;33m"
+EMB = "\033[1;34m"
+EMM = "\033[1;35m"
+EMC = "\033[1;36m"
+EMW = "\033[1;37m"
 NOCOLOR = "\033[0m"
 
 task color_routes: :environment do
