@@ -12,10 +12,10 @@ class WoeidController < ApplicationController
     @status = status_scope
 
     @ads = Ad.includes(:user)
-              .public_send(@type)
-              .public_send(@status)
-              .by_woeid_code(@id)
-              .paginate(page: params[:page])
+             .public_send(@type)
+             .public_send(@status)
+             .by_woeid_code(@id)
+             .paginate(page: params[:page])
 
     @woeid = WoeidHelper.convert_woeid_name(@id) if @id.present?
 
