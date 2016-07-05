@@ -16,9 +16,9 @@ class Ad < ActiveRecord::Base
   # referrer      : referring URL (note the spelling)
 
   rakismet_attrs  author: proc { user.username },
-    author_email: proc { user.email },
-    user_ip: proc { ip },
-    content: proc { body }
+                  author_email: proc { user.email },
+                  user_ip: proc { ip },
+                  content: proc { body }
 
   require 'ipaddress'
 
