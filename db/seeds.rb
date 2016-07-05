@@ -44,4 +44,3 @@ create_user(1)
   user = User.offset(rand(User.count)).first
   create_ad(user)
 end
-

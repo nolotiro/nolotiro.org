@@ -24,4 +24,3 @@ ActiveAdmin.register Comment, as: 'AdComment' do
     link_to 'Ver en la web', ad_path(ad_comment.ad)
   end
 end
-

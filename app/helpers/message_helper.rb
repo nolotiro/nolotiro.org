@@ -15,4 +15,3 @@ module MessageHelper
     link_to username, profile_path(username)
   end
 end
-

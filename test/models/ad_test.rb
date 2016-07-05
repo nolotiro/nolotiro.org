@@ -164,4 +164,3 @@ class AdTest < ActiveSupport::TestCase
     assert_equal 0, @ad.readed_count
   end
 end
-

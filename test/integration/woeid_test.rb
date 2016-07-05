@@ -27,4 +27,3 @@ class WoeidTest < ActionDispatch::IntegrationTest
     end
   end
 end
-

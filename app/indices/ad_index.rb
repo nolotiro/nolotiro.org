@@ -9,4 +9,3 @@ ThinkingSphinx::Index.define :ad, with: :active_record do
   has type
   has created_at
 end
-
