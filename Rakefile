@@ -5,3 +5,16 @@
 require_relative 'config/application'
 
 NolotiroOrg::Application.load_tasks
+
+if %(test development).include?(Rails.env)
+  require 'rubocop/rake_task'
+  RuboCop::RakeTask.new
+
+  Rake::TestTask.new(:test) do |t|
+    t.libs << 'lib' << 'test'
+    t.pattern = 'test/**/*_test.rb'
+    t.warning = false
+  end
+
+  task default: [:test, :rubocop]
+end
