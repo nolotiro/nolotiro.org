@@ -1,52 +1,52 @@
+# frozen_string_literal: true
 require 'test_helper'
 
 class UserTest < ActiveSupport::TestCase
-
   setup do
     @ad = FactoryGirl.create(:ad)
-    @user = FactoryGirl.create(:user, "email" => "jaimito@gmail.com", "username" => "jaimito")
+    @user = FactoryGirl.create(:user, 'email' => 'jaimito@gmail.com', 'username' => 'jaimito')
     @admin = FactoryGirl.create(:admin)
   end
 
-  test "has unique usernames" do 
-    user1 = FactoryGirl.build(:user, username: "Username") 
+  test 'has unique usernames' do
+    user1 = FactoryGirl.build(:user, username: 'Username')
     assert user1.valid?
     assert user1.save
 
-    user2 = FactoryGirl.build(:user, username: "Username") 
+    user2 = FactoryGirl.build(:user, username: 'Username')
     assert_not user2.valid?
     assert_not user2.save
-    assert_includes user2.errors[:username], "ya está en uso"
+    assert_includes user2.errors[:username], 'ya está en uso'
   end
 
-  test "has unique emails" do 
-    user1 = FactoryGirl.build(:user, email: "larryfoster@example.com") 
+  test 'has unique emails' do
+    user1 = FactoryGirl.build(:user, email: 'larryfoster@example.com')
     assert user1.valid?
     assert user1.save
 
-    user2 = FactoryGirl.build(:user, email: "larryfoster@example.com") 
+    user2 = FactoryGirl.build(:user, email: 'larryfoster@example.com')
     assert_not user2.valid?
     assert_not user2.save
-    assert_includes user2.errors[:email], "ya está en uso"
+    assert_includes user2.errors[:email], 'ya está en uso'
   end
 
-  test "has passwords no shorter than 5 characters" do 
-    @user.password = "1234"
+  test 'has passwords no shorter than 5 characters' do
+    @user.password = '1234'
     assert_not @user.valid?
     assert_includes @user.errors[:password],
-                    "es demasiado corto (5 caracteres mínimo)"
+                    'es demasiado corto (5 caracteres mínimo)'
 
-    @user.password = "12345"
+    @user.password = '12345'
     assert @user.valid?
   end
 
-  test "has non-empty usernames" do
-    @user.username = ""
+  test 'has non-empty usernames' do
+    @user.username = ''
     assert_not @user.valid?
-    assert_includes @user.errors[:username], "no puede estar en blanco"
+    assert_includes @user.errors[:username], 'no puede estar en blanco'
   end
 
-  test "has usernames no longer than 63 characters" do
+  test 'has usernames no longer than 63 characters' do
     @user.username = 'A' * 63
     assert @user.valid?
 
@@ -56,41 +56,41 @@ class UserTest < ActiveSupport::TestCase
                     'es demasiado largo (63 caracteres máximo)'
   end
 
-  test "roles work" do 
+  test 'roles work' do
     assert_equal @user.admin?, false
     assert_equal @admin.admin?, true
   end
 
-  test "default langs work" do
+  test 'default langs work' do
     @user.lang = nil
     @user.save
     assert_equal @user.lang, 'es'
   end
 
-  test "locking works" do
+  test 'locking works' do
     @user.lock!
     assert_equal @user.locked?, true
   end
 
-  test "unlocking works" do
+  test 'unlocking works' do
     @user.locked = 1
     @user.save
     @user.unlock!
     assert_equal @user.locked?, false
   end
 
-  test "requires confirmation for new users" do
+  test 'requires confirmation for new users' do
     user = FactoryGirl.create(:non_confirmed_user)
     assert_equal(user.active_for_authentication?, false)
   end
 
-  test "associated ads are deleted when user is deleted" do
+  test 'associated ads are deleted when user is deleted' do
     FactoryGirl.create(:ad, user: @user)
 
     assert_difference(-> { Ad.count }, -1) { @user.destroy }
   end
 
-  test "associated comments are deleted when user is deleted" do
+  test 'associated comments are deleted when user is deleted' do
     FactoryGirl.create(:comment, user: @user)
 
     assert_difference(-> { Comment.count }, -1) { @user.destroy }
@@ -103,7 +103,7 @@ class UserScopesTest < ActiveSupport::TestCase
     2.times { FactoryGirl.create(:ad, user: user2) }
   end
 
-  test "top overall ignores wanted ads from counts and results" do
+  test 'top overall ignores wanted ads from counts and results' do
     FactoryGirl.create(:ad, user: user3, type: 2)
     user2.ads.last.update(type: 2)
 
@@ -114,7 +114,7 @@ class UserScopesTest < ActiveSupport::TestCase
     assert_count(results.second, user2.id, user2.username, 1)
   end
 
-  test "top overall gives all time top ad publishers" do
+  test 'top overall gives all time top ad publishers' do
     FactoryGirl.create(:ad, user: user3)
 
     results = User.top_overall

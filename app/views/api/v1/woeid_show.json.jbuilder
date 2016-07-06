@@ -1,4 +1,5 @@
-json.woeid_id  @woeid
+# frozen_string_literal: true
+json.woeid_id @woeid
 json.woeid_name WoeidHelper.convert_woeid_name(@woeid)[:full]
 json.ads @ads do |ad|
   json.id ad.id

@@ -1,5 +1,5 @@
+# frozen_string_literal: true
 class PageController < ApplicationController
-
   def faqs
   end
 
@@ -14,5 +14,4 @@ class PageController < ApplicationController
 
   def translate
   end
-
 end

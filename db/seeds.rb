@@ -1,4 +1,5 @@
 # coding: utf-8
+# frozen_string_literal: true
 
 def create_user(role = 0)
   pwd = '12345678'
@@ -9,7 +10,7 @@ def create_user(role = 0)
       role: role,
       password: pwd,
       password_confirmation: pwd,
-      confirmed_at: Time.now,
+      confirmed_at: Time.zone.now,
       lang: 'es',
       woeid: 766_273
     )
@@ -18,7 +19,7 @@ def create_user(role = 0)
 end
 
 def create_ad(user)
-  timestamp = rand((Time.now - 1.week) .. Time.now)
+  timestamp = rand((Time.zone.now - 1.week)..Time.zone.now)
   ad = Ad.create(
     user: user,
     title: Faker::Hipster.sentence(3).truncate(60),
@@ -27,25 +28,18 @@ def create_ad(user)
     body: Faker::Hipster.paragraphs.join("\n"),
     type: 1,
     status: 1,
-    woeid_code: 766273,
+    woeid_code: 766_273,
     image: Faker::Placeholdit.image,
-    ip: "28.3.2.4"
+    ip: '28.3.2.4'
   )
   ad
 end
 
-
-(1..10).each do |i|
-  create_user
-end
+10.times { create_user }
 
 create_user(1)
 
-puts "Creating Ads"
-
-(1..30).each do |i|
+30.times do
   user = User.offset(rand(User.count)).first
-  ad = create_ad(user)
-  puts "    #{ad.title}"
+  create_ad(user)
 end
-

@@ -30,7 +30,7 @@
       </div>
     <% end %>
 
-    <% if @ad.is_give? %>
+    <% if @ad.give? %>
       <span class="ad_status <%= @ad.status_class %>"><%= @ad.status_string %></span>
     <% end %>
     <span class="ad_date">

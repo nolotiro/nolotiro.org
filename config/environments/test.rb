@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 NolotiroOrg::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
@@ -12,8 +13,8 @@ NolotiroOrg::Application.configure do
   config.eager_load = false
 
   # Configure static asset server for tests with Cache-Control for performance.
-  config.serve_static_files  = true
-  config.static_cache_control = "public, max-age=3600"
+  config.serve_static_files = true
+  config.static_cache_control = 'public, max-age=3600'
 
   # Show full error reports and disable caching.
   config.consider_all_requests_local       = true
@@ -37,7 +38,7 @@ NolotiroOrg::Application.configure do
   config.active_support.test_order = :random
 
   # for devise
-  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+  config.action_mailer.default_url_options = { host: 'localhost:3000' }
 
   # Set to :debug to see everything in the log.
   config.log_level = :debug

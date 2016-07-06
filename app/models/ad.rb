@@ -1,6 +1,6 @@
 # encoding : utf-8
+# frozen_string_literal: true
 class Ad < ActiveRecord::Base
-
   include Rakismet::Model
 
   # https://github.com/joshfrench/rakismet
@@ -14,15 +14,15 @@ class Ad < ActiveRecord::Base
   # user_ip       : IP address used to submit this comment
   # user_agent    : user agent string
   # referrer      : referring URL (note the spelling)
-  
+
   rakismet_attrs  author: proc { user.username },
-    author_email: proc { user.email },
-    user_ip: proc { ip },
-    content: proc { body }
+                  author_email: proc { user.email },
+                  user_ip: proc { ip },
+                  content: proc { body }
 
   require 'ipaddress'
 
-  belongs_to :user, foreign_key: 'user_owner', :counter_cache => true
+  belongs_to :user, foreign_key: 'user_owner', counter_cache: true
   has_many :comments, class_name: 'Comment', foreign_key: 'ads_id'
 
   validates :title, presence: true
@@ -31,43 +31,43 @@ class Ad < ActiveRecord::Base
   validates :woeid_code, presence: true
   validates :ip, presence: true
 
-  validates :title, length: {minimum: 4, maximum: 100}
-  validates :body, length: {minimum: 30, maximum: 1000}
+  validates :title, length: { minimum: 4, maximum: 100 }
+  validates :body, length: { minimum: 30, maximum: 1000 }
 
   validates :status,
-    inclusion: { in: [1, 2, 3], message: "no es un estado válido" },
-    presence: true
+            inclusion: { in: [1, 2, 3], message: 'no es un estado válido' },
+            presence: true
 
   validates :type,
-    inclusion: { in: [1, 2], message: "no es un tipo válido" },
-    presence: true
+            inclusion: { in: [1, 2], message: 'no es un tipo válido' },
+            presence: true
 
-  #validate :valid_ip_address
+  # validate :valid_ip_address
 
   # legacy database: has a column with value "type", rails doesn't like that
   # the "type" column is no longer need it by rails, so we don't care about it
-  self.inheritance_column = nil 
+  self.inheritance_column = nil
 
   default_scope { order('ads.published_at DESC') }
 
   has_attached_file :image,
-    styles: {thumb: "100x90>"},
-    process_in_background: :image,
-    url: "/system/img/:attachment/:id_partition/:style/:filename"
+                    styles: { thumb: '100x90>' },
+                    process_in_background: :image,
+                    url: '/system/img/:attachment/:id_partition/:style/:filename'
 
-  validates_attachment :image, content_type: { content_type: ["image/jpg", "image/jpeg", "image/png", "image/gif"] }
+  validates_attachment :image, content_type: { content_type: ['image/jpg', 'image/jpeg', 'image/png', 'image/gif'] }
 
-  validates_attachment_size :image, :in => 0.megabytes..5.megabytes
+  validates_attachment_size :image, in: 0.megabytes..5.megabytes
 
-  #before_save :titleize_title if self.title? and /[[:upper:]]/.match(self.title)
-  #before_save :titleize_body if self.body and /[[:upper:]]/.match(self.body)
+  # before_save :titleize_title if self.title? and /[[:upper:]]/.match(self.title)
+  # before_save :titleize_body if self.body and /[[:upper:]]/.match(self.body)
 
   scope :give, -> { where(type: 1) }
   scope :want, -> { where(type: 2) }
 
   scope :by_type, lambda {|type|
     return scope unless type.present?
-    where('type = ?', type) 
+    where('type = ?', type)
   }
 
   scope :available, -> { where(status: 1) }
@@ -76,15 +76,15 @@ class Ad < ActiveRecord::Base
 
   scope :by_status, lambda {|status|
     return all unless status.present?
-    where('status = ?', status) 
+    where('status = ?', status)
   }
 
   scope :by_woeid_code, lambda {|woeid_code|
     return all unless woeid_code.present?
-    where('woeid_code = ?', woeid_code) 
+    where('woeid_code = ?', woeid_code)
   }
 
-  scope :last_week, lambda { where("created_at >= :date", :date => 1.week.ago) } 
+  scope :last_week, lambda { where('created_at >= :date', date: 1.week.ago) }
 
   self.per_page = 20
 
@@ -92,15 +92,15 @@ class Ad < ActiveRecord::Base
     last_ad_creation = Ad.maximum(:created_at)
     return '0' * 20 unless last_ad_creation
 
-    last_ad_creation.strftime("%d%m%y%H%M%s")
+    last_ad_creation.strftime('%d%m%y%H%M%s')
   end
 
-  def body 
-    ApplicationController.helpers.escape_privacy_data(read_attribute(:body))
+  def body
+    ApplicationController.helpers.escape_privacy_data(self[:body])
   end
 
-  def title 
-    ApplicationController.helpers.escape_privacy_data(read_attribute(:title))
+  def title
+    ApplicationController.helpers.escape_privacy_data(self[:title])
   end
 
   def readed_counter
@@ -112,7 +112,7 @@ class Ad < ActiveRecord::Base
   end
 
   def increment_readed_count!
-    Ad.increment_counter(:readed_count, self.id)
+    Ad.increment_counter(:readed_count, id)
   end
 
   def slug
@@ -128,11 +128,11 @@ class Ad < ActiveRecord::Base
   end
 
   def woeid
-    @woeid ||= WoeidHelper.convert_woeid_name(self.woeid_code)
+    @woeid ||= WoeidHelper.convert_woeid_name(woeid_code)
   end
 
-  def full_title 
-    self.type_string + " segunda mano " + self.title + ' ' + self.woeid_name
+  def full_title
+    type_string + ' segunda mano ' + title + ' ' + woeid_name
   end
 
   def type_string
@@ -143,18 +143,18 @@ class Ad < ActiveRecord::Base
       I18n.t('nlt.want')
     else
       I18n.t('nlt.give')
-    end 
+    end
   end
 
   def type_class
     case type
     when 1
-      "give"
+      'give'
     when 2
-      "want"
+      'want'
     else
-      "give"
-    end 
+      'give'
+    end
   end
 
   def status_class
@@ -162,12 +162,12 @@ class Ad < ActiveRecord::Base
     when 1
       'available'
     when 2
-      'booked' 
+      'booked'
     when 3
-      'delivered' 
+      'delivered'
     else
       'available'
-    end 
+    end
   end
 
   def status_string
@@ -175,30 +175,24 @@ class Ad < ActiveRecord::Base
     when 1
       I18n.t('nlt.available')
     when 2
-      I18n.t('nlt.booked') 
+      I18n.t('nlt.booked')
     when 3
-      I18n.t('nlt.delivered') 
+      I18n.t('nlt.delivered')
     else
       I18n.t('nlt.available')
-    end 
-  end
-
-  def valid_ip_address
-    unless IPAddress.valid?(ip)
-      errors.add(:ip, "No es una IP válida")
     end
   end
 
-  def is_give? 
+  def valid_ip_address
+    errors.add(:ip, 'No es una IP válida') unless IPAddress.valid?(ip)
+  end
+
+  def give?
     type == 1
   end
 
-  def is_want? 
-    type == 2
-  end
-
   def meta_title
-    "#{I18n.t('nlt.keywords')} #{self.title} #{self.woeid_name}"
+    "#{I18n.t('nlt.keywords')} #{title} #{woeid_name}"
   end
 
   def bumpable?

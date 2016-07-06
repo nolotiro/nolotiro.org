@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 module ApplicationHelper
   def messages_tab?
     params[:controller] == 'messages'
@@ -19,7 +20,7 @@ module ApplicationHelper
     tag :meta, name: 'description', content: content
   end
 
-  def escape_privacy_data text
+  def escape_privacy_data(text)
     if text
       text = text.gsub(/([\._a-zA-Z0-9-]+@[\._a-zA-Z0-9-]+)/, ' ')
       text = text.gsub(/([9|6])+([0-9\s*]{8,})/, ' ')
@@ -44,15 +45,15 @@ module ApplicationHelper
 
   def i18n_to_localeapp_in_locale(locale)
     langs = {
-      gl: 20650,
-      pt: 20648,
-      nl: 24068,
-      it: 20649,
-      fr: 20646,
-      eu: 20651,
-      en: 20647,
-      de: 20645,
-      ca: 20644
+      gl: 20_650,
+      pt: 20_648,
+      nl: 24_068,
+      it: 20_649,
+      fr: 20_646,
+      eu: 20_651,
+      en: 20_647,
+      de: 20_645,
+      ca: 20_644
     }
     langs[locale]
   end
@@ -68,7 +69,7 @@ module ApplicationHelper
     content_tag(:div, id: 'error_explanation') do
       header = content_tag(:h2, t('nlt.save_failed'))
       list = content_tag(:ul) do
-        errs.full_messages.map { |m| content_tag(:li, m) }.join("\n").html_safe
+        safe_join(errs.full_messages.map { |m| content_tag(:li, m) }, "\n")
       end
 
       header + list

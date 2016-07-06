@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 class User < ActiveRecord::Base
   has_many :identities, inverse_of: :user, dependent: :destroy
 
@@ -5,7 +6,7 @@ class User < ActiveRecord::Base
   has_many :comments, foreign_key: 'user_owner', dependent: :destroy
 
   has_many :friendships
-  has_many :friends, :through => :friendships
+  has_many :friends, through: :friendships
 
   before_save :default_lang
 
@@ -14,25 +15,25 @@ class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :timeoutable and :omniauthable
   devise :confirmable, :database_authenticatable, :registerable,
-    :recoverable, :rememberable, :trackable, :validatable, :lockable, 
-    :omniauthable, omniauth_providers: [:facebook, :google_oauth2]
+         :recoverable, :rememberable, :trackable, :validatable, :lockable,
+         :omniauthable, omniauth_providers: [:facebook, :google_oauth2]
 
   acts_as_messageable
 
-  scope :last_week, lambda { where("created_at >= :date", :date => 1.week.ago) } 
+  scope :last_week, lambda { where('created_at >= :date', date: 1.week.ago) }
 
   scope :top_overall, ->(limit = 20) do
-    select("users.id, users.username, COUNT(ads.id) as n_ads")
+    select('users.id, users.username, COUNT(ads.id) as n_ads')
       .joins(:ads)
       .merge(Ad.give)
-      .group("ads.user_owner")
+      .group('ads.user_owner')
       .unscope(:order)
-      .order("n_ads DESC")
+      .order('n_ads DESC')
       .limit(limit)
   end
 
   scope :top_last_week, ->(limit = 20) do
-    top_overall(limit).where("published_at >= :date", date: 1.week.ago)
+    top_overall(limit).where('published_at >= :date', date: 1.week.ago)
   end
 
   def self.new_with_session(params, session)
@@ -61,47 +62,47 @@ class User < ActiveRecord::Base
     username
   end
 
-  def mailboxer_email(object)
+  def mailboxer_email(_object)
     email
   end
 
-  def unread_messages_count 
-    self.mailbox.inbox.unread(self).count
+  def unread_messages_count
+    mailbox.inbox.unread(self).count
   end
 
   def admin?
     role == 1
   end
 
-  #this method is called by devise to check for "active" state of the model
+  # this method is called by devise to check for "active" state of the model
   def active_for_authentication?
-    super and self.locked != 1
+    super && locked != 1
   end
 
   def unlock!
-    self.update_column('locked', 0)
+    update_column('locked', 0)
   end
 
   def lock!
-    self.update_column('locked', 1)
+    update_column('locked', 1)
   end
 
   def default_lang
-    self.lang ||= "es"
+    self.lang ||= 'es'
   end
 
-  def is_friend? user
-    self.friends.where(id: user.id).count > 0 ? true : false
+  def friend?(user)
+    friends.where(id: user.id).count > 0 ? true : false
   end
 
   # nolotirov2 legacy: auth migration - from zend md5 to devise
-  # https://github.com/plataformatec/devise/wiki/How-To:-Migration-legacy-database 
+  # https://github.com/plataformatec/devise/wiki/How-To:-Migration-legacy-database
   def valid_password?(password)
-    if self.legacy_password_hash.present?
-      if ::Digest::MD5.hexdigest(password).upcase == self.legacy_password_hash.upcase
+    if legacy_password_hash.present?
+      if ::Digest::MD5.hexdigest(password).upcase == legacy_password_hash.upcase
         self.password = password
         self.legacy_password_hash = nil
-        self.save!
+        save!
         true
       else
         false
@@ -111,10 +112,8 @@ class User < ActiveRecord::Base
     end
   end
 
-
   def reset_password(*args)
     self.legacy_password_hash = nil
     super
   end
-
 end

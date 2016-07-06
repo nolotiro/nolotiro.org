@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 class AdsController < ApplicationController
   include ApplicationHelper
 
@@ -7,7 +8,7 @@ class AdsController < ApplicationController
 
   # GET /
   def index
-    if user_signed_in? 
+    if user_signed_in?
       url = current_user.woeid? ? ads_woeid_path(id: current_user.woeid, type: 'give') : location_ask_path
       redirect_to url
     else
@@ -16,8 +17,8 @@ class AdsController < ApplicationController
   end
 
   def list
-    @ads = Rails.cache.fetch("ads_list_#{params[:page]}") do 
-      Ad.give.available.includes(:user).paginate(:page => params[:page])
+    @ads = Rails.cache.fetch("ads_list_#{params[:page]}") do
+      Ad.give.available.includes(:user).paginate(page: params[:page])
     end
   end
 
@@ -33,9 +34,7 @@ class AdsController < ApplicationController
   def new
     @ad = Ad.new
     @ad.comments_enabled = true
-    if current_user.woeid.nil? 
-      redirect_to location_ask_path
-    end
+    redirect_to location_ask_path if current_user.woeid.nil?
   end
 
   # GET /ads/1/edit
@@ -63,7 +62,7 @@ class AdsController < ApplicationController
     @ad.published_at = Time.zone.now
 
     respond_to do |format|
-      if verify_recaptcha(:model => @ad) && @ad.save
+      if verify_recaptcha(model: @ad) && @ad.save
         format.html { redirect_to adslug_path(@ad, slug: @ad.slug), notice: t('nlt.ads.created') }
         format.json { render action: 'show', status: :created, location: @ad }
       else
@@ -98,6 +97,7 @@ class AdsController < ApplicationController
   end
 
   private
+
   # Use callbacks to share common setup or constraints between actions.
   def set_ad
     @ad = Ad.find(params[:id])

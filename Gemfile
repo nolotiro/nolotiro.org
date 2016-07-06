@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 source 'https://rubygems.org'
 
 ruby '2.3.1'
@@ -24,8 +25,6 @@ group :development, :test do
   gem 'spring'                              # dev: speed up things
   gem 'commands'                            # dev: rake commands in console
   gem 'web-console', '~> 2.0'               # dev: better errors
-  #gem 'better_errors'                       # dev: better errors
-  #gem 'binding_of_caller'                   # dev: better errors
   gem 'mailcatcher'                         # dev: mailbox
   gem 'bullet'                              # dev: n+1 query problem alert
 end
@@ -37,13 +36,9 @@ group :test do
   gem 'poltergeist'
 end
 
-group :production, :staging do 
+group :production, :staging do
   gem 'airbrake', '~> 4.0'                  # exception notification
 end
-
-# Use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.1.2'
-
 
 # deploy
 group :development do
@@ -53,6 +48,7 @@ group :development do
   gem 'capistrano-bundler'
   gem 'capistrano-ci'
   gem 'capistrano-pending'
+  gem 'rubocop', '0.41.1'
 end
 
 gem 'http_accept_language'
@@ -76,8 +72,8 @@ gem 'omniauth-facebook'                             # users login with facebook
 gem 'omniauth-google-oauth2'                        # users login with google
 gem 'cancancan', '~> 1.10'                          # authorization# authorization# authorization
 gem 'paperclip', '~> 4.0'                           # images
-gem 'delayed_paperclip'                             # images processing in bacground
-gem 'recaptcha', :require => 'recaptcha/rails'      # captcha
+gem 'delayed_paperclip'                             # images processing in background
+gem 'recaptcha', require: 'recaptcha/rails' # captcha
 gem 'ipaddress'                                     # ip address validation
 gem 'localeapp'                                     # i18n interface
 gem 'activeadmin', github: 'activeadmin'            # admin backend

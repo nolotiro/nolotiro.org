@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 require 'active_support/concern'
 
 module MultiLingualizable
@@ -6,7 +7,7 @@ module MultiLingualizable
   included { before_action :set_locale }
 
   class_methods do
-    def default_url_options(options={})
+    def default_url_options(_options = {})
       { locale: I18n.locale }
     end
   end

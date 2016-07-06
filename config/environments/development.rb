@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 NolotiroOrg::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
@@ -11,7 +12,7 @@ NolotiroOrg::Application.configure do
 
   # Show full error reports and disable caching.
   config.consider_all_requests_local       = true
-  #config.action_controller.perform_caching = false
+  # config.action_controller.perform_caching = false
   config.action_controller.perform_caching = true
   config.cache_store = :redis_store
 
@@ -29,13 +30,13 @@ NolotiroOrg::Application.configure do
   # number of complex assets.
   config.assets.debug = true
 
-  config.assets.precompile += %w( common.css.sass )
+  config.assets.precompile += %w(common.css.sass)
 
   # for devise
-  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+  config.action_mailer.default_url_options = { host: 'localhost:3000' }
 
   # for mailcatcher
-  config.action_mailer.smtp_settings = { :address => "127.0.0.1", :port => 1025 }
+  config.action_mailer.smtp_settings = { address: '127.0.0.1', port: 1025 }
 
   # for images on mailer
   config.action_controller.asset_host = 'http://localhost:3000'

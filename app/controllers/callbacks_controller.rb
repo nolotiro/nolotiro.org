@@ -1,5 +1,5 @@
+# frozen_string_literal: true
 class CallbacksController < Devise::OmniauthCallbacksController
-
   def facebook
     if oauth_user.valid?
       sign_in_and_redirect
@@ -34,6 +34,6 @@ class CallbacksController < Devise::OmniauthCallbacksController
   end
 
   def oauth
-    request.env["omniauth.auth"]
+    request.env['omniauth.auth']
   end
 end

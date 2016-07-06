@@ -1,8 +1,11 @@
-#
-# Base class for controller testing
-#
-class ActionController::TestCase
-  include Devise::Test::ControllerHelpers
+# frozen_string_literal: true
+module ActionController
+  #
+  # Base class for controller testing
+  #
+  class TestCase
+    include Devise::Test::ControllerHelpers
 
-  after { Rails.cache.clear }
+    after { Rails.cache.clear }
+  end
 end

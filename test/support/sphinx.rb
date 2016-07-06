@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 #
 # Some helpers for testing with sphinx indices
 #

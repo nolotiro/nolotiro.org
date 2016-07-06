@@ -1,6 +1,6 @@
+# frozen_string_literal: true
 class WoeidController < ApplicationController
-
-  #caches_action :show, :cache_path => Proc.new { |c| c.params }, unless: :current_user
+  # caches_action :show, :cache_path => Proc.new { |c| c.params }, unless: :current_user
 
   # GET /es/woeid/:id/:type
   # GET /es/woeid/:id/:type/status/:status
@@ -12,19 +12,19 @@ class WoeidController < ApplicationController
     @status = status_scope
 
     @ads = Ad.includes(:user)
-              .public_send(@type)
-              .public_send(@status)
-              .by_woeid_code(@id)
-              .paginate(:page => params[:page])
+             .public_send(@type)
+             .public_send(@status)
+             .by_woeid_code(@id)
+             .paginate(page: params[:page])
 
     @woeid = WoeidHelper.convert_woeid_name(@id) if @id.present?
 
-    if @id.present? == true && @woeid == nil
-      raise ActionController::RoutingError.new('Not Found')
-    elsif not @ads.any?
-      if @woeid
-        @location_options = WoeidHelper.search_by_name(@woeid[:short])
-      end
+    if @id.present? == true && @woeid.nil?
+      raise ActionController::RoutingError, 'Not Found'
     end
+
+    return if @ads.any?
+
+    @location_options = WoeidHelper.search_by_name(@woeid[:short]) if @woeid
   end
 end

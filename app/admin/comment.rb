@@ -1,14 +1,14 @@
-ActiveAdmin.register Comment, as: "AdComment" do
-
+# frozen_string_literal: true
+ActiveAdmin.register Comment, as: 'AdComment' do
   # permit_params
 
   filter :created_at
 
-  #controller do
+  # controller do
   #  def scoped_collection
   #    super.includes :ad, :user
   #  end
-  #end
+  # end
 
   index do
     selectable_column
@@ -20,9 +20,7 @@ ActiveAdmin.register Comment, as: "AdComment" do
     actions
   end
 
-  action_item :view, only: :show do 
-    link_to "Ver en la web", ad_path(ad_comment.ad)
+  action_item :view, only: :show do
+    link_to 'Ver en la web', ad_path(ad_comment.ad)
   end
-
 end
-

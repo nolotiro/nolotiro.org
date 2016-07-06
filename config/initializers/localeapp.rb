@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 require_relative '../application'
 require 'localeapp/rails'
 
@@ -5,7 +6,7 @@ Localeapp.configure do |config|
   config.api_key = if Rails.env.test?
                      'a' * 50
                    else
-                     Rails.application.secrets["localeapp_apikey"]
+                     Rails.application.secrets['localeapp_apikey']
                    end
 
   config.polling_environments = []

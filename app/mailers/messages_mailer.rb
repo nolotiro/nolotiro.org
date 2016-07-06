@@ -1,5 +1,6 @@
+# frozen_string_literal: true
 class MessagesMailer < ActionMailer::Base
-  default from: Rails.application.secrets.emails["default_from"]
+  default from: Rails.application.secrets.emails['default_from']
 
   def create(to_email, from_username, subject, message)
     @from_username = from_username
@@ -10,5 +11,4 @@ class MessagesMailer < ActionMailer::Base
       subject: "[nolotiro.org] Tienes un nuevo mensaje del usuario #{@from_username}"
     )
   end
-
 end

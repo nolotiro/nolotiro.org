@@ -1,5 +1,5 @@
-ThinkingSphinx::Index.define :ad, :with => :active_record do
-
+# frozen_string_literal: true
+ThinkingSphinx::Index.define :ad, with: :active_record do
   indexes title
   indexes body
   indexes user_owner
@@ -9,4 +9,3 @@ ThinkingSphinx::Index.define :ad, :with => :active_record do
   has type
   has created_at
 end
-

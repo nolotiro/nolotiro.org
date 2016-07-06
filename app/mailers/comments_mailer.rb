@@ -1,5 +1,6 @@
+# frozen_string_literal: true
 class CommentsMailer < ActionMailer::Base
-  default from: Rails.application.secrets.emails["default_from"]
+  default from: Rails.application.secrets.emails['default_from']
 
   def create(ad_id, comment)
     @comment = comment
@@ -9,5 +10,4 @@ class CommentsMailer < ActionMailer::Base
       subject: t('nlt.comments.subject', ad: @ad.title)
     )
   end
-
 end

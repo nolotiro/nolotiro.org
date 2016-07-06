@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 json.locations @section_locations do |loc|
   json.woeid_id loc[1]
   json.woeid_name loc[0]

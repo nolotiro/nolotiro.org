@@ -1,10 +1,11 @@
+# frozen_string_literal: true
 require 'concerns/multi_lingualizable'
 
 class ApplicationController < ActionController::Base
   include MultiLingualizable
 
   # TODO: comment captcha for ad creation/edition
-  
+
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
@@ -12,15 +13,15 @@ class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
 
   rescue_from CanCan::AccessDenied do |exception|
-    if user_signed_in? 
-      redirect_to root_url, :alert => t('nlt.permission_denied')
+    if user_signed_in?
+      redirect_to root_url, alert: t('nlt.permission_denied')
     else
-      redirect_to new_user_session_url, :alert => exception.message
+      redirect_to new_user_session_url, alert: exception.message
     end
   end
 
-  def access_denied exception
-    redirect_to root_url, :alert => exception.message
+  def access_denied(exception)
+    redirect_to root_url, alert: exception.message
   end
 
   def signed_in_root_path(resource)
@@ -32,10 +33,10 @@ class ApplicationController < ActionController::Base
 
   def authenticate_active_admin_user!
     authenticate_user!
-    unless current_user.admin?
-      flash[:alert] = t('nlt.permission_denied')
-      redirect_to root_path
-    end
+    return if current_user.admin?
+
+    flash[:alert] = t('nlt.permission_denied')
+    redirect_to root_path
   end
 
   def type_scope
@@ -52,7 +53,7 @@ class ApplicationController < ActionController::Base
 
   helper_method :status_scope
 
-  def location_suggest 
+  def location_suggest
     @location_suggest ||= RequestGeolocator.new(request).suggest
   end
 

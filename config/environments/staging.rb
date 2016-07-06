@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 NolotiroOrg::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
@@ -75,14 +76,13 @@ NolotiroOrg::Application.configure do
   config.log_formatter = ::Logger::Formatter.new
 
   # for devise
-  config.action_mailer.default_url_options = { :host => 'beta.nolotiro.org' }
+  config.action_mailer.default_url_options = { host: 'beta.nolotiro.org' }
 
   # for mailcatcher
-  #config.action_mailer.delivery_method = :smtp
-  #config.action_mailer.smtp_settings = { :address => "127.0.0.1", :port => 1025 }
+  # config.action_mailer.delivery_method = :smtp
+  # config.action_mailer.smtp_settings = { :address => "127.0.0.1", :port => 1025 }
 
   # for images on mailer
   config.action_controller.asset_host = 'https://beta.nolotiro.org'
   config.action_mailer.asset_host = config.action_controller.asset_host
-
 end

@@ -1,14 +1,14 @@
-ActiveAdmin.register_page "Dashboard" do
+# frozen_string_literal: true
+ActiveAdmin.register_page 'Dashboard' do
+  menu priority: 1, label: proc { I18n.t('active_admin.dashboard') }
 
-  menu priority: 1, label: proc{ I18n.t("active_admin.dashboard") }
-
-  content title: proc{ I18n.t("active_admin.dashboard") } do
+  content title: proc { I18n.t('active_admin.dashboard') } do
     # Here is an example of a simple dashboard with columns and panels.
     #
     columns do
       column do
-        panel "Últimos anuncios publicados" do
-          table_for Ad.includes(:user).limit(90) do 
+        panel 'Últimos anuncios publicados' do
+          table_for Ad.includes(:user).limit(90) do
             column :id
             column :title do |ad|
               link_to ad.title, admin_ad_path(ad)
@@ -22,7 +22,7 @@ ActiveAdmin.register_page "Dashboard" do
       end
 
       column do
-        panel "Últimos comentarios publicados" do
+        panel 'Últimos comentarios publicados' do
           table_for Comment.recent do
             column :id
             column :body do |com|
