@@ -66,20 +66,6 @@ class MessagesController < ApplicationController
     current_user.mark_as_read(@conversation)
   end
 
-  def move
-    mailbox = params[:mailbox]
-    conversation = conversations.find(params[:id])
-    if conversation
-      current_user.send(mailbox, conversation)
-      flash[:notice] = I18n.t "mailboxer.notifications.sent", mailbox: mailbox
-    else
-      conversation = conversations.find(params[:conversations])
-      conversations.each { |c| current_user.send(mailbox, c) }
-      flash[:notice] = I18n.t "mailboxer.notifications.sent", mailbox: mailbox
-    end
-    redirect_to mailboxer_messages_path(box: params[:current_box])
-  end
-
   def trash
     conversation = conversations.find(params[:id] || params[:conversations])
     current_user.trash(conversation)
