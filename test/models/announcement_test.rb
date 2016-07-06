@@ -21,4 +21,11 @@ class AnnouncementTest < ActiveSupport::TestCase
     assert_equal [pending], Announcement.pending_for(dismisser)
     assert_equal [pending, acknowledged], Announcement.pending_for(other)
   end
+
+  test '.pick_pending_for returns pending announcement closest to expiration' do
+    _curr1 = create(:announcement, ends_at: 1.hour.from_now)
+    curr2 = create(:announcement, ends_at: 1.minute.from_now)
+
+    assert_equal curr2, Announcement.pick_pending_for(create(:user))
+  end
 end

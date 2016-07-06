@@ -14,4 +14,8 @@ class Announcement < ActiveRecord::Base
 
     join.where('user_id IS NULL or user_id <> ?', user.id)
   end
+
+  def self.pick_pending_for(user)
+    current.pending_for(user).order(ends_at: :asc).first
+  end
 end

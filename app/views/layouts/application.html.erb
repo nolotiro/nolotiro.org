@@ -68,7 +68,10 @@
       fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));</script>
 
-    <%= render "partials/announcements" %>
+    <% if user_signed_in? %>
+      <%= render "partials/announcement",
+                 announcement: Announcement.pick_pending_for(current_user) %>
+    <% end %>
 
     <div class="container">
 
