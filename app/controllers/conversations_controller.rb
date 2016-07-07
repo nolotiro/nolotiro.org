@@ -45,8 +45,8 @@ class ConversationsController < ApplicationController
 
       return render_new_with(recipient, receipt) unless receipt.valid?
     end
-    flash[:notice] = I18n.t 'mailboxer.notifications.sent'
-    redirect_to mailboxer_conversation_path(@conversation)
+    redirect_to mailboxer_conversation_path(@conversation),
+                notice: I18n.t('mailboxer.notifications.sent')
   end
 
   # GET /messages/:ID
