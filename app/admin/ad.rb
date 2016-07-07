@@ -32,6 +32,17 @@ ActiveAdmin.register Ad do
     actions
   end
 
+  form do |f|
+    f.inputs do
+      f.input :type, as: :select,
+                     collection: [['give', 1], ['want', 2]],
+                     include_blank: false
+      f.input :woeid_code
+    end
+
+    f.actions
+  end
+
   action_item :view, only: :show do
     link_to 'Ver en la web', ad_path(ad)
   end
