@@ -16,7 +16,7 @@ ActiveAdmin.register Ad do
   filter :woeid_code
   filter :type, as: :select, collection: [['Regalo', 1], ['Busco', 2]]
   filter :status, as: :select, collection: [['Disponible', 1], ['Reservado', 2], ['Entregado', 3]]
-  filter :created_at
+  filter :published_at
 
   index do
     selectable_column
@@ -28,7 +28,7 @@ ActiveAdmin.register Ad do
     column :type_string
     column :status_class
     column :woeid_name
-    column :created_at
+    column :published_at
     actions
   end
 
