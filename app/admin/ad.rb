@@ -27,7 +27,7 @@ ActiveAdmin.register Ad do
     column :user
     column :type_string
     column :status_class
-    column :woeid_name
+    column(:city, &:woeid_name_short)
     column(:published_at) { |ad| ad.published_at.strftime('%d/%m/%y %H:%M') }
     actions
   end
