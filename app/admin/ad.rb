@@ -29,7 +29,13 @@ ActiveAdmin.register Ad do
     column :status_class
     column(:city, &:woeid_name_short)
     column(:published_at) { |ad| ad.published_at.strftime('%d/%m/%y %H:%M') }
-    actions
+
+    actions(defaults: false) do |ad|
+      edit = link_to 'Editar', edit_admin_ad_path(ad)
+      delete = link_to 'Eliminar', admin_ad_path(ad), method: :delete
+
+      safe_join([edit, delete], ' ')
+    end
   end
 
   form do |f|
