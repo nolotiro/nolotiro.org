@@ -87,7 +87,8 @@ class ConversationsController < ApplicationController
     # FIXME: this should be on model (validation)
     return unless @message.sender.id == recipient_id
 
-    redirect_to message_create_path(user_id: recipient_id), notice: I18n.t('mailboxer.notifications.error_same_user')
+    redirect_to message_new_path(user_id: recipient_id),
+                notice: I18n.t('mailboxer.notifications.error_same_user')
   end
 
   def render_show_with(recipient)

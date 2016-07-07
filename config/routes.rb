@@ -98,8 +98,8 @@ NolotiroOrg::Application.routes.draw do
       get  '/show/:id/subject/:subject', to: 'conversations#show', as: 'message_show'
       get  '/create/id_user_to/:user_id', to: 'conversations#new', as: 'message_new'
       get  '/create/id_user_to/:user_id/subject/:subject', to: 'conversations#new', as: 'message_new_with_subject'
-      post '/create/id_user_to/:user_id', to: 'conversations#update', as: 'message_create'
-      post '/create/id_user_to/:user_id/subject/:subject', to: 'conversations#create', as: 'message_create_with_subject'
+      post '/create/id_user_to/:user_id', to: 'conversations#update'
+      post '/create/id_user_to/:user_id/subject/:subject', to: 'conversations#create'
     end
 
     # rss
