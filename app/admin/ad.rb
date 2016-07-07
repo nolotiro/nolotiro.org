@@ -7,7 +7,7 @@ ActiveAdmin.register Ad do
     end
   end
 
-  permit_params :woeid_code, :type
+  permit_params :woeid_code, :type, :body, :title
 
   filter :title
   filter :body
@@ -37,6 +37,8 @@ ActiveAdmin.register Ad do
       f.input :type, as: :select,
                      collection: [['give', 1], ['want', 2]],
                      include_blank: false
+      f.input :title
+      f.input :body
       f.input :woeid_code
     end
 
