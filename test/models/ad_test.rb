@@ -68,21 +68,21 @@ class AdTest < ActiveSupport::TestCase
   end
 
   test 'ad check slug' do
-    assert_equal @ad.slug, 'ordenador-en-vallecas'
+    assert_equal 'ordenador-en-vallecas', @ad.slug
   end
 
   test 'ad check type_string' do
-    assert_equal @ad.type_string, 'regalo'
+    assert_equal 'regalo', @ad.type_string
     @ad.update!(type: :want)
-    assert_equal @ad.type_string, 'petición'
+    assert_equal 'petición', @ad.type_string
   end
 
   test 'ad check status_string' do
-    assert_equal @ad.status_string, 'disponible'
+    assert_equal 'disponible', @ad.status_string
     @ad.update!(status: :booked)
-    assert_equal @ad.status_string, 'reservado'
+    assert_equal 'reservado', @ad.status_string
     @ad.update!(status: :delivered)
-    assert_equal @ad.status_string, 'entregado'
+    assert_equal 'entregado', @ad.status_string
   end
 
   test 'ad meta_title for give ads' do
@@ -108,7 +108,7 @@ class AdTest < ActiveSupport::TestCase
     skip
     body = 'What a nice emoji😀!What a nice emoji😀!What a nice emoji😀!What a nice emoji😀!What a nice emoji😀!'
     @ad.update!(body: body)
-    assert_equal @ad.body, body
+    assert_equal body, @ad.body
   end
 
   test 'ad bumping refreshes publication date' do
