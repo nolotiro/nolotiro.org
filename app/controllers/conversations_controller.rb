@@ -25,7 +25,7 @@ class ConversationsController < ApplicationController
     return if performed?
 
     recipient = User.find(recipient_id)
-    receipt = current_user.send_message([recipient], @message.body, @message.subject, true, @message.attachment)
+    receipt = current_user.send_message([recipient], @message.body, @message.subject)
     @conversation = receipt.notification.conversation
 
     return render_new_with(recipient, receipt) unless receipt.valid?
@@ -42,7 +42,7 @@ class ConversationsController < ApplicationController
 
     return render_show_with(interlocutor(@conversation)) unless @message.valid?
 
-    current_user.reply_to_conversation(@conversation, @message.body, nil, true, true, @message.attachment)
+    current_user.reply_to_conversation(@conversation, @message.body)
 
     redirect_to mailboxer_conversation_path(@conversation),
                 notice: I18n.t('mailboxer.notifications.sent')
