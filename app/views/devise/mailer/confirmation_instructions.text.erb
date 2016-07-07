@@ -1,5 +1,5 @@
-<%= t('nlt.hello_to', :recipient => @resource.email) %>
+<%= t('nlt.hello_to', recipient: @resource.email) %>
 
 <%= t('devise.confirmations.instructions') %>
 
-<%= confirmation_url(@resource, :confirmation_token => @token) %>
+<%= confirmation_url(@resource, confirmation_token: @token) %>

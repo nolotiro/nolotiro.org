@@ -1,12 +1,12 @@
 <div class="link-boxes">
-  <%= render :partial => "partials/select_language_box" %>
+  <%= render partial: "partials/select_language_box" %>
 
-  <%= render :partial => "partials/user_actions" %>
+  <%= render partial: "partials/user_actions" %>
 </div>
 
 <div class="actions-row">
   <div class="site-logo">
-    <%= link_to root_path, :title => "nolotiro.org home" do %>
+    <%= link_to root_path, title: "nolotiro.org home" do %>
       <div class="site-name">
         nolotiro.org
         <%= h yield(:title) %>

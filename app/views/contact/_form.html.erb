@@ -5,17 +5,17 @@
     <dl>
       <% unless user_signed_in? %>
         <dt>
-          <%= f.label :email, :class => "required" %>
+          <%= f.label :email, class: "required" %>
         </dt>
         <dd>
-          <%= f.text_field :email, :type => :email, :required => "required" %>
+          <%= f.text_field :email, type: :email, required: "required" %>
         </dd>
       <% end %>
       <dt>
-        <%= f.label :message, :class => "required" %><br />
+        <%= f.label :message, class: "required" %><br />
       </dt>
       <dd>
-        <%= f.text_area :message, :size => "24x10" %>
+        <%= f.text_area :message, size: "24x10" %>
       </dd>
       <dt>
         <label for="captcha-input" class="required">
@@ -23,7 +23,7 @@
         </label>
       </dt>
       <dd>
-        <%= recaptcha_tags(:display => { :theme => "white" }, ajax: true)%>
+        <%= recaptcha_tags(display: { theme: "white" }, ajax: true)%>
       </dd>
       <dt>&nbsp;</dt>
       <dd>

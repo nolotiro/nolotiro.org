@@ -1,7 +1,7 @@
 <div id="footer">
 
   <div id="social-butttons">
-    <%= render :partial => "partials/social_buttons", :locals => { :url => url } %>
+    <%= render partial: "partials/social_buttons", locals: { url: url } %>
   </div>
 
   <div class="links-right">
@@ -13,7 +13,7 @@
     &nbsp;&nbsp;
 
     <a href="https://alabs.org/">
-      <%= image_tag("alabs.png", :alt => "aLabs logo") %>
+      <%= image_tag("alabs.png", alt: "aLabs logo") %>
     </a>
   </div>
 
@@ -26,6 +26,6 @@
     <%= link_to t('nlt.privacy'), privacy_path %> |
     <%= link_to t('nlt.developers'), 'https://github.com/alabs/nolotiro.org' %> |
     <%= link_to t('nlt.contact'), contact_path %> |
-    <%= link_to t('nlt.suggestions'), 'http://nolotiro.uservoice.com/forums/30282?lang', :target => "_blank" %>
+    <%= link_to t('nlt.suggestions'), 'http://nolotiro.uservoice.com/forums/30282?lang', target: "_blank" %>
   </div>
 </div>

@@ -33,9 +33,9 @@
 
 <div id="location_header_section">
   <span class="give-want">
-    <%= link_to t('nlt.give'), url_for(type: 'give'), :class => @type == "give" ? "actual" : "''" %>
+    <%= link_to t('nlt.give'), url_for(type: 'give'), class: @type == "give" ? "actual" : "''" %>
     &nbsp;
-    <%= link_to t('nlt.want'), url_for(type: 'want'), :class => @type == "want" ? "actual" : "''" %>
+    <%= link_to t('nlt.want'), url_for(type: 'want'), class: @type == "want" ? "actual" : "''" %>
   </span>
 
   <div class="location_name">
@@ -52,9 +52,9 @@
 
     <% if @woeid %>
       <br>
-      <%= render :partial => "ads/search", :locals => {:woeid => @id, :ad_type => @type, :q => @q} %>
-      <%= link_to location_ask_path, :class => "world_link" do %>
-        <%= image_tag "change_location.png", :alt => "change location" %>
+      <%= render partial: "ads/search", locals: {woeid: @id, ad_type: @type, q: @q} %>
+      <%= link_to location_ask_path, class: "world_link" do %>
+        <%= image_tag "change_location.png", alt: "change location" %>
         <%= t('nlt.change_city') %>
       <% end %>
     <% end %>
@@ -79,16 +79,16 @@
       <%= render partial: "partials/pagination", locals: { items: @ads } %>
     <% else %>
       <% if defined? @no_results_search %>
-        <%= render :partial => "ads/no_results_search", :locals => { :location_options => @location_options } %>
+        <%= render partial: "ads/no_results_search", locals: { location_options: @location_options } %>
       <% else %>
-        <%= render :partial => "ads/no_results", :locals => { :location_options => @location_options } %>
+        <%= render partial: "ads/no_results", locals: { location_options: @location_options } %>
       <% end %>
     <% end %>
 
     <% if @woeid %>
       <div class="rss">
-        <%= link_to rss_type_path(:woeid => @id, :type => "give") do %>
-          <%= image_tag "icons/rss.png", :alt => t("nlt.rss_suscribe") %>
+        <%= link_to rss_type_path(woeid: @id, type: "give") do %>
+          <%= image_tag "icons/rss.png", alt: t("nlt.rss_suscribe") %>
           &nbsp; <%= t('nlt.rss_suscribe') %> - <%= @woeid[:full] %>
         <% end %>
       </div>

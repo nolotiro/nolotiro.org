@@ -8,7 +8,7 @@
   <div class="row">
     <% if @locations.nil? %>
       <p class="error"><%= t('nlt.change_town.choose_html', location: params[:location]) %></p>
-      <%= render :partial =>"ask_form" %>
+      <%= render partial: "ask_form" %>
     <% else %>
       <%= render "list_form",
                  locations: @locations.map { |l| [l.label, l.woeid] } %>
