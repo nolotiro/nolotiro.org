@@ -38,14 +38,14 @@ module Messages
     send_message(body: 'hola, user2')
     send_message(subject: 'forgot the title', body: 'hola, user2')
 
-    assert_content 'Conversación con user2 asunto forgot the title'
+    assert_message_sent 'hola, user2'
   end
 
   def test_replies_to_conversation
     send_message(subject: 'hola, user2', body: 'How you doing?')
     send_message(body: 'hola, user1, nice to see you around')
 
-    page.assert_selector '.bubble', text: 'nice to see you around'
+    assert_message_sent 'nice to see you around'
   end
 
   def test_replies_to_conversation_after_a_previous_error
@@ -53,7 +53,7 @@ module Messages
     send_message(body: '')
     send_message(body: 'forgot to reply something')
 
-    page.assert_selector '.bubble', text: 'forgot to reply something'
+    assert_message_sent 'forgot to reply something'
   end
 
   def test_shows_the_other_user_in_the_conversation_header
@@ -85,7 +85,7 @@ module Messages
   def test_messages_another_user
     send_message(subject: 'hola mundo', body: 'hola trololo')
 
-    assert_content 'hola trololo'
+    assert_message_sent 'hola trololo'
     assert_content 'Borrar mensaje'
   end
 
@@ -112,6 +112,10 @@ module Messages
   end
 
   private
+
+  def assert_message_sent(text)
+    page.assert_selector '.bubble', text: text
+  end
 
   #
   # Sometimes cookie bar gets in the middle of our tests.
