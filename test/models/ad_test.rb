@@ -62,14 +62,14 @@ class AdTest < ActiveSupport::TestCase
     text = 'contactar por email example@example.com, por sms 999999999, o whatsapp al 666666666'
     expected_text = 'contactar por email  , por sms  , o   al  '
     @ad.update(title: text)
-    assert_equal @ad.title, expected_text
+    assert_equal expected_text, @ad.title
   end
 
   test 'ad body escapes privacy data' do
     text = 'contactar por email example@example.com, por sms 999999999, o whatsapp al 666666666'
     expected_text = 'contactar por email  , por sms  , o   al  '
     @ad.update(body: text)
-    assert_equal @ad.body, expected_text
+    assert_equal expected_text, @ad.body
   end
 
   test 'ad validates max length of body' do
