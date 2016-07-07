@@ -1,6 +1,4 @@
 es:
-  active_admin:
-    dashboard: Panel
   activemodel:
     attributes:
       contact:

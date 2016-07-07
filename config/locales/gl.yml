@@ -1,6 +1,4 @@
 gl:
-  active_admin:
-    dashboard: 
   activemodel:
     attributes:
       contact:
