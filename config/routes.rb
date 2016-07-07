@@ -101,7 +101,6 @@ NolotiroOrg::Application.routes.draw do
       get  '/create/id_user_to/:user_id/subject/:subject', to: 'messages#new', as: 'message_new_with_subject'
       post '/create/id_user_to/:user_id', to: 'messages#create', as: 'message_create'
       post '/create/id_user_to/:user_id/subject/:subject', to: 'messages#create', as: 'message_create_with_subject'
-      post '/reply/:id/to/:user_id', to: 'messages#reply', as: 'message_reply'
     end
 
     # rss
