@@ -89,14 +89,6 @@ module Messages
     assert_content 'Borrar mensaje'
   end
 
-  def test_messages_another_user_using_emojis
-    skip 'emojis not supported'
-    send_message(subject: 'hola mundo', body: 'What a nice emoji😀!')
-
-    assert_content 'What a nice emoji😀'
-    assert_content 'Borrar mensaje'
-  end
-
   def test_deletes_a_single_message_and_shows_an_confirmation_flash
     send_message(subject: 'hola mundo', body: 'What a nice message!')
     click_link 'Borrar mensaje'
