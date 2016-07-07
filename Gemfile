@@ -80,7 +80,6 @@ gem 'localeapp',
     github: 'deivid-rodriguez/localeapp',
     branch: 'drop_1.9.3_support'                    # i18n interface
 gem 'activeadmin', github: 'activeadmin'            # admin backend
-gem 'rakismet'                                      # antispam
 gem 'faker'
 
 # For Yahoo YQL interaction

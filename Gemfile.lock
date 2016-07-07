@@ -331,7 +331,6 @@ GEM
     rainbow (2.1.0)
     raindrops (0.15.0)
     rake (11.2.2)
-    rakismet (1.5.1)
     ransack (1.7.0)
       actionpack (>= 3.0)
       activerecord (>= 3.0)
@@ -495,7 +494,6 @@ DEPENDENCIES
   pundit
   rails (~> 4.2)
   rails-i18n (~> 4.0)
-  rakismet
   recaptcha
   redis-rails
   rest-client (~> 2.0)

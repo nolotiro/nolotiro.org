@@ -32,31 +32,7 @@ ActiveAdmin.register Ad do
     actions
   end
 
-  sidebar 'Acciones', only: [:show, :edit] do
-    dl do
-      dt '¿Es SPAM?'
-      dd status_tag(ad.spam?)
-    end
-    ul do
-      li link_to 'Marcar como spam', mark_as_spam_admin_ad_path, method: :post, class: 'button'
-      li
-      li link_to 'Marcar como NO spam', mark_as_ham_admin_ad_path, method: :post, class: 'button'
-    end
-  end
-
   action_item :view, only: :show do
     link_to 'Ver en la web', ad_path(ad)
-  end
-
-  member_action :mark_as_spam, method: :post do
-    @ad = Ad.find params[:id]
-    @ad.spam!
-    redirect_to admin_ad_path(@ad), notice: 'Has marcado este anuncio como SPAM'
-  end
-
-  member_action :mark_as_ham, method: :post do
-    @ad = Ad.find params[:id]
-    @ad.ham!
-    redirect_to admin_ad_path(@ad), notice: 'Este anuncio esta marcado como HAM (no es SPAM)'
   end
 end
