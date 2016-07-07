@@ -37,7 +37,7 @@ class AdsControllerTest < ActionController::TestCase
   end
 
   test 'should not create ad if not signed in' do
-    post :create, ad: { body: 'Es una Ferrari de esas rojas, muy linda.', ip: '8.8.8.8', title: 'Regalo Ferrari', type: 1, woeid_code: '788273' }
+    post :create, ad: { body: 'Es una Ferrari de esas rojas, muy linda.', title: 'Regalo Ferrari', type: 1, woeid_code: '788273' }
     assert_redirected_to new_user_session_url
   end
 
@@ -45,7 +45,7 @@ class AdsControllerTest < ActionController::TestCase
     sign_in @user
 
     assert_difference('Ad.count') do
-      post :create, ad: { body: 'Es una Ferrari de esas rojas, muy linda.', ip: '8.8.8.8', title: 'Regalo Ferrari', type: 1, woeid_code: '788273' }
+      post :create, ad: { body: 'Es una Ferrari de esas rojas, muy linda.', title: 'Regalo Ferrari', type: 1, woeid_code: '788273' }
     end
 
     assert_redirected_to adslug_path(assigns(:ad), slug: 'regalo-ferrari')
@@ -112,7 +112,7 @@ class AdsControllerTest < ActionController::TestCase
   test 'should not update other user ad if normal user' do
     @ad.update(user_owner: @admin.id)
     sign_in @user
-    patch :update, id: @ad, ad: { body: @ad.body, ip: @ad.ip, title: @ad.title, type: @ad.type, user_owner: @ad.user_owner, woeid_code: @ad.woeid_code }
+    patch :update, id: @ad, ad: { body: @ad.body, title: @ad.title, type: @ad.type, user_owner: @ad.user_owner, woeid_code: @ad.woeid_code }
     assert_redirected_to root_url
   end
 
@@ -121,7 +121,7 @@ class AdsControllerTest < ActionController::TestCase
     @ad.update(user_owner: @user.id)
 
     body = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."
-    patch :update, id: @ad, ad: { body: body, ip: @ad.ip, title: @ad.title, type: @ad.type, user_owner: @ad.user_owner, woeid_code: @ad.woeid_code }
+    patch :update, id: @ad, ad: { body: body, title: @ad.title, type: @ad.type, user_owner: @ad.user_owner, woeid_code: @ad.woeid_code }
     assert_redirected_to ad_path(assigns(:ad))
     @ad.reload
     assert_equal body, @ad.body
@@ -129,7 +129,7 @@ class AdsControllerTest < ActionController::TestCase
 
   test 'should update any ad as admin' do
     sign_in @admin
-    patch :update, id: @ad, ad: { body: @ad.body, ip: @ad.ip, title: @ad.title, type: @ad.type, user_owner: @ad.user_owner, woeid_code: @ad.woeid_code }
+    patch :update, id: @ad, ad: { body: @ad.body, title: @ad.title, type: @ad.type, user_owner: @ad.user_owner, woeid_code: @ad.woeid_code }
     assert_redirected_to ad_path(assigns(:ad))
   end
 
