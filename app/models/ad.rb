@@ -22,8 +22,6 @@ class Ad < ActiveRecord::Base
                   user_ip: proc { ip },
                   content: proc { body }
 
-  require 'ipaddress'
-
   belongs_to :user, foreign_key: :user_owner, counter_cache: true
   has_many :comments, foreign_key: :ads_id, dependent: :destroy
 
@@ -37,8 +35,6 @@ class Ad < ActiveRecord::Base
 
   validates :type, presence: true
   validates :type, inclusion: { in: [1, 2] }, allow_blank: true
-
-  # validate :valid_ip_address
 
   # legacy database: has a column with value "type", rails doesn't like that
   # the "type" column is no longer need it by rails, so we don't care about it
@@ -165,10 +161,6 @@ class Ad < ActiveRecord::Base
     when 3 then I18n.t('nlt.delivered')
     else I18n.t('nlt.available')
     end
-  end
-
-  def valid_ip_address
-    errors.add(:ip, 'No es una IP válida') unless IPAddress.valid?(ip)
   end
 
   def meta_title
