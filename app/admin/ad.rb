@@ -27,9 +27,17 @@ ActiveAdmin.register Ad do
 
     column :user
 
-    column :type_string
+    column(:type) do |ad|
+      status_tag({ 'give' => 'green', 'want' => 'red' }[ad.type_class],
+                 label: ad.type_class)
+    end
 
-    column :status_class
+    column(:status) do |ad|
+      status_tag({ 'available' => 'green',
+                   'booked' => 'orange',
+                   'delivered' => 'red' }[ad.status_class],
+                 label: ad.status_class)
+    end
 
     column(:city, &:woeid_name_short)
 
