@@ -58,7 +58,7 @@ class AdTest < ActiveSupport::TestCase
     assert @ad.errors[:title].include?('es demasiado corto (4 caracteres mínimo)')
   end
 
-  test 'ad escaped title and body with escape_privacy_data' do
+  test 'ad title and body escape privacy data' do
     text = 'contactar por email example@example.com, por sms 999999999, o whatsapp al 666666666'
     expected_text = 'contactar por email  , por sms  , o   al  '
     @ad.update_attribute(:body, text)
