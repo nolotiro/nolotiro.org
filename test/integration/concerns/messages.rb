@@ -62,7 +62,7 @@ module Messages
 
     login_as @user2
 
-    visit mailboxer_message_path(Mailboxer::Message.first)
+    visit mailboxer_conversation_path(Mailboxer::Conversation.first)
     assert_content 'Conversación con user1'
   end
 

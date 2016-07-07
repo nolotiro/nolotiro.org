@@ -1,5 +1,5 @@
 # frozen_string_literal: true
-class MessagesController < ApplicationController
+class ConversationsController < ApplicationController
   require 'will_paginate/array'
 
   before_action :authenticate_user!
@@ -46,7 +46,7 @@ class MessagesController < ApplicationController
       return render_new_with(recipient, receipt) unless receipt.valid?
     end
     flash.now[:notice] = I18n.t 'mailboxer.notifications.sent'
-    redirect_to mailboxer_message_path(@conversation)
+    redirect_to mailboxer_conversation_path(@conversation)
   end
 
   # GET /messages/:ID
@@ -65,7 +65,7 @@ class MessagesController < ApplicationController
     conversation = conversations.find(params[:id] || params[:conversations])
     current_user.trash(conversation)
     flash[:notice] = I18n.t 'mailboxer.notifications.trash'
-    redirect_to mailboxer_messages_path
+    redirect_to mailboxer_conversations_path
   end
 
   private

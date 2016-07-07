@@ -17,5 +17,6 @@
 </blockquote>
 
 <p>
-  <%= link_to t('mailboxer.message_mailer.visit'), mailboxer_message_url(id: @message.conversation.id) %>
+  <%= link_to t('mailboxer.message_mailer.visit'),
+              mailboxer_conversation_url(id: @message.conversation.id) %>
 </p>

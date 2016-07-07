@@ -83,7 +83,7 @@ NolotiroOrg::Application.routes.draw do
     get '/search', to: 'search#search', as: 'search'
 
     # messaging
-    resources :mailboxer_messages, controller: :messages, path: '/messages/' do
+    resources :mailboxer_conversations, controller: :conversations, path: '/messages/' do
       member do
         delete 'trash'
       end
@@ -95,12 +95,12 @@ NolotiroOrg::Application.routes.draw do
     # messaging legacy
     scope '/message' do
       get  '/received', to: redirect('/es/message/list'), as: 'messages_received'
-      get  '/list', to: 'messages#index', as: 'messages_list'
-      get  '/show/:id/subject/:subject', to: 'messages#show', as: 'message_show'
-      get  '/create/id_user_to/:user_id', to: 'messages#new', as: 'message_new'
-      get  '/create/id_user_to/:user_id/subject/:subject', to: 'messages#new', as: 'message_new_with_subject'
-      post '/create/id_user_to/:user_id', to: 'messages#create', as: 'message_create'
-      post '/create/id_user_to/:user_id/subject/:subject', to: 'messages#create', as: 'message_create_with_subject'
+      get  '/list', to: 'conversations#index', as: 'messages_list'
+      get  '/show/:id/subject/:subject', to: 'conversations#show', as: 'message_show'
+      get  '/create/id_user_to/:user_id', to: 'conversations#new', as: 'message_new'
+      get  '/create/id_user_to/:user_id/subject/:subject', to: 'conversations#new', as: 'message_new_with_subject'
+      post '/create/id_user_to/:user_id', to: 'conversations#create', as: 'message_create'
+      post '/create/id_user_to/:user_id/subject/:subject', to: 'conversations#create', as: 'message_create_with_subject'
     end
 
     # rss

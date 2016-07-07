@@ -8,12 +8,12 @@
   .row
     = render partial: "users/tabnav", locals: {user: current_user}
     - if @conversations.count > 0
-      = form_tag trash_mailboxer_messages_path, method: :delete do
+      = form_tag trash_mailboxer_conversations_path, method: :delete do
         .table-responsive
           %table#mail-list.table.table-condensed
             %tbody
               - @conversations.each do |c|
-                = render partial: "messages/conversation",
+                = render partial: "conversations/conversation",
                          locals: { c: c, timestamp: c.last_message.created_at }
         = submit_tag t('mailboxer.buttons.trash_selected'), id: 'delete_multiple_button'
       = will_paginate @conversations
