@@ -119,13 +119,6 @@ module Messages
     assert_content 'hola marte'
   end
 
-  def test_replies_to_a_message
-    send_message(subject: 'hola mundo', body: 'hola trololo')
-    send_message(body: 'hola trululu')
-
-    assert_content 'hola trululu'
-  end
-
   private
 
   #
