@@ -4,8 +4,8 @@ json.woeid_id @woeid
 json.woeid_name WoeidHelper.convert_woeid_name(@woeid)[:full]
 json.ads @ads do |ad|
   json.id ad.id
-  json.title ad.title
-  json.body ad.body
+  json.title ad.filtered_title
+  json.body ad.filtered_body
   json.user_owner ad.user_owner
   json.woeid_code ad.woeid_code
   json.created_at ad.created_at

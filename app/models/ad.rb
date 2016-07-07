@@ -84,12 +84,12 @@ class Ad < ActiveRecord::Base
     last_ad_publication.strftime('%d%m%y%H%M%s')
   end
 
-  def body
-    ApplicationController.helpers.escape_privacy_data(self[:body])
+  def filtered_body
+    ApplicationController.helpers.escape_privacy_data(body)
   end
 
-  def title
-    ApplicationController.helpers.escape_privacy_data(self[:title])
+  def filtered_title
+    ApplicationController.helpers.escape_privacy_data(title)
   end
 
   def reset_readed_count!
@@ -101,7 +101,7 @@ class Ad < ActiveRecord::Base
   end
 
   def slug
-    title.parameterize
+    filtered_title.parameterize
   end
 
   def woeid_name
@@ -117,7 +117,7 @@ class Ad < ActiveRecord::Base
   end
 
   def full_title
-    type_string + ' segunda mano ' + title + ' ' + woeid_name
+    type_string + ' segunda mano ' + filtered_title + ' ' + woeid_name
   end
 
   def type_string
@@ -145,7 +145,7 @@ class Ad < ActiveRecord::Base
   end
 
   def meta_title
-    "#{I18n.t('nlt.keywords')} #{title} #{woeid_name}"
+    "#{I18n.t('nlt.keywords')} #{filtered_title} #{woeid_name}"
   end
 
   def bumpable?

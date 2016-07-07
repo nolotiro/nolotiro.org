@@ -7,8 +7,8 @@ xml.rss version: "2.0", "xmlns:media" => "http://search.yahoo.com/mrss/", "xmlns
 
     @ads.each do |ad|
       xml.item do
-        xml.title ad.title
-        description =  ad.body
+        xml.title ad.filtered_title
+        description =  ad.filtered_body
         if ad.image?
           description = image_tag(
             request.protocol + request.host_with_port + ad.image.url(:thumb), style: "float:left;"
