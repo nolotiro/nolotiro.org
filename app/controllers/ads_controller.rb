@@ -24,14 +24,10 @@ class AdsController < ApplicationController
     @ad.published_at = Time.zone.now
     authorize(@ad)
 
-    respond_to do |format|
-      if verify_recaptcha(model: @ad) && @ad.save
-        format.html { redirect_to adslug_path(@ad, slug: @ad.slug), notice: t('nlt.ads.created') }
-        format.json { render action: 'show', status: :created, location: @ad }
-      else
-        format.html { render action: 'new' }
-        format.json { render json: @ad.errors, status: :unprocessable_entity }
-      end
+    if verify_recaptcha(model: @ad) && @ad.save
+      redirect_to adslug_path(@ad, slug: @ad.slug), notice: t('nlt.ads.created')
+    else
+      render action: 'new'
     end
   end
 
@@ -62,32 +58,23 @@ class AdsController < ApplicationController
   end
 
   def bump
-    respond_to do |format|
-      @ad.bump
+    @ad.bump
 
-      format.html { redirect_to :back, notice: t('nlt.ads.bumped') }
-      format.json { head :no_content }
-    end
+    redirect_to :back, notice: t('nlt.ads.bumped')
   end
 
   def update
-    respond_to do |format|
-      if @ad.update(ad_params)
-        format.html { redirect_to @ad, notice: t('nlt.ads.updated') }
-        format.json { head :no_content }
-      else
-        format.html { render action: 'edit', alert: @ad.errors }
-        format.json { render json: @ad.errors, status: :unprocessable_entity }
-      end
+    if @ad.update(ad_params)
+      redirect_to @ad, notice: t('nlt.ads.updated')
+    else
+      render action: 'edit', alert: @ad.errors
     end
   end
 
   def destroy
     @ad.destroy
-    respond_to do |format|
-      format.html { redirect_to ads_url }
-      format.json { head :no_content }
-    end
+
+    redirect_to ads_url
   end
 
   private
