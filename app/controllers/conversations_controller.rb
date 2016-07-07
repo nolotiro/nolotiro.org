@@ -38,10 +38,7 @@ class ConversationsController < ApplicationController
     initialize_message
     return if performed?
 
-    @conversation = conversations.find_by(id: @message.conversation_id)
-    unless @conversation
-      return redirect_to root_path, alert: I18n.t('nlt.permission_denied')
-    end
+    @conversation = conversations.find(@message.conversation_id)
 
     return render_show_with(interlocutor(@conversation)) unless @message.valid?
 
@@ -54,10 +51,7 @@ class ConversationsController < ApplicationController
   # GET /messages/:ID
   # GET /message/show/:ID/subject/SUBJECT
   def show
-    @conversation = conversations.find_by(id: params[:id])
-    unless @conversation
-      return redirect_to root_path, alert: I18n.t('nlt.permission_denied')
-    end
+    @conversation = conversations.find(params[:id])
 
     @message = Mailboxer::Message.new conversation_id: @conversation.id
     current_user.mark_as_read(@conversation)
