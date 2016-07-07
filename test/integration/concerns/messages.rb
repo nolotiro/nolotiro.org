@@ -114,7 +114,7 @@ module Messages
   private
 
   def assert_message_sent(text)
-    page.assert_selector '.bubble', text: text
+    assert_css_selector '.bubble', text: text
     assert_content 'Mensaje enviado'
   end
 
