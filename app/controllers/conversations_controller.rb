@@ -21,30 +21,32 @@ class ConversationsController < ApplicationController
   end
 
   def create
-    @message = Mailboxer::Message.new message_params
-    @message.sender = current_user
-    # FIXME: this should be on model (validation)
-    if @message.sender.id == recipient_id
-      return redirect_to message_create_url(user_id: recipient_id), notice: I18n.t('mailboxer.notifications.error_same_user')
+    initialize_message
+    return if performed?
+
+    recipient = User.find(recipient_id)
+    receipt = current_user.send_message([recipient], @message.body, @message.subject, true, @message.attachment)
+    @conversation = receipt.notification.conversation
+
+    return render_new_with(recipient, receipt) unless receipt.valid?
+
+    redirect_to mailboxer_conversation_path(@conversation),
+                notice: I18n.t('mailboxer.notifications.sent')
+  end
+
+  def update
+    initialize_message
+    return if performed?
+
+    @conversation = conversations.find_by(id: @message.conversation_id)
+    unless @conversation
+      return redirect_to root_path, alert: I18n.t('nlt.permission_denied')
     end
-    if @message.conversation_id
-      @conversation = conversations.find_by(id: @message.conversation_id)
-      unless @conversation
-        return redirect_to root_path, alert: I18n.t('nlt.permission_denied')
-      end
 
-      unless @message.valid?
-        return render_show_with(interlocutor(@conversation))
-      end
+    return render_show_with(interlocutor(@conversation)) unless @message.valid?
 
-      current_user.reply_to_conversation(@conversation, @message.body, nil, true, true, @message.attachment)
-    else
-      recipient = User.find(recipient_id)
-      receipt = current_user.send_message([recipient], @message.body, @message.subject, true, @message.attachment)
-      @conversation = receipt.notification.conversation
+    current_user.reply_to_conversation(@conversation, @message.body, nil, true, true, @message.attachment)
 
-      return render_new_with(recipient, receipt) unless receipt.valid?
-    end
     redirect_to mailboxer_conversation_path(@conversation),
                 notice: I18n.t('mailboxer.notifications.sent')
   end
@@ -77,6 +79,15 @@ class ConversationsController < ApplicationController
 
   def recipient_id
     params[:mailboxer_message][:recipients].to_i
+  end
+
+  def initialize_message
+    @message = Mailboxer::Message.new message_params
+    @message.sender = current_user
+    # FIXME: this should be on model (validation)
+    return unless @message.sender.id == recipient_id
+
+    redirect_to message_create_url(user_id: recipient_id), notice: I18n.t('mailboxer.notifications.error_same_user')
   end
 
   def render_show_with(recipient)
