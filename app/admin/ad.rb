@@ -3,7 +3,7 @@
 ActiveAdmin.register Ad do
   controller do
     def scoped_collection
-      super.recent_first
+      super.includes(:user).recent_first
     end
   end
 
