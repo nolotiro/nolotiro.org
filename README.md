@@ -64,7 +64,7 @@ For obtaining geographical information we use [Yahoo GeoPlanet].
 For IP GeoLocation we use [GeoLite2] City. To download the database, run
 
 ```
-bin/rake nolotiro:download_maxmind_db
+bin/rake download_maxmind_db
 ```
 
 For the search we use Sphinx, so you'll need to install it:

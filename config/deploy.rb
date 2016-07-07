@@ -79,7 +79,7 @@ namespace :deploy do
     on roles(:web), in: :groups, limit: 3, wait: 10 do
       within release_path do
         with rails_env: fetch(:rails_env) do
-          execute :rake, 'nolotiro:cache:clear'
+          execute :rake, 'cache:clear'
         end
       end
     end
