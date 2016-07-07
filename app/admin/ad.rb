@@ -20,14 +20,19 @@ ActiveAdmin.register Ad do
 
   index do
     selectable_column
-    column :title do |ad|
-      link_to ad.title, admin_ad_path(ad)
-    end
+
+    column(:title) { |ad| link_to ad.title, admin_ad_path(ad) }
+
     column :body
+
     column :user
+
     column :type_string
+
     column :status_class
+
     column(:city, &:woeid_name_short)
+
     column(:published_at) { |ad| ad.published_at.strftime('%d/%m/%y %H:%M') }
 
     actions(defaults: false) do |ad|
