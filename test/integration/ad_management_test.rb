@@ -10,7 +10,7 @@ class AdManagementTest < AuthenticatedTest
   it 'can have pictures of 5 megabytes or less' do
     with_file_of_size(5.megabytes) do |path|
       mocking_yahoo_woeid_info(@current_user.woeid) do
-        submit_ad_form(path)
+        submit_ad_form(file_path: path)
 
         assert_no_text('Imagen debe estar entre 0 Bytes y 5 MB')
       end
@@ -20,7 +20,7 @@ class AdManagementTest < AuthenticatedTest
   it 'cannot have pictures bigger than 5 megabytes' do
     with_file_of_size(6.megabytes) do |path|
       mocking_yahoo_woeid_info(@current_user.woeid) do
-        submit_ad_form(path)
+        submit_ad_form(file_path: path)
 
         assert_text('Imagen debe estar entre 0 Bytes y 5 MB')
       end
@@ -38,13 +38,26 @@ class AdManagementTest < AuthenticatedTest
     assert_text 'Hemos republicado el anuncio'
   end
 
+  it 'saves spam ads but does not list them' do
+    mocking_yahoo_woeid_info(@current_user.woeid) do
+      assert_difference(-> { Ad.count }, 1) do
+        submit_ad_form(title: 'Regalo de campista')
+      end
+    end
+
+    assert_text 'Hemos creado el anuncio'
+
+    visit ads_woeid_path(@current_user.woeid, type: 'give')
+    assert_no_text 'Regalo de campista'
+  end
+
   private
 
-  def submit_ad_form(file_path)
+  def submit_ad_form(file_path: nil, title: 'File')
     visit new_ad_path
-    attach_file :image, file_path
+    attach_file(:image, file_path) if file_path
     choose 'Un regalo'
-    fill_in 'Título de tu anuncio:', with: 'File'
+    fill_in 'Título de tu anuncio:', with: title
     fill_in 'Cuerpo del anuncio', with: 'My gift is a file full of equis'
     click_button 'Publicar anuncio'
   end

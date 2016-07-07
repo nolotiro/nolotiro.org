@@ -9,6 +9,9 @@ ActiveAdmin.register Ad do
 
   permit_params :woeid_code, :type, :body, :title
 
+  scope 'No SPAM', :not_spam, default: true
+  scope 'SPAM', :spam
+
   filter :title
   filter :body
   filter :user_username, as: :string, label: I18n.t('nlt.username')
@@ -46,7 +49,11 @@ ActiveAdmin.register Ad do
       edit = link_to 'Editar', edit_admin_ad_path(ad)
       delete = link_to 'Eliminar', admin_ad_path(ad), method: :delete
 
-      safe_join([edit, delete], ' ')
+      spam = link_to "#{'No ' if ad.spam?}SPAM",
+                     mark_spam_admin_ad_path(ad, q: params[:q]),
+                     method: :post
+
+      safe_join([edit, delete, spam], ' ')
     end
   end
 
@@ -65,5 +72,13 @@ ActiveAdmin.register Ad do
 
   action_item :view, only: :show do
     link_to 'Ver en la web', ad_path(ad)
+  end
+
+  member_action :mark_spam, method: :post do
+    @ad = Ad.find params[:id]
+
+    @ad.toggle_spam!
+
+    redirect_to admin_ads_path(q: params[:q]), notice: 'Feedback recibido'
   end
 end

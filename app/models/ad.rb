@@ -3,6 +3,7 @@
 
 class Ad < ActiveRecord::Base
   include Hidable
+  include Spamable
 
   belongs_to :user, foreign_key: :user_owner, counter_cache: true
   has_many :comments, foreign_key: :ads_id, dependent: :destroy

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160904155629) do
+ActiveRecord::Schema.define(version: 20160904155856) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace",     limit: 255
@@ -29,15 +29,15 @@ ActiveRecord::Schema.define(version: 20160904155629) do
   add_index "active_admin_comments", ["resource_type", "resource_id"], name: "index_active_admin_comments_on_resource_type_and_resource_id", using: :btree
 
   create_table "ads", force: :cascade do |t|
-    t.string   "title",              limit: 100,               null: false
-    t.text     "body",               limit: 65535,             null: false
-    t.integer  "user_owner",         limit: 4,                 null: false
-    t.integer  "type",               limit: 4,                 null: false
-    t.integer  "woeid_code",         limit: 4,                 null: false
-    t.datetime "created_at",                                   null: false
+    t.string   "title",              limit: 100,                   null: false
+    t.text     "body",               limit: 65535,                 null: false
+    t.integer  "user_owner",         limit: 4,                     null: false
+    t.integer  "type",               limit: 4,                     null: false
+    t.integer  "woeid_code",         limit: 4,                     null: false
+    t.datetime "created_at",                                       null: false
     t.string   "ip",                 limit: 15
     t.string   "photo",              limit: 100
-    t.integer  "status",             limit: 4,                 null: false
+    t.integer  "status",             limit: 4,                     null: false
     t.integer  "comments_enabled",   limit: 4
     t.datetime "updated_at"
     t.string   "image_file_name",    limit: 255
@@ -45,7 +45,8 @@ ActiveRecord::Schema.define(version: 20160904155629) do
     t.integer  "image_file_size",    limit: 4
     t.datetime "image_updated_at"
     t.integer  "readed_count",       limit: 4,     default: 0
-    t.datetime "published_at",                                 null: false
+    t.datetime "published_at",                                     null: false
+    t.boolean  "spam",                             default: false, null: false
   end
 
   add_index "ads", ["status"], name: "index_ads_on_status", using: :btree

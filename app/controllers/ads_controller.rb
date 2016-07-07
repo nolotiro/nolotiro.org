@@ -25,6 +25,8 @@ class AdsController < ApplicationController
     authorize(@ad)
 
     if verify_recaptcha(model: @ad) && @ad.save
+      @ad.check_spam!
+
       redirect_to redirect_path, notice: t('nlt.ads.created')
     else
       render action: 'new'
@@ -43,7 +45,10 @@ class AdsController < ApplicationController
       end
 
       @ads = Rails.cache.fetch("ads_list_#{page}") do
-        Ad.give.available.recent_first.includes(:user).paginate(page: page)
+        policy_scope(Ad.give.available)
+          .recent_first
+          .includes(:user)
+          .paginate(page: page)
       end
     end
   end
@@ -65,6 +70,8 @@ class AdsController < ApplicationController
 
   def update
     if @ad.update(ad_params)
+      @ad.check_spam!
+
       redirect_to redirect_path, notice: t('nlt.ads.updated')
     else
       render action: 'edit', alert: @ad.errors
@@ -80,6 +87,8 @@ class AdsController < ApplicationController
   private
 
   def redirect_path
+    return ads_woeid_path(current_user.woeid, type: 'give') if @ad.spam
+
     adslug_path(@ad, slug: @ad.slug)
   end
 
