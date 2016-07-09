@@ -1,4 +1,8 @@
 es:
+  active_admin:
+    batch_actions:
+      labels:
+        toggle_spam: Corregir la calificación de SPAM de los registros
   activemodel:
     attributes:
       contact:

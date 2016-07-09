@@ -12,6 +12,12 @@ ActiveAdmin.register Ad do
   scope 'No SPAM', :not_spam, default: true
   scope 'SPAM', :spam
 
+  batch_action :toggle_spam do |ids|
+    batch_action_collection.find(ids).each(&:toggle_spam!)
+
+    redirect_to collection_path, notice: 'Feedback recibido.'
+  end
+
   filter :title
   filter :body
   filter :user_username, as: :string, label: I18n.t('nlt.username')

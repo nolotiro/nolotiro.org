@@ -1,4 +1,8 @@
 gl:
+  active_admin:
+    batch_actions:
+      labels:
+        toggle_spam: 
   activemodel:
     attributes:
       contact:
