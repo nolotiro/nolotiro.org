@@ -11,6 +11,18 @@ class AnnouncementTest < ActiveSupport::TestCase
     assert_equal [curr], Announcement.current
   end
 
+  test '.pending_for returns no announcements when all dismissed' do
+    user1 = create(:user)
+    user2 = create(:user)
+
+    announcement = create(:announcement)
+    create(:dismissal, user: user1, announcement: announcement)
+    create(:dismissal, user: user2, announcement: announcement)
+
+    assert_equal [], Announcement.pending_for(user1)
+    assert_equal [], Announcement.pending_for(user2)
+  end
+
   test '.pending_for returns not acknowleged announcements' do
     dismisser = create(:user)
     other = create(:user)
