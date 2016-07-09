@@ -61,14 +61,14 @@ class AdTest < ActiveSupport::TestCase
   test 'ad title escapes privacy data' do
     text = 'contactar por email example@example.com, por sms 999999999, o whatsapp al 666666666'
     expected_text = 'contactar por email  , por sms  , o   al  '
-    @ad.update(title: text)
+    @ad.update!(title: text)
     assert_equal expected_text, @ad.title
   end
 
   test 'ad body escapes privacy data' do
     text = 'contactar por email example@example.com, por sms 999999999, o whatsapp al 666666666'
     expected_text = 'contactar por email  , por sms  , o   al  '
-    @ad.update(body: text)
+    @ad.update!(body: text)
     assert_equal expected_text, @ad.body
   end
 
@@ -88,35 +88,35 @@ class AdTest < ActiveSupport::TestCase
 
   test 'ad check type_string' do
     assert_equal @ad.type_string, 'regalo'
-    @ad.update(type: 2)
+    @ad.update!(type: 2)
     assert_equal @ad.type_string, 'busco'
   end
 
   test 'ad check status_string' do
     assert_equal @ad.status_string, 'disponible'
-    @ad.update(status: 2)
+    @ad.update!(status: 2)
     assert_equal @ad.status_string, 'reservado'
-    @ad.update(status: 3)
+    @ad.update!(status: 3)
     assert_equal @ad.status_string, 'entregado'
   end
 
   test 'ad check type_class' do
     assert_equal @ad.type_class, 'give'
-    @ad.update(type: 2)
+    @ad.update!(type: 2)
     assert_equal @ad.type_class, 'want'
   end
 
   test 'ad check status_class' do
     assert_equal @ad.status_class, 'available'
-    @ad.update(status: 2)
+    @ad.update!(status: 2)
     assert_equal @ad.status_class, 'booked'
-    @ad.update(status: 3)
+    @ad.update!(status: 3)
     assert_equal @ad.status_class, 'delivered'
   end
 
   test 'ad meta_title for give ads' do
     mocking_yahoo_woeid_info(@ad.woeid_code) do
-      @ad.update(type: 1)
+      @ad.update!(type: 1)
       title = 'regalo segunda mano gratis  ordenador en Vallecas Madrid, ' \
               'Madrid, España'
       assert_equal title, @ad.meta_title
@@ -127,7 +127,7 @@ class AdTest < ActiveSupport::TestCase
     skip
 
     mocking_yahoo_woeid_info(@ad.woeid_code) do
-      @ad.update(type: 2)
+      @ad.update!(type: 2)
       title = 'busco ordenador en Vallecas Madrid, Madrid, España'
       assert_equal title, @ad.meta_title
     end
@@ -136,7 +136,7 @@ class AdTest < ActiveSupport::TestCase
   test 'ad body shoudl store emoji' do
     skip
     body = 'What a nice emoji😀!What a nice emoji😀!What a nice emoji😀!What a nice emoji😀!What a nice emoji😀!'
-    @ad.update(body: body)
+    @ad.update!(body: body)
     assert_equal @ad.body, body
   end
 
