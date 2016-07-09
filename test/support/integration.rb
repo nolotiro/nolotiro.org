@@ -2,6 +2,7 @@
 require 'capybara/poltergeist'
 require 'support/desktop_integration'
 require 'support/mobile_integration'
+require 'support/assertions'
 
 module ActionDispatch
   #
@@ -14,11 +15,6 @@ module ActionDispatch
     after do
       Capybara.reset_sessions!
       Rails.cache.clear
-    end
-
-    def assert_content(text)
-      msg = "Content '#{text}' was not found in page's content: '#{page.text}'"
-      assert page.has_content?(text), msg
     end
   end
 

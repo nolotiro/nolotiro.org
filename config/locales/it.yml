@@ -362,7 +362,6 @@ it:
       title: Domande frequenti
     faqs: domande frequenti
     fill_captcha: Conferma che non sei un robot
-    first_visit: 'nolotiro.org è una comunità dove è possibile sbarazzarci di oggetti che non utilizziamo più e ci ostacolano a casa. '
     footer_explain: 'nolotiro.org è un sito dove guardo per i regali dono gratuito e mobili di seconda mano, sedie, divani, biciclette, computer portatili, tavoli, stufe, lampade, letti, vestiti, giocattoli, lettini per bambini o automobili, telefoni cellulari e altri molte cose che si desidera non è più e non hanno più bisogno di fare il riutilizzo altre persone che possono servire o dare nuova vita.
 
 '
@@ -463,7 +462,6 @@ it:
       description_html: Attualmente, Nolotiro.org è disponibile in poche lingue, ma può aiutare <a href="http://accounts.localeapp.com/projects/6872">a tradurre tua</a>.
       title: Aiutaci a tradurre nolotiro.org la lingua
     update: salvare
-    updating: Stiamo aggiornando l'intero sito, in modo che nelle prossime ore saranno ritardi con messaggi tra gli utenti, le immagini di un annuncio e la quantità di annunci gli utenti. Non ti preoccupare che stiamo lavorandoci
     user_ads: annunci
     user_edit_profile: Modifica profilo utente
     user_profile: Il profilo dell'utente
@@ -477,7 +475,6 @@ it:
     want_to_leave: Vuoi eliminare il tuo utente?
     we_need_your_password: "(Abbiamo bisogno la password per confermare le modifiche)"
     welcome: ciao
-    welcome_message: Benvenuti
     write_a_comment: "+ Scrivi un commento"
     your_email: la tua email
   number:

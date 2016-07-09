@@ -1,6 +1,6 @@
 gl:
   active_admin:
-    dashboard: " "
+    dashboard: 
   activemodel:
     attributes:
       contact:
@@ -377,7 +377,6 @@ gl:
       title: 
     faqs: 
     fill_captcha: Por favor, encha os seguintes caracteres
-    first_visit: nolotiro.org é unha comunidade onde podemos librar de elementos que non usa máis e impiden connosco na casa .
     footer_explain: 
     forgot_your_password: Esqueceches o contrasinal?
     friends: Amigos
@@ -474,7 +473,6 @@ gl:
       description_html: Actualmente, nolotiro.org está dispoñible nalgunhas linguas, pero pode axudar a <a href="http://accounts.localeapp.com/projects/6872">traducir</a> .
       title: Axúdanos a traducir nolotiro.org súa lingua
     update: Gardar
-    updating: Estamos actualizando todo el sitio, por lo que en las próximas horas habrá retrasos con los mensajes entre los usuarios, las imágenes de un anuncio y la cantidad de anuncios de los usuarios. No te preocupes que estamos trabajando en ello
     user_ads: anuncios
     user_edit_profile: Editar perfil de usuario
     user_profile: Perfil de usuario
@@ -488,7 +486,6 @@ gl:
     want_to_leave: 
     we_need_your_password: 
     welcome: 
-    welcome_message: 
     write_a_comment: 
     your_email: 
   number:

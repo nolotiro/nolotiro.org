@@ -68,31 +68,15 @@
       fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));</script>
 
+    <% if user_signed_in? %>
+      <%= render "partials/announcement",
+                 announcement: Announcement.pick_pending_for(current_user) %>
+    <% end %>
+
     <div class="container">
 
       <div id="header">
-        <%= render :partial => "partials/select_language_box" %>
-
-        <%= render :partial => "partials/user_actions" %>
-
-        <div class="site-logo">
-          <div class="site-name">
-            <%= link_to root_path, :title => "nolotiro.org home" do %>
-              <%= image_tag "nolotiro_logo.png", :alt => "nolotiro.org", :id => "logo" %>
-              nolotiro.org
-              <%=h yield(:title) %>
-            <% end %>
-          </div>
-
-          <div class="site-slogan">
-            <%= t('nlt.slogan') %>
-          </div>
-        </div>
-
-        <% if content_for?(:action) %>
-          <%= yield(:action) %>
-        <% end %>
-
+        <%= render "partials/header" %>
       </div>
 
       <div class="desktop">
@@ -109,26 +93,8 @@
         </div>
       <% end %>
 
-      <div class="info js-alert-cookie hide first-visit" data-cookie-name="alert-first-visit">
-        <%= t('nlt.first_visit') %>
-        <a href="#" class="js-alert-close alert-close">x</a>
-      </div>
-
-      <div class="notice js-alert-cookie hide" data-cookie-name="alert-updating">
-        <%= t('nlt.updating') %>
-        <a href="#" class="js-alert-close alert-close">x</a>
-      </div>
-
-      <div class="hide js-welcome-message"><%= t('nlt.welcome_message') %></div>
-
       <div id="main">
-        <% flash.each do |name, msg| %>
-          <% if msg.is_a?(String) %>
-            <div class="col-md-12 <%= name %>">
-              <%= msg %>
-            </div>
-          <% end %>
-        <% end %>
+        <%= render "partials/flash" %>
 
         <%= yield %>
       </div>

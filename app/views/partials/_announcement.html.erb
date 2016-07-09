@@ -1,0 +1,9 @@
+<% if announcement %>
+  <%= div_for announcement do %>
+    <%= announcement.message %>
+
+    <%= link_to 'Ocultar',
+                announcement_dismissals_path(announcement_id: announcement.id),
+                method: :post %>
+  <% end %>
+<% end %>

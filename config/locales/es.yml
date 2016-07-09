@@ -1,6 +1,6 @@
 es:
   active_admin:
-    dashboard: 
+    dashboard: Panel
   activemodel:
     attributes:
       contact:
@@ -362,7 +362,6 @@ es:
       title: Preguntas frecuentes
     faqs: preguntas frecuentes
     fill_captcha: Confirma que no eres un robot
-    first_visit: nolotiro.org es una comunidad donde podemos deshacernos de los objetos que ya no utilizamos y nos estorban en casa.
     footer_explain: 'nolotiro.org es un sitio web donde regalo y busco regalos gratis de segunda mano : muebles, sillas, sofás, bicicletas, ordenadores portátiles, mesas, cocinas, lámparas, camas, ropa, juguetes, cunas o carros para bebes, teléfonos móviles y otras muchas cosas que ya no quieres y ya no necesitas para que las reutilicen otra gente a la que puede servirle o darle nueva vida.'
     forgot_your_password: "¿Has olvidado tu contraseña?"
     friends: Amigos
@@ -457,7 +456,6 @@ es:
       description_html: Actualmente, Nolotiro.org está disponible en pocos idiomas, pero tú puedes ayudarnos a <a href="http://accounts.localeapp.com/projects/6872">traducirlo al tuyo</a>.
       title: Ayúdanos a traducir nolotiro.org a tu idioma
     update: Guardar
-    updating: Estamos actualizando todo el sitio, por lo que en las próximas horas habrá retrasos con los mensajes entre los usuarios, las imágenes de un anuncio y la cantidad de anuncios de los usuarios. No te preocupes que estamos trabajando en ello.
     user_ads: anuncios
     user_edit_profile: Editar perfil de usuario
     user_profile: Perfil de usuario
@@ -471,7 +469,6 @@ es:
     want_to_leave: "¿Quieres borrar tu usuario?"
     we_need_your_password: "(necesitamos tu contraseña para confirmar tus cambios)"
     welcome: hola
-    welcome_message: Bienvenido
     write_a_comment: "+ Escribe un comentario"
     your_email: Tu email
   number:
