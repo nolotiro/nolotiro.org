@@ -13,10 +13,10 @@ module MultiLingualizable
   end
 
   def set_locale
-    session[:locale] = params[:lang] if valid_locale?(params[:lang])
+    cookies.permanent[:locale] = params[:lang] if valid_locale?(params[:lang])
 
     I18n.locale =
-      params_locale || session_locale || browser_locale || default_locale
+      params_locale || cookie_locale || browser_locale || default_locale
   end
 
   def valid_locale?(code)
@@ -29,8 +29,8 @@ module MultiLingualizable
     params[:locale].presence
   end
 
-  def session_locale
-    session[:locale].presence
+  def cookie_locale
+    cookies.permanent[:locale].presence
   end
 
   def browser_locale

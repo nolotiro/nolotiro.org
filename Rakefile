@@ -16,5 +16,9 @@ if %(test development).include?(Rails.env)
     t.warning = false
   end
 
+  # Hack to prevent tests from being run twice.
+  # @todo Remove it, possibly when upgrading to Rails 5
+  MiniTest.class_variable_set('@@installed_at_exit', true)
+
   task default: [:test, :rubocop]
 end
