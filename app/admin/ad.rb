@@ -11,8 +11,7 @@ ActiveAdmin.register Ad do
 
   filter :title
   filter :body
-  filter :user_username, as: :string
-  filter :user_id, as: :string
+  filter :user_username, as: :string, label: I18n.t('nlt.username')
   filter :woeid_code
   filter :type, as: :select, collection: [['Regalo', 1], ['Busco', 2]]
   filter :status, as: :select, collection: [['Disponible', 1], ['Reservado', 2], ['Entregado', 3]]
