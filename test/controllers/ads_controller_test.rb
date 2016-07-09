@@ -68,8 +68,7 @@ class AdsControllerTest < ActionController::TestCase
   end
 
   test 'should not bump ads too recent' do
-    @ad.user_owner = @user.id
-    @ad.update(published_at: 4.days.ago)
+    @ad.update(user_owner: @user.id, published_at: 4.days.ago)
     sign_in @user
     post :bump, id: @ad
     assert_equal 4.days.ago.to_date, @ad.reload.published_at.to_date
