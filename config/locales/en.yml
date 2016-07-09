@@ -23,9 +23,6 @@ en:
         body: Message
         subject: Subject
       user:
-        Contraseña: Password
-        Recuérdame: Remember me
-        Tu email: Your e-mail
         current_password: Current password
         email: E-mail
         password: New password

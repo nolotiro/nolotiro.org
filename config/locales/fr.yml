@@ -23,9 +23,6 @@ fr:
         body: 
         subject: 
       user:
-        Contraseña: 
-        Recuérdame: 
-        Tu email: 
         current_password: 
         email: 
         password: 

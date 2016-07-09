@@ -23,9 +23,6 @@ ca:
         body: Missatge
         subject: Assumpte
       user:
-        Contraseña: Contrasenya
-        Recuérdame: Recorda'm
-        Tu email: El teu correu electrònic
         current_password: Contrasenya actual
         email: Correu electrònic
         password: Contrasenya nova

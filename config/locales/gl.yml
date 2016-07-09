@@ -23,9 +23,6 @@ gl:
         body: Mensaxe
         subject: Asunto
       user:
-        Contraseña: Contrasinal
-        Recuérdame: Lémbrame
-        Tu email: Teu email
         current_password: Contrasinal actual
         email: Correo electrónico
         password: 'Nova contrasinal

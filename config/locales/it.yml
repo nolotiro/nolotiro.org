@@ -23,9 +23,6 @@ it:
         body: Messaggio
         subject: Soggetto
       user:
-        Contraseña: Password
-        Recuérdame: Ricordami
-        Tu email: La tua email
         current_password: Password atuale
         email: email
         password: Password nuova

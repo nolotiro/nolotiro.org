@@ -23,9 +23,6 @@ pt:
         body: Mensagem
         subject: Título
       user:
-        Contraseña: Senha
-        Recuérdame: Lembre-me
-        Tu email: Seu e-mail
         current_password: Senha atual
         email: Correio eletrônico
         password: Nova senha
