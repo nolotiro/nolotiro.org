@@ -43,7 +43,6 @@ class AdsControllerTest < ActionController::TestCase
 
   test 'should create ad if logged in' do
     sign_in @user
-
     assert_difference('Ad.count') do
       post :create, ad: { body: 'Es una Ferrari de esas rojas, muy linda.', title: 'Regalo Ferrari', type: 1, woeid_code: '788273' }
     end
@@ -133,18 +132,14 @@ class AdsControllerTest < ActionController::TestCase
   end
 
   test 'should not destroy ad as anonymous' do
-    assert_difference('Ad.count', 0) do
-      delete :destroy, id: @ad
-    end
+    assert_difference('Ad.count', 0) { delete :destroy, id: @ad }
 
     assert_redirected_to new_user_session_url
   end
 
   test 'should not destroy non-owned ads as normal user' do
     sign_in @user
-    assert_difference('Ad.count', 0) do
-      delete :destroy, id: @ad
-    end
+    assert_difference('Ad.count', 0) { delete :destroy, id: @ad }
 
     assert_redirected_to root_path
   end
@@ -152,18 +147,14 @@ class AdsControllerTest < ActionController::TestCase
   test 'should destroy owned ads as normal user' do
     @ad.update(user_owner: @user.id)
     sign_in @user
-    assert_difference('Ad.count', -1) do
-      delete :destroy, id: @ad
-    end
+    assert_difference('Ad.count', -1) { delete :destroy, id: @ad }
 
     assert_redirected_to ads_path
   end
 
   test 'should destroy ad as admin user' do
     sign_in @admin
-    assert_difference('Ad.count', -1) do
-      delete :destroy, id: @ad
-    end
+    assert_difference('Ad.count', -1) { delete :destroy, id: @ad }
 
     assert_redirected_to ads_path
   end
