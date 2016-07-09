@@ -10,9 +10,10 @@ class Announcement < ActiveRecord::Base
     join = joins <<-SQL.squish
       LEFT OUTER JOIN dismissals
       ON dismissals.announcement_id = announcements.id
+      AND dismissals.user_id = #{user.id}
     SQL
 
-    join.where('user_id IS NULL or user_id <> ?', user.id)
+    join.where('user_id IS NULL')
   end
 
   def self.pick_pending_for(user)
