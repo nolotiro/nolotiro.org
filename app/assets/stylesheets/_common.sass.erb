@@ -50,15 +50,16 @@ a
   float: right
   line-height: 24px
   right: 100px
-  padding-left: 8px
-  padding-right: 6px
   z-index: 200
 
-  span
-    border-right: 1px solid $gray-separator
-    padding: 0 10px
+  a
+    > span
+      border-right: 1px solid $gray-separator
+      display: block
+      float: left
+      padding: 0 10px
 
-    &:last-child
+    &:last-child > span
       border-right: 0px solid $gray-separator
 
 .advice
