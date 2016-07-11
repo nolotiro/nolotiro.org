@@ -30,19 +30,19 @@ class PersonalAdListing < ActionDispatch::IntegrationTest
   it 'lists all give ads in a separate tab in user profile' do
     click_link 'todos'
 
-    page.assert_selector '.ad_excerpt_home', count: 4
+    page.assert_selector '.ad_excerpt_list', count: 4
   end
 
   it 'lists wanted ads in a separate tab in user profile' do
     click_link 'busco'
 
-    page.assert_selector '.ad_excerpt_home', count: 1, text: 'wan1'
+    page.assert_selector '.ad_excerpt_list', count: 1, text: 'wan1'
   end
 
   it 'lists first page of user available ads in user profile' do
     with_pagination(1) { click_link 'disponible' }
 
-    page.assert_selector '.ad_excerpt_home', count: 1, text: 'ava1'
+    page.assert_selector '.ad_excerpt_list', count: 1, text: 'ava1'
   end
 
   it 'lists other pages of user available ads in user profile' do
@@ -51,18 +51,18 @@ class PersonalAdListing < ActionDispatch::IntegrationTest
       click_link 'siguiente'
     end
 
-    page.assert_selector '.ad_excerpt_home', count: 1, text: 'ava2'
+    page.assert_selector '.ad_excerpt_list', count: 1, text: 'ava2'
   end
 
   it 'lists user reserved ads in users profile' do
     click_link 'reservado'
 
-    page.assert_selector '.ad_excerpt_home', count: 1, text: 'res1'
+    page.assert_selector '.ad_excerpt_list', count: 1, text: 'res1'
   end
 
   it 'lists user delivered ads in users profile' do
     click_link 'entregado'
 
-    page.assert_selector '.ad_excerpt_home', count: 1, text: 'del1'
+    page.assert_selector '.ad_excerpt_list', count: 1, text: 'del1'
   end
 end
