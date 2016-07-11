@@ -88,8 +88,8 @@ it:
     passwords:
       action: Cambia la password
       edit:
-        confirm_new_password: 
-        new_password: 
+        confirm_new_password: Ripete di nuovo la password
+        new_password: Password nuova
       follow_instructions: 'Qualcuno a chiesto di cambiare la password di nolotiro.org. Se non sei stato tu puoi ignorare questa email. La password non cambierà fino a quando non accedi al link per crearne una nuova. '
       forgot: Hai dimenticato la password?
       instructions: Per favore, scrive la tua email e te invieremo un link di acceso diretto per cambiare la tua password.

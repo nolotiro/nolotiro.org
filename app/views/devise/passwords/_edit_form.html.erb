@@ -4,12 +4,13 @@
     <%= f.hidden_field :reset_password_token %>
 
     <div>
-      <%= f.label :password %><br />
+      <%= f.label :password, t('devise.passwords.edit.new_password') %><br />
       <%= f.password_field :password %>
     </div>
 
     <div>
-      <%= f.label :password_confirmation %><br />
+      <%= f.label :password_confirmation,
+                  t('devise.passwords.edit.confirm_new_password') %><br />
       <%= f.password_field :password_confirmation %>
     </div>
 
