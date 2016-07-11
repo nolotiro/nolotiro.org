@@ -5,6 +5,14 @@ html
   min-width: 320px
   width: 100%
 
+@media only screen and (max-width: 767px)
+  .container
+    padding: 0
+
+  #main
+    width: 100%
+    padding: 0 15px
+
 .announcement
   width: 100%
   background-color: $light-yellow
@@ -529,13 +537,6 @@ form.searchbox
   margin-left: 15px
   width: 250px
 
-.section_ads
-  float: left
-  position: relative
-  display: inline-block
-  padding: 10px
-  width: 468px
-
 dl, dd
   margin: 0px !important
 
@@ -603,7 +604,8 @@ dl, dd
  * Header Area.
 
 .actions-row
-  margin-top: 40px
+  margin: 40px auto 0
+  width: 96%
 
 @media only screen and (max-width: 767px)
   .site-logo
@@ -632,6 +634,13 @@ dl, dd
     .ad_change_location_home
       float: right
       height: 17px
+
+  .section_ads
+    padding: 10px
+    width: 468px
+    display: inline-block
+    float: left
+    position: relative
 
 .site-logo
   @include clearfix
@@ -948,11 +957,6 @@ $langs: <%= I18n.available_locales.join(" ") %>
   border-color: #d62d20
 
 @media only screen and (max-width: 767px)
-  .section_ads
-    padding: 0px
-    width: 95%
-    padding-left: 4%
-
   .site-name
     width: 50%
 
