@@ -10,8 +10,8 @@
 
     <%= render "filter_status" %>
 
-    <% if @ads.count > 0 %>
-      <%= render partial: 'ads/list_with_adsense', :locals => { :ads => @ads } %>
+    <% if @ads.any? %>
+      <%= render partial: 'ads/list_with_adsense', locals: { ads: @ads } %>
 
       <%= render partial: "partials/pagination", locals: { items: @ads } %>
     <% else %>
