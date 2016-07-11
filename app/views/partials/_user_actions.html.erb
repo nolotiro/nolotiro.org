@@ -1,5 +1,5 @@
-<% if user_signed_in? %>
-  <div class="user_login_box">
+<div class="user_login_box">
+  <% if user_signed_in? %>
     <%= t('nlt.welcome') %>,
     <b>
       <%= link_to current_user.username, profile_path(current_user), id: 'js-username' %>
@@ -11,11 +11,9 @@
     <% end %>
     |
     <%= link_to t('nlt.logout'), destroy_user_session_path, :method => :delete %>
-  </div>
-<% else %>
-  <div class="user_login_box">
+  <% else %>
     <%= link_to t('nlt.new_user'), new_user_registration_path %>
     <%= t('nlt.or') %>
     <%= link_to t('nlt.login'), new_user_session_path %>
-  </div>
-<% end %>
+  <% end %>
+</div>
