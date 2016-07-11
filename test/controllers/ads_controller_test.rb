@@ -135,8 +135,7 @@ class AdsControllerTest < ActionController::TestCase
     patch :update, id: @ad, ad: { body: body, title: @ad.title, type: @ad.type, woeid_code: @ad.woeid_code }
 
     assert_redirected_to adslug_path(@ad, slug: @ad.slug)
-    @ad.reload
-    assert_equal body, @ad.body
+    assert_equal body, @ad.reload.body
   end
 
   test 'should update any ad as admin' do
