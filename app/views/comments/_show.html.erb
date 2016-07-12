@@ -1,10 +1,10 @@
 <% if ad.comments.any? %>
   <%= render partial: "comments/list", locals: {comments: ad.comments.includes(:user)} %>
 <% end %>
-<% if user_signed_in? %>
-  <%= render partial: "comments/form", locals: {ad: ad.id} %>
-<% else %>
-  <div class="ad_comment_form">
+<div class="ad_comment_form">
+  <% if user_signed_in? %>
+    <%= render partial: "comments/form", locals: {ad: ad.id} %>
+  <% else %>
     <%= link_to t('nlt.login_to_comment'), new_user_session_path %>
-  </div>
-<% end %>
+  <% end %>
+</div>

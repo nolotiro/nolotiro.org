@@ -1,23 +1,21 @@
-<div class="ad_comment_form">
-  <%= form_tag(create_comment_path(ad)) do %>
-    <%= errors_for(@comment) %>
+<%= form_tag(create_comment_path(ad)) do %>
+  <%= errors_for(@comment) %>
 
-    <dl>
-      <dt>
-        <label for="body" class="optional">
-          <%= t('nlt.comments.label') %>
-        </label>
-      </dt>
-      <dd>
-        <%= text_area_tag("body", "", size: "80x24", maxlength: 1000) %>
-        <p class="description">
-          <%= t 'nlt.comments.body_max' %>
-        </p>
-      </dd>
-      <dt>&nbsp;</dt>
-      <dd>
-        <%= submit_tag t('nlt.comments.submit') %>
-      </dd>
-    </dl>
-  <% end %>
-</div>
+  <dl>
+    <dt>
+      <label for="body" class="optional">
+        <%= t('nlt.comments.label') %>
+      </label>
+    </dt>
+    <dd>
+      <%= text_area_tag("body", "", size: "80x24", maxlength: 1000) %>
+      <p class="description">
+        <%= t 'nlt.comments.body_max' %>
+      </p>
+    </dd>
+    <dt>&nbsp;</dt>
+    <dd>
+      <%= submit_tag t('nlt.comments.submit') %>
+    </dd>
+  </dl>
+<% end %>
