@@ -92,7 +92,7 @@ development, and you can see them in a nice web interface. The SMTP port is
 already configured to it (1025).
 
 ```
-mailcatcher
+bin/mailcatcher
 open http://localhost:1080
 ```
 
