@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 require 'test_helper'
 
-class MessagesControllerTest < ActionController::TestCase
+class ConversationsControllerTest < ActionController::TestCase
   include Devise::Test::ControllerHelpers
 
   setup do
@@ -28,8 +28,8 @@ class MessagesControllerTest < ActionController::TestCase
       post :create, mailboxer_message: { recipients: @user2, body: 'lo sigues teniendo? ', subject: 'interesado en el ordenador' }
     end
     m = Mailboxer::Conversation.last
-    assert_redirected_to mailboxer_message_path(id: m.id)
-    # asmailboxer_sert_redirected_to message_show_path(id: m.id, subject: m.subject )
+    assert_redirected_to mailboxer_conversation_path(id: m.id)
+
     sign_out @user1
     sign_in @user2
     get :show, id: m.id

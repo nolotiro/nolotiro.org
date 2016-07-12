@@ -3,7 +3,7 @@
   # This template is too cluttered
 %>
 
-<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <fieldset>
     <div class="col-md-6 col-sm-6">
       <%= devise_error_messages! %>
@@ -13,7 +13,7 @@
             <%= f.label :email, t('nlt.your_email') %>
           </dt>
           <dd>
-            <%= f.email_field :email, :autofocus => true, :required => true %>
+            <%= f.email_field :email, autofocus: true, required: true %>
           </dd>
         <% end %>
 
@@ -22,13 +22,13 @@
             <%= f.label :password, t('nlt.choose_your_pass') %>
           </dt>
           <dd>
-            <%= f.password_field :password, :required => true %>
+            <%= f.password_field :password, required: true %>
           </dd>
           <dt>
             <%= f.label :password_confirmation, t('nlt.choose_your_pass_again') %>
           </dt>
           <dd>
-            <%= f.password_field :password_confirmation, :required => true %>
+            <%= f.password_field :password_confirmation, required: true %>
           </dd>
         <% end %>
 
@@ -36,7 +36,7 @@
           <%= f.label :username, t('nlt.choose_username') %>
         </dt>
         <dd>
-          <%= f.text_field :username, :required => true %>
+          <%= f.text_field :username, required: true %>
         </dd>
 
         <% unless omniauth_registration? %>
@@ -46,11 +46,11 @@
             </label>
           </dt>
           <dd>
-            <%= recaptcha_tags(:display => { :theme => "white" }, ajax: true)%>
+            <%= recaptcha_tags(display: { theme: "white" }, ajax: true)%>
           </dd>
           <dd>
             <!-- FIXME: this doesn't work -->
-            <%= f.hidden_field :lang, :value => I18n.locale.to_s %>
+            <%= f.hidden_field :lang, value: I18n.locale.to_s %>
           </dd>
         <% end %>
 

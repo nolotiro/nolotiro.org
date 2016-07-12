@@ -7,20 +7,15 @@
 .col-md-9.col-sm-9
   .row
     = render partial: "users/tabnav", locals: {user: current_user}
-    = render partial: "messages/tabmessages", locals: {box: @box}
-    - if @search
-      %h2=t('mailboxer.search', search: @search)
     - if @conversations.count > 0
-      = form_tag trash_mailboxer_messages_path, method: :delete do
-        = hidden_field_tag 'current_box', @box
+      = form_tag trash_mailboxer_conversations_path, method: :delete do
         .table-responsive
           %table#mail-list.table.table-condensed
             %tbody
               - @conversations.each do |c|
-                = render partial: "messages/conversation",
+                = render partial: "conversations/conversation",
                          locals: { c: c, timestamp: c.last_message.created_at }
-        - unless @box == 'trash'
-          = submit_tag t('mailboxer.buttons.trash_selected'), id: 'delete_multiple_button'
+        = submit_tag t('mailboxer.buttons.trash_selected'), id: 'delete_multiple_button'
       = will_paginate @conversations
     - else
       %p

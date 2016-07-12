@@ -20,9 +20,9 @@
 
         <% unless current_user == @user %>
           <li>
-            <%= link_to message_new_path @user.id, :class => "world_link" do %>
+            <%= link_to message_new_path(@user.id), class: "world_link" do %>
               <%= t('nlt.send_a_message_to') %> <%= @user.username %>
-              <%= image_tag "email_send.png", :alt => "send a mesage" %>
+              <%= image_tag "email_send.png", alt: "send a mesage" %>
             <% end %>
           </li>
         <% end %>

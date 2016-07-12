@@ -4,8 +4,8 @@
 <div id="default_header_section">
   <h1><%= t 'nlt.publish_ad' %> - <%= woeid_name[:full] %></h1>
   <br>
-  <%= link_to location_ask_path, :class => "world_link" do %>
-    <%= image_tag "change_location.png", :alt => "change location" %> 
+  <%= link_to location_ask_path, class: "world_link" do %>
+    <%= image_tag "change_location.png", alt: "change location" %> 
     <%= t 'nlt.change_city' %>
   <% end %>
 </div>

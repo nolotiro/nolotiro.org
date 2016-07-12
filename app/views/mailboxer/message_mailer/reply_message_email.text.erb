@@ -9,4 +9,4 @@
 <%= @message.body %>
 -----------------------------------------------
 
-<%= link_to mailboxer_message_url(id: @message.conversation.id), mailboxer_message_url(id: @message.conversation.id) %>
+<%= mailboxer_conversation_url(id: @message.conversation.id) %>

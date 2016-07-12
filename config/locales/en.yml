@@ -207,9 +207,8 @@ en:
   mailboxer:
     buttons:
       back: "< back to messages"
-      trash: Move message to trash
+      trash: Delete message
       trash_selected: Delete selected messages
-      untrash: Restore messages from trash
     message_mailer:
       message:
         body: Message
@@ -237,10 +236,8 @@ en:
       you_have_recieved_new_reply: You have a new answer
     notifications:
       error_same_user: You can not send a message to yourself
-      move: Message moved to %{mailbox}
       sent: Sent message
-      trash: Message moved to trash
-      untrash: Recovered message
+      trash: Message deleted
     search: Search results %{search}
     table:
       date: Date
@@ -387,10 +384,6 @@ en:
       automatic: This is an automatic message, please do not answer to this email address
     member_since: Member since
     messages: messages
-    messages_tabs:
-      inbox: Inbox
-      sent: Sent
-      trash: Trash
     messages_title: Messages
     meta_description: nolotiro.org is a website where I give free gifts and seeking second-hand furniture, chairs, sofas, bicycles, laptops, tables, stoves, lamps, beds, clothes, toys, baby cribs or cars, mobile phones and other many things you no longer want and no longer need to make the reuse other people who may serve or give new life.
     meta_description_ad: second hand gift %{title} in %{woeid}. %{body}

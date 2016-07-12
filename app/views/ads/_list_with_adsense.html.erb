@@ -1,5 +1,5 @@
 <% ads.each_with_index do |ad,i| %>
-  <%= render :partial => "ads/ad", :locals => { :ad => ad } %>
+  <%= render partial: "ads/ad", locals: { ad: ad } %>
 
   <% if [ 5, 10, 15 ].include? i %>
     <div class="ad_excerpt_list">

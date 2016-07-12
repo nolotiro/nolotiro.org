@@ -213,7 +213,6 @@ eu:
       back: 
       trash: 
       trash_selected: 
-      untrash: 
     message_mailer:
       message:
         body: 
@@ -241,10 +240,8 @@ eu:
       you_have_recieved_new_reply: 
     notifications:
       error_same_user: 
-      move: 
       sent: 
       trash: 
-      untrash: 
     search: 
     table:
       date: 
@@ -387,10 +384,6 @@ eu:
       automatic: 
     member_since: 
     messages: 
-    messages_tabs:
-      inbox: 
-      sent: 
-      trash: 
     messages_title: 
     meta_description: 
     meta_description_ad: 

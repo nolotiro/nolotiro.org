@@ -211,9 +211,8 @@ ca:
   mailboxer:
     buttons:
       back: "<Tornar a missatges"
-      trash: Mou missatge a paperera
+      trash: Esborrar missatge
       trash_selected: Esborrar missatges seleccionats
-      untrash: Recuperar missatge de paperera
     message_mailer:
       message:
         body: missatge
@@ -241,10 +240,8 @@ ca:
       you_have_recieved_new_reply: Has rebut una nova resposta
     notifications:
       error_same_user: No pots enviar-me un missatge a tu mateix
-      move: Missatge mogut a %{mailbox}
       sent: missatge enviat
-      trash: Missatge mogut a paperera
-      untrash: missatge recuperat
+      trash: Missatge esborrat
     search: Resultats de cerca de %{search}
     table:
       date: Fecha
@@ -387,10 +384,6 @@ ca:
       automatic: Aquest és un missatge automàtic. Si us plau, no responguis a aquesta adreça de correu electrònic.
     member_since: membre des de
     messages: missatges
-    messages_tabs:
-      inbox: Rebuts
-      sent: Enviats
-      trash: Paperera
     messages_title: Missatges
     meta_description: 'nolotiro.org és un lloc web on regalar i buscar regals de franc de segona mà: mobles, cadires, sofàs, bicicletes, ordinadors portàtils, taules, cuines, llums, llits, roba, joguines, bressols o carros per a nadons, telèfons mòbils i altres moltes coses que ja no vols i no necessites per a que les reutilitzin altra gent a la qual pot servir o donar-li nova vida.'
     meta_description_ad: regal segona mà %{title} a %{woeid}. %{body}

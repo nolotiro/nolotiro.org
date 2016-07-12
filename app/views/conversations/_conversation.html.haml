@@ -1,0 +1,12 @@
+%tr{ class: "mail #{ 'unread' if c.is_unread?(current_user) }" }
+  %td
+    = check_box_tag '', c.id, false, id: "delete-conversation-#{c.id}",
+                                     class: 'delete_multiple_checkbox',
+                                     name: "conversations[]"
+  %td.sender
+    = link_to_interlocutor(c)
+  %td.mail-subject
+    = link_to c.subject, mailboxer_conversation_path(c)
+  %td.timestamp
+    = cache "moment-#{timestamp}" do
+      %abbr.js-moment{title: timestamp}=timestamp

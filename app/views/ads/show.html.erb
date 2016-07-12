@@ -30,7 +30,7 @@
 
     <% if @ad.image.exists? %>
       <div class="ad_list_image">
-        <%= link_to image_tag(@ad.image.url(:thumb), :alt => @ad.title), @ad.image.url, :rel => 'superbox[image]', :alt => t('nlt.click_to_large') %>
+        <%= link_to image_tag(@ad.image.url(:thumb), alt: @ad.title), @ad.image.url, rel: 'superbox[image]', alt: t('nlt.click_to_large') %>
       </div>
     <% end %>
 
@@ -50,9 +50,9 @@
 
     <% if @ad.status_class == 'available' %>
       <%= link_to message_new_with_subject_path(user_id: @ad.user.id, subject: @ad.slug),
-                  :class => "world_link" do %>
+                  class: "world_link" do %>
         <%= t('nlt.send_a_message') %>
-        <%= image_tag "email_send.png", :alt => t('nlt.send_a_message') %>
+        <%= image_tag "email_send.png", alt: t('nlt.send_a_message') %>
       <% end %>
     <% end %>
 
@@ -60,13 +60,13 @@
 
     <div class="sharelinks">
       <p style="text-align:left;margin-bottom:5px;"><%= t('nlt.share_this_ad') %>:</p>
-      <%= render :partial => "partials/social_buttons", :locals => { :url => ad_url(@ad) } %>
+      <%= render partial: "partials/social_buttons", locals: { url: ad_url(@ad) } %>
     </div>
   </div>
 
   <% if @ad.comments_enabled? && @ad.status_class != 'delivered' %>
     <div class="ad_excerpt_comments">
-      <%= render :partial => "comments/show", :locals => {:ad => @ad} %>
+      <%= render partial: "comments/show", locals: {ad: @ad} %>
     </div>
   <% end %>
 </div>

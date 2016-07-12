@@ -1,4 +1,4 @@
-xml.instruct! :xml, :version => "1.0"
+xml.instruct! :xml, version: "1.0"
 xml.rss version: "2.0", "xmlns:media" => "http://search.yahoo.com/mrss/", "xmlns:atom" => "http://www.w3.org/2005/Atom" do
   xml.channel do
     xml.title "nolotiro.org"
@@ -11,7 +11,7 @@ xml.rss version: "2.0", "xmlns:media" => "http://search.yahoo.com/mrss/", "xmlns
         description =  ad.body
         if ad.image?
           description = image_tag(
-            request.protocol + request.host_with_port + ad.image.url(:thumb), :style => "float:left;"
+            request.protocol + request.host_with_port + ad.image.url(:thumb), style: "float:left;"
           ) + description
         end
         xml.description description 
