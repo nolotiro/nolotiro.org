@@ -6,7 +6,6 @@ class CommentsControllerTest < ActionController::TestCase
 
   setup do
     @ad = create(:ad)
-    @user = create(:user, 'email' => 'jaimito@gmail.com', 'username' => 'jaimito')
   end
 
   test 'should not create a comment as anonymous' do
@@ -18,7 +17,7 @@ class CommentsControllerTest < ActionController::TestCase
   end
 
   test 'should create a comment as a user' do
-    sign_in @user
+    sign_in @ad.user
     assert_difference('Comment.count', 1) do
       post :create, id: @ad.id, body: 'hola mundo'
     end
