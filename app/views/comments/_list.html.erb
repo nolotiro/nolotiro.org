@@ -1,7 +1,7 @@
 <div class="ad_comments">
   <h5><%= t('nlt.comments.title') %></h5>
 
-  <% comments.each do |comment| %>
+  <% ad.comments.includes(:user).each do |comment| %>
     <% if comment.user %>
       <div class="ad_comment">
         <span class="ad_date">
@@ -12,4 +12,12 @@
       </div>
     <% end %>
   <% end %>
+
+  <div class="ad_comment_form">
+    <% if user_signed_in? %>
+      <%= render partial: "comments/form", locals: {ad: ad.id} %>
+    <% else %>
+      <%= link_to t('nlt.login_to_comment'), new_user_session_path %>
+    <% end %>
+  </div>
 </div>
