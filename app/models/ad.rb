@@ -25,14 +25,11 @@ class Ad < ActiveRecord::Base
   belongs_to :user, foreign_key: 'user_owner', counter_cache: true
   has_many :comments, foreign_key: 'ads_id', dependent: :destroy
 
-  validates :title, presence: true
-  validates :body, presence: true
+  validates :title, presence: true, length: { minimum: 4, maximum: 100 }
+  validates :body, presence: true, length: { minimum: 25, maximum: 1000 }
   validates :user_owner, presence: true
   validates :woeid_code, presence: true
   validates :ip, presence: true
-
-  validates :title, length: { minimum: 4, maximum: 100 }
-  validates :body, length: { minimum: 25, maximum: 1000 }
 
   validates :status,
             inclusion: { in: [1, 2, 3], message: 'no es un estado válido' },
