@@ -23,7 +23,7 @@ class Ad < ActiveRecord::Base
   require 'ipaddress'
 
   belongs_to :user, foreign_key: 'user_owner', counter_cache: true
-  has_many :comments, class_name: 'Comment', foreign_key: 'ads_id'
+  has_many :comments, foreign_key: 'ads_id'
 
   validates :title, presence: true
   validates :body, presence: true
