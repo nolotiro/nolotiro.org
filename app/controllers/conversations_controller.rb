@@ -37,7 +37,7 @@ class ConversationsController < ApplicationController
         return render_show_with(interlocutor(@conversation))
       end
 
-      receipt = current_user.reply_to_conversation(@conversation, @message.body, nil, true, true, @message.attachment)
+      current_user.reply_to_conversation(@conversation, @message.body, nil, true, true, @message.attachment)
     else
       recipient = User.find(recipient_id)
       receipt = current_user.send_message([recipient], @message.body, @message.subject, true, @message.attachment)
