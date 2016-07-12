@@ -19,7 +19,7 @@ class AdsController < ApplicationController
   end
 
   def show
-    @comment = Comment.new
+    @comment = @ad.comments.build
     @ad.increment_readed_count!
   end
 
