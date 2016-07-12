@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 # This migration comes from mailboxer_engine (originally 20120813110712)
 class RenameReceiptsRead < ActiveRecord::Migration
   def up

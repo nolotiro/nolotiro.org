@@ -1,5 +1,5 @@
+# frozen_string_literal: true
 class MailboxerNamespacingCompatibility < ActiveRecord::Migration
-
   def up
     rename_table :conversations, :mailboxer_conversations
     rename_table :notifications, :mailboxer_notifications

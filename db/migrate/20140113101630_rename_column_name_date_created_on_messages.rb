@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 class RenameColumnNameDateCreatedOnMessages < ActiveRecord::Migration
   def change
     rename_column :messages, :date_created, :created_at

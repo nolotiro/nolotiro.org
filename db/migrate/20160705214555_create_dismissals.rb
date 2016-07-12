@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 class CreateDismissals < ActiveRecord::Migration
   def change
     create_table :dismissals do |t|

@@ -1,8 +1,9 @@
+# frozen_string_literal: true
 # This migration comes from mailboxer_engine (originally 20110719110700)
 class AddNotifiedObject < ActiveRecord::Migration
   def up
     change_table :notifications do |t|
-      t.references :notified_object, :polymorphic => true
+      t.references :notified_object, polymorphic: true
       t.remove :object_id
       t.remove :object_type
     end
@@ -12,7 +13,7 @@ class AddNotifiedObject < ActiveRecord::Migration
     change_table :notifications do |t|
       t.remove :notified_object_id
       t.remove :notified_object_type
-      t.references :object, :polymorphic => true
+      t.references :object, polymorphic: true
     end
   end
 end
