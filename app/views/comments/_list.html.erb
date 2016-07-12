@@ -11,7 +11,7 @@
     </div>
   <% end %>
 
-  <% if user_signed_in? %>
+  <% if policy(@comment).create? %>
     <div class="ad_comment_form">
       <%= render partial: "comments/form", locals: {comment: @comment} %>
     </div>

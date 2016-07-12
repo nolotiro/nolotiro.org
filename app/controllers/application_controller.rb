@@ -61,7 +61,8 @@ class ApplicationController < ActionController::Base
   helper_method :location_suggest
 
   def comment_counts
-    @comment_counts ||= Comment.where(ads_id: @ads.ids).group(:ads_id).size
+    @comment_counts ||=
+      policy_scope(Comment.where(ads_id: @ads.ids)).group(:ads_id).size
   end
 
   helper_method :comment_counts

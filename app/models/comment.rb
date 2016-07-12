@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 class Comment < ActiveRecord::Base
+  include Hidable
+
   belongs_to :user, foreign_key: 'user_owner' # , :counter_cache => true
   belongs_to :ad, foreign_key: 'ads_id', touch: true
 

@@ -66,11 +66,9 @@
     </div>
   </div>
 
-  <% if @ad.comments_enabled? && @ad.status_class != 'delivered' %>
-    <div class="ad_excerpt_comments">
-      <%= render partial: "comments/list", locals: {comments: @comments} %>
-    </div>
-  <% end %>
+  <div class="ad_excerpt_comments">
+    <%= render partial: "comments/list", locals: {comments: @comments} %>
+  </div>
 </div>
 
 <div class="col-md-6 col-sm-6">

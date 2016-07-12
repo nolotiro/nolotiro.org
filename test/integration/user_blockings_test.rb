@@ -74,4 +74,13 @@ class UserBlockingsTest < ActionDispatch::IntegrationTest
     visit conversations_path
     refute_selector 'tr.mail'
   end
+
+  it 'does not show comment textarea when visitor blocking ad author' do
+    ad = create(:ad, user: @other, comments_enabled: true)
+    create(:blocking, blocker: @current_user, blocked: @other)
+    mocking_yahoo_woeid_info(ad.woeid_code) { visit ad_path(ad) }
+
+    refute_selector '.ad_comment_form'
+    assert_equal ad_path(ad), current_path
+  end
 end
