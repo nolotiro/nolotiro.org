@@ -1,5 +1,5 @@
 class AddDeviseToUsers < ActiveRecord::Migration
-  def self.up
+  def up
 
     # nolotiro.org v2 legacy: we had a duplicated users with the email, so we delete the first one
     u = User.find_by_username('seas')
@@ -48,7 +48,7 @@ class AddDeviseToUsers < ActiveRecord::Migration
     # add_index :users, :unlock_token,         :unique => true
   end
 
-  def self.down
+  def down
     # By default, we don't want to make any assumption about how to roll back a migration when your
     # model already existed. Please edit below which fields you would like to remove in this migration.
     raise ActiveRecord::IrreversibleMigration

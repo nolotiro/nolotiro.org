@@ -1,10 +1,10 @@
 class AddAdsCounterToUser < ActiveRecord::Migration
 
-  def self.up
+  def up
     add_column :users, :ads_count, :integer, :default => 0
   end
 
-  def self.down
+  def down
     remove_column :users, :ads_count
   end
 

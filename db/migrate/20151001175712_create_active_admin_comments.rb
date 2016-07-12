@@ -1,5 +1,5 @@
 class CreateActiveAdminComments < ActiveRecord::Migration
-  def self.up
+  def up
     create_table :active_admin_comments do |t|
       t.string :namespace
       t.text   :body
@@ -13,7 +13,7 @@ class CreateActiveAdminComments < ActiveRecord::Migration
     add_index :active_admin_comments, [:resource_type, :resource_id]
   end
 
-  def self.down
+  def down
     drop_table :active_admin_comments
   end
 end

@@ -1,6 +1,6 @@
 class AddConfirmableToUsers < ActiveRecord::Migration
   # Note: You can't use change, as User.update_all with fail in the down migration
-  def self.up
+  def up
     add_column :users, :confirmation_token, :string
     add_column :users, :confirmed_at, :datetime
     add_column :users, :confirmation_sent_at, :datetime
@@ -26,7 +26,7 @@ class AddConfirmableToUsers < ActiveRecord::Migration
 
   end
 
-  def self.down
+  def down
 
     # nolotiro v2 - legacy - dump the new migration model 
     #

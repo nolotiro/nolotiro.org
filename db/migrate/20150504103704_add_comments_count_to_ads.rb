@@ -1,6 +1,6 @@
 class AddCommentsCountToAds < ActiveRecord::Migration
 
-  def self.up
+  def up
     add_column :ads, :comments_count, :integer, :default => 0
     
     Ad.reset_column_information
@@ -10,7 +10,7 @@ class AddCommentsCountToAds < ActiveRecord::Migration
     end
   end
 
-  def self.down
+  def down
     remove_column :ads, :comments_count
   end
 

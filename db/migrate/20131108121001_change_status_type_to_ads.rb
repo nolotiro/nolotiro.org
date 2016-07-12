@@ -1,7 +1,7 @@
 class ChangeStatusTypeToAds < ActiveRecord::Migration
   # nolotirov2 legacy DB
 
-  def self.up
+  def up
     # Change DB column status type from enum to string (VARCHAR)
     #
     #   Field: status
@@ -21,7 +21,7 @@ class ChangeStatusTypeToAds < ActiveRecord::Migration
     change_column :ads, :status, :integer, :default => 1, :null => false
   end
 
-  def self.down
+  def down
     change_column :ads, :status, :string, :default => "available"
     Ad.unscoped.where(status: 1).update_all(status: 'available')
     Ad.unscoped.where(status: 2).update_all(status: 'booked')
