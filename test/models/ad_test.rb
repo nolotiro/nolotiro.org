@@ -163,4 +163,10 @@ class AdTest < ActiveSupport::TestCase
 
     assert_equal 0, @ad.readed_count
   end
+
+  test 'associated comments are deleted when ad is deleted' do
+    FactoryGirl.create(:comment, ad: @ad)
+
+    assert_difference(-> { Comment.count }, -1) { @ad.destroy }
+  end
 end
