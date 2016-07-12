@@ -7,12 +7,12 @@ class CommentsController < ApplicationController
     @comment = @ad.comments.build(comment_params)
 
     if @comment.save
-      if @comment.ad.user != current_user
+      if @ad.user != current_user
         CommentsMailer.create(@ad.id, @comment.body).deliver_later
       end
       redirect_to @ad, notice: t('nlt.comments.flash_ok')
     else
-      render template: 'ads/show'
+      render 'ads/show'
     end
   end
 
