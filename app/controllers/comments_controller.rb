@@ -13,7 +13,6 @@ class CommentsController < ApplicationController
       if @comment.ad.user != current_user
         CommentsMailer.create(params[:id], params[:body]).deliver_later
       end
-      expire_action(controller: 'ads', action: 'show', ad: @comment.ad)
       redirect_to(ad_path(params[:id]), notice: t('nlt.comments.flash_ok'))
     else
       render template: 'ads/show'
