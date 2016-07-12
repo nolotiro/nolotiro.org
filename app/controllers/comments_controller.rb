@@ -2,7 +2,6 @@
 class CommentsController < ApplicationController
   before_action :authenticate_user!
 
-  # POST /comment/create/ad_id/:id
   def create
     @ad = Ad.find params[:id]
     @comment = Comment.new(ads_id: params[:id],
