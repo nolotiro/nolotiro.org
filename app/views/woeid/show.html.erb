@@ -15,15 +15,20 @@
 
 <% content_for :action do %>
   <% type_n = @type == "want" ? 2 : 1 %>
-  <% if @woeid%>
-    <div class="ad_create_tab">
+
+  <div class="ad_change_location_home">
+    <% if @woeid %>
+      <%= link_to t('nlt.change_city'), location_ask_path %>
+    <% end %>
+  </div>
+
+  <div class="ad_create_tab">
+    <% if @woeid%>
       <%= link_to "+ #{t('nlt.publish_ad_on', woeid: @woeid[:short])}", new_ad_path(type: type_n) %>
-    </div>
-  <% else %>
-    <div class="ad_create_tab">
+    <% else %>
       <%= link_to "+ #{t('nlt.to_publish_ad')}", new_ad_path(type: type_n) %>
-    </div>
-  <% end %>
+    <% end %>
+  </div>
 <% end %>
 
 <div id="location_header_section">

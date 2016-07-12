@@ -405,7 +405,6 @@ es:
       subtitle: Puedes probar alguna de estas cosas
       title: No hay anuncios para esta ubicación.
       try: 'O inténtalo con estas ciudades de nombre similar:'
-    or: o
     password: Contraseña
     permission_denied: No tienes permisos para realizar esta acción.
     please_fill_to_become_member: Por favor, rellena este formulario para ser miembro de nolotiro

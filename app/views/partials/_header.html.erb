@@ -1,21 +1,26 @@
-<%= render :partial => "partials/select_language_box" %>
+<div class="link-boxes">
+  <%= render :partial => "partials/select_language_box" %>
 
-<%= render :partial => "partials/user_actions" %>
+  <%= render :partial => "partials/user_actions" %>
+</div>
 
-<div class="site-logo">
-  <div class="site-name">
+<div class="actions-row">
+  <div class="site-logo">
     <%= link_to root_path, :title => "nolotiro.org home" do %>
-      <%= image_tag "nolotiro_logo.png", :alt => "nolotiro.org", :id => "logo" %>
-      nolotiro.org
-      <%=h yield(:title) %>
+      <div class="site-name">
+        nolotiro.org
+        <%= h yield(:title) %>
+      </div>
+
+      <div class="site-slogan">
+        <%= t('nlt.slogan') %>
+      </div>
     <% end %>
   </div>
 
-  <div class="site-slogan">
-    <%= t('nlt.slogan') %>
-  </div>
+  <% if content_for?(:action) %>
+    <div class="page-actions">
+      <%= yield(:action) %>
+    </div>
+  <% end %>
 </div>
-
-<% if content_for?(:action) %>
-  <%= yield(:action) %>
-<% end %>

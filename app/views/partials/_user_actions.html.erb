@@ -1,21 +1,30 @@
-<% if user_signed_in? %>
-  <div class="user_login_box">
-    <%= t('nlt.welcome') %>,
-    <b>
-      <%= link_to current_user.username, profile_path(current_user), id: 'js-username' %>
-    </b> | 
+<div class="user_login_box">
+  <% if user_signed_in? %>
+    <%= link_to profile_path(current_user), id: 'js-username' do %>
+      <span>
+        <%= t('nlt.welcome') %>,
+        <b><%= current_user.username %></b>
+      </span>
+    <% end %>
+
     <% unread_messages_count = current_user.unread_messages_count %>
     <%= link_to messages_list_path, title: "#{unread_messages_count}" do %>
-      <%= image_tag "icons/ico_email.gif" %>
-      &nbsp;<b><%= unread_messages_count %></b>
+      <span>
+        <%= image_tag "icons/ico_email.gif" %>
+        &nbsp;<b><%= unread_messages_count %></b>
+      </span>
     <% end %>
-    |
-    <%= link_to t('nlt.logout'), destroy_user_session_path, :method => :delete %>
-  </div>
-<% else %>
-  <div class="user_login_box">
-    <%= link_to t('nlt.new_user'), new_user_registration_path %>
-    <%= t('nlt.or') %>
-    <%= link_to t('nlt.login'), new_user_session_path %>
-  </div>
-<% end %>
+
+    <%= link_to destroy_user_session_path, method: :delete do %>
+      <span><%= t('nlt.logout') %></span>
+    <% end %>
+  <% else %>
+    <%= link_to new_user_registration_path do %>
+      <span><%= t('nlt.new_user') %></span>
+    <% end %>
+
+    <%= link_to new_user_session_path do %>
+      <span><%= t('nlt.login') %></span>
+    <% end %>
+  <% end %>
+</div>

@@ -26,6 +26,6 @@ class Search < ActionDispatch::IntegrationTest
     fill_in 'q', with: 'muebles'
     click_button 'buscar'
 
-    page.assert_selector '.ad_excerpt_home', count: 1
+    page.assert_selector '.ad_excerpt_list', count: 1
   end
 end

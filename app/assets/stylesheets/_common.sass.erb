@@ -1,4 +1,17 @@
-/* COMMON CODEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE STARTS HERE */
+/**
+ * Main Grid.
+
+html
+  min-width: 320px
+  width: 100%
+
+@media only screen and (max-width: 767px)
+  .container
+    padding: 0
+
+  #main
+    width: 100%
+    padding: 0 15px
 
 .announcement
   width: 100%
@@ -31,16 +44,27 @@ a
   position: relative
   font-size: 1em
   background-color: #FFFFCC
-  border-bottom: 1px solid #ddd
-  border-left: 1px solid #ddd
-  border-right: 1px solid #ddd
+  border-bottom: 1px solid $gray-separator
+  border-left: 1px solid $gray-separator
+  border-right: 1px solid $gray-separator
   float: right
+  line-height: 24px
   right: 100px
-  padding-bottom: 3px
-  padding-left: 8px
-  padding-right: 6px
-  padding-top: 1px
   z-index: 200
+
+  a
+    > span
+      border-right: 1px solid $gray-separator
+      display: block
+      float: left
+      padding: 0 10px
+
+    &:last-child > span
+      border-right: 0px solid $gray-separator
+
+    /* I can't find a better way to vertically-center the envelope... */
+    img
+      margin-bottom: 4px
 
 .advice
   position: relative
@@ -70,12 +94,12 @@ a
   padding-top: 24px
   z-index: 400
   &:hover
-    border: 1px solid #ddd
+    border: 1px solid $gray-separator
     background-color: #fff
     height: auto
 
 .deployed_languages
-  border: 1px solid #ddd
+  border: 1px solid $gray-separator
   background-color: #fff
   height: auto
 
@@ -115,7 +139,6 @@ a
     color: #fff !important
 
 form.searchbox
-  /*    position: absolute;
   display: inline-block
   width: auto
   padding-right: 20px
@@ -128,7 +151,7 @@ form.searchbox
     font-size: 12px
     border: 1px
     border-style: solid
-    border-color: #ddd
+    border-color: $gray-separator
   dl
     margin: 0px !important
 
@@ -145,14 +168,13 @@ form.searchbox
     background-color: #fff
 
 .ad_create_tab
-  position: absolute
-  right: 0px
-  top: 55px
+  @include clearfix
 
 .ad_change_location_home
+  @include clearfix
   text-align: right
   font-weight: bold !important
-  margin-bottom: 20px
+  margin-bottom: 5px
 
 .ad_create_tab a
   background: #97dc3c
@@ -167,7 +189,7 @@ form.searchbox
   color: #fff
   font-size: 1.2em
   font-weight: bold
-  border: 1px solid #ddd
+  border: 1px solid $gray-separator
   padding-left: 10px
   padding-right: 10px
   padding-top: 5px
@@ -276,7 +298,7 @@ form.searchbox
   display: inline-block
   float: right
   padding: 5px
-  border: 1px solid #ddd
+  border: 1px solid $gray-separator
   background-color: #fff
 
 .message-excerpt
@@ -387,7 +409,7 @@ form.searchbox
 .ad_comment
   float: left
   font-size: 1em
-  border-bottom: 1px dashed #ddd
+  border-bottom: 1px dashed $gray-separator
   width: 100% !important
   padding-right: 18px
   padding-bottom: 18px
@@ -438,7 +460,7 @@ form.searchbox
   padding: .8em
   margin-bottom: 1em
   margin-top: 1em
-  border: 1px solid #ddd
+  border: 1px solid $gray-separator
 
 #error, .error, #error_explanation, .alert
   background: #FBE3E4
@@ -511,14 +533,6 @@ form.searchbox
 /**
  * Home
 
-.home_location_change
-  display: inline
-  position: absolute
-  float: left
-  width: 600px
-  right: 0px
-  top: 43px
-
 .section_users
   float: left
   position: relative
@@ -534,26 +548,10 @@ form.searchbox
   margin-left: 15px
   width: 250px
 
-.section_ads
-  float: left
-  position: relative
-  display: inline-block
-  padding: 10px
-  width: 468px
-
-.home_location_change
-  form
-    display: inline-block
-    padding-right: 20px
-    width: auto
-  &.form dd
-    display: inline
-    margin: 0
-
 dl, dd
   margin: 0px !important
 
-.ad_excerpt_home
+.ad_excerpt_list
   padding-top: 14px
   padding-bottom: 10px
   width: 100%
@@ -566,6 +564,7 @@ dl, dd
  * Layout.
 
 #header
+  @include make-row
   margin-top: 0px
   margin-left: 0px
   margin-right: 0px
@@ -580,7 +579,7 @@ dl, dd
   margin-top: 20px
   padding: 20px
   clear: both
-  border-top: 1px solid #ddd
+  border-top: 1px solid $gray-separator
   background-color: #F2F2F2
 
 #facebook-button
@@ -615,29 +614,67 @@ dl, dd
 /**
  * Header Area.
 
+.actions-row
+  margin: 40px auto 0
+  width: 96%
+
+@media only screen and (max-width: 767px)
+  .site-logo
+    width: 100%
+
+  .page-actions
+    margin: 30px auto 0
+    width: 80%
+
+    .ad_create_tab
+      width: 100%
+
+@media only screen and (min-width: 768px)
+  .site-logo
+    width: 50%
+    float: left
+
+  .page-actions
+    width: 50%
+    float: right
+
+    .ad_create_tab
+      width: 80%
+      float: right
+
+    .ad_change_location_home
+      float: right
+      height: 17px
+
+  .section_ads
+    padding: 10px
+    width: 468px
+    display: inline-block
+    float: left
+    position: relative
+
 .site-logo
   @include clearfix
-  margin-left: 60px
-  padding-top: 30px
+  background: image-url('nolotiro_logo.png') no-repeat 0 0
+  a
+    display: block
+    padding-left: 60px
+    height: 48px
 
 .site-name
   z-index: -130
-  /*below search form
   border: none
-  width: 380px
   font-size: 2em
   line-height: 1
   margin-bottom: 0.01em
   font-family: Georgia, "Times New Roman", Times, serif
-  img
-    position: absolute
-    top: 36px
-    left: 0
 
 .site-slogan
   float: left
   font-size: 1em
   padding-top: 1px
+  color: black
+  text-decoration: none
 
 #location_header_section
   @include make-md-column(12)
@@ -647,7 +684,7 @@ dl, dd
   padding-top: 15px
   padding-bottom: 6px
   padding-left: 20px
-  border: 1px solid #ddd
+  border: 1px solid $gray-separator
   min-height: 75px
 
 .world_link
@@ -664,7 +701,7 @@ dl, dd
   padding-top: 16px
   padding-bottom: 16px
   padding-left: 20px
-  border: 1px solid #ddd
+  border: 1px solid $gray-separator
   margin-bottom: 20px
   h2
     font-size: 1em
@@ -732,26 +769,18 @@ dl, dd
 
 ul#tabnav
   text-align: left
-  /* set to left, right or center
   margin: 1em 0 0 0
   font-size: 14px
   font-weight: bold
-  border-bottom: 1px solid #ddd
+  border-bottom: 1px solid $gray-separator
   list-style-type: none
   padding: 3px 15px
   li
     display: inline
     a
       padding: 3px 10px
-      /* set padding (tab size) as desired; FIRST number must change with respect to padding-top (X) above
-      border: 1px solid #ddd
-      /* set border COLOR as desired; usually matches border color specified in #tabnav
-      /*background-color: #fff;
-      /* set unselected tab background color as desired
-      /*color: #000;
-      /* set unselected tab link color as desired
+      border: 1px solid $gray-separator
       margin-right: 4px
-      /* set additional spacing between tabs as desired
       text-decoration: none
       border-bottom: none
   a:hover, .active
@@ -939,11 +968,6 @@ $langs: <%= I18n.available_locales.join(" ") %>
   border-color: #d62d20
 
 @media only screen and (max-width: 767px)
-  .section_ads
-    padding: 0px
-    width: 95%
-    padding-left: 4%
-
   .site-name
     width: 50%
 
@@ -956,10 +980,6 @@ $langs: <%= I18n.available_locales.join(" ") %>
 
   #location_header_section br
     display: none
-
-  .ad_change_location_home
-    top: 5px
-    right: 25px
 
   #social-butttons
     margin-left: -20px
@@ -991,9 +1011,6 @@ $langs: <%= I18n.available_locales.join(" ") %>
   #default_header_section
     width: 100%
 
-  .home_location_change
-    margin-top: 1em
-
   .section_locations
     margin-left: 2%
     margin-right: 2%
@@ -1024,13 +1041,6 @@ $langs: <%= I18n.available_locales.join(" ") %>
   .give-want
     display: block
 
-  #header
-    .ad_create_tab
-      position: static
-      margin-top: 40px
-      margin-left: 5%
-      margin-right: 5%
-
 @media only screen and (max-width: 500px)
 
   .message-from-left, .message-from-right
@@ -1039,25 +1049,6 @@ $langs: <%= I18n.available_locales.join(" ") %>
   .message-container-left, .message-container-right
     margin: 0px
 
-  .home_location_change
-    position: relative
-    display: inline-block
-    width: 100%
-    margin-top: 0px
-    top: 0px
-
 @media only screen and (max-width: 365px)
   #cookie-bar
     height: 54px
-
-@media only screen and (max-width: 350px)
-
-  .ad_change_location_home
-    top: 50px
-
-  .home_location_change
-    position: relative
-    display: inline-block
-    width: 100%
-    margin-top: 0px
-    top: 0px

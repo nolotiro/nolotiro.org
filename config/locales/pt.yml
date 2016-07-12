@@ -405,7 +405,6 @@ pt:
       subtitle: Você pode tentar com alguma de estas coisas
       title: Não existem anúncios para esta localização.
       try: 'Ou tente com estas cidades com nomes semelhantes:'
-    or: ou
     password: Senha
     permission_denied: Você não tem permissão para executar esta ação
     please_fill_to_become_member: Por favor, preencha este formulário para se tornar um miembro do nolotiro

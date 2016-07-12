@@ -405,7 +405,6 @@ ca:
       subtitle: Pots provar alguna d'aquestes coses
       title: No hi ha anuncis per a aquesta ubicació.
       try: 'O intenta-ho amb aquestes ciutats de nom similar:'
-    or: o
     password: Contrasenya
     permission_denied: No tens permisos per a realitzar aquesta acció.
     please_fill_to_become_member: Si us plau, ompli aquest formulari per ser membre de nolotiro
