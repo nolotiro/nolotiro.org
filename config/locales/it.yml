@@ -150,12 +150,6 @@ it:
         subject: Istruzioni per la conferma
       reset_password_instructions:
         subject: Istruzioni per reimpostare la password
-      unlock_instructions:
-        action: 
-        greeting: 
-        instruction: 
-        message: 
-        subject: Istruzioni per sbloccare l'account
     omniauth_callbacks:
       failure: Non è stato possibile autorizzarti da %{kind} perchè "%{reason}".
       success: Autorizzato con successo dall'account %{kind}.
@@ -186,12 +180,6 @@ it:
       signed_out: Sei uscito correttamente.
       user:
         signed_in: Acceso eseguito
-    unlocks:
-      new:
-        resend_unlock_instructions: 
-      send_instructions: Riceverai un messaggio email con le istruzioni per sbloccare il tuo account entro qualche minuto.
-      send_paranoid_instructions: Se la tua e-mail esiste nel nostro database, riceverai un messaggio email con le istruzioni per sbloccare il tuo account entro qualche minuto.
-      unlocked: Il tuo account è stato correttamente sbloccato. Ora sei collegato.
   friendships:
     create:
       error: C'è stato un'errore aggiungendo %{username} come amico.
@@ -339,7 +327,6 @@ it:
     delivered: consegnato
     developers: svilupatori
     didn_t_receive_confirmation_instructions: Non hai ricevuto le istruzione di conferma?
-    didn_t_receive_unlock_instructions: Non hai ricevuto le istruzione per sblocco?
     edit_this_ad: Editare questo annuncio
     faq:
       answer_1_html: Lo scopo fondamentale di questo sito è quello di sbarazzarsi di oggetti non più utilizzati e che ci ostacolano in casa

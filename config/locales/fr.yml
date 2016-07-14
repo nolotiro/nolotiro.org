@@ -152,12 +152,6 @@ fr:
         subject: Instructions de confirmation
       reset_password_instructions:
         subject: Instructions pour changer le mot de passe
-      unlock_instructions:
-        action: 
-        greeting: 
-        instruction: 
-        message: 
-        subject: Instructions pour déverrouiller le compte
     omniauth_callbacks:
       failure: 'Nous ne pouvons pas vous authentifier depuis %{kind} pour la raison suivante : ''%{reason}''.'
       success: Autorisé avec succès par votre compte %{kind}.
@@ -188,12 +182,6 @@ fr:
       signed_out: Déconnecté(e) avec succès.
       user:
         signed_in: 
-    unlocks:
-      new:
-        resend_unlock_instructions: 
-      send_instructions: Vous allez recevoir un email sous quelques minutes contenant les instructions nécessaires au déblocage de votre compte.
-      send_paranoid_instructions: Si votre compte existe, vous recevrez un email indiquant comment le déverrouiller sous quelques minutes.
-      unlocked: Votre compte a été débloqué avec succès. Veuillez vous connecter.
   friendships:
     create:
       error: 
@@ -341,7 +329,6 @@ fr:
     delivered: 
     developers: 
     didn_t_receive_confirmation_instructions: 
-    didn_t_receive_unlock_instructions: 
     edit_this_ad: 
     faq:
       answer_1_html: 

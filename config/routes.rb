@@ -51,7 +51,7 @@ NolotiroOrg::Application.routes.draw do
     end
 
     devise_for :users,
-               skip: :omniauth_callbacks,
+               skip: [:omniauth_callbacks, :unlocks],
                controllers: { registrations: 'registrations' },
                path: 'user',
                path_names: {

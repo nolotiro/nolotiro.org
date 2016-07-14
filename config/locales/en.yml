@@ -146,12 +146,6 @@ en:
         subject: Confirmation instructions
       reset_password_instructions:
         subject: Reset password instructions
-      unlock_instructions:
-        action: 
-        greeting: 
-        instruction: 
-        message: 
-        subject: Unlock Instructions
     omniauth_callbacks:
       failure: Could not authenticate you from %{kind} because "%{reason}".
       success: Successfully authenticated from %{kind} account.
@@ -182,12 +176,6 @@ en:
       signed_out: Signed out successfully.
       user:
         signed_in: You are signed.
-    unlocks:
-      new:
-        resend_unlock_instructions: 
-      send_instructions: You will receive an email with instructions about how to unlock your account in a few minutes.
-      send_paranoid_instructions: If your account exists, you will receive an email with instructions about how to unlock it in a few minutes.
-      unlocked: Your account has been unlocked successfully. Please sign in to continue.
   friendships:
     create:
       error: Error occurred when adding %{username} as a friend.
@@ -335,7 +323,6 @@ en:
     delivered: delivered
     developers: developers
     didn_t_receive_confirmation_instructions: Didn't receive the confirmation's instructions?
-    didn_t_receive_unlock_instructions: Didn't receive the unblocking's instructions?
     edit_this_ad: Edit this ad
     faq:
       answer_1_html: |2-

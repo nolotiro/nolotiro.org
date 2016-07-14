@@ -150,12 +150,6 @@ pt:
         subject: Instruções de confirmação
       reset_password_instructions:
         subject: Instruções de recuperação de palavra-passe
-      unlock_instructions:
-        action: 
-        greeting: 
-        instruction: 
-        message: 
-        subject: Instruções de desbloqueio
     omniauth_callbacks:
       failure: Could not authorize you from %{kind} because "%{reason}".
       success: Successfully authorized from %{kind} account.
@@ -186,12 +180,6 @@ pt:
       signed_out: Saíu da sessão com sucesso.
       user:
         signed_in: Você está conectado
-    unlocks:
-      new:
-        resend_unlock_instructions: 
-      send_instructions: Dentro de alguns minutos irá receber um email com as instruções para desbloquear a sua conta.
-      send_paranoid_instructions: Se a sua conta existir, irá receber dentro de alguns minutos um email com instruções para a desbloquear.
-      unlocked: A sua conta foi desbloqueada com sucesso. Agora está autenticado.
   friendships:
     create:
       error: Houve um erro ao adiccionar a %{username} como amigo.
@@ -339,7 +327,6 @@ pt:
     delivered: entregado
     developers: desenvolvedores
     didn_t_receive_confirmation_instructions: Você não recebeu instruções de confirmação?
-    didn_t_receive_unlock_instructions: Você não recebeu instruções para o desbloqueio?
     edit_this_ad: Edita este anúncio
     faq:
       answer_1_html: O objectivo fundamental deste site é nos livrar dos objetos que já não usamos e ficam nos estorvando em casa.

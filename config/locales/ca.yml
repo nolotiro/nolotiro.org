@@ -150,12 +150,6 @@ ca:
         subject: Instruccions de confirmació
       reset_password_instructions:
         subject: "[nolotiro.org] Instruccions de regeneració de contrasenya"
-      unlock_instructions:
-        action: 
-        greeting: 
-        instruction: 
-        message: 
-        subject: "[nolotiro.org] Instruccions de desbloqueig"
     omniauth_callbacks:
       failure: No hem pogut autoritzar el compte des de %{kind} perquè "%{reason}".
       success: Autoritzat satisfactoriament el compte des de %{kind}.
@@ -186,12 +180,6 @@ ca:
       signed_out: Sessió tancada correctament.
       user:
         signed_in: Heu entrat.
-    unlocks:
-      new:
-        resend_unlock_instructions: 
-      send_instructions: En breu rebràs un correu electrònic amb instruccions sobre com desbloquejar el teu compte.
-      send_paranoid_instructions: Si el teu compte existeix, rebràs un correu electrònic amb instruccions sobre com desbloquejar-lo.
-      unlocked: El teu compte ha estat desbloquejat correctament. S'ha iniciat la sessió.
   friendships:
     create:
       error: S'ha produït un error en afegir a %{username} com amic.
@@ -339,7 +327,6 @@ ca:
     delivered: lliurat
     developers: desenvolupadors
     didn_t_receive_confirmation_instructions: No has rebut les instruccions de confirmació?
-    didn_t_receive_unlock_instructions: No has rebut les instruccions per al desbloqueig?
     edit_this_ad: Edita aquest anunci
     faq:
       answer_1_html: El propòsit fonamental d'aquesta web és el de desfer-nos dels objectes que ja no fem servir i ens fan nosa a casa.

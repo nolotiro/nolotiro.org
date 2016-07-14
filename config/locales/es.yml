@@ -150,12 +150,6 @@ es:
         subject: "[nolotiro.org] Instrucciones de confirmación"
       reset_password_instructions:
         subject: "[nolotiro.org] Instrucciones de recuperación de contraseña"
-      unlock_instructions:
-        action: 
-        greeting: 
-        instruction: 
-        message: 
-        subject: "[nolotiro.org] Instrucciones para desbloquear"
     omniauth_callbacks:
       failure: No has sido autorizado en la cuenta %{kind} porque "%{reason}".
       success: Has sido autorizado satisfactoriamente de la cuenta %{kind}.
@@ -186,12 +180,6 @@ es:
       signed_out: Sesión finalizada.
       user:
         signed_in: Has iniciado sesión.
-    unlocks:
-      new:
-        resend_unlock_instructions: 
-      send_instructions: Vas a recibir instrucciones para desbloquear tu cuenta en unos pocos minutos.
-      send_paranoid_instructions: Si tu cuenta existe, vas a recibir instrucciones para desbloquear tu cuenta en unos pocos minutos.
-      unlocked: Tu cuenta fue desbloqueada. Tu cuenta fue desbloqueada. Ya puedes iniciar sesión.
   friendships:
     create:
       error: Ocurrió un error al agregar a %{username} como amigo.
@@ -339,7 +327,6 @@ es:
     delivered: entregado
     developers: desarrolladores
     didn_t_receive_confirmation_instructions: "¿No has recibido las instrucciones de confirmación?"
-    didn_t_receive_unlock_instructions: "¿No has recibido las instrucciones para el desbloqueo?"
     edit_this_ad: Edita este anuncio
     faq:
       answer_1_html: El propósito fundamental de esta web es el de deshacernos de los objetos que ya no utilizamos y nos estorban en casa.

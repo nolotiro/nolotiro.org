@@ -155,12 +155,6 @@ gl:
         subject: "[nolotiro.org] Instrucións para confirmación"
       reset_password_instructions:
         subject: "[nolotiro.org] recuperación Instrucións de contrasinal"
-      unlock_instructions:
-        action: 
-        greeting: 
-        instruction: 
-        message: 
-        subject: "[nolotiro.org] Como desbloquear"
     omniauth_callbacks:
       failure: 
       success: 
@@ -193,12 +187,6 @@ gl:
 '
       user:
         signed_in: 
-    unlocks:
-      new:
-        resend_unlock_instructions: 
-      send_instructions: Recibirá instrucións para desbloquear a súa conta en poucos minutos.
-      send_paranoid_instructions: Se existe a túa conta, recibirá instrucións para desbloquear a súa conta en poucos minutos.
-      unlocked: A súa conta foi desbloqueada. A súa conta foi desbloqueada. Agora podes asinar.
   friendships:
     create:
       error: 
@@ -354,7 +342,6 @@ gl:
     delivered: dedicado
     developers: desarrolladores
     didn_t_receive_confirmation_instructions: 
-    didn_t_receive_unlock_instructions: 
     edit_this_ad: Edita este anuncio
     faq:
       answer_1_html: O principal obxectivo deste sitio é para se librar de elementos que non usa máis e impiden connosco na casa.
