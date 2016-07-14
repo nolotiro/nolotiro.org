@@ -132,6 +132,7 @@ eu:
       action: 
       confirmed: 
       instructions: 
+      no_html_instructions: 
       resend: 
       send_instructions: 
       send_paranoid_instructions: 
@@ -161,6 +162,7 @@ eu:
       follow_instructions: 
       forgot: 
       instructions: 
+      no_html_instructions: 
       no_token: 
       send: 
       send_instructions: 

@@ -137,6 +137,7 @@ gl:
       action: Confirmar miña conta
       confirmed: A súa conta foi confirmada correctamente.
       instructions: 'Por favor confirme o seu correo electrónico, accedendo á seguinte enlace:'
+      no_html_instructions: 'Se non pode facer clic no enlace, copia e pega o seguinte na barra de enderezos do seu navegador:'
       resend: Reenviar instrucións de confirmación
       send_instructions: Recibirá un correo electrónico con instrucións sobre como confirmar a súa conta en poucos minutos.
       send_paranoid_instructions: Se o correo existe no noso banco de datos, recibirá un correo electrónico con instrucións sobre como confirmar a súa conta en poucos minutos.
@@ -166,6 +167,7 @@ gl:
       follow_instructions: Alguén pediu trocar a súa contrasinal de nolotiro.org. Se non foi pode ignorar este correo. O seu contrasinal non vai cambiar ata que acceder ao enlace e crear unha nova.
       forgot: "¿Esqueceches o contrasinal?\n"
       instructions: Introduce o teu correo-e e nós enviarémosche unha ligazón de acceso para cambiar o seu contrasinal.
+      no_html_instructions: 'Se non pode facer clic sobre o enlace, copia e pega este URL na barra de enderezos do seu navegador: '
       no_token: Non pode acceder a esta páxina, se non a través dun enlace para restablecer o seu contrasinal. Se chegou aquí a partir do correo electrónico para redefinir o seu contrasinal, por favor, asegúrese de que o URL que inseriu é completa.
       send: Enviar por correo
       send_instructions: Recibirá un correo electrónico con instrucións sobre como axustar o teu contrasinal en poucos minutos.

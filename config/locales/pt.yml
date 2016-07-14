@@ -132,6 +132,7 @@ pt:
       action: Confirmar minha conta
       confirmed: A sua conta foi confirmada com sucesso.
       instructions: 'Por favor, confirme a sua conta de e-mail acessando no seguinte link:'
+      no_html_instructions: 
       resend: Encaminhar instruções de confrimação
       send_instructions: Dentro de alguns minutos irá receber um email com instruções para confirmar  sua conta.
       send_paranoid_instructions: Se o seu email existir na nossa base de dados, irá receber dentro de alguns minutos um email com instruções para confirmar a sua conta.
@@ -161,6 +162,7 @@ pt:
       follow_instructions: 'Alguem solicitou mudar a sua senha de nolotiro.org. Se você não foi, pode ignorar este e-mail. Sua senha não mudará até você não acceder ao link e trocar ela por uma nova. '
       forgot: Esquceu a sua senha?
       instructions: Por favor, insira o seu email para enviar-lhe um link de acceso direto para mudar a sua senha.
+      no_html_instructions: 
       no_token: Não pode aceder a esta página sem vir do email de redefinição da senha. Se vem dum email para redefinir a sena, por favor verifique que usou o URL completo que foi enviado.
       send: Enviar por e-mail
       send_instructions: Dentro de alguns minutos irá receber um email com instruções de reinicialização da palavra-passe.
