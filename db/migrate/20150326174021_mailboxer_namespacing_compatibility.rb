@@ -1,6 +1,6 @@
+# frozen_string_literal: true
 class MailboxerNamespacingCompatibility < ActiveRecord::Migration
-
-  def self.up
+  def up
     rename_table :conversations, :mailboxer_conversations
     rename_table :notifications, :mailboxer_notifications
     rename_table :receipts,      :mailboxer_receipts
@@ -13,7 +13,7 @@ class MailboxerNamespacingCompatibility < ActiveRecord::Migration
     Mailboxer::Notification.where(type: 'Message').update_all(type: 'Mailboxer::Message')
   end
 
-  def self.down
+  def down
     rename_table :mailboxer_conversations, :conversations
     rename_table :mailboxer_notifications, :notifications
     rename_table :mailboxer_receipts,      :receipts

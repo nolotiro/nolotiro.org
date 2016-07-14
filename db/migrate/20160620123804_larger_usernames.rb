@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 class LargerUsernames < ActiveRecord::Migration
   def up
     change_column :users, :username, :string, limit: 63

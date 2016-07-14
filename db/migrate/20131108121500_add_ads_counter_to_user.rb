@@ -1,11 +1,10 @@
+# frozen_string_literal: true
 class AddAdsCounterToUser < ActiveRecord::Migration
-
-  def self.up
-    add_column :users, :ads_count, :integer, :default => 0
+  def up
+    add_column :users, :ads_count, :integer, default: 0
   end
 
-  def self.down
+  def down
     remove_column :users, :ads_count
   end
-
 end

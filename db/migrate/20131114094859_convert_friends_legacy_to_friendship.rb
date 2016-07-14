@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 class ConvertFriendsLegacyToFriendship < ActiveRecord::Migration
   def change
     # nolotirov2 legacy

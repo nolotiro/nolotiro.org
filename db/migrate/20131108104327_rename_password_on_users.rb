@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 class RenamePasswordOnUsers < ActiveRecord::Migration
   # nolotirov2 legacy: auth migration - from zend md5 to devise
   # https://github.com/plataformatec/devise/wiki/How-To:-Migration-legacy-database

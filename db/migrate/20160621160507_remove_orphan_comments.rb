@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 class RemoveOrphanComments < ActiveRecord::Migration
   def change
     reversible do |direction|
