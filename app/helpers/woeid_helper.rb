@@ -12,6 +12,8 @@ module WoeidHelper
     value = Rails.cache.fetch(key)
     return value if value
 
+    Rails.logger.info "[yahoo] Touching Yahoo API to convert woeid #{woeid}..."
+
     GeoPlanet.appid = Rails.application.secrets['geoplanet_app_id']
     begin
       place_raw = GeoPlanet::Place.new(woeid.to_i, lang: locale)
@@ -24,6 +26,9 @@ module WoeidHelper
       return value
     rescue GeoPlanet::NotFound
       return nil
+    rescue GeoPlanet::BadRequest => e
+      Rails.logger.info "[yahoo] Failed to convert woeid #{woeid}: #{e.message}"
+      raise e
     end
   end
 
