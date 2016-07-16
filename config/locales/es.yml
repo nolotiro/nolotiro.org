@@ -132,6 +132,7 @@ es:
       action: Confirmar mi cuenta
       confirmed: Tu cuenta ha sido satisfactoriamente confirmada.
       instructions: 'Por favor confirma tu cuenta de correo accediendo al siguiente enlace:'
+      no_html_instructions: 'Si no puedes hacer link en el enlace, copia y pega lo siguiente en la barra de direcciones de tu navegador:'
       resend: Reenviar instrucciones de confirmación
       send_instructions: Vas a recibir un correo con instrucciones sobre cómo confirmar tu cuenta en unos pocos minutos.
       send_paranoid_instructions: Si tu correo existe en nuestra base de datos, vas a recibir un correo con instrucciones sobre cómo confirmar tu cuenta en unos pocos minutos.
@@ -150,12 +151,6 @@ es:
         subject: "[nolotiro.org] Instrucciones de confirmación"
       reset_password_instructions:
         subject: "[nolotiro.org] Instrucciones de recuperación de contraseña"
-      unlock_instructions:
-        action: 
-        greeting: 
-        instruction: 
-        message: 
-        subject: "[nolotiro.org] Instrucciones para desbloquear"
     omniauth_callbacks:
       failure: No has sido autorizado en la cuenta %{kind} porque "%{reason}".
       success: Has sido autorizado satisfactoriamente de la cuenta %{kind}.
@@ -167,6 +162,7 @@ es:
       follow_instructions: Alguien ha pedido cambiar tu contraseña de nolotiro.org. Si no has sido puedes ignorar este correo. Tu contraseña no cambiará hasta que accedas al enlace y crees una nueva.
       forgot: "¿Has olvidado tu contraseña?"
       instructions: Por favor, introduce tu email y te enviaremos un enlace de acceso directo para cambiar tu contraseña.
+      no_html_instructions: 'Si no puedes hacer click en el enlace, copia y pega lo siguiente en la barra de direcciones de tu navegador: '
       no_token: No puedes acceder a esta página si no es a través de un un enlace para resetear tu contraseña. Si has llegado hasta aquí desde el email para resetear tu contraseña, por favor asegúrate de que la URL introducida está completa.
       send: Enviar por correo
       send_instructions: Vas a recibir un correo con instrucciones sobre cómo resetear tu contraseña en unos pocos minutos.
@@ -186,12 +182,6 @@ es:
       signed_out: Sesión finalizada.
       user:
         signed_in: Has iniciado sesión.
-    unlocks:
-      new:
-        resend_unlock_instructions: 
-      send_instructions: Vas a recibir instrucciones para desbloquear tu cuenta en unos pocos minutos.
-      send_paranoid_instructions: Si tu cuenta existe, vas a recibir instrucciones para desbloquear tu cuenta en unos pocos minutos.
-      unlocked: Tu cuenta fue desbloqueada. Tu cuenta fue desbloqueada. Ya puedes iniciar sesión.
   friendships:
     create:
       error: Ocurrió un error al agregar a %{username} como amigo.
@@ -339,7 +329,6 @@ es:
     delivered: entregado
     developers: desarrolladores
     didn_t_receive_confirmation_instructions: "¿No has recibido las instrucciones de confirmación?"
-    didn_t_receive_unlock_instructions: "¿No has recibido las instrucciones para el desbloqueo?"
     edit_this_ad: Edita este anuncio
     faq:
       answer_1_html: El propósito fundamental de esta web es el de deshacernos de los objetos que ya no utilizamos y nos estorban en casa.

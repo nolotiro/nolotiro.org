@@ -132,6 +132,7 @@ de:
       action: 
       confirmed: Vielen Dank für Ihre Registrierung.
       instructions: 
+      no_html_instructions: 
       resend: 
       send_instructions: Sie erhalten in wenigen Minuten eine E-Mail, mit der Sie Ihre Registrierung bestätigen können.
       send_paranoid_instructions: Falls Ihre E-Mail-Adresse in unserer Datenbank existiert, erhalten Sie in wenigen Minuten eine E-Mail mit der die Sie Ihre Registrierung bestätigen können.
@@ -150,12 +151,6 @@ de:
         subject: Anleitung zur Bestätigung Ihres Accounts
       reset_password_instructions:
         subject: Anleitung für das Zurücksetzen Ihres Passworts
-      unlock_instructions:
-        action: 
-        greeting: 
-        instruction: 
-        message: 
-        subject: Anleitung für die Account-Freischaltung
     omniauth_callbacks:
       failure: Sie konnten nicht mit Ihrem %{kind}-Account angemeldet werden, weil "%{reason}".
       success: Sie haben sich erfolgreich mit Ihrem %{kind}-Account angemeldet.
@@ -167,6 +162,7 @@ de:
       follow_instructions: 
       forgot: 
       instructions: 
+      no_html_instructions: 
       no_token: Sie können sich nicht auf dieser Seite anmelden, wenn Sie nicht von einer Passwort-Zurücksetzen-E-Mail kommen. Wenn Sie von solch einer E-Mail kommen, überprüfen Sie bitte, ob Sie die gesamte URL verwendeten.
       send: 
       send_instructions: Sie erhalten in wenigen Minuten eine E-Mail mit der Anleitung, wie Sie Ihr Passwort zurücksetzen können.
@@ -186,12 +182,6 @@ de:
       signed_out: Erfolgreich abgemeldet.
       user:
         signed_in: 
-    unlocks:
-      new:
-        resend_unlock_instructions: 
-      send_instructions: Sie erhalten in wenigen Minuten eine E-Mail mit der Anleitung, wie Sie Ihren Account entsperren können.
-      send_paranoid_instructions: Falls Ihre E-Mail-Adresse in unserer Datenbank existiert, erhalten Sie in wenigen Minuten eine E-Mail mit der Anleitung, wie Sie Ihren Account entsperren können.
-      unlocked: Ihr Account wurde entsperrt. Sie sind jetzt angemeldet.
   friendships:
     create:
       error: 
@@ -339,7 +329,6 @@ de:
     delivered: 
     developers: 
     didn_t_receive_confirmation_instructions: 
-    didn_t_receive_unlock_instructions: 
     edit_this_ad: 
     faq:
       answer_1_html: 

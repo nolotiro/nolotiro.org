@@ -132,6 +132,7 @@ it:
       action: Conferma il tuo account
       confirmed: Il tuo account è stato correttamente confermato.
       instructions: 'Per favore conferma il tuo email accedendo al seguente link:'
+      no_html_instructions: 'Se non puoi cliccare nel link, copia e incolla questo nella barra degli indirizzi:'
       resend: Invia un altra volta le istruzione di conferma
       send_instructions: Riceverai un messaggio email con le istruzioni per confermare il tuo account entro qualche minuto.
       send_paranoid_instructions: Se la tua e-mail esiste nel nostro database, riceverai un messaggio email con le istruzioni per confermare il tuo account entro qualche minuto.
@@ -150,12 +151,6 @@ it:
         subject: Istruzioni per la conferma
       reset_password_instructions:
         subject: Istruzioni per reimpostare la password
-      unlock_instructions:
-        action: 
-        greeting: 
-        instruction: 
-        message: 
-        subject: Istruzioni per sbloccare l'account
     omniauth_callbacks:
       failure: Non è stato possibile autorizzarti da %{kind} perchè "%{reason}".
       success: Autorizzato con successo dall'account %{kind}.
@@ -167,6 +162,7 @@ it:
       follow_instructions: 'Qualcuno a chiesto di cambiare la password di nolotiro.org. Se non sei stato tu puoi ignorare questa email. La password non cambierà fino a quando non accedi al link per crearne una nuova. '
       forgot: Hai dimenticato la password?
       instructions: Per favore, scrive la tua email e te invieremo un link di acceso diretto per cambiare la tua password.
+      no_html_instructions: "Se non puoi fare clic sul link, copia e incolla l'URL nella barra degli indirizzi del browser: "
       no_token: Puoi accedere a questa pagina solamente dalla email di reset della password. Se vieni dalla email controlla di aver inserito l'url completo riportato nella email.
       send: Invia email
       send_instructions: Riceverai un messaggio email con le istruzioni per reimpostare la tua password entro qualche minuto.
@@ -186,12 +182,6 @@ it:
       signed_out: Sei uscito correttamente.
       user:
         signed_in: Acceso eseguito
-    unlocks:
-      new:
-        resend_unlock_instructions: 
-      send_instructions: Riceverai un messaggio email con le istruzioni per sbloccare il tuo account entro qualche minuto.
-      send_paranoid_instructions: Se la tua e-mail esiste nel nostro database, riceverai un messaggio email con le istruzioni per sbloccare il tuo account entro qualche minuto.
-      unlocked: Il tuo account è stato correttamente sbloccato. Ora sei collegato.
   friendships:
     create:
       error: C'è stato un'errore aggiungendo %{username} come amico.
@@ -339,7 +329,6 @@ it:
     delivered: consegnato
     developers: svilupatori
     didn_t_receive_confirmation_instructions: Non hai ricevuto le istruzione di conferma?
-    didn_t_receive_unlock_instructions: Non hai ricevuto le istruzione per sblocco?
     edit_this_ad: Editare questo annuncio
     faq:
       answer_1_html: Lo scopo fondamentale di questo sito è quello di sbarazzarsi di oggetti non più utilizzati e che ci ostacolano in casa

@@ -132,6 +132,7 @@ ca:
       action: Confirmar el meu compte
       confirmed: El teu compte ha estat confirmat correctament.
       instructions: Per favor confirma el teu compte de correu accedint al següent enllaç
+      no_html_instructions: "Si no pots fer clic a l'enllaç, copia i enganxa el següent a la barra d'adreces del teu navegador:"
       resend: Reexpedir instruccions de confirmació
       send_instructions: En breu rebràs un correu electrònic amb instruccions sobre com confirmar el teu compte.
       send_paranoid_instructions: Si la teva adreça electrònica existeix a la base de dades, rebràs un correu electrònic amb instruccions sobre com confirmar el teu compte.
@@ -150,12 +151,6 @@ ca:
         subject: Instruccions de confirmació
       reset_password_instructions:
         subject: "[nolotiro.org] Instruccions de regeneració de contrasenya"
-      unlock_instructions:
-        action: 
-        greeting: 
-        instruction: 
-        message: 
-        subject: "[nolotiro.org] Instruccions de desbloqueig"
     omniauth_callbacks:
       failure: No hem pogut autoritzar el compte des de %{kind} perquè "%{reason}".
       success: Autoritzat satisfactoriament el compte des de %{kind}.
@@ -167,6 +162,7 @@ ca:
       follow_instructions: Algú ha demanat canviar la teva contrasenya de nolotiro.org. Si no has estat pots ignorar aquest correu. La teva contrasenya no canviarà fins que accedeixis a l'enllaç i creïs una nova.
       forgot: Has oblidat la teva contrasenya?
       instructions: Si us plau, introdueix el teu email i t'enviarem un enllaç d'accés directe per canviar la teva contrasenya.
+      no_html_instructions: "Si no pot fer clic a l'enllaç, copiar i enganxar aquesta URL a la barra d'adreces del navegador: "
       no_token: Només pots accedir a aquesta pàgina des d'un correu electrònic de recuperació de la contrasenya. Si realment has fet servir l'enllaç del correu electrònic, comprova que has utilitzat la URL completa.
       send: Envia per correu
       send_instructions: En breu rebràs un correu electrònic amb instruccions sobre com restablir la teva contrasenya.
@@ -186,12 +182,6 @@ ca:
       signed_out: Sessió tancada correctament.
       user:
         signed_in: Heu entrat.
-    unlocks:
-      new:
-        resend_unlock_instructions: 
-      send_instructions: En breu rebràs un correu electrònic amb instruccions sobre com desbloquejar el teu compte.
-      send_paranoid_instructions: Si el teu compte existeix, rebràs un correu electrònic amb instruccions sobre com desbloquejar-lo.
-      unlocked: El teu compte ha estat desbloquejat correctament. S'ha iniciat la sessió.
   friendships:
     create:
       error: S'ha produït un error en afegir a %{username} com amic.
@@ -339,7 +329,6 @@ ca:
     delivered: lliurat
     developers: desenvolupadors
     didn_t_receive_confirmation_instructions: No has rebut les instruccions de confirmació?
-    didn_t_receive_unlock_instructions: No has rebut les instruccions per al desbloqueig?
     edit_this_ad: Edita aquest anunci
     faq:
       answer_1_html: El propòsit fonamental d'aquesta web és el de desfer-nos dels objectes que ja no fem servir i ens fan nosa a casa.

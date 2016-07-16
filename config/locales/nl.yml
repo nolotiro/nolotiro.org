@@ -122,6 +122,7 @@ nl:
       action: 
       confirmed: 
       instructions: 
+      no_html_instructions: 
       resend: 
       send_instructions: 
       send_paranoid_instructions: 
@@ -140,12 +141,6 @@ nl:
         subject: 
       reset_password_instructions:
         subject: 
-      unlock_instructions:
-        action: 
-        greeting: 
-        instruction: 
-        message: 
-        subject: 
     omniauth_callbacks:
       failure: 
       success: 
@@ -157,6 +152,7 @@ nl:
       follow_instructions: 
       forgot: 
       instructions: 
+      no_html_instructions: 
       no_token: 
       send: 
       send_instructions: 
@@ -176,12 +172,6 @@ nl:
       signed_out: 
       user:
         signed_in: 
-    unlocks:
-      new:
-        resend_unlock_instructions: 
-      send_instructions: 
-      send_paranoid_instructions: 
-      unlocked: 
   friendships:
     create:
       error: 
@@ -329,7 +319,6 @@ nl:
     delivered: 
     developers: 
     didn_t_receive_confirmation_instructions: 
-    didn_t_receive_unlock_instructions: 
     edit_this_ad: 
     faq:
       answer_1_html: 
