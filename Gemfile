@@ -60,7 +60,9 @@ gem 'sidekiq'                                       # job workers
 gem 'sinatra', require: false
 gem 'slim'
 
-gem 'geoplanet'                                     # yahoo woeid geoplanet
+gem 'geoplanet',
+    github: 'deivid-rodriguez/geoplanet',
+    branch: 'better_exceptions'                     # yahoo woeid geoplanet
 gem 'maxminddb'                                     # geolite city v2
 gem 'will_paginate', '~> 3.0'                       # pagination
 gem 'devise'                                        # users
