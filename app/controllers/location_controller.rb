@@ -12,7 +12,7 @@ class LocationController < ApplicationController
     return unless params[:location]
 
     locations = WoeidHelper.search_by_name(params[:location])
-    if !locations.nil? && locations.count == 1
+    if locations && locations.count == 1
       save_location locations[0].woeid
     else
       @locations = locations
@@ -25,7 +25,7 @@ class LocationController < ApplicationController
       save_location params[:location]
     else
       locations = WoeidHelper.search_by_name(params[:location])
-      if locations
+      if locations & locations.count == 1
         save_location locations[0].woeid
       else
         redirect_to location_ask_path, alert: 'Hubo un error con el cambio de su ubicación. Inténtelo de nuevo.'
