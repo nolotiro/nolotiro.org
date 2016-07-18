@@ -19,17 +19,6 @@
     </p>
   <% end %>
 
-  <% if location_options.present? %>
-    <%= t('nlt.no_results.try') %><br>
-    <ul>
-      <% location_options.each do |location| %>
-        <li>
-          <%= link_to_change_location location.fullname, location.label %>
-        </li>
-      <% end %>
-    </ul>
-  <% end %>
-
   <h5>
     <i><%= t('nlt.no_results.phrase') %></i>
   </h5>
