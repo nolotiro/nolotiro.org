@@ -35,6 +35,6 @@ class YahooResultSet
   end
 
   def non_null_ad_counts
-    Ad.where(woeid_code: map(&:woeid)).group(:woeid_code).size
+    Ad.give.where(woeid_code: map(&:woeid)).group(:woeid_code).size
   end
 end
