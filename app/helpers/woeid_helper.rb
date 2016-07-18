@@ -41,7 +41,7 @@ module WoeidHelper
       raw_locations = GeoPlanet::Place.search(name, lang: I18n.locale, type: 7, count: 0)
       return if raw_locations.nil?
 
-      raw_locations.map { |raw_location| YahooLocation.new(raw_location) }
+      YahooResultSet.new(raw_locations)
     end
   end
 end
