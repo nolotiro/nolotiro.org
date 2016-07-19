@@ -229,7 +229,6 @@ eu:
       you_have_new_reply: 
       you_have_recieved_new_reply: 
     notifications:
-      error_same_user: 
       sent: 
       trash: 
     search: 

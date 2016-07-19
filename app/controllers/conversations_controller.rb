@@ -22,7 +22,6 @@ class ConversationsController < ApplicationController
 
   def create
     initialize_message
-    return if performed?
 
     recipient = User.find(recipient_id)
     receipt = current_user.send_message([recipient], @message.body, @message.subject)
@@ -36,7 +35,6 @@ class ConversationsController < ApplicationController
 
   def update
     initialize_message
-    return if performed?
 
     @conversation = conversations.find(@message.conversation_id)
 
@@ -78,11 +76,6 @@ class ConversationsController < ApplicationController
   def initialize_message
     @message = Mailboxer::Message.new message_params
     @message.sender = current_user
-    # FIXME: this should be on model (validation)
-    return unless current_user.id == recipient_id
-
-    redirect_to message_new_path(user_id: recipient_id),
-                notice: I18n.t('mailboxer.notifications.error_same_user')
   end
 
   def render_show_with(recipient)

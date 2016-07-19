@@ -225,7 +225,6 @@ en:
       you_have_new_reply: You have a new answer
       you_have_recieved_new_reply: You have a new answer
     notifications:
-      error_same_user: You can not send a message to yourself
       sent: Sent message
       trash: Message deleted
     search: Search results %{search}

@@ -229,7 +229,6 @@ pt:
       you_have_new_reply: Você têm uma nova resposta
       you_have_recieved_new_reply: Você têm uma nova resposta
     notifications:
-      error_same_user: Você não pode enviar uma mensagem para você mesmo
       sent: Mensagem enviada
       trash: Mensagem apagada
     search: Resultados da busca de %{search}

@@ -229,7 +229,6 @@ ca:
       you_have_new_reply: Has rebut una nova resposta
       you_have_recieved_new_reply: Has rebut una nova resposta
     notifications:
-      error_same_user: No pots enviar-me un missatge a tu mateix
       sent: missatge enviat
       trash: Missatge esborrat
     search: Resultats de cerca de %{search}
