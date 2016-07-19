@@ -15,9 +15,8 @@ class ConversationsController < ApplicationController
   end
 
   def new
-    @message = Mailboxer::Message.new
     @recipient = User.find(params[:user_id])
-    @message.recipients = @recipient.id
+    @message = Mailboxer::Message.new(recipients: @recipient.id)
   end
 
   def create
