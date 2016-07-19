@@ -66,7 +66,7 @@ class ConversationsController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def message_params
-    params.require(:mailboxer_message).permit(:conversation_id, :body, :subject, :recipients, :sender_id)
+    params.require(:mailboxer_message).permit(:conversation_id, :body, :subject, :recipients)
   end
 
   def recipient_id
