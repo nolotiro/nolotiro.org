@@ -34,9 +34,9 @@ class ConversationsController < ApplicationController
   end
 
   def update
-    @message = Mailboxer::Message.new message_params
+    @conversation = conversations.find(params[:id])
 
-    @conversation = conversations.find(@message.conversation_id)
+    @message = @conversation.messages.build message_params
 
     return render_show_with(interlocutor(@conversation)) unless @message.valid?
 
@@ -67,7 +67,7 @@ class ConversationsController < ApplicationController
   # Never trust parameters from the scary internet, only allow the white list through.
   def message_params
     params.require(:mailboxer_message)
-          .permit(:conversation_id, :body, :subject, :recipients)
+          .permit(:body, :subject, :recipients)
           .merge(sender: current_user)
   end
 
