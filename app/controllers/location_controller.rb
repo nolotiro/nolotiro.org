@@ -11,7 +11,6 @@ class LocationController < ApplicationController
   def list
     return unless params[:location]
 
-    similar_locations = WoeidHelper.search_by_name(params[:location])
     if similar_locations && similar_locations.count == 1
       save_location similar_locations[0].woeid
     else
@@ -24,7 +23,6 @@ class LocationController < ApplicationController
     if positive_integer?(params[:location])
       save_location params[:location]
     else
-      similar_locations = WoeidHelper.search_by_name(params[:location])
       if similar_locations & similar_locations.count == 1
         save_location similar_locations[0].woeid
       else
@@ -34,6 +32,10 @@ class LocationController < ApplicationController
   end
 
   private
+
+  def similar_locations
+    @similar_locations ||= WoeidHelper.search_by_name(params[:location])
+  end
 
   def save_location(woeid)
     # receives woeid, set location for user
