@@ -21,7 +21,7 @@ class ConversationsController < ApplicationController
   end
 
   def create
-    initialize_message
+    @message = Mailboxer::Message.new message_params
 
     recipient = User.find(recipient_id)
     receipt = current_user.send_message([recipient], @message.body, @message.subject)
@@ -34,7 +34,7 @@ class ConversationsController < ApplicationController
   end
 
   def update
-    initialize_message
+    @message = Mailboxer::Message.new message_params
 
     @conversation = conversations.find(@message.conversation_id)
 
@@ -66,16 +66,13 @@ class ConversationsController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def message_params
-    params.require(:mailboxer_message).permit(:conversation_id, :body, :subject, :recipients)
+    params.require(:mailboxer_message)
+          .permit(:conversation_id, :body, :subject, :recipients)
+          .merge(sender: current_user)
   end
 
   def recipient_id
     params[:mailboxer_message][:recipients].to_i
-  end
-
-  def initialize_message
-    @message = Mailboxer::Message.new message_params
-    @message.sender = current_user
   end
 
   def render_show_with(recipient)
