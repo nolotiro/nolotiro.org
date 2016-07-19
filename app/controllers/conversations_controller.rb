@@ -79,7 +79,7 @@ class ConversationsController < ApplicationController
     @message = Mailboxer::Message.new message_params
     @message.sender = current_user
     # FIXME: this should be on model (validation)
-    return unless @message.sender.id == recipient_id
+    return unless current_user.id == recipient_id
 
     redirect_to message_new_path(user_id: recipient_id),
                 notice: I18n.t('mailboxer.notifications.error_same_user')
