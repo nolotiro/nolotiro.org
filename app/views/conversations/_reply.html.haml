@@ -10,7 +10,7 @@
         = form_for message,
                    url: mailboxer_conversation_path(message.conversation),
                    method: :put do |f|
-          = errors_for(@message)
+          = errors_for(message)
           = f.hidden_field :conversation_id
           = f.text_area :body, size: '80x3', maxlength: 1500
           %p.description
