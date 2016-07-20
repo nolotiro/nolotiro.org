@@ -15,7 +15,7 @@
 
       <%= render partial: "partials/pagination", locals: { items: @ads } %>
     <% else %>
-      <div class="info"> <%= t("nlt.no_results.on_user") %> </div>
+      <div class="empty"> <%= t("nlt.no_results.on_user") %> </div>
     <% end %>
   </div>
 </div>
