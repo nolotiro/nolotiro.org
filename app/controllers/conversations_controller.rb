@@ -21,10 +21,10 @@ class ConversationsController < ApplicationController
 
   def create
     @interlocutor = User.find(params[:mailboxer_message][:recipients])
-    @message = Mailboxer::Message.new message_params
+    @conversation = Mailboxer::Conversation.new(subject: message_params[:subject])
 
-    receipt = current_user.send_message([@interlocutor], @message.body, @message.subject)
-    @conversation = receipt.notification.conversation
+    @message = @conversation.messages.build message_params.except(:subject)
+    receipt = @message.deliver
 
     return render_new_with(receipt) unless receipt.valid?
 
@@ -37,10 +37,11 @@ class ConversationsController < ApplicationController
     @interlocutor = interlocutor(@conversation)
 
     @message = @conversation.messages.build message_params
+    receipt = @message.deliver
 
-    return render_show_with(@interlocutor) unless @message.valid?
+    return render_show_with(@interlocutor) unless receipt.valid?
 
-    current_user.reply_to_conversation(@conversation, @message.body)
+    @conversation.receipts.untrash
 
     redirect_to mailboxer_conversation_path(@conversation),
                 notice: I18n.t('mailboxer.notifications.sent')
@@ -69,7 +70,7 @@ class ConversationsController < ApplicationController
   def message_params
     params.require(:mailboxer_message)
           .permit(:body, :subject, :recipients)
-          .merge(sender: current_user)
+          .merge(sender: current_user, recipients: @interlocutor)
   end
 
   def render_show_with(recipient)
