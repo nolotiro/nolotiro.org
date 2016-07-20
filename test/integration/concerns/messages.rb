@@ -86,7 +86,6 @@ module Messages
     send_message(subject: 'hola mundo', body: 'hola trololo')
 
     assert_message_sent 'hola trololo'
-    assert_content 'Borrar mensaje'
   end
 
   def test_deletes_a_single_message_and_shows_an_confirmation_flash
