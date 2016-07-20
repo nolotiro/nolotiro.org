@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 class SearchController < ApplicationController
+  include StringUtils
+
   # GET /search
   def search
     @search = true
@@ -8,7 +10,7 @@ class SearchController < ApplicationController
 
     @id = params[:woeid_code]
 
-    if @id.nil?
+    if !positive_integer?(@id)
       redirect_to root_path, alert: I18n.t('nlt.no_location_specified')
     else
       @woeid = WoeidHelper.convert_woeid_name @id
