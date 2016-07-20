@@ -6,10 +6,7 @@ class SearchControllerTest < ActionController::TestCase
   include WebMocking
   include Devise::Test::ControllerHelpers
 
-  setup do
-    @ad = FactoryGirl.create(:ad)
-    @user = FactoryGirl.create(:user)
-  end
+  setup { @ad = FactoryGirl.create(:ad) }
 
   test 'search works with a WOEID code param' do
     mocking_yahoo_woeid_info(@ad.woeid_code) do
@@ -25,17 +22,15 @@ class SearchControllerTest < ActionController::TestCase
     end
   end
 
-  test 'search works with a logged in user with a WOEID code' do
-    mocking_yahoo_woeid_info(@user.woeid) do
-      sign_in @user
-      get :search, q: 'ordenador'
-      assert_response :success
-    end
+  test 'redirects to home page when no WOEID code param specified' do
+    get :search, q: 'ordenador'
+    assert_response :redirect
+    assert_redirected_to root_path
   end
 
-  test 'search works without WOEID param nor logged user' do
+  test 'redirects to home page when no WOEID param nor query' do
     get :search
     assert_response :redirect
-    assert_redirected_to location_ask_path
+    assert_redirected_to root_path
   end
 end

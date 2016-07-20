@@ -7,10 +7,9 @@ class SearchController < ApplicationController
     type_n = @type == 'give' ? 1 : 2
 
     @id = params[:woeid_code]
-    @id = current_user.woeid if user_signed_in? && @id.nil?
 
     if @id.nil?
-      redirect_to location_ask_path
+      redirect_to root_path, alert: I18n.t('nlt.no_location_specified')
     else
       @woeid = WoeidHelper.convert_woeid_name @id
       if params[:q].nil?
