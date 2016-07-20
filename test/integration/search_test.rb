@@ -10,8 +10,9 @@ class Search < ActionDispatch::IntegrationTest
   before do
     ThinkingSphinx::Test.start
 
-    create(:ad, woeid_code: 766_273, title: 'muebles', status: 1)
-    create(:ad, woeid_code: 766_273, title: 'tele', status: 2)
+    create(:ad, woeid_code: 766_273, title: 'muebles oro', status: 1)
+    create(:ad, woeid_code: 766_273, title: 'tele', type: 2)
+    create(:ad, woeid_code: 753_692, title: 'muebles plata', status: 1)
 
     index
 
@@ -22,10 +23,10 @@ class Search < ActionDispatch::IntegrationTest
 
   after { ThinkingSphinx::Test.stop }
 
-  it 'searchs ads by title' do
+  it 'searchs ads in current location by title' do
     fill_in 'q', with: 'muebles'
     click_button 'buscar'
 
-    page.assert_selector '.ad_excerpt_list', count: 1
+    page.assert_selector '.ad_excerpt_list', count: 1, text: 'muebles oro'
   end
 end
