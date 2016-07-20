@@ -3,8 +3,8 @@ class SearchController < ApplicationController
   # GET /search
   def search
     @search = true
-    @type = params[:ad_type]
-    type_n = params[:ad_type] == 'give' ? 1 : 2
+    @type = type_scope
+    type_n = @type == 'give' ? 1 : 2
 
     @id = params[:woeid] || params[:woeid_code]
     @id = current_user.woeid if user_signed_in? && @id.nil?

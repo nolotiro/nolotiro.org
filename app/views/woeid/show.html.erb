@@ -52,7 +52,7 @@
 
     <% if @woeid %>
       <br>
-      <%= render partial: "ads/search", locals: {woeid: @id, ad_type: @type, q: @q} %>
+      <%= render partial: "ads/search", locals: {woeid: @id, type: @type, q: @q} %>
       <%= link_to location_ask_path, class: "world_link" do %>
         <%= image_tag "change_location.png", alt: "change location" %>
         <%= t('nlt.change_city') %>
