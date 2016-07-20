@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 class WoeidController < ApplicationController
+  include StringUtils
+
   # GET /es/woeid/:id/:type
   # GET /es/woeid/:id/:type/status/:status
   # GET /es/ad/listall/ad_type/:type
@@ -8,12 +10,17 @@ class WoeidController < ApplicationController
     @id = params[:id]
     @type = type_scope
     @status = status_scope
+    page = params[:page]
+
+    unless page.nil? || positive_integer?(page)
+      raise ActionController::RoutingError, 'Not Found'
+    end
 
     @ads = Ad.includes(:user)
              .public_send(@type)
              .public_send(@status)
              .by_woeid_code(@id)
-             .paginate(page: params[:page])
+             .paginate(page: page)
 
     return unless @id.present?
 
