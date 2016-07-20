@@ -88,7 +88,7 @@ module Messages
     assert_message_sent 'hola trololo'
   end
 
-  def test_deletes_a_single_message_and_shows_an_confirmation_flash
+  def test_deletes_a_single_conversation_and_shows_an_confirmation_flash
     send_message(subject: 'hola mundo', body: 'What a nice message!')
     click_link 'Borrar mensaje'
 
@@ -96,7 +96,7 @@ module Messages
     assert_content 'Mensaje borrado'
   end
 
-  def test_deletes_multiple_messages_by_checkbox
+  def test_deletes_multiple_conversations_by_checkbox
     send_message(subject: 'hola mundo', body: 'What a nice message!')
     visit message_new_path(@user2)
     send_message(subject: 'hola marte', body: 'What a nice message!')
