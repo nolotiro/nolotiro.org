@@ -6,7 +6,7 @@ class SearchController < ApplicationController
     @type = type_scope
     type_n = @type == 'give' ? 1 : 2
 
-    @id = params[:woeid] || params[:woeid_code]
+    @id = params[:woeid_code]
     @id = current_user.woeid if user_signed_in? && @id.nil?
 
     if @id.nil?

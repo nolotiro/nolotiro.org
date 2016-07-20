@@ -11,16 +11,16 @@ class SearchControllerTest < ActionController::TestCase
     @user = FactoryGirl.create(:user)
   end
 
-  test 'search works with a WOEID param' do
+  test 'search works with a WOEID code param' do
     mocking_yahoo_woeid_info(@ad.woeid_code) do
-      get :search, q: 'ordenador', woeid: @ad.woeid_code
+      get :search, q: 'ordenador', woeid_code: @ad.woeid_code
       assert_response :success
     end
   end
 
-  test 'search works with a WOEID param - no results' do
+  test 'search works with a WOEID code param - no results' do
     mocking_yahoo_woeid_info(@ad.woeid_code) do
-      get :search, q: 'notfound', woeid: @ad.woeid_code
+      get :search, q: 'notfound', woeid_code: @ad.woeid_code
       assert_response :success
     end
   end
