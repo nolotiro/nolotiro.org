@@ -52,7 +52,7 @@ class ConversationsController < ApplicationController
     @conversation = conversations.find(params[:id])
     @interlocutor = interlocutor(@conversation)
 
-    @message = Mailboxer::Message.new conversation_id: @conversation.id
+    @message = Mailboxer::Message.new conversation: @conversation
     current_user.mark_as_read(@conversation)
   end
 
