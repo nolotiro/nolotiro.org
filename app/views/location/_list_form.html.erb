@@ -3,7 +3,7 @@
     <dl>
       <dt>&nbsp;</dt>
       <dd>
-      <%= select_tag(:location, options_for_select(locations)) %>
+      <%= select_tag(:location, options_for_select(locations.as_options)) %>
       </dd>
       <dt>&nbsp;</dt>
       <dd>

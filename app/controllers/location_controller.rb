@@ -11,11 +11,10 @@ class LocationController < ApplicationController
   def list
     return unless params[:location]
 
-    locations = WoeidHelper.search_by_name(params[:location])
-    if !locations.nil? && locations.count == 1
-      save_location locations[0].woeid
+    if unique_location
+      save_location unique_location.woeid
     else
-      @locations = locations
+      @locations = similar_locations
     end
   end
 
@@ -23,17 +22,24 @@ class LocationController < ApplicationController
   def change
     if positive_integer?(params[:location])
       save_location params[:location]
+    elsif unique_location
+      save_location unique_location.woeid
     else
-      locations = WoeidHelper.search_by_name(params[:location])
-      if locations
-        save_location locations[0].woeid
-      else
-        redirect_to location_ask_path, alert: 'Hubo un error con el cambio de su ubicación. Inténtelo de nuevo.'
-      end
+      redirect_to location_ask_path, alert: 'Hubo un error con el cambio de su ubicación. Inténtelo de nuevo.'
     end
   end
 
   private
+
+  def unique_location
+    return unless similar_locations && similar_locations.count == 1
+
+    similar_locations.first
+  end
+
+  def similar_locations
+    @similar_locations ||= WoeidHelper.search_by_name(params[:location])
+  end
 
   def save_location(woeid)
     # receives woeid, set location for user

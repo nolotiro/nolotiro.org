@@ -386,7 +386,6 @@ en:
       publish_ad: post an ad in this city
       subtitle: You can try some of this stuff
       title: There are no results in this location
-      try: 'Or you can try it in cities with similar name:'
     password: Password
     permission_denied: You don't have permissions
     please_fill_to_become_member: Please, fill this form to become a member

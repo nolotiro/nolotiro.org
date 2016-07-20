@@ -17,14 +17,10 @@ class WoeidController < ApplicationController
              .by_woeid_code(@id)
              .paginate(page: params[:page])
 
-    @woeid = WoeidHelper.convert_woeid_name(@id) if @id.present?
+    return unless @id.present?
 
-    if @id.present? == true && @woeid.nil?
-      raise ActionController::RoutingError, 'Not Found'
-    end
+    @woeid = WoeidHelper.convert_woeid_name(@id)
 
-    return if @ads.any?
-
-    @location_options = WoeidHelper.search_by_name(@woeid[:short]) if @woeid
+    raise ActionController::RoutingError, 'Not Found' if @woeid.nil?
   end
 end
