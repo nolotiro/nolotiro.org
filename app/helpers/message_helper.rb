@@ -1,9 +1,7 @@
 # frozen_string_literal: true
 module MessageHelper
-  def interlocutor_username(c)
-    other_user = interlocutor(c)
-
-    other_user ? other_user.username : '[borrado]'
+  def interlocutor_username
+    @interlocutor ? @interlocutor.username : '[borrado]'
   end
 
   def link_to_interlocutor(c)
