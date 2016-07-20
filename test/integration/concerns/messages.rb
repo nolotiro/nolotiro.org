@@ -88,7 +88,7 @@ module Messages
     assert_message_sent 'hola trololo'
   end
 
-  def test_deletes_a_single_conversation_and_shows_an_confirmation_flash
+  def test_deletes_a_single_conversation_and_shows_a_confirmation_flash
     send_message(subject: 'hola mundo', body: 'What a nice message!')
     click_link 'Borrar mensaje'
 
