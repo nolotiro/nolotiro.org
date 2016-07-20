@@ -29,4 +29,13 @@ class Search < ActionDispatch::IntegrationTest
 
     page.assert_selector '.ad_excerpt_list', count: 1, text: 'muebles oro'
   end
+
+  it 'shows a no results message when nothing found in current location' do
+    fill_in 'q', with: 'espejo'
+    click_button 'buscar'
+
+    page.assert_selector '.ad_excerpt_list', count: 0
+    assert_content 'No hay anuncios que coincidan con la búsqueda espejo en ' \
+                   'la ubicación Madrid, Madrid, España'
+  end
 end
