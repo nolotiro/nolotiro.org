@@ -15,14 +15,15 @@ class ConversationsController < ApplicationController
   end
 
   def new
-    @recipient = User.find(params[:user_id])
-    @message = Mailboxer::Message.new(recipients: @recipient.id)
+    @interlocutor = User.find(params[:user_id])
+    @message = Mailboxer::Message.new(recipients: @interlocutor.id)
   end
 
   def create
+    @interlocutor = User.find(params[:mailboxer_message][:recipients])
     @message = Mailboxer::Message.new message_params
 
-    receipt = current_user.send_message([recipient], @message.body, @message.subject)
+    receipt = current_user.send_message([@interlocutor], @message.body, @message.subject)
     @conversation = receipt.notification.conversation
 
     return render_new_with(receipt) unless receipt.valid?
@@ -33,10 +34,11 @@ class ConversationsController < ApplicationController
 
   def update
     @conversation = conversations.find(params[:id])
+    @interlocutor = interlocutor(@conversation)
 
     @message = @conversation.messages.build message_params
 
-    return render_show_with(interlocutor(@conversation)) unless @message.valid?
+    return render_show_with(@interlocutor) unless @message.valid?
 
     current_user.reply_to_conversation(@conversation, @message.body)
 
@@ -48,6 +50,7 @@ class ConversationsController < ApplicationController
   # GET /message/show/:ID/subject/SUBJECT
   def show
     @conversation = conversations.find(params[:id])
+    @interlocutor = interlocutor(@conversation)
 
     @message = Mailboxer::Message.new conversation_id: @conversation.id
     current_user.mark_as_read(@conversation)
@@ -79,16 +82,12 @@ class ConversationsController < ApplicationController
     missing_body = receipt.errors['notification.body'].first
     @message.errors.add(:subject, missing_subject) if missing_subject
     @message.errors.add(:body, missing_body) if missing_body
-    @message.recipients = recipient.id
+    @message.recipients = @interlocutor.id
     render :new
   end
 
   def conversations
     current_user.mailbox.conversations
-  end
-
-  def recipient
-    @recipient ||= User.find(message_params[:recipients])
   end
 
   def interlocutor(conversation)
