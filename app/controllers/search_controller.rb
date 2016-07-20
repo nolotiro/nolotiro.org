@@ -14,6 +14,7 @@ class SearchController < ApplicationController
       redirect_to root_path, alert: I18n.t('nlt.no_location_specified')
     else
       @woeid = WoeidHelper.convert_woeid_name @id
+
       if params[:q].nil?
         @ads = []
       else
@@ -25,12 +26,14 @@ class SearchController < ApplicationController
                          without: { status: 3 },
                          with: { woeid_code: @id, type: type_n }
       end
+
       begin
         @no_results_search = true if @ads.count == 0
       rescue ThinkingSphinx::SphinxError
         @ads = []
         @no_results_search = true
       end
+
       render 'woeid/show'
     end
   end
