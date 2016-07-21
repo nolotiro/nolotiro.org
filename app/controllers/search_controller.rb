@@ -6,8 +6,7 @@ class SearchController < ApplicationController
   def search
     @search = true
     @type = type_scope
-    type_n = @type == 'give' ? 1 : 2
-
+    @status = status_scope
     @id = params[:woeid_code]
 
     if !positive_integer?(@id)
@@ -19,12 +18,12 @@ class SearchController < ApplicationController
         @ads = []
       else
         @q = Riddle::Query.escape(params[:q])
-        @ads = Ad.search @q,
-                         page: params[:page],
-                         star: true,
-                         order: 'created_at DESC',
-                         without: { status: 3 },
-                         with: { woeid_code: @id, type: type_n }
+        @ads =
+          Ad.search @q,
+                    page: params[:page],
+                    star: true,
+                    order: 'created_at DESC',
+                    with: { woeid_code: @id, type: type_n, status: status_n }
       end
 
       begin
@@ -35,6 +34,20 @@ class SearchController < ApplicationController
       end
 
       render 'woeid/show'
+    end
+  end
+
+  private
+
+  def type_n
+    @type == 'give' ? 1 : 2
+  end
+
+  def status_n
+    case @status
+    when 'available' then 1
+    when 'booked' then 2
+    when 'delivered' then 3
     end
   end
 end
