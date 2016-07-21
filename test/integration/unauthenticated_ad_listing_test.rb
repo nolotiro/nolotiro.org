@@ -39,7 +39,7 @@ class UnauthenticatedAdListing < ActionDispatch::IntegrationTest
     end
   end
 
-  it 'lists booked ads everywhere in all ads page' do
+  it 'lists delivered ads everywhere in all ads page' do
     with_pagination(1) do
       mocking_yahoo_woeid_info(753_692) { click_link 'ver más anuncios' }
       mocking_yahoo_woeid_info(773_692) { click_link 'entregado' }
