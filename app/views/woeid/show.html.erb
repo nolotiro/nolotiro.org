@@ -33,9 +33,13 @@
 
 <div id="location_header_section">
   <span class="give-want">
-    <%= link_to t('nlt.give'), url_for(type: 'give'), class: @type == "give" ? "actual" : "''" %>
+    <%= link_to t('nlt.give'),
+                url_for(params.merge(type: 'give')),
+                class: @type == "give" ? "actual" : "''" %>
     &nbsp;
-    <%= link_to t('nlt.want'), url_for(type: 'want'), class: @type == "want" ? "actual" : "''" %>
+    <%= link_to t('nlt.want'),
+                url_for(params.merge(type: 'want')),
+                class: @type == "want" ? "actual" : "''" %>
   </span>
 
   <div class="location_name">

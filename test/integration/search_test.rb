@@ -38,4 +38,14 @@ class Search < ActionDispatch::IntegrationTest
     assert_content 'No hay anuncios que coincidan con la búsqueda espejo en ' \
                    'la ubicación Madrid, Madrid, España'
   end
+
+  it 'sucessfully changes ad type when searching' do
+    fill_in 'q', with: 'tele'
+    click_button 'buscar'
+
+    page.assert_selector '.ad_excerpt_list', count: 0
+    click_link 'busco'
+
+    page.assert_selector '.ad_excerpt_list', count: 1
+  end
 end
