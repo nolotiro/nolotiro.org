@@ -90,10 +90,10 @@ module Messages
 
   def test_deletes_a_single_conversation_and_shows_a_confirmation_flash
     send_message(subject: 'hola mundo', body: 'What a nice message!')
-    click_link 'Borrar conversación'
+    click_link 'Archivar conversación'
 
     refute_content 'hola mundo'
-    assert_content 'Conversación borrada'
+    assert_content 'Conversación archivada'
   end
 
   def test_deletes_multiple_conversations_by_checkbox
@@ -103,7 +103,7 @@ module Messages
 
     visit messages_list_path
     check("delete-conversation-#{Mailboxer::Conversation.first.id}")
-    click_button 'Borrar conversaciones seleccionadas'
+    click_button 'Archivar conversaciones seleccionadas'
 
     refute_content 'hola mundo'
     assert_content 'hola marte'
@@ -111,7 +111,7 @@ module Messages
 
   def revives_deleted_conversation_when_the_other_user_replies_again
     send_message(subject: 'hola mundo', body: 'What a nice message!')
-    click_link 'Borrar conversación'
+    click_link 'Archivar conversación'
     refute_content 'hola mundo'
 
     login_as @user2

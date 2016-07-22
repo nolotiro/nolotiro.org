@@ -201,8 +201,8 @@ es:
   mailboxer:
     buttons:
       back: "< volver a mensajes"
-      trash: Borrar conversación
-      trash_selected: Borrar conversaciones seleccionadas
+      trash: Archivar conversación
+      trash_selected: Archivar conversaciones seleccionadas
     message_mailer:
       message:
         body: Mensaje
@@ -230,7 +230,7 @@ es:
       you_have_recieved_new_reply: Has recibido una nueva respuesta
     notifications:
       sent: Mensaje enviado
-      trash: Conversación borrada
+      trash: Conversación archivada
     search: Resultados de busqueda de %{search}
     table:
       date: Fecha
