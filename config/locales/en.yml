@@ -197,8 +197,8 @@ en:
   mailboxer:
     buttons:
       back: "< back to messages"
-      trash: Delete message
-      trash_selected: Delete selected messages
+      trash: Delete conversation
+      trash_selected: Delete selected conversations
     message_mailer:
       message:
         body: Message
@@ -226,7 +226,7 @@ en:
       you_have_recieved_new_reply: You have a new answer
     notifications:
       sent: Sent message
-      trash: Message deleted
+      trash: Conversation deleted
     search: Search results %{search}
     table:
       date: Date

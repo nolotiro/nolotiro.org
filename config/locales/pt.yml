@@ -201,8 +201,8 @@ pt:
   mailboxer:
     buttons:
       back: "< voltar a mensagens"
-      trash: Apagar mensagem
-      trash_selected: Apagar mensagens selecionados
+      trash: Apagar conversa
+      trash_selected: Apagar conversas selecionadas
     message_mailer:
       message:
         body: Mensagem
@@ -230,7 +230,7 @@ pt:
       you_have_recieved_new_reply: Você têm uma nova resposta
     notifications:
       sent: Mensagem enviada
-      trash: Mensagem apagada
+      trash: Conversa apagada
     search: Resultados da busca de %{search}
     table:
       date: Data

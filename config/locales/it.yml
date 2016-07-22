@@ -201,8 +201,8 @@ it:
   mailboxer:
     buttons:
       back: "< torna al messaggio"
-      trash: Cancellare il messaggio
-      trash_selected: Cancellare i messaggi selezionati
+      trash: Cancellare la conversazione
+      trash_selected: Cancellare le conversazioni selezionati
     message_mailer:
       message:
         body: Messaggio
@@ -230,7 +230,7 @@ it:
       you_have_recieved_new_reply: Hai ricevuto una nuova risposta
     notifications:
       sent: Messaggio inviato
-      trash: Messaggio cancellato
+      trash: Conversazione cancellata
     search: Risultati della ricerca su %{search}
     table:
       date: Data

@@ -208,8 +208,8 @@ gl:
   mailboxer:
     buttons:
       back: 
-      trash: Eliminar mensaxe
-      trash_selected: Eliminar mensaxes seleccionados
+      trash: Eliminar conversa
+      trash_selected: Eliminar conversas seleccionadas
     message_mailer:
       message:
         body: Mensaxe
