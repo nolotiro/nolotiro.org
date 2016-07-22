@@ -241,7 +241,7 @@ gl:
       you_have_recieved_new_reply: Recibiu unha nova resposta
     notifications:
       sent: 
-      trash: 
+      trash: Conversa arquivada
     search: 
     table:
       date: Data
