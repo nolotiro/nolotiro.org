@@ -51,7 +51,6 @@ end
 
 gem 'http_accept_language'
 gem 'newrelic_rpm'                                  # monitoring
-gem 'actionpack-action_caching'                     # caching
 gem 'unicorn'                                       # webserver
 gem 'mysql2', '~> 0.4.4'                            # database adapter
 gem 'thinking-sphinx'                               # sphinxsearch

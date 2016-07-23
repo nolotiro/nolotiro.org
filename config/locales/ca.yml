@@ -386,6 +386,7 @@ ca:
       publish_ad: publicar un anunci en aquesta ciutat
       subtitle: Pots provar alguna d'aquestes coses
       title: No hi ha anuncis per a aquesta ubicació.
+    no_location_specified: 
     password: Contrasenya
     permission_denied: No tens permisos per a realitzar aquesta acció.
     please_fill_to_become_member: Si us plau, ompli aquest formulari per ser membre de nolotiro

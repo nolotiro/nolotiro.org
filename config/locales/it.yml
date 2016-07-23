@@ -390,6 +390,7 @@ it:
       publish_ad: pubblicare un annuncio in questa città
       subtitle: Si può provare una qualsiasi di queste cose
       title: Nessun annuncio per questa posizione.
+    no_location_specified: Devi cercare in una città specifica
     password: password
     permission_denied: Non si dispone dell'autorizzazione per eseguire questa azione.
     please_fill_to_become_member: Si prega di compilare questo modulo per essere un membro di nolotiro

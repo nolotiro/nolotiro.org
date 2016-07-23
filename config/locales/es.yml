@@ -386,6 +386,7 @@ es:
       publish_ad: publicar un anuncio en esta ciudad
       subtitle: Puedes probar alguna de estas cosas
       title: No hay anuncios para esta ubicación.
+    no_location_specified: Debes buscar en una ciudad específica
     password: Contraseña
     permission_denied: No tienes permisos para realizar esta acción.
     please_fill_to_become_member: Por favor, rellena este formulario para ser miembro de nolotiro
