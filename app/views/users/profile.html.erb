@@ -49,16 +49,22 @@
               <% blocking = current_user.blocking?(@user) %>
 
               <% if blocking %>
-                <%= link_to t('nlt.profile_actions.blocking.delete', username: @user.username),
-                            blocking,
+                <%= link_to blocking,
                             method: :delete,
-                            class: 'world_link' %>
+                            class: 'world_link' do %>
+                  <%= t('nlt.profile_actions.blocking.delete', username: @user.username) %>
+
+                  <%= image_tag "unblock.png" %>
+                <% end %>
               <% else %>
-                <%= link_to t('nlt.profile_actions.blocking.add', username: @user.username),
-                            blockings_path(blocked_id: @user.id),
+                <%= link_to blockings_path(blocked_id: @user.id),
                             data: { confirm: t('nlt.profile_actions.blocking.confirm', username: @user.username) },
                             method: :post,
-                            class: 'world_link' %>
+                            class: 'world_link' do %>
+                  <%= t('nlt.profile_actions.blocking.add', username: @user.username) %>
+
+                  <%= image_tag "block.png" %>
+                <% end %>
               <% end %>
             </li>
           <% end %>
