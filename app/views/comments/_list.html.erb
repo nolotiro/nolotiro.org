@@ -14,8 +14,6 @@
   <div class="ad_comment_form">
     <% if user_signed_in? %>
       <%= render partial: "comments/form", locals: {comment: @comment} %>
-    <% else %>
-      <%= link_to t('nlt.login_to_comment'), new_user_session_path %>
     <% end %>
   </div>
 </div>

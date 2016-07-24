@@ -17,12 +17,4 @@ class LinksForAvailableAdsTest < ActionDispatch::IntegrationTest
       assert_content 'Envía un mensaje privado al anunciante'
     end
   end
-
-  it 'shows comment form in ads' do
-    mocking_yahoo_woeid_info(@woeid_code) do
-      visit ad_path(@ad)
-
-      assert_content 'accede para escribir un comentario'
-    end
-  end
 end

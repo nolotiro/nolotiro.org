@@ -385,7 +385,6 @@ gl:
       body_html: 'Nome: Asociación aLabs . <br>Inscrita no Rexistro de asociacións da Comunidade de Madrid , co número 32022 . <br>CIF : G86139847<br> C/Duque de Alba, 13 ( 28012 ) Madrid.'
       title: Aviso legal
     login: acceder
-    login_to_comment: accede para escribir un comentario
     logout: 
     mail:
       automatic: 

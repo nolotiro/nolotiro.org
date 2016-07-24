@@ -368,7 +368,6 @@ ca:
       body_html: 
       title: 
     login: accedir
-    login_to_comment: accedeix per escriure un comentari
     logout: sortir
     mail:
       automatic: Aquest és un missatge automàtic. Si us plau, no responguis a aquesta adreça de correu electrònic.

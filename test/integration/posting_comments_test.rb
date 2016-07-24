@@ -12,7 +12,7 @@ class PostingCommentsTest < ActionDispatch::IntegrationTest
   test 'users need to login before posting a comment' do
     mocking_yahoo_woeid_info(@ad.woeid_code) { visit ad_path(@ad) }
 
-    assert_content 'accede para escribir un comentario'
+    refute_selector '.ad_comments > form'
   end
 
   test 'comments can be posted by logged in users' do

@@ -368,7 +368,6 @@ eu:
       body_html: 
       title: 
     login: 
-    login_to_comment: 
     logout: 
     mail:
       automatic: 

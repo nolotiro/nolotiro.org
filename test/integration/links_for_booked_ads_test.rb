@@ -17,12 +17,4 @@ class LinksForBookedAdsTest < ActionDispatch::IntegrationTest
       refute page.has_content?('Envía un mensaje privado al anunciante')
     end
   end
-
-  it 'shows comment form in ads' do
-    mocking_yahoo_woeid_info(@woeid_code) do
-      visit ad_path(@ad)
-
-      assert page.has_content?('accede para escribir un comentario')
-    end
-  end
 end

@@ -368,7 +368,6 @@ en:
       body_html: 
       title: 
     login: log in
-    login_to_comment: log in to write a comment
     logout: logout
     mail:
       automatic: This is an automatic message, please do not answer to this email address
