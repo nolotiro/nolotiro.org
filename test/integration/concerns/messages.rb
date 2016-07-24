@@ -7,10 +7,10 @@ module Messages
   def setup
     super
 
-    user1 = FactoryGirl.create(:user, username: 'user1')
+    @user1 = FactoryGirl.create(:user, username: 'user1')
     @user2 = FactoryGirl.create(:user, username: 'user2')
 
-    login_as user1
+    login_as @user1
 
     visit message_new_path(@user2)
   end
@@ -86,29 +86,41 @@ module Messages
     send_message(subject: 'hola mundo', body: 'hola trololo')
 
     assert_message_sent 'hola trololo'
-    assert_content 'Borrar mensaje'
   end
 
-  def test_deletes_a_single_message_and_shows_an_confirmation_flash
+  def test_deletes_a_single_conversation_and_shows_a_confirmation_flash
     send_message(subject: 'hola mundo', body: 'What a nice message!')
-    click_link 'Borrar mensaje'
+    click_link 'Archivar conversación'
 
     refute_content 'hola mundo'
-    assert_content 'Mensaje borrado'
+    assert_content 'Conversación archivada'
   end
 
-  def test_deletes_multiple_messages_by_checkbox
+  def test_deletes_multiple_conversations_by_checkbox
     send_message(subject: 'hola mundo', body: 'What a nice message!')
     visit message_new_path(@user2)
     send_message(subject: 'hola marte', body: 'What a nice message!')
 
     visit messages_list_path
     check("delete-conversation-#{Mailboxer::Conversation.first.id}")
-    dismiss_cookie_bar
-    click_button 'Borrar mensajes seleccionados'
+    click_button 'Archivar conversaciones seleccionadas'
 
     refute_content 'hola mundo'
     assert_content 'hola marte'
+  end
+
+  def revives_deleted_conversation_when_the_other_user_replies_again
+    send_message(subject: 'hola mundo', body: 'What a nice message!')
+    click_link 'Archivar conversación'
+    refute_content 'hola mundo'
+
+    login_as @user2
+    visit mailboxer_conversation_path(Mailboxer::Conversation.first)
+    send_message(body: 'hombre, tú por aquí')
+
+    login_as @user1
+    visit messages_list_path
+    assert_content 'hola mundo'
   end
 
   private
@@ -116,14 +128,6 @@ module Messages
   def assert_message_sent(text)
     assert_css_selector '.bubble', text: text
     assert_content 'Mensaje enviado'
-  end
-
-  #
-  # Sometimes cookie bar gets in the middle of our tests.
-  # Just dismiss the alert for now.
-  #
-  def dismiss_cookie_bar
-    within('#cookie-bar') { click_link 'OK' }
   end
 
   def send_message(params)

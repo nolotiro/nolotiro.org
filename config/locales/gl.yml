@@ -208,8 +208,8 @@ gl:
   mailboxer:
     buttons:
       back: 
-      trash: Eliminar mensaxe
-      trash_selected: Eliminar mensaxes seleccionados
+      trash: Arquivar conversa
+      trash_selected: Arquivar conversas seleccionadas
     message_mailer:
       message:
         body: Mensaxe
@@ -240,9 +240,8 @@ gl:
       you_have_new_reply: Recibiu unha nova resposta
       you_have_recieved_new_reply: Recibiu unha nova resposta
     notifications:
-      error_same_user: Non pode enviar unha mensaxe a si mesmo
       sent: 
-      trash: 
+      trash: Conversa arquivada
     search: 
     table:
       date: Data

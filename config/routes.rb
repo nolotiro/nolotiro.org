@@ -95,7 +95,6 @@ NolotiroOrg::Application.routes.draw do
     # messaging legacy
     scope '/message' do
       get  '/list', to: 'conversations#index', as: 'messages_list'
-      get  '/show/:id/subject/:subject', to: 'conversations#show', as: 'message_show'
       get  '/create/id_user_to/:user_id', to: 'conversations#new', as: 'message_new'
       get  '/create/id_user_to/:user_id/subject/:subject', to: 'conversations#new', as: 'message_new_with_subject'
       post '/create/id_user_to/:user_id', to: 'conversations#update'

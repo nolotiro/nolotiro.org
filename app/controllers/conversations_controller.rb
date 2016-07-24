@@ -15,34 +15,33 @@ class ConversationsController < ApplicationController
   end
 
   def new
-    @message = Mailboxer::Message.new
-    @recipient = User.find(params[:user_id])
-    @message.recipients = @recipient.id if params[:user_id]
+    @interlocutor = User.find(params[:user_id])
+    @message = Mailboxer::Message.new(recipients: @interlocutor.id)
   end
 
   def create
-    initialize_message
-    return if performed?
+    @interlocutor = User.find(params[:mailboxer_message][:recipients])
+    @conversation = Mailboxer::Conversation.new(subject: message_params[:subject])
 
-    recipient = User.find(recipient_id)
-    receipt = current_user.send_message([recipient], @message.body, @message.subject)
-    @conversation = receipt.notification.conversation
+    @message = @conversation.messages.build message_params.except(:subject)
+    receipt = @message.deliver
 
-    return render_new_with(recipient, receipt) unless receipt.valid?
+    return render_new_with(receipt) unless receipt.valid?
 
     redirect_to mailboxer_conversation_path(@conversation),
                 notice: I18n.t('mailboxer.notifications.sent')
   end
 
   def update
-    initialize_message
-    return if performed?
+    @conversation = conversations.find(params[:id])
+    @interlocutor = interlocutor(@conversation)
 
-    @conversation = conversations.find(@message.conversation_id)
+    @message = @conversation.messages.build message_params
+    receipt = @message.deliver
 
-    return render_show_with(interlocutor(@conversation)) unless @message.valid?
+    return render_show_with(@interlocutor) unless receipt.valid?
 
-    current_user.reply_to_conversation(@conversation, @message.body)
+    @conversation.receipts.untrash
 
     redirect_to mailboxer_conversation_path(@conversation),
                 notice: I18n.t('mailboxer.notifications.sent')
@@ -52,8 +51,9 @@ class ConversationsController < ApplicationController
   # GET /message/show/:ID/subject/SUBJECT
   def show
     @conversation = conversations.find(params[:id])
+    @interlocutor = interlocutor(@conversation)
 
-    @message = Mailboxer::Message.new conversation_id: @conversation.id
+    @message = Mailboxer::Message.new conversation: @conversation
     current_user.mark_as_read(@conversation)
   end
 
@@ -68,21 +68,9 @@ class ConversationsController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def message_params
-    params.require(:mailboxer_message).permit(:conversation_id, :body, :subject, :recipients, :sender_id)
-  end
-
-  def recipient_id
-    params[:mailboxer_message][:recipients].to_i
-  end
-
-  def initialize_message
-    @message = Mailboxer::Message.new message_params
-    @message.sender = current_user
-    # FIXME: this should be on model (validation)
-    return unless @message.sender.id == recipient_id
-
-    redirect_to message_new_path(user_id: recipient_id),
-                notice: I18n.t('mailboxer.notifications.error_same_user')
+    params.require(:mailboxer_message)
+          .permit(:body, :subject, :recipients)
+          .merge(sender: current_user, recipients: @interlocutor)
   end
 
   def render_show_with(recipient)
@@ -90,13 +78,12 @@ class ConversationsController < ApplicationController
     render :show
   end
 
-  def render_new_with(recipient, receipt)
+  def render_new_with(receipt)
     missing_subject = receipt.errors['notification.conversation.subject'].first
     missing_body = receipt.errors['notification.body'].first
     @message.errors.add(:subject, missing_subject) if missing_subject
     @message.errors.add(:body, missing_body) if missing_body
-    @recipient = recipient
-    @message.recipients = @recipient.id
+    @message.recipients = @interlocutor.id
     render :new
   end
 
