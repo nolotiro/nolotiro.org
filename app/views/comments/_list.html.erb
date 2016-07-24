@@ -11,9 +11,9 @@
     </div>
   <% end %>
 
-  <div class="ad_comment_form">
-    <% if user_signed_in? %>
+  <% if user_signed_in? %>
+    <div class="ad_comment_form">
       <%= render partial: "comments/form", locals: {comment: @comment} %>
-    <% end %>
-  </div>
+    </div>
+  <% end %>
 </div>
