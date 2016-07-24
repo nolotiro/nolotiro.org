@@ -24,7 +24,7 @@
             <%= link_to new_conversation_path(recipient_id: @user.id),
                         class: "world_link" do %>
               <%= t('nlt.send_a_message_to') %> <%= @user.username %>
-              <%= image_tag "email_send.png", alt: "send a mesage" %>
+              <%= image_tag "email_send.png" %>
             <% end %>
           </li>
         <% end %>
@@ -35,12 +35,12 @@
             <% if current_user.friend? @user %>
               <%= link_to destroy_friend_path(@user.id), class: 'world_link', method: 'post' do %>
                 <%= t('nlt.profile_actions.friend.delete', username: @user.username) %>
-                <%= image_tag "friend_delete.png", alt: "Delete friend"%>
+                <%= image_tag "friend_delete.png" %>
               <% end %>
             <% else %>
               <%= link_to add_friend_path(@user.id), class: 'world_link', method: 'post' do %>
                 <%= t('nlt.profile_actions.friend.add', username: @user.username) %>
-                <%= image_tag "friend_add.png", alt: "Add friend"%>
+                <%= image_tag "friend_add.png" %>
               <% end %>
             <% end %>
             </li>
