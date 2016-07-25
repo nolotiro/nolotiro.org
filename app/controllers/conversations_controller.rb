@@ -5,11 +5,9 @@ class ConversationsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @conversations = current_user.mailbox
-                                 .conversations(mailbox_type: 'not_trash')
-                                 .includes(:receipts)
-                                 .sort_by { |c| c.last_message.created_at }
-                                 .reverse
+    @conversations = conversations.includes(:receipts)
+                                  .sort_by { |c| c.last_message.created_at }
+                                  .reverse
 
     @conversations = @conversations.paginate(page: params[:page], total_entries: @conversations.to_a.size)
   end
@@ -88,7 +86,7 @@ class ConversationsController < ApplicationController
   end
 
   def conversations
-    current_user.mailbox.conversations
+    current_user.mailbox.conversations(mailbox_type: 'not_trash')
   end
 
   def interlocutor(conversation)
