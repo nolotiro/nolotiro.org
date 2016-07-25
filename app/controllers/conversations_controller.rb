@@ -22,13 +22,13 @@ class ConversationsController < ApplicationController
     @conversation = Mailboxer::Conversation.new(subject: message_params[:subject])
 
     @message = @conversation.messages.build message_params.except(:subject)
-    receipt = @message.deliver
+    @message.deliver
 
-    if receipt.valid?
+    if @message.valid?
       redirect_to mailboxer_conversation_path(@conversation),
                   notice: I18n.t('mailboxer.notifications.sent')
     else
-      setup_errors_from(receipt)
+      setup_errors
       @message.recipients = @interlocutor.id
       render :new
     end
@@ -39,9 +39,9 @@ class ConversationsController < ApplicationController
     @interlocutor = interlocutor(@conversation)
 
     @message = @conversation.messages.build message_params
-    receipt = @message.deliver
+    @message.deliver
 
-    if receipt.valid?
+    if @message.valid?
       @conversation.receipts.untrash
 
       redirect_to mailboxer_conversation_path(@conversation),
@@ -78,11 +78,10 @@ class ConversationsController < ApplicationController
           .merge(sender: current_user, recipients: @interlocutor)
   end
 
-  def setup_errors_from(receipt)
-    missing_subject = receipt.errors['notification.conversation.subject'].first
-    missing_body = receipt.errors['notification.body'].first
-    @message.errors.add(:subject, missing_subject) if missing_subject
-    @message.errors.add(:body, missing_body) if missing_body
+  def setup_errors
+    missing_subject = @message.errors['conversation.subject']
+
+    @message.errors.add(:subject, missing_subject.first) if missing_subject.any?
   end
 
   def conversations
