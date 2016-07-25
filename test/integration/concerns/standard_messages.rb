@@ -63,7 +63,7 @@ module StandardMessages
 
     login_as @user2
 
-    visit mailboxer_conversation_path(Mailboxer::Conversation.first)
+    visit mailboxer_conversation_path(Conversation.first)
     assert_content 'Conversación con user1'
   end
 
@@ -103,7 +103,7 @@ module StandardMessages
     send_message(subject: 'hola marte', body: 'What a nice message!')
 
     visit messages_list_path
-    check("delete-conversation-#{Mailboxer::Conversation.first.id}")
+    check("delete-conversation-#{Conversation.first.id}")
     click_button 'Archivar conversaciones seleccionadas'
 
     refute_content 'hola mundo'
@@ -116,7 +116,7 @@ module StandardMessages
     refute_content 'hola mundo'
 
     login_as @user2
-    visit mailboxer_conversation_path(Mailboxer::Conversation.first)
+    visit mailboxer_conversation_path(Conversation.first)
     send_message(body: 'hombre, tú por aquí')
 
     login_as @user1

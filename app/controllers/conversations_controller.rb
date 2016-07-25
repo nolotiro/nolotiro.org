@@ -19,7 +19,7 @@ class ConversationsController < ApplicationController
 
   def create
     @interlocutor = User.find(params[:mailboxer_message][:recipients])
-    @conversation = Mailboxer::Conversation.new(subject: message_params[:subject])
+    @conversation = Conversation.new(subject: message_params[:subject])
 
     @message = @conversation.messages.build message_params.except(:subject)
     @message.deliver
@@ -36,7 +36,7 @@ class ConversationsController < ApplicationController
 
   def update
     @conversation = conversations.find(params[:id])
-    @interlocutor = interlocutor(@conversation)
+    @interlocutor = @conversation.interlocutor(current_user)
 
     @message = @conversation.messages.build message_params
     @message.deliver
@@ -56,7 +56,7 @@ class ConversationsController < ApplicationController
   # GET /message/show/:ID/subject/SUBJECT
   def show
     @conversation = conversations.find(params[:id])
-    @interlocutor = interlocutor(@conversation)
+    @interlocutor = @conversation.interlocutor(current_user)
 
     @message = Mailboxer::Message.new conversation: @conversation
     current_user.mark_as_read(@conversation)
@@ -64,7 +64,7 @@ class ConversationsController < ApplicationController
 
   def trash
     conversation = conversations.find(params[:id] || params[:conversations])
-    current_user.trash(conversation)
+    Array(conversation).each { |c| c.move_to_trash(current_user) }
     flash[:notice] = I18n.t 'mailboxer.notifications.trash'
     redirect_to mailboxer_conversations_path
   end
@@ -75,7 +75,7 @@ class ConversationsController < ApplicationController
   def message_params
     params.require(:mailboxer_message)
           .permit(:body, :subject, :recipients)
-          .merge(sender: current_user, recipients: @interlocutor)
+          .merge(sender: current_user, recipients: [@interlocutor])
   end
 
   def setup_errors
@@ -85,15 +85,6 @@ class ConversationsController < ApplicationController
   end
 
   def conversations
-    current_user.mailbox.conversations(mailbox_type: 'not_trash')
+    current_user.conversations
   end
-
-  def interlocutor(conversation)
-    receipts = conversation.receipts.where.not(receiver_id: current_user.id)
-    return unless receipts.any?
-
-    receipts.first.receiver
-  end
-
-  helper_method :interlocutor
 end
