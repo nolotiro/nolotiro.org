@@ -24,10 +24,14 @@ class ConversationsController < ApplicationController
     @message = @conversation.messages.build message_params.except(:subject)
     receipt = @message.deliver
 
-    return render_new_with(receipt) unless receipt.valid?
-
-    redirect_to mailboxer_conversation_path(@conversation),
-                notice: I18n.t('mailboxer.notifications.sent')
+    if receipt.valid?
+      redirect_to mailboxer_conversation_path(@conversation),
+                  notice: I18n.t('mailboxer.notifications.sent')
+    else
+      setup_errors_from(receipt)
+      @message.recipients = @interlocutor.id
+      render :new
+    end
   end
 
   def update
@@ -37,12 +41,15 @@ class ConversationsController < ApplicationController
     @message = @conversation.messages.build message_params
     receipt = @message.deliver
 
-    return render_show_with(@interlocutor) unless receipt.valid?
+    if receipt.valid?
+      @conversation.receipts.untrash
 
-    @conversation.receipts.untrash
-
-    redirect_to mailboxer_conversation_path(@conversation),
-                notice: I18n.t('mailboxer.notifications.sent')
+      redirect_to mailboxer_conversation_path(@conversation),
+                  notice: I18n.t('mailboxer.notifications.sent')
+    else
+      @message.recipients = @interlocutor.id
+      render :show
+    end
   end
 
   # GET /messages/:ID
@@ -71,18 +78,11 @@ class ConversationsController < ApplicationController
           .merge(sender: current_user, recipients: @interlocutor)
   end
 
-  def render_show_with(recipient)
-    @message.recipients = recipient.id
-    render :show
-  end
-
-  def render_new_with(receipt)
+  def setup_errors_from(receipt)
     missing_subject = receipt.errors['notification.conversation.subject'].first
     missing_body = receipt.errors['notification.body'].first
     @message.errors.add(:subject, missing_subject) if missing_subject
     @message.errors.add(:body, missing_body) if missing_body
-    @message.recipients = @interlocutor.id
-    render :new
   end
 
   def conversations
