@@ -1,4 +1,4 @@
-<% if message.sender == message.conversation.messages.first.sender %>
+<% if message.sender == message.conversation.original_message.sender %>
   <div class="message-excerpt">
     <div class="message-from-left">
       <% if message.sender %>
