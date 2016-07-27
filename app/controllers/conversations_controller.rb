@@ -89,7 +89,10 @@ class ConversationsController < ApplicationController
   end
 
   def interlocutor(conversation)
-    conversation.recipients.find { |u| u != current_user }
+    receipts = conversation.receipts.where.not(receiver_id: current_user.id)
+    return unless receipts.any?
+
+    receipts.first.receiver
   end
 
   helper_method :interlocutor

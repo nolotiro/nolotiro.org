@@ -1,7 +1,9 @@
 # frozen_string_literal: true
+require 'integration/concerns/messaging'
 
-module Messages
+module StandardMessages
   include Warden::Test::Helpers
+  include Messaging
 
   def setup
     super
@@ -120,20 +122,5 @@ module Messages
     login_as @user1
     visit messages_list_path
     assert_content 'hola mundo'
-  end
-
-  private
-
-  def assert_message_sent(text)
-    assert_css_selector '.bubble', text: text
-    assert_content 'Mensaje enviado'
-  end
-
-  def send_message(params)
-    subject = params[:subject]
-
-    fill_in('mailboxer_message_subject', with: subject) if subject
-    fill_in 'mailboxer_message_body', with: params[:body]
-    click_button 'Enviar'
   end
 end

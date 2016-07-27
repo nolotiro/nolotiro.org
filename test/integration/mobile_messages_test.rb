@@ -1,8 +1,15 @@
 # frozen_string_literal: true
 require 'test_helper'
 require 'support/mobile_integration'
-require 'integration/concerns/messages'
+require 'integration/concerns/standard_messages'
+require 'integration/concerns/self_messages'
 
-class MobileMessagesTest < MobileIntegrationTest
-  include Messages
+module MobileMessagesTest
+  class StandardMessagesTest < DesktopIntegrationTest
+    include StandardMessages
+  end
+
+  class SelfDesktopMessagesTest < DesktopIntegrationTest
+    include SelfMessages
+  end
 end
