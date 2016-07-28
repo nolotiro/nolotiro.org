@@ -1,5 +1,4 @@
 # frozen_string_literal: true
-require 'integration/concerns/authentication'
 
 module Messages
   include Warden::Test::Helpers
