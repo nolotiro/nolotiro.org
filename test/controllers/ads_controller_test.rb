@@ -58,8 +58,7 @@ class AdsControllerTest < ActionController::TestCase
   end
 
   test 'only ad owner should bump ads' do
-    @ad.published_at = 6.days.ago
-    @ad.save
+    @ad.update(published_at: 6.days.ago)
     sign_in @user
     post :bump, id: @ad
     assert_equal 6.days.ago.to_date, @ad.reload.published_at.to_date
@@ -69,8 +68,7 @@ class AdsControllerTest < ActionController::TestCase
 
   test 'should not bump ads too recent' do
     @ad.user_owner = @user.id
-    @ad.published_at = 4.days.ago
-    @ad.save
+    @ad.update(published_at: 4.days.ago)
     sign_in @user
     post :bump, id: @ad
     assert_equal 4.days.ago.to_date, @ad.reload.published_at.to_date
@@ -79,9 +77,7 @@ class AdsControllerTest < ActionController::TestCase
   end
 
   test 'should bump adds old enough' do
-    @ad.user_owner = @user.id
-    @ad.published_at = 6.days.ago
-    @ad.save
+    @ad.update(user_owner: @user.id, published_at: 6.days.ago)
     sign_in @user
     post :bump, id: @ad
     assert_equal Time.zone.now.to_date, @ad.reload.published_at.to_date
@@ -90,8 +86,7 @@ class AdsControllerTest < ActionController::TestCase
   end
 
   test 'should not edit any ad as normal user' do
-    @ad.user_owner = @admin.id
-    @ad.save
+    @ad.update(user_owner: @admin.id)
     sign_in @user
     get :edit, id: @ad
     assert_response :redirect
@@ -99,8 +94,7 @@ class AdsControllerTest < ActionController::TestCase
   end
 
   test 'should edit my own ad as normal user' do
-    @ad.user_owner = @user.id
-    @ad.save
+    @ad.update(user_owner: @user.id)
     sign_in @user
     get :edit, id: @ad
     assert_response :success
@@ -113,8 +107,7 @@ class AdsControllerTest < ActionController::TestCase
   end
 
   test 'should not update other user ad if normal user' do
-    @ad.user_owner = @admin.id
-    @ad.save
+    @ad.update(user_owner: @admin.id)
     sign_in @user
     patch :update, id: @ad, ad: { body: @ad.body, ip: @ad.ip, title: @ad.title, type: @ad.type, user_owner: @ad.user_owner, woeid_code: @ad.woeid_code }
     assert_redirected_to root_url
@@ -122,8 +115,7 @@ class AdsControllerTest < ActionController::TestCase
 
   test 'should update own ads as normal user' do
     sign_in @user
-    @ad.user_owner = @user.id
-    @ad.save
+    @ad.update(user_owner: @user.id)
 
     body = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."
     patch :update, id: @ad, ad: { body: body, ip: @ad.ip, title: @ad.title, type: @ad.type, user_owner: @ad.user_owner, woeid_code: @ad.woeid_code }
@@ -156,8 +148,7 @@ class AdsControllerTest < ActionController::TestCase
   end
 
   test 'should destroy owned ads as normal user' do
-    @ad.user_owner = @user.id
-    @ad.save
+    @ad.update(user_owner: @user.id)
     sign_in @user
     assert_difference('Ad.count', -1) do
       delete :destroy, id: @ad
