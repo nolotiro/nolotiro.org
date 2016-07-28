@@ -318,9 +318,12 @@ form.searchbox
   float: right
   font-size: 0.8em
 
-.message-container-left
+%message-container
   font-size: 0.9em
   position: relative
+
+.message-container-left
+  @extend %message-container
   margin-right: 120px
 
 .message-from-left img, .message-from-right img
@@ -328,8 +331,7 @@ form.searchbox
   margin-right: 30px
 
 .message-container-right
-  font-size: 0.9em
-  position: relative
+  @extend %message-container
   margin-left: 120px
 
 .triangle-me
