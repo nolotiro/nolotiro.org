@@ -3,7 +3,7 @@ require 'test_helper'
 require 'integration/concerns/authentication'
 require 'support/web_mocking'
 
-class AdCreationTest < ActionDispatch::IntegrationTest
+class AdManagementTest < ActionDispatch::IntegrationTest
   include WebMocking
   include Authentication
 
