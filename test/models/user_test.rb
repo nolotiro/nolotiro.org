@@ -30,6 +30,13 @@ class UserTest < ActiveSupport::TestCase
     assert_includes user2.errors[:email], 'ya está en uso'
   end
 
+  test 'saves downcased emails' do
+    user1 = FactoryGirl.build(:user, email: 'Larryfoster@example.com')
+    assert user1.valid?
+    assert user1.save
+    assert_equal 'larryfoster@example.com', user1.email
+  end
+
   test 'has passwords no shorter than 5 characters' do
     @user.password = '1234'
     assert_not @user.valid?
