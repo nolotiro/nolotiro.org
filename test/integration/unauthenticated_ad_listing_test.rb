@@ -48,6 +48,17 @@ class UnauthenticatedAdListing < ActionDispatch::IntegrationTest
     end
   end
 
+  it 'lists wanted ads when a status filter is active' do
+    mocking_yahoo_woeid_info(766_273) do
+      visit ads_woeid_path(766_273, type: 'give')
+      click_link 'disponible'
+      click_link 'busco'
+    end
+
+    page.assert_text 'busco - Madrid, Madrid, España'
+    page.assert_selector '.ad_excerpt_list', count: 0
+  end
+
   private
 
   def mocking_location_counts
