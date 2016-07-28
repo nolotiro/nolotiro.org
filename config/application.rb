@@ -7,6 +7,10 @@ require 'rails/all'
 # you've limited to :test, :development, or :production.
 Bundler.require(:default, Rails.env)
 
+Class.new Rails::Railtie do
+  console { |_app| Bundler.require(:console) }
+end
+
 module NolotiroOrg
   class Application < Rails::Application
     config.time_zone = 'UTC'

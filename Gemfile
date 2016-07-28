@@ -14,6 +14,10 @@ group :doc do
   gem 'sdoc', require: false
 end
 
+group :console do
+  gem 'table_print'
+end
+
 group :development, :test do
   gem 'minitest-spec-rails'                 # test: specs style out-of-the-box
   gem 'capybara'                            # test: real user interactions
