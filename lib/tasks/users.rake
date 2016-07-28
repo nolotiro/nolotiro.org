@@ -7,4 +7,11 @@ namespace :users do
 
     DuplicateUserMerger.merge!
   end
+
+  desc 'Standarize all emails in DB to lowercase'
+  task lowercase_emails: :environment do
+    ActiveRecord::Base.connection.execute <<-SQL.squish
+      UPDATE users SET email = LOWER(email)
+    SQL
+  end
 end
