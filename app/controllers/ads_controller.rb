@@ -46,7 +46,7 @@ class AdsController < ApplicationController
     respond_to do |format|
       @ad.bump
 
-      format.html { redirect_to ads_woeid_path(id: current_user.woeid, type: @ad.type), notice: t('nlt.ads.bumped') }
+      format.html { redirect_to :back, notice: t('nlt.ads.bumped') }
       format.json { head :no_content }
     end
   end

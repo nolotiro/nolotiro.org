@@ -77,12 +77,14 @@ class AdsControllerTest < ActionController::TestCase
   end
 
   test 'should bump adds old enough' do
+    original_path = ads_woeid_path(id: @user.woeid, type: @ad.type)
+    request.env['HTTP_REFERER'] = original_path
     @ad.update(user_owner: @user.id, published_at: 6.days.ago)
     sign_in @user
     post :bump, id: @ad
     assert_equal Time.zone.now.to_date, @ad.reload.published_at.to_date
     assert_response :redirect
-    assert_redirected_to ads_woeid_path(id: @user.woeid, type: @ad.type)
+    assert_redirected_to original_path
   end
 
   test 'should not edit any ad as normal user' do

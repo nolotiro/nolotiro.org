@@ -32,6 +32,17 @@ class AdManagementTest < ActionDispatch::IntegrationTest
     end
   end
 
+  it 'republishes ads' do
+    ad = create(:ad, user: @user, published_at: 6.days.ago)
+
+    mocking_yahoo_woeid_info(ad.woeid_code) do
+      visit ad_path(ad)
+      click_link 'Republica este anuncio'
+    end
+
+    assert_content 'Hemos republicado el anuncio'
+  end
+
   private
 
   def submit_ad_form(file_path)
