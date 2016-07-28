@@ -12,7 +12,9 @@ class User < ActiveRecord::Base
 
   before_save :default_lang
 
-  validates :username, presence: true, uniqueness: true, length: { maximum: 63 }
+  validates :username, presence: true,
+                       uniqueness: { case_sensitive: false },
+                       length: { maximum: 63 }
 
   # Include default devise modules. Others available are:
   # :timeoutable and :omniauthable
