@@ -31,6 +31,12 @@ class ConversationTest < ActiveSupport::TestCase
     assert_equal 0, Conversation.unread(@recipient).size
   end
 
+  def test_unread_excludes_conversations_with_blockers
+    create(:blocking, blocker: @user, blocked: @recipient)
+
+    assert_equal 0, Conversation.unread(@user).size
+  end
+
   def test_unread_method_returns_a_boolean_unread_flag
     assert_equal false, @conversation.unread?(@user)
     assert_equal true, @conversation.unread?(@recipient)
@@ -41,5 +47,32 @@ class ConversationTest < ActiveSupport::TestCase
     @conversation.envelope_for(sender: @user, recipient: @recipient)
 
     assert_in_delta @conversation.updated_at, Time.zone.now, 1.second
+  end
+
+  def test_involving_lists_conversations_with_users_not_blocking_a_user
+    other = create(:user)
+    other_conversation = create(:conversation, originator: other,
+                                               recipient: @user)
+
+    assert_equal [@conversation, other_conversation],
+                 Conversation.involving(@user)
+
+    create(:blocking, blocker: @recipient, blocked: @user)
+    assert_equal [other_conversation], Conversation.involving(@user)
+
+    create(:blocking, blocker: other, blocked: @user)
+    assert_empty Conversation.involving(@user)
+  end
+
+  def test_involving_includes_orphan_conversations
+    @recipient.destroy
+
+    assert_equal [@conversation], Conversation.involving(@user)
+  end
+
+  def test_involving_excludes_deleted_conversations
+    @conversation.move_to_trash(@user)
+
+    assert_empty Conversation.involving(@user)
   end
 end

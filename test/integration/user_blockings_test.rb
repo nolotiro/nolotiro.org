@@ -83,4 +83,12 @@ class UserBlockingsTest < ActionDispatch::IntegrationTest
     refute_link 'Envía un mensaje privado al anunciante'
     assert_equal ad_path(ad), current_path
   end
+
+  it 'does not show conversations with her when blocked by user' do
+    create(:conversation, originator: @current_user, recipient: @other)
+    create(:blocking, blocker: @other, blocked: @current_user)
+
+    visit conversations_path
+    refute_selector 'tr.mail'
+  end
 end

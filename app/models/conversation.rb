@@ -7,11 +7,11 @@ class Conversation < ActiveRecord::Base
   has_many :receipts, through: :messages
 
   scope :involving, ->(user) do
-    joins(:receipts).merge(Receipt.recipient(user).untrashed).distinct
+    joins(:receipts).merge(Receipt.involving(user).untrashed).distinct
   end
 
   scope :unread, ->(user) do
-    joins(:receipts).merge(Receipt.recipient(user).unread).distinct
+    joins(:receipts).merge(Receipt.involving(user).unread).distinct
   end
 
   def envelope_for(sender:, recipient:, body: '')
