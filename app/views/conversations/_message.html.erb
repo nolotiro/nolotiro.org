@@ -1,4 +1,4 @@
-<% if message.sender == message.conversation.messages.first.sender %>
+<% if message.sender == message.conversation.original_message.sender %>
   <div class="message-excerpt">
     <div class="message-from-left">
       <% if message.sender %>
@@ -15,10 +15,10 @@
       <div class="triangle-me">
       </div>
       <div class="bubble bg-bubble-me">
-        <%= message.body %>
         <div class="message-date"> 
           <abbr class="js-moment" title="<%= message.created_at %>"><%= message.created_at %></abbr>
         </div>
+        <%= simple_format(message.body) %>
       </div>
     </div>
   </div>
@@ -39,10 +39,10 @@
       <div class="triangle-other">
       </div>
       <div class="bubble">
-        <%= message.body %>
         <div class="message-date">
           <abbr class="js-moment" title="<%= message.created_at %>"><%= message.created_at %></abbr>
         </div>
+        <%= simple_format(message.body) %>
       </div>
     </div>
   </div>

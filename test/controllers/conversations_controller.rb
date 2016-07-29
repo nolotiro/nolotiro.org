@@ -24,10 +24,10 @@ class ConversationsControllerTest < ActionController::TestCase
   test 'should create a message, show it and let the other user reply it' do
     # user1 signs in and sends a message to user2
     sign_in @user1
-    assert_difference('Mailboxer::Conversation.count') do
+    assert_difference('Conversation.count') do
       post :create, mailboxer_message: { recipients: @user2, body: 'lo sigues teniendo? ', subject: 'interesado en el ordenador' }
     end
-    m = Mailboxer::Conversation.last
+    m = Conversation.last
     assert_redirected_to mailboxer_conversation_path(id: m.id)
 
     sign_out @user1
@@ -52,10 +52,10 @@ class ConversationsControllerTest < ActionController::TestCase
 
   test 'should not get list of conversations to/from another user' do
     sign_in @user1
-    assert_difference('Mailboxer::Conversation.count') do
+    assert_difference('Conversation.count') do
       post :create, mailboxer_message: { recipients: @user2, body: 'lo sigues teniendo? ', subject: 'interesado en el ordenador' }
     end
-    m = Mailboxer::Conversation.last
+    m = Conversation.last
     sign_out @user1
     user3 = FactoryGirl.create(:user, 'email' => 'brianeno@gmail.com', 'username' => 'eno')
     sign_in user3

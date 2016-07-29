@@ -8,6 +8,10 @@ class User < ActiveRecord::Base
   has_many :friendships
   has_many :friends, through: :friendships
 
+  has_many :receipts, class_name: 'Mailboxer::Receipt',
+                      dependent: :destroy,
+                      as: :receiver
+
   before_save :default_lang
 
   validates :username, presence: true, uniqueness: true, length: { maximum: 63 }
@@ -17,8 +21,6 @@ class User < ActiveRecord::Base
   devise :confirmable, :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :lockable,
          :omniauthable, omniauth_providers: [:facebook, :google_oauth2]
-
-  acts_as_messageable
 
   scope :last_week, lambda { where('created_at >= :date', date: 1.week.ago) }
 
@@ -66,8 +68,16 @@ class User < ActiveRecord::Base
     email
   end
 
+  def conversations
+    @conversations ||= Conversation.not_trash(self)
+  end
+
   def unread_messages_count
-    mailbox.inbox.unread(self).count
+    conversations.unread(self).count
+  end
+
+  def mark_as_read(conversation)
+    conversation.mark_as_read(self)
   end
 
   def admin?

@@ -318,9 +318,15 @@ form.searchbox
   float: right
   font-size: 0.8em
 
-.message-container-left
+%message-container
   font-size: 0.9em
   position: relative
+  p
+    &:last-child
+      margin-bottom: 0
+
+.message-container-left
+  @extend %message-container
   margin-right: 120px
 
 .message-from-left img, .message-from-right img
@@ -328,8 +334,7 @@ form.searchbox
   margin-right: 30px
 
 .message-container-right
-  font-size: 0.9em
-  position: relative
+  @extend %message-container
   margin-left: 120px
 
 .triangle-me
@@ -352,14 +357,14 @@ form.searchbox
   background: #CCF8A7
 
 .bubble
-  min-height: 23px
+  min-height: 72px
   border: 1px solid #CCC
-  -webkit-border-radius: 3px
+  border-radius: 3px
   padding: 10px 10px 30px 10px
 
 .bubble-reply
   border: 1px solid #CCC
-  -webkit-border-radius: 3px
+  border-radius: 3px
   padding: 10px
 
 .message-date

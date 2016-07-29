@@ -12,7 +12,9 @@
 .col-md-7.col-sm-7#messages-thread
   - @conversation.messages.includes(:sender).each do |mes|
     = render partial: "message", locals: {message: mes}
-  = render partial: "reply", locals: {message: @message}
+
+  - if @interlocutor
+    = render partial: "reply", locals: {message: @message}
 
 .col-md-5.col-sm-5
   .row.mobile

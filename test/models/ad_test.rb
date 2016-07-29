@@ -72,9 +72,14 @@ class AdTest < ActiveSupport::TestCase
     assert_equal(@ad.title, expected_text)
   end
 
-  test 'ad validates length of body' do
+  test 'ad validates max length of body' do
     assert_not @ad.update(body: 'a' * 1001)
     assert @ad.errors[:body].include?('es demasiado largo (1000 caracteres máximo)')
+  end
+
+  test 'ad validates min length of body' do
+    assert_not @ad.update(body: 'a' * 24)
+    assert @ad.errors[:body].include?('es demasiado corto (25 caracteres mínimo)')
   end
 
   test 'ad check slug' do

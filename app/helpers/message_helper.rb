@@ -5,7 +5,7 @@ module MessageHelper
   end
 
   def link_to_interlocutor(c)
-    interlocutor = interlocutor(c)
+    interlocutor = c.interlocutor(current_user)
     return '[borrado]' unless interlocutor
 
     username = interlocutor.username

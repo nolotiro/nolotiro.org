@@ -1,8 +1,9 @@
 # frozen_string_literal: true
-require 'integration/concerns/authentication'
+require 'integration/concerns/messaging'
 
-module Messages
+module StandardMessages
   include Warden::Test::Helpers
+  include Messaging
 
   def setup
     super
@@ -62,7 +63,7 @@ module Messages
 
     login_as @user2
 
-    visit mailboxer_conversation_path(Mailboxer::Conversation.first)
+    visit mailboxer_conversation_path(Conversation.first)
     assert_content 'Conversación con user1'
   end
 
@@ -102,7 +103,7 @@ module Messages
     send_message(subject: 'hola marte', body: 'What a nice message!')
 
     visit messages_list_path
-    check("delete-conversation-#{Mailboxer::Conversation.first.id}")
+    check("delete-conversation-#{Conversation.first.id}")
     click_button 'Archivar conversaciones seleccionadas'
 
     refute_content 'hola mundo'
@@ -115,26 +116,11 @@ module Messages
     refute_content 'hola mundo'
 
     login_as @user2
-    visit mailboxer_conversation_path(Mailboxer::Conversation.first)
+    visit mailboxer_conversation_path(Conversation.first)
     send_message(body: 'hombre, tú por aquí')
 
     login_as @user1
     visit messages_list_path
     assert_content 'hola mundo'
-  end
-
-  private
-
-  def assert_message_sent(text)
-    assert_css_selector '.bubble', text: text
-    assert_content 'Mensaje enviado'
-  end
-
-  def send_message(params)
-    subject = params[:subject]
-
-    fill_in('mailboxer_message_subject', with: subject) if subject
-    fill_in 'mailboxer_message_body', with: params[:body]
-    click_button 'Enviar'
   end
 end
