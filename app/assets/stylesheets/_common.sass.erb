@@ -321,6 +321,9 @@ form.searchbox
 %message-container
   font-size: 0.9em
   position: relative
+  p
+    &:last-child
+      margin-bottom: 0
 
 .message-container-left
   @extend %message-container
@@ -354,7 +357,7 @@ form.searchbox
   background: #CCF8A7
 
 .bubble
-  min-height: 23px
+  min-height: 72px
   border: 1px solid #CCC
   -webkit-border-radius: 3px
   padding: 10px 10px 30px 10px
