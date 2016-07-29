@@ -3,7 +3,7 @@ require 'test_helper'
 require 'integration/concerns/authentication'
 require 'support/web_mocking'
 
-class AdCreationTest < ActionDispatch::IntegrationTest
+class AdManagementTest < ActionDispatch::IntegrationTest
   include WebMocking
   include Authentication
 
@@ -30,6 +30,17 @@ class AdCreationTest < ActionDispatch::IntegrationTest
         page.assert_text('Imagen debe estar entre 0 Bytes y 5 MB')
       end
     end
+  end
+
+  it 'republishes ads' do
+    ad = create(:ad, user: @user, published_at: 6.days.ago)
+
+    mocking_yahoo_woeid_info(ad.woeid_code) do
+      visit ad_path(ad)
+      click_link 'Republica este anuncio'
+    end
+
+    assert_content 'Hemos republicado el anuncio'
   end
 
   private
