@@ -39,7 +39,7 @@ class ConversationsController < ApplicationController
     @interlocutor = @conversation.interlocutor(current_user)
 
     @message = @conversation.messages.build message_params
-    @message.deliver
+    @message.deliver(true)
 
     if @message.valid?
       @conversation.receipts.untrash
