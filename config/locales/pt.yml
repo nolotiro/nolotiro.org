@@ -28,6 +28,7 @@ pt:
         password: Nova senha
         password_confirmation: Nova senha (repetir)
         remember: Lembre-me
+        username: Nome de usuário
   date:
     abbr_day_names:
     - Dom

@@ -28,6 +28,7 @@ en:
         password: New password
         password_confirmation: New password (repeat)
         remember: Remember me
+        username: Username
   date:
     abbr_day_names:
     - Sun

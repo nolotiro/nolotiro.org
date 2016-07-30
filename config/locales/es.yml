@@ -28,6 +28,7 @@ es:
         password: Contraseña nueva
         password_confirmation: Contraseña nueva (repetir)
         remember: Recuérdame
+        username: Nombre de usuario
   date:
     abbr_day_names:
     - dom

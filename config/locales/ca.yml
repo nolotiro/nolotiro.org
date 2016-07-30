@@ -28,6 +28,7 @@ ca:
         password: Contrasenya nova
         password_confirmation: Contrasenya nova (repetir)
         remember: Recorda'm
+        username: Nom d'usuari
   date:
     abbr_day_names:
     - Dg

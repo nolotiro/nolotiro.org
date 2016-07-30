@@ -8,6 +8,11 @@
     </div>
 
     <div class="form-group">
+      <%= f.label :username %><br />
+      <%= f.text_field :username %>
+    </div>
+
+    <div class="form-group">
       <%= f.label :password %> <i>(<%= t('nlt.leave_blank') %>)</i><br />
       <%= f.password_field :password, autocomplete: "off" %>
     </div>

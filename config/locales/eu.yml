@@ -28,6 +28,7 @@ eu:
         password: 
         password_confirmation: 
         remember: 
+        username: 
   date:
     abbr_day_names:
     - Igan

@@ -30,6 +30,7 @@ gl:
 '
         password_confirmation: Nova contrasinal (repetir)
         remember: Lémbrame
+        username: Nome de usuario
   date:
     abbr_day_names:
     - Dom

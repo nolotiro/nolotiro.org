@@ -28,6 +28,7 @@ nl:
         password: 
         password_confirmation: 
         remember: 
+        username: 
   date:
     abbr_day_names:
     - zon
