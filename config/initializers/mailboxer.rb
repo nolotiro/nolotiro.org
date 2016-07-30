@@ -10,6 +10,9 @@ Mailboxer.setup do |config|
   config.email_method = :mailboxer_email
   config.name_method = :name
 
+  # Mailer Class
+  config.message_mailer = Mailboxer::MessageMailer
+
   # Configures if you use or not a search engine and wich one are you using
   # Supported enignes: [:solr,:sphinx]
   config.search_enabled = false
