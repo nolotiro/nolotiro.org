@@ -1,4 +1,4 @@
-%tr{ class: "mail #{ 'unread' if c.is_unread?(current_user) }" }
+%tr{ class: "mail #{ 'unread' if c.unread?(current_user) }" }
   %td
     = check_box_tag '', c.id, false, id: "delete-conversation-#{c.id}",
                                      class: 'delete_multiple_checkbox',

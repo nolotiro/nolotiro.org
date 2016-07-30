@@ -19,7 +19,7 @@ ca:
       contact:
         email: 
         message: 
-      mailboxer/message:
+      message:
         body: Missatge
         subject: Assumpte
       user:

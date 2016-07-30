@@ -37,7 +37,7 @@ class ConversationsController < ApplicationController
     @message.deliver(true)
 
     if @message.valid?
-      @conversation.receipts.untrash
+      @conversation.receipts.update_all(trashed: false)
 
       redirect_to mailboxer_conversation_path(@conversation),
                   notice: I18n.t('mailboxer.notifications.sent')

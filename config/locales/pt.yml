@@ -19,7 +19,7 @@ pt:
       contact:
         email: Correio eletrônico
         message: Mensagem
-      mailboxer/message:
+      message:
         body: Mensagem
         subject: Título
       user:

@@ -19,7 +19,7 @@ gl:
       contact:
         email: Correo electrónico
         message: Mensaxe
-      mailboxer/message:
+      message:
         body: Mensaxe
         subject: Asunto
       user:
