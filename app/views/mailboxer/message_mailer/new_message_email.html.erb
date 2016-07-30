@@ -12,7 +12,7 @@
 <b><%= I18n.t("mailboxer.message_mailer.message.body") %></b>
 <blockquote>
   <p>
-  <%= @message.body %>
+  <%= simple_format(@message.body) %>
   </p>
 </blockquote>
 
