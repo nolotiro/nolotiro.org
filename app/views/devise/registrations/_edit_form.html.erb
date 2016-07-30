@@ -6,22 +6,22 @@
 
     <%= devise_error_messages! %>
 
-    <div>
+    <div class="form-group">
       <%= f.label :email %><br />
       <%= f.email_field :email %>
     </div>
 
-    <div>
+    <div class="form-group">
       <%= f.label :password %> <i>(<%= t('nlt.leave_blank') %>)</i><br />
       <%= f.password_field :password, autocomplete: "off" %>
     </div>
 
-    <div>
+    <div class="form-group">
       <%= f.label :password_confirmation %><br />
       <%= f.password_field :password_confirmation %>
     </div>
 
-    <div>
+    <div class="form-group">
       <%= f.label :current_password %> <i>(<%= t('nlt.we_need_your_password') %>)</i><br />
       <%= f.password_field :current_password %>
     </div>
