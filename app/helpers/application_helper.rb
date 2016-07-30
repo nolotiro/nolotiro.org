@@ -5,7 +5,8 @@ module ApplicationHelper
   end
 
   def profile_tab?
-    params[:controller] == 'users' && params['action'] == 'profile'
+    (params[:controller] == 'users' && params['action'] == 'profile') ||
+      (params[:controller] == 'registrations' && params['action'] == 'edit')
   end
 
   def ad_tab?
