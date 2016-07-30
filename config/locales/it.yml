@@ -406,7 +406,6 @@ it:
       friend:
         add: aggiungere %{username} alla tua lista di amici
         delete: rimuovere %{username} alla tua lista di amici
-    profile_edit: Modifica il profilo
     publish_ad: 
     publish_ad_on: Inserisci annunci a %{woeid}
     published_ads: annunci pubblicati

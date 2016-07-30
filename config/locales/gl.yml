@@ -417,7 +417,6 @@ gl:
       friend:
         add: 
         delete: 
-    profile_edit: Editar o perfil
     publish_ad: Publicando anuncio
     publish_ad_on: Publicar anuncio en %{woeid}
     published_ads: Anuncios publicados

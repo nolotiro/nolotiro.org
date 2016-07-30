@@ -400,7 +400,6 @@ ca:
       friend:
         add: afegir %{username} a la llista d'amics
         delete: afegir %{username} a la llista d'amics
-    profile_edit: Edita perfil
     publish_ad: Publicant anunci
     publish_ad_on: Publicar anunci en %{woeid}
     published_ads: Anuncis publicats

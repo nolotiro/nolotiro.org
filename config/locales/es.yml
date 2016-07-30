@@ -400,7 +400,6 @@ es:
       friend:
         add: agregar %{username} a tu lista de amigos
         delete: eliminar %{username} de tu lista de amigos
-    profile_edit: Editar perfil
     publish_ad: 'Publicando anuncio '
     publish_ad_on: Publicar anuncio en %{woeid}
     published_ads: Anuncios publicados
