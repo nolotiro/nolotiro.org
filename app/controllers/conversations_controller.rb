@@ -1,15 +1,10 @@
 # frozen_string_literal: true
 class ConversationsController < ApplicationController
-  require 'will_paginate/array'
-
   before_action :authenticate_user!
 
   def index
     @conversations = conversations.includes(:receipts)
-                                  .sort_by { |c| c.last_message.created_at }
-                                  .reverse
-
-    @conversations = @conversations.paginate(page: params[:page], total_entries: @conversations.to_a.size)
+                                  .paginate(page: params[:page])
   end
 
   def new

@@ -13,8 +13,7 @@
           %table#mail-list.table.table-condensed
             %tbody
               - @conversations.each do |c|
-                = render partial: "conversations/conversation",
-                         locals: { c: c, timestamp: c.last_message.created_at }
+                = render partial: "conversations/conversation", locals: { c: c }
         = submit_tag t('mailboxer.buttons.trash_selected'), id: 'delete_multiple_button'
       = will_paginate @conversations
     - else
