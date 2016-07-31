@@ -8,9 +8,7 @@ class User < ActiveRecord::Base
   has_many :friendships
   has_many :friends, through: :friendships
 
-  has_many :receipts, class_name: 'Mailboxer::Receipt',
-                      dependent: :destroy,
-                      as: :receiver
+  has_many :receipts, as: :receiver, dependent: :destroy
 
   before_save :default_lang
 

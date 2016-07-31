@@ -19,7 +19,7 @@ en:
       contact:
         email: 
         message: 
-      mailboxer/message:
+      message:
         body: Message
         subject: Subject
       user:

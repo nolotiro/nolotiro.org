@@ -1,24 +1,19 @@
 # frozen_string_literal: true
 class ConversationsController < ApplicationController
-  require 'will_paginate/array'
-
   before_action :authenticate_user!
 
   def index
     @conversations = conversations.includes(:receipts)
-                                  .sort_by { |c| c.last_message.created_at }
-                                  .reverse
-
-    @conversations = @conversations.paginate(page: params[:page], total_entries: @conversations.to_a.size)
+                                  .paginate(page: params[:page])
   end
 
   def new
     @interlocutor = User.find(params[:user_id])
-    @message = Mailboxer::Message.new(recipients: @interlocutor.id)
+    @message = Message.new(recipients: @interlocutor.id)
   end
 
   def create
-    @interlocutor = User.find(params[:mailboxer_message][:recipients])
+    @interlocutor = User.find(params[:message][:recipients])
     @conversation = Conversation.new(subject: message_params[:subject])
 
     @message = @conversation.messages.build message_params.except(:subject)
@@ -39,10 +34,10 @@ class ConversationsController < ApplicationController
     @interlocutor = @conversation.interlocutor(current_user)
 
     @message = @conversation.messages.build message_params
-    @message.deliver
+    @message.deliver(true)
 
     if @message.valid?
-      @conversation.receipts.untrash
+      @conversation.receipts.update_all(trashed: false)
 
       redirect_to mailboxer_conversation_path(@conversation),
                   notice: I18n.t('mailboxer.notifications.sent')
@@ -58,7 +53,7 @@ class ConversationsController < ApplicationController
     @conversation = conversations.find(params[:id])
     @interlocutor = @conversation.interlocutor(current_user)
 
-    @message = Mailboxer::Message.new conversation: @conversation
+    @message = Message.new conversation: @conversation
     current_user.mark_as_read(@conversation)
   end
 
@@ -73,7 +68,7 @@ class ConversationsController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def message_params
-    params.require(:mailboxer_message)
+    params.require(:message)
           .permit(:body, :subject, :recipients)
           .merge(sender: current_user, recipients: [@interlocutor])
   end

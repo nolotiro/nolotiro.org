@@ -25,7 +25,7 @@ class ConversationsControllerTest < ActionController::TestCase
     # user1 signs in and sends a message to user2
     sign_in @user1
     assert_difference('Conversation.count') do
-      post :create, mailboxer_message: { recipients: @user2, body: 'lo sigues teniendo? ', subject: 'interesado en el ordenador' }
+      post :create, message: { recipients: @user2, body: 'lo sigues teniendo? ', subject: 'interesado en el ordenador' }
     end
     m = Conversation.last
     assert_redirected_to mailboxer_conversation_path(id: m.id)
@@ -53,7 +53,7 @@ class ConversationsControllerTest < ActionController::TestCase
   test 'should not get list of conversations to/from another user' do
     sign_in @user1
     assert_difference('Conversation.count') do
-      post :create, mailboxer_message: { recipients: @user2, body: 'lo sigues teniendo? ', subject: 'interesado en el ordenador' }
+      post :create, message: { recipients: @user2, body: 'lo sigues teniendo? ', subject: 'interesado en el ordenador' }
     end
     m = Conversation.last
     sign_out @user1
@@ -65,7 +65,7 @@ class ConversationsControllerTest < ActionController::TestCase
 
   test 'should not permit sender param for message' do
     sign_in @user1
-    post :create, mailboxer_message: { recipients: @user1, sender: @user2, body: 'lo sigues teniendo? ', subject: 'interesado en el ordenador' }
+    post :create, message: { recipients: @user1, sender: @user2, body: 'lo sigues teniendo? ', subject: 'interesado en el ordenador' }
     # TODO: finish
   end
 end
