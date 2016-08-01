@@ -52,8 +52,8 @@ class Conversation < ActiveRecord::Base
     receipts_for(user).update_all(is_read: true)
   end
 
-  def move_to_trash(participant)
-    receipts_for(participant).update_all(trashed: true)
+  def move_to_trash(user)
+    receipts_for(user).update_all(trashed: true)
   end
 
   def receipts_for(user)
