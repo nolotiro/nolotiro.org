@@ -19,6 +19,17 @@ class UserTest < ActiveSupport::TestCase
     assert_includes user2.errors[:username], 'ya está en uso'
   end
 
+  test 'has unique case insensitive usernames' do
+    user1 = FactoryGirl.build(:user, username: 'Username')
+    assert user1.valid?
+    assert user1.save
+
+    user2 = FactoryGirl.build(:user, username: 'username')
+    assert_not user2.valid?
+    assert_not user2.save
+    assert_includes user2.errors[:username], 'ya está en uso'
+  end
+
   test 'has unique emails' do
     user1 = FactoryGirl.build(:user, email: 'larryfoster@example.com')
     assert user1.valid?
@@ -28,6 +39,13 @@ class UserTest < ActiveSupport::TestCase
     assert_not user2.valid?
     assert_not user2.save
     assert_includes user2.errors[:email], 'ya está en uso'
+  end
+
+  test 'saves downcased emails' do
+    user1 = FactoryGirl.build(:user, email: 'Larryfoster@example.com')
+    assert user1.valid?
+    assert user1.save
+    assert_equal 'larryfoster@example.com', user1.email
   end
 
   test 'has passwords no shorter than 5 characters' do

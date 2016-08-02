@@ -23,14 +23,12 @@ it:
         body: Messaggio
         subject: Soggetto
       user:
-        Contraseña: Password
-        Recuérdame: Ricordami
-        Tu email: La tua email
         current_password: Password atuale
         email: email
         password: Password nuova
         password_confirmation: Ripete di nuovo la password
         remember: Ricordami
+        username: Nome di utente
   date:
     abbr_day_names:
     - dom
@@ -406,7 +404,6 @@ it:
       friend:
         add: aggiungere %{username} alla tua lista di amici
         delete: rimuovere %{username} alla tua lista di amici
-    profile_edit: Modifica il profilo
     publish_ad: 
     publish_ad_on: Inserisci annunci a %{woeid}
     published_ads: annunci pubblicati

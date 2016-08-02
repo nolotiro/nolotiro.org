@@ -23,9 +23,6 @@ gl:
         body: Mensaxe
         subject: Asunto
       user:
-        Contraseña: Contrasinal
-        Recuérdame: Lémbrame
-        Tu email: Teu email
         current_password: Contrasinal actual
         email: Correo electrónico
         password: 'Nova contrasinal
@@ -33,6 +30,7 @@ gl:
 '
         password_confirmation: Nova contrasinal (repetir)
         remember: Lémbrame
+        username: Nome de usuario
   date:
     abbr_day_names:
     - Dom
@@ -417,7 +415,6 @@ gl:
       friend:
         add: 
         delete: 
-    profile_edit: Editar o perfil
     publish_ad: Publicando anuncio
     publish_ad_on: Publicar anuncio en %{woeid}
     published_ads: Anuncios publicados

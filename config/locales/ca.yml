@@ -23,14 +23,12 @@ ca:
         body: Missatge
         subject: Assumpte
       user:
-        Contraseña: Contrasenya
-        Recuérdame: Recorda'm
-        Tu email: El teu correu electrònic
         current_password: Contrasenya actual
         email: Correu electrònic
         password: Contrasenya nova
         password_confirmation: Contrasenya nova (repetir)
         remember: Recorda'm
+        username: Nom d'usuari
   date:
     abbr_day_names:
     - Dg
@@ -400,7 +398,6 @@ ca:
       friend:
         add: afegir %{username} a la llista d'amics
         delete: afegir %{username} a la llista d'amics
-    profile_edit: Edita perfil
     publish_ad: Publicant anunci
     publish_ad_on: Publicar anunci en %{woeid}
     published_ads: Anuncis publicats

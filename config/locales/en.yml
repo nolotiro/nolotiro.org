@@ -23,14 +23,12 @@ en:
         body: Message
         subject: Subject
       user:
-        Contraseña: Password
-        Recuérdame: Remember me
-        Tu email: Your e-mail
         current_password: Current password
         email: E-mail
         password: New password
         password_confirmation: New password (repeat)
         remember: Remember me
+        username: Username
   date:
     abbr_day_names:
     - Sun
@@ -400,7 +398,6 @@ en:
       friend:
         add: 'Add %{username} to your friend''s list '
         delete: Delete %{username} from your friend's list
-    profile_edit: Edit profile
     publish_ad: Posting ad
     publish_ad_on: Post ad in %{woeid}
     published_ads: Posted ads

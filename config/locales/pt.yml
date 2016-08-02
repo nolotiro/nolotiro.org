@@ -23,14 +23,12 @@ pt:
         body: Mensagem
         subject: Título
       user:
-        Contraseña: Senha
-        Recuérdame: Lembre-me
-        Tu email: Seu e-mail
         current_password: Senha atual
         email: Correio eletrônico
         password: Nova senha
         password_confirmation: Nova senha (repetir)
         remember: Lembre-me
+        username: Nome de usuário
   date:
     abbr_day_names:
     - Dom
@@ -400,7 +398,6 @@ pt:
       friend:
         add: adicionar %{username} a sua lista de amigos
         delete: excluir %{username} da sua lista de amigos
-    profile_edit: Editar perfil
     publish_ad: Publicando anúncio
     publish_ad_on: Publicar anúncio em %{woeid}
     published_ads: Avisos publicados

@@ -3,7 +3,7 @@
     <div class="col-md-6 col-sm-6">
       <dt>
         <label for="email" class="required">
-          <%= f.label t 'nlt.your_email' %>
+          <%= f.label :email, t('nlt.your_email') %>
         </label>
       </dt>
 
@@ -13,7 +13,7 @@
 
       <dt>
       <label for="password" class="required">
-        <%= f.label t 'nlt.password' %>
+        <%= f.label :password, t('nlt.password') %>
       </label>
       </dt>
 
@@ -23,7 +23,7 @@
 
       <dd id="rememberme-element">
         <%= f.check_box :remember_me %> 
-        <%= f.label t 'nlt.remember_me' %>
+        <%= f.label :remember_me, t('nlt.remember_me') %>
       </dd>
 
       <div><%= f.submit t('nlt.sign_in') %></div>

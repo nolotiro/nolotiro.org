@@ -23,14 +23,12 @@ fr:
         body: 
         subject: 
       user:
-        Contraseña: 
-        Recuérdame: 
-        Tu email: 
         current_password: 
         email: 
         password: 
         password_confirmation: 
         remember: 
+        username: 
   date:
     abbr_day_names:
     - dim
@@ -402,7 +400,6 @@ fr:
       friend:
         add: 
         delete: 
-    profile_edit: 
     publish_ad: 
     publish_ad_on: 
     published_ads: 

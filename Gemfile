@@ -14,6 +14,10 @@ group :doc do
   gem 'sdoc', require: false
 end
 
+group :console do
+  gem 'table_print'
+end
+
 group :development, :test do
   gem 'minitest-spec-rails'                 # test: specs style out-of-the-box
   gem 'capybara'                            # test: real user interactions
@@ -79,7 +83,7 @@ gem 'activeadmin', github: 'activeadmin'            # admin backend
 gem 'rakismet'                                      # antispam
 gem 'font-awesome-rails'                            # font-awesome icons
 gem 'faker'
-gem 'ruby-progressbar'
+gem 'ruby-progressbar', require: false
 
 gem 'mailboxer', '0.14.0'                           # messaging
 
