@@ -32,12 +32,6 @@
   </span>
   <div><p><%= truncate ad.body, length: 200, separator: ' ' %></p></div>
   <div class="ad_meta_info">
-    <% if ad.status_class == 'available' %>
-      <b>
-        <%= link_to t('nlt.send_a_message'), new_conversation_path(recipient_id: ad.user.id,
-                                                                   subject: ad.slug) %>
-      </b>
-    <% end %>
     <span class="right small">
       &nbsp;&nbsp;
       <%= t('nlt.readed_count', count: ad.readed_counter) %>

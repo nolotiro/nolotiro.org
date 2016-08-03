@@ -10,14 +10,6 @@ class LinksForAvailableAdsTest < ActionDispatch::IntegrationTest
     @woeid_code = @ad.woeid_code
   end
 
-  it 'shows message link in listings' do
-    mocking_yahoo_woeid_info(@woeid_code) do
-      visit ads_woeid_path(id: @woeid_code, type: 'give', status: 'available')
-
-      assert_content 'Envía un mensaje privado al anunciante'
-    end
-  end
-
   it 'shows message link in ads' do
     mocking_yahoo_woeid_info(@woeid_code) do
       visit ad_path(@ad)
