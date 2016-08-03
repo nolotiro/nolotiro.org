@@ -1,8 +1,6 @@
 # frozen_string_literal: true
 
 class Conversation < ActiveRecord::Base
-  self.table_name = 'mailboxer_conversations'
-
   validates :subject, presence: true, length: { maximum: 255 }
 
   has_many :messages
