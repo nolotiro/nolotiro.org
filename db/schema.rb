@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160803173907) do
+ActiveRecord::Schema.define(version: 20160803173908) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace",     limit: 255
@@ -73,6 +73,12 @@ ActiveRecord::Schema.define(version: 20160803173907) do
   add_index "comments", ["ads_id"], name: "ads_id", using: :btree
   add_index "comments", ["user_owner"], name: "index_comments_on_user_owner", using: :btree
 
+  create_table "conversations", force: :cascade do |t|
+    t.string   "subject",    limit: 255, default: ""
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
+  end
+
   create_table "dismissals", force: :cascade do |t|
     t.integer "announcement_id", limit: 4
     t.integer "user_id",         limit: 4
@@ -105,13 +111,7 @@ ActiveRecord::Schema.define(version: 20160803173907) do
   add_index "mailboxer_conversation_opt_outs", ["conversation_id"], name: "index_mailboxer_conversation_opt_outs_on_conversation_id", using: :btree
   add_index "mailboxer_conversation_opt_outs", ["unsubscriber_id", "unsubscriber_type"], name: "index_mailboxer_conversation_opt_outs_on_unsubscriber_id_type", using: :btree
 
-  create_table "mailboxer_conversations", force: :cascade do |t|
-    t.string   "subject",    limit: 255, default: ""
-    t.datetime "created_at",                          null: false
-    t.datetime "updated_at",                          null: false
-  end
-
-  create_table "mailboxer_notifications", force: :cascade do |t|
+  create_table "messages", force: :cascade do |t|
     t.text     "body",                 limit: 16777215
     t.string   "subject",              limit: 255,      default: ""
     t.integer  "sender_id",            limit: 4
@@ -128,11 +128,11 @@ ActiveRecord::Schema.define(version: 20160803173907) do
     t.datetime "expires"
   end
 
-  add_index "mailboxer_notifications", ["conversation_id"], name: "index_mailboxer_notifications_on_conversation_id", using: :btree
-  add_index "mailboxer_notifications", ["notified_object_id", "notified_object_type"], name: "index_mailboxer_notifications_on_notified_object_id_and_type", using: :btree
-  add_index "mailboxer_notifications", ["sender_id", "sender_type"], name: "index_mailboxer_notifications_on_sender_id_and_sender_type", using: :btree
+  add_index "messages", ["conversation_id"], name: "index_messages_on_conversation_id", using: :btree
+  add_index "messages", ["notified_object_id", "notified_object_type"], name: "index_messages_on_notified_object_id_and_type", using: :btree
+  add_index "messages", ["sender_id", "sender_type"], name: "index_messages_on_sender_id_and_sender_type", using: :btree
 
-  create_table "mailboxer_receipts", force: :cascade do |t|
+  create_table "receipts", force: :cascade do |t|
     t.integer  "receiver_id",     limit: 4
     t.string   "receiver_type",   limit: 255
     t.integer  "notification_id", limit: 4,                   null: false
@@ -146,8 +146,8 @@ ActiveRecord::Schema.define(version: 20160803173907) do
     t.string   "message_id",      limit: 255
   end
 
-  add_index "mailboxer_receipts", ["notification_id"], name: "index_mailboxer_receipts_on_notification_id", using: :btree
-  add_index "mailboxer_receipts", ["receiver_id", "receiver_type"], name: "index_mailboxer_receipts_on_receiver_id_and_receiver_type", using: :btree
+  add_index "receipts", ["notification_id"], name: "index_receipts_on_notification_id", using: :btree
+  add_index "receipts", ["receiver_id", "receiver_type"], name: "index_receipts_on_receiver_id_and_receiver_type", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "username",               limit: 63,               null: false
@@ -188,7 +188,7 @@ ActiveRecord::Schema.define(version: 20160803173907) do
   add_foreign_key "dismissals", "announcements"
   add_foreign_key "dismissals", "users"
   add_foreign_key "identities", "users"
-  add_foreign_key "mailboxer_conversation_opt_outs", "mailboxer_conversations", column: "conversation_id", name: "mb_opt_outs_on_conversations_id"
-  add_foreign_key "mailboxer_notifications", "mailboxer_conversations", column: "conversation_id", name: "notifications_on_conversation_id"
-  add_foreign_key "mailboxer_receipts", "mailboxer_notifications", column: "notification_id", name: "receipts_on_notification_id"
+  add_foreign_key "mailboxer_conversation_opt_outs", "conversations", name: "mb_opt_outs_on_conversations_id"
+  add_foreign_key "messages", "conversations", name: "notifications_on_conversation_id"
+  add_foreign_key "receipts", "messages", column: "notification_id", name: "receipts_on_notification_id"
 end

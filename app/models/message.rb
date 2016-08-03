@@ -1,8 +1,6 @@
 # frozen_string_literal: true
 
 class Message < ActiveRecord::Base
-  self.table_name = 'mailboxer_notifications'
-
   validates :sender, presence: true
   validates :body, presence: true, length: { maximum: 32_000 }
 
