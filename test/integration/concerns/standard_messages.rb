@@ -120,7 +120,7 @@ module StandardMessages
     send_message(body: 'hombre, tú por aquí')
 
     login_as @user1
-    visit conversations_path
-    assert_content 'hola mundo'
+    visit conversation_path(Conversation.first)
+    assert_content 'What a nice message!'
   end
 end
