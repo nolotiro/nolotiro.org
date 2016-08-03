@@ -12,9 +12,9 @@
       <h4><%= t('nlt.member_since') %>: <%= l @user.created_at, format: :long %></h4>
       <ul>
 
-        <% if user_signed_in? and @user == current_user %>  
-          <li>                                                                         
-            <%= link_to t('nlt.user_edit_profile'), user_edit_path(@user) %>                      
+        <% if user_signed_in? and @user == current_user %>
+          <li>
+            <%= link_to t('nlt.user_edit_profile'), user_edit_path(@user) %>
           </li>
         <% end %>
 
@@ -86,7 +86,7 @@
         </li>
       <% end %>
 
-      <% unless user_signed_in? and @user == current_user %>  
+      <% unless user_signed_in? and @user == current_user %>
 
         <% if policy(:admin).become? %>
           <li>
