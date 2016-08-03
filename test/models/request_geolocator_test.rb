@@ -27,9 +27,9 @@ class RequestGeolocatorTest < ActionView::TestCase
   end
 
   test "does not suggests a location unless it's city-specific" do
-    @request.headers['REMOTE_ADDR'] = '186.237.37.253'
+    @request.headers['REMOTE_ADDR'] = '168.90.12.0'
 
-    # This ip address is correctly resolved to Brazil, but not a specific city
+    # This ip address is correctly resolved to Colombia, but not a specific city
     assert_nil RequestGeolocator.new(@request).suggest
   end
 end
