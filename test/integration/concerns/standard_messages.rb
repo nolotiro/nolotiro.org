@@ -110,7 +110,7 @@ module StandardMessages
     assert_content 'hola marte'
   end
 
-  def revives_deleted_conversation_when_the_other_user_replies_again
+  def test_revives_deleted_conversation_when_the_other_user_replies_again
     send_message(subject: 'hola mundo', body: 'What a nice message!')
     click_link 'Archivar conversación'
     refute_content 'hola mundo'
