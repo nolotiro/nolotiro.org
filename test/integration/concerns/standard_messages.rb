@@ -91,10 +91,10 @@ module StandardMessages
 
   def test_deletes_a_single_conversation_and_shows_a_confirmation_flash
     send_message(subject: 'hola mundo', body: 'What a nice message!')
-    click_link 'Archivar conversación'
+    click_link 'Borrar conversación'
 
     refute_content 'hola mundo'
-    assert_content 'Conversación archivada'
+    assert_content 'Conversación borrada'
   end
 
   def test_deletes_multiple_conversations_by_checkbox
@@ -104,7 +104,7 @@ module StandardMessages
 
     visit messages_list_path
     check("delete-conversation-#{Conversation.first.id}")
-    click_button 'Archivar conversaciones seleccionadas'
+    click_button 'Borrar conversaciones seleccionadas'
 
     refute_content 'hola mundo'
     assert_content 'hola marte'
@@ -112,7 +112,7 @@ module StandardMessages
 
   def test_does_not_revive_deleted_conversation_when_the_other_user_replies
     send_message(subject: 'hola mundo', body: 'What a nice message!')
-    click_link 'Archivar conversación'
+    click_link 'Borrar conversación'
     refute_content 'hola mundo'
 
     login_as @user2

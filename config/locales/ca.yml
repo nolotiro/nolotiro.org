@@ -199,8 +199,8 @@ ca:
   mailboxer:
     buttons:
       back: "<Tornar a missatges"
-      trash: Arxivar conversa
-      trash_selected: Arxivar converses seleccionats
+      trash: Esborrar conversa
+      trash_selected: Esborrar converses seleccionats
     message_mailer:
       message:
         body: missatge
@@ -228,7 +228,7 @@ ca:
       you_have_recieved_new_reply: Has rebut una nova resposta
     notifications:
       sent: missatge enviat
-      trash: Conversa arxivada
+      trash: Conversa esborrat
     search: Resultats de cerca de %{search}
     table:
       date: Fecha
