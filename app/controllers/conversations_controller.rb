@@ -39,8 +39,6 @@ class ConversationsController < ApplicationController
     if @conversation.save
       @message.deliver
 
-      @conversation.receipts.update_all(trashed: false)
-
       redirect_to conversation_path(@conversation),
                   notice: I18n.t('mailboxer.notifications.sent')
     else

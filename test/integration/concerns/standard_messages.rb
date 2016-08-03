@@ -110,7 +110,7 @@ module StandardMessages
     assert_content 'hola marte'
   end
 
-  def test_revives_deleted_conversation_when_the_other_user_replies
+  def test_does_not_revive_deleted_conversation_when_the_other_user_replies
     send_message(subject: 'hola mundo', body: 'What a nice message!')
     click_link 'Archivar conversación'
     refute_content 'hola mundo'
@@ -121,6 +121,6 @@ module StandardMessages
 
     login_as @user1
     visit conversation_path(Conversation.first)
-    assert_content 'What a nice message!'
+    refute_content 'What a nice message!'
   end
 end
