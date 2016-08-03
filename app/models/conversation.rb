@@ -34,6 +34,10 @@ class Conversation < ActiveRecord::Base
     @original_message ||= messages.order(:created_at).first
   end
 
+  def messages_for(user)
+    messages.not_trashed_by(user)
+  end
+
   def unread?(user)
     receipts_for(user).not_trash.unread.count != 0
   end

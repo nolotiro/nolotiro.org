@@ -11,6 +11,10 @@ class Message < ActiveRecord::Base
 
   has_many :receipts, dependent: :destroy, foreign_key: :notification_id
 
+  scope :not_trashed_by, ->(user) do
+    joins(:receipts).merge(Receipt.recipient(user).not_trash)
+  end
+
   attr_writer :recipients
 
   def recipients

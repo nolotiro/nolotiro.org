@@ -10,7 +10,7 @@
   = link_to t("mailboxer.buttons.trash"), trash_mailboxer_conversation_path(@conversation), class: :button, method: :delete
 
 .col-md-7.col-sm-7#messages-thread
-  - @conversation.messages.includes(:sender).each do |mes|
+  - @conversation.messages_for(current_user).includes(:sender).each do |mes|
     = render partial: "message", locals: {message: mes}
 
   - if @interlocutor
