@@ -17,6 +17,7 @@ class RequestGeolocator
 
     db = MaxMindDB.new(Rails.root.to_s + '/vendor/geolite/GeoLite2-City.mmdb')
     suggestion = db.lookup(ip_address)
+
     # FIXME: use other APIs when there isn't an IP address mapped
     return unless suggestion.found?
 
