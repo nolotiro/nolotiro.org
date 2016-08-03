@@ -84,14 +84,10 @@
         </li>
       <% end %>
 
-      <% unless user_signed_in? and @user == current_user %>
-
-        <% if policy(:admin).become? %>
-          <li>
-            <%= link_to t('nlt.admin.become_user'), become_user_path(@user.id) %>
-          </li>
-        <% end %>
-
+      <% if policy(:admin).become? %>
+        <li>
+          <%= link_to t('nlt.admin.become_user'), become_user_path(@user.id) %>
+        </li>
       <% end %>
 
       <% unless @user.friends.count == 0 %>
