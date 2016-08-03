@@ -12,12 +12,6 @@
       <h4><%= t('nlt.member_since') %>: <%= l @user.created_at, format: :long %></h4>
       <ul>
 
-        <% if user_signed_in? and @user == current_user %>
-          <li>
-            <%= link_to t('nlt.user_edit_profile'), user_edit_path(@user) %>
-          </li>
-        <% end %>
-
         <% unless current_user == @user ||
              (current_user && current_user.blocking?(@user)) %>
           <li>
@@ -30,7 +24,11 @@
         <% end %>
 
         <% if user_signed_in? %>
-          <% unless current_user == @user %>
+          <% if current_user == @user %>
+            <li>
+              <%= link_to t('nlt.user_edit_profile'), user_edit_path(@user) %>
+            </li>
+          <% else %>
             <li>
             <% if current_user.friend? @user %>
               <%= link_to destroy_friend_path(@user.id), class: 'world_link', method: 'post' do %>
