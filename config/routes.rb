@@ -92,11 +92,6 @@ NolotiroOrg::Application.routes.draw do
       end
     end
 
-    # messaging legacy
-    scope '/message' do
-      get  '/list', to: 'conversations#index', as: 'messages_list'
-    end
-
     # rss
     # nolotirov2 - legacy
     # FIX: las URLs legacy vienen asi

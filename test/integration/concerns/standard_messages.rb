@@ -69,7 +69,7 @@ module StandardMessages
 
   def test_links_to_the_other_user_in_the_conversation_list
     send_message(subject: 'Cosas', body: 'hola, user2')
-    visit messages_list_path
+    visit conversations_path
 
     assert page.has_link?('user2'), 'No link to "user2" found'
   end
@@ -77,7 +77,7 @@ module StandardMessages
   def test_just_shows_a_special_label_when_the_interlocutor_is_no_longer_there
     send_message(subject: 'Cosas', body: 'hola, user2')
     @user2.destroy
-    visit messages_list_path
+    visit conversations_path
 
     assert_content '[borrado]'
     refute page.has_link?('[borrado]')
@@ -102,7 +102,7 @@ module StandardMessages
     visit new_conversation_path(recipient_id: @user2.id)
     send_message(subject: 'hola marte', body: 'What a nice message!')
 
-    visit messages_list_path
+    visit conversations_path
     check("delete-conversation-#{Conversation.first.id}")
     click_button 'Archivar conversaciones seleccionadas'
 
@@ -120,7 +120,7 @@ module StandardMessages
     send_message(body: 'hombre, tú por aquí')
 
     login_as @user1
-    visit messages_list_path
+    visit conversations_path
     assert_content 'hola mundo'
   end
 end
