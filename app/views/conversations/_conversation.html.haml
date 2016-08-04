@@ -6,7 +6,7 @@
   %td.sender
     = link_to_interlocutor(c)
   %td.mail-subject
-    = link_to c.subject, mailboxer_conversation_path(c)
+    = link_to c.subject, conversation_path(c)
   %td.timestamp
     = cache "moment-#{c.updated_at}" do
       %abbr.js-moment{title: c.updated_at}=c.updated_at

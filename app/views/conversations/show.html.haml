@@ -4,10 +4,10 @@
 
 #default_header_section
   %h5
-    = link_to t("mailboxer.buttons.back"), mailboxer_conversations_path
+    = link_to t("mailboxer.buttons.back"), conversations_path
   %h1
     = title
-  = link_to t("mailboxer.buttons.trash"), trash_mailboxer_conversation_path(@conversation), class: :button, method: :delete
+  = link_to t("mailboxer.buttons.trash"), trash_conversation_path(@conversation), class: :button, method: :delete
 
 .col-md-7.col-sm-7#messages-thread
   - @conversation.messages.includes(:sender).each do |mes|

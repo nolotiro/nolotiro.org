@@ -20,7 +20,7 @@ class ConversationsController < ApplicationController
     @message.deliver
 
     if @message.valid?
-      redirect_to mailboxer_conversation_path(@conversation),
+      redirect_to conversation_path(@conversation),
                   notice: I18n.t('mailboxer.notifications.sent')
     else
       setup_errors
@@ -39,7 +39,7 @@ class ConversationsController < ApplicationController
     if @message.valid?
       @conversation.receipts.update_all(trashed: false)
 
-      redirect_to mailboxer_conversation_path(@conversation),
+      redirect_to conversation_path(@conversation),
                   notice: I18n.t('mailboxer.notifications.sent')
     else
       @message.recipients = @interlocutor.id
@@ -61,7 +61,7 @@ class ConversationsController < ApplicationController
     conversation = conversations.find(params[:id] || params[:conversations])
     Array(conversation).each { |c| c.move_to_trash(current_user) }
     flash[:notice] = I18n.t 'mailboxer.notifications.trash'
-    redirect_to mailboxer_conversations_path
+    redirect_to conversations_path
   end
 
   private

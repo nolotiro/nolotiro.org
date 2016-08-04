@@ -8,7 +8,7 @@
     .bubble-reply.bg-bubble-me
       #reply
         = form_for message,
-                   url: mailboxer_conversation_path(message.conversation),
+                   url: conversation_path(message.conversation),
                    method: :put do |f|
           = errors_for(message)
           = f.text_area :body, size: '80x3', maxlength: 1500

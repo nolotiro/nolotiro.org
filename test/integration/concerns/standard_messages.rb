@@ -63,7 +63,7 @@ module StandardMessages
 
     login_as @user2
 
-    visit mailboxer_conversation_path(Conversation.first)
+    visit conversation_path(Conversation.first)
     assert_content 'Conversación con user1'
   end
 
@@ -116,7 +116,7 @@ module StandardMessages
     refute_content 'hola mundo'
 
     login_as @user2
-    visit mailboxer_conversation_path(Conversation.first)
+    visit conversation_path(Conversation.first)
     send_message(body: 'hombre, tú por aquí')
 
     login_as @user1
