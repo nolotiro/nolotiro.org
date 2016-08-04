@@ -20,13 +20,7 @@ class Conversation < ActiveRecord::Base
   def envelope_for(sender:, recipient:, body: '')
     message = messages.build(sender: sender, body: body)
 
-    message.receipts.build(receiver: sender,
-                           mailbox_type: 'sentbox',
-                           is_read: true)
-
-    message.receipts.build(receiver: recipient,
-                           mailbox_type: 'inbox',
-                           is_read: false)
+    message.envelope_for(recipient)
 
     message
   end

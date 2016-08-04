@@ -17,6 +17,11 @@ class Message < ActiveRecord::Base
     recipient_receipt.receiver
   end
 
+  def envelope_for(recipient)
+    receipts.build(receiver: sender, mailbox_type: 'sent', is_read: true)
+    receipts.build(receiver: recipient, mailbox_type: 'inbox', is_read: false)
+  end
+
   def deliver
     Mailboxer::MailDispatcher.new(self, [recipient_receipt]).call
   end
