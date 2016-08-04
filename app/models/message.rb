@@ -14,9 +14,7 @@ class Message < ActiveRecord::Base
   def recipients
     return @recipients unless @recipients.blank?
 
-    recipients  = receipts.includes(:receiver).map(&:receiver)
-
-    @recipients = Mailboxer::RecipientFilter.new(self, recipients).call
+    @recipients = receipts.includes(:receiver).map(&:receiver)
   end
 
   def deliver(reply = false)
