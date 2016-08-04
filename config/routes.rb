@@ -83,7 +83,7 @@ NolotiroOrg::Application.routes.draw do
     get '/search', to: 'search#search', as: 'search'
 
     # messaging
-    resources :conversations, controller: :conversations, path: '/messages/' do
+    resources :conversations, path: '/messages/' do
       member do
         delete 'trash'
       end
