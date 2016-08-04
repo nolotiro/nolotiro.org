@@ -21,9 +21,8 @@ class Message < ActiveRecord::Base
 
     receipts.build(receiver: sender, mailbox_type: 'sentbox', is_read: true)
 
-    return unless valid?
+    return unless save
 
-    save!
     Mailboxer::MailDispatcher.new(self, [recipient_receipt]).call
 
     conversation.touch if reply
