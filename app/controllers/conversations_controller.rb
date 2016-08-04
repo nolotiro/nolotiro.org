@@ -60,8 +60,8 @@ class ConversationsController < ApplicationController
   def trash
     conversation = conversations.find(params[:id] || params[:conversations])
     Array(conversation).each { |c| c.move_to_trash(current_user) }
-    flash[:notice] = I18n.t 'mailboxer.notifications.trash'
-    redirect_to conversations_path
+    redirect_to conversations_path,
+                notice: I18n.t('mailboxer.notifications.trash')
   end
 
   private
