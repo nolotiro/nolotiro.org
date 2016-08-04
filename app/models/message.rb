@@ -9,28 +9,25 @@ class Message < ActiveRecord::Base
 
   has_many :receipts, dependent: :destroy, foreign_key: :notification_id
 
-  attr_writer :recipients
+  attr_writer :recipient
 
-  def recipients
-    return @recipients unless @recipients.blank?
-
-    @recipients = receipts.includes(:receiver).map(&:receiver)
+  def recipient
+    @recipient ||= receipts.find_by(mailbox_type: 'inbox').receiver
   end
 
   def deliver(reply = false)
-    receiver_receipts = recipients.map do |r|
-      receipts.build(receiver: r, mailbox_type: 'inbox', is_read: false)
-    end
+    recipient_receipt =
+      receipts.build(receiver: recipient, mailbox_type: 'inbox', is_read: false)
 
     receipts.build(receiver: sender, mailbox_type: 'sentbox', is_read: true)
 
     return unless valid?
 
     save!
-    Mailboxer::MailDispatcher.new(self, receiver_receipts).call
+    Mailboxer::MailDispatcher.new(self, [recipient_receipt]).call
 
     conversation.touch if reply
 
-    self.recipients = nil
+    self.recipient = nil
   end
 end

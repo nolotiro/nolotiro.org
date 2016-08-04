@@ -9,7 +9,7 @@ class ConversationsController < ApplicationController
 
   def new
     @interlocutor = User.find(params[:recipient_id])
-    @message = Message.new(recipients: [@interlocutor])
+    @message = Message.new(recipient: @interlocutor)
   end
 
   def create
@@ -66,7 +66,7 @@ class ConversationsController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def message_params
-    { sender: current_user, body: params[:body], recipients: [@interlocutor] }
+    { sender: current_user, body: params[:body], recipient: @interlocutor }
   end
 
   def setup_errors
