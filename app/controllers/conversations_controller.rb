@@ -66,7 +66,6 @@ class ConversationsController < ApplicationController
 
   private
 
-  # Never trust parameters from the scary internet, only allow the white list through.
   def message_params
     { sender: current_user, body: params[:body], recipient: @interlocutor }
   end
