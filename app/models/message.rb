@@ -12,7 +12,7 @@ class Message < ActiveRecord::Base
   attr_writer :recipients
 
   def recipients
-    return Array.wrap(@recipients) unless @recipients.blank?
+    return @recipients unless @recipients.blank?
 
     recipients  = receipts.includes(:receiver).map(&:receiver)
 
