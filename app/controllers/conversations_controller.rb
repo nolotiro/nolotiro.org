@@ -9,17 +9,19 @@ class ConversationsController < ApplicationController
 
   def new
     @interlocutor = User.find(params[:recipient_id])
-    @message = Message.new(recipient: @interlocutor)
+    @conversation = Conversation.new(subject: params[:subject])
+    @message = @conversation.envelope_for sender: current_user,
+                                          recipient: @interlocutor
   end
 
   def create
     @interlocutor = User.find(params[:recipient_id])
     @conversation = Conversation.new(subject: params[:subject])
+    @message = @conversation.envelope_for message_params
 
-    @message = @conversation.messages.build message_params
-    @message.deliver
+    if @conversation.save
+      @message.deliver
 
-    if @message.valid?
       redirect_to conversation_path(@conversation),
                   notice: I18n.t('mailboxer.notifications.sent')
     else
@@ -32,11 +34,11 @@ class ConversationsController < ApplicationController
   def update
     @conversation = conversations.find(params[:id])
     @interlocutor = @conversation.interlocutor(current_user)
+    @message = @conversation.envelope_for message_params
 
-    @message = @conversation.messages.build message_params
-    @message.deliver(true)
+    if @conversation.save
+      @message.deliver
 
-    if @message.valid?
       @conversation.receipts.update_all(trashed: false)
 
       redirect_to conversation_path(@conversation),
@@ -71,7 +73,7 @@ class ConversationsController < ApplicationController
   end
 
   def setup_errors
-    missing_subject = @message.errors['conversation.subject']
+    missing_subject = @conversation.errors['subject']
 
     @message.errors.add(:subject, missing_subject.first) if missing_subject.any?
   end

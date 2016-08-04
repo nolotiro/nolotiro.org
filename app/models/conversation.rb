@@ -17,6 +17,20 @@ class Conversation < ActiveRecord::Base
 
   scope :unread, ->(user) { participant(user).merge(Receipt.unread) }
 
+  def envelope_for(sender:, recipient:, body: '')
+    message = messages.build(sender: sender, body: body)
+
+    message.receipts.build(receiver: sender,
+                           mailbox_type: 'sentbox',
+                           is_read: true)
+
+    message.receipts.build(receiver: recipient,
+                           mailbox_type: 'inbox',
+                           is_read: false)
+
+    message
+  end
+
   def interlocutor(user)
     received_receipts = receipts.where.not(receiver_id: user.id)
     return unless received_receipts.any?
