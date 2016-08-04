@@ -199,8 +199,8 @@ it:
   mailboxer:
     buttons:
       back: "< torna al messaggio"
-      trash: Archiviare la conversazione
-      trash_selected: Archiviare le conversazioni selezionati
+      trash: Cancellare la conversazione
+      trash_selected: Cancellare le conversazioni selezionati
     message_mailer:
       message:
         body: Messaggio
@@ -228,7 +228,7 @@ it:
       you_have_recieved_new_reply: Hai ricevuto una nuova risposta
     notifications:
       sent: Messaggio inviato
-      trash: Conversazione archiviata
+      trash: Conversazione cancellata
     search: Risultati della ricerca su %{search}
     table:
       date: Data
