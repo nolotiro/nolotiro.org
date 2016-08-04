@@ -18,6 +18,13 @@ GIT
       sprockets (< 4)
 
 GIT
+  remote: git://github.com/deivid-rodriguez/devise-i18n.git
+  revision: ce02b6f202b82d16eeef458a1aceb40498478977
+  branch: patch-1
+  specs:
+    devise-i18n (1.1.0)
+
+GIT
   remote: git://github.com/deivid-rodriguez/geoplanet.git
   revision: 1602a6163782dd1df28c0195460275f4806e4229
   branch: better_exceptions
@@ -151,7 +158,6 @@ GEM
       railties (>= 4.1.0, < 5.1)
       responders
       warden (~> 1.2.3)
-    devise-i18n (1.1.0)
     domain_name (0.5.25)
       unf (>= 0.0.5, < 1.0.0)
     erubis (2.7.0)
@@ -487,7 +493,7 @@ DEPENDENCIES
   database_cleaner (~> 1.5)
   delayed_paperclip
   devise
-  devise-i18n
+  devise-i18n!
   factory_girl_rails (~> 4.0)
   faker
   font-awesome-rails

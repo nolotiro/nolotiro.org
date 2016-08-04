@@ -7,16 +7,43 @@ class ProfileEditionTest < ActionDispatch::IntegrationTest
   include Authentication
 
   before do
-    user = create(:user, username: 'teresa_electricista', password: 'topsecret')
+    user = create(:user, username: 'teresa_electricista',
+                         password: 'topsecret',
+                         email: 'terec@example.com')
     login_as(user)
-    visit edit_user_registration_path
-    fill_in 'Nombre de usuario', with: 'teresa_fontanera'
-    fill_in 'Contraseña actual', with: 'topsecret'
-    click_button 'Guardar'
   end
 
   it 'allows changing the username' do
+    submit_form(username: 'teresa_fontanera', password: 'topsecret')
+
     assert_content 'Tu cuenta fue actualizada'
     assert_equal 'teresa_fontanera', User.first.username
+  end
+
+  it 'does not change email inmediately' do
+    submit_form(email: 'terfo@example.com', password: 'topsecret')
+
+    message = <<-MSG.squish
+      Has actualizado tu cuenta correctamente, pero es necesario confirmar tu
+      nuevo correo electrónico. Por favor, comprueba tu correo y sigue el enlace
+      de confirmación para finalizar la comprobación del nuevo correo
+      electrónico.
+    MSG
+
+    assert_content message
+    assert_equal 'terec@example.com', User.first.email
+    assert_equal 'terfo@example.com', User.first.unconfirmed_email
+  end
+
+  private
+
+  def submit_form(username: nil, email: nil, password: nil)
+    visit edit_user_registration_path
+
+    fill_in('Nombre de usuario', with: username) if username
+    fill_in('Correo electrónico', with: email) if email
+    fill_in('Contraseña actual', with: password) if password
+
+    click_button 'Guardar'
   end
 end
