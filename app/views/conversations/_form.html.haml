@@ -7,6 +7,7 @@
         = label_tag :subject, t('mailboxer.new.subject')
       %dd
         = text_field_tag :subject, params[:subject]
+
       %dd
         = text_area_tag :body,
                         params[:body],
@@ -16,5 +17,7 @@
 
         %p.description
           = t 'mailboxer.new.body_max'
+
     = hidden_field_tag :recipient_id, params[:recipient_id]
+
     = submit_tag t('mailboxer.new.submit')

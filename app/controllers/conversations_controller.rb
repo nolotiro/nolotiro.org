@@ -24,6 +24,7 @@ class ConversationsController < ApplicationController
                   notice: I18n.t('mailboxer.notifications.sent')
     else
       setup_errors
+
       render :new
     end
   end
@@ -58,6 +59,7 @@ class ConversationsController < ApplicationController
   def trash
     conversation = conversations.find(params[:id] || params[:conversations])
     Array(conversation).each { |c| c.move_to_trash(current_user) }
+
     redirect_to conversations_path,
                 notice: I18n.t('mailboxer.notifications.trash')
   end
