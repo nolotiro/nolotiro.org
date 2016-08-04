@@ -7,11 +7,9 @@
     .triangle-me 
     .bubble-reply.bg-bubble-me
       #reply
-        = form_for message,
-                   url: conversation_path(message.conversation),
-                   method: :put do |f|
+        = form_tag conversation_path(message.conversation), method: :put do |f|
           = errors_for(message)
-          = f.text_area :body, size: '80x3', maxlength: 1500
+          = text_area_tag :body, params[:body], size: '80x3', maxlength: 1500
           %p.description
             = t 'mailboxer.new.body_max'
-          = f.submit t('mailboxer.new.button')
+          = submit_tag t('mailboxer.new.submit')

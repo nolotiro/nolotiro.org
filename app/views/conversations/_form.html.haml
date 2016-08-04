@@ -1,18 +1,20 @@
-= form_for message, url: conversations_path do |f|
+= form_tag conversations_path do |f|
   %fieldset
     = errors_for(message)
 
     %dl
       %dt
-        = f.label :subject, t('mailboxer.new.subject')
+        = label_tag :subject, t('mailboxer.new.subject')
       %dd
-        -if params['subject']
-          = f.text_field :subject, value: params['subject']
-        -else
-          = f.text_field :subject
+        = text_field_tag :subject, params[:subject]
       %dd
-        = f.text_area :body, size: '80x3', maxlength: 1500, required: true
+        = text_area_tag :body,
+                        params[:body],
+                        size: '80x3',
+                        maxlength: 1500,
+                        required: true
+
         %p.description
           = t 'mailboxer.new.body_max'
-    = f.hidden_field :recipients
-    = f.submit t('mailboxer.new.submit')
+    = hidden_field_tag :recipient_id, params[:recipient_id]
+    = submit_tag t('mailboxer.new.submit')

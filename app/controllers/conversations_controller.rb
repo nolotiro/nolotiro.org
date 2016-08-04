@@ -13,10 +13,10 @@ class ConversationsController < ApplicationController
   end
 
   def create
-    @interlocutor = User.find(params[:message][:recipients])
-    @conversation = Conversation.new(subject: message_params[:subject])
+    @interlocutor = User.find(params[:recipient_id])
+    @conversation = Conversation.new(subject: params[:subject])
 
-    @message = @conversation.messages.build message_params.except(:subject)
+    @message = @conversation.messages.build message_params
     @message.deliver
 
     if @message.valid?
@@ -68,9 +68,7 @@ class ConversationsController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def message_params
-    params.require(:message)
-          .permit(:body, :subject, :recipients)
-          .merge(sender: current_user, recipients: [@interlocutor])
+    { sender: current_user, body: params[:body], recipients: [@interlocutor] }
   end
 
   def setup_errors
