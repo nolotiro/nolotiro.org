@@ -1,6 +1,16 @@
 # frozen_string_literal: true
 class CallbacksController < Devise::OmniauthCallbacksController
   def facebook
+    handle_oauth_callback
+  end
+
+  def google_oauth2
+    handle_oauth_callback
+  end
+
+  private
+
+  def handle_oauth_callback
     if oauth_user.valid?
       sign_in_and_redirect
     else
@@ -8,12 +18,6 @@ class CallbacksController < Devise::OmniauthCallbacksController
       redirect_to new_user_registration_path, alert: flash_message
     end
   end
-
-  def google_oauth2
-    sign_in_and_redirect
-  end
-
-  private
 
   def flash_message
     if oauth_user.errors.keys.include?(:email)
