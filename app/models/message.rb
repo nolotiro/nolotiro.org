@@ -22,18 +22,15 @@ class Message < ActiveRecord::Base
       receipts.build(receiver: r, mailbox_type: 'inbox', is_read: false)
     end
 
-    sender_receipt =
-      receipts.build(receiver: sender, mailbox_type: 'sentbox', is_read: true)
+    receipts.build(receiver: sender, mailbox_type: 'sentbox', is_read: true)
 
-    if valid?
-      save!
-      Mailboxer::MailDispatcher.new(self, receiver_receipts).call
+    return unless valid?
 
-      conversation.touch if reply
+    save!
+    Mailboxer::MailDispatcher.new(self, receiver_receipts).call
 
-      self.recipients = nil
-    end
+    conversation.touch if reply
 
-    sender_receipt
+    self.recipients = nil
   end
 end
