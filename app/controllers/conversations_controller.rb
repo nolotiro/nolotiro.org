@@ -8,7 +8,7 @@ class ConversationsController < ApplicationController
   end
 
   def new
-    @interlocutor = User.find(params[:user_id])
+    @interlocutor = User.find(params[:recipient_id])
     @message = Message.new(recipients: @interlocutor.id)
   end
 

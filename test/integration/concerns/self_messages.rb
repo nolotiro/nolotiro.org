@@ -13,11 +13,11 @@ module SelfMessages
 
     login_as @user1
 
-    visit new_conversation_path(user_id: @user1.id)
+    visit new_conversation_path(recipient_id: @user1.id)
   end
 
   def test_self_messages_after_a_previous_error
-    visit new_conversation_path(user_id: @user1.id)
+    visit new_conversation_path(recipient_id: @user1.id)
     send_message(body: 'hola, yo')
     send_message(subject: 'forgot the title', body: 'hola, yo')
 

@@ -13,7 +13,7 @@ module StandardMessages
 
     login_as @user1
 
-    visit new_conversation_path(user_id: @user2.id)
+    visit new_conversation_path(recipient_id: @user2.id)
   end
 
   def test_shows_errors_when_message_has_no_subject
@@ -99,7 +99,7 @@ module StandardMessages
 
   def test_deletes_multiple_conversations_by_checkbox
     send_message(subject: 'hola mundo', body: 'What a nice message!')
-    visit new_conversation_path(user_id: @user2.id)
+    visit new_conversation_path(recipient_id: @user2.id)
     send_message(subject: 'hola marte', body: 'What a nice message!')
 
     visit messages_list_path
