@@ -24,7 +24,6 @@ class ConversationsController < ApplicationController
                   notice: I18n.t('mailboxer.notifications.sent')
     else
       setup_errors
-      @message.recipients = @interlocutor.id
       render :new
     end
   end
@@ -42,7 +41,6 @@ class ConversationsController < ApplicationController
       redirect_to conversation_path(@conversation),
                   notice: I18n.t('mailboxer.notifications.sent')
     else
-      @message.recipients = @interlocutor.id
       render :show
     end
   end
