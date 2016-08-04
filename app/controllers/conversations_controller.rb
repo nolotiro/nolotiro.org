@@ -53,7 +53,7 @@ class ConversationsController < ApplicationController
     @conversation = conversations.find(params[:id])
     @interlocutor = @conversation.interlocutor(current_user)
 
-    @message = Message.new conversation: @conversation
+    @message = @conversation.messages.build
     current_user.mark_as_read(@conversation)
   end
 
