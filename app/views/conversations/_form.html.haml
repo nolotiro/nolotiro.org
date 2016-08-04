@@ -2,21 +2,20 @@
   %fieldset
     = errors_for(message)
 
-    %dl
-      %dt
-        = label_tag :subject, t('mailboxer.new.subject')
-      %dd
-        = text_field_tag :subject, params[:subject]
+    .form-group
+      = label_tag :subject, t('mailboxer.new.subject')
+      %br
+      = text_field_tag :subject, params[:subject]
 
-      %dd
-        = text_area_tag :body,
-                        params[:body],
-                        size: '80x3',
-                        maxlength: 1500,
-                        required: true
+    .form-group
+      = text_area_tag :body,
+                      params[:body],
+                      size: '80x3',
+                      maxlength: 1500,
+                      required: true
 
-        %p.description
-          = t 'mailboxer.new.body_max'
+      %p.description
+        = t 'mailboxer.new.body_max'
 
     = hidden_field_tag :recipient_id, params[:recipient_id]
 
