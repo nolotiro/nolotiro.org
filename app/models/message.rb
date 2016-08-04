@@ -18,7 +18,7 @@ class Message < ActiveRecord::Base
   end
 
   def recipient_receipt
-    receipts.find_by(mailbox_type: 'inbox')
+    receipts.find { |receipt| receipt.mailbox_type == 'inbox' }
   end
 
   def recipient

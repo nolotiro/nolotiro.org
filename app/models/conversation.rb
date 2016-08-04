@@ -26,7 +26,7 @@ class Conversation < ActiveRecord::Base
 
   def interlocutor(user)
     received_receipts = receipts.where.not(receiver_id: user.id)
-    return unless received_receipts.any?
+    return receipts.first.receiver unless received_receipts.any?
 
     received_receipts.first.receiver
   end
@@ -41,6 +41,10 @@ class Conversation < ActiveRecord::Base
 
   def messages_for(user)
     messages.involving(user)
+  end
+
+  def last_message
+    @last_message ||= messages.last
   end
 
   def unread?(user)
