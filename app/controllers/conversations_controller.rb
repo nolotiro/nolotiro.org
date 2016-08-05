@@ -10,14 +10,14 @@ class ConversationsController < ApplicationController
   def new
     @interlocutor = User.find(params[:recipient_id])
     @conversation = Conversation.new(subject: params[:subject])
-    @message = @conversation.envelope_for sender: current_user,
-                                          recipient: @interlocutor
+    @message = @conversation.envelope_for(sender: current_user,
+                                          recipient: @interlocutor)
   end
 
   def create
     @interlocutor = User.find(params[:recipient_id])
     @conversation = Conversation.new(subject: params[:subject])
-    @message = @conversation.envelope_for message_params
+    @message = @conversation.envelope_for(message_params)
 
     if @conversation.save
       @message.deliver
@@ -34,7 +34,7 @@ class ConversationsController < ApplicationController
   def update
     @conversation = conversations.find(params[:id])
     @interlocutor = @conversation.interlocutor(current_user)
-    @message = @conversation.envelope_for message_params
+    @message = @conversation.envelope_for(message_params)
 
     if @conversation.save
       @message.deliver
