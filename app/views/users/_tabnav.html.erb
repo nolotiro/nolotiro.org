@@ -3,7 +3,7 @@
   <% if user_signed_in? and user.id == current_user.id %>
     <li>
       <%= link_to t('nlt.messages'),
-                  messages_list_path,
+                  conversations_path,
                   class: ('active' if messages_tab?) %>
     </li>
   <% end %>

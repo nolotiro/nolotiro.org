@@ -49,7 +49,8 @@
     <%= t('nlt.are_you_interested') %>
 
     <% if @ad.status_class == 'available' %>
-      <%= link_to message_new_with_subject_path(user_id: @ad.user.id, subject: @ad.slug),
+      <%= link_to new_conversation_path(recipient_id: @ad.user.id,
+                                        subject: @ad.slug),
                   class: "world_link" do %>
         <%= t('nlt.send_a_message') %>
         <%= image_tag "email_send.png", alt: t('nlt.send_a_message') %>

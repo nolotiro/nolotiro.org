@@ -41,7 +41,4 @@ NolotiroOrg::Application.configure do
   # for images on mailer
   config.action_controller.asset_host = 'http://localhost:3000'
   config.action_mailer.asset_host = config.action_controller.asset_host
-
-  # for web-console + vagrant
-  config.web_console.whitelisted_ips = '10.0.2.2'
 end

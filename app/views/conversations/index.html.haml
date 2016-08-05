@@ -8,7 +8,7 @@
   .row
     = render partial: "users/tabnav", locals: {user: current_user}
     - if @conversations.count > 0
-      = form_tag trash_mailboxer_conversations_path, method: :delete do
+      = form_tag trash_conversations_path, method: :delete do
         .table-responsive
           %table#mail-list.table.table-condensed
             %tbody

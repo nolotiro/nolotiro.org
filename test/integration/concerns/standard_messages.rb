@@ -13,7 +13,7 @@ module StandardMessages
 
     login_as @user1
 
-    visit message_new_path(@user2)
+    visit new_conversation_path(recipient_id: @user2.id)
   end
 
   def test_shows_errors_when_message_has_no_subject
@@ -63,13 +63,13 @@ module StandardMessages
 
     login_as @user2
 
-    visit mailboxer_conversation_path(Conversation.first)
+    visit conversation_path(Conversation.first)
     assert_content 'Conversación con user1'
   end
 
   def test_links_to_the_other_user_in_the_conversation_list
     send_message(subject: 'Cosas', body: 'hola, user2')
-    visit messages_list_path
+    visit conversations_path
 
     assert page.has_link?('user2'), 'No link to "user2" found'
   end
@@ -77,7 +77,7 @@ module StandardMessages
   def test_just_shows_a_special_label_when_the_interlocutor_is_no_longer_there
     send_message(subject: 'Cosas', body: 'hola, user2')
     @user2.destroy
-    visit messages_list_path
+    visit conversations_path
 
     assert_content '[borrado]'
     refute page.has_link?('[borrado]')
@@ -91,36 +91,36 @@ module StandardMessages
 
   def test_deletes_a_single_conversation_and_shows_a_confirmation_flash
     send_message(subject: 'hola mundo', body: 'What a nice message!')
-    click_link 'Archivar conversación'
+    click_link 'Borrar conversación'
 
     refute_content 'hola mundo'
-    assert_content 'Conversación archivada'
+    assert_content 'Conversación borrada'
   end
 
   def test_deletes_multiple_conversations_by_checkbox
     send_message(subject: 'hola mundo', body: 'What a nice message!')
-    visit message_new_path(@user2)
+    visit new_conversation_path(recipient_id: @user2.id)
     send_message(subject: 'hola marte', body: 'What a nice message!')
 
-    visit messages_list_path
+    visit conversations_path
     check("delete-conversation-#{Conversation.first.id}")
-    click_button 'Archivar conversaciones seleccionadas'
+    click_button 'Borrar conversaciones seleccionadas'
 
     refute_content 'hola mundo'
     assert_content 'hola marte'
   end
 
-  def revives_deleted_conversation_when_the_other_user_replies_again
+  def test_does_not_revive_deleted_conversation_when_the_other_user_replies
     send_message(subject: 'hola mundo', body: 'What a nice message!')
-    click_link 'Archivar conversación'
+    click_link 'Borrar conversación'
     refute_content 'hola mundo'
 
     login_as @user2
-    visit mailboxer_conversation_path(Conversation.first)
+    visit conversation_path(Conversation.first)
     send_message(body: 'hombre, tú por aquí')
 
     login_as @user1
-    visit messages_list_path
-    assert_content 'hola mundo'
+    visit conversation_path(Conversation.first)
+    refute_content 'What a nice message!'
   end
 end

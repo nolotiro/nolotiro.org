@@ -10,8 +10,8 @@ module Messaging
   def send_message(params)
     subject = params[:subject]
 
-    fill_in('message_subject', with: subject) if subject
-    fill_in 'message_body', with: params[:body]
+    fill_in('subject', with: subject) if subject
+    fill_in 'body', with: params[:body]
     click_button 'Enviar'
   end
 end

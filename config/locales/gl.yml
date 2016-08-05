@@ -206,8 +206,8 @@ gl:
   mailboxer:
     buttons:
       back: 
-      trash: Arquivar conversa
-      trash_selected: Arquivar conversas seleccionadas
+      trash: Eliminar conversa
+      trash_selected: Eliminar conversas seleccionadas
     message_mailer:
       message:
         body: Mensaxe

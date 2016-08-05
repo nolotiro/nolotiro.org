@@ -1,8 +1,6 @@
 # frozen_string_literal: true
 
 class Conversation < ActiveRecord::Base
-  self.table_name = 'mailboxer_conversations'
-
   validates :subject, presence: true, length: { maximum: 255 }
 
   has_many :messages
@@ -19,6 +17,14 @@ class Conversation < ActiveRecord::Base
 
   scope :unread, ->(user) { participant(user).merge(Receipt.unread) }
 
+  def envelope_for(sender:, recipient:, body: '')
+    message = messages.build(sender: sender, body: body)
+
+    message.envelope_for(recipient)
+
+    message
+  end
+
   def interlocutor(user)
     received_receipts = receipts.where.not(receiver_id: user.id)
     return unless received_receipts.any?
@@ -32,6 +38,10 @@ class Conversation < ActiveRecord::Base
 
   def original_message
     @original_message ||= messages.order(:created_at).first
+  end
+
+  def messages_for(user)
+    messages.not_trashed_by(user)
   end
 
   def unread?(user)

@@ -83,22 +83,13 @@ NolotiroOrg::Application.routes.draw do
     get '/search', to: 'search#search', as: 'search'
 
     # messaging
-    resources :mailboxer_conversations, controller: :conversations, path: '/messages/' do
+    resources :conversations, path: '/messages/' do
       member do
         delete 'trash'
       end
       collection do
         delete 'trash'
       end
-    end
-
-    # messaging legacy
-    scope '/message' do
-      get  '/list', to: 'conversations#index', as: 'messages_list'
-      get  '/create/id_user_to/:user_id', to: 'conversations#new', as: 'message_new'
-      get  '/create/id_user_to/:user_id/subject/:subject', to: 'conversations#new', as: 'message_new_with_subject'
-      post '/create/id_user_to/:user_id', to: 'conversations#update'
-      post '/create/id_user_to/:user_id/subject/:subject', to: 'conversations#create'
     end
 
     # rss

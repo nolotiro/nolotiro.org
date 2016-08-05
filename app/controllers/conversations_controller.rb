@@ -8,23 +8,25 @@ class ConversationsController < ApplicationController
   end
 
   def new
-    @interlocutor = User.find(params[:user_id])
-    @message = Message.new(recipients: @interlocutor.id)
+    @interlocutor = User.find(params[:recipient_id])
+    @conversation = Conversation.new(subject: params[:subject])
+    @message = @conversation.envelope_for(sender: current_user,
+                                          recipient: @interlocutor)
   end
 
   def create
-    @interlocutor = User.find(params[:message][:recipients])
-    @conversation = Conversation.new(subject: message_params[:subject])
+    @interlocutor = User.find(params[:recipient_id])
+    @conversation = Conversation.new(subject: params[:subject])
+    @message = @conversation.envelope_for(message_params)
 
-    @message = @conversation.messages.build message_params.except(:subject)
-    @message.deliver
+    if @conversation.save
+      @message.deliver
 
-    if @message.valid?
-      redirect_to mailboxer_conversation_path(@conversation),
+      redirect_to conversation_path(@conversation),
                   notice: I18n.t('mailboxer.notifications.sent')
     else
       setup_errors
-      @message.recipients = @interlocutor.id
+
       render :new
     end
   end
@@ -32,17 +34,14 @@ class ConversationsController < ApplicationController
   def update
     @conversation = conversations.find(params[:id])
     @interlocutor = @conversation.interlocutor(current_user)
+    @message = @conversation.envelope_for(message_params)
 
-    @message = @conversation.messages.build message_params
-    @message.deliver(true)
+    if @conversation.save
+      @message.deliver
 
-    if @message.valid?
-      @conversation.receipts.update_all(trashed: false)
-
-      redirect_to mailboxer_conversation_path(@conversation),
+      redirect_to conversation_path(@conversation),
                   notice: I18n.t('mailboxer.notifications.sent')
     else
-      @message.recipients = @interlocutor.id
       render :show
     end
   end
@@ -53,28 +52,26 @@ class ConversationsController < ApplicationController
     @conversation = conversations.find(params[:id])
     @interlocutor = @conversation.interlocutor(current_user)
 
-    @message = Message.new conversation: @conversation
+    @message = @conversation.messages.build
     current_user.mark_as_read(@conversation)
   end
 
   def trash
     conversation = conversations.find(params[:id] || params[:conversations])
     Array(conversation).each { |c| c.move_to_trash(current_user) }
-    flash[:notice] = I18n.t 'mailboxer.notifications.trash'
-    redirect_to mailboxer_conversations_path
+
+    redirect_to conversations_path,
+                notice: I18n.t('mailboxer.notifications.trash')
   end
 
   private
 
-  # Never trust parameters from the scary internet, only allow the white list through.
   def message_params
-    params.require(:message)
-          .permit(:body, :subject, :recipients)
-          .merge(sender: current_user, recipients: [@interlocutor])
+    { sender: current_user, body: params[:body], recipient: @interlocutor }
   end
 
   def setup_errors
-    missing_subject = @message.errors['conversation.subject']
+    missing_subject = @conversation.errors['subject']
 
     @message.errors.add(:subject, missing_subject.first) if missing_subject.any?
   end
