@@ -8,8 +8,4 @@ class Receipt < ActiveRecord::Base
 
   scope :untrashed, -> { where(trashed: false) }
   scope :unread, -> { where(is_read: false) }
-
-  scope :conversation, ->(conversation) do
-    joins(:message).where(messages: { conversation_id: conversation.id })
-  end
 end

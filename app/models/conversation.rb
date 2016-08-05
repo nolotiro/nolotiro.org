@@ -57,6 +57,6 @@ class Conversation < ActiveRecord::Base
   end
 
   def receipts_for(user)
-    Receipt.conversation(self).recipient(user)
+    receipts.recipient(user)
   end
 end
