@@ -45,18 +45,8 @@ class Conversation < ActiveRecord::Base
   end
 
   def unread?(user)
-    receipts_for(user).untrashed.unread.count != 0
+    messages.unread(user).count != 0
   end
 
-  def mark_as_read(user)
-    receipts_for(user).update_all(is_read: true)
-  end
-
-  def move_to_trash(user)
-    receipts_for(user).update_all(trashed: true)
-  end
-
-  def receipts_for(user)
-    receipts.recipient(user)
-  end
+  delegate :mark_as_read, :move_to_trash, to: :receipts
 end
