@@ -1,11 +1,11 @@
 # frozen_string_literal: true
 class ConversationPolicy < ApplicationPolicy
   def create?
-    user == sender && no_blockings?
+    user && user == sender && no_blockings?
   end
 
   def update?
-    user == sender && no_blockings?
+    user && user == sender && no_blockings?
   end
 
   def show?
