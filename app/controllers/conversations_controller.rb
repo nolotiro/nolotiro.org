@@ -59,7 +59,8 @@ class ConversationsController < ApplicationController
 
     @interlocutor = @conversation.interlocutor(current_user)
 
-    @message = @conversation.messages.build
+    @message = @conversation.envelope_for(sender: current_user,
+                                          recipient: @interlocutor)
     current_user.mark_as_read(@conversation)
   end
 

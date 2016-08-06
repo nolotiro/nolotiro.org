@@ -13,7 +13,7 @@
   - @conversation.messages_for(current_user).includes(:sender).each do |mes|
     = render partial: "message", locals: {message: mes}
 
-  - if @interlocutor
+  - if policy(@conversation).update?
     = render partial: "reply", locals: {message: @message}
 
 .col-md-5.col-sm-5
