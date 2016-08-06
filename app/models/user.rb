@@ -69,7 +69,7 @@ class User < ActiveRecord::Base
   end
 
   def conversations
-    @conversations ||= Conversation.not_trash(self)
+    @conversations ||= Conversation.untrashed(self)
   end
 
   def unread_messages_count

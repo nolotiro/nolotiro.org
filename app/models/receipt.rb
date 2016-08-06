@@ -6,7 +6,7 @@ class Receipt < ActiveRecord::Base
 
   scope :recipient, ->(recipient) { where(receiver_id: recipient.id) }
 
-  scope :not_trash, -> { where(trashed: false) }
+  scope :untrashed, -> { where(trashed: false) }
   scope :unread, -> { where(is_read: false) }
 
   scope :conversation, ->(conversation) do
