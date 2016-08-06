@@ -186,10 +186,9 @@ it:
       success: Utente sbloccato
   friendships:
     create:
-      error: C'è stato un'errore aggiungendo %{username} come amico.
-      success: Aggiunto %{username} come amico.
+      success: Amico aggiunto
     destroy:
-      success: Cancellato %{username} come amico.
+      success: Amico cancellato
   helpers:
     label:
       message:

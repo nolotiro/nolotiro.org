@@ -115,7 +115,7 @@ class User < ActiveRecord::Base
   end
 
   def friend?(user)
-    friends.where(id: user.id).count > 0 ? true : false
+    friendships.find_by(friend_id: user.id)
   end
 
   def blocking?(user)

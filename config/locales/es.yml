@@ -186,10 +186,9 @@ es:
       success: Usuario desbloqueado
   friendships:
     create:
-      error: Ocurrió un error al agregar a %{username} como amigo.
-      success: Agregado %{username} como amigo.
+      success: Amigo agregado
     destroy:
-      success: Eliminado %{username} como amigo.
+      success: Amigo eliminado
   helpers:
     label:
       message:

@@ -188,7 +188,6 @@ fr:
       success: 
   friendships:
     create:
-      error: 
       success: 
     destroy:
       success: 

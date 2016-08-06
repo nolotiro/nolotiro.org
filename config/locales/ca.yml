@@ -186,10 +186,9 @@ ca:
       success: Usuari desbloquejat
   friendships:
     create:
-      error: S'ha produït un error en afegir a %{username} com amic.
-      success: Agregat %{username} com amic.
+      success: Amic agregat
     destroy:
-      success: Eliminat %{username} com amic.
+      success: Amic eliminat
   helpers:
     label:
       message:

@@ -176,7 +176,6 @@ nl:
       success: 
   friendships:
     create:
-      error: 
       success: 
     destroy:
       success: 

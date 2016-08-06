@@ -182,10 +182,9 @@ en:
       success: User unblocked
   friendships:
     create:
-      error: Error occurred when adding %{username} as a friend.
-      success: Added %{username} as a friend.
+      success: Friend added
     destroy:
-      success: Removed %{username} as a friend.
+      success: Friend removed
   helpers:
     label:
       message:

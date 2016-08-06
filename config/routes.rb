@@ -63,8 +63,8 @@ NolotiroOrg::Application.routes.draw do
                  password: 'reset'
                }
 
-    post '/addfriend/id/:id', to: 'friendships#create', as: 'add_friend'
-    post '/deletefriend/:id', to: 'friendships#destroy', as: 'destroy_friend'
+    # friendships
+    resources :friendships, only: [:create, :destroy]
 
     scope '/admin' do
       authenticate :user, ->(u) { u.admin? } do

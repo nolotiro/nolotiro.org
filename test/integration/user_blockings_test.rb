@@ -15,23 +15,6 @@ class UserBlockingsTest < ActionDispatch::IntegrationTest
     login_as @current_user
   end
 
-  it 'shows block link in profile after unblocking user' do
-    create(:blocking, blocker: @current_user, blocked: @other)
-    visit profile_path(@other)
-    click_link 'desbloquear a other'
-
-    assert_link 'bloquear a other'
-    refute_link 'desbloquear a other'
-  end
-
-  it 'shows unblock link in profile after blocking user' do
-    visit profile_path(@other)
-    click_link 'bloquear a other'
-
-    assert_link 'desbloquear a other'
-    refute_link 'bloquear a other'
-  end
-
   it 'does not show profile page when visitor is blocked' do
     create(:blocking, blocker: @other, blocked: @current_user)
     mocking_yahoo_woeid_info(@current_user.woeid) { visit profile_path(@other) }

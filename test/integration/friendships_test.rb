@@ -8,22 +8,27 @@ class FriendshipsTest < ActionDispatch::IntegrationTest
 
   before do
     @user = create(:user)
-    @friend = create(:user)
+    @friend = create(:user, username: 'other')
 
     login_as @user
+  end
+
+  it "creates friendships from target user's profile" do
     visit profile_path(@friend)
+    click_link 'agregar other a tu lista de amigos'
+
+    assert_link 'eliminar other de tu lista de amigos'
+    refute_link 'agregar other a tu lista de amigos'
+    assert_content 'Amigo agregado'
   end
 
-  it "creates friendships from target users' profile" do
-    click_link "agregar #{@friend.username} a tu lista de amigos"
+  it "destroys friendships from target user's profile" do
+    create(:friendship, user: @user, friend: @friend)
+    visit profile_path(@friend)
+    click_link 'eliminar other de tu lista de amigos'
 
-    assert_content "Agregado #{@friend.username} como amigo"
-  end
-
-  it "destroys friendships from target users' profile" do
-    click_link "agregar #{@friend.username} a tu lista de amigos"
-    click_link "eliminar #{@friend.username} de tu lista de amigos"
-
-    assert_content "Eliminado #{@friend.username} como amigo"
+    refute_link 'eliminar other de tu lista de amigos'
+    assert_link 'agregar other a tu lista de amigos'
+    assert_content 'Amigo eliminado'
   end
 end
