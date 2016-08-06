@@ -12,47 +12,16 @@
       <h4><%= t('nlt.member_since') %>: <%= l @user.created_at, format: :long %></h4>
       <ul>
 
-        <% unless current_user == @user ||
-             (current_user && current_user.blocking?(@user)) %>
-          <li>
-            <%= link_to new_conversation_path(recipient_id: @user.id),
-                        class: "world_link" do %>
-              <%= t('nlt.send_a_message_to') %> <%= @user.username %>
-              <%= image_tag "email_send.png" %>
-            <% end %>
-          </li>
-        <% end %>
-
         <% if user_signed_in? %>
           <% if current_user == @user %>
             <li>
               <%= link_to t('nlt.user_edit_profile'), user_edit_path(@user) %>
             </li>
           <% else %>
-            <li>
-            <% friendship = current_user.friend?(@user) %>
+            <% blocking = current_user.blocking?(@user) %>
 
-            <% if friendship.nil? %>
-              <%= link_to friendships_path(friend_id: @user.id),
-                          class: 'world_link',
-                          method: :post do %>
-                <%= t('nlt.profile_actions.friend.add', username: @user.username) %>
-
-                <%= image_tag "friend_add.png" %>
-              <% end %>
-            <% else %>
-              <%= link_to friendship, class: 'world_link', method: :delete do %>
-                <%= t('nlt.profile_actions.friend.delete', username: @user.username) %>
-
-                <%= image_tag "friend_delete.png" %>
-              <% end %>
-            <% end %>
-            </li>
-
-            <li>
-              <% blocking = current_user.blocking?(@user) %>
-
-              <% if blocking %>
+            <% if blocking %>
+              <li>
                 <%= link_to blocking,
                             method: :delete,
                             class: 'world_link' do %>
@@ -60,7 +29,9 @@
 
                   <%= image_tag "unblock.png" %>
                 <% end %>
-              <% else %>
+              </li>
+            <% else %>
+              <li>
                 <%= link_to blockings_path(blocked_id: @user.id),
                             data: { confirm: t('nlt.profile_actions.blocking.confirm', username: @user.username) },
                             method: :post,
@@ -69,8 +40,36 @@
 
                   <%= image_tag "block.png" %>
                 <% end %>
-              <% end %>
-            </li>
+              </li>
+
+              <li>
+                <%= link_to new_conversation_path(recipient_id: @user.id),
+                            class: "world_link" do %>
+                  <%= t('nlt.send_a_message_to') %> <%= @user.username %>
+                  <%= image_tag "email_send.png" %>
+                <% end %>
+              </li>
+
+              <li>
+                <% friendship = current_user.friend?(@user) %>
+
+                <% if friendship.nil? %>
+                  <%= link_to friendships_path(friend_id: @user.id),
+                              class: 'world_link',
+                              method: :post do %>
+                    <%= t('nlt.profile_actions.friend.add', username: @user.username) %>
+
+                    <%= image_tag "friend_add.png" %>
+                  <% end %>
+                <% else %>
+                  <%= link_to friendship, class: 'world_link', method: :delete do %>
+                    <%= t('nlt.profile_actions.friend.delete', username: @user.username) %>
+
+                    <%= image_tag "friend_delete.png" %>
+                  <% end %>
+                <% end %>
+              </li>
+            <% end %>
           <% end %>
         <% end %>
 
