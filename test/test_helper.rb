@@ -17,8 +17,5 @@ require 'support/integration'
 DatabaseCleaner.clean_with(:truncation)
 DatabaseCleaner.strategy = :truncation
 
-# Ensure sphinx directories exist for the test environment
-ThinkingSphinx::Test.init
-
 # Ensure phantomjs executable is available
 Phantomjs.check

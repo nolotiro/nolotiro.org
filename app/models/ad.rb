@@ -81,6 +81,11 @@ class Ad < ActiveRecord::Base
     where('woeid_code = ?', woeid_code)
   end
 
+  scope :by_title, ->(query) do
+    return all unless query.present?
+    where('title LIKE ?', "%#{query}%")
+  end
+
   scope :last_week, -> { where('created_at >= :date', date: 1.week.ago) }
 
   self.per_page = 20
