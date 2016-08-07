@@ -60,6 +60,12 @@ class ApplicationController < ActionController::Base
 
   helper_method :location_suggest
 
+  def comment_counts
+    @comment_counts ||= Comment.where(ads_id: @ads.ids).group(:ads_id).size
+  end
+
+  helper_method :comment_counts
+
   protected
 
   def configure_permitted_parameters

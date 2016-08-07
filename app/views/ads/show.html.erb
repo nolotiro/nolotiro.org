@@ -43,7 +43,7 @@
     <br>
     <p><%= simple_format(@ad.body) %></p>
 
-    <%= render "stats", comments_count: @ad.comments_count,
+    <%= render "stats", comments_count: @ad.comments.size,
                         readed_count: @ad.readed_count %>
 
     <%= t('nlt.are_you_interested') %>
