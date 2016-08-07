@@ -133,14 +133,7 @@ class Ad < ActiveRecord::Base
   end
 
   def type_string
-    case type
-    when 1
-      I18n.t('nlt.give')
-    when 2
-      I18n.t('nlt.want')
-    else
-      I18n.t('nlt.give')
-    end
+    type == 2 ? I18n.t('nlt.want') : I18n.t('nlt.give')
   end
 
   def type_class
