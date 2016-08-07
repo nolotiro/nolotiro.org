@@ -50,7 +50,7 @@
 
     <% if @ad.status_class == 'available' &&
           (current_user.nil? || current_user.whitelisting?(@ad.user)) %>
-      <%= link_to new_conversation_path(recipient_id: @ad.user.id,
+      <%= link_to new_conversation_path(recipient_id: @ad.user_owner,
                                         subject: @ad.slug),
                   class: "world_link" do %>
         <%= t('nlt.send_a_message') %>
