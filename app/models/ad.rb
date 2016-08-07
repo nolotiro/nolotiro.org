@@ -106,10 +106,6 @@ class Ad < ActiveRecord::Base
     ApplicationController.helpers.escape_privacy_data(self[:title])
   end
 
-  def readed_counter
-    readed_count || 1
-  end
-
   def reset_readed_count!
     update_column(:readed_count, 0)
   end
