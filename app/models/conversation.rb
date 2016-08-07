@@ -18,6 +18,8 @@ class Conversation < ActiveRecord::Base
   scope :unread, ->(user) { involving(user).merge(Receipt.unread) }
 
   def envelope_for(sender:, recipient:, body: '')
+    self.updated_at = Time.zone.now
+
     message = messages.build(sender: sender, body: body)
 
     message.envelope_for(recipient)

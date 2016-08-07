@@ -35,4 +35,11 @@ class ConversationTest < ActiveSupport::TestCase
     assert_equal false, @conversation.unread?(@user)
     assert_equal true, @conversation.unread?(@recipient)
   end
+
+  def test_envelope_for_touches_the_conversation_timestamp
+    @conversation.update!(updated_at: 1.hour.ago)
+    @conversation.envelope_for(sender: @user, recipient: @recipient)
+
+    assert_in_delta @conversation.updated_at, Time.zone.now, 1.second
+  end
 end
