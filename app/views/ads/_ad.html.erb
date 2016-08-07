@@ -31,13 +31,6 @@
     <%= link_to ad.user.username, listads_user_path(ad.user) %>
   </span>
   <div><p><%= truncate ad.body, length: 200, separator: ' ' %></p></div>
-  <div class="ad_meta_info">
-    <span class="right small">
-      &nbsp;&nbsp;
-      <%= t('nlt.readed_count', count: ad.readed_counter) %>
-      <% if ad.comments_count > 0 %>
-        <%= t('nlt.comments_count', count: ad.comments_count) %>
-      <% end %>
-    </span>
-  </div>
+
+  <%= render "ads/stats", ad: ad %>
 </div>

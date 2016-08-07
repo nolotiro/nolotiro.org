@@ -42,9 +42,8 @@
     </span>
     <br>
     <p><%= simple_format(@ad.body) %></p>
-    <div class="ad_meta_info">
-      <%= t('nlt.readed_count', count: @ad.readed_counter) %><%= t('nlt.comments_count', count: @ad.comments_count) %>
-    </div>
+
+    <%= render "stats", ad: @ad %>
 
     <%= t('nlt.are_you_interested') %>
 
