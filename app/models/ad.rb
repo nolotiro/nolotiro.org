@@ -62,26 +62,26 @@ class Ad < ActiveRecord::Base
   scope :give, -> { where(type: 1) }
   scope :want, -> { where(type: 2) }
 
-  scope :by_type, lambda {|type|
+  scope :by_type, ->(type) do
     return scope unless type.present?
     where('type = ?', type)
-  }
+  end
 
   scope :available, -> { where(status: 1) }
   scope :booked, -> { where(status: 2) }
   scope :delivered, -> { where(status: 3) }
 
-  scope :by_status, lambda {|status|
+  scope :by_status, ->(status) do
     return all unless status.present?
     where('status = ?', status)
-  }
+  end
 
-  scope :by_woeid_code, lambda {|woeid_code|
+  scope :by_woeid_code, ->(woeid_code) do
     return all unless woeid_code.present?
     where('woeid_code = ?', woeid_code)
-  }
+  end
 
-  scope :last_week, lambda { where('created_at >= :date', date: 1.week.ago) }
+  scope :last_week, -> { where('created_at >= :date', date: 1.week.ago) }
 
   self.per_page = 20
 

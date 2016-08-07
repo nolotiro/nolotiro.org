@@ -65,7 +65,7 @@ NolotiroOrg::Application.routes.draw do
     post '/deletefriend/:id', to: 'friendships#destroy', as: 'destroy_friend'
 
     scope '/admin' do
-      authenticate :user, lambda { |u| u.admin? } do
+      authenticate :user, ->(u) { u.admin? } do
         mount Sidekiq::Web, at: '/jobs'
       end
       get '/become/:id', to: 'admin#become', as: 'become_user'
