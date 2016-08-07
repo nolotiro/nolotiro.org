@@ -63,7 +63,7 @@ class Ad < ActiveRecord::Base
   scope :want, -> { where(type: 2) }
 
   scope :by_type, ->(type) do
-    return scope unless type.present?
+    return all unless type.present?
     where('type = ?', type)
   end
 
