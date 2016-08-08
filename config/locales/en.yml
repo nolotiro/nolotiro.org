@@ -412,8 +412,7 @@ en:
     save_failed: 'There is problem, please revied this:'
     search:
       button: search
-      must_search: You must look for something somewhere
-      no_ads_message_html: There are no matching ads with your search <b>%{q}</b> on %{woeid}.
+      no_ads_message_html: There are no matching ads with your search <b>%{q}</b>.
     searching_on_html: Searching <i>%{q}</i> on
     send: Send
     send_a_message: "+ Send a private message to this user"

@@ -418,7 +418,6 @@ it:
     save_failed: 'C''è un problema, verificare questo:'
     search:
       button: ricerca
-      must_search: Si dovrebbe cercare qualcosa da qualche parte.
       no_ads_message_html: 
     searching_on_html: Cercando <i>%{q}</i> in
     send: Inviare

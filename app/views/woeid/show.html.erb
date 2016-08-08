@@ -7,7 +7,7 @@
   <% content_for(:meta_description, t('nlt.gift_on', woeid: @woeid[:full])) %>
 <% end %>
 
-<% unless @search or @woeid.nil? %>
+<% unless @q or @woeid.nil? %>
   <% content_for :meta_extra do %>
     <link rel="alternate" type="application/rss+xml" title="nolotiro.org - <%= @woeid[:full] %>" href="<%= rss_type_url(woeid: @id, type: @type, status: @status) %>" />
   <% end %>
@@ -47,21 +47,18 @@
       <% if @woeid.nil? %>
         <%= t('nlt.all_ads') %>
       <% else %>
-        <%= t('nlt.searching_on_html', q: @q) if @search %>
+        <%= t('nlt.searching_on_html', q: @q) if @q %>
 
         <%= @type == "give" ? t('nlt.give') : t('nlt.want') %>
         - <%= @woeid[:full] %>
       <% end %>
     </h1>
 
-    <% if @woeid %>
-      <br>
-      <%= render partial: "ads/search",
-                 locals: {woeid: @id, type: @type, status: @status, q: @q} %>
-      <%= link_to location_ask_path, class: "world_link" do %>
-        <%= image_tag "change_location.png", alt: "change location" %>
-        <%= t('nlt.change_city') %>
-      <% end %>
+    <br>
+    <%= render partial: "ads/search", locals: {q: @q} %>
+    <%= link_to location_ask_path, class: "world_link" do %>
+      <%= image_tag "change_location.png", alt: "change location" %>
+      <%= t('nlt.change_city') %>
     <% end %>
   </div>
 </div>
@@ -77,7 +74,7 @@
 
       <%= render partial: "partials/pagination", locals: { items: @ads } %>
     <% else %>
-      <% if defined? @no_results_search %>
+      <% if @q %>
         <%= render partial: "ads/no_results_search" %>
       <% else %>
         <%= render partial: "ads/no_results" %>

@@ -414,8 +414,7 @@ pt:
     save_failed: 'Há um problema, confira isto:'
     search:
       button: buscar
-      must_search: Procura alguma coisa em algum lugar
-      no_ads_message_html: Não existem anúncios que concordem com sua búsqueda <b>%{q}</b> na localização %{woeid}.
+      no_ads_message_html: Não existem anúncios que concordem com sua búsqueda <b>%{q}</b>.
     searching_on_html: Buscando <i>%{q}</i> em
     send: Enviar
     send_a_message: "+ Envia uma mensagem privada ao anunciante"

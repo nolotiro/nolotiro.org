@@ -40,4 +40,25 @@ class WoeidControllerTest < ActionController::TestCase
       assert_response :success
     end
   end
+
+  test 'accepts a query search parameter' do
+    mocking_yahoo_woeid_info(@ad.woeid_code) do
+      get :show, type: 'give', q: 'ordenador', id: @ad.woeid_code
+      assert_response :success
+    end
+  end
+
+  test 'accepts a query search parameter when no results' do
+    mocking_yahoo_woeid_info(@ad.woeid_code) do
+      get :show, type: 'give', q: 'notfound', id: @ad.woeid_code
+      assert_response :success
+    end
+  end
+
+  test 'accepts a query search parameter when WOEID code param not specified' do
+    mocking_yahoo_woeid_info(@ad.woeid_code) do
+      get :show, type: 'give', q: 'ordenador'
+      assert_response :success
+    end
+  end
 end

@@ -27,8 +27,7 @@ class Search < ActionDispatch::IntegrationTest
     click_button 'buscar'
 
     page.assert_selector '.ad_excerpt_list', count: 0
-    assert_content 'No hay anuncios que coincidan con la búsqueda espejo en ' \
-                   'la ubicación Madrid, Madrid, España'
+    assert_content 'No hay anuncios que coincidan con la búsqueda espejo'
   end
 
   it 'sucessfully changes ad type when searching' do

@@ -412,8 +412,7 @@ ca:
     save_failed: 'Hi ha un problema, revisa això:'
     search:
       button: buscar
-      must_search: Has de buscar per alguna cosa en algun lloc.
-      no_ads_message_html: No hi ha anuncis que coincideixin amb la cerca <b>%{q}</b> en la ubicació %{woeid}.
+      no_ads_message_html: No hi ha anuncis que coincideixin amb la cerca <b>%{q}</b>.
     searching_on_html: Buscant <i>%{q}</i> a
     send: Enviar
     send_a_message: "+ Envia un missatge privat a l'anunciant"

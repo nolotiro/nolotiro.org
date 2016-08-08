@@ -80,7 +80,14 @@ NolotiroOrg::Application.routes.draw do
     post '/comment/create/ad_id/:id', to: 'comments#create', as: 'create_comment'
 
     # search
-    get '/search', to: 'search#search', as: 'search'
+    get '/search', to: redirect { |params, request|
+      query = Rack::Utils.parse_query(request.query_string).symbolize_keys
+      new_path = "#{params[:locale]}/woeid/#{query[:woeid_code]}"
+      new_path = "#{new_path}/#{query[:type].presence || 'give'}"
+      new_path = "#{new_path}/status/#{query[:status]}" if query[:status].present?
+      new_path = "#{new_path}/page/#{query[:page]}" if query[:page].present?
+      "#{new_path}?q=#{query[:q]}"
+    }
 
     # messaging
     resources :conversations, path: '/messages/' do
