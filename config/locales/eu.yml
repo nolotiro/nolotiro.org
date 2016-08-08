@@ -173,7 +173,6 @@ eu:
       signed_up_but_inactive: 
       signed_up_but_locked: 
       signed_up_but_unconfirmed: 
-      update_needs_confirmation: 
       updated: 
     sessions:
       signed_in: 
