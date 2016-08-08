@@ -64,7 +64,7 @@ class Ad < ActiveRecord::Base
 
   scope :by_type, ->(type) do
     return all unless type.present?
-    where('type = ?', type)
+    where(type: type)
   end
 
   scope :available, -> { where(status: 1) }
@@ -73,12 +73,12 @@ class Ad < ActiveRecord::Base
 
   scope :by_status, ->(status) do
     return all unless status.present?
-    where('status = ?', status)
+    where(status: status)
   end
 
   scope :by_woeid_code, ->(woeid_code) do
     return all unless woeid_code.present?
-    where('woeid_code = ?', woeid_code)
+    where(woeid_code: woeid_code)
   end
 
   scope :by_title, ->(query) do
