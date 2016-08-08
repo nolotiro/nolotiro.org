@@ -85,7 +85,17 @@ NolotiroOrg::Application.routes.draw do
 
       woeid = query[:woeid] || query[:woeid_code]
       new_path = "#{params[:locale]}/woeid/#{woeid}"
-      new_path = "#{new_path}/#{query[:type].presence || 'give'}"
+
+      type = if query[:ad_type].present?
+               query[:ad_type] == '2' ? 'want' : 'give'
+             elsif query[:type].present?
+               query[:type]
+             else
+               'give'
+             end
+
+      new_path = "#{new_path}/#{type}"
+
       new_path = "#{new_path}/status/#{query[:status]}" if query[:status].present?
       new_path = "#{new_path}/page/#{query[:page]}" if query[:page].present?
       "#{new_path}?q=#{query[:q]}"
