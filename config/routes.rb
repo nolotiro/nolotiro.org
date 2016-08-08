@@ -82,7 +82,9 @@ NolotiroOrg::Application.routes.draw do
     # search
     get '/search', to: redirect { |params, request|
       query = Rack::Utils.parse_query(request.query_string).symbolize_keys
-      new_path = "#{params[:locale]}/woeid/#{query[:woeid_code]}"
+
+      woeid = query[:woeid] || query[:woeid_code]
+      new_path = "#{params[:locale]}/woeid/#{woeid}"
       new_path = "#{new_path}/#{query[:type].presence || 'give'}"
       new_path = "#{new_path}/status/#{query[:status]}" if query[:status].present?
       new_path = "#{new_path}/page/#{query[:page]}" if query[:page].present?
