@@ -5,10 +5,10 @@ class AdminControllerTest < ActionController::TestCase
   include Devise::Test::ControllerHelpers
 
   setup do
-    @ad = FactoryGirl.create(:ad)
-    @user = FactoryGirl.create(:user)
-    @another_user = FactoryGirl.create(:user)
-    @admin = FactoryGirl.create(:admin)
+    @ad = create(:ad)
+    @user = create(:user)
+    @another_user = create(:user)
+    @admin = create(:admin)
   end
 
   test 'should not become an user as a anonymous user' do

@@ -17,24 +17,24 @@ class AdsController < ApplicationController
   end
 
   def list
-    @ads = Rails.cache.fetch("ads_list_#{params[:page]}") do
-      Ad.give.available.includes(:user).paginate(page: params[:page])
-    end
+    @ads = Ad.give.available.includes(:user).paginate(page: params[:page])
   end
 
   # GET /ads/1
   # GET /ads/1.json
   def show
-    redirect_to ads_path unless @ad.user
     @comment = Comment.new
     @ad.increment_readed_count!
   end
 
   # GET /ads/new
   def new
-    @ad = Ad.new
-    @ad.comments_enabled = true
-    redirect_to location_ask_path if current_user.woeid.nil?
+    if current_user.woeid.nil?
+      redirect_to location_ask_path
+    else
+      @ad = Ad.new
+      @ad.comments_enabled = true
+    end
   end
 
   # GET /ads/1/edit

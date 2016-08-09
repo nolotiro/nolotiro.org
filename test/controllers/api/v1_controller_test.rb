@@ -7,7 +7,7 @@ module Api
   class V1ControllerTest < ActionController::TestCase
     include WebMocking
 
-    setup { @ad = FactoryGirl.create(:ad, woeid_code: 766_273) }
+    setup { @ad = create(:ad, woeid_code: 766_273) }
 
     test 'should get woeid list on api v1' do
       mocking_yahoo_woeid_info(766_273) do

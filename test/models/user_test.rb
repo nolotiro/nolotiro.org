@@ -3,46 +3,46 @@ require 'test_helper'
 
 class UserTest < ActiveSupport::TestCase
   setup do
-    @ad = FactoryGirl.create(:ad)
-    @user = FactoryGirl.create(:user, 'email' => 'jaimito@gmail.com', 'username' => 'jaimito')
-    @admin = FactoryGirl.create(:admin)
+    @ad = create(:ad)
+    @user = create(:user, 'email' => 'jaimito@gmail.com', 'username' => 'jaimito')
+    @admin = create(:admin)
   end
 
   test 'has unique usernames' do
-    user1 = FactoryGirl.build(:user, username: 'Username')
+    user1 = build(:user, username: 'Username')
     assert user1.valid?
     assert user1.save
 
-    user2 = FactoryGirl.build(:user, username: 'Username')
+    user2 = build(:user, username: 'Username')
     assert_not user2.valid?
     assert_not user2.save
     assert_includes user2.errors[:username], 'ya está en uso'
   end
 
   test 'has unique case insensitive usernames' do
-    user1 = FactoryGirl.build(:user, username: 'Username')
+    user1 = build(:user, username: 'Username')
     assert user1.valid?
     assert user1.save
 
-    user2 = FactoryGirl.build(:user, username: 'username')
+    user2 = build(:user, username: 'username')
     assert_not user2.valid?
     assert_not user2.save
     assert_includes user2.errors[:username], 'ya está en uso'
   end
 
   test 'has unique emails' do
-    user1 = FactoryGirl.build(:user, email: 'larryfoster@example.com')
+    user1 = build(:user, email: 'larryfoster@example.com')
     assert user1.valid?
     assert user1.save
 
-    user2 = FactoryGirl.build(:user, email: 'larryfoster@example.com')
+    user2 = build(:user, email: 'larryfoster@example.com')
     assert_not user2.valid?
     assert_not user2.save
     assert_includes user2.errors[:email], 'ya está en uso'
   end
 
   test 'saves downcased emails' do
-    user1 = FactoryGirl.build(:user, email: 'Larryfoster@example.com')
+    user1 = build(:user, email: 'Larryfoster@example.com')
     assert user1.valid?
     assert user1.save
     assert_equal 'larryfoster@example.com', user1.email
@@ -98,18 +98,18 @@ class UserTest < ActiveSupport::TestCase
   end
 
   test 'requires confirmation for new users' do
-    user = FactoryGirl.create(:non_confirmed_user)
+    user = create(:non_confirmed_user)
     assert_equal(user.active_for_authentication?, false)
   end
 
   test 'associated ads are deleted when user is deleted' do
-    FactoryGirl.create(:ad, user: @user)
+    create(:ad, user: @user)
 
     assert_difference(-> { Ad.count }, -1) { @user.destroy }
   end
 
   test 'associated comments are deleted when user is deleted' do
-    FactoryGirl.create(:comment, user: @user)
+    create(:comment, user: @user)
 
     assert_difference(-> { Comment.count }, -1) { @user.destroy }
   end
@@ -117,12 +117,12 @@ end
 
 class UserScopesTest < ActiveSupport::TestCase
   setup do
-    3.times { FactoryGirl.create(:ad, user: user1) }
-    2.times { FactoryGirl.create(:ad, user: user2) }
+    3.times { create(:ad, user: user1) }
+    2.times { create(:ad, user: user2) }
   end
 
   test 'top overall ignores wanted ads from counts and results' do
-    FactoryGirl.create(:ad, user: user3, type: 2)
+    create(:ad, user: user3, type: 2)
     user2.ads.last.update(type: 2)
 
     results = User.top_overall
@@ -133,7 +133,7 @@ class UserScopesTest < ActiveSupport::TestCase
   end
 
   test 'top overall gives all time top ad publishers' do
-    FactoryGirl.create(:ad, user: user3)
+    create(:ad, user: user3)
 
     results = User.top_overall
 
@@ -144,7 +144,7 @@ class UserScopesTest < ActiveSupport::TestCase
   end
 
   test "top last week gives last week's top publishers" do
-    FactoryGirl.create(:ad, user: user3, published_at: 8.days.ago)
+    create(:ad, user: user3, published_at: 8.days.ago)
 
     results = User.top_last_week
 
@@ -169,14 +169,14 @@ class UserScopesTest < ActiveSupport::TestCase
   end
 
   def user1
-    @user1 ||= FactoryGirl.create(:user, username: 'user1')
+    @user1 ||= create(:user, username: 'user1')
   end
 
   def user2
-    @user2 ||= FactoryGirl.create(:user, username: 'user2')
+    @user2 ||= create(:user, username: 'user2')
   end
 
   def user3
-    @user3 ||= FactoryGirl.create(:user, username: 'user3')
+    @user3 ||= create(:user, username: 'user3')
   end
 end

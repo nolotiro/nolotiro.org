@@ -7,9 +7,9 @@ class AdsControllerTest < ActionController::TestCase
   include Devise::Test::ControllerHelpers
 
   setup do
-    @ad = FactoryGirl.create(:ad)
-    @user = FactoryGirl.create(:user)
-    @admin = FactoryGirl.create(:admin)
+    @ad = create(:ad)
+    @user = create(:user)
+    @admin = create(:admin)
   end
 
   test 'should get index' do

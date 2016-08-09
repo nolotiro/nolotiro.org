@@ -45,10 +45,10 @@ class CanAccessAdmin < ActionDispatch::IntegrationTest
   private
 
   def user
-    @user ||= FactoryGirl.create(:user)
+    @user ||= create(:user)
   end
 
   def admin
-    @admin ||= FactoryGirl.create(:admin)
+    @admin ||= create(:admin)
   end
 end

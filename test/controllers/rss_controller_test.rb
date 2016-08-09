@@ -3,7 +3,7 @@ require 'test_helper'
 
 class RssControllerTest < ActionController::TestCase
   setup do
-    @ad = FactoryGirl.create(:ad)
+    @ad = create(:ad)
   end
 
   test 'should get the feed for a WOEID' do

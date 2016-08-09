@@ -5,9 +5,9 @@ class ConversationsControllerTest < ActionController::TestCase
   include Devise::Test::ControllerHelpers
 
   setup do
-    @ad = FactoryGirl.create(:ad)
-    @user1 = FactoryGirl.create(:user, 'email' => 'davidbowie@gmail.com', 'username' => 'davidbowie')
-    @user2 = FactoryGirl.create(:user, 'email' => 'marcbolan@gmail.com', 'username' => 'trex')
+    @ad = create(:ad)
+    @user1 = create(:user, 'email' => 'davidbowie@gmail.com', 'username' => 'davidbowie')
+    @user2 = create(:user, 'email' => 'marcbolan@gmail.com', 'username' => 'trex')
   end
 
   test 'should redirect to signup to create a message as anon' do
@@ -57,7 +57,7 @@ class ConversationsControllerTest < ActionController::TestCase
     end
     m = Conversation.last
     sign_out @user1
-    user3 = FactoryGirl.create(:user, 'email' => 'brianeno@gmail.com', 'username' => 'eno')
+    user3 = create(:user, 'email' => 'brianeno@gmail.com', 'username' => 'eno')
     sign_in user3
     get :show, id: m.id
     assert_equal 'No tienes permisos para realizar esta acción.', flash[:alert]

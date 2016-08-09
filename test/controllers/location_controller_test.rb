@@ -7,7 +7,7 @@ class LocationControllerTest < ActionController::TestCase
   include Devise::Test::ControllerHelpers
 
   setup do
-    @user = FactoryGirl.create(:user)
+    @user = create(:user)
     @request.headers['REMOTE_ADDR'] = '87.223.138.147'
   end
 

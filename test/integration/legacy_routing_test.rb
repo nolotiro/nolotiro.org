@@ -6,10 +6,10 @@ class LegacyRoutingTest < ActionDispatch::IntegrationTest
   include WebMocking
 
   setup do
-    @ad = FactoryGirl.create(:ad)
-    @user = FactoryGirl.create(:user)
-    @another_user = FactoryGirl.create(:user)
-    @admin = FactoryGirl.create(:admin)
+    @ad = create(:ad)
+    @user = create(:user)
+    @another_user = create(:user)
+    @admin = create(:admin)
   end
 
   I18n.available_locales.map(&:to_s).each do |l|

@@ -6,18 +6,20 @@ class Conversation < ActiveRecord::Base
   has_many :messages
   has_many :receipts, through: :messages
 
-  scope :participant, ->(user) do
+  scope :involving, ->(user) do
     joins(:receipts)
       .order(updated_at: :desc)
       .merge(Receipt.recipient(user))
       .distinct
   end
 
-  scope :not_trash, ->(user) { participant(user).merge(Receipt.not_trash) }
+  scope :untrashed, ->(user) { involving(user).merge(Receipt.untrashed) }
 
-  scope :unread, ->(user) { participant(user).merge(Receipt.unread) }
+  scope :unread, ->(user) { involving(user).merge(Receipt.unread) }
 
   def envelope_for(sender:, recipient:, body: '')
+    self.updated_at = Time.zone.now
+
     message = messages.build(sender: sender, body: body)
 
     message.envelope_for(recipient)
@@ -41,22 +43,12 @@ class Conversation < ActiveRecord::Base
   end
 
   def messages_for(user)
-    messages.not_trashed_by(user)
+    messages.untrashed(user)
   end
 
   def unread?(user)
-    receipts_for(user).not_trash.unread.count != 0
+    messages.unread(user).count != 0
   end
 
-  def mark_as_read(user)
-    receipts_for(user).update_all(is_read: true)
-  end
-
-  def move_to_trash(participant)
-    receipts_for(participant).update_all(trashed: true)
-  end
-
-  def receipts_for(user)
-    Receipt.conversation(self).recipient(user)
-  end
+  delegate :mark_as_read, :move_to_trash, to: :receipts
 end

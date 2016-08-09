@@ -6,7 +6,7 @@ class UserLockable < ActionDispatch::IntegrationTest
   include Authentication
 
   it 'should lock after 10 tries on user' do
-    @user = FactoryGirl.create(:user)
+    @user = create(:user)
 
     8.times do
       login(@user.email, 'trololololo')

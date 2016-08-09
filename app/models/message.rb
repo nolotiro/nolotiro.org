@@ -9,9 +9,11 @@ class Message < ActiveRecord::Base
 
   has_many :receipts, dependent: :destroy, foreign_key: :notification_id
 
-  scope :not_trashed_by, ->(user) do
-    joins(:receipts).merge(Receipt.recipient(user).not_trash)
+  scope :untrashed, ->(user) do
+    joins(:receipts).merge(Receipt.recipient(user).untrashed)
   end
+
+  scope :unread, ->(user) { untrashed(user).merge(Receipt.unread) }
 
   def recipient_receipt
     receipts.find_by(mailbox_type: 'inbox')

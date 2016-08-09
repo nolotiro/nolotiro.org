@@ -7,9 +7,7 @@ require 'support/web_mocking'
 class AdTest < ActiveSupport::TestCase
   include WebMocking
 
-  setup do
-    @ad = FactoryGirl.create(:ad)
-  end
+  setup { @ad = create(:ad) }
 
   test 'ad requires everything' do
     a = Ad.new
@@ -88,48 +86,40 @@ class AdTest < ActiveSupport::TestCase
 
   test 'ad check type_string' do
     assert_equal @ad.type_string, 'regalo'
-    @ad.type = 2
-    @ad.save
+    @ad.update(type: 2)
     assert_equal @ad.type_string, 'busco'
   end
 
   test 'ad check status_string' do
     assert_equal @ad.status_string, 'disponible'
-    @ad.status = 2
-    @ad.save
+    @ad.update(status: 2)
     assert_equal @ad.status_string, 'reservado'
-    @ad.status = 3
-    @ad.save
+    @ad.update(status: 3)
     assert_equal @ad.status_string, 'entregado'
   end
 
   test 'ad check type_class' do
     assert_equal @ad.type_class, 'give'
-    @ad.type = 2
-    @ad.save
+    @ad.update(type: 2)
     assert_equal @ad.type_class, 'want'
   end
 
   test 'ad check status_class' do
     assert_equal @ad.status_class, 'available'
-    @ad.status = 2
-    @ad.save
+    @ad.update(status: 2)
     assert_equal @ad.status_class, 'booked'
-    @ad.status = 3
-    @ad.save
+    @ad.update(status: 3)
     assert_equal @ad.status_class, 'delivered'
   end
 
   test 'ad give?' do
-    @ad.type = 1
-    @ad.save
+    @ad.update(type: 1)
     assert_equal @ad.give?, true
   end
 
   test 'ad meta_title for give ads' do
     mocking_yahoo_woeid_info(@ad.woeid_code) do
-      @ad.type = 1
-      @ad.save
+      @ad.update(type: 1)
       title = 'regalo segunda mano gratis  ordenador en Vallecas Madrid, ' \
               'Madrid, España'
       assert_equal title, @ad.meta_title
@@ -140,8 +130,7 @@ class AdTest < ActiveSupport::TestCase
     skip
 
     mocking_yahoo_woeid_info(@ad.woeid_code) do
-      @ad.type = 2
-      @ad.save
+      @ad.update(type: 2)
       title = 'busco ordenador en Vallecas Madrid, Madrid, España'
       assert_equal title, @ad.meta_title
     end
@@ -150,8 +139,7 @@ class AdTest < ActiveSupport::TestCase
   test 'ad body shoudl store emoji' do
     skip
     body = 'What a nice emoji😀!What a nice emoji😀!What a nice emoji😀!What a nice emoji😀!What a nice emoji😀!'
-    @ad.body = body
-    @ad.save
+    @ad.update(body: body)
     assert_equal @ad.body, body
   end
 
@@ -170,7 +158,7 @@ class AdTest < ActiveSupport::TestCase
   end
 
   test 'associated comments are deleted when ad is deleted' do
-    FactoryGirl.create(:comment, ad: @ad)
+    create(:comment, ad: @ad)
 
     assert_difference(-> { Comment.count }, -1) { @ad.destroy }
   end

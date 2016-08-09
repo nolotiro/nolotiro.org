@@ -5,8 +5,7 @@ class CommentsControllerTest < ActionController::TestCase
   include Devise::Test::ControllerHelpers
 
   setup do
-    @ad = FactoryGirl.create(:ad)
-    @user = FactoryGirl.create(:user, 'email' => 'jaimito@gmail.com', 'username' => 'jaimito')
+    @ad = create(:ad)
   end
 
   test 'should not create a comment as anonymous' do
@@ -18,7 +17,7 @@ class CommentsControllerTest < ActionController::TestCase
   end
 
   test 'should create a comment as a user' do
-    sign_in @user
+    sign_in @ad.user
     assert_difference('Comment.count', 1) do
       post :create, id: @ad.id, body: 'hola mundo'
     end
