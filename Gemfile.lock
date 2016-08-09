@@ -18,13 +18,6 @@ GIT
       sprockets (< 4)
 
 GIT
-  remote: git://github.com/deivid-rodriguez/devise-i18n.git
-  revision: ce02b6f202b82d16eeef458a1aceb40498478977
-  branch: patch-1
-  specs:
-    devise-i18n (1.1.0)
-
-GIT
   remote: git://github.com/deivid-rodriguez/geoplanet.git
   revision: 1602a6163782dd1df28c0195460275f4806e4229
   branch: better_exceptions
@@ -32,6 +25,12 @@ GIT
     geoplanet (0.2.7)
       json (>= 1.1.3)
       rest-client (>= 0.9)
+
+GIT
+  remote: git://github.com/tigrish/devise-i18n.git
+  revision: a849867a65994ac80a94a909782a76fa94bb25b9
+  specs:
+    devise-i18n (1.1.0)
 
 GEM
   remote: https://rubygems.org/
