@@ -68,9 +68,7 @@ gem 'geoplanet',
 gem 'maxminddb'                                     # geolite city v2
 gem 'will_paginate', '~> 3.0'                       # pagination
 gem 'devise'                                        # users
-gem 'devise-i18n',
-    github: 'deivid-rodriguez/devise-i18n',
-    branch: 'patch-1'                               # devise translations
+gem 'devise-i18n', github: 'tigrish/devise-i18n'    # devise translations
 gem 'omniauth'                                      # users login with providers
 gem 'omniauth-facebook'                             # users login with facebook
 gem 'omniauth-google-oauth2'                        # users login with google
