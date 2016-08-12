@@ -7,13 +7,12 @@ class Conversation < ActiveRecord::Base
   has_many :receipts, through: :messages
 
   scope :involving, ->(user) do
-    joins(:receipts)
-      .order(updated_at: :desc)
-      .merge(Receipt.recipient(user).untrashed)
-      .distinct
+    joins(:receipts).merge(Receipt.recipient(user).untrashed).distinct
   end
 
-  scope :unread, ->(user) { involving(user).merge(Receipt.unread) }
+  scope :unread, ->(user) do
+    joins(:receipts).merge(Receipt.recipient(user).unread).distinct
+  end
 
   def envelope_for(sender:, recipient:, body: '')
     self.updated_at = Time.zone.now

@@ -82,7 +82,7 @@ class User < ActiveRecord::Base
   end
 
   def conversations
-    @conversations ||= Conversation.involving(self)
+    @conversations ||= Conversation.involving(self).order(updated_at: :desc)
   end
 
   def unread_messages_count

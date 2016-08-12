@@ -13,7 +13,9 @@ class Message < ActiveRecord::Base
     joins(:receipts).merge(Receipt.recipient(user).untrashed)
   end
 
-  scope :unread, ->(user) { involving(user).merge(Receipt.unread) }
+  scope :unread, ->(user) do
+    joins(:receipts).merge(Receipt.recipient(user).unread)
+  end
 
   def recipient_receipt
     receipts.find_by(mailbox_type: 'inbox')
