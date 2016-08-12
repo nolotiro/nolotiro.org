@@ -25,6 +25,23 @@ class MessageTest < ActiveSupport::TestCase
     assert_equal 2, messages.unread(@recipient).size
   end
 
+  def test_involving_includes_outgoing_messages
+    assert_equal messages, Message.involving(@user)
+  end
+
+  def test_involving_includes_incoming_messages
+    @conversation.envelope_for(sender: @recipient, recipient: @user, body: 'hi')
+    @conversation.save!
+
+    assert_equal messages, Message.involving(@user)
+  end
+
+  def test_involving_includes_orphan_messages
+    @recipient.destroy
+
+    assert_equal messages, Message.involving(@user)
+  end
+
   private
 
   def messages

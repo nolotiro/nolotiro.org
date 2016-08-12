@@ -41,7 +41,7 @@ class Conversation < ActiveRecord::Base
   end
 
   def messages_for(user)
-    messages.untrashed(user)
+    messages.involving(user)
   end
 
   def unread?(user)
