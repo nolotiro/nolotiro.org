@@ -62,26 +62,31 @@ class Ad < ActiveRecord::Base
   scope :give, -> { where(type: 1) }
   scope :want, -> { where(type: 2) }
 
-  scope :by_type, lambda {|type|
-    return scope unless type.present?
-    where('type = ?', type)
-  }
+  scope :by_type, ->(type) do
+    return all unless type.present?
+    where(type: type)
+  end
 
   scope :available, -> { where(status: 1) }
   scope :booked, -> { where(status: 2) }
   scope :delivered, -> { where(status: 3) }
 
-  scope :by_status, lambda {|status|
+  scope :by_status, ->(status) do
     return all unless status.present?
-    where('status = ?', status)
-  }
+    where(status: status)
+  end
 
-  scope :by_woeid_code, lambda {|woeid_code|
+  scope :by_woeid_code, ->(woeid_code) do
     return all unless woeid_code.present?
-    where('woeid_code = ?', woeid_code)
-  }
+    where(woeid_code: woeid_code)
+  end
 
-  scope :last_week, lambda { where('created_at >= :date', date: 1.week.ago) }
+  scope :by_title, ->(query) do
+    return all unless query.present?
+    where('title LIKE ?', "%#{query}%")
+  end
+
+  scope :last_week, -> { where('created_at >= :date', date: 1.week.ago) }
 
   self.per_page = 20
 
@@ -133,14 +138,7 @@ class Ad < ActiveRecord::Base
   end
 
   def type_string
-    case type
-    when 1
-      I18n.t('nlt.give')
-    when 2
-      I18n.t('nlt.want')
-    else
-      I18n.t('nlt.give')
-    end
+    type == 2 ? I18n.t('nlt.want') : I18n.t('nlt.give')
   end
 
   def type_class

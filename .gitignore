@@ -26,11 +26,6 @@ vendor/geolite/*
 # Gems when installed in deployment mode
 vendor/bundle/*
 
-# thinking-sphinx
-config/*.sphinx.conf
-db/sphinx/*
-log/*.sphinx.pid
-
 # Vagrant
 .vagrant
 .localeapp

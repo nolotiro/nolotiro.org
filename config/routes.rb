@@ -65,7 +65,7 @@ NolotiroOrg::Application.routes.draw do
     post '/deletefriend/:id', to: 'friendships#destroy', as: 'destroy_friend'
 
     scope '/admin' do
-      authenticate :user, lambda { |u| u.admin? } do
+      authenticate :user, ->(u) { u.admin? } do
         mount Sidekiq::Web, at: '/jobs'
       end
       get '/become/:id', to: 'admin#become', as: 'become_user'
@@ -80,7 +80,26 @@ NolotiroOrg::Application.routes.draw do
     post '/comment/create/ad_id/:id', to: 'comments#create', as: 'create_comment'
 
     # search
-    get '/search', to: 'search#search', as: 'search'
+    get '/search', to: redirect { |params, request|
+      query = Rack::Utils.parse_query(request.query_string).symbolize_keys
+
+      woeid = query[:woeid] || query[:woeid_code]
+      new_path = "#{params[:locale]}/woeid/#{woeid}"
+
+      type = if query[:ad_type].present?
+               query[:ad_type] == '2' ? 'want' : 'give'
+             elsif query[:type].present?
+               query[:type]
+             else
+               'give'
+             end
+
+      new_path = "#{new_path}/#{type}"
+
+      new_path = "#{new_path}/status/#{query[:status]}" if query[:status].present?
+      new_path = "#{new_path}/page/#{query[:page]}" if query[:page].present?
+      "#{new_path}?q=#{query[:q]}"
+    }
 
     # messaging
     resources :conversations, path: '/messages/' do

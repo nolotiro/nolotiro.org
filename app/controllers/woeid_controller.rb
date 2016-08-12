@@ -10,6 +10,7 @@ class WoeidController < ApplicationController
     @id = params[:id]
     @type = type_scope
     @status = status_scope
+    @q = params[:q]
     page = params[:page]
 
     unless page.nil? || positive_integer?(page)
@@ -20,6 +21,7 @@ class WoeidController < ApplicationController
              .public_send(@type)
              .public_send(@status)
              .by_woeid_code(@id)
+             .by_title(@q)
              .paginate(page: page)
 
     return unless @id.present?
