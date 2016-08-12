@@ -9,11 +9,9 @@ class Conversation < ActiveRecord::Base
   scope :involving, ->(user) do
     joins(:receipts)
       .order(updated_at: :desc)
-      .merge(Receipt.recipient(user))
+      .merge(Receipt.recipient(user).untrashed)
       .distinct
   end
-
-  scope :untrashed, ->(user) { involving(user).merge(Receipt.untrashed) }
 
   scope :unread, ->(user) { involving(user).merge(Receipt.unread) }
 

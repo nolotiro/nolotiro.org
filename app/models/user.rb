@@ -82,7 +82,7 @@ class User < ActiveRecord::Base
   end
 
   def conversations
-    @conversations ||= Conversation.untrashed(self)
+    @conversations ||= Conversation.involving(self)
   end
 
   def unread_messages_count
