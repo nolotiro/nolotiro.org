@@ -50,6 +50,7 @@ group :development do
   gem 'capistrano-ci'
   gem 'capistrano-pending'
   gem 'rubocop', '0.41.1'
+  gem 'brakeman'
 end
 
 gem 'http_accept_language'
