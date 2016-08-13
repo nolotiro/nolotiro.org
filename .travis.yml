@@ -3,8 +3,7 @@
 language: ruby
 
 cache:
-  # TODO: investigate broken bundler cache
-  # bundler: true
+  bundler: true
   apt: true
 
 services:
