@@ -1,14 +1,16 @@
 <div class="ad_comments">
-  <h5><%= t('nlt.comments.title') %></h5>
+  <% if comments.any? %>
+    <h5><%= t('nlt.comments.title') %></h5>
 
-  <% comments.each do |comment| %>
-    <div class="ad_comment">
-      <span class="ad_date">
-        <%= t('nlt.published_at_by_html', time: distance_of_time_in_words_to_now(comment.created_at), user: link_to(comment.user.username, profile_path(comment.user))) %>
-      </span>
-     <br>
-     <span><%= comment.body %></span>
-    </div>
+    <% comments.each do |comment| %>
+      <div class="ad_comment">
+        <span class="ad_date">
+          <%= t('nlt.published_at_by_html', time: distance_of_time_in_words_to_now(comment.created_at), user: link_to(comment.user.username, profile_path(comment.user))) %>
+        </span>
+       <br>
+       <span><%= comment.body %></span>
+      </div>
+    <% end %>
   <% end %>
 
   <% if policy(@comment).create? %>
