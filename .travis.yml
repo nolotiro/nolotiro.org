@@ -29,6 +29,3 @@ before_script:
 branches:
   only:
     - master
-
-env:
-  - DATABASE=mysql2
