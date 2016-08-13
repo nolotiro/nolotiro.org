@@ -3,7 +3,7 @@ class Comment < ActiveRecord::Base
   include Hidable
 
   belongs_to :user, foreign_key: 'user_owner'
-  belongs_to :ad, foreign_key: 'ads_id', touch: true
+  belongs_to :ad, foreign_key: 'ads_id'
 
   validates :ads_id, presence: true
   validates :body, presence: true
