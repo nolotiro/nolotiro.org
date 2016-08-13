@@ -30,7 +30,10 @@
     <%= t('nlt.by_user') %>
     <%= link_to ad.user.username, listads_user_path(ad.user) %>
   </span>
-  <div><p><%= truncate ad.body, length: 200, separator: ' ' %></p></div>
+
+  <div class="ad_body">
+    <p><%= truncate ad.body, length: 200, separator: ' ' %></p>
+  </div>
 
   <%= render "ads/stats", comments_count: comment_counts[ad.id] || 0,
                           readed_count: ad.readed_count %>

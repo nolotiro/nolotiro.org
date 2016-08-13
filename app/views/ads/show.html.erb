@@ -37,28 +37,31 @@
     <% if @ad.give? %>
       <span class="ad_status <%= @ad.status_class %>"><%= @ad.status_string %></span>
     <% end %>
+
     <span class="ad_date">
       <%= t('nlt.published_at_by_html', time: distance_of_time_in_words_to_now(@ad.published_at), user: link_to(@ad.user.username, listads_user_path(@ad.user))) %>
     </span>
-    <br>
-    <p><%= simple_format(@ad.body) %></p>
+
+    <div class="ad_body">
+      <%= simple_format(@ad.body) %>
+    </div>
 
     <%= render "stats", comments_count: @comments.size,
                         readed_count: @ad.readed_count %>
 
     <% if @ad.status_class == 'available' &&
           (current_user.nil? || current_user.whitelisting?(@ad.user)) %>
-      <%= t('nlt.are_you_interested') %>
+      <div class="ad_contact">
+        <%= t('nlt.are_you_interested') %>
 
-      <%= link_to new_conversation_path(recipient_id: @ad.user_owner,
-                                        subject: @ad.slug),
-                  class: "world_link" do %>
-        <%= t('nlt.send_a_message') %>
-        <%= image_tag "email_send.png", alt: t('nlt.send_a_message') %>
-      <% end %>
+        <%= link_to new_conversation_path(recipient_id: @ad.user_owner,
+                                          subject: @ad.slug),
+                    class: "world_link" do %>
+          <%= t('nlt.send_a_message') %>
+          <%= image_tag "email_send.png", alt: t('nlt.send_a_message') %>
+        <% end %>
+      </div>
     <% end %>
-
-    <br><br>
 
     <div class="sharelinks">
       <p><%= t('nlt.share_this_ad') %>:</p>
