@@ -46,10 +46,10 @@
     <%= render "stats", comments_count: @comments.size,
                         readed_count: @ad.readed_count %>
 
-    <%= t('nlt.are_you_interested') %>
-
     <% if @ad.status_class == 'available' &&
           (current_user.nil? || current_user.whitelisting?(@ad.user)) %>
+      <%= t('nlt.are_you_interested') %>
+
       <%= link_to new_conversation_path(recipient_id: @ad.user_owner,
                                         subject: @ad.slug),
                   class: "world_link" do %>
