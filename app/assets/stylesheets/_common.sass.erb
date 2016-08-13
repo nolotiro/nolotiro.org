@@ -391,10 +391,7 @@ form.searchbox
   margin-bottom: 10px
 
 .sharelinks
-  position: relative
-  top: 10px
-  clear: right
-  text-align: right
+  clear: both
   font-size: .7em
   margin-bottom: 15px
   #social-butttons
@@ -578,20 +575,20 @@ dl, dd
   border-top: 1px solid $gray-separator
   background-color: #F2F2F2
 
+  .innerWrap
+    clear: both
+
 #facebook-button
   float: left
   width: 85px
   height: 30px
   padding-right: 5px
-  margin: 4px
 
 #twitter-button
   float: left
   width: 85px
   height: 30px
   padding-right: 5px
-  margin: 4px
-  margin-right: 50px
 
 .links-right
   display: inline-block
@@ -942,7 +939,7 @@ $langs: <%= I18n.available_locales.join(" ") %>
   height: 100px
 
 #social-butttons
-  display: inline-block
+  float: left
   width: 30%
 
 #messages-thread
@@ -976,16 +973,11 @@ $langs: <%= I18n.available_locales.join(" ") %>
   #location_header_section br
     display: none
 
-  #social-butttons
-    margin-left: -20px
-
   #facebook-button
     padding: 0px
-    width: 30%
     margin: 0px
 
   #twitter-button
-    margin: 0px 30px 0px 10px
     padding: 0px
 
   .ad_excerpt
