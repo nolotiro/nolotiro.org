@@ -21,6 +21,7 @@ class AdsController < ApplicationController
   def show
     @comment = @ad.comments.build
     @ad.increment_readed_count!
+    @comments = @ad.comments.includes(:user)
   end
 
   def new
