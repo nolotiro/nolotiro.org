@@ -3,19 +3,15 @@ class AdsController < ApplicationController
   include ApplicationHelper
 
   before_action :set_ad, only: [:show, :edit, :update, :bump, :destroy]
-  before_action :authenticate_user!, except: [:index, :list, :show]
+  before_action :authenticate_user!, except: [:index, :show]
 
   def index
     if user_signed_in?
       url = current_user.woeid? ? ads_woeid_path(id: current_user.woeid, type: 'give') : location_ask_path
       redirect_to url
     else
-      list
+      @ads = Ad.give.available.includes(:user).paginate(page: params[:page])
     end
-  end
-
-  def list
-    @ads = Ad.give.available.includes(:user).paginate(page: params[:page])
   end
 
   def show
