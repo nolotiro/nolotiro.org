@@ -4,11 +4,11 @@
   <ul>
     <% User.top_last_week(20).each do |u| %>
       <li>
-    <%= link_to listads_user_path u.id do %>
-      <%= u.username %> (<%= u.n_ads %>)
-  <% end %>
-    </li>
-  <% end %>
+        <%= link_to listads_user_path u.id do %>
+          <%= u.username %> (<%= u.n_ads %>)
+        <% end %>
+      </li>
+    <% end %>
   </ul>
 </div>
 
@@ -18,10 +18,10 @@
   <ul>
     <% User.top_overall(20).each do |u| %>
       <li>
-    <%= link_to listads_user_path u.id do %>
-      <%= u.username %> (<%= u.n_ads %>)
-  <% end %>
-    </li>
-  <% end %>
+        <%= link_to listads_user_path u.id do %>
+          <%= u.username %> (<%= u.n_ads %>)
+        <% end %>
+      </li>
+    <% end %>
   </ul>
 </div>

@@ -4,10 +4,10 @@
   <ul>
     <% AdHelper.get_locations_ranking(20).each do |loc| %>
       <li>
-    <%= link_to ads_woeid_path(loc[1], type: "give") do %>
-      <%= loc[0] %> (<%= loc[2] %>) 
-  <% end %>
-    </li>
-  <% end %>
+        <%= link_to ads_woeid_path(loc[1], type: "give") do %>
+          <%= loc[0] %> (<%= loc[2] %>)
+        <% end %>
+      </li>
+    <% end %>
   </ul>
 </div>
