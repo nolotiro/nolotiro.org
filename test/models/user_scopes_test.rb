@@ -8,8 +8,8 @@ class UserScopesTest < ActiveSupport::TestCase
   setup do
     Rails.cache.clear
 
-    3.times { create(:ad, user: user1) }
-    2.times { create(:ad, user: user2) }
+    3.times { create(:ad, user: user1, woeid_code: 766_273) }
+    2.times { create(:ad, user: user2, woeid_code: 766_273) }
   end
 
   test 'top overall ignores wanted ads from counts and results' do
@@ -53,6 +53,27 @@ class UserScopesTest < ActiveSupport::TestCase
       assert_equal 'Madrid', results.first.woeid_name_short
       assert_equal 3 + 2, results.first.n_ads
     end
+  end
+
+  test 'top overall city with all users ads in the same city' do
+    results = User.top_city_overall(766_273)
+
+    assert_equal 2, results.length
+    assert_count results.first, user1.id, user1.username, 3
+    assert_count results.second, user2.id, user2.username, 2
+  end
+
+  test 'top overall city with users ads in different cities' do
+    user2.ads.last.update!(woeid_code: 753_692)
+    results_mad = User.top_city_overall(766_273)
+    results_bar = User.top_city_overall(753_692)
+
+    assert_equal 2, results_mad.length
+    assert_count results_mad.first, user1.id, user1.username, 3
+    assert_count results_mad.second, user2.id, user2.username, 1
+
+    assert_equal 1, results_bar.length
+    assert_count results_bar.first, user2.id, user2.username, 1
   end
 
   private

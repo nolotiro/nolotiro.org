@@ -92,6 +92,12 @@
 </div>
 
 <div class="col-md-3 col-sm-3">
+  <%= render "partials/user_ranking", title_key: "users_most_active_last_week",
+                                      scope: User.top_city_last_week(@id) %>
+
+  <%= render "partials/user_ranking", title_key: "users_most_active",
+                                      scope: User.top_city_overall(@id) %>
+
   <div class="google_ad_wrapper">
     <%= render "partials/google_adsense", class_name: "desktop google_adsense_600_160", ad_slot: "6783776462" %>
     <%= render "partials/google_adsense", class_name: "mobile google_adsense_336_280", ad_slot: "7225596067" %>

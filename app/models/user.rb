@@ -66,6 +66,18 @@ class User < ActiveRecord::Base
     end
   end
 
+  scope :top_city_overall, ->(woeid) do
+    Rails.cache.fetch("woeid/#{woeid}/overall-rank-#{Ad.cache_digest}") do
+      build_rank(Ad.by_woeid_code(woeid))
+    end
+  end
+
+  scope :top_city_last_week, ->(woeid) do
+    Rails.cache.fetch("woeid/#{woeid}/last-week-rank-#{Ad.cache_digest}") do
+      build_rank(Ad.last_week.by_woeid_code(woeid))
+    end
+  end
+
   scope :whitelisting, ->(user) do
     joined = joins <<-SQL.squish
       LEFT OUTER JOIN blockings
