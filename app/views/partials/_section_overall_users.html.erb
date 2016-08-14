@@ -1,0 +1,13 @@
+<div class="section_users">
+  <h2><%= t('nlt.users_most_active') %></h2>
+  <br>
+  <ul>
+    <% User.top_overall(20).each do |u| %>
+      <li>
+        <%= link_to listads_user_path u.id do %>
+          <%= u.username %> (<%= u.n_ads %>)
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
+</div>
