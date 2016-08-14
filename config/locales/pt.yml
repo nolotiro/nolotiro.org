@@ -181,9 +181,9 @@ pt:
         signed_in: Você está conectado
   blockings:
     create:
-      success: Usúario bloqueado
+      success: Usuário bloqueado
     destroy:
-      success: Usúario desbloqueao
+      success: Usuário desbloqueao
   friendships:
     create:
       success: Amigo adicionado
