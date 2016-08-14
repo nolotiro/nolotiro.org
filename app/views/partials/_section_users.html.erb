@@ -1,4 +1,4 @@
-<div class="section_users desktop">
+<div class="section_users">
   <h2><%= t('nlt.users_most_active_last_week') %></h2>
   <br>
   <ul>
@@ -12,36 +12,7 @@
   </ul>
 </div>
 
-<div class="section_users mobile">
-  <h2><%= t('nlt.users_most_active_last_week') %></h2>
-  <br>
-  <ul>
-    <% User.top_last_week(5).each do |u| %>
-      <li>
-    <%= link_to listads_user_path u.id do %>
-      <%= u.username %> (<%= u.n_ads %>)
-  <% end %>
-    </li>
-  <% end %>
-  </ul>
-</div>
-
-
-<div class="section_users desktop">
-  <h2><%= t('nlt.users_most_active') %></h2>
-  <br>
-  <ul>
-    <% User.top_overall(80).each do |u| %>
-      <li>
-    <%= link_to listads_user_path u.id do %>
-      <%= u.username %> (<%= u.n_ads %>)
-  <% end %>
-    </li>
-  <% end %>
-  </ul>
-</div>
-
-<div class="section_users mobile">
+<div class="section_users">
   <h2><%= t('nlt.users_most_active') %></h2>
   <br>
   <ul>
