@@ -1,5 +1,11 @@
 # frozen_string_literal: true
 ActiveAdmin.register Ad do
+  controller do
+    def scoped_collection
+      super.recent_first
+    end
+  end
+
   permit_params :woeid_code, :type
 
   filter :title

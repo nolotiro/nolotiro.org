@@ -28,6 +28,7 @@ class WoeidController < ApplicationController
                            .public_send(@status)
                            .by_woeid_code(@id)
                            .by_title(@q)
+                           .recent_first
                            .paginate(page: page)
   end
 end

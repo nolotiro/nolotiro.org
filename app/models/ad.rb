@@ -46,7 +46,7 @@ class Ad < ActiveRecord::Base
   # the "type" column is no longer need it by rails, so we don't care about it
   self.inheritance_column = nil
 
-  default_scope { order('ads.published_at DESC') }
+  scope :recent_first, -> { order(published_at: :desc) }
 
   has_attached_file :image,
                     styles: { thumb: '100x90>' },
@@ -60,7 +60,7 @@ class Ad < ActiveRecord::Base
   # before_save :titleize_title if self.title? and /[[:upper:]]/.match(self.title)
   # before_save :titleize_body if self.body and /[[:upper:]]/.match(self.body)
 
-  scope :recent, -> { Ad.includes(:user).limit(90) }
+  scope :recent, -> { Ad.includes(:user).recent_first.limit(90) }
 
   scope :give, -> { where(type: 1) }
   scope :want, -> { where(type: 2) }

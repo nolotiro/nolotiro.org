@@ -11,7 +11,11 @@ class AdsController < ApplicationController
       redirect_to url
     else
       @ads = Rails.cache.fetch("ads_list_#{params[:page]}") do
-        Ad.give.available.includes(:user).paginate(page: params[:page])
+        Ad.give
+          .available
+          .recent_first
+          .includes(:user)
+          .paginate(page: params[:page])
       end
     end
   end
