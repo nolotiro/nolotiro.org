@@ -17,7 +17,7 @@ class UsersController < ApplicationController
 
   def profile
     name_or_id = params[:username]
-    @user = User.find_by_username(name_or_id) || User.find(name_or_id)
+    @user = User.find_by(username: name_or_id) || User.find(name_or_id)
     authorize(@user)
   end
 
