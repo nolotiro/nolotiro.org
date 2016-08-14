@@ -537,22 +537,17 @@ form.searchbox
     text-align: center
 
 /**
+ * Listings
+
+.ranking
+  margin-top: 15px
+
+  h2
+    margin-bottom: 5px
+    font-size: 1.3em
+
+/**
  * Home
-
-.section_users
-  float: left
-  position: relative
-  display: inline-block
-  padding: 10px
-  width: 150px
-
-.section_locations
-  float: left
-  position: relative
-  display: inline-block
-  padding: 10px
-  margin-left: 15px
-  width: 250px
 
 dl, dd
   margin: 0px !important
@@ -650,13 +645,6 @@ dl, dd
 
     .ad_change_location_home
       height: 17px
-
-  .section_ads
-    padding: 10px
-    width: 468px
-    display: inline-block
-    float: left
-    position: relative
 
 .site-logo
   @include clearfix
@@ -1006,14 +994,6 @@ $langs: <%= I18n.available_locales.join(" ") %>
 
   #default_header_section
     width: 100%
-
-  .section_locations
-    margin-left: 2%
-    margin-right: 2%
-
-  .section_users
-    margin-left: 2%
-    margin-right: 2%
 
   .desktop
     display: none !important

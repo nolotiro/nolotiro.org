@@ -1,6 +1,6 @@
-<div class="section_users">
+<div class="ranking">
   <h2><%= t('nlt.users_most_active_last_week') %></h2>
-  <br>
+
   <ul>
     <% User.top_last_week(20).each do |u| %>
       <li>

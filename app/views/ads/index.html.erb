@@ -17,7 +17,7 @@
   </div>
 <% end %>
 
-<div class="section_ads">
+<div class="col-md-9 col-sm-9">
   <h2><%= t('nlt.last_published_gifts') %></h2>
   <%= render 'ads/list_with_adsense', ads: @ads %>
   <br>
@@ -25,14 +25,16 @@
   <b> <%= link_to t('nlt.view_more_ads'), ads_listall_path(type: :give, page: 2) %> </b>
 </div>
 
-<% cache("ads/#{I18n.locale}/location-ranks-#{Ad.cache_digest}") do %>
-  <%= render "partials/section_locations" %>
-<% end %>
+<div class="col-md-3 col-sm-3">
+  <% cache("ads/#{I18n.locale}/location-ranks-#{Ad.cache_digest}") do %>
+    <%= render "partials/section_locations" %>
+  <% end %>
 
-<% cache("ads/#{I18n.locale}/user-last-week-ranks-#{Ad.cache_digest}") do %>
-  <%= render "partials/section_last_week_users" %>
-<% end %>
+  <% cache("ads/#{I18n.locale}/user-last-week-ranks-#{Ad.cache_digest}") do %>
+    <%= render "partials/section_last_week_users" %>
+  <% end %>
 
-<% cache("ads/#{I18n.locale}/user-overall-ranks-#{Ad.cache_digest}") do %>
-  <%= render "partials/section_overall_users" %>
-<% end %>
+  <% cache("ads/#{I18n.locale}/user-overall-ranks-#{Ad.cache_digest}") do %>
+    <%= render "partials/section_overall_users" %>
+  <% end %>
+</div>
