@@ -55,11 +55,15 @@ class User < ActiveRecord::Base
          :omniauthable, omniauth_providers: [:facebook, :google_oauth2]
 
   scope :top_overall, ->(limit = 20) do
-    joins(:ads).merge(Ad.give).build_rank(limit)
+    Rails.cache.fetch("user-overall-ranks-#{Ad.cache_digest}") do
+      joins(:ads).merge(Ad.give).build_rank(limit)
+    end
   end
 
   scope :top_last_week, ->(limit = 20) do
-    joins(:ads).merge(Ad.give.last_week).build_rank(limit)
+    Rails.cache.fetch("user-last-week-ranks-#{Ad.cache_digest}") do
+      joins(:ads).merge(Ad.give.last_week).build_rank(limit)
+    end
   end
 
   scope :whitelisting, ->(user) do

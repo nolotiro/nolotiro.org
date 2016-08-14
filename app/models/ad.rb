@@ -95,7 +95,9 @@ class Ad < ActiveRecord::Base
   self.per_page = 20
 
   scope :top_locations, ->(limit = 20) do
-    give.group(:woeid_code).order('count_id desc').limit(limit).count('id')
+    Rails.cache.fetch("#{I18n.locale}/location-ranks-#{cache_digest}") do
+      give.group(:woeid_code).order('count_id desc').limit(limit).count('id')
+    end
   end
 
   def self.cache_digest

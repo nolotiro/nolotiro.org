@@ -136,6 +136,8 @@ end
 
 class UserScopesTest < ActiveSupport::TestCase
   setup do
+    Rails.cache.clear
+
     3.times { create(:ad, user: user1) }
     2.times { create(:ad, user: user2) }
   end
