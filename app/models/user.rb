@@ -54,8 +54,6 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :lockable,
          :omniauthable, omniauth_providers: [:facebook, :google_oauth2]
 
-  scope :last_week, -> { where('created_at >= :date', date: 1.week.ago) }
-
   scope :top_overall, ->(limit = 20) do
     select('users.id, users.username, COUNT(ads.id) as n_ads')
       .joins(:ads)

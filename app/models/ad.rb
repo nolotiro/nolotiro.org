@@ -91,8 +91,6 @@ class Ad < ActiveRecord::Base
     where('title LIKE ?', "%#{sanitized_query}%")
   end
 
-  scope :last_week, -> { where('created_at >= :date', date: 1.week.ago) }
-
   self.per_page = 20
 
   def self.cache_digest
