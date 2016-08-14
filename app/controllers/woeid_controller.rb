@@ -17,17 +17,17 @@ class WoeidController < ApplicationController
       raise ActionController::RoutingError, 'Not Found'
     end
 
-    @ads = Ad.includes(:user)
-             .public_send(@type)
-             .public_send(@status)
-             .by_woeid_code(@id)
-             .by_title(@q)
-             .paginate(page: page)
+    if @id.present?
+      @woeid = WoeidHelper.convert_woeid_name(@id)
 
-    return unless @id.present?
+      raise ActionController::RoutingError, 'Not Found' if @woeid.nil?
+    end
 
-    @woeid = WoeidHelper.convert_woeid_name(@id)
-
-    raise ActionController::RoutingError, 'Not Found' if @woeid.nil?
+    @ads = policy_scope(Ad).includes(:user)
+                           .public_send(@type)
+                           .public_send(@status)
+                           .by_woeid_code(@id)
+                           .by_title(@q)
+                           .paginate(page: page)
   end
 end

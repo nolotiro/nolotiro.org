@@ -179,12 +179,16 @@ es:
       signed_out: Sesión finalizada.
       user:
         signed_in: Has iniciado sesión.
+  blockings:
+    create:
+      success: Usuario bloqueado
+    destroy:
+      success: Usuario desbloqueado
   friendships:
     create:
-      error: Ocurrió un error al agregar a %{username} como amigo.
-      success: Agregado %{username} como amigo.
+      success: Amigo agregado
     destroy:
-      success: Eliminado %{username} como amigo.
+      success: Amigo eliminado
   helpers:
     label:
       message:
@@ -363,7 +367,6 @@ es:
       body_html: 'Nombre: Asociación aLabs. <br>Inscrita en el registro de asociaciones de la Comunidad de Madrid con número 32.022. <br>CIF: G86139847<br> C/Duque de Alba, 13 (28012) Madrid.'
       title: Aviso legal
     login: acceder
-    login_to_comment: accede para escribir un comentario
     logout: salir
     mail:
       automatic: Este es un mensaje automático. Por favor, no respondas a esta dirección de email.
@@ -397,6 +400,10 @@ es:
       friend:
         add: agregar %{username} a tu lista de amigos
         delete: eliminar %{username} de tu lista de amigos
+      blocking:
+        add: bloquear a %{username}
+        confirm: "¿Seguro que deseas bloquear a %{username}? No podrá volverte a contactar ni a ver ninguno de tus anuncios."
+        delete: desbloquear a %{username}
     publish_ad: 'Publicando anuncio '
     publish_ad_on: Publicar anuncio en %{woeid}
     published_ads: Anuncios publicados

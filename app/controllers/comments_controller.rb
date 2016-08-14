@@ -2,20 +2,25 @@
 class CommentsController < ApplicationController
   before_action :authenticate_user!
 
-  # POST /comment/create/ad_id/:id
   def create
-    @ad = Ad.find params[:id]
-    @comment = Comment.new(ads_id: params[:id],
-                           body: params[:body],
-                           user_owner: current_user.id,
-                           ip: request.remote_ip)
+    @ad = Ad.find params[:ad_id]
+    @comment = @ad.comments.build(comment_params)
+
     if @comment.save
-      if @comment.ad.user != current_user
-        CommentsMailer.create(params[:id], params[:body]).deliver_later
+      if @ad.user != current_user
+        CommentsMailer.create(@ad.id, @comment.body).deliver_later
       end
-      redirect_to(ad_path(params[:id]), notice: t('nlt.comments.flash_ok'))
+      redirect_to @ad, notice: t('nlt.comments.flash_ok')
     else
-      render template: 'ads/show'
+      render 'ads/show'
     end
+  end
+
+  private
+
+  def comment_params
+    params.require(:comment)
+          .permit(:body)
+          .merge(user_owner: current_user.id, ip: request.remote_ip)
   end
 end

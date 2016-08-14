@@ -1,20 +1,21 @@
 <div id="footer">
+  <div class="upperWrap">
+    <div id="social-butttons">
+      <%= render partial: "partials/social_buttons", locals: { url: url } %>
+    </div>
 
-  <div id="social-butttons">
-    <%= render partial: "partials/social_buttons", locals: { url: url } %>
-  </div>
+    <div class="links-right">
+      <%= link_to t('nlt.about'), about_path %> |
+      <%= link_to t('nlt.blog'), "http://blog.alabs.es/category/nolotiro-org/" %> |
+      <%= link_to t('nlt.faqs'), faqs_path %> |
+      <%= link_to t('nlt.all_ads'), ads_listall_path(type: 'give') %> |
+      <%= link_to t('nlt.help_translate'), translate_path %> |
+      &nbsp;&nbsp;
 
-  <div class="links-right">
-    <%= link_to t('nlt.about'), about_path %> |
-    <%= link_to t('nlt.blog'), "http://blog.alabs.es/category/nolotiro-org/" %> |
-    <%= link_to t('nlt.faqs'), faqs_path %> |
-    <%= link_to t('nlt.all_ads'), ads_listall_path(type: 'give') %> |
-    <%= link_to t('nlt.help_translate'), translate_path %> |
-    &nbsp;&nbsp;
-
-    <a href="https://alabs.org/">
-      <%= image_tag("alabs.png", alt: "aLabs logo") %>
-    </a>
+      <a href="https://alabs.org/">
+        <%= image_tag("alabs.png", alt: "aLabs logo") %>
+      </a>
+    </div>
   </div>
 
   <div class="innerWrap">

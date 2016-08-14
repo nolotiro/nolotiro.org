@@ -71,7 +71,7 @@ module StandardMessages
     send_message(subject: 'Cosas', body: 'hola, user2')
     visit conversations_path
 
-    assert page.has_link?('user2'), 'No link to "user2" found'
+    assert_link 'user2'
   end
 
   def test_just_shows_a_special_label_when_the_interlocutor_is_no_longer_there
@@ -80,7 +80,7 @@ module StandardMessages
     visit conversations_path
 
     assert_content '[borrado]'
-    refute page.has_link?('[borrado]')
+    refute_link '[borrado]'
   end
 
   def test_messages_another_user

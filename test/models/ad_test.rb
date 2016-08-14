@@ -162,4 +162,11 @@ class AdTest < ActiveSupport::TestCase
 
     assert_difference(-> { Comment.count }, -1) { @ad.destroy }
   end
+
+  test '.from_authors_whitelisting excludes ads from authors blocking user' do
+    user = create(:user)
+    create(:blocking, blocker: @ad.user, blocked: user)
+
+    assert_equal [create(:ad)], Ad.from_authors_whitelisting(user)
+  end
 end

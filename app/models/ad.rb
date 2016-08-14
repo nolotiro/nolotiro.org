@@ -1,6 +1,7 @@
 # encoding : utf-8
 # frozen_string_literal: true
 class Ad < ActiveRecord::Base
+  include Hidable
   include Rakismet::Model
 
   # https://github.com/joshfrench/rakismet
@@ -103,10 +104,6 @@ class Ad < ActiveRecord::Base
 
   def title
     ApplicationController.helpers.escape_privacy_data(self[:title])
-  end
-
-  def readed_counter
-    readed_count || 1
   end
 
   def reset_readed_count!

@@ -3,45 +3,36 @@ class AdsController < ApplicationController
   include ApplicationHelper
 
   before_action :set_ad, only: [:show, :edit, :update, :bump, :destroy]
+  before_action :authenticate_user!, except: [:index, :show]
 
-  load_and_authorize_resource
-
-  # GET /
   def index
     if user_signed_in?
       url = current_user.woeid? ? ads_woeid_path(id: current_user.woeid, type: 'give') : location_ask_path
       redirect_to url
     else
-      list
+      @ads = Ad.give.available.includes(:user).paginate(page: params[:page])
     end
   end
 
-  def list
-    @ads = Ad.give.available.includes(:user).paginate(page: params[:page])
-  end
-
-  # GET /ads/1
-  # GET /ads/1.json
   def show
-    @comment = Comment.new
+    @comment = @ad.comments.build
     @ad.increment_readed_count!
+    @comments = policy_scope(@ad.comments).includes(:user)
   end
 
-  # GET /ads/new
   def new
     if current_user.woeid.nil?
       redirect_to location_ask_path
     else
       @ad = Ad.new
       @ad.comments_enabled = true
+      authorize(@ad)
     end
   end
 
-  # GET /ads/1/edit
   def edit
   end
 
-  # POST /ads/1/bump
   def bump
     respond_to do |format|
       @ad.bump
@@ -51,8 +42,6 @@ class AdsController < ApplicationController
     end
   end
 
-  # POST /ads
-  # POST /ads.json
   def create
     @ad = Ad.new(ad_params)
     @ad.user_owner = current_user.id
@@ -60,6 +49,7 @@ class AdsController < ApplicationController
     @ad.ip = request.remote_ip
     @ad.status = 1
     @ad.published_at = Time.zone.now
+    authorize(@ad)
 
     respond_to do |format|
       if verify_recaptcha(model: @ad) && @ad.save
@@ -72,8 +62,6 @@ class AdsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /ads/1
-  # PATCH/PUT /ads/1.json
   def update
     respond_to do |format|
       if @ad.update(ad_params)
@@ -86,8 +74,6 @@ class AdsController < ApplicationController
     end
   end
 
-  # DELETE /ads/1
-  # DELETE /ads/1.json
   def destroy
     @ad.destroy
     respond_to do |format|
@@ -98,12 +84,12 @@ class AdsController < ApplicationController
 
   private
 
-  # Use callbacks to share common setup or constraints between actions.
   def set_ad
     @ad = Ad.find(params[:id])
+    authorize(@ad)
+    @ad
   end
 
-  # Never trust parameters from the scary internet, only allow the white list through.
   def ad_params
     params.require(:ad).permit(:title, :body, :type, :status, :comments_enabled, :image)
   end

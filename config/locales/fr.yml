@@ -181,9 +181,13 @@ fr:
       signed_out: Déconnecté(e) avec succès.
       user:
         signed_in: 
+  blockings:
+    create:
+      success: 
+    destroy:
+      success: 
   friendships:
     create:
-      error: 
       success: 
     destroy:
       success: 
@@ -365,7 +369,6 @@ fr:
       body_html: 
       title: 
     login: 
-    login_to_comment: 
     logout: 
     mail:
       automatic: 
@@ -398,6 +401,10 @@ fr:
     profile_actions:
       friend:
         add: 
+        delete: 
+      blocking:
+        add: 
+        confirm: 
         delete: 
     publish_ad: 
     publish_ad_on: 

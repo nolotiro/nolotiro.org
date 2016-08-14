@@ -7,11 +7,9 @@ module Messaging
     assert_content 'Mensaje enviado'
   end
 
-  def send_message(params)
-    subject = params[:subject]
-
+  def send_message(body: nil, subject: nil)
     fill_in('subject', with: subject) if subject
-    fill_in 'body', with: params[:body]
+    fill_in 'body', with: body
     click_button 'Enviar'
   end
 end

@@ -3,6 +3,7 @@ require 'concerns/multi_lingualizable'
 
 class ApplicationController < ActionController::Base
   include MultiLingualizable
+  include Pundit
 
   # TODO: comment captcha for ad creation/edition
 
@@ -12,7 +13,7 @@ class ApplicationController < ActionController::Base
 
   before_action :configure_permitted_parameters, if: :devise_controller?
 
-  rescue_from CanCan::AccessDenied do |exception|
+  rescue_from Pundit::NotAuthorizedError do |exception|
     if user_signed_in?
       redirect_to root_url, alert: t('nlt.permission_denied')
     else
@@ -58,6 +59,13 @@ class ApplicationController < ActionController::Base
   end
 
   helper_method :location_suggest
+
+  def comment_counts
+    @comment_counts ||=
+      policy_scope(Comment.where(ads_id: @ads.ids)).group(:ads_id).size
+  end
+
+  helper_method :comment_counts
 
   protected
 

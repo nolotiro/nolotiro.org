@@ -175,12 +175,16 @@ en:
       signed_out: Signed out successfully.
       user:
         signed_in: You are signed.
+  blockings:
+    create:
+      success: User blocked
+    destroy:
+      success: User unblocked
   friendships:
     create:
-      error: Error occurred when adding %{username} as a friend.
-      success: Added %{username} as a friend.
+      success: Friend added
     destroy:
-      success: Removed %{username} as a friend.
+      success: Friend removed
   helpers:
     label:
       message:
@@ -363,7 +367,6 @@ en:
       body_html: 
       title: 
     login: log in
-    login_to_comment: log in to write a comment
     logout: logout
     mail:
       automatic: This is an automatic message, please do not answer to this email address
@@ -397,6 +400,10 @@ en:
       friend:
         add: 'Add %{username} to your friend''s list '
         delete: Delete %{username} from your friend's list
+      blocking:
+        add: 
+        confirm: 
+        delete: 
     publish_ad: Posting ad
     publish_ad_on: Post ad in %{woeid}
     published_ads: Posted ads

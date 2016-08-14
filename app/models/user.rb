@@ -10,6 +10,10 @@ class User < ActiveRecord::Base
 
   has_many :receipts, as: :receiver, dependent: :destroy
 
+  has_many :blockings, class_name: 'Blocking',
+                       foreign_key: 'blocker_id',
+                       dependent: :destroy
+
   before_save :default_lang
 
   validates :username, presence: true,
@@ -36,6 +40,15 @@ class User < ActiveRecord::Base
 
   scope :top_last_week, ->(limit = 20) do
     top_overall(limit).where('published_at >= :date', date: 1.week.ago)
+  end
+
+  scope :whitelisting, ->(user) do
+    joined = joins <<-SQL.squish
+      LEFT OUTER JOIN blockings
+      ON blockings.blocker_id = users.id AND blockings.blocked_id = #{user.id}
+    SQL
+
+    joined.where(blockings: { blocker_id: nil })
   end
 
   def self.new_with_session(params, session)
@@ -69,7 +82,7 @@ class User < ActiveRecord::Base
   end
 
   def conversations
-    @conversations ||= Conversation.untrashed(self)
+    @conversations ||= Conversation.involving(self).order(updated_at: :desc)
   end
 
   def unread_messages_count
@@ -102,7 +115,15 @@ class User < ActiveRecord::Base
   end
 
   def friend?(user)
-    friends.where(id: user.id).count > 0 ? true : false
+    friendships.find_by(friend_id: user.id)
+  end
+
+  def blocking?(user)
+    blockings.find_by(blocked_id: user.id)
+  end
+
+  def whitelisting?(user)
+    blocking?(user).nil?
   end
 
   # nolotirov2 legacy: auth migration - from zend md5 to devise

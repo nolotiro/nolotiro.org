@@ -3,8 +3,7 @@ class ConversationsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @conversations = conversations.includes(:receipts)
-                                  .paginate(page: params[:page])
+    @conversations = conversations.paginate(page: params[:page])
   end
 
   def new
@@ -12,12 +11,16 @@ class ConversationsController < ApplicationController
     @conversation = Conversation.new(subject: params[:subject])
     @message = @conversation.envelope_for(sender: current_user,
                                           recipient: @interlocutor)
+
+    authorize(@conversation)
   end
 
   def create
     @interlocutor = User.find(params[:recipient_id])
     @conversation = Conversation.new(subject: params[:subject])
     @message = @conversation.envelope_for(message_params)
+
+    authorize(@conversation)
 
     if @conversation.save
       @message.deliver
@@ -36,6 +39,8 @@ class ConversationsController < ApplicationController
     @interlocutor = @conversation.interlocutor(current_user)
     @message = @conversation.envelope_for(message_params)
 
+    authorize(@conversation)
+
     if @conversation.save
       @message.deliver
 
@@ -50,9 +55,12 @@ class ConversationsController < ApplicationController
   # GET /message/show/:ID/subject/SUBJECT
   def show
     @conversation = conversations.find(params[:id])
+    authorize(@conversation)
+
     @interlocutor = @conversation.interlocutor(current_user)
 
-    @message = @conversation.messages.build
+    @message = @conversation.envelope_for(sender: current_user,
+                                          recipient: @interlocutor)
     current_user.mark_as_read(@conversation)
   end
 

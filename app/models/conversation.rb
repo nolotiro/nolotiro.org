@@ -7,15 +7,12 @@ class Conversation < ActiveRecord::Base
   has_many :receipts, through: :messages
 
   scope :involving, ->(user) do
-    joins(:receipts)
-      .order(updated_at: :desc)
-      .merge(Receipt.recipient(user))
-      .distinct
+    joins(:receipts).merge(Receipt.involving(user).untrashed).distinct
   end
 
-  scope :untrashed, ->(user) { involving(user).merge(Receipt.untrashed) }
-
-  scope :unread, ->(user) { involving(user).merge(Receipt.unread) }
+  scope :unread, ->(user) do
+    joins(:receipts).merge(Receipt.involving(user).unread).distinct
+  end
 
   def envelope_for(sender:, recipient:, body: '')
     self.updated_at = Time.zone.now
@@ -29,7 +26,7 @@ class Conversation < ActiveRecord::Base
 
   def interlocutor(user)
     received_receipts = receipts.where.not(receiver_id: user.id)
-    return unless received_receipts.any?
+    return receipts.first.receiver unless received_receipts.any?
 
     received_receipts.first.receiver
   end
@@ -43,7 +40,11 @@ class Conversation < ActiveRecord::Base
   end
 
   def messages_for(user)
-    messages.untrashed(user)
+    messages.involving(user)
+  end
+
+  def last_message
+    @last_message ||= messages.last
   end
 
   def unread?(user)

@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 class UsersController < ApplicationController
-  # GET '/ad/listuser/id/:id'
   def listads
-    # ads lists for user
     @user = User.find(params[:id])
+    authorize(@user)
+
     @type = type_scope
     @status = status_scope
 
@@ -15,11 +15,10 @@ class UsersController < ApplicationController
     @ads = @ads.public_send(@status) if @status
   end
 
-  # GET '/profile/:username'
   def profile
-    # public profile for user
     name_or_id = params[:username]
-    @user = User.find_by_username(name_or_id) || User.find(name_or_id)
+    @user = User.find_by(username: name_or_id) || User.find(name_or_id)
+    authorize(@user)
   end
 
   private

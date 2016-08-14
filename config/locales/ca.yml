@@ -179,12 +179,16 @@ ca:
       signed_out: Sessió tancada correctament.
       user:
         signed_in: Heu entrat.
+  blockings:
+    create:
+      success: Usuari bloquejat
+    destroy:
+      success: Usuari desbloquejat
   friendships:
     create:
-      error: S'ha produït un error en afegir a %{username} com amic.
-      success: Agregat %{username} com amic.
+      success: Amic agregat
     destroy:
-      success: Eliminat %{username} com amic.
+      success: Amic eliminat
   helpers:
     label:
       message:
@@ -256,7 +260,7 @@ ca:
     admin:
       become_user: "[ADMIN] Canviar a aquest usuari"
       lock_user: "[ADMIN] Bloquejar a aquest usuari"
-      unlock_user: "[ADMIN] Desbloca a aquest usuari"
+      unlock_user: "[ADMIN] Desblocar a aquest usuari"
     ads:
       bumped: 
       count:
@@ -363,7 +367,6 @@ ca:
       body_html: 
       title: 
     login: accedir
-    login_to_comment: accedeix per escriure un comentari
     logout: sortir
     mail:
       automatic: Aquest és un missatge automàtic. Si us plau, no responguis a aquesta adreça de correu electrònic.
@@ -397,6 +400,10 @@ ca:
       friend:
         add: afegir %{username} a la llista d'amics
         delete: afegir %{username} a la llista d'amics
+      blocking:
+        add: bloquejar a %{username}
+        confirm: 
+        delete: desbloquejar a %{username}
     publish_ad: Publicant anunci
     publish_ad_on: Publicar anunci en %{woeid}
     published_ads: Anuncis publicats

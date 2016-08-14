@@ -9,14 +9,16 @@ class Message < ActiveRecord::Base
 
   has_many :receipts, dependent: :destroy, foreign_key: :notification_id
 
-  scope :untrashed, ->(user) do
+  scope :involving, ->(user) do
     joins(:receipts).merge(Receipt.recipient(user).untrashed)
   end
 
-  scope :unread, ->(user) { untrashed(user).merge(Receipt.unread) }
+  scope :unread, ->(user) do
+    joins(:receipts).merge(Receipt.recipient(user).unread)
+  end
 
   def recipient_receipt
-    receipts.find_by(mailbox_type: 'inbox')
+    receipts.find { |receipt| receipt.mailbox_type == 'inbox' }
   end
 
   def recipient

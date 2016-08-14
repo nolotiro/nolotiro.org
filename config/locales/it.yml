@@ -179,12 +179,16 @@ it:
       signed_out: Sei uscito correttamente.
       user:
         signed_in: Acceso eseguito
+  blockings:
+    create:
+      success: Utente bloccato
+    destroy:
+      success: Utente sbloccato
   friendships:
     create:
-      error: C'è stato un'errore aggiungendo %{username} come amico.
-      success: Aggiunto %{username} come amico.
+      success: Amico aggiunto
     destroy:
-      success: Cancellato %{username} come amico.
+      success: Amico cancellato
   helpers:
     label:
       message:
@@ -365,7 +369,6 @@ it:
       body_html: 'Nome: Associazione aLabs. <br> registrata nel registro delle associazioni della Comunità di Madrid con il numero 32022. <br> CIF: G86139847 <br> C / Duque de Alba, 13 (28012) Madrid.'
       title: Note legali
     login: accedi
-    login_to_comment: l'accesso a scrivere un commento
     logout: uscire
     mail:
       automatic: Questo è un messaggio automatico. Si prega di non rispondere a questo indirizzo email.
@@ -403,6 +406,10 @@ it:
       friend:
         add: aggiungere %{username} alla tua lista di amici
         delete: rimuovere %{username} alla tua lista di amici
+      blocking:
+        add: 
+        confirm: 
+        delete: 
     publish_ad: 
     publish_ad_on: Inserisci annunci a %{woeid}
     published_ads: annunci pubblicati

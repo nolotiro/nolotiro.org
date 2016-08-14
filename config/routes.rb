@@ -20,7 +20,9 @@ NolotiroOrg::Application.routes.draw do
 
     # FIXME: type on ads#create instead of params
     # FIXME: nolotirov2 legacy - redirect from /es/ad/create
-    resources :ads, path: 'ad', path_names: { new: 'create' }
+    resources :ads, path: 'ad', path_names: { new: 'create' } do
+      resources :comments, only: :create
+    end
 
     constraints(AdConstraint.new) do
       scope '/ad' do
@@ -61,8 +63,8 @@ NolotiroOrg::Application.routes.draw do
                  password: 'reset'
                }
 
-    post '/addfriend/id/:id', to: 'friendships#create', as: 'add_friend'
-    post '/deletefriend/:id', to: 'friendships#destroy', as: 'destroy_friend'
+    # friendships
+    resources :friendships, only: [:create, :destroy]
 
     scope '/admin' do
       authenticate :user, ->(u) { u.admin? } do
@@ -75,9 +77,6 @@ NolotiroOrg::Application.routes.draw do
 
     get '/user/edit/id/:id', to: redirect('/es/user/edit'), as: 'user_edit'
     get '/profile/:username', to: 'users#profile', as: 'profile'
-
-    # comments
-    post '/comment/create/ad_id/:id', to: 'comments#create', as: 'create_comment'
 
     # search
     get '/search', to: redirect { |params, request|
@@ -101,6 +100,9 @@ NolotiroOrg::Application.routes.draw do
       new_path = "#{new_path}/page/#{query[:page]}" if query[:page].present?
       "#{new_path}?q=#{query[:q]}"
     }
+
+    # blocking
+    resources :blockings, only: [:create, :destroy]
 
     # messaging
     resources :conversations, path: '/messages/' do

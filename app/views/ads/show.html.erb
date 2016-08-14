@@ -37,39 +37,41 @@
     <% if @ad.give? %>
       <span class="ad_status <%= @ad.status_class %>"><%= @ad.status_string %></span>
     <% end %>
+
     <span class="ad_date">
       <%= t('nlt.published_at_by_html', time: distance_of_time_in_words_to_now(@ad.published_at), user: link_to(@ad.user.username, listads_user_path(@ad.user))) %>
     </span>
-    <br>
-    <p><%= simple_format(@ad.body) %></p>
-    <div class="ad_meta_info">
-      <%= t('nlt.readed_count', count: @ad.readed_counter) %><%= t('nlt.comments_count', count: @ad.comments_count) %>
+
+    <div class="ad_body">
+      <%= simple_format(@ad.body) %>
     </div>
 
-    <%= t('nlt.are_you_interested') %>
+    <%= render "stats", comments_count: @comments.size,
+                        readed_count: @ad.readed_count %>
 
-    <% if @ad.status_class == 'available' %>
-      <%= link_to new_conversation_path(recipient_id: @ad.user.id,
-                                        subject: @ad.slug),
-                  class: "world_link" do %>
-        <%= t('nlt.send_a_message') %>
-        <%= image_tag "email_send.png", alt: t('nlt.send_a_message') %>
-      <% end %>
+    <% if @ad.status_class == 'available' &&
+          (current_user.nil? || current_user.whitelisting?(@ad.user)) %>
+      <div class="ad_contact">
+        <%= t('nlt.are_you_interested') %>
+
+        <%= link_to new_conversation_path(recipient_id: @ad.user_owner,
+                                          subject: @ad.slug),
+                    class: "world_link" do %>
+          <%= t('nlt.send_a_message') %>
+          <%= image_tag "email_send.png", alt: t('nlt.send_a_message') %>
+        <% end %>
+      </div>
     <% end %>
 
-    <br><br>
-
     <div class="sharelinks">
-      <p style="text-align:left;margin-bottom:5px;"><%= t('nlt.share_this_ad') %>:</p>
+      <p><%= t('nlt.share_this_ad') %>:</p>
       <%= render partial: "partials/social_buttons", locals: { url: ad_url(@ad) } %>
     </div>
   </div>
 
-  <% if @ad.comments_enabled? && @ad.status_class != 'delivered' %>
-    <div class="ad_excerpt_comments">
-      <%= render partial: "comments/list", locals: {ad: @ad} %>
-    </div>
-  <% end %>
+  <div class="ad_excerpt_comments">
+    <%= render partial: "comments/list", locals: {comments: @comments} %>
+  </div>
 </div>
 
 <div class="col-md-6 col-sm-6">
