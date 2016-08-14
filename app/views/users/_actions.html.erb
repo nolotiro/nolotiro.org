@@ -38,19 +38,19 @@
         <li>
           <% friendship = current_user.friend?(user) %>
 
-          <% if friendship.nil? %>
+          <% if friendship %>
+            <%= link_to friendship, class: 'world_link', method: :delete do %>
+              <%= t('nlt.profile_actions.friend.delete', username: user.username) %>
+
+              <%= image_tag "friend_delete.png" %>
+            <% end %>
+          <% else %>
             <%= link_to friendships_path(friend_id: user.id),
                         class: 'world_link',
                         method: :post do %>
               <%= t('nlt.profile_actions.friend.add', username: user.username) %>
 
               <%= image_tag "friend_add.png" %>
-            <% end %>
-          <% else %>
-            <%= link_to friendship, class: 'world_link', method: :delete do %>
-              <%= t('nlt.profile_actions.friend.delete', username: user.username) %>
-
-              <%= image_tag "friend_delete.png" %>
             <% end %>
           <% end %>
         </li>
