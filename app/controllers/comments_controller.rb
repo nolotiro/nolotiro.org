@@ -10,10 +10,12 @@ class CommentsController < ApplicationController
       if @ad.user != current_user
         CommentsMailer.create(@ad.id, @comment.body).deliver_later
       end
-      redirect_to @ad, notice: t('nlt.comments.flash_ok')
+      flash[:notice] = t('nlt.comments.flash_ok')
     else
-      render 'ads/show'
+      flash[:alert] = t('nlt.comments.flash_ko')
     end
+
+    redirect_to @ad
   end
 
   private
