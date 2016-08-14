@@ -9,9 +9,7 @@
 
       <% if blocking %>
         <li>
-          <%= link_to blocking,
-                      method: :delete,
-                      class: 'world_link' do %>
+          <%= link_to blocking, method: :delete, class: 'world_link' do %>
             <%= t('nlt.profile_actions.blocking.delete', username: user.username) %>
 
             <%= image_tag "unblock.png" %>
