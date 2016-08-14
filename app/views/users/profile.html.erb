@@ -6,7 +6,8 @@
 
 <div class="col-md-9 col-sm-9">
   <div class="row">
-    <%= render partial: "users/tabnav", locals: {user: @user} %>
+    <%= render "users/tabnav", user: @user %>
+
     <div class="ad_excerpt">
       <h4><%= t('nlt.username') %>: <%= @user.username %></h4>
       <h4><%= t('nlt.member_since') %>: <%= l @user.created_at, format: :long %></h4>

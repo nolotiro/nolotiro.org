@@ -8,7 +8,7 @@
   <div class="row">
     <% if @locations.nil? %>
       <p class="error"><%= t('nlt.change_town.choose_html', location: params[:location]) %></p>
-      <%= render partial: "ask_form" %>
+      <%= render "ask_form" %>
     <% else %>
       <%= render "list_form", locations: @locations %>
     <% end %>
@@ -16,5 +16,5 @@
 </div>
 
 <div class="col-md-4 col-sm-4">
-  <%= render partial: "partials/google_adsense", locals: { class_name: "google_adsense_336_280", ad_slot: "7225596067"}  %>
+  <%= render "partials/google_adsense", class_name: "google_adsense_336_280", ad_slot: "7225596067" %>
 </div>

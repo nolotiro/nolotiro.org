@@ -11,13 +11,13 @@
 
 .col-md-7.col-sm-7#messages-thread
   - @conversation.messages_for(current_user).includes(:sender).each do |mes|
-    = render partial: "message", locals: {message: mes}
+    = render "message", message: mes
 
   - if policy(@conversation).update?
-    = render partial: "reply", locals: {message: @message}
+    = render "reply", message: @message
 
 .col-md-5.col-sm-5
   .row.mobile
-    = render partial: "partials/google_adsense", locals: { class_name: "google_adsense_336_280", ad_slot: "7225596067"}
+    = render "partials/google_adsense", class_name: "google_adsense_336_280", ad_slot: "7225596067"
   .row.desktop
-    = render partial: "partials/google_adsense", locals: { class_name: "google_adsense_300_250", ad_slot: "8702329269"}
+    = render "partials/google_adsense", class_name: "google_adsense_300_250", ad_slot: "8702329269"

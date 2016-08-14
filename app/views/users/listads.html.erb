@@ -6,14 +6,14 @@
 
 <div class="col-md-9 col-sm-9">
   <div class="row">
-    <%= render partial: "users/tabnav", locals: {user: @user} %>
+    <%= render "users/tabnav", user: @user %>
 
     <%= render "filter_status" %>
 
     <% if @ads.any? %>
-      <%= render partial: 'ads/list_with_adsense', locals: { ads: @ads } %>
+      <%= render 'ads/list_with_adsense', ads: @ads %>
 
-      <%= render partial: "partials/pagination", locals: { items: @ads } %>
+      <%= render "partials/pagination", items: @ads %>
     <% else %>
       <div class="empty"> <%= t("nlt.no_results.on_user") %> </div>
     <% end %>
@@ -22,7 +22,7 @@
 
 <div class="col-md-3 col-sm-3">
   <div class="google_ad_wrapper">
-    <%= render partial: "partials/google_adsense", locals: { class_name: "desktop google_adsense_600_160", ad_slot: "6783776462"}  %>
-    <%= render partial: "partials/google_adsense", locals: { class_name: "mobile google_adsense_336_280", ad_slot: "7225596067"}  %>
+    <%= render "partials/google_adsense", class_name: "desktop google_adsense_600_160", ad_slot: "6783776462" %>
+    <%= render "partials/google_adsense", class_name: "mobile google_adsense_336_280", ad_slot: "7225596067" %>
   </div>
 </div>
