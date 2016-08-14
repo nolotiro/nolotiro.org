@@ -39,7 +39,7 @@
     <% end %>
 
     <span class="ad_date">
-      <%= t('nlt.published_at_by_html', time: distance_of_time_in_words_to_now(@ad.published_at), user: link_to(@ad.user.username, listads_user_path(@ad.user))) %>
+      <%= t('nlt.published_at_by_html', time: distance_of_time_in_words_to_now(@ad.published_at), user: link_to(@ad.user.username, profile_path(@ad.user))) %>
     </span>
 
     <div class="ad_body">
