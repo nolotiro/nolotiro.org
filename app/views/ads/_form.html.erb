@@ -46,6 +46,12 @@
         </p>
       </dd>
 
+      <!--
+        The following "adbo" CSS id is so that we don't get blocked by AdBlock.
+        @todo Globally rename Ad to Present/Request so that we don't have
+        further problems with this and we no longer need this kind of hacks
+      -->
+
       <dt>
         <%= f.label :body, t('nlt.ads.form.body'), class: "required", id: "adbo", for: "adbo" %>
       </dt>
