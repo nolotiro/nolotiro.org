@@ -10,7 +10,7 @@ class AdHelperTest < ActionView::TestCase
   test 'should get locations ranking' do
     mocking_yahoo_woeid_info(766_273) do
       actual = AdHelper.get_locations_ranking(1)
-      expected = [['Madrid, Madrid, España', 766_273, 1]]
+      expected = [['Madrid', 766_273, 1]]
       assert_equal(expected, actual)
     end
   end

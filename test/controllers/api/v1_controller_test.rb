@@ -15,7 +15,7 @@ module Api
         body = JSON.parse(@response.body)
         body_expected = {
           'locations' => [
-            { 'woeid_id' => 766_273, 'woeid_name' => 'Madrid, Madrid, España', 'ads_count' => 1 }
+            { 'woeid_id' => 766_273, 'woeid_name' => 'Madrid', 'ads_count' => 1 }
           ]
         }
         assert_equal(body_expected, body)
