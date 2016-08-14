@@ -65,32 +65,30 @@
 </div>
 
 <div class="col-md-9 col-sm-9">
-  <div class="row">
-    <% if @type == "give" %>
-      <%= render "woeid/filter_status" %>
-    <% end %>
+  <% if @type == "give" %>
+    <%= render "woeid/filter_status" %>
+  <% end %>
 
-    <% if @ads.any? %>
-      <%= render 'ads/list_with_adsense', ads: @ads %>
+  <% if @ads.any? %>
+    <%= render 'ads/list_with_adsense', ads: @ads %>
 
-      <%= render "partials/pagination", items: @ads %>
+    <%= render "partials/pagination", items: @ads %>
+  <% else %>
+    <% if @q %>
+      <%= render "ads/no_results_search" %>
     <% else %>
-      <% if @q %>
-        <%= render "ads/no_results_search" %>
-      <% else %>
-        <%= render "ads/no_results" %>
-      <% end %>
+      <%= render "ads/no_results" %>
     <% end %>
+  <% end %>
 
-    <% unless @q or @woeid.nil? %>
-      <div class="rss">
-        <%= link_to rss_type_path(woeid: @id, type: "give") do %>
-          <%= image_tag "icons/rss.png", alt: t("nlt.rss_suscribe") %>
-          &nbsp; <%= t('nlt.rss_suscribe') %> - <%= @woeid[:full] %>
-        <% end %>
-      </div>
-    <% end %>
-  </div>
+  <% unless @q or @woeid.nil? %>
+    <div class="rss">
+      <%= link_to rss_type_path(woeid: @id, type: "give") do %>
+        <%= image_tag "icons/rss.png", alt: t("nlt.rss_suscribe") %>
+        &nbsp; <%= t('nlt.rss_suscribe') %> - <%= @woeid[:full] %>
+      <% end %>
+    </div>
+  <% end %>
 </div>
 
 <div class="col-md-3 col-sm-3">
