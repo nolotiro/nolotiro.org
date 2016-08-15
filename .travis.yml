@@ -2,6 +2,10 @@
 
 language: ruby
 
+sudo: required
+
+dist: trusty
+
 cache:
   bundler: true
   apt: true
@@ -24,8 +28,15 @@ script:
 
 before_script:
   - cp config/secrets.yml.example config/secrets.yml
-  - cp config/database.yml.travis config/database.yml
+  - cp config/database.yml.example config/database.yml
 
 branches:
   only:
     - master
+
+addons:
+  apt:
+    packages:
+    - mysql-server-5.6
+    - mysql-client-core-5.6
+    - mysql-client-5.6
