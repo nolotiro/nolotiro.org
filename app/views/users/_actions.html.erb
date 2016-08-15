@@ -2,7 +2,9 @@
   <% if user_signed_in? %>
     <% if current_user == user %>
       <li>
-        <%= link_to t('nlt.user_edit_profile'), user_edit_path(user) %>
+        <%= link_to t('nlt.user_edit_profile'),
+                    user_edit_path(user),
+                    class: 'world_link' %>
       </li>
     <% elsif blocking %>
       <li>
