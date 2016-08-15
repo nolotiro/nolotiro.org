@@ -7,11 +7,10 @@
       </span>
     <% end %>
 
-    <% unread_messages_count = current_user.unread_messages_count %>
-    <%= link_to conversations_path, title: "#{unread_messages_count}" do %>
+    <%= link_to conversations_path do %>
       <span>
         <%= image_tag "icons/ico_email.gif" %>
-        &nbsp;<b><%= unread_messages_count %></b>
+        &nbsp;<b><%= current_user.unread_messages_count %></b>
       </span>
     <% end %>
 
