@@ -55,25 +55,23 @@ class User < ActiveRecord::Base
          :omniauthable, omniauth_providers: [:facebook, :google_oauth2]
 
   scope :top_overall, -> do
-    Rails.cache.fetch("user-overall-ranks-#{Ad.cache_digest}") do
-      build_rank(Ad)
-    end
+    Rails.cache.fetch("top-overall-#{Ad.cache_digest}") { build_rank(Ad) }
   end
 
   scope :top_last_week, -> do
-    Rails.cache.fetch("user-last-week-ranks-#{Ad.cache_digest}") do
+    Rails.cache.fetch("top-last-week-#{Ad.cache_digest}") do
       build_rank(Ad.last_week)
     end
   end
 
   scope :top_city_overall, ->(woeid) do
-    Rails.cache.fetch("woeid/#{woeid}/overall-rank-#{Ad.cache_digest}") do
+    Rails.cache.fetch("woeid/#{woeid}/top-overall-#{Ad.cache_digest}") do
       build_rank(Ad.by_woeid_code(woeid))
     end
   end
 
   scope :top_city_last_week, ->(woeid) do
-    Rails.cache.fetch("woeid/#{woeid}/last-week-rank-#{Ad.cache_digest}") do
+    Rails.cache.fetch("woeid/#{woeid}/top-last-week-#{Ad.cache_digest}") do
       build_rank(Ad.last_week.by_woeid_code(woeid))
     end
   end
