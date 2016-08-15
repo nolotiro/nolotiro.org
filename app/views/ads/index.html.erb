@@ -26,15 +26,15 @@
 </div>
 
 <div class="col-md-3 col-sm-3">
-  <% cache("ads/#{I18n.locale}/location-ranks-#{Ad.cache_digest}") do %>
+  <% cache("#{I18n.locale}/location-ranks-#{Ad.cache_digest}") do %>
     <%= render "partials/section_locations" %>
   <% end %>
 
-  <% cache("ads/user-last-week-ranks-#{Ad.cache_digest}") do %>
+  <% cache("user-last-week-ranks-#{Ad.cache_digest}") do %>
     <%= render "partials/section_last_week_users" %>
   <% end %>
 
-  <% cache("ads/user-overall-ranks-#{Ad.cache_digest}") do %>
+  <% cache("user-overall-ranks-#{Ad.cache_digest}") do %>
     <%= render "partials/section_overall_users" %>
   <% end %>
 </div>
