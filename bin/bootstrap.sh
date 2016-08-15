@@ -41,5 +41,4 @@ chown vagrant:vagrant config/*.yml
 # TODO: db:seeds
 sudo -u vagrant bin/rake db:drop
 sudo -u vagrant bin/rake db:setup
-sudo -u vagrant bin/rake ts:index ts:restart
 sudo -u vagrant bin/rake download_maxmind_db
