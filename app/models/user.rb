@@ -81,16 +81,8 @@ class User < ActiveRecord::Base
     email
   end
 
-  def conversations
-    @conversations ||= Conversation.involving(self)
-  end
-
   def unread_conversations_count
-    conversations.unread(self).size
-  end
-
-  def mark_as_read(conversation)
-    conversation.mark_as_read(self)
+    Conversation.unread(self).size
   end
 
   def admin?
