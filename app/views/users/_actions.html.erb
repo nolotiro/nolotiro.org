@@ -1,4 +1,15 @@
 <ul>
+  <% if current_user.nil? || blocking.nil? %>
+    <li>
+      <%= link_to new_conversation_path(recipient_id: user.id),
+                  class: "world_link" do %>
+        <%= t('nlt.send_a_message_to') %> <%= user.username %>
+
+        <%= image_tag "email_send.png" %>
+      <% end %>
+    </li>
+  <% end %>
+
   <% if user_signed_in? %>
     <% if current_user == user %>
       <li>
@@ -23,15 +34,6 @@
           <%= t('nlt.profile_actions.blocking.add', username: user.username) %>
 
           <%= image_tag "block.png" %>
-        <% end %>
-      </li>
-
-      <li>
-        <%= link_to new_conversation_path(recipient_id: user.id),
-                    class: "world_link" do %>
-          <%= t('nlt.send_a_message_to') %> <%= user.username %>
-
-          <%= image_tag "email_send.png" %>
         <% end %>
       </li>
 
