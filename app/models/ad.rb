@@ -94,6 +94,10 @@ class Ad < ActiveRecord::Base
 
   self.per_page = 20
 
+  scope :top_locations, ->(limit = 20) do
+    give.group(:woeid_code).order('count_id desc').limit(limit).count('id')
+  end
+
   def self.cache_digest
     last_ad_publication = Ad.maximum(:published_at)
     return '0' * 20 unless last_ad_publication
