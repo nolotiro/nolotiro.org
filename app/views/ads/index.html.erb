@@ -30,11 +30,11 @@
     <%= render "partials/section_locations" %>
   <% end %>
 
-  <% cache("ads/#{I18n.locale}/user-last-week-ranks-#{Ad.cache_digest}") do %>
+  <% cache("ads/user-last-week-ranks-#{Ad.cache_digest}") do %>
     <%= render "partials/section_last_week_users" %>
   <% end %>
 
-  <% cache("ads/#{I18n.locale}/user-overall-ranks-#{Ad.cache_digest}") do %>
+  <% cache("ads/user-overall-ranks-#{Ad.cache_digest}") do %>
     <%= render "partials/section_overall_users" %>
   <% end %>
 </div>
