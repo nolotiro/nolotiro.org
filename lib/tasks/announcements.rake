@@ -4,9 +4,10 @@ namespace :announcements do
   desc 'Announce blocking feature'
   task blocking: :environment do
     message = <<-TXT.squish
-      A partir de ahora, puedes bloquear a otros usuarios y ya no te podrán
-      volver a contactar, ni ver tus regalos, comentarios o cualquier actividad
-      tuya en Nolotiro. Serás invisible para ellos!
+      Ahora puedes castigar la falta de seriedad, los plantones o cualquier otro
+      comportamiento que no te guste de otros usuarios de Nolotiro. Visita el
+      perfil del usuario al que quieres bloquear y haz click en el enlace de
+      "bloquear" que aparece. A partir de entonces eres invisible para él!
     TXT
 
     Announcement.create!(message: message,
