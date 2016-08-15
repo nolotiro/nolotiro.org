@@ -2,7 +2,7 @@
   <%= div_for announcement do %>
     <%= announcement.message %>
 
-    <%= link_to 'Ocultar',
+    <%= link_to '&times;'.html_safe,
                 announcement_dismissals_path(announcement_id: announcement.id),
                 method: :post %>
   <% end %>
