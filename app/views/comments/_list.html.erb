@@ -15,7 +15,7 @@
 
   <% if policy(@comment).create? %>
     <div class="ad_comment_form">
-      <%= render partial: "comments/form", locals: {comment: @comment} %>
+      <%= render "comments/form", comment: @comment %>
     </div>
   <% end %>
 </div>

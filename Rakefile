@@ -17,7 +17,7 @@ if %(test development).include?(Rails.env)
   end
 
   task :brakeman do
-    system('brakeman')
+    system('brakeman --quiet')
   end
 
   # Hack to prevent tests from being run twice.

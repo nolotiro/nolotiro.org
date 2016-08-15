@@ -11,7 +11,7 @@
       <% end %>
 
       <dt>
-        <%= f.label :image,  t('nlt.ads.form.select_an_image'), class: "optional" %> 
+        <%= f.label :image, t('nlt.ads.form.select_an_image'), class: "optional" %>
       </dt>
       <dd>
         <%= f.file_field :image %>
@@ -22,7 +22,7 @@
 
       <% if ad.id %>
         <dt>
-          <%= f.label :status,  t('nlt.ads.form.status'), class: "required" %> 
+          <%= f.label :status, t('nlt.ads.form.status'), class: "required" %>
         </dt>
         <dd>
           <%= f.select(:status, options_for_select([[t('nlt.available'), 1], [t('nlt.booked'), 2], [t('nlt.delivered'), 3]], selected: ad.status))  %>
@@ -30,14 +30,14 @@
       <% end %>
 
       <dt>
-        <%= f.label :type,  t('nlt.ads.form.type_ad'), class: "required" %> 
+        <%= f.label :type, t('nlt.ads.form.type_ad'), class: "required" %>
       </dt>
       <dd>
         <%= f.select(:type, options_for_select([["#{t('nlt.give')}...", 1], ["#{t('nlt.want')}...", 2]], selected: ad.type ? ad.type : params[:type]))  %>
       </dd>
 
       <dt>
-        <%= f.label :title,  t('nlt.ads.form.title'), class: "required" %> 
+        <%= f.label :title, t('nlt.ads.form.title'), class: "required" %>
       </dt>
       <dd>
         <%= f.text_field :title, required: true, maxlength: 100, size: 45 %>
@@ -46,18 +46,24 @@
         </p>
       </dd>
 
+      <!--
+        The following "adbo" CSS id is so that we don't get blocked by AdBlock.
+        @todo Globally rename Ad to Present/Request so that we don't have
+        further problems with this and we no longer need this kind of hacks
+      -->
+
       <dt>
-        <%= f.  label :body,  t('nlt.ads.form.body'), class: "required", id: "adbo", for: "adbo" %> 
+        <%= f.label :body, t('nlt.ads.form.body'), class: "required", id: "adbo", for: "adbo" %>
       </dt>
       <dd>
-        <%= f.  text_area :body, rows: 24, cols: 80, required: true, maxlength: 500, id: "adbo" %>
+        <%= f.text_area :body, required: true, maxlength: 500, id: "adbo" %>
         <p class="description">
           <%= t 'nlt.ads.form.body_max' %>
         </p>
       </dd>
 
       <dt>
-        <%= f.label :comments_enabled,  t('nlt.ads.form.comments_enabled'), class: "required" %> 
+        <%= f.label :comments_enabled, t('nlt.ads.form.comments_enabled'), class: "required" %>
       </dt>
       <span class="element">
         <%= f.check_box :comments_enabled %>

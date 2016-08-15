@@ -6,14 +6,15 @@
 
 .col-md-9.col-sm-9
   .row
-    = render partial: "users/tabnav", locals: {user: current_user}
+    = render "users/tabnav", user: current_user
+
     - if @conversations.count > 0
       = form_tag trash_conversations_path, method: :delete do
         .table-responsive
           %table#mail-list.table.table-condensed
             %tbody
               - @conversations.each do |c|
-                = render partial: "conversations/conversation", locals: { c: c }
+                = render "conversations/conversation", c: c
         = submit_tag t('mailboxer.buttons.trash_selected'), id: 'delete_multiple_button'
       = will_paginate @conversations
     - else
@@ -23,5 +24,5 @@
 
 .col-md-3.col-sm-3
   .row
-    = render partial: "partials/google_adsense", locals: { class_name: "mobile google_adsense_336_280", ad_slot: "7225596067"}
-    = render partial: "partials/google_adsense", locals: { class_name: "desktop google_adsense_600_160", ad_slot: "6783776462"}
+    = render "partials/google_adsense", class_name: "mobile google_adsense_336_280", ad_slot: "7225596067"
+    = render "partials/google_adsense", class_name: "desktop google_adsense_600_160", ad_slot: "6783776462"

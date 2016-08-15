@@ -80,11 +80,11 @@
       </div>
 
       <div class="desktop">
-        <%= render partial: "partials/google_adsense", locals: { class_name: "google_adsense_728_90", ad_slot: "9326281262"}  %>
+        <%= render "partials/google_adsense", class_name: "google_adsense_728_90", ad_slot: "9326281262" %>
       </div>
 
       <div class="mobile">
-        <%= render partial: "partials/google_adsense", locals: { class_name: "google_adsense_320_100", ad_slot: "1977811266"}  %>
+        <%= render "partials/google_adsense", class_name: "google_adsense_320_100", ad_slot: "1977811266" %>
       </div>
 
       <% unless I18n.locale == :es %>
@@ -100,7 +100,7 @@
       </div>
 
       <% cache do %>
-        <%= render partial: "partials/footer", locals: { url: "https://nolotiro.org" } %>
+        <%= render "partials/footer", url: "https://nolotiro.org" %>
       <% end %>
 
     </div>

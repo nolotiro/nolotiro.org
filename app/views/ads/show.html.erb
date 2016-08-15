@@ -39,10 +39,10 @@
     <% end %>
 
     <span class="ad_date">
-      <%= t('nlt.published_at_by_html', time: distance_of_time_in_words_to_now(@ad.published_at), user: link_to(@ad.user.username, listads_user_path(@ad.user))) %>
+      <%= t('nlt.published_at_by_html', time: distance_of_time_in_words_to_now(@ad.published_at), user: link_to(@ad.user.username, profile_path(@ad.user))) %>
     </span>
 
-    <div class="ad_body">
+    <div class="body-wrapper">
       <%= simple_format(@ad.body) %>
     </div>
 
@@ -65,17 +65,17 @@
 
     <div class="sharelinks">
       <p><%= t('nlt.share_this_ad') %>:</p>
-      <%= render partial: "partials/social_buttons", locals: { url: ad_url(@ad) } %>
+      <%= render "partials/social_buttons", url: ad_url(@ad) %>
     </div>
   </div>
 
   <div class="ad_excerpt_comments">
-    <%= render partial: "comments/list", locals: {comments: @comments} %>
+    <%= render "comments/list", comments: @comments %>
   </div>
 </div>
 
 <div class="col-md-6 col-sm-6">
   <div class="google_ad_wrapper">
-    <%= render partial: "partials/google_adsense", locals: { class_name: "google_adsense_336_280", ad_slot: "7225596067"}  %>
+    <%= render "partials/google_adsense", class_name: "google_adsense_336_280", ad_slot: "7225596067" %>
   </div>
 </div>
