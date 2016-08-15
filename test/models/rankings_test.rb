@@ -2,7 +2,7 @@
 require 'test_helper'
 require 'support/web_mocking'
 
-class UserScopesTest < ActiveSupport::TestCase
+class RankingsTest < ActiveSupport::TestCase
   include WebMocking
 
   setup do
