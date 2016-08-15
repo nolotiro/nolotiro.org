@@ -15,9 +15,9 @@ class UserScopesTest < ActiveSupport::TestCase
 
     results = User.top_overall
 
-    assert_equal(2, results.length)
-    assert_count(results.first, user1.id, user1.username, 3)
-    assert_count(results.second, user2.id, user2.username, 1)
+    assert_equal 2, results.length
+    assert_count results.first, user1.id, user1.username, 3
+    assert_count results.second, user2.id, user2.username, 1
   end
 
   test 'top overall gives all time top ad publishers' do
@@ -25,10 +25,10 @@ class UserScopesTest < ActiveSupport::TestCase
 
     results = User.top_overall
 
-    assert_equal(3, results.length)
-    assert_count(results.first, user1.id, user1.username, 3)
-    assert_count(results.second, user2.id, user2.username, 2)
-    assert_count(results.third, user3.id, user3.username, 1)
+    assert_equal 3, results.length
+    assert_count results.first, user1.id, user1.username, 3
+    assert_count results.second, user2.id, user2.username, 2
+    assert_count results.third, user3.id, user3.username, 1
   end
 
   test "top last week gives last week's top publishers" do
@@ -36,16 +36,16 @@ class UserScopesTest < ActiveSupport::TestCase
 
     results = User.top_last_week
 
-    assert_equal(2, results.length)
-    assert_count(results.first, user1.id, user1.username, 3)
-    assert_count(results.second, user2.id, user2.username, 2)
+    assert_equal 2, results.length
+    assert_count results.first, user1.id, user1.username, 3
+    assert_count results.second, user2.id, user2.username, 2
   end
 
   test 'top last week accepts argument with number of publishers requested' do
     results = User.top_last_week(1)
 
-    assert_equal(1, results.length)
-    assert_count(results.first, user1.id, user1.username, 3)
+    assert_equal 1, results.length
+    assert_count results.first, user1.id, user1.username, 3
   end
 
   private
