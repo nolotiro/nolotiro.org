@@ -30,6 +30,7 @@
         <%= link_to new_conversation_path(recipient_id: user.id),
                     class: "world_link" do %>
           <%= t('nlt.send_a_message_to') %> <%= user.username %>
+
           <%= image_tag "email_send.png" %>
         <% end %>
       </li>
