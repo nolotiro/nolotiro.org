@@ -86,7 +86,7 @@ class User < ActiveRecord::Base
   end
 
   def unread_messages_count
-    conversations.unread(self).count
+    conversations.unread(self).size
   end
 
   def mark_as_read(conversation)
