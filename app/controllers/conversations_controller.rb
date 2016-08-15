@@ -3,7 +3,8 @@ class ConversationsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @conversations = conversations.paginate(page: params[:page])
+    @conversations = conversations.order(updated_at: :desc)
+                                  .paginate(page: params[:page])
   end
 
   def new
