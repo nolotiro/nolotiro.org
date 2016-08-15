@@ -1,7 +1,10 @@
 # frozen_string_literal: true
 require 'test_helper'
+require 'support/web_mocking'
 
 class UserScopesTest < ActiveSupport::TestCase
+  include WebMocking
+
   setup do
     Rails.cache.clear
 
@@ -46,6 +49,17 @@ class UserScopesTest < ActiveSupport::TestCase
 
     assert_equal 1, results.length
     assert_count results.first, user1.id, user1.username, 3
+  end
+
+  test 'top locations returns cities with most ads' do
+    mocking_yahoo_woeid_info(766_273) do
+      results = Ad.top_locations
+
+      assert_equal 1, results.length
+      assert_equal 766_273, results.first.woeid_code
+      assert_equal 'Madrid', results.first.woeid_name_short
+      assert_equal 3 + 2, results.first.n_ads
+    end
   end
 
   private

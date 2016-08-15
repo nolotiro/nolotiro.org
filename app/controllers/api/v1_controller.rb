@@ -20,7 +20,7 @@ module Api
     end
 
     def woeid_list
-      @section_locations = AdHelper.get_locations_ranking
+      @section_locations = Ad.top_locations(20)
     end
   end
 end
