@@ -85,7 +85,7 @@ class User < ActiveRecord::Base
     @conversations ||= Conversation.involving(self)
   end
 
-  def unread_messages_count
+  def unread_conversations_count
     conversations.unread(self).size
   end
 
