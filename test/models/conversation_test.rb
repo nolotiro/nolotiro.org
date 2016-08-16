@@ -76,6 +76,55 @@ class ConversationTest < ActiveSupport::TestCase
     assert_empty Conversation.involving(@user)
   end
 
+  def test_involving_includes_started_conversations
+    assert_equal [@conversation], Conversation.involving(@user)
+  end
+
+  def test_involving_includes_received_conversations
+    @conversation.update!(originator: @recipient, recipient: @user)
+
+    assert_equal [@conversation], Conversation.involving(@user)
+  end
+
+  def test_involving_excludes_started_conversations_with_blockers
+    create(:blocking, blocker: @recipient, blocked: @user)
+
+    assert_empty Conversation.involving(@user)
+  end
+
+  def test_involving_includes_started_conversations_with_blocked_users
+    create(:blocking, blocker: @user, blocked: @recipient)
+
+    assert_equal [@conversation], Conversation.involving(@user)
+  end
+
+  def test_involving_excludes_received_conversations_with_blockers
+    @conversation.update!(originator: @recipient, recipient: @user)
+    create(:blocking, blocker: @recipient, blocked: @user)
+
+    assert_empty Conversation.involving(@user)
+  end
+
+  def test_involving_includes_received_conversations_with_blocked_users
+    @conversation.update!(originator: @recipient, recipient: @user)
+    create(:blocking, blocker: @user, blocked: @recipient)
+
+    assert_equal [@conversation], Conversation.involving(@user)
+  end
+
+  def test_involving_includes_started_conversations_with_deleted_users
+    @recipient.destroy
+
+    assert_equal [@conversation], Conversation.involving(@user)
+  end
+
+  def test_involving_includes_received_conversations_with_deleted_users
+    @conversation.update!(originator: @recipient, recipient: @user)
+    @recipient.destroy
+
+    assert_equal [@conversation], Conversation.involving(@user)
+  end
+
   def test_interlocutor_returns_nil_for_orphan_conversations_w_one_msg
     @recipient.destroy
 

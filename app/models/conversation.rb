@@ -10,11 +10,33 @@ class Conversation < ActiveRecord::Base
   belongs_to :recipient, class_name: 'User'
 
   scope :involving, ->(user) do
-    joins(:receipts).merge(Receipt.untrashed_by(user)).distinct
+    joins(:receipts)
+      .participant(user)
+      .whitelisted(user)
+      .merge(Receipt.untrashed_by(user))
+      .distinct
   end
 
   scope :unread_by, ->(user) do
-    joins(:receipts).merge(Receipt.unread_by(user)).distinct
+    joins(:receipts)
+      .participant(user)
+      .whitelisted(user)
+      .merge(Receipt.unread_by(user))
+      .distinct
+  end
+
+  scope :participant, ->(user) do
+    where('recipient_id = ? OR originator_id = ?', user.id, user.id)
+  end
+
+  scope :whitelisted, ->(user) do
+    joined = joins <<-SQL.squish
+      LEFT OUTER JOIN blockings
+      ON (recipient_id = blocker_id AND originator_id = blocked_id) OR
+         (recipient_id = blocked_id AND originator_id = blocker_id)
+    SQL
+
+    joined.where('blockings.blocked_id IS NULL OR blockings.blocked_id <> ?', user.id)
   end
 
   def self.start(sender:, recipient:, subject: '', body: '')
