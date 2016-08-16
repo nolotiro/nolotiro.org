@@ -17,10 +17,6 @@ class Message < ActiveRecord::Base
     joins(:receipts).merge(Receipt.recipient(user).unread)
   end
 
-  def recipient_receipt
-    receipts.find { |receipt| receipt.mailbox_type == 'inbox' }
-  end
-
   def recipient
     conversation.interlocutor(sender)
   end
@@ -31,6 +27,6 @@ class Message < ActiveRecord::Base
   end
 
   def deliver
-    Mailboxer::MailDispatcher.new(self, [recipient_receipt]).call
+    Mailboxer::MessageMailer.send_email(self, recipient).deliver_now
   end
 end
