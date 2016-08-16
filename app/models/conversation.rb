@@ -15,7 +15,9 @@ class Conversation < ActiveRecord::Base
   end
 
   def self.start(sender:, recipient:, subject: '', body: '')
-    conversation = new(subject: subject)
+    conversation = new(subject: subject,
+                       originator_id: sender.id,
+                       recipient_id: recipient.id)
 
     conversation.envelope_for(sender: sender, recipient: recipient, body: body)
 
