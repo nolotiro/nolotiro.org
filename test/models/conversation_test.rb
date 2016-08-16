@@ -79,7 +79,7 @@ class ConversationTest < ActiveSupport::TestCase
   def test_interlocutor_returns_nil_for_orphan_conversations_w_one_msg
     @recipient.destroy
 
-    assert_nil @conversation.interlocutor(@user)
+    assert_nil @conversation.reload.interlocutor(@user)
   end
 
   def test_interlocutor_returns_nil_for_orphan_conversations_w_several_msgs
@@ -87,7 +87,7 @@ class ConversationTest < ActiveSupport::TestCase
     @conversation.save!
 
     @recipient.destroy
-    assert_nil @conversation.interlocutor(@user)
+    assert_nil @conversation.reload.interlocutor(@user)
   end
 
   def test_interlocutor_returns_nil_for_orphan_conversations_w_several_sent_msgs
@@ -95,7 +95,7 @@ class ConversationTest < ActiveSupport::TestCase
     @conversation.save!
 
     @recipient.destroy
-    assert_nil @conversation.interlocutor(@user)
+    assert_nil @conversation.reload.interlocutor(@user)
   end
 
   def test_recipient_when_she_has_sent_messages_and_originator_no_longer_there

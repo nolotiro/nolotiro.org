@@ -6,6 +6,9 @@ class Conversation < ActiveRecord::Base
   has_many :messages, dependent: :destroy
   has_many :receipts, through: :messages
 
+  belongs_to :originator, class_name: 'User'
+  belongs_to :recipient, class_name: 'User'
+
   scope :involving, ->(user) do
     joins(:receipts).merge(Receipt.involving(user).untrashed).distinct
   end
@@ -39,30 +42,7 @@ class Conversation < ActiveRecord::Base
   end
 
   def interlocutor(user)
-    message = message_by_interlocutor(user)
-    return message.sender if message
-
-    receipt = receipt_for_interlocutor(user)
-    return receipt.receiver if receipt
-
-    receipts.pluck(:mailbox_type).uniq.size == 1 ? nil : user
-  end
-
-  def originator
-    original_message.sender
-  end
-
-  def recipient
-    return interlocutor(originator) if originator
-
-    first_message_with_sender = messages.find(&:sender)
-    return first_message_with_sender.sender if first_message_with_sender
-
-    receipts.find(&:receiver).receiver
-  end
-
-  def original_message
-    @original_message ||= messages.order(:created_at).first
+    user == originator ? recipient : originator
   end
 
   def messages_for(user)
@@ -78,14 +58,4 @@ class Conversation < ActiveRecord::Base
   end
 
   delegate :mark_as_read, :move_to_trash, to: :receipts
-
-  private
-
-  def message_by_interlocutor(user)
-    messages.find { |message| message.sender_id != user.id }
-  end
-
-  def receipt_for_interlocutor(user)
-    receipts.find { |message| message.receiver_id != user.id }
-  end
 end

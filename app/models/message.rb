@@ -22,7 +22,7 @@ class Message < ActiveRecord::Base
   end
 
   def recipient
-    recipient_receipt.receiver
+    conversation.interlocutor(sender)
   end
 
   def envelope_for(recipient)
