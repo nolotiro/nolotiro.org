@@ -65,6 +65,7 @@ class Ad < ActiveRecord::Base
 
   scope :by_type, ->(type) do
     return all unless type.present?
+
     where(type: type)
   end
 
@@ -74,16 +75,19 @@ class Ad < ActiveRecord::Base
 
   scope :by_status, ->(status) do
     return all unless status.present?
+
     where(status: status)
   end
 
   scope :by_woeid_code, ->(woeid_code) do
     return all unless woeid_code.present?
+
     where(woeid_code: woeid_code)
   end
 
   scope :by_title, ->(query) do
     return all unless query.present?
+
     where('MATCH(title) AGAINST (?)', query)
   end
 
