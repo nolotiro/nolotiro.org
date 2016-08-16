@@ -31,7 +31,7 @@ class ConversationTest < ActiveSupport::TestCase
     assert_equal 0, Conversation.unread(@recipient).size
   end
 
-  def test_unread_excludes_conversations_with_blockers
+  def test_unread_scope_excludes_conversations_with_blockers
     create(:blocking, blocker: @user, blocked: @recipient)
 
     assert_equal 0, Conversation.unread(@user).size
