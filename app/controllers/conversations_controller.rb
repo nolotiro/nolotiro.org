@@ -4,8 +4,10 @@ class ConversationsController < ApplicationController
   before_action :load_conversation, only: [:show, :update]
 
   def index
-    @conversations = conversations.order(updated_at: :desc)
-                                  .paginate(page: params[:page])
+    @conversations = Conversation.involving(current_user)
+                                 .includes(:originator, :recipient)
+                                 .order(updated_at: :desc)
+                                 .paginate(page: params[:page])
   end
 
   def new
@@ -64,7 +66,9 @@ class ConversationsController < ApplicationController
   end
 
   def trash
-    conversation = conversations.find(params[:id] || params[:conversations])
+    conversation = Conversation.involving(current_user)
+                               .find(params[:id] || params[:conversations])
+
     Array(conversation).each { |c| c.move_to_trash(current_user) }
 
     redirect_to conversations_path,
@@ -74,7 +78,7 @@ class ConversationsController < ApplicationController
   private
 
   def load_conversation
-    @conversation = conversations.find(params[:id])
+    @conversation = Conversation.involving(current_user).find(params[:id])
   end
 
   def start_params
@@ -89,9 +93,5 @@ class ConversationsController < ApplicationController
     missing_subject = @conversation.errors['subject']
 
     @message.errors.add(:subject, missing_subject.first) if missing_subject.any?
-  end
-
-  def conversations
-    Conversation.involving(current_user)
   end
 end
