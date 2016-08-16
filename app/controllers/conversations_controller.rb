@@ -53,8 +53,6 @@ class ConversationsController < ApplicationController
     end
   end
 
-  # GET /messages/:ID
-  # GET /message/show/:ID/subject/SUBJECT
   def show
     authorize(@conversation)
 
