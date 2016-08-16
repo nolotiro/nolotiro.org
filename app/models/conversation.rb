@@ -14,14 +14,26 @@ class Conversation < ActiveRecord::Base
     joins(:receipts).merge(Receipt.involving(user).unread).distinct
   end
 
-  def envelope_for(sender:, recipient:, body: '')
-    self.updated_at = Time.zone.now
+  def self.start(sender:, recipient:, subject: '', body: '')
+    conversation = new(subject: subject)
 
+    conversation.envelope_for(sender: sender, recipient: recipient, body: body)
+
+    conversation
+  end
+
+  def envelope_for(sender:, recipient:, body: '')
     message = messages.build(sender: sender, body: body)
 
     message.envelope_for(recipient)
 
     message
+  end
+
+  def reply(sender:, recipient:, body: '')
+    self.updated_at = Time.zone.now
+
+    envelope_for(sender: sender, recipient: recipient, body: body)
   end
 
   def interlocutor(user)
