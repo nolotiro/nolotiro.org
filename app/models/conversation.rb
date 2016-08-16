@@ -37,12 +37,10 @@ class Conversation < ActiveRecord::Base
   end
 
   def interlocutor(user)
-    received_receipts = receipts.where.not(receiver_id: user.id)
-    return received_receipts.first.receiver if received_receipts.any?
+    original_receipt = interlocutor_receipt(user)
+    return unless original_receipt
 
-    return if receipts.size == 1
-
-    receipts.first.receiver
+    original_receipt.receiver
   end
 
   def originator
@@ -66,4 +64,15 @@ class Conversation < ActiveRecord::Base
   end
 
   delegate :mark_as_read, :move_to_trash, to: :receipts
+
+  private
+
+  def interlocutor_receipt(user)
+    received_receipts = receipts.where.not(receiver_id: user.id)
+    return received_receipts.first if received_receipts.any?
+
+    return if receipts.size == 1
+
+    receipts.first
+  end
 end
