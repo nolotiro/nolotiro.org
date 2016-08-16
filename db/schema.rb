@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160816012524) do
+ActiveRecord::Schema.define(version: 20160816164210) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace",     limit: 255
@@ -81,10 +81,15 @@ ActiveRecord::Schema.define(version: 20160816012524) do
   add_index "comments", ["user_owner"], name: "index_comments_on_user_owner", using: :btree
 
   create_table "conversations", force: :cascade do |t|
-    t.string   "subject",    limit: 255, default: ""
-    t.datetime "created_at",                          null: false
-    t.datetime "updated_at",                          null: false
+    t.string   "subject",       limit: 255, default: ""
+    t.datetime "created_at",                             null: false
+    t.datetime "updated_at",                             null: false
+    t.integer  "originator_id", limit: 4
+    t.integer  "recipient_id",  limit: 4
   end
+
+  add_index "conversations", ["originator_id"], name: "index_conversations_on_originator_id", using: :btree
+  add_index "conversations", ["recipient_id"], name: "index_conversations_on_recipient_id", using: :btree
 
   create_table "dismissals", force: :cascade do |t|
     t.integer "announcement_id", limit: 4
