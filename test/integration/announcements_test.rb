@@ -27,7 +27,7 @@ class AnnouncementsTest < ActionDispatch::IntegrationTest
   it 'properly dismisses announcements' do
     login_as create(:user, woeid: nil)
     visit root_path
-    click_link 'Ocultar'
+    click_link '×'
 
     refute_content @active_announcement.message
   end
@@ -41,7 +41,7 @@ class AnnouncementsTest < ActionDispatch::IntegrationTest
     assert_content @active_announcement2.message
     refute_content @active_announcement.message
 
-    click_link 'Ocultar'
+    click_link '×'
     assert_content @active_announcement.message
     refute_content @active_announcement2.message
   end
