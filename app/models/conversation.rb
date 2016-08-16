@@ -10,11 +10,11 @@ class Conversation < ActiveRecord::Base
   belongs_to :recipient, class_name: 'User'
 
   scope :involving, ->(user) do
-    joins(:receipts).merge(Receipt.involving(user).untrashed).distinct
+    joins(:receipts).merge(Receipt.untrashed_by(user)).distinct
   end
 
   scope :unread_by, ->(user) do
-    joins(:receipts).merge(Receipt.involving(user).unread).distinct
+    joins(:receipts).merge(Receipt.unread_by(user)).distinct
   end
 
   def self.start(sender:, recipient:, subject: '', body: '')

@@ -6,6 +6,9 @@ class Receipt < ActiveRecord::Base
 
   scope :recipient, ->(recipient) { where(receiver_id: recipient.id) }
 
+  scope :untrashed_by, ->(user) { involving(user).untrashed }
+  scope :unread_by, ->(user) { involving(user).unread }
+
   scope :untrashed, -> { where(trashed: false) }
   scope :unread, -> { untrashed.where(is_read: false) }
 
