@@ -8,6 +8,11 @@ class ConversationsController < ApplicationController
                                  .includes(:originator, :recipient)
                                  .order(updated_at: :desc)
                                  .paginate(page: params[:page])
+
+    @unread_counts = Message.where(conversation_id: @conversations.ids)
+                            .unread_by(current_user)
+                            .group(:conversation_id)
+                            .size
   end
 
   def new

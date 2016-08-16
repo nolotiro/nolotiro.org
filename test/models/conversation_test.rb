@@ -37,11 +37,6 @@ class ConversationTest < ActiveSupport::TestCase
     assert_equal 0, Conversation.unread_by(@user).size
   end
 
-  def test_unread_method_returns_a_boolean_unread_flag
-    assert_equal false, @conversation.unread?(@user)
-    assert_equal true, @conversation.unread?(@recipient)
-  end
-
   def test_reply_touches_the_conversation_timestamp
     @conversation.update!(updated_at: 1.hour.ago)
     @conversation.reply(sender: @user, recipient: @recipient, body: 'Hey!')

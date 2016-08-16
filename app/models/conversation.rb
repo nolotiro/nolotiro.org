@@ -75,9 +75,5 @@ class Conversation < ActiveRecord::Base
     @last_message ||= messages.last
   end
 
-  def unread?(user)
-    messages.unread_by(user).any?
-  end
-
   delegate :mark_as_read, :move_to_trash, to: :receipts
 end
