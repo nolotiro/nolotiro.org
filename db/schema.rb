@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160816012524) do
+ActiveRecord::Schema.define(version: 20160816012551) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace",     limit: 255
@@ -49,6 +49,7 @@ ActiveRecord::Schema.define(version: 20160816012524) do
   end
 
   add_index "ads", ["status"], name: "index_ads_on_status", using: :btree
+  add_index "ads", ["title"], name: "index_ads_on_title", type: :fulltext
   add_index "ads", ["user_owner"], name: "index_ads_on_user_owner", using: :btree
   add_index "ads", ["woeid_code"], name: "woeid", using: :btree
 

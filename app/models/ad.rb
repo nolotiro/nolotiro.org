@@ -84,7 +84,7 @@ class Ad < ActiveRecord::Base
 
   scope :by_title, ->(query) do
     return all unless query.present?
-    where('title LIKE ?', "%#{query}%")
+    where('MATCH(title) AGAINST (?)', query)
   end
 
   scope :last_week, -> { where('created_at >= :date', date: 1.week.ago) }
