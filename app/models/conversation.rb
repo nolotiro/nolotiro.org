@@ -13,7 +13,7 @@ class Conversation < ActiveRecord::Base
     joins(:receipts).merge(Receipt.involving(user).untrashed).distinct
   end
 
-  scope :unread, ->(user) do
+  scope :unread_by, ->(user) do
     joins(:receipts).merge(Receipt.involving(user).unread).distinct
   end
 
@@ -54,7 +54,7 @@ class Conversation < ActiveRecord::Base
   end
 
   def unread?(user)
-    messages.unread(user).any?
+    messages.unread_by(user).any?
   end
 
   delegate :mark_as_read, :move_to_trash, to: :receipts

@@ -13,7 +13,7 @@ class Message < ActiveRecord::Base
     joins(:receipts).merge(Receipt.recipient(user).untrashed)
   end
 
-  scope :unread, ->(user) do
+  scope :unread_by, ->(user) do
     joins(:receipts).merge(Receipt.recipient(user).unread)
   end
 

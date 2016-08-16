@@ -95,7 +95,7 @@ class User < ActiveRecord::Base
   end
 
   def unread_conversations_count
-    Conversation.unread(self).size
+    Conversation.unread_by(self).size
   end
 
   def admin?

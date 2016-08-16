@@ -12,29 +12,29 @@ class ConversationTest < ActiveSupport::TestCase
                                           recipient: @recipient)
   end
 
-  def test_unread_scope_returns_unread_conversations_only
-    assert_equal 0, Conversation.unread(@user).size
-    assert_equal 1, Conversation.unread(@recipient).size
+  def test_unread_by_scope_returns_unread_conversations_only
+    assert_equal 0, Conversation.unread_by(@user).size
+    assert_equal 1, Conversation.unread_by(@recipient).size
   end
 
   def test_mark_as_read_does_what_its_name_indicates
     @conversation.mark_as_read(@recipient)
 
-    assert_equal 0, Conversation.unread(@user).size
-    assert_equal 0, Conversation.unread(@recipient).size
+    assert_equal 0, Conversation.unread_by(@user).size
+    assert_equal 0, Conversation.unread_by(@recipient).size
   end
 
-  def test_unread_scope_excludes_deleted_conversations
+  def test_unread_by_scope_excludes_deleted_conversations
     @conversation.move_to_trash(@recipient)
 
-    assert_equal 0, Conversation.unread(@user).size
-    assert_equal 0, Conversation.unread(@recipient).size
+    assert_equal 0, Conversation.unread_by(@user).size
+    assert_equal 0, Conversation.unread_by(@recipient).size
   end
 
-  def test_unread_scope_excludes_conversations_with_blockers
+  def test_unread_by_scope_excludes_conversations_with_blockers
     create(:blocking, blocker: @user, blocked: @recipient)
 
-    assert_equal 0, Conversation.unread(@user).size
+    assert_equal 0, Conversation.unread_by(@user).size
   end
 
   def test_unread_method_returns_a_boolean_unread_flag
