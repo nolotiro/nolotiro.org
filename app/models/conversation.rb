@@ -48,7 +48,7 @@ class Conversation < ActiveRecord::Base
   end
 
   def unread?(user)
-    messages.unread(user).count != 0
+    messages.unread(user).any?
   end
 
   delegate :mark_as_read, :move_to_trash, to: :receipts
