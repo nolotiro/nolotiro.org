@@ -49,8 +49,15 @@ class ReceiptTest < ActiveSupport::TestCase
     assert_correctness Receipt.involving(@user)
   end
 
-  def test_involving_includes_receipts_related_to_orphan_users
+  def test_involving_includes_receipts_related_to_orphan_senders
     create(:conversation, originator: @other, recipient: @user)
+    @other.destroy
+
+    assert_correctness Receipt.involving(@user)
+  end
+
+  def test_involving_includes_receipts_related_to_orphan_recipients
+    create(:conversation, originator: @user, recipient: @other)
     @other.destroy
 
     assert_correctness Receipt.involving(@user)
