@@ -47,6 +47,10 @@ class Conversation < ActiveRecord::Base
     original_message.sender
   end
 
+  def recipient
+    interlocutor(originator)
+  end
+
   def original_message
     @original_message ||= messages.order(:created_at).first
   end
