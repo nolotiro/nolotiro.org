@@ -26,9 +26,11 @@ class Conversation < ActiveRecord::Base
 
   def interlocutor(user)
     received_receipts = receipts.where.not(receiver_id: user.id)
-    return receipts.first.receiver unless received_receipts.any?
+    return received_receipts.first.receiver if received_receipts.any?
 
-    received_receipts.first.receiver
+    return if receipts.size == 1
+
+    receipts.first.receiver
   end
 
   def originator

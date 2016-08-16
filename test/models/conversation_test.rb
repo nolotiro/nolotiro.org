@@ -75,4 +75,10 @@ class ConversationTest < ActiveSupport::TestCase
 
     assert_empty Conversation.involving(@user)
   end
+
+  def test_interlocutor_returns_nil_for_orphan_conversations
+    @recipient.destroy
+
+    assert_nil @conversation.interlocutor(@user)
+  end
 end

@@ -8,7 +8,7 @@ class User < ActiveRecord::Base
   has_many :friendships
   has_many :friends, through: :friendships
 
-  has_many :receipts, foreign_key: :receiver_id
+  has_many :receipts, foreign_key: :receiver_id, dependent: :destroy
 
   has_many :blockings, foreign_key: :blocker_id, dependent: :destroy
 

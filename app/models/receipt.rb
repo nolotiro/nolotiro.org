@@ -11,9 +11,8 @@ class Receipt < ActiveRecord::Base
 
   scope :involving, ->(user) do
     joined = joins <<-SQL.squish
-      INNER JOIN receipts s
-      ON s.notification_id = receipts.notification_id
-      AND s.mailbox_type <> receipts.mailbox_type
+      LEFT OUTER JOIN receipts s
+      ON s.notification_id = receipts.notification_id AND s.id <> receipts.id
       LEFT OUTER JOIN blockings b
       ON (receipts.receiver_id = b.blocker_id AND s.receiver_id = b.blocked_id)
       OR (receipts.receiver_id = b.blocked_id AND s.receiver_id = b.blocker_id)
