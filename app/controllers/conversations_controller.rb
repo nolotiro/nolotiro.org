@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 class ConversationsController < ApplicationController
   before_action :authenticate_user!
+  before_action :load_conversation, only: [:show, :update]
 
   def index
     @conversations = conversations.order(updated_at: :desc)
@@ -35,7 +36,6 @@ class ConversationsController < ApplicationController
   end
 
   def update
-    @conversation = conversations.find(params[:id])
     @interlocutor = @conversation.interlocutor(current_user)
     @message = @conversation.reply(reply_params)
 
@@ -54,7 +54,6 @@ class ConversationsController < ApplicationController
   # GET /messages/:ID
   # GET /message/show/:ID/subject/SUBJECT
   def show
-    @conversation = conversations.find(params[:id])
     authorize(@conversation)
 
     @interlocutor = @conversation.interlocutor(current_user)
@@ -73,6 +72,10 @@ class ConversationsController < ApplicationController
   end
 
   private
+
+  def load_conversation
+    @conversation = conversations.find(params[:id])
+  end
 
   def start_params
     reply_params.merge(subject: params[:subject])
