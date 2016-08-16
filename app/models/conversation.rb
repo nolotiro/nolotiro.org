@@ -72,7 +72,7 @@ class Conversation < ActiveRecord::Base
   private
 
   def interlocutor_receipt(user)
-    received_receipts = receipts.where.not(receiver_id: user.id)
+    received_receipts = receipts.where.not(receiver: user)
     return received_receipts.first if received_receipts.any?
 
     return if receipts.size == 1
