@@ -3,7 +3,7 @@
 class Conversation < ActiveRecord::Base
   validates :subject, presence: true, length: { maximum: 255 }
 
-  has_many :messages
+  has_many :messages, dependent: :destroy
   has_many :receipts, through: :messages
 
   scope :involving, ->(user) do

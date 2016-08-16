@@ -2,17 +2,15 @@
 class User < ActiveRecord::Base
   has_many :identities, inverse_of: :user, dependent: :destroy
 
-  has_many :ads, foreign_key: 'user_owner', dependent: :destroy
-  has_many :comments, foreign_key: 'user_owner', dependent: :destroy
+  has_many :ads, foreign_key: :user_owner, dependent: :destroy
+  has_many :comments, foreign_key: :user_owner, dependent: :destroy
 
   has_many :friendships
   has_many :friends, through: :friendships
 
-  has_many :receipts, as: :receiver, dependent: :destroy
+  has_many :receipts, foreign_key: :receiver_id
 
-  has_many :blockings, class_name: 'Blocking',
-                       foreign_key: 'blocker_id',
-                       dependent: :destroy
+  has_many :blockings, foreign_key: :blocker_id, dependent: :destroy
 
   before_save :default_lang
 
@@ -81,16 +79,8 @@ class User < ActiveRecord::Base
     email
   end
 
-  def conversations
-    @conversations ||= Conversation.involving(self)
-  end
-
   def unread_conversations_count
-    conversations.unread(self).size
-  end
-
-  def mark_as_read(conversation)
-    conversation.mark_as_read(self)
+    Conversation.unread(self).size
   end
 
   def admin?

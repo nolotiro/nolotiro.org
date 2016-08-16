@@ -62,7 +62,7 @@ class ConversationsController < ApplicationController
 
     @message = @conversation.envelope_for(sender: current_user,
                                           recipient: @interlocutor)
-    current_user.mark_as_read(@conversation)
+    @conversation.mark_as_read(current_user)
   end
 
   def trash
@@ -86,6 +86,6 @@ class ConversationsController < ApplicationController
   end
 
   def conversations
-    current_user.conversations
+    Conversation.involving(current_user)
   end
 end
