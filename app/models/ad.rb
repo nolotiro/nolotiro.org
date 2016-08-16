@@ -23,8 +23,8 @@ class Ad < ActiveRecord::Base
 
   require 'ipaddress'
 
-  belongs_to :user, foreign_key: 'user_owner', counter_cache: true
-  has_many :comments, foreign_key: 'ads_id', dependent: :destroy
+  belongs_to :user, foreign_key: :user_owner, counter_cache: true
+  has_many :comments, foreign_key: :ads_id, dependent: :destroy
 
   validates :title, presence: true, length: { minimum: 4, maximum: 100 }
   validates :body, presence: true, length: { minimum: 25, maximum: 1000 }

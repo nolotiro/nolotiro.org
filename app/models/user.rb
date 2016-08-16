@@ -2,8 +2,8 @@
 class User < ActiveRecord::Base
   has_many :identities, inverse_of: :user, dependent: :destroy
 
-  has_many :ads, foreign_key: 'user_owner', dependent: :destroy
-  has_many :comments, foreign_key: 'user_owner', dependent: :destroy
+  has_many :ads, foreign_key: :user_owner, dependent: :destroy
+  has_many :comments, foreign_key: :user_owner, dependent: :destroy
 
   has_many :friendships
   has_many :friends, through: :friendships
@@ -11,7 +11,7 @@ class User < ActiveRecord::Base
   has_many :receipts, as: :receiver, dependent: :destroy
 
   has_many :blockings, class_name: 'Blocking',
-                       foreign_key: 'blocker_id',
+                       foreign_key: :blocker_id,
                        dependent: :destroy
 
   before_save :default_lang
