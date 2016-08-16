@@ -22,8 +22,8 @@ class Message < ActiveRecord::Base
   end
 
   def envelope_for(recipient)
-    receipts.build(receiver: sender, mailbox_type: 'sent', is_read: true)
-    receipts.build(receiver: recipient, mailbox_type: 'inbox', is_read: false)
+    receipts.build(receiver: sender, is_read: true)
+    receipts.build(receiver: recipient, is_read: false)
   end
 
   def deliver
