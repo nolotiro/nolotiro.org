@@ -72,6 +72,7 @@ class Ad < ActiveRecord::Base
 
   scope :by_woeid_code, ->(woeid_code) do
     return all unless woeid_code.present?
+
     where(woeid_code: woeid_code)
   end
 
