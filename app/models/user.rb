@@ -12,6 +12,16 @@ class User < ActiveRecord::Base
 
   has_many :blockings, foreign_key: :blocker_id, dependent: :destroy
 
+  has_many :started_conversations,
+           foreign_key: :originator_id,
+           class_name: 'Conversation',
+           dependent: :nullify
+
+  has_many :received_conversations,
+           foreign_key: :recipient_id,
+           class_name: 'Conversation',
+           dependent: :nullify
+
   before_save :default_lang
 
   validates :username, presence: true,
