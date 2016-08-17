@@ -204,7 +204,7 @@ en:
       message:
         body: Message
         subject: Subject
-      subject_new: "[nolotiro.org] New message: %{subject}"
+      subject_new: "[nolotiro.org] New message from user %{user}"
       visit: View conversation and reply
       visit_html: Visit %{url} and go to your inbox to reply
       visit_text: Visit %{url} and go to your inbox to reply

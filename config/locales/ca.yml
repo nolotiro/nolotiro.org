@@ -208,7 +208,7 @@ ca:
       message:
         body: missatge
         subject: Assumpte
-      subject_new: "[nolotiro.org] Missatge nou :%{subject}"
+      subject_new: "[nolotiro.org] Missatge nou de l'usuari %{user}"
       visit: Veure conversa i respondre missatge
       visit_html: Visita %{url} i veu a la teva safata d'entrada per respondre
       visit_text: Visita %{url} i veu a la teva safata d'entrada per respondre

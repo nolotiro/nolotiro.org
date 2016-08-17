@@ -208,7 +208,7 @@ pt:
       message:
         body: Mensagem
         subject: Assunto
-      subject_new: "[nolotiro.org] Nova mensagem: %{subject}"
+      subject_new: "[nolotiro.org] Nova mensagem do usuário %{user}"
       visit: Ver conversa e responder mensagem
       visit_html: Clique em %{url} e ingrese na sua caixa de entrada para responder
       visit_text: Clique em %{url} e ingrese na sua caixa de entrada para responder
