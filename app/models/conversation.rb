@@ -43,7 +43,7 @@ class Conversation < ActiveRecord::Base
     receipt = receipt_for_interlocutor(user)
     return receipt.receiver if receipt
 
-    receipts.size <= 1 ? nil : messages.first.sender
+    receipts.pluck(:mailbox_type).uniq.size == 1 ? nil : user
   end
 
   def originator

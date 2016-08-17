@@ -89,4 +89,12 @@ class ConversationTest < ActiveSupport::TestCase
     @recipient.destroy
     assert_nil @conversation.interlocutor(@user)
   end
+
+  def test_interlocutor_returns_nil_for_orphan_conversations_w_several_sent_msgs
+    @conversation.reply(sender: @user, recipient: @recipient, body: 'Hei!')
+    @conversation.save!
+
+    @recipient.destroy
+    assert_nil @conversation.interlocutor(@user)
+  end
 end
