@@ -37,10 +37,13 @@ class Conversation < ActiveRecord::Base
   end
 
   def interlocutor(user)
-    original_receipt = interlocutor_receipt(user)
-    return unless original_receipt
+    message = message_by_interlocutor(user)
+    return message.sender if message
 
-    original_receipt.receiver
+    receipt = receipt_for_interlocutor(user)
+    return receipt.receiver if receipt
+
+    receipts.size <= 1 ? nil : messages.first.sender
   end
 
   def originator
@@ -71,12 +74,11 @@ class Conversation < ActiveRecord::Base
 
   private
 
-  def interlocutor_receipt(user)
-    received_receipts = receipts.where.not(receiver: user)
-    return received_receipts.first if received_receipts.any?
+  def message_by_interlocutor(user)
+    messages.where.not(sender: user).first
+  end
 
-    return if receipts.size == 1
-
-    receipts.first
+  def receipt_for_interlocutor(user)
+    receipts.where.not(receiver: user).first
   end
 end
