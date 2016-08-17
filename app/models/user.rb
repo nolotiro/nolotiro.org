@@ -22,6 +22,11 @@ class User < ActiveRecord::Base
            class_name: 'Conversation',
            dependent: :nullify
 
+  has_many :sent_messages,
+           foreign_key: :sender_id,
+           class_name: 'Message',
+           dependent: :nullify
+
   before_save :default_lang
 
   validates :username, presence: true,
