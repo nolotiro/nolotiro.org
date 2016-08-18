@@ -19,7 +19,7 @@ class UserBlockingsTest < ActionDispatch::IntegrationTest
     create(:blocking, blocker: @other, blocked: @current_user)
     mocking_yahoo_woeid_info(@current_user.woeid) { visit profile_path(@other) }
 
-    assert_content 'No tienes permisos para realizar esta acción'
+    assert_text 'No tienes permisos para realizar esta acción'
     assert_equal ads_woeid_path(@current_user.woeid, type: 'give'), current_path
   end
 
@@ -29,7 +29,7 @@ class UserBlockingsTest < ActionDispatch::IntegrationTest
       visit listads_user_path(@other)
     end
 
-    assert_content 'No tienes permisos para realizar esta acción'
+    assert_text 'No tienes permisos para realizar esta acción'
     assert_equal ads_woeid_path(@current_user.woeid, type: 'give'), current_path
   end
 
@@ -46,7 +46,7 @@ class UserBlockingsTest < ActionDispatch::IntegrationTest
     create(:blocking, blocker: @other, blocked: @current_user)
     mocking_yahoo_woeid_info(@current_user.woeid) { visit root_path }
 
-    refute_content ad.title
+    assert_no_text ad.title
   end
 
   it 'does not show ad page when visitor is blocked' do
@@ -54,7 +54,7 @@ class UserBlockingsTest < ActionDispatch::IntegrationTest
     create(:blocking, blocker: @other, blocked: @current_user)
     mocking_yahoo_woeid_info(ad.woeid_code) { visit ad_path(ad) }
 
-    assert_content 'No tienes permisos para realizar esta acción'
+    assert_text 'No tienes permisos para realizar esta acción'
     assert_equal ads_woeid_path(@current_user.woeid, type: 'give'), current_path
   end
 

@@ -13,7 +13,7 @@ class LinksForAds < ActionDispatch::IntegrationTest
     mocking_yahoo_woeid_info(@ad.woeid_code) do
       visit ad_path(@ad)
 
-      assert_content 'Envía un mensaje privado al anunciante'
+      assert_text 'Envía un mensaje privado al anunciante'
     end
   end
 
@@ -23,7 +23,7 @@ class LinksForAds < ActionDispatch::IntegrationTest
     mocking_yahoo_woeid_info(@ad.woeid_code) do
       visit ad_path(@ad)
 
-      refute_content 'Envía un mensaje privado al anunciante'
+      assert_no_text 'Envía un mensaje privado al anunciante'
     end
   end
 
@@ -33,7 +33,7 @@ class LinksForAds < ActionDispatch::IntegrationTest
     mocking_yahoo_woeid_info(@ad.woeid_code) do
       visit ad_path(@ad)
 
-      refute_content 'Envía un mensaje privado al anunciante'
+      assert_no_text 'Envía un mensaje privado al anunciante'
     end
   end
 end

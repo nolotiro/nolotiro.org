@@ -19,20 +19,20 @@ module StandardMessages
   def test_shows_errors_when_message_has_no_subject
     send_message(body: 'hola, user2')
 
-    assert_content 'Título no puede estar en blanco'
+    assert_text 'Título no puede estar en blanco'
   end
 
   def test_prevents_from_creating_conversation_with_empty_message
     send_message(subject: 'hola, user2')
 
-    assert_content 'Nuevo mensaje privado para el usuario user2'
+    assert_text 'Nuevo mensaje privado para el usuario user2'
   end
 
   def test_shows_errors_when_replying_to_conversation_with_empty_message
     send_message(subject: 'hola, user2', body: 'How you doing?')
     send_message(body: '')
 
-    assert_content 'Mensaje no puede estar en blanco'
+    assert_text 'Mensaje no puede estar en blanco'
   end
 
   def test_sends_a_new_message_after_a_previous_error
@@ -59,12 +59,12 @@ module StandardMessages
 
   def test_shows_the_other_user_in_the_conversation_header
     send_message(subject: 'Cosas', body: 'hola, user2')
-    assert_content 'Conversación con user2'
+    assert_text 'Conversación con user2'
 
     login_as @user2
 
     visit conversation_path(Conversation.first)
-    assert_content 'Conversación con user1'
+    assert_text 'Conversación con user1'
   end
 
   def test_links_to_the_other_user_in_the_conversation_list
@@ -79,11 +79,11 @@ module StandardMessages
     @user2.destroy
 
     visit conversations_path
-    assert_content '[borrado]'
+    assert_text '[borrado]'
     refute_link '[borrado]'
 
     visit conversation_path(Conversation.first)
-    assert_content '[borrado]'
+    assert_text '[borrado]'
     refute_link '[borrado]'
   end
 
@@ -97,8 +97,8 @@ module StandardMessages
     send_message(subject: 'hola mundo', body: 'What a nice message!')
     click_link 'Borrar conversación'
 
-    refute_content 'hola mundo'
-    assert_content 'Conversación borrada'
+    assert_no_text 'hola mundo'
+    assert_text 'Conversación borrada'
   end
 
   def test_deletes_multiple_conversations_by_checkbox
@@ -110,14 +110,14 @@ module StandardMessages
     check("delete-conversation-#{Conversation.first.id}")
     click_button 'Borrar conversaciones seleccionadas'
 
-    refute_content 'hola mundo'
-    assert_content 'hola marte'
+    assert_no_text 'hola mundo'
+    assert_text 'hola marte'
   end
 
   def test_does_not_revive_deleted_conversation_when_the_other_user_replies
     send_message(subject: 'hola mundo', body: 'What a nice message!')
     click_link 'Borrar conversación'
-    refute_content 'hola mundo'
+    assert_no_text 'hola mundo'
 
     login_as @user2
     visit conversation_path(Conversation.first)
@@ -125,6 +125,6 @@ module StandardMessages
 
     login_as @user1
     visit conversation_path(Conversation.first)
-    refute_content 'What a nice message!'
+    assert_no_text 'What a nice message!'
   end
 end

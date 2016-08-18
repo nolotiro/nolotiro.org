@@ -8,7 +8,7 @@ class FacebookEmaillessRegistrationTest < ActionDispatch::IntegrationTest
   before { login_via_facebook(name: 'pepe') }
 
   it 'redirects to a form' do
-    assert_content <<~MSG
+    assert_text <<~MSG
       Necesitamos que indiques una dirección de email para completar el registro
     MSG
   end
@@ -20,7 +20,7 @@ class FacebookEmaillessRegistrationTest < ActionDispatch::IntegrationTest
   it 'finishes registration' do
     fill_in_finalize_form('pepe@facebook.com')
 
-    assert_content <<~MSG
+    assert_text <<~MSG
       Se ha enviado un mensaje con un enlace de confirmación a tu correo
       electrónico.
     MSG
@@ -36,7 +36,7 @@ class FacebookEmaillessRegistrationTest < ActionDispatch::IntegrationTest
     fill_in_finalize_form('pepe@facebook.com')
     login_via_facebook(name: 'pepe')
 
-    assert_content 'Tienes que confirmar tu cuenta para poder continuar'
+    assert_text 'Tienes que confirmar tu cuenta para poder continuar'
   end
 
   it 'logs user in after confirming email' do
@@ -44,7 +44,7 @@ class FacebookEmaillessRegistrationTest < ActionDispatch::IntegrationTest
     User.first.confirm
     login_via_facebook(name: 'pepe')
 
-    assert_content 'hola, pepe'
+    assert_text 'hola, pepe'
   end
 
   private

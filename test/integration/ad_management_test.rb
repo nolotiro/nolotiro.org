@@ -40,7 +40,7 @@ class AdManagementTest < ActionDispatch::IntegrationTest
       click_link 'Republica este anuncio'
     end
 
-    assert_content 'Hemos republicado el anuncio'
+    assert_text 'Hemos republicado el anuncio'
   end
 
   private

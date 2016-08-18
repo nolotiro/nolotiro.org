@@ -20,7 +20,7 @@ class BlockingsTest < ActionDispatch::IntegrationTest
 
     refute_link 'bloquear a other'
     assert_link 'desbloquear a other'
-    assert_content 'Usuario bloqueado'
+    assert_text 'Usuario bloqueado'
   end
 
   it "unblocks from target user's profile" do
@@ -30,6 +30,6 @@ class BlockingsTest < ActionDispatch::IntegrationTest
 
     refute_link 'desbloquear a other'
     assert_link 'bloquear a other'
-    assert_content 'Usuario desbloqueado'
+    assert_text 'Usuario desbloqueado'
   end
 end

@@ -12,6 +12,6 @@ class UnsuccessfulRegistrationTest < ActionDispatch::IntegrationTest
   end
 
   it 'shows errors' do
-    assert_content 'Ocurrieron 3 errores'
+    assert_text 'Ocurrieron 3 errores'
   end
 end

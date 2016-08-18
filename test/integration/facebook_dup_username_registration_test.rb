@@ -13,7 +13,7 @@ class FacebookDupUsernameRegistrationTest < ActionDispatch::IntegrationTest
   end
 
   it 'redirects to a form' do
-    assert_content <<~MSG
+    assert_text <<~MSG
       Tu nombre de usuario de facebook ya se encuentra en nuestra base de datos.
       Si te has registrado ya usando otra red social o mediante email y
       contraseña, por favor, inicia sesión de esa manera. En caso contrario,
@@ -25,6 +25,6 @@ class FacebookDupUsernameRegistrationTest < ActionDispatch::IntegrationTest
     fill_in 'Elige un nombre de usuario', with: 'pepe_nolotiro'
     click_button 'Regístrate'
 
-    assert_content 'hola, pepe_nolotiro'
+    assert_text 'hola, pepe_nolotiro'
   end
 end

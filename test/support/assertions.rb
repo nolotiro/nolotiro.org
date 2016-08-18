@@ -13,16 +13,6 @@ module Minitest
       refute has_link?(name, exact: true), msg
     end
 
-    def assert_content(text)
-      msg = "Content '#{text}' was not found in page's content: '#{text}'"
-      assert has_content?(text), msg
-    end
-
-    def refute_content(text)
-      msg = "Content '#{text}' was found in page's content: '#{text}'"
-      refute has_content?(text), msg
-    end
-
     def assert_css_selector(selector, text:)
       assert has_selector?(selector, text: text),
              assert_error_for(selector, text)

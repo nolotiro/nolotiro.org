@@ -14,14 +14,14 @@ class AnnouncementsTest < ActionDispatch::IntegrationTest
   it 'displays no announcements for anonymous visitors' do
     visit root_path
 
-    refute_content @active_announcement.message
+    assert_no_text @active_announcement.message
   end
 
   it 'displays active announcements' do
     login_as create(:user, woeid: nil)
     visit root_path
 
-    assert_content @active_announcement.message
+    assert_text @active_announcement.message
   end
 
   it 'properly dismisses announcements' do
@@ -29,7 +29,7 @@ class AnnouncementsTest < ActionDispatch::IntegrationTest
     visit root_path
     click_link '×'
 
-    refute_content @active_announcement.message
+    assert_no_text @active_announcement.message
   end
 
   it 'displays a single announcement at a time' do
@@ -38,11 +38,11 @@ class AnnouncementsTest < ActionDispatch::IntegrationTest
                                                   ends_at: 1.minute.from_now)
     login_as create(:user, woeid: nil)
     visit root_path
-    assert_content @active_announcement2.message
-    refute_content @active_announcement.message
+    assert_text @active_announcement2.message
+    assert_no_text @active_announcement.message
 
     click_link '×'
-    assert_content @active_announcement.message
-    refute_content @active_announcement2.message
+    assert_text @active_announcement.message
+    assert_no_text @active_announcement2.message
   end
 end

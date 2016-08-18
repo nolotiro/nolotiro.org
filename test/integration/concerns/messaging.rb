@@ -4,7 +4,7 @@ module Messaging
 
   def assert_message_sent(text)
     assert_css_selector '.bubble', text: text
-    assert_content 'Mensaje enviado'
+    assert_text 'Mensaje enviado'
   end
 
   def send_message(body: nil, subject: nil)
