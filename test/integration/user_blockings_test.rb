@@ -37,7 +37,7 @@ class UserBlockingsTest < ActionDispatch::IntegrationTest
     create(:blocking, blocker: @current_user, blocked: @other)
     visit profile_path(@other)
 
-    refute_link 'envía un mensaje privado a other'
+    assert_no_selector 'a', text: 'envía un mensaje privado a other'
     assert_equal profile_path(@other), current_path
   end
 
@@ -63,7 +63,7 @@ class UserBlockingsTest < ActionDispatch::IntegrationTest
     create(:blocking, blocker: @current_user, blocked: @other)
     mocking_yahoo_woeid_info(ad.woeid_code) { visit ad_path(ad) }
 
-    refute_link 'Envía un mensaje privado al anunciante'
+    assert_no_selector 'a', text: 'Envía un mensaje privado a other'
     assert_equal ad_path(ad), current_path
   end
 

@@ -71,7 +71,7 @@ module StandardMessages
     send_message(subject: 'Cosas', body: 'hola, user2')
     visit conversations_path
 
-    assert_link 'user2'
+    assert_selector 'a', text: 'user2'
   end
 
   def test_just_shows_a_special_label_when_the_interlocutor_is_no_longer_there
@@ -80,11 +80,11 @@ module StandardMessages
 
     visit conversations_path
     assert_text '[borrado]'
-    refute_link '[borrado]'
+    assert_no_selector 'a', text: '[borrado]'
 
     visit conversation_path(Conversation.first)
     assert_text '[borrado]'
-    refute_link '[borrado]'
+    assert_no_selector 'a', text: '[borrado]'
   end
 
   def test_messages_another_user

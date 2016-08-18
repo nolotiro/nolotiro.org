@@ -17,8 +17,8 @@ class FriendshipsTest < ActionDispatch::IntegrationTest
     visit profile_path(@friend)
     click_link 'agregar other a tu lista de amigos'
 
-    assert_link 'eliminar other de tu lista de amigos'
-    refute_link 'agregar other a tu lista de amigos'
+    assert_selector 'a', text: 'eliminar other de tu lista de amigos'
+    assert_no_selector 'a', text: 'agregar other a tu lista de amigos'
     assert_text 'Amigo agregado'
   end
 
@@ -27,8 +27,8 @@ class FriendshipsTest < ActionDispatch::IntegrationTest
     visit profile_path(@friend)
     click_link 'eliminar other de tu lista de amigos'
 
-    refute_link 'eliminar other de tu lista de amigos'
-    assert_link 'agregar other a tu lista de amigos'
+    assert_no_selector 'a', text: 'eliminar other de tu lista de amigos'
+    assert_selector 'a', text: 'agregar other a tu lista de amigos'
     assert_text 'Amigo eliminado'
   end
 end
