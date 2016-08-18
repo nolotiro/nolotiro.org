@@ -10,13 +10,13 @@ class UserLockable < ActionDispatch::IntegrationTest
 
     8.times do
       login(@user.email, 'trololololo')
-      assert_content(I18n.t('devise.failure.not_found_in_database'))
+      assert_content I18n.t('devise.failure.not_found_in_database')
     end
 
     login(@user.email, 'trololololo')
-    assert_content(I18n.t('devise.failure.last_attempt'))
+    assert_content I18n.t('devise.failure.last_attempt')
 
     login(@user.email, 'trololololo')
-    assert_content(I18n.t('devise.failure.locked'))
+    assert_content I18n.t('devise.failure.locked')
   end
 end
