@@ -13,11 +13,6 @@ module Minitest
       refute has_link?(name, exact: true), msg
     end
 
-    def assert_css_selector(selector, text:)
-      assert has_selector?(selector, text: text),
-             assert_error_for(selector, text)
-    end
-
     private
 
     def assert_error_for(selector, text)

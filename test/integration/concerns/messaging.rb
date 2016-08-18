@@ -3,7 +3,7 @@ module Messaging
   private
 
   def assert_message_sent(text)
-    assert_css_selector '.bubble', text: text
+    assert_selector '.bubble', text: text
     assert_text 'Mensaje enviado'
   end
 
