@@ -24,24 +24,24 @@ class AuthenticatedAdListing < ActionDispatch::IntegrationTest
   end
 
   it 'lists first page of available ads in users location in home page' do
-    page.assert_selector '.ad_excerpt_list', count: 1, text: 'ava_mad1'
+    assert_selector '.ad_excerpt_list', count: 1, text: 'ava_mad1'
   end
 
   it 'lists other pages of available ads in users location in home page' do
     with_pagination(1) { click_link 'siguiente' }
 
-    page.assert_selector '.ad_excerpt_list', count: 1, text: 'ava_mad2'
+    assert_selector '.ad_excerpt_list', count: 1, text: 'ava_mad2'
   end
 
   it 'lists reserved ads in users location in home page' do
     click_link 'reservado'
 
-    page.assert_selector '.ad_excerpt_list', count: 1, text: 'res_mad'
+    assert_selector '.ad_excerpt_list', count: 1, text: 'res_mad'
   end
 
   it 'lists delivered ads in users location in home page' do
     click_link 'entregado'
 
-    page.assert_selector '.ad_excerpt_list', count: 1, text: 'del_mad'
+    assert_selector '.ad_excerpt_list', count: 1, text: 'del_mad'
   end
 end

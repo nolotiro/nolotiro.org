@@ -5,36 +5,36 @@ module Minitest
   #
   module Assertions
     def assert_link(name)
-      assert page.has_link?(name, exact: true), assert_error_for('a', name)
+      assert has_link?(name, exact: true), assert_error_for('a', name)
     end
 
     def refute_link(name)
-      msg = "Link '#{name}' was found in page's html: #{page.html}"
-      refute page.has_link?(name, exact: true), msg
+      msg = "Link '#{name}' was found in page's html: #{html}"
+      refute has_link?(name, exact: true), msg
     end
 
     def assert_content(text)
-      msg = "Content '#{text}' was not found in page's content: '#{page.text}'"
-      assert page.has_content?(text), msg
+      msg = "Content '#{text}' was not found in page's content: '#{text}'"
+      assert has_content?(text), msg
     end
 
     def refute_content(text)
-      msg = "Content '#{text}' was found in page's content: '#{page.text}'"
-      refute page.has_content?(text), msg
+      msg = "Content '#{text}' was found in page's content: '#{text}'"
+      refute has_content?(text), msg
     end
 
     def assert_css_selector(selector, text:)
-      assert page.has_selector?(selector, text: text),
+      assert has_selector?(selector, text: text),
              assert_error_for(selector, text)
     end
 
     private
 
     def assert_error_for(selector, text)
-      found = page.find_all(selector)
+      found = find_all(selector)
 
       if found.empty?
-        "Selector '#{selector}' was not found in page's html: '#{page.html}'"
+        "Selector '#{selector}' was not found in page's html: '#{html}'"
       else
         <<~MSG.squish
           #{pluralize(found.size, 'instance')} of selector '#{selector}' were
