@@ -10,47 +10,54 @@ class ReceiptTest < ActiveSupport::TestCase
   end
 
   def test_involving_includes_sent_receipts
-    create(:message, sender: @user, recipient: @other)
+    create(:conversation, originator: @user, recipient: @other)
 
     assert_correctness Receipt.involving(@user)
   end
 
   def test_involving_includes_received_receipts
-    create(:message, sender: @other, recipient: @user)
+    create(:conversation, originator: @other, recipient: @user)
 
     assert_correctness Receipt.involving(@user)
   end
 
   def test_involving_excludes_sent_receipts_related_to_blockers
-    create(:message, sender: @user, recipient: @other)
+    create(:conversation, originator: @user, recipient: @other)
     create(:blocking, blocker: @other, blocked: @user)
 
     assert_empty Receipt.involving(@user)
   end
 
   def test_involving_includes_sent_receipts_related_to_blocked_users
-    create(:message, sender: @user, recipient: @other)
+    create(:conversation, originator: @user, recipient: @other)
     create(:blocking, blocker: @user, blocked: @other)
 
     assert_correctness Receipt.involving(@user)
   end
 
   def test_involving_excludes_received_receipts_related_to_blockers
-    create(:message, sender: @other, recipient: @user)
+    create(:conversation, originator: @other, recipient: @user)
     create(:blocking, blocker: @other, blocked: @user)
 
     assert_empty Receipt.involving(@user)
   end
 
   def test_involving_includes_received_receipts_related_to_blocked_users
-    create(:message, sender: @other, recipient: @user)
+    create(:conversation, originator: @other, recipient: @user)
     create(:blocking, blocker: @user, blocked: @other)
 
     assert_correctness Receipt.involving(@user)
   end
 
-  def test_involving_includes_receipts_related_to_orphan_users
-    create(:message, sender: @other, recipient: @user)
+  def test_involving_includes_receipts_related_to_orphan_senders
+    create(:conversation, originator: @other, recipient: @user)
+    @other.destroy
+
+    assert_correctness Receipt.involving(@user)
+  end
+
+  def test_involving_includes_receipts_related_to_orphan_recipients
+    create(:conversation, originator: @user, recipient: @other)
     @other.destroy
 
     assert_correctness Receipt.involving(@user)

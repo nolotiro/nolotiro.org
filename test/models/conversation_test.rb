@@ -42,9 +42,9 @@ class ConversationTest < ActiveSupport::TestCase
     assert_equal true, @conversation.unread?(@recipient)
   end
 
-  def test_envelope_for_touches_the_conversation_timestamp
+  def test_reply_touches_the_conversation_timestamp
     @conversation.update!(updated_at: 1.hour.ago)
-    @conversation.envelope_for(sender: @user, recipient: @recipient)
+    @conversation.reply(sender: @user, recipient: @recipient, body: 'Hey!')
 
     assert_in_delta @conversation.updated_at, Time.zone.now, 1.second
   end
@@ -74,5 +74,27 @@ class ConversationTest < ActiveSupport::TestCase
     @conversation.move_to_trash(@user)
 
     assert_empty Conversation.involving(@user)
+  end
+
+  def test_interlocutor_returns_nil_for_orphan_conversations_w_one_msg
+    @recipient.destroy
+
+    assert_nil @conversation.interlocutor(@user)
+  end
+
+  def test_interlocutor_returns_nil_for_orphan_conversations_w_several_msgs
+    @conversation.reply(sender: @recipient, recipient: @user, body: 'Hei!')
+    @conversation.save!
+
+    @recipient.destroy
+    assert_nil @conversation.interlocutor(@user)
+  end
+
+  def test_interlocutor_returns_nil_for_orphan_conversations_w_several_sent_msgs
+    @conversation.reply(sender: @user, recipient: @recipient, body: 'Hei!')
+    @conversation.save!
+
+    @recipient.destroy
+    assert_nil @conversation.interlocutor(@user)
   end
 end

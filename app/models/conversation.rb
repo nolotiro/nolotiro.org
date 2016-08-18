@@ -14,9 +14,17 @@ class Conversation < ActiveRecord::Base
     joins(:receipts).merge(Receipt.involving(user).unread).distinct
   end
 
-  def envelope_for(sender:, recipient:, body: '')
-    self.updated_at = Time.zone.now
+  def self.start(sender:, recipient:, subject: '', body: '')
+    conversation = new(subject: subject,
+                       originator_id: sender.id,
+                       recipient_id: recipient.id)
 
+    conversation.envelope_for(sender: sender, recipient: recipient, body: body)
+
+    conversation
+  end
+
+  def envelope_for(sender:, recipient:, body: '')
     message = messages.build(sender: sender, body: body)
 
     message.envelope_for(recipient)
@@ -24,15 +32,28 @@ class Conversation < ActiveRecord::Base
     message
   end
 
-  def interlocutor(user)
-    received_receipts = receipts.where.not(receiver_id: user.id)
-    return receipts.first.receiver unless received_receipts.any?
+  def reply(sender:, recipient:, body: '')
+    self.updated_at = Time.zone.now
 
-    received_receipts.first.receiver
+    envelope_for(sender: sender, recipient: recipient, body: body)
+  end
+
+  def interlocutor(user)
+    message = message_by_interlocutor(user)
+    return message.sender if message
+
+    receipt = receipt_for_interlocutor(user)
+    return receipt.receiver if receipt
+
+    receipts.pluck(:mailbox_type).uniq.size == 1 ? nil : user
   end
 
   def originator
     original_message.sender
+  end
+
+  def recipient
+    interlocutor(originator)
   end
 
   def original_message
@@ -48,8 +69,18 @@ class Conversation < ActiveRecord::Base
   end
 
   def unread?(user)
-    messages.unread(user).count != 0
+    messages.unread(user).any?
   end
 
   delegate :mark_as_read, :move_to_trash, to: :receipts
+
+  private
+
+  def message_by_interlocutor(user)
+    messages.where.not(sender: user).first
+  end
+
+  def receipt_for_interlocutor(user)
+    receipts.where.not(receiver: user).first
+  end
 end

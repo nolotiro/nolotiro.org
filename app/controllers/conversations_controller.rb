@@ -9,17 +9,16 @@ class ConversationsController < ApplicationController
 
   def new
     @interlocutor = User.find(params[:recipient_id])
-    @conversation = Conversation.new(subject: params[:subject])
-    @message = @conversation.envelope_for(sender: current_user,
-                                          recipient: @interlocutor)
+    @conversation = Conversation.start(start_params)
+    @message = @conversation.messages.first
 
     authorize(@conversation)
   end
 
   def create
     @interlocutor = User.find(params[:recipient_id])
-    @conversation = Conversation.new(subject: params[:subject])
-    @message = @conversation.envelope_for(message_params)
+    @conversation = Conversation.start(start_params)
+    @message = @conversation.messages.first
 
     authorize(@conversation)
 
@@ -38,7 +37,7 @@ class ConversationsController < ApplicationController
   def update
     @conversation = conversations.find(params[:id])
     @interlocutor = @conversation.interlocutor(current_user)
-    @message = @conversation.envelope_for(message_params)
+    @message = @conversation.reply(reply_params)
 
     authorize(@conversation)
 
@@ -60,8 +59,8 @@ class ConversationsController < ApplicationController
 
     @interlocutor = @conversation.interlocutor(current_user)
 
-    @message = @conversation.envelope_for(sender: current_user,
-                                          recipient: @interlocutor)
+    @message = @conversation.reply(reply_params)
+
     @conversation.mark_as_read(current_user)
   end
 
@@ -75,7 +74,11 @@ class ConversationsController < ApplicationController
 
   private
 
-  def message_params
+  def start_params
+    reply_params.merge(subject: params[:subject])
+  end
+
+  def reply_params
     { sender: current_user, body: params[:body], recipient: @interlocutor }
   end
 
