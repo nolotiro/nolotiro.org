@@ -97,4 +97,19 @@ class ConversationTest < ActiveSupport::TestCase
     @recipient.destroy
     assert_nil @conversation.interlocutor(@user)
   end
+
+  def test_recipient_when_she_has_sent_messages_and_originator_no_longer_there
+    @conversation.reply(sender: @recipient, recipient: @user, body: 'Hei!')
+    @conversation.save!
+
+    @user.destroy
+
+    assert_equal @recipient, @conversation.reload.recipient
+  end
+
+  def test_recipient_when_no_sent_messages_and_originator_no_longer_there
+    @user.destroy
+
+    assert_equal @recipient, @conversation.reload.recipient
+  end
 end

@@ -53,7 +53,12 @@ class Conversation < ActiveRecord::Base
   end
 
   def recipient
-    interlocutor(originator)
+    return interlocutor(originator) if originator
+
+    first_message_with_sender = messages.find(&:sender)
+    return first_message_with_sender.sender if first_message_with_sender
+
+    receipts.find(&:receiver).receiver
   end
 
   def original_message
