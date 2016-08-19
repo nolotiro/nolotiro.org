@@ -29,13 +29,8 @@ namespace :conversations do
 
   desc 'Fills in originators & recipients for conversations'
   task fill_originators_and_recipients: :environment do
-    Conversation.where(originator_id: nil, recipient_id: nil)
-                .find_each do |conversation|
-      originator_id = conversation.originator.try(:id)
-      recipient_id = conversation.recipient.try(:id)
-
-      conversation.update_column(:originator_id, originator_id)
-      conversation.update_column(:recipient_id, recipient_id)
+    Conversation.where(originator_id: nil, recipient_id: nil).ids.each do |id|
+      ConversationWorker.perform_async(id)
     end
   end
 end
