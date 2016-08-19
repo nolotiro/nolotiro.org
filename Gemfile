@@ -49,6 +49,7 @@ group :development do
   gem 'capistrano-bundler'
   gem 'capistrano-ci'
   gem 'capistrano-pending'
+  gem 'capistrano-sidekiq'
   gem 'rubocop', '0.41.1'
   gem 'brakeman'
 end
