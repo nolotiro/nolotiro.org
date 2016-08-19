@@ -82,7 +82,6 @@ gem 'activeadmin', github: 'activeadmin'            # admin backend
 gem 'rakismet'                                      # antispam
 gem 'font-awesome-rails'                            # font-awesome icons
 gem 'faker'
-gem 'ruby-progressbar', require: false
 
 gem 'mailboxer', '0.14.0'                           # messaging
 

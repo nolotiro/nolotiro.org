@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-require 'ruby-progressbar'
-
 namespace :conversations do
   desc 'Deletes orphan receipts'
   task remove_orphan_receipts: :environment do
@@ -31,18 +29,13 @@ namespace :conversations do
 
   desc 'Fills in originators & recipients for conversations'
   task fill_originators_and_recipients: :environment do
-    todo = Conversation.where(originator_id: nil, recipient_id: nil)
-
-    progress_bar = ProgressBar.create(format: '%c/%C %B %a', total: todo.count)
-
-    todo.find_each do |conversation|
+    Conversation.where(originator_id: nil, recipient_id: nil)
+                .find_each do |conversation|
       originator_id = conversation.originator.try(:id)
       recipient_id = conversation.recipient.try(:id)
 
       conversation.update_column(:originator_id, originator_id)
       conversation.update_column(:recipient_id, recipient_id)
-
-      progress_bar.increment
     end
   end
 end

@@ -512,7 +512,6 @@ DEPENDENCIES
   recaptcha
   redis-rails
   rubocop (= 0.41.1)
-  ruby-progressbar
   sass-rails (~> 5.0)
   sdoc
   sidekiq
