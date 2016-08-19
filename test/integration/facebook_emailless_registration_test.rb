@@ -14,7 +14,7 @@ class FacebookEmaillessRegistrationTest < ActionDispatch::IntegrationTest
   end
 
   it 'autofills username' do
-    assert has_selector?('input[value=pepe]')
+    assert_selector 'input[value=pepe]'
   end
 
   it 'finishes registration' do
