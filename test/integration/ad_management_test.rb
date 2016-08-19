@@ -17,7 +17,7 @@ class AdManagementTest < ActionDispatch::IntegrationTest
       mocking_yahoo_woeid_info(@user.woeid) do
         submit_ad_form(path)
 
-        page.assert_no_text('Imagen debe estar entre 0 Bytes y 5 MB')
+        assert_no_text('Imagen debe estar entre 0 Bytes y 5 MB')
       end
     end
   end
@@ -27,7 +27,7 @@ class AdManagementTest < ActionDispatch::IntegrationTest
       mocking_yahoo_woeid_info(@user.woeid) do
         submit_ad_form(path)
 
-        page.assert_text('Imagen debe estar entre 0 Bytes y 5 MB')
+        assert_text('Imagen debe estar entre 0 Bytes y 5 MB')
       end
     end
   end
@@ -40,7 +40,7 @@ class AdManagementTest < ActionDispatch::IntegrationTest
       click_link 'Republica este anuncio'
     end
 
-    assert_content 'Hemos republicado el anuncio'
+    assert_text 'Hemos republicado el anuncio'
   end
 
   private

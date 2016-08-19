@@ -16,7 +16,7 @@ class ProfileEditionTest < ActionDispatch::IntegrationTest
   it 'allows changing the username' do
     submit_form(username: 'teresa_fontanera', password: 'topsecret')
 
-    assert_content 'Tu cuenta fue actualizada'
+    assert_text 'Tu cuenta fue actualizada'
     assert_equal 'teresa_fontanera', User.first.username
   end
 
@@ -30,7 +30,7 @@ class ProfileEditionTest < ActionDispatch::IntegrationTest
       electrónico.
     MSG
 
-    assert_content message
+    assert_text message
     assert_equal 'terec@example.com', User.first.email
     assert_equal 'terfo@example.com', User.first.unconfirmed_email
   end

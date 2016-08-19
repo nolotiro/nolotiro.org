@@ -9,7 +9,7 @@ class CanAccessAdmin < ActionDispatch::IntegrationTest
 
   it 'should not get /admin/jobs as a anonymous user' do
     visit '/admin/jobs'
-    assert_content 'Para publicar anuncios o enviar mensajes accede a tu cuenta'
+    assert_text 'Para publicar anuncios o enviar mensajes accede a tu cuenta'
   end
 
   it 'should not get /admin/jobs as a normal user' do
@@ -20,26 +20,26 @@ class CanAccessAdmin < ActionDispatch::IntegrationTest
   it 'should get /admin/jobs as admin' do
     login_as admin
     visit '/admin/jobs'
-    assert_content 'Sidekiq'
-    assert_content 'Redis'
-    assert_content 'Memory Usage'
+    assert_text 'Sidekiq'
+    assert_text 'Redis'
+    assert_text 'Memory Usage'
   end
 
   it 'should not get /admin as a anonymous user' do
     visit '/admin'
-    assert_content I18n.t('devise.failure.unauthenticated')
+    assert_text I18n.t('devise.failure.unauthenticated')
   end
 
   it 'should not get /admin as a normal user' do
     login_as user
     mocking_yahoo_woeid_info(user.woeid) { visit '/admin' }
-    assert_content I18n.t('nlt.permission_denied')
+    assert_text I18n.t('nlt.permission_denied')
   end
 
   it 'should get /admin as admin' do
     login_as admin
     visit '/admin'
-    assert_content 'Últimos anuncios publicados'
+    assert_text 'Últimos anuncios publicados'
   end
 
   private

@@ -17,7 +17,7 @@ class RegistrationTest < ActionDispatch::IntegrationTest
   end
 
   it 'sends a confirmation email' do
-    assert_content <<~MSG
+    assert_text <<~MSG
       Se ha enviado un mensaje con un enlace de confirmación a tu correo
       electrónico.
     MSG
@@ -27,6 +27,6 @@ class RegistrationTest < ActionDispatch::IntegrationTest
     User.first.confirm
     login('nolotiro@example.com', '111111')
 
-    assert_content 'Cambia tu ciudad'
+    assert_text 'Cambia tu ciudad'
   end
 end

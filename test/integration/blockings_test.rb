@@ -18,9 +18,9 @@ class BlockingsTest < ActionDispatch::IntegrationTest
     visit profile_path(@enemy)
     click_link 'bloquear a other'
 
-    refute_link 'bloquear a other'
-    assert_link 'desbloquear a other'
-    assert_content 'Usuario bloqueado'
+    assert_no_selector 'a', text: /\Abloquear a other\z/
+    assert_selector 'a', text: 'desbloquear a other'
+    assert_text 'Usuario bloqueado'
   end
 
   it "unblocks from target user's profile" do
@@ -28,8 +28,8 @@ class BlockingsTest < ActionDispatch::IntegrationTest
     visit profile_path(@enemy)
     click_link 'desbloquear a other'
 
-    refute_link 'desbloquear a other'
-    assert_link 'bloquear a other'
-    assert_content 'Usuario desbloqueado'
+    assert_no_selector 'a', text: 'desbloquear a other'
+    assert_selector 'a', text: /\Abloquear a other\z/
+    assert_text 'Usuario desbloqueado'
   end
 end

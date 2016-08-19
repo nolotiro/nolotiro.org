@@ -10,7 +10,7 @@ class FacebookRegistrationTest < ActionDispatch::IntegrationTest
   it 'properly authenticates user when facebook account has an email' do
     login_via_facebook(name: 'pepe', email: 'pepe@facebook.com')
 
-    assert_content 'hola, pepe'
+    assert_text 'hola, pepe'
   end
 
   it 'succesfully links to old user if email already present in db' do
@@ -19,6 +19,6 @@ class FacebookRegistrationTest < ActionDispatch::IntegrationTest
       login_via_facebook(name: 'pepe', email: 'pepe@facebook.com')
     end
 
-    assert_content 'hola, pepito'
+    assert_text 'hola, pepito'
   end
 end

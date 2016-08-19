@@ -14,7 +14,7 @@ class PasswordResetTest < ActionDispatch::IntegrationTest
     fill_in 'Correo electrónico', with: 'nolotiro@example.com'
     click_button 'Enviar por correo'
 
-    assert_content <<~MSG
+    assert_text <<~MSG
       Vas a recibir un correo con instrucciones sobre cómo resetear tu
       contraseña en unos pocos minutos.
     MSG
@@ -29,7 +29,7 @@ class PasswordResetTest < ActionDispatch::IntegrationTest
       fill_in 'Contraseña nueva (repetir)', with: '222222'
       click_button 'Cambiar contraseña'
 
-      assert_content 'Tu contraseña fue cambiada. Ya iniciaste sesión.'
+      assert_text 'Tu contraseña fue cambiada. Ya iniciaste sesión.'
     end
   end
 end
