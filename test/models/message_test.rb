@@ -12,6 +12,16 @@ class MessageTest < ActiveSupport::TestCase
                                           recipient: @recipient)
   end
 
+  def test_enforces_non_nil_sender_on_creation
+    message = @conversation.messages.build(sender: nil, body: 'hi!')
+
+    assert_equal false, message.valid?
+  end
+
+  def test_allows_sender_becoming_orphan
+    assert_equal true, @conversation.messages.first.update(sender: nil)
+  end
+
   def test_unread_scope_returns_the_number_of_unread_messages
     assert_equal 0, messages.unread(@user).size
     assert_equal 1, messages.unread(@recipient).size
