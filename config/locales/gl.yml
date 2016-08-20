@@ -216,7 +216,6 @@ gl:
         body: Mensaxe
         subject: Asunto
       subject_new: 
-      subject_reply: 
       visit: Ver conversa e responder o mensaxe
       visit_html: 
       visit_text: 
@@ -238,8 +237,6 @@ gl:
       visit_text: 'Visita %{url} e ir á súa bandexa de entrada para responder
 
 '
-      you_have_new_reply: Recibiu unha nova resposta
-      you_have_recieved_new_reply: Recibiu unha nova resposta
     notifications:
       sent: 
       trash: Conversa arquivada

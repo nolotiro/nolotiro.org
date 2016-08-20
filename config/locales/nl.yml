@@ -199,7 +199,6 @@ nl:
         body: 
         subject: 
       subject_new: 
-      subject_reply: 
       visit: 
       visit_html: 
       visit_text: 
@@ -217,8 +216,6 @@ nl:
       subject: 
       visit_html: 
       visit_text: 
-      you_have_new_reply: 
-      you_have_recieved_new_reply: 
     notifications:
       sent: 
       trash: 

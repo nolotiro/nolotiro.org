@@ -209,7 +209,6 @@ it:
         body: Messaggio
         subject: Oggetto
       subject_new: "[nolotiro.org] Nuovo messaggio: %{subject}"
-      subject_reply: "[nolotiro.org] Nuova risposta: %{subject}"
       visit: Guarda la converzazione e risponde al messaggio
       visit_html: Vai a %{url} e guarda nella tua posta in arrivo per rispondere
       visit_text: Vai a %{url} e guarda nella tua posta in arrivo per rispondere
@@ -227,8 +226,6 @@ it:
       subject: "[nolotiro.org] Nuova notifica: %{subject}"
       visit_html: Visita %{url} e vai a la tua posta in arrivo per rispondere
       visit_text: Visita %{url} e vai a la tua posta in arrivo per rispondere
-      you_have_new_reply: Hai ricevuto una nuova risposta
-      you_have_recieved_new_reply: Hai ricevuto una nuova risposta
     notifications:
       sent: Messaggio inviato
       trash: Conversazione cancellata

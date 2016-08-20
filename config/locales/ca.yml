@@ -209,7 +209,6 @@ ca:
         body: missatge
         subject: Assumpte
       subject_new: "[nolotiro.org] Missatge nou :%{subject}"
-      subject_reply: "[nolotiro.org] Nova resposta: %{subject}"
       visit: Veure conversa i respondre missatge
       visit_html: Visita %{url} i veu a la teva safata d'entrada per respondre
       visit_text: Visita %{url} i veu a la teva safata d'entrada per respondre
@@ -227,8 +226,6 @@ ca:
       subject: "[nolotiro.org] Nova notificació: %{subject}"
       visit_html: Visita %{url} i veu a la teva safata d'entrada per respondre
       visit_text: Visita %{url} i veu a la teva safata d'entrada per respondre
-      you_have_new_reply: Has rebut una nova resposta
-      you_have_recieved_new_reply: Has rebut una nova resposta
     notifications:
       sent: missatge enviat
       trash: Conversa esborrat

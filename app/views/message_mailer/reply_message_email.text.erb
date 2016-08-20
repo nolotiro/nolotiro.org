@@ -1,9 +1,0 @@
-<%= I18n.t("mailboxer.notification_mailer.you_have_new_reply") %>: <%= @subject %>
-===============================================
-
------------------------------------------------
-<%= I18n.t("mailboxer.message_mailer.message.body") %>:
-<%= @message.body %>
------------------------------------------------
-
-<%= conversation_url(id: @message.conversation.id) %>
