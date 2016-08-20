@@ -81,6 +81,6 @@ class Conversation < ActiveRecord::Base
   end
 
   def receipt_for_interlocutor(user)
-    receipts.where.not(receiver: user).first
+    receipts.find { |message| message.receiver_id != user.id }
   end
 end
