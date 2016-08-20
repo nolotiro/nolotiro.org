@@ -199,12 +199,10 @@ nl:
         body: 
         subject: 
       subject_new: 
-      subject_reply: 
       visit: 
       visit_html: 
       visit_text: 
       you_have_new_message: 
-      you_have_recieved_new_message: 
     new:
       body_max: 
       button: 
@@ -213,12 +211,6 @@ nl:
       subject: 
       submit: 
       title: 
-    notification_mailer:
-      subject: 
-      visit_html: 
-      visit_text: 
-      you_have_new_reply: 
-      you_have_recieved_new_reply: 
     notifications:
       sent: 
       trash: 

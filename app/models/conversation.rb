@@ -6,12 +6,37 @@ class Conversation < ActiveRecord::Base
   has_many :messages, dependent: :destroy
   has_many :receipts, through: :messages
 
+  belongs_to :originator, class_name: 'User'
+  belongs_to :recipient, class_name: 'User'
+
   scope :involving, ->(user) do
-    joins(:receipts).merge(Receipt.involving(user).untrashed).distinct
+    joins(:receipts)
+      .participant(user)
+      .whitelisted(user)
+      .merge(Receipt.untrashed_by(user))
+      .distinct
   end
 
-  scope :unread, ->(user) do
-    joins(:receipts).merge(Receipt.involving(user).unread).distinct
+  scope :unread_by, ->(user) do
+    joins(:receipts)
+      .participant(user)
+      .whitelisted(user)
+      .merge(Receipt.unread_by(user))
+      .distinct
+  end
+
+  scope :participant, ->(user) do
+    where('recipient_id = ? OR originator_id = ?', user.id, user.id)
+  end
+
+  scope :whitelisted, ->(user) do
+    joined = joins <<-SQL.squish
+      LEFT OUTER JOIN blockings
+      ON (recipient_id = blocker_id AND originator_id = blocked_id) OR
+         (recipient_id = blocked_id AND originator_id = blocker_id)
+    SQL
+
+    joined.where('blockings.blocked_id IS NULL OR blockings.blocked_id <> ?', user.id)
   end
 
   def self.start(sender:, recipient:, subject: '', body: '')
@@ -39,30 +64,7 @@ class Conversation < ActiveRecord::Base
   end
 
   def interlocutor(user)
-    message = message_by_interlocutor(user)
-    return message.sender if message
-
-    receipt = receipt_for_interlocutor(user)
-    return receipt.receiver if receipt
-
-    receipts.pluck(:mailbox_type).uniq.size == 1 ? nil : user
-  end
-
-  def originator
-    original_message.sender
-  end
-
-  def recipient
-    return interlocutor(originator) if originator
-
-    first_message_with_sender = messages.find(&:sender)
-    return first_message_with_sender.sender if first_message_with_sender
-
-    receipts.find(&:receiver).receiver
-  end
-
-  def original_message
-    @original_message ||= messages.order(:created_at).first
+    user == originator ? recipient : originator
   end
 
   def messages_for(user)
@@ -73,19 +75,5 @@ class Conversation < ActiveRecord::Base
     @last_message ||= messages.last
   end
 
-  def unread?(user)
-    messages.unread(user).any?
-  end
-
   delegate :mark_as_read, :move_to_trash, to: :receipts
-
-  private
-
-  def message_by_interlocutor(user)
-    messages.find { |message| message.sender_id != user.id }
-  end
-
-  def receipt_for_interlocutor(user)
-    receipts.find { |message| message.receiver_id != user.id }
-  end
 end

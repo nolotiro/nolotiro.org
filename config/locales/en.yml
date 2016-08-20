@@ -204,13 +204,11 @@ en:
       message:
         body: Message
         subject: Subject
-      subject_new: "[nolotiro.org] New message: %{subject}"
-      subject_reply: "[nolotiro.org] New reply: %{subject}"
+      subject_new: "[nolotiro.org] New message from user %{user}"
       visit: View conversation and reply
       visit_html: Visit %{url} and go to your inbox to reply
       visit_text: Visit %{url} and go to your inbox to reply
       you_have_new_message: You have a new message
-      you_have_recieved_new_message: You have a new message
     new:
       body_max: 
       button: Send
@@ -219,12 +217,6 @@ en:
       subject: 
       submit: Send
       title: New private message for user %{user}
-    notification_mailer:
-      subject: "[nolotiro.org] New notification: %{subject}"
-      visit_html: Visit %{url} and go to your inbox to reply
-      visit_text: Visit %{url} and go to your inbox to reply
-      you_have_new_reply: You have a new answer
-      you_have_recieved_new_reply: You have a new answer
     notifications:
       sent: Sent message
       trash: Conversation deleted

@@ -84,7 +84,5 @@ gem 'rakismet'                                      # antispam
 gem 'font-awesome-rails'                            # font-awesome icons
 gem 'faker'
 
-gem 'mailboxer', '0.14.0'                           # messaging
-
 gem 'bootstrap-sass', '~> 3.3'
 gem 'sass-rails', '~> 5.0'

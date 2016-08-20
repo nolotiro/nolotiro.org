@@ -1,10 +1,18 @@
 # frozen_string_literal: true
 class ConversationsController < ApplicationController
   before_action :authenticate_user!
+  before_action :load_conversation, only: [:show, :update]
 
   def index
-    @conversations = conversations.order(updated_at: :desc)
-                                  .paginate(page: params[:page])
+    @conversations = Conversation.involving(current_user)
+                                 .includes(:originator, :recipient)
+                                 .order(updated_at: :desc)
+                                 .paginate(page: params[:page])
+
+    @unread_counts = Message.where(conversation_id: @conversations.ids)
+                            .unread_by(current_user)
+                            .group(:conversation_id)
+                            .size
   end
 
   def new
@@ -35,7 +43,6 @@ class ConversationsController < ApplicationController
   end
 
   def update
-    @conversation = conversations.find(params[:id])
     @interlocutor = @conversation.interlocutor(current_user)
     @message = @conversation.reply(reply_params)
 
@@ -51,10 +58,7 @@ class ConversationsController < ApplicationController
     end
   end
 
-  # GET /messages/:ID
-  # GET /message/show/:ID/subject/SUBJECT
   def show
-    @conversation = conversations.find(params[:id])
     authorize(@conversation)
 
     @interlocutor = @conversation.interlocutor(current_user)
@@ -65,7 +69,9 @@ class ConversationsController < ApplicationController
   end
 
   def trash
-    conversation = conversations.find(params[:id] || params[:conversations])
+    conversation = Conversation.involving(current_user)
+                               .find(params[:id] || params[:conversations])
+
     Array(conversation).each { |c| c.move_to_trash(current_user) }
 
     redirect_to conversations_path,
@@ -73,6 +79,10 @@ class ConversationsController < ApplicationController
   end
 
   private
+
+  def load_conversation
+    @conversation = Conversation.involving(current_user).find(params[:id])
+  end
 
   def start_params
     reply_params.merge(subject: params[:subject])
@@ -86,9 +96,5 @@ class ConversationsController < ApplicationController
     missing_subject = @conversation.errors['subject']
 
     @message.errors.add(:subject, missing_subject.first) if missing_subject.any?
-  end
-
-  def conversations
-    Conversation.involving(current_user)
   end
 end

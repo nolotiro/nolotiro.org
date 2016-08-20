@@ -12,34 +12,29 @@ class ConversationTest < ActiveSupport::TestCase
                                           recipient: @recipient)
   end
 
-  def test_unread_scope_returns_unread_conversations_only
-    assert_equal 0, Conversation.unread(@user).size
-    assert_equal 1, Conversation.unread(@recipient).size
+  def test_unread_by_scope_returns_unread_conversations_only
+    assert_equal 0, Conversation.unread_by(@user).size
+    assert_equal 1, Conversation.unread_by(@recipient).size
   end
 
   def test_mark_as_read_does_what_its_name_indicates
     @conversation.mark_as_read(@recipient)
 
-    assert_equal 0, Conversation.unread(@user).size
-    assert_equal 0, Conversation.unread(@recipient).size
+    assert_equal 0, Conversation.unread_by(@user).size
+    assert_equal 0, Conversation.unread_by(@recipient).size
   end
 
-  def test_unread_scope_excludes_deleted_conversations
+  def test_unread_by_scope_excludes_deleted_conversations
     @conversation.move_to_trash(@recipient)
 
-    assert_equal 0, Conversation.unread(@user).size
-    assert_equal 0, Conversation.unread(@recipient).size
+    assert_equal 0, Conversation.unread_by(@user).size
+    assert_equal 0, Conversation.unread_by(@recipient).size
   end
 
-  def test_unread_excludes_conversations_with_blockers
+  def test_unread_by_scope_excludes_conversations_with_blockers
     create(:blocking, blocker: @user, blocked: @recipient)
 
-    assert_equal 0, Conversation.unread(@user).size
-  end
-
-  def test_unread_method_returns_a_boolean_unread_flag
-    assert_equal false, @conversation.unread?(@user)
-    assert_equal true, @conversation.unread?(@recipient)
+    assert_equal 0, Conversation.unread_by(@user).size
   end
 
   def test_reply_touches_the_conversation_timestamp
@@ -76,10 +71,59 @@ class ConversationTest < ActiveSupport::TestCase
     assert_empty Conversation.involving(@user)
   end
 
+  def test_involving_includes_started_conversations
+    assert_equal [@conversation], Conversation.involving(@user)
+  end
+
+  def test_involving_includes_received_conversations
+    @conversation.update!(originator: @recipient, recipient: @user)
+
+    assert_equal [@conversation], Conversation.involving(@user)
+  end
+
+  def test_involving_excludes_started_conversations_with_blockers
+    create(:blocking, blocker: @recipient, blocked: @user)
+
+    assert_empty Conversation.involving(@user)
+  end
+
+  def test_involving_includes_started_conversations_with_blocked_users
+    create(:blocking, blocker: @user, blocked: @recipient)
+
+    assert_equal [@conversation], Conversation.involving(@user)
+  end
+
+  def test_involving_excludes_received_conversations_with_blockers
+    @conversation.update!(originator: @recipient, recipient: @user)
+    create(:blocking, blocker: @recipient, blocked: @user)
+
+    assert_empty Conversation.involving(@user)
+  end
+
+  def test_involving_includes_received_conversations_with_blocked_users
+    @conversation.update!(originator: @recipient, recipient: @user)
+    create(:blocking, blocker: @user, blocked: @recipient)
+
+    assert_equal [@conversation], Conversation.involving(@user)
+  end
+
+  def test_involving_includes_started_conversations_with_deleted_users
+    @recipient.destroy
+
+    assert_equal [@conversation], Conversation.involving(@user)
+  end
+
+  def test_involving_includes_received_conversations_with_deleted_users
+    @conversation.update!(originator: @recipient, recipient: @user)
+    @recipient.destroy
+
+    assert_equal [@conversation], Conversation.involving(@user)
+  end
+
   def test_interlocutor_returns_nil_for_orphan_conversations_w_one_msg
     @recipient.destroy
 
-    assert_nil @conversation.interlocutor(@user)
+    assert_nil @conversation.reload.interlocutor(@user)
   end
 
   def test_interlocutor_returns_nil_for_orphan_conversations_w_several_msgs
@@ -87,7 +131,7 @@ class ConversationTest < ActiveSupport::TestCase
     @conversation.save!
 
     @recipient.destroy
-    assert_nil @conversation.interlocutor(@user)
+    assert_nil @conversation.reload.interlocutor(@user)
   end
 
   def test_interlocutor_returns_nil_for_orphan_conversations_w_several_sent_msgs
@@ -95,7 +139,7 @@ class ConversationTest < ActiveSupport::TestCase
     @conversation.save!
 
     @recipient.destroy
-    assert_nil @conversation.interlocutor(@user)
+    assert_nil @conversation.reload.interlocutor(@user)
   end
 
   def test_recipient_when_she_has_sent_messages_and_originator_no_longer_there

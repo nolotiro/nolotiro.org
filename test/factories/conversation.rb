@@ -2,10 +2,8 @@
 
 FactoryGirl.define do
   factory :conversation do
-    transient do
-      originator { create(:user) }
-      recipient { create(:user) }
-    end
+    association :originator, factory: :user
+    association :recipient, factory: :user
 
     subject 'Talking about presents'
 

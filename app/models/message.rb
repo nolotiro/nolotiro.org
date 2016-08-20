@@ -13,24 +13,20 @@ class Message < ActiveRecord::Base
     joins(:receipts).merge(Receipt.recipient(user).untrashed)
   end
 
-  scope :unread, ->(user) do
+  scope :unread_by, ->(user) do
     joins(:receipts).merge(Receipt.recipient(user).unread)
   end
 
-  def recipient_receipt
-    receipts.find { |receipt| receipt.mailbox_type == 'inbox' }
-  end
-
   def recipient
-    recipient_receipt.receiver
+    conversation.interlocutor(sender)
   end
 
   def envelope_for(recipient)
-    receipts.build(receiver: sender, mailbox_type: 'sent', is_read: true)
-    receipts.build(receiver: recipient, mailbox_type: 'inbox', is_read: false)
+    receipts.build(receiver: sender, is_read: true)
+    receipts.build(receiver: recipient, is_read: false)
   end
 
   def deliver
-    Mailboxer::MailDispatcher.new(self, [recipient_receipt]).call
+    MessageMailer.send_email(self).deliver_now
   end
 end
