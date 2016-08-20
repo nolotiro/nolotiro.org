@@ -27,6 +27,6 @@ class Message < ActiveRecord::Base
   end
 
   def deliver
-    MessageMailer.send_email(self, recipient).deliver_now
+    MessageMailer.send_email(self).deliver_now
   end
 end

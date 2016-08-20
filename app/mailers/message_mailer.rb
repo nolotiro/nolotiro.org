@@ -3,9 +3,9 @@
 class MessageMailer < ActionMailer::Base
   default from: Rails.application.secrets.emails['default_from']
 
-  def send_email(message, receiver)
+  def send_email(message)
     @message = message
-    @receiver = receiver
+    @receiver = message.recipient
     @subject = message.subject
 
     if message.conversation.messages.size > 1
