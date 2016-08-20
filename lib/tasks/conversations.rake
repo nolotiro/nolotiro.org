@@ -12,6 +12,18 @@ namespace :conversations do
     target.destroy_all
   end
 
+  desc 'Nullify orphan senders'
+  task nullify_orphan_senders: :environment do
+    target = Message.joins('LEFT OUTER JOIN users on users.id = sender_id')
+                    .where(users: { id: nil })
+                    .where.not(sender_id: nil)
+
+    STDOUT.print "About to nullify #{target.size} sender_id's. Continue? (y/n)"
+    abort unless STDIN.gets.chomp == 'y'
+
+    target.update_all(sender_id: nil)
+  end
+
   desc 'Deletes garbage conversations (no receipts at all)'
   task remove_garbage: :environment do
     joined = Conversation.joins <<-SQL.squish
