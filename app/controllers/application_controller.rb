@@ -1,5 +1,4 @@
 # frozen_string_literal: true
-require 'concerns/multi_lingualizable'
 
 class ApplicationController < ActionController::Base
   include MultiLingualizable

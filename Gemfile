@@ -49,6 +49,7 @@ group :development do
   gem 'capistrano-bundler'
   gem 'capistrano-ci'
   gem 'capistrano-pending'
+  gem 'capistrano-sidekiq'
   gem 'rubocop', '0.41.1'
   gem 'brakeman'
 end
@@ -82,7 +83,6 @@ gem 'activeadmin', github: 'activeadmin'            # admin backend
 gem 'rakismet'                                      # antispam
 gem 'font-awesome-rails'                            # font-awesome icons
 gem 'faker'
-gem 'ruby-progressbar', require: false
 
 gem 'mailboxer', '0.14.0'                           # messaging
 

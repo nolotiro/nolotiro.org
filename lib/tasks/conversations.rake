@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-require 'ruby-progressbar'
-
 namespace :conversations do
   desc 'Deletes orphan receipts'
   task remove_orphan_receipts: :environment do
@@ -12,6 +10,18 @@ namespace :conversations do
     abort unless STDIN.gets.chomp == 'y'
 
     target.destroy_all
+  end
+
+  desc 'Nullify orphan senders'
+  task nullify_orphan_senders: :environment do
+    target = Message.joins('LEFT OUTER JOIN users on users.id = sender_id')
+                    .where(users: { id: nil })
+                    .where.not(sender_id: nil)
+
+    STDOUT.print "About to nullify #{target.size} sender_id's. Continue? (y/n)"
+    abort unless STDIN.gets.chomp == 'y'
+
+    target.update_all(sender_id: nil)
   end
 
   desc 'Deletes garbage conversations (no receipts at all)'
@@ -31,18 +41,8 @@ namespace :conversations do
 
   desc 'Fills in originators & recipients for conversations'
   task fill_originators_and_recipients: :environment do
-    todo = Conversation.where(originator_id: nil, recipient_id: nil)
-
-    progress_bar = ProgressBar.create(format: '%c/%C %B %a', total: todo.count)
-
-    todo.find_each do |conversation|
-      originator_id = conversation.originator.try(:id)
-      recipient_id = conversation.recipient.try(:id)
-
-      conversation.update_column(:originator_id, originator_id)
-      conversation.update_column(:recipient_id, recipient_id)
-
-      progress_bar.increment
+    Conversation.where(originator_id: nil, recipient_id: nil).ids.each do |id|
+      ConversationWorker.perform_async(id)
     end
   end
 end
