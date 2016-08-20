@@ -213,7 +213,6 @@ es:
       visit_html: Visita %{url} y ve a tu bandeja de entrada para responder
       visit_text: Visita %{url} y ve a tu bandeja de entrada para responder
       you_have_new_message: Has recibido un nuevo mensaje
-      you_have_recieved_new_message: Has recibido un nuevo mensaje
     new:
       body_max: Máximo 1500 carácteres
       button: Enviar
@@ -222,10 +221,6 @@ es:
       subject: Tema
       submit: Enviar
       title: Nuevo mensaje privado para el usuario %{user}
-    notification_mailer:
-      subject: "[nolotiro.org] Nueva notificación: %{subject}"
-      visit_html: Visita %{url} y ve a tu bandeja de entrada para responder
-      visit_text: Visita %{url} y ve a tu bandeja de entrada para responder
     notifications:
       sent: Mensaje enviado
       trash: Conversación borrada

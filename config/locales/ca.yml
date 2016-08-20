@@ -213,7 +213,6 @@ ca:
       visit_html: Visita %{url} i veu a la teva safata d'entrada per respondre
       visit_text: Visita %{url} i veu a la teva safata d'entrada per respondre
       you_have_new_message: Has rebut un nou missatge
-      you_have_recieved_new_message: Has rebut un nou missatge
     new:
       body_max: 
       button: Enviar
@@ -222,10 +221,6 @@ ca:
       subject: 
       submit: Enviar
       title: Nou missatge privat per a l'usuari %{user}
-    notification_mailer:
-      subject: "[nolotiro.org] Nova notificació: %{subject}"
-      visit_html: Visita %{url} i veu a la teva safata d'entrada per respondre
-      visit_text: Visita %{url} i veu a la teva safata d'entrada per respondre
     notifications:
       sent: missatge enviat
       trash: Conversa esborrat

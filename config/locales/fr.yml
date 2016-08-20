@@ -215,7 +215,6 @@ fr:
       visit_html: 
       visit_text: 
       you_have_new_message: 
-      you_have_recieved_new_message: 
     new:
       body_max: 
       button: 
@@ -224,10 +223,6 @@ fr:
       subject: 
       submit: 
       title: 
-    notification_mailer:
-      subject: 
-      visit_html: 
-      visit_text: 
     notifications:
       sent: 
       trash: 

@@ -220,7 +220,6 @@ gl:
       visit_html: 
       visit_text: 
       you_have_new_message: Recibiu unha mensaxe nova
-      you_have_recieved_new_message: Recibiu unha mensaxe nova
     new:
       body_max: Máximo 1500 carácteres
       button: Enviar
@@ -229,14 +228,6 @@ gl:
       subject: Tema
       submit: Enviar
       title: Nova mensaxe privada para o usuario %{user}
-    notification_mailer:
-      subject: "[nolotiro.org] nova notificación: %{subject}"
-      visit_html: 'Visita %{url} e ir á súa bandexa de entrada para responder
-
-'
-      visit_text: 'Visita %{url} e ir á súa bandexa de entrada para responder
-
-'
     notifications:
       sent: 
       trash: Conversa arquivada

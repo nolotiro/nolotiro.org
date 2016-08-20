@@ -213,7 +213,6 @@ pt:
       visit_html: Clique em %{url} e ingrese na sua caixa de entrada para responder
       visit_text: Clique em %{url} e ingrese na sua caixa de entrada para responder
       you_have_new_message: Você recebeu uma nova mensagem
-      you_have_recieved_new_message: Você recebeu uma nova mensagem
     new:
       body_max: Máximo 1500 caracteres
       button: Enviar
@@ -222,10 +221,6 @@ pt:
       subject: Assunto
       submit: Enviar
       title: Nova mensagem privada para o usuário %{user}
-    notification_mailer:
-      subject: "[nolotiro.org} Nova notificação: %{subject}"
-      visit_html: Clique em %{url} e ingrese na sua caixa de entrada para responder
-      visit_text: Clique em %{url} e ingrese na sua caixa de entrada para responder
     notifications:
       sent: Mensagem enviada
       trash: Conversa apagada
