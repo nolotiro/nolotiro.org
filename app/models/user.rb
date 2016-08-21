@@ -55,16 +55,11 @@ class User < ActiveRecord::Base
          :omniauthable, omniauth_providers: [:facebook, :google_oauth2]
 
   scope :top_overall, ->(limit = 20) do
-    select('users.id, users.username, COUNT(ads.id) as n_ads')
-      .joins(:ads)
-      .merge(Ad.give)
-      .group('ads.user_owner')
-      .order('n_ads DESC')
-      .limit(limit)
+    joins(:ads).merge(Ad.give).build_rank(limit)
   end
 
   scope :top_last_week, ->(limit = 20) do
-    top_overall(limit).merge(Ad.last_week)
+    joins(:ads).merge(Ad.give.last_week).build_rank(limit)
   end
 
   scope :whitelisting, ->(user) do
@@ -74,6 +69,13 @@ class User < ActiveRecord::Base
     SQL
 
     joined.where(blockings: { blocker_id: nil })
+  end
+
+  def self.build_rank(limit = 20)
+    select('users.id, users.username, COUNT(ads.id) as n_ads')
+      .group('ads.user_owner')
+      .order('n_ads DESC')
+      .limit(limit)
   end
 
   def self.new_with_session(params, session)
