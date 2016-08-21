@@ -66,19 +66,9 @@ class Ad < ActiveRecord::Base
   scope :give, -> { where(type: 1) }
   scope :want, -> { where(type: 2) }
 
-  scope :by_type, ->(type) do
-    return all unless type.present?
-    where(type: type)
-  end
-
   scope :available, -> { where(status: 1) }
   scope :booked, -> { where(status: 2) }
   scope :delivered, -> { where(status: 3) }
-
-  scope :by_status, ->(status) do
-    return all unless status.present?
-    where(status: status)
-  end
 
   scope :by_woeid_code, ->(woeid_code) do
     return all unless woeid_code.present?
