@@ -64,7 +64,7 @@ class User < ActiveRecord::Base
   end
 
   scope :top_last_week, ->(limit = 20) do
-    top_overall(limit).where('published_at >= :date', date: 1.week.ago)
+    top_overall(limit).merge(Ad.last_week)
   end
 
   scope :whitelisting, ->(user) do

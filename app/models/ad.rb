@@ -61,6 +61,7 @@ class Ad < ActiveRecord::Base
   # before_save :titleize_body if self.body and /[[:upper:]]/.match(self.body)
 
   scope :recent, -> { Ad.includes(:user).recent_first.limit(90) }
+  scope :last_week, -> { where('published_at >= :date', date: 1.week.ago) }
 
   scope :give, -> { where(type: 1) }
   scope :want, -> { where(type: 2) }
