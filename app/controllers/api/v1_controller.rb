@@ -14,7 +14,7 @@ module Api
       @woeid = params[:id]
       @page = params[:page]
       @ads = ads.available
-                .where(woeid_code: @woeid)
+                .by_woeid_code(@woeid)
                 .recent_first
                 .paginate(page: params[:page])
     end
