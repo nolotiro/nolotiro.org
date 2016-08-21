@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 class AdsController < ApplicationController
-  include ApplicationHelper
-
   before_action :set_ad, only: [:show, :edit, :update, :bump, :destroy]
   before_action :authenticate_user!, except: [:index, :show]
 
