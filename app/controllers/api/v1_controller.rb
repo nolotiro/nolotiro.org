@@ -6,17 +6,14 @@ module Api
     end
 
     def woeid_show
-      ads = if params[:type] == 'give'
-              Ad.give
-            else
-              Ad.want
-            end
+      @type = type_scope
       @woeid = params[:id]
       @page = params[:page]
-      @ads = ads.available
-                .by_woeid_code(@woeid)
-                .recent_first
-                .paginate(page: params[:page])
+      @ads = Ad.public_send(@type)
+               .available
+               .by_woeid_code(@woeid)
+               .recent_first
+               .paginate(page: params[:page])
     end
 
     def woeid_list
