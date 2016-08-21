@@ -95,10 +95,10 @@ class Ad < ActiveRecord::Base
   self.per_page = 20
 
   def self.cache_digest
-    last_ad_creation = Ad.maximum(:created_at)
-    return '0' * 20 unless last_ad_creation
+    last_ad_publication = Ad.maximum(:published_at)
+    return '0' * 20 unless last_ad_publication
 
-    last_ad_creation.strftime('%d%m%y%H%M%s')
+    last_ad_publication.strftime('%d%m%y%H%M%s')
   end
 
   def body
