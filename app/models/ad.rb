@@ -142,39 +142,22 @@ class Ad < ActiveRecord::Base
   end
 
   def type_class
-    case type
-    when 1
-      'give'
-    when 2
-      'want'
-    else
-      'give'
-    end
+    type == 2 ? 'want' : 'give'
   end
 
   def status_class
     case status
-    when 1
-      'available'
-    when 2
-      'booked'
-    when 3
-      'delivered'
-    else
-      'available'
+    when 2 then 'booked'
+    when 3 then 'delivered'
+    else 'available'
     end
   end
 
   def status_string
     case status
-    when 1
-      I18n.t('nlt.available')
-    when 2
-      I18n.t('nlt.booked')
-    when 3
-      I18n.t('nlt.delivered')
-    else
-      I18n.t('nlt.available')
+    when 2 then I18n.t('nlt.booked')
+    when 3 then I18n.t('nlt.delivered')
+    else I18n.t('nlt.available')
     end
   end
 
