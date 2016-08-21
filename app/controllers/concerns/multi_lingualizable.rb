@@ -13,16 +13,8 @@ module MultiLingualizable
   end
 
   def set_locale
-    cookies.permanent[:locale] = params[:lang] if valid_locale?(params[:lang])
-
     I18n.locale =
       params_locale || cookie_locale || browser_locale || default_locale
-  end
-
-  def valid_locale?(code)
-    return false unless code.present?
-
-    I18n.available_locales.include?(code.to_sym)
   end
 
   def params_locale
