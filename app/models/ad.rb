@@ -60,6 +60,8 @@ class Ad < ActiveRecord::Base
   # before_save :titleize_title if self.title? and /[[:upper:]]/.match(self.title)
   # before_save :titleize_body if self.body and /[[:upper:]]/.match(self.body)
 
+  scope :recent, -> { Ad.includes(:user).limit(90) }
+
   scope :give, -> { where(type: 1) }
   scope :want, -> { where(type: 2) }
 
