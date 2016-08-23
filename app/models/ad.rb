@@ -192,10 +192,6 @@ class Ad < ActiveRecord::Base
     errors.add(:ip, 'No es una IP válida') unless IPAddress.valid?(ip)
   end
 
-  def give?
-    type == 1
-  end
-
   def meta_title
     "#{I18n.t('nlt.keywords')} #{title} #{woeid_name}"
   end

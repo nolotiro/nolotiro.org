@@ -112,11 +112,6 @@ class AdTest < ActiveSupport::TestCase
     assert_equal @ad.status_class, 'delivered'
   end
 
-  test 'ad give?' do
-    @ad.update(type: 1)
-    assert_equal @ad.give?, true
-  end
-
   test 'ad meta_title for give ads' do
     mocking_yahoo_woeid_info(@ad.woeid_code) do
       @ad.update(type: 1)
