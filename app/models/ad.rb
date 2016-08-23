@@ -96,12 +96,12 @@ class Ad < ActiveRecord::Base
 
   scope :top_locations, -> do
     Rails.cache.fetch("#{I18n.locale}/location-ranks-#{cache_digest}") do
-      give
-        .group(:woeid_code)
-        .order('n_ads DESC')
-        .limit(20)
-        .select(:woeid_code, 'COUNT(woeid_code) as n_ads')
+      rank_by(:woeid_code).select(:woeid_code, 'COUNT(woeid_code) as n_ads')
     end
+  end
+
+  def self.rank_by(attribute)
+    give.group(attribute).order('n_ads DESC').limit(20)
   end
 
   def self.cache_digest

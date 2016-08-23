@@ -56,13 +56,13 @@ class User < ActiveRecord::Base
 
   scope :top_overall, -> do
     Rails.cache.fetch("user-overall-ranks-#{Ad.cache_digest}") do
-      joins(:ads).merge(Ad.give).build_rank
+      build_rank(Ad)
     end
   end
 
   scope :top_last_week, -> do
     Rails.cache.fetch("user-last-week-ranks-#{Ad.cache_digest}") do
-      joins(:ads).merge(Ad.give.last_week).build_rank
+      build_rank(Ad.last_week)
     end
   end
 
@@ -75,11 +75,10 @@ class User < ActiveRecord::Base
     joined.where(blockings: { blocker_id: nil })
   end
 
-  def self.build_rank
+  def self.build_rank(ads_scope)
     select(:id, :username, 'COUNT(ads.id) as n_ads')
-      .group('ads.user_owner')
-      .order('n_ads DESC')
-      .limit(20)
+      .joins(:ads)
+      .merge(ads_scope.rank_by(:user_owner))
   end
 
   def self.new_with_session(params, session)
