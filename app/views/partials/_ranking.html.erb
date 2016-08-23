@@ -1,7 +1,9 @@
-<div class="ranking">
-  <h2><%= t("nlt.#{title_key}") %></h2>
+<% if Ad.full_ranking?(scope) %>
+  <div class="ranking">
+    <h2><%= t("nlt.#{title_key}") %></h2>
 
-  <ul>
-    <%= yield %>
-  </ul>
-</div>
+    <ul>
+      <%= yield %>
+    </ul>
+  </div>
+<% end %>

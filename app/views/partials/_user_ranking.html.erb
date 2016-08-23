@@ -1,4 +1,5 @@
-<%= render layout: 'partials/ranking', locals: { title_key: title_key } do %>
+<%= render layout: 'partials/ranking',
+           locals: { title_key: title_key, scope: scope } do %>
   <% scope.each do |id, username, n_ads| %>
     <li>
       <%= link_to listads_user_path id do %>

@@ -94,6 +94,10 @@ class Ad < ActiveRecord::Base
     give.group(attribute).order('n_ads DESC').limit(ranking_size)
   end
 
+  def self.full_ranking?(rank_scope)
+    rank_scope.length == ranking_size
+  end
+
   def self.ranking_size
     20
   end
