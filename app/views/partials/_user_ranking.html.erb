@@ -2,10 +2,10 @@
   <h2><%= t("nlt.#{title_key}") %></h2>
 
   <ul>
-    <% scope.each do |u| %>
+    <% scope.each do |id, username, n_ads| %>
       <li>
-        <%= link_to listads_user_path u.id do %>
-          <%= u.username %> (<%= u.n_ads %>)
+        <%= link_to listads_user_path id do %>
+          <%= username %> (<%= n_ads %>)
         <% end %>
       </li>
     <% end %>
