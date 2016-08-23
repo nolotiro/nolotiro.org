@@ -1,13 +1,9 @@
-<div class="ranking">
-  <h2><%= t("nlt.#{title_key}") %></h2>
-
-  <ul>
-    <% scope.each do |id, username, n_ads| %>
-      <li>
-        <%= link_to listads_user_path id do %>
-          <%= username %> (<%= n_ads %>)
-        <% end %>
-      </li>
-    <% end %>
-  </ul>
-</div>
+<%= render layout: 'partials/ranking', locals: { title_key: title_key } do %>
+  <% scope.each do |id, username, n_ads| %>
+    <li>
+      <%= link_to listads_user_path id do %>
+        <%= username %> (<%= n_ads %>)
+      <% end %>
+    </li>
+  <% end %>
+<% end %>

@@ -26,7 +26,8 @@
 </div>
 
 <div class="col-md-3 col-sm-3">
-  <%= render "partials/location_ranking" %>
+  <%= render "partials/location_ranking", title_key: "cities_in_the_world",
+                                          scope: Ad.top_locations %>
 
   <%= render "partials/user_ranking", title_key: "users_most_active_last_week",
                                       scope: User.top_last_week %>
