@@ -76,7 +76,7 @@ class User < ActiveRecord::Base
   end
 
   def self.build_rank(limit = 20)
-    select('users.id, users.username, COUNT(ads.id) as n_ads')
+    select(:id, :username, 'COUNT(ads.id) as n_ads')
       .group('ads.user_owner')
       .order('n_ads DESC')
       .limit(limit)
