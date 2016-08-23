@@ -91,7 +91,11 @@ class Ad < ActiveRecord::Base
   end
 
   def self.rank_by(attribute)
-    give.group(attribute).order('n_ads DESC').limit(20)
+    give.group(attribute).order('n_ads DESC').limit(ranking_size)
+  end
+
+  def self.ranking_size
+    20
   end
 
   def self.cache_digest
