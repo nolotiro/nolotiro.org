@@ -2,7 +2,7 @@
   <h2><%= t('nlt.cities_in_the_world') %></h2>
 
   <ul>
-    <% Ad.top_locations(20).each do |loc| %>
+    <% Ad.top_locations.each do |loc| %>
       <li>
         <%= link_to ads_woeid_path(loc.woeid_code, type: "give") do %>
           <%= loc.woeid_name_short %> (<%= loc.n_ads %>)

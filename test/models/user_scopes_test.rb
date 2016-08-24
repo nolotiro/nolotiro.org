@@ -44,13 +44,6 @@ class UserScopesTest < ActiveSupport::TestCase
     assert_count results.second, user2.id, user2.username, 2
   end
 
-  test 'top last week accepts argument with number of publishers requested' do
-    results = User.top_last_week(1)
-
-    assert_equal 1, results.length
-    assert_count results.first, user1.id, user1.username, 3
-  end
-
   test 'top locations returns cities with most ads' do
     mocking_yahoo_woeid_info(766_273) do
       results = Ad.top_locations

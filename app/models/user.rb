@@ -54,15 +54,15 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :lockable,
          :omniauthable, omniauth_providers: [:facebook, :google_oauth2]
 
-  scope :top_overall, ->(limit = 20) do
+  scope :top_overall, -> do
     Rails.cache.fetch("user-overall-ranks-#{Ad.cache_digest}") do
-      joins(:ads).merge(Ad.give).build_rank(limit)
+      joins(:ads).merge(Ad.give).build_rank
     end
   end
 
-  scope :top_last_week, ->(limit = 20) do
+  scope :top_last_week, -> do
     Rails.cache.fetch("user-last-week-ranks-#{Ad.cache_digest}") do
-      joins(:ads).merge(Ad.give.last_week).build_rank(limit)
+      joins(:ads).merge(Ad.give.last_week).build_rank
     end
   end
 
@@ -75,11 +75,11 @@ class User < ActiveRecord::Base
     joined.where(blockings: { blocker_id: nil })
   end
 
-  def self.build_rank(limit = 20)
+  def self.build_rank
     select(:id, :username, 'COUNT(ads.id) as n_ads')
       .group('ads.user_owner')
       .order('n_ads DESC')
-      .limit(limit)
+      .limit(20)
   end
 
   def self.new_with_session(params, session)
