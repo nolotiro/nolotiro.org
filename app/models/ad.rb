@@ -83,8 +83,10 @@ class Ad < ActiveRecord::Base
   end
 
   scope :by_title, ->(query) do
-    return all unless query.present?
-    where('title LIKE ?', "%#{query}%")
+    sanitized_query = query.try(:scrub, '')
+    return all unless sanitized_query.present?
+
+    where('title LIKE ?', "%#{sanitized_query}%")
   end
 
   scope :last_week, -> { where('created_at >= :date', date: 1.week.ago) }
