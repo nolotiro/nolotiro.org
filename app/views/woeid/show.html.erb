@@ -7,7 +7,7 @@
   <% content_for(:meta_description, t('nlt.gift_on', woeid: @woeid[:full])) %>
 <% end %>
 
-<% unless @q or @woeid.nil? %>
+<% if @woeid %>
   <% content_for :meta_extra do %>
     <link rel="alternate" type="application/rss+xml" title="nolotiro.org - <%= @woeid[:full] %>" href="<%= rss_type_url(woeid: @id, type: @type, status: @status) %>" />
   <% end %>
@@ -81,7 +81,7 @@
     <% end %>
   <% end %>
 
-  <% unless @q or @woeid.nil? %>
+  <% if @woeid %>
     <div class="rss">
       <%= link_to rss_type_path(woeid: @id, type: "give") do %>
         <%= image_tag "icons/rss.png", alt: t("nlt.rss_suscribe") %>
