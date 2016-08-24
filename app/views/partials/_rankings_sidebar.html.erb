@@ -1,0 +1,17 @@
+<% unless @id %>
+  <%= render "partials/location_ranking", title_key: "cities_in_the_world",
+                                          scope: Ad.top_locations %>
+<% end %>
+
+<%= render "partials/user_ranking",
+           title_key: "users_most_active_last_week",
+           scope: @id ? User.top_city_last_week(@id) : User.top_last_week %>
+
+<%= render "partials/user_ranking",
+           title_key: "users_most_active",
+           scope: @id ? User.top_city_overall(@id) : User.top_overall %>
+
+<div class="google_ad_wrapper">
+  <%= render "partials/google_adsense", class_name: "desktop google_adsense_600_160", ad_slot: "6783776462" %>
+  <%= render "partials/google_adsense", class_name: "mobile google_adsense_336_280", ad_slot: "7225596067" %>
+</div>
