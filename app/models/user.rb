@@ -29,9 +29,11 @@ class User < ActiveRecord::Base
 
   before_save :default_lang
 
-  validates :username, presence: true,
-                       uniqueness: { case_sensitive: false },
-                       length: { maximum: 63 }
+  validates :username, presence: true
+  validates :username, uniqueness: { case_sensitive: false },
+                       length: { maximum: 63 },
+                       allow_blank: true,
+                       if: :username_changed?
 
   validates :email, presence: true
   validates :email, uniqueness: true,
