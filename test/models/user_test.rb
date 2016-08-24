@@ -30,6 +30,14 @@ class UserTest < ActiveSupport::TestCase
     assert_includes user2.errors[:username], 'ya está en uso'
   end
 
+  test 'disallows usernames that look like emails' do
+    user = build(:user, username: 'larryfoster@example.com')
+
+    assert_not user.valid?
+    assert_not user.save
+    assert_includes user.errors[:username], 'no es válido'
+  end
+
   test 'has unique emails' do
     user1 = build(:user, email: 'larryfoster@example.com')
     assert user1.valid?
