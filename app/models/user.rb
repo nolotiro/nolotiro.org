@@ -33,10 +33,22 @@ class User < ActiveRecord::Base
                        uniqueness: { case_sensitive: false },
                        length: { maximum: 63 }
 
+  validates :email, presence: true
+  validates :email, uniqueness: true,
+                    format: { with: /\A[^@]+@[^@]+\z/ },
+                    allow_blank: true,
+                    if: :email_changed?
+
+  validates :password, presence: true,
+                       confirmation: true,
+                       if: :password_required?
+
+  validates :password, length: { in: 5..128 }, allow_blank: true
+
   # Include default devise modules. Others available are:
   # :timeoutable and :omniauthable
   devise :confirmable, :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable, :lockable,
+         :recoverable, :rememberable, :trackable, :lockable,
          :omniauthable, omniauth_providers: [:facebook, :google_oauth2]
 
   scope :last_week, -> { where('created_at >= :date', date: 1.week.ago) }
@@ -79,7 +91,7 @@ class User < ActiveRecord::Base
   end
 
   def password_required?
-    super && identities.none?
+    (new_record? || password || password_confirmation) && identities.none?
   end
 
   def name
