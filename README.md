@@ -104,7 +104,7 @@ https://beta.nolotiro.org/api/v1/ad/153735
 
 ## 3erd Party
 
-* Core based on [Ruby On Rail]
+* Core based on [Ruby On Rails]
 * [Yahoo YQL] - This project is strong WOEID integration centered.
 * [jQuery] for Javascript.
 * [GeoLite2] data API by Maxmind to auto detect user location.
@@ -117,7 +117,7 @@ https://beta.nolotiro.org/api/v1/ad/153735
 [jQuery]: https://jquery.com
 [Localeapp]: https://accounts.localeapp.com/projects/6872
 [Phantomjs Bug]: https://github.com/ariya/phantomjs/issues/13953
-[Ruby on Rail]: http://rubyonrails.org
+[Ruby on Rails]: http://rubyonrails.org
 [Travis Badge]: https://travis-ci.org/alabs/nolotiro.org.png
 [Travis Bug]: https://github.com/travis-ci/travis-ci/issues/3225
 [Travis URL]: https://travis-ci.org/alabs/nolotiro.org
