@@ -5,7 +5,6 @@ class UsersControllerTest < ActionController::TestCase
   include Devise::Test::ControllerHelpers
 
   setup do
-    @ad = create(:ad)
     @user = create(:user, email: 'jaimito@gmail.com', username: 'jaimito')
   end
 
