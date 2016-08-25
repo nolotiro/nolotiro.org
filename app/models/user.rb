@@ -31,7 +31,7 @@ class User < ActiveRecord::Base
 
   validates :username, presence: true
   validates :username, uniqueness: { case_sensitive: false },
-                       format: { without: /\A[^@]+@[^@]+\z/ },
+                       format: { without: /\A([^@]+@[^@]+|[1-9]+)\z/ },
                        length: { maximum: 63 },
                        allow_blank: true,
                        if: :username_changed?
