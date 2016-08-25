@@ -28,7 +28,7 @@ class UsersController < ApplicationController
   end
 
   def friendly_find(param)
-    User.find_by(username: param) || User.find(param)
+    User.unlocked.find_by(username: param) || User.unlocked.find(param)
   end
 
   def status_scope
