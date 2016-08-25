@@ -95,10 +95,10 @@ For the localization and translation interface we use [LocaleApp].
 
 Example URLs:
 
-http://beta.nolotiro.org/api/v1/woeid/list
-http://beta.nolotiro.org/api/v1/woeid/766273/give
-http://beta.nolotiro.org/api/v1/woeid/766273/give?page=2
-http://beta.nolotiro.org/api/v1/ad/153735
+https://beta.nolotiro.org/api/v1/woeid/list
+https://beta.nolotiro.org/api/v1/woeid/766273/give
+https://beta.nolotiro.org/api/v1/woeid/766273/give?page=2
+https://beta.nolotiro.org/api/v1/ad/153735
 
 ## 3erd Party
 
@@ -112,7 +112,7 @@ http://beta.nolotiro.org/api/v1/ad/153735
 [Gemnasium URL]: https://gemnasium.com/alabs/nolotiro.org
 [Geolite2]: https://dev.maxmind.com/geoip/geoip2/geolite2/
 [Google Recaptcha]: https://www.google.com/recaptcha/admin/create
-[jQuery]: http://jquery.com/
+[jQuery]: https://jquery.com/
 [Localeapp]: https://accounts.localeapp.com/projects/6872
 [Phantomjs Bug]: https://github.com/ariya/phantomjs/issues/13953
 [Ruby on Rail]: http://rubyonrails.org/
