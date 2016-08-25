@@ -1,7 +1,6 @@
 # nolotiro.org v3
 
 [![Build Status][Travis Badge]][Travis URL]
-
 [![Dependency Status][Gemnasium Badge]][Gemnasium URL]
 
 This is the next revision of nolotiro.org, this time in Ruby On Rails.
@@ -26,8 +25,8 @@ vagrant ssh
 
 ```
 
-
 Finally you should start the application server:
+
 ```
 cd /vagrant
 bin/rails s -b 0.0.0.0
@@ -37,11 +36,9 @@ Now you can access the web application at this url (port 3000):
 
 http://localhost:3000
 
-
 ## Manual Installation
 
 Check out the script in bin/bootstrap.sh - that's the same that Vagrant uses.
-
 
 ## Test setup
 
@@ -53,7 +50,6 @@ real headless browser. Currently, because of
 [this bug][Phantomjs Bug] and
 [this bug][Travis Bug] we are providing the
 phantomjs's linux x86_64 binary within the repo itself.
-
 
 ## More information
 
