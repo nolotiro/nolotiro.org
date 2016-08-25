@@ -1,8 +1,8 @@
 # nolotiro.org v3
 
-[![Build Status](https://travis-ci.org/alabs/nolotiro.org.png?branch=master)](https://travis-ci.org/alabs/nolotiro.org)
+[![Build Status][Travis Badge]][Travis URL]
 
-[![Dependency Status](https://gemnasium.com/alabs/nolotiro.org.svg)](https://gemnasium.com/alabs/nolotiro.org)
+[![Dependency Status][Gemnasium Badge]][Gemnasium URL]
 
 This is the next revision of nolotiro.org, this time in Ruby On Rails.
 
@@ -11,7 +11,7 @@ This is the next revision of nolotiro.org, this time in Ruby On Rails.
 
 ## Automatic Installation
 
-You need to install [VirtualBox](https://www.virtualbox.org/) and [Vagrant](https://www.vagrantup.com/):
+You need to install [VirtualBox] and [Vagrant]:
 
 Then from the root directory of the project, execute:
 
@@ -50,8 +50,8 @@ freshly downloaded copy a nolotiro's master.
 
 Some of our integration tests use `poltergeist` + `phantomjs` to run against a
 real headless browser. Currently, because of
-[this bug](https://github.com/ariya/phantomjs/issues/13953) and
-[this bug](https://github.com/travis-ci/travis-ci/issues/3225) we are providing the
+[this bug][Phantomjs Bug] and
+[this bug][Travis Bug] we are providing the
 phantomjs's linux x86_64 binary within the repo itself.
 
 
@@ -72,7 +72,7 @@ sudo apt-get install redis-server
 bundle exec sidekiq
 ```
 
-For recaptcha you need to [signup](https://www.google.com/recaptcha/admin/create)
+For recaptcha you need to [signup][Google Recaptcha]
 and configure it in the relevant environment in *config/secrets.yml* (keys
 *recaptcha.public_key* and *recaptcha.private_key*)
 
@@ -91,7 +91,7 @@ Happy hacking!
 
 ## i18n
 
-For the localization and translation interface we use [LocaleApp](http://accounts.localeapp.com/projects/6872).
+For the localization and translation interface we use [LocaleApp].
 
 ## API
 
@@ -106,10 +106,23 @@ http://beta.nolotiro.org/api/v1/ad/153735
 
 ## 3erd Party
 
-* Core based on [Ruby On Rail](http://rubyonrails.org/)
-* [Yahoo YQL](https://developer.yahoo.com/yql) - This project is strong WOEID integration centered.
-* [jQuery](http://jquery.com/) for Javascript.
+* Core based on [Ruby On Rail]
+* [Yahoo YQL] - This project is strong WOEID integration centered.
+* [jQuery] for Javascript.
 * [GeoLite2] data API by Maxmind to auto detect user location.
 * Logo by Silvestre Herrera under GPL License.
 
+[Gemnasium Badge]: https://gemnasium.com/alabs/nolotiro.org.svg
+[Gemnasium URL]: https://gemnasium.com/alabs/nolotiro.org
 [Geolite2]: https://dev.maxmind.com/geoip/geoip2/geolite2/
+[Google Recaptcha]: https://www.google.com/recaptcha/admin/create
+[jQuery]: http://jquery.com/
+[Localeapp]: https://accounts.localeapp.com/projects/6872
+[Phantomjs Bug]: https://github.com/ariya/phantomjs/issues/13953
+[Ruby on Rail]: http://rubyonrails.org/
+[Travis Badge]: https://travis-ci.org/alabs/nolotiro.org.png?branch=master
+[Travis Bug]: https://github.com/travis-ci/travis-ci/issues/3225
+[Travis URL]: https://travis-ci.org/alabs/nolotiro.org
+[Vagrant]: https://www.vagrantup.com/
+[Virtualbox]: https://www.virtualbox.org/
+[Yahoo YQL]: https://developer.yahoo.com/yql
