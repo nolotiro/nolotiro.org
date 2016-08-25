@@ -18,7 +18,7 @@ class FacebookEmaillessRegistrationTest < ActionDispatch::IntegrationTest
   end
 
   it 'finishes registration' do
-    fill_in_finalize_form('pepe@facebook.com')
+    fill_in_finalize_form('pepe@example.com')
 
     assert_text <<~MSG
       Se ha enviado un mensaje con un enlace de confirmación a tu correo
@@ -27,20 +27,20 @@ class FacebookEmaillessRegistrationTest < ActionDispatch::IntegrationTest
   end
 
   it 'allows overriding facebook name in form' do
-    fill_in_finalize_form('pepe@facebook.com', 'pepito')
+    fill_in_finalize_form('pepe@example.com', 'pepito')
 
     assert_equal ['pepito'], User.pluck(:username)
   end
 
   it 'requires user to confirm email' do
-    fill_in_finalize_form('pepe@facebook.com')
+    fill_in_finalize_form('pepe@example.com')
     login_via_facebook(name: 'pepe')
 
     assert_text 'Tienes que confirmar tu cuenta para poder continuar'
   end
 
   it 'logs user in after confirming email' do
-    fill_in_finalize_form('pepe@facebook.com')
+    fill_in_finalize_form('pepe@example.com')
     User.first.confirm
     login_via_facebook(name: 'pepe')
 

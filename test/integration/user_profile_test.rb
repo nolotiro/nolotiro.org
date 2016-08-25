@@ -3,7 +3,7 @@ require 'test_helper'
 
 class UserProfileTest < ActionDispatch::IntegrationTest
   before do
-    @user = create(:user, email: 'jaimito@gmail.com', username: 'jaimito')
+    @user = create(:user, email: 'jaimito@example.com', username: 'jaimito')
   end
 
   it 'gets user profile by username' do

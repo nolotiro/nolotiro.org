@@ -6,8 +6,8 @@ class ConversationsControllerTest < ActionController::TestCase
 
   setup do
     @ad = create(:ad)
-    @user1 = create(:user, email: 'davidbowie@gmail.com', username: 'davidbowie')
-    @user2 = create(:user, email: 'marcbolan@gmail.com', username: 'trex')
+    @user1 = create(:user, email: 'davidbowie@example.com', username: 'davidbowie')
+    @user2 = create(:user, email: 'marcbolan@example.com', username: 'trex')
   end
 
   test 'should redirect to signup to create a message as anon' do
@@ -57,7 +57,7 @@ class ConversationsControllerTest < ActionController::TestCase
     end
     m = Conversation.last
     sign_out @user1
-    user3 = create(:user, email: 'brianeno@gmail.com', username: 'eno')
+    user3 = create(:user, email: 'brianeno@example.com', username: 'eno')
     sign_in user3
     get :show, id: m.id
     assert_equal 'No tienes permisos para realizar esta acción.', flash[:alert]
