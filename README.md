@@ -10,9 +10,8 @@ This is the next revision of nolotiro.org, this time in Ruby On Rails.
 
 ## Automatic Installation
 
-You need to install [VirtualBox] and [Vagrant]:
-
-Then from the root directory of the project, execute
+You need to install [VirtualBox] and [Vagrant]. Then from the root directory of
+the project, execute
 
 ```
 vagrant up
@@ -44,14 +43,13 @@ Check out the script in `bin/bootstrap.sh` - that's the same that Vagrant uses.
 
 ## Test setup
 
-Running `bin/rake` will run all the tests, that should always pass on a
-freshly downloaded copy a nolotiro's master.
+Running `bin/rake` will run all the tests, that should always pass on a freshly
+downloaded copy a nolotiro's master.
 
 Some of our integration tests use `poltergeist` + `phantomjs` to run against a
-real headless browser. Currently, because of
-[this bug][Phantomjs Bug] and
-[this bug][Travis Bug] we are providing the
-phantomjs's linux x86_64 binary within the repo itself.
+real headless browser. Currently, because of [this bug][Phantomjs Bug] and
+[this bug][Travis Bug] we are providing the phantomjs's linux x86_64 binary
+within the repo itself.
 
 ## More information
 
@@ -70,15 +68,15 @@ sudo apt-get install redis-server
 bundle exec sidekiq
 ```
 
-For recaptcha you need to [signup][Google Recaptcha]
-and configure it in the relevant environment in *config/secrets.yml* (keys
-*recaptcha.public_key* and *recaptcha.private_key*)
+For recaptcha you need to [signup][Google Recaptcha] and configure it in the
+relevant environment in *config/secrets.yml* (keys *recaptcha.public_key* and
+*recaptcha.private_key*)
 
 ## Development environment magic
 
-For the emails we recommend using mailcatcher. This doesn't send external emails during
-development, and you can see them in a nice web interface. The SMTP port is
-already configured to it (1025).
+For the emails we recommend using mailcatcher. This doesn't send external emails
+during development, and you can see them in a nice web interface. The SMTP port
+is already configured to it (1025).
 
 ```
 bin/mailcatcher
