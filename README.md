@@ -34,7 +34,9 @@ bin/rails s -b 0.0.0.0
 
 Now you can access the web application at this url (port 3000):
 
+```
 http://localhost:3000
+```
 
 ## Manual Installation
 
@@ -95,10 +97,12 @@ For the localization and translation interface we use [LocaleApp].
 
 Example URLs:
 
+```
 https://beta.nolotiro.org/api/v1/woeid/list
 https://beta.nolotiro.org/api/v1/woeid/766273/give
 https://beta.nolotiro.org/api/v1/woeid/766273/give?page=2
 https://beta.nolotiro.org/api/v1/ad/153735
+```
 
 ## 3erd Party
 
