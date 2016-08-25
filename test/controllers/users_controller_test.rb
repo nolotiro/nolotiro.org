@@ -6,7 +6,7 @@ class UsersControllerTest < ActionController::TestCase
 
   setup do
     @ad = create(:ad)
-    @user = create(:user, 'email' => 'jaimito@gmail.com', 'username' => 'jaimito')
+    @user = create(:user, email: 'jaimito@gmail.com', username: 'jaimito')
   end
 
   test 'should get user profile by username' do

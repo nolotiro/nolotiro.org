@@ -4,7 +4,7 @@ require 'test_helper'
 class UserTest < ActiveSupport::TestCase
   setup do
     @ad = create(:ad)
-    @user = create(:user, 'email' => 'jaimito@gmail.com', 'username' => 'jaimito')
+    @user = create(:user, email: 'jaimito@gmail.com', username: 'jaimito')
     @admin = create(:admin)
   end
 
@@ -28,6 +28,25 @@ class UserTest < ActiveSupport::TestCase
     assert_not user2.valid?
     assert_not user2.save
     assert_includes user2.errors[:username], 'ya está en uso'
+  end
+
+  test 'disallows usernames that look like emails' do
+    user = build(:user, username: 'larryfoster@example.com')
+
+    assert_not user.valid?
+    assert_not user.save
+    assert_includes user.errors[:username], 'no es válido'
+  end
+
+  test 'disallows usernames that look like ids' do
+    user1 = build(:user, username: '007')
+    assert user1.valid?
+    assert user1.save
+
+    user2 = build(:user, username: '12345')
+    assert_not user2.valid?
+    assert_not user2.save
+    assert_includes user2.errors[:username], 'no es válido'
   end
 
   test 'has unique emails' do
