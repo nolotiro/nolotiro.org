@@ -24,7 +24,11 @@ class UsersController < ApplicationController
   private
 
   def load_user
-    @user = User.find_by(username: params[:id]) || User.find(params[:id])
+    @user = friendly_find(params[:id])
+  end
+
+  def friendly_find(param)
+    User.find_by(username: param) || User.find(param)
   end
 
   def status_scope
