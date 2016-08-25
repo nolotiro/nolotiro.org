@@ -57,8 +57,6 @@ phantomjs's linux x86_64 binary within the repo itself.
 
 ## More information
 
-The database we use is legacy, a MySQL with the schema of [v2](https://github.com/alabs/nolotiro)
-
 For obtaining geographical information we use [Yahoo YQL].
 
 For IP GeoLocation we use [GeoLite2] City. To download the database, run
