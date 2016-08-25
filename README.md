@@ -63,7 +63,7 @@ For IP GeoLocation we use [GeoLite2] City. To download the database, run
 bin/rake download_maxmind_db
 ```
 
-For delayed tasks (like sending emails) we use Sidekiq, that uses Redis. Also we use Redis to cache things.
+For delayed tasks (like sending emails) we use Sidekiq, that uses Redis. For caching, we use Redis.
 
 ```
 sudo apt-get install redis-server
