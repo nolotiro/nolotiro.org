@@ -4,7 +4,7 @@ require 'test_helper'
 class UserTest < ActiveSupport::TestCase
   setup do
     @ad = create(:ad)
-    @user = create(:user, 'email' => 'jaimito@gmail.com', 'username' => 'jaimito')
+    @user = create(:user, email: 'jaimito@gmail.com', username: 'jaimito')
     @admin = create(:admin)
   end
 

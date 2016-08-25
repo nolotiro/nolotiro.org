@@ -80,7 +80,7 @@ NolotiroOrg::Application.configure do
 
   # for mailcatcher
   # config.action_mailer.delivery_method = :smtp
-  # config.action_mailer.smtp_settings = { :address => "127.0.0.1", :port => 1025 }
+  # config.action_mailer.smtp_settings = { address: "127.0.0.1", port: 1025 }
 
   # for images on mailer
   config.action_controller.asset_host = 'https://beta.nolotiro.org'
