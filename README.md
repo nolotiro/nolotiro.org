@@ -32,7 +32,7 @@ cd /vagrant
 bin/rails s -b 0.0.0.0
 ```
 
-Now you can access the web application at this url (port 3000):
+Now you can access the web application at this URL
 
 ```
 http://localhost:3000
