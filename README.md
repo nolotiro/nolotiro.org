@@ -109,7 +109,7 @@ http://beta.nolotiro.org/api/v1/ad/153735
 * Core based on [Ruby On Rail](http://rubyonrails.org/)
 * [Yahoo YQL](https://developer.yahoo.com/yql) - This project is strong WOEID integration centered.
 * [jQuery](http://jquery.com/) for Javascript.
-* [GeoLite2][] data API by Maxmind to auto detect user location.
+* [GeoLite2] data API by Maxmind to auto detect user location.
 * Logo by Silvestre Herrera under GPL License.
 
 [Geolite2]: https://dev.maxmind.com/geoip/geoip2/geolite2/
