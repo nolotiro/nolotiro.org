@@ -12,20 +12,20 @@ This is the next revision of nolotiro.org, this time in Ruby On Rails.
 
 You need to install [VirtualBox] and [Vagrant]:
 
-Then from the root directory of the project, execute:
+Then from the root directory of the project, execute
 
 ```
 vagrant up
  ```
 
-When finished, you need to log in to the virtual machine with the command:
+When finished, you need to log in to the virtual machine with the command
 
 ```
 vagrant ssh
 
 ```
 
-Finally you should start the application server:
+Finally you should start the application server
 
 ```
 cd /vagrant
