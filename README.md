@@ -87,14 +87,6 @@ bin/mailcatcher
 open http://localhost:1080
 ```
 
-We use a special task for the colors: 
-
-```
-rake color_routes
-```
-
-We use better_errors when giving a 500 in development env.
-
 Happy hacking!
 
 ## i18n
