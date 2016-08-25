@@ -20,4 +20,16 @@ namespace :users do
       user.update!(username: new_username)
     end
   end
+
+  desc 'Renames users with id-like usernames'
+  task remove_id_like_usernames: :environment do
+    target = User.where("username REGEXP '^[1-9]+$'")
+
+    STDOUT.print "About to rename #{target.size} users. Continue? (y/n)"
+    abort unless STDIN.gets.chomp == 'y'
+
+    target.find_each do |user|
+      user.update!(username: user.email.gsub(/@.*/, '') + user.username)
+    end
+  end
 end
