@@ -40,7 +40,7 @@ http://localhost:3000
 
 ## Manual Installation
 
-Check out the script in bin/bootstrap.sh - that's the same that Vagrant uses.
+Check out the script in `bin/bootstrap.sh` - that's the same that Vagrant uses.
 
 ## Test setup
 
