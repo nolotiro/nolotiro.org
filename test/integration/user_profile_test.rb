@@ -7,18 +7,24 @@ class UserProfileTest < ActionDispatch::IntegrationTest
   end
 
   it 'gets user profile by username' do
-    visit profile_path(username: @user.username)
+    visit profile_path(id: @user.username)
 
     assert_text 'Perfil de usuario - jaimito'
   end
 
   it 'gets user profile by id' do
-    visit profile_path(username: @user.id)
+    visit profile_path(id: @user.id)
 
     assert_text 'Perfil de usuario - jaimito'
   end
 
-  it 'gets user ad list' do
+  it 'gets user ad list by username' do
+    visit listads_user_path(id: @user.username)
+
+    assert_text 'Anuncios publicados - jaimito'
+  end
+
+  it 'gets user ad list by id' do
     visit listads_user_path(id: @user.id)
 
     assert_text 'Anuncios publicados - jaimito'
