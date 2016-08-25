@@ -113,7 +113,7 @@ https://beta.nolotiro.org/api/v1/ad/153735
 [Gemnasium Badge]: https://gemnasium.com/alabs/nolotiro.org.svg
 [Gemnasium URL]: https://gemnasium.com/alabs/nolotiro.org
 [Geolite2]: https://dev.maxmind.com/geoip/geoip2/geolite2
-[Google Recaptcha]: https://www.google.com/recaptcha/admin/create
+[Google Recaptcha]: https://www.google.com/recaptcha/admin#list
 [jQuery]: https://jquery.com
 [Localeapp]: https://accounts.localeapp.com/projects/6872
 [Phantomjs Bug]: https://github.com/ariya/phantomjs/issues/13953
