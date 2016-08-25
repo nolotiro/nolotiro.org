@@ -76,7 +76,7 @@ relevant environment in *config/secrets.yml* (keys *recaptcha.public_key* and
 
 For the emails we recommend using mailcatcher. This doesn't send external emails
 during development, and you can see them in a nice web interface. The SMTP port
-is already configured to it (1025).
+is already configured.
 
 ```
 bin/mailcatcher
