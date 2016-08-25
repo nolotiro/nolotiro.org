@@ -44,7 +44,7 @@ Check out the script in `bin/bootstrap.sh` - that's the same that Vagrant uses.
 
 ## Test setup
 
-Running `bin/rake` will run all the tests, that should always pass only a
+Running `bin/rake` will run all the tests, that should always pass on a
 freshly downloaded copy a nolotiro's master.
 
 Some of our integration tests use `poltergeist` + `phantomjs` to run against a
