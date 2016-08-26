@@ -11,6 +11,7 @@ class User < ActiveRecord::Base
   has_many :receipts, foreign_key: :receiver_id, dependent: :destroy
 
   has_many :blockings, foreign_key: :blocker_id, dependent: :destroy
+  has_many :dismissals, dependent: :destroy
 
   has_many :started_conversations,
            foreign_key: :originator_id,
