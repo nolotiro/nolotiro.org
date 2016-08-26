@@ -64,15 +64,5 @@ namespace :deploy do
     end
   end
 
-  before :restart, :clear_cache do
-    on roles(:web), in: :groups, limit: 3, wait: 10 do
-      within release_path do
-        with rails_env: fetch(:rails_env) do
-          execute :rake, 'cache:clear'
-        end
-      end
-    end
-  end
-
   after :finishing, 'deploy:cleanup'
 end
