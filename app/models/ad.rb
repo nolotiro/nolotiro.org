@@ -55,7 +55,7 @@ class Ad < ActiveRecord::Base
     where('title LIKE ?', "%#{sanitized_query}%")
   end
 
-  self.per_page = 20
+  paginates_per 20
 
   scope :top_locations, -> do
     key = "#{I18n.locale}/top-locations-#{cache_digest}"

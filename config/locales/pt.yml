@@ -379,16 +379,8 @@ pt:
     formats:
       active_admin: 
   time_ago_in_words: ha %{time}
-  will_paginate:
-    next_label: próximo →
-    page_entries_info:
-      multi_page: Mostrando %{model} %{from} - %{to} de %{count} no total
-      multi_page_html: Mostrando %{model} <b>%{from}&nbsp;-&nbsp;%{to}</b> de <b>%{count}</b> no total
-      single_page:
-        one: Mostrando 1 %{model}
-        other: Mostrando em total %{count} %{model}
-      single_page_html:
-        one: Mostrando <b>1</b> %{model}
-        other: Mostrando em <b>total&nbsp;%{count}</b> %{model}
-    page_gap: "&hellip;"
-    previous_label: "← anterior"
+  views:
+    pagination:
+      next: próximo &rsaquo;
+      previous: "&lsaquo; anterior"
+      truncate: "&hellip;"

@@ -660,48 +660,39 @@ form.searchbox
  * Pagination
 
 .pagination
-  clear: both
-  font-weight: bold
-  margin-bottom: 30px
-  padding-top: 10px
-  text-align: center
-  font-size: 1.2em
-  display: block
-  width: auto
-  border: 0
-  list-style: none
-  margin-right: 2px
+  background: white
+  cursor: default
+  margin-right: auto
+  margin-left: auto
 
-  span
-    border: solid 1px $link
-    margin-right: 2px
-    text-align: center
+  .prev a, .next a, .page a, .current, .gap, .last a, .first a
     padding: 4px
+    margin-right: 5px
+
+  a, span
+    display: block
+    float: left
+
+    span
+      padding: 0px
+      margin-right: 0px
+      border: 0px
+
+  .current
+    font-style: normal
+    font-weight: bold
+    background: #00ACCF
+    color: white
+    border: 1px solid #00ACCF
 
   a
     text-decoration: none
+    color: #00ACCF
+    border: 1px solid #00ACCF
 
-  #current
-    background-color: $link
-    display: inline-block
-    color: #fff
-    text-align: center
-
-#next
-  width: 85px
-  display: inline-block
-
-#prev
-  display: inline-block
-  margin-right: 0
-
-#norm
-  display: inline-block
-  text-align: center
-
-.disabled
-  border-color: #fff !important
-  color: #666
+    &:hover, &:focus
+      color: #000033
+      border-color: #000033
 
 /**
  * Footer

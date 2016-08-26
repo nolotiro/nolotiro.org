@@ -451,7 +451,6 @@ GEM
     websocket-driver (0.6.4)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.2)
-    will_paginate (3.1.0)
     xpath (2.0.0)
       nokogiri (~> 1.3)
 
@@ -484,6 +483,7 @@ DEPENDENCIES
   jbuilder (~> 1.2)
   jquery-rails
   json (~> 1.8)
+  kaminari (= 0.17.0)
   launchy
   localeapp!
   mailcatcher
@@ -512,7 +512,6 @@ DEPENDENCIES
   uglifier (>= 1.3.0)
   vcr (~> 3.0)
   webmock (~> 2.0)
-  will_paginate (~> 3.0)
 
 RUBY VERSION
    ruby 2.3.1p112

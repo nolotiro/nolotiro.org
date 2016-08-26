@@ -24,6 +24,6 @@ search:
 ignore_unused:
 - errors.*
 - 'active{model,record}.{attributes,models}.*'
-- '{devise,will_paginate}.*'
+- devise.*
 - recaptcha.errors.*
 - '{time,date}.formats.active_admin'

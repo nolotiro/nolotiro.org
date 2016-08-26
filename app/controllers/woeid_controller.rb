@@ -22,7 +22,7 @@ class WoeidController < ApplicationController
     scope = Ad.public_send(@type).by_woeid_code(current_woeid).by_title(@q)
     scope = scope.public_send(@status) if @type == 'give'
 
-    @ads = policy_scope(scope).includes(:user).recent_first.paginate(page: @page)
+    @ads = policy_scope(scope).includes(:user).recent_first.page(@page)
   end
 
   private

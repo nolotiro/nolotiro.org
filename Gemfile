@@ -77,7 +77,7 @@ gem 'redis-rails'                                   # redis cache
 gem 'sidekiq'                                       # job workers
 
 gem 'maxminddb'                                     # geolite city v2
-gem 'will_paginate', '~> 3.0'                       # pagination
+gem 'kaminari', '0.17.0'                            # pagination
 gem 'devise'                                        # users
 gem 'omniauth'                                      # users login with providers
 gem 'omniauth-facebook'                             # users login with facebook

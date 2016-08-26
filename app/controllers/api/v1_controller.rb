@@ -16,7 +16,7 @@ module Api
 
       @ads = Ad.public_send(@type).by_woeid_code(@woeid)
       @ads = @ads.available if type_scope == :give
-      @ads = @ads.recent_first.paginate(page: @page)
+      @ads = @ads.recent_first.page(@page)
     end
 
     def woeid_list
