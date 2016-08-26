@@ -94,3 +94,6 @@ gem 'json', '~> 1.8'
 
 gem 'bootstrap-sass', '~> 3.3'
 gem 'sass-rails', '~> 5.0'
+
+# Rake task utils
+gem 'rubyzip', require: false
