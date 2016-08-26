@@ -50,8 +50,8 @@ freshly downloaded copy a nolotiro's master.
 
 Some of our integration tests use `poltergeist` + `phantomjs` to run against a
 real headless browser. Currently, because of
-https://github.com/ariya/phantomjs/issues/13953 and
-https://github.com/travis-ci/travis-ci/issues/3225 we are providing the
+[this bug](https://github.com/ariya/phantomjs/issues/13953) and
+[this bug](https://github.com/travis-ci/travis-ci/issues/3225) we are providing the
 phantomjs's linux x86_64 binary within the repo itself.
 
 
