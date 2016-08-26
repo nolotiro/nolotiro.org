@@ -181,9 +181,9 @@ pt:
         signed_in: Você está conectado
   blockings:
     create:
-      success: Usúario bloqueado
+      success: Usuário bloqueado
     destroy:
-      success: Usúario desbloqueao
+      success: Usuário desbloqueao
   friendships:
     create:
       success: Amigo adicionado
@@ -296,7 +296,7 @@ pt:
     choose_username: Escolha un nome de usuário
     choose_your_pass: Escolha sua senha
     choose_your_pass_again: 'Insira sua senha (sim, de novo) '
-    cities_in_the_world: cidades do mondo que mais reciclam
+    cities_in_the_world: cidades que mais reciclam
     click_to_large: Click para aumentar foto
     comments:
       body_max: Máximo 1000 caracteres
@@ -436,7 +436,7 @@ pt:
     user_edit_profile: Editar perfil de usuário
     user_profile: Perfil de usuário
     username: Nome de usuário
-    users_most_active: Usuários mais ativos
+    users_most_active: usuários mais ativos
     users_most_active_last_week: usuários mais ativos nas últimas semanas
     view_ads_on: Ver anúncios em %{location}
     view_ads_on_your_city: Ver anúncios na sua cidade

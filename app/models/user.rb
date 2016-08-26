@@ -54,20 +54,26 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :lockable,
          :omniauthable, omniauth_providers: [:facebook, :google_oauth2]
 
-  scope :last_week, -> { where('created_at >= :date', date: 1.week.ago) }
-
-  scope :top_overall, ->(limit = 20) do
-    select('users.id, users.username, COUNT(ads.id) as n_ads')
-      .joins(:ads)
-      .merge(Ad.give)
-      .group('ads.user_owner')
-      .unscope(:order)
-      .order('n_ads DESC')
-      .limit(limit)
+  scope :top_overall, -> do
+    Rails.cache.fetch("top-overall-#{Ad.cache_digest}") { build_rank(Ad) }
   end
 
-  scope :top_last_week, ->(limit = 20) do
-    top_overall(limit).where('published_at >= :date', date: 1.week.ago)
+  scope :top_last_week, -> do
+    Rails.cache.fetch("top-last-week-#{Ad.cache_digest}") do
+      build_rank(Ad.last_week)
+    end
+  end
+
+  scope :top_city_overall, ->(woeid) do
+    Rails.cache.fetch("woeid/#{woeid}/top-overall-#{Ad.cache_digest}") do
+      build_rank(Ad.by_woeid_code(woeid))
+    end
+  end
+
+  scope :top_city_last_week, ->(woeid) do
+    Rails.cache.fetch("woeid/#{woeid}/top-last-week-#{Ad.cache_digest}") do
+      build_rank(Ad.last_week.by_woeid_code(woeid))
+    end
   end
 
   scope :whitelisting, ->(user) do
@@ -77,6 +83,12 @@ class User < ActiveRecord::Base
     SQL
 
     joined.where(blockings: { blocker_id: nil })
+  end
+
+  def self.build_rank(ads_scope)
+    joins(:ads)
+      .merge(ads_scope.rank_by(:user_owner))
+      .pluck(:id, :username, 'COUNT(user_owner) as n_ads')
   end
 
   def self.new_with_session(params, session)

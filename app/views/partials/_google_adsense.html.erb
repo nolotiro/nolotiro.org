@@ -1,6 +1,4 @@
 <div class="center">
-  <ins class="adsbygoogle <%= class_name %>"
-       style="display:inline-block;"
-       data-ad-client="ca-pub-5360961269901609"
-       data-ad-slot="<%= ad_slot %>"></ins>
+  <%= render "partials/raw_google_adsense", class_name: class_name,
+                                            ad_slot: ad_slot %>
 </div>

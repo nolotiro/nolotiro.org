@@ -46,7 +46,7 @@ class Ad < ActiveRecord::Base
   # the "type" column is no longer need it by rails, so we don't care about it
   self.inheritance_column = nil
 
-  default_scope { order('ads.published_at DESC') }
+  scope :recent_first, -> { order(published_at: :desc) }
 
   has_attached_file :image,
                     styles: { thumb: '100x90>' },
@@ -60,22 +60,15 @@ class Ad < ActiveRecord::Base
   # before_save :titleize_title if self.title? and /[[:upper:]]/.match(self.title)
   # before_save :titleize_body if self.body and /[[:upper:]]/.match(self.body)
 
+  scope :recent, -> { Ad.includes(:user).recent_first.limit(90) }
+  scope :last_week, -> { where('published_at >= :date', date: 1.week.ago) }
+
   scope :give, -> { where(type: 1) }
   scope :want, -> { where(type: 2) }
-
-  scope :by_type, ->(type) do
-    return all unless type.present?
-    where(type: type)
-  end
 
   scope :available, -> { where(status: 1) }
   scope :booked, -> { where(status: 2) }
   scope :delivered, -> { where(status: 3) }
-
-  scope :by_status, ->(status) do
-    return all unless status.present?
-    where(status: status)
-  end
 
   scope :by_woeid_code, ->(woeid_code) do
     return all unless woeid_code.present?
@@ -89,15 +82,31 @@ class Ad < ActiveRecord::Base
     where('title LIKE ?', "%#{sanitized_query}%")
   end
 
-  scope :last_week, -> { where('created_at >= :date', date: 1.week.ago) }
-
   self.per_page = 20
 
-  def self.cache_digest
-    last_ad_creation = Ad.maximum(:created_at)
-    return '0' * 20 unless last_ad_creation
+  scope :top_locations, -> do
+    Rails.cache.fetch("#{I18n.locale}/top-locations-#{cache_digest}") do
+      rank_by(:woeid_code).select(:woeid_code, 'COUNT(woeid_code) as n_ads')
+    end
+  end
 
-    last_ad_creation.strftime('%d%m%y%H%M%s')
+  def self.rank_by(attribute)
+    give.group(attribute).order('n_ads DESC').limit(ranking_size)
+  end
+
+  def self.full_ranking?(rank_scope)
+    rank_scope.length == ranking_size
+  end
+
+  def self.ranking_size
+    20
+  end
+
+  def self.cache_digest
+    last_ad_publication = Ad.maximum(:published_at)
+    return '0' * 20 unless last_ad_publication
+
+    last_ad_publication.strftime('%d%m%y%H%M%s')
   end
 
   def body
@@ -141,48 +150,27 @@ class Ad < ActiveRecord::Base
   end
 
   def type_class
-    case type
-    when 1
-      'give'
-    when 2
-      'want'
-    else
-      'give'
-    end
+    type == 2 ? 'want' : 'give'
   end
 
   def status_class
     case status
-    when 1
-      'available'
-    when 2
-      'booked'
-    when 3
-      'delivered'
-    else
-      'available'
+    when 2 then 'booked'
+    when 3 then 'delivered'
+    else 'available'
     end
   end
 
   def status_string
     case status
-    when 1
-      I18n.t('nlt.available')
-    when 2
-      I18n.t('nlt.booked')
-    when 3
-      I18n.t('nlt.delivered')
-    else
-      I18n.t('nlt.available')
+    when 2 then I18n.t('nlt.booked')
+    when 3 then I18n.t('nlt.delivered')
+    else I18n.t('nlt.available')
     end
   end
 
   def valid_ip_address
     errors.add(:ip, 'No es una IP válida') unless IPAddress.valid?(ip)
-  end
-
-  def give?
-    type == 1
   end
 
   def meta_title

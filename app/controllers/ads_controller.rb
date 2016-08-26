@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 class AdsController < ApplicationController
-  include ApplicationHelper
-
   before_action :set_ad, only: [:show, :edit, :update, :bump, :destroy]
   before_action :authenticate_user!, except: [:index, :show]
 
@@ -11,7 +9,11 @@ class AdsController < ApplicationController
       redirect_to url
     else
       @ads = Rails.cache.fetch("ads_list_#{params[:page]}") do
-        Ad.give.available.includes(:user).paginate(page: params[:page])
+        Ad.give
+          .available
+          .recent_first
+          .includes(:user)
+          .paginate(page: params[:page])
       end
     end
   end

@@ -7,7 +7,7 @@
   <% content_for(:meta_description, t('nlt.gift_on', woeid: @woeid[:full])) %>
 <% end %>
 
-<% unless @q or @woeid.nil? %>
+<% if @woeid %>
   <% content_for :meta_extra do %>
     <link rel="alternate" type="application/rss+xml" title="nolotiro.org - <%= @woeid[:full] %>" href="<%= rss_type_url(woeid: @id, type: @type, status: @status) %>" />
   <% end %>
@@ -65,37 +65,32 @@
 </div>
 
 <div class="col-md-9 col-sm-9">
-  <div class="row">
-    <% if @type == "give" %>
-      <%= render "woeid/filter_status" %>
-    <% end %>
+  <% if @type == "give" %>
+    <%= render "woeid/filter_status" %>
+  <% end %>
 
-    <% if @ads.any? %>
-      <%= render 'ads/list_with_adsense', ads: @ads %>
+  <% if @ads.any? %>
+    <%= render 'ads/list_with_adsense', ads: @ads %>
 
-      <%= render "partials/pagination", items: @ads %>
+    <%= render "partials/pagination", items: @ads %>
+  <% else %>
+    <% if @q %>
+      <%= render "ads/no_results_search" %>
     <% else %>
-      <% if @q %>
-        <%= render "ads/no_results_search" %>
-      <% else %>
-        <%= render "ads/no_results" %>
-      <% end %>
+      <%= render "ads/no_results" %>
     <% end %>
+  <% end %>
 
-    <% unless @q or @woeid.nil? %>
-      <div class="rss">
-        <%= link_to rss_type_path(woeid: @id, type: "give") do %>
-          <%= image_tag "icons/rss.png", alt: t("nlt.rss_suscribe") %>
-          &nbsp; <%= t('nlt.rss_suscribe') %> - <%= @woeid[:full] %>
-        <% end %>
-      </div>
-    <% end %>
-  </div>
+  <% if @woeid %>
+    <div class="rss">
+      <%= link_to rss_type_path(woeid: @id, type: "give") do %>
+        <%= image_tag "icons/rss.png", alt: t("nlt.rss_suscribe") %>
+        &nbsp; <%= t('nlt.rss_suscribe') %> - <%= @woeid[:full] %>
+      <% end %>
+    </div>
+  <% end %>
 </div>
 
 <div class="col-md-3 col-sm-3">
-  <div class="google_ad_wrapper">
-    <%= render "partials/google_adsense", class_name: "desktop google_adsense_600_160", ad_slot: "6783776462" %>
-    <%= render "partials/google_adsense", class_name: "mobile google_adsense_336_280", ad_slot: "7225596067" %>
-  </div>
+  <%= render 'partials/rankings_sidebar' %>
 </div>

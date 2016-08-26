@@ -77,14 +77,11 @@
 
       <div id="header">
         <%= render "partials/header" %>
-      </div>
 
-      <div class="desktop">
-        <%= render "partials/google_adsense", class_name: "google_adsense_728_90", ad_slot: "9326281262" %>
-      </div>
-
-      <div class="mobile">
-        <%= render "partials/google_adsense", class_name: "google_adsense_320_100", ad_slot: "1977811266" %>
+        <div class="main-banner">
+          <%= render "partials/google_adsense", class_name: "desktop google_adsense_728_90", ad_slot: "9326281262" %>
+          <%= render "partials/google_adsense", class_name: "mobile google_adsense_320_100", ad_slot: "1977811266" %>
+        </div>
       </div>
 
       <% unless I18n.locale == :es %>

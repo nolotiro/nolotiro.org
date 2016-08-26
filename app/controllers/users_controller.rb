@@ -10,6 +10,7 @@ class UsersController < ApplicationController
     @ads = @user.ads
                 .includes(:user)
                 .public_send(@type)
+                .recent_first
                 .paginate(page: params[:page])
 
     @ads = @ads.public_send(@status) if @status

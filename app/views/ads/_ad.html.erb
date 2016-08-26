@@ -20,7 +20,7 @@
       <%= ad.type_string %>
     <% end %>
   </div>
-  <% if ad.give? %>
+  <% if ad.type_class == 'give' %>
     <span class="ad_status <%= ad.status_class %>">
       <%= ad.status_string %>
     </span>
