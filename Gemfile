@@ -63,9 +63,6 @@ gem 'sidekiq'                                       # job workers
 gem 'sinatra', require: false
 gem 'slim'
 
-gem 'geoplanet',
-    github: 'deivid-rodriguez/geoplanet',
-    branch: 'better_exceptions'                     # yahoo woeid geoplanet
 gem 'maxminddb'                                     # geolite city v2
 gem 'will_paginate', '~> 3.0'                       # pagination
 gem 'devise'                                        # users
@@ -83,6 +80,10 @@ gem 'activeadmin', github: 'activeadmin'            # admin backend
 gem 'rakismet'                                      # antispam
 gem 'font-awesome-rails'                            # font-awesome icons
 gem 'faker'
+
+# For Yahoo YQL interaction
+gem 'rest-client', '~> 2.0'
+gem 'json', '~> 1.8'
 
 gem 'bootstrap-sass', '~> 3.3'
 gem 'sass-rails', '~> 5.0'

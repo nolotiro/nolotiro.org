@@ -59,7 +59,7 @@ phantomjs's linux x86_64 binary within the repo itself.
 
 The database we use is legacy, a MySQL with the schema of [v2](https://github.com/alabs/nolotiro)
 
-For obtaining geographical information we use [Yahoo GeoPlanet].
+For obtaining geographical information we use [Yahoo YQL].
 
 For IP GeoLocation we use [GeoLite2] City. To download the database, run
 
@@ -117,7 +117,7 @@ http://beta.nolotiro.org/api/v1/ad/153735
 ## 3erd Party
 
 * Core based on [Ruby On Rail](http://rubyonrails.org/)
-* [Yahoo GeoPlanet](http://developer.yahoo.com/geo/geoplanet/) - This project is strong WOEID integration centered.
+* [Yahoo YQL](https://developer.yahoo.com/yql) - This project is strong WOEID integration centered.
 * [jQuery](http://jquery.com/) for Javascript.
 * [GeoLite2][] data API by Maxmind to auto detect user location.
 * Logo by [Silvestre Herrera](http://www.silvestre.com.ar/) under GPL License.

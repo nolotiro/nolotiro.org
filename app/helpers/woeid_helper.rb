@@ -6,28 +6,32 @@ module WoeidHelper
     value = Rails.cache.fetch(key)
     return value if value
 
-    GeoPlanet.appid = Rails.application.secrets['geoplanet_app_id']
-    begin
-      place_raw = GeoPlanet::Place.new(woeid.to_i, lang: locale)
-      place = YahooLocation.new(place_raw)
+    query = <<-SQL.squish
+      select * from geo.places where woeid = #{woeid} AND lang = '#{locale}'
+    SQL
 
-      return unless place.town?
+    place_raw = Yahoo::Fetcher.new(query).fetch
+    return if place_raw.nil?
 
-      value = { full: place.fullname, short: place.name }
-      Rails.cache.write(key, value)
-      value
-    rescue GeoPlanet::NotFound
-      nil
-    end
+    place = Yahoo::Location.new(place_raw)
+    return unless place.town?
+
+    value = { full: place.fullname, short: place.name }
+    Rails.cache.write(key, value)
+    value
   end
 
   def self.search_by_name(name)
     return unless name
 
-    GeoPlanet.appid = Rails.application.secrets['geoplanet_app_id']
-    raw_locations = GeoPlanet::Place.search(name, lang: I18n.locale, type: 7, count: 0)
+    query = <<-SQL.squish
+      select * from geo.places
+      where text = '#{name}' AND placetype = '7' AND lang = '#{I18n.locale}'
+    SQL
+
+    raw_locations = Yahoo::Fetcher.new(query).fetch
     return if raw_locations.nil?
 
-    YahooResultSet.new(raw_locations)
+    Yahoo::ResultSet.new(raw_locations)
   end
 end
