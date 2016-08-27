@@ -1,0 +1,149 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://query.yahooapis.com/v1/public/yql?format=json&q=select%20*%20from%20geo.places%20where%20text%20=%20%27tenerife,%20islas%20canarias%27%20AND%20placetype%20=%20%277%27%20AND%20lang%20=%20%27es%27
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.0 (linux-gnu x86_64) ruby/2.3.1p112
+      Host:
+      - query.yahooapis.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Yql-Host:
+      - prod_bf1_1;paas.yql;queryyahooapiscomproductionbf1;39cf253c-6637-11e6-a2c9-d4ae52974741
+      X-Content-Type-Options:
+      - nosniff
+      Access-Control-Allow-Origin:
+      - "*"
+      Content-Type:
+      - application/json; charset=UTF-8
+      Cache-Control:
+      - no-cache
+      Date:
+      - Sat, 27 Aug 2016 18:46:01 GMT
+      Age:
+      - '0'
+      Server:
+      - ATS
+      Via:
+      - http/1.1 a19.ue.bf1.yahoo.net (ApacheTrafficServer [cMsSf ])
+      Y-Trace:
+      - BAEAQAAAAAAQeSMDtGdHJwAAAAAAAAAAs2PHSKhNWQYAAAAAAAAAAAAFOxIK2r0hAAU7EgrbI8.0kNMeAAAAAA--
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJxdWVyeSI6eyJjb3VudCI6MSwiY3JlYXRlZCI6IjIwMTYtMDgtMjdUMTg6
+        NDY6MDFaIiwibGFuZyI6ImVuLVVTIiwicmVzdWx0cyI6eyJwbGFjZSI6eyJs
+        YW5nIjoiZXMtIiwieG1sbnMiOiJodHRwOi8vd2hlcmUueWFob29hcGlzLmNv
+        bS92MS9zY2hlbWEucm5nIiwieWFob28iOiJodHRwOi8vd3d3LnlhaG9vYXBp
+        cy5jb20vdjEvYmFzZS5ybmciLCJ1cmkiOiJodHRwOi8vd2hlcmUueWFob29h
+        cGlzLmNvbS92MS9wbGFjZS83NzM2OTIiLCJ3b2VpZCI6Ijc3MzY5MiIsInBs
+        YWNlVHlwZU5hbWUiOnsiY29kZSI6IjciLCJjb250ZW50IjoiUHVlYmxvIn0s
+        Im5hbWUiOiJTYW50YSBDcnV6IGRlIFRlbmVyaWZlIiwiY291bnRyeSI6eyJj
+        b2RlIjoiRVMiLCJ0eXBlIjoiUGHDrXMiLCJ3b2VpZCI6IjIzNDI0OTUwIiwi
+        Y29udGVudCI6IkVzcGHDsWEifSwiYWRtaW4xIjp7ImNvZGUiOiIiLCJ0eXBl
+        IjoiQ29tdW5pZGFkIEF1dMOzbm9tYSIsIndvZWlkIjoiMTI1NzgwMzEiLCJj
+        b250ZW50IjoiSXNsYXMgQ2FuYXJpYXMifSwiYWRtaW4yIjp7ImNvZGUiOiIi
+        LCJ0eXBlIjoiQ29uZGFkbyIsIndvZWlkIjoiMTI2MDIxMDkiLCJjb250ZW50
+        IjoiU2FudGEgQ3J1eiBkZSBUZW5lcmlmZSJ9LCJhZG1pbjMiOm51bGwsImxv
+        Y2FsaXR5MSI6eyJ0eXBlIjoiUHVlYmxvIiwid29laWQiOiI3NzM2OTIiLCJj
+        b250ZW50IjoiU2FudGEgQ3J1eiBkZSBUZW5lcmlmZSJ9LCJsb2NhbGl0eTIi
+        Om51bGwsInBvc3RhbCI6bnVsbCwiY2VudHJvaWQiOnsibGF0aXR1ZGUiOiIy
+        OC40NjE2MyIsImxvbmdpdHVkZSI6Ii0xNi4yNjcwNTkifSwiYm91bmRpbmdC
+        b3giOnsic291dGhXZXN0Ijp7ImxhdGl0dWRlIjoiMjguNDM4MDgiLCJsb25n
+        aXR1ZGUiOiItMTYuMjkxOTI5In0sIm5vcnRoRWFzdCI6eyJsYXRpdHVkZSI6
+        IjI4LjQ4Nzk0OSIsImxvbmdpdHVkZSI6Ii0xNi4yMzU1OSJ9fSwiYXJlYVJh
+        bmsiOiIxIiwicG9wUmFuayI6IjEiLCJ0aW1lem9uZSI6eyJ0eXBlIjoiVGlt
+        ZSBab25lIiwid29laWQiOiIyODM1MDg3MCIsImNvbnRlbnQiOiJBdGxhbnRp
+        Yy9DYW5hcnkifX19fX0=
+    http_version: 
+  recorded_at: Sat, 27 Aug 2016 18:46:01 GMT
+- request:
+    method: get
+    uri: http://query.yahooapis.com/v1/public/yql?format=json&q=select%20*%20from%20geo.places%20where%20woeid%20=%20773692%20AND%20lang%20=%20%27es%27
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.0 (linux-gnu x86_64) ruby/2.3.1p112
+      Host:
+      - query.yahooapis.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Yql-Host:
+      - prod_bf1_1;paas.yql;queryyahooapiscomproductionbf1;3a358875-6637-11e6-a2c9-d4ae52974741
+      X-Content-Type-Options:
+      - nosniff
+      Access-Control-Allow-Origin:
+      - "*"
+      Content-Type:
+      - application/json; charset=UTF-8
+      Cache-Control:
+      - no-cache
+      Date:
+      - Sat, 27 Aug 2016 18:46:01 GMT
+      Age:
+      - '0'
+      Server:
+      - ATS
+      Via:
+      - http/1.1 a12.ue.bf1.yahoo.net (ApacheTrafficServer [cMsSf ])
+      Y-Trace:
+      - BAEAQAAAAABrIWjuJDkiKAAAAAAAAAAAiDDYgOFZyScAAAAAAAAAAAAFOxIK4cp9AAU7Egrh_yKXoj5HAAAAAA--
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJxdWVyeSI6eyJjb3VudCI6MSwiY3JlYXRlZCI6IjIwMTYtMDgtMjdUMTg6
+        NDY6MDFaIiwibGFuZyI6ImVuLVVTIiwicmVzdWx0cyI6eyJwbGFjZSI6eyJs
+        YW5nIjoiZXMtIiwieG1sbnMiOiJodHRwOi8vd2hlcmUueWFob29hcGlzLmNv
+        bS92MS9zY2hlbWEucm5nIiwieWFob28iOiJodHRwOi8vd3d3LnlhaG9vYXBp
+        cy5jb20vdjEvYmFzZS5ybmciLCJ1cmkiOiJodHRwOi8vd2hlcmUueWFob29h
+        cGlzLmNvbS92MS9wbGFjZS83NzM2OTIiLCJ3b2VpZCI6Ijc3MzY5MiIsInBs
+        YWNlVHlwZU5hbWUiOnsiY29kZSI6IjciLCJjb250ZW50IjoiUHVlYmxvIn0s
+        Im5hbWUiOiJTYW50YSBDcnV6IGRlIFRlbmVyaWZlIiwiY291bnRyeSI6eyJj
+        b2RlIjoiRVMiLCJ0eXBlIjoiUGHDrXMiLCJ3b2VpZCI6IjIzNDI0OTUwIiwi
+        Y29udGVudCI6IkVzcGHDsWEifSwiYWRtaW4xIjp7ImNvZGUiOiIiLCJ0eXBl
+        IjoiQ29tdW5pZGFkIEF1dMOzbm9tYSIsIndvZWlkIjoiMTI1NzgwMzEiLCJj
+        b250ZW50IjoiSXNsYXMgQ2FuYXJpYXMifSwiYWRtaW4yIjp7ImNvZGUiOiIi
+        LCJ0eXBlIjoiQ29uZGFkbyIsIndvZWlkIjoiMTI2MDIxMDkiLCJjb250ZW50
+        IjoiU2FudGEgQ3J1eiBkZSBUZW5lcmlmZSJ9LCJhZG1pbjMiOm51bGwsImxv
+        Y2FsaXR5MSI6eyJ0eXBlIjoiUHVlYmxvIiwid29laWQiOiI3NzM2OTIiLCJj
+        b250ZW50IjoiU2FudGEgQ3J1eiBkZSBUZW5lcmlmZSJ9LCJsb2NhbGl0eTIi
+        Om51bGwsInBvc3RhbCI6bnVsbCwiY2VudHJvaWQiOnsibGF0aXR1ZGUiOiIy
+        OC40NjE2MyIsImxvbmdpdHVkZSI6Ii0xNi4yNjcwNTkifSwiYm91bmRpbmdC
+        b3giOnsic291dGhXZXN0Ijp7ImxhdGl0dWRlIjoiMjguNDM4MDgiLCJsb25n
+        aXR1ZGUiOiItMTYuMjkxOTI5In0sIm5vcnRoRWFzdCI6eyJsYXRpdHVkZSI6
+        IjI4LjQ4Nzk0OSIsImxvbmdpdHVkZSI6Ii0xNi4yMzU1OSJ9fSwiYXJlYVJh
+        bmsiOiIxIiwicG9wUmFuayI6IjEiLCJ0aW1lem9uZSI6eyJ0eXBlIjoiVGlt
+        ZSBab25lIiwid29laWQiOiIyODM1MDg3MCIsImNvbnRlbnQiOiJBdGxhbnRp
+        Yy9DYW5hcnkifX19fX0=
+    http_version: 
+  recorded_at: Sat, 27 Aug 2016 18:46:01 GMT
+recorded_with: VCR 3.0.3
