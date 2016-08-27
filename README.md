@@ -104,7 +104,7 @@ https://beta.nolotiro.org/api/v1/ad/153735
 
 ## 3erd Party
 
-* Core based on [Ruby On Rails]
+* Core based on [Ruby On Rails].
 * [Yahoo YQL] - This project is strong WOEID integration centered.
 * [jQuery] for Javascript.
 * [GeoLite2] data API by Maxmind to auto detect user location.
