@@ -6,31 +6,31 @@ class LocationControllerTest < ActionController::TestCase
   include WebMocking
   include Devise::Test::ControllerHelpers
 
-  setup do
+  before do
     @user = create(:user)
     @request.headers['REMOTE_ADDR'] = '87.223.138.147'
   end
 
-  test 'should get ask location' do
+  def test_asks_location
     get :ask
     assert_response :success
   end
 
-  test 'should get location suggestion list' do
+  def test_gets_location_suggestion_list
     mocking_yahoo_woeid_similar('tenerife') do
       get :list, location: 'tenerife'
       assert_response :success
     end
   end
 
-  test 'should get location suggestion list (with post)' do
+  def test_gets_location_suggestion_list_with_post
     mocking_yahoo_woeid_similar('tenerife') do
       post :list, location: 'tenerife'
       assert_response :success
     end
   end
 
-  test 'should set location in my user' do
+  def test_sets_location_in_my_user
     sign_in @user
     post :change, location: 288_888
     assert_response :redirect

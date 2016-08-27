@@ -5,7 +5,7 @@ require 'support/web_mocking'
 class LegacyRoutingTest < ActionDispatch::IntegrationTest
   include WebMocking
 
-  setup do
+  before do
     @ad = create(:ad)
     @user = create(:user)
     @another_user = create(:user)
@@ -13,7 +13,7 @@ class LegacyRoutingTest < ActionDispatch::IntegrationTest
   end
 
   I18n.available_locales.map(&:to_s).each do |l|
-    test "should i18n for #{l} work" do
+    define_method(:"test_i18n_for_#{l}_works") do
       mocking_yahoo_woeid_info(@ad.woeid_code, l) do
         assert_routing "/#{l}", controller: 'ads', action: 'index', locale: l
         get "/#{l}"
@@ -23,11 +23,11 @@ class LegacyRoutingTest < ActionDispatch::IntegrationTest
     end
   end
 
-  test 'should route to home' do
+  def test_route_to_home
     assert_routing '/', controller: 'ads', action: 'index'
   end
 
-  test 'should route to WOEID ads' do
+  def test_route_to_woeid_ads
     assert_routing '/es/woeid/766273/give',
                    controller: 'woeid', action: 'show', locale: 'es', id: '766273', type: 'give'
 
@@ -59,12 +59,12 @@ class LegacyRoutingTest < ActionDispatch::IntegrationTest
                    controller: 'woeid', action: 'show', locale: 'es', type: 'want'
   end
 
-  test 'should route to location change' do
+  def test_routes_to_location_change
     assert_routing '/es/location/change', controller: 'location', action: 'ask', locale: 'es'
     assert_routing '/es/location/change2', controller: 'location', action: 'change', locale: 'es'
   end
 
-  test 'should route to pages' do
+  def test_routes_to_pages
     assert_routing '/es/page/faqs', controller: 'page', action: 'faqs', locale: 'es'
     assert_routing '/es/page/translate', controller: 'page', action: 'translate', locale: 'es'
     get '/es/page/tos'
@@ -73,21 +73,21 @@ class LegacyRoutingTest < ActionDispatch::IntegrationTest
     assert_routing '/es/page/about', controller: 'page', action: 'about', locale: 'es'
   end
 
-  test 'should route to contact' do
+  def test_routes_to_contact
     assert_routing '/es/contact', controller: 'contact', action: 'new', locale: 'es'
   end
 
-  test 'should route user profile' do
+  def test_routes_to_user_profile
     assert_routing "/es/profile/#{@user.id}", controller: 'users', action: 'profile', locale: 'es', id: @user.id.to_s
     assert_routing "/es/profile/#{@user.username}", controller: 'users', action: 'profile', locale: 'es', id: @user.username
     assert_routing "/es/ad/listuser/id/#{@user.id}", controller: 'users', action: 'listads', locale: 'es', id: @user.id.to_s
   end
 
-  test 'should route auth' do
+  def test_routes_auth
     assert_routing '/es/user/register', action: 'new', controller: 'registrations', locale: 'es'
   end
 
-  test 'should get ads' do
+  def test_routes_to_ad_management
     assert_routing '/es/ad/create', action: 'new', controller: 'ads', locale: 'es'
     assert_routing "/es/ad/#{@ad.id}/#{@ad.slug}", controller: 'ads', action: 'show', locale: 'es', id: @ad.id.to_s, slug: 'ordenador-en-vallecas'
 
