@@ -20,6 +20,12 @@ ActiveAdmin.register Comment, as: 'AdComment' do
     actions
   end
 
+  form do |f|
+    f.inputs { f.input :body }
+
+    f.actions
+  end
+
   action_item :view, only: :show do
     link_to 'Ver en la web', ad_path(ad_comment.ad)
   end
