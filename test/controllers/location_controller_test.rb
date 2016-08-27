@@ -6,8 +6,6 @@ class LocationControllerTest < ActionController::TestCase
   include WebMocking
   include Devise::Test::ControllerHelpers
 
-  before { @user = create(:user) }
-
   def test_asks_location
     get :ask
     assert_response :success
@@ -28,7 +26,7 @@ class LocationControllerTest < ActionController::TestCase
   end
 
   def test_sets_location_in_my_user
-    sign_in @user
+    sign_in create(:user)
     post :change, location: 288_888
     assert_response :redirect
     assert_redirected_to ads_woeid_path(288_888, type: 'give')
