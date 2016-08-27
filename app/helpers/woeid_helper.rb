@@ -11,13 +11,13 @@ module WoeidHelper
       place_raw = GeoPlanet::Place.new(woeid.to_i, lang: locale)
       place = YahooLocation.new(place_raw)
 
-      return nil unless place.town?
+      return unless place.town?
 
       value = { full: place.fullname, short: place.name }
       Rails.cache.write(key, value)
-      return value
+      value
     rescue GeoPlanet::NotFound
-      return nil
+      nil
     end
   end
 
