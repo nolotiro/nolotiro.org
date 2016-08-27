@@ -10,7 +10,7 @@ module Yahoo
     end
 
     def fullname
-      "#{name}, #{admin1}, #{country}"
+      [name, admin1, country].compact.join(', ')
     end
 
     def name
@@ -28,7 +28,7 @@ module Yahoo
     private
 
     def admin1
-      @place['admin1']['content']
+      @place['admin1'].try(:[], 'content')
     end
 
     def country
