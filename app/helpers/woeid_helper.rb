@@ -1,12 +1,6 @@
 # frozen_string_literal: true
 module WoeidHelper
   def self.convert_woeid_name(woeid)
-    # search by woeid, return place
-    #
-    # param woeid: integer. example: 244444
-    # return place: string. format: "City, State, Country"
-    #
-
     locale = I18n.locale
     key = 'woeid_' + locale.to_s + '_' + woeid.to_s
     value = Rails.cache.fetch(key)
@@ -28,14 +22,6 @@ module WoeidHelper
   end
 
   def self.search_by_name(name)
-    # search by name, return possible places
-    #
-    # param name: string. example: "Madrid"
-    # return places: list.
-    #        format: [[full name, woeid, ad_count], ...]
-    #        example: [["Madrid, Madrid, Spain (2444 anuncios)",766273]]
-    #
-
     if name
       GeoPlanet.appid = Rails.application.secrets['geoplanet_app_id']
       raw_locations = GeoPlanet::Place.search(name, lang: I18n.locale, type: 7, count: 0)
