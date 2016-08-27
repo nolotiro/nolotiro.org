@@ -1,47 +1,37 @@
 # frozen_string_literal: true
 module WoeidHelper
   def self.convert_woeid_name(woeid)
-    # search by woeid, return place
-    #
-    # param woeid: integer. example: 244444
-    # return place: string. format: "City, State, Country"
-    #
-
     locale = I18n.locale
     key = 'woeid_' + locale.to_s + '_' + woeid.to_s
     value = Rails.cache.fetch(key)
     return value if value
 
-    GeoPlanet.appid = Rails.application.secrets['geoplanet_app_id']
-    begin
-      place_raw = GeoPlanet::Place.new(woeid.to_i, lang: locale)
-      place = YahooLocation.new(place_raw)
+    query = <<-SQL.squish
+      select * from geo.places where woeid = #{woeid} AND lang = '#{locale}'
+    SQL
 
-      return nil unless place.town?
+    place_raw = Yahoo::Fetcher.new(query).fetch
+    return if place_raw.nil?
 
-      value = { full: place.fullname, short: place.name }
-      Rails.cache.write(key, value)
-      return value
-    rescue GeoPlanet::NotFound
-      return nil
-    end
+    place = Yahoo::Location.new(place_raw)
+    return unless place.town?
+
+    value = { full: place.fullname, short: place.name }
+    Rails.cache.write(key, value)
+    value
   end
 
   def self.search_by_name(name)
-    # search by name, return possible places
-    #
-    # param name: string. example: "Madrid"
-    # return places: list.
-    #        format: [[full name, woeid, ad_count], ...]
-    #        example: [["Madrid, Madrid, Spain (2444 anuncios)",766273]]
-    #
+    return unless name
 
-    if name
-      GeoPlanet.appid = Rails.application.secrets['geoplanet_app_id']
-      raw_locations = GeoPlanet::Place.search(name, lang: I18n.locale, type: 7, count: 0)
-      return if raw_locations.nil?
+    query = <<-SQL.squish
+      select * from geo.places
+      where text = '#{name}' AND placetype = '7' AND lang = '#{I18n.locale}'
+    SQL
 
-      YahooResultSet.new(raw_locations)
-    end
+    raw_locations = Yahoo::Fetcher.new(query).fetch
+    return if raw_locations.nil?
+
+    Yahoo::ResultSet.new(raw_locations)
   end
 end

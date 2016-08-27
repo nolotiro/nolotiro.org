@@ -2,67 +2,74 @@
 http_interactions:
 - request:
     method: get
-    uri: http://where.yahooapis.com/v1/place/766273?appid=ccc2c6d8c5c9233d952dee39e4e4f05266d3ebc47b809498a7b071b500aefccd269423a8967b3d96700d5c1a630d59159b2b8f4d111714a8fb777362e548bc57&format=json&lang=ca
+    uri: http://query.yahooapis.com/v1/public/yql?format=json&q=select%20*%20from%20geo.places%20where%20woeid%20=%20766273%20AND%20lang%20=%20%27ca%27
     body:
       encoding: US-ASCII
       string: ''
     headers:
       Accept:
-      - "*/*; q=0.5, application/xml"
+      - "*/*"
       Accept-Encoding:
       - gzip, deflate
       User-Agent:
-      - Ruby
+      - rest-client/2.0.0 (linux-gnu x86_64) ruby/2.3.1p112
+      Host:
+      - query.yahooapis.com
   response:
     status:
       code: 200
       message: OK
     headers:
-      Date:
-      - Wed, 15 Jun 2016 19:20:15 GMT
-      P3p:
-      - policyref="https://policies.yahoo.com/w3c/p3p.xml", CP="CAO DSP COR CUR ADM
-        DEV TAI PSA PSD IVAi IVDi CONi TELo OTPi OUR DELi SAMi OTRi UNRi PUBi IND
-        PHY ONL UNI PUR FIN COM NAV INT DEM CNT STA POL HEA PRE LOC GOV"
-      Content-Language:
-      - ca
+      X-Yql-Host:
+      - prod_bf1_1;paas.yql;queryyahooapiscomproductionbf1;2de6064e-6638-11e6-a2c9-d4ae52974741
+      X-Content-Type-Options:
+      - nosniff
       Access-Control-Allow-Origin:
       - "*"
-      Cache-Control:
-      - max-age=86400,public
-      Expires:
-      - Thu, 16 Jun 2016 19:20:15 GMT
-      Vary:
-      - Accept-Encoding
-      Content-Encoding:
-      - gzip
-      Content-Length:
-      - '434'
       Content-Type:
       - application/json; charset=UTF-8
+      Cache-Control:
+      - no-cache
+      Date:
+      - Sat, 27 Aug 2016 14:14:46 GMT
       Age:
       - '0'
-      Connection:
-      - keep-alive
-      Via:
-      - http/1.1 r8.ycpi.br1.yahoo.net (ApacheTrafficServer [cSsSfU])
       Server:
       - ATS
+      Via:
+      - http/1.1 a01.ue.bf1.yahoo.net (ApacheTrafficServer [cMsSf ])
       Y-Trace:
-      - BAEAQAAAAAAjKcR.ZFwLowAAAAAAAAAAngInLGx24YMAAAAAAAAAAAAFNVYC4pWWAAU1VgLop_2n_HuXAAAAAA--
+      - BAEAQAAAAAD4HyYsTF1THgAAAAAAAAAAwXUlScv_61MAAAAAAAAAAAAFOw5Ay0UHAAU7DkDLdTIsQPfTAAAAAA--
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
     body:
       encoding: ASCII-8BIT
       string: !binary |-
-        H4sIAAAAAAAAA3VTS2+jMBD+K5HP2WCMeeXYVY5drbqVKq24zII3WAXbMqYp
-        G+W/dxwISUv2Zn3zPeyZ8ZGYBkpBtkdy0EJWZJsmCUuj9Yg/D0b8gBbr5Fkf
-        FPkCr8A523lxqSskpac1USP9ESqLdmus9MrZAaFdZ0ANcMWucoeGyPg+cdeT
-        H9n9wvN0MRZxxvOYYgZUrVThWdD2Sjpwq0qs5sixfMf9QobeFT2lf5nSLVzT
-        rlkhi9OMMn7JYlj9afWbV4lKlRKWgWwR+FlxPyehjObzm6Lbzo3IwvURH1FK
-        I//jl033bnQJjXRDeGs5gwvXabyfluDGhY0xRncOmvFcCpyV9uwjacBJ1/vL
-        cLrhLOQs91q1n9Bv0SZJw8Q7/sEZV1LtH/S7V3a6d/WL6NzCJmJxHi1s0jzL
-        zmumrat3cEcXM0qz8Ksujnh+8m22Ap5AvZJt7J9jxnOIC+9kK/5pdV673moj
-        imDu26W2bBsWVr+9au5dnFAeJdzPoLcSObVzZlsERXCohRWbAWqtwchuU+q2
-        CN7CIjh/qiIYu+7HBGqPwhLI6fQBjt/dEaIDAAA=
+        eyJxdWVyeSI6eyJjb3VudCI6MSwiY3JlYXRlZCI6IjIwMTYtMDgtMjdUMTQ6
+        MTQ6NDZaIiwibGFuZyI6ImVuLVVTIiwicmVzdWx0cyI6eyJwbGFjZSI6eyJs
+        YW5nIjoiY2EtIiwieG1sbnMiOiJodHRwOi8vd2hlcmUueWFob29hcGlzLmNv
+        bS92MS9zY2hlbWEucm5nIiwieWFob28iOiJodHRwOi8vd3d3LnlhaG9vYXBp
+        cy5jb20vdjEvYmFzZS5ybmciLCJ1cmkiOiJodHRwOi8vd2hlcmUueWFob29h
+        cGlzLmNvbS92MS9wbGFjZS83NjYyNzMiLCJ3b2VpZCI6Ijc2NjI3MyIsInBs
+        YWNlVHlwZU5hbWUiOnsiY29kZSI6IjciLCJjb250ZW50IjoiVG93biJ9LCJu
+        YW1lIjoiTWFkcmlkIiwiY291bnRyeSI6eyJjb2RlIjoiRVMiLCJ0eXBlIjoi
+        Q291bnRyeSIsIndvZWlkIjoiMjM0MjQ5NTAiLCJjb250ZW50IjoiRXNwYW55
+        YSJ9LCJhZG1pbjEiOnsiY29kZSI6IiIsInR5cGUiOiJDb211bml0YXQgYXV0
+        w7Jub21hIiwid29laWQiOiIxMjU3ODAyNCIsImNvbnRlbnQiOiJDb211bml0
+        YXQgZGUgTWFkcmlkIn0sImFkbWluMiI6eyJjb2RlIjoiIiwidHlwZSI6IkNv
+        bXRhdC9EaXN0cmljdGUiLCJ3b2VpZCI6IjEyNjAyMDkwIiwiY29udGVudCI6
+        IlByb3bDrW5jaWEgZGUgTWFkcmlkIn0sImFkbWluMyI6bnVsbCwibG9jYWxp
+        dHkxIjp7InR5cGUiOiJUb3duIiwid29laWQiOiI3NjYyNzMiLCJjb250ZW50
+        IjoiTWFkcmlkIn0sImxvY2FsaXR5MiI6bnVsbCwicG9zdGFsIjpudWxsLCJj
+        ZW50cm9pZCI6eyJsYXRpdHVkZSI6IjQwLjQyMTQyOSIsImxvbmdpdHVkZSI6
+        Ii0zLjY3MTYzIn0sImJvdW5kaW5nQm94Ijp7InNvdXRoV2VzdCI6eyJsYXRp
+        dHVkZSI6IjQwLjMyNTkzOSIsImxvbmdpdHVkZSI6Ii0zLjc5ODg3In0sIm5v
+        cnRoRWFzdCI6eyJsYXRpdHVkZSI6IjQwLjUyMDA4MSIsImxvbmdpdHVkZSI6
+        Ii0zLjUzNDkifX0sImFyZWFSYW5rIjoiMSIsInBvcFJhbmsiOiIxIiwidGlt
+        ZXpvbmUiOnsidHlwZSI6IlRpbWUgWm9uZSIsIndvZWlkIjoiNTYwNDM2NDQi
+        LCJjb250ZW50IjoiRXVyb3BlL01hZHJpZCJ9fX19fQ==
     http_version: 
-  recorded_at: Wed, 15 Jun 2016 19:20:15 GMT
+  recorded_at: Sat, 27 Aug 2016 14:14:46 GMT
 recorded_with: VCR 3.0.3

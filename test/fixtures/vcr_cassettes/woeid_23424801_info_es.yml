@@ -2,64 +2,68 @@
 http_interactions:
 - request:
     method: get
-    uri: http://where.yahooapis.com/v1/place/23424801?appid=ccc2c6d8c5c9233d952dee39e4e4f05266d3ebc47b809498a7b071b500aefccd269423a8967b3d96700d5c1a630d59159b2b8f4d111714a8fb777362e548bc57&format=json&lang=es
+    uri: http://query.yahooapis.com/v1/public/yql?format=json&q=select%20*%20from%20geo.places%20where%20woeid%20=%2023424801%20AND%20lang%20=%20%27es%27
     body:
       encoding: US-ASCII
       string: ''
     headers:
       Accept:
-      - "*/*; q=0.5, application/xml"
+      - "*/*"
       Accept-Encoding:
       - gzip, deflate
       User-Agent:
-      - Ruby
+      - rest-client/2.0.0 (linux-gnu x86_64) ruby/2.3.1p112
+      Host:
+      - query.yahooapis.com
   response:
     status:
       code: 200
       message: OK
     headers:
-      Date:
-      - Tue, 28 Jun 2016 11:44:39 GMT
-      P3p:
-      - policyref="https://policies.yahoo.com/w3c/p3p.xml", CP="CAO DSP COR CUR ADM
-        DEV TAI PSA PSD IVAi IVDi CONi TELo OTPi OUR DELi SAMi OTRi UNRi PUBi IND
-        PHY ONL UNI PUR FIN COM NAV INT DEM CNT STA POL HEA PRE LOC GOV"
-      Content-Language:
-      - es
+      X-Yql-Host:
+      - prod_bf1_1;paas.yql;queryyahooapiscomproductionbf1;3a2cd5e1-6637-11e6-a2c9-d4ae52974741
+      X-Content-Type-Options:
+      - nosniff
       Access-Control-Allow-Origin:
       - "*"
-      Cache-Control:
-      - max-age=86400,public
-      Expires:
-      - Wed, 29 Jun 2016 11:44:39 GMT
-      Vary:
-      - Accept-Encoding
-      Content-Encoding:
-      - gzip
-      Content-Length:
-      - '311'
       Content-Type:
       - application/json; charset=UTF-8
+      Cache-Control:
+      - no-cache
+      Date:
+      - Sat, 27 Aug 2016 14:15:08 GMT
       Age:
       - '0'
-      Connection:
-      - keep-alive
-      Via:
-      - http/1.1 r2.ycpi.br1.yahoo.net (ApacheTrafficServer [cSsSfU])
       Server:
       - ATS
+      Via:
+      - http/1.1 a10.ue.bf1.yahoo.net (ApacheTrafficServer [cMsSf ])
       Y-Trace:
-      - BAEAQAAAAAB7iKZXYReQSwAAAAAAAAAAlI_BR6r0OagAAAAAAAAAAAAFNlUpc2mqAAU2VSl5nTpwtcypAAAAAA--
+      - BAEAQAAAAACOhY.iwTuS1wAAAAAAAAAA9mXhotzyetsAAAAAAAAAAAAFOw5CG92HAAU7DkIb_Q3PhbZ8AAAAAA--
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
     body:
       encoding: ASCII-8BIT
       string: !binary |-
-        H4sIAAAAAAAAA21Ry07DMBD8FeRzcWznVXoE9YoQQuKSy+JYjUXqjewNJary
-        79ikFRBxm33MzD7ObOhBG7Y7sxMa27KdygtVbIXcLJWXaTCPcIwd7AmaUQjT
-        Braq3QCRD0lDYxs7pZo3zC2kvR6hRR8pGkdHfvov9yNAUXJltWiy/UPEqxmj
-        DbRH62SsswtWv3C+4B419JYm+Te8dA4YCPoFaxPHwWRxZj2QpTF530peb2VZ
-        Jao7XJP1lktRVVUdp3iLe7TWHe7xM1EDjtS9mkArnZILWefFX507yatKqiLd
-        DD11e1jzJC/KQsmVfcmVEKLO53QFb+AZ3HvsTY/DYQnEho3extU6omHXZE12
-        6ow3fIIOEQYbuMZjk33IJvt+aJNdL5vOBO4QqSawef4CNxCTjCcCAAA=
+        eyJxdWVyeSI6eyJjb3VudCI6MSwiY3JlYXRlZCI6IjIwMTYtMDgtMjdUMTQ6
+        MTU6MDhaIiwibGFuZyI6ImVuLVVTIiwicmVzdWx0cyI6eyJwbGFjZSI6eyJs
+        YW5nIjoiZXMtIiwieG1sbnMiOiJodHRwOi8vd2hlcmUueWFob29hcGlzLmNv
+        bS92MS9zY2hlbWEucm5nIiwieWFob28iOiJodHRwOi8vd3d3LnlhaG9vYXBp
+        cy5jb20vdjEvYmFzZS5ybmciLCJ1cmkiOiJodHRwOi8vd2hlcmUueWFob29h
+        cGlzLmNvbS92MS9wbGFjZS8yMzQyNDgwMSIsIndvZWlkIjoiMjM0MjQ4MDEi
+        LCJwbGFjZVR5cGVOYW1lIjp7ImNvZGUiOiIxMiIsImNvbnRlbnQiOiJQYcOt
+        cyJ9LCJuYW1lIjoiRWN1YWRvciIsImNvdW50cnkiOnsiY29kZSI6IkVDIiwi
+        dHlwZSI6IlBhw61zIiwid29laWQiOiIyMzQyNDgwMSIsImNvbnRlbnQiOiJF
+        Y3VhZG9yIn0sImFkbWluMSI6bnVsbCwiYWRtaW4yIjpudWxsLCJhZG1pbjMi
+        Om51bGwsImxvY2FsaXR5MSI6bnVsbCwibG9jYWxpdHkyIjpudWxsLCJwb3N0
+        YWwiOm51bGwsImNlbnRyb2lkIjp7ImxhdGl0dWRlIjoiLTEuNzgxNTYiLCJs
+        b25naXR1ZGUiOiItNzguMTA2NjY3In0sImJvdW5kaW5nQm94Ijp7InNvdXRo
+        V2VzdCI6eyJsYXRpdHVkZSI6Ii01LjAxNzM0IiwibG9uZ2l0dWRlIjoiLTkx
+        LjY2MTI0In0sIm5vcnRoRWFzdCI6eyJsYXRpdHVkZSI6IjEuNDU0MjEiLCJs
+        b25naXR1ZGUiOiItNzUuMjAwMDczIn19LCJhcmVhUmFuayI6IjEiLCJwb3BS
+        YW5rIjoiMSJ9fX19
     http_version: 
-  recorded_at: Tue, 28 Jun 2016 11:44:39 GMT
+  recorded_at: Sat, 27 Aug 2016 14:15:08 GMT
 recorded_with: VCR 3.0.3

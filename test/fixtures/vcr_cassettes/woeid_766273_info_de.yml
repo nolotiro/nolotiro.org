@@ -2,67 +2,53 @@
 http_interactions:
 - request:
     method: get
-    uri: http://where.yahooapis.com/v1/place/766273?appid=ccc2c6d8c5c9233d952dee39e4e4f05266d3ebc47b809498a7b071b500aefccd269423a8967b3d96700d5c1a630d59159b2b8f4d111714a8fb777362e548bc57&format=json&lang=de
+    uri: http://query.yahooapis.com/v1/public/yql?format=json&q=select%20*%20from%20geo.places%20where%20woeid%20=%20766273%20AND%20lang%20=%20%27de%27
     body:
       encoding: US-ASCII
       string: ''
     headers:
       Accept:
-      - "*/*; q=0.5, application/xml"
+      - "*/*"
       Accept-Encoding:
       - gzip, deflate
       User-Agent:
-      - Ruby
+      - rest-client/2.0.0 (linux-gnu x86_64) ruby/2.3.1p112
+      Host:
+      - query.yahooapis.com
   response:
     status:
       code: 200
       message: OK
     headers:
-      Date:
-      - Wed, 15 Jun 2016 12:20:25 GMT
-      P3p:
-      - policyref="https://policies.yahoo.com/w3c/p3p.xml", CP="CAO DSP COR CUR ADM
-        DEV TAI PSA PSD IVAi IVDi CONi TELo OTPi OUR DELi SAMi OTRi UNRi PUBi IND
-        PHY ONL UNI PUR FIN COM NAV INT DEM CNT STA POL HEA PRE LOC GOV"
-      Content-Language:
-      - de
+      X-Yql-Host:
+      - prod_bf1_1;paas.yql;queryyahooapiscomproductionbf1;39ce61e2-6637-11e6-a2c9-d4ae52974741
+      X-Content-Type-Options:
+      - nosniff
       Access-Control-Allow-Origin:
       - "*"
-      Cache-Control:
-      - max-age=86400,public
-      Expires:
-      - Thu, 16 Jun 2016 12:20:25 GMT
-      Vary:
-      - Accept-Encoding
-      Content-Encoding:
-      - gzip
-      Content-Length:
-      - '419'
       Content-Type:
       - application/json; charset=UTF-8
+      Cache-Control:
+      - no-cache
+      Date:
+      - Sat, 27 Aug 2016 14:14:44 GMT
       Age:
-      - '25196'
-      Connection:
-      - keep-alive
-      Via:
-      - http/1.1 r6.ycpi.br1.yahoo.net (ApacheTrafficServer [cHs f ])
+      - '0'
       Server:
       - ATS
+      Via:
+      - http/1.1 a02.ue.bf1.yahoo.net (ApacheTrafficServer [cMsSf ])
       Y-Trace:
-      - BAEAQAAAAAD4uMMaaoEmlwAAAAAAAAAAdIpNurKqmUAAAAAAAAAAAAAFNVYDNeIgAAU1VgM2DNYjgXphAAAAAA--
+      - BAEAQAAAAABXQ15_NIdyvgAAAAAAAAAARWXMxGGr05wAAAAAAAAAAAAFOw5AsVViAAU7DkCxhvVD4IfFAAAAAA--
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
     body:
-      encoding: ASCII-8BIT
-      string: !binary |-
-        H4sIAAAAAAAAA22Ty07DMBBFfwV5XZrEdl7dgYTYAEKAhISyGRLTWCR25EyA
-        UvXfseu+wOys8dwzN3OdNRk6qAVZrMmnFrIhizzLaM5mvv60GsQd9PaePCI0
-        SP7UzwDRjE5d68Z25ZsZUb7/FhpjeTN7Myk0K4cYQEmhjrWjHC3QdtyA8hIH
-        I1eP9ryzRRmnvExjOwCaXqrkdISvBLSLCbXS1uW16IVUY93CG57iz2+PAxKa
-        5kVM+X4ADQbQYMC90R9SfR+Rp7gspnF58MsCHAtw3qYF/c8rdvY6XUMncfVr
-        BYdiQN0H9yvfEwz1cwY9InT+XAubjnbda9IBSpycGx7POU04LZ1WLXfVczbP
-        8iRzxFebaiPV8lJ/OeWoJ2yfxYgBhtG0ZAEmL4ti+4C0wfYK/tGlNI6L5K8u
-        ZbzcuD0bAQ+g3skidZ8z+HNi3zLKXnxrtQ19MnoQVXRY3P4u2NuLkLgVHVaX
-        ZjFnGXcZTEbalhZxWFRRFX22woj5ClqtYZDjvNZ9FX0kVbT9W6rIL93FBGpp
-        hdb5ZvMDDGVAqnwDAAA=
+      encoding: UTF-8
+      string: '{"query":{"count":1,"created":"2016-08-27T14:14:44Z","lang":"en-US","results":{"place":{"lang":"de-","xmlns":"http://where.yahooapis.com/v1/schema.rng","yahoo":"http://www.yahooapis.com/v1/base.rng","uri":"http://where.yahooapis.com/v1/place/766273","woeid":"766273","placeTypeName":{"code":"7","content":"Stadt"},"name":"Madrid","country":{"code":"ES","type":"Land","woeid":"23424950","content":"Spanien"},"admin1":{"code":"","type":"Autonome
+        Gemeinschaft","woeid":"12578024","content":"Madrid"},"admin2":{"code":"","type":"Provinz","woeid":"12602090","content":"Madrid"},"admin3":null,"locality1":{"type":"Stadt","woeid":"766273","content":"Madrid"},"locality2":null,"postal":null,"centroid":{"latitude":"40.421429","longitude":"-3.67163"},"boundingBox":{"southWest":{"latitude":"40.325939","longitude":"-3.79887"},"northEast":{"latitude":"40.520081","longitude":"-3.5349"}},"areaRank":"1","popRank":"1","timezone":{"type":"Time
+        Zone","woeid":"56043644","content":"Europe/Madrid"}}}}}'
     http_version: 
-  recorded_at: Wed, 15 Jun 2016 19:20:20 GMT
+  recorded_at: Sat, 27 Aug 2016 14:14:44 GMT
 recorded_with: VCR 3.0.3

@@ -4,7 +4,6 @@ language: ruby
 
 cache:
   bundler: true
-  apt: true
 
 services:
   - redis-server

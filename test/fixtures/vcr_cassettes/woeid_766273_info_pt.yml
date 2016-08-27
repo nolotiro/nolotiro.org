@@ -2,67 +2,73 @@
 http_interactions:
 - request:
     method: get
-    uri: http://where.yahooapis.com/v1/place/766273?appid=ccc2c6d8c5c9233d952dee39e4e4f05266d3ebc47b809498a7b071b500aefccd269423a8967b3d96700d5c1a630d59159b2b8f4d111714a8fb777362e548bc57&format=json&lang=pt
+    uri: http://query.yahooapis.com/v1/public/yql?format=json&q=select%20*%20from%20geo.places%20where%20woeid%20=%20766273%20AND%20lang%20=%20%27pt%27
     body:
       encoding: US-ASCII
       string: ''
     headers:
       Accept:
-      - "*/*; q=0.5, application/xml"
+      - "*/*"
       Accept-Encoding:
       - gzip, deflate
       User-Agent:
-      - Ruby
+      - rest-client/2.0.0 (linux-gnu x86_64) ruby/2.3.1p112
+      Host:
+      - query.yahooapis.com
   response:
     status:
       code: 200
       message: OK
     headers:
-      Date:
-      - Wed, 15 Jun 2016 19:20:17 GMT
-      P3p:
-      - policyref="https://policies.yahoo.com/w3c/p3p.xml", CP="CAO DSP COR CUR ADM
-        DEV TAI PSA PSD IVAi IVDi CONi TELo OTPi OUR DELi SAMi OTRi UNRi PUBi IND
-        PHY ONL UNI PUR FIN COM NAV INT DEM CNT STA POL HEA PRE LOC GOV"
-      Content-Language:
-      - pt
+      X-Yql-Host:
+      - prod_bf1_1;paas.yql;queryyahooapiscomproductionbf1;39ce3ad1-6637-11e6-a2c9-d4ae52974741
+      X-Content-Type-Options:
+      - nosniff
       Access-Control-Allow-Origin:
       - "*"
-      Cache-Control:
-      - max-age=86400,public
-      Expires:
-      - Thu, 16 Jun 2016 19:20:17 GMT
-      Vary:
-      - Accept-Encoding
-      Content-Encoding:
-      - gzip
-      Content-Length:
-      - '440'
       Content-Type:
       - application/json; charset=UTF-8
+      Cache-Control:
+      - no-cache
+      Date:
+      - Sat, 27 Aug 2016 14:14:50 GMT
       Age:
       - '0'
-      Connection:
-      - keep-alive
-      Via:
-      - http/1.1 r3.ycpi.br1.yahoo.net (ApacheTrafficServer [cSsSfU])
       Server:
       - ATS
+      Via:
+      - http/1.1 a32.ue.bf1.yahoo.net (ApacheTrafficServer [cMsSf ])
       Y-Trace:
-      - BAEAQAAAAADbbAYDVBw5hAAAAAAAAAAA6JgHC4v8W2sAAAAAAAAAAAAFNVYDA0ccAAU1VgMIXy0AVLnzAAAAAA--
+      - BAEAQAAAAAAHcVhkFVkzmAAAAAAAAAAAHPjyUYKWe1cAAAAAAAAAAAAFOw5BBmiqAAU7DkEGpF5r8BEqAAAAAA--
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
     body:
       encoding: ASCII-8BIT
       string: !binary |-
-        H4sIAAAAAAAAA3WTy27bMBBFf8Xg2rEoUk/v2sBBNy6KtkA32kwk1iIqcQiK
-        TOoa/veSkh9K1O6I4dxzr2aoE9Ed1IJsT+QVhWzINs8ylvP1VP9+1OIz9P6e
-        fHHiuUPy7mIF1pohyGtsfFt+XhM1CfbQGA9c+xunrDn60m7QoFq41+5y64HB
-        BSpHqWiGsScQye6bP1/CMZ6wpEypd4Gmlyqe+0yVBfIRe6dkA41YfXA24H9y
-        hT3MHR72d4+YpXlBWXL1YAsPtoxt8GUKrmo5I8+pGWW0vCXnCypfUPc+dz1h
-        tcT/UItL1g5r6KQ9vhnJrbhMfF3nm7XPOGwy0jhY6KZzLfzOMHSfSAdWWhfi
-        JHSTsDhhZdCqw6X6wDdZHmeB+Ox33Uh1+Ii/g3JAZ9sfYrALDGdpyReYvCyK
-        8Vmhse0O/qFLGaVF/F6X8qQ8h3EbAV9B/SLbNHyOns6xf+JW9uIPqvEJOINa
-        VNFtcte7xeCe3ICrT2jGvcRGzmaYZjThWRK24Yz0va21eltFVfTaCiM2R2gR
-        QcthU2NfRS9xFY0/UxVN0w8LA3XwQm3J+fwXaHYC5JwDAAA=
+        eyJxdWVyeSI6eyJjb3VudCI6MSwiY3JlYXRlZCI6IjIwMTYtMDgtMjdUMTQ6
+        MTQ6NTBaIiwibGFuZyI6ImVuLVVTIiwicmVzdWx0cyI6eyJwbGFjZSI6eyJs
+        YW5nIjoicHQtIiwieG1sbnMiOiJodHRwOi8vd2hlcmUueWFob29hcGlzLmNv
+        bS92MS9zY2hlbWEucm5nIiwieWFob28iOiJodHRwOi8vd3d3LnlhaG9vYXBp
+        cy5jb20vdjEvYmFzZS5ybmciLCJ1cmkiOiJodHRwOi8vd2hlcmUueWFob29h
+        cGlzLmNvbS92MS9wbGFjZS83NjYyNzMiLCJ3b2VpZCI6Ijc2NjI3MyIsInBs
+        YWNlVHlwZU5hbWUiOnsiY29kZSI6IjciLCJjb250ZW50IjoiUHVlYmxvIn0s
+        Im5hbWUiOiJNYWRyaWQiLCJjb3VudHJ5Ijp7ImNvZGUiOiJFUyIsInR5cGUi
+        OiJQYcOtcyIsIndvZWlkIjoiMjM0MjQ5NTAiLCJjb250ZW50IjoiRXNwYW5o
+        YSJ9LCJhZG1pbjEiOnsiY29kZSI6IiIsInR5cGUiOiJDb211bmlkYWRlIEF1
+        dMOzbm9tYSIsIndvZWlkIjoiMTI1NzgwMjQiLCJjb250ZW50IjoiTWFkcmlk
+        In0sImFkbWluMiI6eyJjb2RlIjoiIiwidHlwZSI6IkNvbmRhZG8iLCJ3b2Vp
+        ZCI6IjEyNjAyMDkwIiwiY29udGVudCI6Ik1hZHJpZCJ9LCJhZG1pbjMiOm51
+        bGwsImxvY2FsaXR5MSI6eyJ0eXBlIjoiUHVlYmxvIiwid29laWQiOiI3NjYy
+        NzMiLCJjb250ZW50IjoiTWFkcmlkIn0sImxvY2FsaXR5MiI6bnVsbCwicG9z
+        dGFsIjpudWxsLCJjZW50cm9pZCI6eyJsYXRpdHVkZSI6IjQwLjQyMTQyOSIs
+        ImxvbmdpdHVkZSI6Ii0zLjY3MTYzIn0sImJvdW5kaW5nQm94Ijp7InNvdXRo
+        V2VzdCI6eyJsYXRpdHVkZSI6IjQwLjMyNTkzOSIsImxvbmdpdHVkZSI6Ii0z
+        Ljc5ODg3In0sIm5vcnRoRWFzdCI6eyJsYXRpdHVkZSI6IjQwLjUyMDA4MSIs
+        ImxvbmdpdHVkZSI6Ii0zLjUzNDkifX0sImFyZWFSYW5rIjoiMSIsInBvcFJh
+        bmsiOiIxIiwidGltZXpvbmUiOnsidHlwZSI6IlRpbWUgWm9uZSIsIndvZWlk
+        IjoiNTYwNDM2NDQiLCJjb250ZW50IjoiRXVyb3BlL01hZHJpZCJ9fX19fQ==
     http_version: 
-  recorded_at: Wed, 15 Jun 2016 19:20:17 GMT
+  recorded_at: Sat, 27 Aug 2016 14:14:50 GMT
 recorded_with: VCR 3.0.3
