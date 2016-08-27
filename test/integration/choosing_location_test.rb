@@ -48,11 +48,8 @@ class ChoosingLocationTest < ActionDispatch::IntegrationTest
     user = create(:user)
     login_as user
 
-    mocking_yahoo_woeid_similar('tenerife') do
-      choose_location('tenerife')
-
-      select 'Santa Cruz de Tenerife, Islas Canarias, España (0 anuncios)'
-      click_button 'Elige tu ubicación'
+    mocking_yahoo_woeid_similar('tenerife_unique') do
+      choose_location('tenerife, islas canarias')
       logout
       login_as user
 
