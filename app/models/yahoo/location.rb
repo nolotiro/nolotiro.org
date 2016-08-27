@@ -11,6 +11,9 @@ module Yahoo
 
     def fullname
       "#{name}, #{admin1}, #{country}"
+    rescue TypeError => e
+      msg = "[Yahoo] Errored in request with #{@place} result: #{e.message}"
+      raise TypeError, msg
     end
 
     def name
