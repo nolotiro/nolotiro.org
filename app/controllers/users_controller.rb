@@ -9,12 +9,11 @@ class UsersController < ApplicationController
     @status = status_scope
 
     @ads = @user.ads
-                .includes(:user)
-                .public_send(@type)
-                .recent_first
-                .paginate(page: params[:page])
 
+    @ads = @ads.public_send(@type) if @type
     @ads = @ads.public_send(@status) if @status
+
+    @ads = @ads.includes(:user).recent_first.paginate(page: params[:page])
   end
 
   def profile
@@ -38,4 +37,12 @@ class UsersController < ApplicationController
   end
 
   helper_method :status_scope
+
+  def type_scope
+    return unless %w(give want).include?(params[:type])
+
+    params[:type]
+  end
+
+  helper_method :type_scope
 end

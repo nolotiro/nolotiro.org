@@ -27,10 +27,10 @@ class PersonalAdListing < ActionDispatch::IntegrationTest
     end
   end
 
-  it 'lists all give ads in a separate tab in user profile' do
+  it 'lists all ads in a separate tab in user profile' do
     click_link 'todos'
 
-    assert_selector '.ad_excerpt_list', count: 4
+    assert_selector '.ad_excerpt_list', count: 5
   end
 
   it 'lists wanted ads in a separate tab in user profile' do
