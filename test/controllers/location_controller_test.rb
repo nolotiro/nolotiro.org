@@ -6,10 +6,7 @@ class LocationControllerTest < ActionController::TestCase
   include WebMocking
   include Devise::Test::ControllerHelpers
 
-  before do
-    @user = create(:user)
-    @request.headers['REMOTE_ADDR'] = '87.223.138.147'
-  end
+  before { @user = create(:user) }
 
   def test_asks_location
     get :ask
