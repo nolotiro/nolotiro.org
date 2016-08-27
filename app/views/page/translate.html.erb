@@ -1,10 +1,5 @@
-<%= content_for :meta_title, t('nlt.translate.title') %>
-
-<div id="location_header_section">
-  <h1><%= t('nlt.translate.title') %></h1><br>
-</div>
-
-<div class="col-md-9 col-sm-9">
+<%= render layout: 'static_page',
+           locals: { title: t('nlt.translate.title') } do %>
   <div class="row">
     <fieldset>
       <% translate_it = link_to t('nlt.translate.link'),
@@ -13,4 +8,4 @@
       <%= t('nlt.translate.description_html', translate_it: translate_it) %>
     </fieldset>
   </div>
-</div>
+<% end %>

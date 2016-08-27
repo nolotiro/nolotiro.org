@@ -1,12 +1,6 @@
-<%= content_for :meta_title, t('nlt.about_page.title') %>
-
-<div id="location_header_section">
-  <h1><%= t('nlt.about_page.title') %></h1><br>
-  <b><a href="/"> « <%= t('nlt.back') %></a></b>
-</div>
-
-<div class="col-md-9 col-sm-9">
+<%= render layout: 'static_page',
+           locals: { title: t('nlt.about_page.title') } do %>
   <div class="ad_excerpt">
     <%= t('nlt.about_page.description_html') %>
   </div>
-</div>
+<% end %>
