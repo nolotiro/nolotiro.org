@@ -1,7 +1,8 @@
 # frozen_string_literal: true
 class UsersController < ApplicationController
+  before_action :load_user
+
   def listads
-    @user = User.find(params[:id])
     authorize(@user)
 
     @type = type_scope
@@ -17,12 +18,18 @@ class UsersController < ApplicationController
   end
 
   def profile
-    name_or_id = params[:username]
-    @user = User.find_by(username: name_or_id) || User.find(name_or_id)
     authorize(@user)
   end
 
   private
+
+  def load_user
+    @user = friendly_find(params[:id])
+  end
+
+  def friendly_find(param)
+    User.unlocked.find_by(username: param) || User.unlocked.find(param)
+  end
 
   def status_scope
     return unless %w(available booked delivered).include?(params[:status])

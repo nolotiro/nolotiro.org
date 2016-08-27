@@ -21,7 +21,7 @@ FactoryGirl.define do
   # This will use the User class (Admin would have been guessed)
   factory :admin, class: User do
     username
-    email 'admin@gmail.com'
+    email 'admin@example.com'
     lang 'es'
     password '12435968770'
     role 1

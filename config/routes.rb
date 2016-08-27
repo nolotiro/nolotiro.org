@@ -76,7 +76,7 @@ NolotiroOrg::Application.routes.draw do
     end
 
     get '/user/edit/id/:id', to: redirect('/es/user/edit'), as: 'user_edit'
-    get '/profile/:username', to: 'users#profile', as: 'profile'
+    get '/profile/:id', to: 'users#profile', as: 'profile'
 
     # search
     get '/search', to: redirect { |params, request|

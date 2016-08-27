@@ -48,6 +48,8 @@ class User < ActiveRecord::Base
 
   validates :password, length: { in: 5..128 }, allow_blank: true
 
+  scope :unlocked, -> { where(locked: 0) }
+
   # Include default devise modules. Others available are:
   # :timeoutable and :omniauthable
   devise :confirmable, :database_authenticatable, :registerable,
