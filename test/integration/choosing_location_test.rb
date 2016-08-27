@@ -26,6 +26,24 @@ class ChoosingLocationTest < ActionDispatch::IntegrationTest
     end
   end
 
+  it "directly chooses location when there's a single match" do
+    mocking_yahoo_woeid_similar('tenerife_unique') do
+      visit location_ask_path
+      fill_in 'location', with: 'tenerife, islas canarias'
+      click_button 'Enviar'
+
+      assert_text 'regalo - Santa Cruz de Tenerife, Islas Canarias, España'
+    end
+  end
+
+  it 'directly chooses location through GET request' do
+    mocking_yahoo_woeid_similar('tenerife_unique') do
+      visit location_change_path(location: 'tenerife, islas canarias')
+
+      assert_text 'regalo - Santa Cruz de Tenerife, Islas Canarias, España'
+    end
+  end
+
   it 'memorizes chosen location in the user' do
     user = create(:user)
     login_as user

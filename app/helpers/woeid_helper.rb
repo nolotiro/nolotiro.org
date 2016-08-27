@@ -32,6 +32,6 @@ module WoeidHelper
     raw_locations = Yahoo::Fetcher.new(query).fetch
     return if raw_locations.nil?
 
-    Yahoo::ResultSet.new(raw_locations)
+    Yahoo::ResultSet.new(Array.wrap(raw_locations))
   end
 end

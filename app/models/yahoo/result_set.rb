@@ -5,12 +5,14 @@ module Yahoo
   # Wrapper around a set of Yahoo YQL woeids
   #
   class ResultSet
+    include Enumerable
+
     def initialize(result_set)
-      @result_set = result_set
+      @locations = result_set.map { |result| Location.new(result) }
     end
 
     def as_options
-      locations.map do |location|
+      map do |location|
         woeid = location.woeid
         count = I18n.t('nlt.ads.count', count: ad_counts[woeid])
         label = "#{location.fullname} (#{count})"
@@ -19,18 +21,14 @@ module Yahoo
       end
     end
 
-    def count
-      locations.size
-    end
-
     private
 
-    def locations
-      @locations ||= @result_set.map { |result| Location.new(result) }
+    def each
+      @locations.each { |result| yield(result) }
     end
 
     def woeids
-      @woeids ||= locations.map(&:woeid)
+      @woeids ||= map(&:woeid)
     end
 
     def ad_counts
