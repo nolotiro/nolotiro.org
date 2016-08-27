@@ -10,7 +10,13 @@ module Yahoo
     end
 
     def as_options
-      locations.map { |location| [count_label_for(location), location.woeid] }
+      locations.map do |location|
+        woeid = location.woeid
+        count = I18n.t('nlt.ads.count', count: ad_counts[woeid])
+        label = "#{location.fullname} (#{count})"
+
+        [label, woeid]
+      end
     end
 
     def count
@@ -25,13 +31,6 @@ module Yahoo
 
     def woeids
       @woeids ||= locations.map(&:woeid)
-    end
-
-    def count_label_for(location)
-      fullname = location.fullname
-      count = I18n.t('nlt.ads.count', count: ad_counts[location.woeid])
-
-      "#{fullname} (#{count})"
     end
 
     def ad_counts
