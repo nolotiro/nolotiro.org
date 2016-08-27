@@ -22,12 +22,12 @@ module WoeidHelper
   end
 
   def self.search_by_name(name)
-    if name
-      GeoPlanet.appid = Rails.application.secrets['geoplanet_app_id']
-      raw_locations = GeoPlanet::Place.search(name, lang: I18n.locale, type: 7, count: 0)
-      return if raw_locations.nil?
+    return unless name
 
-      YahooResultSet.new(raw_locations)
-    end
+    GeoPlanet.appid = Rails.application.secrets['geoplanet_app_id']
+    raw_locations = GeoPlanet::Place.search(name, lang: I18n.locale, type: 7, count: 0)
+    return if raw_locations.nil?
+
+    YahooResultSet.new(raw_locations)
   end
 end
