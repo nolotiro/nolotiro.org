@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 ActiveAdmin.register Comment, as: 'AdComment' do
-  # permit_params
+  permit_params :body
 
   filter :created_at
 
