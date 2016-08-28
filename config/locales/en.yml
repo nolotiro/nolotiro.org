@@ -263,7 +263,7 @@ en:
         private_messages_or_comments: Through both private messages or public comments in the ad
         image_permitted_formats: 'Supported formats: gif, jpg, png. Max size: 5Mb'
         prohibited: 'There is a problem, please review this:'
-        select_an_image: Choose an image for you ad (optional)
+        select_an_image: Choose an image for you ad
         status: Status
         title: 'Title of your ad:'
         title_max: Maximum 100 characters

@@ -267,7 +267,7 @@ pt:
         private_messages_or_comments: Por messagem privada o ou através de comentários públicos no anúncio
         image_permitted_formats: gif, jpg, png somente. No máximo 1Mb de tamanho.
         prohibited: 'Há um problema, verificar isso:'
-        select_an_image: Adicionar uma imagem para o anúncio (opcional).
+        select_an_image: Adicionar uma imagem para o anúncio
         status: Estado
         title: 'Titulo do anúncio:'
         title_max: 100 caracteres, no máximo

@@ -267,7 +267,7 @@ ca:
         private_messages_or_comments: Per missatge privat o a través de comentaris públics a l'anunci
         image_permitted_formats: 'Formats permesos: gif, jpg, png. Max: 5Mb de mida.'
         prohibited: 'Hi ha un problema, revisa això:'
-        select_an_image: Selecciona una imatge per al teu anunci (opcional).
+        select_an_image: Selecciona una imatge per al teu anunci
         status: Estat
         title: 'Título de tu anuncio:'
         title_max: Màxim 100 caràcters

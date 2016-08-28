@@ -267,7 +267,7 @@ it:
         private_messages_or_comments: Por messaggi privati oppure por commenti nell'annucio
         image_permitted_formats: 'Formatti permessi: gif, jpg, png. Massimo: 5Mb di dimensione'
         prohibited: 'C''e un problema, controlla questo:'
-        select_an_image: Seleziona una immagine per il tuo annuncio (opzionale).
+        select_an_image: Seleziona una immagine per il tuo annuncio
         status: Stato
         title: 'Titolo del tuo annuncio: '
         title_max: 'Massimo 100 caratteri '

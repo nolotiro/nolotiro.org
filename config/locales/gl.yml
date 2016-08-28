@@ -274,7 +274,7 @@ gl:
         private_messages_or_comments: Por mensaxe privada o mediante comentarios públicos no anuncio
         image_permitted_formats: 'Formatos permitidos: gif, jpg, png. Max: 5Mb de tamaño.'
         prohibited: 'Hai un problema, consulta isto:'
-        select_an_image: Seleccione unha imaxe para o súo regalo (opcional).
+        select_an_image: Seleccione unha imaxe para o súo regalo
         status: Estado
         title: 'Título do anuncio:'
         title_max: Máximo 100 caracteres

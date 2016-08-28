@@ -267,7 +267,7 @@ es:
         private_messages_or_comments: Por mensaje privado o mediante comentarios públicos en el anuncio
         image_permitted_formats: 'Formatos permitidos: gif, jpg, png. Max: 5Mb de tamaño.'
         prohibited: 'Hay un problema, revisa esto:'
-        select_an_image: Selecciona una imagen para tu anuncio (opcional).
+        select_an_image: Selecciona una imagen para tu anuncio
         status: Estado
         title: 'Título de tu anuncio:'
         title_max: Máximo 100 caracteres
