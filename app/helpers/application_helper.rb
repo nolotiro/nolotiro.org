@@ -22,7 +22,7 @@ module ApplicationHelper
   end
 
   def recaptcha
-    recaptcha_tags(display: { theme: 'white' }, ajax: true)
+    recaptcha_tags(display: { theme: 'white' }, ajax: true, hl: I18n.locale)
   end
 
   def escape_privacy_data(text)
