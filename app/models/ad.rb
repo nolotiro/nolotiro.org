@@ -34,7 +34,8 @@ class Ad < ActiveRecord::Base
 
   validates :status, inclusion: { in: [1, 2, 3] }, presence: true
 
-  validates :type, inclusion: { in: [1, 2] }, presence: true
+  validates :type, presence: true
+  validates :type, inclusion: { in: [1, 2] }, allow_blank: true
 
   # validate :valid_ip_address
 
