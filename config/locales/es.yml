@@ -266,13 +266,11 @@ es:
         private_messages_only: Sólo por mensaje privado
         private_messages_or_comments: Por mensaje privado o mediante comentarios públicos en el anuncio
         image_permitted_formats: 'Formatos permitidos: gif, jpg, png. Max: 5Mb de tamaño.'
-        please_ad_type: por favor, selecciona el tipo de anuncio
         prohibited: 'Hay un problema, revisa esto:'
         select_an_image: Selecciona una imagen para tu anuncio (opcional).
         status: Estado
         title: 'Título de tu anuncio:'
         title_max: Máximo 100 caracteres
-        to_publish: Para publicar tu anuncio, por favor, introduce estos datos
         type_ad: 'Tipo de anuncio:'
       updated: Hemos actualizado el anuncio
     all: todos
@@ -498,7 +496,6 @@ es:
       duplicated_username: Tu nombre de usuario de %{provider} ya se encuentra en nuestra base de datos. Si te has registrado ya usando otra red social o mediante email y contraseña, por favor, inicia sesión de esa manera. En caso contrario, indica otro nombre de usuario para completar el registro.
   recaptcha:
     errors:
-      incorrect-captcha-sol: Hubo un error rellenando los caracteres del captcha.
       verification_failed: Falló la verificación contra robots, prueba de nuevo
   support:
     array:

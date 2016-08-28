@@ -262,13 +262,11 @@ en:
         private_messages_only: Through private messages only
         private_messages_or_comments: Through both private messages or public comments in the ad
         image_permitted_formats: 'Supported formats: gif, jpg, png. Max size: 5Mb'
-        please_ad_type: Please, choose the type of ad
         prohibited: 'There is a problem, please review this:'
         select_an_image: Choose an image for you ad (optional)
         status: Status
         title: 'Title of your ad:'
         title_max: Maximum 100 characters
-        to_publish: To post your ad, please complete this fields
         type_ad: 'Type of ad:'
       updated: We have updated your ad
     all: all
@@ -498,7 +496,6 @@ en:
       duplicated_username: The username provided by %{provider} is already in our database. If you already registered through another social network or through email & password, please login using those. Otherwise just specify another username.
   recaptcha:
     errors:
-      incorrect-captcha-sol: There is a mistake in your captcha's answer
       verification_failed: Robot verification failed, try again
   support:
     array:

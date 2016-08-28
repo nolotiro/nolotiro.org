@@ -268,13 +268,11 @@ fr:
         private_messages_only: 
         private_messages_or_comments: 
         image_permitted_formats: 
-        please_ad_type: 
         prohibited: 
         select_an_image: 
         status: 
         title: 
         title_max: 
-        to_publish: 
         type_ad: 
       updated: 
     all: 
@@ -500,7 +498,6 @@ fr:
       duplicated_username: 
   recaptcha:
     errors:
-      incorrect-captcha-sol: 
       verification_failed: 
   support:
     array:
