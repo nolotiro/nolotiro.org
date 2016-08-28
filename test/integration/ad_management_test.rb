@@ -44,7 +44,7 @@ class AdManagementTest < AuthenticatedTest
     attach_file :image, file_path
     fill_in 'Título de tu anuncio:', with: 'File'
     fill_in 'Cuerpo del anuncio', with: 'My gift is a file full of equis'
-    click_button 'Enviar'
+    click_button 'Publicar anuncio'
   end
 
   def with_file_of_size(size)
