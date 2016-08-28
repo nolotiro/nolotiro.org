@@ -10,7 +10,7 @@ class ConversationsController < ApplicationController
                                 .order(updated_at: :desc)
                                 .paginate(page: params[:page])
 
-    @unread_counts = Message.where(conversation_id: @conversations.ids)
+    @unread_counts = Message.where(conversation_id: @conversations.map(&:id))
                             .unread_by(current_user)
                             .group(:conversation_id)
                             .size

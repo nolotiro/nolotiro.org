@@ -89,7 +89,7 @@ class User < ActiveRecord::Base
 
   def self.build_rank(ads_scope)
     joins(:ads)
-      .merge(ads_scope.rank_by(:user_owner))
+      .merge(ads_scope.rank_by(:id, :username, :user_owner))
       .pluck(:id, :username, 'COUNT(user_owner) as n_ads')
   end
 
