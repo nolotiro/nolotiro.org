@@ -16,7 +16,7 @@ class EditionsByAdmin < ActionDispatch::IntegrationTest
   it 'changes only the edited attribute' do
     mocking_yahoo_woeid_info(@ad.woeid_code) do
       visit ads_edit_path(@ad)
-      select 'busco...', from: 'ad_type'
+      choose 'busco...'
       click_button 'Publicar anuncio'
 
       assert_equal 766_273, @ad.reload.woeid_code

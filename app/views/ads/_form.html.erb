@@ -33,7 +33,13 @@
         <%= f.label :type, t('nlt.ads.form.type_ad'), class: 'required' %>
       </dt>
       <dd>
-        <%= f.select :type, options_for_select([["#{t('nlt.give')}...", 1], ["#{t('nlt.want')}...", 2]]) %>
+        <%= f.label :type, value: 1 do %>
+          <%= f.radio_button :type, 1 %><%= "#{t('nlt.give')}..." %>
+        <% end %>
+
+        <%= f.label :type, value: 2 do %>
+          <%= f.radio_button :type, 2 %><%= "#{t('nlt.want')}..." %>
+        <% end %>
       </dd>
 
       <dt>
