@@ -10,10 +10,7 @@ module Yahoo
     end
 
     def fullname
-      "#{name}, #{admin1}, #{country}"
-    rescue TypeError => e
-      msg = "[Yahoo] Errored in request with #{@place} result: #{e.message}"
-      raise TypeError, msg
+      [name, admin1, country].compact.join(', ')
     end
 
     def name
@@ -31,7 +28,7 @@ module Yahoo
     private
 
     def admin1
-      @place['admin1']['content']
+      @place['admin1'].try(:[], 'content')
     end
 
     def country
