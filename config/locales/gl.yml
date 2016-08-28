@@ -350,7 +350,6 @@ gl:
       question_7: 
       title: 
     faqs: 
-    fill_captcha: Por favor, encha os seguintes caracteres
     footer_explain: 
     forgot_your_password: Esqueceches o contrasinal?
     friends: Amigos
@@ -395,7 +394,6 @@ gl:
     permission_denied: 
     please_fill_to_become_member: Por favor, enche este formulario para facer membro do nolotiro
     please_insert_email_and_password: Por favor, engada o seu correo electrónico e contrasinal.
-    please_introduce: 'Por favor, introduza os caracteres que aparecen:'
     privacy: política de privacidade
     privacy_page:
       body_html: 

@@ -341,7 +341,6 @@ fr:
       question_7: 
       title: 
     faqs: 
-    fill_captcha: 
     footer_explain: 
     forgot_your_password: 
     friends: 
@@ -384,7 +383,6 @@ fr:
     permission_denied: 
     please_fill_to_become_member: 
     please_insert_email_and_password: 
-    please_introduce: 
     privacy: 
     privacy_page:
       body_html: 

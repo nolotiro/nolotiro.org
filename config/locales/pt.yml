@@ -339,7 +339,6 @@ pt:
       question_7: Posso enviar coisas à gente que não mora na minha cidade?
       title: Perguntas frequentes
     faqs: perguntas frequentes
-    fill_captcha: Confirma que você não é um robô
     footer_explain: 'nolotiro.org é um site onde dou presentes e busco presentes grátis de segunda mão: móveis, cadeiras, sofás, bicicletas, notebooks, mesas, fogões, camas, roupas, brinquedos, berços ou carrinhos de bebe, celulares e muito mais que você já não precisa para que sejam reutilizados por outras pessoas.'
     forgot_your_password: Você esqueceu sua senha?
     friends: Amigos
@@ -382,7 +381,6 @@ pt:
     permission_denied: Você não tem permissão para executar esta ação
     please_fill_to_become_member: Por favor, preencha este formulário para se tornar um miembro do nolotiro
     please_insert_email_and_password: Por favor insira o seu email e a senha
-    please_introduce: Por favor, insira os caracteres que você vê
     privacy: política de privacidade
     privacy_page:
       body_html: 
