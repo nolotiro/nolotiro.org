@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 ActiveAdmin.register Comment, as: 'AdComment' do
-  # permit_params
+  permit_params :body
 
   filter :created_at
 
@@ -18,6 +18,12 @@ ActiveAdmin.register Comment, as: 'AdComment' do
     column :ip
     column :created_at
     actions
+  end
+
+  form do |f|
+    f.inputs { f.input :body }
+
+    f.actions
   end
 
   action_item :view, only: :show do
