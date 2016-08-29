@@ -270,7 +270,7 @@ it:
         select_an_image: Seleziona una immagine per il tuo annuncio
         status: Stato
         title: 'Titolo del tuo annuncio: '
-        title_max: 'Massimo 100 caratteri '
+        title_tip: Descrivi brevemente ciò che dai o cerchi (max. 100 caratteri)
         type_ad: 'Tipo di annuncio:'
       updated: Abbiamo aggiornato il tuo annuncio
     all: tutti

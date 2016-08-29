@@ -270,7 +270,7 @@ es:
         select_an_image: Selecciona una imagen para tu anuncio
         status: Estado
         title: 'Título de tu anuncio:'
-        title_max: Máximo 100 caracteres
+        title_tip: Describe brevemente lo que regalas o buscas (max. 100 caracteres)
         type_ad: 'Tipo de anuncio:'
       updated: Hemos actualizado el anuncio
     all: todos

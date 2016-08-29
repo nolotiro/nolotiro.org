@@ -270,7 +270,7 @@ ca:
         select_an_image: Selecciona una imatge per al teu anunci
         status: Estat
         title: 'Título de tu anuncio:'
-        title_max: Màxim 100 caràcters
+        title_tip: Descriu breument el que regales o busques (max. 100 caràcters)
         type_ad: 'Tipus d''anunci:'
       updated: Hem actualitzat l'anunci
     all: tots

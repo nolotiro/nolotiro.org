@@ -266,7 +266,7 @@ en:
         select_an_image: Choose an image for you ad
         status: Status
         title: 'Title of your ad:'
-        title_max: Maximum 100 characters
+        title_tip: "Describe briefly what you're giving away or looking for (max. 100 chars)"
         type_ad: 'Type of ad:'
       updated: We have updated your ad
     all: all

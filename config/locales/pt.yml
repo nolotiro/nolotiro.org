@@ -270,7 +270,7 @@ pt:
         select_an_image: Adicionar uma imagem para o anúncio
         status: Estado
         title: 'Titulo do anúncio:'
-        title_max: 100 caracteres, no máximo
+        title_tip: Descreva resumidamente o que você doar ou procurar (100 caracteres no máximo)
         type_ad: 'Tipo do anúncio:'
       updated: Anúncio atualizado
     all: todos

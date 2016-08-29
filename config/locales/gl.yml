@@ -277,7 +277,7 @@ gl:
         select_an_image: Seleccione unha imaxe para o súo regalo
         status: Estado
         title: 'Título do anuncio:'
-        title_max: Máximo 100 caracteres
+        title_tip: Describe resumidamente o que doas ou buscas (máx. 100 caracteres)
         type_ad: 'Tipo de anuncio:'
       updated: actualizamos o anuncio
     all: todos
