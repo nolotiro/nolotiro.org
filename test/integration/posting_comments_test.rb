@@ -22,5 +22,6 @@ class PostingCommentsTest < ActionDispatch::IntegrationTest
     click_button 'Enviar'
 
     assert_selector '.ad_comment', text: 'No tiene ruedas'
+    logout
   end
 end

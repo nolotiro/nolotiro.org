@@ -12,6 +12,8 @@ class EditionsByAdmin < ActionDispatch::IntegrationTest
     login_as create(:admin, woeid: 766_272)
   end
 
+  after { logout }
+
   it 'changes only the edited attribute' do
     mocking_yahoo_woeid_info(@ad.woeid_code) do
       visit ads_edit_path(@ad)

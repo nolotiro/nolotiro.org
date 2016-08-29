@@ -22,6 +22,7 @@ class AnnouncementsTest < ActionDispatch::IntegrationTest
     visit root_path
 
     assert_text @active_announcement.message
+    logout
   end
 
   it 'properly dismisses announcements' do
@@ -30,6 +31,7 @@ class AnnouncementsTest < ActionDispatch::IntegrationTest
     click_link '×'
 
     assert_no_text @active_announcement.message
+    logout
   end
 
   it 'displays a single announcement at a time' do
@@ -44,5 +46,6 @@ class AnnouncementsTest < ActionDispatch::IntegrationTest
     click_link '×'
     assert_text @active_announcement.message
     assert_no_text @active_announcement2.message
+    logout
   end
 end

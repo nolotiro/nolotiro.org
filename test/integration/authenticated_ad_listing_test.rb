@@ -23,6 +23,8 @@ class AuthenticatedAdListing < ActionDispatch::IntegrationTest
     end
   end
 
+  after { logout }
+
   it 'lists first page of available ads in users location in home page' do
     assert_selector '.ad_excerpt_list', count: 1, text: 'ava_mad1'
   end

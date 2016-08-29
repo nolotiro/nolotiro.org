@@ -55,6 +55,8 @@ class ChoosingLocationTest < ActionDispatch::IntegrationTest
 
       assert_text 'regalo - Santa Cruz de Tenerife, Islas Canarias, España'
     end
+
+    logout
   end
 
   private

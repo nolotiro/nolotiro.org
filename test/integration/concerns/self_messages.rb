@@ -16,6 +16,12 @@ module SelfMessages
     visit new_conversation_path(recipient_id: @user1.id)
   end
 
+  def teardown
+    super
+
+    logout
+  end
+
   def test_self_messages_after_a_previous_error
     visit new_conversation_path(recipient_id: @user1.id)
     send_message(body: 'hola, yo')

@@ -1,17 +1,10 @@
 # frozen_string_literal: true
 require 'test_helper'
-require 'integration/concerns/authentication'
+require 'integration/concerns/authenticated_test'
 require 'support/web_mocking'
 
-class FriendshipsTest < ActionDispatch::IntegrationTest
-  include Authentication
-
-  before do
-    @user = create(:user)
-    @friend = create(:user, username: 'other')
-
-    login_as @user
-  end
+class FriendshipsTest < AuthenticatedTest
+  before { @friend = create(:user, username: 'other') }
 
   it "creates friendships from target user's profile" do
     visit profile_path(@friend)
@@ -23,7 +16,7 @@ class FriendshipsTest < ActionDispatch::IntegrationTest
   end
 
   it "destroys friendships from target user's profile" do
-    create(:friendship, user: @user, friend: @friend)
+    create(:friendship, user: @current_user, friend: @friend)
     visit profile_path(@friend)
     click_link 'eliminar other de tu lista de amigos'
 

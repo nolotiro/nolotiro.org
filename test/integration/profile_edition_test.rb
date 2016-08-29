@@ -13,6 +13,8 @@ class ProfileEditionTest < ActionDispatch::IntegrationTest
     login_as(user)
   end
 
+  after { logout }
+
   it 'allows changing the username' do
     submit_form(username: 'teresa_fontanera', password: 'topsecret')
 
