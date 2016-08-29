@@ -40,7 +40,9 @@
     <div class='form-group'>
       <%= f.label :title, t('nlt.ads.form.title'), class: 'required' %>
 
-      <%= f.text_field :title, required: true, maxlength: 100, size: 45 %>
+      <%= f.text_field :title, required: true,
+                               maxlength: 100,
+                               class: 'form-control' %>
       <p class='help-block'>
         <%= t 'nlt.ads.form.title_max' %>
       </p>
@@ -55,7 +57,11 @@
     <div class='form-group'>
       <%= f.label :body, t('nlt.ads.form.body'), class: 'required', id: 'adbo', for: 'adbo' %>
 
-      <%= f.text_area :body, required: true, maxlength: 500, id: 'adbo' %>
+      <%= f.text_area :body, required: true,
+                             maxlength: 500,
+                             rows: 10,
+                             class: 'form-control',
+                             id: 'adbo' %>
       <p class='help-block'>
         <%= t 'nlt.ads.form.body_max' %>
       </p>
