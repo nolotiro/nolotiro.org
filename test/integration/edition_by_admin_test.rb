@@ -1,16 +1,17 @@
 # frozen_string_literal: true
 require 'test_helper'
-require 'integration/concerns/authentication'
 require 'support/web_mocking'
 
 class EditionsByAdmin < ActionDispatch::IntegrationTest
   include WebMocking
-  include Authentication
+  include Warden::Test::Helpers
 
   before do
     @ad = create(:ad, woeid_code: 766_273, type: 1)
     login_as create(:admin, woeid: 766_272)
   end
+
+  after { logout }
 
   it 'changes only the edited attribute' do
     mocking_yahoo_woeid_info(@ad.woeid_code) do

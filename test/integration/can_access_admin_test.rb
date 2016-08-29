@@ -1,10 +1,9 @@
 # frozen_string_literal: true
 require 'test_helper'
-require 'integration/concerns/authentication'
 require 'support/web_mocking'
 
 class CanAccessAdmin < ActionDispatch::IntegrationTest
-  include Authentication
+  include Warden::Test::Helpers
   include WebMocking
 
   it 'should not get /admin/jobs as a anonymous user' do
@@ -15,6 +14,7 @@ class CanAccessAdmin < ActionDispatch::IntegrationTest
   it 'should not get /admin/jobs as a normal user' do
     login_as user
     assert_raises(ActionController::RoutingError) { visit '/admin/jobs' }
+    logout
   end
 
   it 'should get /admin/jobs as admin' do
@@ -23,6 +23,7 @@ class CanAccessAdmin < ActionDispatch::IntegrationTest
     assert_text 'Sidekiq'
     assert_text 'Redis'
     assert_text 'Memory Usage'
+    logout
   end
 
   it 'should not get /admin as a anonymous user' do
@@ -34,12 +35,14 @@ class CanAccessAdmin < ActionDispatch::IntegrationTest
     login_as user
     mocking_yahoo_woeid_info(user.woeid) { visit '/admin' }
     assert_text I18n.t('nlt.permission_denied')
+    logout
   end
 
   it 'should get /admin as admin' do
     login_as admin
     visit '/admin'
     assert_text 'Últimos anuncios publicados'
+    logout
   end
 
   private

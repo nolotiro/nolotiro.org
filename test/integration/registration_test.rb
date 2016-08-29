@@ -1,10 +1,9 @@
 # frozen_string_literal: true
 require 'test_helper'
-
-require 'integration/concerns/authentication'
+require 'integration/concerns/login_helper'
 
 class RegistrationTest < ActionDispatch::IntegrationTest
-  include Authentication
+  include LoginHelper
 
   before do
     visit root_path

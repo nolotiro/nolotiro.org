@@ -1,18 +1,14 @@
 # frozen_string_literal: true
 
 require 'test_helper'
-require 'integration/concerns/authentication'
+require 'integration/concerns/authenticated_test'
 require 'support/web_mocking'
 
-class UserBlockingsTest < ActionDispatch::IntegrationTest
-  include Authentication
+class UserBlockingsTest < AuthenticatedTest
   include WebMocking
 
   before do
-    @current_user = create(:user)
     @other = create(:user, username: 'other')
-
-    login_as @current_user
   end
 
   it 'does not show profile page when visitor is blocked' do

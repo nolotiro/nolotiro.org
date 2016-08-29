@@ -1,20 +1,14 @@
 # frozen_string_literal: true
 require 'test_helper'
-require 'integration/concerns/authentication'
+require 'integration/concerns/authenticated_test'
 require 'support/web_mocking'
 
-class AdManagementTest < ActionDispatch::IntegrationTest
+class AdManagementTest < AuthenticatedTest
   include WebMocking
-  include Authentication
-
-  before do
-    @user = create(:user)
-    login_as @user
-  end
 
   it 'can have pictures of 5 megabytes or less' do
     with_file_of_size(5.megabytes) do |path|
-      mocking_yahoo_woeid_info(@user.woeid) do
+      mocking_yahoo_woeid_info(@current_user.woeid) do
         submit_ad_form(path)
 
         assert_no_text('Imagen debe estar entre 0 Bytes y 5 MB')
@@ -24,7 +18,7 @@ class AdManagementTest < ActionDispatch::IntegrationTest
 
   it 'cannot have pictures bigger than 5 megabytes' do
     with_file_of_size(6.megabytes) do |path|
-      mocking_yahoo_woeid_info(@user.woeid) do
+      mocking_yahoo_woeid_info(@current_user.woeid) do
         submit_ad_form(path)
 
         assert_text('Imagen debe estar entre 0 Bytes y 5 MB')
@@ -33,7 +27,7 @@ class AdManagementTest < ActionDispatch::IntegrationTest
   end
 
   it 'republishes ads' do
-    ad = create(:ad, user: @user, published_at: 6.days.ago)
+    ad = create(:ad, user: @current_user, published_at: 6.days.ago)
 
     mocking_yahoo_woeid_info(ad.woeid_code) do
       visit ad_path(ad)

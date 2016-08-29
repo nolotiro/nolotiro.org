@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 require 'test_helper'
-require 'integration/concerns/authentication'
+require 'integration/concerns/login_helper'
 
 class UserLockable < ActionDispatch::IntegrationTest
-  include Authentication
+  include LoginHelper
 
   it 'should lock after 10 tries on user' do
     @user = create(:user)

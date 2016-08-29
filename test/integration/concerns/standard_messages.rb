@@ -16,6 +16,12 @@ module StandardMessages
     visit new_conversation_path(recipient_id: @user2.id)
   end
 
+  def teardown
+    super
+
+    logout
+  end
+
   def test_shows_errors_when_message_has_no_subject
     send_message(body: 'hola, user2')
 
@@ -61,6 +67,7 @@ module StandardMessages
     send_message(subject: 'Cosas', body: 'hola, user2')
     assert_text 'Conversación con user2'
 
+    logout
     login_as @user2
 
     visit conversation_path(Conversation.first)
@@ -119,10 +126,12 @@ module StandardMessages
     click_link 'Borrar conversación'
     assert_no_text 'hola mundo'
 
+    logout
     login_as @user2
     visit conversation_path(Conversation.first)
     send_message(body: 'hombre, tú por aquí')
 
+    logout
     login_as @user1
     visit conversation_path(Conversation.first)
     assert_no_text 'What a nice message!'

@@ -1,11 +1,10 @@
 # frozen_string_literal: true
 require 'test_helper'
-require 'integration/concerns/authentication'
 require 'support/web_mocking'
 
 class ChoosingLocationTest < ActionDispatch::IntegrationTest
   include WebMocking
-  include Authentication
+  include Warden::Test::Helpers
 
   it 'suggests locations matching name' do
     mocking_yahoo_woeid_similar('tenerife') do
@@ -55,6 +54,8 @@ class ChoosingLocationTest < ActionDispatch::IntegrationTest
 
       assert_text 'regalo - Santa Cruz de Tenerife, Islas Canarias, España'
     end
+
+    logout
   end
 
   private

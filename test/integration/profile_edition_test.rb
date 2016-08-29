@@ -1,10 +1,8 @@
 # frozen_string_literal: true
 require 'test_helper'
 
-require 'integration/concerns/authentication'
-
 class ProfileEditionTest < ActionDispatch::IntegrationTest
-  include Authentication
+  include Warden::Test::Helpers
 
   before do
     user = create(:user, username: 'teresa_electricista',
@@ -12,6 +10,8 @@ class ProfileEditionTest < ActionDispatch::IntegrationTest
                          email: 'terec@example.com')
     login_as(user)
   end
+
+  after { logout }
 
   it 'allows changing the username' do
     submit_form(username: 'teresa_fontanera', password: 'topsecret')

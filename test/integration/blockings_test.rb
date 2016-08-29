@@ -1,16 +1,12 @@
 # frozen_string_literal: true
 require 'test_helper'
-require 'integration/concerns/authentication'
+require 'integration/concerns/authenticated_test'
 require 'support/web_mocking'
 
-class BlockingsTest < ActionDispatch::IntegrationTest
-  include Authentication
-
+class BlockingsTest < AuthenticatedTest
   before do
-    @user = create(:user)
     @enemy = create(:user, username: 'other')
 
-    login_as @user
     visit profile_path(@enemy)
   end
 
@@ -24,7 +20,7 @@ class BlockingsTest < ActionDispatch::IntegrationTest
   end
 
   it "unblocks from target user's profile" do
-    create(:blocking, blocker: @user, blocked: @enemy)
+    create(:blocking, blocker: @current_user, blocked: @enemy)
     visit profile_path(@enemy)
     click_link 'desbloquear a other'
 

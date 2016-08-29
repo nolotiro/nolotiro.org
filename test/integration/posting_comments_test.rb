@@ -1,10 +1,9 @@
 # frozen_string_literal: true
 require 'test_helper'
-require 'integration/concerns/authentication'
 require 'support/web_mocking'
 
 class PostingCommentsTest < ActionDispatch::IntegrationTest
-  include Authentication
+  include Warden::Test::Helpers
   include WebMocking
 
   before { @ad = FactoryGirl.create(:ad, comments_enabled: true) }
@@ -22,5 +21,6 @@ class PostingCommentsTest < ActionDispatch::IntegrationTest
     click_button 'Enviar'
 
     assert_selector '.ad_comment', text: 'No tiene ruedas'
+    logout
   end
 end
