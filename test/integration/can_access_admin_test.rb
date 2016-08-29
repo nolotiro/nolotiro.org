@@ -1,10 +1,9 @@
 # frozen_string_literal: true
 require 'test_helper'
-require 'integration/concerns/authentication'
 require 'support/web_mocking'
 
 class CanAccessAdmin < ActionDispatch::IntegrationTest
-  include Authentication
+  include Warden::Test::Helpers
   include WebMocking
 
   it 'should not get /admin/jobs as a anonymous user' do

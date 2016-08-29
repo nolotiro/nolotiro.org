@@ -1,12 +1,11 @@
 # frozen_string_literal: true
 require 'test_helper'
-require 'integration/concerns/authentication'
 require 'integration/concerns/pagination'
 require 'support/web_mocking'
 
 class AuthenticatedAdListing < ActionDispatch::IntegrationTest
   include WebMocking
-  include Authentication
+  include Warden::Test::Helpers
   include Pagination
 
   before do

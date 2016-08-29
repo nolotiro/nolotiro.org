@@ -1,9 +1,8 @@
 # frozen_string_literal: true
 require 'test_helper'
-require 'integration/concerns/authentication'
 
 class AnnouncementsTest < ActionDispatch::IntegrationTest
-  include Authentication
+  include Warden::Test::Helpers
 
   before do
     @active_announcement = create(:announcement, message: 'Blocking released!',

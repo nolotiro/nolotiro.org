@@ -1,11 +1,10 @@
 # frozen_string_literal: true
 require 'test_helper'
-require 'integration/concerns/authentication'
 require 'support/web_mocking'
 
 class EditionsByAdmin < ActionDispatch::IntegrationTest
   include WebMocking
-  include Authentication
+  include Warden::Test::Helpers
 
   before do
     @ad = create(:ad, woeid_code: 766_273, type: 1)
