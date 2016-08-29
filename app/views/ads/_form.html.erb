@@ -28,13 +28,17 @@
     <div class='form-group'>
       <%= f.label :type, t('nlt.ads.form.type_ad'), class: 'required' %>
 
-      <%= f.label :type, value: 1 do %>
-        <%= f.radio_button :type, 1 %><%= "#{t('nlt.give')}..." %>
-      <% end %>
+      <div class='radio'>
+        <%= f.label :type, value: 1 do %>
+          <%= f.radio_button :type, 1 %><%= "#{t('nlt.give')}..." %>
+        <% end %>
+      </div>
 
-      <%= f.label :type, value: 2 do %>
-        <%= f.radio_button :type, 2 %><%= "#{t('nlt.want')}..." %>
-      <% end %>
+      <div class='radio'>
+        <%= f.label :type, value: 2 do %>
+          <%= f.radio_button :type, 2 %><%= "#{t('nlt.want')}..." %>
+        <% end %>
+      </div>
     </div>
 
     <div class='form-group'>
@@ -70,15 +74,19 @@
     <div class='form-group'>
       <%= f.label :comments_enabled, t('nlt.ads.form.comments_enabled'), class: 'required' %>
 
-      <%= f.label :comments_enabled, value: 0 do %>
-        <%= f.radio_button :comments_enabled, 0 %>
-        <%= t('nlt.ads.form.private_messages_only') %>
-      <% end %>
+      <div class='radio'>
+        <%= f.label :comments_enabled, value: 0 do %>
+          <%= f.radio_button :comments_enabled, 0 %>
+          <%= t('nlt.ads.form.private_messages_only') %>
+        <% end %>
+      </div>
 
-      <%= f.label :comments_enabled, value: 1 do %>
-        <%= f.radio_button :comments_enabled, 1 %>
-        <%= t('nlt.ads.form.private_messages_or_comments') %>
-      <% end %>
+      <div class='radio'>
+        <%= f.label :comments_enabled, value: 1 do %>
+          <%= f.radio_button :comments_enabled, 1 %>
+          <%= t('nlt.ads.form.private_messages_or_comments') %>
+        <% end %>
+      </div>
     </div>
 
     <div class='form-group'>
