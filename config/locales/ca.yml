@@ -271,13 +271,15 @@ ca:
         status: Estat
         title: 'Título de tu anuncio:'
         title_tip: Descriu breument el que regales o busques (max. 100 caràcters)
-        type_ad: 'Tipus d''anunci:'
+        type_ad: "Quin tipus d'anunci vols publicar?"
       updated: Hem actualitzat l'anunci
     all: tots
     all_ads: tots els anuncis
     and: i
     are_you_interested: T'interessa?
     available: disponible
+    a_gift: Un regal
+    a_request: Una petició
     back: tornar a la pàgina d'inici
     blog: bloc
     booked: reservat

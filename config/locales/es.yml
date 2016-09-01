@@ -271,13 +271,15 @@ es:
         status: Estado
         title: 'Título de tu anuncio:'
         title_tip: Describe brevemente lo que regalas o buscas (max. 100 caracteres)
-        type_ad: 'Tipo de anuncio:'
+        type_ad: ¿Qué tipo de anuncio quieres publicar?
       updated: Hemos actualizado el anuncio
     all: todos
     all_ads: todos los anuncios
     and: y
     are_you_interested: "¿Te interesa?"
     available: disponible
+    a_gift: Un regalo
+    a_request: Una petición
     back: volver a la página de inicio
     blog: blog
     booked: reservado

@@ -271,13 +271,15 @@ pt:
         status: Estado
         title: 'Titulo do anúncio:'
         title_tip: Descreva resumidamente o que você doar ou procurar (100 caracteres no máximo)
-        type_ad: 'Tipo do anúncio:'
+        type_ad: Que tipo de anúncio gostaria de postar?
       updated: Anúncio atualizado
     all: todos
     all_ads: todos os anúncios
     and: e
     are_you_interested: Está interessado?
     available: disponível
+    a_gift: Um presente
+    a_request: Uma petição
     back: voltar para a pagina de inicio
     blog: blog
     booked: reservado

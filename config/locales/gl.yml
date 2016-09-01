@@ -278,13 +278,15 @@ gl:
         status: Estado
         title: 'Título do anuncio:'
         title_tip: Describe resumidamente o que doas ou buscas (máx. 100 caracteres)
-        type_ad: 'Tipo de anuncio:'
+        type_ad: Que tipo de anuncio quere publicar?
       updated: actualizamos o anuncio
     all: todos
     all_ads: todos os anuncios
     and: e
     are_you_interested: Interesado?
     available: dispoñible
+    a_gift: Un presente
+    a_request: Una petición
     back: regresar á páxina de inicio
     blog: blog
     booked: reservado

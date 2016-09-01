@@ -267,12 +267,14 @@ en:
         status: Status
         title: 'Title of your ad:'
         title_tip: "Describe briefly what you're giving away or looking for (max. 100 chars)"
-        type_ad: 'Type of ad:'
+        type_ad: Which type of ad would you like to publish?
       updated: We have updated your ad
     all: all
     all_ads: all ads
     and: and
     are_you_interested: Are you interested?
+    a_gift: A gift
+    a_request: A request
     available: available
     back: Back to the main page
     blog: blog
