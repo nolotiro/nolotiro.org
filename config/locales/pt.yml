@@ -260,7 +260,7 @@ pt:
     gifts: presentes
     give: presente
     hello_to: Olá %{recipient},
-    help_translate: ajuda a traduzir
+    translations: traduções
     here: aqui
     home_title: anúncios de presentes novos e de segunda mão
     if_you_are_new: Se você é um novo usuário, por favor

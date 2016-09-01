@@ -260,7 +260,7 @@ ca:
     gifts: regals
     give: regal
     hello_to: Hola %{recipient},
-    help_translate: ajuda a traduir
+    translations: traduccions
     here: aquí
     home_title: anuncis de regals nous i de segona mà
     if_you_are_new: Si ets un nou usuari, si us plau
