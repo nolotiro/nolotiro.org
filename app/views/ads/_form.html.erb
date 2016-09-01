@@ -5,24 +5,24 @@
     <dl>
 
       <% if ad.image.exists? %>
-        <div class="ad_list_image">
+        <div class='ad_list_image'>
           <%= link_to image_tag(ad.image.url(:thumb), alt: ad.title), ad.image.url, rel: 'superbox[image]', alt: t('nlt.click_to_large') %>
         </div>
       <% end %>
 
       <dt>
-        <%= f.label :image, t('nlt.ads.form.select_an_image'), class: "optional" %>
+        <%= f.label :image, t('nlt.ads.form.select_an_image'), class: 'optional' %>
       </dt>
       <dd>
         <%= f.file_field :image %>
-        <p class="description">
+        <p class='description'>
           <%= t 'nlt.ads.form.image_permitted_formats' %>
         </p>
       </dd>
 
       <% if ad.id %>
         <dt>
-          <%= f.label :status, t('nlt.ads.form.status'), class: "required" %>
+          <%= f.label :status, t('nlt.ads.form.status'), class: 'required' %>
         </dt>
         <dd>
           <%= f.select(:status, options_for_select([[t('nlt.available'), 1], [t('nlt.booked'), 2], [t('nlt.delivered'), 3]], selected: ad.status))  %>
@@ -30,49 +30,49 @@
       <% end %>
 
       <dt>
-        <%= f.label :type, t('nlt.ads.form.type_ad'), class: "required" %>
+        <%= f.label :type, t('nlt.ads.form.type_ad'), class: 'required' %>
       </dt>
       <dd>
         <%= f.select(:type, options_for_select([["#{t('nlt.give')}...", 1], ["#{t('nlt.want')}...", 2]], selected: ad.type ? ad.type : params[:type]))  %>
       </dd>
 
       <dt>
-        <%= f.label :title, t('nlt.ads.form.title'), class: "required" %>
+        <%= f.label :title, t('nlt.ads.form.title'), class: 'required' %>
       </dt>
       <dd>
         <%= f.text_field :title, required: true, maxlength: 100, size: 45 %>
-        <p class="description">
+        <p class='description'>
           <%= t 'nlt.ads.form.title_max' %>
         </p>
       </dd>
 
       <!--
-        The following "adbo" CSS id is so that we don't get blocked by AdBlock.
+        The following 'adbo' CSS id is so that we don't get blocked by AdBlock.
         @todo Globally rename Ad to Present/Request so that we don't have
         further problems with this and we no longer need this kind of hacks
       -->
 
       <dt>
-        <%= f.label :body, t('nlt.ads.form.body'), class: "required", id: "adbo", for: "adbo" %>
+        <%= f.label :body, t('nlt.ads.form.body'), class: 'required', id: 'adbo', for: 'adbo' %>
       </dt>
       <dd>
-        <%= f.text_area :body, required: true, maxlength: 500, id: "adbo" %>
-        <p class="description">
+        <%= f.text_area :body, required: true, maxlength: 500, id: 'adbo' %>
+        <p class='description'>
           <%= t 'nlt.ads.form.body_max' %>
         </p>
       </dd>
 
       <dt>
-        <%= f.label :comments_enabled, t('nlt.ads.form.comments_enabled'), class: "required" %>
+        <%= f.label :comments_enabled, t('nlt.ads.form.comments_enabled'), class: 'required' %>
       </dt>
-      <span class="element">
+      <span class='element'>
         <%= f.check_box :comments_enabled %>
       </span>
 
-      <% unless params[:action] == "edit" %>
+      <% unless params[:action] == 'edit' %>
         <dt></dt>
         <dd>
-          <%= recaptcha_tags(display: { theme: "white" }, ajax: true)%>
+          <%= recaptcha_tags(display: { theme: 'white' }, ajax: true)%>
         </dd>
       <% end %>
 

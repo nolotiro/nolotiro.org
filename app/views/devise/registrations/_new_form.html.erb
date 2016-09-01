@@ -5,7 +5,7 @@
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <fieldset>
-    <div class="col-md-6 col-sm-6">
+    <div class='col-md-6 col-sm-6'>
       <%= devise_error_messages! %>
       <dl>
         <% unless omniauth_email? %>
@@ -42,7 +42,7 @@
         <% unless omniauth_registration? %>
           <dt></dt>
           <dd>
-            <%= recaptcha_tags(display: { theme: "white" }, ajax: true)%>
+            <%= recaptcha_tags(display: { theme: 'white' }, ajax: true)%>
           </dd>
           <dd>
             <!-- FIXME: this doesn't work -->
@@ -62,8 +62,8 @@
     </div>
 
     <% unless omniauth_registration? %>
-      <div class="col-md-6 col-sm-6">
-        <%= render "devise/shared/omniauth_links" %>
+      <div class='col-md-6 col-sm-6'>
+        <%= render 'devise/shared/omniauth_links' %>
       </div>
     <% end %>
   </fieldset>
