@@ -262,22 +262,24 @@ pt:
       form:
         body: 'Corpo de anúncio:'
         body_max: 500 caracteres, no máximo
-        comments_enabled: Permitir comentários públicos
+        comments_enabled: Como você gostaria de ser contactado?
+        private_messages_only: Apenas por messagem privada
+        private_messages_or_comments: Por messagem privada o ou através de comentários públicos no anúncio
         image_permitted_formats: gif, jpg, png somente. No máximo 1Mb de tamanho.
-        please_ad_type: por favor, seleciona o tipo do anúncio
         prohibited: 'Há um problema, verificar isso:'
-        select_an_image: Adicionar uma imagem para o anúncio (opcional).
+        select_an_image: Adicionar uma imagem para o anúncio
         status: Estado
         title: 'Titulo do anúncio:'
-        title_max: 100 caracteres, no máximo
-        to_publish: Para republicar o anúncio, por favor, insere esses dados
-        type_ad: 'Tipo do anúncio:'
+        title_tip: Descreva resumidamente o que você doar ou procurar (100 caracteres no máximo)
+        type_ad: Que tipo de anúncio gostaria de postar?
       updated: Anúncio atualizado
     all: todos
     all_ads: todos os anúncios
     and: e
     are_you_interested: Está interessado?
     available: disponível
+    a_gift: Um presente
+    a_request: Uma petição
     back: voltar para a pagina de inicio
     blog: blog
     booked: reservado
@@ -339,7 +341,6 @@ pt:
       question_7: Posso enviar coisas à gente que não mora na minha cidade?
       title: Perguntas frequentes
     faqs: perguntas frequentes
-    fill_captcha: Confirma que você não é um robô
     footer_explain: 'nolotiro.org é um site onde dou presentes e busco presentes grátis de segunda mão: móveis, cadeiras, sofás, bicicletas, notebooks, mesas, fogões, camas, roupas, brinquedos, berços ou carrinhos de bebe, celulares e muito mais que você já não precisa para que sejam reutilizados por outras pessoas.'
     forgot_your_password: Você esqueceu sua senha?
     friends: Amigos
@@ -382,7 +383,6 @@ pt:
     permission_denied: Você não tem permissão para executar esta ação
     please_fill_to_become_member: Por favor, preencha este formulário para se tornar um miembro do nolotiro
     please_insert_email_and_password: Por favor insira o seu email e a senha
-    please_introduce: Por favor, insira os caracteres que você vê
     privacy: política de privacidade
     privacy_page:
       body_html: 
@@ -508,7 +508,6 @@ pt:
       duplicated_username: 
   recaptcha:
     errors:
-      incorrect-captcha-sol: Houve um erro preenchendo os caracteres do captcha.
       verification_failed: Falha na verificação contra robots, tenta de novo
   support:
     array:

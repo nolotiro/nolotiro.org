@@ -269,24 +269,24 @@ gl:
       form:
         body: 'Corpo do anuncio:'
         body_max: Máximo 500 caracteres
-        comments_enabled: Permitir comentarios públicos
+        comments_enabled: Cómo quere ser contactada?
+        private_messages_only: Unicamente por mensaxe privada
+        private_messages_or_comments: Por mensaxe privada o mediante comentarios públicos no anuncio
         image_permitted_formats: 'Formatos permitidos: gif, jpg, png. Max: 5Mb de tamaño.'
-        please_ad_type: por favor , seleccione o tipo de anuncio
         prohibited: 'Hai un problema, consulta isto:'
-        select_an_image: Seleccione unha imaxe para o súo regalo (opcional).
+        select_an_image: Seleccione unha imaxe para o súo regalo
         status: Estado
         title: 'Título do anuncio:'
-        title_max: Máximo 100 caracteres
-        to_publish: 'Para publicar o súo regalo, debe introducir estes datos
-
-'
-        type_ad: 'Tipo de anuncio:'
+        title_tip: Describe resumidamente o que doas ou buscas (máx. 100 caracteres)
+        type_ad: Que tipo de anuncio quere publicar?
       updated: actualizamos o anuncio
     all: todos
     all_ads: todos os anuncios
     and: e
     are_you_interested: Interesado?
     available: dispoñible
+    a_gift: Un presente
+    a_request: Una petición
     back: regresar á páxina de inicio
     blog: blog
     booked: reservado
@@ -350,7 +350,6 @@ gl:
       question_7: 
       title: 
     faqs: 
-    fill_captcha: Por favor, encha os seguintes caracteres
     footer_explain: 
     forgot_your_password: Esqueceches o contrasinal?
     friends: Amigos
@@ -395,7 +394,6 @@ gl:
     permission_denied: 
     please_fill_to_become_member: Por favor, enche este formulario para facer membro do nolotiro
     please_insert_email_and_password: Por favor, engada o seu correo electrónico e contrasinal.
-    please_introduce: 'Por favor, introduza os caracteres que aparecen:'
     privacy: política de privacidade
     privacy_page:
       body_html: 
@@ -511,7 +509,6 @@ gl:
       duplicated_username: 
   recaptcha:
     errors:
-      incorrect-captcha-sol: 
       verification_failed: 
   support:
     array:

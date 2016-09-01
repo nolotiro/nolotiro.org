@@ -2,8 +2,37 @@
 class AdsController < ApplicationController
   include StringUtils
 
-  before_action :set_ad, only: [:show, :edit, :update, :bump, :destroy]
+  before_action :set_ad, except: [:new, :create, :index]
   before_action :authenticate_user!, except: [:index, :show]
+
+  def new
+    if current_user.woeid.nil?
+      redirect_to location_ask_path
+    else
+      @ad = Ad.new(comments_enabled: true)
+      authorize(@ad)
+    end
+  end
+
+  def create
+    @ad = Ad.new(ad_params)
+    @ad.user_owner = current_user.id
+    @ad.woeid_code = current_user.woeid
+    @ad.ip = request.remote_ip
+    @ad.status = 1
+    @ad.published_at = Time.zone.now
+    authorize(@ad)
+
+    respond_to do |format|
+      if verify_recaptcha(model: @ad) && @ad.save
+        format.html { redirect_to adslug_path(@ad, slug: @ad.slug), notice: t('nlt.ads.created') }
+        format.json { render action: 'show', status: :created, location: @ad }
+      else
+        format.html { render action: 'new' }
+        format.json { render json: @ad.errors, status: :unprocessable_entity }
+      end
+    end
+  end
 
   def index
     if user_signed_in?
@@ -28,16 +57,6 @@ class AdsController < ApplicationController
     @comments = policy_scope(@ad.comments).includes(:user)
   end
 
-  def new
-    if current_user.woeid.nil?
-      redirect_to location_ask_path
-    else
-      @ad = Ad.new
-      @ad.comments_enabled = true
-      authorize(@ad)
-    end
-  end
-
   def edit
   end
 
@@ -47,26 +66,6 @@ class AdsController < ApplicationController
 
       format.html { redirect_to :back, notice: t('nlt.ads.bumped') }
       format.json { head :no_content }
-    end
-  end
-
-  def create
-    @ad = Ad.new(ad_params)
-    @ad.user_owner = current_user.id
-    @ad.woeid_code = current_user.woeid
-    @ad.ip = request.remote_ip
-    @ad.status = 1
-    @ad.published_at = Time.zone.now
-    authorize(@ad)
-
-    respond_to do |format|
-      if verify_recaptcha(model: @ad) && @ad.save
-        format.html { redirect_to adslug_path(@ad, slug: @ad.slug), notice: t('nlt.ads.created') }
-        format.json { render action: 'show', status: :created, location: @ad }
-      else
-        format.html { render action: 'new' }
-        format.json { render json: @ad.errors, status: :unprocessable_entity }
-      end
     end
   end
 

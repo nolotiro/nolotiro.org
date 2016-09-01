@@ -32,13 +32,10 @@ class Ad < ActiveRecord::Base
   validates :woeid_code, presence: true
   validates :ip, presence: true
 
-  validates :status,
-            inclusion: { in: [1, 2, 3], message: 'no es un estado válido' },
-            presence: true
+  validates :status, inclusion: { in: [1, 2, 3] }, presence: true
 
-  validates :type,
-            inclusion: { in: [1, 2], message: 'no es un tipo válido' },
-            presence: true
+  validates :type, presence: true
+  validates :type, inclusion: { in: [1, 2] }, allow_blank: true
 
   # validate :valid_ip_address
 

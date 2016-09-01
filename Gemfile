@@ -78,7 +78,6 @@ gem 'ipaddress'                                     # ip address validation
 gem 'localeapp'                                     # i18n interface
 gem 'activeadmin', github: 'activeadmin'            # admin backend
 gem 'rakismet'                                      # antispam
-gem 'font-awesome-rails'                            # font-awesome icons
 gem 'faker'
 
 # For Yahoo YQL interaction

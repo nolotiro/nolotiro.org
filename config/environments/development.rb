@@ -12,7 +12,7 @@ NolotiroOrg::Application.configure do
 
   # Show full error reports and disable caching.
   config.consider_all_requests_local       = true
-  # config.action_controller.perform_caching = false
+
   config.action_controller.perform_caching = true
   config.cache_store = :redis_store
 
@@ -29,8 +29,6 @@ NolotiroOrg::Application.configure do
   # This option may cause significant delays in view rendering with a large
   # number of complex assets.
   config.assets.debug = true
-
-  config.assets.precompile += %w(common.css.sass)
 
   # for devise
   config.action_mailer.default_url_options = { host: 'localhost:3000' }

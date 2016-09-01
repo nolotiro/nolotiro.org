@@ -262,22 +262,24 @@ es:
       form:
         body: 'Cuerpo del anuncio:'
         body_max: Máximo 500 caracteres
-        comments_enabled: Permitir comentarios públicos
+        comments_enabled: ¿Cómo quieres ser contactada?
+        private_messages_only: Sólo por mensaje privado
+        private_messages_or_comments: Por mensaje privado o mediante comentarios públicos en el anuncio
         image_permitted_formats: 'Formatos permitidos: gif, jpg, png. Max: 5Mb de tamaño.'
-        please_ad_type: por favor, selecciona el tipo de anuncio
         prohibited: 'Hay un problema, revisa esto:'
-        select_an_image: Selecciona una imagen para tu anuncio (opcional).
+        select_an_image: Selecciona una imagen para tu anuncio
         status: Estado
         title: 'Título de tu anuncio:'
-        title_max: Máximo 100 caracteres
-        to_publish: Para publicar tu anuncio, por favor, introduce estos datos
-        type_ad: 'Tipo de anuncio:'
+        title_tip: Describe brevemente lo que regalas o buscas (max. 100 caracteres)
+        type_ad: ¿Qué tipo de anuncio quieres publicar?
       updated: Hemos actualizado el anuncio
     all: todos
     all_ads: todos los anuncios
     and: y
     are_you_interested: "¿Te interesa?"
     available: disponible
+    a_gift: Un regalo
+    a_request: Una petición
     back: volver a la página de inicio
     blog: blog
     booked: reservado
@@ -339,7 +341,6 @@ es:
       question_7: "¿Puedo enviar cosas a gente que no vive en mi ciudad?"
       title: Preguntas frecuentes
     faqs: preguntas frecuentes
-    fill_captcha: Confirma que no eres un robot
     footer_explain: 'nolotiro.org es un sitio web donde regalo y busco regalos gratis de segunda mano : muebles, sillas, sofás, bicicletas, ordenadores portátiles, mesas, cocinas, lámparas, camas, ropa, juguetes, cunas o carros para bebes, teléfonos móviles y otras muchas cosas que ya no quieres y ya no necesitas para que las reutilicen otra gente a la que puede servirle o darle nueva vida.'
     forgot_your_password: "¿Has olvidado tu contraseña?"
     friends: Amigos
@@ -382,7 +383,6 @@ es:
     permission_denied: No tienes permisos para realizar esta acción.
     please_fill_to_become_member: Por favor, rellena este formulario para ser miembro de nolotiro
     please_insert_email_and_password: Por favor pon tu email y contraseña.
-    please_introduce: 'Por favor, introduce los caracteres que veas:'
     privacy: política de privacidad
     privacy_page:
       body_html: 'nolotiro.org (en adelante sitio web) pertenece y es administrado por:<br><br> aLabs<br> C/ Duque de Alba, 13 <br> 28012 Madrid, España<br> <br><br> Pueden contactar en el formulario de contacto habilitado a tal efecto en el sitio web. El acceso al sitio web, implica la plena aceptación de la presente política de privacidad y de los términos de uso. <br><br> En relación al cumplimiento de la Ley Orgánica 15/1999, de 13 de Diciembre, de Protección de Datos de Carácter Personal (LOPD), le informamos que este sitio web  almacena de forma automatizada los datos proporcionados en el formulario de usuario registrado al efecto de poder proporcionarle al usuario los servicios del sitio web de una forma personalizada como son: gestión de su cuenta de usuario, publicación de anuncios, y gestión de sistema de mensajes privados entre usuarios.  <br><br> El término mensajes privados se refiere a que la posibilidad de acceso a dichos mensajes privados será exclusivamente entre dos usuarios, sin posibilidad por parte de terceros usuarios a acceder a dicho contenido. Sin embargo , en la base de datos los mensajes se guardan en texto plano, pudiendo ser puestos a disposición de las fuerzas de seguridad en caso de comisión de delito o de requerimiento judicial.  <br><br> El usuario se abstendrá de publicar datos personales suyos o de terceros en los anuncios como pueden ser direcciones de email, teléfonos, direcciones postales, etc.  El sitio web, tomará las medidas necesarias para la preservación de los datos personales, aun cuando el usuario ignore estos términos de privacidad. Es por eso que hemos desarrollado un filtro de emails y telefonos en los anuncios para evitar que dicha información sea recopilada por sistemas automáticos y robots de indexación.  Esto no exime de la última responsabilidad del usuario en cuanto a la publicación de datos personales suyos o de terceros. Y se hace solamente porque creemos que muchos usuarios no son conscientes de la importancia de la preservación de sus datos personales.  <br><br> Formulario de contacto:<br> le informamos que los datos personales facilitados por el usuario en el formulario de contacto son guardados con la única finalidad de contacto con el usuario, estos datos no serán utilizados en ningún caso para el envio mensajes publicitarios así como tampoco serán cedidos a terceros.  <br> En cualquier momento puede ejercer los derechos de acceso, rectificación y cancelación de sus datos dirigiéndose por cualquiera de los medios de comunicacion indicados en el primer párrafo.  <br><br> Cookies de sesión:<br> El acceso a este sitio implica la utilización de cookies de sesión. Las cookies de sesión son pequeñas cantidades de información que se almacenan en el navegador utilizado por cada usuario para que el servidor recuerde cierta información que posteriormente pueda utilizar. Esta información permite identificarle a usted como un usuario concreto de forma anónima.  <br><br> Adicionalmente este sitio puede albergar elementos en el código fuente de las páginas que se utilizan para medir el tráfico de usuarios que visitan una página web y poder sacar un patrón de visitas de los usuarios. Esta información anónima puede ser compartida con empresas clientes, proveedores, patrocinadores y anunciantes. <br><br> Actualmente utilizamos los servicios de Google Analytics para la medición del tráfico de este sitio que puede capturar la información descrita anteriormente. Puede ver más información sobre la política de privacidad en el sitio web de Google: Google (Analytics): http://www.google.com/intl/es_ALL/privacypolicy.html <br><br> Este sitio también puede albergar publicidad propia, de afiliados, o de redes publicitarias. Esta publicidad se muestra mediante servidores publicitarios que también utilizan cookies para mostrar contenidos publicitarios afines a los usuarios. Cada uno de estos servidores publicitarios dispone de su propia política de privacidad, que puede ser consultada en sus propias páginas web. Actualmente este sitio alberga publicidad de Google Adsense: http://www.google.com/intl/es_ALL/privacypolicy.html'
@@ -498,7 +498,6 @@ es:
       duplicated_username: Tu nombre de usuario de %{provider} ya se encuentra en nuestra base de datos. Si te has registrado ya usando otra red social o mediante email y contraseña, por favor, inicia sesión de esa manera. En caso contrario, indica otro nombre de usuario para completar el registro.
   recaptcha:
     errors:
-      incorrect-captcha-sol: Hubo un error rellenando los caracteres del captcha.
       verification_failed: Falló la verificación contra robots, prueba de nuevo
   support:
     array:

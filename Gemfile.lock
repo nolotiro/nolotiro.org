@@ -71,10 +71,10 @@ GEM
       activesupport (>= 3.0.0)
     arel (6.0.3)
     ast (2.3.0)
-    autoprefixer-rails (6.3.6.2)
+    autoprefixer-rails (6.4.0.3)
       execjs
     bcrypt (3.1.11)
-    bootstrap-sass (3.3.6)
+    bootstrap-sass (3.3.7)
       autoprefixer-rails (>= 5.2.1)
       sass (>= 3.3.4)
     bourbon (4.2.7)
@@ -159,8 +159,6 @@ GEM
       i18n (~> 0.5)
     faraday (0.9.2)
       multipart-post (>= 1.2, < 3)
-    font-awesome-rails (4.6.3.0)
-      railties (>= 3.2, < 5.1)
     formtastic (3.1.4)
       actionpack (>= 3.2.13)
     formtastic_i18n (0.6.0)
@@ -473,7 +471,6 @@ DEPENDENCIES
   devise-i18n!
   factory_girl_rails (~> 4.0)
   faker
-  font-awesome-rails
   haml-rails
   http_accept_language
   ipaddress

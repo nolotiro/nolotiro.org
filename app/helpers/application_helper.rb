@@ -21,6 +21,10 @@ module ApplicationHelper
     tag :meta, name: 'description', content: content
   end
 
+  def recaptcha
+    recaptcha_tags(display: { theme: 'white' }, ajax: true, hl: I18n.locale)
+  end
+
   def escape_privacy_data(text)
     if text
       text = text.gsub(/([\._a-zA-Z0-9-]+@[\._a-zA-Z0-9-]+)/, ' ')

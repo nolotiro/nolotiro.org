@@ -30,8 +30,7 @@ class AdTest < ActiveSupport::TestCase
     assert @ad.valid?
     assert_equal @ad.type, 2
     @ad.type = 3
-    @ad.valid?
-    assert @ad.errors[:type].include?('no es un tipo válido')
+    refute @ad.valid?
   end
 
   test 'ad validates status' do
@@ -46,8 +45,7 @@ class AdTest < ActiveSupport::TestCase
     assert @ad.valid?
     assert_equal @ad.status, 3
     @ad.status = 4
-    @ad.valid?
-    assert @ad.errors[:status].include?('no es un estado válido')
+    refute @ad.valid?
   end
 
   test 'ad validates maximum length of title' do
