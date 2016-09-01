@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 module ActionController
   #
   # Base class for controller testing

@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 class AddDeviseToUsers < ActiveRecord::Migration
   def up
     # nolotiro.org v2 legacy: we had a duplicated users with the email, so we delete the first one

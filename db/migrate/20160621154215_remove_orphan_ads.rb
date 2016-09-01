@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 class RemoveOrphanAds < ActiveRecord::Migration
   def change
     reversible do |direction|

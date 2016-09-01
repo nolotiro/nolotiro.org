@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 class AdsController < ApplicationController
   include StringUtils
 

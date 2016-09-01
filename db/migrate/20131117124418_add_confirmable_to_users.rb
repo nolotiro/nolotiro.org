@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 class AddConfirmableToUsers < ActiveRecord::Migration
   # Note: You can't use change, as User.update_all with fail in the down migration
   def up

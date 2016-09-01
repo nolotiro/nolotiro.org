@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 #
 # Routes constraints for Ad routes
 #

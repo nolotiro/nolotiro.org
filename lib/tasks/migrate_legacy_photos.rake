@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 namespace :migrate do
   namespace :images do
     desc 'Migrate all the legacy photos'

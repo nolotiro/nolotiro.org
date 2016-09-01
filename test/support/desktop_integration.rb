@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 require 'support/web_mocking'
 
 Capybara.register_driver :poltergeist_desktop do |app|

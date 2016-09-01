@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 class Announcement < ActiveRecord::Base
   has_many :dismissals, dependent: :destroy
 

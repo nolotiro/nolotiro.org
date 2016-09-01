@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 class DeleteThreadIdFromMailboxerConversations < ActiveRecord::Migration
   def up
     remove_column :mailboxer_conversations, :thread_id

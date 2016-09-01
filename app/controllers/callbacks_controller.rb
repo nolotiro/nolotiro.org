@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 class CallbacksController < Devise::OmniauthCallbacksController
   def facebook
     handle_oauth_callback

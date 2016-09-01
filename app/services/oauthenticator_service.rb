@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 #
 # Authenticates a user given the Oauth hash
 #

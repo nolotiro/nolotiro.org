@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 namespace :migrate do
   namespace :counters do
     desc 'Reprocess the User ads_count'

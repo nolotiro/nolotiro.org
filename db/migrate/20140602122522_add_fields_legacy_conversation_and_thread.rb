@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 class AddFieldsLegacyConversationAndThread < ActiveRecord::Migration
   def change
     add_column :conversations, :thread_id, :integer, default: 0

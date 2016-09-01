@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 module WoeidHelper
   def self.convert_woeid_name(woeid)
     locale = I18n.locale

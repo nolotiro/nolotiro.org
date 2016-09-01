@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 module Pagination
   def with_pagination(n)
     old_per_page = Ad.per_page

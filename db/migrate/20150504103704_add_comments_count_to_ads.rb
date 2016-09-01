@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 class AddCommentsCountToAds < ActiveRecord::Migration
   def up
     add_column :ads, :comments_count, :integer, default: 0

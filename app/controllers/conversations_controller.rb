@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 class ConversationsController < ApplicationController
   before_action :authenticate_user!
   before_action :load_conversation, only: [:show, :update]

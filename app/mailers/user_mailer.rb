@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 class UserMailer < ActionMailer::Base
   default from: Rails.application.secrets.emails['default_from']
 
