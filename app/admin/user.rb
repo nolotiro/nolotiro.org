@@ -27,4 +27,28 @@ ActiveAdmin.register User do
   action_item :view, only: :show do
     link_to 'Ver en la web', profile_path(user)
   end
+
+  action_item :moderate, only: :show do
+    if user.locked?
+      link_to 'Desbloquear Usuario', unlock_admin_user_path(user), method: :post
+    else
+      link_to 'Bloquear Usuario', lock_admin_user_path(user), method: :post
+    end
+  end
+
+  member_action :unlock, method: :post do
+    user = User.find(params[:id])
+
+    user.unlock!
+
+    redirect_to admin_user_path(user), notice: 'Usuario desbloqueado'
+  end
+
+  member_action :lock, method: :post do
+    user = User.find(params[:id])
+
+    user.lock!
+
+    redirect_to admin_user_path(user), notice: 'Usuario bloqueado'
+  end
 end

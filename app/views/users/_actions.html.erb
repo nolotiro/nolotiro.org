@@ -58,20 +58,4 @@
       </li>
     <% end %>
   <% end %>
-
-  <% if policy(:admin).lock? %>
-    <li>
-      <% if user.locked? %>
-        <%= link_to unlock_user_path(user), class: 'world_link' do %>
-          <%= t('nlt.admin.unlock_user') %>
-          <%= image_tag "add.png" %>
-        <% end %>
-      <% else %>
-        <%= link_to lock_user_path(user), class: 'world_link' do %>
-          <%= t('nlt.admin.lock_user') %>
-          <%= image_tag "remove.png" %>
-        <% end %>
-      <% end %>
-    </li>
-  <% end %>
 </ul>
