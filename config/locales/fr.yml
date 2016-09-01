@@ -265,6 +265,8 @@ fr:
         body: 
         body_max: 
         comments_enabled: 
+        private_messages_only: 
+        private_messages_or_comments: 
         image_permitted_formats: 
         please_ad_type: 
         prohibited: 

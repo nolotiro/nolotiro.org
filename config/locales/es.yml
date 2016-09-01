@@ -262,7 +262,9 @@ es:
       form:
         body: 'Cuerpo del anuncio:'
         body_max: Máximo 500 caracteres
-        comments_enabled: Permitir comentarios públicos
+        comments_enabled: ¿Cómo quieres ser contactada?
+        private_messages_only: Sólo por mensaje privado
+        private_messages_or_comments: Por mensaje privado o mediante comentarios públicos en el anuncio
         image_permitted_formats: 'Formatos permitidos: gif, jpg, png. Max: 5Mb de tamaño.'
         please_ad_type: por favor, selecciona el tipo de anuncio
         prohibited: 'Hay un problema, revisa esto:'

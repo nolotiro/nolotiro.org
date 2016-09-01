@@ -258,7 +258,9 @@ en:
       form:
         body: 'Body of the ad:'
         body_max: Maximum 500 characters
-        comments_enabled: Allow public comments
+        comments_enabled: How do you want to be contacted?
+        private_messages_only: Through private messages only
+        private_messages_or_comments: Through both private messages or public comments in the ad
         image_permitted_formats: 'Supported formats: gif, jpg, png. Max size: 5Mb'
         please_ad_type: Please, choose the type of ad
         prohibited: 'There is a problem, please review this:'

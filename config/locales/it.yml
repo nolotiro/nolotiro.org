@@ -262,7 +262,9 @@ it:
       form:
         body: Corpo del annuncio
         body_max: Massimo 500 caratteri
-        comments_enabled: 'Permmete commenti publici '
+        comments_enabled: Como vuoi essere contattata?
+        private_messages_only: Soltanto por messaggi privati
+        private_messages_or_comments: Por messaggi privati oppure por commenti nell'annucio
         image_permitted_formats: 'Formatti permessi: gif, jpg, png. Massimo: 5Mb di dimensione'
         please_ad_type: per favore, seleziona il tipo di annuncio
         prohibited: 'C''e un problema, controlla questo:'

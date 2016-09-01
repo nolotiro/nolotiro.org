@@ -262,7 +262,9 @@ ca:
       form:
         body: 'Cos de l''anunci:'
         body_max: Màxim 500 caràcters
-        comments_enabled: Permetre comentaris públics
+        comments_enabled: Com vols ser contactat?
+        private_messages_only: Només per missatge privat
+        private_messages_or_comments: Per missatge privat o a través de comentaris públics a l'anunci
         image_permitted_formats: 'Formats permesos: gif, jpg, png. Max: 5Mb de mida.'
         please_ad_type: si us plau, selecciona el tipus d'anunci
         prohibited: 'Hi ha un problema, revisa això:'

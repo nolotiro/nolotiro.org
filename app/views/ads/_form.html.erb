@@ -72,7 +72,15 @@
         <%= f.label :comments_enabled, t('nlt.ads.form.comments_enabled'), class: 'required' %>
       </dt>
       <dd>
-        <%= f.check_box :comments_enabled %>
+        <%= f.label :comments_enabled, value: 0 do %>
+          <%= f.radio_button :comments_enabled, 0 %>
+          <%= t('nlt.ads.form.private_messages_only') %>
+        <% end %>
+
+        <%= f.label :comments_enabled, value: 1 do %>
+          <%= f.radio_button :comments_enabled, 1 %>
+          <%= t('nlt.ads.form.private_messages_or_comments') %>
+        <% end %>
       </dd>
 
       <% unless params[:action] == 'edit' %>
