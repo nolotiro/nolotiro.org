@@ -65,9 +65,9 @@
       <dt>
         <%= f.label :comments_enabled, t('nlt.ads.form.comments_enabled'), class: 'required' %>
       </dt>
-      <span class='element'>
+      <dd>
         <%= f.check_box :comments_enabled %>
-      </span>
+      </dd>
 
       <% unless params[:action] == 'edit' %>
         <dt></dt>
