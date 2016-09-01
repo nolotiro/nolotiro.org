@@ -2,7 +2,7 @@
 class AdsController < ApplicationController
   include StringUtils
 
-  before_action :set_ad, only: [:show, :edit, :update, :bump, :destroy]
+  before_action :set_ad, except: [:new, :create, :index]
   before_action :authenticate_user!, except: [:index, :show]
 
   def new
