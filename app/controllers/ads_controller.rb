@@ -32,8 +32,7 @@ class AdsController < ApplicationController
     if current_user.woeid.nil?
       redirect_to location_ask_path
     else
-      @ad = Ad.new
-      @ad.comments_enabled = true
+      @ad = Ad.new(comments_enabled: true)
       authorize(@ad)
     end
   end
