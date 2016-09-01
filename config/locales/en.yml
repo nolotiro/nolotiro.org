@@ -246,7 +246,6 @@ en:
       title: About nolotiro.org
     access_here: access here
     admin:
-      become_user: "[ADMIN] Modify this user"
       lock_user: "[ADMIN] Block this user"
       unlock_user: "[ADMIN] Unblock this user"
     ads:

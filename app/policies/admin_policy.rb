@@ -7,8 +7,4 @@ AdminPolicy = Struct.new(:user, :admin) do
   def unlock?
     user && user.admin?
   end
-
-  def become?
-    user && user.admin?
-  end
 end

@@ -250,7 +250,6 @@ it:
       title: Su nolotiro.org
     access_here: accedi qui
     admin:
-      become_user: "[ADMIN] Passare a questo utente "
       lock_user: "[ADMIN] Bloccare a questo utente"
       unlock_user: "[ADMIN] Sbloccare a questo utente"
     ads:

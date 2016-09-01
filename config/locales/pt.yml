@@ -250,7 +250,6 @@ pt:
       title: Sobre o nolotiro.org
     access_here: acesse aqui
     admin:
-      become_user: "[ADMIN] Mudar para este usuário"
       lock_user: "[ADMIN] Bloquear este usuário"
       unlock_user: "[ADMIN] Desbloquear este usuario"
     ads:

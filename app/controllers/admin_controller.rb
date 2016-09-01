@@ -2,13 +2,6 @@
 class AdminController < ApplicationController
   before_action :authenticate_user!, :authorize_admin!
 
-  def become
-    user = User.find(params[:id])
-    sign_in(:user, user)
-    flash[:notice] = "Becoming user #{user.username}"
-    redirect_to root_url
-  end
-
   def lock
     user = User.find(params[:id])
     user.lock!
