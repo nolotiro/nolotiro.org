@@ -10,25 +10,47 @@ en:
     attributes:
       ad:
         body: Body
+        city: City
+        id: ID
         image: Image
         image_content_type: 'Type of image''s content '
         image_file_size: Size of the image
+        published_at: Published at
+        status: Status
         subject: Title
         title: Title
         type: Type
+        user: User
+        woeid_code: Woeid code
+      comment:
+        ad: Ad
+        body: Body
+        created_at: Creation date
+        id: ID
+        ip: IP
+        user: User
       contact:
-        email: 
-        message: 
+        email: Email address
+        message: Message
       message:
         body: Message
         subject: Subject
       user:
+        ads_count: Published ads
+        confirmed_at: Confirmation date
+        created_at: Sign-in date
         current_password: Current password
+        current_sign_in_at: Last connection
         email: E-mail
+        last_sign_in_ip: Last connection (IP)
         password: New password
         password_confirmation: New password (repeat)
         remember: Remember me
         username: Username
+    models:
+      ad: Ads
+      ad_comment: Ad Comments
+      admin: Admin
   date:
     abbr_day_names:
     - Sun
@@ -201,11 +223,11 @@ en:
       trash: Delete conversation
       trash_selected: Delete selected conversations
     new:
-      body_max: 
+      body_max: Max. 1500 characters
       button: Send
       errors: 'There is a problem, please check this:'
       legend: Send message
-      subject: 
+      subject: Topic
       submit: Send
       title: New private message for user %{user}
     notifications:
@@ -233,13 +255,15 @@ en:
     visit_text: Visit %{url} and go to your inbox to reply
     you_have_new_message: You have a new message
   nlt:
+    a_gift: A gift
+    a_request: A request
     about: about
     about_page:
       description_html: <b>What is nolotiro.org?</b><br> It is a web site where you can offer stuff you don't need anymore so other people who need it can get it for free. <br><br> <strong>Read the <a href="/es/page/faqs">frecuently asked questions</a> to know more details about the philosophy and goals of the project</strong> <br><br> <b>Advantages of nolotiro.org:</b><br> The big advantage of nolotiro.org, is that replace the nostalgy/feelings of dumping for the feeling of making something for someone. You can get rid off that stuff you don't dump it because you feel sad, or because it was new, or because just were getting dusty. On the other hand, nolotiro.org is organized by geographical zones encouraging that your stuff stays in your zone without shipping costs, couriers, etc. <br><br> <b>Please, be aware:</b><br> THERE IS NO EXCHANGE OPTION, this is not based on exchange, nor buying, because we want to encourage altruism, give stuff for free, because we don't need it. <br><br> <b> Explanation (spanish)</b><br> <a href="http://www.marcianoduran.com.uy/?p=176">¿Why y don't dump it?</a> By Marciano Durán <br><br> <b>nolotiro.org works thank to the effort of many <a href="http://www.youtube.com/watch?v=KMU0tzLwhbE">people</a> who have developed the following open source software:</b> <a href="http://rubyonrails.org/">Ruby On Rails</a>, <a href="http://www.mysql.com/">MySQL</a>, <a href="https://developer.yahoo.com/yql/">Yahoo YQL</a>, <a href="http://www.postfix.org/">Postfix</a>, <a href="http://www.ubuntu.org/">Ubuntu</a>, <a href="http://nginx.org/">Nginx</a>, and many more, so many that is not possible to name then here. <br><br> <b> The source code of nolotiro.org is open code</b> and it is avaialble to be used under (Affero GPL 3 license).<br> Visit <a href="https://github.com/alabs/nolotiro.org"> website for developers</a> to get more details.<br> Contributors are welcome to develope or translate this site in other languajes.
       title: About nolotiro.org
     access_here: access here
     ads:
-      bumped: 
+      bumped: We have bumped the ad
       count:
         one: "%{count} ad"
         other: "%{count} ads"
@@ -268,7 +292,7 @@ en:
     back: Back to the main page
     blog: blog
     booked: reserved
-    bump_this_ad: 
+    bump_this_ad: Republish this ad
     by_user: by user
     cancel_my_account: Cancel my account
     change_city: change city
@@ -286,7 +310,7 @@ en:
     cities_in_the_world: best recycling cities
     click_to_large: Click to large the photo
     comments:
-      body_max: 
+      body_max: Max. 1000 characters
       do_click: 'Please click this link to reply:'
       flash_ko: It is not possible to save your comment, there is an error, please review it and send your comment again
       flash_ok: Saved comment
@@ -342,10 +366,10 @@ en:
     keywords: gift second hand free
     last_published_gifts: last posted gifts
     leave_blank: "(leave it empty if you do not want to change it)"
-    legal_notice: 
+    legal_notice: Legal note
     legal_page:
-      body_html: 
-      title: 
+      body_html: 'Name: aLabs Association. <br>Registered in the associations registry in the Community of Madrid, registration number 32.022. <br>CIF: G86139847 <br>C/Duque de Alba, 13 (28012) Madrid.'
+      title: Legal note
     login: log in
     logout: logout
     mail:
@@ -360,7 +384,7 @@ en:
       first_to_publish_html: "1. Be the first to %{publish}."
       switch_to_bigger_city: "2. Try a bigger city close to your location."
       switch_to_guessed_city_html: "3. Our IP based city suggestion system tells us you are close to: <br> %{change_location}"
-      on_user: 
+      on_user: There are no ads of this kind published by this user.
       phrase: '"The journey of a thousand miles begins with one step", Lao Tse.'
       publish_ad: post an ad in this city
       subtitle: You can try some of this stuff
@@ -425,7 +449,7 @@ en:
     users_most_active_last_week: most active users last week
     view_ads_on: View ads in %{location}
     view_ads_on_your_city: View ads from your city or town
-    view_more_ads: 
+    view_more_ads: See more ads >
     want: want
     want_to_leave: Do you want to delete your user?
     we_need_your_password: "(we need your password to confirm your edition)"

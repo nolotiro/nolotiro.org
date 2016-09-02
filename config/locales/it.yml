@@ -10,12 +10,25 @@ it:
     attributes:
       ad:
         body: Corpo
+        city: Cittá
+        id: Id
         image: Immagine
         image_content_type: Tipo del contenuto della immagine
         image_file_size: Formato della immagine
+        published_at: pubblicato il
+        status: Stato
         subject: Titolo
         title: Titolo
         type: Tipo
+        user: Utente
+        woeid_code: Woeid codici
+      comment:
+        ad: Annuncio
+        body: Corpo
+        created_at: Data di creazione
+        id: Id
+        ip: Ip
+        user: Utente
       contact:
         email: posta elettronica
         message: Messaggio
@@ -23,12 +36,21 @@ it:
         body: Messaggio
         subject: Soggetto
       user:
+        ads_count: Annunci pubblicati
+        confirmed_at: Data di conferma
+        created_at: Data registrazione
         current_password: Password atuale
+        current_sign_in_at: Uultimo accesso
         email: email
+        last_sign_in_ip: Ultimo accesso (IP)
         password: Password nuova
         password_confirmation: Ripete di nuovo la password
         remember: Ricordami
         username: Nome di utente
+    models:
+      ad: Ads
+      ad_comment: Ad Commenti
+      admin: Admin
   date:
     abbr_day_names:
     - dom
@@ -392,7 +414,7 @@ it:
         add: 
         confirm: 
         delete: 
-    publish_ad: 
+    publish_ad: Pubblicando annuncio
     publish_ad_on: Inserisci annunci a %{woeid}
     published_ads: annunci pubblicati
     published_at_by_html: Pubblicato fa %{time} dall'utente %{user}
@@ -407,7 +429,7 @@ it:
     save_failed: 'C''è un problema, verificare questo:'
     search:
       button: ricerca
-      no_ads_message_html: 
+      no_ads_message_html: Non ci sono annunci che corrispondano alla ricerca <b>%{q}</b>.
     searching_on_html: Cercando <i>%{q}</i> in
     send: Inviare
     send_a_message: "+ Invia un messaggio privato al annunciante"
@@ -515,8 +537,8 @@ it:
   will_paginate:
     next_label: successivo →
     page_entries_info:
-      multi_page: 
-      multi_page_html: 
+      multi_page: Mostrando %{model} %{from} - %{to} de %{count} in totale
+      multi_page_html: Mostrando %{model} <b>%{from}&nbsp;-&nbsp;%{to}</b> de <b>%{count}</b> totale
       single_page: 
       single_page_html: 
     page_gap: "&hellip;"

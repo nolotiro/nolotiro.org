@@ -10,12 +10,25 @@ es:
     attributes:
       ad:
         body: Cuerpo
+        city: City
+        id: Id
         image: Imagen
         image_content_type: Tipo de contenido de imagen
         image_file_size: Tamaño de imagen
+        published_at: Published at
+        status: Status
         subject: Título
         title: Título
         type: Tipo
+        user: User
+        woeid_code: Woeid code
+      comment:
+        ad: Anuncio
+        body: Cuerpo
+        created_at: Fecha de creación
+        id: Id
+        ip: Ip
+        user: Usuario
       contact:
         email: Correo electrónico
         message: Mensaje
@@ -23,12 +36,21 @@ es:
         body: Mensaje
         subject: Título
       user:
+        ads_count: Anuncios publicados
+        confirmed_at: Fecha de confirmación
+        created_at: Fecha de registro
         current_password: Contraseña actual
+        current_sign_in_at: Último login
         email: Correo electrónico
+        last_sign_in_ip: Último login (IP)
         password: Contraseña nueva
         password_confirmation: Contraseña nueva (repetir)
         remember: Recuérdame
         username: Nombre de usuario
+    models:
+      ad: Ads
+      ad_comment: Ad Comments
+      admin: Admin
   date:
     abbr_day_names:
     - dom

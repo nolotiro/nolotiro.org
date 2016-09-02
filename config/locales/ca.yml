@@ -10,25 +10,47 @@ ca:
     attributes:
       ad:
         body: Cos
+        city: Ciutat
+        id: ID
         image: Imatge
         image_content_type: Tipus de contingut d'imatge
         image_file_size: Mida de la imatge
+        published_at: Publicat a
+        status: Estat
         subject: Títol
         title: Títol
         type: Tipus
+        user: Usuari
+        woeid_code: Woeid codi
+      comment:
+        ad: Anunci
+        body: Cos
+        created_at: Data de creació
+        id: ID
+        ip: IP
+        user: Usuari
       contact:
-        email: 
-        message: 
+        email: Correu electrònic
+        message: Missatge
       message:
         body: Missatge
         subject: Assumpte
       user:
+        ads_count: Anuncis publicats
+        confirmed_at: Data de confirmació
+        created_at: Data de registre
         current_password: Contrasenya actual
+        current_sign_in_at: Últim login
         email: Correu electrònic
+        last_sign_in_ip: Últim login (IP)
         password: Contrasenya nova
         password_confirmation: Contrasenya nova (repetir)
         remember: Recorda'm
         username: Nom d'usuari
+    models:
+      ad: Anuncis
+      ad_comment: Comentaris de l'anunci
+      admin: Admin
   date:
     abbr_day_names:
     - Dg
@@ -205,11 +227,11 @@ ca:
       trash: Esborrar conversa
       trash_selected: Esborrar converses seleccionats
     new:
-      body_max: 
+      body_max: Màxim 1500 caràcters
       button: Enviar
       errors: 'Hi ha un problema, revisa això:'
       legend: Enviar missatge
-      subject: 
+      subject: Tema
       submit: Enviar
       title: Nou missatge privat per a l'usuari %{user}
     notifications:
@@ -243,7 +265,7 @@ ca:
       title: Sobre nolotiro.org
     access_here: accedeix aquí
     ads:
-      bumped: 
+      bumped: Hem republicat l'anunci
       count:
         one: "%{count} anunci"
         other: "%{count} anuncis"
@@ -272,7 +294,7 @@ ca:
     back: tornar a la pàgina d'inici
     blog: bloc
     booked: reservat
-    bump_this_ad: 
+    bump_this_ad: Republica l'anunci
     by_user: per l'usuari
     cancel_my_account: Cancel·lar el meu compte
     change_city: canviar ciutat
@@ -290,7 +312,7 @@ ca:
     cities_in_the_world: ciutats que més reciclen
     click_to_large: Cliqueu per fer més gran foto
     comments:
-      body_max: 
+      body_max: Màxim 1000 caràcters
       do_click: 'Fes clic en aquest enllaç per respondre el missatge:'
       flash_ko: Hi va haver un error en desar el teu comentari. Revisa-ho i enviar-lo de nou
       flash_ok: comentari guardat
@@ -346,10 +368,10 @@ ca:
     keywords: regal segona mà gratis
     last_published_gifts: últims regals publicats
     leave_blank: "(deixa-la en blanc si no vols canviar-la)"
-    legal_notice: 
+    legal_notice: Avís legal
     legal_page:
-      body_html: 
-      title: 
+      body_html: 'Nom: Associació aLabs. <br>Inscrita en el registre d''associacions de la Comunitat de Madrid amb nombre 32.022. <br>CIF: G86139847<br> C/Duque de Alba, 13 (28012) Madrid.'
+      title: Avís legal
     login: accedir
     logout: sortir
     mail:
@@ -364,7 +386,7 @@ ca:
       first_to_publish_html: "1. Sigues el primer a %{publish}."
       switch_to_bigger_city: "2. Prova a canviar la ciutat per una més gran que estigui a prop de la teva ubicació."
       switch_to_guessed_city_html: "3. El nostre sistema de suggeriment d'ubicació (basat en la teva IP) diu que aquestes prop de: <br> %{change_location}"
-      on_user: 
+      on_user: No hi ha anuncis d'aquest tipus publicats per aquest usuari.
       phrase: '"Un viatge de mil quilòmetres comença amb un simple pas", Lao Tse.'
       publish_ad: publicar un anunci en aquesta ciutat
       subtitle: Pots provar alguna d'aquestes coses
@@ -429,7 +451,7 @@ ca:
     users_most_active_last_week: usuaris més actius en la darrera setmana
     view_ads_on: Veure anuncis en %{location}
     view_ads_on_your_city: Veure anuncis a la teva ciutat o poble
-    view_more_ads: 
+    view_more_ads: Veure més anuncis
     want: busco
     want_to_leave: Vols esborrar el teu usuari?
     we_need_your_password: "(necessitem la contrasenya per confirmar els canvis)"
@@ -485,8 +507,8 @@ ca:
         delimiter: "."
   oauth:
     errors:
-      email_not_provided: 
-      duplicated_username: 
+      email_not_provided: Necessitem que indiqui una adreça de correu electrònic per completar el registre.
+      duplicated_username: El teu nom d'usuari de %{provider} ja es troba a la base de dades. Si t'has registrat ja usant una altra xarxa social o mitjançant email i contrasenya, si us plau, inicia sessió d'aquesta manera. En cas contrari, indica un altre nom d'usuari per completar el registre.
   recaptcha:
     errors:
       verification_failed: Ha fallat la verificació contra robots, intenta-ho de nou

@@ -10,12 +10,25 @@ de:
     attributes:
       ad:
         body: 
+        city: 
+        id: 
         image: 
         image_content_type: 
         image_file_size: 
+        published_at: 
+        status: 
         subject: 
         title: 
         type: 
+        user: 
+        woeid_code: 
+      comment:
+        ad: 
+        body: 
+        created_at: 
+        id: 
+        ip: 
+        user: 
       contact:
         email: 
         message: 
@@ -23,12 +36,21 @@ de:
         body: 
         subject: 
       user:
+        ads_count: 
+        confirmed_at: 
+        created_at: 
         current_password: 
+        current_sign_in_at: 
         email: 
+        last_sign_in_ip: 
         password: 
         password_confirmation: 
         remember: 
         username: 
+    models:
+      ad: 
+      ad_comment: 
+      admin: 
   date:
     abbr_day_names:
     - So
