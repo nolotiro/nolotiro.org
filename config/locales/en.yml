@@ -366,7 +366,7 @@ en:
       switch_to_bigger_city: "2. Try a bigger city close to your location."
       switch_to_guessed_city_html: "3. Our IP based city suggestion system tells us you are close to: <br> %{change_location}"
       on_user: 
-      phrase: '"The journey of a thousand miles begins with one step" Lao Tse.'
+      phrase: '"The journey of a thousand miles begins with one step", Lao Tse.'
       publish_ad: post an ad in this city
       subtitle: You can try some of this stuff
       title: There are no results in this location
