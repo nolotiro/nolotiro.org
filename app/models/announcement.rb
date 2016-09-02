@@ -3,7 +3,10 @@ class Announcement < ActiveRecord::Base
   has_many :dismissals, dependent: :destroy
 
   scope :current, -> do
-    where('starts_at <= :now AND ends_at >= :now', now: Time.zone.now)
+    now = Time.zone.now
+
+    where('starts_at <= :now', now: now)
+      .where('ends_at >= :now OR ends_at IS NULL', now: now)
       .where('locale IS NULL OR locale = :locale', locale: I18n.locale)
   end
 

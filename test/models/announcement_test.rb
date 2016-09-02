@@ -17,6 +17,12 @@ class AnnouncementTest < ActiveSupport::TestCase
     assert_equal [current], Announcement.current
   end
 
+  test '.current returns never expiring announcements' do
+    current = create(:announcement, :eternal)
+
+    assert_equal [current], Announcement.current
+  end
+
   test '.pending_for returns no announcements when all dismissed' do
     user1 = create(:user)
     user2 = create(:user)

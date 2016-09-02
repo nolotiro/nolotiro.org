@@ -26,6 +26,11 @@ FactoryGirl.define do
       ends_at { 1.day.from_now }
     end
 
+    trait :eternal do
+      starts_at { 1.hour.ago }
+      ends_at nil
+    end
+
     current
   end
 end
