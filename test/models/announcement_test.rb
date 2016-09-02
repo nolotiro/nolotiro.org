@@ -3,10 +3,9 @@ require 'test_helper'
 
 class AnnouncementTest < ActiveSupport::TestCase
   test '.current returns only active announcements' do
-    _past = create(:announcement, starts_at: 1.day.ago, ends_at: 1.hour.ago)
-    curr = create(:announcement, starts_at: 1.day.ago, ends_at: 1.day.from_now)
-    _post = create(:announcement, starts_at: 1.hour.from_now,
-                                  ends_at: 1.day.from_now)
+    _past = create(:announcement, :expired)
+    curr = create(:announcement, :current)
+    _post = create(:announcement, :programmed)
 
     assert_equal [curr], Announcement.current
   end
