@@ -13,7 +13,7 @@ class Announcement < ActiveRecord::Base
       AND dismissals.user_id = #{user.id}
     SQL
 
-    join.where('user_id IS NULL')
+    join.where(dismissals: { user_id: nil })
   end
 
   def self.pick_pending_for(user)
