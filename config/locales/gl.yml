@@ -231,15 +231,8 @@ gl:
     notifications:
       sent: 
       trash: Conversa arquivada
-    search: 
     table:
-      date: Data
-      delete: Eliminar?
-      last: Último
       none: 
-      reciever: Recibido
-      sender: Enviado
-      subject: Asunto
     titles:
       conversation: 
       index: 
@@ -391,7 +384,6 @@ gl:
     password: Contrasinal
     permission_denied: 
     please_fill_to_become_member: Por favor, enche este formulario para facer membro do nolotiro
-    please_insert_email_and_password: Por favor, engada o seu correo electrónico e contrasinal.
     privacy: política de privacidade
     privacy_page:
       body_html: 

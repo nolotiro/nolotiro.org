@@ -224,15 +224,8 @@ de:
     notifications:
       sent: 
       trash: 
-    search: 
     table:
-      date: 
-      delete: 
-      last: 
       none: 
-      reciever: 
-      sender: 
-      subject: 
     titles:
       conversation: 
       index: 
@@ -380,7 +373,6 @@ de:
     password: 
     permission_denied: 
     please_fill_to_become_member: 
-    please_insert_email_and_password: 
     privacy: 
     privacy_page:
       body_html: 

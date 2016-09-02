@@ -224,15 +224,8 @@ pt:
     notifications:
       sent: Mensagem enviada
       trash: Conversa apagada
-    search: Resultados da busca de %{search}
     table:
-      date: Data
-      delete: Apagar?
-      last: Último
       none: Você não têm mensagens de este tipo
-      reciever: Recebido
-      sender: Enviado
-      subject: Assunto
     titles:
       conversation: Conversa com %{recipient} assunto %{subject}
       index: Mensagens de %{username}
@@ -380,7 +373,6 @@ pt:
     password: Senha
     permission_denied: Você não tem permissão para executar esta ação
     please_fill_to_become_member: Por favor, preencha este formulário para se tornar um miembro do nolotiro
-    please_insert_email_and_password: Por favor insira o seu email e a senha
     privacy: política de privacidade
     privacy_page:
       body_html: 

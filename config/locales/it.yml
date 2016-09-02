@@ -224,15 +224,8 @@ it:
     notifications:
       sent: Messaggio inviato
       trash: Conversazione cancellata
-    search: Risultati della ricerca su %{search}
     table:
-      date: Data
-      delete: Cancellare?
-      last: ultimo
       none: Non hai messaggi di questo tipo
-      reciever: Ricevuto
-      sender: Inviato
-      subject: Oggetto
     titles:
       conversation: Conversazione con %{recipient} oggetto %{subject}
       index: Messaggio di %{username}
@@ -384,7 +377,6 @@ it:
     password: password
     permission_denied: Non si dispone dell'autorizzazione per eseguire questa azione.
     please_fill_to_become_member: Si prega di compilare questo modulo per essere un membro di nolotiro
-    please_insert_email_and_password: Metta prego la tua email e la password.
     privacy: politica sulla privacy
     privacy_page:
       body_html: 'nolotiro.org (sito web di seguito) è di proprietà e gestito da: <br> <br> aLabs <br> C/Duque de Alba, 13 <br> 28012 Madrid, Spagna <br> può contattare nel contatto modulo abilitato a tale scopo sul sito. L''accesso al sito comporta la piena accettazione del presente informativa sulla privacy e le condizioni d''uso. <br> In relazione al rispetto della legge 15/1999, del 13 dicembre, protezione dei dati personali (LOPD), si informa che questo sito memorizza i dati automatizzati forniti sul modulo si sono registrati all''utente di effettuare l''utente a fornire servizi di siti web in modo personalizzato, come ad esempio: gestire il proprio account utente, gli annunci, e il sistema di gestione di messaggi privati ​​tra utenti. <br> I messaggi privati ​​termine si riferisce alla possibilità di accesso a tali messaggi privati ​​sarà esclusivamente tra due utenti, senza alcuna possibilità di utenti di terze parti per accedere al contenuto. Tuttavia, nei messaggi di database vengono memorizzati in formato testo e può essere messo a disposizione delle forze di sicurezza in caso di commissione di reati o di ingiunzione. <br> L''utente non pubblica o di terzi dati personali che lo annunci, come indirizzi e-mail, numeri di telefono, indirizzi, ecc Il sito web, prendere le misure necessarie per la conservazione dei dati personali, anche se l''utente ignora queste condizioni di privacy. Ecco perché abbiamo sviluppato un e-mail filtro e telefono negli annunci per evitare che tali informazioni possano essere raccolte dai sistemi di indicizzazione automatica e robot. Questo non elimina la responsabilità ultima degli utenti per quanto riguarda la pubblicazione dei propri dati personali o di terzi. Ed è solo perché crediamo che molti utenti non sono consapevoli dell''importanza della conservazione dei propri dati personali. <br> Formulario di contatto: <br> si informa che i dati personali forniti dall''utente nel modulo di contatto vengono memorizzati per il solo scopo di contatto con l''utente, questi dati non possono essere utilizzati in ogni caso, per l''invio di messaggi pubblicitari, né essere ceduti a terzi. <br> In qualsiasi momento è possibile esercitare i diritti di accesso, rettifica e cancellazione dei dati da uno dei mezzi di comunicazione di cui al primo comma. <br> Sessione Cookie: <br> L''accesso a questo sito implica l''uso di cookies di sessione. I cookie di sessione sono piccoli pezzi di informazioni che vengono memorizzate nel browser utilizzato da ciascun utente per il server di ricordare alcune informazioni che possono essere utilizzati in seguito. Queste informazioni possono identificare l''utente come un utente specifico anonimo. <br> Inoltre, questo sito può ospitare elementi nel codice sorgente delle pagine che vengono utilizzati per misurare il traffico di utenti che visitano un sito web e può disegnare un modello di visite degli utenti. Queste informazioni anonime può essere condiviso con i clienti aziendali, fornitori, sponsor e inserzionisti. <br> attualmente usiamo i servizi di Google Analytics per misurare il traffico di questo sito in grado di catturare le informazioni di cui sopra. È possibile visualizzare ulteriori informazioni sulla politica sulla privacy sul sito web di Google: Google (Analytics): http://www.google.com/intl/es_ALL/privacypolicy.html <br> Questo sito può anche ospitare pubblicità reti proprio, affiliazione o pubblicitari. Questo annuncio è mostrato attraverso i server che utilizzano i cookie per visualizzare pubblicità relative contenuti agli utenti. Ognuno di questi server pubblicità ha una propria politica sulla privacy, che può essere consultato sulle proprie pagine web. Attualmente questo sito ospita pubblicità Google Adsense: http://www.google.com/intl/es_ALL/privacypolicy.html
