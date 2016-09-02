@@ -328,6 +328,7 @@ eu:
       answer_5_html: 
       answer_6_html: 
       answer_7_html: 
+      answer_8_html: 
       question_1: 
       question_2: 
       question_3: 
@@ -335,6 +336,7 @@ eu:
       question_5: 
       question_6: 
       question_7: 
+      question_8: 
       title: 
     faqs: 
     footer_explain: 

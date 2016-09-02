@@ -328,6 +328,7 @@ es:
       answer_5_html: 'Sólo hay 2 clases de anuncios: Los de Regalo, en los que ofreces objetos que te estorban o ya no quieres tener. Y los anuncios de Quiero, que sirven para dar pistas e inspirar a la gente sobre que clase de objetos quiere otra gente utilizar o poseer. <strong>Los anuncios de cambio, venta, pidiendo dinero, comerciales, de empleo, medicamentos, etc no están permitidos.</strong> Y son borrados en cuanto un moderador los detecta, en caso de publicar repetidamente anuncios no deseados, se puede proceder al bloqueo de la cuenta del usuario.'
       answer_6_html: 'El trueque es un sistema que funciona muy bien en formato físico, esto es, dos personas cara a cara, viendo los objetos y hablando en vivo y en directo. Pero en internet el trueque es muy susceptible de terminar en engaños o insatisfacciones y discusiones eternas. Además como has podido leer anteriormente, aquí se dan objetos sin condiciones y el trueque tiene el condicionamiento del quid pro quo, es decir: tu me das y yo te doy algo igual.'
       answer_7_html: Sorprendentemente mucha gente lo hace, y no hay nada malo en que se hagan envíos, pero debes tener un mínimo de precaución con la seriedad del receptor, ha habido casos en que alguien de muy buena fe ha realizado un envío pagando los gastos y luego ha resultado que se le ha devuelto el paquete. Lo ideal es que no se hagan, se debe fomentar que los objetos circulen lo mas cerca posible, ahorrando energía, y puede servir para conocer mejor a la gente de tu misma ciudad. Esperamos que en la nueva versión, que hemos enfocado a un concepto local, se consiga. <a href="http://en.wikipedia.org/wiki/Think_Globally,_Act_Locally">Piensa globalmente, actúa localmente.</a>
+      answer_8_html: 'No. Los animales no son objetos que se puedan "tirar" o "reciclar" con lo que quedan fuera del ámbito de nolotiro. Son seres vivos, con capacidad de sufrir y consecuentemente deberían tener controles mucho más estrictos sobre en qué manos caen.'
       question_1: "¿Cuál es el propósito de este proyecto?"
       question_2: ¿Entonces esta web no es para ayudar a los demás?
       question_3: Pero a mi me gustaría regalar mis cosas a alguien que realmente lo necesitj
@@ -335,6 +336,7 @@ es:
       question_5: "¿Qué clase de anuncios puedo publicar en nolotiro?"
       question_6: "¿No está permitido el intercambio de objetos? que raro"
       question_7: "¿Puedo enviar cosas a gente que no vive en mi ciudad?"
+      question_8: "¿Puedo regalar animales?"
       title: Preguntas frecuentes
     faqs: preguntas frecuentes
     footer_explain: 'nolotiro.org es un sitio web donde regalo y busco regalos gratis de segunda mano: muebles, sillas, sofás, bicicletas, ordenadores portátiles, mesas, cocinas, lámparas, camas, ropa, juguetes, cunas o carros para bebes, teléfonos móviles y otras muchas cosas que ya no quieres y ya no necesitas para que las reutilicen otra gente a la que puede servirle o darle nueva vida.'

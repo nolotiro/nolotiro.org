@@ -328,6 +328,7 @@ ca:
       answer_5_html: 'Només hi ha 2 classes d''anuncis: Els de Regal, en els que ofereixes objectes que et destorben o ja no vols tenir. I els anuncis de Vull, que serveixen per donar pistes i inspirar a la gent sobre que classe d''objectes vol una altra gent utilitzar o posseir. <strong> Els anuncis de canvi, venda, demanant diners, comercials, d''ocupació, medicaments, etc no estan permesos. </strong> I són esborrats quant un moderador els detecta, en cas de publicar repetidament anuncis no desitjats, es pot procedir al bloqueig del compte de l''usuari.'
       answer_6_html: 'El troc és un sistema que funciona molt bé en format físic, és a dir, dues persones cara a cara, veient els objectes i parlant en viu i en directe. Però a internet la barata és molt susceptible d''acabar a enganys o insatisfaccions i discussions eternes. A més com has pogut llegir anteriorment, aquí es donen objectes sense condicions i la barata té el condicionament de l''quid pro quo, és a dir: el teu em dónes i jo et dono una cosa igual.'
       answer_7_html: 'Sorprenentment molta gent ho fa, i no hi ha res dolent en que es facin enviaments, però has de tenir un mínim de precaució amb la serietat del receptor, hi ha hagut casos en què algú de molt bona fe ha realitzat un enviament pagant les despeses i després ha resultat que li ha tornat el paquet. L''ideal és que no es facin, s''ha de fomentar que els objectes circulin el més a prop possible, estalviant energia, i pot servir per conèixer millor a la gent de la teva mateixa ciutat. Esperem que en la nova versió, que hem enfocat a un concepte local, s''aconsegueixi. <a href="http://en.wikipedia.org/wiki/Think_Globally,_Act_Locally">Pensa globalment, actúa localment.</a>'
+      answer_8_html: 'No, els animals no són objectes que es puguin "tirar" o "reciclar" pel que queden fora de l''àmbit de nolotiro. Són éssers vius, amb capacitat de patir i conseqüentment haurien de tenir controls molt més estrictes sobre en quines mans cauen.'
       question_1: Quin és el propòsit d'aquest projecte?
       question_2: Llavors aquest web no és per ajudar els altres?
       question_3: Però a mi m'agradaria regalar les meves coses a algú que realment ho necessiti
@@ -335,6 +336,7 @@ ca:
       question_5: Quina classe d'anuncis puc publicar a nolotiro?
       question_6: "¿No està permès l'intercanvi d'objectes? que estrany"
       question_7: Puc enviar coses a gent que no viu a la meva ciutat?
+      question_8: Puc regalar animals?
       title: Preguntes freqüents
     faqs: preguntes freqüents
     footer_explain: 'nolotiro.org és un lloc web on regalar i buscar regals de franc de segona mà: mobles, cadires, sofàs, bicicletes, ordinadors portàtils, taules, cuines, llums, llits, roba, joguines, bressols o carros per a nadons, telèfons mòbils i altres moltes coses que ja no vols i no necessites per a que les reutilitzin altra gent a la qual pot servir o donar-li nova vida.'

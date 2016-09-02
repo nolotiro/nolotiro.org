@@ -328,6 +328,7 @@ pt:
       answer_5_html: 
       answer_6_html: 'A troca direta é um sistema que funciona muito bem em formato físico, isto é, duas pessoas cara a cara, vendo os objetos e falando ao vivo e em direto. Mas na internet, a troca pode acabar em decepção ou insatisfações e discussões intermináveis. Além disso, como você já tem lido anteriormente, aqui se dão como presentes objetos sem condições e a troca tem como condicionamento o quid pro quo: você me da e eu te dou algo igual.'
       answer_7_html: 
+      answer_8_html: 
       question_1: Qual é o propósito deste projeto?
       question_2: Então este site não é para ajudar os outros?
       question_3: Mas eu gostaria dar de graça minhas coisas para alguém que realmente o precisa
@@ -335,6 +336,7 @@ pt:
       question_5: Que tipo de anúncios posso publicar no nolotiro?
       question_6: Não está permitido o intercâmbio de objetos? Extraño
       question_7: Posso enviar coisas à gente que não mora na minha cidade?
+      question_8: 
       title: Perguntas frequentes
     faqs: perguntas frequentes
     footer_explain: 'nolotiro.org é um site onde dou presentes e busco presentes grátis de segunda mão: móveis, cadeiras, sofás, bicicletas, notebooks, mesas, fogões, camas, roupas, brinquedos, berços ou carrinhos de bebe, celulares e muito mais que você já não precisa para que sejam reutilizados por outras pessoas.'
