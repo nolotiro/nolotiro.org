@@ -211,15 +211,6 @@ gl:
       back: 
       trash: Eliminar conversa
       trash_selected: Eliminar conversas seleccionadas
-    message_mailer:
-      message:
-        body: Mensaxe
-        subject: Asunto
-      subject_new: 
-      visit: Ver conversa e responder o mensaxe
-      visit_html: 
-      visit_text: 
-      you_have_new_message: Recibiu unha mensaxe nova
     new:
       body_max: Máximo 1500 carácteres
       button: Enviar
@@ -243,6 +234,15 @@ gl:
     greetings: Grazas e saludos,
     hello: Ola,
     signature: Equipo de nolotiro.org
+  message_mailer:
+    message:
+      body: Mensaxe
+      subject: Asunto
+    subject_new: 
+    visit: Ver conversa e responder o mensaxe
+    visit_html: 
+    visit_text: 
+    you_have_new_message: Recibiu unha mensaxe nova
   nlt:
     about: acerca de
     about_page:

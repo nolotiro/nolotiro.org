@@ -204,15 +204,6 @@ de:
       back: 
       trash: 
       trash_selected: 
-    message_mailer:
-      message:
-        body: 
-        subject: 
-      subject_new: 
-      visit: 
-      visit_html: 
-      visit_text: 
-      you_have_new_message: 
     new:
       body_max: 
       button: 
@@ -236,6 +227,15 @@ de:
     greetings: 
     hello: 
     signature: 
+  message_mailer:
+    message:
+      body: 
+      subject: 
+    subject_new: 
+    visit: 
+    visit_html: 
+    visit_text: 
+    you_have_new_message: 
   nlt:
     about: 
     about_page:

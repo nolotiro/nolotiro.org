@@ -1,15 +1,15 @@
 <h1>
-  <%= I18n.t("mailboxer.message_mailer.you_have_new_message") %>
+  <%= I18n.t("message_mailer.you_have_new_message") %>
 </h1>
 
-<b><%= I18n.t("mailboxer.message_mailer.message.subject") %></b>
+<b><%= I18n.t("message_mailer.message.subject") %></b>
 <blockquote>
   <p>
   <%= @message.conversation.subject %>
   </p>
 </blockquote>
 
-<b><%= I18n.t("mailboxer.message_mailer.message.body") %></b>
+<b><%= I18n.t("message_mailer.message.body") %></b>
 <blockquote>
   <p>
   <%= simple_format(@message.body) %>
@@ -17,6 +17,6 @@
 </blockquote>
 
 <p>
-  <%= link_to t("mailboxer.message_mailer.visit"),
+  <%= link_to t("message_mailer.visit"),
               conversation_url(id: @message.conversation.id) %>
 </p>

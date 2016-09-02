@@ -204,15 +204,6 @@ es:
       back: "< volver a mensajes"
       trash: Borrar conversación
       trash_selected: Borrar conversaciones seleccionadas
-    message_mailer:
-      message:
-        body: Mensaje
-        subject: Asunto
-      subject_new: "[nolotiro.org] Nuevo mensaje del usuario %{user}"
-      visit: Ver conversación y responder mensaje
-      visit_html: Visita %{url} y ve a tu bandeja de entrada para responder
-      visit_text: Visita %{url} y ve a tu bandeja de entrada para responder
-      you_have_new_message: Has recibido un nuevo mensaje
     new:
       body_max: Máximo 1500 carácteres
       button: Enviar
@@ -236,6 +227,15 @@ es:
     greetings: Gracias y saludos,
     hello: Hola,
     signature: Equipo de nolotiro.org
+  message_mailer:
+    message:
+      body: Mensaje
+      subject: Asunto
+    subject_new: "[nolotiro.org] Nuevo mensaje del usuario %{user}"
+    visit: Ver conversación y responder mensaje
+    visit_html: Visita %{url} y ve a tu bandeja de entrada para responder
+    visit_text: Visita %{url} y ve a tu bandeja de entrada para responder
+    you_have_new_message: Has recibido un nuevo mensaje
   nlt:
     about: acerca de
     about_page:

@@ -200,15 +200,6 @@ en:
       back: "< back to messages"
       trash: Delete conversation
       trash_selected: Delete selected conversations
-    message_mailer:
-      message:
-        body: Message
-        subject: Subject
-      subject_new: "[nolotiro.org] New message from user %{user}"
-      visit: View conversation and reply
-      visit_html: Visit %{url} and go to your inbox to reply
-      visit_text: Visit %{url} and go to your inbox to reply
-      you_have_new_message: You have a new message
     new:
       body_max: 
       button: Send
@@ -232,6 +223,15 @@ en:
     greetings: Thank you! Cheers!
     hello: Hi,
     signature: nolotiro.org team
+  message_mailer:
+    message:
+      body: Message
+      subject: Subject
+    subject_new: "[nolotiro.org] New message from user %{user}"
+    visit: View conversation and reply
+    visit_html: Visit %{url} and go to your inbox to reply
+    visit_text: Visit %{url} and go to your inbox to reply
+    you_have_new_message: You have a new message
   nlt:
     about: about
     about_page:

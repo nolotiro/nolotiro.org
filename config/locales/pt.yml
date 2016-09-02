@@ -204,15 +204,6 @@ pt:
       back: "< voltar a mensagens"
       trash: Apagar conversa
       trash_selected: Apagar conversas selecionadas
-    message_mailer:
-      message:
-        body: Mensagem
-        subject: Assunto
-      subject_new: "[nolotiro.org] Nova mensagem do usuário %{user}"
-      visit: Ver conversa e responder mensagem
-      visit_html: Clique em %{url} e ingrese na sua caixa de entrada para responder
-      visit_text: Clique em %{url} e ingrese na sua caixa de entrada para responder
-      you_have_new_message: Você recebeu uma nova mensagem
     new:
       body_max: Máximo 1500 caracteres
       button: Enviar
@@ -236,6 +227,15 @@ pt:
     greetings: Atenciosamente
     hello: Olá,
     signature: O equipe do nolotiro.org
+  message_mailer:
+    message:
+      body: Mensagem
+      subject: Assunto
+    subject_new: "[nolotiro.org] Nova mensagem do usuário %{user}"
+    visit: Ver conversa e responder mensagem
+    visit_html: Clique em %{url} e ingrese na sua caixa de entrada para responder
+    visit_text: Clique em %{url} e ingrese na sua caixa de entrada para responder
+    you_have_new_message: Você recebeu uma nova mensagem
   nlt:
     about: sobre
     about_page:
