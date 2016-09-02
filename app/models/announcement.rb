@@ -4,6 +4,7 @@ class Announcement < ActiveRecord::Base
 
   scope :current, -> do
     where('starts_at <= :now AND ends_at >= :now', now: Time.zone.now)
+      .where('locale IS NULL OR locale = :locale', locale: I18n.locale)
   end
 
   def self.pending_for(user)

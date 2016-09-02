@@ -10,6 +10,13 @@ class AnnouncementTest < ActiveSupport::TestCase
     assert_equal [current], Announcement.current
   end
 
+  test '.current ignores announcements for other locales' do
+    current = create(:announcement, :current)
+    _foreign = create(:announcement, :current, locale: 'eu')
+
+    assert_equal [current], Announcement.current
+  end
+
   test '.pending_for returns no announcements when all dismissed' do
     user1 = create(:user)
     user2 = create(:user)
