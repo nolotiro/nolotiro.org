@@ -33,4 +33,21 @@ namespace :announcements do
                            starts_at: starts_at)
     end
   end
+
+  desc 'Announce that ads about animals are forbidden'
+  task animals: :environment do
+    include Rails.application.routes.url_helpers
+
+    message = <<-TXT.squish
+      Hemos cambiado las reglas de nolotiro y a partir de ahora no se permiten
+      anuncios de regalo ni petición de <b>animales</b>. Lee las
+      <a href=#{faqs_path(locale: 'es')}>preguntas frecuentes</a> para más
+      información.
+    TXT
+
+    Announcement.create!(locale: 'es',
+                         message: message,
+                         starts_at: Time.zone.now,
+                         ends_at: 3.weeks.from_now)
+  end
 end
