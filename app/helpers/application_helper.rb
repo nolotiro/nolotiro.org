@@ -48,21 +48,6 @@ module ApplicationHelper
     end
   end
 
-  def i18n_to_localeapp_in_locale(locale)
-    langs = {
-      gl: 20_650,
-      pt: 20_648,
-      nl: 24_068,
-      it: 20_649,
-      fr: 20_646,
-      eu: 20_651,
-      en: 20_647,
-      de: 20_645,
-      ca: 20_644
-    }
-    langs[locale]
-  end
-
   def localized_url(locale)
     url_for(params.merge(locale: locale, only_path: false))
   end
