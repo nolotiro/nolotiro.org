@@ -20,6 +20,7 @@ html
   display: relative
   padding: 10px 50px
   text-align: center
+
   a
     font-size: 24px
     line-height: 12px
@@ -31,12 +32,16 @@ a
   &:link
     color: #00ACCF
     text-decoration: none
+
   &:visited
     color: #00ACCF
+
   &:active
     color: #00C7EF
+
   &:hover
     color: #26DAFF
+
   &.actual
     border-bottom: solid
     border-width: 3px
@@ -94,6 +99,7 @@ a
   width: 92px
   padding-top: 24px
   z-index: 400
+
   &:hover
     border: 1px solid $gray-separator
     background-color: #fff
@@ -109,12 +115,14 @@ a
     display: none
     width: 100%
     text-decoration: none !important
+
   img
     text-decoration: none !important
     border: 0
     right: 2px
     clear: left
     vertical-align: baseline
+
   &:hover a
     display: block
 
@@ -123,6 +131,7 @@ a
     display: block
     position: absolute
     top: 0px
+
   a:hover
     background-color: #999 !important
     text-decoration: none !important
@@ -133,15 +142,18 @@ form.searchbox
   width: auto
   padding-right: 20px
   top: 0px
+
   dd
     display: inline
     margin: 0
+
   input
     padding: 1px
     font-size: 12px
     border: 1px
     border-style: solid
     border-color: $gray-separator
+
   dl
     margin: 0px !important
 
@@ -152,6 +164,7 @@ form.searchbox
 .select_language_box
   margin-top: -0.4em
   padding: 4px
+
   select
     font-size: 0.9em
     font-weight: bold
@@ -259,10 +272,12 @@ form.searchbox
   padding: 14px 18px 22px 18px
   margin: 0
   width: 100%
+
   h4
     font-size: 1.3em
     font-weight: bold
     margin-bottom: 6px
+
   &:hover
     background-color: #FFFFCC
 
@@ -308,6 +323,7 @@ form.searchbox
 %message-container
   font-size: 0.9em
   position: relative
+
   p
     &:last-child
       margin-bottom: 0
@@ -373,6 +389,7 @@ form.searchbox
   text-align: left
   font-size: 11px
   margin-top: 5px
+
   b
     margin-right: 10px
 
@@ -409,6 +426,7 @@ form.searchbox
   padding-right: 18px
   padding-bottom: 18px
   margin-top: 14px
+
   span
     clear: left
     float: left
@@ -459,6 +477,7 @@ form.searchbox
   background: #FBE3E4
   color: #8a1f11
   border-color: #FBC2C4
+
   a
     color: #8a1f11
 
@@ -466,6 +485,7 @@ form.searchbox
   background: #FFF6BF
   color: #514721
   border-color: #FFD324
+
   a
     color: #514721
 
@@ -473,6 +493,7 @@ form.searchbox
   background: #FFF
   color: #264409
   border-color: #C6D880
+
   a
     color: #264409
 
@@ -523,6 +544,7 @@ dl, dd
   padding-bottom: 10px
   width: 100%
   border-bottom: 1px solid $gray-separator
+
   h4
     font-size: 1.4em
     font-weight: bold
@@ -616,6 +638,7 @@ dl, dd
 .site-logo
   @include clearfix
   background: image-url('nolotiro_logo.png') no-repeat 0 0
+
   a
     display: block
     padding-left: 60px
@@ -663,6 +686,7 @@ dl, dd
   padding-left: 20px
   border: 1px solid $gray-separator
   margin-bottom: 20px
+
   h2
     font-size: 1em
     font-weight: bold
@@ -683,13 +707,16 @@ dl, dd
   border: 0
   list-style: none
   margin-right: 2px
+
   span
     border: solid 1px #00ACCF
     margin-right: 2px
     text-align: center
     padding: 4px
+
   a
     text-decoration: none
+
   #current
     background-color: #00ACCF
     display: inline-block
@@ -735,14 +762,17 @@ ul#tabnav
   border-bottom: 1px solid $gray-separator
   list-style-type: none
   padding: 3px 15px
+
   li
     display: inline
+
     a
       padding: 3px 10px
       border: 1px solid $gray-separator
       margin-right: 4px
       text-decoration: none
       border-bottom: none
+
   a:hover, .active
     color: #000 !important
 
@@ -757,6 +787,7 @@ $langs: <%= I18n.available_locales.join(" ") %>
       background-repeat: no-repeat
       background-position: 0px 5px, center
       background-image: image-url("flags/#{$l}.gif")
+
       span
         margin-left: 15px
 
@@ -859,7 +890,6 @@ $langs: <%= I18n.available_locales.join(" ") %>
     display: block
 
 @media only screen and (max-width: 500px)
-
   .message-from-left, .message-from-right
     display: none
 
