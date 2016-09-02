@@ -1,6 +1,6 @@
 <% if announcement %>
   <%= div_for announcement do %>
-    <%= announcement.message %>
+    <%= raw announcement.message %>
 
     <%= link_to '&times;'.html_safe,
                 announcement_dismissals_path(announcement_id: announcement.id),

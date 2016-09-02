@@ -84,12 +84,6 @@
         </div>
       </div>
 
-      <% unless I18n.locale == :es %>
-        <div id="advice_langtest" class="advice">
-          This language translation is in testing phase. If you find a missing or wrong translation, <%= link_to "please report it", contact_path %>.
-        </div>
-      <% end %>
-
       <div id="main">
         <%= render "partials/flash" %>
 
