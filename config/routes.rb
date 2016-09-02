@@ -72,9 +72,6 @@ NolotiroOrg::Application.routes.draw do
       authenticate :user, ->(u) { u.admin? } do
         mount Sidekiq::Web, at: '/jobs'
       end
-      get '/become/:id', to: 'admin#become', as: 'become_user'
-      get '/lock/:id', to: 'admin#lock', as: 'lock_user'
-      get '/unlock/:id', to: 'admin#unlock', as: 'unlock_user'
     end
 
     get '/user/edit/id/:id', to: redirect('/es/user/edit'), as: 'user_edit'

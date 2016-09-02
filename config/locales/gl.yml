@@ -256,10 +256,6 @@ gl:
       description_html: 
       title: Acerca de nolotiro.org
     access_here: Entre aquí
-    admin:
-      become_user: 
-      lock_user: 
-      unlock_user: 
     ads:
       bumped: 
       count:

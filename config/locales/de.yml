@@ -249,10 +249,6 @@ de:
       description_html: 
       title: 
     access_here: 
-    admin:
-      become_user: 
-      lock_user: 
-      unlock_user: 
     ads:
       bumped: 
       count:
