@@ -1,11 +1,7 @@
 <%= render layout: 'static_page',
            locals: { title: t('nlt.translate.title') } do %>
-  <div class="row">
-    <fieldset>
-      <% translate_it = link_to t('nlt.translate.link'),
-                                'http://accounts.localeapp.com/projects/6872' %>
+  <% translate_it = link_to t('nlt.translate.link'),
+                            'http://accounts.localeapp.com/projects/6872' %>
 
-      <%= t('nlt.translate.description_html', translate_it: translate_it) %>
-    </fieldset>
-  </div>
+  <%= t('nlt.translate.description_html', translate_it: translate_it) %>
 <% end %>
