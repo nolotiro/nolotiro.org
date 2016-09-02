@@ -434,7 +434,8 @@ gl:
     to_publish_or_send_messages: 
     tos: condicións de uso
     translate:
-      description_html: Actualmente, nolotiro.org está dispoñible nalgunhas linguas, pero pode axudar a <a href="http://accounts.localeapp.com/projects/6872">traducir</a> .
+      description_html: Actualmente, nolotiro.org está dispoñible nalgunhas linguas, pero pode axudar a %{translate_it}.
+      link: traducir
       title: Axúdanos a traducir nolotiro.org súa lingua
     update: Gardar
     user_ads: anuncios

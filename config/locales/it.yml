@@ -429,7 +429,8 @@ it:
     to_publish_or_send_messages: Per pubblicizzare o inviare Accesso al tuo account
     tos: condizioni di utilizzo
     translate:
-      description_html: Attualmente, Nolotiro.org è disponibile in poche lingue, ma può aiutare <a href="http://accounts.localeapp.com/projects/6872">a tradurre tua</a>.
+      description_html: Attualmente, Nolotiro.org è disponibile in poche lingue, ma può aiutare a %{translate_it}.
+      link: tradurre tua
       title: Aiutaci a tradurre nolotiro.org la lingua
     update: salvare
     user_ads: annunci

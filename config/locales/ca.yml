@@ -423,7 +423,8 @@ ca:
     to_publish_or_send_messages: Per publicar anuncis o enviar missatges accedeix al teu compte
     tos: termes d'ús
     translate:
-      description_html: Actualment, Nolotiro.org està disponible en pocs idiomes, però tu pots ajudar-nos a <a href="http://accounts.localeapp.com/projects/6872">traduir-lo al teu</a>.
+      description_html: Actualment, Nolotiro.org està disponible en pocs idiomes, però tu pots ajudar-nos a %{translate_it}.
+      link: traduir-lo al teu
       title: Ajuda'ns a traduir nolotiro.org a la teva llengua
     update: Guardar
     user_ads: anuncis

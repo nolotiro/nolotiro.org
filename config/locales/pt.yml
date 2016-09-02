@@ -425,7 +425,8 @@ pt:
     to_publish_or_send_messages: Para publicar anúncios ou enviar mensagens faça login na sua conta
     tos: termos de uso
     translate:
-      description_html: Atualmente, Nolotiro.org está disponível em poucas línguas, mas você pode nos ajudar a <a href="http://accounts.localeapp.com/projects/6872">traduzi-lo à sua</a>.
+      description_html: Atualmente, Nolotiro.org está disponível em poucas línguas, mas você pode nos ajudar a %{translate_it}.
+      link: traduzi-lo à sua
       title: Ajude-nos a traduzir nolotiro.org ao sua língua
     update: Salvar
     user_ads: anúncios
