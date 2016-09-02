@@ -4,6 +4,7 @@
 
     <%= link_to '&times;'.html_safe,
                 announcement_dismissals_path(announcement_id: announcement.id),
-                method: :post %>
+                method: :post,
+                class: 'dismiss' %>
   <% end %>
 <% end %>
