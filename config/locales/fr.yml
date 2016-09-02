@@ -152,7 +152,7 @@ fr:
       reset_password_instructions:
         subject: Instructions pour changer le mot de passe
     omniauth_callbacks:
-      failure: 'Nous ne pouvons pas vous authentifier depuis %{kind} pour la raison suivante : ''%{reason}''.'
+      failure: 'Nous ne pouvons pas vous authentifier depuis %{kind} pour la raison suivante: ''%{reason}''.'
       success: Autorisé avec succès par votre compte %{kind}.
     passwords:
       action: 
