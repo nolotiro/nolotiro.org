@@ -1,10 +1,12 @@
 <%= content_for :meta_title, title %>
 
-<div id="location_header_section">
-  <h1><%= title %></h1><br>
-  <b><a href="/"> « <%= t('nlt.back') %></a></b>
-</div>
+<div class="panel panel-default">
+  <div id="location_header_section" class="panel-heading">
+    <h1><%= title %></h1><br>
+    <b><a href="/"> « <%= t('nlt.back') %></a></b>
+  </div>
 
-<div>
-  <%= yield %>
+  <div class="panel-body">
+    <%= yield %>
+  </div>
 </div>
