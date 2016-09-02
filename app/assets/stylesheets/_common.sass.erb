@@ -81,9 +81,6 @@ a
   clear: both
   margin-bottom: 10px
 
-.close_advice a
-  color: #000
-
 #select_language_box
   position: absolute
   top: 0px
@@ -102,11 +99,6 @@ a
     background-color: #fff
     height: auto
 
-.deployed_languages
-  border: 1px solid $gray-separator
-  background-color: #fff
-  height: auto
-
 #select_language_box
   a
     padding: 2px
@@ -123,14 +115,8 @@ a
     right: 2px
     clear: left
     vertical-align: baseline
-  a span.lang_name
-    display: inline-block
-    text-decoration: none
   &:hover a
     display: block
-
-.deployed_languages a
-  display: block
 
 #select_language_box
   .lang.active
@@ -879,11 +865,6 @@ ul#tabnav
     .disabled
       background: #ccc
       cursor: default
-
-.xdebug-var-dump
-  clear: both
-  border: 1px silver solid
-  padding: 4px
 
 $langs: <%= I18n.available_locales.join(" ") %>
 
