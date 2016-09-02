@@ -434,9 +434,9 @@ gl:
     to_publish_or_send_messages: 
     tos: condicións de uso
     translate:
-      description_html: Actualmente, nolotiro.org está dispoñible nalgunhas linguas, pero pode axudar a %{translate_it}.
-      link: traducir
-      title: Axúdanos a traducir nolotiro.org súa lingua
+      description_html: Actualmente, nolotiro.org está disponible en poucos idiomas, pero podes axudar a %{translate_it}.
+      link: traducilo ao teu
+      title: Axúdanos a traducir nolotiro.org ao teu idioma
     update: Gardar
     user_ads: anuncios
     user_edit_profile: Editar perfil de usuario
