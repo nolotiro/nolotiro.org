@@ -1,11 +1,4 @@
-<%= content_for :meta_title, t('nlt.faq.title') %>
-
-<div id="location_header_section">
-  <h1><%= t('nlt.faq.title') %></h1><br>
-  <b><a href="/"> « <%= t('nlt.back') %></a></b>
-</div>
-
-<div class="col-md-9 col-sm-9">
+<%= render layout: 'static_page', locals: { title: t('nlt.faq.title') } do %>
   <strong>* <%= t('nlt.faq.question_1') %></strong><br>
   <%= t('nlt.faq.answer_1_html') %>
   <br><br>
@@ -27,4 +20,7 @@
   <strong>* <%= t('nlt.faq.question_7') %></strong><br>
   <%= t('nlt.faq.answer_7_html') %>
   <br><br>
-</div> 
+  <strong>* <%= t('nlt.faq.question_8') %></strong><br>
+  <%= t('nlt.faq.answer_8_html') %>
+  <br><br>
+<% end %>

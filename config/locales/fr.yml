@@ -4,31 +4,58 @@ fr:
   activemodel:
     attributes:
       contact:
-        email: 
-        message: 
+        email: Courrier électronique
+        message: Message
   activerecord:
     attributes:
       ad:
-        body: 
-        image: 
-        image_content_type: 
-        image_file_size: 
-        subject: 
-        title: 
-        type: 
+        body: Corps
+        city: Ville
+        id: Id
+        image: Image
+        image_content_type: Image le type de contenu
+        image_file_size: Taille de l'image
+        published_at: Publié au
+        status: Statut
+        subject: titre
+        title: Título
+        type: Type
+        user: Usager
+        woeid_code: Woeid code
+      comment:
+        ad: Annonce
+        body: corps
+        created_at: Date de creation
+        id: Id
+        ip: Ip
+        user: Usager
       contact:
-        email: 
-        message: 
+        email: Courrier électronique
+        message: Message
       message:
         body: 
         subject: 
       user:
-        current_password: 
-        email: 
-        password: 
-        password_confirmation: 
-        remember: 
-        username: 
+        ads_count: Annonces publiées
+        confirmed_at: Date de confirmation
+        created_at: Date d'enregistrement
+        current_password: Mot de passe actuel
+        current_sign_in_at: Dernière connexion
+        email: Courrier électronique
+        last_sign_in_ip: Dernière connexion (IP)
+        password: Nouveau mot de passe
+        password_confirmation: Nouveau mot de passe (répétition)
+        remember: Souvenir de moi
+        username: Nom d'utilisateur
+    models:
+      ad: Ads
+      ad_comment: Ad Comments
+      admin: Admin
+  blockings:
+    create:
+      success: 
+    destroy:
+      success: 
   date:
     abbr_day_names:
     - dim
@@ -129,18 +156,18 @@ fr:
       year: Année
   devise:
     confirmations:
-      action: 
+      action: Confirmer mon compte
       confirmed: Votre compte a été confirmé avec succès.
-      instructions: 
-      no_html_instructions: "Si vous ne pouvez pas cliquer sur le lien, copiez et collez le texte suivant dans la barre d'adresse de votre navigateur:"
-      resend: 
+      instructions: 'S''il vous plaît confirmer votre e-mail en accédant au lien suivant:'
+      no_html_instructions: 'Si vous ne pouvez pas cliquer sur le lien, copiez et collez le texte suivant dans la barre d''adresse de votre navigateur:'
+      resend: Envoyer les instructions de confirmation
       send_instructions: Vous allez recevoir sous quelques minutes un email comportant des instructions pour confirmer votre compte.
       send_paranoid_instructions: Si votre email existe sur notre base de données, vous recevrez sous quelques minutes un message avec des instructions pour confirmer votre compte.
     failure:
       already_authenticated: Vous êtes déjà connecté(e).
       inactive: Votre compte n’est pas encore activé.
       invalid: Email ou mot de passe incorrect.
-      last_attempt: 
+      last_attempt: Méfiez-vous que si vous continuez à essayer de bloquer le projet de loi pendant 3 heures. as tu oublié ton mot de passe? Récupérez-le.
       locked: Votre compte est verrouillé.
       not_found_in_database: Email ou mot de passe incorrect.
       timeout: Votre session est périmée, veuillez vous reconnecter pour continuer.
@@ -152,19 +179,19 @@ fr:
       reset_password_instructions:
         subject: Instructions pour changer le mot de passe
     omniauth_callbacks:
-      failure: 'Nous ne pouvons pas vous authentifier depuis %{kind} pour la raison suivante : ''%{reason}''.'
+      failure: 'Nous ne pouvons pas vous authentifier depuis %{kind} pour la raison suivante: ''%{reason}''.'
       success: Autorisé avec succès par votre compte %{kind}.
     passwords:
-      action: 
+      action: Changer le mot de passe
       edit:
         confirm_new_password: 
         new_password: 
-      follow_instructions: 
-      forgot: 
-      instructions: 
-      no_html_instructions: "Si vous ne pouvez pas cliquer sur le lien, copier et coller cette URL dans la barre d'adresse de votre navigateur: "
+      follow_instructions: Quelqu'un a demandé de changer votre mot de passe nolotiro.org. Si vous ne l'avez pas été vous pouvez ignorer cet e-mail. Votre mot de passe ne changera pas jusqu'à ce que vous accédez au lien et créer un nouveau.
+      forgot: As tu oublié ton mot de passe?
+      instructions: S'il vous plaît entrer votre e-mail et vous envoyer un lien de raccourci pour changer votre mot de passe.
+      no_html_instructions: 'Si vous ne pouvez pas cliquer sur le lien, copier et coller cette URL dans la barre d''adresse de votre navigateur: '
       no_token: Vous ne pouvez pas accéder à cette page si vous n’y accédez pas depuis un email de réinitialisation de mot de passe. Si vous venez en effet d’un tel email, vérifiez que vous avez copié l’adresse URL en entier.
-      send: 
+      send: Envoyer par email
       send_instructions: Vous allez recevoir sous quelques minutes un email vous indiquant comment réinitialiser votre mot de passe.
       send_paranoid_instructions: Si votre email existe dans notre base de données, vous recevrez un lien vous permettant de récupérer votre mot de passe.
       updated: Votre mot de passe a été modifié avec succès. Vous êtes maintenant connecté(e).
@@ -180,21 +207,16 @@ fr:
       signed_in: Connecté(e) avec succès.
       signed_out: Déconnecté(e) avec succès.
       user:
-        signed_in: 
-  blockings:
-    create:
-      success: 
-    destroy:
-      success: 
+        signed_in: Vous êtes connecté.
   friendships:
     create:
-      success: 
+      success: Ami ajouté
     destroy:
-      success: 
+      success: Ami supprimé
   helpers:
     label:
       message:
-        subject: 
+        subject: Assujettir
     select:
       prompt: Veuillez sélectionner
     submit:
@@ -203,247 +225,245 @@ fr:
       update: Modifier ce(tte) %{model}
   mailboxer:
     buttons:
-      back: 
-      trash: 
-      trash_selected: 
-    message_mailer:
-      message:
-        body: 
-        subject: 
-      subject_new: 
-      visit: 
-      visit_html: 
-      visit_text: 
-      you_have_new_message: 
+      back: "< Retour aux messages"
+      trash: Déplacer un message à corbeille
+      trash_selected: Supprimer les messages sélectionnés
     new:
-      body_max: 
-      button: 
-      errors: 
-      legend: 
-      subject: 
-      submit: 
-      title: 
+      body_max: Maximum 1500 caractères
+      button: Envoyer
+      errors: 'Il y a un problème, vérifier cela:'
+      legend: Envoyer message
+      subject: Thème
+      submit: Envoyer
+      title: Nouveau message privé pour l'utilisateur %{user}
     notifications:
-      sent: 
-      trash: 
-    search: 
+      sent: Message envoyé
+      trash: Message déplacé à la corbeille
     table:
-      date: 
-      delete: 
-      last: 
-      none: 
-      reciever: 
-      sender: 
-      subject: 
+      none: Pas de messages de ce type
     titles:
-      conversation: 
-      index: 
+      conversation: Conversation avec %{recipient} objet %{subject}
+      index: Messages %{username}
   mailer:
     confirmation_reminder:
-      p1: 
-      p2: 
-    greetings: 
-    hello: 
-    signature: 
+      p1: Nous avons détecté que vous avez créé un compte sur nolotiro.org et vous ne l'avez pas confirmé.
+      p2: 'Cela signifie que vous avez eu du mal à accéder à la page. Si vous voulez confirmer votre utilisateur (%{username}) vous pouvez avec ce lien:'
+    greetings: Merci et salutations,
+    hello: Bonjour,
+    signature: Équipe de nolotiro.org
+  message_mailer:
+    message:
+      body: 
+      subject: 
+    subject_new: 
+    visit: 
+    visit_html: 
+    visit_text: 
+    you_have_new_message: 
   nlt:
-    about: 
-    about_page:
-      description_html: 
-      title: 
-    access_here: 
-    ads:
-      bumped: 
-      count:
-        one: 
-        other: 
-      created: 
-      form:
-        body: 
-        body_max: 
-        comments_enabled: 
-        private_messages_only: 
-        private_messages_or_comments: 
-        image_permitted_formats: 
-        prohibited: 
-        select_an_image: 
-        status: 
-        title: 
-        title_tip: 
-        type_ad: 
-      updated: 
-    all: 
-    all_ads: 
-    and: 
-    are_you_interested: 
-    available: 
     a_gift: 
     a_request: 
-    back: 
-    blog: 
-    booked: 
-    bump_this_ad: 
-    by_user: 
-    cancel_my_account: 
-    change_city: 
+    about: à propos de
+    about_page:
+      description_html: '<b> Qu''est-ce qu''il est nolotiro.org? </b><br> Est un site où vous offrez au public, des choses que vous ne voulez plus ou pas plus besoin de les ramasser d''autres personnes qui peuvent servir ou être de très utile. <br><br> <strong> Lire <a href="/es/page/faqs">questions fréquemment posées</a> des questions communes à savoir plus de détails sur la philosophie et les objectifs du projet </strong> <br><br> <b>Avantages de nolotiro.org: </b><br> Le plus grand avantage de nolotiro.org, remplace la nostalgie / sentiment de déchets, par le sentiment de faire quelque chose pour quelqu''un. Gérer pour se débarrasser de ces choses non pas parce que vous jetant plaignais o parce qu''ils étaient nouveaux, et finalement que la poussière dans un coin négligé ou espace occupé, en sachant que quelqu''un va prendre le bon jeu, parce que si vous vraiment vous en avez besoin. En outre, vous nolotiro.org organisé par zones géographiques encourage choses que vous voulez, rester proche, sans frais de port, pas de mouvement, pas de livraisons aux pays lointains on ne sait jamais si elles vous donnent vous-même quelqu''un de votre propre ville, vous trouverez en personne à un endroit convenu. <br><br> <b> S''il vous plaît noter: </b><br> AUCUN ÉCHANGE OPTION, ce ne repose pas sur le troc, ou l''achat, qui doit être promu altruisme, donner choses oui, parce que nous avons trop. <br><br> <b> Explication dans la version littéraire </b><br> <a href="http://www.marcianoduran.com.uy/?p=176"> <br>Pourquoi ne pas jeter? </a> par Marciano Duran <br><br> <b>nolotiro.org fonctionne grâce au travail de nombreux <a href="http://www.youtube.com/watch?v=KMU0tzLwhbE"> personnes </a > que vous avez créé le logiciel gratuit suivant: </b> <a href="http://rubyonrails.org/"> Ruby on Rails </a>, <a href="http://www.mysql.com/">MySQL<a href="http://developer.yahoo.com/geo/geoplanet/">Yahoo API GeoPlanet</a>, <a href="http://www.postfix.org/"> <a Postfix href="http://www.ubuntu.org/"> </a> Ubuntu, Nginx <a href="http://nginx.org/"> <a href="http://sphinxsearch.com/"> </a> Sphinx, et beaucoup d''autres, si nombreux qu''il serait impossible d''énumérer ici. <br><br> <b> Le code source est open source nolotiro.org </b> et est disponible pour utilisation (sous licence Affero GPL 3) <br> Visitez le <a href="https://github.com/alabs/nolotiro.org"> développeurs web </a> pour les détails (en anglais). les collaborateurs de sont les bienvenus, que ce soit pour planifier ou de traduire la page dans d''autres langues.'
+      title: A propos de nolotiro.org
+    access_here: accès ici
+    ads:
+      bumped: Nous avons publié l'avis
+      created: Nous avons créé l'annonce
+      form:
+        body: 'Corps de l''annonce:'
+        body_max: 500 caractères maximum
+        comments_enabled: Autoriser les commentaires du public
+        image_permitted_formats: 'Admis formats: gif, jpg, png. Max: 5MB.'
+        private_messages_only: 
+        private_messages_or_comments: 
+        prohibited: 'Il y a un problème, vérifier cela:'
+        select_an_image: Sélectionnez une image pour votre annonce (en option).
+        status: Etat
+        title: 'Titre de votre annonce:'
+        title_tip: 
+        type_ad: Type d'annonce
+      updated: Nous avons mis à jour l'annonce
+    all: tous
+    all_ads: toutes les annonces
+    and: et
+    are_you_interested: Ça t'intéresse?
+    available: disponible
+    back: retour à la page d'accueil
+    blog: blog
+    booked: réservé
+    bump_this_ad: République cette annonce
+    by_user: par
+    cancel_my_account: Annuler mon compte
+    change_city: changerment ville
     change_town:
-      choose: 
-      choose_html: 
-      close_to: 
-      please: 
-      submit: 
-      town: 
-    change_your_city: 
-    choose_username: 
-    choose_your_pass: 
-    choose_your_pass_again: 
-    cities_in_the_world: 
-    click_to_large: 
+      choose: Choisissez votre pays
+      choose_html: Aucun emplacement trouvé avec le nom <b>%{location}</b>. S'il vous plaît essayer à nouveau
+      close_to: 'Notre emplacement du système de suggestion (en fonction de votre IP) dit que vous êtes près de:'
+      please: S'il vous plaît entrer votre ville
+      submit: Envoyer
+      town: 'Ville:'
+    change_your_city: Changer de ville
+    choose_username: Choisissez un nom d'utilisateur
+    choose_your_pass: Choisissez votre mot de passe
+    choose_your_pass_again: Entrez votre mot de passe (oui, encore)
+    cities_in_the_world: villes du monde les plus recyclés
+    click_to_large: Cliquez pour agrandir la photo
     comments:
-      body_max: 
-      do_click: 
-      flash_ko: 
-      flash_ok: 
-      label: 
-      subject: 
-      submit: 
-      title: 
-    comments_count:
+      body_max: Maximum 1000 caractères
+      do_click: 'Cliquez sur le lien pour répondre au message:'
+      flash_ko: Il y avait un enregistrement de votre commentaire erreur. Check it et de le renvoyer
+      flash_ok: Commenter sauvé
+      label: Votre commentaire
+      subject: "[nolotiro.org] Vous avez un nouveau commentaire sur l'annonce %{ad}"
+      submit: Envoyer
+      title: Commentaires
+    contact: contact
+    contact_form: Formulaire de contact
+    contact_legend_html: Ce formulaire est à contacter les gestionnaires nolotiro. Vous cherchez une annonce? Cliquez %{new_ad_link}.
+    contact_thanks: Message envoyé! Merci de contacter nolotiro.org
+    cookie: Nous utilisons les cookies pour améliorer votre navigation sur ce site
+    create_new_ad: Créer une nouvelle annonce
+    delete_ad: supprimer ad
+    delete_sure: Êtes-vous sûr de vouloir le supprimer?
+    delivered: dévoué
+    developers: développeurs
+    didn_t_receive_confirmation_instructions: Vous avez pas reçu les instructions de confirmation?
+    edit_this_ad: Modifier cette annonce
+    faq:
+      answer_1_html: Le but principal de ce site est de se débarrasser des éléments que vous utilisez plus et nous empêchent à la maison.
+      answer_2_html: 'D''abord, vous directement pudiéndote débarrasser des choses que vous ne voulez plus, et toujours donner quelque chose implicitement. Il est préférable de l''aborder égoïstement et contrôler la relation de cause à effet qui va déclencher donner. Si nous nous concentrons sur le fait de donner des objets à partir d''un point de vue égoïste, se débarrasser des choses utiles mais qui nous dérangee, nous avons toujours une bonne expérience, sans attendre quelque chose de plus pour se débarrasser de ces objets. Et sachant que quelqu''un te donne usage ou avantage de renforcer cette expérience positive. mots: l''acte de donner des objets de valeur ou utile est toujours une chose positive si nous ne prévoyons pas une récompense morale ou apaiser notre conscience.'
+      answer_3_html: Sur ce site, vous avez un pouvoir absolu sur la décision de qui, où et quand vous donnez vos objets de valeur. Bien sûr, l'idéal est de donner quelque chose à la personne qui ont le plus besoin. Pas se méprendre sur le chemin nous utilisons le mot égotisme ici. Mais pour savoir si la personne que vous allez donner un objet mérite est une tâche très difficile, et favorise un type de comportement qui mènent à de mauvaises expériences et des jugements de valeur qui peuvent faire beaucoup de mal.
+      answer_4_html: Oui, il y a quelques-uns. Mail il n'pas d'importance. Si votre objectif est de se débarrasser des choses que vous ne voulez pas (l'égoïste). Si vous avez donné des objets parce qu'ils portaient et ne savait pas quoi faire avec eux, mais ne les voulait jeter, vous avez bien fait et vous êtes retourné cet objet au <a href="http://www.lapetiteclaudine.com/archives/009217.html">monde des choses utiles</a>, économiser de l'argent aux autres et de l'énergie, générant la richesse (un petit peu). Cependant, la décision finale sur le destinataire de l'objet que vous donnez est exclusivement vôtre. Donc, appliquer les critères que vous jugez appropriées.
+      answer_5_html: "Il y a seulement 2 types d'annonces: The Gift, qui offrent des articles qui entraveront ou ne veulent plus. Et je veux des annonces, qui servent à fournir des indices et inspirer les gens à ce genre d'objets que vous voulez que d'autres personnes d'utiliser ou de posséder. \n<Strong> Annonces, vente, demandant l'argent de l'emploi, le commerce, les médicaments etc. ne sont pas autorisés. </strong> Et ils sont supprimés dès qu'il détecte un modérateur, si indésirables affichant plusieurs reprises annonces, vous pouvez procéder à verrouiller le compte utilisateur."
+      answer_6_html: Le troc est un système qui fonctionne très bien en format physique, qui est, deux personnes face à face, en regardant des objets et de parler en direct et de vivre. Mais internet troc est très susceptible de se retrouver dans des tromperies et des discussions sans fin ou insatisfactions. Plus que vous avez lu ci-dessus, voici les objets sont donnés sans conditions et de troc a le conditionnement de quid pro quo, soit. Tu me donne et je donne quelque chose comme ça.
+      answer_7_html: Étonnamment beaucoup de gens, et il n'y a rien de mal avec les expéditions sont faites, mais doivent avoir un minimum de prudence à la gravité du récepteur ont été les cas où une personne de bonne foi a fait les frais d'expédition prépayée et a ensuite un résultat qui a retourné le paquet. Idéalement, ne se fait pas, devraient être encouragés à faire circuler des objets aussi près que possible, les économies d'énergie, et peut servir à mieux connaître les gens la ville votre ville. Espérons que dans la nouvelle version, nous nous sommes concentrés un concept local est atteint. <a href="http://en.wikipedia.org/wiki/Think_Globally,_Act_Locally">penser globalement et agit localement.</a>
+      answer_8_html: 
+      question_1: Quel est le but de ce projet?
+      question_2: Alors ce site est de ne pas aider les autres?
+      question_3: Mais je tiens à donner mon truc à quelqu'un qui en a vraiment besoin
+      question_4: Est-il vrai qu'il ya des gens qui vendent ensuite les choses qu'ils donnent loin ici?
+      question_5: Est-il vrai qu'il ya des gens qui vendent ensuite les choses qu'ils donnent loin ici?
+      question_6: Il est interdit l'échange d'objets? que rares
+      question_7: Puis-je envoyer des choses à des gens qui ne vivent pas dans ma ville?
+      question_8: 
+      title: Questions fréquentes
+    faqs: questions fréquentes
+    footer_explain: nolotiro.org est un site où je cherche des cadeaux don gratuit et des meubles de seconde main, des chaises, des canapés, des vélos, des ordinateurs portables, des tables, des poêles, des lampes, des lits, des vêtements, des jouets, des lits bébé ou les voitures, les téléphones mobiles et autres beaucoup de choses que vous ne voulez plus et n'a plus besoin de faire la réutilisation d'autres personnes qui peuvent servir ou donner une nouvelle vie.
+    forgot_your_password: As tu oublié ton mot de passe?
+    friends: Amis
+    gift_on: cadeau en %{woeid}
+    give: cadeau
+    hello_to: Salut %{recipient},
+    help_translate: Il aide à traduire
+    here: ici
+    home_title: annonces de cadeaux neuves et d'occasion
+    if_you_are_new: Si vous êtes un nouvel utilisateur, s'il vous plaît
+    if_youre_already_an_user: Si vous êtes déjà un utilisateur enregistré, s'il vous plaît
+    keywords: cadeau de seconde main gratuit
+    last_published_gifts: derniers cadeaux publiés
+    leave_blank: "(Laissez vide si vous ne voulez pas changer)"
+    legal_notice: avis juridique
+    legal_page:
+      body_html: 'Nom: Association aLabs. <br>Inscrite au registre des associations de la Communauté de Madrid avec le numéro 32022. <br>CIF: G86139847<br>C/Duque de Alba, 13 (28012) Madrid.'
+      title: Mentions légales
+    login: connecter
+    logout: déconnecter
+    mail:
+      automatic: Ceci est un message automatique. S'il vous plaît ne pas répondre à cette adresse e-mail.
+    member_since: Membre depuis
+    messages: messages
+    messages_title: Messages
+    meta_description: nolotiro.org est un site où je cherche des cadeaux don gratuit et des meubles de seconde main, des chaises, des canapés, des vélos, des ordinateurs portables, des tables, des poêles, des lampes, des lits, des vêtements, des jouets, des lits bébé ou les voitures, les téléphones mobiles et autres beaucoup de choses que vous ne voulez plus et n'a plus besoin de faire la réutilisation d'autres personnes qui peuvent servir ou donner une nouvelle vie.
+    meta_description_ad: cadeu seconde main %{title} en %{woeid}. %{body}
+    n_ads:
+      one: "%{count} annonce"
+      other: "%{count} annonces"
+    n_comments:
       one: ", %{count} commentaire"
       other: ", %{count} commentaires"
-    contact: 
-    contact_form: 
-    contact_legend_html: 
-    contact_thanks: 
-    cookie: 
-    create_new_ad: 
-    delete_ad: 
-    delete_sure: 
-    delivered: 
-    developers: 
-    didn_t_receive_confirmation_instructions: 
-    edit_this_ad: 
-    faq:
-      answer_1_html: 
-      answer_2_html: 
-      answer_3_html: 
-      answer_4_html: 
-      answer_5_html: 
-      answer_6_html: 
-      answer_7_html: 
-      question_1: 
-      question_2: 
-      question_3: 
-      question_4: 
-      question_5: 
-      question_6: 
-      question_7: 
-      title: 
-    faqs: 
-    footer_explain: 
-    forgot_your_password: 
-    friends: 
-    gift_on: 
-    give: 
-    hello_to: 
-    help_translate: 
-    here: 
-    home_title: 
-    if_you_are_new: 
-    if_youre_already_an_user: 
-    keywords: 
-    last_published_gifts: 
-    leave_blank: 
-    legal_notice: 
-    legal_page:
-      body_html: 
-      title: 
-    login: 
-    logout: 
-    mail:
-      automatic: 
-    member_since: 
-    messages: 
-    messages_title: 
-    meta_description: 
-    meta_description_ad: 
-    new_user: 
-    no_results:
-      first_to_publish_html: 
-      switch_to_bigger_city: 
-      switch_to_guessed_city_html: 
-      on_user: 
-      phrase: 
-      publish_ad: 
-      subtitle: 
-      title: 
+    n_reads:
+      one: "%{count} lecture"
+      other: "%{count} lectures"
+    new_user: nouvel utilisateur
     no_location_specified: 
-    password: 
-    permission_denied: 
-    please_fill_to_become_member: 
-    please_insert_email_and_password: 
-    privacy: 
+    no_results:
+      first_to_publish_html: 1. Soyez le premier à publier %{publish}.
+      on_user: Aucune de ces annonces publiées par cet utilisateur.
+      phrase: «Un voyage de mille kilomètres commence par un premier pas", Lao Tse.
+      publish_ad: publier une annonce dans cette ville
+      subtitle: Vous pouvez essayer une de ces choses
+      switch_to_bigger_city: 2. Essayez de changer la ville pour un plus grand que vous êtes à proximité de votre emplacement.
+      switch_to_guessed_city_html: '3. Notre emplacement du système de suggestion (basé sur votre IP) indique que vous êtes près de: <br> %{change_location}'
+      title: Aucune annonce pour ce lieu.
+    password: Mot de passe
+    permission_denied: Vous n'êtes pas autorisé à effectuer cette action.
+    please_fill_to_become_member: S'il vous plaît remplir ce formulaire pour être un membre de nolotiro
+    privacy: Politique de confidentialité
     privacy_page:
-      body_html: 
-      title: 
-    profile: 
+      body_html: 'nolotiro.org (site Web ci-après) est détenu et géré par: <br><br>aLabs<br>C/Duque de Alba, 13 <br> 28012 Madrid, Espagne <br> <br><br> peut contacter dans le formulaire de contact a permis à cet effet sur le site. L''accès au site implique l''acceptation de cette politique et conditions d''utilisation vie privée. <br><br> En ce qui concerne le respect de la loi 15/1999, du 13 Décembre, la protection des données personnelles (LOPD), nous vous informons que ce site stocke les données automatisées fournies sur le formulaire ils ont enregistré l''utilisateur pour effectuer l''utilisateur pour fournir des services du site Web d''une manière personnalisée, tels que: la gestion de votre compte utilisateur, annonces, et le système de gestion des messages privés entre les utilisateurs. <br><br> Les messages privés terme se réfère à la possibilité d''avoir accès à ces messages privés seront exclusivement entre deux utilisateurs, sans aucune possibilité d''utilisateurs tiers d''accéder au contenu. Cependant, dans les messages de base de données sont stockées dans le texte brut et peut être mis à la disposition des forces de sécurité en cas de perpétration d''un crime ou d''une injonction. <br><br> L''utilisateur ne doit pas publier ou de tiers posséder des données personnelles dans les annonces telles que les adresses électroniques, numéros de téléphone, adresses, etc. Le site, de prendre les mesures nécessaires à la préservation des données personnelles, même si l''utilisateur ignore ces termes de vie privée. Voilà pourquoi nous avons développé un des e-mails de filtre et le téléphone dans les annonces pour empêcher que ces informations soient recueillies par des systèmes et des robots d''indexation automatique. Cela ne supprime pas la responsabilité ultime de l''utilisateur quant à la publication de ses données personnelles ou de tiers. Et il est seulement parce que nous croyons que de nombreux utilisateurs ne sont pas conscients de l''importance de la préservation de leurs données personnelles. Le formulaire de contact <br>: <br> nous vous informons que les données personnelles fournies par l''utilisateur dans le formulaire de contact sont stockés dans le seul but de contact avec l''utilisateur, ces données ne seront pas utilisées dans tous les cas pour l''envoi de messages publicitaires, ni être transférées à des tiers. <br><br> A tout moment vous pouvez exercer vos droits d''accès, de rectification et de suppression des données par l''un des médias mentionnés au premier alinéa. <br> Session Cookies: <br> accès à ce site implique l''utilisation de cookies de session. Les cookies de session sont de petits éléments d''information qui sont stockés dans le navigateur utilisé par chaque utilisateur pour le serveur de se rappeler certaines informations qui peuvent être utilisées plus tard. Cette information peut vous identifier comme un utilisateur spécifique anonyme. <br> outre, ce site peut accueillir des éléments dans le code source des pages qui sont utilisés pour mesurer le trafic des utilisateurs qui visitent un site Web et peut tirer un motif de visites d''utilisateurs. Cette information anonyme peut être partagée avec les clients d''entreprise, les fournisseurs, les sponsors et les annonceurs. <br><br> Actuellement, nous utilisons les services de Google Analytics pour mesurer le trafic de ce site qui permet de capturer les informations décrites ci-dessus. Vous pouvez voir plus d''informations sur la politique de confidentialité sur le site de Google: Google (Analytics): http://www.google.com/intl/es_ALL/privacypolicy.html <br> Ce site peut également accueillir la publicité réseaux propres, affiliés ou publicitaires. Cette annonce est montré à travers les serveurs qui utilisent également des cookies pour afficher le contenu lié la publicité pour les utilisateurs. Chacun de ces serveurs publicitaires a sa propre politique de confidentialité, qui peut être consulté sur leurs propres pages Web. Actuellement, ce site héberge la publicité Google Adsense: http://www.google.com/intl/es_ALL/privacypolicy.html
+
+'
+      title: Politique de confidentialité
+    profile: profil
     profile_actions:
-      friend:
-        add: 
-        delete: 
       blocking:
         add: 
         confirm: 
         delete: 
-    publish_ad: 
-    publish_ad_on: 
-    published_ads: 
-    published_at_by_html: 
-    published_on: 
-    published_on_html: 
-    readed_count: 
-    reads: 
-    register: 
-    register_here: 
-    remember_me: 
-    rss_suscribe: 
-    save_failed: 
+      friend:
+        add: ajoutez %{username} à votre liste d'amis
+        delete: supprimer %{username} à votre liste d'amis
+    publish_ad: Publication annonce
+    publish_ad_on: Publier annonce en %{woeid}
+    published_ads: Annonces publiées
+    published_at_by_html: Publié a %{time} par utilisateur %{user}
+    published_on: Publié a %{date}
+    published_on_html: Publié <abbr class='js-moment' title='%{date}'>%{date}</abbr>
+    reads: lectures
+    register: Inscrivez
+    register_here: Inscrivez ici
+    remember_me: souviens-toi de moi
+    rss_suscribe: Abonnez-vous via RSS
+    save_failed: 'Il y a un problème, vérifier cela:'
     search:
-      button: 
-      no_ads_message_html: 
-    searching_on_html: 
-    send: 
-    send_a_message: 
-    send_a_message_to: 
-    sending_this_form: 
-    share_this_ad: 
-    sign_in: 
-    sign_in_with_provider: 
-    sign_up: 
-    slogan: 
-    suggestions: 
-    to_publish_ad: 
-    to_publish_or_send_messages: 
-    tos: 
+      button: recherche
+      no_ads_message_html: Aucune annonce correspondant à la recherche <b>%{q}</b>.
+    searching_on_html: Regarder <i>%{q}</i> en
+    send: Envoyer
+    send_a_message: "+ Envoyer un message privé à l'annonceur"
+    send_a_message_to: Envoyer un message privé à
+    sending_this_form: En soumettant ce formulaire, reconnaissez avoir lu, compris, et vous êtes heureux avec notre
+    share_this_ad: Diffuse cette annonce
+    sign_in: S'identifier
+    sign_in_with_provider: Connexion avec %{provider}
+    sign_up: Créer un usager
+    slogan: Ne jetez pas, je Gift (sans conditions)
+    suggestions: suggestions
+    to_publish_ad: Publier annonce
+    to_publish_or_send_messages: Liste ou envoyer des messages accéder à votre compte
+    tos: Conditions d'utilisation
     translate:
-      description_html: 
-      link: 
-      title: 
-    update: 
-    user_ads: 
-    user_edit_profile: 
-    user_profile: 
-    username: 
-    users_most_active: 
-    users_most_active_last_week: 
-    view_ads_on: 
-    view_ads_on_your_city: 
-    view_more_ads: 
-    want: 
-    want_to_leave: 
-    we_need_your_password: 
-    welcome: 
-    write_a_comment: 
-    your_email: 
+      description_html: À l'heure actuelle, nolotiro.org est disponible dans quelques langues, mais vous pouvez nous aider à %{translate_it}.
+      link: le traduire à la vôtre
+      title: Aidez-nous à traduire nolotiro.org à votre langue
+    update: Suaver
+    user_ads: annonces
+    user_edit_profile: Modifier le profil de l'utilisateur
+    user_profile: Profil d'utilisateur
+    username: Nom d'utilisateur
+    users_most_active: utilisateurs plus actifs
+    users_most_active_last_week: la plupart des utilisateurs actifs dans la dernière semaine
+    view_ads_on: Voir annonces dans %{location}
+    view_ads_on_your_city: Voir les annonces dans votre ville
+    view_more_ads: voir plus d'annonces >
+    want: regarde
+    want_to_leave: Voulez-vous supprimer votre nom d'utilisateur?
+    we_need_your_password: "(Nous avons besoin de votre mot de passe pour confirmer vos modifications)"
+    welcome: Salut
+    write_a_comment: "+ Ajouter un commentaire"
+    your_email: votre e-mail
   number:
     currency:
       format:
@@ -493,11 +513,11 @@ fr:
         delimiter: 
   oauth:
     errors:
-      email_not_provided: 
-      duplicated_username: 
+      duplicated_username: Votre nom d'utilisateur pour %{provider} est déjà dans notre base de données. Si vous avez enregistré déjà en utilisant un autre réseau social ou via e-mail et mot de passe, s'il vous plaît connectez-vous de cette façon. Dans le cas contraire, il indique un autre nom d'utilisateur pour terminer l'enregistrement.
+      email_not_provided: Nous avons besoin d'entrer une adresse e-mail pour terminer l'enregistrement.
   recaptcha:
     errors:
-      verification_failed: 
+      verification_failed: Il a échoué la vérification contre les robots, essayer à nouveau
   support:
     array:
       last_word_connector: " et "
@@ -511,9 +531,9 @@ fr:
       short: "%d %b %H:%M"
     pm: pm
   unauthorized:
-    default: 
+    default: Vous n'êtes pas autorisé à accéder à cette page.
     manage:
-      all: 
+      all: Vous devez d'abord vous connecter ou vous inscrire un usager.
   will_paginate:
     next_label: suivant →
     page_entries_info:

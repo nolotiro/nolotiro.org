@@ -7,7 +7,7 @@ class MessageMailer < ActionMailer::Base
     @message = message
     @sender = message.sender
     @receiver = message.recipient
-    @subject = t('mailboxer.message_mailer.subject_new', user: @sender.username)
+    @subject = t('message_mailer.subject_new', user: @sender.username)
 
     mail to: @receiver.email, subject: @subject, template_name: 'new_message_email'
   end

@@ -10,12 +10,25 @@ gl:
     attributes:
       ad:
         body: Corpo
+        city: Cidade
+        id: ID
         image: Imaxe
         image_content_type: Tipo de contido de imaxe
         image_file_size: Tamaño da imaxe
+        published_at: Publicada en
+        status: Estado
         subject: Título
         title: Título
         type: Tipo
+        user: Usuario
+        woeid_code: Código Woeid
+      comment:
+        ad: Anuncio
+        body: Corpo
+        created_at: Data de creación
+        id: ID
+        ip: IP
+        user: Usuario
       contact:
         email: Correo electrónico
         message: Mensaxe
@@ -23,14 +36,28 @@ gl:
         body: Mensaxe
         subject: Asunto
       user:
+        ads_count: Anuncios publicados
+        confirmed_at: Data de confirmación
+        created_at: Data de inscrición
         current_password: Contrasinal actual
+        current_sign_in_at: Pasado login
         email: Correo electrónico
+        last_sign_in_ip: Pasado login (IP)
         password: 'Nova contrasinal
 
 '
         password_confirmation: Nova contrasinal (repetir)
         remember: Lémbrame
         username: Nome de usuario
+    models:
+      ad: Anuncios
+      ad_comment: 
+      admin: Admin
+  blockings:
+    create:
+      success: 
+    destroy:
+      success: 
   date:
     abbr_day_names:
     - Dom
@@ -185,12 +212,7 @@ gl:
 
 '
       user:
-        signed_in: 
-  blockings:
-    create:
-      success: 
-    destroy:
-      success: 
+        signed_in: Está conectado.
   friendships:
     create:
       success: 
@@ -208,18 +230,9 @@ gl:
       update: Actualizar %{model}
   mailboxer:
     buttons:
-      back: 
+      back: Mensaxes de novo
       trash: Eliminar conversa
       trash_selected: Eliminar conversas seleccionadas
-    message_mailer:
-      message:
-        body: Mensaxe
-        subject: Asunto
-      subject_new: 
-      visit: Ver conversa e responder o mensaxe
-      visit_html: 
-      visit_text: 
-      you_have_new_message: Recibiu unha mensaxe nova
     new:
       body_max: Máximo 1500 carácteres
       button: Enviar
@@ -229,20 +242,13 @@ gl:
       submit: Enviar
       title: Nova mensaxe privada para o usuario %{user}
     notifications:
-      sent: 
+      sent: Mensaxe enviada
       trash: Conversa arquivada
-    search: 
     table:
-      date: Data
-      delete: Eliminar?
-      last: Último
       none: 
-      reciever: Recibido
-      sender: Enviado
-      subject: Asunto
     titles:
       conversation: 
-      index: 
+      index: Mensaxes de %{username}
   mailer:
     confirmation_reminder:
       p1: Detectamos que teña creado unha conta en nolotiro.org e vostede non confirmou.
@@ -250,7 +256,18 @@ gl:
     greetings: Grazas e saludos,
     hello: Ola,
     signature: Equipo de nolotiro.org
+  message_mailer:
+    message:
+      body: Mensaxe
+      subject: Asunto
+    subject_new: 
+    visit: Ver conversa e responder o mensaxe
+    visit_html: 
+    visit_text: 
+    you_have_new_message: Recibiu unha mensaxe nova
   nlt:
+    a_gift: Un presente
+    a_request: Una petición
     about: acerca de
     about_page:
       description_html: 
@@ -258,17 +275,14 @@ gl:
     access_here: Entre aquí
     ads:
       bumped: 
-      count:
-        one: "%{count} anuncio"
-        other: "%{count} anuncios"
       created: Creamos o anuncio
       form:
         body: 'Corpo do anuncio:'
         body_max: Máximo 500 caracteres
         comments_enabled: Cómo quere ser contactada?
+        image_permitted_formats: 'Formatos permitidos: gif, jpg, png. Max: 5Mb de tamaño.'
         private_messages_only: Unicamente por mensaxe privada
         private_messages_or_comments: Por mensaxe privada o mediante comentarios públicos no anuncio
-        image_permitted_formats: 'Formatos permitidos: gif, jpg, png. Max: 5Mb de tamaño.'
         prohibited: 'Hai un problema, consulta isto:'
         select_an_image: Seleccione unha imaxe para o súo regalo
         status: Estado
@@ -281,8 +295,6 @@ gl:
     and: e
     are_you_interested: Interesado?
     available: dispoñible
-    a_gift: Un presente
-    a_request: Una petición
     back: regresar á páxina de inicio
     blog: blog
     booked: reservado
@@ -298,7 +310,7 @@ gl:
       submit: Enviar
       town: 'Cidade:'
     change_your_city: Cambiar de cidade
-    choose_username: 
+    choose_username: Escoller un nome de usuario
     choose_your_pass: 
     choose_your_pass_again: 
     cities_in_the_world: 
@@ -312,9 +324,6 @@ gl:
       subject: 
       submit: 
       title: 
-    comments_count:
-      one: ", %{count} comentario"
-      other: ", %{count} comentarios"
     contact: contacto
     contact_form: 
     contact_legend_html: Este formulario é para poñerse en contacto cos xestores de nolotiro. Vostede quere publicar un anuncio? Prema %{new_ad_link}
@@ -337,6 +346,7 @@ gl:
       answer_5_html: 
       answer_6_html: 
       answer_7_html: 
+      answer_8_html: 
       question_1: 
       question_2: 
       question_3: 
@@ -344,6 +354,7 @@ gl:
       question_5: 
       question_6: 
       question_7: 
+      question_8: 
       title: 
     faqs: 
     footer_explain: 
@@ -364,7 +375,7 @@ gl:
     leave_blank: 
     legal_notice: aviso legal
     legal_page:
-      body_html: 'Nome: Asociación aLabs . <br>Inscrita no Rexistro de asociacións da Comunidade de Madrid , co número 32022 . <br>CIF : G86139847<br> C/Duque de Alba, 13 ( 28012 ) Madrid.'
+      body_html: 'Nome: Asociación aLabs. <br>Inscrita no Rexistro de asociacións da Comunidade de Madrid, co número 32022. <br>CIF: G86139847<br>C/Duque de Alba, 13 (28012) Madrid.'
       title: Aviso legal
     login: acceder
     logout: 
@@ -375,33 +386,41 @@ gl:
     messages_title: 
     meta_description: 
     meta_description_ad: 
+    n_ads:
+      one: "%{count} anuncio"
+      other: "%{count} anuncios"
+    n_comments:
+      one: ", %{count} comentario"
+      other: ", %{count} comentarios"
+    n_reads:
+      one: 
+      other: 
     new_user: 
+    no_location_specified: 
     no_results:
       first_to_publish_html: 
-      switch_to_bigger_city: 
-      switch_to_guessed_city_html: 
       on_user: 
       phrase: 
       publish_ad: 
       subtitle: 
+      switch_to_bigger_city: 
+      switch_to_guessed_city_html: 
       title: 
-    no_location_specified: 
     password: Contrasinal
     permission_denied: 
     please_fill_to_become_member: Por favor, enche este formulario para facer membro do nolotiro
-    please_insert_email_and_password: Por favor, engada o seu correo electrónico e contrasinal.
     privacy: política de privacidade
     privacy_page:
       body_html: 
       title: Política de privacidade
     profile: perfil
     profile_actions:
-      friend:
-        add: 
-        delete: 
       blocking:
         add: 
         confirm: 
+        delete: 
+      friend:
+        add: 
         delete: 
     publish_ad: Publicando anuncio
     publish_ad_on: Publicar anuncio en %{woeid}
@@ -409,7 +428,6 @@ gl:
     published_at_by_html: Publicado fai %{time} por el usuario %{user}
     published_on: Publicado fai %{date}
     published_on_html: Publicado <abbr class='js-moment' title='%{date}'>%{date}</abbr>
-    readed_count: 
     reads: 
     register: 
     register_here: 
@@ -426,7 +444,7 @@ gl:
     sending_this_form: Ao enviar este formulario, vostede acepta que leu, entendeu e está feliz co noso
     share_this_ad: Comparte este anuncio
     sign_in: Acceder
-    sign_in_with_provider: Entrar co outro proveedor
+    sign_in_with_provider: Entrar co %{provider}
     sign_up: Crear un usuario
     slogan: no lo tiro, te lo regalo (sin condiciones)
     suggestions: suxestións
@@ -502,8 +520,8 @@ gl:
         delimiter: 
   oauth:
     errors:
-      email_not_provided: 
       duplicated_username: 
+      email_not_provided: 
   recaptcha:
     errors:
       verification_failed: 

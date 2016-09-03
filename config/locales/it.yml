@@ -10,12 +10,25 @@ it:
     attributes:
       ad:
         body: Corpo
+        city: Cittá
+        id: Id
         image: Immagine
         image_content_type: Tipo del contenuto della immagine
         image_file_size: Formato della immagine
+        published_at: pubblicato il
+        status: Stato
         subject: Titolo
         title: Titolo
         type: Tipo
+        user: Utente
+        woeid_code: Woeid codici
+      comment:
+        ad: Annuncio
+        body: Corpo
+        created_at: Data di creazione
+        id: Id
+        ip: Ip
+        user: Utente
       contact:
         email: posta elettronica
         message: Messaggio
@@ -23,12 +36,26 @@ it:
         body: Messaggio
         subject: Soggetto
       user:
+        ads_count: Annunci pubblicati
+        confirmed_at: Data di conferma
+        created_at: Data registrazione
         current_password: Password atuale
+        current_sign_in_at: Uultimo accesso
         email: email
+        last_sign_in_ip: Ultimo accesso (IP)
         password: Password nuova
         password_confirmation: Ripete di nuovo la password
         remember: Ricordami
         username: Nome di utente
+    models:
+      ad: Ads
+      ad_comment: Ad Commenti
+      admin: Admin
+  blockings:
+    create:
+      success: Utente bloccato
+    destroy:
+      success: Utente sbloccato
   date:
     abbr_day_names:
     - dom
@@ -160,7 +187,7 @@ it:
       follow_instructions: 'Qualcuno a chiesto di cambiare la password di nolotiro.org. Se non sei stato tu puoi ignorare questa email. La password non cambierà fino a quando non accedi al link per crearne una nuova. '
       forgot: Hai dimenticato la password?
       instructions: Per favore, scrive la tua email e te invieremo un link di acceso diretto per cambiare la tua password.
-      no_html_instructions: "Se non puoi fare clic sul link, copia e incolla l'URL nella barra degli indirizzi del browser: "
+      no_html_instructions: 'Se non puoi fare clic sul link, copia e incolla l''URL nella barra degli indirizzi del browser: '
       no_token: Puoi accedere a questa pagina solamente dalla email di reset della password. Se vieni dalla email controlla di aver inserito l'url completo riportato nella email.
       send: Invia email
       send_instructions: Riceverai un messaggio email con le istruzioni per reimpostare la tua password entro qualche minuto.
@@ -179,11 +206,6 @@ it:
       signed_out: Sei uscito correttamente.
       user:
         signed_in: Acceso eseguito
-  blockings:
-    create:
-      success: Utente bloccato
-    destroy:
-      success: Utente sbloccato
   friendships:
     create:
       success: Amico aggiunto
@@ -204,15 +226,6 @@ it:
       back: "< torna al messaggio"
       trash: Cancellare la conversazione
       trash_selected: Cancellare le conversazioni selezionati
-    message_mailer:
-      message:
-        body: Messaggio
-        subject: Oggetto
-      subject_new: "[nolotiro.org] Nuovo messaggio dall'utente %{user}"
-      visit: Guarda la converzazione e risponde al messaggio
-      visit_html: Vai a %{url} e guarda nella tua posta in arrivo per rispondere
-      visit_text: Vai a %{url} e guarda nella tua posta in arrivo per rispondere
-      you_have_new_message: Hai ricevuto un nuovo messaggio
     new:
       body_max: 1500 caratteri massimo
       button: Invia
@@ -224,15 +237,8 @@ it:
     notifications:
       sent: Messaggio inviato
       trash: Conversazione cancellata
-    search: Risultati della ricerca su %{search}
     table:
-      date: Data
-      delete: Cancellare?
-      last: ultimo
       none: Non hai messaggi di questo tipo
-      reciever: Ricevuto
-      sender: Inviato
-      subject: Oggetto
     titles:
       conversation: Conversazione con %{recipient} oggetto %{subject}
       index: Messaggio di %{username}
@@ -243,25 +249,33 @@ it:
     greetings: 'Grazie e saluti, '
     hello: 'Ciao, '
     signature: il team di nolotiro.org
+  message_mailer:
+    message:
+      body: Messaggio
+      subject: Oggetto
+    subject_new: "[nolotiro.org] Nuovo messaggio dall'utente %{user}"
+    visit: Guarda la converzazione e risponde al messaggio
+    visit_html: Vai a %{url} e guarda nella tua posta in arrivo per rispondere
+    visit_text: Vai a %{url} e guarda nella tua posta in arrivo per rispondere
+    you_have_new_message: Hai ricevuto un nuovo messaggio
   nlt:
+    a_gift: Un regalo
+    a_request: Una petizione
     about: su di noi
     about_page:
-      description_html: <b>¿Che cos'è nolotiro.org?</b><br> è un sito dove è possibile offrire al pubblico le cose che non vuoi più o che non ti servono più, così persone a cui servono le possono prendere o esserli di molta utilità.<br><br> <strong>Leggi le <a href="/es/page/faqs">domanti frequenti</a> per sapere di più sulla filosofia e gli obiettivi del progetto</strong> <br><br> <b>Vantaggi di nolotiro.org:</b><br> Il vantaggio più grande di nolotiro.org, è che sostituisce la nostalgia/sentimento di spreco, per una sensazione di fare qualcosa per qualcuno. Riesci a sbarazzarti di cose che non buttavi perché sentivi tristezza, perché erano nuove, o perché... e alla fine solo restavano in un angolo dimenticati utilizzando spazio, sapendo che a qualcun altro poteva servirle, che le serviva veramente. Da un'altra parte nolotiro.org è stato organizzato in aree geografiche, così le cose rimangono vicino, non ci sono spesse di spedizione, ne spostamenti, ne meno spedizione ad altri paesi lontani con la possibilità che non arrivino mai a destinazione, lo puoi dare in persona a qualcuno della tua stessa città, che può prenderlo in un luogo precedentemente concordato. <br><br> <b>Devi fare attenzione:</b><br> NON C'E NESSUNA OPZIONE DI SCAMBIO, questo non è basato nel baratto, ne l'acquisto, perché si debe fomentare il altruismo, dare le cose perché si, perché abbiamo troppo. <br><br> <b>Spiegazione in versione letteraria in spagnolo</b><br> <a href="http://www.marcianoduran.com.uy/?p=176">Perché non lo butto?</a> Per Marciano Durán <br><br> <b>nolotiro.org funziona grazie al lavoro de molte <a href="http://www.youtube.com/watch?v=KMU0tzLwhbE">persone</a> che hanno sviluppato il seguente software libero:</b> <a href="http://rubyonrails.org/">Ruby On Rails</a>, <a href="http://www.mysql.com/">MySQL</a>, <a href="https://developer.yahoo.com/yql/">Yahoo YQL</a>, <a href="http://www.postfix.org/">Postfix</a>, <a href="http://www.ubuntu.org/">Ubuntu</a>, <a href="http://nginx.org/">Nginx</a>, e tanti altri, tanti che sarebbe impossibile nominarli tutti cui. <br><br> <b>Il codice fonte di nolotiro.org è un codice aperto</b> ed è disponibile per essere utilizzato (sotto licenza Affero GPL 3).<br> Vai su <a href="https://github.com/alabs/nolotiro.org"> web per sviluppatori</a> per altri informazioni (in inglese).<br> I collaboratori sono benvenuti, sia per programmare o per tradurre il sito in altre lingue.
+      description_html: <b>¿Che cos'è nolotiro.org?</b><br> è un sito dove è possibile offrire al pubblico le cose che non vuoi più o che non ti servono più, così persone a cui servono le possono prendere o esserli di molta utilità.<br><br> <strong>Leggi le <a href="/es/page/faqs">domanti frequenti</a> per sapere di più sulla filosofia e gli obiettivi del progetto</strong> <br><br> <b>Vantaggi di nolotiro.org:</b><br> Il vantaggio più grande di nolotiro.org, è che sostituisce la nostalgia/sentimento di spreco, per una sensazione di fare qualcosa per qualcuno. Riesci a sbarazzarti delle cose che non buttavi via perche ti dispaceva buttare delle cose ancore útili ma che non usavi e alla fine solo restavano in un angolo dimenticati utilizzando spazio, sapendo che a qualcun altro poteva servirle, che le serviva veramente. Da un'altra parte nolotiro.org è stato organizzato in aree geografiche, così le cose rimangono vicino, non ci sono spesse di spedizione, ne spostamenti, ne meno spedizione ad altri paesi lontani con la possibilità che non arrivino mai a destinazione, lo puoi dare in persona a qualcuno della tua stessa città, che può prenderlo in un luogo precedentemente concordato. <br><br> <b>Devi fare attenzione:</b><br> NON C'E NESSUNA OPZIONE DI SCAMBIO, questo non è basato nel baratto, ne l'acquisto, perché si debe fomentare il altruismo, dare le cose perché si, perché abbiamo troppo. <br><br> <b>Spiegazione in versione letteraria in spagnolo</b><br> <a href="http://www.marcianoduran.com.uy/?p=176">Perché non lo butto?</a> Per Marciano Durán <br><br> <b>nolotiro.org funziona grazie al lavoro de molte <a href="http://www.youtube.com/watch?v=KMU0tzLwhbE">persone</a> che hanno sviluppato il seguente software libero:</b> <a href="http://rubyonrails.org/">Ruby On Rails</a>, <a href="http://www.mysql.com/">MySQL</a>, <a href="https://developer.yahoo.com/yql/">Yahoo YQL</a>, <a href="http://www.postfix.org/">Postfix</a>, <a href="http://www.ubuntu.org/">Ubuntu</a>, <a href="http://nginx.org/">Nginx</a>, e tanti altri, tanti che sarebbe impossibile nominarli tutti cui. <br><br> <b>Il codice fonte di nolotiro.org è un codice aperto</b> ed è disponibile per essere utilizzato (sotto licenza Affero GPL 3).<br> Vai su <a href="https://github.com/alabs/nolotiro.org"> web per sviluppatori</a> per altri informazioni (in inglese).<br> I collaboratori sono benvenuti, sia per programmare o per tradurre il sito in altre lingue.
       title: Su nolotiro.org
     access_here: accedi qui
     ads:
       bumped: Abbiamo ripubblicato annuncio
-      count:
-        one: "%{count} annuncio"
-        other: "%{count} annunci"
       created: 'Abbiamo creato l''annuncio '
       form:
         body: Corpo del annuncio
         body_max: Massimo 500 caratteri
         comments_enabled: Como vuoi essere contattata?
+        image_permitted_formats: 'Formatti permessi: gif, jpg, png. Massimo: 5Mb di dimensione'
         private_messages_only: Soltanto por messaggi privati
         private_messages_or_comments: Por messaggi privati oppure por commenti nell'annucio
-        image_permitted_formats: 'Formatti permessi: gif, jpg, png. Massimo: 5Mb di dimensione'
         prohibited: 'C''e un problema, controlla questo:'
         select_an_image: Seleziona una immagine per il tuo annuncio
         status: Stato
@@ -274,8 +288,6 @@ it:
     and: e
     are_you_interested: Sei interessato?
     available: disponibile
-    a_gift: Un regalo
-    a_request: Una petizione
     back: torna alla pagina iniziale
     blog: blog
     booked: riservato
@@ -305,9 +317,6 @@ it:
       subject: "[nolotiro.org] Hai un nuovo commento sull'annuncio %{ad}"
       submit: Inviare
       title: Commenti
-    comments_count:
-      one: ", %{count} commento"
-      other: ", %{count} commenti"
     contact: contatto
     contact_form: Formulario di contatto
     contact_legend_html: Questo formulario é per contattare i gestori di nolotiro. Estái cercando di pubblicare un annucio? Clicca %{new_ad_link}
@@ -322,19 +331,21 @@ it:
     edit_this_ad: Editare questo annuncio
     faq:
       answer_1_html: Lo scopo fondamentale di questo sito è quello di sbarazzarsi di oggetti non più utilizzati e che ci ostacolano in casa
-      answer_2_html: 'Primero a ti directamente pudiéndote deshacer de esas cosas que ya no quieres, y siempre al que regalas algo implícitamente. Lo mejor es enfocarlo egoistamente y controlar la relación de causa-efecto que vamos a desencadenar regalando.<br> Si enfocamos dicho acto de regalar objetos desde una perspectiva  egoísta, la de deshacernos de cosas útiles, pero que nos molestan,porque nos estorban, porque van a ir a la basura, porque son objetos desahuciados ... siempre tendremos una buena experiencia, al no esperar nada mas que  librarnos de dichos objetos. <br> Y el saber que alguien le está dando uso o provecho reforzará esa experiencia como positiva. <br> Es decir: el acto de regalar cosas de valor o útiles siempre es algo positivo si no esperamos una recompensa moral o aplacar nuestra conciencia.'
-      answer_3_html: Su questo sito si ha potere assoluto sulla decisione di chi, dove e quando si dà via gli oggetti di valore. <br> Naturalmente l'ideale è quello di dare qualcosa alla persona che più bisogno. <br> Non fraintendere il senso usiamo la parola egoismo qui. Ma per sapere se la persona che si sta per dare un oggetto merita, è un compito molto difficile, e favorisce un tipo di comportamento che portano a cattive esperienze e giudizi di valore che possono fare molto male.
-      answer_4_html: 'Anche se le probabilità che i trafficanti usata animali farciti rotolarsi in questo web sono abbastanza remota, in tal caso ... non mi dispiacerebbe affatto se il vostro obiettivo è quello di sbarazzarsi delle cose che non si desidera (l''egoista). <Br > Come si sente: non importa di più, anche se non credo che continui a fare qualcosa di buona qualità Se hai dato oggetti perché indossavano e non sapeva che cosa fare con loro, ma nessuno dei due voleva gettare away''ve fatto bene <.. br> Hai fatto bene con te, e sei tornato quell''oggetto per <a href="http://www.lapetiteclaudine.com/archives/009217.html"> mondo di cose utili, risparmiando denaro </a> persone ed energia, generatori di ricchezza (anche se piccola, è ricchezza). Se, invece, questa risposta non vi convince, allora non si dovrebbe dare via niente qui e vendere o donare ad una ONG, dove si controllano e la selezione di queste persone in difficoltà (non possiamo garantire questo processo).'
-      answer_5_html: 'Ci sono solo 2 tipi di annunci: il dono, che offrono oggetti che ostacolino o non vogliono più. E voglio annunci, che servono a fornire indizi e ispirare le persone a che tipo di oggetti che si desidera che altre persone di utilizzare o possedere. <br> <Strong> annunci di cambiamento, vendita, chiedendo denaro da lavoro, commercio, farmaci ecc non sono ammessi. </ strong> e vengono cancellati non appena viene rilevato un moderatore, se indesiderato più volte la pubblicazione degli annunci, si può procedere per bloccare l''account utente.'
-      answer_6_html: Il baratto è un sistema che funziona molto bene in formato fisico, cioè, due persone faccia a faccia, guardando gli oggetti e parlare dal vivo e vivere. Ma baratto internet è molto probabile che finiscano in inganni e discussioni infinite o malcontenti <br> Inoltre, come avete letto sopra, qui gli oggetti sono dato senza condizioni e baratto ha il condizionamento di quid pro quo, vale a dire. Tu me do e do niente di simile.
-      answer_7_html: Sorprendentemente molte persone fanno, e non c'è niente di sbagliato con spedizioni vengono effettuate, ma devono avere un minimo di cautela con la serietà del ricevitore sono stati casi in cui qualcuno di buona fede ha fatto le spese di spedizione prepagata e poi ha un risultato che ha restituito il pacchetto. Idealmente, non fatto, dovrebbero essere incoraggiati a far circolare gli oggetti il più vicino possibile, il risparmio energetico, e può servire per conoscere meglio le persone della tua città. <br> Spero che nella nuova versione, ci siamo concentrati un concetto locale è raggiunto. <br> <a href="http://en.wikipedia.org/wiki/Think_Globally,_Act_Locally">pensare a livello globale.</a>
+      answer_2_html: Prima a te direttamente perche ti puoi liberare delle cose che non voui più, ma anche alla persona a qui regali implicitamente. Il meglio è vederlo da un punto di vista egoista e controllare la relazione de causa-effetto che stiamo a iniziare. Si facciamo cosí e pensiamo soltanto a liberarci delle cose útili, ma che noi non vogliamo più perche ci incomodano e sono da buttare fuori, sempre terremo una bella esperienza, perche non speriamo niente di più. Ed il fatto de sapere que qualcuno ne está profittando rafforze la esperienza. In altre parole, l'atto di regalare delle cose di valore o útili es sempre positivo se non speriamo un premio morale o placare la nostra coscienza.
+      answer_3_html: Su questo sito si ha potere assoluto sulla decisione di chi, dove e quando si dà via gli oggetti di valore. Naturalmente l'ideale è quello di dare qualcosa alla persona che più bisogno. Non fraintendere il senso usiamo la parola egoismo qui. Ma per sapere se la persona che si sta per dare un oggetto merita, è un compito molto difficile, e favorisce un tipo di comportamento che portano a cattive esperienze e giudizi di valore che possono fare molto male.
+      answer_4_html: Si, ce ne sone alcuni. Ma a te non te ne friega niente se il tuo obiettivo è quello di sbarazzarti delle cose che non voui più (l'egoista). Se hai regalato degli oggetti perché occupavano troppo spazio e non sapevi cosa fare con loro, hai fatto bene e hai tornato quell'oggetto all <a href="http://www.lapetiteclaudine.com/archives/009217.html">mondo delle cose utili</a>, risparmiando soldi ad'altre persone ed energia, generando ricchezza (anche se poca, è ricchezza). Tuttavia, la decisione finale sul destinatario dell'oggetto che regali è esclusivamente tua. Quindi applica i criteri che consideri più opportuni."
+      answer_5_html: 'Ci sono solo 2 tipi di annunci: il dono, che offrono oggetti che ostacolino o non vogliono più. E voglio annunci, che servono a fornire indizi e ispirare le persone a che tipo di oggetti che si desidera che altre persone di utilizzare o possedere. <strong> annunci di cambiamento, vendita, chiedendo denaro da lavoro, commercio, farmaci ecc non sono ammessi. </strong> e vengono cancellati non appena viene rilevato un moderatore, se indesiderato più volte la pubblicazione degli annunci, si può procedere per bloccare l''account utente.'
+      answer_6_html: Il baratto è un sistema che funziona molto bene in formato fisico, cioè, due persone faccia a faccia, guardando gli oggetti e parlare dal vivo e vivere. Ma baratto internet è molto probabile che finiscano in inganni e discussioni infinite o malcontenti. Inoltre, come avete letto sopra, qui gli oggetti sono dato senza condizioni e baratto ha il condizionamento di quid pro quo, vale a dire. Tu me do e do niente di simile.
+      answer_7_html: Sorprendentemente molte persone lo fanno, e non c'è niente di sbagliato con spedizioni vengono effettuate, ma devono avere un minimo di cautela con la serietà del ricevitore sono stati casi in cui qualcuno di buona fede ha fatto le spese di spedizione prepagata e poi ha un risultato che ha restituito il pacchetto. Idealmente, non fatto, dovrebbero essere incoraggiati a far circolare gli oggetti il più vicino possibile, il risparmio energetico, e può servire per conoscere meglio le persone della tua città. Spero che nella nuova versione, ci siamo concentrati un concetto locale è raggiunto. <a href="http://en.wikipedia.org/wiki/Think_Globally,_Act_Locally">pensare a livello globale.</a>
+      answer_8_html: No. Gli animali non sono oggetti che possano venire "buttati fuori" o "riciclati", quindi non c'entrano niente con nolotiro. Sono esseri viventi, che possono soffrire e dovrebbero esserci controlli più severi quando cambiano di mani.
       question_1: Qual è il fine di questo progetto?
-      question_2: Quindi ... Questo sito non è quello di aiutare gli altri?
+      question_2: Quindi, questo sito non è quello di aiutare gli altri?
       question_3: Ma mi piace dare la mia roba a qualcuno che veramente ne ha bisogno
       question_4: E 'vero che ci sono persone che poi vendono le cose che danno via qui?
       question_5: Che tipo di annunci posso pubblicare in nolotiro?
       question_6: Non è permesso il scambio di oggetti? che strano
       question_7: Posso inviare cose a gente che non abita nella mia città?
+      question_8: Posso regalare degli animali?
       title: Domande frequenti
     faqs: domande frequenti
     footer_explain: 'nolotiro.org è un sito dove guardo per i regali dono gratuito e mobili di seconda mano, sedie, divani, biciclette, computer portatili, tavoli, stufe, lampade, letti, vestiti, giocattoli, lettini per bambini o automobili, telefoni cellulari e altri molte cose che si desidera non è più e non hanno più bisogno di fare il riutilizzo altre persone che possono servire o dare nuova vita.
@@ -355,7 +366,7 @@ it:
     leave_blank: "(Lasciala in bianco se non la vuoi cambiare)"
     legal_notice: note legali
     legal_page:
-      body_html: 'Nome: Associazione aLabs. <br> registrata nel registro delle associazioni della Comunità di Madrid con il numero 32022. <br> CIF: G86139847 <br> C / Duque de Alba, 13 (28012) Madrid.'
+      body_html: 'Nome: Associazione aLabs. <br> registrata nel registro delle associazioni della Comunità di Madrid con il numero 32022. <br> CIF: G86139847 <br>C/Duque de Alba, 13 (28012) Madrid.'
       title: Note legali
     login: accedi
     logout: uscire
@@ -368,43 +379,50 @@ it:
 
 '
     meta_description_ad: rivendita regali %{title} en %{woeid}. %{body}
+    n_ads:
+      one: "%{count} annuncio"
+      other: "%{count} annunci"
+    n_comments:
+      one: ", %{count} commento"
+      other: ", %{count} commenti"
+    n_reads:
+      one: "%{count} lettura"
+      other: "%{count} letture"
     new_user: nuovo utente
+    no_location_specified: Devi cercare in una città specifica
     no_results:
-      first_to_publish_html: "1. Puoi essere il primo a %{publish}."
-      switch_to_bigger_city: "2. Prova a cambiare la città per una più grande vicino da te."
-      switch_to_guessed_city_html: "3. Il nostro sistema di suggerimento (in base alla tua IP) dice che ti trovi vicino a: <br> %{change_location}"
+      first_to_publish_html: 1. Puoi essere il primo a %{publish}.
       on_user: Nessuna di tali annunci da questo utente.
-      phrase: '"Un viaggio di mille chilometri inizia con un singolo passo" Lao Tse.'
+      phrase: '"Un viaggio di mille chilometri inizia con un singolo passo", Lao Tse.'
       publish_ad: pubblicare un annuncio in questa città
       subtitle: Si può provare una qualsiasi di queste cose
+      switch_to_bigger_city: 2. Prova a cambiare la città per una più grande vicino da te.
+      switch_to_guessed_city_html: '3. Il nostro sistema di suggerimento (in base alla tua IP) dice che ti trovi vicino a: <br> %{change_location}'
       title: Nessun annuncio per questa posizione.
-    no_location_specified: Devi cercare in una città specifica
     password: password
     permission_denied: Non si dispone dell'autorizzazione per eseguire questa azione.
     please_fill_to_become_member: Si prega di compilare questo modulo per essere un membro di nolotiro
-    please_insert_email_and_password: Metta prego la tua email e la password.
     privacy: politica sulla privacy
     privacy_page:
-      body_html: 'nolotiro.org (sito web di seguito) è di proprietà e gestito da: <br> aLabs <br> C / Duque de Alba, 13 <br> 28012 Madrid, Spagna <br> può contattare nel contatto modulo abilitato a tale scopo sul sito. L''accesso al sito comporta la piena accettazione del presente informativa sulla privacy e le condizioni d''uso. <br> In relazione al rispetto della legge 15/1999, del 13 dicembre, protezione dei dati personali (LOPD), si informa che questo sito memorizza i dati automatizzati forniti sul modulo si sono registrati all''utente di effettuare l''utente a fornire servizi di siti web in modo personalizzato, come ad esempio: gestire il proprio account utente, gli annunci, e il sistema di gestione di messaggi privati ​​tra utenti. <br> I messaggi privati ​​termine si riferisce alla possibilità di accesso a tali messaggi privati ​​sarà esclusivamente tra due utenti, senza alcuna possibilità di utenti di terze parti per accedere al contenuto. Tuttavia, nei messaggi di database vengono memorizzati in formato testo e può essere messo a disposizione delle forze di sicurezza in caso di commissione di reati o di ingiunzione. <br> L''utente non pubblica o di terzi dati personali che lo annunci, come indirizzi e-mail, numeri di telefono, indirizzi, ecc Il sito web, prendere le misure necessarie per la conservazione dei dati personali, anche se l''utente ignora queste condizioni di privacy. Ecco perché abbiamo sviluppato un e-mail filtro e telefono negli annunci per evitare che tali informazioni possano essere raccolte dai sistemi di indicizzazione automatica e robot. Questo non elimina la responsabilità ultima degli utenti per quanto riguarda la pubblicazione dei propri dati personali o di terzi. Ed è solo perché crediamo che molti utenti non sono consapevoli dell''importanza della conservazione dei propri dati personali. <br> Formulario di contatto: <br> si informa che i dati personali forniti dall''utente nel modulo di contatto vengono memorizzati per il solo scopo di contatto con l''utente, questi dati non possono essere utilizzati in ogni caso, per l''invio di messaggi pubblicitari, né essere ceduti a terzi. <br> In qualsiasi momento è possibile esercitare i diritti di accesso, rettifica e cancellazione dei dati da uno dei mezzi di comunicazione di cui al primo comma. <br> Sessione Cookie: <br> L''accesso a questo sito implica l''uso di cookies di sessione. I cookie di sessione sono piccoli pezzi di informazioni che vengono memorizzate nel browser utilizzato da ciascun utente per il server di ricordare alcune informazioni che possono essere utilizzati in seguito. Queste informazioni possono identificare l''utente come un utente specifico anonimo. <br> Inoltre, questo sito può ospitare elementi nel codice sorgente delle pagine che vengono utilizzati per misurare il traffico di utenti che visitano un sito web e può disegnare un modello di visite degli utenti. Queste informazioni anonime può essere condiviso con i clienti aziendali, fornitori, sponsor e inserzionisti. <br> attualmente usiamo i servizi di Google Analytics per misurare il traffico di questo sito in grado di catturare le informazioni di cui sopra. È possibile visualizzare ulteriori informazioni sulla politica sulla privacy sul sito web di Google: Google (Analytics): http://www.google.com/intl/es_ALL/privacypolicy.html <br> Questo sito può anche ospitare pubblicità reti proprio, affiliazione o pubblicitari. Questo annuncio è mostrato attraverso i server che utilizzano i cookie per visualizzare pubblicità relative contenuti agli utenti. Ognuno di questi server pubblicità ha una propria politica sulla privacy, che può essere consultato sulle proprie pagine web. Attualmente questo sito ospita pubblicità Google Adsense: http://www.google.com/intl/es_ALL/privacypolicy.html
+      body_html: 'nolotiro.org (sito web di seguito) è di proprietà e gestito da: <br> <br> aLabs <br> C/Duque de Alba, 13 <br> 28012 Madrid, Spagna <br> può contattare nel contatto modulo abilitato a tale scopo sul sito. L''accesso al sito comporta la piena accettazione del presente informativa sulla privacy e le condizioni d''uso. <br> In relazione al rispetto della legge 15/1999, del 13 dicembre, protezione dei dati personali (LOPD), si informa che questo sito memorizza i dati automatizzati forniti sul modulo si sono registrati all''utente di effettuare l''utente a fornire servizi di siti web in modo personalizzato, come ad esempio: gestire il proprio account utente, gli annunci, e il sistema di gestione di messaggi privati ​​tra utenti. <br> I messaggi privati ​​termine si riferisce alla possibilità di accesso a tali messaggi privati ​​sarà esclusivamente tra due utenti, senza alcuna possibilità di utenti di terze parti per accedere al contenuto. Tuttavia, nei messaggi di database vengono memorizzati in formato testo e può essere messo a disposizione delle forze di sicurezza in caso di commissione di reati o di ingiunzione. <br> L''utente non pubblica o di terzi dati personali che lo annunci, come indirizzi e-mail, numeri di telefono, indirizzi, ecc Il sito web, prendere le misure necessarie per la conservazione dei dati personali, anche se l''utente ignora queste condizioni di privacy. Ecco perché abbiamo sviluppato un e-mail filtro e telefono negli annunci per evitare che tali informazioni possano essere raccolte dai sistemi di indicizzazione automatica e robot. Questo non elimina la responsabilità ultima degli utenti per quanto riguarda la pubblicazione dei propri dati personali o di terzi. Ed è solo perché crediamo che molti utenti non sono consapevoli dell''importanza della conservazione dei propri dati personali. <br> Formulario di contatto: <br> si informa che i dati personali forniti dall''utente nel modulo di contatto vengono memorizzati per il solo scopo di contatto con l''utente, questi dati non possono essere utilizzati in ogni caso, per l''invio di messaggi pubblicitari, né essere ceduti a terzi. <br> In qualsiasi momento è possibile esercitare i diritti di accesso, rettifica e cancellazione dei dati da uno dei mezzi di comunicazione di cui al primo comma. <br> Sessione Cookie: <br> L''accesso a questo sito implica l''uso di cookies di sessione. I cookie di sessione sono piccoli pezzi di informazioni che vengono memorizzate nel browser utilizzato da ciascun utente per il server di ricordare alcune informazioni che possono essere utilizzati in seguito. Queste informazioni possono identificare l''utente come un utente specifico anonimo. <br> Inoltre, questo sito può ospitare elementi nel codice sorgente delle pagine che vengono utilizzati per misurare il traffico di utenti che visitano un sito web e può disegnare un modello di visite degli utenti. Queste informazioni anonime può essere condiviso con i clienti aziendali, fornitori, sponsor e inserzionisti. <br> attualmente usiamo i servizi di Google Analytics per misurare il traffico di questo sito in grado di catturare le informazioni di cui sopra. È possibile visualizzare ulteriori informazioni sulla politica sulla privacy sul sito web di Google: Google (Analytics): http://www.google.com/intl/es_ALL/privacypolicy.html <br> Questo sito può anche ospitare pubblicità reti proprio, affiliazione o pubblicitari. Questo annuncio è mostrato attraverso i server che utilizzano i cookie per visualizzare pubblicità relative contenuti agli utenti. Ognuno di questi server pubblicità ha una propria politica sulla privacy, che può essere consultato sulle proprie pagine web. Attualmente questo sito ospita pubblicità Google Adsense: http://www.google.com/intl/es_ALL/privacypolicy.html
 
 '
       title: Politica sulla privacy
     profile: profilo
     profile_actions:
-      friend:
-        add: aggiungere %{username} alla tua lista di amici
-        delete: rimuovere %{username} alla tua lista di amici
       blocking:
         add: 
         confirm: 
         delete: 
-    publish_ad: 
+      friend:
+        add: aggiungere %{username} alla tua lista di amici
+        delete: rimuovere %{username} alla tua lista di amici
+    publish_ad: Pubblicando annuncio
     publish_ad_on: Inserisci annunci a %{woeid}
     published_ads: annunci pubblicati
     published_at_by_html: Pubblicato fa %{time} dall'utente %{user}
     published_on: Pubblicato fa %{date}
     published_on_html: Pubblicato <abbr class='js-moment' title='%{date}'>%{date}</abbr>
-    readed_count: "%{count} lettures"
     reads: lettures
     register: Iscriviti
     register_here: registrati qui
@@ -413,7 +431,7 @@ it:
     save_failed: 'C''è un problema, verificare questo:'
     search:
       button: ricerca
-      no_ads_message_html: 
+      no_ads_message_html: Non ci sono annunci che corrispondano alla ricerca <b>%{q}</b>.
     searching_on_html: Cercando <i>%{q}</i> in
     send: Inviare
     send_a_message: "+ Invia un messaggio privato al annunciante"
@@ -497,8 +515,8 @@ it:
         delimiter: 
   oauth:
     errors:
-      email_not_provided: Abbiamo bisigno di un indirizzo de correo electronico per completare l'iscrizione.
       duplicated_username: Il tuo username di %{provider} è gia nella nostra basi de dati. Se ti sei iscrito usando un'altra rete sociale oppure email e password, fai login usando quello. Altrimenti, inserisci un'altro username.
+      email_not_provided: Abbiamo bisigno di un indirizzo de correo electronico per completare l'iscrizione.
   recaptcha:
     errors:
       verification_failed: C'è stato un error nella verificazione contro dei robot
@@ -521,8 +539,8 @@ it:
   will_paginate:
     next_label: successivo →
     page_entries_info:
-      multi_page: 
-      multi_page_html: 
+      multi_page: Mostrando %{model} %{from} - %{to} de %{count} in totale
+      multi_page_html: Mostrando %{model} <b>%{from}&nbsp;-&nbsp;%{to}</b> de <b>%{count}</b> totale
       single_page: 
       single_page_html: 
     page_gap: "&hellip;"

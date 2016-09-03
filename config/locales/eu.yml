@@ -10,12 +10,25 @@ eu:
     attributes:
       ad:
         body: 
+        city: 
+        id: 
         image: 
         image_content_type: 
         image_file_size: 
+        published_at: 
+        status: 
         subject: 
         title: 
         type: 
+        user: 
+        woeid_code: 
+      comment:
+        ad: 
+        body: 
+        created_at: 
+        id: 
+        ip: 
+        user: 
       contact:
         email: 
         message: 
@@ -23,12 +36,26 @@ eu:
         body: 
         subject: 
       user:
+        ads_count: 
+        confirmed_at: 
+        created_at: 
         current_password: 
+        current_sign_in_at: 
         email: 
+        last_sign_in_ip: 
         password: 
         password_confirmation: 
         remember: 
         username: 
+    models:
+      ad: 
+      ad_comment: 
+      admin: 
+  blockings:
+    create:
+      success: 
+    destroy:
+      success: 
   date:
     abbr_day_names:
     - Igan
@@ -179,11 +206,6 @@ eu:
       signed_out: 
       user:
         signed_in: 
-  blockings:
-    create:
-      success: 
-    destroy:
-      success: 
   friendships:
     create:
       success: 
@@ -204,15 +226,6 @@ eu:
       back: 
       trash: 
       trash_selected: 
-    message_mailer:
-      message:
-        body: 
-        subject: 
-      subject_new: 
-      visit: 
-      visit_html: 
-      visit_text: 
-      you_have_new_message: 
     new:
       body_max: 
       button: 
@@ -224,15 +237,8 @@ eu:
     notifications:
       sent: 
       trash: 
-    search: 
     table:
-      date: 
-      delete: 
-      last: 
       none: 
-      reciever: 
-      sender: 
-      subject: 
     titles:
       conversation: 
       index: 
@@ -243,7 +249,18 @@ eu:
     greetings: 
     hello: 
     signature: 
+  message_mailer:
+    message:
+      body: 
+      subject: 
+    subject_new: 
+    visit: 
+    visit_html: 
+    visit_text: 
+    you_have_new_message: 
   nlt:
+    a_gift: 
+    a_request: 
     about: 
     about_page:
       description_html: 
@@ -251,17 +268,14 @@ eu:
     access_here: 
     ads:
       bumped: 
-      count:
-        one: 
-        other: 
       created: 
       form:
         body: 
         body_max: 
         comments_enabled: 
+        image_permitted_formats: 
         private_messages_only: 
         private_messages_or_comments: 
-        image_permitted_formats: 
         prohibited: 
         select_an_image: 
         status: 
@@ -274,8 +288,6 @@ eu:
     and: 
     are_you_interested: 
     available: 
-    a_gift: 
-    a_request: 
     back: 
     blog: 
     booked: 
@@ -305,9 +317,6 @@ eu:
       subject: 
       submit: 
       title: 
-    comments_count:
-      one: 
-      other: 
     contact: 
     contact_form: 
     contact_legend_html: 
@@ -328,6 +337,7 @@ eu:
       answer_5_html: 
       answer_6_html: 
       answer_7_html: 
+      answer_8_html: 
       question_1: 
       question_2: 
       question_3: 
@@ -335,6 +345,7 @@ eu:
       question_5: 
       question_6: 
       question_7: 
+      question_8: 
       title: 
     faqs: 
     footer_explain: 
@@ -364,41 +375,48 @@ eu:
     messages_title: 
     meta_description: 
     meta_description_ad: 
+    n_ads:
+      one: 
+      other: 
+    n_comments:
+      one: 
+      other: 
+    n_reads:
+      one: 
+      other: 
     new_user: 
+    no_location_specified: 
     no_results:
       first_to_publish_html: 
-      switch_to_bigger_city: 
-      switch_to_guessed_city_html: 
       on_user: 
       phrase: 
       publish_ad: 
       subtitle: 
+      switch_to_bigger_city: 
+      switch_to_guessed_city_html: 
       title: 
-    no_location_specified: 
     password: 
     permission_denied: 
     please_fill_to_become_member: 
-    please_insert_email_and_password: 
     privacy: 
     privacy_page:
       body_html: 
       title: 
     profile: 
     profile_actions:
+      blocking:
+        add: 
+        confirm: 
+        delete: 
       friend:
         add: 
         delete: 
-      blocking:
-        add:
-        confirm:
-        delete:
     publish_ad: 
     publish_ad_on: 
     published_ads: 
     published_at_by_html: 
     published_on: 
     published_on_html: 
-    readed_count: 
     reads: 
     register: 
     register_here: 
@@ -491,8 +509,8 @@ eu:
         delimiter: 
   oauth:
     errors:
-      email_not_provided: 
       duplicated_username: 
+      email_not_provided: 
   recaptcha:
     errors:
       verification_failed: 
@@ -505,7 +523,7 @@ eu:
     am: am
     formats:
       default: "%A, %Y(e)ko %Bren %e %H:%M:%S %z"
-      long: "%Y(e)ko %Bren %e,  %H:%M"
+      long: "%Y(e)ko %Bren %e, %H:%M"
       short: "%b %e, %H:%M"
     pm: pm
   unauthorized:
