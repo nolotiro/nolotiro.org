@@ -442,7 +442,7 @@ gl:
     sending_this_form: Ao enviar este formulario, vostede acepta que leu, entendeu e está feliz co noso
     share_this_ad: Comparte este anuncio
     sign_in: Acceder
-    sign_in_with_provider: Entrar co outro proveedor
+    sign_in_with_provider: Entrar co %{provider}
     sign_up: Crear un usuario
     slogan: no lo tiro, te lo regalo (sin condiciones)
     suggestions: suxestións
