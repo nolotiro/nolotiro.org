@@ -51,6 +51,11 @@ es:
       ad: Ads
       ad_comment: Ad Comments
       admin: Admin
+  blockings:
+    create:
+      success: Usuario bloqueado
+    destroy:
+      success: Usuario desbloqueado
   date:
     abbr_day_names:
     - dom
@@ -201,11 +206,6 @@ es:
       signed_out: Sesión finalizada.
       user:
         signed_in: Has iniciado sesión.
-  blockings:
-    create:
-      success: Usuario bloqueado
-    destroy:
-      success: Usuario desbloqueado
   friendships:
     create:
       success: Amigo agregado
@@ -259,6 +259,8 @@ es:
     visit_text: Visita %{url} y ve a tu bandeja de entrada para responder
     you_have_new_message: Has recibido un nuevo mensaje
   nlt:
+    a_gift: Un regalo
+    a_request: Una petición
     about: acerca de
     about_page:
       description_html: <b>¿Qué es nolotiro.org?</b><br> Es un sitio web donde ofrecer al público, las cosas que ya no quieres o ya no necesitas para que las recoja otra gente a la que puede servirle o serle de mucha utilidad. <br><br> <strong>Lee las <a href="/es/page/faqs">preguntas de uso frecuente</a> para saber mas detalles de la filosofia y objetivos del proyecto</strong> <br><br> <b>Ventajas de nolotiro.org:</b><br> La gran ventaja de nolotiro.org, es que sustituye la nostalgia/sentimiento de derroche, por la sensación de hacer algo por alguien. Logras deshacerte de esas cosas que no tirabas porque te daba pena o porque estaban nuevas y que al final solo acumulaban polvo en algún rincón olvidadas u ocupaban espacio, sabiendo que alguien las va a sacar buen partido, porque si que las necesita verdaderamente. Por otra parte, nolotiro.org al estar organizado por zonas geográficas fomenta que las cosas que quieras dar, se queden cerca, no hay gastos de envío, ni desplazamientos, ni envios a países lejanos que nunca sabes si llegan, se lo das tú mismo a alguien de tu misma ciudad, que va a buscarlo en persona a un lugar pactado. <br><br> <b>A tener en cuenta:</b><br> NO HAY OPCIÓN DE INTERCAMBIO, esto no se basa en el trueque, ni en la compra, por que hay que fomentar el altruismo, dar las cosas por que sí, porque nos sobran. <br><br> <b>Explicación en versión literaria</b><br> <a href="http://www.marcianoduran.com.uy/?p=176">¿Porqué no lo tiro?</a> Por Marciano Durán <br><br> <b>nolotiro.org funciona gracias al trabajo de muchas <a href="http://www.youtube.com/watch?v=KMU0tzLwhbE">personas</a> que han creado el siguiente software libre:</b> <a href="http://rubyonrails.org/">Ruby On Rails</a>, <a href="http://www.mysql.com/">MySQL</a>, <a href="https://developer.yahoo.com/yql/">Yahoo YQL</a>, <a href="http://www.postfix.org/">Postfix</a>, <a href="http://www.ubuntu.org/">Ubuntu</a>, <a href="http://nginx.org/">Nginx</a>, y muchos mas, tantos que sería imposible nombrarlos todos aquí. <br><br> <b>El código fuente de nolotiro.org es código abierto</b> y está disponible para ser utilizado (bajo licencia Affero GPL 3).<br> Visita la <a href="https://github.com/alabs/nolotiro.org"> web para desarrolladores</a> para mas detalles (en inglés).<br> Los colaboradores son bienvenidos, ya sea para programar o para traducir la página a otras lenguas.
@@ -273,24 +275,22 @@ es:
       form:
         body: 'Cuerpo del anuncio:'
         body_max: Máximo 500 caracteres
-        comments_enabled: ¿Cómo quieres ser contactada?
+        comments_enabled: "¿Cómo quieres ser contactada?"
+        image_permitted_formats: 'Formatos permitidos: gif, jpg, png. Max: 5Mb de tamaño.'
         private_messages_only: Sólo por mensaje privado
         private_messages_or_comments: Por mensaje privado o mediante comentarios públicos en el anuncio
-        image_permitted_formats: 'Formatos permitidos: gif, jpg, png. Max: 5Mb de tamaño.'
         prohibited: 'Hay un problema, revisa esto:'
         select_an_image: Selecciona una imagen para tu anuncio
         status: Estado
         title: 'Título de tu anuncio:'
         title_tip: Describe brevemente lo que regalas o buscas (max. 100 caracteres)
-        type_ad: ¿Qué tipo de anuncio quieres publicar?
+        type_ad: "¿Qué tipo de anuncio quieres publicar?"
       updated: Hemos actualizado el anuncio
     all: todos
     all_ads: todos los anuncios
     and: y
     are_you_interested: "¿Te interesa?"
     available: disponible
-    a_gift: Un regalo
-    a_request: Una petición
     back: volver a la página de inicio
     blog: blog
     booked: reservado
@@ -343,9 +343,9 @@ es:
       answer_5_html: 'Sólo hay 2 clases de anuncios: Los de Regalo, en los que ofreces objetos que te estorban o ya no quieres tener. Y los anuncios de Quiero, que sirven para dar pistas e inspirar a la gente sobre que clase de objetos quiere otra gente utilizar o poseer. <strong>Los anuncios de cambio, venta, pidiendo dinero, comerciales, de empleo, medicamentos, etc no están permitidos.</strong> Y son borrados en cuanto un moderador los detecta, en caso de publicar repetidamente anuncios no deseados, se puede proceder al bloqueo de la cuenta del usuario.'
       answer_6_html: 'El trueque es un sistema que funciona muy bien en formato físico, esto es, dos personas cara a cara, viendo los objetos y hablando en vivo y en directo. Pero en internet el trueque es muy susceptible de terminar en engaños o insatisfacciones y discusiones eternas. Además como has podido leer anteriormente, aquí se dan objetos sin condiciones y el trueque tiene el condicionamiento del quid pro quo, es decir: tu me das y yo te doy algo igual.'
       answer_7_html: Sorprendentemente mucha gente lo hace, y no hay nada malo en que se hagan envíos, pero debes tener un mínimo de precaución con la seriedad del receptor, ha habido casos en que alguien de muy buena fe ha realizado un envío pagando los gastos y luego ha resultado que se le ha devuelto el paquete. Lo ideal es que no se hagan, se debe fomentar que los objetos circulen lo mas cerca posible, ahorrando energía, y puede servir para conocer mejor a la gente de tu misma ciudad. Esperamos que en la nueva versión, que hemos enfocado a un concepto local, se consiga. <a href="http://en.wikipedia.org/wiki/Think_Globally,_Act_Locally">Piensa globalmente, actúa localmente.</a>
-      answer_8_html: 'No. Los animales no son objetos que se puedan "tirar" o "reciclar" con lo que quedan fuera del ámbito de nolotiro. Son seres vivos, con capacidad de sufrir y consecuentemente deberían tener controles mucho más estrictos sobre en qué manos caen.'
+      answer_8_html: No. Los animales no son objetos que se puedan "tirar" o "reciclar" con lo que quedan fuera del ámbito de nolotiro. Son seres vivos, con capacidad de sufrir y consecuentemente deberían tener controles mucho más estrictos sobre en qué manos caen.
       question_1: "¿Cuál es el propósito de este proyecto?"
-      question_2: ¿Entonces esta web no es para ayudar a los demás?
+      question_2: "¿Entonces esta web no es para ayudar a los demás?"
       question_3: Pero a mi me gustaría regalar mis cosas a alguien que realmente lo necesita
       question_4: "¿Es verdad que hay gente que luego vende las cosas que regalan aquí?"
       question_5: "¿Qué clase de anuncios puedo publicar en nolotiro?"
@@ -382,16 +382,16 @@ es:
     meta_description: 'nolotiro.org es un sitio web donde regalo y busco regalos gratis de segunda mano: muebles, sillas, sofás, bicicletas, ordenadores portátiles, mesas, cocinas, lámparas, camas, ropa, juguetes, cunas o carros para bebes, teléfonos móviles y otras muchas cosas que ya no quieres y ya no necesitas para que las reutilicen otra gente a la que puede servirle o darle nueva vida.'
     meta_description_ad: regalo segunda mano %{title} en %{woeid}. %{body}
     new_user: nuevo usuario
+    no_location_specified: Debes buscar en una ciudad específica
     no_results:
-      first_to_publish_html: "1. Sé el primero en %{publish}."
-      switch_to_bigger_city: "2. Prueba a cambiar la ciudad por una más grande que esté cerca de tu ubicación."
-      switch_to_guessed_city_html: "3. Nuestro sistema de sugerencia de ubicación (basado en tu IP) dice que estás cerca de: <br> %{change_location}"
+      first_to_publish_html: 1. Sé el primero en %{publish}.
       on_user: No hay anuncios de este tipo publicados por este usuario.
       phrase: '"Un viaje de mil kilómetros comienza con un simple paso", Lao Tse.'
       publish_ad: publicar un anuncio en esta ciudad
       subtitle: Puedes probar alguna de estas cosas
+      switch_to_bigger_city: 2. Prueba a cambiar la ciudad por una más grande que esté cerca de tu ubicación.
+      switch_to_guessed_city_html: '3. Nuestro sistema de sugerencia de ubicación (basado en tu IP) dice que estás cerca de: <br> %{change_location}'
       title: No hay anuncios para esta ubicación.
-    no_location_specified: Debes buscar en una ciudad específica
     password: Contraseña
     permission_denied: No tienes permisos para realizar esta acción.
     please_fill_to_become_member: Por favor, rellena este formulario para ser miembro de nolotiro
@@ -401,13 +401,13 @@ es:
       title: Política de privacidad
     profile: perfil
     profile_actions:
-      friend:
-        add: agregar %{username} a tu lista de amigos
-        delete: eliminar %{username} de tu lista de amigos
       blocking:
         add: bloquear a %{username}
         confirm: "¿Seguro que deseas bloquear a %{username}? No podrá volverte a contactar ni a ver ninguno de tus anuncios."
         delete: desbloquear a %{username}
+      friend:
+        add: agregar %{username} a tu lista de amigos
+        delete: eliminar %{username} de tu lista de amigos
     publish_ad: 'Publicando anuncio '
     publish_ad_on: Publicar anuncio en %{woeid}
     published_ads: Anuncios publicados
@@ -507,8 +507,8 @@ es:
         delimiter: "."
   oauth:
     errors:
-      email_not_provided: Necesitamos que indiques una dirección de email para completar el registro.
       duplicated_username: Tu nombre de usuario de %{provider} ya se encuentra en nuestra base de datos. Si te has registrado ya usando otra red social o mediante email y contraseña, por favor, inicia sesión de esa manera. En caso contrario, indica otro nombre de usuario para completar el registro.
+      email_not_provided: Necesitamos que indiques una dirección de email para completar el registro.
   recaptcha:
     errors:
       verification_failed: Falló la verificación contra robots, prueba de nuevo

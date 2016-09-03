@@ -51,6 +51,11 @@ nl:
       ad: 
       ad_comment: 
       admin: 
+  blockings:
+    create:
+      success: 
+    destroy:
+      success: 
   date:
     abbr_day_names:
     - zon
@@ -191,11 +196,6 @@ nl:
       signed_out: 
       user:
         signed_in: 
-  blockings:
-    create:
-      success: 
-    destroy:
-      success: 
   friendships:
     create:
       success: 
@@ -249,6 +249,8 @@ nl:
     visit_text: 
     you_have_new_message: 
   nlt:
+    a_gift: 
+    a_request: 
     about: 
     about_page:
       description_html: 
@@ -264,9 +266,9 @@ nl:
         body: 
         body_max: 
         comments_enabled: 
+        image_permitted_formats: 
         private_messages_only: 
         private_messages_or_comments: 
-        image_permitted_formats: 
         prohibited: 
         select_an_image: 
         status: 
@@ -279,8 +281,6 @@ nl:
     and: 
     are_you_interested: 
     available: 
-    a_gift: 
-    a_request: 
     back: 
     blog: 
     booked: 
@@ -372,16 +372,16 @@ nl:
     meta_description: 
     meta_description_ad: 
     new_user: 
+    no_location_specified: 
     no_results:
       first_to_publish_html: 
-      switch_to_bigger_city: 
-      switch_to_guessed_city_html: 
       on_user: 
       phrase: 
       publish_ad: 
       subtitle: 
+      switch_to_bigger_city: 
+      switch_to_guessed_city_html: 
       title: 
-    no_location_specified: 
     password: 
     permission_denied: 
     please_fill_to_become_member: 
@@ -391,12 +391,12 @@ nl:
       title: 
     profile: 
     profile_actions:
-      friend:
-        add: 
-        delete: 
       blocking:
         add: 
         confirm: 
+        delete: 
+      friend:
+        add: 
         delete: 
     publish_ad: 
     publish_ad_on: 
@@ -497,8 +497,8 @@ nl:
         delimiter: 
   oauth:
     errors:
-      email_not_provided: 
       duplicated_username: 
+      email_not_provided: 
   recaptcha:
     errors:
       verification_failed: 

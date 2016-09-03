@@ -51,6 +51,11 @@ pt:
       ad: 
       ad_comment: 
       admin: Admin
+  blockings:
+    create:
+      success: Usuário bloqueado
+    destroy:
+      success: Usuário desbloqueao
   date:
     abbr_day_names:
     - Dom
@@ -201,11 +206,6 @@ pt:
       signed_out: Saíu da sessão com sucesso.
       user:
         signed_in: Você está conectado
-  blockings:
-    create:
-      success: Usuário bloqueado
-    destroy:
-      success: Usuário desbloqueao
   friendships:
     create:
       success: Amigo adicionado
@@ -259,6 +259,8 @@ pt:
     visit_text: Clique em %{url} e ingrese na sua caixa de entrada para responder
     you_have_new_message: Você recebeu uma nova mensagem
   nlt:
+    a_gift: Um presente
+    a_request: Uma petição
     about: sobre
     about_page:
       description_html: <b>O que é nolotiro.org?</b><br> É um site web onde você pode oferecer ao publico, as coisas que você já não quer ou que já não precisa para que as pegue uma outra pessoa que possa lhe servir ou possa dá-lhe uma melhor utilidade. <br><br> <strong>Leia as <a href="/es/page/faqs">perguntas frecuentes:</a> para conhecer mais detalhes da filosofia e dos objetivos do projeto</strong> <br><br> <b>Vantagens e desvantagens do nolotiro.org:</b><br> A grande vantagem do nolotiro.org, é que substitui o sentimento de nostalgia, pela sensação de fazer algo por alguém mais. Você consegue se livrar de essas coisas que não jogava fora porque sentia pena, porque achava que ainda estavam novas, ou porque você não sabia o que fazer com elas e que no final só ficavam acumulando pó esquecidas em algum canto ou ocupavam um espaço valioso. Aliás, ao estar organizado por zonas geográficas, nolotiro.org fomenta que as coisas que você quer dar, fiquem perto, não tem gastos de envio, nem deslocamento, nem encomendas para países distantes que nunca tem certeza de que vão chegar, você mesmo entrega para alguém da sua cidade, que vai pegar o presente num local acordado. <br><br> <b>Para ter em conta:</b><br> NÃO TEM OPÇÃO DE TROCA, isto não se basa em permutar objetos, nem na compra, a idéia é fomentar o altruísmo, dar as coisas porque sim, porque não precisamos delas. <br><br> <b>Explicação em versão literária</b><br> <a href="http://www.marcianoduran.com.uy/?p=176">Por qué no lo tiro?</a> Por Marciano Durán <br><br> <b>nolotiro.org funciona graças ao trabalho de muitas <a href="http://www.youtube.com/watch?v=KMU0tzLwhbE">pessoas</a> que criaram o seguinte software livre:</b> <a href="http://rubyonrails.org/">Ruby On Rails</a>, <a href="http://www.mysql.com/">MySQL</a>, <a href="https://developer.yahoo.com/yql/">Yahoo YQL</a>, <a href="http://www.postfix.org/">Postfix</a>, <a href="http://www.ubuntu.org/">Ubuntu</a>, <a href="http://nginx.org/">Nginx</a>, e muitos mais, tantos que seria impossível de nomear todos aqui. <br><br> <b>O código fonte do nolotiro.org é um código aberto</b> e está disponível para ser utilizado (baixo licencia Affero GPL 3).<br> Visite o <a href="https://github.com/alabs/nolotiro.org"> site para desenvolvedores </a> para mais detalhes (em inglês).<br> Os colaboradores são bem-vindos, seja para programar como para traduzir o site em outras línguas
@@ -274,9 +276,9 @@ pt:
         body: 'Corpo de anúncio:'
         body_max: 500 caracteres, no máximo
         comments_enabled: Como você gostaria de ser contactado?
+        image_permitted_formats: gif, jpg, png somente. No máximo 1Mb de tamanho.
         private_messages_only: Apenas por messagem privada
         private_messages_or_comments: Por messagem privada o ou através de comentários públicos no anúncio
-        image_permitted_formats: gif, jpg, png somente. No máximo 1Mb de tamanho.
         prohibited: 'Há um problema, verificar isso:'
         select_an_image: Adicionar uma imagem para o anúncio
         status: Estado
@@ -289,8 +291,6 @@ pt:
     and: e
     are_you_interested: Está interessado?
     available: disponível
-    a_gift: Um presente
-    a_request: Uma petição
     back: voltar para a pagina de inicio
     blog: blog
     booked: reservado
@@ -382,16 +382,16 @@ pt:
     meta_description: 'nolotiro.org é um site web onde posso dar presentes e procurar presentes de segunda mão: movéis, cadeiras, sofás, bicicletas, computadores pessoais, mesas, fogões, abajures, camas, roupa, brinquedos, berços ou carrinhos para bebes, celulares e mais outras coisas que você já não quer e não precisa para que sejam reutilizadas por outras pessoas.'
     meta_description_ad: presentes de segunda mão %{title} em %{woeid}. %{body}
     new_user: novo usuário
+    no_location_specified: 
     no_results:
-      first_to_publish_html: "1. Seja o primeiro em %{publish}."
-      switch_to_bigger_city: "2. Tenta trocar a cidade por uma outra mayor que esteja perto da sua localização."
-      switch_to_guessed_city_html: "3. Nosso sistema de sugestões de localização (baseado na sua IP) disse que voçê está perto de <br> %{change_location}"
+      first_to_publish_html: 1. Seja o primeiro em %{publish}.
       on_user: Não existem anúncios de este tipo publicados por este usuário.
       phrase: '"Uma viagem de mil quilômetros começa com um simples passo", Lao Tse'
       publish_ad: publicar um anúncio em esta cidade
       subtitle: Você pode tentar com alguma de estas coisas
+      switch_to_bigger_city: 2. Tenta trocar a cidade por uma outra mayor que esteja perto da sua localização.
+      switch_to_guessed_city_html: 3. Nosso sistema de sugestões de localização (baseado na sua IP) disse que voçê está perto de <br> %{change_location}
       title: Não existem anúncios para esta localização.
-    no_location_specified: 
     password: Senha
     permission_denied: Você não tem permissão para executar esta ação
     please_fill_to_become_member: Por favor, preencha este formulário para se tornar um miembro do nolotiro
@@ -401,13 +401,13 @@ pt:
       title: Politica de privacidade
     profile: perfil
     profile_actions:
-      friend:
-        add: adicionar %{username} a sua lista de amigos
-        delete: excluir %{username} da sua lista de amigos
       blocking:
         add: 
         confirm: 
         delete: 
+      friend:
+        add: adicionar %{username} a sua lista de amigos
+        delete: excluir %{username} da sua lista de amigos
     publish_ad: Publicando anúncio
     publish_ad_on: Publicar anúncio em %{woeid}
     published_ads: Avisos publicados

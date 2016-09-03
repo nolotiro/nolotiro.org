@@ -53,6 +53,11 @@ gl:
       ad: Anuncios
       ad_comment: 
       admin: Admin
+  blockings:
+    create:
+      success: 
+    destroy:
+      success: 
   date:
     abbr_day_names:
     - Dom
@@ -208,11 +213,6 @@ gl:
 '
       user:
         signed_in: Está conectado.
-  blockings:
-    create:
-      success: 
-    destroy:
-      success: 
   friendships:
     create:
       success: 
@@ -266,6 +266,8 @@ gl:
     visit_text: 
     you_have_new_message: Recibiu unha mensaxe nova
   nlt:
+    a_gift: Un presente
+    a_request: Una petición
     about: acerca de
     about_page:
       description_html: 
@@ -281,9 +283,9 @@ gl:
         body: 'Corpo do anuncio:'
         body_max: Máximo 500 caracteres
         comments_enabled: Cómo quere ser contactada?
+        image_permitted_formats: 'Formatos permitidos: gif, jpg, png. Max: 5Mb de tamaño.'
         private_messages_only: Unicamente por mensaxe privada
         private_messages_or_comments: Por mensaxe privada o mediante comentarios públicos no anuncio
-        image_permitted_formats: 'Formatos permitidos: gif, jpg, png. Max: 5Mb de tamaño.'
         prohibited: 'Hai un problema, consulta isto:'
         select_an_image: Seleccione unha imaxe para o súo regalo
         status: Estado
@@ -296,8 +298,6 @@ gl:
     and: e
     are_you_interested: Interesado?
     available: dispoñible
-    a_gift: Un presente
-    a_request: Una petición
     back: regresar á páxina de inicio
     blog: blog
     booked: reservado
@@ -393,16 +393,16 @@ gl:
     meta_description: 
     meta_description_ad: 
     new_user: 
+    no_location_specified: 
     no_results:
       first_to_publish_html: 
-      switch_to_bigger_city: 
-      switch_to_guessed_city_html: 
       on_user: 
       phrase: 
       publish_ad: 
       subtitle: 
+      switch_to_bigger_city: 
+      switch_to_guessed_city_html: 
       title: 
-    no_location_specified: 
     password: Contrasinal
     permission_denied: 
     please_fill_to_become_member: Por favor, enche este formulario para facer membro do nolotiro
@@ -412,12 +412,12 @@ gl:
       title: Política de privacidade
     profile: perfil
     profile_actions:
-      friend:
-        add: 
-        delete: 
       blocking:
         add: 
         confirm: 
+        delete: 
+      friend:
+        add: 
         delete: 
     publish_ad: Publicando anuncio
     publish_ad_on: Publicar anuncio en %{woeid}
@@ -518,8 +518,8 @@ gl:
         delimiter: 
   oauth:
     errors:
-      email_not_provided: 
       duplicated_username: 
+      email_not_provided: 
   recaptcha:
     errors:
       verification_failed: 

@@ -51,6 +51,11 @@ en:
       ad: Ads
       ad_comment: Ad Comments
       admin: Admin
+  blockings:
+    create:
+      success: User blocked
+    destroy:
+      success: User unblocked
   date:
     abbr_day_names:
     - Sun
@@ -148,7 +153,7 @@ en:
       action: Confirm my account
       confirmed: Your account was successfully confirmed.
       instructions: 'Please confirm your email by accessing the following link:'
-      no_html_instructions: "If you can't click the link, copy and paste the following into the address bar of your browser:"
+      no_html_instructions: 'If you can''t click the link, copy and paste the following into the address bar of your browser:'
       resend: Resend confirmation's instructions
       send_instructions: You will receive an email with instructions about how to confirm your account in a few minutes.
       send_paranoid_instructions: If your email address exists in our database, you will receive an email with instructions about how to confirm your account in a few minutes.
@@ -178,7 +183,7 @@ en:
       follow_instructions: Someone asked nolotiro.org about change your password. If it's not you then you can ignore this mail. Your password will not change until you access the link and create a new one.
       forgot: Did you forget your password?
       instructions: Please, enter your email address and we will send you a shortcut link to change your password.
-      no_html_instructions: "If you can't click the link, copy and paste the following into the address bar of your browser: "
+      no_html_instructions: 'If you can''t click the link, copy and paste the following into the address bar of your browser: '
       no_token: You can't access this page without coming from a password reset email. If you do come from a password reset email, please make sure you used the full URL provided.
       send: Send by email
       send_instructions: You will receive an email with instructions about how to reset your password in a few minutes.
@@ -197,11 +202,6 @@ en:
       signed_out: Signed out successfully.
       user:
         signed_in: You are signed.
-  blockings:
-    create:
-      success: User blocked
-    destroy:
-      success: User unblocked
   friendships:
     create:
       success: Friend added
@@ -272,22 +272,20 @@ en:
         body: 'Body of the ad:'
         body_max: Maximum 500 characters
         comments_enabled: How do you want to be contacted?
+        image_permitted_formats: 'Supported formats: gif, jpg, png. Max size: 5Mb'
         private_messages_only: Through private messages only
         private_messages_or_comments: Through both private messages or public comments in the ad
-        image_permitted_formats: 'Supported formats: gif, jpg, png. Max size: 5Mb'
         prohibited: 'There is a problem, please review this:'
         select_an_image: Choose an image for you ad
         status: Status
         title: 'Title of your ad:'
-        title_tip: "Describe briefly what you're giving away or looking for (max. 100 chars)"
+        title_tip: Describe briefly what you're giving away or looking for (max. 100 chars)
         type_ad: Which type of ad would you like to publish?
       updated: We have updated your ad
     all: all
     all_ads: all ads
     and: and
     are_you_interested: Are you interested?
-    a_gift: A gift
-    a_request: A request
     available: available
     back: Back to the main page
     blog: blog
@@ -341,7 +339,7 @@ en:
       answer_5_html: 'There are only 2 kinds of ads: The Gift, which offer items that will hinder or no longer want to have. And the want ads, which serve to provide clues and inspire people about what kind of objects you want to use or possess other people. <strong> change ads, sale, asking for money from employment, trade, drugs etc. are not allowed. </strong> they are deleted as soon as it detects a moderator, publish repeatedly if unwanted ads, you can proceed to block the user''s account.'
       answer_6_html: Barter is a system that works very well in physical format, that is, two people face to face, seeing objects and speaking live. But internet barter is very likely to end in deception or dissatisfaction and endless discussions. In addition, here objects are given without conditions and barter is the conditioning of the quid pro quo, ie. Tu me give and I give you anything like it.
       answer_7_html: Surprisingly many people do, and there's nothing wrong with that shipments are made, but must have a minimum of caution with the seriousness of the receiver have been cases where someone of good faith has made paying shipping costs and then has a result that has returned the package. Ideally, do not, should be encouraged to circulate objects as close as possible, saving energy, and can serve to get to know the people of your city. Hope that in the new version, we have focused a local concept is achieved. <a href="http://en.wikipedia.org/wiki/Think_Globally,_Act_Locally"> think globally. </a>
-      answer_8_html: 'No. Animals are not objects that can be "thrown away" or "recycled" so they fall outside of the scope of nolotiro. They are living beings, capable of suffering and should therefore be subject to much stricter controls about in which hands they fall.'
+      answer_8_html: No. Animals are not objects that can be "thrown away" or "recycled" so they fall outside of the scope of nolotiro. They are living beings, capable of suffering and should therefore be subject to much stricter controls about in which hands they fall.
       question_1: What is the goal of this project?
       question_2: But this web is to help other people, isn't it?
       question_3: But, I would like to give my stuff as a present to someone who really need it
@@ -380,16 +378,16 @@ en:
     meta_description: nolotiro.org is a website where I give free gifts and seeking second-hand furniture, chairs, sofas, bicycles, laptops, tables, stoves, lamps, beds, clothes, toys, baby cribs or cars, mobile phones and other many things you no longer want and no longer need to make the reuse other people who may serve or give new life.
     meta_description_ad: second hand gift %{title} in %{woeid}. %{body}
     new_user: sign up
+    no_location_specified: You must search in a specific city
     no_results:
-      first_to_publish_html: "1. Be the first to %{publish}."
-      switch_to_bigger_city: "2. Try a bigger city close to your location."
-      switch_to_guessed_city_html: "3. Our IP based city suggestion system tells us you are close to: <br> %{change_location}"
+      first_to_publish_html: 1. Be the first to %{publish}.
       on_user: There are no ads of this kind published by this user.
       phrase: '"The journey of a thousand miles begins with one step", Lao Tse.'
       publish_ad: post an ad in this city
       subtitle: You can try some of this stuff
+      switch_to_bigger_city: 2. Try a bigger city close to your location.
+      switch_to_guessed_city_html: '3. Our IP based city suggestion system tells us you are close to: <br> %{change_location}'
       title: There are no results in this location
-    no_location_specified: You must search in a specific city
     password: Password
     permission_denied: You don't have permissions
     please_fill_to_become_member: Please, fill this form to become a member
@@ -399,13 +397,13 @@ en:
       title: Privacy Policy
     profile: profile
     profile_actions:
-      friend:
-        add: 'Add %{username} to your friend''s list '
-        delete: Delete %{username} from your friend's list
       blocking:
         add: 
         confirm: 
         delete: 
+      friend:
+        add: 'Add %{username} to your friend''s list '
+        delete: Delete %{username} from your friend's list
     publish_ad: Posting ad
     publish_ad_on: Post ad in %{woeid}
     published_ads: Posted ads
@@ -505,8 +503,8 @@ en:
         delimiter: 
   oauth:
     errors:
-      email_not_provided: We need you to provide us with an email address to complete the registration process
       duplicated_username: The username provided by %{provider} is already in our database. If you already registered through another social network or through email & password, please login using those. Otherwise just specify another username.
+      email_not_provided: We need you to provide us with an email address to complete the registration process
   recaptcha:
     errors:
       verification_failed: Robot verification failed, try again

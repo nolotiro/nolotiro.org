@@ -51,6 +51,11 @@ it:
       ad: Ads
       ad_comment: Ad Commenti
       admin: Admin
+  blockings:
+    create:
+      success: Utente bloccato
+    destroy:
+      success: Utente sbloccato
   date:
     abbr_day_names:
     - dom
@@ -182,7 +187,7 @@ it:
       follow_instructions: 'Qualcuno a chiesto di cambiare la password di nolotiro.org. Se non sei stato tu puoi ignorare questa email. La password non cambierà fino a quando non accedi al link per crearne una nuova. '
       forgot: Hai dimenticato la password?
       instructions: Per favore, scrive la tua email e te invieremo un link di acceso diretto per cambiare la tua password.
-      no_html_instructions: "Se non puoi fare clic sul link, copia e incolla l'URL nella barra degli indirizzi del browser: "
+      no_html_instructions: 'Se non puoi fare clic sul link, copia e incolla l''URL nella barra degli indirizzi del browser: '
       no_token: Puoi accedere a questa pagina solamente dalla email di reset della password. Se vieni dalla email controlla di aver inserito l'url completo riportato nella email.
       send: Invia email
       send_instructions: Riceverai un messaggio email con le istruzioni per reimpostare la tua password entro qualche minuto.
@@ -201,11 +206,6 @@ it:
       signed_out: Sei uscito correttamente.
       user:
         signed_in: Acceso eseguito
-  blockings:
-    create:
-      success: Utente bloccato
-    destroy:
-      success: Utente sbloccato
   friendships:
     create:
       success: Amico aggiunto
@@ -259,6 +259,8 @@ it:
     visit_text: Vai a %{url} e guarda nella tua posta in arrivo per rispondere
     you_have_new_message: Hai ricevuto un nuovo messaggio
   nlt:
+    a_gift: Un regalo
+    a_request: Una petizione
     about: su di noi
     about_page:
       description_html: <b>¿Che cos'è nolotiro.org?</b><br> è un sito dove è possibile offrire al pubblico le cose che non vuoi più o che non ti servono più, così persone a cui servono le possono prendere o esserli di molta utilità.<br><br> <strong>Leggi le <a href="/es/page/faqs">domanti frequenti</a> per sapere di più sulla filosofia e gli obiettivi del progetto</strong> <br><br> <b>Vantaggi di nolotiro.org:</b><br> Il vantaggio più grande di nolotiro.org, è che sostituisce la nostalgia/sentimento di spreco, per una sensazione di fare qualcosa per qualcuno. Riesci a sbarazzarti delle cose che non buttavi via perche ti dispaceva buttare delle cose ancore útili ma che non usavi e alla fine solo restavano in un angolo dimenticati utilizzando spazio, sapendo che a qualcun altro poteva servirle, che le serviva veramente. Da un'altra parte nolotiro.org è stato organizzato in aree geografiche, così le cose rimangono vicino, non ci sono spesse di spedizione, ne spostamenti, ne meno spedizione ad altri paesi lontani con la possibilità che non arrivino mai a destinazione, lo puoi dare in persona a qualcuno della tua stessa città, che può prenderlo in un luogo precedentemente concordato. <br><br> <b>Devi fare attenzione:</b><br> NON C'E NESSUNA OPZIONE DI SCAMBIO, questo non è basato nel baratto, ne l'acquisto, perché si debe fomentare il altruismo, dare le cose perché si, perché abbiamo troppo. <br><br> <b>Spiegazione in versione letteraria in spagnolo</b><br> <a href="http://www.marcianoduran.com.uy/?p=176">Perché non lo butto?</a> Per Marciano Durán <br><br> <b>nolotiro.org funziona grazie al lavoro de molte <a href="http://www.youtube.com/watch?v=KMU0tzLwhbE">persone</a> che hanno sviluppato il seguente software libero:</b> <a href="http://rubyonrails.org/">Ruby On Rails</a>, <a href="http://www.mysql.com/">MySQL</a>, <a href="https://developer.yahoo.com/yql/">Yahoo YQL</a>, <a href="http://www.postfix.org/">Postfix</a>, <a href="http://www.ubuntu.org/">Ubuntu</a>, <a href="http://nginx.org/">Nginx</a>, e tanti altri, tanti che sarebbe impossibile nominarli tutti cui. <br><br> <b>Il codice fonte di nolotiro.org è un codice aperto</b> ed è disponibile per essere utilizzato (sotto licenza Affero GPL 3).<br> Vai su <a href="https://github.com/alabs/nolotiro.org"> web per sviluppatori</a> per altri informazioni (in inglese).<br> I collaboratori sono benvenuti, sia per programmare o per tradurre il sito in altre lingue.
@@ -274,9 +276,9 @@ it:
         body: Corpo del annuncio
         body_max: Massimo 500 caratteri
         comments_enabled: Como vuoi essere contattata?
+        image_permitted_formats: 'Formatti permessi: gif, jpg, png. Massimo: 5Mb di dimensione'
         private_messages_only: Soltanto por messaggi privati
         private_messages_or_comments: Por messaggi privati oppure por commenti nell'annucio
-        image_permitted_formats: 'Formatti permessi: gif, jpg, png. Massimo: 5Mb di dimensione'
         prohibited: 'C''e un problema, controlla questo:'
         select_an_image: Seleziona una immagine per il tuo annuncio
         status: Stato
@@ -289,8 +291,6 @@ it:
     and: e
     are_you_interested: Sei interessato?
     available: disponibile
-    a_gift: Un regalo
-    a_request: Una petizione
     back: torna alla pagina iniziale
     blog: blog
     booked: riservato
@@ -337,13 +337,13 @@ it:
     edit_this_ad: Editare questo annuncio
     faq:
       answer_1_html: Lo scopo fondamentale di questo sito è quello di sbarazzarsi di oggetti non più utilizzati e che ci ostacolano in casa
-      answer_2_html: 'Prima a te direttamente perche ti puoi liberare delle cose che non voui più, ma anche alla persona a qui regali implicitamente. Il meglio è vederlo da un punto di vista egoista e controllare la relazione de causa-effetto che stiamo a iniziare. Si facciamo cosí e pensiamo soltanto a liberarci delle cose útili, ma che noi non vogliamo più perche ci incomodano e sono da buttare fuori, sempre terremo una bella esperienza, perche non speriamo niente di più. Ed il fatto de sapere que qualcuno ne está profittando rafforze la esperienza. In altre parole, l''atto di regalare delle cose di valore o útili es sempre positivo se non speriamo un premio morale o placare la nostra coscienza.'
+      answer_2_html: Prima a te direttamente perche ti puoi liberare delle cose che non voui più, ma anche alla persona a qui regali implicitamente. Il meglio è vederlo da un punto di vista egoista e controllare la relazione de causa-effetto che stiamo a iniziare. Si facciamo cosí e pensiamo soltanto a liberarci delle cose útili, ma che noi non vogliamo più perche ci incomodano e sono da buttare fuori, sempre terremo una bella esperienza, perche non speriamo niente di più. Ed il fatto de sapere que qualcuno ne está profittando rafforze la esperienza. In altre parole, l'atto di regalare delle cose di valore o útili es sempre positivo se non speriamo un premio morale o placare la nostra coscienza.
       answer_3_html: Su questo sito si ha potere assoluto sulla decisione di chi, dove e quando si dà via gli oggetti di valore. Naturalmente l'ideale è quello di dare qualcosa alla persona che più bisogno. Non fraintendere il senso usiamo la parola egoismo qui. Ma per sapere se la persona che si sta per dare un oggetto merita, è un compito molto difficile, e favorisce un tipo di comportamento che portano a cattive esperienze e giudizi di valore che possono fare molto male.
-      answer_4_html: 'Anche se le probabilità che i trafficanti di orsacchiotti frequentino queste sito sono abbastanza remote, a te non te ne friega niente se il tuo obiettivo è quello di sbarazzarti delle cose che non voui più (l''egoista). Se hai regalato degli oggetti perché indossavano e non sapevi cosa fare con loro, hai fatto bene e hai tornato quell''oggetto all'' <a href="http://www.lapetiteclaudine.com/archives/009217.html"> mondo di cose utili, risparmiando denaro </a> persone ed energia, generatori di ricchezza (anche se piccola, è ricchezza). Se, invece, questa risposta non vi convince, allora non si dovrebbe dare via niente qui e vendere o donare ad una ONG, dove si controllano e la selezione di queste persone in difficoltà (non possiamo garantire questo processo).'
+      answer_4_html: Anche se le probabilità che i trafficanti di orsacchiotti frequentino queste sito sono abbastanza remote, a te non te ne friega niente se il tuo obiettivo è quello di sbarazzarti delle cose che non voui più (l'egoista). Se hai regalato degli oggetti perché indossavano e non sapevi cosa fare con loro, hai fatto bene e hai tornato quell'oggetto all' <a href="http://www.lapetiteclaudine.com/archives/009217.html"> mondo di cose utili, risparmiando denaro </a> persone ed energia, generatori di ricchezza (anche se piccola, è ricchezza). Se, invece, questa risposta non vi convince, allora non si dovrebbe dare via niente qui e vendere o donare ad una ONG, dove si controllano e la selezione di queste persone in difficoltà (non possiamo garantire questo processo).
       answer_5_html: 'Ci sono solo 2 tipi di annunci: il dono, che offrono oggetti che ostacolino o non vogliono più. E voglio annunci, che servono a fornire indizi e ispirare le persone a che tipo di oggetti che si desidera che altre persone di utilizzare o possedere. <strong> annunci di cambiamento, vendita, chiedendo denaro da lavoro, commercio, farmaci ecc non sono ammessi. </strong> e vengono cancellati non appena viene rilevato un moderatore, se indesiderato più volte la pubblicazione degli annunci, si può procedere per bloccare l''account utente.'
       answer_6_html: Il baratto è un sistema che funziona molto bene in formato fisico, cioè, due persone faccia a faccia, guardando gli oggetti e parlare dal vivo e vivere. Ma baratto internet è molto probabile che finiscano in inganni e discussioni infinite o malcontenti. Inoltre, come avete letto sopra, qui gli oggetti sono dato senza condizioni e baratto ha il condizionamento di quid pro quo, vale a dire. Tu me do e do niente di simile.
       answer_7_html: Sorprendentemente molte persone lo fanno, e non c'è niente di sbagliato con spedizioni vengono effettuate, ma devono avere un minimo di cautela con la serietà del ricevitore sono stati casi in cui qualcuno di buona fede ha fatto le spese di spedizione prepagata e poi ha un risultato che ha restituito il pacchetto. Idealmente, non fatto, dovrebbero essere incoraggiati a far circolare gli oggetti il più vicino possibile, il risparmio energetico, e può servire per conoscere meglio le persone della tua città. Spero che nella nuova versione, ci siamo concentrati un concetto locale è raggiunto. <a href="http://en.wikipedia.org/wiki/Think_Globally,_Act_Locally">pensare a livello globale.</a>
-      answer_8_html: 'No. Gli animali non sono oggetti che possano venire "buttati fuori" o "riciclati", quindi non c''entrano niente con nolotiro. Sono esseri viventi, che possono soffrire e dovrebbero esserci controlli più severi quando cambiano di mani.'
+      answer_8_html: No. Gli animali non sono oggetti che possano venire "buttati fuori" o "riciclati", quindi non c'entrano niente con nolotiro. Sono esseri viventi, che possono soffrire e dovrebbero esserci controlli più severi quando cambiano di mani.
       question_1: Qual è il fine di questo progetto?
       question_2: Quindi, questo sito non è quello di aiutare gli altri?
       question_3: Ma mi piace dare la mia roba a qualcuno che veramente ne ha bisogno
@@ -386,16 +386,16 @@ it:
 '
     meta_description_ad: rivendita regali %{title} en %{woeid}. %{body}
     new_user: nuovo utente
+    no_location_specified: Devi cercare in una città specifica
     no_results:
-      first_to_publish_html: "1. Puoi essere il primo a %{publish}."
-      switch_to_bigger_city: "2. Prova a cambiare la città per una più grande vicino da te."
-      switch_to_guessed_city_html: "3. Il nostro sistema di suggerimento (in base alla tua IP) dice che ti trovi vicino a: <br> %{change_location}"
+      first_to_publish_html: 1. Puoi essere il primo a %{publish}.
       on_user: Nessuna di tali annunci da questo utente.
       phrase: '"Un viaggio di mille chilometri inizia con un singolo passo", Lao Tse.'
       publish_ad: pubblicare un annuncio in questa città
       subtitle: Si può provare una qualsiasi di queste cose
+      switch_to_bigger_city: 2. Prova a cambiare la città per una più grande vicino da te.
+      switch_to_guessed_city_html: '3. Il nostro sistema di suggerimento (in base alla tua IP) dice che ti trovi vicino a: <br> %{change_location}'
       title: Nessun annuncio per questa posizione.
-    no_location_specified: Devi cercare in una città specifica
     password: password
     permission_denied: Non si dispone dell'autorizzazione per eseguire questa azione.
     please_fill_to_become_member: Si prega di compilare questo modulo per essere un membro di nolotiro
@@ -407,13 +407,13 @@ it:
       title: Politica sulla privacy
     profile: profilo
     profile_actions:
-      friend:
-        add: aggiungere %{username} alla tua lista di amici
-        delete: rimuovere %{username} alla tua lista di amici
       blocking:
         add: 
         confirm: 
         delete: 
+      friend:
+        add: aggiungere %{username} alla tua lista di amici
+        delete: rimuovere %{username} alla tua lista di amici
     publish_ad: Pubblicando annuncio
     publish_ad_on: Inserisci annunci a %{woeid}
     published_ads: annunci pubblicati
@@ -513,8 +513,8 @@ it:
         delimiter: 
   oauth:
     errors:
-      email_not_provided: Abbiamo bisigno di un indirizzo de correo electronico per completare l'iscrizione.
       duplicated_username: Il tuo username di %{provider} è gia nella nostra basi de dati. Se ti sei iscrito usando un'altra rete sociale oppure email e password, fai login usando quello. Altrimenti, inserisci un'altro username.
+      email_not_provided: Abbiamo bisigno di un indirizzo de correo electronico per completare l'iscrizione.
   recaptcha:
     errors:
       verification_failed: C'è stato un error nella verificazione contro dei robot
