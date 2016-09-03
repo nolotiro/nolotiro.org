@@ -420,7 +420,7 @@ it:
     published_at_by_html: Pubblicato fa %{time} dall'utente %{user}
     published_on: Pubblicato fa %{date}
     published_on_html: Pubblicato <abbr class='js-moment' title='%{date}'>%{date}</abbr>
-    readed_count: "%{count} lettures"
+    readed_count: "%{count} letture"
     reads: lettures
     register: Iscriviti
     register_here: registrati qui
