@@ -14,4 +14,23 @@ namespace :announcements do
                          starts_at: Time.zone.now,
                          ends_at: 2.weeks.from_now)
   end
+
+  desc 'Translations warning as an announcement'
+  task translations: :environment do
+    include Rails.application.routes.url_helpers
+
+    (I18n.available_locales - [:es]).each do |locale|
+      message = <<-TXT.squish
+        This language translation is in testing phase. If you find a missing or
+        wrong translation, <a href=#{contact_path(locale: locale)}>please report
+        it</a>
+      TXT
+
+      starts_at = Time.zone.now
+
+      Announcement.create!(locale: locale,
+                           message: message,
+                           starts_at: starts_at)
+    end
+  end
 end

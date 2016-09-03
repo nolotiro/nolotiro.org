@@ -7,7 +7,10 @@
 <div class="col-md-9 col-sm-9">
   <div class="row">
     <fieldset>
-      <%= t('nlt.translate.description_html') %>
+      <% translate_it = link_to t('nlt.translate.link'),
+                                'http://accounts.localeapp.com/projects/6872' %>
+
+      <%= t('nlt.translate.description_html', translate_it: translate_it) %>
     </fieldset>
   </div>
 </div>

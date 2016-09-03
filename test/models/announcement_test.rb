@@ -3,12 +3,24 @@ require 'test_helper'
 
 class AnnouncementTest < ActiveSupport::TestCase
   test '.current returns only active announcements' do
-    _past = create(:announcement, starts_at: 1.day.ago, ends_at: 1.hour.ago)
-    curr = create(:announcement, starts_at: 1.day.ago, ends_at: 1.day.from_now)
-    _post = create(:announcement, starts_at: 1.hour.from_now,
-                                  ends_at: 1.day.from_now)
+    _expired = create(:announcement, :expired)
+    current = create(:announcement, :current)
+    _programmed = create(:announcement, :programmed)
 
-    assert_equal [curr], Announcement.current
+    assert_equal [current], Announcement.current
+  end
+
+  test '.current ignores announcements for other locales' do
+    current = create(:announcement, :current)
+    _foreign = create(:announcement, :current, locale: 'eu')
+
+    assert_equal [current], Announcement.current
+  end
+
+  test '.current returns never expiring announcements' do
+    current = create(:announcement, :eternal)
+
+    assert_equal [current], Announcement.current
   end
 
   test '.pending_for returns no announcements when all dismissed' do
@@ -35,9 +47,9 @@ class AnnouncementTest < ActiveSupport::TestCase
   end
 
   test '.pick_pending_for returns pending announcement closest to expiration' do
-    _curr1 = create(:announcement, ends_at: 1.hour.from_now)
-    curr2 = create(:announcement, ends_at: 1.minute.from_now)
+    _old = create(:announcement, ends_at: 1.hour.from_now)
+    recent = create(:announcement, ends_at: 1.minute.from_now)
 
-    assert_equal curr2, Announcement.pick_pending_for(create(:user))
+    assert_equal recent, Announcement.pick_pending_for(create(:user))
   end
 end

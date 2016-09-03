@@ -3,7 +3,11 @@ class Announcement < ActiveRecord::Base
   has_many :dismissals, dependent: :destroy
 
   scope :current, -> do
-    where('starts_at <= :now AND ends_at >= :now', now: Time.zone.now)
+    now = Time.zone.now
+
+    where('starts_at <= :now', now: now)
+      .where('ends_at >= :now OR ends_at IS NULL', now: now)
+      .where('locale IS NULL OR locale = :locale', locale: I18n.locale)
   end
 
   def self.pending_for(user)
@@ -13,7 +17,7 @@ class Announcement < ActiveRecord::Base
       AND dismissals.user_id = #{user.id}
     SQL
 
-    join.where('user_id IS NULL')
+    join.where(dismissals: { user_id: nil })
   end
 
   def self.pick_pending_for(user)

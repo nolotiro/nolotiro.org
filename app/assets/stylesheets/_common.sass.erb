@@ -20,7 +20,8 @@ html
   display: relative
   padding: 10px 50px
   text-align: center
-  a
+
+  .dismiss
     font-size: 24px
     line-height: 12px
     position: absolute
@@ -31,12 +32,16 @@ a
   &:link
     color: #00ACCF
     text-decoration: none
+
   &:visited
     color: #00ACCF
+
   &:active
     color: #00C7EF
+
   &:hover
     color: #26DAFF
+
   &.actual
     border-bottom: solid
     border-width: 3px
@@ -70,20 +75,6 @@ a
     img
       margin-bottom: 4px
 
-.advice
-  position: relative
-  display: block
-  background: $light-yellow
-  font-weight: bold
-  padding: 5px
-  width: auto
-  font-size: 12px
-  clear: both
-  margin-bottom: 10px
-
-.close_advice a
-  color: #000
-
 #select_language_box
   position: absolute
   top: 0px
@@ -97,15 +88,11 @@ a
   width: 92px
   padding-top: 24px
   z-index: 400
+
   &:hover
     border: 1px solid $gray-separator
     background-color: #fff
     height: auto
-
-.deployed_languages
-  border: 1px solid $gray-separator
-  background-color: #fff
-  height: auto
 
 #select_language_box
   a
@@ -117,26 +104,23 @@ a
     display: none
     width: 100%
     text-decoration: none !important
+
   img
     text-decoration: none !important
     border: 0
     right: 2px
     clear: left
     vertical-align: baseline
-  a span.lang_name
-    display: inline-block
-    text-decoration: none
+
   &:hover a
     display: block
-
-.deployed_languages a
-  display: block
 
 #select_language_box
   .lang.active
     display: block
     position: absolute
     top: 0px
+
   a:hover
     background-color: #999 !important
     text-decoration: none !important
@@ -147,15 +131,18 @@ form.searchbox
   width: auto
   padding-right: 20px
   top: 0px
+
   dd
     display: inline
     margin: 0
+
   input
     padding: 1px
     font-size: 12px
     border: 1px
     border-style: solid
     border-color: $gray-separator
+
   dl
     margin: 0px !important
 
@@ -166,6 +153,7 @@ form.searchbox
 .select_language_box
   margin-top: -0.4em
   padding: 4px
+
   select
     font-size: 0.9em
     font-weight: bold
@@ -273,10 +261,12 @@ form.searchbox
   padding: 14px 18px 22px 18px
   margin: 0
   width: 100%
+
   h4
     font-size: 1.3em
     font-weight: bold
     margin-bottom: 6px
+
   &:hover
     background-color: #FFFFCC
 
@@ -322,6 +312,7 @@ form.searchbox
 %message-container
   font-size: 0.9em
   position: relative
+
   p
     &:last-child
       margin-bottom: 0
@@ -387,6 +378,7 @@ form.searchbox
   text-align: left
   font-size: 11px
   margin-top: 5px
+
   b
     margin-right: 10px
 
@@ -423,6 +415,7 @@ form.searchbox
   padding-right: 18px
   padding-bottom: 18px
   margin-top: 14px
+
   span
     clear: left
     float: left
@@ -473,6 +466,7 @@ form.searchbox
   background: #FBE3E4
   color: #8a1f11
   border-color: #FBC2C4
+
   a
     color: #8a1f11
 
@@ -480,6 +474,7 @@ form.searchbox
   background: #FFF6BF
   color: #514721
   border-color: #FFD324
+
   a
     color: #514721
 
@@ -487,6 +482,7 @@ form.searchbox
   background: #FFF
   color: #264409
   border-color: #C6D880
+
   a
     color: #264409
 
@@ -537,6 +533,7 @@ dl, dd
   padding-bottom: 10px
   width: 100%
   border-bottom: 1px solid $gray-separator
+
   h4
     font-size: 1.4em
     font-weight: bold
@@ -630,6 +627,7 @@ dl, dd
 .site-logo
   @include clearfix
   background: image-url('nolotiro_logo.png') no-repeat 0 0
+
   a
     display: block
     padding-left: 60px
@@ -677,6 +675,7 @@ dl, dd
   padding-left: 20px
   border: 1px solid $gray-separator
   margin-bottom: 20px
+
   h2
     font-size: 1em
     font-weight: bold
@@ -697,13 +696,16 @@ dl, dd
   border: 0
   list-style: none
   margin-right: 2px
+
   span
     border: solid 1px #00ACCF
     margin-right: 2px
     text-align: center
     padding: 4px
+
   a
     text-decoration: none
+
   #current
     background-color: #00ACCF
     display: inline-block
@@ -749,141 +751,21 @@ ul#tabnav
   border-bottom: 1px solid $gray-separator
   list-style-type: none
   padding: 3px 15px
+
   li
     display: inline
+
     a
       padding: 3px 10px
       border: 1px solid $gray-separator
       margin-right: 4px
       text-decoration: none
       border-bottom: none
+
   a:hover, .active
     color: #000 !important
 
 /* end css tabs
-
-/* Base Superbox Styles *****************************************************************
-
-#superbox-overlay
-  position: fixed
-  top: 0
-  left: 0
-  z-index: 9998
-  width: 100%
-  height: 100%
-
-#superbox-wrapper
-  position: fixed
-  z-index: 9999
-  top: 0
-  display: table
-  width: 100%
-  height: 100%
-
-#superbox-container
-  position: relative
-  display: table-cell
-  width: 100%
-  height: 100%
-  margin: 0
-  padding: 0
-  vertical-align: middle
-
-#superbox
-  margin: 0 auto
-  padding: 0
-
-#superbox-container .loading
-  margin: 0
-  text-align: center
-
-/* IE7
-
-*
-  &:first-child + html
-    #superbox-container
-      position: absolute
-      top: 50%
-      display: block
-      height: auto
-    #superbox
-      position: relative
-      top: -50%
-      display: block
-  html
-    #superbox-container
-      position: absolute
-      top: 50%
-      display: block
-      height: auto
-    #superbox
-      position: relative
-      top: -50%
-      display: block
-    #superbox-overlay
-      position: absolute
-      height: expression(document.body.scrollHeight > document.body.offsetHeight ? document.body.scrollHeight + 'px' : document.body.offsetHeight + 'px')
-    #superbox-wrapper
-      position: absolute
-      margin-top: expression(0 - parseInt(this.offsetHeight / 2) + (document.documentElement && document.documentElement.scrollTop || document.body.scrollTop) + 'px')
-
-/* IE6 - Thanks to Thickbox for IE expressions
-
-#superbox-container .loading
-  text-align: center
-  font-size: 40px
-  color: #fff
-
-#superbox
-  padding: 10px
-  background: #fff
-
-#superbox-innerbox
-  padding: 10px 0
-
-#superbox.image
-  text-align: center
-
-/* nolotiro Theme
-
-#superbox-overlay
-  background: #e0e4cc
-
-/*#superbox-overlay{background:#fff;}
-
-#superbox-container .loading
-  width: 32px
-  height: 32px
-  margin: 0 auto
-  text-indent: -9999px
-  background: image-url('loader.gif') no-repeat 0 0
-
-#superbox
-  .close a
-    float: right
-    padding: 0 5px
-    line-height: 20px
-    background: #333
-    cursor: pointer
-    span
-      color: #fff
-  .nextprev
-    a
-      float: left
-      margin-right: 5px
-      padding: 0 5px
-      line-height: 20px
-      background: #333
-      cursor: pointer
-      color: #fff
-    .disabled
-      background: #ccc
-      cursor: default
-
-.xdebug-var-dump
-  clear: both
-  border: 1px silver solid
-  padding: 4px
 
 $langs: <%= I18n.available_locales.join(" ") %>
 
@@ -894,6 +776,7 @@ $langs: <%= I18n.available_locales.join(" ") %>
       background-repeat: no-repeat
       background-position: 0px 5px, center
       background-image: image-url("flags/#{$l}.gif")
+
       span
         margin-left: 15px
 
@@ -996,7 +879,6 @@ $langs: <%= I18n.available_locales.join(" ") %>
     display: block
 
 @media only screen and (max-width: 500px)
-
   .message-from-left, .message-from-right
     display: none
 
