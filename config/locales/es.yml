@@ -268,9 +268,6 @@ es:
     access_here: accede aquí
     ads:
       bumped: Hemos republicado el anuncio
-      count:
-        one: "%{count} anuncio"
-        other: "%{count} anuncios"
       created: Hemos creado el anuncio
       form:
         body: 'Cuerpo del anuncio:'
@@ -320,9 +317,6 @@ es:
       subject: "[nolotiro.org] Tienes un nuevo comentario en el anuncio %{ad}"
       submit: Enviar
       title: Comentarios
-    comments_count:
-      one: ", %{count} comentario"
-      other: ", %{count} comentarios"
     contact: contacto
     contact_form: Formulario de contacto
     contact_legend_html: Este formulario es para contactar con las administradoras de nolotiro. ¿Estas buscando publicar un anuncio? Haz click %{new_ad_link}.
@@ -381,6 +375,15 @@ es:
     messages_title: Mensajes
     meta_description: 'nolotiro.org es un sitio web donde regalo y busco regalos gratis de segunda mano: muebles, sillas, sofás, bicicletas, ordenadores portátiles, mesas, cocinas, lámparas, camas, ropa, juguetes, cunas o carros para bebes, teléfonos móviles y otras muchas cosas que ya no quieres y ya no necesitas para que las reutilicen otra gente a la que puede servirle o darle nueva vida.'
     meta_description_ad: regalo segunda mano %{title} en %{woeid}. %{body}
+    n_ads:
+      one: "%{count} anuncio"
+      other: "%{count} anuncios"
+    n_comments:
+      one: ", %{count} comentario"
+      other: ", %{count} comentarios"
+    n_reads:
+      one: "%{count} lectura"
+      other: "%{count} lecturas"
     new_user: nuevo usuario
     no_location_specified: Debes buscar en una ciudad específica
     no_results:
@@ -414,7 +417,6 @@ es:
     published_at_by_html: Publicado hace %{time} por el usuario %{user}
     published_on: Publicado hace %{date}
     published_on_html: Publicado <abbr class='js-moment' title='%{date}'>%{date}</abbr>
-    readed_count: "%{count} lecturas"
     reads: lecturas
     register: Regístrate
     register_here: registrate aquí

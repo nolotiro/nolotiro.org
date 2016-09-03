@@ -264,9 +264,6 @@ en:
     access_here: access here
     ads:
       bumped: We have bumped the ad
-      count:
-        one: "%{count} ad"
-        other: "%{count} ads"
       created: We have created the ad
       form:
         body: 'Body of the ad:'
@@ -316,9 +313,6 @@ en:
       subject: "[nolotiro.org] You have a new comment in you ad %{ad}"
       submit: Send
       title: Comments
-    comments_count:
-      one: ", %{count} comment"
-      other: ", %{count} comments"
     contact: contact
     contact_form: Contact's form
     contact_legend_html: This form is to contact nolotiro administrators. Do you want to publish an ad instead? Click %{new_ad_link}.
@@ -377,6 +371,15 @@ en:
     messages_title: Messages
     meta_description: nolotiro.org is a website where I give free gifts and seeking second-hand furniture, chairs, sofas, bicycles, laptops, tables, stoves, lamps, beds, clothes, toys, baby cribs or cars, mobile phones and other many things you no longer want and no longer need to make the reuse other people who may serve or give new life.
     meta_description_ad: second hand gift %{title} in %{woeid}. %{body}
+    n_ads:
+      one: "%{count} ad"
+      other: "%{count} ads"
+    n_comments:
+      one: ", %{count} comment"
+      other: ", %{count} comments"
+    n_reads:
+      one: "%{count} view"
+      other: "%{count} views"
     new_user: sign up
     no_location_specified: You must search in a specific city
     no_results:
@@ -410,7 +413,6 @@ en:
     published_at_by_html: Posted %{time} ago by user %{user}
     published_on: Posted since %{date}
     published_on_html: Posted <abbr class='js-moment' title='%{date}'>%{date}</abbr>
-    readed_count: "%{count} views"
     reads: views
     register: Register
     register_here: Register here

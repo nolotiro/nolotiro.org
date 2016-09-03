@@ -268,9 +268,6 @@ it:
     access_here: accedi qui
     ads:
       bumped: Abbiamo ripubblicato annuncio
-      count:
-        one: "%{count} annuncio"
-        other: "%{count} annunci"
       created: 'Abbiamo creato l''annuncio '
       form:
         body: Corpo del annuncio
@@ -320,9 +317,6 @@ it:
       subject: "[nolotiro.org] Hai un nuovo commento sull'annuncio %{ad}"
       submit: Inviare
       title: Commenti
-    comments_count:
-      one: ", %{count} commento"
-      other: ", %{count} commenti"
     contact: contatto
     contact_form: Formulario di contatto
     contact_legend_html: Questo formulario é per contattare i gestori di nolotiro. Estái cercando di pubblicare un annucio? Clicca %{new_ad_link}
@@ -385,6 +379,15 @@ it:
 
 '
     meta_description_ad: rivendita regali %{title} en %{woeid}. %{body}
+    n_ads:
+      one: "%{count} annuncio"
+      other: "%{count} annunci"
+    n_comments:
+      one: ", %{count} commento"
+      other: ", %{count} commenti"
+    n_reads:
+      one: "%{count} lettura"
+      other: "%{count} letture"
     new_user: nuovo utente
     no_location_specified: Devi cercare in una città specifica
     no_results:
@@ -420,7 +423,6 @@ it:
     published_at_by_html: Pubblicato fa %{time} dall'utente %{user}
     published_on: Pubblicato fa %{date}
     published_on_html: Pubblicato <abbr class='js-moment' title='%{date}'>%{date}</abbr>
-    readed_count: "%{count} letture"
     reads: lettures
     register: Iscriviti
     register_here: registrati qui

@@ -270,9 +270,6 @@ fr:
     access_here: accès ici
     ads:
       bumped: Nous avons publié l'avis
-      count:
-        one: "%{count} annonce"
-        other: "%{count} annonces"
       created: Nous avons créé l'annonce
       form:
         body: 'Corps de l''annonce:'
@@ -322,9 +319,6 @@ fr:
       subject: "[nolotiro.org] Vous avez un nouveau commentaire sur l'annonce %{ad}"
       submit: Envoyer
       title: Commentaires
-    comments_count:
-      one: ", %{count} commentaire"
-      other: ", %{count} commentaires"
     contact: contact
     contact_form: Formulaire de contact
     contact_legend_html: Ce formulaire est à contacter les gestionnaires nolotiro. Vous cherchez une annonce? Cliquez %{new_ad_link}.
@@ -383,6 +377,15 @@ fr:
     messages_title: Messages
     meta_description: nolotiro.org est un site où je cherche des cadeaux don gratuit et des meubles de seconde main, des chaises, des canapés, des vélos, des ordinateurs portables, des tables, des poêles, des lampes, des lits, des vêtements, des jouets, des lits bébé ou les voitures, les téléphones mobiles et autres beaucoup de choses que vous ne voulez plus et n'a plus besoin de faire la réutilisation d'autres personnes qui peuvent servir ou donner une nouvelle vie.
     meta_description_ad: cadeu seconde main %{title} en %{woeid}. %{body}
+    n_ads:
+      one: "%{count} annonce"
+      other: "%{count} annonces"
+    n_comments:
+      one: ", %{count} commentaire"
+      other: ", %{count} commentaires"
+    n_reads:
+      one: "%{count} lecture"
+      other: "%{count} lectures"
     new_user: nouvel utilisateur
     no_location_specified: 
     no_results:
@@ -418,7 +421,6 @@ fr:
     published_at_by_html: Publié a %{time} par utilisateur %{user}
     published_on: Publié a %{date}
     published_on_html: Publié <abbr class='js-moment' title='%{date}'>%{date}</abbr>
-    readed_count: "%{count} lectures"
     reads: lectures
     register: Inscrivez
     register_here: Inscrivez ici

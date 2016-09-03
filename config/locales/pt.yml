@@ -268,9 +268,6 @@ pt:
     access_here: acesse aqui
     ads:
       bumped: Anúncio republicado
-      count:
-        one: "%{count} anúncio"
-        other: "%{count} anúncios"
       created: Anúncio criado
       form:
         body: 'Corpo de anúncio:'
@@ -320,9 +317,6 @@ pt:
       subject: "[nolotiro.org] Você tem um novo comentário no seu anúncio %{ad}"
       submit: Enviar
       title: Comentários
-    comments_count:
-      one: ", %{count} comentário"
-      other: ", %{count} comentários"
     contact: contato
     contact_form: Formulario de contato
     contact_legend_html: Este formulário é para contatar com os administradores do nolotiro. Você está procurando publicar um anúncio? Clique %{new_ad_link}.
@@ -381,6 +375,15 @@ pt:
     messages_title: Mensagens
     meta_description: 'nolotiro.org é um site web onde posso dar presentes e procurar presentes de segunda mão: movéis, cadeiras, sofás, bicicletas, computadores pessoais, mesas, fogões, abajures, camas, roupa, brinquedos, berços ou carrinhos para bebes, celulares e mais outras coisas que você já não quer e não precisa para que sejam reutilizadas por outras pessoas.'
     meta_description_ad: presentes de segunda mão %{title} em %{woeid}. %{body}
+    n_ads:
+      one: "%{count} anúncio"
+      other: "%{count} anúncios"
+    n_comments:
+      one: ", %{count} comentário"
+      other: ", %{count} comentários"
+    n_reads:
+      one: "%{count} leitura"
+      other: "%{count} leituras"
     new_user: novo usuário
     no_location_specified: 
     no_results:
@@ -414,9 +417,6 @@ pt:
     published_at_by_html: Publicado há %{time} pelo usuário %{user}
     published_on: Publicado há %{date}
     published_on_html: Publicado <abbr class='js-moment' title='%{date}'>%{date}</abbr>
-    readed_count:
-      one: "%{count} leitura"
-      other: "%{count} leituras"
     reads: leituras
     register: Registre-se
     register_here: cadastre-se aqui

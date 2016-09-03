@@ -258,9 +258,6 @@ nl:
     access_here: 
     ads:
       bumped: 
-      count:
-        one: 
-        other: 
       created: 
       form:
         body: 
@@ -310,9 +307,6 @@ nl:
       subject: 
       submit: 
       title: 
-    comments_count:
-      one: 
-      other: 
     contact: 
     contact_form: 
     contact_legend_html: 
@@ -371,6 +365,15 @@ nl:
     messages_title: 
     meta_description: 
     meta_description_ad: 
+    n_ads:
+      one: 
+      other: 
+    n_comments:
+      one: 
+      other: 
+    n_reads:
+      one: 
+      other: 
     new_user: 
     no_location_specified: 
     no_results:
@@ -404,7 +407,6 @@ nl:
     published_at_by_html: 
     published_on: 
     published_on_html: 
-    readed_count: 
     reads: 
     register: 
     register_here: 

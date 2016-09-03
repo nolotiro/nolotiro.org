@@ -275,9 +275,6 @@ gl:
     access_here: Entre aquí
     ads:
       bumped: 
-      count:
-        one: "%{count} anuncio"
-        other: "%{count} anuncios"
       created: Creamos o anuncio
       form:
         body: 'Corpo do anuncio:'
@@ -327,9 +324,6 @@ gl:
       subject: 
       submit: 
       title: 
-    comments_count:
-      one: ", %{count} comentario"
-      other: ", %{count} comentarios"
     contact: contacto
     contact_form: 
     contact_legend_html: Este formulario é para poñerse en contacto cos xestores de nolotiro. Vostede quere publicar un anuncio? Prema %{new_ad_link}
@@ -392,6 +386,15 @@ gl:
     messages_title: 
     meta_description: 
     meta_description_ad: 
+    n_ads:
+      one: "%{count} anuncio"
+      other: "%{count} anuncios"
+    n_comments:
+      one: ", %{count} comentario"
+      other: ", %{count} comentarios"
+    n_reads:
+      one: 
+      other: 
     new_user: 
     no_location_specified: 
     no_results:
@@ -425,7 +428,6 @@ gl:
     published_at_by_html: Publicado fai %{time} por el usuario %{user}
     published_on: Publicado fai %{date}
     published_on_html: Publicado <abbr class='js-moment' title='%{date}'>%{date}</abbr>
-    readed_count: 
     reads: 
     register: 
     register_here: 
