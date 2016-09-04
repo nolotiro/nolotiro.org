@@ -7,7 +7,7 @@ class PostingCommentsTest < ActionDispatch::IntegrationTest
   include Warden::Test::Helpers
   include WebMocking
 
-  before { @ad = FactoryGirl.create(:ad, comments_enabled: true) }
+  before { @ad = create(:ad, comments_enabled: true) }
 
   test 'users need to login before posting a comment' do
     mocking_yahoo_woeid_info(@ad.woeid_code) { visit ad_path(@ad) }
