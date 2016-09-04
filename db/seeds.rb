@@ -26,8 +26,8 @@ def create_ad(user)
     created_at: timestamp,
     published_at: timestamp,
     body: Faker::Hipster.paragraphs.join("\n"),
-    type: 1,
-    status: 1,
+    type: :give,
+    status: :available,
     woeid_code: 766_273,
     image: Faker::Placeholdit.image
   )

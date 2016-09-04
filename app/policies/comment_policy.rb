@@ -3,7 +3,7 @@
 class CommentPolicy < ApplicationPolicy
   def create?
     record.ad.comments_enabled? &&
-      record.ad.status_class != 'delivered' &&
+      !record.ad.delivered? &&
       user &&
       Blocking.none_between?(record.ad.user, user)
   end

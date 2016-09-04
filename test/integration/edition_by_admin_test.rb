@@ -8,7 +8,7 @@ class EditionsByAdmin < ActionDispatch::IntegrationTest
   include Warden::Test::Helpers
 
   before do
-    @ad = create(:ad, woeid_code: 766_273, type: 1)
+    @ad = create(:ad, :give, woeid_code: 766_273)
     login_as create(:admin, woeid: 766_272)
   end
 
@@ -21,7 +21,7 @@ class EditionsByAdmin < ActionDispatch::IntegrationTest
       click_button 'Publicar anuncio'
 
       assert_equal 766_273, @ad.reload.woeid_code
-      assert_equal 2, @ad.reload.type
+      assert_equal 'want', @ad.reload.type
     end
   end
 end

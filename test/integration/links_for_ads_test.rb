@@ -9,7 +9,7 @@ class LinksForAds < ActionDispatch::IntegrationTest
   before { @ad = create(:ad, comments_enabled: true) }
 
   it 'shows message link in available ads' do
-    @ad.update(status: 1)
+    @ad.update(status: :available)
 
     mocking_yahoo_woeid_info(@ad.woeid_code) do
       visit ad_path(@ad)
@@ -19,7 +19,7 @@ class LinksForAds < ActionDispatch::IntegrationTest
   end
 
   it 'does not show message link in booked ads' do
-    @ad.update(status: 2)
+    @ad.update(status: :booked)
 
     mocking_yahoo_woeid_info(@ad.woeid_code) do
       visit ad_path(@ad)
@@ -29,7 +29,7 @@ class LinksForAds < ActionDispatch::IntegrationTest
   end
 
   it 'does not show message link in delivered ads' do
-    @ad.update(status: 3)
+    @ad.update(status: :delivered)
 
     mocking_yahoo_woeid_info(@ad.woeid_code) do
       visit ad_path(@ad)

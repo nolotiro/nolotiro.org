@@ -30,7 +30,10 @@ class AdsControllerTest < ActionController::TestCase
   end
 
   test 'should not create ad if not signed in' do
-    post :create, ad: { body: 'Es una Ferrari de esas rojas, muy linda.', title: 'Regalo Ferrari', type: 1, woeid_code: '788273' }
+    post :create, ad: { body: 'Es una Ferrari de esas rojas, muy linda.',
+                        title: 'Regalo Ferrari',
+                        type: 'give',
+                        woeid_code: '788273' }
 
     assert_redirected_to new_user_session_url
   end
@@ -39,7 +42,10 @@ class AdsControllerTest < ActionController::TestCase
     sign_in @user
 
     assert_difference('Ad.count') do
-      post :create, ad: { body: 'Es una Ferrari de esas rojas, muy linda.', title: 'Regalo Ferrari', type: 1, woeid_code: '788273' }
+      post :create, ad: { body: 'Es una Ferrari de esas rojas, muy linda.',
+                          title: 'Regalo Ferrari',
+                          type: 'give',
+                          woeid_code: '788273' }
     end
 
     assert_redirected_to adslug_path(assigns(:ad), slug: 'regalo-ferrari')

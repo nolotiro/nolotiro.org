@@ -20,7 +20,7 @@ class AdsController < ApplicationController
     @ad.user_owner = current_user.id
     @ad.woeid_code = current_user.woeid
     @ad.ip = request.remote_ip
-    @ad.status = 1
+    @ad.status = :available
     @ad.published_at = Time.zone.now
     authorize(@ad)
 

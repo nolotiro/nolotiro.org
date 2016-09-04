@@ -21,16 +21,16 @@ class AdTest < ActiveSupport::TestCase
   end
 
   test 'ad validates type' do
-    assert_equal true, @ad.update(type: 1)
-    assert_equal true, @ad.update(type: 2)
-    assert_equal false, @ad.update(type: 3)
+    assert_equal true, @ad.update(type: :give)
+    assert_equal true, @ad.update(type: :want)
+    assert_raises(ArgumentError) { @ad.update(type: :other) }
   end
 
   test 'ad validates status' do
-    assert_equal true, @ad.update(status: 1)
-    assert_equal true, @ad.update(status: 2)
-    assert_equal true, @ad.update(status: 3)
-    assert_equal false, @ad.update(status: 4)
+    assert_equal true, @ad.update(status: :available)
+    assert_equal true, @ad.update(status: :booked)
+    assert_equal true, @ad.update(status: :delivered)
+    assert_raises(ArgumentError) { @ad.update(status: :other) }
   end
 
   test 'ad validates maximum length of title' do
@@ -74,35 +74,21 @@ class AdTest < ActiveSupport::TestCase
 
   test 'ad check type_string' do
     assert_equal @ad.type_string, 'regalo'
-    @ad.update!(type: 2)
+    @ad.update!(type: :want)
     assert_equal @ad.type_string, 'petición'
   end
 
   test 'ad check status_string' do
     assert_equal @ad.status_string, 'disponible'
-    @ad.update!(status: 2)
+    @ad.update!(status: :booked)
     assert_equal @ad.status_string, 'reservado'
-    @ad.update!(status: 3)
+    @ad.update!(status: :delivered)
     assert_equal @ad.status_string, 'entregado'
-  end
-
-  test 'ad check type_class' do
-    assert_equal @ad.type_class, 'give'
-    @ad.update!(type: 2)
-    assert_equal @ad.type_class, 'want'
-  end
-
-  test 'ad check status_class' do
-    assert_equal @ad.status_class, 'available'
-    @ad.update!(status: 2)
-    assert_equal @ad.status_class, 'booked'
-    @ad.update!(status: 3)
-    assert_equal @ad.status_class, 'delivered'
   end
 
   test 'ad meta_title for give ads' do
     mocking_yahoo_woeid_info(@ad.woeid_code) do
-      @ad.update!(type: 1)
+      @ad.update!(type: :give)
       title = 'regalo segunda mano gratis  ordenador en Vallecas Madrid, ' \
               'Madrid, España'
       assert_equal title, @ad.meta_title
@@ -113,7 +99,7 @@ class AdTest < ActiveSupport::TestCase
     skip
 
     mocking_yahoo_woeid_info(@ad.woeid_code) do
-      @ad.update!(type: 2)
+      @ad.update!(type: :want)
       title = 'busco ordenador en Vallecas Madrid, Madrid, España'
       assert_equal title, @ad.meta_title
     end
