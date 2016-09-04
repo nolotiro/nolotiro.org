@@ -6,7 +6,7 @@ require 'support/web_mocking'
 class LinksForAds < ActionDispatch::IntegrationTest
   include WebMocking
 
-  before { @ad = create(:ad, comments_enabled: true) }
+  before { @ad = create(:ad) }
 
   it 'shows message link in available ads' do
     @ad.update(status: :available)
