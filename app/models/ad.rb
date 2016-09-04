@@ -112,10 +112,6 @@ class Ad < ActiveRecord::Base
     @woeid_info ||= WoeidHelper.convert_woeid_name(woeid_code)
   end
 
-  def full_title
-    type_string + ' segunda mano ' + filtered_title + ' ' + woeid_name
-  end
-
   def type_string
     I18n.t("nlt.#{type}")
   end
