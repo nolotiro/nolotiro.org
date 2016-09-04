@@ -121,7 +121,7 @@ class Ad < ActiveRecord::Base
   end
 
   def meta_title
-    "#{I18n.t('nlt.keywords')} #{filtered_title} #{woeid_name}"
+    "#{type_string} - #{title} - #{woeid_name}"
   end
 
   def bumpable?

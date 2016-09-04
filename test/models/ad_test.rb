@@ -85,19 +85,16 @@ class AdTest < ActiveSupport::TestCase
     ad = build(:ad, :give)
 
     mocking_yahoo_woeid_info(ad.woeid_code) do
-      title = 'regalo segunda mano gratis  ordenador en Vallecas Madrid, ' \
-              'Madrid, España'
+      title = 'regalo - ordenador en Vallecas - Madrid, Madrid, España'
       assert_equal title, ad.meta_title
     end
   end
 
   test 'ad meta_title for want ads' do
-    skip
-
     ad = build(:ad, :want)
 
     mocking_yahoo_woeid_info(ad.woeid_code) do
-      title = 'busco ordenador en Vallecas Madrid, Madrid, España'
+      title = 'petición - ordenador en Vallecas - Madrid, Madrid, España'
       assert_equal title, ad.meta_title
     end
   end
