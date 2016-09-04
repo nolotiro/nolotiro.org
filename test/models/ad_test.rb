@@ -7,8 +7,6 @@ require 'support/web_mocking'
 class AdTest < ActiveSupport::TestCase
   include WebMocking
 
-  setup { @ad = create(:ad) }
-
   test 'ad requires everything' do
     a = Ad.new
     a.valid?
@@ -21,114 +19,115 @@ class AdTest < ActiveSupport::TestCase
   end
 
   test 'ad validates type' do
-    assert_equal true, @ad.update(type: :give)
-    assert_equal true, @ad.update(type: :want)
-    assert_raises(ArgumentError) { @ad.update(type: :other) }
+    assert_equal true, build(:ad, :give).valid?
+    assert_equal true, build(:ad, :want).valid?
+    assert_raises(ArgumentError) { build(:ad, type: :other) }
   end
 
   test 'ad validates status' do
-    assert_equal true, @ad.update(status: :available)
-    assert_equal true, @ad.update(status: :booked)
-    assert_equal true, @ad.update(status: :delivered)
-    assert_raises(ArgumentError) { @ad.update(status: :other) }
+    assert_equal true, build(:ad, status: :available).valid?
+    assert_equal true, build(:ad, status: :booked).valid?
+    assert_equal true, build(:ad, status: :delivered).valid?
+    assert_raises(ArgumentError) { build(:ad, status: :other) }
   end
 
   test 'ad validates maximum length of title' do
-    assert @ad.update(title: 'a' * 100)
-    assert_not @ad.update(title: 'a' * 101)
+    assert_equal true, build(:ad, title: 'a' * 100).valid?
+    assert_equal false, build(:ad, title: 'a' * 101).valid?
   end
 
   test 'ad validates minimum length of title' do
-    assert @ad.update(title: 'a' * 4)
-    assert_not @ad.update(title: 'a' * 3)
+    assert_equal true, build(:ad, title: 'a' * 4).valid?
+    assert_equal false, build(:ad, title: 'a' * 3).valid?
   end
 
   test 'ad title escapes privacy data' do
     text = 'por email example@example.com, o whatsapp al 666666666'
     expected_text = 'por email  , o   al  '
-    @ad.update!(title: text)
-    assert_equal expected_text, @ad.filtered_title
+    ad = build(:ad, title: text)
+    assert_equal expected_text, ad.filtered_title
   end
 
   test 'ad body escapes privacy data' do
     text = 'por email example@example.com, o whatsapp al 666666666'
     expected_text = 'por email  , o   al  '
-    @ad.update!(body: text)
-    assert_equal expected_text, @ad.filtered_body
+    ad = build(:ad, body: text)
+    assert_equal expected_text, ad.filtered_body
   end
 
   test 'ad validates max length of body' do
-    assert @ad.update(body: 'a' * 1000)
-    assert_not @ad.update(body: 'a' * 1001)
+    assert_equal true, build(:ad, body: 'a' * 1000).valid?
+    assert_equal false, build(:ad, body: 'a' * 1001).valid?
   end
 
   test 'ad validates min length of body' do
-    assert @ad.update(body: 'a' * 25)
-    assert_not @ad.update(body: 'a' * 24)
+    assert_equal true, build(:ad, body: 'a' * 25).valid?
+    assert_equal false, build(:ad, body: 'a' * 24).valid?
   end
 
   test 'ad check slug' do
-    assert_equal 'ordenador-en-vallecas', @ad.slug
+    ad = build(:ad, title: 'ordenador en Vallecas')
+    assert_equal 'ordenador-en-vallecas', ad.slug
   end
 
   test 'ad check type_string' do
-    assert_equal 'regalo', @ad.type_string
-    @ad.update!(type: :want)
-    assert_equal 'petición', @ad.type_string
+    assert_equal 'regalo', build(:ad, :give).type_string
+    assert_equal 'petición', build(:ad, :want).type_string
   end
 
   test 'ad check status_string' do
-    assert_equal 'disponible', @ad.status_string
-    @ad.update!(status: :booked)
-    assert_equal 'reservado', @ad.status_string
-    @ad.update!(status: :delivered)
-    assert_equal 'entregado', @ad.status_string
+    assert_equal 'disponible', build(:ad, :available).status_string
+    assert_equal 'reservado', build(:ad, :booked).status_string
+    assert_equal 'entregado', build(:ad, :delivered).status_string
   end
 
   test 'ad meta_title for give ads' do
-    mocking_yahoo_woeid_info(@ad.woeid_code) do
-      @ad.update!(type: :give)
+    ad = build(:ad, :give)
+
+    mocking_yahoo_woeid_info(ad.woeid_code) do
       title = 'regalo segunda mano gratis  ordenador en Vallecas Madrid, ' \
               'Madrid, España'
-      assert_equal title, @ad.meta_title
+      assert_equal title, ad.meta_title
     end
   end
 
   test 'ad meta_title for want ads' do
     skip
 
-    mocking_yahoo_woeid_info(@ad.woeid_code) do
-      @ad.update!(type: :want)
+    ad = build(:ad, :want)
+
+    mocking_yahoo_woeid_info(ad.woeid_code) do
       title = 'busco ordenador en Vallecas Madrid, Madrid, España'
-      assert_equal title, @ad.meta_title
+      assert_equal title, ad.meta_title
     end
   end
 
   test 'ad body shoudl store emoji' do
     skip
     body = 'What a nice emoji😀!What a nice emoji😀!What a nice emoji😀!What a nice emoji😀!What a nice emoji😀!'
-    @ad.update!(body: body)
-    assert_equal body, @ad.body
+    ad = create(:ad, body: body)
+    assert_equal body, ad.body
   end
 
   test 'ad bumping refreshes publication date' do
-    @ad.published_at = 1.week.ago
-    @ad.bump
+    ad = create(:ad, published_at: 1.week.ago)
+    ad.bump
 
-    assert_in_delta Time.zone.now.to_i, @ad.published_at.to_i, 1
+    assert_in_delta Time.zone.now.to_i, ad.published_at.to_i, 1
   end
 
   test 'ad bumping resets readed count' do
-    @ad.readed_count = 100
-    @ad.bump
+    ad = create(:ad, readed_count: 100)
+    ad.bump
 
-    assert_equal 0, @ad.readed_count
+    assert_equal 0, ad.readed_count
   end
 
   test 'associated comments are deleted when ad is deleted' do
-    create(:comment, ad: @ad)
+    ad = create(:ad)
+    create(:comment, ad: ad)
 
-    assert_difference(-> { Comment.count }, -1) { @ad.destroy }
+    assert_difference(-> { Comment.count }, -1) { ad.destroy }
   end
 
   test '.by_title ignores invalid bytes sequences' do
