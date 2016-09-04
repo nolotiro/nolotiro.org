@@ -21,30 +21,16 @@ class AdTest < ActiveSupport::TestCase
   end
 
   test 'ad validates type' do
-    # only is allowed "1 2"
-    @ad.type = 1
-    assert @ad.valid?
-    assert_equal @ad.type, 1
-    @ad.type = 2
-    assert @ad.valid?
-    assert_equal @ad.type, 2
-    @ad.type = 3
-    refute @ad.valid?
+    assert_equal true, @ad.update(type: 1)
+    assert_equal true, @ad.update(type: 2)
+    assert_equal false, @ad.update(type: 3)
   end
 
   test 'ad validates status' do
-    # only is allowed "1 2 3"
-    @ad.status = 1
-    assert @ad.valid?
-    assert_equal @ad.status, 1
-    @ad.status = 2
-    assert @ad.valid?
-    assert_equal @ad.status, 2
-    @ad.status = 3
-    assert @ad.valid?
-    assert_equal @ad.status, 3
-    @ad.status = 4
-    refute @ad.valid?
+    assert_equal true, @ad.update(status: 1)
+    assert_equal true, @ad.update(status: 2)
+    assert_equal true, @ad.update(status: 3)
+    assert_equal false, @ad.update(status: 4)
   end
 
   test 'ad validates maximum length of title' do
