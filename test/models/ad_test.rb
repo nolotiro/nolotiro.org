@@ -12,12 +12,12 @@ class AdTest < ActiveSupport::TestCase
   test 'ad requires everything' do
     a = Ad.new
     a.valid?
-    assert a.errors[:status].include?('no puede estar en blanco')
-    assert a.errors[:body].include?('no puede estar en blanco')
-    assert a.errors[:title].include?('no puede estar en blanco')
-    assert a.errors[:user_owner].include?('no puede estar en blanco')
-    assert a.errors[:type].include?('no puede estar en blanco')
-    assert a.errors[:woeid_code].include?('no puede estar en blanco')
+    assert_not_empty a.errors[:status]
+    assert_not_empty a.errors[:body]
+    assert_not_empty a.errors[:title]
+    assert_not_empty a.errors[:user_owner]
+    assert_not_empty a.errors[:type]
+    assert_not_empty a.errors[:woeid_code]
   end
 
   test 'ad validates type' do
@@ -34,14 +34,13 @@ class AdTest < ActiveSupport::TestCase
   end
 
   test 'ad validates maximum length of title' do
-    @ad.title = 'a' * 200
-    assert_not @ad.save
-    assert @ad.errors[:title].include?('es demasiado largo (100 caracteres máximo)')
+    assert @ad.update(title: 'a' * 100)
+    assert_not @ad.update(title: 'a' * 101)
   end
 
   test 'ad validates minimum length of title' do
+    assert @ad.update(title: 'a' * 4)
     assert_not @ad.update(title: 'a' * 3)
-    assert @ad.errors[:title].include?('es demasiado corto (4 caracteres mínimo)')
   end
 
   test 'ad title escapes privacy data' do
@@ -59,13 +58,13 @@ class AdTest < ActiveSupport::TestCase
   end
 
   test 'ad validates max length of body' do
+    assert @ad.update(body: 'a' * 1000)
     assert_not @ad.update(body: 'a' * 1001)
-    assert @ad.errors[:body].include?('es demasiado largo (1000 caracteres máximo)')
   end
 
   test 'ad validates min length of body' do
+    assert @ad.update(body: 'a' * 25)
     assert_not @ad.update(body: 'a' * 24)
-    assert @ad.errors[:body].include?('es demasiado corto (25 caracteres mínimo)')
   end
 
   test 'ad check slug' do
