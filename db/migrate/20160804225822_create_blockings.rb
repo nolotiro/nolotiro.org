@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 class CreateBlockings < ActiveRecord::Migration
   def up
     create_table :blockings do |t|

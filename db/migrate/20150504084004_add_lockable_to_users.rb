@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 class AddLockableToUsers < ActiveRecord::Migration
   def change
     add_column :users, :failed_attempts, :integer

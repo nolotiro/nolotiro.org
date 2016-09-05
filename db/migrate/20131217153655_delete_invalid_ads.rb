@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 class DeleteInvalidAds < ActiveRecord::Migration
   # nolotiro v2 - DB legacy
   def up

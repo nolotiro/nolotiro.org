@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 # This migration comes from mailboxer_engine (originally 20131206080416)
 class AddConversationOptout < ActiveRecord::Migration
   def up

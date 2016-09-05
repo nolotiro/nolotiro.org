@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 class AdCommentsIntegrity < ActiveRecord::Migration
   def change
     reversible do |direction|

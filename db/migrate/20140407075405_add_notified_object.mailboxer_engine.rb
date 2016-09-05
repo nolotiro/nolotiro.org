@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 # This migration comes from mailboxer_engine (originally 20110719110700)
 class AddNotifiedObject < ActiveRecord::Migration
   def up

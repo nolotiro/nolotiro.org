@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 require 'test_helper'
 require 'integration/concerns/pagination'
 require 'support/web_mocking'

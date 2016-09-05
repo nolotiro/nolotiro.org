@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 set :application, 'nolotiro.org'
 set :repo_url, 'https://github.com/alabs/nolotiro.org'
 

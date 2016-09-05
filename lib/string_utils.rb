@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 #
 # Some utilities to handle strings
 #

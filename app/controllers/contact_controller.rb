@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 class ContactController < ApplicationController
   # TODO: create model for Contact
   # TODO: deliver_later

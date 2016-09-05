@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 ActiveAdmin.register Ad do
   controller do
     def scoped_collection

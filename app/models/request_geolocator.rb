@@ -1,5 +1,6 @@
 # encoding : utf-8
 # frozen_string_literal: true
+
 class RequestGeolocator
   def initialize(request)
     @request = request

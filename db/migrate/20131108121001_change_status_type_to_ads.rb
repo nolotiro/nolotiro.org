@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 class ChangeStatusTypeToAds < ActiveRecord::Migration
   # nolotirov2 legacy DB
 

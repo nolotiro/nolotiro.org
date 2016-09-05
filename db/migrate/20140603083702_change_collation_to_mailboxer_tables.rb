@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 class ChangeCollationToMailboxerTables < ActiveRecord::Migration
   def change_to_utf8(table_name)
     execute("ALTER TABLE #{table_name} DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;")

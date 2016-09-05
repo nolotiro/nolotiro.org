@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 class ChangeLockedOnUsers < ActiveRecord::Migration
   def change
     change_column :users, :locked, :integer, null: true

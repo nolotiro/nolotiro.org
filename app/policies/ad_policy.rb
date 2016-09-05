@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 class AdPolicy < ApplicationPolicy
   def update?
     user && (record.user == user || user.admin?)

@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 module OauthHelpers
   def login_via_facebook(attrs)
     OmniAuth.config.test_mode = true

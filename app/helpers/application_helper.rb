@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 module ApplicationHelper
   def messages_tab?
     params[:controller] == 'conversations'

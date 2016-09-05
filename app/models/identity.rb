@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 #
 # Handles different identities for the same user
 #

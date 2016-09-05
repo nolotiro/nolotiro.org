@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 class RemoveDefaultWoeid < ActiveRecord::Migration
   def up
     change_column_null :users, :woeid, true

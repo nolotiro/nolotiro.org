@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 module Api
   class V1Controller < ApplicationController
     def ad_show
