@@ -25,11 +25,8 @@
       <%= ad.status_string %>
     </span>
   <% end %>
-  <span class="ad_date">
-    <%= t('nlt.published_on_html', date: ad.published_at) %>
-    <%= t('nlt.by_user') %>
-    <%= link_to ad.user.username, profile_path(ad.user) %>
-  </span>
+
+  <%= published_ago_by(ad.published_at, ad.user) %>
 
   <div class="body-wrapper">
     <p><%= truncate ad.body, length: 200, separator: ' ' %></p>

@@ -56,98 +56,6 @@ en:
       success: User blocked
     destroy:
       success: User unblocked
-  date:
-    abbr_day_names:
-    - Sun
-    - Mon
-    - Tue
-    - Wed
-    - Thu
-    - Fri
-    - Sat
-    abbr_month_names:
-    - Jan
-    - Feb
-    - Mar
-    - Apr
-    - May
-    - Jun
-    - Jul
-    - Aug
-    - Sept
-    - Oct
-    - Nov
-    - Dec
-    day_names:
-    - Sunday
-    - Monday
-    - Tuesday
-    - Wednesday
-    - Thursday
-    - Friday
-    - Saturday
-    formats:
-      default: "%d/%m/%Y"
-      long: "%d of %B of %Y"
-      short: "%d of %b"
-    month_names:
-    - 
-    - January
-    - February
-    - March
-    - April
-    - May
-    - June
-    - July
-    - August
-    - September
-    - October
-    - November
-    - December
-    order: "--- \n- : day\n- : month\n- : year"
-  datetime:
-    distance_in_words:
-      about_x_hours:
-        one: about 1 hour
-        other: about %{count} hours
-      about_x_months:
-        one: about 1 month
-        other: about %{count} months
-      about_x_years:
-        one: about 1 year
-        other: about %{count} years
-      almost_x_years:
-        one: over 1 year
-        other: over %{count} years
-      half_a_minute: half a minute
-      less_than_x_minutes:
-        one: less than 1 minute
-        other: less than %{count} minutes
-      less_than_x_seconds:
-        one: less than 1 second
-        other: less than %{count} seconds
-      over_x_years:
-        one: more than 1 year
-        other: more than %{count} years
-      x_days:
-        one: 1 day
-        other: "%{count} days"
-      x_minutes:
-        one: 1 minute
-        other: "%{count} minutes"
-      x_months:
-        one: 1 month
-        other: "%{count} months"
-      x_seconds:
-        one: 1 second
-        other: "%{count} seconds"
-    prompts:
-      day: Day
-      hour: Hour
-      minute: Minutes
-      month: Month
-      second: Seconds
-      year: Year
   devise:
     confirmations:
       action: Confirm my account
@@ -288,7 +196,6 @@ en:
     blog: blog
     booked: reserved
     bump_this_ad: Republish this ad
-    by_user: by user
     cancel_my_account: Cancel my account
     change_city: change city
     change_town:
@@ -410,9 +317,7 @@ en:
     publish_ad: Posting ad
     publish_ad_on: Post ad in %{woeid}
     published_ads: Posted ads
-    published_at_by_html: Posted %{time} ago by user %{user}
-    published_on: Posted since %{date}
-    published_on_html: Posted <abbr class='js-moment' title='%{date}'>%{date}</abbr>
+    published_ago_by_html: Posted %{time} by user %{user}
     reads: views
     register: Register
     register_here: Register here
@@ -515,13 +420,7 @@ en:
       last_word_connector: ", and"
       two_words_connector: and
       words_connector: 
-  time:
-    am: am
-    formats:
-      default: "%A, %d de %B de %Y %H:%M:%S %z"
-      long: "%d de %B de %Y %H:%M"
-      short: "%d de %b %H:%M"
-    pm: pm
+  time_ago_in_words: "%{time} ago"
   unauthorized:
     default: You are not authorized to enter this url
     manage:

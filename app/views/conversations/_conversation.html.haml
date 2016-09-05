@@ -8,4 +8,4 @@
   %td.mail-subject
     = link_to c.subject, conversation_path(c)
   %td.timestamp
-    %abbr.js-moment{title: c.updated_at}=c.updated_at
+    = time_ago_in_words(c.updated_at)

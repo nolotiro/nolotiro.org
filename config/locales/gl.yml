@@ -58,105 +58,6 @@ gl:
       success: 
     destroy:
       success: 
-  date:
-    abbr_day_names:
-    - Dom
-    - Lun
-    - Mar
-    - Mer
-    - Xov
-    - Ven
-    - Sab
-    abbr_month_names:
-    - 
-    - Xan
-    - Feb
-    - Mar
-    - Abr
-    - Mai
-    - Xuñ
-    - Xul
-    - Ago
-    - Set
-    - Out
-    - Nov
-    - Dec
-    day_names:
-    - Domingo
-    - Luns
-    - Martes
-    - Mércores
-    - Xoves
-    - Venres
-    - Sábado
-    formats:
-      default: "%e/%m/%Y"
-      long: "%A %e de %B de %Y"
-      short: "%e %b"
-    month_names:
-    - 
-    - Xaneiro
-    - Febreiro
-    - Marzo
-    - Abril
-    - Maio
-    - Xuño
-    - Xullo
-    - Agosto
-    - Setembro
-    - Outubro
-    - Novembro
-    - Decembro
-    order:
-    - :day
-    - :month
-    - :year
-  datetime:
-    distance_in_words:
-      about_x_hours:
-        one: aproximadamente unha hora
-        other: "%{count} horas"
-      about_x_months:
-        one: aproximadamente 1 mes
-        other: "%{count} meses"
-      about_x_years:
-        one: aproximadamente 1 ano
-        other: "%{count} anos"
-      almost_x_years:
-        one: case un ano
-        other: case %{count} anos
-      half_a_minute: medio minuto
-      less_than_x_minutes:
-        one: 1 minuto
-        other: "%{count} minutos"
-        zero: menos dun minuto
-      less_than_x_seconds:
-        few: poucos segundos
-        one: 1 segundo
-        other: "%{count} segundos"
-        zero: menos dun segundo
-      over_x_years:
-        one: máis dun ano
-        other: "%{count} anos"
-      x_days:
-        one: 1 día
-        other: "%{count} días"
-      x_minutes:
-        one: 1 minuto
-        other: "%{count} minuto"
-      x_months:
-        one: 1 mes
-        other: "%{count} meses"
-      x_seconds:
-        one: 1 segundo
-        other: "%{count} segundos"
-    prompts:
-      day: Día
-      hour: Hora
-      minute: Minutos
-      month: Mes
-      second: Segundos
-      year: Ano
   devise:
     confirmations:
       action: Confirmar miña conta
@@ -299,7 +200,6 @@ gl:
     blog: blog
     booked: reservado
     bump_this_ad: 
-    by_user: por
     cancel_my_account: Cancelar a miña conta
     change_city: cambio cidades
     change_town:
@@ -425,9 +325,7 @@ gl:
     publish_ad: Publicando anuncio
     publish_ad_on: Publicar anuncio en %{woeid}
     published_ads: Anuncios publicados
-    published_at_by_html: Publicado fai %{time} por el usuario %{user}
-    published_on: Publicado fai %{date}
-    published_on_html: Publicado <abbr class='js-moment' title='%{date}'>%{date}</abbr>
+    published_ago_by_html: Publicado %{time} por el usuario %{user}
     reads: 
     register: 
     register_here: 
@@ -530,13 +428,7 @@ gl:
       last_word_connector: " e "
       two_words_connector: " e "
       words_connector: ", "
-  time:
-    am: 
-    formats:
-      default: "%A, %e de %B de %Y ás %H:%M"
-      long: "%A %e de %B de %Y ás %H:%M"
-      short: "%e/%m, %H:%M"
-    pm: 
+  time_ago_in_words: hace %{time}
   unauthorized:
     default: 
     manage:
