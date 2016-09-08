@@ -55,10 +55,18 @@ within the repo itself.
 
 For obtaining geographical information we use [Yahoo YQL].
 
-For IP GeoLocation we use [GeoLite2] City. To download the database, run
+For IP GeoLocation we use [GeoLite2] City. The database is bundled with this
+repo in compressed format. To extract the database, run
 
 ```
-bin/rake download_maxmind_db
+bin/rake max_mind:extract
+```
+
+You can also, grab the latest version of the DB from MaxMind by running
+
+
+```
+bin/rake max_mind:update
 ```
 
 For delayed tasks, we use Sidekiq, that uses Redis. For caching, we use Redis.
@@ -107,7 +115,7 @@ https://beta.nolotiro.org/api/v1/ad/153735
 * Core based on [Ruby On Rails].
 * [Yahoo YQL] - This project is strong WOEID integration centered.
 * [jQuery] for Javascript.
-* [GeoLite2] data API by Maxmind to auto detect user location.
+* [GeoLite2] data API by MaxMind to auto detect user location.
 * Logo by Silvestre Herrera under GPL License.
 
 [Gemnasium Badge]: https://gemnasium.com/alabs/nolotiro.org.svg

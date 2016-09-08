@@ -17,7 +17,7 @@ set :deploy_via, :remote_cache
 set :ssh_options, forward_agent: true
 
 set :linked_files, %w(config/database.yml config/secrets.yml config/newrelic.yml)
-set :linked_dirs, %w(log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system public/legacy vendor/geolite)
+set :linked_dirs, %w(log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system public/legacy)
 
 set :bundle_binstubs, nil
 set :keep_releases, 5
@@ -27,15 +27,18 @@ set :ci_repository, 'alabs/nolotiro.org'
 
 # Logical flow for deploying an app
 before 'deploy', 'ci:verify'
+before 'deploy:publishing', 'deploy:max_mind:extract'
 after  'deploy:finished', 'deploy:restart'
 
 namespace :deploy do
-  desc 'Perform migrations'
-  task :migrations do
-    on roles(:db) do
-      within release_path do
-        with rails_env: fetch(:rails_env) do
-          execute :rake, 'db:migrate'
+  namespace :max_mind do
+    desc 'Extract MaxMind DB for source compressed file'
+    task :extract do
+      on roles(:app) do
+        within release_path do
+          with rails_env: fetch(:rails_env) do
+            execute :rake, 'max_mind:extract'
+          end
         end
       end
     end
@@ -44,7 +47,6 @@ namespace :deploy do
   desc 'Start application'
   task :start do
     on roles(:app), in: :sequence, wait: 5 do
-      # starting nginx / passenger
       sudo 'service nginx start'
     end
   end
@@ -52,7 +54,6 @@ namespace :deploy do
   desc 'Stop application'
   task :stop do
     on roles(:app), in: :sequence, wait: 5 do
-      # stoping nginx / passenger
       sudo 'service nginx stop'
     end
   end
@@ -60,10 +61,7 @@ namespace :deploy do
   desc 'Restart application'
   task :restart do
     on roles(:app), in: :sequence, wait: 5 do
-      # restarting nginx / passenger
       sudo 'service nginx restart'
     end
   end
-
-  after :finishing, 'deploy:cleanup'
 end

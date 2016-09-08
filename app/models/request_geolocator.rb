@@ -22,7 +22,7 @@ class RequestGeolocator
     # FIXME: use other APIs when there isn't an IP address mapped
     return unless suggestion.found?
 
-    location = MaxMindLocation.new(suggestion)
+    location = MaxMind::Location.new(suggestion)
     return unless location.city
 
     location

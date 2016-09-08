@@ -11,7 +11,7 @@ class RequestGeolocatorTest < ActionView::TestCase
   end
 
   test 'suggests location from ip address' do
-    @request.headers['REMOTE_ADDR'] = '8.8.8.8'
+    @request.headers['REMOTE_ADDR'] = '74.125.225.224'
     suggestion = RequestGeolocator.new(@request).suggest
 
     assert_equal 'Mountain View, California, Estados Unidos',
@@ -19,7 +19,7 @@ class RequestGeolocatorTest < ActionView::TestCase
   end
 
   test 'suggests properly translated locations' do
-    @request.headers['REMOTE_ADDR'] = '8.8.8.8'
+    @request.headers['REMOTE_ADDR'] = '74.125.225.224'
 
     I18n.locale = :en
     suggestion = RequestGeolocator.new(@request).suggest
@@ -28,9 +28,9 @@ class RequestGeolocatorTest < ActionView::TestCase
   end
 
   test "does not suggests a location unless it's city-specific" do
-    @request.headers['REMOTE_ADDR'] = '168.90.12.0'
+    @request.headers['REMOTE_ADDR'] = '8.8.8.8'
 
-    # This ip address is correctly resolved to Colombia, but not a specific city
+    # This ip address is correctly resolved to United States, but not a specific city
     assert_nil RequestGeolocator.new(@request).suggest
   end
 end

@@ -21,7 +21,7 @@ public/system/*
 public/assets/*
 
 # GeoLiteCity DB
-vendor/geolite/*
+vendor/geolite/GeoLite2-City.mmdb
 
 # Gems when installed in deployment mode
 vendor/bundle/*
