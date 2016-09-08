@@ -55,4 +55,4 @@ chown vagrant:vagrant config/*.yml
 sudo -u vagrant bin/rake db:drop
 sudo -u vagrant bin/rake db:setup
 sudo -u vagrant bin/rake ts:index ts:restart
-sudo -u vagrant bin/rake download_max_mind_db
+sudo -u vagrant bin/rake max_mind:download
