@@ -6,8 +6,8 @@ module MaxMind
   #
   # Imports geographical Database information from MaxMind
   #
-  class Downloader
-    def run!
+  class Fetcher
+    def update!
       download!
       extract!
     end
