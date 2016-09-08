@@ -7,4 +7,11 @@ namespace :max_mind do
 
     MaxMind::Downloader.new.run!
   end
+
+  desc "Extracts MaxMind's GeoLite2 City compressed db"
+  task extract: :environment do
+    require 'max_mind/downloader'
+
+    MaxMind::Downloader.new.extract!
+  end
 end

@@ -55,10 +55,11 @@ within the repo itself.
 
 For obtaining geographical information we use [Yahoo YQL].
 
-For IP GeoLocation we use [GeoLite2] City. To download the database, run
+For IP GeoLocation we use [GeoLite2] City. The database is bundled with this
+repo in compressed format. To extract the database, run
 
 ```
-bin/rake max_mind:download
+bin/rake max_mind:extract
 ```
 
 For delayed tasks, we use Sidekiq, that uses Redis. For caching, we use Redis.
