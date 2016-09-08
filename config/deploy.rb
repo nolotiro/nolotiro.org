@@ -33,7 +33,6 @@ namespace :deploy do
   desc 'Start application'
   task :start do
     on roles(:app), in: :sequence, wait: 5 do
-      # starting nginx / passenger
       sudo 'service nginx start'
     end
   end
@@ -41,7 +40,6 @@ namespace :deploy do
   desc 'Stop application'
   task :stop do
     on roles(:app), in: :sequence, wait: 5 do
-      # stoping nginx / passenger
       sudo 'service nginx stop'
     end
   end
@@ -49,7 +47,6 @@ namespace :deploy do
   desc 'Restart application'
   task :restart do
     on roles(:app), in: :sequence, wait: 5 do
-      # restarting nginx / passenger
       sudo 'service nginx restart'
     end
   end
