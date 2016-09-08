@@ -56,102 +56,6 @@ it:
       success: Utente bloccato
     destroy:
       success: Utente sbloccato
-  date:
-    abbr_day_names:
-    - dom
-    - lun
-    - mar
-    - mer
-    - gio
-    - ven
-    - sab
-    abbr_month_names:
-    - 
-    - gen
-    - feb
-    - mar
-    - apr
-    - mag
-    - giu
-    - lug
-    - ago
-    - set
-    - ott
-    - nov
-    - dic
-    day_names:
-    - domenica
-    - lunedì
-    - martedì
-    - mercoledì
-    - giovedì
-    - venerdì
-    - sabato
-    formats:
-      default: "%d/%m/%Y"
-      long: "%d %B %Y"
-      short: "%d %b"
-    month_names:
-    - 
-    - gennaio
-    - febbraio
-    - marzo
-    - aprile
-    - maggio
-    - giugno
-    - luglio
-    - agosto
-    - settembre
-    - ottobre
-    - novembre
-    - dicembre
-    order:
-    - :day
-    - :month
-    - :year
-  datetime:
-    distance_in_words:
-      about_x_hours:
-        one: circa un'ora
-        other: circa %{count} ore
-      about_x_months:
-        one: circa un mese
-        other: circa %{count} mesi
-      about_x_years:
-        one: circa un anno
-        other: circa %{count} anni
-      almost_x_years:
-        one: circa 1 anno
-        other: circa %{count} anni
-      half_a_minute: mezzo minuto
-      less_than_x_minutes:
-        one: meno di un minuto
-        other: meno di %{count} minuti
-      less_than_x_seconds:
-        one: meno di un secondo
-        other: meno di %{count} secondi
-      over_x_years:
-        one: oltre un anno
-        other: oltre %{count} anni
-      x_days:
-        one: 1 giorno
-        other: "%{count} giorni"
-      x_minutes:
-        one: 1 minuto
-        other: "%{count} minuti"
-      x_months:
-        one: 1 mese
-        other: "%{count} mesi"
-      x_seconds:
-        one: 1 secondo
-        other: "%{count} secondi"
-    prompts:
-      day: Giorno
-      hour: Ora
-      minute: Minuto
-      month: Mese
-      second: Secondi
-      year: Anno
   devise:
     confirmations:
       action: Conferma il tuo account
@@ -292,7 +196,6 @@ it:
     blog: blog
     booked: riservato
     bump_this_ad: Repubblica questo annuncio
-    by_user: per l'utente
     cancel_my_account: Cancella il mio account
     change_city: cambia città
     change_town:
@@ -420,9 +323,7 @@ it:
     publish_ad: Pubblicando annuncio
     publish_ad_on: Inserisci annunci a %{woeid}
     published_ads: annunci pubblicati
-    published_at_by_html: Pubblicato fa %{time} dall'utente %{user}
-    published_on: Pubblicato fa %{date}
-    published_on_html: Pubblicato <abbr class='js-moment' title='%{date}'>%{date}</abbr>
+    published_ago_by_html: Pubblicato %{time} dall'utente %{user}
     reads: lettures
     register: Iscriviti
     register_here: registrati qui
@@ -525,13 +426,7 @@ it:
       last_word_connector: " e "
       two_words_connector: " e "
       words_connector: ", "
-  time:
-    am: am
-    formats:
-      default: "%a %d %b %Y, %H:%M:%S %z"
-      long: "%d %B %Y %H:%M"
-      short: "%d %b %H:%M"
-    pm: pm
+  time_ago_in_words: "%{time} fa"
   unauthorized:
     default: Non sei autorizzato ad accedere a questa pagina.
     manage:

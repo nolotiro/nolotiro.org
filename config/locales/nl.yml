@@ -56,92 +56,6 @@ nl:
       success: 
     destroy:
       success: 
-  date:
-    abbr_day_names:
-    - zon
-    - mon
-    - die
-    - woe
-    - don
-    - vri
-    - zat
-    abbr_month_names:
-    - 
-    - jan
-    - feb
-    - maa
-    - apr
-    - mei
-    - jun
-    - jul
-    - aug
-    - sep
-    - okt
-    - nov
-    - dec
-    day_names:
-    - zondag
-    - maandag
-    - diensdag
-    - woensdag
-    - donderdag
-    - vrijdag
-    - zaterdag
-    formats:
-      default: 
-      long: 
-      short: 
-    month_names:
-    - 
-    - januari
-    - februari
-    - maart
-    - april
-    - mei
-    - juni
-    - juli
-    - augustus
-    - septiember
-    - oktober
-    - november
-    - december
-    order:
-    - :dag
-    - :maand
-    - :jaar
-  datetime:
-    distance_in_words:
-      about_x_hours:
-        one: rond één uur
-        other: ongeveer %{count} uren
-      about_x_months:
-        one: rond 1 maand
-        other: ongeveer %{count} manden
-      about_x_years: 
-      almost_x_years:
-        one: bijna 1 jaar
-        other: bijna %{count} jaar
-      half_a_minute: 
-      less_than_x_minutes: 
-      less_than_x_seconds: 
-      over_x_years: 
-      x_days:
-        one: 1 dag
-        other: "%{count} dagen"
-      x_minutes:
-        one: 1 minuut
-        other: "%{count} minuten"
-      x_months:
-        one: 1 maand
-        other: "%{count} manden"
-      x_seconds: 
-    prompts:
-      day: Dag
-      hour: Uur
-      minute: 
-      month: Maand
-      second: 
-      year: Jaar
   devise:
     confirmations:
       action: 
@@ -282,7 +196,6 @@ nl:
     blog: 
     booked: 
     bump_this_ad: 
-    by_user: 
     cancel_my_account: 
     change_city: 
     change_town:
@@ -404,9 +317,7 @@ nl:
     publish_ad: 
     publish_ad_on: 
     published_ads: 
-    published_at_by_html: 
-    published_on: 
-    published_on_html: 
+    published_ago_by_html: 
     reads: 
     register: 
     register_here: 
@@ -509,13 +420,7 @@ nl:
       last_word_connector: 
       two_words_connector: 
       words_connector: 
-  time:
-    am: 
-    formats:
-      default: 
-      long: 
-      short: 
-    pm: 
+  time_ago_in_words:
   unauthorized:
     default: 
     manage:
