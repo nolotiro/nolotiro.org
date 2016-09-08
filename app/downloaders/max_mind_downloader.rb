@@ -5,7 +5,7 @@ require 'open-uri'
 #
 # Imports geographical Database information from MaxMind
 #
-class MaxmindDownloader
+class MaxMindDownloader
   def run!
     download! unless already_downloaded?
 
