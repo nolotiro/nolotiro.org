@@ -8,8 +8,7 @@ module MaxMind
   #
   class Downloader
     def run!
-      download! unless already_downloaded?
-
+      download!
       extract!
     end
 
@@ -23,18 +22,20 @@ module MaxMind
           IO.copy_stream(input_stream, output_stream)
         end
       end
+
+      raise 'DB does not match expected checksum' unless valid?
     end
 
-    def already_downloaded?
+    def valid?
       compressed_db_checksum == local_compressed_db_checksum
     end
 
     private
 
     def local_compressed_db_checksum
-      return '' unless File.exist?(local_compressed_db_path)
+      return '' unless File.exist?(local_db_path)
 
-      Digest::MD5.file(local_compressed_db_path).hexdigest
+      Digest::MD5.file(local_db_path).hexdigest
     end
 
     def compressed_db_checksum
