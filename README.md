@@ -62,6 +62,13 @@ repo in compressed format. To extract the database, run
 bin/rake max_mind:extract
 ```
 
+You can also, grab the latest version of the DB from MaxMind by running
+
+
+```
+bin/rake max_mind:update
+```
+
 For delayed tasks, we use Sidekiq, that uses Redis. For caching, we use Redis.
 
 ```
