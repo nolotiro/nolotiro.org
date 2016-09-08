@@ -30,17 +30,6 @@ before 'deploy', 'ci:verify'
 after  'deploy:finished', 'deploy:restart'
 
 namespace :deploy do
-  desc 'Perform migrations'
-  task :migrations do
-    on roles(:db) do
-      within release_path do
-        with rails_env: fetch(:rails_env) do
-          execute :rake, 'db:migrate'
-        end
-      end
-    end
-  end
-
   desc 'Start application'
   task :start do
     on roles(:app), in: :sequence, wait: 5 do
@@ -64,6 +53,4 @@ namespace :deploy do
       sudo 'service nginx restart'
     end
   end
-
-  after :finishing, 'deploy:cleanup'
 end
