@@ -26,7 +26,7 @@ class ApplicationController < ActionController::Base
 
   def signed_in_root_path(resource)
     woeid = resource.woeid
-    return ads_woeid_path(id: woeid, type: 'give') if woeid
+    return ads_woeid_path(woeid, type: 'give') if woeid
 
     location_ask_path
   end

@@ -84,7 +84,7 @@ class AdsControllerTest < ActionController::TestCase
   end
 
   test 'should bump adds old enough' do
-    original_path = ads_woeid_path(id: @user.woeid, type: @ad.type)
+    original_path = ads_woeid_path(@user.woeid, type: @ad.type)
     request.env['HTTP_REFERER'] = original_path
     @ad.update!(user_owner: @user.id, published_at: 6.days.ago)
     sign_in @user

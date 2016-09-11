@@ -49,6 +49,6 @@ class LocationController < ApplicationController
       current_user.save
     end
     cookies[:location] = woeid
-    redirect_to ads_woeid_path(id: woeid, type: 'give')
+    redirect_to ads_woeid_path(woeid, type: 'give')
   end
 end

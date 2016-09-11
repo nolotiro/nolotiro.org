@@ -19,7 +19,7 @@
 
 <div id="default_header_section">
   <h2>
-    <%= link_to ads_woeid_path(id: @ad.woeid_code, type: @ad.type_class) do %>
+    <%= link_to ads_woeid_path(@ad.woeid_code, type: @ad.type_class) do %>
       <%= @ad.woeid_name %> &gt;
       <%= @ad.type_string %>
     <% end %>

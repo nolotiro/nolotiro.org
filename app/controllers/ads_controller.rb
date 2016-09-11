@@ -33,7 +33,7 @@ class AdsController < ApplicationController
 
   def index
     if user_signed_in?
-      url = current_user.woeid? ? ads_woeid_path(id: current_user.woeid, type: 'give') : location_ask_path
+      url = current_user.woeid? ? ads_woeid_path(current_user.woeid, type: 'give') : location_ask_path
       redirect_to url
     else
       page = params[:page]
