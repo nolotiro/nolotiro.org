@@ -28,6 +28,7 @@ class ConversationTest < ActiveSupport::TestCase
     create(:blocking, blocker: @user, blocked: @recipient)
 
     assert_equal 0, Conversation.unread_by(@user).size
+    assert_equal 0, Conversation.unread_by(@recipient).size
   end
 
   def test_mark_as_read_does_what_its_name_indicates
