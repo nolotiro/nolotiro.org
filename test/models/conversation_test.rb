@@ -24,6 +24,13 @@ class ConversationTest < ActiveSupport::TestCase
     assert_equal 0, Conversation.unread_by(@recipient).size
   end
 
+  def test_unread_by_scope_returns_unique_conversations
+    @conversation.reply(sender: @user, recipient: @recipient, body: 'Nice!')
+    @conversation.save!
+
+    assert_equal 1, Conversation.unread_by(@recipient).size
+  end
+
   def test_whitelisted_for_scope_excludes_conversations_with_blockers
     create(:blocking, blocker: @user, blocked: @recipient)
 
