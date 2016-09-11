@@ -24,12 +24,11 @@ class WoeidController < ApplicationController
       raise ActionController::RoutingError, 'Not Found' if @woeid.nil?
     end
 
-    @ads = policy_scope(Ad).includes(:user)
-                           .public_send(@type)
-                           .public_send(@status)
-                           .by_woeid_code(@id)
-                           .by_title(@q)
-                           .recent_first
-                           .paginate(page: page)
+    scope = Ad.public_send(@type)
+              .public_send(@status)
+              .by_woeid_code(@id)
+              .by_title(@q)
+
+    @ads = policy_scope(scope).includes(:user).recent_first.paginate(page: page)
   end
 end
