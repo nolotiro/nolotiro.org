@@ -36,7 +36,7 @@ class Conversation < ActiveRecord::Base
          (recipient_id = blocked_id AND originator_id = blocker_id)
     SQL
 
-    joined.where('blockings.blocked_id IS NULL OR blockings.blocked_id <> ?', user.id)
+    joined.merge(Blocking.not_affecting(user))
   end
 
   def self.start(sender:, recipient:, subject: '', body: '')
