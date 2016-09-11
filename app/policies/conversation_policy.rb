@@ -1,6 +1,10 @@
 # frozen_string_literal: true
 
 class ConversationPolicy < ApplicationPolicy
+  def index
+    user
+  end
+
   def create?
     sender && recipient && user == sender && no_blockings?
   end
@@ -9,17 +13,13 @@ class ConversationPolicy < ApplicationPolicy
     sender && recipient && user == sender && no_blockings?
   end
 
-  def show?
-    return true unless interlocutor
-
-    interlocutor.whitelisting?(user)
+  class Scope < ApplicationPolicy::Scope
+    def resolve
+      scope.participant(user).whitelisted_for(user).untrashed_by(user)
+    end
   end
 
   private
-
-  def interlocutor
-    @interlocutor ||= record.interlocutor(user)
-  end
 
   def no_blockings?
     Blocking.none_between?(sender, recipient)

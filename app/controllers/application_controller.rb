@@ -67,7 +67,8 @@ class ApplicationController < ActionController::Base
   helper_method :comment_counts
 
   def conversations_count
-    @conversations_count ||= Conversation.involving_unread(current_user).size
+    @conversations_count ||=
+      policy_scope(Conversation.unread_by(current_user)).size
   end
 
   helper_method :conversations_count

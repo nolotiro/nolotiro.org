@@ -9,16 +9,8 @@ class Conversation < ActiveRecord::Base
   belongs_to :originator, class_name: 'User'
   belongs_to :recipient, class_name: 'User'
 
-  scope :involving, ->(user) do
-    participant(user).whitelisted_for(user).untrashed_by(user)
-  end
-
   scope :untrashed_by, ->(user) do
     joins(:receipts).merge(Receipt.untrashed_by(user)).distinct
-  end
-
-  scope :involving_unread, ->(user) do
-    involving(user).unread_by(user)
   end
 
   scope :unread_by, ->(user) do
