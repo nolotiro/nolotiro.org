@@ -125,10 +125,6 @@ class User < ActiveRecord::Base
     email
   end
 
-  def unread_conversations_count
-    Conversation.unread_by(self).size
-  end
-
   def admin?
     role == 1
   end

@@ -66,6 +66,12 @@ class ApplicationController < ActionController::Base
 
   helper_method :comment_counts
 
+  def conversations_count
+    @conversations_count ||= Conversation.unread_by(current_user).size
+  end
+
+  helper_method :conversations_count
+
   protected
 
   def configure_permitted_parameters
