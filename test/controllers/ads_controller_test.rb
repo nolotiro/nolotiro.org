@@ -134,7 +134,7 @@ class AdsControllerTest < ActionController::TestCase
     body = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."
     patch :update, id: @ad, ad: { body: body, title: @ad.title, type: @ad.type, woeid_code: @ad.woeid_code }
 
-    assert_redirected_to ad_path(assigns(:ad))
+    assert_redirected_to adslug_path(@ad, slug: @ad.slug)
     @ad.reload
     assert_equal body, @ad.body
   end
@@ -143,7 +143,7 @@ class AdsControllerTest < ActionController::TestCase
     sign_in @admin
     patch :update, id: @ad, ad: { body: @ad.body, title: @ad.title, type: @ad.type, woeid_code: @ad.woeid_code }
 
-    assert_redirected_to ad_path(assigns(:ad))
+    assert_redirected_to adslug_path(@ad, slug: @ad.slug)
   end
 
   test 'should not destroy ad as anonymous' do
