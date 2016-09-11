@@ -24,11 +24,11 @@ class ConversationTest < ActiveSupport::TestCase
     assert_equal 0, Conversation.unread_by(@recipient).size
   end
 
-  def test_unread_by_scope_excludes_conversations_with_blockers
+  def test_whitelisted_for_scope_excludes_conversations_with_blockers
     create(:blocking, blocker: @user, blocked: @recipient)
 
-    assert_equal 0, Conversation.unread_by(@user).size
-    assert_equal 0, Conversation.unread_by(@recipient).size
+    assert_equal 1, Conversation.whitelisted_for(@user).size
+    assert_equal 0, Conversation.whitelisted_for(@recipient).size
   end
 
   def test_mark_as_read_does_what_its_name_indicates
