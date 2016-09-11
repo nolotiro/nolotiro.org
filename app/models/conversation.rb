@@ -12,7 +12,7 @@ class Conversation < ActiveRecord::Base
   scope :involving, ->(user) do
     joins(:receipts)
       .participant(user)
-      .whitelisted(user)
+      .whitelisted_for(user)
       .merge(Receipt.untrashed_by(user))
       .distinct
   end
@@ -20,7 +20,7 @@ class Conversation < ActiveRecord::Base
   scope :unread_by, ->(user) do
     joins(:receipts)
       .participant(user)
-      .whitelisted(user)
+      .whitelisted_for(user)
       .merge(Receipt.unread_by(user))
       .distinct
   end
@@ -29,7 +29,7 @@ class Conversation < ActiveRecord::Base
     where('recipient_id = ? OR originator_id = ?', user.id, user.id)
   end
 
-  scope :whitelisted, ->(user) do
+  scope :whitelisted_for, ->(user) do
     joined = joins <<-SQL.squish
       LEFT OUTER JOIN blockings
       ON (recipient_id = blocker_id AND originator_id = blocked_id) OR
