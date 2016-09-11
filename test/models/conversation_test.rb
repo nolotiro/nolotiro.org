@@ -43,6 +43,24 @@ class ConversationTest < ActiveSupport::TestCase
     assert_equal 0, Conversation.whitelisted_for(@recipient).size
   end
 
+  def test_untrashed_by_scope_returns_untrashed_conversations_only
+    assert_equal 1, Conversation.untrashed_by(@user).size
+    assert_equal 1, Conversation.untrashed_by(@recipient).size
+
+    @conversation.move_to_trash(@user)
+
+    assert_equal 0, Conversation.untrashed_by(@user).size
+    assert_equal 1, Conversation.untrashed_by(@recipient).size
+  end
+
+  def test_untrashed_by_scope_returns_unique_conversations
+    @conversation.reply(sender: @user, recipient: @recipient, body: 'Nice!')
+    @conversation.save!
+    @conversation.move_to_trash(@recipient)
+
+    assert_equal 1, Conversation.untrashed_by(@user).size
+  end
+
   def test_reply_touches_the_conversation_timestamp
     @conversation.update!(updated_at: 1.hour.ago)
     @conversation.reply(sender: @user, recipient: @recipient, body: 'Hey!')
