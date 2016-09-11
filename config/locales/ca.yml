@@ -68,7 +68,7 @@ ca:
     index:
       title: Missatges de %{username}
     show:
-      title: Conversa amb %{recipient} assumpte %{subject}
+      title_html: Conversa amb %{recipient} assumpte %{subject}
   devise:
     confirmations:
       action: Confirmar el meu compte

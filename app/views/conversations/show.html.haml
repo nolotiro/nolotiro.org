@@ -1,5 +1,7 @@
-- title = t("conversations.show.title", recipient: interlocutor_username,
-                                        subject: @conversation.subject)
+- title = t("conversations.show.title_html",
+            recipient: link_to_interlocutor(@conversation),
+            subject: @conversation.subject)
+
 - content_for :meta_title, title
 
 #default_header_section

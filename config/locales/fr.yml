@@ -68,7 +68,7 @@ fr:
     index:
       title: Messages %{username}
     show:
-      title: Conversation avec %{recipient} objet %{subject}
+      title_html: Conversation avec %{recipient} objet %{subject}
   devise:
     confirmations:
       action: Confirmer mon compte

@@ -70,7 +70,7 @@ gl:
     index:
       title: Mensaxes de %{username}
     show:
-      title: 
+      title_html: 
   devise:
     confirmations:
       action: Confirmar miña conta

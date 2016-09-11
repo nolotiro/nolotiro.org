@@ -68,7 +68,7 @@ nl:
     index:
       title: 
     show:
-      title: 
+      title_html: 
   devise:
     confirmations:
       action: 

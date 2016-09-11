@@ -68,7 +68,7 @@ pt:
     index:
       title: Mensagens de %{username}
     show:
-      title: Conversa com %{recipient} assunto %{subject}
+      title_html: Conversa com %{recipient} assunto %{subject}
   devise:
     confirmations:
       action: Confirmar minha conta
