@@ -121,10 +121,6 @@ class User < ActiveRecord::Base
     username
   end
 
-  def mailboxer_email(_object)
-    email
-  end
-
   def admin?
     role == 1
   end
