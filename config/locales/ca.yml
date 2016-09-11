@@ -58,6 +58,17 @@ ca:
       success: Usuari bloquejat
     destroy:
       success: Usuari desbloquejat
+  conversations:
+    new:
+      body_max: Màxim 1500 caràcters
+      button: Enviar
+      subject: Tema
+      submit: Enviar
+      title: Nou missatge privat per a l'usuari %{user}
+    index:
+      title: Missatges de %{username}
+    show:
+      title: Conversa amb %{recipient} assumpte %{subject}
   devise:
     confirmations:
       action: Confirmar el meu compte
@@ -132,20 +143,11 @@ ca:
       back: "<Tornar a missatges"
       trash: Esborrar conversa
       trash_selected: Esborrar converses seleccionats
-    new:
-      body_max: Màxim 1500 caràcters
-      button: Enviar
-      subject: Tema
-      submit: Enviar
-      title: Nou missatge privat per a l'usuari %{user}
     notifications:
       sent: missatge enviat
       trash: Conversa esborrat
     table:
       none: No tens missatges d'aquest tipus
-    titles:
-      conversation: Conversa amb %{recipient} assumpte %{subject}
-      index: Missatges de %{username}
   mailer:
     confirmation_reminder:
       p1: Hem detectat que t'has creat un compte a nolotiro.org i no l'has confirmat.

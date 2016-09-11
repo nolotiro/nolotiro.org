@@ -60,6 +60,17 @@ gl:
       success: 
     destroy:
       success: 
+  conversations:
+    new:
+      body_max: Máximo 1500 carácteres
+      button: Enviar
+      subject: Tema
+      submit: Enviar
+      title: Nova mensaxe privada para o usuario %{user}
+    index:
+      title: Mensaxes de %{username}
+    show:
+      title: 
   devise:
     confirmations:
       action: Confirmar miña conta
@@ -136,20 +147,11 @@ gl:
       back: Mensaxes de novo
       trash: Eliminar conversa
       trash_selected: Eliminar conversas seleccionadas
-    new:
-      body_max: Máximo 1500 carácteres
-      button: Enviar
-      subject: Tema
-      submit: Enviar
-      title: Nova mensaxe privada para o usuario %{user}
     notifications:
       sent: Mensaxe enviada
       trash: Conversa arquivada
     table:
       none: 
-    titles:
-      conversation: 
-      index: Mensaxes de %{username}
   mailer:
     confirmation_reminder:
       p1: Detectamos que teña creado unha conta en nolotiro.org e vostede non confirmou.

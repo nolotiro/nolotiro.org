@@ -58,6 +58,17 @@ it:
       success: Utente bloccato
     destroy:
       success: Utente sbloccato
+  conversations:
+    new:
+      body_max: 1500 caratteri massimo
+      button: Invia
+      subject: soggetto
+      submit: Invia
+      title: Nuovo messaggio privato per l'utente %{user}
+    index:
+      title: Messaggio di %{username}
+    show:
+      title: Conversazione con %{recipient} oggetto %{subject}
   devise:
     confirmations:
       action: Conferma il tuo account
@@ -132,20 +143,11 @@ it:
       back: "< torna al messaggio"
       trash: Cancellare la conversazione
       trash_selected: Cancellare le conversazioni selezionati
-    new:
-      body_max: 1500 caratteri massimo
-      button: Invia
-      subject: soggetto
-      submit: Invia
-      title: Nuovo messaggio privato per l'utente %{user}
     notifications:
       sent: Messaggio inviato
       trash: Conversazione cancellata
     table:
       none: Non hai messaggi di questo tipo
-    titles:
-      conversation: Conversazione con %{recipient} oggetto %{subject}
-      index: Messaggio di %{username}
   mailer:
     confirmation_reminder:
       p1: Abbiamo rivelato che hai creato un account in nolotiro.org che non è stato confermato.
