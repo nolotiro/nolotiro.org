@@ -135,8 +135,6 @@ es:
     new:
       body_max: Máximo 1500 carácteres
       button: Enviar
-      errors: 'Hay un problema, revisa esto:'
-      legend: Enviar mensaje
       subject: Tema
       submit: Enviar
       title: Nuevo mensaje privado para el usuario %{user}

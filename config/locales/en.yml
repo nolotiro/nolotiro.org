@@ -135,8 +135,6 @@ en:
     new:
       body_max: Max. 1500 characters
       button: Send
-      errors: 'There is a problem, please check this:'
-      legend: Send message
       subject: Topic
       submit: Send
       title: New private message for user %{user}

@@ -135,8 +135,6 @@ ca:
     new:
       body_max: Màxim 1500 caràcters
       button: Enviar
-      errors: 'Hi ha un problema, revisa això:'
-      legend: Enviar missatge
       subject: Tema
       submit: Enviar
       title: Nou missatge privat per a l'usuari %{user}

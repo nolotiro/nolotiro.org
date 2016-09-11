@@ -135,8 +135,6 @@ fr:
     new:
       body_max: Maximum 1500 caractères
       button: Envoyer
-      errors: 'Il y a un problème, vérifier cela:'
-      legend: Envoyer message
       subject: Thème
       submit: Envoyer
       title: Nouveau message privé pour l'utilisateur %{user}

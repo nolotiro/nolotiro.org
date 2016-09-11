@@ -135,8 +135,6 @@ pt:
     new:
       body_max: Máximo 1500 caracteres
       button: Enviar
-      errors: 'Há um problema, verifique isto:'
-      legend: Enviar mensagem
       subject: Assunto
       submit: Enviar
       title: Nova mensagem privada para o usuário %{user}

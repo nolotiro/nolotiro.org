@@ -135,8 +135,6 @@ it:
     new:
       body_max: 1500 caratteri massimo
       button: Invia
-      errors: 'C''è stato un problema, controlla questo:'
-      legend: Invia il messaggio
       subject: soggetto
       submit: Invia
       title: Nuovo messaggio privato per l'utente %{user}

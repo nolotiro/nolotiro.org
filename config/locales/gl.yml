@@ -139,8 +139,6 @@ gl:
     new:
       body_max: Máximo 1500 carácteres
       button: Enviar
-      errors: 'Hai un problema, consulta isto:'
-      legend: Enviar mesaxe
       subject: Tema
       submit: Enviar
       title: Nova mensaxe privada para o usuario %{user}
