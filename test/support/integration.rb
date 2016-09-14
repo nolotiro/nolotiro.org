@@ -4,6 +4,9 @@ require 'capybara/poltergeist'
 require 'support/desktop_integration'
 require 'support/mobile_integration'
 
+# Pickup assets from development server if it's running
+Capybara.asset_host = 'http://localhost:3000'
+
 module ActionDispatch
   #
   # Base class for integration tests
