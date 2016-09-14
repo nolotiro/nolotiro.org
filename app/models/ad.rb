@@ -29,7 +29,6 @@ class Ad < ActiveRecord::Base
   validates :body, presence: true, length: { minimum: 25, maximum: 1000 }
   validates :user_owner, presence: true
   validates :woeid_code, presence: true
-  validates :ip, presence: true
 
   validates :status, inclusion: { in: [1, 2, 3] }, presence: true
 

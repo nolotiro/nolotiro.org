@@ -18,7 +18,6 @@ class AdTest < ActiveSupport::TestCase
     assert a.errors[:user_owner].include?('no puede estar en blanco')
     assert a.errors[:type].include?('no puede estar en blanco')
     assert a.errors[:woeid_code].include?('no puede estar en blanco')
-    assert a.errors[:ip].include?('no puede estar en blanco')
   end
 
   test 'ad validates type' do
