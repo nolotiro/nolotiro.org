@@ -5,11 +5,7 @@ require 'integration/concerns/authenticated_test'
 require 'support/web_mocking'
 
 class BlockingsTest < AuthenticatedTest
-  before do
-    @enemy = create(:user, username: 'other')
-
-    visit profile_path(@enemy)
-  end
+  before { @enemy = create(:user, username: 'other') }
 
   it "blocks from targe users's profile" do
     visit profile_path(@enemy)
