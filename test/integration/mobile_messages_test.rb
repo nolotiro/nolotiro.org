@@ -6,11 +6,11 @@ require 'integration/concerns/standard_messages'
 require 'integration/concerns/self_messages'
 
 module MobileMessagesTest
-  class StandardMessagesTest < DesktopIntegrationTest
+  class StandardMessagesTest < MobileIntegrationTest
     include StandardMessages
   end
 
-  class SelfDesktopMessagesTest < DesktopIntegrationTest
+  class SelfDesktopMessagesTest < MobileIntegrationTest
     include SelfMessages
   end
 end
