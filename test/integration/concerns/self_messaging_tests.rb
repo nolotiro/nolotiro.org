@@ -2,7 +2,7 @@
 
 require 'integration/concerns/messaging'
 
-module SelfMessages
+module SelfMessagingTests
   include Warden::Test::Helpers
   include Messaging
 
