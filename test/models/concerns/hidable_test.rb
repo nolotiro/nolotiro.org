@@ -38,4 +38,12 @@ class HidableTest < ActiveSupport::TestCase
     assert_empty GenericPost.from_authors_whitelisting(@visitor)
     assert_equal [@post], GenericPost.from_authors_whitelisting(@author)
   end
+
+  def test_from_unlocked_authors
+    assert_equal [@post], GenericPost.from_unlocked_authors
+
+    @author.lock!
+
+    assert_empty GenericPost.from_unlocked_authors
+  end
 end
