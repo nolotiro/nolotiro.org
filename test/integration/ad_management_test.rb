@@ -43,6 +43,7 @@ class AdManagementTest < AuthenticatedTest
   def submit_ad_form(file_path)
     visit new_ad_path
     attach_file :image, file_path
+    choose 'Un regalo'
     fill_in 'Título de tu anuncio:', with: 'File'
     fill_in 'Cuerpo del anuncio', with: 'My gift is a file full of equis'
     click_button 'Publicar anuncio'
