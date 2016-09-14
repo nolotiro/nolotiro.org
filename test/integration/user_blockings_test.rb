@@ -7,9 +7,7 @@ require 'support/web_mocking'
 class UserBlockingsTest < AuthenticatedTest
   include WebMocking
 
-  before do
-    @other = create(:user, username: 'other')
-  end
+  before { @other = create(:user, username: 'other') }
 
   it 'does not show profile page when visitor is blocked' do
     create(:blocking, blocker: @other, blocked: @current_user)
