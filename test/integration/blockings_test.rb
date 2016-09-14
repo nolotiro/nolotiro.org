@@ -8,7 +8,7 @@ class BlockingsTest < AuthenticatedTest
   before { @enemy = create(:user, username: 'other') }
 
   it "blocks from targe users's profile" do
-    visit profile_path(@enemy)
+    visit profile_path(@enemy.username)
     click_link 'bloquear a other'
 
     assert_no_selector 'a', text: /\Abloquear a other\z/
@@ -18,7 +18,7 @@ class BlockingsTest < AuthenticatedTest
 
   it "unblocks from target user's profile" do
     create(:blocking, blocker: @current_user, blocked: @enemy)
-    visit profile_path(@enemy)
+    visit profile_path(@enemy.username)
     click_link 'desbloquear a other'
 
     assert_no_selector 'a', text: 'desbloquear a other'

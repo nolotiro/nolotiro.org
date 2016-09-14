@@ -35,7 +35,7 @@ class UserProfileTest < ActionDispatch::IntegrationTest
     @user.lock!
 
     assert_raises(ActiveRecord::RecordNotFound) do
-      visit profile_path(@user.id)
+      visit profile_path(@user.username)
     end
   end
 
