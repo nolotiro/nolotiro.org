@@ -35,7 +35,7 @@ class HidableTest < ActiveSupport::TestCase
   def test_from_authors_whitelisting_excludes_objects_from_authors_blocking_user
     create(:blocking, blocker: @author, blocked: @visitor)
 
-    assert_equal [GenericPost.create!(user: create(:user))],
-                 GenericPost.from_authors_whitelisting(@visitor)
+    assert_empty GenericPost.from_authors_whitelisting(@visitor)
+    assert_equal [@post], GenericPost.from_authors_whitelisting(@author)
   end
 end
