@@ -2,7 +2,7 @@
 
 require 'integration/concerns/messaging'
 
-module StandardMessagingTests
+module MessagingTests
   include Warden::Test::Helpers
   include Messaging
 
@@ -42,26 +42,11 @@ module StandardMessagingTests
     assert_text 'Mensaje no puede estar en blanco'
   end
 
-  def test_sends_a_new_message_after_a_previous_error
-    send_message(body: 'hola, user2')
-    send_message(subject: 'forgot the title', body: 'hola, user2')
-
-    assert_message_sent 'hola, user2'
-  end
-
   def test_replies_to_conversation
     send_message(subject: 'hola, user2', body: 'How you doing?')
     send_message(body: 'hola, user1, nice to see you around')
 
     assert_message_sent 'nice to see you around'
-  end
-
-  def test_replies_to_conversation_after_a_previous_error
-    send_message(subject: 'hola, user2', body: 'How you doing?')
-    send_message(body: '')
-    send_message(body: 'forgot to reply something')
-
-    assert_message_sent 'forgot to reply something'
   end
 
   def test_shows_the_other_user_in_the_conversation_header
