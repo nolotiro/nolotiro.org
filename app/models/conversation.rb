@@ -31,6 +31,18 @@ class Conversation < ActiveRecord::Base
     joined.merge(Blocking.not_affecting(user))
   end
 
+  scope :with_unlocked_participants, -> do
+    joined = joins <<-SQL.squish
+      LEFT OUTER JOIN users u1 ON conversations.originator_id = u1.id
+      LEFT OUTER JOIN users u2 ON conversations.recipient_id = u2.id
+    SQL
+
+    joined.where <<-SQL.squish
+      (u1.locked IS NULL OR u1.locked = 0) AND
+      (u2.locked IS NULL OR u2.locked = 0)
+    SQL
+  end
+
   def self.start(sender:, recipient:, subject: '', body: '')
     conversation = new(subject: subject,
                        originator_id: sender.id,

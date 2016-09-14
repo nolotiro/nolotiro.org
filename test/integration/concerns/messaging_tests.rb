@@ -67,6 +67,14 @@ module MessagingTests
     assert_selector 'a', text: 'user2'
   end
 
+  def test_does_not_show_conversations_with_blocked_users
+    send_message(subject: 'Cosas', body: 'Send me info to myemail@example.org')
+    @user2.lock!
+    visit conversations_path
+
+    assert_no_selector 'a', text: 'user2'
+  end
+
   def test_just_shows_a_special_label_when_the_interlocutor_is_no_longer_there
     send_message(subject: 'Cosas', body: 'hola, user2')
     @user2.destroy
