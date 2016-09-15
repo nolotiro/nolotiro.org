@@ -29,8 +29,8 @@ GIT
       rest-client (>= 1.8, < 3)
 
 GIT
-  remote: git://github.com/tigrish/devise-i18n.git
-  revision: a849867a65994ac80a94a909782a76fa94bb25b9
+  remote: https://github.com/tigrish/devise-i18n.git
+  revision: fa9546a693278940d734679b5ca2732d5586f256
   specs:
     devise-i18n (1.1.0)
 
