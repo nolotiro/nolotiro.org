@@ -47,8 +47,7 @@
       <% else %>
         <%= t('nlt.searching_on_html', q: @q) if @q %>
 
-        <%= @type == "give" ? t('nlt.give') : t('nlt.want') %>
-        - <%= @woeid[:full] %>
+        <%= @woeid[:full] %>
       <% end %>
     </h1>
 

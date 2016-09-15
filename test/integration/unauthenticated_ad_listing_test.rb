@@ -56,7 +56,7 @@ class UnauthenticatedAdListing < ActionDispatch::IntegrationTest
       click_link 'busco'
     end
 
-    assert_text 'busco - Madrid, Madrid, España'
+    assert_text 'Madrid, Madrid, España'
     assert_selector '.ad_excerpt_list', count: 0
   end
 
