@@ -33,17 +33,19 @@
   </div>
 <% end %>
 
-<div id="location_header_section">
-  <span class="give-want">
+<ul class="nav give-want-tabs">
+  <li role="presentation" class="<%= 'active' if @type == "give" %>">
     <%= link_to t('nlt.gifts'),
-                url_for(params.except(:page, :status).merge(type: 'give')),
-                class: @type == "give" ? "actual" : "''" %>
-    &nbsp;
-    <%= link_to t('nlt.requests'),
-                url_for(params.except(:page, :status).merge(type: 'want')),
-                class: @type == "want" ? "actual" : "''" %>
-  </span>
+                url_for(params.except(:page, :status).merge(type: 'give')) %>
+  </li>
 
+  <li role="presentation" class="<%= 'active' if @type == "want" %>">
+    <%= link_to t('nlt.requests'),
+                url_for(params.except(:page, :status).merge(type: 'want')) %>
+  </li>
+</ul>
+
+<div id="location_header_section">
   <div class="location_name">
     <h1>
       <% if @woeid.nil? %>

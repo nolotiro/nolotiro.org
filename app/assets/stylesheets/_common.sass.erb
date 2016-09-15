@@ -436,22 +436,17 @@ form.searchbox
   display: inline-block
   margin-bottom: 14px
 
-.give-want
-  position: relative
-  display: inline-block
-  width: auto
-  float: right
-  right: 5px
-  text-align: center
-  background-color: #fff
-  font-size: 2em
-  font-weight: bold
-  right: 10px
-  padding-left: 14px
-  padding-right: 14px
-  padding-top: 8px
-  padding-bottom: 12px
-  margin-bottom: 10px
+.give-want-tabs
+  @extend .nav-tabs
+
+  border-bottom: none
+
+  li
+    margin-right: 2px
+
+    a
+      border-color: $gray-separator $gray-separator transparent
+      color: $navbar-default-link-active-color
 
 .errors, #error_explanation
   color: red
@@ -866,10 +861,6 @@ $langs: <%= I18n.available_locales.join(" ") %>
 @media only screen and (min-width: 768px)
   .mobile
     display: none !important
-
-@media only screen and (max-width: 530px)
-  .give-want
-    display: block
 
 @media only screen and (max-width: 500px)
   .message-from-left, .message-from-right
