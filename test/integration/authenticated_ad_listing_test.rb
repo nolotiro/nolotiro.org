@@ -29,6 +29,10 @@ class AuthenticatedAdListing < ActionDispatch::IntegrationTest
     logout
   end
 
+  it 'shows a link to publish ads in the users location' do
+    assert_selector 'a', text: '+ Publicar anuncio en Madrid'
+  end
+
   it 'lists first page of available ads in users location in home page' do
     assert_selector '.ad_excerpt_list', count: 1, text: 'ava_mad1'
   end
