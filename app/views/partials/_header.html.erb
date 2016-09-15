@@ -7,14 +7,8 @@
 <div class="actions-row">
   <div class="site-logo">
     <%= link_to root_path, title: "nolotiro.org home" do %>
-      <div class="site-name">
-        nolotiro.org
-        <%= h yield(:title) %>
-      </div>
-
-      <div class="site-slogan">
-        <%= t('nlt.slogan') %>
-      </div>
+      <div class="site-name">nolotiro.org</div>
+      <div class="site-slogan"><%= t('nlt.slogan') %></div>
     <% end %>
   </div>
 

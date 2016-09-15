@@ -1,7 +1,6 @@
 <% if @woeid.nil? %>
   <% content_for(:meta_title, t('nlt.home_title')) %>
 <% else %>
-  <% content_for(:title, @woeid[:full]) %>
   <% content_for(:meta_title, t('nlt.keywords') + @woeid[:full]) %>
   <% content_for(:meta_description, t('nlt.gift_on', woeid: @woeid[:full])) %>
 <% end %>
