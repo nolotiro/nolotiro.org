@@ -35,11 +35,11 @@
 
 <div id="location_header_section">
   <span class="give-want">
-    <%= link_to t('nlt.give'),
+    <%= link_to t('nlt.gifts'),
                 url_for(params.except(:page, :status).merge(type: 'give')),
                 class: @type == "give" ? "actual" : "''" %>
     &nbsp;
-    <%= link_to t('nlt.want'),
+    <%= link_to t('nlt.requests'),
                 url_for(params.except(:page, :status).merge(type: 'want')),
                 class: @type == "want" ? "actual" : "''" %>
   </span>

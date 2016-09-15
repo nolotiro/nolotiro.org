@@ -36,7 +36,7 @@ class Search < ActionDispatch::IntegrationTest
     click_button 'buscar'
 
     assert_selector '.ad_excerpt_list', count: 0
-    click_link 'busco'
+    click_link 'peticiones'
 
     assert_selector '.ad_excerpt_list', count: 1
   end

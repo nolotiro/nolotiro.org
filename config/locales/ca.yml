@@ -257,6 +257,7 @@ ca:
     forgot_your_password: Ha oblidat la seva contrasenya?
     friends: Amics
     gift_on: regal en %{woeid}
+    gifts: regals
     give: regal
     hello_to: Hola %{recipient},
     help_translate: ajuda a traduir
@@ -324,6 +325,7 @@ ca:
     register: Registra't
     register_here: registra't aquí
     remember_me: Recordar
+    requests: peticiós
     rss_suscribe: Subscriure via RSS
     save_failed: 'Hi ha un problema, revisa això:'
     search:
@@ -356,7 +358,7 @@ ca:
     users_most_active_last_week: usuaris més actius en la darrera setmana
     view_ads_on: Veure anuncis en %{location}
     view_ads_on_your_city: Veure anuncis a la teva ciutat o poble
-    want: busco
+    want: petició
     want_to_leave: Vols esborrar el teu usuari?
     we_need_your_password: "(necessitem la contrasenya per confirmar els canvis)"
     welcome: hola

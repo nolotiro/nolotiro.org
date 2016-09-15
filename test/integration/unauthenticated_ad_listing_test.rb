@@ -57,7 +57,7 @@ class UnauthenticatedAdListing < ActionDispatch::IntegrationTest
   it 'lists wanted ads when a status filter is active' do
     visit ads_woeid_path(766_273, type: 'give')
     click_link 'disponible'
-    click_link 'busco'
+    click_link 'peticiones'
 
     assert_text 'Madrid, Madrid, España'
     assert_selector '.ad_excerpt_list', count: 0

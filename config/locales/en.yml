@@ -257,6 +257,7 @@ en:
     forgot_your_password: Forgot your password?
     friends: Friends
     gift_on: gift on %{woeid}
+    gifts: presents
     give: gift
     hello_to: Hello %{recipient},
     help_translate: help us to translate
@@ -324,6 +325,7 @@ en:
     register: Register
     register_here: Register here
     remember_me: Remember me
+    requests: requests
     rss_suscribe: Suscribe via RSS
     save_failed: 'There is problem, please revied this:'
     search:

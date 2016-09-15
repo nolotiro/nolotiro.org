@@ -257,6 +257,7 @@ fr:
     forgot_your_password: As tu oublié ton mot de passe?
     friends: Amis
     gift_on: cadeau en %{woeid}
+    gifts: cadeaux
     give: cadeau
     hello_to: Salut %{recipient},
     help_translate: Il aide à traduire
@@ -326,6 +327,7 @@ fr:
     register: Inscrivez
     register_here: Inscrivez ici
     remember_me: souviens-toi de moi
+    requests: pétitions
     rss_suscribe: Abonnez-vous via RSS
     save_failed: 'Il y a un problème, vérifier cela:'
     search:
@@ -358,7 +360,7 @@ fr:
     users_most_active_last_week: la plupart des utilisateurs actifs dans la dernière semaine
     view_ads_on: Voir annonces dans %{location}
     view_ads_on_your_city: Voir les annonces dans votre ville
-    want: regarde
+    want: pétition
     want_to_leave: Voulez-vous supprimer votre nom d'utilisateur?
     we_need_your_password: "(Nous avons besoin de votre mot de passe pour confirmer vos modifications)"
     welcome: Salut
