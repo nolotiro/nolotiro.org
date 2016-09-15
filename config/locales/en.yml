@@ -256,7 +256,7 @@ en:
     footer_explain: 'nolotiro.org is a website where you can give stuff for free or find free second hand stuff: furniture, chairs, bicycles, computers, laptops, tables, beds, clothe, toys, mobile phones and many other stuff you don''t want or need, so other people can recycle it and give it a new life.'
     forgot_your_password: Forgot your password?
     friends: Friends
-    gift_on: gift on%{woeid}
+    gift_on: gift on %{woeid}
     give: gift
     hello_to: Hello %{recipient},
     help_translate: help us to translate
