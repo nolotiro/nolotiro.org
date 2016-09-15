@@ -1,6 +1,5 @@
 <% if @woeid.nil? %>
-  <% content_for(:title, t('nlt.all_ads')) %>
-  <% content_for(:meta_title, t('nlt.all_ads')) %>
+  <% content_for(:meta_title, t('nlt.home_title')) %>
 <% else %>
   <% content_for(:title, @woeid[:full]) %>
   <% content_for(:meta_title, t('nlt.keywords') + @woeid[:full]) %>
@@ -17,6 +16,11 @@
   <div class="ad_change_location_home">
     <% if @woeid %>
       <%= link_to t('nlt.change_city'), location_ask_path %>
+    <% elsif location_suggest %>
+      <% title = t('nlt.view_ads_on', location: location_suggest.city) %>
+      <%= link_to_change_location location_suggest.fullname, title %>
+    <% else %>
+      <%= link_to t('nlt.view_ads_on_your_city'), location_ask_path %>
     <% end %>
   </div>
 

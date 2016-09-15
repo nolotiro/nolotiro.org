@@ -3,12 +3,13 @@
 class WoeidController < ApplicationController
   include StringUtils
 
+  before_action :check_location
+
   # GET /es/woeid/:id/:type
   # GET /es/woeid/:id/:type/status/:status
   # GET /es/ad/listall/ad_type/:type
   # GET /es/ad/listall/ad_type/:type/status/:status
   def show
-    @id = params[:id]
     @type = type_scope
     @status = status_scope
     @q = params[:q]
@@ -18,7 +19,7 @@ class WoeidController < ApplicationController
       raise ActionController::RoutingError, 'Not Found'
     end
 
-    if @id.present?
+    if @id
       @woeid = WoeidHelper.convert_woeid_name(@id)
 
       raise ActionController::RoutingError, 'Not Found' if @woeid.nil?
@@ -30,5 +31,23 @@ class WoeidController < ApplicationController
               .by_title(@q)
 
     @ads = policy_scope(scope).includes(:user).recent_first.paginate(page: page)
+  end
+
+  private
+
+  def resolve_woeid
+    return @id if @id.present?
+
+    user_woeid
+  end
+
+  def check_location
+    redirect_to location_ask_path if user_signed_in? && user_woeid.nil?
+
+    @id = params[:id].presence || user_woeid
+  end
+
+  def user_woeid
+    current_user.try(:woeid)
   end
 end

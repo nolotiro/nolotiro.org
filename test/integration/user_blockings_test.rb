@@ -81,6 +81,6 @@ class UserBlockingsTest < AuthenticatedTest
 
   def assert_access_denied
     assert_text 'No tienes permisos para realizar esta acción'
-    assert_equal ads_woeid_path(@current_user.woeid, type: 'give'), current_path
+    assert_equal root_path, current_path
   end
 end

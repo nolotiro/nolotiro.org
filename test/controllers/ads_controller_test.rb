@@ -13,16 +13,6 @@ class AdsControllerTest < ActionController::TestCase
     @admin = create(:admin)
   end
 
-  test 'should get index' do
-    mocking_yahoo_woeid_info(@ad.woeid_code) do
-      @request.headers['REMOTE_ADDR'] = '87.223.138.147'
-      get :index
-
-      assert_response :success
-      assert_not_nil assigns(:ads)
-    end
-  end
-
   test 'should not get new if not signed in' do
     get :new
 

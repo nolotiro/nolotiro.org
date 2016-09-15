@@ -33,26 +33,6 @@ class AdsController < ApplicationController
     end
   end
 
-  def index
-    if user_signed_in?
-      url = current_user.woeid? ? ads_woeid_path(current_user.woeid, type: 'give') : location_ask_path
-      redirect_to url
-    else
-      page = params[:page]
-
-      unless page.nil? || positive_integer?(page)
-        raise ActionController::RoutingError, 'Not Found'
-      end
-
-      @ads = Rails.cache.fetch("ads_list_#{page}") do
-        policy_scope(Ad.give.available)
-          .recent_first
-          .includes(:user)
-          .paginate(page: page)
-      end
-    end
-  end
-
   def show
     @comment = @ad.comments.build
     @ad.increment_readed_count!

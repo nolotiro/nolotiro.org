@@ -33,14 +33,14 @@ class UnauthenticatedAdListing < ActionDispatch::IntegrationTest
 
   it 'lists second page of available ads everywhere in all ads page' do
     visit root_path
-    click_link 'ver más anuncios'
+    click_link '2'
 
     assert_selector '.ad_excerpt_list', count: 1, text: 'ava_bar'
   end
 
   it 'lists booked ads everywhere in all ads page' do
     visit root_path
-    click_link 'ver más anuncios'
+    click_link '2'
     click_link 'reservado'
 
     assert_selector '.ad_excerpt_list', count: 1, text: 'res_mad'
@@ -48,7 +48,7 @@ class UnauthenticatedAdListing < ActionDispatch::IntegrationTest
 
   it 'lists delivered ads everywhere in all ads page' do
     visit root_path
-    click_link 'ver más anuncios'
+    click_link '2'
     click_link 'entregado'
 
     assert_selector '.ad_excerpt_list', count: 1, text: 'del_ten'

@@ -7,6 +7,13 @@ class ChoosingLocationTest < ActionDispatch::IntegrationTest
   include WebMocking
   include Warden::Test::Helpers
 
+  it 'redirects there when user logged in and no location set' do
+    login_as create(:user, :stateless)
+    visit root_path
+
+    assert_selector 'h1', text: 'Cambia tu ciudad'
+  end
+
   it 'suggests locations matching name' do
     mocking_yahoo_woeid_similar('tenerife') do
       choose_location('tenerife')
