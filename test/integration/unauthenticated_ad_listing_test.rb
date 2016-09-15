@@ -15,7 +15,7 @@ class UnauthenticatedAdListing < ActionDispatch::IntegrationTest
     create(:ad, :in_ten, title: 'del_ten', status: 3)
 
     with_pagination(1) do
-      mocking_location_counts { visit root_path }
+      mocking_all_locations { visit root_path }
     end
   end
 
@@ -62,7 +62,7 @@ class UnauthenticatedAdListing < ActionDispatch::IntegrationTest
 
   private
 
-  def mocking_location_counts
+  def mocking_all_locations
     mocking_yahoo_woeid_info(766_273) do
       mocking_yahoo_woeid_info(753_692) do
         mocking_yahoo_woeid_info(773_692) { yield }
