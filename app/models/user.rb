@@ -63,21 +63,21 @@ class User < ActiveRecord::Base
   end
 
   scope :top_last_week, -> do
-    Rails.cache.fetch("top-last-week-#{Ad.cache_digest}") do
-      build_rank(Ad.last_week)
-    end
+    key = "top-last-week-#{Ad.cache_digest}"
+
+    Rails.cache.fetch(key) { build_rank(Ad.last_week) }
   end
 
   scope :top_city_overall, ->(woeid) do
-    Rails.cache.fetch("woeid/#{woeid}/top-overall-#{Ad.cache_digest}") do
-      build_rank(Ad.by_woeid_code(woeid))
-    end
+    key = "woeid/#{woeid}/top-overall-#{Ad.cache_digest}"
+
+    Rails.cache.fetch(key) { build_rank(Ad.by_woeid_code(woeid)) }
   end
 
   scope :top_city_last_week, ->(woeid) do
-    Rails.cache.fetch("woeid/#{woeid}/top-last-week-#{Ad.cache_digest}") do
-      build_rank(Ad.last_week.by_woeid_code(woeid))
-    end
+    key = "woeid/#{woeid}/top-last-week-#{Ad.cache_digest}"
+
+    Rails.cache.fetch(key) { build_rank(Ad.last_week.by_woeid_code(woeid)) }
   end
 
   scope :whitelisting, ->(user) do
