@@ -15,8 +15,7 @@ class UserBlockingsTest < AuthenticatedTest
       visit profile_path(@other.username)
     end
 
-    assert_text 'No tienes permisos para realizar esta acción'
-    assert_equal ads_woeid_path(@current_user.woeid, type: 'give'), current_path
+    assert_access_denied
   end
 
   it 'does not show listads page when visitor is blocked' do
@@ -25,8 +24,7 @@ class UserBlockingsTest < AuthenticatedTest
       visit listads_user_path(@other)
     end
 
-    assert_text 'No tienes permisos para realizar esta acción'
-    assert_equal ads_woeid_path(@current_user.woeid, type: 'give'), current_path
+    assert_access_denied
   end
 
   it 'does not show message link when visitor blocking profile owner' do
@@ -50,8 +48,7 @@ class UserBlockingsTest < AuthenticatedTest
     create(:blocking, blocker: @other, blocked: @current_user)
     mocking_yahoo_woeid_info(ad.woeid_code) { visit ad_path(ad) }
 
-    assert_text 'No tienes permisos para realizar esta acción'
-    assert_equal ads_woeid_path(@current_user.woeid, type: 'give'), current_path
+    assert_access_denied
   end
 
   it 'does not show send message link in ad page when blocked by user' do
@@ -78,5 +75,12 @@ class UserBlockingsTest < AuthenticatedTest
 
     refute_selector '.ad_comment_form'
     assert_equal ad_path(ad), current_path
+  end
+
+  private
+
+  def assert_access_denied
+    assert_text 'No tienes permisos para realizar esta acción'
+    assert_equal ads_woeid_path(@current_user.woeid, type: 'give'), current_path
   end
 end
