@@ -1,7 +1,10 @@
-<%= content_for(:meta_title, "#{I18n.t('nlt.keywords')} #{@ad.title} #{@ad.woeid_name}") %>
+<%= content_for(:meta_title,
+                "#{I18n.t('nlt.keywords')} #{@ad.filtered_title} #{@ad.woeid_name}") %>
 
 <%= content_for :meta_description do %>
-  <%= t('nlt.meta_description_ad', title: @ad.title, woeid: @ad.woeid_name, body: @ad.body) %>
+  <%= t('nlt.meta_description_ad', title: @ad.filtered_title,
+                                   woeid: @ad.woeid_name,
+                                   body: @ad.filtered_body) %>
 <% end %>
 
 <% content_for :action do %>
@@ -16,12 +19,12 @@
 
 <div id="default_header_section">
   <h2>
-    <%= link_to ads_woeid_path(id: @ad.woeid_code, type: @ad.type_class) do %>
+    <%= link_to ads_woeid_path(@ad.woeid_code, type: @ad.type_class) do %>
       <%= @ad.woeid_name %> &gt;
       <%= @ad.type_string %>
     <% end %>
   </h2>
-  <h1><%= @ad.title %></h1>
+  <h1><%= @ad.filtered_title %></h1>
 </div>
 
 <div class="col-md-6 col-sm-6">
@@ -30,7 +33,9 @@
 
     <% if @ad.image.exists? %>
       <div class="ad_list_image">
-        <%= link_to image_tag(@ad.image.url(:thumb), alt: @ad.title), @ad.image.url, alt: t('nlt.click_to_large') %>
+        <%= link_to image_tag(@ad.image.url(:thumb), alt: @ad.filtered_title),
+                    @ad.image.url,
+                    alt: t('nlt.click_to_large') %>
       </div>
     <% end %>
 
@@ -41,7 +46,7 @@
     <%= published_ago_by(@ad.published_at, @ad.user) %>
 
     <div class="body-wrapper">
-      <%= simple_format(@ad.body) %>
+      <%= simple_format(@ad.filtered_body) %>
     </div>
 
     <%= render "stats", comments_count: @comments.size,

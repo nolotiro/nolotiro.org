@@ -15,9 +15,10 @@ class AdPolicy < ApplicationPolicy
 
   class Scope < ApplicationPolicy::Scope
     def resolve
-      return scope unless user
+      not_spam = scope.not_spam
+      return not_spam unless user
 
-      scope.from_authors_whitelisting(user)
+      not_spam.from_authors_whitelisting(user)
     end
   end
 end

@@ -4,18 +4,19 @@
   <% if ad.image.exists? %>
     <div class="ad_list_image">
       <%= link_to adslug_path(ad,ad.slug) do %>
-        <%= image_tag ad.image.url(:thumb), title: ad.title, alt: ad.title %>
+        <%= image_tag ad.image.url(:thumb), title: ad.filtered_title,
+                                            alt: ad.filtered_title %>
       <% end %>
     </div>
   <% end %>
 
   <h4>
     <%= link_to adslug_path(ad,ad.slug) do %>
-      <%= ad.title %>
+      <%= ad.filtered_title %>
     <% end %>
   </h4>
   <div class="ad_excerpt_woeid">
-    <%= link_to ads_woeid_path(id: ad.woeid_code, type: ad.type_class) do %>
+    <%= link_to ads_woeid_path(ad.woeid_code, type: ad.type_class) do %>
       <%= ad.woeid_name %> &gt;
       <%= ad.type_string %>
     <% end %>
@@ -29,7 +30,7 @@
   <%= published_ago_by(ad.published_at, ad.user) %>
 
   <div class="body-wrapper">
-    <p><%= truncate ad.body, length: 200, separator: ' ' %></p>
+    <p><%= truncate ad.filtered_body, length: 200, separator: ' ' %></p>
   </div>
 
   <%= render "ads/stats", comments_count: comment_counts[ad.id] || 0,

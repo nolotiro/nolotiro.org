@@ -8,25 +8,25 @@ class UserProfileTest < ActionDispatch::IntegrationTest
   end
 
   it 'gets user profile by username' do
-    visit profile_path(id: @user.username)
+    visit profile_path(@user.username)
 
     assert_text 'Perfil de usuario - jaimito'
   end
 
   it 'gets user profile by id' do
-    visit profile_path(id: @user.id)
+    visit profile_path(@user.id)
 
     assert_text 'Perfil de usuario - jaimito'
   end
 
   it 'gets user ad list by username' do
-    visit listads_user_path(id: @user.username)
+    visit listads_user_path(@user.username)
 
     assert_text 'Anuncios publicados - jaimito'
   end
 
   it 'gets user ad list by id' do
-    visit listads_user_path(id: @user.id)
+    visit listads_user_path(@user.id)
 
     assert_text 'Anuncios publicados - jaimito'
   end
@@ -35,7 +35,7 @@ class UserProfileTest < ActionDispatch::IntegrationTest
     @user.lock!
 
     assert_raises(ActiveRecord::RecordNotFound) do
-      visit profile_path(id: @user.id)
+      visit profile_path(@user.username)
     end
   end
 
@@ -43,7 +43,7 @@ class UserProfileTest < ActionDispatch::IntegrationTest
     @user.lock!
 
     assert_raises(ActiveRecord::RecordNotFound) do
-      visit listads_user_path(id: @user.id)
+      visit listads_user_path(@user.id)
     end
   end
 end

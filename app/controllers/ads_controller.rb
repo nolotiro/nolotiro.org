@@ -24,20 +24,18 @@ class AdsController < ApplicationController
     @ad.published_at = Time.zone.now
     authorize(@ad)
 
-    respond_to do |format|
-      if verify_recaptcha(model: @ad) && @ad.save
-        format.html { redirect_to adslug_path(@ad, slug: @ad.slug), notice: t('nlt.ads.created') }
-        format.json { render action: 'show', status: :created, location: @ad }
-      else
-        format.html { render action: 'new' }
-        format.json { render json: @ad.errors, status: :unprocessable_entity }
-      end
+    if verify_recaptcha(model: @ad) && @ad.save
+      @ad.check_spam!
+
+      redirect_to redirect_path, notice: t('nlt.ads.created')
+    else
+      render action: 'new'
     end
   end
 
   def index
     if user_signed_in?
-      url = current_user.woeid? ? ads_woeid_path(id: current_user.woeid, type: 'give') : location_ask_path
+      url = current_user.woeid? ? ads_woeid_path(current_user.woeid, type: 'give') : location_ask_path
       redirect_to url
     else
       page = params[:page]
@@ -47,7 +45,10 @@ class AdsController < ApplicationController
       end
 
       @ads = Rails.cache.fetch("ads_list_#{page}") do
-        Ad.give.available.recent_first.includes(:user).paginate(page: page)
+        policy_scope(Ad.give.available)
+          .recent_first
+          .includes(:user)
+          .paginate(page: page)
       end
     end
   end
@@ -62,35 +63,34 @@ class AdsController < ApplicationController
   end
 
   def bump
-    respond_to do |format|
-      @ad.bump
+    @ad.bump
 
-      format.html { redirect_to :back, notice: t('nlt.ads.bumped') }
-      format.json { head :no_content }
-    end
+    redirect_to :back, notice: t('nlt.ads.bumped')
   end
 
   def update
-    respond_to do |format|
-      if @ad.update(ad_params)
-        format.html { redirect_to @ad, notice: t('nlt.ads.updated') }
-        format.json { head :no_content }
-      else
-        format.html { render action: 'edit', alert: @ad.errors }
-        format.json { render json: @ad.errors, status: :unprocessable_entity }
-      end
+    if @ad.update(ad_params)
+      @ad.check_spam!
+
+      redirect_to redirect_path, notice: t('nlt.ads.updated')
+    else
+      render action: 'edit', alert: @ad.errors
     end
   end
 
   def destroy
     @ad.destroy
-    respond_to do |format|
-      format.html { redirect_to ads_url }
-      format.json { head :no_content }
-    end
+
+    redirect_to ads_url
   end
 
   private
+
+  def redirect_path
+    return ads_woeid_path(current_user.woeid, type: 'give') if @ad.spam
+
+    adslug_path(@ad, slug: @ad.slug)
+  end
 
   def set_ad
     @ad = Ad.find(params[:id])

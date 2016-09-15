@@ -1,6 +1,8 @@
 gl:
   active_admin:
-    dashboard: 
+    batch_actions:
+      labels:
+        toggle_spam: 
   activemodel:
     attributes:
       contact:
@@ -88,8 +90,8 @@ gl:
     passwords:
       action: Cambio de contrasinal
       edit:
-        confirm_new_password: 
-        new_password: 
+        confirm_new_password: Nova contrasinal (repetir)
+        new_password: Nova contrasinal
       follow_instructions: Alguén pediu trocar a súa contrasinal de nolotiro.org. Se non foi pode ignorar este correo. O seu contrasinal non vai cambiar ata que acceder ao enlace e crear unha nova.
       forgot: "¿Esqueceches o contrasinal?\n"
       instructions: Introduce o teu correo-e e nós enviarémosche unha ligazón de acceso para cambiar o seu contrasinal.

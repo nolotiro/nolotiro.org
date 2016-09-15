@@ -1,6 +1,8 @@
 de:
   active_admin:
-    dashboard: 
+    batch_actions:
+      labels:
+        toggle_spam: 
   activemodel:
     attributes:
       contact:

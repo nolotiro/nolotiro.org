@@ -3,26 +3,7 @@
 
 class Ad < ActiveRecord::Base
   include Hidable
-  include Rakismet::Model
-
-  # https://github.com/joshfrench/rakismet
-  #
-  # author        : name submitted with the comment
-  # author_url    : URL submitted with the comment
-  # author_email  : email submitted with the comment
-  # comment_type  : Defaults to comment but you can set it to trackback, pingback, or something more appropriate
-  # content       : the content submitted
-  # permalink     : the permanent URL for the entry the comment belongs to
-  # user_ip       : IP address used to submit this comment
-  # user_agent    : user agent string
-  # referrer      : referring URL (note the spelling)
-
-  rakismet_attrs  author: proc { user.username },
-                  author_email: proc { user.email },
-                  user_ip: proc { ip },
-                  content: proc { body }
-
-  require 'ipaddress'
+  include Spamable
 
   belongs_to :user, foreign_key: :user_owner, counter_cache: true
   has_many :comments, foreign_key: :ads_id, dependent: :destroy
@@ -31,14 +12,11 @@ class Ad < ActiveRecord::Base
   validates :body, presence: true, length: { minimum: 25, maximum: 1000 }
   validates :user_owner, presence: true
   validates :woeid_code, presence: true
-  validates :ip, presence: true
 
   validates :status, inclusion: { in: [1, 2, 3] }, presence: true
 
   validates :type, presence: true
   validates :type, inclusion: { in: [1, 2] }, allow_blank: true
-
-  # validate :valid_ip_address
 
   # legacy database: has a column with value "type", rails doesn't like that
   # the "type" column is no longer need it by rails, so we don't care about it
@@ -107,12 +85,12 @@ class Ad < ActiveRecord::Base
     last_ad_publication.strftime('%d%m%y%H%M%s')
   end
 
-  def body
-    ApplicationController.helpers.escape_privacy_data(self[:body])
+  def filtered_body
+    ApplicationController.helpers.escape_privacy_data(body)
   end
 
-  def title
-    ApplicationController.helpers.escape_privacy_data(self[:title])
+  def filtered_title
+    ApplicationController.helpers.escape_privacy_data(title)
   end
 
   def reset_readed_count!
@@ -124,7 +102,7 @@ class Ad < ActiveRecord::Base
   end
 
   def slug
-    title.parameterize
+    filtered_title.parameterize
   end
 
   def woeid_name
@@ -140,7 +118,7 @@ class Ad < ActiveRecord::Base
   end
 
   def full_title
-    type_string + ' segunda mano ' + title + ' ' + woeid_name
+    type_string + ' segunda mano ' + filtered_title + ' ' + woeid_name
   end
 
   def type_string
@@ -167,12 +145,8 @@ class Ad < ActiveRecord::Base
     end
   end
 
-  def valid_ip_address
-    errors.add(:ip, 'No es una IP válida') unless IPAddress.valid?(ip)
-  end
-
   def meta_title
-    "#{I18n.t('nlt.keywords')} #{title} #{woeid_name}"
+    "#{I18n.t('nlt.keywords')} #{filtered_title} #{woeid_name}"
   end
 
   def bumpable?

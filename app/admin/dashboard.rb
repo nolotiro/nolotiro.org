@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
 ActiveAdmin.register_page 'Dashboard' do
-  menu priority: 1, label: proc { I18n.t('active_admin.dashboard') }
+  menu priority: 1
 
-  content title: proc { I18n.t('active_admin.dashboard') } do
+  content do
     # Here is an example of a simple dashboard with columns and panels.
     #
     columns do
@@ -14,7 +14,9 @@ ActiveAdmin.register_page 'Dashboard' do
             column :title do |ad|
               link_to ad.title, admin_ad_path(ad)
             end
-            column :user
+            column(:user) do |ad|
+              link_to ad.user.username, admin_user_path(ad.user)
+            end
             column :published_at do |ad|
               time_ago_in_words ad.published_at
             end
@@ -29,7 +31,9 @@ ActiveAdmin.register_page 'Dashboard' do
             column :body do |com|
               link_to com.body, admin_comment_path(com)
             end
-            column :user
+            column(:user) do |com|
+              link_to com.user.username, admin_user_path(com.user)
+            end
             column :ad
             column :created_at do |com|
               time_ago_in_words com.created_at

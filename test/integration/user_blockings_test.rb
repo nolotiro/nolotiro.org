@@ -7,13 +7,13 @@ require 'support/web_mocking'
 class UserBlockingsTest < AuthenticatedTest
   include WebMocking
 
-  before do
-    @other = create(:user, username: 'other')
-  end
+  before { @other = create(:user, username: 'other') }
 
   it 'does not show profile page when visitor is blocked' do
     create(:blocking, blocker: @other, blocked: @current_user)
-    mocking_yahoo_woeid_info(@current_user.woeid) { visit profile_path(@other) }
+    mocking_yahoo_woeid_info(@current_user.woeid) do
+      visit profile_path(@other.username)
+    end
 
     assert_text 'No tienes permisos para realizar esta acción'
     assert_equal ads_woeid_path(@current_user.woeid, type: 'give'), current_path
@@ -31,10 +31,10 @@ class UserBlockingsTest < AuthenticatedTest
 
   it 'does not show message link when visitor blocking profile owner' do
     create(:blocking, blocker: @current_user, blocked: @other)
-    visit profile_path(@other)
+    visit profile_path(@other.username)
 
     assert_no_selector 'a', text: 'envía un mensaje privado a other'
-    assert_equal profile_path(@other), current_path
+    assert_equal profile_path(@other.username), current_path
   end
 
   it 'does not show ad in listings when visitor is blocked' do

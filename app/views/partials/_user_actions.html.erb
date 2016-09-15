@@ -1,6 +1,6 @@
 <div class="user_login_box">
   <% if user_signed_in? %>
-    <%= link_to profile_path(current_user), id: 'js-username' do %>
+    <%= link_to profile_path(current_user.username), id: 'js-username' do %>
       <span>
         <%= t('nlt.welcome') %>,
         <b><%= current_user.username %></b>

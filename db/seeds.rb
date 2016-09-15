@@ -29,8 +29,7 @@ def create_ad(user)
     type: 1,
     status: 1,
     woeid_code: 766_273,
-    image: Faker::Placeholdit.image,
-    ip: '28.3.2.4'
+    image: Faker::Placeholdit.image
   )
   ad
 end

@@ -10,7 +10,7 @@
 
   <li>
     <%= link_to t('nlt.profile'),
-                profile_path(user),
+                profile_path(user.username),
                 class: ('active' if profile_tab?) %>
   </li>
 

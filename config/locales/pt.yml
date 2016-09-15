@@ -1,6 +1,8 @@
 pt:
   active_admin:
-    dashboard: Panel
+    batch_actions:
+      labels:
+        toggle_spam: 
   activemodel:
     attributes:
       contact:
@@ -86,8 +88,8 @@ pt:
     passwords:
       action: Trocar a senha
       edit:
-        confirm_new_password: 
-        new_password: 
+        confirm_new_password: Nova senha (repetir)
+        new_password: Nova senha
       follow_instructions: 'Alguem solicitou mudar a sua senha de nolotiro.org. Se você não foi, pode ignorar este e-mail. Sua senha não mudará até você não acceder ao link e trocar ela por uma nova. '
       forgot: Esquceu a sua senha?
       instructions: Por favor, insira o seu email para enviar-lhe um link de acceso direto para mudar a sua senha.

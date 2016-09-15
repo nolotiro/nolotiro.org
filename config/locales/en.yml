@@ -1,6 +1,8 @@
 en:
   active_admin:
-    dashboard: Dashboard
+    batch_actions:
+      labels:
+        toggle_spam: 
   activemodel:
     attributes:
       contact:
@@ -86,8 +88,8 @@ en:
     passwords:
       action: Change Password
       edit:
-        confirm_new_password: 
-        new_password: 
+        confirm_new_password: New password (repeat)
+        new_password: New password
       follow_instructions: Someone asked nolotiro.org about change your password. If it's not you then you can ignore this mail. Your password will not change until you access the link and create a new one.
       forgot: Did you forget your password?
       instructions: Please, enter your email address and we will send you a shortcut link to change your password.

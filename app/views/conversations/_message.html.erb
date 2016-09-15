@@ -2,7 +2,7 @@
   <div class="message-excerpt">
     <div class="message-from-left">
       <% if message.sender %>
-        <%= link_to profile_path(message.sender) do %>
+        <%= link_to profile_path(message.sender.username) do %>
           <%= image_tag "contact.png" %>
           <%= message.sender.username %>
         <% end %>
@@ -26,7 +26,7 @@
   <div class="message-excerpt">
     <div class="message-from-right">
       <% if message.sender %>
-        <%= link_to profile_path(message.sender) do %>
+        <%= link_to profile_path(message.sender.username) do %>
           <%= image_tag "contact.png" %>
           <%= message.sender.username %>
         <% end %>

@@ -2,9 +2,7 @@
   <fieldset>
     <div class="col-md-6 col-sm-6">
       <dt>
-        <label for="email" class="required">
-          <%= f.label :email, t('nlt.your_email') %>
-        </label>
+        <%= f.label :email, t('nlt.your_email'), required: true %>
       </dt>
 
       <dd>
@@ -12,13 +10,11 @@
       </dd>
 
       <dt>
-      <label for="password" class="required">
-        <%= f.label :password, t('nlt.password') %>
-      </label>
+        <%= f.label :password, t('nlt.password'), required: true %>
       </dt>
 
       <dd>
-      <%= f.password_field :password %>
+        <%= f.password_field :password %>
       </dd>
 
       <dd id="rememberme-element">
