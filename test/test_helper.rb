@@ -7,6 +7,7 @@ require_relative '../config/environment'
 require 'rails/test_help'
 
 require 'minitest/pride'
+require 'minitest/around/spec'
 require 'capybara/rails'
 require 'support/phantomjs'
 
