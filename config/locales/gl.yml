@@ -263,6 +263,7 @@ gl:
     forgot_your_password: Esqueceches o contrasinal?
     friends: Amigos
     gift_on: regalo en %{woeid}
+    gifts: regalos
     give: regalo
     hello_to: Ola %{recipient},
     help_translate: axuda a traducir
@@ -332,6 +333,7 @@ gl:
     register: 
     register_here: 
     remember_me: 
+    requests: peticiones
     rss_suscribe: 
     save_failed: 
     search:
@@ -364,8 +366,7 @@ gl:
     users_most_active_last_week: 
     view_ads_on: 
     view_ads_on_your_city: 
-    view_more_ads: 
-    want: 
+    want: petición
     want_to_leave: 
     we_need_your_password: 
     welcome: 

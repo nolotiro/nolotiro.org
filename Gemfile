@@ -1,5 +1,14 @@
 # frozen_string_literal: true
 
+# @todo Revisited the warnings fixed by this in Bundler 2, I guess they will be
+# fixed and this won't be needed
+#
+git_source(:github) do |repo_name|
+  repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?('/')
+
+  "https://github.com/#{repo_name}.git"
+end
+
 source 'https://rubygems.org'
 
 ruby '2.3.1'
@@ -21,6 +30,7 @@ end
 
 group :development, :test do
   gem 'minitest-spec-rails'                 # test: specs style out-of-the-box
+  gem 'minitest-around'                     # test: minitest enhancements
   gem 'capybara'                            # test: real user interactions
   gem 'launchy'                             # test: features - save_and_open_page helper
   gem 'factory_girl_rails', '~> 4.0'        # test: factories

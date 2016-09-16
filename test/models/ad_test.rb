@@ -89,7 +89,7 @@ class AdTest < ActiveSupport::TestCase
   test 'ad check type_string' do
     assert_equal @ad.type_string, 'regalo'
     @ad.update!(type: 2)
-    assert_equal @ad.type_string, 'busco'
+    assert_equal @ad.type_string, 'petición'
   end
 
   test 'ad check status_string' do

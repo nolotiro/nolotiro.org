@@ -15,7 +15,7 @@ FactoryGirl.define do
     lang 'es'
     password '123456789'
     role 0
-    woeid 766_273
+    madrilenian
     confirmed_at Time.zone.now
   end
 
@@ -35,6 +35,9 @@ FactoryGirl.define do
     lang 'es'
     password '123456789'
     role 0
-    woeid 766_273
+    madrilenian
   end
+
+  trait(:madrilenian) { woeid 766_273 }
+  trait(:stateless) { woeid nil }
 end

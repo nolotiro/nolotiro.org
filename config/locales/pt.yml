@@ -257,7 +257,8 @@ pt:
     forgot_your_password: Você esqueceu sua senha?
     friends: Amigos
     gift_on: dou presente em %{woeid}
-    give: dou presente
+    gifts: presentes
+    give: presente
     hello_to: Olá %{recipient},
     help_translate: ajuda a traduzir
     here: aqui
@@ -324,6 +325,7 @@ pt:
     register: Registre-se
     register_here: cadastre-se aqui
     remember_me: Lembrar-me
+    requests: peticões
     rss_suscribe: Subscreva-se via RSS
     save_failed: 'Há um problema, confira isto:'
     search:
@@ -356,8 +358,7 @@ pt:
     users_most_active_last_week: usuários mais ativos nas últimas semanas
     view_ads_on: Ver anúncios em %{location}
     view_ads_on_your_city: Ver anúncios na sua cidade
-    view_more_ads: ver mais anúncios >
-    want: procuro
+    want: petição
     want_to_leave: Você quer apagar o seu usuário?
     we_need_your_password: "(precisamos sua senha para confirmar mudanças)"
     welcome: olá

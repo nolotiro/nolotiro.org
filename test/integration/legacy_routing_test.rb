@@ -16,7 +16,10 @@ class LegacyRoutingTest < ActionDispatch::IntegrationTest
   I18n.available_locales.map(&:to_s).each do |l|
     define_method(:"test_i18n_for_#{l}_works") do
       mocking_yahoo_woeid_info(@ad.woeid_code, l) do
-        assert_routing "/#{l}", controller: 'ads', action: 'index', locale: l
+        assert_recognizes(
+          { controller: 'woeid', action: 'show', type: 'give', locale: l },
+          "/#{l}"
+        )
         get "/#{l}"
         assert_response :success, "couldn't GET /#{l}"
         I18n.locale = :es
@@ -25,7 +28,9 @@ class LegacyRoutingTest < ActionDispatch::IntegrationTest
   end
 
   def test_route_to_home
-    assert_routing '/', controller: 'ads', action: 'index'
+    assert_recognizes(
+      { controller: 'woeid', action: 'show', type: 'give' }, '/'
+    )
   end
 
   def test_route_to_woeid_ads

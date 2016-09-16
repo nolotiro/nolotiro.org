@@ -29,7 +29,7 @@ class PersonalAdListing < ActionDispatch::IntegrationTest
   end
 
   it 'lists wanted ads in a separate tab in user profile' do
-    click_link 'busco'
+    click_link 'peticiones'
 
     assert_selector '.ad_excerpt_list', count: 1, text: 'wan1'
   end

@@ -256,7 +256,8 @@ en:
     footer_explain: 'nolotiro.org is a website where you can give stuff for free or find free second hand stuff: furniture, chairs, bicycles, computers, laptops, tables, beds, clothe, toys, mobile phones and many other stuff you don''t want or need, so other people can recycle it and give it a new life.'
     forgot_your_password: Forgot your password?
     friends: Friends
-    gift_on: gift on%{woeid}
+    gift_on: gift on %{woeid}
+    gifts: presents
     give: gift
     hello_to: Hello %{recipient},
     help_translate: help us to translate
@@ -324,6 +325,7 @@ en:
     register: Register
     register_here: Register here
     remember_me: Remember me
+    requests: requests
     rss_suscribe: Suscribe via RSS
     save_failed: 'There is problem, please revied this:'
     search:
@@ -356,7 +358,6 @@ en:
     users_most_active_last_week: most active users last week
     view_ads_on: View ads in %{location}
     view_ads_on_your_city: View ads from your city or town
-    view_more_ads: See more ads >
     want: want
     want_to_leave: Do you want to delete your user?
     we_need_your_password: "(we need your password to confirm your edition)"

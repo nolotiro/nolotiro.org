@@ -7,6 +7,13 @@ class ChoosingLocationTest < ActionDispatch::IntegrationTest
   include WebMocking
   include Warden::Test::Helpers
 
+  it 'redirects there when user logged in and no location set' do
+    login_as create(:user, :stateless)
+    visit root_path
+
+    assert_selector 'h1', text: 'Cambia tu ciudad'
+  end
+
   it 'suggests locations matching name' do
     mocking_yahoo_woeid_similar('tenerife') do
       choose_location('tenerife')
@@ -22,7 +29,7 @@ class ChoosingLocationTest < ActionDispatch::IntegrationTest
       select 'Santa Cruz de Tenerife, Islas Canarias, España (0 anuncios)'
       click_button 'Elige tu ubicación'
 
-      assert_text 'regalo - Santa Cruz de Tenerife, Islas Canarias, España'
+      assert_location_page 'Santa Cruz de Tenerife, Islas Canarias, España'
     end
   end
 
@@ -32,7 +39,7 @@ class ChoosingLocationTest < ActionDispatch::IntegrationTest
       fill_in 'location', with: 'tenerife, islas canarias'
       click_button 'Enviar'
 
-      assert_text 'regalo - Santa Cruz de Tenerife, Islas Canarias, España'
+      assert_location_page 'Santa Cruz de Tenerife, Islas Canarias, España'
     end
   end
 
@@ -40,7 +47,7 @@ class ChoosingLocationTest < ActionDispatch::IntegrationTest
     mocking_yahoo_woeid_similar('tenerife_unique') do
       visit location_change_path(location: 'tenerife, islas canarias')
 
-      assert_text 'regalo - Santa Cruz de Tenerife, Islas Canarias, España'
+      assert_location_page 'Santa Cruz de Tenerife, Islas Canarias, España'
     end
   end
 
@@ -53,7 +60,7 @@ class ChoosingLocationTest < ActionDispatch::IntegrationTest
       logout
       login_as user
 
-      assert_text 'regalo - Santa Cruz de Tenerife, Islas Canarias, España'
+      assert_location_page 'Santa Cruz de Tenerife, Islas Canarias, España'
     end
 
     logout
@@ -65,5 +72,10 @@ class ChoosingLocationTest < ActionDispatch::IntegrationTest
     visit location_ask_path
     fill_in 'location', with: name
     click_button 'Enviar'
+  end
+
+  def assert_location_page(name)
+    assert_text 'No hay anuncios para esta ubicación.'
+    assert_text name
   end
 end

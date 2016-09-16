@@ -9,28 +9,36 @@ class AuthenticatedAdListing < ActionDispatch::IntegrationTest
   include Warden::Test::Helpers
   include Pagination
 
-  before do
+  around do |test|
     create(:ad, :in_mad, title: 'ava_mad1', status: 1, published_at: 1.hour.ago)
     create(:ad, :in_bar, title: 'ava_bar', status: 1)
     create(:ad, :in_mad, title: 'ava_mad2', status: 1, published_at: 1.day.ago)
     create(:ad, :in_mad, title: 'res_mad', status: 2)
     create(:ad, :in_mad, title: 'del_mad', status: 3)
 
-    with_pagination(1) do
-      login_as create(:user, woeid: 766_273)
+    login_as create(:user, woeid: 766_273)
 
-      mocking_yahoo_woeid_info(766_273) { visit root_path }
+    with_pagination(1) do
+      mocking_yahoo_woeid_info(766_273) do
+        visit root_path
+
+        test.call
+      end
     end
+
+    logout
   end
 
-  after { logout }
+  it 'shows a link to publish ads in the users location' do
+    assert_selector 'a', text: '+ Publicar anuncio en Madrid'
+  end
 
   it 'lists first page of available ads in users location in home page' do
     assert_selector '.ad_excerpt_list', count: 1, text: 'ava_mad1'
   end
 
   it 'lists other pages of available ads in users location in home page' do
-    with_pagination(1) { click_link 'siguiente' }
+    click_link 'siguiente'
 
     assert_selector '.ad_excerpt_list', count: 1, text: 'ava_mad2'
   end

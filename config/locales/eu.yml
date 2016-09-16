@@ -257,6 +257,7 @@ eu:
     forgot_your_password: 
     friends: 
     gift_on: 
+    gifts: 
     give: 
     hello_to: 
     help_translate: 
@@ -324,6 +325,7 @@ eu:
     register: 
     register_here: 
     remember_me: 
+    requests: 
     rss_suscribe: 
     save_failed: 
     search:
@@ -356,7 +358,6 @@ eu:
     users_most_active_last_week: 
     view_ads_on: 
     view_ads_on_your_city: 
-    view_more_ads: 
     want: 
     want_to_leave: 
     we_need_your_password: 

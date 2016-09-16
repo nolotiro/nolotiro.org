@@ -1,8 +1,6 @@
 <% if @woeid.nil? %>
-  <% content_for(:title, t('nlt.all_ads')) %>
-  <% content_for(:meta_title, t('nlt.all_ads')) %>
+  <% content_for(:meta_title, t('nlt.home_title')) %>
 <% else %>
-  <% content_for(:title, @woeid[:full]) %>
   <% content_for(:meta_title, t('nlt.keywords') + @woeid[:full]) %>
   <% content_for(:meta_description, t('nlt.gift_on', woeid: @woeid[:full])) %>
 <% end %>
@@ -17,6 +15,11 @@
   <div class="ad_change_location_home">
     <% if @woeid %>
       <%= link_to t('nlt.change_city'), location_ask_path %>
+    <% elsif location_suggest %>
+      <% title = t('nlt.view_ads_on', location: location_suggest.city) %>
+      <%= link_to_change_location location_suggest.fullname, title %>
+    <% else %>
+      <%= link_to t('nlt.view_ads_on_your_city'), location_ask_path %>
     <% end %>
   </div>
 
@@ -29,40 +32,41 @@
   </div>
 <% end %>
 
-<div id="location_header_section">
-  <span class="give-want">
-    <%= link_to t('nlt.give'),
-                url_for(params.except(:page, :status).merge(type: 'give')),
-                class: @type == "give" ? "actual" : "''" %>
-    &nbsp;
-    <%= link_to t('nlt.want'),
-                url_for(params.except(:page, :status).merge(type: 'want')),
-                class: @type == "want" ? "actual" : "''" %>
-  </span>
+<div class="col-md-9 col-sm-9 col-xs-12">
+  <ul class="nav give-want-tabs">
+    <li role="presentation" class="<%= 'active' if @type == "give" %>">
+      <%= link_to t('nlt.gifts'),
+                  url_for(params.except(:page, :status).merge(type: 'give')) %>
+    </li>
 
-  <div class="location_name">
-    <h1>
-      <% if @woeid.nil? %>
-        <%= t('nlt.all_ads') %>
-      <% else %>
-        <%= t('nlt.searching_on_html', q: @q) if @q %>
+    <li role="presentation" class="<%= 'active' if @type == "want" %>">
+      <%= link_to t('nlt.requests'),
+                  url_for(params.except(:page, :status).merge(type: 'want')) %>
+    </li>
+  </ul>
 
-        <%= @type == "give" ? t('nlt.give') : t('nlt.want') %>
-        - <%= @woeid[:full] %>
+  <div id="location_header_section">
+    <div class="location_name">
+      <h1>
+        <% if @woeid.nil? %>
+          <%= t('nlt.all_ads') %>
+        <% else %>
+          <%= t('nlt.searching_on_html', q: @q) if @q %>
+
+          <%= @woeid[:full] %>
+        <% end %>
+      </h1>
+
+      <br>
+      <%= render "ads/search", q: @q %>
+
+      <%= link_to location_ask_path, class: "world_link" do %>
+        <%= image_tag "change_location.png", alt: "change location" %>
+        <%= t('nlt.change_city') %>
       <% end %>
-    </h1>
-
-    <br>
-    <%= render "ads/search", q: @q %>
-
-    <%= link_to location_ask_path, class: "world_link" do %>
-      <%= image_tag "change_location.png", alt: "change location" %>
-      <%= t('nlt.change_city') %>
-    <% end %>
+    </div>
   </div>
-</div>
 
-<div class="col-md-9 col-sm-9">
   <% if @type == "give" %>
     <%= render "woeid/filter_status" %>
   <% end %>
@@ -89,6 +93,6 @@
   <% end %>
 </div>
 
-<div class="col-md-3 col-sm-3">
+<div class="col-md-3 col-sm-3 col-xs-12">
   <%= render 'partials/rankings_sidebar' %>
 </div>

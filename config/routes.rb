@@ -19,11 +19,11 @@ NolotiroOrg::Application.routes.draw do
 
   # i18n
   scope '(:locale)', locale: /#{I18n.available_locales.join("|")}/ do
-    root 'ads#index'
+    root 'woeid#show', defaults: { type: 'give' }
 
     # FIXME: type on ads#create instead of params
     # FIXME: nolotirov2 legacy - redirect from /es/ad/create
-    resources :ads, path: 'ad', path_names: { new: 'create' } do
+    resources :ads, path: 'ad', path_names: { new: 'create' }, except: :index do
       resources :comments, only: :create
     end
 
