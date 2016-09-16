@@ -36,6 +36,8 @@ class WoeidController < ApplicationController
   private
 
   def resolve_woeid
+    return if request.path =~ %r{/listall/}
+
     params[:id].presence || user_woeid
   end
 

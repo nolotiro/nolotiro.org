@@ -25,6 +25,19 @@ class UnauthenticatedAdListing < ActionDispatch::IntegrationTest
     assert_select 'a', 'Ver anuncios en Mountain View'
   end
 
+  it 'lists first page of available ads everywhere in all ads page' do
+    visit ads_listall_path(type: 'give')
+
+    assert_selector '.ad_excerpt_list', count: 1, text: 'ava_mad'
+  end
+
+  it 'lists second page of available ads everywhere in all ads page' do
+    visit ads_listall_path(type: 'give')
+    click_link 'siguiente'
+
+    assert_selector '.ad_excerpt_list', count: 1, text: 'ava_bar'
+  end
+
   it 'lists first page of available ads everywhere in home page' do
     visit root_path
 
