@@ -69,7 +69,7 @@ a
       padding: 0 10px
 
     &:last-child > span
-      border-right: 0px solid $gray-separator
+      border-right: 0 solid $gray-separator
 
     /* I can't find a better way to vertically-center the envelope... */
     img
@@ -77,9 +77,9 @@ a
 
 #select_language_box
   position: absolute
-  top: 0px
+  top: 0
   float: right
-  right: 0px
+  right: 0
   border: 1px solid white
   display: inline-block
   height: 12px
@@ -98,7 +98,7 @@ a
   a
     padding: 2px
     padding-left: 4px
-    padding-right: 0px
+    padding-right: 0
     line-height: 16px
     height: 20px
     display: none
@@ -119,7 +119,7 @@ a
   .lang.active
     display: block
     position: absolute
-    top: 0px
+    top: 0
 
   a:hover
     background-color: #999 !important
@@ -130,7 +130,7 @@ form.searchbox
   display: inline-block
   width: auto
   padding-right: 20px
-  top: 0px
+  top: 0
 
   dd
     display: inline
@@ -144,7 +144,7 @@ form.searchbox
     border-color: $gray-separator
 
   dl
-    margin: 0px !important
+    margin: 0 !important
 
 .user_profile h4
   font-size: 14px
@@ -210,7 +210,7 @@ form.searchbox
   padding: 3px
   font-weight: bold
   font-size: 11px
-  border: 0px
+  border: 0
   margin-right: 4px
 
 .available
@@ -521,7 +521,7 @@ form.searchbox
  * Home
 
 dl, dd
-  margin: 0px !important
+  margin: 0 !important
 
 .ad_excerpt_list
   padding-top: 14px
@@ -671,7 +671,7 @@ dl, dd
     font-size: 1em
     font-weight: bold
     margin-bottom: 1.5em
-    padding-left: 0px
+    padding-left: 0
 
 /* paginator  **********
 
@@ -765,7 +765,7 @@ $langs: <%= I18n.available_locales.join(" ") %>
     .flag-#{$l}
       vertical-align: center
       background-repeat: no-repeat
-      background-position: 0px 5px, center
+      background-position: 0 5px, center
       background-image: image-url("flags/#{$l}.gif")
 
       span
@@ -827,14 +827,14 @@ $langs: <%= I18n.available_locales.join(" ") %>
     display: none
 
   #facebook-button
-    padding: 0px
-    margin: 0px
+    padding: 0
+    margin: 0
 
   #twitter-button
-    padding: 0px
+    padding: 0
 
   .ad_excerpt
-    padding: 0px
+    padding: 0
     margin: 10px 10px
     width: 95%
 
@@ -864,7 +864,7 @@ $langs: <%= I18n.available_locales.join(" ") %>
     display: none
 
   .message-container-left, .message-container-right
-    margin: 0px
+    margin: 0
 
 @media only screen and (max-width: 365px)
   #cookie-bar
