@@ -3,7 +3,7 @@
     = errors_for(message)
 
     .form-group
-      = label_tag :subject, t('mailboxer.new.subject')
+      = label_tag :subject, t('conversations.new.subject')
       %br
       = text_field_tag :subject, params[:subject]
 
@@ -15,8 +15,8 @@
                       required: true
 
       %p.help-block
-        = t 'mailboxer.new.body_max'
+        = t 'conversations.new.body_max'
 
     = hidden_field_tag :recipient_id, params[:recipient_id]
 
-    = submit_tag t('mailboxer.new.submit')
+    = submit_tag t('conversations.new.submit')

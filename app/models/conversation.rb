@@ -9,34 +9,38 @@ class Conversation < ActiveRecord::Base
   belongs_to :originator, class_name: 'User'
   belongs_to :recipient, class_name: 'User'
 
-  scope :involving, ->(user) do
-    joins(:receipts)
-      .participant(user)
-      .whitelisted(user)
-      .merge(Receipt.untrashed_by(user))
-      .distinct
+  scope :untrashed_by, ->(user) do
+    joins(:receipts).merge(Receipt.untrashed_by(user)).distinct
   end
 
   scope :unread_by, ->(user) do
-    joins(:receipts)
-      .participant(user)
-      .whitelisted(user)
-      .merge(Receipt.unread_by(user))
-      .distinct
+    joins(:receipts).merge(Receipt.unread_by(user)).distinct
   end
 
   scope :participant, ->(user) do
     where('recipient_id = ? OR originator_id = ?', user.id, user.id)
   end
 
-  scope :whitelisted, ->(user) do
+  scope :whitelisted_for, ->(user) do
     joined = joins <<-SQL.squish
       LEFT OUTER JOIN blockings
       ON (recipient_id = blocker_id AND originator_id = blocked_id) OR
          (recipient_id = blocked_id AND originator_id = blocker_id)
     SQL
 
-    joined.where('blockings.blocked_id IS NULL OR blockings.blocked_id <> ?', user.id)
+    joined.merge(Blocking.not_affecting(user))
+  end
+
+  scope :with_unlocked_participants, -> do
+    joined = joins <<-SQL.squish
+      LEFT OUTER JOIN users u1 ON conversations.originator_id = u1.id
+      LEFT OUTER JOIN users u2 ON conversations.recipient_id = u2.id
+    SQL
+
+    joined.where <<-SQL.squish
+      (u1.locked IS NULL OR u1.locked = 0) AND
+      (u2.locked IS NULL OR u2.locked = 0)
+    SQL
   end
 
   def self.start(sender:, recipient:, subject: '', body: '')

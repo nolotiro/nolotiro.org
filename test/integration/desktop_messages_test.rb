@@ -2,15 +2,8 @@
 
 require 'test_helper'
 require 'support/desktop_integration'
-require 'integration/concerns/standard_messages'
-require 'integration/concerns/self_messages'
+require 'integration/concerns/messaging_tests'
 
-module DesktopMessagesTest
-  class StandardMessagesTest < DesktopIntegrationTest
-    include StandardMessages
-  end
-
-  class SelfDesktopMessagesTest < DesktopIntegrationTest
-    include SelfMessages
-  end
+class DesktopMessagesTest < DesktopIntegrationTest
+  include MessagingTests
 end

@@ -58,6 +58,17 @@ eu:
       success: 
     destroy:
       success: 
+  conversations:
+    new:
+      body_max: 
+      button: 
+      subject: 
+      submit: 
+      title: 
+    index:
+      title: 
+    show:
+      title_html: 
   devise:
     confirmations:
       action: 
@@ -132,22 +143,11 @@ eu:
       back: 
       trash: 
       trash_selected: 
-    new:
-      body_max: 
-      button: 
-      errors: 
-      legend: 
-      subject: 
-      submit: 
-      title: 
     notifications:
       sent: 
       trash: 
     table:
       none: 
-    titles:
-      conversation: 
-      index: 
   mailer:
     confirmation_reminder:
       p1: 

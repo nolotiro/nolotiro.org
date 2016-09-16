@@ -58,6 +58,17 @@ fr:
       success: 
     destroy:
       success: 
+  conversations:
+    new:
+      body_max: Maximum 1500 caractères
+      button: Envoyer
+      subject: Thème
+      submit: Envoyer
+      title: Nouveau message privé pour l'utilisateur %{user}
+    index:
+      title: Messages %{username}
+    show:
+      title_html: Conversation avec %{recipient} objet %{subject}
   devise:
     confirmations:
       action: Confirmer mon compte
@@ -132,22 +143,11 @@ fr:
       back: "< Retour aux messages"
       trash: Déplacer un message à corbeille
       trash_selected: Supprimer les messages sélectionnés
-    new:
-      body_max: Maximum 1500 caractères
-      button: Envoyer
-      errors: 'Il y a un problème, vérifier cela:'
-      legend: Envoyer message
-      subject: Thème
-      submit: Envoyer
-      title: Nouveau message privé pour l'utilisateur %{user}
     notifications:
       sent: Message envoyé
       trash: Message déplacé à la corbeille
     table:
       none: Pas de messages de ce type
-    titles:
-      conversation: Conversation avec %{recipient} objet %{subject}
-      index: Messages %{username}
   mailer:
     confirmation_reminder:
       p1: Nous avons détecté que vous avez créé un compte sur nolotiro.org et vous ne l'avez pas confirmé.

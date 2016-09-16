@@ -58,6 +58,17 @@ en:
       success: User blocked
     destroy:
       success: User unblocked
+  conversations:
+    new:
+      body_max: Max. 1500 characters
+      button: Send
+      subject: Topic
+      submit: Send
+      title: New private message for user %{user}
+    index:
+      title: Message from %{username}
+    show:
+      title_html: Conversation with %{recipient} subject %{subject}
   devise:
     confirmations:
       action: Confirm my account
@@ -132,22 +143,11 @@ en:
       back: "< back to messages"
       trash: Delete conversation
       trash_selected: Delete selected conversations
-    new:
-      body_max: Max. 1500 characters
-      button: Send
-      errors: 'There is a problem, please check this:'
-      legend: Send message
-      subject: Topic
-      submit: Send
-      title: New private message for user %{user}
     notifications:
       sent: Sent message
       trash: Conversation deleted
     table:
       none: You do not have this type of messages
-    titles:
-      conversation: Conversation with %{recipient} subject %{subject}
-      index: Message from %{username}
   mailer:
     confirmation_reminder:
       p1: We have detected that you have created an account on nolotiro.org and you have not confirmed yet.

@@ -5,10 +5,10 @@ class ConversationsController < ApplicationController
   before_action :load_conversation, only: [:show, :update]
 
   def index
-    @conversations = Conversation.involving(current_user)
-                                 .includes(:originator, :recipient)
-                                 .order(updated_at: :desc)
-                                 .paginate(page: params[:page])
+    @conversations =
+      policy_scope(Conversation).includes(:originator, :recipient)
+                                .order(updated_at: :desc)
+                                .paginate(page: params[:page])
 
     @unread_counts = Message.where(conversation_id: @conversations.ids)
                             .unread_by(current_user)
@@ -70,8 +70,8 @@ class ConversationsController < ApplicationController
   end
 
   def trash
-    conversation = Conversation.involving(current_user)
-                               .find(params[:id] || params[:conversations])
+    conversation =
+      policy_scope(Conversation).find(params[:id] || params[:conversations])
 
     Array(conversation).each { |c| c.move_to_trash(current_user) }
 
@@ -82,7 +82,7 @@ class ConversationsController < ApplicationController
   private
 
   def load_conversation
-    @conversation = Conversation.involving(current_user).find(params[:id])
+    @conversation = Conversation.find(params[:id])
   end
 
   def start_params

@@ -2,15 +2,18 @@
 
 require 'test_helper'
 require 'support/mobile_integration'
-require 'integration/concerns/standard_messages'
-require 'integration/concerns/self_messages'
+require 'integration/concerns/messaging_tests'
 
-module MobileMessagesTest
-  class StandardMessagesTest < DesktopIntegrationTest
-    include StandardMessages
-  end
+class MobileMessagesTest < MobileIntegrationTest
+  include MessagingTests
 
-  class SelfDesktopMessagesTest < DesktopIntegrationTest
-    include SelfMessages
+  #
+  # In mobile screens, sometimes the cookie-bar gets in the middle so we need
+  # to dismiss it first.
+  #
+  before do
+    visit root_path
+
+    within('#cookie-bar') { click_link 'OK' }
   end
 end

@@ -58,6 +58,17 @@ pt:
       success: Usuário bloqueado
     destroy:
       success: Usuário desbloqueao
+  conversations:
+    new:
+      body_max: Máximo 1500 caracteres
+      button: Enviar
+      subject: Assunto
+      submit: Enviar
+      title: Nova mensagem privada para o usuário %{user}
+    index:
+      title: Mensagens de %{username}
+    show:
+      title_html: Conversa com %{recipient} assunto %{subject}
   devise:
     confirmations:
       action: Confirmar minha conta
@@ -132,22 +143,11 @@ pt:
       back: "< voltar a mensagens"
       trash: Apagar conversa
       trash_selected: Apagar conversas selecionadas
-    new:
-      body_max: Máximo 1500 caracteres
-      button: Enviar
-      errors: 'Há um problema, verifique isto:'
-      legend: Enviar mensagem
-      subject: Assunto
-      submit: Enviar
-      title: Nova mensagem privada para o usuário %{user}
     notifications:
       sent: Mensagem enviada
       trash: Conversa apagada
     table:
       none: Você não têm mensagens de este tipo
-    titles:
-      conversation: Conversa com %{recipient} assunto %{subject}
-      index: Mensagens de %{username}
   mailer:
     confirmation_reminder:
       p1: Detectamos que você criou uma nova conta em nolotiro.org que ainda não foi confirmada.

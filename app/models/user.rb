@@ -121,14 +121,6 @@ class User < ActiveRecord::Base
     username
   end
 
-  def mailboxer_email(_object)
-    email
-  end
-
-  def unread_conversations_count
-    Conversation.unread_by(self).size
-  end
-
   def admin?
     role == 1
   end

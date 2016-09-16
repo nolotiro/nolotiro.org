@@ -10,6 +10,10 @@ class Blocking < ActiveRecord::Base
   validates :blocker, :blocked, presence: true
   validates :blocker, uniqueness: { scope: :blocked }
 
+  scope :not_affecting, ->(user) do
+    where('blockings.blocked_id IS NULL OR blockings.blocked_id <> ?', user.id)
+  end
+
   def self.none_between?(user1, user2)
     condition = <<-SQL.squish
       (blocker_id = :uid1 AND blocked_id = :uid2) OR

@@ -1,10 +1,11 @@
 .message-excerpt
   .message-from-left
-    = link_to profile_path(current_user.username) do 
+    = link_to profile_path(current_user.username) do
       = image_tag "contact.png"
-      = current_user.username 
+      = current_user.username
+
   .message-container-right
-    .triangle-me 
+    .triangle-me
     .bubble-reply.bg-bubble-me
       #reply
         = form_tag conversation_path(message.conversation), method: :put do |f|
@@ -14,6 +15,6 @@
             = text_area_tag :body, params[:body], size: '80x3', maxlength: 1500
 
             %p.help-block
-              = t 'mailboxer.new.body_max'
+              = t 'conversations.new.body_max'
 
-          = submit_tag t('mailboxer.new.submit')
+          = submit_tag t('conversations.new.submit')
