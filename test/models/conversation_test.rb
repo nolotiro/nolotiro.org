@@ -15,6 +15,11 @@ class ConversationTest < ActiveSupport::TestCase
   def test_unread_by_scope_returns_unread_conversations_only
     assert_equal 0, Conversation.unread_by(@user).size
     assert_equal 1, Conversation.unread_by(@recipient).size
+
+    @conversation.mark_as_read(@recipient)
+
+    assert_equal 0, Conversation.unread_by(@user).size
+    assert_equal 0, Conversation.unread_by(@recipient).size
   end
 
   def test_unread_by_scope_excludes_deleted_conversations
@@ -36,13 +41,6 @@ class ConversationTest < ActiveSupport::TestCase
 
     assert_equal 1, Conversation.whitelisted_for(@user).size
     assert_equal 0, Conversation.whitelisted_for(@recipient).size
-  end
-
-  def test_mark_as_read_does_what_its_name_indicates
-    @conversation.mark_as_read(@recipient)
-
-    assert_equal 0, Conversation.unread_by(@user).size
-    assert_equal 0, Conversation.unread_by(@recipient).size
   end
 
   def test_reply_touches_the_conversation_timestamp
