@@ -15,7 +15,7 @@ class UnauthenticatedAdListing < ActionDispatch::IntegrationTest
     create(:ad, :in_ten, title: 'del_ten', status: 3)
 
     with_pagination(1) do
-      mocking_all_locations { test.call }
+      VCR.use_cassette('mad_bar_ten_info_es') { test.call }
     end
   end
 
@@ -61,15 +61,5 @@ class UnauthenticatedAdListing < ActionDispatch::IntegrationTest
 
     assert_text 'Madrid, Madrid, España'
     assert_selector '.ad_excerpt_list', count: 0
-  end
-
-  private
-
-  def mocking_all_locations
-    mocking_yahoo_woeid_info(766_273) do
-      mocking_yahoo_woeid_info(753_692) do
-        mocking_yahoo_woeid_info(773_692) { yield }
-      end
-    end
   end
 end
