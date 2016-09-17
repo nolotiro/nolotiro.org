@@ -293,23 +293,28 @@ form.searchbox
   background-color: #fff
 
 .message-excerpt
-  width: 100%
-  display: block
+  @include make-row
+
   margin-bottom: 20px
-  position: relative
+
+.message-from
+  text-align: center
+  width: 90px
+  font-size: 0.8em
+  display: block
+
+  img
+    margin: 0 15px
 
 .message-from-left
-  text-align: center
-  width: 120px
+  @extend .message-from
+
   float: left
-  font-size: 0.8em
-  display: block
 
 .message-from-right
-  text-align: center
-  width: 120px
+  @extend .message-from
+
   float: right
-  font-size: 0.8em
 
 %message-container
   font-size: 0.9em
@@ -322,16 +327,12 @@ form.searchbox
 .message-container-left
   @extend %message-container
 
-  margin-right: 120px
-
-.message-from-left img, .message-from-right img
-  margin-left: 30px
-  margin-right: 30px
+  margin-right: 90px
 
 .message-container-right
   @extend %message-container
 
-  margin-left: 120px
+  margin-left: 90px
 
 .triangle-me
   position: absolute
@@ -784,7 +785,7 @@ ul#tabnav
   height: 250px
 
 #body
-  width: 90%
+  width: 100%
   height: 100px
 
 #social-butttons
@@ -851,13 +852,6 @@ ul#tabnav
 @media only screen and (min-width: 768px)
   .mobile
     display: none !important
-
-@media only screen and (max-width: 500px)
-  .message-from-left, .message-from-right
-    display: none
-
-  .message-container-left, .message-container-right
-    margin: 0
 
 @media only screen and (max-width: 365px)
   #cookie-bar
