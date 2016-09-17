@@ -75,6 +75,8 @@ a
     img
       margin-bottom: 4px
 
+$langs: <%= I18n.available_locales.join(" ") %>
+
 #select_language_box
   position: absolute
   top: 0
@@ -94,7 +96,9 @@ a
     background-color: #fff
     height: auto
 
-#select_language_box
+    a
+      display: block
+
   a
     padding: 2px
     padding-left: 4px
@@ -105,6 +109,11 @@ a
     width: 100%
     text-decoration: none !important
 
+    &:hover
+      background-color: #999 !important
+      text-decoration: none !important
+      color: #fff !important
+
   img
     text-decoration: none !important
     border: 0
@@ -112,19 +121,20 @@ a
     clear: left
     vertical-align: baseline
 
-  &:hover a
-    display: block
-
-#select_language_box
   .lang.active
     display: block
     position: absolute
     top: 0
 
-  a:hover
-    background-color: #999 !important
-    text-decoration: none !important
-    color: #fff !important
+  @each $l in $langs
+    .flag-#{$l}
+      vertical-align: center
+      background-repeat: no-repeat
+      background-position: 0 5px, center
+      background-image: image-url("flags/#{$l}.gif")
+
+      span
+        margin-left: 15px
 
 form.searchbox
   display: inline-block
@@ -748,22 +758,6 @@ ul#tabnav
     color: #000 !important
 
 /* end css tabs
-
-$langs: <%= I18n.available_locales.join(" ") %>
-
-=flags-countries
-  @each $l in $langs
-    .flag-#{$l}
-      vertical-align: center
-      background-repeat: no-repeat
-      background-position: 0 5px, center
-      background-image: image-url("flags/#{$l}.gif")
-
-      span
-        margin-left: 15px
-
-#select_language_box
-  +flags-countries
 
 #cookie-bar
   position: fixed
