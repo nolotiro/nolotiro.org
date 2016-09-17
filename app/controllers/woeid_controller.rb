@@ -19,12 +19,6 @@ class WoeidController < ApplicationController
       raise ActionController::RoutingError, 'Not Found'
     end
 
-    if @id
-      @woeid = WoeidHelper.convert_woeid_name(@id)
-
-      raise ActionController::RoutingError, 'Not Found' if @woeid.nil?
-    end
-
     scope = Ad.public_send(@type)
               .public_send(@status)
               .by_woeid_code(@id)
@@ -45,6 +39,10 @@ class WoeidController < ApplicationController
     redirect_to location_ask_path if user_signed_in? && user_woeid.nil?
 
     @id = resolve_woeid
+    return unless @id
+
+    @woeid = WoeidHelper.convert_woeid_name(@id)
+    raise ActionController::RoutingError, 'Not Found' if @woeid.nil?
   end
 
   def user_woeid
