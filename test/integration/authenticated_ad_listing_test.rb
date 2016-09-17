@@ -10,9 +10,9 @@ class AuthenticatedAdListing < ActionDispatch::IntegrationTest
   include Pagination
 
   around do |test|
-    create(:ad, :in_mad, title: 'ava_mad1', status: 1, published_at: 1.hour.ago)
-    create(:ad, :in_bar, title: 'ava_bar', status: 1, published_at: 2.hours.ago)
-    create(:ad, :in_mad, title: 'ava_mad2', status: 1, published_at: 1.day.ago)
+    create(:ad, :in_mad, title: 'ava_mad1', status: 1, published_at: 1.day.ago)
+    create(:ad, :in_bar, title: 'ava_bar', status: 1, published_at: 2.days.ago)
+    create(:ad, :in_mad, title: 'ava_mad2', status: 1, published_at: 3.days.ago)
     create(:ad, :in_mad, title: 'res_mad', status: 2)
     create(:ad, :in_mad, title: 'del_mad', status: 3)
 
