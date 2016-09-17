@@ -36,15 +36,13 @@ class WoeidController < ApplicationController
   private
 
   def resolve_woeid
-    return @id if @id.present?
-
-    user_woeid
+    params[:id].presence || user_woeid
   end
 
   def check_location
     redirect_to location_ask_path if user_signed_in? && user_woeid.nil?
 
-    @id = params[:id].presence || user_woeid
+    @id = resolve_woeid
   end
 
   def user_woeid
