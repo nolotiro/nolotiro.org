@@ -61,9 +61,10 @@ class Ad < ActiveRecord::Base
   self.per_page = 20
 
   scope :top_locations, -> do
-    Rails.cache.fetch("#{I18n.locale}/top-locations-#{cache_digest}") do
-      rank_by(:woeid_code).select(:woeid_code, 'COUNT(woeid_code) as n_ads')
-    end
+    key = "#{I18n.locale}/top-locations-#{cache_digest}"
+    sql_count = 'COUNT(woeid_code) as n_ads'
+
+    Rails.cache.fetch(key) { rank_by(:woeid_code).select(:woeid_code, sql_count) }
   end
 
   def self.rank_by(attribute)
