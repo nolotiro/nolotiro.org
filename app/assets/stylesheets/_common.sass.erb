@@ -84,7 +84,7 @@ $langs: <%= I18n.available_locales.join(" ") %>
   right: 0
   border: 1px solid white
   display: inline-block
-  height: 12px
+  height: 24px
   overflow: hidden
   vertical-align: top
   width: 92px
@@ -100,11 +100,10 @@ $langs: <%= I18n.available_locales.join(" ") %>
       display: block
 
   a
-    padding: 2px
     padding-left: 4px
     padding-right: 0
-    line-height: 16px
-    height: 20px
+    line-height: 24px
+    height: 24px
     display: none
     width: 100%
     text-decoration: none !important
@@ -130,7 +129,7 @@ $langs: <%= I18n.available_locales.join(" ") %>
     .flag-#{$l}
       vertical-align: center
       background-repeat: no-repeat
-      background-position: 0 5px, center
+      background-position: 0 7px, center
       background-image: image-url("flags/#{$l}.gif")
 
       span
