@@ -5,7 +5,7 @@ html
   min-width: 320px
   width: 100%
 
-@media only screen and (max-width: 767px)
+@media only screen and (max-width: $container-sm)
   .container
     padding: 0
 
@@ -597,7 +597,7 @@ dl, dd
   width: 96%
   overflow: auto
 
-@media only screen and (max-width: 767px)
+@media only screen and (max-width: $container-sm)
   .site-logo
     width: 100%
 
@@ -608,7 +608,7 @@ dl, dd
     .ad_create_tab
       width: 100%
 
-@media only screen and (min-width: 768px)
+@media only screen and (min-width: $container-sm + 1)
   .site-logo
     width: 50%
     float: left
@@ -806,7 +806,7 @@ ul#tabnav
   font-weight: bold
   border-color: #d62d20
 
-@media only screen and (max-width: 767px)
+@media only screen and (max-width: $container-sm)
   .site-name
     width: 50%
 
@@ -846,6 +846,6 @@ ul#tabnav
     margin-left: 4%
     clear: both
 
-@media only screen and (min-width: 768px)
+@media only screen and (min-width: $container-sm + 1)
   .mobile
     display: none !important
