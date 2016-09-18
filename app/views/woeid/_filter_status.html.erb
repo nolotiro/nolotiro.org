@@ -1,13 +1,13 @@
 <div class="filter_status">
   <%= link_to t('nlt.available'),
               url_for(params.merge(type: 'give', status: 'available').except(:page)),
-              class: status_scope == "available" ? "actual" : "''" %>
+              status_scope == "available" ? { class: "actual" } : {} %>
 
   <%= link_to t('nlt.booked'),
               url_for(params.merge(type: 'give', status: 'booked').except(:page)),
-              class: status_scope == "booked" ? "actual" : "''" %>
+              status_scope == "booked" ? { class: "actual" } : {} %>
 
   <%= link_to t('nlt.delivered'),
               url_for(params.merge(type: 'give', status: 'delivered').except(:page)),
-              class: status_scope == "delivered" ? "actual" : "''" %>
+              status_scope == "delivered" ? { class: "actual" } : {} %>
 </div>
