@@ -41,8 +41,8 @@ class WoeidController < ApplicationController
     @id = resolve_woeid
     return unless @id
 
-    @woeid = WoeidHelper.convert_woeid_name(@id)
-    raise ActionController::RoutingError, 'Not Found' if @woeid.nil?
+    @woeid_info = WoeidHelper.convert_woeid_name(@id)
+    raise ActionController::RoutingError, 'Not Found' if @woeid_info.nil?
   end
 
   def user_woeid

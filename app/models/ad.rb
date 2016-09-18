@@ -107,15 +107,15 @@ class Ad < ActiveRecord::Base
   end
 
   def woeid_name
-    woeid[:full]
+    woeid_info[:full]
   end
 
   def woeid_name_short
-    woeid[:short]
+    woeid_info[:short]
   end
 
-  def woeid
-    @woeid ||= WoeidHelper.convert_woeid_name(woeid_code)
+  def woeid_info
+    @woeid_info ||= WoeidHelper.convert_woeid_name(woeid_code)
   end
 
   def full_title
