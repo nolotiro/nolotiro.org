@@ -57,6 +57,13 @@ class AuthenticatedAdListing < ActionDispatch::IntegrationTest
     assert_selector '.ad_excerpt_list', count: 1, text: 'avamad2'
   end
 
+  it 'lists available ads in users location in home page' do
+    visit root_path
+    click_link 'disponible'
+
+    assert_selector '.ad_excerpt_list', count: 1, text: 'avamad1'
+  end
+
   it 'lists reserved ads in users location in home page' do
     visit root_path
     click_link 'reservado'
