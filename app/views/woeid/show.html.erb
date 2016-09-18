@@ -1,19 +1,25 @@
-<% if @woeid.nil? %>
+<% if current_woeid.nil? %>
   <% content_for(:meta_title, t('nlt.home_title')) %>
 <% else %>
-  <% content_for(:meta_title, t('nlt.keywords') + @woeid[:full]) %>
-  <% content_for(:meta_description, t('nlt.gift_on', woeid: @woeid[:full])) %>
+  <% content_for(:meta_title, t('nlt.keywords') + @woeid_info[:full]) %>
+  <% content_for(:meta_description,
+                 t('nlt.gift_on', woeid: @woeid_info[:full])) %>
 <% end %>
 
-<% if @woeid %>
+<% if current_woeid %>
   <% content_for :meta_extra do %>
-    <link rel="alternate" type="application/rss+xml" title="nolotiro.org - <%= @woeid[:full] %>" href="<%= rss_type_url(woeid: @id, type: @type, status: @status) %>" />
+    <link rel="alternate"
+          type="application/rss+xml"
+          title="nolotiro.org - <%= @woeid_info[:full] %>"
+          href="<%= rss_type_url(woeid: current_woeid,
+                                 type: @type,
+                                 status: @status) %>" />
   <% end %>
 <% end %>
 
 <% content_for :action do %>
   <div class="ad_change_location_home">
-    <% if @woeid %>
+    <% if current_woeid %>
       <%= link_to t('nlt.change_city'), location_ask_path %>
     <% elsif location_suggest %>
       <% title = t('nlt.view_ads_on', location: location_suggest.city) %>
@@ -24,8 +30,9 @@
   </div>
 
   <div class="ad_create_tab">
-    <% if @woeid%>
-      <%= link_to "+ #{t('nlt.publish_ad_on', woeid: @woeid[:short])}", new_ad_path %>
+    <% if current_woeid %>
+      <%= link_to "+ #{t('nlt.publish_ad_on', woeid: @woeid_info[:short])}",
+                  new_ad_path %>
     <% else %>
       <%= link_to "+ #{t('nlt.to_publish_ad')}", new_ad_path %>
     <% end %>
@@ -48,12 +55,12 @@
   <div id="location_header_section">
     <div class="location_name">
       <h1>
-        <% if @woeid.nil? %>
+        <% if current_woeid.nil? %>
           <%= t('nlt.all_ads') %>
         <% else %>
           <%= t('nlt.searching_on_html', q: @q) if @q %>
 
-          <%= @woeid[:full] %>
+          <%= @woeid_info[:full] %>
         <% end %>
       </h1>
 
@@ -68,13 +75,13 @@
   </div>
 
   <% if @type == "give" %>
-    <%= render "woeid/filter_status" %>
+    <%= render "filter_status" %>
   <% end %>
 
   <% if @ads.any? %>
     <%= render 'ads/list_with_adsense', ads: @ads %>
 
-    <%= will_paginate @ads, params: params.merge(id: @id),
+    <%= will_paginate @ads, params: params.merge(id: current_woeid),
                             inner_window: 2,
                             outer_window: -1 %>
   <% else %>
@@ -85,11 +92,11 @@
     <% end %>
   <% end %>
 
-  <% if @woeid %>
+  <% if current_woeid %>
     <div class="rss">
-      <%= link_to rss_type_path(woeid: @id, type: "give") do %>
+      <%= link_to rss_type_path(woeid: current_woeid, type: "give") do %>
         <%= image_tag "icons/rss.png", alt: t("nlt.rss_suscribe") %>
-        &nbsp; <%= t('nlt.rss_suscribe') %> - <%= @woeid[:full] %>
+        &nbsp; <%= t('nlt.rss_suscribe') %> - <%= @woeid_info[:full] %>
       <% end %>
     </div>
   <% end %>

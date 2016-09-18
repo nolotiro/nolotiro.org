@@ -9,10 +9,10 @@ class UnauthenticatedAdListing < ActionDispatch::IntegrationTest
   include Pagination
 
   around do |test|
-    create(:ad, :in_mad, title: 'ava_mad', published_at: 1.hour.ago, status: 1)
-    create(:ad, :in_bar, title: 'ava_bar', published_at: 2.hours.ago, status: 1)
-    create(:ad, :in_mad, title: 'res_mad', status: 2)
-    create(:ad, :in_ten, title: 'del_ten', status: 3)
+    create(:ad, :in_mad, title: 'avamad', published_at: 1.day.ago, status: 1)
+    create(:ad, :in_bar, title: 'avabar', published_at: 2.days.ago, status: 1)
+    create(:ad, :in_mad, title: 'resmad', status: 2)
+    create(:ad, :in_ten, title: 'delten', status: 3)
 
     with_pagination(1) do
       VCR.use_cassette('mad_bar_ten_info_es') { test.call }
@@ -28,27 +28,27 @@ class UnauthenticatedAdListing < ActionDispatch::IntegrationTest
   it 'lists first page of available ads everywhere in all ads page' do
     visit ads_listall_path(type: 'give')
 
-    assert_selector '.ad_excerpt_list', count: 1, text: 'ava_mad'
+    assert_selector '.ad_excerpt_list', count: 1, text: 'avamad'
   end
 
   it 'lists second page of available ads everywhere in all ads page' do
     visit ads_listall_path(type: 'give')
     click_link 'siguiente'
 
-    assert_selector '.ad_excerpt_list', count: 1, text: 'ava_bar'
+    assert_selector '.ad_excerpt_list', count: 1, text: 'avabar'
   end
 
   it 'lists first page of available ads everywhere in home page' do
     visit root_path
 
-    assert_selector '.ad_excerpt_list', count: 1, text: 'ava_mad'
+    assert_selector '.ad_excerpt_list', count: 1, text: 'avamad'
   end
 
   it 'lists second page of available ads everywhere in home page' do
     visit root_path
     click_link 'siguiente'
 
-    assert_selector '.ad_excerpt_list', count: 1, text: 'ava_bar'
+    assert_selector '.ad_excerpt_list', count: 1, text: 'avabar'
   end
 
   it 'lists booked ads everywhere in home page' do
@@ -56,7 +56,7 @@ class UnauthenticatedAdListing < ActionDispatch::IntegrationTest
     click_link 'siguiente'
     click_link 'reservado'
 
-    assert_selector '.ad_excerpt_list', count: 1, text: 'res_mad'
+    assert_selector '.ad_excerpt_list', count: 1, text: 'resmad'
   end
 
   it 'lists delivered ads everywhere in home page' do
@@ -64,7 +64,7 @@ class UnauthenticatedAdListing < ActionDispatch::IntegrationTest
     click_link 'siguiente'
     click_link 'entregado'
 
-    assert_selector '.ad_excerpt_list', count: 1, text: 'del_ten'
+    assert_selector '.ad_excerpt_list', count: 1, text: 'delten'
   end
 
   it 'lists wanted ads when a status filter is active' do
