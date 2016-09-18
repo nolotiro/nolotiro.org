@@ -9,6 +9,10 @@ module Api
     def woeid_show
       @type = type_scope
       @woeid = params[:id]
+
+      @woeid_info = WoeidHelper.convert_woeid_name(@woeid)
+      raise ActionController::RoutingError, 'Not Found' if @woeid_info.nil?
+
       @page = params[:page]
       @ads = Ad.public_send(@type)
                .available
