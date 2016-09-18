@@ -260,7 +260,7 @@ en:
     gifts: presents
     give: gift
     hello_to: Hello %{recipient},
-    help_translate: help us to translate
+    translations: translations
     here: here
     home_title: new and second hand gift's ads
     if_you_are_new: If you are a new user, please

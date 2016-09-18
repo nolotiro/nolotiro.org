@@ -5,7 +5,7 @@ html
   min-width: 320px
   width: 100%
 
-@media only screen and (max-width: 767px)
+@media only screen and (max-width: $container-sm)
   .container
     padding: 0
 
@@ -69,20 +69,22 @@ a
       padding: 0 10px
 
     &:last-child > span
-      border-right: 0px solid $gray-separator
+      border-right: 0 solid $gray-separator
 
     /* I can't find a better way to vertically-center the envelope... */
     img
       margin-bottom: 4px
 
+$langs: <%= I18n.available_locales.join(" ") %>
+
 #select_language_box
   position: absolute
-  top: 0px
+  top: 0
   float: right
-  right: 0px
+  right: 0
   border: 1px solid white
   display: inline-block
-  height: 12px
+  height: 24px
   overflow: hidden
   vertical-align: top
   width: 92px
@@ -94,16 +96,22 @@ a
     background-color: #fff
     height: auto
 
-#select_language_box
-  a
-    padding: 2px
+    .lang
+      display: block
+
+  .lang
     padding-left: 4px
-    padding-right: 0px
-    line-height: 16px
-    height: 20px
+    padding-right: 0
+    line-height: 24px
+    height: 24px
     display: none
     width: 100%
     text-decoration: none !important
+
+    &:hover
+      background-color: #999 !important
+      text-decoration: none !important
+      color: #fff !important
 
   img
     text-decoration: none !important
@@ -112,25 +120,26 @@ a
     clear: left
     vertical-align: baseline
 
-  &:hover a
-    display: block
-
-#select_language_box
-  .lang.active
+  .lang-active
     display: block
     position: absolute
-    top: 0px
+    top: 0
 
-  a:hover
-    background-color: #999 !important
-    text-decoration: none !important
-    color: #fff !important
+  @each $l in $langs
+    .flag-#{$l}
+      vertical-align: center
+      background-repeat: no-repeat
+      background-position: 0 7px, center
+      background-image: image-url("flags/#{$l}.gif")
+
+      span
+        margin-left: 15px
 
 form.searchbox
   display: inline-block
   width: auto
   padding-right: 20px
-  top: 0px
+  top: 0
 
   dd
     display: inline
@@ -144,26 +153,18 @@ form.searchbox
     border-color: $gray-separator
 
   dl
-    margin: 0px !important
+    margin: 0 !important
 
 .user_profile h4
   font-size: 14px
   padding: 5px
-
-.select_language_box
-  margin-top: -0.4em
-  padding: 4px
-
-  select
-    font-size: 0.9em
-    font-weight: bold
-    background-color: #fff
 
 .ad_create_tab
   @include clearfix
 
 .ad_change_location_home
   @include clearfix
+
   text-align: right
   font-weight: bold !important
   margin-bottom: 5px
@@ -210,7 +211,7 @@ form.searchbox
   padding: 3px
   font-weight: bold
   font-size: 11px
-  border: 0px
+  border: 0
   margin-right: 4px
 
 .available
@@ -278,6 +279,7 @@ form.searchbox
 
 .ad_excerpt_show
   @include make-row
+
   display: block
 
 .ad_excerpt_comments
@@ -291,23 +293,28 @@ form.searchbox
   background-color: #fff
 
 .message-excerpt
-  width: 100%
-  display: block
+  @include make-row
+
   margin-bottom: 20px
-  position: relative
+
+.message-from
+  text-align: center
+  width: 90px
+  font-size: 0.8em
+  display: block
+
+  img
+    margin: 0 15px
 
 .message-from-left
-  text-align: center
-  width: 120px
+  @extend .message-from
+
   float: left
-  font-size: 0.8em
-  display: block
 
 .message-from-right
-  text-align: center
-  width: 120px
+  @extend .message-from
+
   float: right
-  font-size: 0.8em
 
 %message-container
   font-size: 0.9em
@@ -319,15 +326,13 @@ form.searchbox
 
 .message-container-left
   @extend %message-container
-  margin-right: 120px
 
-.message-from-left img, .message-from-right img
-  margin-left: 30px
-  margin-right: 30px
+  margin-right: 90px
 
 .message-container-right
   @extend %message-container
-  margin-left: 120px
+
+  margin-left: 90px
 
 .triangle-me
   position: absolute
@@ -371,6 +376,7 @@ form.searchbox
 
 .ad_meta_info
   @include clearfix
+
   position: relative
   display: block
   padding: 3px
@@ -423,6 +429,7 @@ form.searchbox
 
 .ad_comment_form
   @extend .ad_comment
+
   border-bottom: 0
 
 .ad_comments h5
@@ -521,7 +528,7 @@ form.searchbox
  * Home
 
 dl, dd
-  margin: 0px !important
+  margin: 0 !important
 
 .ad_excerpt_list
   padding-top: 14px
@@ -538,12 +545,10 @@ dl, dd
 
 #header
   @include make-row
+
   margin: 0
   position: relative
   text-align: left
-
-.main-banner
-  padding: 30px 0
 
 #footer
   font-size: 1em
@@ -592,7 +597,7 @@ dl, dd
   width: 96%
   overflow: auto
 
-@media only screen and (max-width: 767px)
+@media only screen and (max-width: $container-sm)
   .site-logo
     width: 100%
 
@@ -603,7 +608,7 @@ dl, dd
     .ad_create_tab
       width: 100%
 
-@media only screen and (min-width: 768px)
+@media only screen and (min-width: $container-sm + 1)
   .site-logo
     width: 50%
     float: left
@@ -621,6 +626,7 @@ dl, dd
 
 .site-logo
   @include clearfix
+
   background: image-url('nolotiro_logo.png') no-repeat 0 0
 
   a
@@ -660,6 +666,7 @@ dl, dd
 
 #default_header_section
   @include make-md-column(12)
+
   +word-break
 
   display: block
@@ -674,7 +681,7 @@ dl, dd
     font-size: 1em
     font-weight: bold
     margin-bottom: 1.5em
-    padding-left: 0px
+    padding-left: 0
 
 /* paginator  **********
 
@@ -761,26 +768,7 @@ ul#tabnav
 
 /* end css tabs
 
-$langs: <%= I18n.available_locales.join(" ") %>
-
-=flags-countries
-  @each $l in $langs
-    .flag-#{$l}
-      vertical-align: center
-      background-repeat: no-repeat
-      background-position: 0px 5px, center
-      background-image: image-url("flags/#{$l}.gif")
-
-      span
-        margin-left: 15px
-
-#select_language_box
-  +flags-countries
-
 #cookie-bar
-  position: fixed
-  bottom: 0
-  width: 100%
   z-index: 99999
 
 #new_user
@@ -794,7 +782,7 @@ $langs: <%= I18n.available_locales.join(" ") %>
   height: 250px
 
 #body
-  width: 90%
+  width: 100%
   height: 100px
 
 #social-butttons
@@ -818,7 +806,7 @@ $langs: <%= I18n.available_locales.join(" ") %>
   font-weight: bold
   border-color: #d62d20
 
-@media only screen and (max-width: 767px)
+@media only screen and (max-width: $container-sm)
   .site-name
     width: 50%
 
@@ -830,14 +818,14 @@ $langs: <%= I18n.available_locales.join(" ") %>
     display: none
 
   #facebook-button
-    padding: 0px
-    margin: 0px
+    padding: 0
+    margin: 0
 
   #twitter-button
-    padding: 0px
+    padding: 0
 
   .ad_excerpt
-    padding: 0px
+    padding: 0
     margin: 10px 10px
     width: 95%
 
@@ -858,17 +846,6 @@ $langs: <%= I18n.available_locales.join(" ") %>
     margin-left: 4%
     clear: both
 
-@media only screen and (min-width: 768px)
+@media only screen and (min-width: $container-sm + 1)
   .mobile
     display: none !important
-
-@media only screen and (max-width: 500px)
-  .message-from-left, .message-from-right
-    display: none
-
-  .message-container-left, .message-container-right
-    margin: 0px
-
-@media only screen and (max-width: 365px)
-  #cookie-bar
-    height: 54px

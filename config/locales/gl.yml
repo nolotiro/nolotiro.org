@@ -266,7 +266,7 @@ gl:
     gifts: regalos
     give: regalo
     hello_to: Ola %{recipient},
-    help_translate: axuda a traducir
+    translations: traducións
     here: aquí
     home_title: 
     if_you_are_new: Se vostede é un novo usuario, por favor

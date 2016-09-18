@@ -262,7 +262,7 @@ it:
     gifts: regali
     give: regalo
     hello_to: Ciao %{recipient},
-    help_translate: aiuta a tradurre
+    translations: traduzioni
     here: qui
     home_title: 'annunci di regali nuovi e di seconda mano '
     if_you_are_new: Se sei un utente nuovo, per favore

@@ -260,7 +260,7 @@ fr:
     gifts: cadeaux
     give: cadeau
     hello_to: Salut %{recipient},
-    help_translate: Il aide à traduire
+    translations: Traductions
     here: ici
     home_title: annonces de cadeaux neuves et d'occasion
     if_you_are_new: Si vous êtes un nouvel utilisateur, s'il vous plaît

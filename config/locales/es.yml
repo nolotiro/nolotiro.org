@@ -260,7 +260,7 @@ es:
     gifts: regalos
     give: regalo
     hello_to: Hola %{recipient},
-    help_translate: ayuda a traducir
+    translations: traducciones
     here: aquí
     home_title: anuncios de regalos nuevos y de segunda mano
     if_you_are_new: Si eres un nuevo usuario, por favor
