@@ -11,7 +11,9 @@
     <link rel="alternate"
           type="application/rss+xml"
           title="nolotiro.org - <%= @woeid_info[:full] %>"
-          href="<%= rss_type_url(woeid: @id, type: @type, status: @status) %>" />
+          href="<%= rss_type_url(woeid: current_woeid,
+                                 type: @type,
+                                 status: @status) %>" />
   <% end %>
 <% end %>
 
@@ -79,7 +81,7 @@
   <% if @ads.any? %>
     <%= render 'ads/list_with_adsense', ads: @ads %>
 
-    <%= will_paginate @ads, params: params.merge(id: @id),
+    <%= will_paginate @ads, params: params.merge(id: current_woeid),
                             inner_window: 2,
                             outer_window: -1 %>
   <% else %>
@@ -92,7 +94,7 @@
 
   <% if @woeid_info %>
     <div class="rss">
-      <%= link_to rss_type_path(woeid: @id, type: "give") do %>
+      <%= link_to rss_type_path(woeid: current_woeid, type: "give") do %>
         <%= image_tag "icons/rss.png", alt: t("nlt.rss_suscribe") %>
         &nbsp; <%= t('nlt.rss_suscribe') %> - <%= @woeid_info[:full] %>
       <% end %>

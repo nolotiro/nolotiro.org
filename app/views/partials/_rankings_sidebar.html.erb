@@ -1,4 +1,4 @@
-<% unless @id %>
+<% unless current_woeid %>
   <%= render "partials/location_ranking", title_key: "cities_in_the_world",
                                           scope: Ad.top_locations %>
 <% end %>
