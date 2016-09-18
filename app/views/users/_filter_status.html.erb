@@ -3,8 +3,10 @@
 
   <%= link_to t('nlt.available'), url_for(type: 'give', status: 'available'),
     class: status_scope == "available" ? "actual" : "''" %>
+
   <%= link_to t('nlt.booked'), url_for(type: 'give', status: 'booked'),
     class: status_scope == "booked" ? "actual" : "''" %>
+
   <%= link_to t('nlt.delivered'), url_for(type: 'give', status: 'delivered'),
     class: status_scope == "delivered" ? "actual" : "''" %>
 
