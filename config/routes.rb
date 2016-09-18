@@ -106,12 +106,8 @@ NolotiroOrg::Application.routes.draw do
 
     # messaging
     resources :conversations, path: '/messages/' do
-      member do
-        delete 'trash'
-      end
-      collection do
-        delete 'trash'
-      end
+      member { delete 'trash' }
+      collection { delete 'trash' }
     end
 
     # rss
