@@ -10,8 +10,8 @@ class AuthenticatedAdListing < ActionDispatch::IntegrationTest
   include Pagination
 
   around do |test|
-    create(:ad, :in_mad, title: 'avamad1', status: 1, published_at: 1.day.ago)
-    create(:ad, :in_bar, title: 'avabar', status: 1, published_at: 2.days.ago)
+    create(:ad, :in_bar, title: 'avabar', status: 1, published_at: 1.day.ago)
+    create(:ad, :in_mad, title: 'avamad1', status: 1, published_at: 2.days.ago)
     create(:ad, :in_mad, title: 'avamad2', status: 1, published_at: 3.days.ago)
     create(:ad, :in_mad, title: 'resmad', status: 2)
     create(:ad, :in_mad, title: 'delmad', status: 3)
@@ -34,14 +34,14 @@ class AuthenticatedAdListing < ActionDispatch::IntegrationTest
   it 'lists first page of available ads everywhere in all ads page' do
     visit ads_listall_path(type: 'give')
 
-    assert_selector '.ad_excerpt_list', count: 1, text: 'avamad1'
+    assert_selector '.ad_excerpt_list', count: 1, text: 'avabar'
   end
 
   it 'lists other pages of available ads everywhere in all ads page' do
     visit ads_listall_path(type: 'give')
     click_link 'siguiente'
 
-    assert_selector '.ad_excerpt_list', count: 1, text: 'avabar'
+    assert_selector '.ad_excerpt_list', count: 1, text: 'avamad1'
   end
 
   it 'lists first page of available ads in users location in home page' do
