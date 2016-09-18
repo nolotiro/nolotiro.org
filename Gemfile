@@ -71,7 +71,6 @@ gem 'unicorn'                                       # webserver
 gem 'mysql2', '~> 0.4.4'                            # database adapter
 gem 'redis-rails'                                   # redis cache
 gem 'sidekiq'                                       # job workers
-gem 'sinatra', require: false
 gem 'slim'
 
 gem 'maxminddb'                                     # geolite city v2

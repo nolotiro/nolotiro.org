@@ -353,7 +353,7 @@ GEM
       json (~> 1.4)
     recaptcha (3.2.0)
       json
-    redis (3.3.0)
+    redis (3.3.1)
     redis-actionpack (5.0.0)
       actionpack (>= 4.0.0, < 6)
       redis-rack (~> 2.0.0.pre)
@@ -400,10 +400,10 @@ GEM
       json (~> 1.7, >= 1.7.7)
       rdoc (~> 4.0)
     sexp_processor (4.7.0)
-    sidekiq (4.0.1)
+    sidekiq (4.2.1)
       concurrent-ruby (~> 1.0)
       connection_pool (~> 2.2, >= 2.2.0)
-      json (~> 1.0)
+      rack-protection (~> 1.5)
       redis (~> 3.2, >= 3.2.1)
     sinatra (1.4.6)
       rack (~> 1.4)
@@ -519,7 +519,6 @@ DEPENDENCIES
   sass-rails (~> 5.0)
   sdoc
   sidekiq
-  sinatra
   slim
   spring
   table_print
