@@ -1,4 +1,4 @@
-<% if @woeid_info.nil? %>
+<% if current_woeid.nil? %>
   <% content_for(:meta_title, t('nlt.home_title')) %>
 <% else %>
   <% content_for(:meta_title, t('nlt.keywords') + @woeid_info[:full]) %>
@@ -6,7 +6,7 @@
                  t('nlt.gift_on', woeid: @woeid_info[:full])) %>
 <% end %>
 
-<% if @woeid_info %>
+<% if current_woeid %>
   <% content_for :meta_extra do %>
     <link rel="alternate"
           type="application/rss+xml"
@@ -19,7 +19,7 @@
 
 <% content_for :action do %>
   <div class="ad_change_location_home">
-    <% if @woeid_info %>
+    <% if current_woeid %>
       <%= link_to t('nlt.change_city'), location_ask_path %>
     <% elsif location_suggest %>
       <% title = t('nlt.view_ads_on', location: location_suggest.city) %>
@@ -30,7 +30,7 @@
   </div>
 
   <div class="ad_create_tab">
-    <% if @woeid_info%>
+    <% if current_woeid%>
       <%= link_to "+ #{t('nlt.publish_ad_on', woeid: @woeid_info[:short])}",
                   new_ad_path %>
     <% else %>
@@ -55,7 +55,7 @@
   <div id="location_header_section">
     <div class="location_name">
       <h1>
-        <% if @woeid_info.nil? %>
+        <% if current_woeid.nil? %>
           <%= t('nlt.all_ads') %>
         <% else %>
           <%= t('nlt.searching_on_html', q: @q) if @q %>
@@ -92,7 +92,7 @@
     <% end %>
   <% end %>
 
-  <% if @woeid_info %>
+  <% if current_woeid %>
     <div class="rss">
       <%= link_to rss_type_path(woeid: current_woeid, type: "give") do %>
         <%= image_tag "icons/rss.png", alt: t("nlt.rss_suscribe") %>
