@@ -87,6 +87,8 @@ NolotiroOrg::Application.routes.draw do
     # legacy messaging
     get '/messages/new', to: redirect(ConversationUrlRewriter.new)
     get '/messages/:id', to: redirect(ConversationUrlRewriter.new)
+    get '/message/create/id_user_to/:user_id/subject/:subject',
+        to: redirect(ConversationUrlRewriter.new)
 
     # messaging
     resources :conversations do
