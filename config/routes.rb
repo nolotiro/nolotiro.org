@@ -84,8 +84,12 @@ NolotiroOrg::Application.routes.draw do
     # blocking
     resources :blockings, only: [:create, :destroy]
 
+    # legacy messaging
+    get '/messages/new', to: redirect(ConversationUrlRewriter.new)
+    get '/messages/:id', to: redirect(ConversationUrlRewriter.new)
+
     # messaging
-    resources :conversations, path: '/messages/' do
+    resources :conversations do
       member { delete 'trash' }
       collection { delete 'trash' }
     end
