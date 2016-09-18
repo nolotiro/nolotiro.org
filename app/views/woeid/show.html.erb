@@ -30,7 +30,7 @@
   </div>
 
   <div class="ad_create_tab">
-    <% if current_woeid%>
+    <% if current_woeid %>
       <%= link_to "+ #{t('nlt.publish_ad_on', woeid: @woeid_info[:short])}",
                   new_ad_path %>
     <% else %>
