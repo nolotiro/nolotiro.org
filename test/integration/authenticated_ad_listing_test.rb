@@ -15,6 +15,7 @@ class AuthenticatedAdListing < ActionDispatch::IntegrationTest
     create(:ad, :in_mad, title: 'avamad2', status: 1, published_at: 3.days.ago)
     create(:ad, :in_mad, title: 'resmad', status: 2)
     create(:ad, :in_mad, title: 'delmad', status: 3)
+    create(:ad, :in_bar, title: 'busbar', type: 2)
 
     login_as create(:user, woeid: 766_273)
 
@@ -55,6 +56,13 @@ class AuthenticatedAdListing < ActionDispatch::IntegrationTest
     click_link 'siguiente'
 
     assert_selector '.ad_excerpt_list', count: 1, text: 'avamad2'
+  end
+
+  it 'lists petitions in users location in home page' do
+    visit root_path
+    click_link 'peticiones'
+
+    assert_selector '.ad_excerpt_list', count: 0
   end
 
   it 'lists available ads in users location in home page' do
