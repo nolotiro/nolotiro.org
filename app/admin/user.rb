@@ -30,26 +30,17 @@ ActiveAdmin.register User do
   end
 
   action_item :moderate, only: :show do
-    if user.locked?
-      link_to 'Desbloquear Usuario', unlock_admin_user_path(user), method: :post
-    else
-      link_to 'Bloquear Usuario', lock_admin_user_path(user), method: :post
-    end
+    link_to "#{user.locked? ? 'Desb' : 'B'}loquear Usuario",
+            moderate_admin_user_path(user),
+            method: :post
   end
 
-  member_action :unlock, method: :post do
+  member_action :moderate, method: :post do
     user = User.find(params[:id])
 
-    user.unlock!
+    user.moderate!
 
-    redirect_to admin_user_path(user), notice: 'Usuario desbloqueado'
-  end
-
-  member_action :lock, method: :post do
-    user = User.find(params[:id])
-
-    user.lock!
-
-    redirect_to admin_user_path(user), notice: 'Usuario bloqueado'
+    redirect_to admin_user_path(user),
+                notice: "Usuario #{'des' unless user.locked?}bloqueado"
   end
 end

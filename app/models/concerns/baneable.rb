@@ -22,4 +22,8 @@ module Baneable
   def lock!
     update_column('locked', 1)
   end
+
+  def moderate!
+    locked? ? unlock! : lock!
+  end
 end

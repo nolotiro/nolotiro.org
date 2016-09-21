@@ -117,6 +117,12 @@ class UserTest < ActiveSupport::TestCase
     assert_equal false, @user.locked?
   end
 
+  test 'toogling banned flag works' do
+    @user.lock!
+    @user.moderate!
+    assert_equal false, @user.locked?
+  end
+
   test 'requires confirmation for new users' do
     user = create(:non_confirmed_user)
     assert_equal false, user.active_for_authentication?
