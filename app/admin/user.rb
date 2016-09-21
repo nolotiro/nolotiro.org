@@ -9,12 +9,12 @@ ActiveAdmin.register User do
   scope 'Legítimos', :legitimate, default: true
   scope 'Baneados', :banned
 
-  filter :email
   filter :username
+  filter :email
+  filter :confirmed_at
   filter :last_sign_in_ip
   filter :last_sign_in_at
   filter :ads_count
-  filter :confirmed_at
 
   index do
     column :username do |user|
