@@ -7,6 +7,7 @@ module Baneable
   def self.prepended(base)
     base.class_eval do
       scope :legitimate, -> { where(banned_at: nil) }
+      scope :banned, -> { where.not(banned_at: nil) }
     end
   end
 

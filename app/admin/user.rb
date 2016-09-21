@@ -6,6 +6,9 @@ ActiveAdmin.register User do
 
   permit_params :role
 
+  scope 'Legítimos', :legitimate, default: true
+  scope 'Baneados', :banned
+
   filter :email
   filter :username
   filter :last_sign_in_ip
