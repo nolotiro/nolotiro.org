@@ -24,4 +24,12 @@ class PostingCommentsTest < ActionDispatch::IntegrationTest
     assert_selector '.ad_comment', text: 'No tiene ruedas'
     logout
   end
+
+  test 'comments from spammers are not listed' do
+    comment = create(:comment, ad: @ad, body: 'Tiene ruedas?')
+    comment.user.ban!
+    mocking_yahoo_woeid_info(@ad.woeid_code) { visit ad_path(@ad) }
+
+    assert_no_selector '.ad_comment', text: 'Tiene ruedas?'
+  end
 end
