@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 ActiveAdmin.register User do
+  config.batch_actions = false
+
   permit_params :role
 
   filter :email
@@ -12,7 +14,6 @@ ActiveAdmin.register User do
   filter :current_sign_in_at
 
   index do
-    selectable_column
     column :username do |user|
       link_to user.username, admin_user_path(user)
     end
