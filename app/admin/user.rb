@@ -27,7 +27,12 @@ ActiveAdmin.register User do
     column :ads_count
 
     actions(defaults: false) do |user|
-      link_to 'Editar', edit_admin_user_path(user)
+      edit = link_to 'Editar', edit_admin_user_path(user)
+      moderate = link_to "#{user.banned? ? 'Desb' : 'B'}loquear",
+                         moderate_admin_user_path(user),
+                         method: :post
+
+      safe_join([edit, moderate], ' ')
     end
   end
 
