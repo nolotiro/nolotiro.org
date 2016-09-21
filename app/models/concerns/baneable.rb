@@ -12,7 +12,7 @@ module Baneable
   end
 
   def active_for_authentication?
-    super && !banned?
+    super && legitimate?
   end
 
   def unban!
@@ -23,8 +23,12 @@ module Baneable
     update_column('banned_at', Time.zone.now)
   end
 
+  def legitimate?
+    banned_at.nil?
+  end
+
   def banned?
-    !banned_at.nil?
+    !legitimate?
   end
 
   def moderate!
