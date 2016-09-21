@@ -38,7 +38,7 @@ it:
         body: Messaggio
         subject: Soggetto
       user:
-        ads_count: Annunci pubblicati
+        ads_count: Annunci
         confirmed_at: Data di conferma
         created_at: Data registrazione
         current_password: Password atuale

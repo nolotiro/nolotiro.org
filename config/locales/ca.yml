@@ -38,7 +38,7 @@ ca:
         body: Missatge
         subject: Assumpte
       user:
-        ads_count: Anuncis publicats
+        ads_count: Anuncis
         confirmed_at: Data de confirmació
         created_at: Data de registre
         current_password: Contrasenya actual

@@ -38,7 +38,7 @@ en:
         body: Message
         subject: Subject
       user:
-        ads_count: Published ads
+        ads_count: Ads
         confirmed_at: Confirmation date
         created_at: Sign-in date
         current_password: Current password

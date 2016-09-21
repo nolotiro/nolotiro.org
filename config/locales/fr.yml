@@ -38,7 +38,7 @@ fr:
         body: 
         subject: 
       user:
-        ads_count: Annonces publiées
+        ads_count: Annonces
         confirmed_at: Date de confirmation
         created_at: Date d'enregistrement
         current_password: Mot de passe actuel
