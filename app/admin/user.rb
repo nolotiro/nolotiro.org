@@ -17,9 +17,7 @@ ActiveAdmin.register User do
   filter :ads_count
 
   index do
-    column :username do |user|
-      link_to user.username, admin_user_path(user)
-    end
+    column(:username) { |user| link_to user.username, admin_user_path(user) }
     column :email
     column :confirmed_at
     column :last_sign_in_ip
