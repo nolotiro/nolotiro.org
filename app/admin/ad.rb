@@ -37,12 +37,12 @@ ActiveAdmin.register Ad do
 
     column :user
 
-    column(:type) do |ad|
+    column :type do |ad|
       status_tag({ 'give' => 'green', 'want' => 'red' }[ad.type],
                  label: ad.type)
     end
 
-    column(:status) do |ad|
+    column :status do |ad|
       status_tag({ 'available' => 'green',
                    'booked' => 'orange',
                    'delivered' => 'red' }[ad.status],
