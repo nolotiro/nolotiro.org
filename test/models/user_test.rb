@@ -119,7 +119,7 @@ class UserTest < ActiveSupport::TestCase
 
   test 'requires confirmation for new users' do
     user = create(:non_confirmed_user)
-    assert_equal(user.active_for_authentication?, false)
+    assert_equal user.active_for_authentication?, false
   end
 
   test 'associated ads are deleted when user is deleted' do
