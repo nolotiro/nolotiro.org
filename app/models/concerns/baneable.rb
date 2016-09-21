@@ -16,11 +16,11 @@ module Baneable
   end
 
   def unban!
-    update_column('banned_at', nil)
+    update!(banned_at: nil)
   end
 
   def ban!
-    update_column('banned_at', Time.zone.now)
+    update!(banned_at: Time.zone.now)
   end
 
   def legitimate?
