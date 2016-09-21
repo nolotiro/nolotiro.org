@@ -14,7 +14,6 @@ ActiveAdmin.register User do
   filter :last_sign_in_ip
   filter :last_sign_in_at
   filter :ads_count
-  filter :created_at
   filter :confirmed_at
 
   index do
@@ -26,7 +25,6 @@ ActiveAdmin.register User do
     column :last_sign_in_ip
     column :last_sign_in_at
     column :ads_count
-    column :created_at
 
     actions(defaults: false) do |user|
       link_to 'Editar', edit_admin_user_path(user)
