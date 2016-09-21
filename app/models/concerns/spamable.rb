@@ -15,15 +15,7 @@ module Spamable
   end
 
   def check_spam!
-    opinion = spammed?(title) || spammed?(body)
-
-    update!(spam: opinion)
-
-    opinion
-  end
-
-  def toggle_spam!
-    toggle!(:spam)
+    user.ban! if spammed?(title) || spammed?(body)
   end
 
   private
