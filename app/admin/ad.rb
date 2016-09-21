@@ -51,7 +51,7 @@ ActiveAdmin.register Ad do
 
     column(:city, &:woeid_name_short)
 
-    column(:published_at) { |ad| ad.published_at.strftime('%d/%m/%y %H:%M') }
+    column :published_at
 
     actions(defaults: false) do |ad|
       edit = link_to 'Editar', edit_admin_ad_path(ad)
