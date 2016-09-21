@@ -11,7 +11,6 @@ module Baneable
     end
   end
 
-  # this method is called by devise to check for "active" state of the model
   def active_for_authentication?
     super && !banned?
   end
