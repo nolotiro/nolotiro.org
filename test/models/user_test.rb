@@ -95,31 +95,31 @@ class UserTest < ActiveSupport::TestCase
   end
 
   test 'roles work' do
-    assert_equal @user.admin?, false
-    assert_equal @admin.admin?, true
+    assert_equal false, @user.admin?
+    assert_equal true, @admin.admin?
   end
 
   test 'default langs work' do
     @user.lang = nil
     @user.save
-    assert_equal @user.lang, 'es'
+    assert_equal 'es', @user.lang
   end
 
   test 'locking works' do
     @user.lock!
-    assert_equal @user.locked?, true
+    assert_equal true, @user.locked?
   end
 
   test 'unlocking works' do
     @user.locked = 1
     @user.save
     @user.unlock!
-    assert_equal @user.locked?, false
+    assert_equal false, @user.locked?
   end
 
   test 'requires confirmation for new users' do
     user = create(:non_confirmed_user)
-    assert_equal user.active_for_authentication?, false
+    assert_equal false, user.active_for_authentication?
   end
 
   test 'associated ads are deleted when user is deleted' do
