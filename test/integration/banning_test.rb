@@ -19,4 +19,12 @@ class BanningTest < AuthenticatedTest
       assert_text 'Tu cuenta aún no ha sido activada'
     end
   end
+
+  it 'hides ads from banned users' do
+    ad = create(:ad)
+    ad.user.ban!
+    mocking_yahoo_woeid_info(ad.woeid_code) { visit ad_path(ad) }
+
+    assert_no_text ad.body
+  end
 end
