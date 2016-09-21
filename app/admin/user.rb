@@ -2,6 +2,7 @@
 
 ActiveAdmin.register User do
   config.batch_actions = false
+  config.clear_action_items!
 
   permit_params :role
 
@@ -23,11 +24,18 @@ ActiveAdmin.register User do
     column :current_sign_in_at
     column :ads_count
     column :created_at
-    actions
+
+    actions(defaults: false) do |user|
+      link_to 'Editar', edit_admin_user_path(user)
+    end
   end
 
   action_item :view, only: :show do
     link_to 'Ver en la web', profile_path(user.username)
+  end
+
+  action_item :edit, only: :show do
+    link_to 'Editar Usuario', edit_admin_user_path(user)
   end
 
   action_item :moderate, only: :show do
