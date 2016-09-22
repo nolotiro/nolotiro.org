@@ -30,16 +30,4 @@ class UsersController < ApplicationController
   def friendly_find(param)
     User.unlocked.find_by(username: param) || User.unlocked.find(param)
   end
-
-  def status_scope
-    return unless %w(available booked delivered).include?(params[:status])
-
-    params[:status]
-  end
-
-  def type_scope
-    return unless %w(give want).include?(params[:type])
-
-    params[:type]
-  end
 end

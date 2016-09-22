@@ -40,11 +40,11 @@ class ApplicationController < ActionController::Base
   end
 
   def type_scope
-    params[:type] == 'want' ? params[:type] : 'give'
+    %w(give want).include?(params[:type]) ? params[:type] : nil
   end
 
   def status_scope
-    return 'available' unless %w(booked delivered).include?(params[:status])
+    return unless %w(available booked delivered).include?(params[:status])
 
     params[:status]
   end

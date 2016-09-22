@@ -10,8 +10,8 @@ class WoeidController < ApplicationController
   # GET /es/ad/listall/ad_type/:type
   # GET /es/ad/listall/ad_type/:type/status/:status
   def show
-    @type = type_scope
-    @status = status_scope
+    @type = type_scope || 'give'
+    @status = status_scope || 'available'
     @q = params[:q]
     page = params[:page]
 
