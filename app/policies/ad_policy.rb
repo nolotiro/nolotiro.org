@@ -6,7 +6,7 @@ class AdPolicy < ApplicationPolicy
   end
 
   def bump?
-    user && ((record.user == user && record.bumpable?) || user.admin?)
+    user && (record.user == user && record.bumpable?)
   end
 
   def destroy?
