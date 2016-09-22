@@ -79,39 +79,21 @@ NolotiroOrg::Application.routes.draw do
     get '/profile/:id', to: 'users#profile', as: 'profile'
 
     # search
-    get '/search', to: redirect { |params, request|
-      raw_query = URI.escape(request.query_string)
-      query = Rack::Utils.parse_query(raw_query).symbolize_keys
-
-      woeid = query[:woeid] || query[:woeid_code]
-      new_path = "#{params[:locale]}/woeid/#{woeid}"
-
-      type = if query[:ad_type].present?
-               query[:ad_type] == '2' ? 'want' : 'give'
-             elsif query[:type].present?
-               query[:type]
-             else
-               'give'
-             end
-
-      new_path = "#{new_path}/#{type}"
-
-      new_path = "#{new_path}/status/#{query[:status]}" if query[:status].present?
-      new_path = "#{new_path}/page/#{query[:page]}" if query[:page].present?
-      "#{new_path}?q=#{query[:q]}"
-    }
+    get '/search', to: redirect(SearchUrlRewriter.new)
 
     # blocking
     resources :blockings, only: [:create, :destroy]
 
+    # legacy messaging
+    get '/messages/new', to: redirect(ConversationUrlRewriter.new)
+    get '/messages/:id', to: redirect(ConversationUrlRewriter.new)
+    get '/message/create/id_user_to/:user_id/subject/:subject',
+        to: redirect(ConversationUrlRewriter.new)
+
     # messaging
-    resources :conversations, path: '/messages/' do
-      member do
-        delete 'trash'
-      end
-      collection do
-        delete 'trash'
-      end
+    resources :conversations do
+      member { delete 'trash' }
+      collection { delete 'trash' }
     end
 
     # rss
