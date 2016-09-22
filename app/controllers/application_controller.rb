@@ -40,18 +40,14 @@ class ApplicationController < ActionController::Base
   end
 
   def type_scope
-    params[:type] == 'want' ? params[:type] : 'give'
+    %w(give want).include?(params[:type]) ? params[:type] : nil
   end
 
-  helper_method :type_scope
-
   def status_scope
-    return 'available' unless %w(booked delivered).include?(params[:status])
+    return unless %w(available booked delivered).include?(params[:status])
 
     params[:status]
   end
-
-  helper_method :status_scope
 
   def location_suggest
     @location_suggest ||= RequestGeolocator.new(request).suggest

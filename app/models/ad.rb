@@ -13,10 +13,11 @@ class Ad < ActiveRecord::Base
   validates :user_owner, presence: true
   validates :woeid_code, presence: true
 
-  validates :status, inclusion: { in: [1, 2, 3] }, presence: true
+  enum status: { available: 1, booked: 2, delivered: 3 }
+  validates :status, presence: true
 
+  enum type: { give: 1, want: 2 }
   validates :type, presence: true
-  validates :type, inclusion: { in: [1, 2] }, allow_blank: true
 
   # legacy database: has a column with value "type", rails doesn't like that
   # the "type" column is no longer need it by rails, so we don't care about it
@@ -38,13 +39,6 @@ class Ad < ActiveRecord::Base
 
   scope :recent, -> { Ad.includes(:user).recent_first.limit(90) }
   scope :last_week, -> { where('published_at >= :date', date: 1.week.ago) }
-
-  scope :give, -> { where(type: 1) }
-  scope :want, -> { where(type: 2) }
-
-  scope :available, -> { where(status: 1) }
-  scope :booked, -> { where(status: 2) }
-  scope :delivered, -> { where(status: 3) }
 
   scope :by_woeid_code, ->(woeid_code) do
     return all unless woeid_code.present?
@@ -118,36 +112,16 @@ class Ad < ActiveRecord::Base
     @woeid_info ||= WoeidHelper.convert_woeid_name(woeid_code)
   end
 
-  def full_title
-    type_string + ' segunda mano ' + filtered_title + ' ' + woeid_name
-  end
-
   def type_string
-    type == 2 ? I18n.t('nlt.want') : I18n.t('nlt.give')
-  end
-
-  def type_class
-    type == 2 ? 'want' : 'give'
-  end
-
-  def status_class
-    case status
-    when 2 then 'booked'
-    when 3 then 'delivered'
-    else 'available'
-    end
+    I18n.t("nlt.#{type}")
   end
 
   def status_string
-    case status
-    when 2 then I18n.t('nlt.booked')
-    when 3 then I18n.t('nlt.delivered')
-    else I18n.t('nlt.available')
-    end
+    I18n.t("nlt.#{status}")
   end
 
   def meta_title
-    "#{I18n.t('nlt.keywords')} #{filtered_title} #{woeid_name}"
+    "#{type_string} - #{title} - #{woeid_name}"
   end
 
   def bumpable?

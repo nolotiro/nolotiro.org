@@ -1,5 +1,4 @@
-<%= content_for(:meta_title,
-                "#{I18n.t('nlt.keywords')} #{@ad.filtered_title} #{@ad.woeid_name}") %>
+<%= content_for(:meta_title, @ad.meta_title) %>
 
 <%= content_for :meta_description do %>
   <%= t('nlt.meta_description_ad', title: @ad.filtered_title,
@@ -19,7 +18,7 @@
 
 <div id="default_header_section">
   <h2>
-    <%= link_to ads_woeid_path(@ad.woeid_code, type: @ad.type_class) do %>
+    <%= link_to ads_woeid_path(@ad.woeid_code, type: @ad.type) do %>
       <%= @ad.woeid_name %> &gt;
       <%= @ad.type_string %>
     <% end %>
@@ -39,8 +38,8 @@
       </div>
     <% end %>
 
-    <% if @ad.type_class == 'give' %>
-      <span class="ad_status <%= @ad.status_class %>"><%= @ad.status_string %></span>
+    <% if @ad.give? %>
+      <span class="ad_status <%= @ad.status %>"><%= @ad.status_string %></span>
     <% end %>
 
     <%= published_ago_by(@ad.published_at, @ad.user) %>
@@ -52,7 +51,7 @@
     <%= render "stats", comments_count: @comments.size,
                         readed_count: @ad.readed_count %>
 
-    <% if @ad.status_class == 'available' &&
+    <% if @ad.available? &&
           (current_user.nil? || current_user.whitelisting?(@ad.user)) %>
       <div class="ad_contact">
         <%= t('nlt.are_you_interested') %>

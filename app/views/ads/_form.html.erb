@@ -24,7 +24,8 @@
       <% if ad.id %>
         <%= f.label :status, t('nlt.ads.form.status'), class: 'required' %>
 
-        <%= f.select :status, options_for_select([[t('nlt.available'), 1], [t('nlt.booked'), 2], [t('nlt.delivered'), 3]], selected: ad.status) %>
+        <%= f.select :status,
+                     options_for_select(Ad.statuses.keys.map { |status| [I18n.t("nlt.#{status}"), status] }, selected: ad.status) %>
       <% end %>
     </div>
 
@@ -32,14 +33,14 @@
       <%= f.label :type, t('nlt.ads.form.type_ad'), class: 'required' %>
 
       <div class='radio'>
-        <%= f.label :type, value: 1 do %>
-          <%= f.radio_button :type, 1 %><%= t('nlt.a_gift') %>
+        <%= f.label :type, value: 'give' do %>
+          <%= f.radio_button :type, 'give' %><%= t('nlt.a_gift') %>
         <% end %>
       </div>
 
       <div class='radio'>
-        <%= f.label :type, value: 2 do %>
-          <%= f.radio_button :type, 2 %><%= t('nlt.a_request') %>
+        <%= f.label :type, value: 'want' do %>
+          <%= f.radio_button :type, 'want' %><%= t('nlt.a_request') %>
         <% end %>
       </div>
     </div>

@@ -16,13 +16,13 @@
     <% end %>
   </h4>
   <div class="ad_excerpt_woeid">
-    <%= link_to ads_woeid_path(ad.woeid_code, type: ad.type_class) do %>
+    <%= link_to ads_woeid_path(ad.woeid_code, type: ad.type) do %>
       <%= ad.woeid_name %> &gt;
       <%= ad.type_string %>
     <% end %>
   </div>
-  <% if ad.type_class == 'give' %>
-    <span class="ad_status <%= ad.status_class %>">
+  <% if ad.give? %>
+    <span class="ad_status <%= ad.status %>">
       <%= ad.status_string %>
     </span>
   <% end %>

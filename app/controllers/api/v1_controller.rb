@@ -7,7 +7,7 @@ module Api
     end
 
     def woeid_show
-      @type = type_scope
+      @type = type_scope || 'give'
       @woeid = params[:id]
 
       @woeid_info = WoeidHelper.convert_woeid_name(@woeid)

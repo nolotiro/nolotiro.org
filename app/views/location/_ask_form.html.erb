@@ -1,4 +1,4 @@
-<%= form_tag({action: "list"}) do %>
+<%= form_tag action: "list" do %>
   <fieldset>
     <dl>
       <dt>
@@ -7,11 +7,11 @@
       </label>
       </dt>
       <dd>
-      <%= text_field_tag(:location) %>
+      <%= text_field_tag :location %>
       </dd>
       <dt>&nbsp;</dt>
       <dd>
-      <%= submit_tag(t('nlt.change_town.submit')) %>
+      <%= submit_tag t('nlt.change_town.submit') %>
       </dd>
     </dl>
 

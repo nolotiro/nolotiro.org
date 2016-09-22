@@ -1,13 +1,13 @@
-<%= form_tag({action: "change"}) do %>
+<%= form_tag action: "change" do %>
   <fieldset>
     <dl>
       <dt>&nbsp;</dt>
       <dd>
-      <%= select_tag(:location, options_for_select(locations.as_options)) %>
+      <%= select_tag :location, options_for_select(locations.as_options) %>
       </dd>
       <dt>&nbsp;</dt>
       <dd>
-      <%= submit_tag(t('nlt.change_town.choose')) %>
+      <%= submit_tag t('nlt.change_town.choose') %>
       </dd>
     </dl>
   </fieldset>

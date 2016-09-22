@@ -22,8 +22,10 @@ ActiveAdmin.register Ad do
   filter :body
   filter :user_username, as: :string, label: I18n.t('nlt.username')
   filter :woeid_code
-  filter :type, as: :select, collection: [['Regalo', 1], ['Busco', 2]]
-  filter :status, as: :select, collection: [['Disponible', 1], ['Reservado', 2], ['Entregado', 3]]
+  filter :type, as: :select, collection: [%w(Regalo give), %w(Busco want)]
+  filter :status, as: :select, collection: [%w(Disponible available),
+                                            %w(Reservado booked),
+                                            %w(Entregado delivered)]
   filter :published_at
 
   index do
@@ -36,15 +38,15 @@ ActiveAdmin.register Ad do
     column :user
 
     column(:type) do |ad|
-      status_tag({ 'give' => 'green', 'want' => 'red' }[ad.type_class],
-                 label: ad.type_class)
+      status_tag({ 'give' => 'green', 'want' => 'red' }[ad.type],
+                 label: ad.type)
     end
 
     column(:status) do |ad|
       status_tag({ 'available' => 'green',
                    'booked' => 'orange',
-                   'delivered' => 'red' }[ad.status_class],
-                 label: ad.status_class)
+                   'delivered' => 'red' }[ad.status],
+                 label: ad.status)
     end
 
     column(:city, &:woeid_name_short)
@@ -65,9 +67,7 @@ ActiveAdmin.register Ad do
 
   form do |f|
     f.inputs do
-      f.input :type, as: :select,
-                     collection: [['give', 1], ['want', 2]],
-                     include_blank: false
+      f.input :type, as: :select, include_blank: false
       f.input :title
       f.input :body
       f.input :woeid_code

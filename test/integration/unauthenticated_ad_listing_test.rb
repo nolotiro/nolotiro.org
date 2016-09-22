@@ -9,10 +9,10 @@ class UnauthenticatedAdListing < ActionDispatch::IntegrationTest
   include Pagination
 
   around do |test|
-    create(:ad, :in_mad, title: 'avamad', published_at: 1.day.ago, status: 1)
-    create(:ad, :in_bar, title: 'avabar', published_at: 2.days.ago, status: 1)
-    create(:ad, :in_mad, title: 'resmad', status: 2)
-    create(:ad, :in_ten, title: 'delten', status: 3)
+    create(:ad, :available, :in_mad, title: 'avamad', published_at: 1.day.ago)
+    create(:ad, :available, :in_bar, title: 'avabar', published_at: 2.days.ago)
+    create(:ad, :booked, :in_mad, title: 'resmad')
+    create(:ad, :delivered, :in_ten, title: 'delten')
 
     with_pagination(1) do
       VCR.use_cassette('mad_bar_ten_info_es') { test.call }
