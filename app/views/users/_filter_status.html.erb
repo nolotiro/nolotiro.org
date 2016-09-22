@@ -1,21 +1,19 @@
 <div class="filter_status">
-  <%= link_to t('nlt.all'),
-              url_for,
-              type_scope.nil? ? { class: "actual" } : {} %>
+  <%= link_to t('nlt.all'), url_for, @type.nil? ? { class: "actual" } : {} %>
 
   <%= link_to t('nlt.available'),
               url_for(type: 'give', status: 'available'),
-              status_scope == "available" ? { class: "actual" } : {} %>
+              @status == "available" ? { class: "actual" } : {} %>
 
   <%= link_to t('nlt.booked'),
               url_for(type: 'give', status: 'booked'),
-              status_scope == "booked" ? { class: "actual" } : {} %>
+              @status == "booked" ? { class: "actual" } : {} %>
 
   <%= link_to t('nlt.delivered'),
               url_for(type: 'give', status: 'delivered'),
-              status_scope == "delivered" ? { class: "actual" } : {} %>
+              @status == "delivered" ? { class: "actual" } : {} %>
 
   <%= link_to t('nlt.requests'),
               url_for(type: 'want'),
-              type_scope == "want" ? { class: "actual" } : {} %>
+              @type == "want" ? { class: "actual" } : {} %>
 </div>

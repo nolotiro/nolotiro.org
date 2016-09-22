@@ -37,13 +37,9 @@ class UsersController < ApplicationController
     params[:status]
   end
 
-  helper_method :status_scope
-
   def type_scope
     return unless %w(give want).include?(params[:type])
 
     params[:type]
   end
-
-  helper_method :type_scope
 end
