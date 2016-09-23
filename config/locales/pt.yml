@@ -128,12 +128,6 @@ pt:
     label:
       message:
         subject: Assunto
-    select:
-      prompt: Por favor seleccione
-    submit:
-      create: Criar %{model}
-      submit: Gravar %{model}
-      update: Actualizar %{model}
   mailboxer:
     buttons:
       back: "< voltar a mensagens"
@@ -360,61 +354,6 @@ pt:
     welcome: olá
     write_a_comment: "+ Escreve um comentário"
     your_email: Seu email
-  number:
-    currency:
-      format:
-        delimiter: "."
-        format: "%u%n"
-        precision: 2
-        separator: ","
-        significant: false
-        strip_insignificant_zeros: false
-        unit: "€"
-    format:
-      delimiter: "."
-      precision: 3
-      separator: ","
-      significant: false
-      strip_insignificant_zeros: false
-    human:
-      decimal_units:
-        format: "%n %u"
-        units:
-          billion:
-            one: mil milhões
-            other: mil milhões
-          million:
-            one: milhão
-            other: milhões
-          quadrillion:
-            one: mil biliões
-            other: mil biliões
-          thousand: mil
-          trillion:
-            one: bilião
-            other: biliões
-          unit: 
-      format:
-        delimiter: 
-        precision: 1
-        significant: true
-        strip_insignificant_zeros: true
-      storage_units:
-        format: "%n %u"
-        units:
-          byte:
-            one: Byte
-            other: Bytes
-          gb: GB
-          kb: KB
-          mb: MB
-          tb: TB
-    percentage:
-      format:
-        delimiter: 
-    precision:
-      format:
-        delimiter: 
   oauth:
     errors:
       duplicated_username: O seu nome de usuário de %{provider} já se encontra na nossa base de dados. Se você tiver registrado usando outra rede social ou por email e senha, por favor, inicia sessão deste jeito. No caso contrário, indicar outro nome de usuário para completar o registro.
@@ -422,11 +361,6 @@ pt:
   recaptcha:
     errors:
       verification_failed: Falha na verificação contra robots, tenta de novo
-  support:
-    array:
-      last_word_connector: ", e"
-      two_words_connector: " e "
-      words_connector: ", "
   time_ago_in_words: ha %{time}
   unauthorized:
     default: Você não está autorizado a acessar esta página.

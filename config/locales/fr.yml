@@ -128,12 +128,6 @@ fr:
     label:
       message:
         subject: Assujettir
-    select:
-      prompt: Veuillez sélectionner
-    submit:
-      create: Créer un(e) %{model}
-      submit: Enregistrer ce(tte) %{model}
-      update: Modifier ce(tte) %{model}
   mailboxer:
     buttons:
       back: "< Retour aux messages"
@@ -362,53 +356,6 @@ fr:
     welcome: Salut
     write_a_comment: "+ Ajouter un commentaire"
     your_email: votre e-mail
-  number:
-    currency:
-      format:
-        delimiter: " "
-        format: "%n %u"
-        precision: 2
-        separator: ","
-        significant: false
-        strip_insignificant_zeros: false
-        unit: "€"
-    format:
-      delimiter: " "
-      precision: 3
-      separator: ","
-      significant: false
-      strip_insignificant_zeros: false
-    human:
-      decimal_units:
-        format: "%n %u"
-        units:
-          billion: milliard
-          million: million
-          quadrillion: million de milliards
-          thousand: millier
-          trillion: billion
-          unit: 
-      format:
-        delimiter: 
-        precision: 2
-        significant: true
-        strip_insignificant_zeros: true
-      storage_units:
-        format: "%n %u"
-        units:
-          byte:
-            one: octet
-            other: octets
-          gb: Go
-          kb: ko
-          mb: Mo
-          tb: To
-    percentage:
-      format:
-        delimiter: 
-    precision:
-      format:
-        delimiter: 
   oauth:
     errors:
       duplicated_username: Votre nom d'utilisateur pour %{provider} est déjà dans notre base de données. Si vous avez enregistré déjà en utilisant un autre réseau social ou via e-mail et mot de passe, s'il vous plaît connectez-vous de cette façon. Dans le cas contraire, il indique un autre nom d'utilisateur pour terminer l'enregistrement.
@@ -416,11 +363,6 @@ fr:
   recaptcha:
     errors:
       verification_failed: Il a échoué la vérification contre les robots, essayer à nouveau
-  support:
-    array:
-      last_word_connector: " et "
-      two_words_connector: " et "
-      words_connector: ", "
   time_ago_in_words: il y a %{time}
   unauthorized:
     default: Vous n'êtes pas autorisé à accéder à cette page.

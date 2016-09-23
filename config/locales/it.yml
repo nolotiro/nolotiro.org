@@ -128,12 +128,6 @@ it:
     label:
       message:
         subject: Oggetto
-    select:
-      prompt: Per favore, seleziona
-    submit:
-      create: Crea %{model}
-      submit: Invia %{model}
-      update: Aggiorna %{model}
   mailboxer:
     buttons:
       back: "< torna al messaggio"
@@ -366,53 +360,6 @@ it:
     welcome: ciao
     write_a_comment: "+ Scrivi un commento"
     your_email: la tua email
-  number:
-    currency:
-      format:
-        delimiter: "."
-        format: "%n %u"
-        precision: 2
-        separator: ","
-        significant: false
-        strip_insignificant_zeros: false
-        unit: "€"
-    format:
-      delimiter: "."
-      precision: 2
-      separator: ","
-      significant: false
-      strip_insignificant_zeros: false
-    human:
-      decimal_units:
-        format: "%n %u"
-        units:
-          billion: Miliardi
-          million: Milioni
-          quadrillion: Biliardi
-          thousand: Mila
-          trillion: Bilioni
-          unit: 
-      format:
-        delimiter: 
-        precision: 1
-        significant: true
-        strip_insignificant_zeros: true
-      storage_units:
-        format: "%n %u"
-        units:
-          byte:
-            one: Byte
-            other: Byte
-          gb: GB
-          kb: KB
-          mb: MB
-          tb: TB
-    percentage:
-      format:
-        delimiter: 
-    precision:
-      format:
-        delimiter: 
   oauth:
     errors:
       duplicated_username: Il tuo username di %{provider} è gia nella nostra basi de dati. Se ti sei iscrito usando un'altra rete sociale oppure email e password, fai login usando quello. Altrimenti, inserisci un'altro username.
@@ -420,11 +367,6 @@ it:
   recaptcha:
     errors:
       verification_failed: C'è stato un error nella verificazione contro dei robot
-  support:
-    array:
-      last_word_connector: " e "
-      two_words_connector: " e "
-      words_connector: ", "
   time_ago_in_words: "%{time} fa"
   unauthorized:
     default: Non sei autorizzato ad accedere a questa pagina.

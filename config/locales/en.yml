@@ -128,12 +128,6 @@ en:
     label:
       message:
         subject: Subject
-    select:
-      prompt: Please select
-    submit:
-      create: New %{model}
-      submit: Save %{model}
-      update: Update %{model}
   mailboxer:
     buttons:
       back: "< back to messages"
@@ -360,53 +354,6 @@ en:
     welcome: welcome
     write_a_comment: "+ Write a comment"
     your_email: Your email
-  number:
-    currency:
-      format:
-        delimiter: 
-        format: "%n %u"
-        precision: 2
-        separator: 
-        significant: false
-        strip_insignificant_zeros: false
-        unit: 
-    format:
-      delimiter: 
-      precision: 3
-      separator: 
-      significant: false
-      strip_insignificant_zeros: false
-    human:
-      decimal_units:
-        format: "%n %u"
-        units:
-          billion: billion
-          million: million
-          quadrillion: trillion
-          thousand: one thousand
-          trillion: billion
-          unit: 
-      format:
-        delimiter: 
-        precision: 1
-        significant: true
-        strip_insignificant_zeros: true
-      storage_units:
-        format: "%n %u"
-        units:
-          byte:
-            one: Byte
-            other: Bytes
-          gb: GB
-          kb: KB
-          mb: MB
-          tb: TB
-    percentage:
-      format:
-        delimiter: 
-    precision:
-      format:
-        delimiter: 
   oauth:
     errors:
       duplicated_username: The username provided by %{provider} is already in our database. If you already registered through another social network or through email & password, please login using those. Otherwise just specify another username.
@@ -414,11 +361,6 @@ en:
   recaptcha:
     errors:
       verification_failed: Robot verification failed, try again
-  support:
-    array:
-      last_word_connector: ", and"
-      two_words_connector: and
-      words_connector: 
   time_ago_in_words: "%{time} ago"
   unauthorized:
     default: You are not authorized to enter this url

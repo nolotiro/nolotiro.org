@@ -128,12 +128,6 @@ es:
     label:
       message:
         subject: Asunto
-    select:
-      prompt: Por favor seleccione
-    submit:
-      create: Crear %{model}
-      submit: Guardar %{model}
-      update: Actualizar %{model}
   mailboxer:
     buttons:
       back: "< volver a mensajes"
@@ -360,53 +354,6 @@ es:
     welcome: hola
     write_a_comment: "+ Escribe un comentario"
     your_email: Tu email
-  number:
-    currency:
-      format:
-        delimiter: "."
-        format: "%n %u"
-        precision: 2
-        separator: ","
-        significant: false
-        strip_insignificant_zeros: false
-        unit: "€"
-    format:
-      delimiter: "."
-      precision: 3
-      separator: ","
-      significant: false
-      strip_insignificant_zeros: false
-    human:
-      decimal_units:
-        format: "%n %u"
-        units:
-          billion: mil millones
-          million: millón
-          quadrillion: mil billones
-          thousand: mil
-          trillion: billón
-          unit: " "
-      format:
-        delimiter: "."
-        precision: 1
-        significant: true
-        strip_insignificant_zeros: true
-      storage_units:
-        format: "%n %u"
-        units:
-          byte:
-            one: Byte
-            other: Bytes
-          gb: GB
-          kb: KB
-          mb: MB
-          tb: TB
-    percentage:
-      format:
-        delimiter: "."
-    precision:
-      format:
-        delimiter: "."
   oauth:
     errors:
       duplicated_username: Tu nombre de usuario de %{provider} ya se encuentra en nuestra base de datos. Si te has registrado ya usando otra red social o mediante email y contraseña, por favor, inicia sesión de esa manera. En caso contrario, indica otro nombre de usuario para completar el registro.
@@ -414,11 +361,6 @@ es:
   recaptcha:
     errors:
       verification_failed: Falló la verificación contra robots, prueba de nuevo
-  support:
-    array:
-      last_word_connector: ", y "
-      two_words_connector: " y "
-      words_connector: ", "
   time_ago_in_words: hace %{time}
   unauthorized:
     default: No estás autorizado para acceder a esta página.

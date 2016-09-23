@@ -128,12 +128,6 @@ ca:
     label:
       message:
         subject: Assumpte
-    select:
-      prompt: Si us plau tria
-    submit:
-      create: Crear %{model}
-      submit: Guardar %{model}
-      update: Actualitzar %{model}
   mailboxer:
     buttons:
       back: "<Tornar a missatges"
@@ -360,53 +354,6 @@ ca:
     welcome: hola
     write_a_comment: "+ Escriu un nou comentari"
     your_email: El teu email
-  number:
-    currency:
-      format:
-        delimiter: "."
-        format: "%n %u"
-        precision: 2
-        separator: ","
-        significant: false
-        strip_insignificant_zeros: false
-        unit: "€"
-    format:
-      delimiter: "."
-      precision: 3
-      separator: ","
-      significant: false
-      strip_insignificant_zeros: false
-    human:
-      decimal_units:
-        format: "%n %u"
-        units:
-          billion: mil milions
-          million: milió
-          quadrillion: quadrilió
-          thousand: mil
-          trillion: trilió
-          unit: 
-      format:
-        delimiter: "."
-        precision: 1
-        significant: true
-        strip_insignificant_zeros: true
-      storage_units:
-        format: "%n %u"
-        units:
-          byte:
-            one: Byte
-            other: Bytes
-          gb: GB
-          kb: KB
-          mb: MB
-          tb: TB
-    percentage:
-      format:
-        delimiter: "."
-    precision:
-      format:
-        delimiter: "."
   oauth:
     errors:
       duplicated_username: El teu nom d'usuari de %{provider} ja es troba a la base de dades. Si t'has registrat ja usant una altra xarxa social o mitjançant email i contrasenya, si us plau, inicia sessió d'aquesta manera. En cas contrari, indica un altre nom d'usuari per completar el registre.
@@ -414,11 +361,6 @@ ca:
   recaptcha:
     errors:
       verification_failed: Ha fallat la verificació contra robots, intenta-ho de nou
-  support:
-    array:
-      last_word_connector: ", i "
-      two_words_connector: " i "
-      words_connector: ", "
   time_ago_in_words: fa %{time}
   unauthorized:
     default: No aquestes autoritzat paràgraf accedir a aquest this page.
