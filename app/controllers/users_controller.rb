@@ -28,6 +28,6 @@ class UsersController < ApplicationController
   end
 
   def friendly_find(param)
-    User.unlocked.find_by(username: param) || User.unlocked.find(param)
+    User.legitimate.find_by(username: param) || User.legitimate.find(param)
   end
 end

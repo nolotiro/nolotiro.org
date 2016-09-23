@@ -6,28 +6,28 @@
 module Baneable
   def self.prepended(base)
     base.class_eval do
-      scope :unlocked, -> { where(banned_at: nil) }
+      scope :legitimate, -> { where(banned_at: nil) }
     end
   end
 
   # this method is called by devise to check for "active" state of the model
   def active_for_authentication?
-    super && !locked?
+    super && !banned?
   end
 
-  def unlock!
+  def unban!
     update_column('banned_at', nil)
   end
 
-  def lock!
+  def ban!
     update_column('banned_at', Time.zone.now)
   end
 
-  def locked?
+  def banned?
     !banned_at.nil?
   end
 
   def moderate!
-    locked? ? unlock! : lock!
+    banned? ? unban! : ban!
   end
 end

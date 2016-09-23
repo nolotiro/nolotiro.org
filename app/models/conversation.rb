@@ -31,7 +31,7 @@ class Conversation < ActiveRecord::Base
     joined.merge(Blocking.not_affecting(user))
   end
 
-  scope :with_unlocked_participants, -> do
+  scope :with_legitimate_participants, -> do
     joined = joins <<-SQL.squish
       LEFT OUTER JOIN users u1 ON conversations.originator_id = u1.id
       LEFT OUTER JOIN users u2 ON conversations.recipient_id = u2.id

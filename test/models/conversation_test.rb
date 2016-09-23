@@ -43,19 +43,19 @@ class ConversationTest < ActiveSupport::TestCase
     assert_equal 0, Conversation.whitelisted_for(@recipient).size
   end
 
-  def test_with_unlocked_participants_excludes_conversations_with_locked_originators
-    assert_equal 1, Conversation.with_unlocked_participants.size
+  def test_with_legitimate_participants_excludes_stuff_with_banned_originators
+    assert_equal 1, Conversation.with_legitimate_participants.size
 
-    assert_difference(-> { Conversation.with_unlocked_participants.size }, -1) do
-      @user.lock!
+    assert_difference(-> { Conversation.with_legitimate_participants.size }, -1) do
+      @user.ban!
     end
   end
 
-  def test_with_unlocked_participants_excludes_conversations_with_locked_recipients
-    assert_equal 1, Conversation.with_unlocked_participants.size
+  def test_with_legitimate_participants_excludes_stuff_with_banned_recipients
+    assert_equal 1, Conversation.with_legitimate_participants.size
 
-    assert_difference(-> { Conversation.with_unlocked_participants.size }, -1) do
-      @recipient.lock!
+    assert_difference(-> { Conversation.with_legitimate_participants.size }, -1) do
+      @recipient.ban!
     end
   end
 

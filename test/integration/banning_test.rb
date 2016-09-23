@@ -12,7 +12,7 @@ class BanningTest < AuthenticatedTest
       visit root_path
       assert_selector '#header', text: @current_user.name
 
-      @current_user.lock!
+      @current_user.ban!
 
       visit root_path
       assert_selector '#header', text: 'acceder'

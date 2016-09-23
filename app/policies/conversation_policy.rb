@@ -15,7 +15,7 @@ class ConversationPolicy < ApplicationPolicy
 
   class Scope < ApplicationPolicy::Scope
     def resolve
-      scope.with_unlocked_participants
+      scope.with_legitimate_participants
            .participant(user)
            .whitelisted_for(user)
            .untrashed_by(user)

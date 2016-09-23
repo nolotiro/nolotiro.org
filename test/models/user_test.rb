@@ -105,21 +105,21 @@ class UserTest < ActiveSupport::TestCase
     assert_equal 'es', @user.lang
   end
 
-  test 'locking works' do
-    @user.lock!
-    assert_equal true, @user.locked?
+  test 'banning works' do
+    @user.ban!
+    assert_equal true, @user.banned?
   end
 
-  test 'unlocking works' do
-    @user.lock!
-    @user.unlock!
-    assert_equal false, @user.locked?
+  test 'unbanning works' do
+    @user.ban!
+    @user.unban!
+    assert_equal false, @user.banned?
   end
 
   test 'toogling banned flag works' do
-    @user.lock!
+    @user.ban!
     @user.moderate!
-    assert_equal false, @user.locked?
+    assert_equal false, @user.banned?
   end
 
   test 'requires confirmation for new users' do

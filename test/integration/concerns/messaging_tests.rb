@@ -67,9 +67,9 @@ module MessagingTests
     assert_selector 'a', text: 'user2'
   end
 
-  def test_does_not_show_conversations_with_blocked_users
+  def test_does_not_show_conversations_with_banned_users
     send_message(subject: 'Cosas', body: 'Send me info to myemail@example.org')
-    @user2.lock!
+    @user2.ban!
     visit conversations_path
 
     assert_no_selector 'a', text: 'user2'

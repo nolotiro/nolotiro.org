@@ -30,7 +30,7 @@ ActiveAdmin.register User do
   end
 
   action_item :moderate, only: :show do
-    link_to "#{user.locked? ? 'Desb' : 'B'}loquear Usuario",
+    link_to "#{user.banned? ? 'Desb' : 'B'}loquear Usuario",
             moderate_admin_user_path(user),
             method: :post
   end

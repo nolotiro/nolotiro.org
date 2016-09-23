@@ -18,7 +18,7 @@ class AdPolicy < ApplicationPolicy
       not_spam = scope.not_spam
       return not_spam unless user
 
-      not_spam.from_unlocked_authors.from_authors_whitelisting(user)
+      not_spam.from_legitimate_authors.from_authors_whitelisting(user)
     end
   end
 end

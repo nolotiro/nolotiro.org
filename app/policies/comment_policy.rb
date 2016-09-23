@@ -12,7 +12,7 @@ class CommentPolicy < ApplicationPolicy
     def resolve
       return scope unless user
 
-      scope.from_unlocked_authors.from_authors_whitelisting(user)
+      scope.from_legitimate_authors.from_authors_whitelisting(user)
     end
   end
 end
