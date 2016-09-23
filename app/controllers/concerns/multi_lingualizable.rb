@@ -1,13 +1,13 @@
 # frozen_string_literal: true
 
-require 'active_support/concern'
-
 module MultiLingualizable
-  extend ActiveSupport::Concern
+  def self.included(base)
+    base.extend ClassMethods
 
-  included { before_action :set_locale }
+    base.class_eval { before_action :set_locale }
+  end
 
-  class_methods do
+  module ClassMethods
     def default_url_options(_options = {})
       { locale: I18n.locale }
     end

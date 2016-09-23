@@ -1,16 +1,14 @@
 # frozen_string_literal: true
 
-require 'active_support/concern'
-
 #
 # Spam related functionality
 #
 module Spamable
-  extend ActiveSupport::Concern
-
-  included do
-    scope :spam, -> { where(spam: true) }
-    scope :not_spam, -> { where(spam: false) }
+  def self.included(base)
+    base.class_eval do
+      scope :spam, -> { where(spam: true) }
+      scope :not_spam, -> { where(spam: false) }
+    end
   end
 
   #

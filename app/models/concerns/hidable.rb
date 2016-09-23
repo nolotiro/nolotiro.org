@@ -1,15 +1,13 @@
 # frozen_string_literal: true
 
-require 'active_support/concern'
-
 module Hidable
-  extend ActiveSupport::Concern
+  def self.included(base)
+    base.class_eval do
+      scope :from_authors_whitelisting, ->(user) do
+        joins(:user).merge(User.whitelisting(user))
+      end
 
-  included do
-    scope :from_authors_whitelisting, ->(user) do
-      joins(:user).merge(User.whitelisting(user))
+      scope :from_unlocked_authors, -> { joins(:user).merge(User.unlocked) }
     end
-
-    scope :from_unlocked_authors, -> { joins(:user).merge(User.unlocked) }
   end
 end
