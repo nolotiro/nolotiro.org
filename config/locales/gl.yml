@@ -58,6 +58,10 @@ gl:
     destroy:
       success: 
   conversations:
+    buttons:
+      back: Mensaxes de novo
+      trash: Eliminar conversa
+      trash_selected: Eliminar conversas seleccionadas
     index:
       title: Mensaxes de %{username}
     new:
@@ -65,8 +69,13 @@ gl:
       subject: Tema
       submit: Enviar
       title: Nova mensaxe privada para o usuario %{user}
+    notifications:
+      sent: Mensaxe enviada
+      trash: Conversa arquivada
     show:
       title_html: 
+    table:
+      none: 
   devise:
     confirmations:
       action: Confirmar miña conta
@@ -128,16 +137,6 @@ gl:
       success: 
     destroy:
       success: 
-  mailboxer:
-    buttons:
-      back: Mensaxes de novo
-      trash: Eliminar conversa
-      trash_selected: Eliminar conversas seleccionadas
-    notifications:
-      sent: Mensaxe enviada
-      trash: Conversa arquivada
-    table:
-      none: 
   mailer:
     confirmation_reminder:
       p1: Detectamos que teña creado unha conta en nolotiro.org e vostede non confirmou.

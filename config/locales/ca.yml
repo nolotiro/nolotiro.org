@@ -56,6 +56,10 @@ ca:
     destroy:
       success: Usuari desbloquejat
   conversations:
+    buttons:
+      back: "<Tornar a missatges"
+      trash: Esborrar conversa
+      trash_selected: Esborrar converses seleccionats
     index:
       title: Missatges de %{username}
     new:
@@ -63,8 +67,13 @@ ca:
       subject: Tema
       submit: Enviar
       title: Nou missatge privat per a l'usuari %{user}
+    notifications:
+      sent: missatge enviat
+      trash: Conversa esborrat
     show:
       title_html: Conversa amb %{recipient} assumpte %{subject}
+    table:
+      none: No tens missatges d'aquest tipus
   devise:
     confirmations:
       action: Confirmar el meu compte
@@ -124,16 +133,6 @@ ca:
       success: Amic agregat
     destroy:
       success: Amic eliminat
-  mailboxer:
-    buttons:
-      back: "<Tornar a missatges"
-      trash: Esborrar conversa
-      trash_selected: Esborrar converses seleccionats
-    notifications:
-      sent: missatge enviat
-      trash: Conversa esborrat
-    table:
-      none: No tens missatges d'aquest tipus
   mailer:
     confirmation_reminder:
       p1: Hem detectat que t'has creat un compte a nolotiro.org i no l'has confirmat.

@@ -56,6 +56,10 @@ fr:
     destroy:
       success: 
   conversations:
+    buttons:
+      back: "< Retour aux messages"
+      trash: Déplacer un message à corbeille
+      trash_selected: Supprimer les messages sélectionnés
     index:
       title: Messages %{username}
     new:
@@ -63,8 +67,13 @@ fr:
       subject: Thème
       submit: Envoyer
       title: Nouveau message privé pour l'utilisateur %{user}
+    notifications:
+      sent: Message envoyé
+      trash: Message déplacé à la corbeille
     show:
       title_html: Conversation avec %{recipient} objet %{subject}
+    table:
+      none: Pas de messages de ce type
   devise:
     confirmations:
       action: Confirmer mon compte
@@ -124,16 +133,6 @@ fr:
       success: Ami ajouté
     destroy:
       success: Ami supprimé
-  mailboxer:
-    buttons:
-      back: "< Retour aux messages"
-      trash: Déplacer un message à corbeille
-      trash_selected: Supprimer les messages sélectionnés
-    notifications:
-      sent: Message envoyé
-      trash: Message déplacé à la corbeille
-    table:
-      none: Pas de messages de ce type
   mailer:
     confirmation_reminder:
       p1: Nous avons détecté que vous avez créé un compte sur nolotiro.org et vous ne l'avez pas confirmé.

@@ -15,12 +15,13 @@
             %tbody
               - @conversations.each do |c|
                 = render "conversations/conversation", c: c
-        = submit_tag t('mailboxer.buttons.trash_selected'), id: 'delete_multiple_button'
+        = submit_tag t('conversations.buttons.trash_selected'),
+                     id: 'delete_multiple_button'
       = will_paginate @conversations
     - else
       %p
         .empty
-          = t("mailboxer.table.none")
+          = t("conversations.table.none")
 
 .col-md-3.col-sm-3
   .row

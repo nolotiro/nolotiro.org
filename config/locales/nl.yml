@@ -56,6 +56,10 @@ nl:
     destroy:
       success: 
   conversations:
+    buttons:
+      back: 
+      trash: 
+      trash_selected: 
     index:
       title: 
     new:
@@ -63,8 +67,13 @@ nl:
       subject: 
       submit: 
       title: 
+    notifications:
+      sent: 
+      trash: 
     show:
       title_html: 
+    table:
+      none: 
   devise:
     confirmations:
       action: 
@@ -124,16 +133,6 @@ nl:
       success: 
     destroy:
       success: 
-  mailboxer:
-    buttons:
-      back: 
-      trash: 
-      trash_selected: 
-    notifications:
-      sent: 
-      trash: 
-    table:
-      none: 
   mailer:
     confirmation_reminder:
       p1: 

@@ -56,6 +56,10 @@ it:
     destroy:
       success: Utente sbloccato
   conversations:
+    buttons:
+      back: "< torna al messaggio"
+      trash: Cancellare la conversazione
+      trash_selected: Cancellare le conversazioni selezionati
     index:
       title: Messaggio di %{username}
     new:
@@ -63,8 +67,13 @@ it:
       subject: soggetto
       submit: Invia
       title: Nuovo messaggio privato per l'utente %{user}
+    notifications:
+      sent: Messaggio inviato
+      trash: Conversazione cancellata
     show:
       title_html: Conversazione con %{recipient} oggetto %{subject}
+    table:
+      none: Non hai messaggi di questo tipo
   devise:
     confirmations:
       action: Conferma il tuo account
@@ -124,16 +133,6 @@ it:
       success: Amico aggiunto
     destroy:
       success: Amico cancellato
-  mailboxer:
-    buttons:
-      back: "< torna al messaggio"
-      trash: Cancellare la conversazione
-      trash_selected: Cancellare le conversazioni selezionati
-    notifications:
-      sent: Messaggio inviato
-      trash: Conversazione cancellata
-    table:
-      none: Non hai messaggi di questo tipo
   mailer:
     confirmation_reminder:
       p1: Abbiamo rivelato che hai creato un account in nolotiro.org che non è stato confermato.

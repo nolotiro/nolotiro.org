@@ -56,6 +56,10 @@ en:
     destroy:
       success: User unblocked
   conversations:
+    buttons:
+      back: "< back to messages"
+      trash: Conversation deleted
+      trash_selected: Delete selected conversations
     index:
       title: Message from %{username}
     new:
@@ -63,8 +67,13 @@ en:
       subject: Topic
       submit: Send
       title: New private message for user %{user}
+    notifications:
+      sent: Sent message
+      trash: 
     show:
       title_html: Conversation with %{recipient} subject %{subject}
+    table:
+      none: You do not have this type of messages
   devise:
     confirmations:
       action: Confirm my account
@@ -124,16 +133,6 @@ en:
       success: Friend added
     destroy:
       success: Friend removed
-  mailboxer:
-    buttons:
-      back: "< back to messages"
-      trash: Delete conversation
-      trash_selected: Delete selected conversations
-    notifications:
-      sent: Sent message
-      trash: Conversation deleted
-    table:
-      none: You do not have this type of messages
   mailer:
     confirmation_reminder:
       p1: We have detected that you have created an account on nolotiro.org and you have not confirmed yet.
