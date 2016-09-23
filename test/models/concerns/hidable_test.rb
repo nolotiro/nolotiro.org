@@ -39,11 +39,11 @@ class HidableTest < ActiveSupport::TestCase
     assert_equal [@post], GenericPost.from_authors_whitelisting(@author)
   end
 
-  def test_from_unlocked_authors
-    assert_equal [@post], GenericPost.from_unlocked_authors
+  def test_from_legitimate_authors
+    assert_equal [@post], GenericPost.from_legitimate_authors
 
-    @author.lock!
+    @author.ban!
 
-    assert_empty GenericPost.from_unlocked_authors
+    assert_empty GenericPost.from_legitimate_authors
   end
 end

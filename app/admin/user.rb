@@ -1,55 +1,59 @@
 # frozen_string_literal: true
 
 ActiveAdmin.register User do
+  config.batch_actions = false
+  config.clear_action_items!
+
   permit_params :role
 
-  filter :email
+  scope 'Legítimos', :legitimate, default: true
+  scope 'Baneados', :banned
+
   filter :username
-  filter :last_sign_in_ip
-  filter :ads_count
-  filter :created_at
+  filter :email
   filter :confirmed_at
-  filter :current_sign_in_at
+  filter :last_sign_in_ip
+  filter :last_sign_in_at
+  filter :ads_count
 
   index do
-    selectable_column
-    column :username do |user|
-      link_to user.username, admin_user_path(user)
-    end
+    column(:username) { |user| link_to user.username, admin_user_path(user) }
     column :email
     column :confirmed_at
     column :last_sign_in_ip
-    column :current_sign_in_at
+    column :last_sign_in_at
     column :ads_count
-    column :created_at
-    actions
-  end
 
-  action_item :view, only: :show do
-    link_to 'Ver en la web', profile_path(user.username)
-  end
+    actions(defaults: false) do |user|
+      edit = link_to 'Editar', edit_admin_user_path(user)
+      moderate = link_to "#{user.banned? ? 'Desb' : 'B'}loquear",
+                         moderate_admin_user_path(user),
+                         method: :post
 
-  action_item :moderate, only: :show do
-    if user.locked?
-      link_to 'Desbloquear Usuario', unlock_admin_user_path(user), method: :post
-    else
-      link_to 'Bloquear Usuario', lock_admin_user_path(user), method: :post
+      safe_join([edit, moderate], ' ')
     end
   end
 
-  member_action :unlock, method: :post do
-    user = User.find(params[:id])
-
-    user.unlock!
-
-    redirect_to admin_user_path(user), notice: 'Usuario desbloqueado'
+  action_item :view, only: :show do
+    link_to('Ver en la web', profile_path(user.username)) if user.legitimate?
   end
 
-  member_action :lock, method: :post do
+  action_item :edit, only: :show do
+    link_to 'Editar Usuario', edit_admin_user_path(user)
+  end
+
+  action_item :moderate, only: :show do
+    link_to "#{user.banned? ? 'Desb' : 'B'}loquear Usuario",
+            moderate_admin_user_path(user),
+            method: :post
+  end
+
+  member_action :moderate, method: :post do
     user = User.find(params[:id])
 
-    user.lock!
+    user.moderate!
 
-    redirect_to admin_user_path(user), notice: 'Usuario bloqueado'
+    redirect_to admin_user_path(user),
+                notice: "Usuario #{'des' unless user.locked?}bloqueado"
   end
 end

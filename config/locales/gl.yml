@@ -1,8 +1,4 @@
 gl:
-  active_admin:
-    batch_actions:
-      labels:
-        toggle_spam: 
   activemodel:
     attributes:
       contact:
@@ -38,7 +34,7 @@ gl:
         body: Mensaxe
         subject: Asunto
       user:
-        ads_count: Anuncios publicados
+        ads_count: Anuncios
         confirmed_at: Data de confirmación
         created_at: Data de inscrición
         current_password: Contrasinal actual

@@ -45,10 +45,16 @@ class AdManagementTest < AuthenticatedTest
       end
     end
 
-    assert_text 'Hemos creado el anuncio'
-
-    visit ads_woeid_path(@current_user.woeid, type: 'give')
+    visit root_path
     assert_no_text 'Regalo de campista'
+  end
+
+  it 'automatically kicks out spammers' do
+    mocking_yahoo_woeid_info(@current_user.woeid) do
+      submit_ad_form(title: 'Regalo de campista')
+    end
+
+    assert_text 'Tu cuenta aún no ha sido activada'
   end
 
   private

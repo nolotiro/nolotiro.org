@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class User < ActiveRecord::Base
+  prepend Baneable
+
   has_many :identities, inverse_of: :user, dependent: :destroy
 
   has_many :ads, foreign_key: :user_owner, dependent: :destroy
@@ -49,8 +51,6 @@ class User < ActiveRecord::Base
                        if: :password_required?
 
   validates :password, length: { in: 5..128 }, allow_blank: true
-
-  scope :unlocked, -> { where(locked: 0) }
 
   # Include default devise modules. Others available are:
   # :timeoutable and :omniauthable
@@ -123,19 +123,6 @@ class User < ActiveRecord::Base
 
   def admin?
     role == 1
-  end
-
-  # this method is called by devise to check for "active" state of the model
-  def active_for_authentication?
-    super && locked != 1
-  end
-
-  def unlock!
-    update_column('locked', 0)
-  end
-
-  def lock!
-    update_column('locked', 1)
   end
 
   def default_lang

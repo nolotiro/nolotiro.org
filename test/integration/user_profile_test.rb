@@ -31,16 +31,16 @@ class UserProfileTest < ActionDispatch::IntegrationTest
     assert_text 'Anuncios publicados - jaimito'
   end
 
-  it 'gives 404 for profiles of locked users' do
-    @user.lock!
+  it 'gives 404 for profiles of banned users' do
+    @user.ban!
 
     assert_raises(ActiveRecord::RecordNotFound) do
       visit profile_path(@user.username)
     end
   end
 
-  it 'gives 404 for ad list of locked users' do
-    @user.lock!
+  it 'gives 404 for ad list of banned users' do
+    @user.ban!
 
     assert_raises(ActiveRecord::RecordNotFound) do
       visit listads_user_path(@user.id)

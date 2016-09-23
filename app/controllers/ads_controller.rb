@@ -27,7 +27,7 @@ class AdsController < ApplicationController
     if verify_recaptcha(model: @ad) && @ad.save
       @ad.check_spam!
 
-      redirect_to redirect_path, notice: t('nlt.ads.created')
+      redirect_to adslug_path(@ad, slug: @ad.slug), notice: t('nlt.ads.created')
     else
       render action: 'new'
     end
@@ -52,7 +52,7 @@ class AdsController < ApplicationController
     if @ad.update(ad_params)
       @ad.check_spam!
 
-      redirect_to redirect_path, notice: t('nlt.ads.updated')
+      redirect_to adslug_path(@ad, slug: @ad.slug), notice: t('nlt.ads.updated')
     else
       render action: 'edit', alert: @ad.errors
     end
@@ -65,12 +65,6 @@ class AdsController < ApplicationController
   end
 
   private
-
-  def redirect_path
-    return ads_woeid_path(current_user.woeid, type: 'give') if @ad.spam
-
-    adslug_path(@ad, slug: @ad.slug)
-  end
 
   def set_ad
     @ad = Ad.find(params[:id])

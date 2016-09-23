@@ -6,7 +6,7 @@ class AdPolicy < ApplicationPolicy
   end
 
   def bump?
-    user && ((record.user == user && record.bumpable?) || user.admin?)
+    user && (record.user == user && record.bumpable?)
   end
 
   def destroy?
@@ -15,10 +15,10 @@ class AdPolicy < ApplicationPolicy
 
   class Scope < ApplicationPolicy::Scope
     def resolve
-      not_spam = scope.not_spam
+      not_spam = scope.from_legitimate_authors
       return not_spam unless user
 
-      not_spam.from_unlocked_authors.from_authors_whitelisting(user)
+      not_spam.from_authors_whitelisting(user)
     end
   end
 end

@@ -1,8 +1,4 @@
 es:
-  active_admin:
-    batch_actions:
-      labels:
-        toggle_spam: Corregir la calificación de SPAM de los registros
   activemodel:
     attributes:
       contact:
@@ -38,7 +34,7 @@ es:
         body: Mensaje
         subject: Título
       user:
-        ads_count: Anuncios publicados
+        ads_count: Anuncios
         confirmed_at: Fecha de confirmación
         created_at: Fecha de registro
         current_password: Contraseña actual

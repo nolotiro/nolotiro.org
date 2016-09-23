@@ -9,15 +9,6 @@ ActiveAdmin.register Ad do
 
   permit_params :woeid_code, :type, :body, :title
 
-  scope 'No SPAM', :not_spam, default: true
-  scope 'SPAM', :spam
-
-  batch_action :toggle_spam do |ids|
-    batch_action_collection.find(ids).each(&:toggle_spam!)
-
-    redirect_to collection_path, notice: 'Feedback recibido.'
-  end
-
   filter :title
   filter :body
   filter :user_username, as: :string, label: I18n.t('nlt.username')
@@ -37,12 +28,12 @@ ActiveAdmin.register Ad do
 
     column :user
 
-    column(:type) do |ad|
+    column :type do |ad|
       status_tag({ 'give' => 'green', 'want' => 'red' }[ad.type],
                  label: ad.type)
     end
 
-    column(:status) do |ad|
+    column :status do |ad|
       status_tag({ 'available' => 'green',
                    'booked' => 'orange',
                    'delivered' => 'red' }[ad.status],
@@ -51,17 +42,13 @@ ActiveAdmin.register Ad do
 
     column(:city, &:woeid_name_short)
 
-    column(:published_at) { |ad| ad.published_at.strftime('%d/%m/%y %H:%M') }
+    column :published_at
 
     actions(defaults: false) do |ad|
       edit = link_to 'Editar', edit_admin_ad_path(ad)
       delete = link_to 'Eliminar', admin_ad_path(ad), method: :delete
 
-      spam = link_to "#{'No ' if ad.spam?}SPAM",
-                     mark_spam_admin_ad_path(ad, q: params[:q]),
-                     method: :post
-
-      safe_join([edit, delete, spam], ' ')
+      safe_join([edit, delete], ' ')
     end
   end
 

@@ -1,8 +1,4 @@
 pt:
-  active_admin:
-    batch_actions:
-      labels:
-        toggle_spam: 
   activemodel:
     attributes:
       contact:
@@ -38,7 +34,7 @@ pt:
         body: Mensagem
         subject: Título
       user:
-        ads_count: Anúncios publicados
+        ads_count: Anúncios
         confirmed_at: Data de confirmação
         created_at: Data de registro
         current_password: Senha atual

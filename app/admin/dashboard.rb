@@ -14,7 +14,7 @@ ActiveAdmin.register_page 'Dashboard' do
             column :title do |ad|
               link_to ad.title, admin_ad_path(ad)
             end
-            column(:user) do |ad|
+            column :user do |ad|
               link_to ad.user.username, admin_user_path(ad.user)
             end
             column :published_at do |ad|
@@ -31,7 +31,7 @@ ActiveAdmin.register_page 'Dashboard' do
             column :body do |com|
               link_to com.body, admin_comment_path(com)
             end
-            column(:user) do |com|
+            column :user do |com|
               link_to com.user.username, admin_user_path(com.user)
             end
             column :ad
