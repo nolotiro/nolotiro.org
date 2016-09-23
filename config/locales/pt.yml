@@ -60,7 +60,6 @@ pt:
       title: Mensagens de %{username}
     new:
       body_max: Máximo 1500 caracteres
-      button: Enviar
       subject: Assunto
       submit: Enviar
       title: Nova mensagem privada para o usuário %{user}
@@ -125,10 +124,6 @@ pt:
       success: Amigo adicionado
     destroy:
       success: Amigo excluído
-  helpers:
-    label:
-      message:
-        subject: Assunto
   mailboxer:
     buttons:
       back: "< voltar a mensagens"
@@ -152,8 +147,6 @@ pt:
       subject: Assunto
     subject_new: "[nolotiro.org] Nova mensagem do usuário %{user}"
     visit: Ver conversa e responder mensagem
-    visit_html: Clique em %{url} e ingrese na sua caixa de entrada para responder
-    visit_text: Clique em %{url} e ingrese na sua caixa de entrada para responder
     you_have_new_message: Você recebeu uma nova mensagem
   nlt:
     a_gift: Um presente
@@ -173,7 +166,6 @@ pt:
         image_permitted_formats: gif, jpg, png somente. No máximo 1Mb de tamanho.
         private_messages_only: Apenas por messagem privada
         private_messages_or_comments: Por messagem privada o ou através de comentários públicos no anúncio
-        prohibited: 'Há um problema, verificar isso:'
         select_an_image: Adicionar uma imagem para o anúncio
         status: Estado
         title: 'Titulo do anúncio:'
@@ -195,7 +187,6 @@ pt:
       choose: Escolhe sua localização
       choose_html: Não foram encontradas localizações com o nome <b>%{location}</b>. Tente de novo
       close_to: 'Nosso sistema de sugestões de localização (baseado no seu IP) disse que você está perto de:'
-      please: Por favor, insira sua cidade
       submit: Enviar
       town: 'Cidade:'
     change_your_city: Escolha sua cidade
@@ -363,10 +354,6 @@ pt:
     errors:
       verification_failed: Falha na verificação contra robots, tenta de novo
   time_ago_in_words: ha %{time}
-  unauthorized:
-    default: Você não está autorizado a acessar esta página.
-    manage:
-      all: Primeiro você tem que iniciar sessão ou registrar um usuário.
   will_paginate:
     next_label: próximo →
     page_entries_info:

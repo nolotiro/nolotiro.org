@@ -60,7 +60,6 @@ it:
       title: Messaggio di %{username}
     new:
       body_max: 1500 caratteri massimo
-      button: Invia
       subject: soggetto
       submit: Invia
       title: Nuovo messaggio privato per l'utente %{user}
@@ -125,10 +124,6 @@ it:
       success: Amico aggiunto
     destroy:
       success: Amico cancellato
-  helpers:
-    label:
-      message:
-        subject: Oggetto
   mailboxer:
     buttons:
       back: "< torna al messaggio"
@@ -152,8 +147,6 @@ it:
       subject: Oggetto
     subject_new: "[nolotiro.org] Nuovo messaggio dall'utente %{user}"
     visit: Guarda la converzazione e risponde al messaggio
-    visit_html: Vai a %{url} e guarda nella tua posta in arrivo per rispondere
-    visit_text: Vai a %{url} e guarda nella tua posta in arrivo per rispondere
     you_have_new_message: Hai ricevuto un nuovo messaggio
   nlt:
     a_gift: Un regalo
@@ -173,7 +166,6 @@ it:
         image_permitted_formats: 'Formatti permessi: gif, jpg, png. Massimo: 5Mb di dimensione'
         private_messages_only: Soltanto por messaggi privati
         private_messages_or_comments: Por messaggi privati oppure por commenti nell'annucio
-        prohibited: 'C''e un problema, controlla questo:'
         select_an_image: Seleziona una immagine per il tuo annuncio
         status: Stato
         title: 'Titolo del tuo annuncio: '
@@ -195,7 +187,6 @@ it:
       choose: Sceglie il luogo
       choose_html: Nessuna posizione trovate con il nome <b>%{location}</b>. Riprova
       close_to: 'Nostro sistema di posizione (basato nella tua IP) ci indica che sei vicino a:'
-      please: Per favore, scrive la tua città
       submit: Inviare
       town: 'Città:'
     change_your_city: Cambia la tua città
@@ -369,10 +360,6 @@ it:
     errors:
       verification_failed: C'è stato un error nella verificazione contro dei robot
   time_ago_in_words: "%{time} fa"
-  unauthorized:
-    default: Non sei autorizzato ad accedere a questa pagina.
-    manage:
-      all: È necessario prima effettuare il login o registrare un utente.
   will_paginate:
     next_label: successivo →
     page_entries_info:

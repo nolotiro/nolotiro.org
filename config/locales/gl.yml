@@ -62,7 +62,6 @@ gl:
       title: Mensaxes de %{username}
     new:
       body_max: Máximo 1500 carácteres
-      button: Enviar
       subject: Tema
       submit: Enviar
       title: Nova mensaxe privada para o usuario %{user}
@@ -129,10 +128,6 @@ gl:
       success: 
     destroy:
       success: 
-  helpers:
-    label:
-      message:
-        subject: Asunto
   mailboxer:
     buttons:
       back: Mensaxes de novo
@@ -156,8 +151,6 @@ gl:
       subject: Asunto
     subject_new: 
     visit: Ver conversa e responder o mensaxe
-    visit_html: 
-    visit_text: 
     you_have_new_message: Recibiu unha mensaxe nova
   nlt:
     a_gift: Un presente
@@ -177,7 +170,6 @@ gl:
         image_permitted_formats: 'Formatos permitidos: gif, jpg, png. Max: 5Mb de tamaño.'
         private_messages_only: Unicamente por mensaxe privada
         private_messages_or_comments: Por mensaxe privada o mediante comentarios públicos no anuncio
-        prohibited: 'Hai un problema, consulta isto:'
         select_an_image: Seleccione unha imaxe para o súo regalo
         status: Estado
         title: 'Título do anuncio:'
@@ -199,7 +191,6 @@ gl:
       choose: Elixa a súa situación
       choose_html: Non hai lugares atopados co nome <b>%{location}</b>. Téntao de novo
       close_to: 'O noso sistema de suxestións (con base no seu IP) di que estas preto a:'
-      please: Por favor, introduza a súa cidade
       submit: Enviar
       town: 'Cidade:'
     change_your_city: Cambiar de cidade
@@ -371,10 +362,6 @@ gl:
     errors:
       verification_failed: 
   time_ago_in_words: hace %{time}
-  unauthorized:
-    default: 
-    manage:
-      all: 
   will_paginate:
     next_label: 
     page_entries_info:

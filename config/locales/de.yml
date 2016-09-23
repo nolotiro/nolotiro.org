@@ -60,7 +60,6 @@ de:
       title: 
     new:
       body_max: 
-      button: 
       subject: 
       submit: 
       title: 
@@ -125,10 +124,6 @@ de:
       success: 
     destroy:
       success: 
-  helpers:
-    label:
-      message:
-        subject: 
   mailboxer:
     buttons:
       back: 
@@ -152,8 +147,6 @@ de:
       subject: 
     subject_new: 
     visit: 
-    visit_html: 
-    visit_text: 
     you_have_new_message: 
   nlt:
     a_gift: 
@@ -173,7 +166,6 @@ de:
         image_permitted_formats: 
         private_messages_only: 
         private_messages_or_comments: 
-        prohibited: 
         select_an_image: 
         status: 
         title: 
@@ -195,7 +187,6 @@ de:
       choose: 
       choose_html: 
       close_to: 
-      please: 
       submit: 
       town: 
     change_your_city: 
@@ -363,10 +354,6 @@ de:
     errors:
       verification_failed: 
   time_ago_in_words: "%{time} her"
-  unauthorized:
-    default: 
-    manage:
-      all: 
   will_paginate:
     next_label: Weiter →
     page_entries_info:

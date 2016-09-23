@@ -60,7 +60,6 @@ ca:
       title: Missatges de %{username}
     new:
       body_max: Màxim 1500 caràcters
-      button: Enviar
       subject: Tema
       submit: Enviar
       title: Nou missatge privat per a l'usuari %{user}
@@ -125,10 +124,6 @@ ca:
       success: Amic agregat
     destroy:
       success: Amic eliminat
-  helpers:
-    label:
-      message:
-        subject: Assumpte
   mailboxer:
     buttons:
       back: "<Tornar a missatges"
@@ -152,8 +147,6 @@ ca:
       subject: Assumpte
     subject_new: "[nolotiro.org] Missatge nou de l'usuari %{user}"
     visit: Veure conversa i respondre missatge
-    visit_html: Visita %{url} i veu a la teva safata d'entrada per respondre
-    visit_text: Visita %{url} i veu a la teva safata d'entrada per respondre
     you_have_new_message: Has rebut un nou missatge
   nlt:
     a_gift: Un regal
@@ -173,7 +166,6 @@ ca:
         image_permitted_formats: 'Formats permesos: gif, jpg, png. Max: 5Mb de mida.'
         private_messages_only: Només per missatge privat
         private_messages_or_comments: Per missatge privat o a través de comentaris públics a l'anunci
-        prohibited: 'Hi ha un problema, revisa això:'
         select_an_image: Selecciona una imatge per al teu anunci
         status: Estat
         title: 'Título de tu anuncio:'
@@ -195,7 +187,6 @@ ca:
       choose: Tria la teva ubicació
       choose_html: No s'han trobat ubicacions amb el nom <b>%{location}</b>. Torna a intentar-
       close_to: 'El nostre sistema de suggeriment d''ubicació (basat en la teva IP) diu que aquestes prop de:'
-      please: Si us plau, escriu la teva ciutat
       submit: Enviar
       town: 'Ciutat:'
     change_your_city: Canvia la teva ciutat
@@ -363,10 +354,6 @@ ca:
     errors:
       verification_failed: Ha fallat la verificació contra robots, intenta-ho de nou
   time_ago_in_words: fa %{time}
-  unauthorized:
-    default: No aquestes autoritzat paràgraf accedir a aquest this page.
-    manage:
-      all: Has primer iniciar sessió o registrar usuari un.
   will_paginate:
     next_label: Següent &#8594;
     page_entries_info:

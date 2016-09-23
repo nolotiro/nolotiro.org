@@ -60,7 +60,6 @@ en:
       title: Message from %{username}
     new:
       body_max: Max. 1500 characters
-      button: Send
       subject: Topic
       submit: Send
       title: New private message for user %{user}
@@ -125,10 +124,6 @@ en:
       success: Friend added
     destroy:
       success: Friend removed
-  helpers:
-    label:
-      message:
-        subject: Subject
   mailboxer:
     buttons:
       back: "< back to messages"
@@ -152,8 +147,6 @@ en:
       subject: Subject
     subject_new: "[nolotiro.org] New message from user %{user}"
     visit: View conversation and reply
-    visit_html: Visit %{url} and go to your inbox to reply
-    visit_text: Visit %{url} and go to your inbox to reply
     you_have_new_message: You have a new message
   nlt:
     a_gift: A gift
@@ -173,7 +166,6 @@ en:
         image_permitted_formats: 'Supported formats: gif, jpg, png. Max size: 5Mb'
         private_messages_only: Through private messages only
         private_messages_or_comments: Through both private messages or public comments in the ad
-        prohibited: 'There is a problem, please review this:'
         select_an_image: Choose an image for you ad
         status: Status
         title: 'Title of your ad:'
@@ -195,7 +187,6 @@ en:
       choose: Choose your location
       choose_html: There are no locations with the name <b>%{location}</b>. Please try it again
       close_to: 'Our suggested location''s system (based on your IP) indicates us that you are close to:'
-      please: Please, indicate your city
       submit: Send
       town: 'City:'
     change_your_city: change your city
@@ -363,10 +354,6 @@ en:
     errors:
       verification_failed: Robot verification failed, try again
   time_ago_in_words: "%{time} ago"
-  unauthorized:
-    default: You are not authorized to enter this url
-    manage:
-      all: First, you must log in or sign up
   will_paginate:
     next_label: next →
     page_entries_info:

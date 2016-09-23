@@ -60,7 +60,6 @@ fr:
       title: Messages %{username}
     new:
       body_max: Maximum 1500 caractères
-      button: Envoyer
       subject: Thème
       submit: Envoyer
       title: Nouveau message privé pour l'utilisateur %{user}
@@ -125,10 +124,6 @@ fr:
       success: Ami ajouté
     destroy:
       success: Ami supprimé
-  helpers:
-    label:
-      message:
-        subject: Assujettir
   mailboxer:
     buttons:
       back: "< Retour aux messages"
@@ -152,8 +147,6 @@ fr:
       subject: 
     subject_new: 
     visit: 
-    visit_html: 
-    visit_text: 
     you_have_new_message: 
   nlt:
     a_gift: 
@@ -173,7 +166,6 @@ fr:
         image_permitted_formats: 'Admis formats: gif, jpg, png. Max: 5MB.'
         private_messages_only: 
         private_messages_or_comments: 
-        prohibited: 'Il y a un problème, vérifier cela:'
         select_an_image: Sélectionnez une image pour votre annonce (en option).
         status: Etat
         title: 'Titre de votre annonce:'
@@ -195,7 +187,6 @@ fr:
       choose: Choisissez votre pays
       choose_html: Aucun emplacement trouvé avec le nom <b>%{location}</b>. S'il vous plaît essayer à nouveau
       close_to: 'Notre emplacement du système de suggestion (en fonction de votre IP) dit que vous êtes près de:'
-      please: S'il vous plaît entrer votre ville
       submit: Envoyer
       town: 'Ville:'
     change_your_city: Changer de ville
@@ -365,10 +356,6 @@ fr:
     errors:
       verification_failed: Il a échoué la vérification contre les robots, essayer à nouveau
   time_ago_in_words: il y a %{time}
-  unauthorized:
-    default: Vous n'êtes pas autorisé à accéder à cette page.
-    manage:
-      all: Vous devez d'abord vous connecter ou vous inscrire un usager.
   will_paginate:
     next_label: suivant →
     page_entries_info:

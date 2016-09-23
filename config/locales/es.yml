@@ -60,7 +60,6 @@ es:
       title: Mensajes de %{username}
     new:
       body_max: Máximo 1500 carácteres
-      button: Enviar
       subject: Tema
       submit: Enviar
       title: Nuevo mensaje privado para el usuario %{user}
@@ -125,10 +124,6 @@ es:
       success: Amigo agregado
     destroy:
       success: Amigo eliminado
-  helpers:
-    label:
-      message:
-        subject: Asunto
   mailboxer:
     buttons:
       back: "< volver a mensajes"
@@ -152,8 +147,6 @@ es:
       subject: Asunto
     subject_new: "[nolotiro.org] Nuevo mensaje del usuario %{user}"
     visit: Ver conversación y responder mensaje
-    visit_html: Visita %{url} y ve a tu bandeja de entrada para responder
-    visit_text: Visita %{url} y ve a tu bandeja de entrada para responder
     you_have_new_message: Has recibido un nuevo mensaje
   nlt:
     a_gift: Un regalo
@@ -173,7 +166,6 @@ es:
         image_permitted_formats: 'Formatos permitidos: gif, jpg, png. Max: 5Mb de tamaño.'
         private_messages_only: Sólo por mensaje privado
         private_messages_or_comments: Por mensaje privado o mediante comentarios públicos en el anuncio
-        prohibited: 'Hay un problema, revisa esto:'
         select_an_image: Selecciona una imagen para tu anuncio
         status: Estado
         title: 'Título de tu anuncio:'
@@ -195,7 +187,6 @@ es:
       choose: Elige tu ubicación
       choose_html: No se han encontrado ubicaciones con el nombre <b>%{location}</b>. Vuelve a intentarlo
       close_to: 'Nuestro sistema de sugerencia de ubicación (basado en tu IP) dice que estás cerca de:'
-      please: Por favor, escribe tu ciudad
       submit: Enviar
       town: 'Ciudad:'
     change_your_city: Cambia tu ciudad
@@ -363,10 +354,6 @@ es:
     errors:
       verification_failed: Falló la verificación contra robots, prueba de nuevo
   time_ago_in_words: hace %{time}
-  unauthorized:
-    default: No estás autorizado para acceder a esta página.
-    manage:
-      all: Debes primero iniciar sesión o registrarte un usuario.
   will_paginate:
     next_label: siguiente →
     page_entries_info:
