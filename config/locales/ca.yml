@@ -307,7 +307,7 @@ ca:
     profile_actions:
       blocking:
         add: bloquejar a %{username}
-        confirm: 
+        confirm: "¿Segur que vols bloquejar %{username}? No podrà tornar a contactar ni a veure els teus anuncis."
         delete: desbloquejar a %{username}
       friend:
         add: afegir %{username} a la llista d'amics
