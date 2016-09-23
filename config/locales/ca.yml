@@ -55,14 +55,14 @@ ca:
     destroy:
       success: Usuari desbloquejat
   conversations:
+    index:
+      title: Missatges de %{username}
     new:
       body_max: Màxim 1500 caràcters
       button: Enviar
       subject: Tema
       submit: Enviar
       title: Nou missatge privat per a l'usuari %{user}
-    index:
-      title: Missatges de %{username}
     show:
       title_html: Conversa amb %{recipient} assumpte %{subject}
   devise:
@@ -256,7 +256,6 @@ ca:
     gifts: regals
     give: regal
     hello_to: Hola %{recipient},
-    translations: traduccions
     here: aquí
     home_title: anuncis de regals nous i de segona mà
     if_you_are_new: Si ets un nou usuari, si us plau
@@ -345,6 +344,7 @@ ca:
       description_html: Actualment, nolotiro.org està disponible en pocs idiomes, però tu pots ajudar-nos a %{translate_it}.
       link: traduir-lo al teu
       title: Ajuda'ns a traduir nolotiro.org a la teva llengua
+    translations: traduccions
     update: Guardar
     user_ads: anuncis
     user_edit_profile: Edita perfil d'usuari

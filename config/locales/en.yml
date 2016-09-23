@@ -55,14 +55,14 @@ en:
     destroy:
       success: User unblocked
   conversations:
+    index:
+      title: Message from %{username}
     new:
       body_max: Max. 1500 characters
       button: Send
       subject: Topic
       submit: Send
       title: New private message for user %{user}
-    index:
-      title: Message from %{username}
     show:
       title_html: Conversation with %{recipient} subject %{subject}
   devise:
@@ -256,7 +256,6 @@ en:
     gifts: presents
     give: gift
     hello_to: Hello %{recipient},
-    translations: translations
     here: here
     home_title: new and second hand gift's ads
     if_you_are_new: If you are a new user, please
@@ -345,6 +344,7 @@ en:
       description_html: Currently, nolotiro.org is available in a few languages, but you can help us %{translate_it}.
       link: translate it to yours
       title: Help us to translate nolotiro.org
+    translations: translations
     update: Save
     user_ads: ads
     user_edit_profile: Edit user's profile

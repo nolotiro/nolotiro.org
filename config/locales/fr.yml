@@ -55,14 +55,14 @@ fr:
     destroy:
       success: 
   conversations:
+    index:
+      title: Messages %{username}
     new:
       body_max: Maximum 1500 caractères
       button: Envoyer
       subject: Thème
       submit: Envoyer
       title: Nouveau message privé pour l'utilisateur %{user}
-    index:
-      title: Messages %{username}
     show:
       title_html: Conversation avec %{recipient} objet %{subject}
   devise:
@@ -256,7 +256,6 @@ fr:
     gifts: cadeaux
     give: cadeau
     hello_to: Salut %{recipient},
-    translations: Traductions
     here: ici
     home_title: annonces de cadeaux neuves et d'occasion
     if_you_are_new: Si vous êtes un nouvel utilisateur, s'il vous plaît
@@ -347,6 +346,7 @@ fr:
       description_html: À l'heure actuelle, nolotiro.org est disponible dans quelques langues, mais vous pouvez nous aider à %{translate_it}.
       link: le traduire à la vôtre
       title: Aidez-nous à traduire nolotiro.org à votre langue
+    translations: Traductions
     update: Suaver
     user_ads: annonces
     user_edit_profile: Modifier le profil de l'utilisateur

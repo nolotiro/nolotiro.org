@@ -55,13 +55,13 @@ eu:
     destroy:
       success: 
   conversations:
+    index:
+      title: 
     new:
       body_max: 
       button: 
       subject: 
       submit: 
-      title: 
-    index:
       title: 
     show:
       title_html: 
@@ -256,7 +256,6 @@ eu:
     gifts: 
     give: 
     hello_to: 
-    translations: 
     here: 
     home_title: 
     if_you_are_new: 
@@ -345,6 +344,7 @@ eu:
       description_html: 
       link: 
       title: 
+    translations: 
     update: 
     user_ads: 
     user_edit_profile: 

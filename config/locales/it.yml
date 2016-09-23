@@ -55,14 +55,14 @@ it:
     destroy:
       success: Utente sbloccato
   conversations:
+    index:
+      title: Messaggio di %{username}
     new:
       body_max: 1500 caratteri massimo
       button: Invia
       subject: soggetto
       submit: Invia
       title: Nuovo messaggio privato per l'utente %{user}
-    index:
-      title: Messaggio di %{username}
     show:
       title_html: Conversazione con %{recipient} oggetto %{subject}
   devise:
@@ -258,7 +258,6 @@ it:
     gifts: regali
     give: regalo
     hello_to: Ciao %{recipient},
-    translations: traduzioni
     here: qui
     home_title: 'annunci di regali nuovi e di seconda mano '
     if_you_are_new: Se sei un utente nuovo, per favore
@@ -351,6 +350,7 @@ it:
       description_html: Attualmente, nolotiro.org è disponibile in poche lingue, ma puoi aiutare a %{translate_it}.
       link: tradurlo alla tua
       title: Aiutaci a tradurre nolotiro.org alla tua lingua
+    translations: traduzioni
     update: salvare
     user_ads: annunci
     user_edit_profile: Modifica profilo utente

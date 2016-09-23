@@ -57,14 +57,14 @@ gl:
     destroy:
       success: 
   conversations:
+    index:
+      title: Mensaxes de %{username}
     new:
       body_max: Máximo 1500 carácteres
       button: Enviar
       subject: Tema
       submit: Enviar
       title: Nova mensaxe privada para o usuario %{user}
-    index:
-      title: Mensaxes de %{username}
     show:
       title_html: 
   devise:
@@ -262,7 +262,6 @@ gl:
     gifts: regalos
     give: regalo
     hello_to: Ola %{recipient},
-    translations: traducións
     here: aquí
     home_title: 
     if_you_are_new: Se vostede é un novo usuario, por favor
@@ -353,6 +352,7 @@ gl:
       description_html: Actualmente, nolotiro.org está disponible en poucos idiomas, pero podes axudar a %{translate_it}.
       link: traducilo ao teu
       title: Axúdanos a traducir nolotiro.org ao teu idioma
+    translations: traducións
     update: Gardar
     user_ads: anuncios
     user_edit_profile: Editar perfil de usuario
