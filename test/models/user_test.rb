@@ -111,8 +111,7 @@ class UserTest < ActiveSupport::TestCase
   end
 
   test 'unlocking works' do
-    @user.locked = 1
-    @user.save
+    @user.lock!
     @user.unlock!
     assert_equal false, @user.locked?
   end
