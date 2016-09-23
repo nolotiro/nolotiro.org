@@ -3,6 +3,9 @@
 #
 # Spam related functionality
 #
+# @todo We'll want to include something more sophisticated here, like a Bayesian
+# classifier.
+#
 module Spamable
   def self.included(base)
     base.class_eval do
@@ -11,10 +14,6 @@ module Spamable
     end
   end
 
-  #
-  # @todo We'll want to include something more sophisticated here, like a
-  # Bayesian classifier.
-  #
   def check_spam!
     opinion = spammed?(title) || spammed?(body)
 
