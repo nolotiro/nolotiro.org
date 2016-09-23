@@ -419,7 +419,7 @@ nl:
       last_word_connector: 
       two_words_connector: 
       words_connector: 
-  time_ago_in_words:
+  time_ago_in_words: 
   unauthorized:
     default: 
     manage:
