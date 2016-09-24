@@ -3,8 +3,6 @@
 set :application, 'nolotiro.org'
 set :repo_url, 'https://github.com/alabs/nolotiro.org'
 
-ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }
-
 set :scm, :git
 
 set :format, :pretty
