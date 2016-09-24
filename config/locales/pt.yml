@@ -53,6 +53,9 @@ pt:
       ad_comment:
         one: 
         other: 
+      user:
+        one: 
+        other: 
   blockings:
     create:
       success: Usuário bloqueado

@@ -53,6 +53,9 @@ en:
       ad_comment:
         one: comment
         other: Comments
+      user:
+        one: user
+        other: Users
   blockings:
     create:
       success: User blocked

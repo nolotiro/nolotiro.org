@@ -53,6 +53,9 @@ fr:
       ad_comment:
         one: commentaire
         other: Commentaires
+      user:
+        one: utilisateur
+        other: Utilisateurs
   blockings:
     create:
       success: 

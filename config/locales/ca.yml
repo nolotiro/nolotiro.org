@@ -53,6 +53,9 @@ ca:
       ad_comment:
         one: comentari
         other: Comentaris
+      user:
+        one: usuario
+        other: Usuarios
   blockings:
     create:
       success: Usuari bloquejat
