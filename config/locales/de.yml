@@ -49,7 +49,6 @@ de:
     models:
       ad: 
       ad_comment: 
-      admin: 
   blockings:
     create:
       success: 

@@ -51,7 +51,6 @@ gl:
     models:
       ad: Anuncios
       ad_comment: 
-      admin: Admin
   blockings:
     create:
       success: 

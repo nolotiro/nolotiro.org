@@ -49,7 +49,6 @@ es:
     models:
       ad: Ads
       ad_comment: Ad Comments
-      admin: Admin
   blockings:
     create:
       success: Usuario bloqueado

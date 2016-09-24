@@ -49,7 +49,6 @@ ca:
     models:
       ad: Anuncis
       ad_comment: Comentaris de l'anunci
-      admin: Admin
   blockings:
     create:
       success: Usuari bloquejat
