@@ -9,7 +9,6 @@ set :format, :pretty
 set :log_level, :debug
 set :pty, true
 
-# set :deploy_via, :copy
 set :deploy_via, :remote_cache
 
 set :ssh_options, forward_agent: true
