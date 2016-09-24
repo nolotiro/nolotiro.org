@@ -169,7 +169,7 @@ gl:
       title: Acerca de nolotiro.org
     access_here: Entre aquí
     ads:
-      bumped: 
+      bumped: Republicamos o anuncio
       created: Creamos o anuncio
       form:
         body: 'Corpo do anuncio:'
@@ -224,7 +224,7 @@ gl:
 '
     cookie: Usamos cookies para mellorar a súa navegación neste sitio
     create_new_ad: Crear un novo anuncio
-    delete_ad: 
+    delete_ad: Eliminar anuncio
     delete_sure: 
     delivered: dedicado
     developers: desarrolladores
