@@ -48,7 +48,7 @@ fr:
         username: Nom d'utilisateur
     models:
       ad: Ads
-      ad_comment: Ad Comments
+      ad_comment: Comments
   blockings:
     create:
       success: 

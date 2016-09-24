@@ -48,7 +48,7 @@ ca:
         username: Nom d'usuari
     models:
       ad: Anuncis
-      ad_comment: Comentaris de l'anunci
+      ad_comment: Comentaris
   blockings:
     create:
       success: Usuari bloquejat
