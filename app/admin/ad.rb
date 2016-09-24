@@ -5,7 +5,7 @@ ActiveAdmin.register Ad do
 
   controller do
     def scoped_collection
-      super.includes(:user)
+      params[:id] ? super : super.includes(:user)
     end
   end
 
