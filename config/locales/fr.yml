@@ -47,8 +47,8 @@ fr:
         remember: Souvenir de moi
         username: Nom d'utilisateur
     models:
-      ad: Ads
-      ad_comment: Comments
+      ad: Annonces
+      ad_comment: Comentaires
   blockings:
     create:
       success: 

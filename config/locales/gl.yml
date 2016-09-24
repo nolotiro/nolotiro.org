@@ -50,7 +50,7 @@ gl:
         username: Nome de usuario
     models:
       ad: Anuncios
-      ad_comment: 
+      ad_comment: Comentarios
   blockings:
     create:
       success: 

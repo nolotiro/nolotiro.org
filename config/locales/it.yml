@@ -47,7 +47,7 @@ it:
         remember: Ricordami
         username: Nome di utente
     models:
-      ad: Ads
+      ad: Annunci
       ad_comment: Commenti
   blockings:
     create:
