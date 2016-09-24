@@ -5,7 +5,7 @@ server 'beta.nolotiro.org', user: 'ruby-data', roles: %w(db web app)
 set :stage, :staging
 set :rails_env, 'staging'
 set :deploy_to, '/var/www/beta.nolotiro.org'
-set :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }
+set :branch, -> { `git rev-parse --abbrev-ref HEAD`.chomp }
 
 set :rbenv_type, :user
 set :rbenv_ruby, '2.3.1'
