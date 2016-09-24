@@ -21,7 +21,7 @@ http_interactions:
       message: OK
     headers:
       X-Yql-Host:
-      - prod_bf1_1;paas.yql;queryyahooapiscomproductionbf1;39ce13be-6637-11e6-a2c9-d4ae52974741
+      - prod_bf1_1;paas.yql;queryyahooapiscomproductionbf1;a25da6a7-81e1-11e6-a7b2-d4ae5297450a
       X-Content-Type-Options:
       - nosniff
       Access-Control-Allow-Origin:
@@ -31,24 +31,20 @@ http_interactions:
       Cache-Control:
       - no-cache
       Date:
-      - Sat, 27 Aug 2016 14:14:50 GMT
+      - Sat, 24 Sep 2016 01:05:28 GMT
       Age:
-      - '2'
+      - '0'
       Server:
       - ATS
-      Via:
-      - http/1.1 a27.ue.bf1.yahoo.net (ApacheTrafficServer [cMsSf ])
-      Y-Trace:
-      - BAEAQAAAAABiRQGH6Ib7OwAAAAAAAAAANUp8S32ww.gAAAAAAAAAAAAFOw5BEjUxAAU7DkEUg0CHq2W0AAAAAA--
       Transfer-Encoding:
       - chunked
       Connection:
       - keep-alive
     body:
       encoding: UTF-8
-      string: '{"query":{"count":1,"created":"2016-08-27T14:14:50Z","lang":"en-US","results":{"place":{"lang":"gl-","xmlns":"http://where.yahooapis.com/v1/schema.rng","yahoo":"http://www.yahooapis.com/v1/base.rng","uri":"http://where.yahooapis.com/v1/place/766273","woeid":"766273","placeTypeName":{"code":"7","content":"Town"},"name":"Madrid","country":{"code":"ES","type":"Country","woeid":"23424950","content":"Spain"},"admin1":{"code":"","type":"Autonomous
+      string: '{"query":{"count":1,"created":"2016-09-24T01:05:28Z","lang":"en-US","results":{"place":{"lang":"gl-","xmlns":"http://where.yahooapis.com/v1/schema.rng","yahoo":"http://www.yahooapis.com/v1/base.rng","uri":"http://where.yahooapis.com/v1/place/766273","woeid":"766273","placeTypeName":{"code":"7","content":"Town"},"name":"Madrid","country":{"code":"ES","type":"Country","woeid":"23424950","content":"Spain"},"admin1":{"code":"","type":"Autonomous
         Community","woeid":"12578024","content":"Madrid"},"admin2":{"code":"","type":"Province","woeid":"12602090","content":"Madrid"},"admin3":null,"locality1":{"type":"Town","woeid":"766273","content":"Madrid"},"locality2":null,"postal":null,"centroid":{"latitude":"40.421429","longitude":"-3.67163"},"boundingBox":{"southWest":{"latitude":"40.325939","longitude":"-3.79887"},"northEast":{"latitude":"40.520081","longitude":"-3.5349"}},"areaRank":"1","popRank":"1","timezone":{"type":"Time
         Zone","woeid":"56043644","content":"Europe/Madrid"}}}}}'
     http_version: 
-  recorded_at: Sat, 27 Aug 2016 14:14:51 GMT
+  recorded_at: Sat, 24 Sep 2016 01:05:28 GMT
 recorded_with: VCR 3.0.3
