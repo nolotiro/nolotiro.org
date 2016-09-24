@@ -1,9 +1,11 @@
 # frozen_string_literal: true
 
 ActiveAdmin.register Ad do
+  config.sort_order = 'published_at_desc'
+
   controller do
     def scoped_collection
-      super.includes(:user).recent_first
+      super.includes(:user)
     end
   end
 
