@@ -82,6 +82,9 @@ gl:
       title_html: 
     table:
       none: 
+  date:
+    formats:
+      active_admin: 
   devise:
     confirmations:
       action: Confirmar miña conta
@@ -366,6 +369,9 @@ gl:
   recaptcha:
     errors:
       verification_failed: 
+  time:
+    formats:
+      active_admin: 
   time_ago_in_words: hace %{time}
   will_paginate:
     next_label: 

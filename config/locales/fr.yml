@@ -80,6 +80,9 @@ fr:
       title_html: Conversation avec %{recipient} objet %{subject}
     table:
       none: Pas de messages de ce type
+  date:
+    formats:
+      active_admin: 
   devise:
     confirmations:
       action: Confirmer mon compte
@@ -360,6 +363,9 @@ fr:
   recaptcha:
     errors:
       verification_failed: Il a échoué la vérification contre les robots, essayer à nouveau
+  time:
+    formats:
+      active_admin: 
   time_ago_in_words: il y a %{time}
   will_paginate:
     next_label: suivant →

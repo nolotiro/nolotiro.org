@@ -25,3 +25,4 @@ ignore_unused:
 - 'active{model,record}.{attributes,models}.*'
 - '{devise,will_paginate}.*'
 - recaptcha.errors.*
+- '{time,date}.formats.active_admin'

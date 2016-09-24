@@ -80,6 +80,9 @@ en:
       title_html: Conversation with %{recipient} subject %{subject}
     table:
       none: You do not have this type of messages
+  date:
+    formats:
+      active_admin: 
   devise:
     confirmations:
       action: Confirm my account
@@ -358,6 +361,9 @@ en:
   recaptcha:
     errors:
       verification_failed: Robot verification failed, try again
+  time:
+    formats:
+      active_admin: 
   time_ago_in_words: "%{time} ago"
   will_paginate:
     next_label: next →

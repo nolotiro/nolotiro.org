@@ -80,6 +80,9 @@ ca:
       title_html: Conversa amb %{recipient} assumpte %{subject}
     table:
       none: No tens missatges d'aquest tipus
+  date:
+    formats:
+      active_admin: 
   devise:
     confirmations:
       action: Confirmar el meu compte
@@ -358,6 +361,9 @@ ca:
   recaptcha:
     errors:
       verification_failed: Ha fallat la verificació contra robots, intenta-ho de nou
+  time:
+    formats:
+      active_admin: 
   time_ago_in_words: fa %{time}
   will_paginate:
     next_label: Següent &#8594;
