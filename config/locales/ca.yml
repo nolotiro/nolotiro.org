@@ -47,8 +47,12 @@ ca:
         remember: Recorda'm
         username: Nom d'usuari
     models:
-      ad: Anuncis
-      ad_comment: Comentaris
+      ad:
+        one: anunci
+        other: Anuncis
+      ad_comment:
+        one: comentari
+        other: Comentaris
   blockings:
     create:
       success: Usuari bloquejat

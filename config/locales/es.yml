@@ -47,8 +47,12 @@ es:
         remember: Recuérdame
         username: Nombre de usuario
     models:
-      ad: Anuncios
-      ad_comment: Comentarios
+      ad:
+        one: anuncio
+        other: Anuncios
+      ad_comment:
+        one: comentario
+        other: Comentarios
   blockings:
     create:
       success: Usuario bloqueado

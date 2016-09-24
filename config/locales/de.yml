@@ -47,8 +47,12 @@ de:
         remember: 
         username: 
     models:
-      ad: 
-      ad_comment: 
+      ad:
+        one: 
+        other: 
+      ad_comment:
+        one: 
+        other: 
   blockings:
     create:
       success: 

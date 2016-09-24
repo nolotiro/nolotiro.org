@@ -47,8 +47,12 @@ it:
         remember: Ricordami
         username: Nome di utente
     models:
-      ad: Annunci
-      ad_comment: Commenti
+      ad:
+        one: annuncio
+        other: Annunci
+      ad_comment:
+        one: commento
+        other: Commenti
   blockings:
     create:
       success: Utente bloccato

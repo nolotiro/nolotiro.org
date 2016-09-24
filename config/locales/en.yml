@@ -47,8 +47,12 @@ en:
         remember: Remember me
         username: Username
     models:
-      ad: Ads
-      ad_comment: Comments
+      ad:
+        one: ad
+        other: Ads
+      ad_comment:
+        one: comment
+        other: Comments
   blockings:
     create:
       success: User blocked

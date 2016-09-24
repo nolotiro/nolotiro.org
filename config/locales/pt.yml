@@ -47,8 +47,12 @@ pt:
         remember: Lembre-me
         username: Nome de usuário
     models:
-      ad: 
-      ad_comment: 
+      ad:
+        one: 
+        other: 
+      ad_comment:
+        one: 
+        other: 
   blockings:
     create:
       success: Usuário bloqueado
