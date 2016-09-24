@@ -171,6 +171,7 @@ gl:
     ads:
       bumped: Republicamos o anuncio
       created: Creamos o anuncio
+      destroyed: Eliminamos o anuncio
       form:
         body: 'Corpo do anuncio:'
         body_max: Máximo 500 caracteres

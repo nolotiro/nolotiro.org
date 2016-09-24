@@ -167,6 +167,7 @@ fr:
     ads:
       bumped: Nous avons publié l'avis
       created: Nous avons créé l'annonce
+      destroyed: Nous avons supprimé l'annonce
       form:
         body: 'Corps de l''annonce:'
         body_max: 500 caractères maximum

@@ -167,6 +167,7 @@ pt:
     ads:
       bumped: Anúncio republicado
       created: Anúncio criado
+      destroyed: Anúncio apagado
       form:
         body: 'Corpo de anúncio:'
         body_max: 500 caracteres, no máximo

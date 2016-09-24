@@ -167,6 +167,7 @@ ca:
     ads:
       bumped: Hem republicat l'anunci
       created: Hem creat l'anunci
+      destroyed: Hemos eliminat l'annunci
       form:
         body: 'Cos de l''anunci:'
         body_max: Màxim 500 caràcters

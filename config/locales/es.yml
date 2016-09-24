@@ -167,6 +167,7 @@ es:
     ads:
       bumped: Hemos republicado el anuncio
       created: Hemos creado el anuncio
+      destroyed: Hemos borrado el anuncio
       form:
         body: 'Cuerpo del anuncio:'
         body_max: Máximo 500 caracteres

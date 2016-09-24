@@ -167,6 +167,7 @@ de:
     ads:
       bumped: 
       created: 
+      destroyed: 
       form:
         body: 
         body_max: 

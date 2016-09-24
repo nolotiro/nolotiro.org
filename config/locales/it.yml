@@ -167,6 +167,7 @@ it:
     ads:
       bumped: Abbiamo ripubblicato annuncio
       created: 'Abbiamo creato l''annuncio '
+      destroyed: Abbiamo cancellato l'annuncio
       form:
         body: Corpo del annuncio
         body_max: Massimo 500 caratteri

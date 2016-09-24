@@ -167,6 +167,7 @@ en:
     ads:
       bumped: We have bumped the ad
       created: We have created the ad
+      destroyed: We have destroyed the ad
       form:
         body: 'Body of the ad:'
         body_max: Maximum 500 characters

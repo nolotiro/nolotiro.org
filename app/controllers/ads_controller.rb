@@ -61,7 +61,7 @@ class AdsController < ApplicationController
   def destroy
     @ad.destroy
 
-    redirect_to ads_url
+    redirect_to listads_user_path(current_user), notice: t('nlt.ads.destroyed')
   end
 
   private
