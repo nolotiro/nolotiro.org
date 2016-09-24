@@ -3,15 +3,12 @@
 set :application, 'nolotiro.org'
 set :repo_url, 'https://github.com/alabs/nolotiro.org'
 
-ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }
-
 set :scm, :git
 
 set :format, :pretty
 set :log_level, :debug
 set :pty, true
 
-# set :deploy_via, :copy
 set :deploy_via, :remote_cache
 
 set :ssh_options, forward_agent: true
@@ -22,11 +19,7 @@ set :linked_dirs, %w(log tmp/pids tmp/cache tmp/sockets vendor/bundle public/sys
 set :bundle_binstubs, nil
 set :keep_releases, 5
 
-set :ci_client, 'travis'
-set :ci_repository, 'alabs/nolotiro.org'
-
 # Logical flow for deploying an app
-before 'deploy', 'ci:verify'
 before 'deploy:publishing', 'deploy:max_mind:extract'
 after  'deploy:finished', 'deploy:restart'
 
