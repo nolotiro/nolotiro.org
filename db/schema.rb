@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160924163454) do
+ActiveRecord::Schema.define(version: 20160924163658) do
 
   create_table "ads", force: :cascade do |t|
     t.string   "title",              limit: 100,                   null: false
@@ -142,7 +142,6 @@ ActiveRecord::Schema.define(version: 20160924163454) do
     t.integer  "active",                 limit: 4,   default: 0,  null: false
     t.integer  "role",                   limit: 4,   default: 0,  null: false
     t.integer  "woeid",                  limit: 4
-    t.string   "lang",                   limit: 4,                null: false
     t.string   "encrypted_password",     limit: 255, default: "", null: false
     t.string   "reset_password_token",   limit: 255
     t.datetime "reset_password_sent_at"

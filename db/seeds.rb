@@ -11,7 +11,6 @@ def create_user(role = 0)
       password: pwd,
       password_confirmation: pwd,
       confirmed_at: Time.zone.now,
-      lang: 'es',
       woeid: 766_273
     )
     return user if user.save

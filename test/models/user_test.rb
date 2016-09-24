@@ -99,12 +99,6 @@ class UserTest < ActiveSupport::TestCase
     assert_equal true, @admin.admin?
   end
 
-  test 'default langs work' do
-    @user.lang = nil
-    @user.save
-    assert_equal 'es', @user.lang
-  end
-
   test 'banning works' do
     @user.ban!
     assert_equal true, @user.banned?
