@@ -160,11 +160,4 @@ class AdsControllerTest < ActionController::TestCase
     assert_difference('Ad.count', -1) { delete :destroy, id: @ad }
     assert_redirected_to ads_path
   end
-
-  test 'should destroy ad as admin user' do
-    sign_in @admin
-
-    assert_difference('Ad.count', -1) { delete :destroy, id: @ad }
-    assert_redirected_to ads_path
-  end
 end
