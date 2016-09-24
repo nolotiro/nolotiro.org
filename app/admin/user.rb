@@ -32,6 +32,32 @@ ActiveAdmin.register User do
       row :confirmed_at
       row :banned_at
     end
+
+    panel 'Anuncios' do
+      table_for user.ads.order(published_at: :desc) do
+        column(:title) { |ad| link_to ad.title, admin_ad_path(ad) }
+        column :type do |ad|
+          status_tag({ 'give' => 'green', 'want' => 'red' }[ad.type],
+                     label: ad.type)
+        end
+
+        column :status do |ad|
+          status_tag({ 'available' => 'green',
+                       'booked' => 'orange',
+                       'delivered' => 'red' }[ad.status],
+                     label: ad.status)
+        end
+
+        column :body
+
+        column :actions do |ad|
+          edit = link_to 'Editar', edit_admin_ad_path(ad)
+          delete = link_to 'Eliminar', admin_ad_path(ad), method: :delete
+
+          safe_join([edit, delete], ' ')
+        end
+      end
+    end
   end
 
   index do
