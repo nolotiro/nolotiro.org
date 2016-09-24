@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-server 'beta.nolotiro.org', user: 'ruby-data', roles: %w(db web app)
+server 'beta.nolotiro.org', user: 'ruby-data', port: 2226, roles: %w(db web app)
 
 set :stage, :staging
 set :rails_env, 'staging'
