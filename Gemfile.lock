@@ -115,9 +115,6 @@ GEM
     capistrano-bundler (1.1.4)
       capistrano (~> 3.1)
       sshkit (~> 1.2)
-    capistrano-ci (0.0.5)
-      capistrano (>= 2.5.5)
-      httparty
     capistrano-harrow (0.5.3)
     capistrano-pending (0.1.1)
       capistrano (>= 3.2.0)
@@ -207,9 +204,6 @@ GEM
     http-cookie (1.0.2)
       domain_name (~> 0.5)
     http_accept_language (2.0.5)
-    httparty (0.13.7)
-      json (~> 1.8)
-      multi_xml (>= 0.5.2)
     i18n (0.7.0)
     inherited_resources (1.6.0)
       actionpack (>= 3.2, < 5)
@@ -477,7 +471,6 @@ DEPENDENCIES
   byebug
   capistrano (~> 3.0)
   capistrano-bundler
-  capistrano-ci
   capistrano-pending
   capistrano-rails
   capistrano-rbenv

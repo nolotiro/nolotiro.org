@@ -8,6 +8,4 @@ require 'capistrano/bundler'
 require 'capistrano/rails'
 require 'capistrano/sidekiq'
 
-require 'capistrano/ci/recipes'
-
 require 'capistrano/pending'

@@ -22,11 +22,7 @@ set :linked_dirs, %w(log tmp/pids tmp/cache tmp/sockets vendor/bundle public/sys
 set :bundle_binstubs, nil
 set :keep_releases, 5
 
-set :ci_client, 'travis'
-set :ci_repository, 'alabs/nolotiro.org'
-
 # Logical flow for deploying an app
-before 'deploy', 'ci:verify'
 before 'deploy:publishing', 'deploy:max_mind:extract'
 after  'deploy:finished', 'deploy:restart'
 
