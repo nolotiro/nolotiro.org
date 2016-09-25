@@ -1,0 +1,27 @@
+---
+
+# The "main" locale.
+#
+base_locale: es
+
+# Read and write translations.
+#
+data:
+  yaml:
+    write:
+      # do not wrap lines at 80 characters
+      line_width: -1
+
+# Find translate calls
+#
+search:
+  exclude:
+    - app/assets/images
+    - app/assets/fonts
+
+# Consider these keys used
+#
+ignore_unused:
+- 'active{model,record}.{attributes,models}.*'
+- '{devise,will_paginate}.*'
+- recaptcha.errors.*

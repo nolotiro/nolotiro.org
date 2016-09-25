@@ -1,3 +1,4 @@
+---
 en:
   activemodel:
     attributes:
@@ -55,16 +56,24 @@ en:
     destroy:
       success: User unblocked
   conversations:
+    buttons:
+      back: "< back to messages"
+      trash: Conversation deleted
+      trash_selected: Delete selected conversations
+    index:
+      title: Message from %{username}
     new:
       body_max: Max. 1500 characters
-      button: Send
       subject: Topic
       submit: Send
       title: New private message for user %{user}
-    index:
-      title: Message from %{username}
+    notifications:
+      sent: Sent message
+      trash: 
     show:
       title_html: Conversation with %{recipient} subject %{subject}
+    table:
+      none: You do not have this type of messages
   devise:
     confirmations:
       action: Confirm my account
@@ -124,26 +133,6 @@ en:
       success: Friend added
     destroy:
       success: Friend removed
-  helpers:
-    label:
-      message:
-        subject: Subject
-    select:
-      prompt: Please select
-    submit:
-      create: New %{model}
-      submit: Save %{model}
-      update: Update %{model}
-  mailboxer:
-    buttons:
-      back: "< back to messages"
-      trash: Delete conversation
-      trash_selected: Delete selected conversations
-    notifications:
-      sent: Sent message
-      trash: Conversation deleted
-    table:
-      none: You do not have this type of messages
   mailer:
     confirmation_reminder:
       p1: We have detected that you have created an account on nolotiro.org and you have not confirmed yet.
@@ -157,8 +146,6 @@ en:
       subject: Subject
     subject_new: "[nolotiro.org] New message from user %{user}"
     visit: View conversation and reply
-    visit_html: Visit %{url} and go to your inbox to reply
-    visit_text: Visit %{url} and go to your inbox to reply
     you_have_new_message: You have a new message
   nlt:
     a_gift: A gift
@@ -178,7 +165,6 @@ en:
         image_permitted_formats: 'Supported formats: gif, jpg, png. Max size: 5Mb'
         private_messages_only: Through private messages only
         private_messages_or_comments: Through both private messages or public comments in the ad
-        prohibited: 'There is a problem, please review this:'
         select_an_image: Choose an image for you ad
         status: Status
         title: 'Title of your ad:'
@@ -200,7 +186,6 @@ en:
       choose: Choose your location
       choose_html: There are no locations with the name <b>%{location}</b>. Please try it again
       close_to: 'Our suggested location''s system (based on your IP) indicates us that you are close to:'
-      please: Please, indicate your city
       submit: Send
       town: 'City:'
     change_your_city: change your city
@@ -256,7 +241,6 @@ en:
     gifts: presents
     give: gift
     hello_to: Hello %{recipient},
-    translations: translations
     here: here
     home_title: new and second hand gift's ads
     if_you_are_new: If you are a new user, please
@@ -345,6 +329,7 @@ en:
       description_html: Currently, nolotiro.org is available in a few languages, but you can help us %{translate_it}.
       link: translate it to yours
       title: Help us to translate nolotiro.org
+    translations: translations
     update: Save
     user_ads: ads
     user_edit_profile: Edit user's profile
@@ -360,53 +345,6 @@ en:
     welcome: welcome
     write_a_comment: "+ Write a comment"
     your_email: Your email
-  number:
-    currency:
-      format:
-        delimiter: 
-        format: "%n %u"
-        precision: 2
-        separator: 
-        significant: false
-        strip_insignificant_zeros: false
-        unit: 
-    format:
-      delimiter: 
-      precision: 3
-      separator: 
-      significant: false
-      strip_insignificant_zeros: false
-    human:
-      decimal_units:
-        format: "%n %u"
-        units:
-          billion: billion
-          million: million
-          quadrillion: trillion
-          thousand: one thousand
-          trillion: billion
-          unit: 
-      format:
-        delimiter: 
-        precision: 1
-        significant: true
-        strip_insignificant_zeros: true
-      storage_units:
-        format: "%n %u"
-        units:
-          byte:
-            one: Byte
-            other: Bytes
-          gb: GB
-          kb: KB
-          mb: MB
-          tb: TB
-    percentage:
-      format:
-        delimiter: 
-    precision:
-      format:
-        delimiter: 
   oauth:
     errors:
       duplicated_username: The username provided by %{provider} is already in our database. If you already registered through another social network or through email & password, please login using those. Otherwise just specify another username.
@@ -414,16 +352,7 @@ en:
   recaptcha:
     errors:
       verification_failed: Robot verification failed, try again
-  support:
-    array:
-      last_word_connector: ", and"
-      two_words_connector: and
-      words_connector: 
   time_ago_in_words: "%{time} ago"
-  unauthorized:
-    default: You are not authorized to enter this url
-    manage:
-      all: First, you must log in or sign up
   will_paginate:
     next_label: next →
     page_entries_info:

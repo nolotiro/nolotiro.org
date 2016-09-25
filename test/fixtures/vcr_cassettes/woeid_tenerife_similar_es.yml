@@ -21,7 +21,7 @@ http_interactions:
       message: OK
     headers:
       X-Yql-Host:
-      - prod_bf1_1;paas.yql;queryyahooapiscomproductionbf1;2050ff45-664e-11e6-a2c9-d4ae52974741
+      - prod_bf1_1;paas.yql;queryyahooapiscomproductionbf1;a25eb820-81e1-11e6-a7b2-d4ae5297450a
       X-Content-Type-Options:
       - nosniff
       Access-Control-Allow-Origin:
@@ -31,15 +31,15 @@ http_interactions:
       Cache-Control:
       - no-cache
       Date:
-      - Sat, 27 Aug 2016 18:47:50 GMT
+      - Sat, 24 Sep 2016 01:05:14 GMT
       Age:
       - '0'
+      Via:
+      - http/1.1 a33.ue.bf1.yahoo.net (ApacheTrafficServer [cMsSf ])
       Server:
       - ATS
-      Via:
-      - http/1.1 a30.ue.bf1.yahoo.net (ApacheTrafficServer [cMsSf ])
       Y-Trace:
-      - BAEAQAAAAADFPIj3HC.n.AAAAAAAAAAAedNWE6t6sLcAAAAAAAAAAAAFOxIRZMq_AAU7EhFk9wjpf2b3AAAAAA--
+      - BAEAQAAAAAA4m5iBo1JU8AAAAAAAAAAAZPbvNk65OMAAAAAAAAAAAAAFPTZ8xEpjAAU9NnzGPgx77d7qAAAAAA--
       Transfer-Encoding:
       - chunked
       Connection:
@@ -47,8 +47,8 @@ http_interactions:
     body:
       encoding: ASCII-8BIT
       string: !binary |-
-        eyJxdWVyeSI6eyJjb3VudCI6MywiY3JlYXRlZCI6IjIwMTYtMDgtMjdUMTg6
-        NDc6NTBaIiwibGFuZyI6ImVuLVVTIiwicmVzdWx0cyI6eyJwbGFjZSI6W3si
+        eyJxdWVyeSI6eyJjb3VudCI6MywiY3JlYXRlZCI6IjIwMTYtMDktMjRUMDE6
+        MDU6MTRaIiwibGFuZyI6ImVuLVVTIiwicmVzdWx0cyI6eyJwbGFjZSI6W3si
         bGFuZyI6ImVzLSIsInhtbG5zIjoiaHR0cDovL3doZXJlLnlhaG9vYXBpcy5j
         b20vdjEvc2NoZW1hLnJuZyIsInlhaG9vIjoiaHR0cDovL3d3dy55YWhvb2Fw
         aXMuY29tL3YxL2Jhc2Uucm5nIiwidXJpIjoiaHR0cDovL3doZXJlLnlhaG9v
@@ -112,7 +112,7 @@ http_interactions:
         aW1lIFpvbmUiLCJ3b2VpZCI6IjI4MzUwODcwIiwiY29udGVudCI6IkF0bGFu
         dGljL0NhbmFyeSJ9fV19fX0=
     http_version: 
-  recorded_at: Sat, 27 Aug 2016 18:47:50 GMT
+  recorded_at: Sat, 24 Sep 2016 01:05:14 GMT
 - request:
     method: get
     uri: http://query.yahooapis.com/v1/public/yql?format=json&q=select%20*%20from%20geo.places%20where%20woeid%20=%20773692%20AND%20lang%20=%20%27es%27
@@ -134,7 +134,7 @@ http_interactions:
       message: OK
     headers:
       X-Yql-Host:
-      - prod_bf1_1;paas.yql;queryyahooapiscomproductionbf1;39d00fa4-6637-11e6-a2c9-d4ae52974741
+      - prod_bf1_1;paas.yql;queryyahooapiscomproductionbf1;a2743bff-81e1-11e6-a7b2-d4ae5297450a
       X-Content-Type-Options:
       - nosniff
       Access-Control-Allow-Origin:
@@ -144,15 +144,11 @@ http_interactions:
       Cache-Control:
       - no-cache
       Date:
-      - Sat, 27 Aug 2016 18:47:51 GMT
+      - Sat, 24 Sep 2016 01:05:15 GMT
       Age:
       - '0'
       Server:
       - ATS
-      Via:
-      - http/1.1 a32.ue.bf1.yahoo.net (ApacheTrafficServer [cMsSf ])
-      Y-Trace:
-      - BAEAQAAAAACJZH2ShENpngAAAAAAAAAAHPjyUYKWe1cAAAAAAAAAAAAFOxIRbEksAAU7EhFsa.fAqnv5AAAAAA--
       Transfer-Encoding:
       - chunked
       Connection:
@@ -160,8 +156,8 @@ http_interactions:
     body:
       encoding: ASCII-8BIT
       string: !binary |-
-        eyJxdWVyeSI6eyJjb3VudCI6MSwiY3JlYXRlZCI6IjIwMTYtMDgtMjdUMTg6
-        NDc6NTFaIiwibGFuZyI6ImVuLVVTIiwicmVzdWx0cyI6eyJwbGFjZSI6eyJs
+        eyJxdWVyeSI6eyJjb3VudCI6MSwiY3JlYXRlZCI6IjIwMTYtMDktMjRUMDE6
+        MDU6MTVaIiwibGFuZyI6ImVuLVVTIiwicmVzdWx0cyI6eyJwbGFjZSI6eyJs
         YW5nIjoiZXMtIiwieG1sbnMiOiJodHRwOi8vd2hlcmUueWFob29hcGlzLmNv
         bS92MS9zY2hlbWEucm5nIiwieWFob28iOiJodHRwOi8vd3d3LnlhaG9vYXBp
         cy5jb20vdjEvYmFzZS5ybmciLCJ1cmkiOiJodHRwOi8vd2hlcmUueWFob29h
@@ -185,5 +181,5 @@ http_interactions:
         ZSBab25lIiwid29laWQiOiIyODM1MDg3MCIsImNvbnRlbnQiOiJBdGxhbnRp
         Yy9DYW5hcnkifX19fX0=
     http_version: 
-  recorded_at: Sat, 27 Aug 2016 18:47:51 GMT
+  recorded_at: Sat, 24 Sep 2016 01:05:15 GMT
 recorded_with: VCR 3.0.3

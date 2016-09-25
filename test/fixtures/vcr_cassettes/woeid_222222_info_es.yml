@@ -21,7 +21,7 @@ http_interactions:
       message: OK
     headers:
       X-Yql-Host:
-      - prod_bf1_1;paas.yql;queryyahooapiscomproductionbf1;0f9b3e87-6639-11e6-a2c9-d4ae52974741
+      - prod_bf1_1;paas.yql;queryyahooapiscomproductionbf1;a25f7b76-81e1-11e6-a7b2-d4ae5297450a
       X-Content-Type-Options:
       - nosniff
       Access-Control-Allow-Origin:
@@ -31,22 +31,22 @@ http_interactions:
       Cache-Control:
       - no-cache
       Date:
-      - Sat, 27 Aug 2016 14:15:07 GMT
+      - Sat, 24 Sep 2016 01:06:00 GMT
       Age:
       - '0'
+      Via:
+      - http/1.1 a19.ue.bf1.yahoo.net (ApacheTrafficServer [cMsSf ])
       Server:
       - ATS
-      Via:
-      - http/1.1 a13.ue.bf1.yahoo.net (ApacheTrafficServer [cMsSf ])
       Y-Trace:
-      - BAEAQAAAAACZSqx5E4IhOAAAAAAAAAAAqtJ2t8O9tUUAAAAAAAAAAAAFOw5CFD8CAAU7DkIUZHepYkhDAAAAAA--
+      - BAEAQAAAAACva9RrtxJlwgAAAAAAAAAAs2PHSKhNWQYAAAAAAAAAAAAFPTZ_fkpvAAU9Nn9.Zow6rV.qAAAAAA--
       Transfer-Encoding:
       - chunked
       Connection:
       - keep-alive
     body:
       encoding: UTF-8
-      string: '{"query":{"count":0,"created":"2016-08-27T14:15:07Z","lang":"en-US","results":null}}'
+      string: '{"query":{"count":0,"created":"2016-09-24T01:06:00Z","lang":"en-US","results":null}}'
     http_version: 
-  recorded_at: Sat, 27 Aug 2016 14:15:07 GMT
+  recorded_at: Sat, 24 Sep 2016 01:06:00 GMT
 recorded_with: VCR 3.0.3

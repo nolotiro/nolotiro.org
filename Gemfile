@@ -63,6 +63,7 @@ group :development do
   gem 'capistrano-sidekiq'
   gem 'rubocop', '0.42.0'
   gem 'brakeman-lib'
+  gem 'i18n-tasks', '0.9.5'
 end
 
 gem 'http_accept_language'

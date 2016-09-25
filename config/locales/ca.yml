@@ -1,3 +1,4 @@
+---
 ca:
   activemodel:
     attributes:
@@ -55,16 +56,24 @@ ca:
     destroy:
       success: Usuari desbloquejat
   conversations:
+    buttons:
+      back: "<Tornar a missatges"
+      trash: Esborrar conversa
+      trash_selected: Esborrar converses seleccionats
+    index:
+      title: Missatges de %{username}
     new:
       body_max: Màxim 1500 caràcters
-      button: Enviar
       subject: Tema
       submit: Enviar
       title: Nou missatge privat per a l'usuari %{user}
-    index:
-      title: Missatges de %{username}
+    notifications:
+      sent: missatge enviat
+      trash: Conversa esborrat
     show:
       title_html: Conversa amb %{recipient} assumpte %{subject}
+    table:
+      none: No tens missatges d'aquest tipus
   devise:
     confirmations:
       action: Confirmar el meu compte
@@ -124,26 +133,6 @@ ca:
       success: Amic agregat
     destroy:
       success: Amic eliminat
-  helpers:
-    label:
-      message:
-        subject: Assumpte
-    select:
-      prompt: Si us plau tria
-    submit:
-      create: Crear %{model}
-      submit: Guardar %{model}
-      update: Actualitzar %{model}
-  mailboxer:
-    buttons:
-      back: "<Tornar a missatges"
-      trash: Esborrar conversa
-      trash_selected: Esborrar converses seleccionats
-    notifications:
-      sent: missatge enviat
-      trash: Conversa esborrat
-    table:
-      none: No tens missatges d'aquest tipus
   mailer:
     confirmation_reminder:
       p1: Hem detectat que t'has creat un compte a nolotiro.org i no l'has confirmat.
@@ -157,8 +146,6 @@ ca:
       subject: Assumpte
     subject_new: "[nolotiro.org] Missatge nou de l'usuari %{user}"
     visit: Veure conversa i respondre missatge
-    visit_html: Visita %{url} i veu a la teva safata d'entrada per respondre
-    visit_text: Visita %{url} i veu a la teva safata d'entrada per respondre
     you_have_new_message: Has rebut un nou missatge
   nlt:
     a_gift: Un regal
@@ -178,7 +165,6 @@ ca:
         image_permitted_formats: 'Formats permesos: gif, jpg, png. Max: 5Mb de mida.'
         private_messages_only: Només per missatge privat
         private_messages_or_comments: Per missatge privat o a través de comentaris públics a l'anunci
-        prohibited: 'Hi ha un problema, revisa això:'
         select_an_image: Selecciona una imatge per al teu anunci
         status: Estat
         title: 'Título de tu anuncio:'
@@ -200,7 +186,6 @@ ca:
       choose: Tria la teva ubicació
       choose_html: No s'han trobat ubicacions amb el nom <b>%{location}</b>. Torna a intentar-
       close_to: 'El nostre sistema de suggeriment d''ubicació (basat en la teva IP) diu que aquestes prop de:'
-      please: Si us plau, escriu la teva ciutat
       submit: Enviar
       town: 'Ciutat:'
     change_your_city: Canvia la teva ciutat
@@ -256,7 +241,6 @@ ca:
     gifts: regals
     give: regal
     hello_to: Hola %{recipient},
-    translations: traduccions
     here: aquí
     home_title: anuncis de regals nous i de segona mà
     if_you_are_new: Si ets un nou usuari, si us plau
@@ -308,7 +292,7 @@ ca:
     profile_actions:
       blocking:
         add: bloquejar a %{username}
-        confirm: 
+        confirm: "¿Segur que vols bloquejar %{username}? No podrà tornar a contactar ni a veure els teus anuncis."
         delete: desbloquejar a %{username}
       friend:
         add: afegir %{username} a la llista d'amics
@@ -345,6 +329,7 @@ ca:
       description_html: Actualment, nolotiro.org està disponible en pocs idiomes, però tu pots ajudar-nos a %{translate_it}.
       link: traduir-lo al teu
       title: Ajuda'ns a traduir nolotiro.org a la teva llengua
+    translations: traduccions
     update: Guardar
     user_ads: anuncis
     user_edit_profile: Edita perfil d'usuari
@@ -360,53 +345,6 @@ ca:
     welcome: hola
     write_a_comment: "+ Escriu un nou comentari"
     your_email: El teu email
-  number:
-    currency:
-      format:
-        delimiter: "."
-        format: "%n %u"
-        precision: 2
-        separator: ","
-        significant: false
-        strip_insignificant_zeros: false
-        unit: "€"
-    format:
-      delimiter: "."
-      precision: 3
-      separator: ","
-      significant: false
-      strip_insignificant_zeros: false
-    human:
-      decimal_units:
-        format: "%n %u"
-        units:
-          billion: mil milions
-          million: milió
-          quadrillion: quadrilió
-          thousand: mil
-          trillion: trilió
-          unit: 
-      format:
-        delimiter: "."
-        precision: 1
-        significant: true
-        strip_insignificant_zeros: true
-      storage_units:
-        format: "%n %u"
-        units:
-          byte:
-            one: Byte
-            other: Bytes
-          gb: GB
-          kb: KB
-          mb: MB
-          tb: TB
-    percentage:
-      format:
-        delimiter: "."
-    precision:
-      format:
-        delimiter: "."
   oauth:
     errors:
       duplicated_username: El teu nom d'usuari de %{provider} ja es troba a la base de dades. Si t'has registrat ja usant una altra xarxa social o mitjançant email i contrasenya, si us plau, inicia sessió d'aquesta manera. En cas contrari, indica un altre nom d'usuari per completar el registre.
@@ -414,16 +352,7 @@ ca:
   recaptcha:
     errors:
       verification_failed: Ha fallat la verificació contra robots, intenta-ho de nou
-  support:
-    array:
-      last_word_connector: ", i "
-      two_words_connector: " i "
-      words_connector: ", "
   time_ago_in_words: fa %{time}
-  unauthorized:
-    default: No aquestes autoritzat paràgraf accedir a aquest this page.
-    manage:
-      all: Has primer iniciar sessió o registrar usuari un.
   will_paginate:
     next_label: Següent &#8594;
     page_entries_info:

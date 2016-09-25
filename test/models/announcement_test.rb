@@ -13,7 +13,7 @@ class AnnouncementTest < ActiveSupport::TestCase
 
   test '.current ignores announcements for other locales' do
     current = create(:announcement, :current)
-    _foreign = create(:announcement, :current, locale: 'eu')
+    _foreign = create(:announcement, :current, locale: 'it')
 
     assert_equal [current], Announcement.current
   end

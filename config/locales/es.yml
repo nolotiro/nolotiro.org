@@ -1,3 +1,4 @@
+---
 es:
   activemodel:
     attributes:
@@ -55,16 +56,24 @@ es:
     destroy:
       success: Usuario desbloqueado
   conversations:
+    buttons:
+      back: "< volver a mensajes"
+      trash: Borrar conversación
+      trash_selected: Borrar conversaciones seleccionadas
+    index:
+      title: Mensajes de %{username}
     new:
       body_max: Máximo 1500 carácteres
-      button: Enviar
       subject: Tema
       submit: Enviar
       title: Nuevo mensaje privado para el usuario %{user}
-    index:
-      title: Mensajes de %{username}
+    notifications:
+      sent: Mensaje enviado
+      trash: Conversación borrada
     show:
       title_html: Conversación con %{recipient} asunto %{subject}
+    table:
+      none: No tienes mensajes de este tipo
   devise:
     confirmations:
       action: Confirmar mi cuenta
@@ -124,26 +133,6 @@ es:
       success: Amigo agregado
     destroy:
       success: Amigo eliminado
-  helpers:
-    label:
-      message:
-        subject: Asunto
-    select:
-      prompt: Por favor seleccione
-    submit:
-      create: Crear %{model}
-      submit: Guardar %{model}
-      update: Actualizar %{model}
-  mailboxer:
-    buttons:
-      back: "< volver a mensajes"
-      trash: Borrar conversación
-      trash_selected: Borrar conversaciones seleccionadas
-    notifications:
-      sent: Mensaje enviado
-      trash: Conversación borrada
-    table:
-      none: No tienes mensajes de este tipo
   mailer:
     confirmation_reminder:
       p1: Hemos detectado que te has creado una cuenta en nolotiro.org y no la has confirmado.
@@ -157,8 +146,6 @@ es:
       subject: Asunto
     subject_new: "[nolotiro.org] Nuevo mensaje del usuario %{user}"
     visit: Ver conversación y responder mensaje
-    visit_html: Visita %{url} y ve a tu bandeja de entrada para responder
-    visit_text: Visita %{url} y ve a tu bandeja de entrada para responder
     you_have_new_message: Has recibido un nuevo mensaje
   nlt:
     a_gift: Un regalo
@@ -178,7 +165,6 @@ es:
         image_permitted_formats: 'Formatos permitidos: gif, jpg, png. Max: 5Mb de tamaño.'
         private_messages_only: Sólo por mensaje privado
         private_messages_or_comments: Por mensaje privado o mediante comentarios públicos en el anuncio
-        prohibited: 'Hay un problema, revisa esto:'
         select_an_image: Selecciona una imagen para tu anuncio
         status: Estado
         title: 'Título de tu anuncio:'
@@ -200,7 +186,6 @@ es:
       choose: Elige tu ubicación
       choose_html: No se han encontrado ubicaciones con el nombre <b>%{location}</b>. Vuelve a intentarlo
       close_to: 'Nuestro sistema de sugerencia de ubicación (basado en tu IP) dice que estás cerca de:'
-      please: Por favor, escribe tu ciudad
       submit: Enviar
       town: 'Ciudad:'
     change_your_city: Cambia tu ciudad
@@ -256,7 +241,6 @@ es:
     gifts: regalos
     give: regalo
     hello_to: Hola %{recipient},
-    translations: traducciones
     here: aquí
     home_title: anuncios de regalos nuevos y de segunda mano
     if_you_are_new: Si eres un nuevo usuario, por favor
@@ -345,6 +329,7 @@ es:
       description_html: Actualmente, nolotiro.org está disponible en pocos idiomas, pero tú puedes ayudarnos a %{translate_it}.
       link: traducirlo al tuyo
       title: Ayúdanos a traducir nolotiro.org a tu idioma
+    translations: traducciones
     update: Guardar
     user_ads: anuncios
     user_edit_profile: Editar perfil de usuario
@@ -360,53 +345,6 @@ es:
     welcome: hola
     write_a_comment: "+ Escribe un comentario"
     your_email: Tu email
-  number:
-    currency:
-      format:
-        delimiter: "."
-        format: "%n %u"
-        precision: 2
-        separator: ","
-        significant: false
-        strip_insignificant_zeros: false
-        unit: "€"
-    format:
-      delimiter: "."
-      precision: 3
-      separator: ","
-      significant: false
-      strip_insignificant_zeros: false
-    human:
-      decimal_units:
-        format: "%n %u"
-        units:
-          billion: mil millones
-          million: millón
-          quadrillion: mil billones
-          thousand: mil
-          trillion: billón
-          unit: " "
-      format:
-        delimiter: "."
-        precision: 1
-        significant: true
-        strip_insignificant_zeros: true
-      storage_units:
-        format: "%n %u"
-        units:
-          byte:
-            one: Byte
-            other: Bytes
-          gb: GB
-          kb: KB
-          mb: MB
-          tb: TB
-    percentage:
-      format:
-        delimiter: "."
-    precision:
-      format:
-        delimiter: "."
   oauth:
     errors:
       duplicated_username: Tu nombre de usuario de %{provider} ya se encuentra en nuestra base de datos. Si te has registrado ya usando otra red social o mediante email y contraseña, por favor, inicia sesión de esa manera. En caso contrario, indica otro nombre de usuario para completar el registro.
@@ -414,16 +352,7 @@ es:
   recaptcha:
     errors:
       verification_failed: Falló la verificación contra robots, prueba de nuevo
-  support:
-    array:
-      last_word_connector: ", y "
-      two_words_connector: " y "
-      words_connector: ", "
   time_ago_in_words: hace %{time}
-  unauthorized:
-    default: No estás autorizado para acceder a esta página.
-    manage:
-      all: Debes primero iniciar sesión o registrarte un usuario.
   will_paginate:
     next_label: siguiente →
     page_entries_info:

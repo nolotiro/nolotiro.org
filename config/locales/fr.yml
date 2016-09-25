@@ -1,3 +1,4 @@
+---
 fr:
   activemodel:
     attributes:
@@ -55,16 +56,24 @@ fr:
     destroy:
       success: 
   conversations:
+    buttons:
+      back: "< Retour aux messages"
+      trash: Déplacer un message à corbeille
+      trash_selected: Supprimer les messages sélectionnés
+    index:
+      title: Messages %{username}
     new:
       body_max: Maximum 1500 caractères
-      button: Envoyer
       subject: Thème
       submit: Envoyer
       title: Nouveau message privé pour l'utilisateur %{user}
-    index:
-      title: Messages %{username}
+    notifications:
+      sent: Message envoyé
+      trash: Message déplacé à la corbeille
     show:
       title_html: Conversation avec %{recipient} objet %{subject}
+    table:
+      none: Pas de messages de ce type
   devise:
     confirmations:
       action: Confirmer mon compte
@@ -124,26 +133,6 @@ fr:
       success: Ami ajouté
     destroy:
       success: Ami supprimé
-  helpers:
-    label:
-      message:
-        subject: Assujettir
-    select:
-      prompt: Veuillez sélectionner
-    submit:
-      create: Créer un(e) %{model}
-      submit: Enregistrer ce(tte) %{model}
-      update: Modifier ce(tte) %{model}
-  mailboxer:
-    buttons:
-      back: "< Retour aux messages"
-      trash: Déplacer un message à corbeille
-      trash_selected: Supprimer les messages sélectionnés
-    notifications:
-      sent: Message envoyé
-      trash: Message déplacé à la corbeille
-    table:
-      none: Pas de messages de ce type
   mailer:
     confirmation_reminder:
       p1: Nous avons détecté que vous avez créé un compte sur nolotiro.org et vous ne l'avez pas confirmé.
@@ -157,8 +146,6 @@ fr:
       subject: 
     subject_new: 
     visit: 
-    visit_html: 
-    visit_text: 
     you_have_new_message: 
   nlt:
     a_gift: 
@@ -178,7 +165,6 @@ fr:
         image_permitted_formats: 'Admis formats: gif, jpg, png. Max: 5MB.'
         private_messages_only: 
         private_messages_or_comments: 
-        prohibited: 'Il y a un problème, vérifier cela:'
         select_an_image: Sélectionnez une image pour votre annonce (en option).
         status: Etat
         title: 'Titre de votre annonce:'
@@ -200,7 +186,6 @@ fr:
       choose: Choisissez votre pays
       choose_html: Aucun emplacement trouvé avec le nom <b>%{location}</b>. S'il vous plaît essayer à nouveau
       close_to: 'Notre emplacement du système de suggestion (en fonction de votre IP) dit que vous êtes près de:'
-      please: S'il vous plaît entrer votre ville
       submit: Envoyer
       town: 'Ville:'
     change_your_city: Changer de ville
@@ -256,7 +241,6 @@ fr:
     gifts: cadeaux
     give: cadeau
     hello_to: Salut %{recipient},
-    translations: Traductions
     here: ici
     home_title: annonces de cadeaux neuves et d'occasion
     if_you_are_new: Si vous êtes un nouvel utilisateur, s'il vous plaît
@@ -347,6 +331,7 @@ fr:
       description_html: À l'heure actuelle, nolotiro.org est disponible dans quelques langues, mais vous pouvez nous aider à %{translate_it}.
       link: le traduire à la vôtre
       title: Aidez-nous à traduire nolotiro.org à votre langue
+    translations: Traductions
     update: Suaver
     user_ads: annonces
     user_edit_profile: Modifier le profil de l'utilisateur
@@ -362,53 +347,6 @@ fr:
     welcome: Salut
     write_a_comment: "+ Ajouter un commentaire"
     your_email: votre e-mail
-  number:
-    currency:
-      format:
-        delimiter: " "
-        format: "%n %u"
-        precision: 2
-        separator: ","
-        significant: false
-        strip_insignificant_zeros: false
-        unit: "€"
-    format:
-      delimiter: " "
-      precision: 3
-      separator: ","
-      significant: false
-      strip_insignificant_zeros: false
-    human:
-      decimal_units:
-        format: "%n %u"
-        units:
-          billion: milliard
-          million: million
-          quadrillion: million de milliards
-          thousand: millier
-          trillion: billion
-          unit: 
-      format:
-        delimiter: 
-        precision: 2
-        significant: true
-        strip_insignificant_zeros: true
-      storage_units:
-        format: "%n %u"
-        units:
-          byte:
-            one: octet
-            other: octets
-          gb: Go
-          kb: ko
-          mb: Mo
-          tb: To
-    percentage:
-      format:
-        delimiter: 
-    precision:
-      format:
-        delimiter: 
   oauth:
     errors:
       duplicated_username: Votre nom d'utilisateur pour %{provider} est déjà dans notre base de données. Si vous avez enregistré déjà en utilisant un autre réseau social ou via e-mail et mot de passe, s'il vous plaît connectez-vous de cette façon. Dans le cas contraire, il indique un autre nom d'utilisateur pour terminer l'enregistrement.
@@ -416,16 +354,7 @@ fr:
   recaptcha:
     errors:
       verification_failed: Il a échoué la vérification contre les robots, essayer à nouveau
-  support:
-    array:
-      last_word_connector: " et "
-      two_words_connector: " et "
-      words_connector: ", "
   time_ago_in_words: il y a %{time}
-  unauthorized:
-    default: Vous n'êtes pas autorisé à accéder à cette page.
-    manage:
-      all: Vous devez d'abord vous connecter ou vous inscrire un usager.
   will_paginate:
     next_label: suivant →
     page_entries_info:

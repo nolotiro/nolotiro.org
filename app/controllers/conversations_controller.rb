@@ -35,7 +35,7 @@ class ConversationsController < ApplicationController
       @message.deliver
 
       redirect_to conversation_path(@conversation),
-                  notice: I18n.t('mailboxer.notifications.sent')
+                  notice: I18n.t('conversations.notifications.sent')
     else
       setup_errors
 
@@ -53,7 +53,7 @@ class ConversationsController < ApplicationController
       @message.deliver
 
       redirect_to conversation_path(@conversation),
-                  notice: I18n.t('mailboxer.notifications.sent')
+                  notice: I18n.t('conversations.notifications.sent')
     else
       render :show
     end
@@ -76,7 +76,7 @@ class ConversationsController < ApplicationController
     Array(conversation).each { |c| c.move_to_trash(current_user) }
 
     redirect_to conversations_path,
-                notice: I18n.t('mailboxer.notifications.trash')
+                notice: I18n.t('conversations.notifications.trash')
   end
 
   private
