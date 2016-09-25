@@ -40,6 +40,7 @@ class AdsController < ApplicationController
   end
 
   def edit
+    session[:return_to] = referer_path
   end
 
   def bump
@@ -52,7 +53,7 @@ class AdsController < ApplicationController
     if @ad.update(ad_params)
       @ad.check_spam!
 
-      redirect_to ad_friendly_path, notice: t('nlt.ads.updated')
+      redirect_to update_redirect_path, notice: t('nlt.ads.updated')
     else
       render action: 'edit', alert: @ad.errors
     end
@@ -61,13 +62,31 @@ class AdsController < ApplicationController
   def destroy
     @ad.destroy
 
-    redirect_to listads_user_path(current_user), notice: t('nlt.ads.destroyed')
+    redirect_to destroy_redirect_path, notice: t('nlt.ads.destroyed')
   end
 
   private
 
+  def update_redirect_path
+    session.delete(:return_to) || ad_friendly_path
+  end
+
+  def destroy_redirect_path
+    previous_path = session.delete(:return_to)
+    previous_path_available = previous_path && previous_path != ad_friendly_path
+    return previous_path if previous_path_available
+
+    listads_user_path(current_user)
+  end
+
   def ad_friendly_path
     adslug_path(@ad, slug: @ad.slug)
+  end
+
+  def referer_path
+    URI(request.referer).path
+  rescue
+    ad_friendly_path
   end
 
   def set_ad
