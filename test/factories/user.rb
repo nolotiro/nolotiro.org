@@ -12,7 +12,6 @@ FactoryGirl.define do
   factory :user do
     username
     email
-    lang 'es'
     password '123456789'
     role 0
     madrilenian
@@ -23,7 +22,6 @@ FactoryGirl.define do
   factory :admin, class: User do
     username
     email 'admin@example.com'
-    lang 'es'
     password '12435968770'
     role 1
     confirmed_at Time.zone.now
@@ -32,7 +30,6 @@ FactoryGirl.define do
   factory :non_confirmed_user, class: User do
     username
     email
-    lang 'es'
     password '123456789'
     role 0
     madrilenian

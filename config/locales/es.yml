@@ -47,9 +47,15 @@ es:
         remember: Recuérdame
         username: Nombre de usuario
     models:
-      ad: Ads
-      ad_comment: Ad Comments
-      admin: Admin
+      ad:
+        one: anuncio
+        other: Anuncios
+      ad_comment:
+        one: comentario
+        other: Comentarios
+      user:
+        one: usuario
+        other: Usuarios
   blockings:
     create:
       success: Usuario bloqueado
@@ -74,6 +80,9 @@ es:
       title_html: Conversación con %{recipient} asunto %{subject}
     table:
       none: No tienes mensajes de este tipo
+  date:
+    formats:
+      active_admin: '%d/%m/%y'
   devise:
     confirmations:
       action: Confirmar mi cuenta
@@ -352,6 +361,9 @@ es:
   recaptcha:
     errors:
       verification_failed: Falló la verificación contra robots, prueba de nuevo
+  time:
+    formats:
+      active_admin: '%d/%m/%y %H:%M'
   time_ago_in_words: hace %{time}
   will_paginate:
     next_label: siguiente →

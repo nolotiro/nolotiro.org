@@ -16,6 +16,50 @@ ActiveAdmin.register User do
   filter :last_sign_in_at
   filter :ads_count
 
+  show do
+    attributes_table do
+      row :id
+      row :username
+      row :legacy_password_hash
+      row :email
+      row :created_at
+      row :active
+      row :role
+      row :woeid
+      row :sign_in_count
+      row :last_sign_in_ip
+      row :last_sign_in_at
+      row :confirmed_at
+      row :banned_at
+    end
+
+    panel 'Anuncios' do
+      table_for user.ads.order(published_at: :desc) do
+        column(:title) { |ad| link_to ad.title, admin_ad_path(ad) }
+        column :type do |ad|
+          status_tag({ 'give' => 'green', 'want' => 'red' }[ad.type],
+                     label: ad.type)
+        end
+
+        column :status do |ad|
+          status_tag({ 'available' => 'green',
+                       'booked' => 'orange',
+                       'delivered' => 'red' }[ad.status],
+                     label: ad.status)
+        end
+
+        column :body
+
+        column :actions do |ad|
+          edit = link_to 'Editar', edit_admin_ad_path(ad)
+          delete = link_to 'Eliminar', admin_ad_path(ad), method: :delete
+
+          safe_join([edit, delete], ' ')
+        end
+      end
+    end
+  end
+
   index do
     column(:username) { |user| link_to user.username, admin_user_path(user) }
     column :email
@@ -54,6 +98,6 @@ ActiveAdmin.register User do
     user.moderate!
 
     redirect_to admin_user_path(user),
-                notice: "Usuario #{'des' unless user.locked?}bloqueado"
+                notice: "Usuario #{'des' unless user.banned?}bloqueado"
   end
 end

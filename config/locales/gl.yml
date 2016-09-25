@@ -49,9 +49,15 @@ gl:
         remember: Lémbrame
         username: Nome de usuario
     models:
-      ad: Anuncios
-      ad_comment: 
-      admin: Admin
+      ad:
+        one: anuncio
+        other: Anuncios
+      ad_comment:
+        one: comentario
+        other: Comentarios
+      user:
+        one: usuario
+        other: Usuarios
   blockings:
     create:
       success: 
@@ -76,6 +82,9 @@ gl:
       title_html: 
     table:
       none: 
+  date:
+    formats:
+      active_admin: 
   devise:
     confirmations:
       action: Confirmar miña conta
@@ -360,6 +369,9 @@ gl:
   recaptcha:
     errors:
       verification_failed: 
+  time:
+    formats:
+      active_admin: 
   time_ago_in_words: hace %{time}
   will_paginate:
     next_label: 

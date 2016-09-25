@@ -47,9 +47,15 @@ de:
         remember: 
         username: 
     models:
-      ad: 
-      ad_comment: 
-      admin: 
+      ad:
+        one: 
+        other: 
+      ad_comment:
+        one: 
+        other: 
+      user:
+        one: 
+        other: 
   blockings:
     create:
       success: 
@@ -74,6 +80,9 @@ de:
       title_html: 
     table:
       none: 
+  date:
+    formats:
+      active_admin: 
   devise:
     confirmations:
       action: 
@@ -352,6 +361,9 @@ de:
   recaptcha:
     errors:
       verification_failed: 
+  time:
+    formats:
+      active_admin: 
   time_ago_in_words: "%{time} her"
   will_paginate:
     next_label: Weiter →

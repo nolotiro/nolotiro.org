@@ -47,9 +47,15 @@ pt:
         remember: Lembre-me
         username: Nome de usuário
     models:
-      ad: 
-      ad_comment: 
-      admin: Admin
+      ad:
+        one: 
+        other: 
+      ad_comment:
+        one: 
+        other: 
+      user:
+        one: 
+        other: 
   blockings:
     create:
       success: Usuário bloqueado
@@ -74,6 +80,9 @@ pt:
       title_html: Conversa com %{recipient} assunto %{subject}
     table:
       none: Você não têm mensagens de este tipo
+  date:
+    formats:
+      active_admin: 
   devise:
     confirmations:
       action: Confirmar minha conta
@@ -352,6 +361,9 @@ pt:
   recaptcha:
     errors:
       verification_failed: Falha na verificação contra robots, tenta de novo
+  time:
+    formats:
+      active_admin: 
   time_ago_in_words: ha %{time}
   will_paginate:
     next_label: próximo →

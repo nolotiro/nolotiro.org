@@ -47,9 +47,15 @@ it:
         remember: Ricordami
         username: Nome di utente
     models:
-      ad: Ads
-      ad_comment: Ad Commenti
-      admin: Admin
+      ad:
+        one: annuncio
+        other: Annunci
+      ad_comment:
+        one: commento
+        other: Commenti
+      user:
+        one: utente
+        other: Utenti
   blockings:
     create:
       success: Utente bloccato
@@ -74,6 +80,9 @@ it:
       title_html: Conversazione con %{recipient} oggetto %{subject}
     table:
       none: Non hai messaggi di questo tipo
+  date:
+    formats:
+      active_admin: 
   devise:
     confirmations:
       action: Conferma il tuo account
@@ -358,6 +367,9 @@ it:
   recaptcha:
     errors:
       verification_failed: C'è stato un error nella verificazione contro dei robot
+  time:
+    formats:
+      active_admin: 
   time_ago_in_words: "%{time} fa"
   will_paginate:
     next_label: successivo →

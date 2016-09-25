@@ -31,8 +31,6 @@ class User < ActiveRecord::Base
            class_name: 'Message',
            dependent: :nullify
 
-  before_save :default_lang
-
   validates :username, presence: true
   validates :username, uniqueness: { case_sensitive: false },
                        format: { without: /\A([^@]+@[^@]+|[1-9]+)\z/ },
@@ -123,10 +121,6 @@ class User < ActiveRecord::Base
 
   def admin?
     role == 1
-  end
-
-  def default_lang
-    self.lang ||= 'es'
   end
 
   def friend?(user)
