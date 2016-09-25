@@ -8,9 +8,17 @@ class AdRemovalTest < AuthenticatedTest
 
   it 'properly deletes ads' do
     visit ads_edit_path(@ad)
-    assert_difference('Ad.count', -1) { click_link 'Borrar anuncio' }
 
+    assert_difference('Ad.count', -1) { click_button 'Borrar anuncio' }
     assert_text 'Hemos borrado el anuncio'
     assert_equal listads_user_path(@current_user), current_path
+  end
+
+  it 'shows an recomendation before deleting ads' do
+    visit ads_edit_path(@ad)
+
+    assert_text(
+      /te recomendamos que en lugar de borrarlo lo marques como entregado/
+    )
   end
 end

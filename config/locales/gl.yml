@@ -226,7 +226,8 @@ gl:
     cookie: Usamos cookies para mellorar a súa navegación neste sitio
     create_new_ad: Crear un novo anuncio
     delete_ad: Eliminar anuncio
-    delete_sure: 
+    delete_if_delivered: 
+    delete_if_not_delivered: 
     delivered: dedicado
     developers: desarrolladores
     didn_t_receive_confirmation_instructions: 

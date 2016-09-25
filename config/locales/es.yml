@@ -220,7 +220,8 @@ es:
     cookie: Utilizamos cookies para mejorar tu navegación en este sitio
     create_new_ad: Crea un nuevo anuncio
     delete_ad: Borrar anuncio
-    delete_sure: "¿Estás seguro que quieres borrarlo?"
+    delete_if_delivered: Si has regalado este anuncio, te recomendamos que en lugar de borrarlo lo marques como entregado. Así el anuncio contabilizará en tus estadísticas de regalos y quizá estas estadísticas en un futuro sean utilizadas para proporcionar beneficios a los más regaladores.
+    delete_if_not_delivered: Si por el contrario has regalado el objeto por otro medio, lo has vendido o has cambiado de opinión y ya no lo quieres regalar, adelante.
     delivered: entregado
     developers: desarrolladores
     didn_t_receive_confirmation_instructions: "¿No has recibido las instrucciones de confirmación?"

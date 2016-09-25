@@ -220,7 +220,8 @@ de:
     cookie: 
     create_new_ad: 
     delete_ad: 
-    delete_sure: 
+    delete_if_delivered: 
+    delete_if_not_delivered: 
     delivered: 
     developers: 
     didn_t_receive_confirmation_instructions: 

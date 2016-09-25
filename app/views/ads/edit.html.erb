@@ -1,16 +1,21 @@
 <%= content_for(:meta_title, t('nlt.edit_this_ad')) %>
 
-<div id="default_header_section">
+<section id="default_header_section">
   <h1><%= t('nlt.edit_this_ad') %></h1>
-  <br><br>
-  <%= link_to ad_path(@ad), method: :delete, data: { confirm: t('nlt.delete_sure') } do %>
-    <%= image_tag "delete_ad.png" %>
-    <%= t('nlt.delete_ad') %>
-  <% end %>
+</section>
+
+<div class="col-md-8 col-sm-8 offset-md-4 offset-sm-4">
+  <div class="row">
+    <%= render 'form', ad: @ad %>
+  </div>
 </div>
+
+<section id="default_header_section">
+  <h1><%= t('nlt.delete_ad') %></h1>
+</section>
 
 <div class="col-md-8 col-sm-8">
   <div class="row">
-    <%= render 'form', ad: @ad %>
+    <%= render 'destroy_form', ad: @ad %>
   </div>
 </div>

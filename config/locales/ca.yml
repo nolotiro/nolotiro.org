@@ -220,7 +220,8 @@ ca:
     cookie: Utilitzem cookies per millorar la teva navegació en aquest lloc
     create_new_ad: Crea un nou anunci
     delete_ad: Esborrar anunci
-    delete_sure: Estàs segur que vols esborrar-ho?
+    delete_if_delivered: Si has regalat aquest anunci, et recomanem que en lloc d'esborrar-ho marquis com lliurat. Així l'anunci comptabilitzarà en les teves estadístiques de regals i potser aquestes estadístiques en un futur siguin utilitzades per proporcionar beneficis als més regaladores.
+    delete_if_not_delivered: Si per contra has regalat l'objecte per un altre mitjà, l'has venut o has canviat d'opinió i ja no el vols regalar, endavant.
     delivered: lliurat
     developers: desenvolupadors
     didn_t_receive_confirmation_instructions: No has rebut les instruccions de confirmació?

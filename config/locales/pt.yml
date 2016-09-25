@@ -220,7 +220,8 @@ pt:
     cookie: Utilizamos cookies para melhorar sua navegação neste site
     create_new_ad: Cria um novo anúncio
     delete_ad: Apagar anúncio
-    delete_sure: Tem certeza que quer apagá-lo?
+    delete_if_delivered: 
+    delete_if_not_delivered: 
     delivered: entregado
     developers: desenvolvedores
     didn_t_receive_confirmation_instructions: Você não recebeu instruções de confirmação?

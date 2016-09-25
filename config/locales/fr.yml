@@ -220,7 +220,8 @@ fr:
     cookie: Nous utilisons les cookies pour améliorer votre navigation sur ce site
     create_new_ad: Créer une nouvelle annonce
     delete_ad: Supprimer ad
-    delete_sure: Êtes-vous sûr de vouloir le supprimer?
+    delete_if_delivered: 
+    delete_if_not_delivered: 
     delivered: dévoué
     developers: développeurs
     didn_t_receive_confirmation_instructions: Vous avez pas reçu les instructions de confirmation?
