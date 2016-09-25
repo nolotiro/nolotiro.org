@@ -169,8 +169,9 @@ gl:
       title: Acerca de nolotiro.org
     access_here: Entre aquí
     ads:
-      bumped: 
+      bumped: Republicamos o anuncio
       created: Creamos o anuncio
+      destroyed: Eliminamos o anuncio
       form:
         body: 'Corpo do anuncio:'
         body_max: Máximo 500 caracteres
@@ -224,8 +225,9 @@ gl:
 '
     cookie: Usamos cookies para mellorar a súa navegación neste sitio
     create_new_ad: Crear un novo anuncio
-    delete_ad: 
-    delete_sure: 
+    delete_ad: Eliminar anuncio
+    delete_if_delivered: 
+    delete_if_not_delivered: 
     delivered: dedicado
     developers: desarrolladores
     didn_t_receive_confirmation_instructions: 

@@ -167,6 +167,7 @@ en:
     ads:
       bumped: We have bumped the ad
       created: We have created the ad
+      destroyed: We have destroyed the ad
       form:
         body: 'Body of the ad:'
         body_max: Maximum 500 characters
@@ -219,7 +220,8 @@ en:
     cookie: We use cookies in order to improve your navigation in this site
     create_new_ad: Create a new ad
     delete_ad: Delete ad
-    delete_sure: Are you sure you want to delete it?
+    delete_if_delivered: If you have given away this ad, we recommend that you mark it as delivered instead. By doing that, the ad will be counted in your stats, and those stats might be used in the future to provide some benefits to the most generous people.
+    delete_if_not_delivered: If you have actually given the ad away by other means, you've sold it or you've just changed your mind and you no longer want to give it away, go ahead!
     delivered: delivered
     developers: developers
     didn_t_receive_confirmation_instructions: Didn't receive the confirmation's instructions?

@@ -167,6 +167,7 @@ fr:
     ads:
       bumped: Nous avons publié l'avis
       created: Nous avons créé l'annonce
+      destroyed: Nous avons supprimé l'annonce
       form:
         body: 'Corps de l''annonce:'
         body_max: 500 caractères maximum
@@ -218,8 +219,9 @@ fr:
     contact_thanks: Message envoyé! Merci de contacter nolotiro.org
     cookie: Nous utilisons les cookies pour améliorer votre navigation sur ce site
     create_new_ad: Créer une nouvelle annonce
-    delete_ad: supprimer ad
-    delete_sure: Êtes-vous sûr de vouloir le supprimer?
+    delete_ad: Supprimer ad
+    delete_if_delivered: 
+    delete_if_not_delivered: 
     delivered: dévoué
     developers: développeurs
     didn_t_receive_confirmation_instructions: Vous avez pas reçu les instructions de confirmation?

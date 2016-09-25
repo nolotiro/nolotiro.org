@@ -167,6 +167,7 @@ it:
     ads:
       bumped: Abbiamo ripubblicato annuncio
       created: 'Abbiamo creato l''annuncio '
+      destroyed: Abbiamo cancellato l'annuncio
       form:
         body: Corpo del annuncio
         body_max: Massimo 500 caratteri
@@ -218,8 +219,9 @@ it:
     contact_thanks: Messaggio inviato! Grazie per contattare con nolotiro.org
     cookie: Usiamo cookies per migliorare la navigazione in questo sito
     create_new_ad: Crea un nuovo annuncio
-    delete_ad: cancella annuncio
-    delete_sure: Sei sicuro che lo vuoi cancellare?
+    delete_ad: Cancellare annuncio
+    delete_if_delivered: Se hai regalato l'oggetto, raccomandiamo di cambiare lo stato a consegnato. Cosí l'annucio è contabilizato nelle tue statistiche e magari queste statistiche verrano usate nel future per fornire vantaggi ai migliori regalatori.
+    delete_if_not_delivered: Se per contra hai regalato l'oggetto per altri mezzi oppure l'hai venduto o hai cambiato idea e non lo vuoi più regalare, vai avanti!
     delivered: consegnato
     developers: svilupatori
     didn_t_receive_confirmation_instructions: Non hai ricevuto le istruzione di conferma?
