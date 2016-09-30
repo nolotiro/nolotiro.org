@@ -2,6 +2,7 @@
 
 ActiveAdmin.register Ad do
   config.sort_order = 'published_at_desc'
+  config.per_page = 100
 
   controller do
     def scoped_collection
