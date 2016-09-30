@@ -16,11 +16,3 @@ test:
   password: nolotirov3pass
   pool: 5
   timeout: 5000
-
-production:
-  adapter: mysql2
-  database: nolotirov3_prod
-  username: nolotirov3
-  password:
-  pool: 5
-  timeout: 5000
