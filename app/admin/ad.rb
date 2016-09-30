@@ -9,6 +9,20 @@ ActiveAdmin.register Ad do
     end
   end
 
+  batch_action :destroy do |ids|
+    Ad.where(id: ids).destroy_all
+
+    count = ids.count
+    model = active_admin_config.resource_label.downcase
+    plural_model = active_admin_config.plural_resource_label(count: ids.count)
+                                      .downcase
+
+    msg = t('active_admin.batch_actions.succesfully_destroyed',
+            count: count, model: model, plural_model: plural_model)
+
+    redirect_to collection_path(q: params[:q]), notice: msg
+  end
+
   permit_params :woeid_code, :type, :body, :title
 
   filter :title
