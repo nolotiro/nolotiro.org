@@ -5,7 +5,7 @@ class CallbacksController < Devise::OmniauthCallbacksController
     handle_oauth_callback
   end
 
-  def google_oauth2
+  def google
     handle_oauth_callback
   end
 

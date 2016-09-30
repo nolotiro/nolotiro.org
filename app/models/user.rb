@@ -54,7 +54,7 @@ class User < ActiveRecord::Base
   # :timeoutable and :omniauthable
   devise :confirmable, :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :lockable,
-         :omniauthable, omniauth_providers: [:facebook, :google_oauth2]
+         :omniauthable, omniauth_providers: [:facebook, :google]
 
   scope :top_overall, -> do
     Rails.cache.fetch("top-overall-#{Ad.cache_digest}") { build_rank(Ad) }
