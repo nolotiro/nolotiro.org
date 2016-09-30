@@ -1,8 +1,6 @@
 # frozen_string_literal: true
 
 class ContactMailer < ActionMailer::Base
-  default from: Rails.application.secrets.emails['default_from']
-
   def contact_form(email, message, request)
     @email = email
     @ip_address = RequestGeolocator.new(request).ip_address
