@@ -76,10 +76,6 @@ sudo apt-get install redis-server
 bundle exec sidekiq
 ```
 
-For recaptcha you need to [signup][Google Recaptcha] and configure it in the
-relevant environment in *config/secrets.yml* (keys *recaptcha.public_key* and
-*recaptcha.private_key*)
-
 ## Development environment magic
 
 For the emails we recommend using mailcatcher. This doesn't send external emails
