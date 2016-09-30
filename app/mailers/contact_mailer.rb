@@ -8,9 +8,7 @@ class ContactMailer < ActionMailer::Base
     @ip_address = RequestGeolocator.new(request).ip_address
     @ua = request.user_agent
     @message = message
-    mail(
-      from: email,
-      subject: "nolotiro.org - contact from #{email}"
-    )
+
+    mail from: email, subject: "nolotiro.org - contact from #{email}"
   end
 end
