@@ -1,25 +1,10 @@
 # frozen_string_literal: true
 
 require 'test_helper'
-require 'support/oauth'
-require 'support/web_mocking'
+require 'integration/concerns/social_registration_tests'
 
 class FacebookRegistrationTest < ActionDispatch::IntegrationTest
-  include OauthHelpers
-  include WebMocking
+  include SocialRegistrationTests
 
-  it 'properly authenticates user when facebook account has an email' do
-    login_via(:facebook, name: 'pepe', email: 'pepe@example.com')
-
-    assert_text 'hola, pepe'
-  end
-
-  it 'succesfully links to old user if email already present in db' do
-    user = create(:user, username: 'pepito', email: 'pepe@example.com')
-    mocking_yahoo_woeid_info(user.woeid) do
-      login_via(:facebook, name: 'pepe', email: 'pepe@example.com')
-    end
-
-    assert_text 'hola, pepito'
-  end
+  before { @provider = :facebook }
 end

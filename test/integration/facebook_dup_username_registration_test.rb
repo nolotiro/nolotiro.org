@@ -2,28 +2,11 @@
 
 require 'test_helper'
 require 'support/oauth'
+require 'integration/concerns/social_dup_username_tests'
 
 class FacebookDupUsernameRegistrationTest < ActionDispatch::IntegrationTest
   include OauthHelpers
+  include SocialDupUsernameTests
 
-  before do
-    create(:user, username: 'pepe', email: 'pepe@example.org')
-    login_via(:facebook, name: 'pepe', email: 'pepe@example.com')
-  end
-
-  it 'redirects to a form' do
-    assert_text <<~MSG
-      Tu nombre de usuario de facebook ya se encuentra en nuestra base de datos.
-      Si te has registrado ya usando otra red social o mediante email y
-      contraseña, por favor, inicia sesión de esa manera. En caso contrario,
-      indica otro nombre de usuario para completar el registro.
-    MSG
-  end
-
-  it 'finalizes registration properly' do
-    fill_in 'Elige un nombre de usuario', with: 'pepe_nolotiro'
-    click_button 'Regístrate'
-
-    assert_text 'hola, pepe_nolotiro'
-  end
+  before { @provider = :facebook }
 end
