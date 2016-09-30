@@ -6,7 +6,7 @@ require 'support/oauth'
 class FacebookEmaillessRegistrationTest < ActionDispatch::IntegrationTest
   include OauthHelpers
 
-  before { login_via_facebook(name: 'pepe') }
+  before { login_via(:facebook, name: 'pepe') }
 
   it 'redirects to a form' do
     assert_text <<~MSG
@@ -35,7 +35,7 @@ class FacebookEmaillessRegistrationTest < ActionDispatch::IntegrationTest
 
   it 'requires user to confirm email' do
     fill_in_finalize_form('pepe@example.com')
-    login_via_facebook(name: 'pepe')
+    login_via(:facebook, name: 'pepe')
 
     assert_text 'Tienes que confirmar tu cuenta para poder continuar'
   end
@@ -43,7 +43,7 @@ class FacebookEmaillessRegistrationTest < ActionDispatch::IntegrationTest
   it 'logs user in after confirming email' do
     fill_in_finalize_form('pepe@example.com')
     User.first.confirm
-    login_via_facebook(name: 'pepe')
+    login_via(:facebook, name: 'pepe')
 
     assert_text 'hola, pepe'
   end

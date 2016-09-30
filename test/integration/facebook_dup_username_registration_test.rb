@@ -10,7 +10,7 @@ class FacebookDupUsernameRegistrationTest < ActionDispatch::IntegrationTest
 
   before do
     create(:user, username: 'pepe', email: 'pepe@example.org')
-    login_via_facebook(name: 'pepe', email: 'pepe@example.com')
+    login_via(:facebook, name: 'pepe', email: 'pepe@example.com')
   end
 
   it 'redirects to a form' do
