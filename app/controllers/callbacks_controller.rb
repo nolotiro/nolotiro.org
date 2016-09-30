@@ -15,7 +15,7 @@ class CallbacksController < Devise::OmniauthCallbacksController
     if oauth_user.valid?
       sign_in_and_redirect
     else
-      session['devise.omniauth_data'] = oauth
+      session['devise.omniauth_data'] = oauth.except('extra')
       redirect_to new_user_registration_path, alert: flash_message
     end
   end
