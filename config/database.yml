@@ -1,0 +1,22 @@
+connection: &connection
+  adapter: mysql2
+  username: <%= ENV['NLT_DB_USER'] %>
+  password: <%= ENV['NLT_DB_PASS'] %>
+  database: <%= ENV['NLT_DB_NAME'] %>
+  timeout: 5000
+
+development:
+  pool: 5
+  <<: *connection
+
+test:
+  pool: 5
+  <<: *connection
+
+staging:
+  pool: 75
+  <<: *connection
+
+production:
+  pool: 25
+  <<: *connection

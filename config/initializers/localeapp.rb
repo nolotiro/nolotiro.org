@@ -5,7 +5,8 @@ if Rails.env.development?
   require 'localeapp/rails'
 
   Localeapp.configure do |config|
-    config.api_key = Rails.application.secrets['localeapp_apikey']
+    config.api_key = ENV['LOCALEAPP_APIKEY']
+
     config.polling_environments = []
     config.sending_environments = []
     config.reloading_environments = []

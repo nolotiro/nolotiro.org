@@ -2,9 +2,9 @@
 
 if Rails.env.production? || Rails.env.staging?
   Airbrake.configure do |config|
-    config.api_key = Rails.application.secrets.airbrake['apikey']
-    config.host    = Rails.application.secrets.airbrake['host']
-    config.port    = Rails.application.secrets.airbrake['port']
+    config.api_key = ENV['AIRBRAKE_APIKEY']
+    config.host    = ENV['AIRBRAKE_HOST']
+    config.port    = ENV['AIRBRAKE_PORT'].to_i
     config.secure  = config.port == 443
   end
 end

@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class ContactMailer < ActionMailer::Base
-  default to: Rails.application.secrets.emails['contact']
+  default to: ENV['NLT_DEFAULT_TO']
 
   def contact_form(email, message, request)
     @email = email

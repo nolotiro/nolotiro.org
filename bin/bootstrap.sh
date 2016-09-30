@@ -37,9 +37,6 @@ sudo -u vagrant -i rbenv rehash
 cd /vagrant
 sudo -u vagrant /home/vagrant/.rbenv/shims/bundle install
 
-cp config/database.yml.example config/database.yml
-cp config/secrets.yml.example config/secrets.yml
-
 chown vagrant:vagrant config/*.yml
 
 # TODO: db:seeds
