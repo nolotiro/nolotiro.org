@@ -142,13 +142,6 @@ de:
       success: 
     destroy:
       success: 
-  mailer:
-    confirmation_reminder:
-      p1: 
-      p2: 
-    greetings: 
-    hello: 
-    signature: 
   message_mailer:
     message:
       body: 

@@ -142,13 +142,6 @@ pt:
       success: Amigo adicionado
     destroy:
       success: Amigo excluído
-  mailer:
-    confirmation_reminder:
-      p1: Detectamos que você criou uma nova conta em nolotiro.org que ainda não foi confirmada.
-      p2: 'Isto significa que você pode ter tido problemas para acessar ao site. Se você quer confirmar o seu usuário (%{username}) pode fazé-lo neste link:'
-    greetings: Atenciosamente
-    hello: Olá,
-    signature: O equipe do nolotiro.org
   message_mailer:
     message:
       body: Mensagem

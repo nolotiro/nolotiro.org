@@ -146,13 +146,6 @@ gl:
       success: 
     destroy:
       success: 
-  mailer:
-    confirmation_reminder:
-      p1: Detectamos que teña creado unha conta en nolotiro.org e vostede non confirmou.
-      p2: 'Isto significa que tivo problemas para acceder á páxina. Se quere confirmar o usuario (%{username}) pode con esta ligazón:'
-    greetings: Grazas e saludos,
-    hello: Ola,
-    signature: Equipo de nolotiro.org
   message_mailer:
     message:
       body: Mensaxe

@@ -142,13 +142,6 @@ it:
       success: Amico aggiunto
     destroy:
       success: Amico cancellato
-  mailer:
-    confirmation_reminder:
-      p1: Abbiamo rivelato che hai creato un account in nolotiro.org che non è stato confermato.
-      p2: 'Questo significa che hai avuto problemi di accesso alla pagina. Se si desidera confermare la utente (%{username}) è possibile con questo link:'
-    greetings: 'Grazie e saluti, '
-    hello: 'Ciao, '
-    signature: il team di nolotiro.org
   message_mailer:
     message:
       body: Messaggio
