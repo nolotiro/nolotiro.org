@@ -37,6 +37,9 @@ ActiveAdmin.register User do
     panel 'Anuncios' do
       table_for user.ads.order(published_at: :desc) do
         column(:title) { |ad| link_to ad.title, admin_ad_path(ad) }
+
+        column :published_at
+
         column :type do |ad|
           status_tag({ 'give' => 'green', 'want' => 'red' }[ad.type],
                      label: ad.type)
