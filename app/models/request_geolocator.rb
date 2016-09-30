@@ -7,9 +7,6 @@ class RequestGeolocator
   end
 
   def ip_address
-    debug_ip_address = Rails.application.secrets['debug_ip_address']
-    return debug_ip_address if debug_ip_address.present?
-
     @request.remote_ip
   end
 
