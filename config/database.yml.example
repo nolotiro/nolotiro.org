@@ -1,8 +1,8 @@
 development:
   adapter: mysql2
   database: nolotirov3_dev
-  username: nolotirov3
-  password: nolotirov3pass
+  username: root
+  password:
   pool: 5
   timeout: 5000
 
@@ -12,7 +12,7 @@ development:
 test:
   adapter: mysql2
   database: nolotirov3_test
-  username: nolotirov3
-  password: nolotirov3pass
+  username: root
+  password:
   pool: 5
   timeout: 5000

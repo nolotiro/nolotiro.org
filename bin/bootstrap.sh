@@ -1,8 +1,6 @@
 #!/usr/bin/env bash
 # http://docs.vagrantup.com/v2/getting-started/provisioning.html
 
-MYSQL_PASS="sincondiciones"
-
 # TODO: check installed packages
 apt-get update
 debconf-set-selections <<< "mysql-server-5.5 mysql-server/root_password password ${MYSQL_PASS}"
@@ -17,7 +15,7 @@ apt-get clean
 cat > /home/vagrant/.my.cnf <<EOF
 [client]
 user = root
-password = ${MYSQL_PASS}
+password =
 EOF
 
 # install rbenv and ruby-build
@@ -41,13 +39,6 @@ sudo -u vagrant /home/vagrant/.rbenv/shims/bundle install
 
 cp config/database.yml.example config/database.yml
 cp config/secrets.yml.example config/secrets.yml
-
-sudo -u vagrant -i mysql << EOF
-CREATE USER 'nolotirov3'@'localhost' IDENTIFIED BY 'nolotirov3pass';
-GRANT ALL PRIVILEGES ON nolotirov3_dev.* TO nolotirov3@localhost IDENTIFIED BY 'nolotirov3pass';
-GRANT ALL PRIVILEGES ON nolotirov3_test.* TO nolotirov3@localhost IDENTIFIED BY 'nolotirov3pass';
-FLUSH PRIVILEGES;
-EOF
 
 chown vagrant:vagrant config/*.yml
 
