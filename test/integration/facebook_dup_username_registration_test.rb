@@ -2,11 +2,9 @@
 
 require 'test_helper'
 require 'support/oauth'
-require 'support/web_mocking'
 
 class FacebookDupUsernameRegistrationTest < ActionDispatch::IntegrationTest
   include OauthHelpers
-  include WebMocking
 
   before do
     create(:user, username: 'pepe', email: 'pepe@example.org')
