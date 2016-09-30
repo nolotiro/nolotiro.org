@@ -31,6 +31,7 @@ ActiveAdmin.register User do
       row :last_sign_in_at
       row :confirmed_at
       row :banned_at
+      row :ads_count
     end
 
     panel 'Anuncios' do
