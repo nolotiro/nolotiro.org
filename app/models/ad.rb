@@ -96,6 +96,10 @@ class Ad < ActiveRecord::Base
     Ad.increment_counter(:readed_count, id)
   end
 
+  def move!
+    update!(type: give? ? :want : :give)
+  end
+
   def slug
     filtered_title.parameterize
   end

@@ -64,8 +64,11 @@ ActiveAdmin.register Ad do
     actions(defaults: false) do |ad|
       edit = link_to 'Editar', edit_admin_ad_path(ad)
       delete = link_to 'Eliminar', admin_ad_path(ad), method: :delete
+      move = link_to "Mover a #{ad.give? ? 'peticiones' : 'regalos'}",
+                     move_admin_ad_path(ad),
+                     method: :post
 
-      safe_join([edit, delete], ' ')
+      safe_join([edit, delete, move], ' ')
     end
   end
 
@@ -80,7 +83,21 @@ ActiveAdmin.register Ad do
     f.actions
   end
 
+  action_item :move, only: :show do
+    link_to "Mover a #{ad.give? ? 'peticiones' : 'regalos'}",
+            move_admin_ad_path(ad),
+            method: :post
+  end
+
   action_item :view, only: :show do
     link_to 'Ver en la web', ad_path(ad)
+  end
+
+  member_action :move, method: :post do
+    ad = Ad.find(params[:id])
+
+    ad.move!
+
+    redirect_to admin_ads_path, notice: 'Anuncio movido'
   end
 end
