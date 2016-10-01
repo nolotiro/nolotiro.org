@@ -53,6 +53,10 @@ module ApplicationHelper
     url_for(params.merge(locale: locale, only_path: false))
   end
 
+  def canonical_url
+    url_for(params.except(:q).merge(only_path: false))
+  end
+
   def errors_for(object)
     errs = object.errors
     return unless errs.any?
