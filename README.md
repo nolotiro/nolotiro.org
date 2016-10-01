@@ -46,11 +46,6 @@ Check out the script in `bin/bootstrap.sh` - that's the same that Vagrant uses.
 Running `bin/rake` will run all the tests, that should always pass on a freshly
 downloaded copy a nolotiro's master.
 
-Some of our integration tests use `poltergeist` + `phantomjs` to run against a
-real headless browser. Currently, because of [this bug][Phantomjs Bug] and
-[this bug][Travis Bug] we are providing the phantomjs's linux x86_64 binary
-within the repo itself.
-
 ## More information
 
 For obtaining geographical information we use [Yahoo YQL].
