@@ -83,12 +83,4 @@ ActiveAdmin.register Ad do
   action_item :view, only: :show do
     link_to 'Ver en la web', ad_path(ad)
   end
-
-  member_action :mark_spam, method: :post do
-    @ad = Ad.find params[:id]
-
-    @ad.toggle_spam!
-
-    redirect_to admin_ads_path(q: params[:q]), notice: 'Feedback recibido'
-  end
 end
