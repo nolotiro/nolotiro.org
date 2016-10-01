@@ -2,7 +2,8 @@
 
 ActiveAdmin.register User do
   config.batch_actions = false
-  config.clear_action_items!
+  config.remove_action_item(:new)
+  config.remove_action_item(:destroy)
 
   permit_params :role
 
@@ -84,10 +85,6 @@ ActiveAdmin.register User do
 
   action_item :view, only: :show do
     link_to('Ver en la web', profile_path(user.username)) if user.legitimate?
-  end
-
-  action_item :edit, only: :show do
-    link_to 'Editar Usuario', edit_admin_user_path(user)
   end
 
   action_item :moderate, only: :show do
