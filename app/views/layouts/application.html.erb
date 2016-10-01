@@ -20,7 +20,7 @@
 
     <% I18n.available_locales.each do |locale| %>
       <link rel="alternate"
-            hreflang="<%= locale %>"
+            hreflang="<%= locale.to_s %>"
             href="<%= localized_url(locale) %>" />
     <% end %>
 
