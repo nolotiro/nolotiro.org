@@ -9,10 +9,24 @@ debconf-set-selections <<< "mysql-server-5.5 mysql-server/root_password password
 debconf-set-selections <<< "mysql-server-5.5 mysql-server/root_password_again password ${MYSQL_PASS}"
 
 # Application dependencies
-apt-get install -y curl phantomjs redis-server mysql-server-5.5 libmysqlclient-dev sqlite3 libsqlite3-dev imagemagick
+apt-get install -y curl \
+                   phantomjs \
+                   redis-server \
+                   mysql-server-5.5 \
+                   libmysqlclient-dev \
+                   sqlite3 \
+                   libsqlite3-dev \
+                   imagemagick
 
 # Rbenv dependencies
-apt-get install -y git-core make build-essential libssl-dev libreadline6-dev zlib1g-dev libyaml-dev libc6-dev
+apt-get install -y git-core \
+                   make \
+                   build-essential \
+                   libssl-dev \
+                   libreadline6-dev \
+                   zlib1g-dev \
+                   libyaml-dev \
+                   libc6-dev
 
 # Enable auto-login for MySQL
 cat > /home/vagrant/.my.cnf <<EOF
