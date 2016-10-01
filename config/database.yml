@@ -14,7 +14,7 @@ test:
   <<: *connection
 
 staging:
-  pool: 75
+  pool: 25
   <<: *connection
 
 production:
