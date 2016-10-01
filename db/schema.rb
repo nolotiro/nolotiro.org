@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160930235635) do
+ActiveRecord::Schema.define(version: 20161001185104) do
 
   create_table "ads", force: :cascade do |t|
     t.string   "title",              limit: 100,               null: false
@@ -101,17 +101,12 @@ ActiveRecord::Schema.define(version: 20160930235635) do
   add_index "identities", ["user_id"], name: "index_identities_on_user_id", using: :btree
 
   create_table "messages", force: :cascade do |t|
-    t.text     "body",              limit: 16777215
-    t.string   "subject",           limit: 255,      default: ""
-    t.integer  "sender_id",         limit: 4
-    t.integer  "conversation_id",   limit: 4
-    t.boolean  "draft",                              default: false
-    t.datetime "updated_at",                                         null: false
-    t.datetime "created_at",                                         null: false
-    t.string   "notification_code", limit: 255
-    t.string   "attachment",        limit: 255
-    t.boolean  "global",                             default: false
-    t.datetime "expires"
+    t.text     "body",            limit: 16777215
+    t.string   "subject",         limit: 255,      default: ""
+    t.integer  "sender_id",       limit: 4
+    t.integer  "conversation_id", limit: 4
+    t.datetime "updated_at",                                    null: false
+    t.datetime "created_at",                                    null: false
   end
 
   add_index "messages", ["conversation_id"], name: "index_messages_on_conversation_id", using: :btree
