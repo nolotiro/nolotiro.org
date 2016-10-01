@@ -18,8 +18,10 @@
 
     <link rel="alternate" href="<%= localized_url(nil) %>" hreflang="x-default" />
 
-    <% I18n.available_locales.each do |l| %>
-      <link rel="alternate" hreflang="<%= l %>" href="<%= localized_url(l) %>" />
+    <% I18n.available_locales.each do |locale| %>
+      <link rel="alternate"
+            hreflang="<%= locale %>"
+            href="<%= localized_url(locale) %>" />
     <% end %>
 
     <!--
