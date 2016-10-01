@@ -75,6 +75,7 @@ ActiveAdmin.register User do
 
     actions(defaults: false, dropdown: true) do |user|
       item 'Editar', edit_admin_user_path(user)
+      item 'Contactar', new_conversation_path(recipient_id: user.id)
       item "#{user.banned? ? 'Desb' : 'B'}loquear",
            moderate_admin_user_path(user),
            method: :post
@@ -83,6 +84,12 @@ ActiveAdmin.register User do
 
   action_item :view, only: :show do
     link_to('Ver en la web', profile_path(user.username)) if user.legitimate?
+  end
+
+  action_item :contact, only: :show do
+    if user.legitimate?
+      link_to 'Contactar', new_conversation_path(recipient_id: user.id)
+    end
   end
 
   action_item :moderate, only: :show do
