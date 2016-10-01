@@ -83,14 +83,14 @@ ActiveAdmin.register Ad do
     f.actions
   end
 
+  action_item :view, only: :show do
+    link_to 'Ver en la web', ad_path(ad)
+  end
+
   action_item :move, only: :show do
     link_to "Mover a #{ad.give? ? 'peticiones' : 'regalos'}",
             move_admin_ad_path(ad),
             method: :post
-  end
-
-  action_item :view, only: :show do
-    link_to 'Ver en la web', ad_path(ad)
   end
 
   member_action :move, method: :post do
