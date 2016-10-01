@@ -61,14 +61,12 @@ ActiveAdmin.register Ad do
 
     column :published_at
 
-    actions(defaults: false) do |ad|
-      edit = link_to 'Editar', edit_admin_ad_path(ad)
-      delete = link_to 'Eliminar', admin_ad_path(ad), method: :delete
-      move = link_to "Mover a #{ad.give? ? 'peticiones' : 'regalos'}",
-                     move_admin_ad_path(ad),
-                     method: :post
-
-      safe_join([edit, delete, move], ' ')
+    actions(defaults: false, dropdown: true) do |ad|
+      item 'Editar', edit_admin_ad_path(ad)
+      item 'Eliminar', admin_ad_path(ad), method: :delete
+      item "Mover a #{ad.give? ? 'peticiones' : 'regalos'}",
+           move_admin_ad_path(ad),
+           method: :post
     end
   end
 

@@ -73,13 +73,11 @@ ActiveAdmin.register User do
     column :last_sign_in_at
     column :ads_count
 
-    actions(defaults: false) do |user|
-      edit = link_to 'Editar', edit_admin_user_path(user)
-      moderate = link_to "#{user.banned? ? 'Desb' : 'B'}loquear",
-                         moderate_admin_user_path(user),
-                         method: :post
-
-      safe_join([edit, moderate], ' ')
+    actions(defaults: false, dropdown: true) do |user|
+      item 'Editar', edit_admin_user_path(user)
+      item "#{user.banned? ? 'Desb' : 'B'}loquear",
+           moderate_admin_user_path(user),
+           method: :post
     end
   end
 

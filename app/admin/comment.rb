@@ -18,7 +18,7 @@ ActiveAdmin.register Comment, as: 'AdComment' do
     column :user
     column :ip
     column :created_at
-    actions
+    actions(dropdown: true)
   end
 
   form do |f|
