@@ -3,8 +3,8 @@
 require 'test_helper'
 require 'integration/concerns/social_registration_tests'
 
-class FacebookRegistrationTest < ActionDispatch::IntegrationTest
+class GoogleRegistrationTest < ActionDispatch::IntegrationTest
   include SocialRegistrationTests
 
-  before { @provider = :facebook }
+  before { @provider = :google }
 end
