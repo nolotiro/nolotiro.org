@@ -11,9 +11,10 @@
 /log/*.log
 /tmp
 
-config/app_config.yml
-config/database.yml
-config/secrets.yml
+# App configuration
+.env.local
+.env.staging
+.env.production
 
 # photos / images
 public/legacy/uploads/ads/original/*

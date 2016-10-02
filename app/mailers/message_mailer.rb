@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class MessageMailer < ActionMailer::Base
-  default from: Rails.application.secrets.emails['default_from']
+  default from: ENV['NLT_DEFAULT_FROM']
 
   def send_email(message)
     @message = message

@@ -142,13 +142,6 @@ en:
       success: Friend added
     destroy:
       success: Friend removed
-  mailer:
-    confirmation_reminder:
-      p1: We have detected that you have created an account on nolotiro.org and you have not confirmed yet.
-      p2: 'That means maybe you had problems trying to registering in nolotiro. If you want yo confirm your user (%{username}) click this link: '
-    greetings: Thank you! Cheers!
-    hello: Hi,
-    signature: nolotiro.org team
   message_mailer:
     message:
       body: Message

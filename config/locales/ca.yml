@@ -142,13 +142,6 @@ ca:
       success: Amic agregat
     destroy:
       success: Amic eliminat
-  mailer:
-    confirmation_reminder:
-      p1: Hem detectat que t'has creat un compte a nolotiro.org i no l'has confirmat.
-      p2: 'Això vol dir que pots haver tingut problemes per accedir a la pàgina. Si vols confirmar la teva usuari (%{username}) pots fer-ho amb aquest enllaç:'
-    greetings: Gràcies i salutacions,
-    hello: Hola,
-    signature: Equip de nolotiro.org
   message_mailer:
     message:
       body: missatge

@@ -20,6 +20,8 @@ gem 'uglifier', '>= 1.3.0'
 gem 'jquery-rails'
 gem 'jbuilder', '~> 1.2'
 
+gem 'dotenv-rails', '~> 2.1'
+
 group :doc do
   gem 'sdoc', require: false
 end
@@ -64,6 +66,9 @@ group :development do
   gem 'rubocop', '0.42.0'
   gem 'brakeman-lib'
   gem 'i18n-tasks', '0.9.5'
+  gem 'localeapp',
+      github: 'deivid-rodriguez/localeapp',
+      branch: 'drop_1.9.3_support'                  # i18n interface
 end
 
 gem 'http_accept_language'
@@ -85,9 +90,6 @@ gem 'paperclip', '~> 4.0'                           # images
 gem 'delayed_paperclip'                             # images processing in background
 gem 'recaptcha', require: 'recaptcha/rails' # captcha
 gem 'ipaddress'                                     # ip address validation
-gem 'localeapp',
-    github: 'deivid-rodriguez/localeapp',
-    branch: 'drop_1.9.3_support'                    # i18n interface
 gem 'activeadmin', github: 'activeadmin'            # admin backend
 gem 'faker'
 

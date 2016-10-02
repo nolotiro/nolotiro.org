@@ -142,13 +142,6 @@ fr:
       success: Ami ajouté
     destroy:
       success: Ami supprimé
-  mailer:
-    confirmation_reminder:
-      p1: Nous avons détecté que vous avez créé un compte sur nolotiro.org et vous ne l'avez pas confirmé.
-      p2: 'Cela signifie que vous avez eu du mal à accéder à la page. Si vous voulez confirmer votre utilisateur (%{username}) vous pouvez avec ce lien:'
-    greetings: Merci et salutations,
-    hello: Bonjour,
-    signature: Équipe de nolotiro.org
   message_mailer:
     message:
       body: 
