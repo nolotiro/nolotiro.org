@@ -2,7 +2,8 @@
 
 ActiveAdmin.register User do
   config.batch_actions = false
-  config.clear_action_items!
+  config.remove_action_item(:new)
+  config.remove_action_item(:destroy)
 
   permit_params :role
 
@@ -31,11 +32,15 @@ ActiveAdmin.register User do
       row :last_sign_in_at
       row :confirmed_at
       row :banned_at
+      row :ads_count
     end
 
     panel 'Anuncios' do
       table_for user.ads.order(published_at: :desc) do
         column(:title) { |ad| link_to ad.title, admin_ad_path(ad) }
+
+        column :published_at
+
         column :type do |ad|
           status_tag({ 'give' => 'green', 'want' => 'red' }[ad.type],
                      label: ad.type)
@@ -68,13 +73,12 @@ ActiveAdmin.register User do
     column :last_sign_in_at
     column :ads_count
 
-    actions(defaults: false) do |user|
-      edit = link_to 'Editar', edit_admin_user_path(user)
-      moderate = link_to "#{user.banned? ? 'Desb' : 'B'}loquear",
-                         moderate_admin_user_path(user),
-                         method: :post
-
-      safe_join([edit, moderate], ' ')
+    actions(defaults: false, dropdown: true) do |user|
+      item 'Editar', edit_admin_user_path(user)
+      item 'Contactar', new_conversation_path(recipient_id: user.id)
+      item "#{user.banned? ? 'Desb' : 'B'}loquear",
+           moderate_admin_user_path(user),
+           method: :post
     end
   end
 
@@ -82,12 +86,14 @@ ActiveAdmin.register User do
     link_to('Ver en la web', profile_path(user.username)) if user.legitimate?
   end
 
-  action_item :edit, only: :show do
-    link_to 'Editar Usuario', edit_admin_user_path(user)
+  action_item :contact, only: :show do
+    if user.legitimate?
+      link_to 'Contactar', new_conversation_path(recipient_id: user.id)
+    end
   end
 
   action_item :moderate, only: :show do
-    link_to "#{user.banned? ? 'Desb' : 'B'}loquear Usuario",
+    link_to "#{user.banned? ? 'Desb' : 'B'}loquear usuario",
             moderate_admin_user_path(user),
             method: :post
   end

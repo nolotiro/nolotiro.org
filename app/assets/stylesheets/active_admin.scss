@@ -1,2 +1,6 @@
 @import "active_admin/mixins";
 @import "active_admin/base";
+
+.col-title, .col-body {
+  max-width: 150px;
+}

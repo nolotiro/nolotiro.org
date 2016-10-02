@@ -2,11 +2,26 @@
 
 ActiveAdmin.register Ad do
   config.sort_order = 'published_at_desc'
+  config.per_page = 100
 
   controller do
     def scoped_collection
       params[:id] ? super : super.includes(:user)
     end
+  end
+
+  batch_action :destroy do |ids|
+    Ad.where(id: ids).destroy_all
+
+    count = ids.count
+    model = active_admin_config.resource_label.downcase
+    plural_model = active_admin_config.plural_resource_label(count: ids.count)
+                                      .downcase
+
+    msg = t('active_admin.batch_actions.succesfully_destroyed',
+            count: count, model: model, plural_model: plural_model)
+
+    redirect_to collection_path(q: params[:q]), notice: msg
   end
 
   permit_params :woeid_code, :type, :body, :title
@@ -46,11 +61,12 @@ ActiveAdmin.register Ad do
 
     column :published_at
 
-    actions(defaults: false) do |ad|
-      edit = link_to 'Editar', edit_admin_ad_path(ad)
-      delete = link_to 'Eliminar', admin_ad_path(ad), method: :delete
-
-      safe_join([edit, delete], ' ')
+    actions(defaults: false, dropdown: true) do |ad|
+      item 'Editar', edit_admin_ad_path(ad)
+      item 'Eliminar', admin_ad_path(ad), method: :delete
+      item "Mover a #{ad.give? ? 'peticiones' : 'regalos'}",
+           move_admin_ad_path(ad),
+           method: :post
     end
   end
 
@@ -69,11 +85,17 @@ ActiveAdmin.register Ad do
     link_to 'Ver en la web', ad_path(ad)
   end
 
-  member_action :mark_spam, method: :post do
-    @ad = Ad.find params[:id]
+  action_item :move, only: :show do
+    link_to "Mover a #{ad.give? ? 'peticiones' : 'regalos'}",
+            move_admin_ad_path(ad),
+            method: :post
+  end
 
-    @ad.toggle_spam!
+  member_action :move, method: :post do
+    ad = Ad.find(params[:id])
 
-    redirect_to admin_ads_path(q: params[:q]), notice: 'Feedback recibido'
+    ad.move!
+
+    redirect_to admin_ads_path, notice: 'Anuncio movido'
   end
 end

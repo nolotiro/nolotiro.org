@@ -14,7 +14,7 @@ es:
         image: Imagen
         image_content_type: Tipo de contenido de imagen
         image_file_size: Tamaño de imagen
-        published_at: Published at
+        published_at: Fecha
         status: Status
         subject: Título
         title: Título
