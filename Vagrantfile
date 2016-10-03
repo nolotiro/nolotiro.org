@@ -69,5 +69,6 @@ Vagrant.configure(2) do |config|
   #   sudo apt-get update
   #   sudo apt-get install -y apache2
   # SHELL
-  config.vm.provision :shell, path: 'bin/bootstrap.sh'
+  config.vm.provision :shell, path: 'bin/setup.sh', privileged: true
+  config.vm.provision :shell, path: 'bin/bootstrap.sh', privileged: false
 end
