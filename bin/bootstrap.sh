@@ -51,7 +51,7 @@ sudo -u vagrant -i rbenv global 2.3.1
 sudo -u vagrant -i gem install bundler
 sudo -u vagrant -i rbenv rehash
 
-cd /vagrant
+cd /vagrant || exit
 sudo -u vagrant /home/vagrant/.rbenv/shims/bundle install
 
 sudo -u vagrant bin/rake db:drop
