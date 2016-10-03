@@ -3,8 +3,8 @@
 MYSQL_PASS=sincondiciones
 
 # Prepare MySQL for unattended installation
-debconf-set-selections <<< "mysql-server-5.5 mysql-server/root_password password ${MYSQL_PASS}"
-debconf-set-selections <<< "mysql-server-5.5 mysql-server/root_password_again password ${MYSQL_PASS}"
+debconf-set-selections <<< "mysql-server-5.5 mysql-server/root_password password $MYSQL_PASS"
+debconf-set-selections <<< "mysql-server-5.5 mysql-server/root_password_again password $MYSQL_PASS"
 
 # Setup nodejs repo
 curl -sL https://deb.nodesource.com/setup_6.x | bash -
