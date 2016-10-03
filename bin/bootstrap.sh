@@ -15,11 +15,12 @@ source "$HOME/.profile"
 
 # Install required ruby versions
 rbenv install 2.3.1
-rbenv global 2.3.1
+
+cd /vagrant || exit
+
 gem install bundler
 rbenv rehash
 
-cd /vagrant || exit
 bundle install
 
 bin/rake db:drop
