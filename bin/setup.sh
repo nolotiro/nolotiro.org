@@ -36,3 +36,16 @@ cat > "$HOME/.my.cnf" <<EOF
 user = root
 password = $MYSQL_PASS
 EOF
+
+cd /vagrant || exit
+
+# Prepare DB user
+
+source "$(pwd)/.env"
+mysql -e "CREATE USER $NLT_DB_USER@localhost IDENTIFIED BY '$NLT_DB_PASS'"
+
+source "$(pwd)/.env.development"
+mysql -e "GRANT ALL PRIVILEGES ON $NLT_DB_NAME.* TO $NLT_DB_USER@localhost"
+
+source "$(pwd)/.env.test"
+mysql -e "GRANT ALL PRIVILEGES ON $NLT_DB_NAME.* TO $NLT_DB_USER@localhost"
