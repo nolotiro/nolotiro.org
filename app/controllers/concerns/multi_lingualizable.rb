@@ -23,7 +23,14 @@ module MultiLingualizable
   end
 
   def cookie_locale
-    cookies.permanent[:locale].presence
+    locale = cookies.permanent[:locale]
+    # @note This validation is necessary because, although we validate the
+    # locale before saving the cookie, we've deprecated nl & eu locales so some
+    # cookies already set are no longer valid. Once we readd these locales we
+    # can remove this.
+    return unless valid_locale?(locale)
+
+    locale
   end
 
   def browser_locale
@@ -32,5 +39,11 @@ module MultiLingualizable
 
   def default_locale
     I18n.default_locale
+  end
+
+  def valid_locale?(locale)
+    return false unless locale.present?
+
+    I18n.available_locales.include?(locale.to_sym)
   end
 end

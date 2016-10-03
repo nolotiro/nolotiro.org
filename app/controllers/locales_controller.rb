@@ -36,12 +36,6 @@ class LocalesController < ApplicationController
     segments.join('/')
   end
 
-  def valid_locale?(locale)
-    return false unless locale.present?
-
-    I18n.available_locales.include?(locale.to_sym)
-  end
-
   def locale
     params[:locale]
   end
