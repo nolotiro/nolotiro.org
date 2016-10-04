@@ -23,6 +23,6 @@ rbenv rehash
 
 bundle install
 
-bin/rake db:drop
-bin/rake db:setup
+bin/rake db:reset RAILS_ENV=development
+bin/rake db:drop db:create db:schema:load RAILS_ENV=test
 bin/rake max_mind:extract
