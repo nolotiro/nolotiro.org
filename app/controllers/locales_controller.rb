@@ -2,13 +2,9 @@
 
 class LocalesController < ApplicationController
   def show
-    if valid_locale?(locale)
-      cookies.permanent[:locale] = locale
+    cookies.permanent[:locale] = locale
 
-      redirect_to refered_url
-    else
-      redirect_to referer_url
-    end
+    redirect_to refered_url
   end
 
   private
