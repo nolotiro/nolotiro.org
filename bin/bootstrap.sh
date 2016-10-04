@@ -4,8 +4,10 @@
 git clone git://github.com/sstephenson/rbenv.git "$HOME/.rbenv"
 
 # Load rbenv on login
-echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> "$HOME/.profile"
-echo 'eval "$(rbenv init -)"' >> "$HOME/.profile"
+cat > "$HOME/.profile" <<'EOF'
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
+EOF
 
 # Install ruby-build
 git clone git://github.com/sstephenson/ruby-build.git "$HOME/.rbenv/plugins/ruby-build"
