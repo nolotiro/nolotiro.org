@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+MYSQL_PASS=sincondiciones
+
 # TODO: check installed packages
 
 # Prepare MySQL for unattended installation
@@ -16,7 +18,7 @@ apt-get install -y git-core make build-essential libssl-dev libreadline6-dev zli
 cat > /home/vagrant/.my.cnf <<EOF
 [client]
 user = root
-password =
+password = $MYSQL_PASS
 EOF
 
 # Install rbenv
