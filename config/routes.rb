@@ -15,7 +15,10 @@ NolotiroOrg::Application.routes.draw do
 
   devise_for :users, only: :omniauth_callbacks, controllers: { omniauth_callbacks: 'callbacks' }
 
-  get '/locales/:locale', to: 'locales#show', as: :locale
+  get '/locales/:locale',
+      to: 'locales#show',
+      as: :locale,
+      constraints: { locale: /#{I18n.available_locales.join("|")}/ }
 
   # i18n
   scope '(:locale)', locale: /#{I18n.available_locales.join("|")}/ do

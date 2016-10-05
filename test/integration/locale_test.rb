@@ -34,6 +34,12 @@ class LocaleTest < ActionDispatch::IntegrationTest
     assert_equal I18n.default_locale, I18n.locale
   end
 
+  it 'ignores trying to set deprecated locales' do
+    assert_raise(ActionController::RoutingError) do
+      visit '/locales/eu'
+    end
+  end
+
   it 'assigns locale from browser if no locale in param or session' do
     get root_path(locale: nil), {}, 'HTTP_ACCEPT_LANGUAGE' => 'it'
 
