@@ -29,21 +29,21 @@ apt-get install -y build-essential \
                    zlib1g-dev
 
 # Enable auto-login for MySQL
-cat > /home/vagrant/.my.cnf <<EOF
+cat > "$HOME/.my.cnf" <<EOF
 [client]
 user = root
 password = $MYSQL_PASS
 EOF
 
 # Install rbenv
-sudo -u vagrant -i git clone git://github.com/sstephenson/rbenv.git /home/vagrant/.rbenv
+sudo -u vagrant -i git clone git://github.com/sstephenson/rbenv.git "$HOME/.rbenv"
 
 # Load rbenv on login
-sudo -u vagrant echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> /home/vagrant/.profile
-sudo -u vagrant echo 'eval "$(rbenv init -)"' >> /home/vagrant/.profile
+sudo -u vagrant echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> "$HOME/.profile"
+sudo -u vagrant echo 'eval "$(rbenv init -)"' >> "$HOME/.profile"
 
 # Install ruby-build
-sudo -u vagrant -i git clone git://github.com/sstephenson/ruby-build.git /home/vagrant/.rbenv/plugins/ruby-build
+sudo -u vagrant -i git clone git://github.com/sstephenson/ruby-build.git "$HOME/.rbenv/plugins/ruby-build"
 
 # Install required ruby versions
 sudo -u vagrant -i rbenv install 2.3.1
