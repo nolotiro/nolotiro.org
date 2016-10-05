@@ -33,7 +33,6 @@ apt-get install -y build-essential \
 # Enable auto-login for MySQL
 cat > "$HOME/.my.cnf" <<EOF
 [client]
-user = root
 password = $MYSQL_PASS
 EOF
 
