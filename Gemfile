@@ -72,7 +72,6 @@ group :development do
 end
 
 gem 'http_accept_language'
-gem 'unicorn'                                       # webserver
 gem 'pg', '0.19.0'                                  # database adapter
 gem 'redis-rails'                                   # redis cache
 gem 'sidekiq'                                       # job workers
