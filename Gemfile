@@ -73,7 +73,7 @@ end
 
 gem 'http_accept_language'
 gem 'unicorn'                                       # webserver
-gem 'mysql2', '~> 0.4.4'                            # database adapter
+gem 'pg', '0.19.0'                                  # database adapter
 gem 'redis-rails'                                   # redis cache
 gem 'sidekiq'                                       # job workers
 gem 'slim'
