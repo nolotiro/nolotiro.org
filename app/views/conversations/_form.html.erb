@@ -1,0 +1,24 @@
+<%= form_tag conversations_path do |f| %>
+  <fieldset>
+    <%= errors_for(message) %>
+
+    <div class="form-group">
+      <%= label_tag :subject, t('conversations.new.subject') %>
+      <br/>
+      <%= text_field_tag :subject, params[:subject] %>
+    </div>
+
+    <div class="form-group">
+      <%= text_area_tag :body, params[:body], size: '80x3',
+                                              maxlength: 1500,
+                                              required: true %>
+      <p class="help-block">
+        <%= t 'conversations.new.body_max' %>
+      </p>
+    </div>
+
+    <%= hidden_field_tag :recipient_id, params[:recipient_id] %>
+
+    <%= submit_tag t('conversations.new.submit') %>
+  </fieldset>
+<% end %>

@@ -1,0 +1,39 @@
+<% title = t("conversations.show.title_html",
+             recipient: link_to_interlocutor(@conversation),
+             subject: @conversation.subject) %>
+
+<% content_for :meta_title, title %>
+
+<div id="default_header_section">
+  <h5>
+    <%= link_to t("conversations.buttons.back"), conversations_path %>
+  </h5>
+  <h1>
+    <%= title %>
+  </h1>
+
+  <%= link_to t("conversations.buttons.trash"),
+              trash_conversation_path(@conversation),
+              class: :button,
+              method: :delete %>
+</div>
+
+<div class="col-md-7 col-sm-7" id="messages-thread">
+  <% @conversation.messages_for(current_user).includes(:sender).each do |mes| %>
+    <%= render "message", message: mes %>
+  <% end %>
+
+  <% if policy(@conversation).update? %>
+    <%= render "reply", message: @message %>
+  <% end %>
+</div>
+
+<div class="col-md-5 col-sm-5">
+  <div class="row mobile">
+    <%= render "partials/google_adsense", class_name: "google_adsense_336_280", ad_slot: "7225596067" %>
+  </div>
+
+  <div class="row desktop">
+    <%= render "partials/google_adsense", class_name: "google_adsense_300_250", ad_slot: "8702329269" %>
+  </div>
+</div>

@@ -1,0 +1,34 @@
+<div class="message-excerpt">
+  <div class="message-from-left">
+    <%= link_to profile_path(current_user.username) do %>
+      <%= image_tag "contact.png" %>
+      <%= current_user.username %>
+    <% end %>
+  </div>
+
+  <div class="message-container-right">
+    <div class="triangle-me"></div>
+
+    <div class="bubble-reply bg-bubble-me">
+      <div id="reply">
+        <%= form_tag conversation_path(message.conversation),
+                     method: :put do |f| %>
+          <%= errors_for(message) %>
+
+          <div class="form-group">
+            <%= text_area_tag :body,
+                              params[:body],
+                              size: '80x3',
+                              maxlength: 1500 %>
+
+            <p class="help-block">
+              <%= t 'conversations.new.body_max' %>
+            </p>
+          </div>
+
+          <%= submit_tag t('conversations.new.submit') %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

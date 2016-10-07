@@ -1,0 +1,19 @@
+<tr class="mail <%= 'unread' if @unread_counts[c.id].try(:positive?)  %>">
+  <td>
+    <%= check_box_tag '', c.id, false, id: "delete-conversation-#{c.id}",
+                                       class: 'delete_multiple_checkbox',
+                                       name: "conversations[]" %>
+  </td>
+
+  <td class="sender">
+    <%= link_to_interlocutor(c) %>
+  </td>
+
+  <td class="mail-subject">
+    <%= link_to c.subject, conversation_path(c) %>
+  </td>
+
+  <td class="timestamp">
+    <%= time_ago_in_words(c.updated_at) %>
+  </td>
+</tr>
