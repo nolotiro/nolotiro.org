@@ -217,7 +217,6 @@ GEM
       has_scope (~> 0.6.0.rc)
       railties (>= 3.2, < 5)
       responders
-    ipaddress (0.8.0)
     jbuilder (1.5.3)
       activesupport (>= 3.0.0)
       multi_json (>= 1.2.0)
@@ -491,7 +490,6 @@ DEPENDENCIES
   faker
   http_accept_language
   i18n-tasks (= 0.9.5)
-  ipaddress
   jbuilder (~> 1.2)
   jquery-rails
   json (~> 1.8)
