@@ -75,7 +75,6 @@ gem 'http_accept_language'
 gem 'pg', '0.19.0'                                  # database adapter
 gem 'redis-rails'                                   # redis cache
 gem 'sidekiq'                                       # job workers
-gem 'slim'
 
 gem 'maxminddb'                                     # geolite city v2
 gem 'will_paginate', '~> 3.0'                       # pagination
