@@ -188,7 +188,8 @@ gl:
       marked_as: Anuncio marcado como %{status}
       updated: Anuncio actualizado
     all: todos
-    all_ads: todos os anuncios
+    all_gifts: todos os regalos
+    all_requests: todas as peticiones
     are_you_interested: Interesado?
     available: dispoñible
     back: regresar á páxina de inicio

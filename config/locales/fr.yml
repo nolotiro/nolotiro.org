@@ -187,7 +187,8 @@ fr:
       marked_as: Annonce %{status}
       updated: Annoce mis à jour
     all: tous
-    all_ads: toutes les annonces
+    all_gifts: toutes les cadeaux
+    all_requests: toutes les pétitions
     are_you_interested: Ça t'intéresse?
     available: disponible
     back: retour à la page d'accueil

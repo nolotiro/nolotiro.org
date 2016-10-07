@@ -53,7 +53,7 @@
       <div class="location_name">
         <h1>
           <% if current_woeid.nil? %>
-            <%= t('nlt.all_ads') %>
+            <%= t("nlt.all_#{@type == 'want' ? 'requests' : 'gifts'}") %>
           <% else %>
             <%= t('nlt.searching_on_html', q: @q) if @q %>
 

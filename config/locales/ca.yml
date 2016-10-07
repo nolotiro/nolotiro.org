@@ -186,7 +186,8 @@ ca:
       marked_as: Anunci %{status}
       updated: Anunci actualitzat
     all: tots
-    all_ads: tots els anuncis
+    all_gifts: tots els regals
+    all_requests: totes les peticions
     are_you_interested: T'interessa?
     available: disponible
     back: tornar a la pàgina d'inici

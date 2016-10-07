@@ -187,7 +187,8 @@ en:
       marked_as: Ad %{status}
       updated: Ad updated
     all: all
-    all_ads: all ads
+    all_gifts: all gifts
+    all_requests: all requests
     are_you_interested: Are you interested?
     available: available
     back: Back to the main page

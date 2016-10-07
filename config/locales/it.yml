@@ -187,7 +187,8 @@ it:
       marked_as: Annuncio %{status}
       updated: Annuncio aggiornato
     all: tutti
-    all_ads: tutti gli annunci
+    all_gifts: tutti i regali
+    all_requests: tutte le petizioni
     are_you_interested: Sei interessato?
     available: disponibile
     back: torna alla pagina iniziale
