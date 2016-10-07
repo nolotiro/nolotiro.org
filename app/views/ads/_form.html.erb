@@ -6,8 +6,7 @@
       <% if ad.image.exists? %>
         <div class='ad_list_image'>
           <%= link_to image_tag(ad.image.url(:thumb), alt: ad.filtered_title),
-                      ad.image.url,
-                      alt: t('nlt.click_to_large') %>
+                      ad.image.url %>
         </div>
       <% end %>
 
