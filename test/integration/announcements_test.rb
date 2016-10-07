@@ -35,17 +35,17 @@ class AnnouncementsTest < ActionDispatch::IntegrationTest
   end
 
   it 'displays a single announcement at a time' do
-    @active_announcement2 = create(:announcement, message: 'Magic released',
-                                                  starts_at: 1.hour.ago,
-                                                  ends_at: 1.minute.from_now)
+    @active_announcement_two = create(:announcement, message: 'Magic released',
+                                                     starts_at: 1.hour.ago,
+                                                     ends_at: 1.minute.from_now)
     login_as create(:user, woeid: nil)
     visit root_path
-    assert_text @active_announcement2.message
+    assert_text @active_announcement_two.message
     assert_no_text @active_announcement.message
 
     click_link '×'
     assert_text @active_announcement.message
-    assert_no_text @active_announcement2.message
+    assert_no_text @active_announcement_two.message
     logout
   end
 end
