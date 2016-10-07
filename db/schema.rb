@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161001185104) do
+ActiveRecord::Schema.define(version: 20161007014256) do
 
   create_table "ads", force: :cascade do |t|
     t.string   "title",              limit: 100,               null: false
@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(version: 20161001185104) do
     t.string   "image_content_type", limit: 255
     t.integer  "image_file_size",    limit: 4
     t.datetime "image_updated_at"
-    t.integer  "readed_count",       limit: 4,     default: 0
+    t.integer  "readed_count",       limit: 4,     default: 1
     t.datetime "published_at",                                 null: false
   end
 

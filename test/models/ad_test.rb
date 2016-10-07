@@ -116,7 +116,7 @@ class AdTest < ActiveSupport::TestCase
     ad = create(:ad, readed_count: 100)
     ad.bump
 
-    assert_equal 0, ad.readed_count
+    assert_equal 1, ad.readed_count
   end
 
   test 'associated comments are deleted when ad is deleted' do

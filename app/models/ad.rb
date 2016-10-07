@@ -89,7 +89,7 @@ class Ad < ActiveRecord::Base
   end
 
   def reset_readed_count!
-    update_column(:readed_count, 0)
+    update_column(:readed_count, 1)
   end
 
   def increment_readed_count!
