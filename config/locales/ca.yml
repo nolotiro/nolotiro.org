@@ -263,16 +263,16 @@ ca:
     give_it_to: Regala'l a %{user}
     hello_to: Hola %{recipient},
     here: aquí
-    home_title: anuncis de regals nous i de segona mà
     if_you_are_new: Si ets un nou usuari, si us plau
     if_youre_already_an_user: Si ja ets un usuari registrat, si us plau
-    keywords: regal segona mà gratis
     last_published_gifts: últims regals publicats
     leave_blank: "(deixa-la en blanc si no vols canviar-la)"
     legal_notice: Avís legal
     legal_page:
       body_html: 'Nom: Associació aLabs. <br>Inscrita en el registre d''associacions de la Comunitat de Madrid amb nombre 32.022. <br>CIF: G86139847<br> C/Duque de Alba, 13 (28012) Madrid.'
       title: Avís legal
+    location_gifts: regals en %{location}
+    location_requests: peticions en %{location}
     login: accedir
     logout: sortir
     mail:
@@ -348,6 +348,7 @@ ca:
     sign_up: Crear un usuari
     slogan: no ho tir, t'ho regal (sense condicions)
     suggestions: suggeriments
+    title_with_page: "%{title}, pàgina %{page}"
     to_publish_or_send_messages: Per publicar anuncis o enviar missatges accedeix al teu compte
     tos: termes d'ús
     translate:

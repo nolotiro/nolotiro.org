@@ -264,16 +264,16 @@ es:
     give_it_to: Regálaselo a %{user}
     hello_to: Hola %{recipient},
     here: aquí
-    home_title: anuncios de regalos nuevos y de segunda mano
     if_you_are_new: Si eres un nuevo usuario, por favor
     if_youre_already_an_user: Si ya eres un usuario registrado, por favor
-    keywords: 'regalo segunda mano gratis '
     last_published_gifts: últimos regalos publicados
     leave_blank: "(déjala en blanco si no quieres cambiarla)"
     legal_notice: aviso legal
     legal_page:
       body_html: 'Nombre: Asociación aLabs. <br>Inscrita en el registro de asociaciones de la Comunidad de Madrid con número 32.022. <br>CIF: G86139847<br>C/Duque de Alba, 13 (28012) Madrid.'
       title: Aviso legal
+    location_gifts: regalos en %{location}
+    location_requests: peticiones en %{location}
     login: acceder
     logout: salir
     mail:
@@ -349,6 +349,7 @@ es:
     sign_up: Crear un usuario
     slogan: no lo tiro, te lo regalo (sin condiciones)
     suggestions: sugerencias
+    title_with_page: "%{title}, página %{page}"
     to_publish_or_send_messages: Para publicar anuncios o enviar mensajes accede a tu cuenta
     tos: términos de uso
     translate:

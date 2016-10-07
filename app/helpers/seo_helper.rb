@@ -7,6 +7,20 @@ module SeoHelper
     content_tag(:title, "#{content_for(:title)} - nolotiro.org")
   end
 
+  def listing_page_title
+    key = params[:type] == 'want' ? 'requests' : 'gifts'
+
+    main = if current_woeid
+             t("nlt.location_#{key}", location: @woeid_info[:full])
+           else
+             t("nlt.all_#{key}")
+           end
+
+    return main unless params[:page]
+
+    t('nlt.title_with_page', title: main, page: params[:page])
+  end
+
   def meta_description
     general = t('nlt.meta_description')
     specific = content_for(:meta_description) if content_for?(:meta_description)

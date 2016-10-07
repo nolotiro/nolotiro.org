@@ -264,16 +264,16 @@ pt:
     give_it_to: Da um presente para %{user}
     hello_to: Olá %{recipient},
     here: aqui
-    home_title: anúncios de presentes novos e de segunda mão
     if_you_are_new: Se você é um novo usuário, por favor
     if_youre_already_an_user: Si você já está cadastrado, por favor
-    keywords: presente segunda mão grátis
     last_published_gifts: últimos presentes publicados
     leave_blank: "(deixar em branco se você não quer mudá-la)"
     legal_notice: aviso legal
     legal_page:
       body_html: 'Nome: Asociaçã aLabs. <br>Inscrita en el registro de asociaciones de la Comunidad de Madrid con número 32.022. <br>CIF: G86139847<br>C/Duque de Alba, 13 (28012) Madrid.'
       title: Aviso legal
+    location_gifts: presentes em %{location}
+    location_requests: peticões em %{location}
     login: acessar
     logout: sair
     mail:
@@ -349,6 +349,7 @@ pt:
     sign_up: Criar usuário
     slogan: não jogo fora, te dou de presente (sem condições)
     suggestions: sugestões
+    title_with_page: "%{title}, página %{page}"
     to_publish_or_send_messages: Para publicar anúncios ou enviar mensagens faça login na sua conta
     tos: termos de uso
     translate:

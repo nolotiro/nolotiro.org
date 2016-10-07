@@ -264,16 +264,16 @@ en:
     give_it_to: Give it away to %{user}
     hello_to: Hello %{recipient},
     here: here
-    home_title: new and second hand gift's ads
     if_you_are_new: If you are a new user, please
     if_youre_already_an_user: If you are a registered user, please
-    keywords: gift second hand free
     last_published_gifts: last posted gifts
     leave_blank: "(leave it empty if you do not want to change it)"
     legal_notice: Legal note
     legal_page:
       body_html: 'Name: aLabs Association. <br>Registered in the associations registry in the Community of Madrid, registration number 32.022. <br>CIF: G86139847 <br>C/Duque de Alba, 13 (28012) Madrid.'
       title: Legal note
+    location_gifts: gifts in %{location}
+    location_requests: requests in %{location}
     login: log in
     logout: logout
     mail:
@@ -349,6 +349,7 @@ en:
     sign_up: Sign up
     slogan: don't dump it, give it to your neighbor
     suggestions: suggestions
+    title_with_page: "%{title}, page %{page}"
     to_publish_or_send_messages: To post ads or send messages please log in
     tos: Terms and conditions
     translate:

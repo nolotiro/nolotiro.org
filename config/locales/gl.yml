@@ -267,10 +267,8 @@ gl:
     give_it_to: Regálaselo a %{user}
     hello_to: Ola %{recipient},
     here: aquí
-    home_title: 
     if_you_are_new: Se vostede é un novo usuario, por favor
     if_youre_already_an_user: Se xa é un usuario rexistrado, por favor
-    keywords: presente segunda man libre
     last_published_gifts: 'últimos presentes publicados
 
 '
@@ -279,6 +277,8 @@ gl:
     legal_page:
       body_html: 'Nome: Asociación aLabs. <br>Inscrita no Rexistro de asociacións da Comunidade de Madrid, co número 32022. <br>CIF: G86139847<br>C/Duque de Alba, 13 (28012) Madrid.'
       title: Aviso legal
+    location_gifts: regalos en %{location}
+    location_requests: peticiones en %{location}
     login: acceder
     logout: 
     mail:
@@ -354,6 +354,7 @@ gl:
     sign_up: Crear un usuario
     slogan: no lo tiro, te lo regalo (sin condiciones)
     suggestions: suxestións
+    title_with_page: "%{title}, páxina %{page}"
     to_publish_or_send_messages: 
     tos: condicións de uso
     translate:
