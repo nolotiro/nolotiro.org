@@ -284,7 +284,7 @@ pt:
     messages: mensagens
     messages_title: Mensagens
     meta_description: 'nolotiro.org é um site web onde posso dar presentes e procurar presentes de segunda mão: movéis, cadeiras, sofás, bicicletas, computadores pessoais, mesas, fogões, abajures, camas, roupa, brinquedos, berços ou carrinhos para bebes, celulares e mais outras coisas que você já não quer e não precisa para que sejam reutilizadas por outras pessoas.'
-    meta_description_ad: presentes de segunda mão %{title} em %{woeid}. %{body}
+    meta_description_ad: "%{type} en %{woeid} de %{title}. %{body}"
     n_ads:
       one: "%{count} anúncio"
       other: "%{count} anúncios"

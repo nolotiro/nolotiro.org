@@ -284,7 +284,7 @@ fr:
     messages: messages
     messages_title: Messages
     meta_description: nolotiro.org est un site où je cherche des cadeaux don gratuit et des meubles de seconde main, des chaises, des canapés, des vélos, des ordinateurs portables, des tables, des poêles, des lampes, des lits, des vêtements, des jouets, des lits bébé ou les voitures, les téléphones mobiles et autres beaucoup de choses que vous ne voulez plus et n'a plus besoin de faire la réutilisation d'autres personnes qui peuvent servir ou donner une nouvelle vie.
-    meta_description_ad: cadeu seconde main %{title} en %{woeid}. %{body}
+    meta_description_ad: "%{type} en %{woeid}. %{title}. %{body}"
     n_ads:
       one: "%{count} annonce"
       other: "%{count} annonces"

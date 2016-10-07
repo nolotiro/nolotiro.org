@@ -284,7 +284,7 @@ es:
     messages: mensajes
     messages_title: Mensajes
     meta_description: 'nolotiro.org es un sitio web donde regalo y busco regalos gratis de segunda mano: muebles, sillas, sofás, bicicletas, ordenadores portátiles, mesas, cocinas, lámparas, camas, ropa, juguetes, cunas o carros para bebes, teléfonos móviles y otras muchas cosas que ya no quieres y ya no necesitas para que las reutilice otra gente a la que puede servirle o darle nueva vida.'
-    meta_description_ad: regalo segunda mano %{title} en %{woeid}. %{body}
+    meta_description_ad: "%{type} en %{woeid} de %{title}. %{body}"
     n_ads:
       one: "%{count} anuncio"
       other: "%{count} anuncios"
