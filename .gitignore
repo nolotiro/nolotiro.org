@@ -29,7 +29,6 @@ vendor/bundle/*
 
 # Vagrant
 .vagrant
-.localeapp
 
 #localeapp
 log/localeapp.yml
