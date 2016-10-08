@@ -3,9 +3,11 @@
 require 'test_helper'
 
 class LocaleTest < ActionDispatch::IntegrationTest
-  before { @old_locale = I18n.locale }
+  include Minitest::Hooks
 
-  after { I18n.locale = @old_locale }
+  around do |&block|
+    I18n.with_locale(:es) { super(&block) }
+  end
 
   it 'switches locale properly' do
     visit root_path(locale: 'pt')

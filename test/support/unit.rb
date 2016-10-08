@@ -11,8 +11,6 @@ module ActiveSupport
 
     def setup
       DatabaseCleaner.start
-      I18n.default_locale = :es
-      I18n.locale = :es
     end
 
     def teardown
