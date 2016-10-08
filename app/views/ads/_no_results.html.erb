@@ -2,25 +2,26 @@
   <h2><%= t('nlt.no_results.title') %></h2>
   <h3><%= t('nlt.no_results.subtitle') %></h3>
 
-  <p>
-    <%= t('nlt.no_results.first_to_publish_html',
-          publish: link_to(t('nlt.no_results.publish_ad'), new_ad_path)) %>
-  </p>
+  <ul>
+    <li>
+      <%= t('nlt.no_results.first_to_publish_html',
+            publish: link_to(t('nlt.no_results.publish_ad'), new_ad_path)) %>
+    </li>
 
-  <p>
-    <%= t('nlt.no_results.switch_to_bigger_city') %>
-  </p>
+    <li>
+      <%= t('nlt.no_results.switch_to_bigger_city') %>
+    </li>
 
-  <% if location_suggest %>
-    <p>
-      <% link = link_to_change_location(location_suggest.fullname) %>
-      <%= t('nlt.no_results.switch_to_guessed_city_html',
-            change_location: link) %>
-    </p>
-  <% end %>
+    <% if location_suggest %>
+      <li>
+        <% link = link_to_change_location(location_suggest.fullname) %>
+        <%= t('nlt.no_results.switch_to_guessed_city_html',
+              change_location: link) %>
+      </li>
+    <% end %>
+  </ul>
 
   <h5>
     <i><%= t('nlt.no_results.phrase') %></i>
   </h5>
-
 </div>

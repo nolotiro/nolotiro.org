@@ -277,13 +277,13 @@ en:
     new_user: sign up
     no_location_specified: You must search in a specific city
     no_results:
-      first_to_publish_html: 1. Be the first to %{publish}.
+      first_to_publish_html: Be the first to %{publish}.
       on_user: There are no ads of this kind published by this user.
       phrase: '"The journey of a thousand miles begins with one step", Lao Tse.'
       publish_ad: post an ad in this city
       subtitle: You can try some of this stuff
-      switch_to_bigger_city: 2. Try a bigger city close to your location.
-      switch_to_guessed_city_html: '3. Our IP based city suggestion system tells us you are close to: <br> %{change_location}'
+      switch_to_bigger_city: Try a bigger city close to your location.
+      switch_to_guessed_city_html: 'Our IP based city suggestion system tells us you are close to: <br> %{change_location}'
       title: There are no results in this location
     password: Password
     permission_denied: You don't have permissions
