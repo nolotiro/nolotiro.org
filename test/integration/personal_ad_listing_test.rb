@@ -4,7 +4,7 @@ require 'test_helper'
 require 'integration/concerns/pagination'
 require 'support/web_mocking'
 
-class PersonalAdListing < ActionDispatch::IntegrationTest
+class PersonalAdListingTest < ActionDispatch::IntegrationTest
   include WebMocking
   include Pagination
 
