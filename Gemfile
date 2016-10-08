@@ -68,6 +68,7 @@ group :development do
   gem 'localeapp',
       github: 'deivid-rodriguez/localeapp',
       branch: 'drop_1.9.3_support'                  # i18n interface
+  gem 'faker'
 end
 
 gem 'http_accept_language'
@@ -87,7 +88,6 @@ gem 'paperclip', '~> 4.0'                           # images
 gem 'delayed_paperclip'                             # images processing in background
 gem 'recaptcha', require: 'recaptcha/rails'         # captcha
 gem 'activeadmin', github: 'activeadmin'            # admin backend
-gem 'faker'
 
 # For Yahoo YQL interaction
 gem 'rest-client', '~> 2.0'
