@@ -7,15 +7,16 @@ require 'support/web_mocking'
 class UnauthenticatedAdListing < ActionDispatch::IntegrationTest
   include WebMocking
   include Pagination
+  include Minitest::Hooks
 
-  around do |test|
+  around do |&block|
     create(:ad, :available, :in_mad, title: 'avamad', published_at: 1.day.ago)
     create(:ad, :available, :in_bar, title: 'avabar', published_at: 2.days.ago)
     create(:ad, :booked, :in_mad, title: 'resmad')
     create(:ad, :delivered, :in_ten, title: 'delten')
 
     with_pagination(1) do
-      VCR.use_cassette('mad_bar_ten_info_es') { test.call }
+      VCR.use_cassette('mad_bar_ten_info_es') { super(&block) }
     end
   end
 

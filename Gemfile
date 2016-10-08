@@ -31,7 +31,7 @@ end
 
 group :development, :test do
   gem 'minitest-spec-rails'                 # test: specs style out-of-the-box
-  gem 'minitest-around'                     # test: minitest enhancements
+  gem 'minitest-hooks'                      # test: minitest enhancements
   gem 'capybara'                            # test: real user interactions
   gem 'launchy'                             # test: features - save_and_open_page helper
   gem 'factory_girl_rails', '~> 4.0'        # test: factories

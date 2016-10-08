@@ -252,8 +252,7 @@ GEM
     mimemagic (0.3.0)
     mini_portile2 (2.1.0)
     minitest (5.9.1)
-    minitest-around (0.4.0)
-      minitest (~> 5.0)
+    minitest-hooks (1.4.0)
     minitest-spec-rails (5.4.0)
       minitest (~> 5.0)
       rails (>= 4.1)
@@ -495,7 +494,7 @@ DEPENDENCIES
   localeapp!
   mailcatcher
   maxminddb
-  minitest-around
+  minitest-hooks
   minitest-spec-rails
   newrelic_rpm
   omniauth
