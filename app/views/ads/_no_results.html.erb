@@ -2,18 +2,18 @@
   <h2><%= t('nlt.no_results.title') %></h2>
   <h3><%= t('nlt.no_results.subtitle') %></h3>
 
-  <ul>
-    <li>
+  <ul class="list-group">
+    <li class="list-group-item">
       <%= t('nlt.no_results.first_to_publish_html',
             publish: link_to(t('nlt.no_results.publish_ad'), new_ad_path)) %>
     </li>
 
-    <li>
+    <li class="list-group-item">
       <%= t('nlt.no_results.switch_to_bigger_city') %>
     </li>
 
     <% if location_suggest %>
-      <li>
+      <li class="list-group-item">
         <% link = link_to_change_location(location_suggest.fullname) %>
         <%= t('nlt.no_results.switch_to_guessed_city_html',
               change_location: link) %>
