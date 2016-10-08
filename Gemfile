@@ -85,7 +85,7 @@ gem 'omniauth-google-oauth2'                        # users login with google
 gem 'pundit'                                        # authorization
 gem 'paperclip', '~> 4.0'                           # images
 gem 'delayed_paperclip'                             # images processing in background
-gem 'recaptcha', require: 'recaptcha/rails' # captcha
+gem 'recaptcha', require: 'recaptcha/rails'         # captcha
 gem 'activeadmin', github: 'activeadmin'            # admin backend
 gem 'faker'
 
