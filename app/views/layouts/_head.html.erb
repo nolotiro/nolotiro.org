@@ -1,0 +1,58 @@
+<title><%= yield(:meta_title) %> - nolotiro.org</title>
+<meta charset="utf-8" />
+<%= favicon_link_tag 'favicon.ico' %>
+<%= stylesheet_link_tag "application", media: "all" %>
+
+<%= csrf_meta_tags %>
+
+<%= meta_description %>
+
+<% if content_for?(:meta_extra) %>
+  <%= yield(:meta_extra) %>
+<% end %>
+
+<meta name='viewport' content='width=device-width, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no' />
+
+<link rel="canonical" href="<%= canonical_url %>" />
+
+<link rel="alternate" href="<%= localized_url(nil) %>" hreflang="x-default" />
+
+<% I18n.available_locales.each do |locale| %>
+  <link rel="alternate"
+        hreflang="<%= locale.to_s %>"
+        href="<%= localized_url(locale) %>" />
+<% end %>
+
+<!--
+
+       Esta web está hecha por la asociación aLabs (http://alabs.es).
+       Puedes ver el código en https://github.com/alabs/nolotiro.org/
+
+                   @@@@              @@@@                 @+`
+                   @@@@              @@@@               @@@@@`
+           `..`    @@@@      ,;;,    @@@@ ,;,    `:;:`   ,@@`
+         `::::::.  @@@@    .@@@@@@:  @@@@@@@@@  @@@@@@@  @#@@
+         ::::::::  @@@@    @@@@@@@@  @@@@@@@@@`:@@@@@@@#
+        .:::`,:::. @@@@   :@@@.;@@@; @@@@ @@@@.@@@@ @@@@
+        ,::: ,:::: @@@@   '@@@.,@@@+ @@@@ @@@@.@@@@ @@@@
+        :::: ::::; @@@@   '@@@.'@@@# @@@@ @@@@.+@@@@
+           .:::::; @@@@      :@@@@@# @@@@ @@@@. @@@@@#
+         ,:::::::; @@@@    +@@@@@@@# @@@@ @@@@. .@@@@@@`
+        `:::;,:::; @@@@   .@@@@,@@@# @@@@ @@@@.   #@@@@@
+        ,:::`,:::; @@@@   '@@@,,@@@# @@@@ @@@@.#@@@ @@@@
+        :::: ,:::; @@@@   '@@@.,@@@# @@@@ @@@@.+@@@ #@@@
+        ,::: ::::; @@@@@@@'@@@.;@@@# @@@@ @@@@`:@@@ @@@@
+        .::::::::; @@@@@@@.@@@@@@@@# @@@@@@@@@  @@@@@@@@
+         ::::::::; @@@@@@@ @@@@'@@@# @@@@#@@@+  .@@@@@@`
+          .:                `:`            :`     `::`
+
+-->
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-5360961269901609",
+    enable_page_level_ads: true
+  });
+</script>
