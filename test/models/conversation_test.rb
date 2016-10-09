@@ -120,4 +120,11 @@ class ConversationTest < ActiveSupport::TestCase
 
     assert_equal @recipient, @conversation.reload.recipient
   end
+
+  def test_messages_for_are_ordered_most_recent_last
+    @conversation.reply(sender: @user, recipient: @recipient, body: 'Hei!')
+    @conversation.save!
+
+    assert_equal 'Hei!', @conversation.messages_for(@user)[1].body
+  end
 end
