@@ -277,12 +277,13 @@ pt:
     new_user: novo usuário
     no_location_specified: 
     no_results:
+      choose_bigger: Escolha uma ciudade mais grande
       first_to_publish_html: Seja o primeiro em %{publish}.
       on_user: Não existem anúncios de este tipo publicados por este usuário.
       phrase: '"Uma viagem de mil quilômetros começa com um simples passo", Lao Tse'
       publish_ad: publicar um anúncio em esta cidade
       subtitle: Você pode tentar com alguma de estas coisas
-      switch_to_bigger_city: Tenta trocar a cidade por uma outra mayor que esteja perto da sua localização.
+      switch_to_bigger_city_html: "%{choose_bigger} que esteja perto da sua localização."
       switch_to_guessed_city_html: Nosso sistema de sugestões de localização (baseado na sua IP) disse que voçê está perto de <br> %{change_location}
       title: Não existem anúncios para esta localização.
     password: Senha

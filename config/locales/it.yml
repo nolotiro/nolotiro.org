@@ -281,12 +281,13 @@ it:
     new_user: nuovo utente
     no_location_specified: Devi cercare in una città specifica
     no_results:
+      choose_bigger: Sceglie una città più grande
       first_to_publish_html: Puoi essere il primo a %{publish}.
       on_user: Nessuna di tali annunci da questo utente.
       phrase: '"Un viaggio di mille chilometri inizia con un singolo passo", Lao Tse.'
       publish_ad: pubblicare un annuncio in questa città
       subtitle: Si può provare una qualsiasi di queste cose
-      switch_to_bigger_city: Prova a cambiare la città per una più grande vicino da te.
+      switch_to_bigger_city_html: "%{choose_bigger} vicino da te."
       switch_to_guessed_city_html: 'Il nostro sistema di suggerimento (in base alla tua IP) dice che ti trovi vicino a: <br> %{change_location}'
       title: Nessun annuncio per questa posizione.
     password: password

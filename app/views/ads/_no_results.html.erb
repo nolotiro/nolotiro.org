@@ -9,7 +9,8 @@
     </li>
 
     <li class="list-group-item">
-      <%= t('nlt.no_results.switch_to_bigger_city') %>
+      <% link = link_to(t('nlt.no_results.choose_bigger'), location_ask_path) %>
+      <%= t('nlt.no_results.switch_to_bigger_city_html', choose_bigger: link) %>
     </li>
 
     <% if location_suggest %>
