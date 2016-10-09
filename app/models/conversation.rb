@@ -69,7 +69,7 @@ class Conversation < ActiveRecord::Base
   end
 
   def messages_for(user)
-    messages.involving(user)
+    messages.involving(user).order(created_at: :asc)
   end
 
   def last_message
