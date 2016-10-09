@@ -61,8 +61,8 @@ class Ad < ActiveRecord::Base
     Rails.cache.fetch(key) { rank_by(:woeid_code).select(:woeid_code, sql_count) }
   end
 
-  def self.rank_by(attribute)
-    give.group(attribute).order('n_ads DESC').limit(ranking_size)
+  def self.rank_by(*attributes)
+    give.group(*attributes).order('n_ads DESC').limit(ranking_size)
   end
 
   def self.full_ranking?(rank_scope)

@@ -100,8 +100,7 @@ class AdTest < ActiveSupport::TestCase
   end
 
   test 'ad body shoudl store emoji' do
-    skip
-    body = 'What a nice emoji😀!What a nice emoji😀!What a nice emoji😀!What a nice emoji😀!What a nice emoji😀!'
+    body = 'Pantalones cortos para el veranito que se vene! 😀 '
     ad = create(:ad, body: body)
     assert_equal body, ad.body
   end

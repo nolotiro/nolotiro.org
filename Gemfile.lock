@@ -273,7 +273,6 @@ GEM
     multi_json (1.12.1)
     multi_xml (0.5.5)
     multipart-post (2.0.0)
-    mysql2 (0.4.4)
     net-scp (1.2.1)
       net-ssh (>= 2.6.5)
     net-ssh (3.2.0)
@@ -310,6 +309,7 @@ GEM
       mimemagic (= 0.3.0)
     parser (2.3.1.2)
       ast (~> 2.2)
+    pg (0.19.0)
     pkg-config (1.1.7)
     poltergeist (1.10.0)
       capybara (~> 2.1)
@@ -519,12 +519,12 @@ DEPENDENCIES
   maxminddb
   minitest-around
   minitest-spec-rails
-  mysql2 (~> 0.4.4)
   newrelic_rpm
   omniauth
   omniauth-facebook
   omniauth-google-oauth2
   paperclip (~> 4.0)
+  pg (= 0.19.0)
   poltergeist
   pundit
   rails (~> 4.2)

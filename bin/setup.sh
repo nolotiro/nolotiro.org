@@ -1,18 +1,21 @@
 #!/usr/bin/env bash
 
-MYSQL_PASS=sincondiciones
+# Setup PostgreSQL repo
+add-apt-repository \
+  'deb http://apt.postgresql.org/pub/repos/apt/ trusty-pgdg main'
 
-# Prepare MySQL for unattended installation
-debconf-set-selections <<< "mysql-server-5.5 mysql-server/root_password password $MYSQL_PASS"
-debconf-set-selections <<< "mysql-server-5.5 mysql-server/root_password_again password $MYSQL_PASS"
+wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | \
+  apt-key add -
+
+apt-get update
 
 # Setup nodejs repo
 curl -sL https://deb.nodesource.com/setup_6.x | bash -
 
 # Application dependencies
 apt-get install -y imagemagick \
-                   libmysqlclient-dev \
-                   mysql-server-5.5 \
+                   libpq-dev \
+                   postgresql-9.6 \
                    nodejs \
                    phantomjs \
                    redis-server
@@ -30,21 +33,18 @@ apt-get install -y build-essential \
                    sqlite3 \
                    zlib1g-dev
 
-# Enable auto-login for MySQL
-cat > "$HOME/.my.cnf" <<EOF
-[client]
-password = $MYSQL_PASS
-EOF
-
 cd /vagrant || exit
 
 # Prepare DB user
 
 source "$(pwd)/.env"
-mysql -e "CREATE USER $NLT_DB_USER@localhost IDENTIFIED BY '$NLT_DB_PASS'"
 
-source "$(pwd)/.env.development"
-mysql -e "GRANT ALL PRIVILEGES ON $NLT_DB_NAME.* TO $NLT_DB_USER@localhost"
+sudo -u postgres psql -c "CREATE USER $NLT_DB_USER WITH NOSUPERUSER \
+                                                        CREATEDB \
+                                                        NOCREATEROLE \
+                                                        PASSWORD '$NLT_DB_PASS'"
 
-source "$(pwd)/.env.test"
-mysql -e "GRANT ALL PRIVILEGES ON $NLT_DB_NAME.* TO $NLT_DB_USER@localhost"
+# Let DB user authenticate through password
+
+sed -i 's/\(local *all *all *\)peer/\1md5/' /etc/postgresql/9.6/main/pg_hba.conf
+service postgresql reload

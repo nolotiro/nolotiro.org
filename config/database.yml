@@ -1,5 +1,5 @@
 connection: &connection
-  adapter: mysql2
+  adapter: postgresql
   username: <%= ENV['NLT_DB_USER'] %>
   password: <%= ENV['NLT_DB_PASS'] %>
   database: <%= ENV['NLT_DB_NAME'] %>
