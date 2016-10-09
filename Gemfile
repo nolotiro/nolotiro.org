@@ -15,7 +15,6 @@ ruby '2.3.1'
 
 gem 'rails', '~> 4.2'
 gem 'rails-i18n', '~> 4.0'
-gem 'haml-rails'
 gem 'uglifier', '>= 1.3.0'
 gem 'jquery-rails'
 gem 'jbuilder', '~> 1.2'
@@ -63,20 +62,19 @@ group :development do
   gem 'capistrano-bundler'
   gem 'capistrano-pending'
   gem 'capistrano-sidekiq'
-  gem 'rubocop', '0.42.0'
+  gem 'rubocop', '0.43.0'
   gem 'brakeman-lib'
   gem 'i18n-tasks', '0.9.5'
   gem 'localeapp',
       github: 'deivid-rodriguez/localeapp',
       branch: 'drop_1.9.3_support'                  # i18n interface
+  gem 'faker', require: false
 end
 
 gem 'http_accept_language'
-gem 'unicorn'                                       # webserver
 gem 'pg', '0.19.0'                                  # database adapter
 gem 'redis-rails'                                   # redis cache
 gem 'sidekiq'                                       # job workers
-gem 'slim'
 
 gem 'maxminddb'                                     # geolite city v2
 gem 'will_paginate', '~> 3.0'                       # pagination
@@ -88,10 +86,8 @@ gem 'omniauth-google-oauth2'                        # users login with google
 gem 'pundit'                                        # authorization
 gem 'paperclip', '~> 4.0'                           # images
 gem 'delayed_paperclip'                             # images processing in background
-gem 'recaptcha', require: 'recaptcha/rails' # captcha
-gem 'ipaddress'                                     # ip address validation
+gem 'recaptcha', require: 'recaptcha/rails'         # captcha
 gem 'activeadmin', github: 'activeadmin'            # admin backend
-gem 'faker'
 
 # For Yahoo YQL interaction
 gem 'rest-client', '~> 2.0'

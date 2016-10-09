@@ -1,5 +1,6 @@
-# coding: utf-8
 # frozen_string_literal: true
+
+require 'faker'
 
 def create_user(role = 0)
   pwd = '12345678'
