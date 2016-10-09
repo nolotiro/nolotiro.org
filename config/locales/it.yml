@@ -288,7 +288,7 @@ it:
       publish_ad: pubblicare un annuncio in questa città
       subtitle: Si può provare una qualsiasi di queste cose
       switch_to_bigger_city_html: "%{choose_bigger} vicino da te."
-      switch_to_guessed_city_html: 'Il nostro sistema di suggerimento (in base alla tua IP) dice che ti trovi vicino a: <br> %{change_location}'
+      switch_to_guessed_city_html: 'Verifica di aver scelto correttamente la tua cità. Il nostro sistema di suggerimento (in base alla tua IP) dice che ti trovi vicino a: <br> %{change_location}'
       title: Nessun annuncio per questa posizione.
     password: password
     permission_denied: Non si dispone dell'autorizzazione per eseguire questa azione.

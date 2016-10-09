@@ -284,7 +284,7 @@ ca:
       publish_ad: publicar un anunci en aquesta ciutat
       subtitle: Pots provar alguna d'aquestes coses
       switch_to_bigger_city_html: "%{choose_bigger} que estigui a prop de la teva ubicació."
-      switch_to_guessed_city_html: 'El nostre sistema de suggeriment d''ubicació (basat en la teva IP) diu que aquestes prop de: <br> %{change_location}'
+      switch_to_guessed_city_html: 'Comprova que has triat la teva ciutat correctament. El nostre sistema de suggeriment d''ubicació (basat en la teva IP) diu que aquestes prop de: <br> %{change_location}'
       title: No hi ha anuncis per a aquesta ubicació.
     password: Contrasenya
     permission_denied: No tens permisos per a realitzar aquesta acció.
