@@ -284,7 +284,7 @@ pt:
       publish_ad: publicar um anúncio em esta cidade
       subtitle: Você pode tentar com alguma de estas coisas
       switch_to_bigger_city_html: "%{choose_bigger} que esteja perto da sua localização."
-      switch_to_guessed_city_html: Confira se vôce escolheu la sua cidade corretamente. Nosso sistema de sugestões de localização (baseado na sua IP) disse que voçê está perto de <br> %{change_location}
+      switch_to_guessed_city_html: Confira se vôce escolheu la sua cidade corretamente. Nosso sistema de sugestões de localização (baseado na sua IP) disse que voçê está perto de %{change_location}
       title: Não existem anúncios para esta localização.
     password: Senha
     permission_denied: Você não tem permissão para executar esta ação
