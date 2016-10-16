@@ -98,22 +98,16 @@ class AdTest < ActiveSupport::TestCase
 
   test 'ad meta_title for give ads' do
     ad = build(:ad, :give)
+    title = 'regalo - ordenador en Vallecas - Madrid, Madrid, España'
 
-    mocking_yahoo_woeid_info(ad.woeid_code) do
-      title = 'regalo - ordenador en Vallecas - Madrid, Madrid, España'
-
-      assert_equal title, ad.meta_title
-    end
+    assert_equal title, ad.meta_title
   end
 
   test 'ad meta_title for want ads' do
     ad = build(:ad, :want)
+    title = 'petición - ordenador en Vallecas - Madrid, Madrid, España'
 
-    mocking_yahoo_woeid_info(ad.woeid_code) do
-      title = 'petición - ordenador en Vallecas - Madrid, Madrid, España'
-
-      assert_equal title, ad.meta_title
-    end
+    assert_equal title, ad.meta_title
   end
 
   test 'ad body stores emoji' do

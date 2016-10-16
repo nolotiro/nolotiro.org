@@ -6,6 +6,8 @@ class User < ActiveRecord::Base
 
   counter_stats_for :created_at
 
+  belongs_to :town, foreign_key: :woeid
+
   has_many :identities, inverse_of: :user, dependent: :destroy
 
   has_many :ads, foreign_key: :user_owner, dependent: :destroy

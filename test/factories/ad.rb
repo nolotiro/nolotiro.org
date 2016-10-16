@@ -6,7 +6,7 @@ FactoryGirl.define do
     body 'pentium 9 con monitor de plasma de 90 pulgadas. pasar a recoger'
     give
     available
-    woeid_code 766_273
+    in_mad
     ip '28.3.2.4'
     created_at { Time.zone.now }
     user
@@ -37,8 +37,16 @@ FactoryGirl.define do
       status :delivered
     end
 
-    trait(:in_mad) { woeid_code 766_273 }
-    trait(:in_bar) { woeid_code 753_692 }
-    trait(:in_ten) { woeid_code 773_692 }
+    trait :in_mad do
+      town { create(:town, :madrid) }
+    end
+
+    trait :in_bar do
+      town { create(:town, :barcelona) }
+    end
+
+    trait :in_ten do
+      town { create(:town, :tenerife) }
+    end
   end
 end

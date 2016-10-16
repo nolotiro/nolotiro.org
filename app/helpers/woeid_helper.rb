@@ -7,17 +7,9 @@ module WoeidHelper
     value = Rails.cache.fetch(key)
     return value if value
 
-    query = <<-SQL.squish
-      select * from geo.places where woeid = #{woeid} AND lang = '#{locale}'
-    SQL
+    town = Town.find(woeid)
 
-    place_raw = Yahoo::Fetcher.new(query).fetch
-    return if place_raw.nil?
-
-    place = Yahoo::Location.new(place_raw)
-    return unless place.town?
-
-    value = { full: place.fullname, short: place.name }
+    value = { full: town.fullname, short: town.name }
     Rails.cache.write(key, value)
     value
   end
@@ -25,14 +17,6 @@ module WoeidHelper
   def self.search_by_name(name)
     return [] unless name.present?
 
-    query = <<-SQL.squish
-      select * from geo.places
-      where text = '#{name}' AND placetype = '7' AND lang = '#{I18n.locale}'
-    SQL
-
-    raw_locations = Yahoo::Fetcher.new(query).fetch
-    return [] if raw_locations.nil?
-
-    Yahoo::ResultSet.new(Array.wrap(raw_locations))
+    Yahoo::ResultSet.new(Town.includes(:state, :country).matching(name))
   end
 end

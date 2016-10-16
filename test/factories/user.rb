@@ -32,10 +32,12 @@ FactoryGirl.define do
     email
     password '123456789'
     role 0
-    madrilenian
   end
 
-  trait(:madrilenian) { woeid 766_273 }
+  trait :madrilenian do
+    town { create(:town, :madrid) }
+  end
+
   trait(:stateless) { woeid nil }
 
   trait(:spammer) do

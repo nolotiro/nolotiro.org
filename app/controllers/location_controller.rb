@@ -32,7 +32,7 @@ class LocationController < ApplicationController
     @unique_location ||= if positive_integer?(params[:location])
                            params[:location]
                          elsif similar_locations&.count == 1
-                           similar_locations.first.woeid
+                           similar_locations.first.id
                          end
   end
 

@@ -4,4 +4,5 @@
 # Represents a country
 #
 class Country < ActiveRecord::Base
+  validates :iso, presence: true, uniqueness: true
 end

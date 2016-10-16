@@ -7,10 +7,10 @@ class WoeidTest < ActionDispatch::IntegrationTest
   include WebMocking
 
   it 'returns a hard 404 error if woeid is not type town' do
-    mocking_yahoo_woeid_info(23_424_801) do
-      assert_raise(ActionController::RoutingError) do
-        get '/es/woeid/23424801/give' # woeid of Ecuador Country
-      end
+    create(:town, :madrid)
+
+    assert_raise(ActiveRecord::RecordNotFound) do
+      get '/es/woeid/12578024/give' # woeid of Madrid State
     end
   end
 
@@ -21,10 +21,8 @@ class WoeidTest < ActionDispatch::IntegrationTest
   end
 
   it 'returns a hard 404 error if woeid does not exist' do
-    mocking_yahoo_woeid_info(222_222) do
-      assert_raise(ActionController::RoutingError) do
-        get '/es/woeid/222222/give'
-      end
+    assert_raise(ActiveRecord::RecordNotFound) do
+      get '/es/woeid/222222/give'
     end
   end
 end

@@ -33,6 +33,5 @@ class WoeidController < ApplicationController
     return unless current_woeid
 
     @woeid_info = WoeidHelper.convert_woeid_name(current_woeid)
-    raise ActionController::RoutingError, 'Not Found' if @woeid_info.nil?
   end
 end

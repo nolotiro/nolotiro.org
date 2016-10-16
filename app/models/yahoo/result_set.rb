@@ -7,13 +7,13 @@ module Yahoo
   class ResultSet
     include Enumerable
 
-    def initialize(result_set)
-      @locations = result_set.map { |result| Location.new(result) }
+    def initialize(locations)
+      @locations = locations
     end
 
     def as_options
       map do |location|
-        woeid = location.woeid
+        woeid = location.id
         count = I18n.t('nlt.n_ads', count: ad_counts[woeid])
         label = "#{location.fullname} (#{count})"
 
@@ -28,7 +28,7 @@ module Yahoo
     end
 
     def woeids
-      @woeids ||= map(&:woeid)
+      @woeids ||= map(&:id)
     end
 
     def ad_counts

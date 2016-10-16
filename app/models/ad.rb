@@ -12,6 +12,8 @@ class Ad < ActiveRecord::Base
 
   counter_stats_for :published_at
 
+  belongs_to :town, foreign_key: :woeid_code
+
   belongs_to :user, foreign_key: :user_owner, counter_cache: true
   validates :user, presence: true
 

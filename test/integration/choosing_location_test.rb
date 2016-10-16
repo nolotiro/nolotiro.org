@@ -17,11 +17,15 @@ class ChoosingLocationTest < ActionDispatch::IntegrationTest
   end
 
   it 'suggests locations matching name' do
-    mocking_yahoo_woeid_similar('tenerife') do
-      choose_location('tenerife')
+    create(:town, :tenerife)
+    create(:town, name: 'Tenerife',
+                  id: 369_486,
+                  _state: :magdalena,
+                  _country: :colombia)
 
-      assert_text 'Santa Cruz de Tenerife, Islas Canarias, España (0 anuncios)'
-    end
+    choose_location('tenerife')
+
+    assert_text 'Santa Cruz de Tenerife, Islas Canarias, España (0 anuncios)'
   end
 
   it 'shows a message when no matching locations are found' do
@@ -39,43 +43,43 @@ class ChoosingLocationTest < ActionDispatch::IntegrationTest
   end
 
   it 'chooses between locations matching name' do
-    mocking_yahoo_woeid_similar('tenerife') do
-      choose_location('tenerife')
+    create(:town, :tenerife)
+    create(:town, name: 'Tenerife',
+                  id: 369_486,
+                  _state: :magdalena,
+                  _country: :colombia)
 
-      select 'Santa Cruz de Tenerife, Islas Canarias, España (0 anuncios)'
-      click_button 'Elige tu ubicación'
+    choose_location('tenerife')
 
-      assert_location_page 'Santa Cruz de Tenerife, Islas Canarias, España'
-    end
+    select 'Santa Cruz de Tenerife, Islas Canarias, España (0 anuncios)'
+    click_button 'Elige tu ubicación'
+
+    assert_location_page 'Santa Cruz de Tenerife, Islas Canarias, España'
   end
 
   it "directly chooses location when there's a single match" do
-    mocking_yahoo_woeid_similar('tenerife_unique') do
-      choose_location('tenerife, islas canarias')
+    create(:town, :tenerife)
+    choose_location('tenerife, islas canarias')
 
-      assert_location_page 'Santa Cruz de Tenerife, Islas Canarias, España'
-    end
+    assert_location_page 'Santa Cruz de Tenerife, Islas Canarias, España'
   end
 
   it 'directly chooses location through GET request' do
-    mocking_yahoo_woeid_similar('tenerife_unique') do
-      visit location_change_path(location: 'tenerife, islas canarias')
+    create(:town, :tenerife)
+    visit location_change_path(location: 'tenerife, islas canarias')
 
-      assert_location_page 'Santa Cruz de Tenerife, Islas Canarias, España'
-    end
+    assert_location_page 'Santa Cruz de Tenerife, Islas Canarias, España'
   end
 
   it 'memorizes chosen location in the user' do
+    create(:town, :tenerife)
     user = create(:user)
     login_as user
+    choose_location('tenerife, islas canarias')
+    logout
+    login_as user
 
-    mocking_yahoo_woeid_similar('tenerife_unique') do
-      choose_location('tenerife, islas canarias')
-      logout
-      login_as user
-
-      assert_location_page 'Santa Cruz de Tenerife, Islas Canarias, España'
-    end
+    assert_location_page 'Santa Cruz de Tenerife, Islas Canarias, España'
 
     logout
   end
