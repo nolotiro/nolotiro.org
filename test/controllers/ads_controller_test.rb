@@ -143,7 +143,7 @@ class AdsControllerTest < ActionController::TestCase
 
   test 'should not destroy ad as anonymous' do
     assert_difference('Ad.count', 0) { delete :destroy, id: @ad }
-    assert_redirected_to new_user_session_url
+    assert_redirected_to root_path
   end
 
   test 'should not destroy non-owned ads as normal user' do
