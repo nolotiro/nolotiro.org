@@ -16,6 +16,7 @@ curl -sL https://deb.nodesource.com/setup_6.x | bash -
 apt-get install -y imagemagick \
                    libpq-dev \
                    postgresql-9.6 \
+                   postgresql-contrib-9.6 \
                    nodejs \
                    phantomjs \
                    redis-server
@@ -39,7 +40,7 @@ cd /vagrant || exit
 
 source "$(pwd)/.env"
 
-sudo -u postgres psql -c "CREATE USER $NLT_DB_USER WITH NOSUPERUSER \
+sudo -u postgres psql -c "CREATE USER $NLT_DB_USER WITH SUPERUSER \
                                                         CREATEDB \
                                                         NOCREATEROLE \
                                                         PASSWORD '$NLT_DB_PASS'"

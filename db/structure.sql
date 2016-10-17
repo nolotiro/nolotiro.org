@@ -28,6 +28,20 @@ CREATE EXTENSION IF NOT EXISTS plpgsql WITH SCHEMA pg_catalog;
 COMMENT ON EXTENSION plpgsql IS 'PL/pgSQL procedural language';
 
 
+--
+-- Name: pg_trgm; Type: EXTENSION; Schema: -; Owner: -
+--
+
+CREATE EXTENSION IF NOT EXISTS pg_trgm WITH SCHEMA public;
+
+
+--
+-- Name: EXTENSION pg_trgm; Type: COMMENT; Schema: -; Owner: -
+--
+
+COMMENT ON EXTENSION pg_trgm IS 'text similarity measurement and index searching based on trigrams';
+
+
 SET search_path = public, pg_catalog;
 
 SET default_tablespace = '';
@@ -891,6 +905,13 @@ CREATE UNIQUE INDEX idx_16475_index_users_on_username ON users USING btree (user
 
 
 --
+-- Name: index_countries_on_name_trigram; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_countries_on_name_trigram ON countries USING gin (name gin_trgm_ops);
+
+
+--
 -- Name: index_states_on_country_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -898,10 +919,24 @@ CREATE INDEX index_states_on_country_id ON states USING btree (country_id);
 
 
 --
+-- Name: index_states_on_name_trigram; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_states_on_name_trigram ON states USING gin (name gin_trgm_ops);
+
+
+--
 -- Name: index_towns_on_country_id; Type: INDEX; Schema: public; Owner: -
 --
 
 CREATE INDEX index_towns_on_country_id ON towns USING btree (country_id);
+
+
+--
+-- Name: index_towns_on_name_trigram; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_towns_on_name_trigram ON towns USING gin (name gin_trgm_ops);
 
 
 --
@@ -1062,4 +1097,6 @@ INSERT INTO schema_migrations (version) VALUES ('20161007014256');
 INSERT INTO schema_migrations (version) VALUES ('20161019233040');
 
 INSERT INTO schema_migrations (version) VALUES ('20161117184138');
+
+INSERT INTO schema_migrations (version) VALUES ('20161117184157');
 
