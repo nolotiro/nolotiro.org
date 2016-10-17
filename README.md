@@ -49,8 +49,6 @@ downloaded copy a nolotiro's master.
 
 ## More information
 
-For obtaining geographical information we use [Yahoo YQL].
-
 For IP GeoLocation we use [GeoLite2] City. The database is bundled with this
 repo in compressed format. To extract the database, run
 
@@ -105,7 +103,9 @@ https://beta.nolotiro.org/api/v1/ad/153735
 ## 3erd Party
 
 * Core based on [Ruby On Rails].
-* [Yahoo YQL] - This project is strong WOEID integration centered.
+* Geographical data is mantained in-app, and it started as a modified copy of
+  the [Yahoo Geoplanet] DB, which originally released as CC BY 3.0 US, then
+  taken down, but still available in archive.org.
 * [jQuery] for Javascript.
 * [GeoLite2] data API by MaxMind to auto detect user location.
 * Logo by Silvestre Herrera under GPL License.
@@ -123,4 +123,4 @@ https://beta.nolotiro.org/api/v1/ad/153735
 [Travis URL]: https://travis-ci.org/alabs/nolotiro.org
 [Vagrant]: https://www.vagrantup.com/
 [Virtualbox]: https://www.virtualbox.org/
-[Yahoo YQL]: https://developer.yahoo.com/yql
+[Yahoo Geoplanet]: https://archive.org/details/geoplanet_data_7.10.0.zip
