@@ -13,7 +13,9 @@ class LocationController < ApplicationController
     if unique_location
       save_location unique_location
     else
-      @locations = similar_locations
+      @locations = Yahoo::ResultSet.new(
+        similar_locations.includes(:state, :country)
+      )
     end
   end
 
@@ -37,7 +39,7 @@ class LocationController < ApplicationController
   end
 
   def similar_locations
-    @similar_locations ||= WoeidHelper.search_by_name(params[:location])
+    @similar_locations ||= Town.matching(params[:location])
   end
 
   def save_location(woeid)
