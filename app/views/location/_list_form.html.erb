@@ -1,7 +1,7 @@
 <%= form_tag action: "change" do %>
   <div class="form-group">
     <%= select_tag :location,
-                   options_for_select(locations.as_options),
+                   options_for_select(location_options),
                    class: 'form-control' %>
   </div>
 

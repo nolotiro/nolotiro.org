@@ -7,6 +7,17 @@ class Town < ActiveRecord::Base
   belongs_to :state
   belongs_to :country
 
+  scope :matching_rank, ->(text) do
+    sum_sql = 'SUM(CASE ads.type WHEN 1 THEN 1 ELSE 0 END)'
+    concat_sql = "CONCAT(towns.name, ', ', states.name, ', ', countries.name)"
+
+    matching(text)
+      .select(:id, "#{sum_sql} as n_ads", "#{concat_sql} as label")
+      .joins('LEFT OUTER JOIN ads on ads.woeid_code = towns.id')
+      .group(:id, 'towns.name', 'states.name', 'countries.name')
+      .order('n_ads DESC')
+  end
+
   scope :matching, ->(text) do
     keywords = text.split(',').map(&:strip)
     return none if keywords.empty?

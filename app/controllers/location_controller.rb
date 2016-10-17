@@ -13,9 +13,7 @@ class LocationController < ApplicationController
     if unique_location
       save_location unique_location
     else
-      @locations = Yahoo::ResultSet.new(
-        similar_locations.includes(:state, :country)
-      )
+      @locations = similar_locations
     end
   end
 
@@ -33,13 +31,13 @@ class LocationController < ApplicationController
   def unique_location
     @unique_location ||= if positive_integer?(params[:location])
                            params[:location]
-                         elsif similar_locations&.count == 1
+                         elsif similar_locations&.length == 1
                            similar_locations.first.id
                          end
   end
 
   def similar_locations
-    @similar_locations ||= Town.matching(params[:location])
+    @similar_locations ||= Town.matching_rank(params[:location])
   end
 
   def save_location(woeid)

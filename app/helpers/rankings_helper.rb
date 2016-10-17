@@ -12,4 +12,13 @@ module RankingsHelper
 
     User.top_city_overall(current_woeid)
   end
+
+  def location_options
+    @locations.map do |location|
+      [
+        "#{location.label} (#{t('nlt.n_ads', count: location.n_ads)})",
+        location.id
+      ]
+    end
+  end
 end
