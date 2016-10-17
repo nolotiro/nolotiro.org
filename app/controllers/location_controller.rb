@@ -33,7 +33,7 @@ class LocationController < ApplicationController
   private
 
   def unique_location
-    return unless similar_locations && similar_locations.count == 1
+    return unless similar_locations&.count == 1
 
     similar_locations.first
   end
