@@ -10,8 +10,6 @@ class LocationController < ApplicationController
   # POST /es/location/change
   # GET /es/location/change2?location=:location
   def list
-    return unless params[:location]
-
     if unique_location
       save_location unique_location.woeid
     else
@@ -39,7 +37,9 @@ class LocationController < ApplicationController
   end
 
   def similar_locations
-    @similar_locations ||= WoeidHelper.search_by_name(params[:location])
+    @similar_locations ||= if params[:location].present?
+                             WoeidHelper.search_by_name(params[:location])
+                           end
   end
 
   def save_location(woeid)
