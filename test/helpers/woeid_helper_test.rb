@@ -1,11 +1,8 @@
 # frozen_string_literal: true
 
 require 'test_helper'
-require 'support/web_mocking'
 
 class WoeidHelperTest < ActionView::TestCase
-  include WebMocking
-
   after { Rails.cache.clear }
 
   test 'converts a WOEID to a place name in the given format' do

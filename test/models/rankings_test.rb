@@ -1,11 +1,8 @@
 # frozen_string_literal: true
 
 require 'test_helper'
-require 'support/web_mocking'
 
 class RankingsTest < ActiveSupport::TestCase
-  include WebMocking
-
   setup do
     Rails.cache.clear
 
@@ -52,17 +49,13 @@ class RankingsTest < ActiveSupport::TestCase
   end
 
   test 'top locations returns cities with most ads' do
-    mocking_yahoo_woeid_info(766_273) do
-      assert_equal [[766_273, 'Madrid', 3 + 2]], Ad.top_locations.ranked
-    end
+    assert_equal [[766_273, 'Madrid', 3 + 2]], Ad.top_locations.ranked
   end
 
   test 'top locations excludes ads by banned users' do
-    mocking_yahoo_woeid_info(766_273) do
-      @user1.ban!
+    @user1.ban!
 
-      assert_equal [[766_273, 'Madrid', 2]], Ad.top_locations.ranked
-    end
+    assert_equal [[766_273, 'Madrid', 2]], Ad.top_locations.ranked
   end
 
   test 'top overall city with all users ads in the same city' do

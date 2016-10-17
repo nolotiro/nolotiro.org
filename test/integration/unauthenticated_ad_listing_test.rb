@@ -2,10 +2,8 @@
 
 require 'test_helper'
 require 'integration/concerns/pagination'
-require 'support/web_mocking'
 
 class UnauthenticatedAdListing < ActionDispatch::IntegrationTest
-  include WebMocking
   include Pagination
   include Minitest::Hooks
 
@@ -16,9 +14,7 @@ class UnauthenticatedAdListing < ActionDispatch::IntegrationTest
     create(:ad, :delivered, :in_ten, title: 'delten')
     create(:ad, :want, :in_mad, title: 'wantmad')
 
-    with_pagination(1) do
-      VCR.use_cassette('mad_bar_ten_info_es') { super(&block) }
-    end
+    with_pagination(1) { super(&block) }
   end
 
   it 'lists first page of available ads everywhere in all ads page' do

@@ -36,7 +36,7 @@ class PostingCommentsTest < ActionDispatch::IntegrationTest
   test 'comments are displayed oldest to newest' do
     create(:comment, ad: @ad, body: 'Araña?', created_at: 12.days.ago)
     create(:comment, ad: @ad, body: 'No, gato', created_at: 1.minute.ago)
-    mocking_yahoo_woeid_info(@ad.woeid_code) { visit ad_path(@ad) }
+    visit_ad_page(@ad)
 
     assert_selector '.comments h5:first-of-type', text: 'Comentarios'
     assert_selector '.comments div:first-of-type', text: 'Araña?'

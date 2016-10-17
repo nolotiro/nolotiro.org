@@ -1,10 +1,8 @@
 # frozen_string_literal: true
 
 require 'test_helper'
-require 'support/web_mocking'
 
 class AdsControllerTest < ActionController::TestCase
-  include WebMocking
   include Devise::Test::ControllerHelpers
 
   setup do
@@ -21,12 +19,10 @@ class AdsControllerTest < ActionController::TestCase
   end
 
   test 'should get new if signed in' do
-    mocking_yahoo_woeid_info(@user.woeid) do
-      sign_in @user
-      get :new
+    sign_in @user
+    get :new
 
-      assert_response :success
-    end
+    assert_response :success
   end
 
   test 'should not create ad if not signed in' do
@@ -58,32 +54,26 @@ class AdsControllerTest < ActionController::TestCase
   end
 
   test 'should show ad' do
-    mocking_yahoo_woeid_info(@ad.woeid_code) do
-      get :show, params: { id: @ad.id, slug: @ad.slug }
+    get :show, params: { id: @ad.id, slug: @ad.slug }
 
-      assert_response :success
-    end
+    assert_response :success
   end
 
   test 'redirects to slugged version from non-slugged one' do
-    mocking_yahoo_woeid_info(@ad.woeid_code) do
-      get :legacy_show, params: { id: @ad.id }
+    get :legacy_show, params: { id: @ad.id }
 
-      assert_response :redirect
-      assert_redirected_to adslug_path(@ad, slug: @ad.slug)
-    end
+    assert_response :redirect
+    assert_redirected_to adslug_path(@ad, slug: @ad.slug)
   end
 
   test 'redirects to new slugged URL after title changes' do
     old_slug = @ad.slug
     @ad.update!(title: 'My new title, mistyped something')
 
-    mocking_yahoo_woeid_info(@ad.woeid_code) do
-      get :show, params: { id: @ad.id, slug: old_slug }
+    get :show, params: { id: @ad.id, slug: old_slug }
 
-      assert_response :redirect
-      assert_redirected_to adslug_path(@ad, slug: @ad.slug)
-    end
+    assert_response :redirect
+    assert_redirected_to adslug_path(@ad, slug: @ad.slug)
   end
 
   test 'should not edit any ad as normal user' do

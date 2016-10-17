@@ -46,8 +46,6 @@ group :test do
   gem 'bullet' # n+1 query problem alert
   gem 'database_cleaner', '~> 1.5'
   gem 'poltergeist'
-  gem 'vcr', '~> 3.0'
-  gem 'webmock', '~> 2.0'
 end
 
 group :production, :staging do

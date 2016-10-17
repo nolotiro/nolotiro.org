@@ -2,10 +2,8 @@
 
 require 'test_helper'
 require 'integration/concerns/pagination'
-require 'support/web_mocking'
 
 class PersonalAdListingTest < ActionDispatch::IntegrationTest
-  include WebMocking
   include Pagination
 
   before do
@@ -19,7 +17,7 @@ class PersonalAdListingTest < ActionDispatch::IntegrationTest
 
     create(:ad, title: "something else to ensure it's filtered out")
 
-    mocking_yahoo_woeid_info(@user.woeid) { visit listads_user_path(@user) }
+    visit listads_user_path(@user)
   end
 
   it 'lists all ads in a separate tab in user profile' do

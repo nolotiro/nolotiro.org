@@ -1,11 +1,8 @@
 # frozen_string_literal: true
 
 require 'test_helper'
-require 'support/web_mocking'
 
 class PasswordResetTest < ActionDispatch::IntegrationTest
-  include WebMocking
-
   before { @user = create(:user, email: 'nolotiro@example.com') }
 
   it 'sends a confirmation email' do
@@ -22,15 +19,13 @@ class PasswordResetTest < ActionDispatch::IntegrationTest
   end
 
   it 'changes password and logs user in' do
-    mocking_yahoo_woeid_info(@user.woeid) do
-      token = @user.send_reset_password_instructions
-      visit edit_user_password_path(reset_password_token: token)
+    token = @user.send_reset_password_instructions
+    visit edit_user_password_path(reset_password_token: token)
 
-      fill_in 'Contraseña nueva', with: '222222'
-      fill_in 'Contraseña nueva (repetir)', with: '222222'
-      click_button 'Cambiar contraseña'
+    fill_in 'Contraseña nueva', with: '222222'
+    fill_in 'Contraseña nueva (repetir)', with: '222222'
+    click_button 'Cambiar contraseña'
 
-      assert_text 'Tu contraseña fue cambiada. Ya iniciaste sesión.'
-    end
+    assert_text 'Tu contraseña fue cambiada. Ya iniciaste sesión.'
   end
 end

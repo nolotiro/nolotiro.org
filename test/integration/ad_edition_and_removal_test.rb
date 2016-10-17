@@ -2,10 +2,8 @@
 
 require 'test_helper'
 require 'integration/concerns/authenticated_test'
-require 'support/web_mocking'
 
 class AdEditionAndRemovalTest < AuthenticatedTest
-  include WebMocking
   include Warden::Test::Helpers
 
   before do
@@ -21,9 +19,7 @@ class AdEditionAndRemovalTest < AuthenticatedTest
   end
 
   it 'does not update ads from index' do
-    mocking_yahoo_woeid_info(@current_user.woeid) do
-      visit ads_woeid_path(@current_user.woeid, type: 'give')
-    end
+    visit ads_woeid_path(@current_user.woeid, type: 'give')
 
     assert_no_selector 'a', text: 'Edita este anuncio'
   end
@@ -55,7 +51,7 @@ class AdEditionAndRemovalTest < AuthenticatedTest
   private
 
   def assert_destroy_ad_from(path)
-    mocking_yahoo_woeid_info(@current_user.woeid) { visit path }
+    visit path
     click_link 'Edita este anuncio'
     assert_difference('Ad.count', -1) { click_button 'Borrar anuncio' }
 
@@ -63,7 +59,7 @@ class AdEditionAndRemovalTest < AuthenticatedTest
   end
 
   def assert_update_ad_from(path)
-    mocking_yahoo_woeid_info(@current_user.woeid) { visit path }
+    visit path
     click_link 'Edita este anuncio'
     click_button 'Actualizar anuncio'
 

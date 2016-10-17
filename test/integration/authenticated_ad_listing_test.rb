@@ -2,10 +2,8 @@
 
 require 'test_helper'
 require 'integration/concerns/pagination'
-require 'support/web_mocking'
 
 class AuthenticatedAdListing < ActionDispatch::IntegrationTest
-  include WebMocking
   include Warden::Test::Helpers
   include Pagination
   include Minitest::Hooks
@@ -20,9 +18,7 @@ class AuthenticatedAdListing < ActionDispatch::IntegrationTest
 
     login_as create(:user, woeid: 766_273)
 
-    with_pagination(1) do
-      VCR.use_cassette('mad_bar_ten_info_es') { super(&block) }
-    end
+    with_pagination(1) { super(&block) }
 
     logout
   end

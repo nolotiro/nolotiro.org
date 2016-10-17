@@ -2,11 +2,8 @@
 # frozen_string_literal: true
 
 require 'test_helper'
-require 'support/web_mocking'
 
 class AdTest < ActiveSupport::TestCase
-  include WebMocking
-
   test 'ad requires everything' do
     a = Ad.new
     a.valid?

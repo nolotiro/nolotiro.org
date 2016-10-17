@@ -1,11 +1,9 @@
 # frozen_string_literal: true
 
 require 'test_helper'
-require 'support/web_mocking'
 require 'integration/concerns/geo'
 
 class ChoosingLocationTest < ActionDispatch::IntegrationTest
-  include WebMocking
   include Warden::Test::Helpers
   include Geo
 
@@ -29,11 +27,9 @@ class ChoosingLocationTest < ActionDispatch::IntegrationTest
   end
 
   it 'shows a message when no matching locations are found' do
-    mocking_yahoo_woeid_similar('tenerifa') do
-      choose_location('tenerifa')
+    choose_location('tenerifa')
 
-      assert_text 'No se han encontrado ubicaciones con el nombre tenerifa'
-    end
+    assert_text 'No se han encontrado ubicaciones con el nombre tenerifa'
   end
 
   it 'shows an error message when submitted without a search' do

@@ -2,15 +2,14 @@
 
 require 'test_helper'
 require 'integration/concerns/geo'
-require 'support/web_mocking'
 
 class SuggestingLocationTest < ActionDispatch::IntegrationTest
   include Geo
-  include WebMocking
 
   before do
     Capybara.current_driver = Capybara.javascript_driver
     page.driver.add_headers('X_FORWARDED_FOR' => '83.39.207.18')
+    create(:town, :madrid)
 
     visit root_path
   end
@@ -22,9 +21,7 @@ class SuggestingLocationTest < ActionDispatch::IntegrationTest
   end
 
   it 'directly chooses location from IP suggestion' do
-    mocking_yahoo_woeid_similar('madrid_unique') do
-      click_link 'Ver anuncios en Madrid'
-    end
+    click_link 'Ver anuncios en Madrid'
 
     assert_location_page 'Madrid, Madrid, España'
   end

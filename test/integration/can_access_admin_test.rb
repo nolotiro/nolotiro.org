@@ -1,11 +1,9 @@
 # frozen_string_literal: true
 
 require 'test_helper'
-require 'support/web_mocking'
 
 class CanAccessAdmin < ActionDispatch::IntegrationTest
   include Warden::Test::Helpers
-  include WebMocking
 
   it 'should not get /admin/jobs as a anonymous user' do
     visit '/admin/jobs'
@@ -34,7 +32,7 @@ class CanAccessAdmin < ActionDispatch::IntegrationTest
 
   it 'should not get /admin as a normal user' do
     login_as user
-    mocking_yahoo_woeid_info(user.woeid) { visit '/admin' }
+    visit '/admin'
     assert_text I18n.t('nlt.permission_denied')
     logout
   end

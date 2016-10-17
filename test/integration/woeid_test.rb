@@ -1,11 +1,8 @@
 # frozen_string_literal: true
 
 require 'test_helper'
-require 'support/web_mocking'
 
 class WoeidTest < ActionDispatch::IntegrationTest
-  include WebMocking
-
   it 'returns a hard 404 error if woeid is not type town' do
     create(:town, :madrid)
 

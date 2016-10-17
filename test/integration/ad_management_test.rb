@@ -3,29 +3,23 @@
 require 'test_helper'
 require 'integration/concerns/authenticated_test'
 require 'support/ads'
-require 'support/web_mocking'
 
 class AdManagementTest < AuthenticatedTest
   include AdTestHelpers
-  include WebMocking
 
   it 'can have pictures of 5 megabytes or less' do
     with_file_of_size(5.megabytes) do |path|
-      mocking_yahoo_woeid_info(@current_user.woeid) do
-        submit_ad_form(file_path: path)
+      submit_ad_form(file_path: path)
 
-        assert_no_text('Imagen debe estar entre 0 Bytes y 5 MB')
-      end
+      assert_no_text('Imagen debe estar entre 0 Bytes y 5 MB')
     end
   end
 
   it 'cannot have pictures bigger than 5 megabytes' do
     with_file_of_size(6.megabytes) do |path|
-      mocking_yahoo_woeid_info(@current_user.woeid) do
-        submit_ad_form(file_path: path)
+      submit_ad_form(file_path: path)
 
-        assert_text('Imagen debe estar entre 0 Bytes y 5 MB')
-      end
+      assert_text('Imagen debe estar entre 0 Bytes y 5 MB')
     end
   end
 
@@ -111,10 +105,8 @@ class AdManagementTest < AuthenticatedTest
   end
 
   it 'saves spam ads but does not list them' do
-    mocking_yahoo_woeid_info(@current_user.woeid) do
-      assert_difference(-> { Ad.count }, 1) do
-        submit_ad_form(title: 'Regalo de campista')
-      end
+    assert_difference(-> { Ad.count }, 1) do
+      submit_ad_form(title: 'Regalo de campista')
     end
 
     visit root_path
@@ -122,9 +114,7 @@ class AdManagementTest < AuthenticatedTest
   end
 
   it 'automatically kicks out spammers' do
-    mocking_yahoo_woeid_info(@current_user.woeid) do
-      submit_ad_form(title: 'Regalo de campista')
-    end
+    submit_ad_form(title: 'Regalo de campista')
 
     assert_text 'Tu cuenta aún no ha sido activada'
   end
