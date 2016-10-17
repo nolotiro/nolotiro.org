@@ -7,6 +7,10 @@
 
 <%= meta_description %>
 
+<% if content_for?(:meta_robots) %>
+  <%= yield(:meta_robots) %>
+<% end %>
+
 <% if content_for?(:meta_extra) %>
   <%= yield(:meta_extra) %>
 <% end %>
