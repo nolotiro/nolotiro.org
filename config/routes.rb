@@ -38,7 +38,8 @@ NolotiroOrg::Application.routes.draw do
               as: 'ads_listall'
           get '/listuser/id/:id(/type/:type)(/status/:status)(/page/:page)',
               to: 'users#listads',
-              as: 'listads_user'
+              as: 'listads_user',
+              constraints: { id: %r{[^/]+} }
         end
 
         # locations lists
@@ -77,7 +78,10 @@ NolotiroOrg::Application.routes.draw do
       end
 
       get '/user/edit/id/:id', to: redirect('/es/user/edit'), as: 'user_edit'
-      get '/profile/:id', to: 'users#profile', as: 'profile'
+      get '/profile/:id',
+          to: 'users#profile',
+          as: 'profile',
+          constraints: { id: %r{[^/]+} }
 
       # search
       get '/search', to: redirect(SearchUrlRewriter.new)

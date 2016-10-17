@@ -13,6 +13,13 @@ class UserProfileTest < ActionDispatch::IntegrationTest
     assert_text 'Perfil de usuario - jaimito'
   end
 
+  it 'gets user profile by username, even when it has dots in it' do
+    @user.update!(username: 'A.n.')
+    visit profile_path(@user.username)
+
+    assert_text 'Perfil de usuario - A.n.'
+  end
+
   it 'gets user profile by id' do
     visit profile_path(@user.id)
 
@@ -23,6 +30,13 @@ class UserProfileTest < ActionDispatch::IntegrationTest
     visit listads_user_path(@user.username)
 
     assert_text 'Anuncios publicados - jaimito'
+  end
+
+  it 'gets user ad list by username, even when it has dots in it' do
+    @user.update!(username: 'A.n.')
+    visit listads_user_path(@user.username)
+
+    assert_text 'Anuncios publicados - A.n.'
   end
 
   it 'gets user ad list by id' do

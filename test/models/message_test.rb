@@ -36,20 +36,20 @@ class MessageTest < ActiveSupport::TestCase
   end
 
   def test_involving_includes_outgoing_messages
-    assert_equal messages, Message.involving(@user)
+    assert_equal messages.to_set, Message.involving(@user).to_set
   end
 
   def test_involving_includes_incoming_messages
     @conversation.envelope_for(sender: @recipient, recipient: @user, body: 'hi')
     @conversation.save!
 
-    assert_equal messages, Message.involving(@user)
+    assert_equal messages.to_set, Message.involving(@user).to_set
   end
 
   def test_involving_includes_orphan_messages
     @recipient.destroy
 
-    assert_equal messages, Message.involving(@user)
+    assert_equal messages.to_set, Message.involving(@user).to_set
   end
 
   private
