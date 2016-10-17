@@ -32,11 +32,12 @@ class User < ActiveRecord::Base
            dependent: :nullify
 
   validates :username, presence: true
-  validates :username, uniqueness: { case_sensitive: false },
-                       format: { without: /\A([^@]+@[^@]+|[1-9]+)\z/ },
-                       length: { maximum: 63 },
-                       allow_blank: true,
-                       if: :username_changed?
+  validates :username,
+            uniqueness: { case_sensitive: false },
+            format: { without: %r{\A([^@]+@[^@]+|[1-9]+|.*/.*)\z} },
+            length: { maximum: 63 },
+            allow_blank: true,
+            if: :username_changed?
 
   validates :email, presence: true
   validates :email, uniqueness: true,

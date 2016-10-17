@@ -50,6 +50,11 @@ class UserTest < ActiveSupport::TestCase
     assert_includes user2.errors[:username], 'no es válido'
   end
 
+  test 'disallows usernames containing URL separator character' do
+    user = build(:user, username: 'elena/mario')
+    assert_not user.valid?
+  end
+
   test 'has unique emails' do
     user1 = build(:user, email: 'larryfoster@example.com')
     assert user1.valid?
