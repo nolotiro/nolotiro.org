@@ -82,12 +82,10 @@
     <%= will_paginate @ads, params: params.merge(id: current_woeid),
                             inner_window: 2,
                             outer_window: -1 %>
+  <% elsif @q %>
+    <%= render "ads/no_results_search" %>
   <% else %>
-    <% if @q %>
-      <%= render "ads/no_results_search" %>
-    <% else %>
-      <%= render "ads/no_results" %>
-    <% end %>
+    <%= render "ads/no_results" %>
   <% end %>
 
   <% if current_woeid %>
