@@ -29,7 +29,7 @@ class AdsController < ApplicationController
 
       redirect_to ad_friendly_path, notice: t('nlt.ads.created')
     else
-      render action: 'new'
+      render 'new'
     end
   end
 
@@ -61,7 +61,7 @@ class AdsController < ApplicationController
 
       redirect_to update_redirect_path, notice: t('nlt.ads.updated')
     else
-      render action: 'edit', alert: @ad.errors
+      render 'edit', alert: @ad.errors
     end
   end
 
