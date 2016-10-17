@@ -11,8 +11,7 @@ module Api
       @woeid = params[:id]
       @page = params[:page]
 
-      @woeid_info = WoeidHelper.convert_woeid_name(@woeid)
-      raise ActionController::RoutingError, 'Not Found' if @woeid_info.nil?
+      @town = Town.find(@woeid)
 
       @ads = Ad.public_send(@type).by_woeid_code(@woeid)
       @ads = @ads.available if type_scope == :give

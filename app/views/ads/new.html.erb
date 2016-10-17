@@ -1,6 +1,6 @@
-<% woeid_name = WoeidHelper.convert_woeid_name(current_user.woeid) %>
-
-<% content_for :title, "#{t('nlt.publish_ad')} - #{woeid_name[:full]}" %>
+<% user_with_town = User.includes(:town).find(current_user.id) %>
+<% title = "#{t('nlt.publish_ad')} - #{user_with_town.town.fullname}" %>
+<%= content_for :title, title %>
 
 <div class="main-row">
   <div class="col-md-8 col-sm-8">

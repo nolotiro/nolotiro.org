@@ -1,16 +1,15 @@
 <% if current_woeid.nil? %>
   <% content_for :title, t('nlt.home_title') %>
 <% else %>
-  <% content_for :title, t('nlt.keywords') + @woeid_info[:full] %>
-  <% content_for :meta_description,
-                 t('nlt.gift_on', woeid: @woeid_info[:full]) %>
+  <% content_for :title, t('nlt.keywords') + @town.fullname %>
+  <% content_for :meta_description, t('nlt.gift_on', woeid: @town.fullname) %>
 <% end %>
 
 <% if current_woeid && @status == 'available' %>
   <% content_for :meta_extra do %>
     <link rel="alternate"
           type="application/rss+xml"
-          title="nolotiro.org - <%= @woeid_info[:full] %>"
+          title="nolotiro.org - <%= @town.fullname %>"
           href="<%= rss_type_url(woeid: current_woeid, type: @type) %>" />
   <% end %>
 <% end %>
@@ -29,7 +28,7 @@
 
   <div class="ad_create_tab">
     <% if current_woeid %>
-      <%= link_to "+ #{t('nlt.publish_ad_on', woeid: @woeid_info[:short])}",
+      <%= link_to "+ #{t('nlt.publish_ad_on', woeid: @town.name)}",
                   new_ad_path %>
     <% else %>
       <%= link_to "+ #{t('nlt.publish_ad')}", new_ad_path %>
@@ -57,7 +56,7 @@
           <% else %>
             <%= t('nlt.searching_on_html', q: @q) if @q %>
 
-            <%= @woeid_info[:full] %>
+            <%= @town.fullname %>
           <% end %>
         </h1>
 
@@ -98,7 +97,7 @@
         <div class="rss">
           <%= link_to rss_type_path(woeid: current_woeid, type: "give") do %>
             <%= image_tag "rss.png", alt: t("nlt.rss_suscribe") %>
-            &nbsp; <%= t('nlt.rss_suscribe') %> - <%= @woeid_info[:full] %>
+            &nbsp; <%= t('nlt.rss_suscribe') %> - <%= @town.fullname %>
           <% end %>
         </div>
       <% end %>

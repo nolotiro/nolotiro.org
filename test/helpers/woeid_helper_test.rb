@@ -3,16 +3,6 @@
 require 'test_helper'
 
 class WoeidHelperTest < ActionView::TestCase
-  after { Rails.cache.clear }
-
-  test 'converts a WOEID to a place name in the given format' do
-    create(:town, :madrid)
-
-    location = WoeidHelper.convert_woeid_name(766_273)
-    assert_equal('Madrid, Madrid, España', location[:full])
-    assert_equal('Madrid', location[:short])
-  end
-
   test 'suggests cities with similar names' do
     create(:town, name: 'Tenerife',
                   id: 369_486,

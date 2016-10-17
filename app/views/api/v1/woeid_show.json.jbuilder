@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 json.woeid_id @woeid
-json.woeid_name @woeid_info[:full]
+json.woeid_name @town.fullname
 json.ads @ads do |ad|
   json.id ad.id
   json.title ad.filtered_title

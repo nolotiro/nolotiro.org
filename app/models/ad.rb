@@ -80,15 +80,11 @@ class Ad < ActiveRecord::Base
   end
 
   def woeid_name
-    woeid_info[:full]
+    town.fullname
   end
 
   def woeid_name_short
-    woeid_info[:short]
-  end
-
-  def woeid_info
-    @woeid_info ||= WoeidHelper.convert_woeid_name(woeid_code)
+    town.name
   end
 
   def type_string
