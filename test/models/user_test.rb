@@ -11,22 +11,18 @@ class UserTest < ActiveSupport::TestCase
 
   test 'has unique usernames' do
     user1 = build(:user, username: 'Username')
-    assert user1.valid?
     assert user1.save
 
     user2 = build(:user, username: 'Username')
-    assert_not user2.valid?
     assert_not user2.save
     assert_includes user2.errors[:username], 'ya está en uso'
   end
 
   test 'has unique case insensitive usernames' do
     user1 = build(:user, username: 'Username')
-    assert user1.valid?
     assert user1.save
 
     user2 = build(:user, username: 'username')
-    assert_not user2.valid?
     assert_not user2.save
     assert_includes user2.errors[:username], 'ya está en uso'
   end
@@ -35,18 +31,15 @@ class UserTest < ActiveSupport::TestCase
     user = build(:user, username: 'larryfoster@example.com')
 
     assert_not user.valid?
-    assert_not user.save
     assert_includes user.errors[:username], 'no es válido'
   end
 
   test 'disallows usernames that look like ids' do
     user1 = build(:user, username: '007')
     assert user1.valid?
-    assert user1.save
 
     user2 = build(:user, username: '12345')
     assert_not user2.valid?
-    assert_not user2.save
     assert_includes user2.errors[:username], 'no es válido'
   end
 
@@ -57,18 +50,15 @@ class UserTest < ActiveSupport::TestCase
 
   test 'has unique emails' do
     user1 = build(:user, email: 'larryfoster@example.com')
-    assert user1.valid?
     assert user1.save
 
     user2 = build(:user, email: 'larryfoster@example.com')
-    assert_not user2.valid?
     assert_not user2.save
     assert_includes user2.errors[:email], 'ya está en uso'
   end
 
   test 'saves downcased emails' do
     user1 = build(:user, email: 'Larryfoster@example.com')
-    assert user1.valid?
     assert user1.save
     assert_equal 'larryfoster@example.com', user1.email
   end
