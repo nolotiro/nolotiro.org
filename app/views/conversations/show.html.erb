@@ -1,5 +1,5 @@
 <% title = t("conversations.show.title_html",
-             recipient: link_to_interlocutor(@conversation),
+             recipient: link_to_profile(@interlocutor),
              subject: @conversation.subject) %>
 
 <% content_for :meta_title, title %>
