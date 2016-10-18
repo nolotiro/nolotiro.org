@@ -303,7 +303,7 @@ fr:
       friend:
         add: ajoutez %{username} à votre liste d'amis
         delete: supprimer %{username} à votre liste d'amis
-    publish_ad: Publication annonce
+    publish_ad: Publier annonce
     publish_ad_on: Publier annonce en %{woeid}
     published_ads: Annonces publiées
     published_ago_by_html: Publié %{time} par utilisateur %{user}
@@ -327,7 +327,6 @@ fr:
     sign_up: Créer un usager
     slogan: Ne jetez pas, je Gift (sans conditions)
     suggestions: suggestions
-    to_publish_ad: Publier annonce
     to_publish_or_send_messages: Liste ou envoyer des messages accéder à votre compte
     tos: Conditions d'utilisation
     translate:

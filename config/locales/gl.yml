@@ -309,7 +309,7 @@ gl:
       friend:
         add: 
         delete: 
-    publish_ad: Publicando anuncio
+    publish_ad: Publicar anuncio
     publish_ad_on: Publicar anuncio en %{woeid}
     published_ads: Anuncios publicados
     published_ago_by_html: Publicado %{time} por el usuario %{user}
@@ -333,7 +333,6 @@ gl:
     sign_up: Crear un usuario
     slogan: no lo tiro, te lo regalo (sin condiciones)
     suggestions: suxestións
-    to_publish_ad: Publicar anuncio
     to_publish_or_send_messages: 
     tos: condicións de uso
     translate:

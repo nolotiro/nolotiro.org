@@ -301,7 +301,7 @@ es:
       friend:
         add: agregar %{username} a tu lista de amigos
         delete: eliminar %{username} de tu lista de amigos
-    publish_ad: 'Publicando anuncio '
+    publish_ad: Publicar anuncio
     publish_ad_on: Publicar anuncio en %{woeid}
     published_ads: Anuncios publicados
     published_ago_by_html: Publicado %{time} por el usuario %{user}
@@ -325,7 +325,6 @@ es:
     sign_up: Crear un usuario
     slogan: no lo tiro, te lo regalo (sin condiciones)
     suggestions: sugerencias
-    to_publish_ad: Publicar anuncio
     to_publish_or_send_messages: Para publicar anuncios o enviar mensajes accede a tu cuenta
     tos: términos de uso
     translate:
