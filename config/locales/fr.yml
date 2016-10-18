@@ -277,13 +277,14 @@ fr:
     new_user: nouvel utilisateur
     no_location_specified: 
     no_results:
-      first_to_publish_html: 1. Soyez le premier à publier %{publish}.
+      choose_bigger: Choisisez une ville plus grand
+      first_to_publish_html: Soyez le premier à publier %{publish}.
       on_user: Aucune de ces annonces publiées par cet utilisateur.
       phrase: «Un voyage de mille kilomètres commence par un premier pas", Lao Tse.
       publish_ad: publier une annonce dans cette ville
       subtitle: Vous pouvez essayer une de ces choses
-      switch_to_bigger_city: 2. Essayez de changer la ville pour un plus grand que vous êtes à proximité de votre emplacement.
-      switch_to_guessed_city_html: '3. Notre emplacement du système de suggestion (basé sur votre IP) indique que vous êtes près de: <br> %{change_location}'
+      switch_to_bigger_city_html: "%{choose_bigger} à côté de votre emplacement."
+      switch_to_guessed_city_html: 'Vérifiez que vous avez choisi correctement votre ville. Notre emplacement du système de suggestion (basé sur votre IP) indique que vous êtes près de %{change_location}'
       title: Aucune annonce pour ce lieu.
     password: Mot de passe
     permission_denied: Vous n'êtes pas autorisé à effectuer cette action.

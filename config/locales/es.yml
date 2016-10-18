@@ -277,13 +277,14 @@ es:
     new_user: nuevo usuario
     no_location_specified: Debes buscar en una ciudad específica
     no_results:
-      first_to_publish_html: 1. Sé el primero en %{publish}.
+      choose_bigger: Elige una ciudad más grande
+      first_to_publish_html: Sé el primero en %{publish}.
       on_user: No hay anuncios de este tipo publicados por este usuario.
       phrase: '"Un viaje de mil kilómetros comienza con un simple paso", Lao Tse.'
       publish_ad: publicar un anuncio en esta ciudad
       subtitle: Puedes probar alguna de estas cosas
-      switch_to_bigger_city: 2. Prueba a cambiar la ciudad por una más grande que esté cerca de tu ubicación.
-      switch_to_guessed_city_html: '3. Nuestro sistema de sugerencia de ubicación (basado en tu IP) dice que estás cerca de: <br> %{change_location}'
+      switch_to_bigger_city_html: "%{choose_bigger} que esté cerca de tu ubicación."
+      switch_to_guessed_city_html: 'Comprueba que has elegido tu ciudad correctamente. Nuestro sistema de sugerencia de ubicación (basado en tu IP) dice que estás cerca de %{change_location}'
       title: No hay anuncios para esta ubicación.
     password: Contraseña
     permission_denied: No tienes permisos para realizar esta acción.

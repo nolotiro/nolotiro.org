@@ -1,26 +1,29 @@
 <div class="no_results">
   <h2><%= t('nlt.no_results.title') %></h2>
-  <h3><%= t('nlt.no_results.subtitle') %></h3>
+
+  <p><%= t('nlt.no_results.subtitle') %></p>
+
+  <ul class="list-group">
+    <li class="list-group-item">
+      <%= t('nlt.no_results.first_to_publish_html',
+            publish: link_to(t('nlt.no_results.publish_ad'), new_ad_path)) %>
+    </li>
+
+    <li class="list-group-item">
+      <% link = link_to(t('nlt.no_results.choose_bigger'), location_ask_path) %>
+      <%= t('nlt.no_results.switch_to_bigger_city_html', choose_bigger: link) %>
+    </li>
+
+    <% if location_suggest %>
+      <li class="list-group-item">
+        <% link = link_to_change_location(location_suggest.fullname) %>
+        <%= t('nlt.no_results.switch_to_guessed_city_html',
+              change_location: link) %>
+      </li>
+    <% end %>
+  </ul>
 
   <p>
-    <%= t('nlt.no_results.first_to_publish_html',
-          publish: link_to(t('nlt.no_results.publish_ad'), new_ad_path)) %>
-  </p>
-
-  <p>
-    <%= t('nlt.no_results.switch_to_bigger_city') %>
-  </p>
-
-  <% if location_suggest %>
-    <p>
-      <% link = link_to_change_location(location_suggest.fullname) %>
-      <%= t('nlt.no_results.switch_to_guessed_city_html',
-            change_location: link) %>
-    </p>
-  <% end %>
-
-  <h5>
     <i><%= t('nlt.no_results.phrase') %></i>
-  </h5>
-
+  </p>
 </div>

@@ -285,12 +285,13 @@ gl:
     new_user: 
     no_location_specified: 
     no_results:
+      choose_bigger: 
       first_to_publish_html: 
       on_user: 
       phrase: 
       publish_ad: 
       subtitle: 
-      switch_to_bigger_city: 
+      switch_to_bigger_city_html: 
       switch_to_guessed_city_html: 
       title: 
     password: Contrasinal
