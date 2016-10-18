@@ -9,7 +9,7 @@ class OauthenticatorService
   end
 
   def authenticate
-    identity = Identity.find_by(provider: provider, uid: uid)
+    identity = Identity.includes(:user).find_by(provider: provider, uid: uid)
     return identity.user if identity
 
     user = User.find_or_initialize_by(email: email) do |u|

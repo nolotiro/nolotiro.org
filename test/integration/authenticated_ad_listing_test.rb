@@ -8,8 +8,9 @@ class AuthenticatedAdListing < ActionDispatch::IntegrationTest
   include WebMocking
   include Warden::Test::Helpers
   include Pagination
+  include Minitest::Hooks
 
-  around do |test|
+  around do |&block|
     create(:ad, :available, :in_bar, title: 'avabar', published_at: 1.day.ago)
     create(:ad, :available, :in_mad, title: 'avamad1', published_at: 2.days.ago)
     create(:ad, :available, :in_mad, title: 'avamad2', published_at: 3.days.ago)
@@ -20,7 +21,7 @@ class AuthenticatedAdListing < ActionDispatch::IntegrationTest
     login_as create(:user, woeid: 766_273)
 
     with_pagination(1) do
-      VCR.use_cassette('mad_bar_ten_info_es') { test.call }
+      VCR.use_cassette('mad_bar_ten_info_es') { super(&block) }
     end
 
     logout

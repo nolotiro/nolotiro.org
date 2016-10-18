@@ -31,7 +31,7 @@ end
 
 group :development, :test do
   gem 'minitest-spec-rails'                 # test: specs style out-of-the-box
-  gem 'minitest-around'                     # test: minitest enhancements
+  gem 'minitest-hooks'                      # test: minitest enhancements
   gem 'capybara'                            # test: real user interactions
   gem 'launchy'                             # test: features - save_and_open_page helper
   gem 'factory_girl_rails', '~> 4.0'        # test: factories
@@ -39,7 +39,6 @@ group :development, :test do
   gem 'spring'                              # dev: speed up things
   gem 'commands'                            # dev: rake commands in console
   gem 'mailcatcher'                         # dev: mailbox
-  gem 'bullet'                              # dev: n+1 query problem alert
 end
 
 group :test do
@@ -47,6 +46,7 @@ group :test do
   gem 'webmock', '~> 2.0'
   gem 'database_cleaner', '~> 1.5'
   gem 'poltergeist'
+  gem 'bullet'                              # n+1 query problem alert
 end
 
 group :production, :staging do
