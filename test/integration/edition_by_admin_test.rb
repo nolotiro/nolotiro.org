@@ -18,7 +18,7 @@ class EditionsByAdmin < ActionDispatch::IntegrationTest
     mocking_yahoo_woeid_info(@ad.woeid_code) do
       visit ads_edit_path(@ad)
       choose 'Una petición'
-      click_button 'Publicar anuncio'
+      click_button 'Actualizar anuncio'
 
       assert_equal 766_273, @ad.reload.woeid_code
       assert_equal 'want', @ad.reload.type
