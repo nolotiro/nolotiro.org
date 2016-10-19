@@ -165,7 +165,7 @@ fr:
         body: 'Corps de l''annonce:'
         body_max: 500 caractères maximum
         comments_enabled: Autoriser les commentaires du public
-        image_permitted_formats: 'Admis formats: gif, jpg, png. Max: 5MB.'
+        image_permitted_formats: 'Admis formats: gif, jpg, png. Max: 5Mb.'
         private_messages_only: 
         private_messages_or_comments: 
         select_an_image: Sélectionnez une image pour votre annonce (en option).
