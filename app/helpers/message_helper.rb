@@ -1,11 +1,10 @@
 # frozen_string_literal: true
 
 module MessageHelper
-  def link_to_interlocutor(c)
-    interlocutor = c.interlocutor(current_user)
-    return '[borrado]' unless interlocutor
+  def link_to_profile(user)
+    return '[borrado]' unless user
 
-    username = interlocutor.username
+    username = user.username
     link_to username, profile_path(username)
   end
 end
