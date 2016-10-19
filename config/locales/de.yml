@@ -176,7 +176,6 @@ de:
       updated: 
     all: 
     all_ads: 
-    and: 
     are_you_interested: 
     available: 
     back: 
@@ -196,7 +195,6 @@ de:
     choose_your_pass: 
     choose_your_pass_again: 
     cities_in_the_world: 
-    click_to_large: 
     comments:
       body_max: 
       do_click: 
@@ -289,6 +287,7 @@ de:
     password: 
     permission_denied: 
     please_fill_to_become_member: 
+    policy_agreement_html: 
     privacy: 
     privacy_page:
       body_html: 
@@ -320,7 +319,6 @@ de:
     send: 
     send_a_message: 
     send_a_message_to: 
-    sending_this_form: 
     share_this_ad: 
     sign_in: 
     sign_in_with_provider: 

@@ -51,10 +51,9 @@
           <%= f.submit t('nlt.register') %>
         </dd>
       </dl>
-      <%= t 'nlt.sending_this_form' %>
-      <%= link_to t('nlt.tos'), tos_path %>
-      <%= t 'nlt.and' %>
-      <%= link_to t('nlt.privacy'), privacy_path %>.
+      <%= t('nlt.policy_agreement_html',
+            tos: link_to(t('nlt.tos'), tos_path),
+            privacy: link_to(t('nlt.privacy'), privacy_path)) %>
     </div>
 
     <% unless omniauth_registration? %>

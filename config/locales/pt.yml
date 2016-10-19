@@ -176,7 +176,6 @@ pt:
       updated: Anúncio atualizado
     all: todos
     all_ads: todos os anúncios
-    and: e
     are_you_interested: Está interessado?
     available: disponível
     back: voltar para a pagina de inicio
@@ -196,7 +195,6 @@ pt:
     choose_your_pass: Escolha sua senha
     choose_your_pass_again: 'Insira sua senha (sim, de novo) '
     cities_in_the_world: cidades que mais reciclam
-    click_to_large: Click para aumentar foto
     comments:
       body_max: Máximo 1000 caracteres
       do_click: 'Faz click neste link para responder a mensagem:'
@@ -288,6 +286,7 @@ pt:
       title: Não existem anúncios para esta localização.
     password: Senha
     permission_denied: Você não tem permissão para executar esta ação
+    policy_agreement_html: Enviando este formulário, você admite ter lido, entendido, e concorda com nossas %{tos} e %{privacy}.
     please_fill_to_become_member: Por favor, preencha este formulário para se tornar um miembro do nolotiro
     privacy: política de privacidade
     privacy_page:
@@ -320,7 +319,6 @@ pt:
     send: Enviar
     send_a_message: "+ Envia uma mensagem privada ao anunciante"
     send_a_message_to: envia uma mensagem privada a
-    sending_this_form: Enviando este formulário, você admite ter lido, entendido, e concorda com nossas
     share_this_ad: Compartilha este anúncio
     sign_in: Accesar
     sign_in_with_provider: Fazer login com %{provider}

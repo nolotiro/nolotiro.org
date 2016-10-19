@@ -180,7 +180,6 @@ gl:
       updated: actualizamos o anuncio
     all: todos
     all_ads: todos os anuncios
-    and: e
     are_you_interested: Interesado?
     available: dispoñible
     back: regresar á páxina de inicio
@@ -200,7 +199,6 @@ gl:
     choose_your_pass: 
     choose_your_pass_again: 
     cities_in_the_world: 
-    click_to_large: 
     comments:
       body_max: 
       do_click: 
@@ -297,6 +295,7 @@ gl:
     password: Contrasinal
     permission_denied: 
     please_fill_to_become_member: Por favor, enche este formulario para facer membro do nolotiro
+    policy_agreement_html: Ao enviar este formulario, vostede acepta que leu, entendeu e está feliz co noso %{tos} e %{privacy}.
     privacy: política de privacidade
     privacy_page:
       body_html: 
@@ -328,7 +327,6 @@ gl:
     send: 
     send_a_message: 
     send_a_message_to: 
-    sending_this_form: Ao enviar este formulario, vostede acepta que leu, entendeu e está feliz co noso
     share_this_ad: Comparte este anuncio
     sign_in: Acceder
     sign_in_with_provider: Entrar co %{provider}

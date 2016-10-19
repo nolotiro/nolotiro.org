@@ -1,11 +1,7 @@
 <%= form_tag url_for(params.except(:q)), method: :get,
                                          class: "searchbox",
                                          enforce_utf8: false do %>
-  <dl>
-    <dd>
-    <%= text_field_tag :q, q %>
-    </dd>
+  <%= text_field_tag :q, q %>
 
-    <%= submit_tag t('nlt.search.button'), name: nil %>
-  </dl>
+  <%= submit_tag t('nlt.search.button'), name: nil %>
 <% end %>
