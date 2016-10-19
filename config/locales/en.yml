@@ -301,7 +301,7 @@ en:
       friend:
         add: 'Add %{username} to your friend''s list '
         delete: Delete %{username} from your friend's list
-    publish_ad: Posting ad
+    publish_ad: Post ad
     publish_ad_on: Post ad in %{woeid}
     published_ads: Posted ads
     published_ago_by_html: Posted %{time} by user %{user}
@@ -325,7 +325,6 @@ en:
     sign_up: Sign up
     slogan: don't dump it, give it to your neighbor
     suggestions: suggestions
-    to_publish_ad: Create ad
     to_publish_or_send_messages: To post ads or send messages please log in
     tos: Terms and conditions
     translate:

@@ -67,7 +67,7 @@ class AdEditionAndRemovalTest < AuthenticatedTest
   def assert_update_ad_from(path)
     mocking_yahoo_woeid_info(@current_user.woeid) { visit path }
     click_link 'Edita este anuncio'
-    click_button 'Publicar anuncio'
+    click_button 'Actualizar anuncio'
 
     assert_text 'Hemos actualizado el anuncio'
     assert_equal path, current_path

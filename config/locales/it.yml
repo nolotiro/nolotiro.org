@@ -307,7 +307,7 @@ it:
       friend:
         add: aggiungere %{username} alla tua lista di amici
         delete: rimuovere %{username} alla tua lista di amici
-    publish_ad: Pubblicando annuncio
+    publish_ad: Pubblicare annuncio
     publish_ad_on: Inserisci annunci a %{woeid}
     published_ads: annunci pubblicati
     published_ago_by_html: Pubblicato %{time} dall'utente %{user}
@@ -331,7 +331,6 @@ it:
     sign_up: Creare un utente
     slogan: Non buttare, io regalo (senza condizioni)
     suggestions: suggerimenti
-    to_publish_ad: Pubblicare anuncio
     to_publish_or_send_messages: Per pubblicizzare o inviare Accesso al tuo account
     tos: condizioni di utilizzo
     translate:
@@ -340,6 +339,7 @@ it:
       title: Aiutaci a tradurre nolotiro.org alla tua lingua
     translations: traduzioni
     update: salvare
+    update_ad: Aggiornare l'annuncio
     user_ads: annunci
     user_edit_profile: Modifica profilo utente
     user_profile: Il profilo dell'utente

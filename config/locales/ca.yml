@@ -301,7 +301,7 @@ ca:
       friend:
         add: afegir %{username} a la llista d'amics
         delete: afegir %{username} a la llista d'amics
-    publish_ad: Publicant anunci
+    publish_ad: Publicar anunci
     publish_ad_on: Publicar anunci en %{woeid}
     published_ads: Anuncis publicats
     published_ago_by_html: Publicat %{time} per l'usuari %{user}
@@ -325,7 +325,6 @@ ca:
     sign_up: Crear un usuari
     slogan: no ho tir, t'ho regal (sense condicions)
     suggestions: suggeriments
-    to_publish_ad: Publicar anunci
     to_publish_or_send_messages: Per publicar anuncis o enviar missatges accedeix al teu compte
     tos: termes d'ús
     translate:
@@ -334,6 +333,7 @@ ca:
       title: Ajuda'ns a traduir nolotiro.org a la teva llengua
     translations: traduccions
     update: Guardar
+    update_ad: Actualitzar anunci
     user_ads: anuncis
     user_edit_profile: Edita perfil d'usuari
     user_profile: Perfil d'usuari
