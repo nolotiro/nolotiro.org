@@ -165,7 +165,7 @@ pt:
         body: 'Corpo de anúncio:'
         body_max: 500 caracteres, no máximo
         comments_enabled: Como você gostaria de ser contactado?
-        image_permitted_formats: gif, jpg, png somente. No máximo 1Mb de tamanho.
+        image_permitted_formats: gif, jpg, png soamente. No máximo 1Mb de tamanho.
         private_messages_only: Apenas por messagem privada
         private_messages_or_comments: Por messagem privada o ou através de comentários públicos no anúncio
         select_an_image: Adicionar uma imagem para o anúncio
