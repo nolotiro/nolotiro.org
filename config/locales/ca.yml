@@ -192,6 +192,7 @@ ca:
     back: tornar a la pàgina d'inici
     blog: bloc
     booked: reservat
+    bump: Republicar
     bump_this_ad: Republica l'anunci
     cancel_my_account: Cancel·lar el meu compte
     change_city: canviar ciutat
@@ -228,6 +229,7 @@ ca:
     delivered: lliurat
     developers: desenvolupadors
     didn_t_receive_confirmation_instructions: No has rebut les instruccions de confirmació?
+    edit: Editar
     edit_this_ad: Edita aquest anunci
     faq:
       answer_1_html: El propòsit fonamental d'aquesta web és el de desfer-nos dels objectes que ja no fem servir i ens fan nosa a casa.

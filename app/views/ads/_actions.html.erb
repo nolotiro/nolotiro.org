@@ -4,7 +4,7 @@
       <li>
         <%= link_to ads_edit_path(ad.id) do %>
           <%= image_tag "edit_ad.png", alt: t('nlt.edit_this_ad') %>
-          &nbsp; <%= t('nlt.edit_this_ad') %>
+          &nbsp; <%= t('nlt.edit') %>
         <% end %>
       </li>
     <% end %>
@@ -13,7 +13,7 @@
       <li>
         <%= link_to ads_bump_path(ad.id), method: :post do %>
           <%= image_tag "bump_ad.png", alt: t('nlt.bump_this_ad') %>
-          &nbsp; <%= t('nlt.bump_this_ad') %>
+          &nbsp; <%= t('nlt.bump') %>
         <% end %>
       </li>
     <% end %>

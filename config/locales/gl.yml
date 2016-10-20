@@ -194,6 +194,7 @@ gl:
     back: regresar á páxina de inicio
     blog: blog
     booked: reservado
+    bump: Republicar
     bump_this_ad: Republicar este anuncio
     cancel_my_account: Cancelar a miña conta
     change_city: cambio cidades
@@ -233,6 +234,7 @@ gl:
     developers: desarrolladores
     didn_t_receive_confirmation_instructions: 
     edit_this_ad: Edita este anuncio
+    edit: Editar
     faq:
       answer_1_html: O principal obxectivo deste sitio é para se librar de elementos que non usa máis e impiden connosco na casa.
       answer_2_html: 
