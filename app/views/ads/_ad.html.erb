@@ -3,7 +3,7 @@
 
   <% if ad.image.exists? %>
     <div class="ad_list_image">
-      <%= link_to adslug_path(ad,ad.slug) do %>
+      <%= link_to adslug_path(ad, ad.slug) do %>
         <%= image_tag ad.image.url(:thumb), title: ad.filtered_title,
                                             alt: ad.filtered_title %>
       <% end %>
@@ -11,7 +11,7 @@
   <% end %>
 
   <h4>
-    <%= link_to adslug_path(ad,ad.slug) do %>
+    <%= link_to adslug_path(ad, ad.slug) do %>
       <%= ad.filtered_title %>
     <% end %>
   </h4>
