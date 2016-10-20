@@ -30,4 +30,13 @@ class Search < ActionDispatch::IntegrationTest
     assert_selector '.ad_excerpt_list', count: 0
     assert_text 'No hay anuncios que coincidan con la búsqueda espejo'
   end
+
+  it 'shows a no results message when nothing found in current section' do
+    click_link 'peticiones'
+    fill_in 'q', with: 'muebles'
+    click_button 'buscar'
+
+    assert_selector '.ad_excerpt_list', count: 0
+    assert_text 'No hay anuncios que coincidan con la búsqueda muebles'
+  end
 end
