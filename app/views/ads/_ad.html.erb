@@ -1,25 +1,17 @@
-<div class="ad_excerpt_list">
-  <%= render "ads/actions", ad: ad %>
-
+<%= link_to adslug_path(ad, ad.slug), class: 'ad_content' do %>
   <% if ad.image.exists? %>
     <div class="ad_list_image">
-      <%= link_to adslug_path(ad, ad.slug) do %>
-        <%= image_tag ad.image.url(:thumb), title: ad.filtered_title,
-                                            alt: ad.filtered_title %>
-      <% end %>
+      <%= image_tag ad.image.url(:thumb), title: ad.filtered_title,
+                                          alt: ad.filtered_title %>
     </div>
   <% end %>
 
   <h4>
-    <%= link_to adslug_path(ad, ad.slug) do %>
-      <%= ad.filtered_title %>
-    <% end %>
+    <%= ad.filtered_title %>
   </h4>
   <div class="ad_excerpt_woeid">
-    <%= link_to ads_woeid_path(ad.woeid_code, type: ad.type) do %>
-      <%= ad.woeid_name %> &gt;
-      <%= ad.type_string %>
-    <% end %>
+    <%= ad.woeid_name %> &gt;
+    <%= ad.type_string %>
   </div>
   <% if ad.give? %>
     <span class="ad_status <%= ad.status %>">
@@ -35,4 +27,4 @@
 
   <%= render "ads/stats", comments_count: comment_counts[ad.id] || 0,
                           readed_count: ad.readed_count %>
-</div>
+<% end %>

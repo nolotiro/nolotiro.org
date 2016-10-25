@@ -1,5 +1,9 @@
 <% ads.each_with_index do |ad, i| %>
-  <%= render "ads/ad", ad: ad %>
+  <div class="ad_excerpt_list">
+    <%= render "ads/actions", ad: ad %>
+
+    <%= render "ads/ad", ad: ad %>
+  </div>
 
   <% if [5, 10, 15].include?(i) %>
     <div class="ad_excerpt_list">

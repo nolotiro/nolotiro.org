@@ -243,11 +243,6 @@ form.searchbox
 
 /* styles for adds
 
-.ad_excerpt_woeid
-  font-size: 1em
-  font-weight: bold
-  margin-bottom: 3px
-
 =word-break
   word-break: break-all
   word-break: break-word
@@ -529,14 +524,28 @@ dl, dd
   margin: 0 !important
 
 .ad_excerpt_list
-  padding-top: 14px
-  padding-bottom: 10px
+  color: $text
+  padding: 10px 0
   width: 100%
   border-bottom: 1px solid $gray-separator
 
+.ad_content
+  clear: left
+  display: block
+
+  > div
+    color: $text
+    font-weight: normal
+
   h4
+    color: $link
     font-size: 1.4em
     font-weight: bold
+
+  > .ad_excerpt_woeid
+    font-size: 1em
+    font-weight: bold
+    margin-bottom: 3px
 
 /**
  * Layout.
