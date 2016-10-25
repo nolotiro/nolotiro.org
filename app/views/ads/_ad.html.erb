@@ -9,10 +9,12 @@
   <h4>
     <%= ad.filtered_title %>
   </h4>
+
   <div class="ad_excerpt_woeid">
     <%= ad.woeid_name %> &gt;
     <%= ad.type_string %>
   </div>
+
   <% if ad.give? %>
     <span class="ad_status <%= ad.status %>">
       <%= ad.status_string %>
