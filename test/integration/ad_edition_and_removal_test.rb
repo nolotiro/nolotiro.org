@@ -19,24 +19,18 @@ class AdEditionAndRemovalTest < AuthenticatedTest
     )
   end
 
-  it 'properly updates ads from index and redirects back' do
-    initial_path = ads_woeid_path(@current_user.woeid, type: 'give')
+  it 'does not update ads from index' do
+    mocking_yahoo_woeid_info(@current_user.woeid) do
+      visit ads_woeid_path(@current_user.woeid, type: 'give')
+    end
 
-    assert_update_ad_from(initial_path)
-    assert_equal initial_path, current_path
+    assert_no_selector 'a', text: 'Edita este anuncio'
   end
 
   it 'properly updates ads from show page and redirects back' do
     initial_path = adslug_path(@ad, slug: @ad.slug)
 
     assert_update_ad_from(initial_path)
-    assert_equal initial_path, current_path
-  end
-
-  it 'properly deletes ads from index and redirects back' do
-    initial_path = ads_woeid_path(@current_user.woeid, type: 'give')
-
-    assert_destroy_ad_from(initial_path)
     assert_equal initial_path, current_path
   end
 
