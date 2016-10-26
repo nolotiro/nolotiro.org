@@ -2,8 +2,10 @@
   <ul class="ad_actions">
     <% if policy(ad).update? %>
       <li>
-        <%= link_to ads_edit_path(ad) do %>
-          <%= image_tag "edit_ad.png", alt: t('nlt.edit_this_ad') %>
+        <% full_title = t('nlt.edit_this_ad') %>
+
+        <%= link_to ads_edit_path(ad), title: full_title do %>
+          <%= image_tag "edit_ad.png", alt: full_title %>
           <%= t('nlt.edit') %>
         <% end %>
       </li>
@@ -11,8 +13,10 @@
 
     <% if policy(ad).bump? %>
       <li>
-        <%= link_to ads_bump_path(ad), method: :post do %>
-          <%= image_tag "bump_ad.png", alt: t('nlt.bump_this_ad') %>
+        <% full_title = t('nlt.bump_this_ad') %>
+
+        <%= link_to ads_bump_path(ad), method: :post, title: full_title do %>
+          <%= image_tag "bump_ad.png", alt: full_title %>
           <%= t('nlt.bump') %>
         <% end %>
       </li>
