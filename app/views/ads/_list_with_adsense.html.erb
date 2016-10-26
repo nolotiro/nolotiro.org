@@ -1,16 +1,18 @@
-<% ads.each_with_index do |ad, i| %>
-  <div class="ad_excerpt_list">
-    <% if ad_tab? %>
-      <%= render "ads/actions", ad: ad %>
+<ul>
+  <% ads.each_with_index do |ad, i| %>
+    <li class="ad_excerpt_list">
+      <% if ad_tab? %>
+        <%= render "ads/actions", ad: ad %>
+      <% end %>
+
+      <%= render "ads/ad", ad: ad %>
+    </li>
+
+    <% if [5, 10, 15].include?(i) %>
+      <li class="ad_excerpt_list">
+        <%= render "partials/google_adsense", class_name: "desktop google_adsense_336_280", ad_slot: "7225596067" %>
+        <%= render "partials/google_adsense", class_name: "mobile google_adsense_320_100", ad_slot: "1977811266" %>
+      </li>
     <% end %>
-
-    <%= render "ads/ad", ad: ad %>
-  </div>
-
-  <% if [5, 10, 15].include?(i) %>
-    <div class="ad_excerpt_list">
-      <%= render "partials/google_adsense", class_name: "desktop google_adsense_336_280", ad_slot: "7225596067" %>
-      <%= render "partials/google_adsense", class_name: "mobile google_adsense_320_100", ad_slot: "1977811266" %>
-    </div>
   <% end %>
-<% end %>
+</ul>
