@@ -6,6 +6,7 @@ require 'support/web_mocking'
 
 class AdEditionAndRemovalTest < AuthenticatedTest
   include WebMocking
+  include Warden::Test::Helpers
 
   before do
     @ad = create(:ad, user: @current_user, woeid_code: @current_user.woeid)
@@ -46,6 +47,16 @@ class AdEditionAndRemovalTest < AuthenticatedTest
 
     assert_destroy_ad_from(initial_path)
     assert_equal listads_user_path(@current_user), current_path
+  end
+
+  it 'properly deletes ads as an admin and redirects to user list' do
+    initial_path = ad_path(@ad)
+
+    logout
+    login_as create(:admin)
+
+    assert_destroy_ad_from(initial_path)
+    assert_equal listads_user_path(@ad.user), current_path
   end
 
   private
