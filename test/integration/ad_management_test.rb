@@ -35,7 +35,7 @@ class AdManagementTest < AuthenticatedTest
       click_link 'Republica este anuncio'
     end
 
-    assert_text 'Hemos republicado el anuncio'
+    assert_text 'Anuncio republicado'
   end
 
   it 'saves spam ads but does not list them' do

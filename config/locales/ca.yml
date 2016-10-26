@@ -169,9 +169,9 @@ ca:
       title: Sobre nolotiro.org
     access_here: accedeix aquí
     ads:
-      bumped: Hem republicat l'anunci
-      created: Hem creat l'anunci
-      destroyed: Hemos eliminat l'annunci
+      bumped: Anunci republicat
+      created: Anunci creat
+      destroyed: Anunci eliminat
       form:
         body: 'Cos de l''anunci:'
         body_max: Màxim 500 caràcters
@@ -184,7 +184,7 @@ ca:
         title: 'Título de tu anuncio:'
         title_tip: Descriu breument el que regales o busques (max. 100 caràcters)
         type_ad: Quin tipus d'anunci vols publicar?
-      updated: Hem actualitzat l'anunci
+      updated: Anunci actualitzat
     all: tots
     all_ads: tots els anuncis
     are_you_interested: T'interessa?

@@ -170,9 +170,9 @@ en:
       title: About nolotiro.org
     access_here: access here
     ads:
-      bumped: We have bumped the ad
-      created: We have created the ad
-      destroyed: We have destroyed the ad
+      bumped: Ad bumped
+      created: Ad created
+      destroyed: Ad destroyed
       form:
         body: 'Body of the ad:'
         body_max: Maximum 500 characters
@@ -185,7 +185,7 @@ en:
         title: 'Title of your ad:'
         title_tip: Describe briefly what you're giving away or looking for (max. 100 chars)
         type_ad: Which type of ad would you like to publish?
-      updated: We have updated your ad
+      updated: Ad updated
     all: all
     all_ads: all ads
     are_you_interested: Are you interested?

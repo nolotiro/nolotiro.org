@@ -170,9 +170,9 @@ fr:
       title: A propos de nolotiro.org
     access_here: accès ici
     ads:
-      bumped: Nous avons publié l'avis
-      created: Nous avons créé l'annonce
-      destroyed: Nous avons supprimé l'annonce
+      bumped: Annonce publié
+      created: Annonce créé
+      destroyed: Annonce supprimé
       form:
         body: 'Corps de l''annonce:'
         body_max: 500 caractères maximum
@@ -185,7 +185,7 @@ fr:
         title: 'Titre de votre annonce:'
         title_tip: 
         type_ad: Type d'annonce
-      updated: Nous avons mis à jour l'annonce
+      updated: Annoce mis à jour
     all: tous
     all_ads: toutes les annonces
     are_you_interested: Ça t'intéresse?

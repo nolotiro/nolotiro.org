@@ -170,9 +170,9 @@ es:
       title: Acerca de nolotiro.org
     access_here: accede aquí
     ads:
-      bumped: Hemos republicado el anuncio
-      created: Hemos creado el anuncio
-      destroyed: Hemos borrado el anuncio
+      bumped: Anuncio republicado
+      created: Anuncio creado
+      destroyed: Anuncio borrado
       form:
         body: 'Cuerpo del anuncio:'
         body_max: Máximo 500 caracteres
@@ -185,7 +185,7 @@ es:
         title: 'Título de tu anuncio:'
         title_tip: Describe brevemente lo que regalas o buscas (max. 100 caracteres)
         type_ad: "¿Qué tipo de anuncio quieres publicar?"
-      updated: Hemos actualizado el anuncio
+      updated: Anuncio actualizado
     all: todos
     all_ads: todos los anuncios
     are_you_interested: "¿Te interesa?"

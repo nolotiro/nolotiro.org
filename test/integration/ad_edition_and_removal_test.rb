@@ -66,7 +66,7 @@ class AdEditionAndRemovalTest < AuthenticatedTest
     click_link 'Edita este anuncio'
     assert_difference('Ad.count', -1) { click_button 'Borrar anuncio' }
 
-    assert_text 'Hemos borrado el anuncio'
+    assert_text 'Anuncio borrado'
   end
 
   def assert_update_ad_from(path)
@@ -74,7 +74,7 @@ class AdEditionAndRemovalTest < AuthenticatedTest
     click_link 'Edita este anuncio'
     click_button 'Actualizar anuncio'
 
-    assert_text 'Hemos actualizado el anuncio'
+    assert_text 'Anuncio actualizado'
     assert_equal path, current_path
   end
 end

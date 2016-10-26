@@ -170,9 +170,9 @@ it:
       title: Su nolotiro.org
     access_here: accedi qui
     ads:
-      bumped: Abbiamo ripubblicato annuncio
-      created: 'Abbiamo creato l''annuncio '
-      destroyed: Abbiamo cancellato l'annuncio
+      bumped: Annuncio ripubblicato
+      created: Annuncio creato
+      destroyed: Annuncio cancellato
       form:
         body: Corpo del annuncio
         body_max: Massimo 500 caratteri
@@ -185,7 +185,7 @@ it:
         title: 'Titolo del tuo annuncio: '
         title_tip: Descrivi brevemente ciò che dai o cerchi (max. 100 caratteri)
         type_ad: Che tipo di annuncio vuoi pubblicare?
-      updated: Abbiamo aggiornato il tuo annuncio
+      updated: Annuncio aggiornato
     all: tutti
     all_ads: tutti gli annunci
     are_you_interested: Sei interessato?
