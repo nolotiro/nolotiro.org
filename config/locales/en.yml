@@ -185,6 +185,7 @@ en:
         title: 'Title of your ad:'
         title_tip: Describe briefly what you're giving away or looking for (max. 100 chars)
         type_ad: Which type of ad would you like to publish?
+      marked_as: Ad %{status}
       updated: Ad updated
     all: all
     all_ads: all ads
@@ -275,6 +276,8 @@ en:
     logout: logout
     mail:
       automatic: This is an automatic message, please do not answer to this email address
+    mark_as: Mark %{status}
+    mark_this_ad: Mark this ad as %{status}
     member_since: Member since
     messages: messages
     messages_title: Messages

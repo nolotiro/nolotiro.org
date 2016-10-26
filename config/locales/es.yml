@@ -185,6 +185,7 @@ es:
         title: 'Título de tu anuncio:'
         title_tip: Describe brevemente lo que regalas o buscas (max. 100 caracteres)
         type_ad: "¿Qué tipo de anuncio quieres publicar?"
+      marked_as: Anuncio %{status}
       updated: Anuncio actualizado
     all: todos
     all_ads: todos los anuncios
@@ -275,6 +276,8 @@ es:
     logout: salir
     mail:
       automatic: Este es un mensaje automático. Por favor, no respondas a esta dirección de email.
+    mark_as: Marcar %{status}
+    mark_this_ad: Marca este anuncio como %{status}
     member_since: Miembro desde
     messages: mensajes
     messages_title: Mensajes

@@ -185,6 +185,7 @@ fr:
         title: 'Titre de votre annonce:'
         title_tip: 
         type_ad: Type d'annonce
+      marked_as: Annonce %{status}
       updated: Annoce mis à jour
     all: tous
     all_ads: toutes les annonces
@@ -275,6 +276,8 @@ fr:
     logout: déconnecter
     mail:
       automatic: Ceci est un message automatique. S'il vous plaît ne pas répondre à cette adresse e-mail.
+    mark_as: Marquer %{status}
+    mark_this_ad: Marquer cette annonce comme %{status}
     member_since: Membre depuis
     messages: messages
     messages_title: Messages

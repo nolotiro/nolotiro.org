@@ -184,6 +184,7 @@ ca:
         title: 'Título de tu anuncio:'
         title_tip: Descriu breument el que regales o busques (max. 100 caràcters)
         type_ad: Quin tipus d'anunci vols publicar?
+      marked_as: Anunci %{status}
       updated: Anunci actualitzat
     all: tots
     all_ads: tots els anuncis
@@ -274,6 +275,8 @@ ca:
     logout: sortir
     mail:
       automatic: Aquest és un missatge automàtic. Si us plau, no responguis a aquesta adreça de correu electrònic.
+    mark_as: Marcar %{status}
+    mark_this_ad: Marca aquest anunci com %{status}
     member_since: membre des de
     messages: missatges
     messages_title: Missatges

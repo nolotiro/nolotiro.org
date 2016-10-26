@@ -186,6 +186,7 @@ gl:
         title: 'Título do anuncio:'
         title_tip: Describe resumidamente o que doas ou buscas (máx. 100 caracteres)
         type_ad: Que tipo de anuncio quere publicar?
+      marked_as: Anuncio marcado como %{status}
       updated: Anuncio actualizado
     all: todos
     all_ads: todos os anuncios
@@ -280,6 +281,8 @@ gl:
     logout: 
     mail:
       automatic: 
+    mark_as: Marcar %{status}
+    mark_this_ad: Marca este anuncio como %{status}
     member_since: 
     messages: 
     messages_title: 

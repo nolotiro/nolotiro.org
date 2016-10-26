@@ -43,6 +43,12 @@ class AdsController < ApplicationController
     session[:return_to] = referer_path
   end
 
+  def change_status
+    @ad.update!(status: params[:status].to_sym)
+
+    redirect_to :back, notice: t('nlt.ads.marked_as', status: @ad.status_string)
+  end
+
   def bump
     @ad.bump
 

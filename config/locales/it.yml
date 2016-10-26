@@ -185,6 +185,7 @@ it:
         title: 'Titolo del tuo annuncio: '
         title_tip: Descrivi brevemente ciò che dai o cerchi (max. 100 caratteri)
         type_ad: Che tipo di annuncio vuoi pubblicare?
+      marked_as: Annuncio %{status}
       updated: Annuncio aggiornato
     all: tutti
     all_ads: tutti gli annunci
@@ -277,6 +278,8 @@ it:
     logout: uscire
     mail:
       automatic: Questo è un messaggio automatico. Si prega di non rispondere a questo indirizzo email.
+    mark_as: Segnare %{status}
+    mark_this_ad: Segna questo annuncio come %{status}
     member_since: membro dal
     messages: messaggi
     messages_title: Messaggi

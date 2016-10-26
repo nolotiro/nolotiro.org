@@ -185,6 +185,7 @@ pt:
         title: 'Titulo do anúncio:'
         title_tip: Descreva resumidamente o que você doar ou procurar (100 caracteres no máximo)
         type_ad: Que tipo de anúncio gostaria de postar?
+      marked_as: Anúncio %{status}
       updated: Anúncio atualizado
     all: todos
     all_ads: todos os anúncios
@@ -275,6 +276,8 @@ pt:
     logout: sair
     mail:
       automatic: Este é uma mensagem automática. Por favor, não responda a este email.
+    mark_as: Marcar %{status}
+    mark_this_ad: Marca este anúncio como %{status}
     member_since: Membro desde
     messages: mensagens
     messages_title: Mensagens

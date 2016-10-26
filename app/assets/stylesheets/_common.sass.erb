@@ -191,21 +191,58 @@ form.searchbox
   width: auto
   display: block
 
+@media only screen and (min-width: $container-sm + 1)
+  $action-height: 48px
+
+  .ad_actions li
+    height: $action-height
+    line-height: $action-height
+
+    &:first-child
+      a
+        padding-left: 0
+
+    &:last-child
+      a
+        border-right: none
+        padding-right: 0
+
+    a
+      border-right: 1px solid $gray-separator
+      font-size: 12px
+      line-height: $action-height / 2
+      margin: $action-height / 4 0
+      padding: 0 10px
+
+@media only screen and (max-width: $container-sm + 1)
+  $action-height: 72px
+
+  .ad_actions
+    height: $action-height
+    padding: $action-height / 6 0
+
+    li
+      height: $action-height / 3
+      line-height: $action-height / 3
+      width: 50%
+
+    a
+      font-size: 9px
+
 .ad_actions
-  padding-bottom: 10px
+  display: block
   list-style-type: none
-  overflow: hidden
+  width: 100%
 
   li
     float: left
 
-    &:first-child
-      padding-right: 36px
-
-    &:last-child
-      padding-right: 0
+    a
+      display: block
+      width: 100%
 
 .ad_status
+  clear: left
   display: inline-block
   color: #fff
   padding: 3px
