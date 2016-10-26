@@ -19,7 +19,7 @@ class RankingsTest < ActiveSupport::TestCase
 
   test 'top overall ignores wanted ads from counts and results' do
     create(:ad, :want, user: @user3)
-    @user2.ads.last.update(type: :want)
+    @user2.ads.last.move!
 
     assert_equal [[1, 'user1', 3], [2, 'user2', 1]], User.top_overall
   end
