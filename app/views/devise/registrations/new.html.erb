@@ -1,7 +1,7 @@
 <% content_for(:meta_title, t('nlt.new_user')) %>
 
 <% unless omniauth_registration? %>
-  <div id="default_header_section">
+  <div class="default_header_section">
     <h1><%= I18n.t('nlt.please_fill_to_become_member') %></h1><br><br>
     (<%= t 'nlt.if_youre_already_an_user' %>&nbsp;
     <%= link_to t('nlt.access_here'), new_user_session_path, title: "user login" %>)
