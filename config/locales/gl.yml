@@ -182,7 +182,6 @@ gl:
         private_messages_only: Unicamente por mensaxe privada
         private_messages_or_comments: Por mensaxe privada o mediante comentarios públicos no anuncio
         select_an_image: Seleccione unha imaxe para o súo regalo
-        status: Estado
         title: 'Título do anuncio:'
         title_tip: Describe resumidamente o que doas ou buscas (máx. 100 caracteres)
         type_ad: Que tipo de anuncio quere publicar?

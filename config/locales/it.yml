@@ -181,7 +181,6 @@ it:
         private_messages_only: Soltanto por messaggi privati
         private_messages_or_comments: Por messaggi privati oppure por commenti nell'annucio
         select_an_image: Seleziona una immagine per il tuo annuncio
-        status: Stato
         title: 'Titolo del tuo annuncio: '
         title_tip: Descrivi brevemente ciò che dai o cerchi (max. 100 caratteri)
         type_ad: Che tipo di annuncio vuoi pubblicare?

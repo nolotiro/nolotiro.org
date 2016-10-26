@@ -180,7 +180,6 @@ ca:
         private_messages_only: Només per missatge privat
         private_messages_or_comments: Per missatge privat o a través de comentaris públics a l'anunci
         select_an_image: Selecciona una imatge per al teu anunci
-        status: Estat
         title: 'Título de tu anuncio:'
         title_tip: Descriu breument el que regales o busques (max. 100 caràcters)
         type_ad: Quin tipus d'anunci vols publicar?

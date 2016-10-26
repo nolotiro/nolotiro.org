@@ -181,7 +181,6 @@ en:
         private_messages_only: Through private messages only
         private_messages_or_comments: Through both private messages or public comments in the ad
         select_an_image: Choose an image for you ad
-        status: Status
         title: 'Title of your ad:'
         title_tip: Describe briefly what you're giving away or looking for (max. 100 chars)
         type_ad: Which type of ad would you like to publish?

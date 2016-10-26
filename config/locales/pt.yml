@@ -181,7 +181,6 @@ pt:
         private_messages_only: Apenas por messagem privada
         private_messages_or_comments: Por messagem privada o ou através de comentários públicos no anúncio
         select_an_image: Adicionar uma imagem para o anúncio
-        status: Estado
         title: 'Titulo do anúncio:'
         title_tip: Descreva resumidamente o que você doar ou procurar (100 caracteres no máximo)
         type_ad: Que tipo de anúncio gostaria de postar?

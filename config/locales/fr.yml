@@ -181,7 +181,6 @@ fr:
         private_messages_only: 
         private_messages_or_comments: 
         select_an_image: Sélectionnez une image pour votre annonce (en option).
-        status: Etat
         title: 'Titre de votre annonce:'
         title_tip: 
         type_ad: Type d'annonce

@@ -181,7 +181,6 @@ es:
         private_messages_only: Sólo por mensaje privado
         private_messages_or_comments: Por mensaje privado o mediante comentarios públicos en el anuncio
         select_an_image: Selecciona una imagen para tu anuncio
-        status: Estado
         title: 'Título de tu anuncio:'
         title_tip: Describe brevemente lo que regalas o buscas (max. 100 caracteres)
         type_ad: "¿Qué tipo de anuncio quieres publicar?"
