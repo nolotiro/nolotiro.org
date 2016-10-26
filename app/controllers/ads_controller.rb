@@ -104,7 +104,15 @@ class AdsController < ApplicationController
     @ad
   end
 
+  def ad_create_whitelist
+    ad_update_whitelist + [:type]
+  end
+
+  def ad_update_whitelist
+    [:title, :body, :comments_enabled, :image]
+  end
+
   def ad_params
-    params.require(:ad).permit(:title, :body, :type, :comments_enabled, :image)
+    params.require(:ad).permit(send(:"ad_#{params[:action]}_whitelist"))
   end
 end

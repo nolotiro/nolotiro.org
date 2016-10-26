@@ -19,21 +19,23 @@
       </p>
     </div>
 
-    <div class='form-group'>
-      <%= f.label :type, t('nlt.ads.form.type_ad'), class: 'required' %>
+    <% if ad.new_record? %>
+      <div class='form-group'>
+        <%= f.label :type, t('nlt.ads.form.type_ad'), class: 'required' %>
 
-      <div class='radio'>
-        <%= f.label :type, value: 'give' do %>
-          <%= f.radio_button :type, 'give' %><%= t('nlt.a_gift') %>
-        <% end %>
-      </div>
+        <div class='radio'>
+          <%= f.label :type, value: 'give' do %>
+            <%= f.radio_button :type, 'give' %><%= t('nlt.a_gift') %>
+          <% end %>
+        </div>
 
-      <div class='radio'>
-        <%= f.label :type, value: 'want' do %>
-          <%= f.radio_button :type, 'want' %><%= t('nlt.a_request') %>
-        <% end %>
+        <div class='radio'>
+          <%= f.label :type, value: 'want' do %>
+            <%= f.radio_button :type, 'want' %><%= t('nlt.a_request') %>
+          <% end %>
+        </div>
       </div>
-    </div>
+    <% end %>
 
     <div class='form-group'>
       <%= f.label :title, t('nlt.ads.form.title'), class: 'required' %>
