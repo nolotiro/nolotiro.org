@@ -1,34 +1,30 @@
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <fieldset>
-    <div class="col-md-6 col-sm-6">
-      <dt>
-        <%= f.label :email, t('nlt.your_email'), required: true %>
-      </dt>
+  <div class="col-md-6 col-sm-6">
+    <div class='form-group'>
+      <%= f.label :email, t('nlt.your_email'), required: true %>
+      <%= f.email_field :email, class: 'form-control' %>
+    </div>
 
-      <dd>
-        <%= f.email_field :email, autofocus: true %>
-      </dd>
+    <div class='form-group'>
+      <%= f.label :password, t('nlt.password'), required: true %>
+      <%= f.password_field :password, class: 'form-control' %>
+    </div>
 
-      <dt>
-        <%= f.label :password, t('nlt.password'), required: true %>
-      </dt>
+    <div class='form-group'>
+      <%= f.check_box :remember_me %>
+      <%= f.label :remember_me, t('nlt.remember_me') %>
+    </div>
 
-      <dd>
-        <%= f.password_field :password %>
-      </dd>
+    <div class='form-group'>
+      <%= f.submit t('nlt.sign_in') %>
+    </div>
 
-      <dd id="rememberme-element">
-        <%= f.check_box :remember_me %>
-        <%= f.label :remember_me, t('nlt.remember_me') %>
-      </dd>
-
-      <div><%= f.submit t('nlt.sign_in') %></div>
-
+    <div class='form-group'>
       <%= render "devise/shared/links" %>
     </div>
+  </div>
 
-    <div class="col-md-6 col-sm-6">
-      <%= render "devise/shared/omniauth_links" %>
-    </div>
-  </fieldset>
+  <div class="col-md-6 col-sm-6">
+    <%= render "devise/shared/omniauth_links" %>
+  </div>
 <% end %>

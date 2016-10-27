@@ -1,21 +1,19 @@
 <%= form_for [comment.ad, comment] do |f| %>
   <%= errors_for(comment) %>
 
-  <dl>
-    <dt>
-      <%= f.label :body, t('nlt.comments.label') %>
-    </dt>
+  <div class="form-group">
+    <%= f.label :body, t('nlt.comments.label') %>
+    <%= f.text_area :body,
+                    size: '80x12',
+                    maxlength: 1000,
+                    class: 'form-control' %>
 
-    <dd>
-      <%= f.text_area :body, size: '80x24', maxlength: 1000 %>
+    <p class='help-block'>
+      <%= t 'nlt.comments.body_max' %>
+    </p>
+  </div>
 
-      <p class='help-block'>
-        <%= t 'nlt.comments.body_max' %>
-      </p>
-    </dd>
-    <dt>&nbsp;</dt>
-    <dd>
-      <%= f.submit t('nlt.comments.submit') %>
-    </dd>
-  </dl>
+  <div class="form-group">
+    <%= f.submit t('nlt.comments.submit') %>
+  </div>
 <% end %>

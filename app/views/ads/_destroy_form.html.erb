@@ -1,10 +1,8 @@
 <%= form_for(ad, method: :delete) do |f| %>
-  <fieldset>
-    <p><%= t('nlt.delete_if_delivered') %></p>
-    <p><%= t('nlt.delete_if_not_delivered') %></p>
+  <p><%= t('nlt.delete_if_delivered') %></p>
+  <p><%= t('nlt.delete_if_not_delivered') %></p>
 
-    <div class='form-group'>
-      <%= f.button t('nlt.delete_ad'), class: 'btn btn-danger' %>
-    </div>
-  </fieldset>
+  <div class='form-group'>
+    <%= f.button t('nlt.delete_ad'), class: 'btn btn-danger' %>
+  </div>
 <% end %>
