@@ -14,7 +14,7 @@
     <% if @conversations.any? %>
       <%= form_tag trash_conversations_path, method: :delete do %>
         <div class="table-responsive">
-          <table class="table table-condensed" id="mail-list">
+          <table class="table table-condensed mail-list">
             <tbody>
               <% @conversations.each do |c| %>
                 <%= render "conversations/conversation", c: c %>
