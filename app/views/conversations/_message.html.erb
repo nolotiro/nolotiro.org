@@ -1,6 +1,6 @@
 <div class="message-excerpt">
   <div class="message-container">
-    <% if message.sender == message.conversation.originator %>
+    <% if message.sender == current_user %>
       <div class="triangle-me">
       </div>
       <div class="bubble bg-bubble-me">
