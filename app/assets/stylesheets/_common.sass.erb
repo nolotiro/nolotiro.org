@@ -319,42 +319,13 @@ form.searchbox
 
   margin-bottom: 20px
 
-.message-from
-  text-align: center
-  width: 90px
-  font-size: 0.8em
-  display: block
-
-  img
-    margin: 0 15px
-
-.message-from-left
-  @extend .message-from
-
-  float: left
-
-.message-from-right
-  @extend .message-from
-
-  float: right
-
-%message-container
+.message-container
   font-size: 0.9em
   position: relative
 
   p
     &:last-child
       margin-bottom: 0
-
-.message-container-left
-  @extend %message-container
-
-  margin-right: 90px
-
-.message-container-right
-  @extend %message-container
-
-  margin-left: 90px
 
 .triangle-me
   background: image-url("pico-green-left.png") no-repeat 0 0
@@ -514,28 +485,12 @@ form.searchbox
  * Messages
 
 .mail-list
-  list-style: none
-  padding: 5px
-  .sender
-    width: 150px
-  .mail
-    background-color: #fcfcfc
-    border-top: 1px solid #efefef
-    border-left: 1px solid #efefef
-    border-right: 1px solid #efefef
-    padding: 5px
-    span
-      vertical-align: middle
-    &:last-child
-      border-bottom: 1px solid #efefef
+  tr:last-child
+    border-bottom: 1px solid $gray-separator
+
   .unread
     td
       font-weight: bold
-    a
-      font-weight: bold
-  a
-    text-decoration: none
-    font-weight: normal
 
 /**
  * Listings
@@ -835,9 +790,6 @@ ul#tabnav
 #social-butttons
   float: left
   width: 30%
-
-#messages-thread
-  min-height: 300px
 
 .btn.login-with-facebook
   background-color: #3b5998

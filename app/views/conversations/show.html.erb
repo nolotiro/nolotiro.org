@@ -20,7 +20,7 @@
               method: :delete %>
 </div>
 
-<div class="col-md-7 col-sm-7" id="messages-thread">
+<div class="col-md-7 col-sm-7">
   <% @conversation.messages_for(current_user).includes(:sender).each do |mes| %>
     <%= render "message", message: mes %>
   <% end %>

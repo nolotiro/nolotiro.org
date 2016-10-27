@@ -13,15 +13,14 @@
 
     <% if @conversations.any? %>
       <%= form_tag trash_conversations_path, method: :delete do %>
-        <div class="table-responsive">
-          <table class="table table-condensed mail-list">
-            <tbody>
-              <% @conversations.each do |c| %>
-                <%= render "conversations/conversation", c: c %>
-              <% end %>
-            </tbody>
-          </table>
-        </div>
+        <table class="table table-condensed mail-list">
+          <tbody>
+            <% @conversations.each do |c| %>
+              <%= render "conversations/conversation", c: c %>
+            <% end %>
+          </tbody>
+        </table>
+
         <%= submit_tag t('conversations.buttons.trash_selected'),
                        id: 'delete_multiple_button' %>
       <% end %>
