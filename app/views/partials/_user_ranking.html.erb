@@ -3,7 +3,7 @@
   <% scope.each do |id, username, n_ads| %>
     <li>
       <%= link_to listads_user_path id do %>
-        <%= username %> (<%= n_ads %>)
+        <%= "#{username} (#{n_ads})" %>
       <% end %>
     </li>
   <% end %>
