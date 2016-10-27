@@ -1,5 +1,4 @@
 <ul class="nav nlt-tabs">
-  <!-- TODO: can an user edit or view messages from another user? -->
   <% if user_signed_in? and user == current_user %>
     <li role="presentation" <%= 'class=active' if messages_tab? %>>
       <%= link_to t('nlt.messages'), conversations_path %>
