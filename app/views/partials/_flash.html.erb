@@ -1,7 +1,7 @@
 <% flash.each do |name, msg| %>
   <% if msg.is_a?(String) %>
-    <div class="col-md-12 <%= name %>">
-      <%= msg %>
+    <div class='flash-msg <%= name.to_s %>'>
+      <%= msg.to_s %>
     </div>
   <% end %>
 <% end %>
