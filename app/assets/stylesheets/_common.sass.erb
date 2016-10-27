@@ -435,18 +435,6 @@ form.searchbox
   display: inline-block
   margin-bottom: 14px
 
-.give-want-tabs
-  @extend .nav-tabs
-
-  border-bottom: none
-
-  li
-    margin-right: 2px
-
-    a
-      border-color: $gray-separator $gray-separator transparent
-      color: $navbar-default-link-active-color
-
 /**
  * Flash & error messages
 
@@ -747,27 +735,17 @@ dl, dd
 /**
  * Tabs
 
-ul#tabnav
-  text-align: left
-  margin: 1em 0 0 0
-  font-size: 14px
-  font-weight: bold
-  border-bottom: 1px solid $gray-separator
-  list-style-type: none
-  padding: 3px 15px
+.nlt-tabs
+  @extend .nav-tabs
+
+  border-bottom: none
 
   li
-    display: inline
+    margin-right: 2px
 
     a
-      padding: 3px 10px
-      border: 1px solid $gray-separator
-      margin-right: 4px
-      text-decoration: none
-      border-bottom: none
-
-  a:hover, .active
-    color: #000 !important
+      border-color: $gray-separator $gray-separator transparent
+      color: $navbar-default-link-active-color
 
 /**
  * Misc
