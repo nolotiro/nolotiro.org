@@ -1,13 +1,17 @@
 /**
  * Main Grid.
 
-@media only screen and (max-width: $container-sm)
-  .container
-    padding: 0
+.container
+  padding: 0
 
-  #main
-    width: 100%
-    padding: 0 15px
+#main
+  width: 100%
+
+  @media only screen and (max-width: $container-sm)
+    padding: 0 2%
+
+  @media only screen and (min-width: $container-sm + 1)
+    padding: 0
 
 .announcement
   width: 100%
