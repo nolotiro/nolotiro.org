@@ -30,7 +30,3 @@
     <%= f.submit t('nlt.update') %>
   </div>
 <% end %>
-
-<h3><%= t('nlt.cancel_my_account') %></h3>
-
-<p><%= t('nlt.want_to_leave') %> <%= link_to t('nlt.cancel_my_account'), registration_path(resource_name), data: { confirm: t('nlt.delete_sure') }, method: :delete %>.</p>
