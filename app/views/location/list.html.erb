@@ -4,7 +4,7 @@
   <h1><%= t('nlt.change_town.choose') %></h1>
 </div>
 
-<div class="col-md-8 col-sm-8">
+<div class="col-md-6 col-sm-6">
   <div class="row">
     <% if @locations.nil? %>
       <p class="error"><%= t('nlt.change_town.choose_html', location: params[:location]) %></p>
@@ -15,6 +15,6 @@
   </div>
 </div>
 
-<div class="col-md-4 col-sm-4">
+<div class="col-md-6 col-sm-6">
   <%= render "partials/google_adsense", class_name: "google_adsense_336_280", ad_slot: "7225596067" %>
 </div>
