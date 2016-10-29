@@ -1,9 +1,9 @@
 <% if current_woeid.nil? %>
-  <% content_for(:meta_title, t('nlt.home_title')) %>
+  <% content_for :meta_title, t('nlt.home_title') %>
 <% else %>
-  <% content_for(:meta_title, t('nlt.keywords') + @woeid_info[:full]) %>
-  <% content_for(:meta_description,
-                 t('nlt.gift_on', woeid: @woeid_info[:full])) %>
+  <% content_for :meta_title, t('nlt.keywords') + @woeid_info[:full] %>
+  <% content_for :meta_description,
+                 t('nlt.gift_on', woeid: @woeid_info[:full]) %>
 <% end %>
 
 <% if current_woeid && @status == 'available' %>
