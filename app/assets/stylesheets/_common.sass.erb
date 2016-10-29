@@ -291,14 +291,6 @@ form.searchbox
   font-weight: normal
   padding-bottom: 5px
 
-.ad_excerpt_show
-  @include make-row
-
-  display: block
-
-.ad_excerpt_comments
-  @include make-row
-
 .delete_message
   display: inline-block
   float: right
@@ -307,8 +299,6 @@ form.searchbox
   background-color: #fff
 
 .message-excerpt
-  @include make-row
-
   margin-bottom: 20px
 
 .message-container
@@ -394,22 +384,19 @@ form.searchbox
     float: left
 
 .ad_comments
+  clear: both
   display: block
-  float: left
   padding-top: 15px
 
 .comment
-  float: left
+  border-top: 1px dashed $gray-separator
+  clear: both
   font-size: 1em
-  border-bottom: 1px dashed $gray-separator
   width: 100% !important
-  padding-right: 18px
-  padding-bottom: 18px
-  margin-top: 14px
+  padding: 18px 0
 
   span
-    clear: left
-    float: left
+    display: block
     padding: 5px
 
 .comment_form
