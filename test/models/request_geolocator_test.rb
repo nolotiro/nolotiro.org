@@ -3,34 +3,22 @@
 require 'test_helper'
 
 class RequestGeolocatorTest < ActionView::TestCase
-  test 'extracts ip address from request headers' do
-    @request.headers['REMOTE_ADDR'] = '87.223.138.147'
-    ip = RequestGeolocator.new(@request).ip_address
-
-    assert_equal '87.223.138.147', ip
-  end
-
   test 'suggests location from ip address' do
-    @request.headers['REMOTE_ADDR'] = '74.125.225.224'
-    suggestion = RequestGeolocator.new(@request).suggest
+    suggestion = RequestGeolocator.new('74.125.225.224').suggest
 
     assert_equal 'Mountain View, California, Estados Unidos',
                  suggestion.fullname
   end
 
   test 'suggests properly translated locations' do
-    @request.headers['REMOTE_ADDR'] = '74.125.225.224'
-
     I18n.with_locale(:en) do
-      suggestion = RequestGeolocator.new(@request).suggest
+      suggestion = RequestGeolocator.new('74.125.225.224').suggest
       assert_equal 'Mountain View, California, United States', suggestion.fullname
     end
   end
 
   test "does not suggests a location unless it's city-specific" do
-    @request.headers['REMOTE_ADDR'] = '179.168.191.163'
-
     # This ip address is correctly resolved to Brazil, but not a specific city
-    assert_nil RequestGeolocator.new(@request).suggest
+    assert_nil RequestGeolocator.new('179.168.191.163').suggest
   end
 end
