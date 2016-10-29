@@ -5,7 +5,8 @@
     <% comments.each do |comment| %>
       <div class="comment">
         <%= linked_published_ago_by(comment.created_at, comment.user) %>
-       <span><%= comment.body %></span>
+
+        <span><%= comment.body %></span>
       </div>
     <% end %>
   <% end %>
