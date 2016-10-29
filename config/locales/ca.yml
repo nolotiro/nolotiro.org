@@ -316,6 +316,8 @@ ca:
         add: bloquejar a %{username}
         confirm: "¿Segur que vols bloquejar %{username}? No podrà tornar a contactar ni a veure els teus anuncis."
         delete: desbloquejar a %{username}
+      contact: envia un missatge privat a %{username}
+      edit: edita perfil d'usuari
       friend:
         add: afegir %{username} a la llista d'amics
         delete: afegir %{username} a la llista d'amics
@@ -336,7 +338,6 @@ ca:
     searching_on_html: Buscant <i>%{q}</i> a
     send: Enviar
     send_a_message: "+ Envia un missatge privat a l'anunciant"
-    send_a_message_to: envia un missatge privat a
     share_this_ad: Comparteix aquest anunci
     sign_in: Accedir
     sign_in_with_provider: Inicia sessió amb %{provider}

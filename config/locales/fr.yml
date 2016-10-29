@@ -319,6 +319,8 @@ fr:
         add: 
         confirm: 
         delete: 
+      contact: envoyer un message privé à %{username}
+      edit: modifier le profil de l'utilisateur
       friend:
         add: ajoutez %{username} à votre liste d'amis
         delete: supprimer %{username} à votre liste d'amis
@@ -339,7 +341,6 @@ fr:
     searching_on_html: Regarder <i>%{q}</i> en
     send: Envoyer
     send_a_message: "+ Envoyer un message privé à l'annonceur"
-    send_a_message_to: Envoyer un message privé à
     share_this_ad: Diffuse cette annonce
     sign_in: S'identifier
     sign_in_with_provider: Connexion avec %{provider}

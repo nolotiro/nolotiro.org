@@ -323,6 +323,8 @@ it:
         add: 
         confirm: 
         delete: 
+      contact: envia un messaggio privato a %{username}
+      edit: modifica profilo utente
       friend:
         add: aggiungere %{username} alla tua lista di amici
         delete: rimuovere %{username} alla tua lista di amici
@@ -343,7 +345,6 @@ it:
     searching_on_html: Cercando <i>%{q}</i> in
     send: Inviare
     send_a_message: "+ Invia un messaggio privato al annunciante"
-    send_a_message_to: 'envia un messaggio privato a '
     share_this_ad: Condividi questo annuncio
     sign_in: Login
     sign_in_with_provider: Accedi con %{provider}

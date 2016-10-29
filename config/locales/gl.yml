@@ -322,6 +322,8 @@ gl:
         add: 
         confirm: 
         delete: 
+      contact: 
+      edit: editar perfil de usuario
       friend:
         add: 
         delete: 
@@ -342,7 +344,6 @@ gl:
     searching_on_html: 
     send: 
     send_a_message: 
-    send_a_message_to: 
     share_this_ad: Comparte este anuncio
     sign_in: Acceder
     sign_in_with_provider: Entrar co %{provider}

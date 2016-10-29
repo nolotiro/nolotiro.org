@@ -317,6 +317,8 @@ es:
         add: bloquear a %{username}
         confirm: "¿Seguro que deseas bloquear a %{username}? No podrá volverte a contactar ni a ver ninguno de tus anuncios."
         delete: desbloquear a %{username}
+      contact: envía un mensaje privado a %{username}
+      edit: editar perfil de usuario
       friend:
         add: agregar %{username} a tu lista de amigos
         delete: eliminar %{username} de tu lista de amigos
@@ -337,7 +339,6 @@ es:
     searching_on_html: Buscando <i>%{q}</i> en
     send: Enviar
     send_a_message: "+ Envía un mensaje privado al anunciante"
-    send_a_message_to: 'envía un mensaje privado a '
     share_this_ad: Comparte este anuncio
     sign_in: Acceder
     sign_in_with_provider: Inicia sesión con %{provider}

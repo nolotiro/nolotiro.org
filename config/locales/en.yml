@@ -317,6 +317,8 @@ en:
         add: 
         confirm: 
         delete: 
+      contact: send a private message to %{username}
+      edit: edit user's profile
       friend:
         add: 'Add %{username} to your friend''s list '
         delete: Delete %{username} from your friend's list
@@ -337,7 +339,6 @@ en:
     searching_on_html: Searching <i>%{q}</i> on
     send: Send
     send_a_message: "+ Send a private message to this user"
-    send_a_message_to: send a private message to
     share_this_ad: Share this ad
     sign_in: Sign in
     sign_in_with_provider: Sign in with %{provider}
