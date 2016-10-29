@@ -37,75 +37,79 @@
   </div>
 <% end %>
 
-<div class="col-md-9 col-sm-9">
-  <ul class="nav nlt-tabs">
-    <li role="presentation" class="<%= 'active' if @type == "give" %>">
-      <%= link_to t('nlt.gifts'), ad_listing_path('give') %>
-    </li>
+<div class="row">
+  <div class="col-md-9 col-sm-9">
+    <ul class="nav nlt-tabs">
+      <li role="presentation" class="<%= 'active' if @type == "give" %>">
+        <%= link_to t('nlt.gifts'), ad_listing_path('give') %>
+      </li>
 
-    <li role="presentation" class="<%= 'active' if @type == "want" %>">
-      <%= link_to t('nlt.requests'), ad_listing_path('want') %>
-    </li>
-  </ul>
+      <li role="presentation" class="<%= 'active' if @type == "want" %>">
+        <%= link_to t('nlt.requests'), ad_listing_path('want') %>
+      </li>
+    </ul>
 
-  <div class="location_header_section">
-    <div class="location_name">
-      <h1>
-        <% if current_woeid.nil? %>
-          <%= t('nlt.all_ads') %>
-        <% else %>
-          <%= t('nlt.searching_on_html', q: @q) if @q %>
+    <div class="location_header_section">
+      <div class="location_name">
+        <h1>
+          <% if current_woeid.nil? %>
+            <%= t('nlt.all_ads') %>
+          <% else %>
+            <%= t('nlt.searching_on_html', q: @q) if @q %>
 
-          <%= @woeid_info[:full] %>
+            <%= @woeid_info[:full] %>
+          <% end %>
+        </h1>
+
+        <br>
+        <%= render "ads/search", q: @q %>
+
+        <%= link_to location_ask_path, class: "world_link" do %>
+          <%= image_tag "change_location.png", alt: "change location" %>
+          <%= t('nlt.change_city') %>
         <% end %>
-      </h1>
+      </div>
+    </div>
 
-      <br>
-      <%= render "ads/search", q: @q %>
+    <div class="default_content_section">
+      <% if @type == "give" %>
+        <%= render "filter_status" %>
+      <% end %>
 
-      <%= link_to location_ask_path, class: "world_link" do %>
-        <%= image_tag "change_location.png", alt: "change location" %>
-        <%= t('nlt.change_city') %>
+      <% if @ads.any? %>
+        <%= render 'ads/list_with_adsense', ads: @ads %>
+
+        <%= will_paginate @ads, params: params.merge(id: current_woeid),
+                                inner_window: 2,
+                                outer_window: -1 %>
+      <% elsif @q %>
+        <%
+          # @todo In the future we might want to enhance this page with interesting
+          # content for the user, such as related searches or hits in locations a
+          # little bit further away. But for now this is a dummy page where google
+          # is giving soft 404 errors. So just remove indexing for now
+        %>
+        <% content_for :meta_robots do %>
+          <meta name="robots" content="noindex,nofollow">
+        <% end %>
+
+        <%= render "ads/no_results_search" %>
+      <% else %>
+        <%= render "ads/no_results" %>
+      <% end %>
+
+      <% if current_woeid && @status == 'available' %>
+        <div class="rss">
+          <%= link_to rss_type_path(woeid: current_woeid, type: "give") do %>
+            <%= image_tag "rss.png", alt: t("nlt.rss_suscribe") %>
+            &nbsp; <%= t('nlt.rss_suscribe') %> - <%= @woeid_info[:full] %>
+          <% end %>
+        </div>
       <% end %>
     </div>
   </div>
 
-  <% if @type == "give" %>
-    <%= render "filter_status" %>
-  <% end %>
-
-  <% if @ads.any? %>
-    <%= render 'ads/list_with_adsense', ads: @ads %>
-
-    <%= will_paginate @ads, params: params.merge(id: current_woeid),
-                            inner_window: 2,
-                            outer_window: -1 %>
-  <% elsif @q %>
-    <%
-      # @todo In the future we might want to enhance this page with interesting
-      # content for the user, such as related searches or hits in locations a
-      # little bit further away. But for now this is a dummy page where google
-      # is giving soft 404 errors. So just remove indexing for now
-    %>
-    <% content_for :meta_robots do %>
-      <meta name="robots" content="noindex,nofollow">
-    <% end %>
-
-    <%= render "ads/no_results_search" %>
-  <% else %>
-    <%= render "ads/no_results" %>
-  <% end %>
-
-  <% if current_woeid && @status == 'available' %>
-    <div class="rss">
-      <%= link_to rss_type_path(woeid: current_woeid, type: "give") do %>
-        <%= image_tag "rss.png", alt: t("nlt.rss_suscribe") %>
-        &nbsp; <%= t('nlt.rss_suscribe') %> - <%= @woeid_info[:full] %>
-      <% end %>
-    </div>
-  <% end %>
-</div>
-
-<div class="col-md-3 col-sm-3">
-  <%= render 'partials/rankings_sidebar' %>
+  <div class="col-md-3 col-sm-3">
+    <%= render 'partials/rankings_sidebar' %>
+  </div>
 </div>

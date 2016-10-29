@@ -284,6 +284,12 @@ form.searchbox
   font-weight: normal
   padding-bottom: 5px
 
+.edit-section, .destroy-section
+  @include make-row
+
+.edit-section
+  margin-bottom: 30px
+
 .delete_message
   display: inline-block
   float: right
@@ -366,8 +372,7 @@ form.searchbox
     margin-bottom: 0
 
 .rss
-  float: left
-  margin-bottom: 10px
+  margin: 15px 0
 
 .sharelinks
   clear: both
@@ -615,6 +620,7 @@ form.searchbox
   padding-bottom: 6px
   padding-left: 20px
   border: 1px solid $gray-separator
+  border-bottom: none
   min-height: 75px
 
 .panel-default
@@ -629,22 +635,20 @@ form.searchbox
   margin-top: 8px
 
 .default_header_section
-  @include make-md-column(12)
-  @include make-sm-column(12)
-
-  display: block
   background-color: $blue-searchbox
-  padding-top: 16px
-  padding-bottom: 16px
-  padding-left: 20px
   border: 1px solid $gray-separator
-  margin-bottom: 20px
+  padding: 15px
 
   h2
     font-size: 1em
     font-weight: bold
     margin-bottom: 1.5em
     padding-left: 0
+
+.default_content_section
+  border: 1px solid $gray-separator
+  border-top: none
+  padding: 15px
 
 /**
  * Pagination

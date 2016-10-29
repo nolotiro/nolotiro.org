@@ -1,24 +1,28 @@
 <% title = "#{t('nlt.user_profile')} - #{@user.username}" %>
 <%= content_for :meta_title, title %>
 
-<div class="default_header_section">
-  <h1><%= title.to_s %></h1>
-</div>
+<div class="row">
+  <div class="col-md-9 col-sm-9">
+      <%= render "users/tabnav", user: @user %>
 
-<div class="col-md-9 col-sm-9">
-  <div class="row">
-    <%= render "users/tabnav", user: @user %>
-    <h4 class="profile-info">
-      <%= t('nlt.username') %>: <%= @user.username %>
-    </h4>
-    <h4 class="profile-info">
-      <%= t('nlt.member_since') %>: <%= l @user.created_at, format: :long %>
-    </h4>
+    <div class="default_header_section">
+      <h1><%= title.to_s %></h1>
+    </div>
+
+    <div class="default_content_section">
+      <h4 class="profile-info">
+        <%= t('nlt.username') %>: <%= @user.username %>
+      </h4>
+
+      <h4 class="profile-info">
+        <%= t('nlt.member_since') %>: <%= l @user.created_at, format: :long %>
+      </h4>
 
       <%= render 'actions',
                  user: @user,
                  blocking: current_user ? current_user.blocking?(@user) : nil %>
 
       <%= render 'friends', user: @user %>
+    </div>
   </div>
 </div>

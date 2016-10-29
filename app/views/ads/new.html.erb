@@ -2,17 +2,19 @@
 <% title = "#{t('nlt.publish_ad')} - #{woeid_name[:full]}" %>
 <%= content_for(:meta_title, title) %>
 
-<div class="default_header_section">
-  <h1><%= title.to_s %></h1>
-  <br>
-  <%= link_to location_ask_path, class: "world_link" do %>
-    <%= image_tag "change_location.png", alt: "change location" %>
-    <%= t 'nlt.change_city' %>
-  <% end %>
-</div>
+<div class="row">
+  <div class="col-md-8 col-sm-8">
+    <div class="default_header_section">
+      <h1><%= title.to_s %></h1>
+      <br>
+      <%= link_to location_ask_path, class: "world_link" do %>
+        <%= image_tag "change_location.png", alt: "change location" %>
+        <%= t 'nlt.change_city' %>
+      <% end %>
+    </div>
 
-<div class="col-md-8 col-sm-8">
-  <div class="row">
-    <%= render 'form', ad: @ad, button_label: t('nlt.publish_ad') %>
+    <div class="default_content_section">
+      <%= render 'form', ad: @ad, button_label: t('nlt.publish_ad') %>
+    </div>
   </div>
 </div>

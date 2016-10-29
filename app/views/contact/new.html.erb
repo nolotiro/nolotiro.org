@@ -8,8 +8,10 @@
         new_ad_link: link_to(t('nlt.here'), new_ad_path)) %>
 </div>
 
-<div class="col-md-8 col-sm-8">
+<div class="default_content_section">
   <div class="row">
-    <%= render 'form', contact: @contact %>
+    <div class="col-md-8 col-sm-8">
+      <%= render 'form', contact: @contact %>
+    </div>
   </div>
 </div>

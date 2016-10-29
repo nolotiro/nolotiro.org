@@ -1,21 +1,25 @@
 <%= content_for(:meta_title, t('nlt.edit_this_ad')) %>
 
-<section class="default_header_section">
-  <h1><%= t('nlt.edit_this_ad') %></h1>
-</section>
+<section class="edit-section">
+  <div class="col-md-8 col-sm-8">
+    <div class="default_header_section">
+      <h1><%= t('nlt.edit_this_ad') %></h1>
+    </div>
 
-<div class="col-md-8 col-sm-8">
-  <div class="row">
-    <%= render 'form', ad: @ad, button_label: t('nlt.update_ad') %>
+    <div class="default_content_section">
+      <%= render 'form', ad: @ad, button_label: t('nlt.update_ad') %>
+    </div>
   </div>
 </div>
 
-<section class="default_header_section">
-  <h1><%= t('nlt.delete_ad') %></h1>
-</section>
+<section class="destroy-section">
+  <div class="col-md-8 col-sm-8">
+    <div class="default_header_section">
+      <h1><%= t('nlt.delete_ad') %></h1>
+    </div>
 
-<div class="col-md-8 col-sm-8">
-  <div class="row">
-    <%= render 'destroy_form', ad: @ad %>
+    <div class="default_content_section">
+      <%= render 'destroy_form', ad: @ad %>
+    </div>
   </div>
 </div>

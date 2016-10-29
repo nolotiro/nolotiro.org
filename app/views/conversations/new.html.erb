@@ -5,8 +5,10 @@
   <h1><%= title.to_s %></h1>
 </div>
 
-<div class="col-md-7 col-sm-7">
+<div class="default_content_section">
   <div class="row">
-    <%= render "form", message: @message %>
+    <div class="col-md-7 col-sm-7">
+      <%= render "form", message: @message %>
+    </div>
   </div>
 </div>

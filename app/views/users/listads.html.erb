@@ -1,28 +1,28 @@
 <% title = "#{t('nlt.published_ads')} - #{@user.username}" %>
 <% content_for :meta_title, title %>
 
-<div class="default_header_section">
-  <h1><%= title.to_s %></h1>
-</div>
-
-<div class="col-md-9 col-sm-9">
-  <div class="row">
+<div class="row">
+  <div class="col-md-9 col-sm-9">
     <%= render "users/tabnav", user: @user %>
 
-    <%= render "filter_status" %>
+    <div class="default_header_section">
+      <h1><%= title.to_s %></h1>
+    </div>
 
-    <% if @ads.any? %>
-      <%= render 'ads/list_with_adsense', ads: @ads %>
+    <div class="default_content_section">
+      <%= render "filter_status" %>
 
-      <%= will_paginate @ads, inner_window: 2, outer_window: -1 %>
-    <% else %>
-      <div class="empty"> <%= t("nlt.no_results.on_user") %> </div>
-    <% end %>
+      <% if @ads.any? %>
+        <%= render 'ads/list_with_adsense', ads: @ads %>
+
+        <%= will_paginate @ads, inner_window: 2, outer_window: -1 %>
+      <% else %>
+        <div class="empty"> <%= t("nlt.no_results.on_user") %> </div>
+      <% end %>
+    </div>
   </div>
-</div>
 
-<div class="col-md-3 col-sm-3">
-  <div class="google_ad_wrapper">
+  <div class="col-md-3 col-sm-3">
     <%= render "partials/google_adsense", class_name: "desktop google_adsense_600_160", ad_slot: "6783776462" %>
     <%= render "partials/google_adsense", class_name: "mobile google_adsense_336_280", ad_slot: "7225596067" %>
   </div>

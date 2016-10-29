@@ -1,40 +1,40 @@
 <% title = t('conversations.index.title', username: current_user.username) %>
 <%= content_for :meta_title, title %>
 
-<div class="default_header_section">
-  <h1><%= title.to_s %></h1>
-</div>
-
-<div class="col-md-9 col-sm-9">
-  <div class="row">
+<div class="row">
+  <div class="col-md-9 col-sm-9">
     <%= render "users/tabnav", user: current_user %>
 
-    <% if @conversations.any? %>
-      <%= form_tag trash_conversations_path, method: :delete do %>
-        <table class="table table-condensed mail-list">
-          <tbody>
-            <% @conversations.each do |c| %>
-              <%= render "conversations/conversation", c: c %>
-            <% end %>
-          </tbody>
-        </table>
+    <div class="default_header_section">
+      <h1><%= title.to_s %></h1>
+    </div>
 
-        <%= submit_tag t('conversations.buttons.trash_selected'),
-                       id: 'delete_multiple_button' %>
+    <div class="default_content_section">
+      <% if @conversations.any? %>
+        <%= form_tag trash_conversations_path, method: :delete do %>
+          <table class="table table-condensed mail-list">
+            <tbody>
+              <% @conversations.each do |c| %>
+                <%= render "conversations/conversation", c: c %>
+              <% end %>
+            </tbody>
+          </table>
+
+          <%= submit_tag t('conversations.buttons.trash_selected'),
+                         id: 'delete_multiple_button' %>
+        <% end %>
+        <%= will_paginate @conversations %>
+      <% else %>
+        <p>
+          <div class="empty">
+            <%= t("conversations.table.none") %>
+          </div>
+        </p>
       <% end %>
-      <%= will_paginate @conversations %>
-    <% else %>
-      <p>
-        <div class="empty">
-          <%= t("conversations.table.none") %>
-        </div>
-      </p>
-    <% end %>
+    </div>
   </div>
-</div>
 
-<div class="col-md-3 col-sm-3">
-  <div class="row">
+  <div class="col-md-3 col-sm-3">
     <%= render "partials/google_adsense", class_name: "mobile google_adsense_336_280", ad_slot: "7225596067" %>
     <%= render "partials/google_adsense", class_name: "desktop google_adsense_600_160", ad_slot: "6783776462" %>
   </div>

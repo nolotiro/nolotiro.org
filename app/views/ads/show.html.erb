@@ -16,65 +16,69 @@
   </div>
 <% end %>
 
-<div class="default_header_section">
-  <h2>
-    <%= link_to ads_woeid_path(@ad.woeid_code, type: @ad.type) do %>
-      <%= @ad.woeid_name %> &gt;
-      <%= @ad.type_string %>
-    <% end %>
-  </h2>
-  <h1><%= @ad.filtered_title %></h1>
-</div>
-
-<div class="col-md-6 col-sm-6">
-  <%= render "ads/actions", ad: @ad %>
-
-  <div class="aod_content">
-    <% if @ad.image.exists? %>
-      <div class="ad_list_image">
-        <%= link_to image_tag(@ad.image.url(:thumb), alt: @ad.filtered_title),
-                    @ad.image.url %>
-      </div>
-    <% end %>
-
-    <% if @ad.give? %>
-      <span class="ad_status <%= @ad.status %>"><%= @ad.status_string %></span>
-    <% end %>
-
-    <%= linked_published_ago_by(@ad.published_at, @ad.user) %>
-
-    <div class="body-wrapper">
-      <%= simple_format(@ad.filtered_body) %>
+<div class="row">
+  <div class="col-md-6 col-sm-6">
+    <div class="default_header_section">
+      <h2>
+        <%= link_to ads_woeid_path(@ad.woeid_code, type: @ad.type) do %>
+          <%= @ad.woeid_name %> &gt;
+          <%= @ad.type_string %>
+        <% end %>
+      </h2>
+      <h1><%= @ad.filtered_title %></h1>
     </div>
 
-    <%= render "stats", comments_count: @comments.size,
-                        readed_count: @ad.readed_count %>
+    <div class="default_content_section">
+      <%= render "ads/actions", ad: @ad %>
 
-    <% if @ad.available? &&
-          (current_user.nil? || current_user.whitelisting?(@ad.user)) %>
-      <div class="ad_contact">
-        <%= t('nlt.are_you_interested') %>
-
-        <%= link_to new_conversation_path(recipient_id: @ad.user_owner,
-                                          subject: @ad.slug),
-                    class: "world_link" do %>
-          <%= t('nlt.send_a_message') %>
-          <%= image_tag "email_send.png", alt: t('nlt.send_a_message') %>
+      <div class="aod_content">
+        <% if @ad.image.exists? %>
+          <div class="ad_list_image">
+            <%= link_to image_tag(@ad.image.url(:thumb), alt: @ad.filtered_title),
+                        @ad.image.url %>
+          </div>
         <% end %>
-      </div>
-    <% end %>
 
-    <div class="sharelinks">
-      <p><%= t('nlt.share_this_ad') %>:</p>
-      <%= render "partials/social_buttons", url: ad_url(@ad) %>
+        <% if @ad.give? %>
+          <span class="ad_status <%= @ad.status %>"><%= @ad.status_string %></span>
+        <% end %>
+
+        <%= linked_published_ago_by(@ad.published_at, @ad.user) %>
+
+        <div class="body-wrapper">
+          <%= simple_format(@ad.filtered_body) %>
+        </div>
+
+        <%= render "stats", comments_count: @comments.size,
+                            readed_count: @ad.readed_count %>
+
+        <% if @ad.available? &&
+              (current_user.nil? || current_user.whitelisting?(@ad.user)) %>
+          <div class="ad_contact">
+            <%= t('nlt.are_you_interested') %>
+
+            <%= link_to new_conversation_path(recipient_id: @ad.user_owner,
+                                              subject: @ad.slug),
+                        class: "world_link" do %>
+              <%= t('nlt.send_a_message') %>
+              <%= image_tag "email_send.png", alt: t('nlt.send_a_message') %>
+            <% end %>
+          </div>
+        <% end %>
+
+        <div class="sharelinks">
+          <p><%= t('nlt.share_this_ad') %>:</p>
+          <%= render "partials/social_buttons", url: ad_url(@ad) %>
+        </div>
+      </div>
+
+      <%= render "comments/list", comments: @comments %>
     </div>
   </div>
 
-  <%= render "comments/list", comments: @comments %>
-</div>
-
-<div class="col-md-6 col-sm-6">
-  <div class="google_ad_wrapper">
-    <%= render "partials/google_adsense", class_name: "google_adsense_336_280", ad_slot: "7225596067" %>
+  <div class="col-md-6 col-sm-6">
+    <div class="google_ad_wrapper">
+      <%= render "partials/google_adsense", class_name: "google_adsense_336_280", ad_slot: "7225596067" %>
+    </div>
   </div>
 </div>
