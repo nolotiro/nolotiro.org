@@ -1,7 +1,8 @@
-<%= content_for(:meta_title, t('nlt.change_your_city')) %>
+<% title = t('nlt.change_your_city') %>
+<%= content_for(:meta_title, title) %>
 
 <div class="default_header_section">
-  <h1><%= t('nlt.change_your_city') %></h1>
+  <h1><%= title.to_s %></h1>
 </div>
 
 <div class="col-md-6 col-sm-6">

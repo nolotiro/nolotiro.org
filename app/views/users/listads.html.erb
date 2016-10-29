@@ -1,7 +1,8 @@
-<% content_for :meta_title, "#{t('nlt.published_ads')} - #{@user.username}" %>
+<% title = "#{t('nlt.published_ads')} - #{@user.username}" %>
+<% content_for :meta_title, title %>
 
 <div class="default_header_section">
-  <h1><%= t 'nlt.published_ads' %>  -  <%= @user.username %></h1>
+  <h1><%= title.to_s %></h1>
 </div>
 
 <div class="col-md-9 col-sm-9">

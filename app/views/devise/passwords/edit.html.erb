@@ -1,7 +1,8 @@
-<% content_for(:meta_title, t('devise.passwords.action')) %>
+<% title = t('devise.passwords.action') %>
+<% content_for(:meta_title, title) %>
 
 <div class="default_header_section">
-  <h1><%= t('devise.passwords.action') %></h1>
+  <h1><%= title.to_s %></h1>
 </div>
 
 <div class="col-md-8 col-sm-8">
