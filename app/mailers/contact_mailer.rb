@@ -5,7 +5,7 @@ class ContactMailer < ActionMailer::Base
 
   def contact_form(email, message, request)
     @email = email
-    @ip_address = RequestGeolocator.new(request).ip_address
+    @ip_address = request.remote_ip
     @ua = request.user_agent
     @message = message
 
