@@ -4,6 +4,8 @@ class RegistrationsController < Devise::RegistrationsController
   def create
     if omniauth_registration? || verify_recaptcha
       super
+
+      resource.ban! if resource.valid? && suspicious_ip?
     else
       build_resource
       clean_up_passwords(resource)
@@ -20,6 +22,10 @@ class RegistrationsController < Devise::RegistrationsController
   end
 
   private
+
+  def suspicious_ip?
+    User.suspicious?(request.remote_ip)
+  end
 
   def omniauth_registration?
     session['devise.omniauth_data']

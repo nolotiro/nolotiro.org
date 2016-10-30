@@ -37,4 +37,16 @@ FactoryGirl.define do
 
   trait(:madrilenian) { woeid 766_273 }
   trait(:stateless) { woeid nil }
+
+  trait(:spammer) do
+    banned_at { 3.days.ago }
+  end
+
+  trait(:old_spammer) do
+    banned_at { 4.months.ago }
+  end
+
+  trait(:recent_spammer) do
+    banned_at { 2.months.ago }
+  end
 end
