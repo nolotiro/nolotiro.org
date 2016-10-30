@@ -50,4 +50,22 @@ namespace :announcements do
                          starts_at: Time.zone.now,
                          ends_at: 3.weeks.from_now)
   end
+
+  desc 'Announce that ads about cars & houses are forbidden'
+  task cars_and_houses: :environment do
+    include Rails.application.routes.url_helpers
+
+    faq = faqs_path(locale: 'es', anchor: 'faq9')
+
+    message = <<-TXT.squish
+      A partir de ahora no se permiten anuncios de regalo ni petición de
+      <b>casas</b>, <b>coches</b> o similares. <a href=#{faq}>Más
+      información</a>.
+    TXT
+
+    Announcement.create!(locale: 'es',
+                         message: message,
+                         starts_at: Time.zone.now,
+                         ends_at: 4.weeks.from_now)
+  end
 end
