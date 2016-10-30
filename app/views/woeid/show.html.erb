@@ -99,7 +99,7 @@
   <% if current_woeid && @status == 'available' %>
     <div class="rss">
       <%= link_to rss_type_path(woeid: current_woeid, type: "give") do %>
-        <%= image_tag "icons/rss.png", alt: t("nlt.rss_suscribe") %>
+        <%= image_tag "rss.png", alt: t("nlt.rss_suscribe") %>
         &nbsp; <%= t('nlt.rss_suscribe') %> - <%= @woeid_info[:full] %>
       <% end %>
     </div>
