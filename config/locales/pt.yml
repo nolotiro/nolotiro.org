@@ -226,6 +226,7 @@ pt:
       answer_6_html: 'A troca direta é um sistema que funciona muito bem em formato físico, isto é, duas pessoas cara a cara, vendo os objetos e falando ao vivo e em direto. Mas na internet, a troca pode acabar em decepção ou insatisfações e discussões intermináveis. Além disso, como você já tem lido anteriormente, aqui se dão como presentes objetos sem condições e a troca tem como condicionamento o quid pro quo: você me da e eu te dou algo igual.'
       answer_7_html: Surpreendentemente muitas pessoas fazem isso, e no tem nada de errado com os envíos, só tem que ter um mínimo de cautela com a seriedade do destinatário. Teve casos no que alguem de boa fe teve feito um envío pagando os gastos e depois o objeto foi enviado de volta. O ideal é não fazer envios, fomentando que os objetos fiquem o mais perto posível, o que ajuda a poupar energía, além de conhecer melhor às pessoas da sua mesma cidade. Esperamos que a nova versão, que temos enfocado ao concepto local, seja posível. <a href="https://en.wikipedia.org/wiki/Think_Globally,_Act_Locally">Pensar globalmente, agir localmente.</a>
       answer_8_html: 
+      answer_9_html: Não. A experiência nos diz que esses anúncios são sempre calotes então preferimos para probi-las. Em qualquer caso, as transações no nolotiro devem ser livres de dinheiro e para transferir a propriedade desses objetos tem que pagar um imposto sobre doação. Portanto, embora os presentes foram feitos de boa fé, não podem ser aceitados no nolotiro.
       question_1: Qual é o propósito deste projeto?
       question_2: Então este site não é para ajudar os outros?
       question_3: Mas eu gostaria dar de graça minhas coisas para alguém que realmente o precisa
@@ -234,6 +235,7 @@ pt:
       question_6: Não está permitido o intercâmbio de objetos? Extraño
       question_7: Posso enviar coisas à gente que não mora na minha cidade?
       question_8: 
+      question_9: Posso obter uma casa, um carro ou uma moto no nolotiro?
       title: Perguntas frequentes
     faqs: perguntas frequentes
     footer_explain: 'nolotiro.org é um site onde dou presentes e busco presentes grátis de segunda mão: móveis, cadeiras, sofás, bicicletas, notebooks, mesas, fogões, camas, roupas, brinquedos, berços ou carrinhos de bebe, celulares e muito mais que você já não precisa para que sejam reutilizados por outras pessoas.'
