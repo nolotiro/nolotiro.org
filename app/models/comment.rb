@@ -2,6 +2,9 @@
 
 class Comment < ActiveRecord::Base
   include Hidable
+  include Statable
+
+  counter_stats_for :created_at
 
   belongs_to :user, foreign_key: :user_owner
   belongs_to :ad, foreign_key: :ads_id

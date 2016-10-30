@@ -1,6 +1,10 @@
 # frozen_string_literal: true
 
+require 'helpers/stats_sidebar'
+
 ActiveAdmin.register Ad do
+  include StatsSidebar
+
   config.sort_order = 'published_at_desc'
   config.per_page = 100
 

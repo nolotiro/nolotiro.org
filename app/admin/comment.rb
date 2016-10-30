@@ -1,6 +1,10 @@
 # frozen_string_literal: true
 
+require 'helpers/stats_sidebar'
+
 ActiveAdmin.register Comment, as: 'AdComment' do
+  include StatsSidebar
+
   permit_params :body
 
   filter :created_at

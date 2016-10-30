@@ -1,6 +1,10 @@
 # frozen_string_literal: true
 
+require 'helpers/stats_sidebar'
+
 ActiveAdmin.register User do
+  include StatsSidebar
+
   config.batch_actions = false
   config.remove_action_item(:new)
   config.remove_action_item(:destroy)
