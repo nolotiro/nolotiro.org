@@ -86,7 +86,7 @@ ca:
   devise:
     confirmations:
       action: Confirmar el meu compte
-      confirmed: El teu compte ha estat confirmat correctament.
+      confirmed: La vostra adreça electrònica ha estat confirmada correctament.
       instructions: Per favor confirma el teu compte de correu accedint al següent enllaç
       no_html_instructions: 'Si no pots fer clic a l''enllaç, copia i enganxa el següent a la barra d''adreces del teu navegador:'
       resend: Reexpedir instruccions de confirmació
@@ -131,12 +131,23 @@ ca:
       signed_up_but_inactive: El teu compte ha estat creat correctament. Tanmateix, no hem pogut inciar la sessió perquè el teu compte encara no està activat.
       signed_up_but_locked: El teu compte ha estat creat correctament. Tanmateix, no hem pogut inciar la sessió perquè el teu compte està bloquejat.
       signed_up_but_unconfirmed: S'ha enviat un missatge amb un enllaç de confirmació al teu correu electrònic. Obre l'enllaç per activar el teu compte.
+      update_needs_confirmation: Has actualitzat el teu compte correctament, però cal confirmar el teu nou correu electrònic. Si us plau, comprova el teu correu i segueix l'enllaç de confirmació per finalitzar la comprovació del nou correu eletrònic.
       updated: Has actualitzat el teu compte correctament.
     sessions:
       signed_in: Sessió iniciada correctament.
       signed_out: Sessió tancada correctament.
       user:
         signed_in: Heu entrat.
+  errors:
+    messages:
+      already_confirmed: ja està confirmat
+      confirmation_period_expired: necessita ser confirmat en %{period}, si us plau demana'n un de nou
+      expired: ha caducat, si us plau demana'n un de nou
+      not_found: no s'ha trobat
+      not_locked: no està bloquejat
+      not_saved:
+        one: '1 error ha evitat que %{resource} es pugui desar:'
+        other: "%{count} errors han evitat que %{resource} es pugui desar:"
   friendships:
     create:
       success: Amic agregat
