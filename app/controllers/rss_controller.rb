@@ -8,6 +8,6 @@ class RssController < ApplicationController
     ads = params[:type] == 'want' ? ads.want.available : ads.give
     ads = ads.by_woeid_code(params[:woeid])
 
-    @ads = ads.limit(30)
+    @ads = policy_scope(ads).limit(30)
   end
 end
