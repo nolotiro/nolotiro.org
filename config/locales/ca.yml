@@ -101,7 +101,7 @@ ca:
       not_found_in_database: Correu electrònic o contrasenya invàlids.
       timeout: La teva sessió ha caducat. Si us plau, torna a iniciar sessió per a continuar.
       unauthenticated: Has d'iniciar sessió o bé registrar-te abans de continuar.
-      unconfirmed: Has de confirmar el teu compte abans de continuar.
+      unconfirmed: S'ha enviat un missatge amb un enllaç de confirmació al teu correu electrònic. Obre l'enllaç per activar el teu compte.
     mailer:
       confirmation_instructions:
         subject: Instruccions de confirmació

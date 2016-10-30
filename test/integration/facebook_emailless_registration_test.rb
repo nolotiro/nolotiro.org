@@ -37,7 +37,10 @@ class FacebookEmaillessRegistrationTest < ActionDispatch::IntegrationTest
     fill_in_finalize_form('pepe@example.com')
     login_via(:facebook, name: 'pepe')
 
-    assert_text 'Tienes que confirmar tu cuenta para poder continuar'
+    assert_text <<-MSG.squish
+      Se ha enviado un mensaje con un enlace de confirmación a tu correo
+      electrónico. Abre el enlace para activar tu cuenta.
+    MSG
   end
 
   it 'logs user in after confirming email' do

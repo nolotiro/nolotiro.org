@@ -103,7 +103,7 @@ gl:
       not_found_in_database: Correo-e ou contrasinal incorrecto.
       timeout: A sesión caducou, por favor, faga o login novo para continuar.
       unauthenticated: Debe facer o login ou rexístrese para continuar.
-      unconfirmed: Ten que confirmar a súa conta para continuar.
+      unconfirmed: El enviou unha mensaxe cun enlace de confirmación ao teu correo. Abre o enlace a activar a súa conta.
     mailer:
       confirmation_instructions:
         subject: "[nolotiro.org] Instrucións para confirmación"

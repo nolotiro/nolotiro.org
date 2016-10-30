@@ -101,7 +101,7 @@ it:
       not_found_in_database: Email o password non validi.
       timeout: Sessione scaduta, accedere nuovamente per continuare.
       unauthenticated: Devi accedere o registrarti per continuare.
-      unconfirmed: Devi confermare il tuo account per continuare.
+      unconfirmed: Ti è stato inviato un messaggio con un link di conferma. Ti invitiamo a visitare il link per attivare il tuo account.
     mailer:
       confirmation_instructions:
         subject: Istruzioni per la conferma

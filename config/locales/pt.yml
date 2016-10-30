@@ -101,7 +101,7 @@ pt:
       not_found_in_database: O endereço de email ou a palavra-passe são inválidos.
       timeout: A sua sessão expirou, por favor autentique-se novamente para continuar.
       unauthenticated: Antes de continuar tem de se autenticar ou efectuar um registo.
-      unconfirmed: Tem de confirmar a sua conta antes de continuar.
+      unconfirmed: Foi enviado um email com um link para confirmar o seu email. Por favor abra o link para ativar a sua conta.
     mailer:
       confirmation_instructions:
         subject: Instruções de confirmação

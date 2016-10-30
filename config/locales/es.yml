@@ -101,7 +101,7 @@ es:
       not_found_in_database: Email o contraseña inválidos.
       timeout: Tu sesión expiró, por favor inicia sesión nuevamente para continuar.
       unauthenticated: Tienes que iniciar sesión o registrarte para poder continuar.
-      unconfirmed: Tienes que confirmar tu cuenta para poder continuar.
+      unconfirmed: Se ha enviado un mensaje con un enlace de confirmación a tu correo electrónico. Abre el enlace para activar tu cuenta.
     mailer:
       confirmation_instructions:
         subject: "[nolotiro.org] Instrucciones de confirmación"
