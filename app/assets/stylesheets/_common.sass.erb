@@ -308,21 +308,23 @@ form.searchbox
     &:last-child
       margin-bottom: 0
 
-.triangle-me
-  background: image-url("pico-green-left.png") no-repeat 0 0
+%triangle
   height: 10px
-  left: -11px
   position: absolute
   top: 40px
   width: 12px
 
+.triangle-me
+  @extend %triangle
+
+  background: image-url("pico-green-left.png") no-repeat 0 0
+  left: -11px
+
 .triangle-other
+  @extend %triangle
+
   background: image-url("pico-white-right.png") no-repeat 0 0
-  height: 10px
-  position: absolute
   right: -11px
-  top: 40px
-  width: 12px
 
 .bg-bubble-me
   background: #CCF8A7
