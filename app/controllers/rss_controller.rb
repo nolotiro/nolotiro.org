@@ -8,19 +8,8 @@ class RssController < ApplicationController
   def feed
     # rss filter
     ads = Ad
-    ads = params[:type] == 'want' ? ads.want : ads.give
+    ads = params[:type] == 'want' ? ads.want.available : ads.give
     ads = ads.by_woeid_code(params[:woeid])
-
-    ads = case params[:status]
-          when 1, nil
-            ads.available
-          when 2
-            ads.booked
-          when 3
-            ads.delivered
-          else
-            ads
-          end
 
     @ads = ads.limit(30)
   end

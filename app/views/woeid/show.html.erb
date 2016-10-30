@@ -6,14 +6,12 @@
                  t('nlt.gift_on', woeid: @woeid_info[:full])) %>
 <% end %>
 
-<% if current_woeid %>
+<% if current_woeid && @status == 'available' %>
   <% content_for :meta_extra do %>
     <link rel="alternate"
           type="application/rss+xml"
           title="nolotiro.org - <%= @woeid_info[:full] %>"
-          href="<%= rss_type_url(woeid: current_woeid,
-                                 type: @type,
-                                 status: @status) %>" />
+          href="<%= rss_type_url(woeid: current_woeid, type: @type) %>" />
   <% end %>
 <% end %>
 
@@ -98,7 +96,7 @@
     <%= render "ads/no_results" %>
   <% end %>
 
-  <% if current_woeid %>
+  <% if current_woeid && @status == 'available' %>
     <div class="rss">
       <%= link_to rss_type_path(woeid: current_woeid, type: "give") do %>
         <%= image_tag "icons/rss.png", alt: t("nlt.rss_suscribe") %>
