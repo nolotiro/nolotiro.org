@@ -4,6 +4,9 @@ ActiveAdmin.register Ad do
   config.sort_order = 'published_at_desc'
   config.per_page = 100
 
+  scope 'Regalos', :give, default: true
+  scope 'Peticiones', :want
+
   controller do
     def scoped_collection
       params[:id] ? super : super.includes(:user)
@@ -30,7 +33,6 @@ ActiveAdmin.register Ad do
   filter :body
   filter :user_username, as: :string, label: I18n.t('nlt.username')
   filter :woeid_code
-  filter :type, as: :select, collection: [%w(Regalo give), %w(Busco want)]
   filter :status, as: :select, collection: [%w(Disponible available),
                                             %w(Reservado booked),
                                             %w(Entregado delivered)]
@@ -45,16 +47,13 @@ ActiveAdmin.register Ad do
 
     column :user
 
-    column :type do |ad|
-      status_tag({ 'give' => 'green', 'want' => 'red' }[ad.type],
-                 label: ad.type)
-    end
-
-    column :status do |ad|
-      status_tag({ 'available' => 'green',
-                   'booked' => 'orange',
-                   'delivered' => 'red' }[ad.status],
-                 label: ad.status)
+    if current_scope.scope_method == :give
+      column :status do |ad|
+        status_tag({ 'available' => 'green',
+                     'booked' => 'orange',
+                     'delivered' => 'red' }[ad.status],
+                   label: ad.status)
+      end
     end
 
     column(:city, &:woeid_name_short)
