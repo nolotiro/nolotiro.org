@@ -66,11 +66,12 @@ class ApplicationController < ActionController::Base
   helper_method :conversations_count
 
   def current_woeid
-    @current_woeid ||= if request.path =~ %r{/listall/}
-                         nil
-                       else
-                         params[:id].presence || user_woeid
-                       end
+    @current_woeid ||=
+      if request.path =~ %r{/listall/} || params[:controller] == 'users'
+        nil
+      else
+        params[:id].presence || user_woeid
+      end
   end
 
   helper_method :current_woeid
