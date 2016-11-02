@@ -28,12 +28,6 @@ GIT
       json (>= 1.8, < 3)
       rest-client (>= 1.8, < 3)
 
-GIT
-  remote: https://github.com/tigrish/devise-i18n.git
-  revision: fa9546a693278940d734679b5ca2732d5586f256
-  specs:
-    devise-i18n (1.1.0)
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -482,7 +476,6 @@ DEPENDENCIES
   database_cleaner (~> 1.5)
   delayed_paperclip
   devise
-  devise-i18n!
   dotenv-rails (~> 2.1)
   factory_girl_rails (~> 4.0)
   faker

@@ -101,7 +101,7 @@ it:
       not_found_in_database: Email o password non validi.
       timeout: Sessione scaduta, accedere nuovamente per continuare.
       unauthenticated: Devi accedere o registrarti per continuare.
-      unconfirmed: Devi confermare il tuo account per continuare.
+      unconfirmed: Ti è stato inviato un messaggio con un link di conferma. Ti invitiamo a visitare il link per attivare il tuo account.
     mailer:
       confirmation_instructions:
         subject: Istruzioni per la conferma
@@ -131,12 +131,24 @@ it:
       signed_up_but_inactive: Iscrizione eseguita correttamente. Però non puoi accedere in quanto il tuo account non è ancora attivo.
       signed_up_but_locked: Iscrizione eseguita correttamente. Però non puoi accedere in quanto il tuo account è bloccato.
       signed_up_but_unconfirmed: Ti è stato inviato un messaggio con un link di conferma. Ti invitiamo a visitare il link per attivare il tuo account.
+      update_needs_confirmation: Il tuo account è stato aggiornato, ma dobbiamo verificare la tua email. Ti invitiamo a consultare la tua email e cliccare sul link di conferma.
       updated: Il tuo account è stato aggiornato.
     sessions:
+      already_signed_out: Sei uscito correttamente.
       signed_in: Accesso effettuato con successo.
       signed_out: Sei uscito correttamente.
       user:
         signed_in: Acceso eseguito
+  errors:
+    messages:
+      already_confirmed: "è stato già confermato"
+      confirmation_period_expired: deve essere confermato entro %{period}, richiedi una nuova conferma
+      expired: "è scaduto, si prega di richiederne uno nuovo"
+      not_found: non trovato
+      not_locked: non era bloccato
+      not_saved:
+        one: 'Non posso salvare questo %{resource}: 1 errore'
+        other: 'Non posso salvare questo %{resource}: %{count} errori.'
   friendships:
     create:
       success: Amico aggiunto

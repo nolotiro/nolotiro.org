@@ -22,6 +22,7 @@ search:
 # Consider these keys used
 #
 ignore_unused:
+- errors.*
 - 'active{model,record}.{attributes,models}.*'
 - '{devise,will_paginate}.*'
 - recaptcha.errors.*
