@@ -3,25 +3,11 @@
 class RssController < ApplicationController
   layout false
 
-  # GET '/rss/feed/woeid/:woeid/ad_type/:type'
-  # GET '/rss/feed/woeid/:woeid/ad_type/give/status/:status'
   def feed
-    # rss filter
     ads = Ad
-    ads = params[:type] == 'want' ? ads.want : ads.give
-    ads = ads.where(woeid_code: params[:woeid])
+    ads = params[:type] == 'want' ? ads.want.available : ads.give
+    ads = ads.by_woeid_code(params[:woeid])
 
-    ads = case params[:status]
-          when 1, nil
-            ads.available
-          when 2
-            ads.booked
-          when 3
-            ads.delivered
-          else
-            ads
-          end
-
-    @ads = ads.limit(30)
+    @ads = policy_scope(ads).limit(30)
   end
 end

@@ -109,7 +109,6 @@ NolotiroOrg::Application.routes.draw do
       # http://stackoverflow.com/questions/22421522/nginx-rewrite-rule-for-replacing-space-whitespace-with-hyphen-and-convert-url-to
       scope '/rss' do
         get '/feed/woeid/:woeid/ad_type/:type', format: 'rss', to: 'rss#feed', as: 'rss_type'
-        get '/feed/woeid/:woeid/ad_type/give/status/:status', format: 'rss', to: 'rss#feed', as: 'rss_status'
       end
 
       scope '/page' do
