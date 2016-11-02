@@ -225,6 +225,7 @@ it:
     delete_ad: Cancellare annuncio
     delete_if_delivered: Se hai regalato l'oggetto, raccomandiamo di cambiare lo stato a consegnato. Cosí l'annucio è contabilizato nelle tue statistiche e magari queste statistiche verrano usate nel future per fornire vantaggi ai migliori regalatori.
     delete_if_not_delivered: Se per contra hai regalato l'oggetto per altri mezzi oppure l'hai venduto o hai cambiato idea e non lo vuoi più regalare, vai avanti!
+    delete_sure: Sei sicuro che voui cancellare il tuo account? Tutto il tuo contenuto verrá cancellato in modo permanente.
     delivered: consegnato
     developers: svilupatori
     didn_t_receive_confirmation_instructions: Non hai ricevuto le istruzione di conferma?

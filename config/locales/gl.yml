@@ -228,6 +228,7 @@ gl:
     delete_ad: Eliminar anuncio
     delete_if_delivered: 
     delete_if_not_delivered: 
+    delete_sure: Está seguro de que quere cancelar a subscrición? Todo o seu contido será eliminado permanentemente.
     delivered: dedicado
     developers: desarrolladores
     didn_t_receive_confirmation_instructions: 
