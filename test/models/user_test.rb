@@ -127,4 +127,10 @@ class UserTest < ActiveSupport::TestCase
 
     assert_difference(-> { Comment.count }, -1) { @user.destroy }
   end
+
+  test 'associated blockings are deleted when user is deleted' do
+    create(:blocking, blocker: @user)
+
+    assert_difference(-> { Blocking.count }, -1) { @user.destroy }
+  end
 end
