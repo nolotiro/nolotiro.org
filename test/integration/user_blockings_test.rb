@@ -73,7 +73,7 @@ class UserBlockingsTest < AuthenticatedTest
     create(:blocking, blocker: @current_user, blocked: @other)
     mocking_yahoo_woeid_info(ad.woeid_code) { visit ad_path(ad) }
 
-    refute_selector '.ad_comment_form'
+    refute_selector '.comment_form'
     assert_equal ad_path(ad), current_path
   end
 

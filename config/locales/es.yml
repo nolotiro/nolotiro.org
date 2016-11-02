@@ -50,7 +50,7 @@ es:
       ad:
         one: anuncio
         other: Anuncios
-      ad_comment:
+      aa_comment:
         one: comentario
         other: Comentarios
       user:

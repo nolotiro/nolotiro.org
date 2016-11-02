@@ -50,7 +50,7 @@ ca:
       ad:
         one: anunci
         other: Anuncis
-      ad_comment:
+      aa_comment:
         one: comentari
         other: Comentaris
       user:
