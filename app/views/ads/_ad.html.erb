@@ -10,10 +10,10 @@
     <%= ad.filtered_title %>
   </h4>
 
-  <% unless current_woeid %>
+  <% unless current_woeid && @type %>
     <div class="ad_excerpt_woeid">
-      <%= ad.woeid_name %> &gt;
-      <%= ad.type_string %>
+      <%= safe_join([current_woeid ? nil : ad.woeid_name,
+                     @type ? nil : ad.type_string].compact, raw(' &gt; ')) %>
     </div>
   <% end %>
 
