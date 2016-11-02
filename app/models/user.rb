@@ -11,12 +11,18 @@ class User < ActiveRecord::Base
   has_many :ads, foreign_key: :user_owner, dependent: :destroy
   has_many :comments, foreign_key: :user_owner, dependent: :destroy
 
-  has_many :friendships
+  has_many :friendships, dependent: :destroy
+  has_many :incoming_friendships, foreign_key: :friend_id,
+                                  class_name: 'Friendship',
+                                  dependent: :destroy
   has_many :friends, through: :friendships
 
   has_many :receipts, foreign_key: :receiver_id, dependent: :destroy
 
   has_many :blockings, foreign_key: :blocker_id, dependent: :destroy
+  has_many :received_blockings, foreign_key: :blocked_id,
+                                class_name: 'Blocking',
+                                dependent: :destroy
   has_many :dismissals, dependent: :destroy
 
   has_many :started_conversations,
