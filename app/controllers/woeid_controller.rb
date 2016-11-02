@@ -29,16 +29,6 @@ class WoeidController < ApplicationController
 
   private
 
-  def current_woeid
-    @current_woeid ||= if request.path =~ %r{/listall/}
-                         nil
-                       else
-                         params[:id].presence || user_woeid
-                       end
-  end
-
-  helper_method :current_woeid
-
   def check_location
     redirect_to location_ask_path if user_signed_in? && user_woeid.nil?
 
@@ -46,9 +36,5 @@ class WoeidController < ApplicationController
 
     @woeid_info = WoeidHelper.convert_woeid_name(current_woeid)
     raise ActionController::RoutingError, 'Not Found' if @woeid_info.nil?
-  end
-
-  def user_woeid
-    current_user.try(:woeid)
   end
 end

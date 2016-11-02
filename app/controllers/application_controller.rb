@@ -65,11 +65,27 @@ class ApplicationController < ActionController::Base
 
   helper_method :conversations_count
 
+  def current_woeid
+    @current_woeid ||= if request.path =~ %r{/listall/}
+                         nil
+                       else
+                         params[:id].presence || user_woeid
+                       end
+  end
+
+  helper_method :current_woeid
+
   protected
 
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit(:sign_up, keys: [:username, :email, :password, :password_confirmation, :remember_me])
     devise_parameter_sanitizer.permit(:sign_in, keys: [:username, :email, :password, :remember_me])
     devise_parameter_sanitizer.permit(:account_update, keys: [:username])
+  end
+
+  private
+
+  def user_woeid
+    current_user.try(:woeid)
   end
 end

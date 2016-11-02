@@ -10,10 +10,12 @@
     <%= ad.filtered_title %>
   </h4>
 
-  <div class="ad_excerpt_woeid">
-    <%= ad.woeid_name %> &gt;
-    <%= ad.type_string %>
-  </div>
+  <% unless current_woeid %>
+    <div class="ad_excerpt_woeid">
+      <%= ad.woeid_name %> &gt;
+      <%= ad.type_string %>
+    </div>
+  <% end %>
 
   <div class="ad_status_line">
     <% if ad.give? %>
