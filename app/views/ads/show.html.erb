@@ -39,11 +39,13 @@
           </div>
         <% end %>
 
-        <% if @ad.give? %>
-          <span class="ad_status <%= @ad.status %>"><%= @ad.status_string %></span>
-        <% end %>
+        <div class="ad_status_line">
+          <% if @ad.give? %>
+            <span class="ad_status <%= @ad.status %>"><%= @ad.status_string %></span>
+          <% end %>
 
-        <%= linked_published_ago_by(@ad.published_at, @ad.user) %>
+          <%= linked_published_ago_by(@ad.published_at, @ad.user) %>
+        </div>
 
         <div class="body-wrapper">
           <%= simple_format(@ad.filtered_body) %>

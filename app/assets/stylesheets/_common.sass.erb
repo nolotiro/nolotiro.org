@@ -359,7 +359,6 @@ form.searchbox
   clear: left
   text-align: left
   font-size: 11px
-  margin-top: 5px
 
   b
     margin-right: 10px
@@ -367,10 +366,10 @@ form.searchbox
 .ad_contact
   margin: 15px 0
 
-.body-wrapper
-  margin-top: 5px
+.body-wrapper p
+  margin-bottom: 5px
 
-  p:last-child
+  &:last-child
     margin-bottom: 0
 
 .rss
@@ -494,9 +493,10 @@ form.searchbox
   clear: left
   display: block
 
-  > div
+  > div, h4
     color: $text
     font-weight: normal
+    margin-bottom: 8px
 
   h4
     color: $link
@@ -507,7 +507,6 @@ form.searchbox
     color: gray
     font-size: 1em
     font-weight: bold
-    margin-bottom: 3px
 
 /**
  * Layout.
