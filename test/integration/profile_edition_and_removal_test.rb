@@ -2,7 +2,7 @@
 
 require 'test_helper'
 
-class ProfileEditionTest < ActionDispatch::IntegrationTest
+class ProfileEditionAndRemovalTest < ActionDispatch::IntegrationTest
   include Warden::Test::Helpers
 
   before do
@@ -34,6 +34,13 @@ class ProfileEditionTest < ActionDispatch::IntegrationTest
     assert_text message
     assert_equal 'terec@example.com', User.first.email
     assert_equal 'terfo@example.com', User.first.unconfirmed_email
+  end
+
+  it 'allows account deletion' do
+    visit edit_user_registration_path
+    click_link 'Cancelar mi cuenta'
+
+    assert_text 'Fue grato tenerte con nosotros. Tu cuenta fue cancelada.'
   end
 
   private
