@@ -39,13 +39,6 @@ class CanAccessAdmin < ActionDispatch::IntegrationTest
     logout
   end
 
-  it 'should get /admin as admin' do
-    login_as admin
-    visit '/admin'
-    assert_text 'Últimos anuncios publicados'
-    logout
-  end
-
   private
 
   def user
