@@ -9,9 +9,11 @@ module TimeHelper
 
   def published_ago_by(time, user)
     content_tag(:span, class: 'ad_date') do
-      t('nlt.published_ago_by_html',
-        time: time_ago_in_words(time),
-        user: link_to(user.username, profile_path(user)))
+      t('nlt.published_ago_by_html', time: time_ago_in_words(time), user: user)
     end
+  end
+
+  def linked_published_ago_by(time, user)
+    published_ago_by(time, link_to(user.username, profile_path(user)))
   end
 end

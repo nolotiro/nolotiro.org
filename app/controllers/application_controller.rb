@@ -46,7 +46,7 @@ class ApplicationController < ActionController::Base
   end
 
   def location_suggest
-    @location_suggest ||= RequestGeolocator.new(request).suggest
+    @location_suggest ||= RequestGeolocator.new(request.remote_ip).suggest
   end
 
   helper_method :location_suggest

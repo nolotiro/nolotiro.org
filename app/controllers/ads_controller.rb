@@ -75,7 +75,7 @@ class AdsController < ApplicationController
     previous_path = session.delete(:return_to)
     return previous_path unless previous_path_destroyed?(previous_path)
 
-    listads_user_path(current_user)
+    listads_user_path(@ad.user)
   end
 
   def previous_path_destroyed?(previous_path)

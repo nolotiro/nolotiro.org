@@ -30,11 +30,11 @@ html
 
 a
   &:link
-    color: #00ACCF
+    color: $link
     text-decoration: none
 
   &:visited
-    color: #00ACCF
+    color: $link
 
   &:active
     color: #00C7EF
@@ -242,11 +242,6 @@ form.searchbox
   padding: 10px 18px 12px 0
 
 /* styles for adds
-
-.ad_excerpt_woeid
-  font-size: 1em
-  font-weight: bold
-  margin-bottom: 3px
 
 =word-break
   word-break: break-all
@@ -529,14 +524,28 @@ dl, dd
   margin: 0 !important
 
 .ad_excerpt_list
-  padding-top: 14px
-  padding-bottom: 10px
+  color: $text
+  padding: 10px 0
   width: 100%
   border-bottom: 1px solid $gray-separator
 
+.ad_content
+  clear: left
+  display: block
+
+  > div
+    color: $text
+    font-weight: normal
+
   h4
+    color: $link
     font-size: 1.4em
     font-weight: bold
+
+  > .ad_excerpt_woeid
+    font-size: 1em
+    font-weight: bold
+    margin-bottom: 3px
 
 /**
  * Layout.
@@ -647,7 +656,7 @@ dl, dd
   color: black
   text-decoration: none
 
-#location_header_section
+.location_header_section
   z-index: 100
   display: block
   background-color: $blue-searchbox
@@ -656,6 +665,12 @@ dl, dd
   padding-left: 20px
   border: 1px solid $gray-separator
   min-height: 75px
+
+.panel-default
+  .static-page-panel-heading
+    @extend .panel-heading
+
+    background-color: $blue-searchbox
 
 .world_link
   display: inline-block
@@ -698,7 +713,7 @@ dl, dd
   margin-right: 2px
 
   span
-    border: solid 1px #00ACCF
+    border: solid 1px $link
     margin-right: 2px
     text-align: center
     padding: 4px
@@ -707,7 +722,7 @@ dl, dd
     text-decoration: none
 
   #current
-    background-color: #00ACCF
+    background-color: $link
     display: inline-block
     color: #fff
     text-align: center
