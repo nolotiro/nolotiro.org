@@ -4,6 +4,9 @@
 class Ad < ActiveRecord::Base
   include Hidable
   include Spamable
+  include Statable
+
+  counter_stats_for :published_at
 
   belongs_to :user, foreign_key: :user_owner, counter_cache: true
   has_many :comments, foreign_key: :ads_id, dependent: :destroy
@@ -38,7 +41,6 @@ class Ad < ActiveRecord::Base
   # before_save :titleize_body if self.body and /[[:upper:]]/.match(self.body)
 
   scope :recent, -> { Ad.includes(:user).recent_first.limit(90) }
-  scope :last_week, -> { where('published_at >= :date', date: 1.week.ago) }
 
   scope :by_woeid_code, ->(woeid_code) do
     return all unless woeid_code.present?

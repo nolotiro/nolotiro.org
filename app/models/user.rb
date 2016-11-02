@@ -2,6 +2,9 @@
 
 class User < ActiveRecord::Base
   prepend Baneable
+  include Statable
+
+  counter_stats_for :created_at
 
   has_many :identities, inverse_of: :user, dependent: :destroy
 
