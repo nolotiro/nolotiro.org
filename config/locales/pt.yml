@@ -225,6 +225,7 @@ pt:
     delete_ad: Apagar anúncio
     delete_if_delivered: 
     delete_if_not_delivered: 
+    delete_sure: Tem certeza de que deseja cancelar a inscrição? Todo o seu conteúdo será apagado permanentemente.
     delivered: entregado
     developers: desenvolvedores
     didn_t_receive_confirmation_instructions: Você não recebeu instruções de confirmação?

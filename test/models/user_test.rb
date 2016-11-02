@@ -127,4 +127,28 @@ class UserTest < ActiveSupport::TestCase
 
     assert_difference(-> { Comment.count }, -1) { @user.destroy }
   end
+
+  test 'associated blockings are deleted when user is deleted' do
+    create(:blocking, blocker: @user)
+
+    assert_difference(-> { Blocking.count }, -1) { @user.destroy }
+  end
+
+  test 'associated incoming blockings are deleted when user is deleted' do
+    create(:blocking, blocked: @user)
+
+    assert_difference(-> { Blocking.count }, -1) { @user.destroy }
+  end
+
+  test 'associated friendships are deleted when user is deleted' do
+    create(:friendship, user: @user)
+
+    assert_difference(-> { Friendship.count }, -1) { @user.destroy }
+  end
+
+  test 'associated incoming friendships are deleted when user is deleted' do
+    create(:friendship, friend: @user)
+
+    assert_difference(-> { Friendship.count }, -1) { @user.destroy }
+  end
 end

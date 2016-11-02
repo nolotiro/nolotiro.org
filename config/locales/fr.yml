@@ -225,6 +225,7 @@ fr:
     delete_ad: Supprimer ad
     delete_if_delivered: 
     delete_if_not_delivered: 
+    delete_sure: Êtes-vous sûr que vous voulez vous désabonner? Tout votre contenu sera définitivement supprimé.
     delivered: dévoué
     developers: développeurs
     didn_t_receive_confirmation_instructions: Vous avez pas reçu les instructions de confirmation?
