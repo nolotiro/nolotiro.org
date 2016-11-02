@@ -1,9 +1,9 @@
-<div class="ad_comments">
+<div class="comments">
   <% if comments.any? %>
     <h5><%= t('nlt.comments.title') %></h5>
 
     <% comments.each do |comment| %>
-      <div class="ad_comment">
+      <div class="comment">
         <%= linked_published_ago_by(comment.created_at, comment.user) %>
        <br>
        <span><%= comment.body %></span>
@@ -12,7 +12,7 @@
   <% end %>
 
   <% if policy(@comment).create? %>
-    <div class="ad_comment_form">
+    <div class="comment_form">
       <%= render "comments/form", comment: @comment %>
     </div>
   <% end %>

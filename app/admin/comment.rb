@@ -2,7 +2,7 @@
 
 require 'helpers/stats_sidebar'
 
-ActiveAdmin.register Comment, as: 'AdComment' do
+ActiveAdmin.register Comment, as: 'AaComment' do
   include StatsSidebar
 
   permit_params :body
@@ -32,6 +32,6 @@ ActiveAdmin.register Comment, as: 'AdComment' do
   end
 
   action_item :view, only: :show do
-    link_to 'Ver en la web', ad_path(ad_comment.ad)
+    link_to 'Ver en la web', ad_path(aa_comment.ad)
   end
 end

@@ -50,7 +50,7 @@ it:
       ad:
         one: annuncio
         other: Annunci
-      ad_comment:
+      aa_comment:
         one: commento
         other: Commenti
       user:

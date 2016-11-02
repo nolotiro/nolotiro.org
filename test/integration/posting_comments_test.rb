@@ -12,7 +12,7 @@ class PostingCommentsTest < ActionDispatch::IntegrationTest
   test 'users need to login before posting a comment' do
     mocking_yahoo_woeid_info(@ad.woeid_code) { visit ad_path(@ad) }
 
-    refute_selector '.ad_comments > form'
+    refute_selector '.comments > form'
   end
 
   test 'comments can be posted by logged in users' do
@@ -21,7 +21,7 @@ class PostingCommentsTest < ActionDispatch::IntegrationTest
     fill_in 'Tu comentario', with: 'No tiene ruedas'
     click_button 'Enviar'
 
-    assert_selector '.ad_comment', text: 'No tiene ruedas'
+    assert_selector '.comment', text: 'No tiene ruedas'
     logout
   end
 
@@ -30,6 +30,6 @@ class PostingCommentsTest < ActionDispatch::IntegrationTest
     comment.user.ban!
     mocking_yahoo_woeid_info(@ad.woeid_code) { visit ad_path(@ad) }
 
-    assert_no_selector '.ad_comment', text: 'Tiene ruedas?'
+    assert_no_selector '.comment', text: 'Tiene ruedas?'
   end
 end
