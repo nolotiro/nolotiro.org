@@ -744,20 +744,59 @@ form.searchbox
   width: 100%
   height: 100px
 
-.btn.login-with-facebook, .btn.login-with-google
-  color: white
-  display: block
-  font-weight: bold
+.login-card
+  .btn.login-with-facebook, .btn.login-with-google
+    color: white
+    display: block
+    font-weight: bold
 
-.btn.login-with-facebook
-  background-color: #3b5998
-  border-color: #3B5998
-  margin-top: 30px
+  .btn.login-with-facebook
+    background-color: #3b5998
+    border-color: #3B5998
 
-.btn.login-with-google
-  background-color: #d62d20
-  border-color: #d62d20
-  margin-top: 10px
+  .btn.login-with-google
+    background-color: #d62d20
+    border-color: #d62d20
+    margin-top: 10px
+
+  .btn.login-with-facebook, .btn.login-with-google, form
+    width: 70%
+    min-width: 235px
+    margin-left: auto
+    margin-right: auto
+
+@media only screen and (min-width: $container-sm + 1)
+  .login-card
+    @include make-row
+
+    display: flex
+    align-items: center
+
+    .registration-form-wrapper
+      @include make-md-column(6)
+      @include make-sm-column(6)
+
+      border-right: 1px solid $gray-separator
+
+    .omniauth-wrapper
+      @include make-md-column(6)
+      @include make-sm-column(6)
+
+@media only screen and (max-width: $container-sm)
+  .registration-form-wrapper
+    @include make-md-column(12)
+    @include make-sm-column(12)
+
+    border-bottom: 1px solid $gray-separator
+    padding-bottom: 15px
+    position: relative
+
+  .omniauth-wrapper
+    @include make-md-column(12)
+    @include make-sm-column(12)
+
+    padding-top: 30px
+    padding-bottom: 15px
 
 @media only screen and (max-width: $container-sm)
   .site-name

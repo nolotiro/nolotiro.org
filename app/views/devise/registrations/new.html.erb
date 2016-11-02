@@ -9,7 +9,15 @@
 <% end %>
 
 <div class="default_content_section">
-  <div class="row">
-    <%= render 'new_form' %>
+  <div class="login-card">
+    <div class="registration-form-wrapper">
+      <%= render 'new_form' %>
+    </div>
+
+    <% unless omniauth_registration? %>
+      <div class="omniauth-wrapper">
+        <%= render 'devise/shared/omniauth_links' %>
+      </div>
+    <% end %>
   </div>
 </div>
