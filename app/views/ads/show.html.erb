@@ -70,7 +70,10 @@
 
         <div class="sharelinks">
           <p><%= t('nlt.share_this_ad') %>:</p>
-          <%= render "partials/social_buttons", url: ad_url(@ad) %>
+
+          <div class="social-buttons">
+            <%= render "partials/social_buttons", url: ad_url(@ad) %>
+          </div>
         </div>
       </div>
 
