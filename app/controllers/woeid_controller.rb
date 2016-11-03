@@ -13,9 +13,9 @@ class WoeidController < ApplicationController
     @type = type_scope || 'give'
     @status = status_scope || 'available'
     @q = params[:q]
-    page = params[:page]
+    @page = params[:page]
 
-    unless page.nil? || positive_integer?(page)
+    unless @page.nil? || positive_integer?(@page)
       raise ActionController::RoutingError, 'Not Found'
     end
 
@@ -24,7 +24,7 @@ class WoeidController < ApplicationController
               .by_woeid_code(current_woeid)
               .by_title(@q)
 
-    @ads = policy_scope(scope).includes(:user).recent_first.paginate(page: page)
+    @ads = policy_scope(scope).includes(:user).recent_first.paginate(page: @page)
   end
 
   private
