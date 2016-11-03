@@ -68,7 +68,7 @@ class UnauthenticatedAdListing < ActionDispatch::IntegrationTest
     assert_selector '.ad_excerpt_list', count: 1, text: 'delten'
   end
 
-  it 'lists wanted ads when a status filter is active' do
+  it 'lists petitions when a status filter is active' do
     visit ads_woeid_path(766_273, type: 'give')
     click_link 'disponible'
     click_link 'peticiones'
