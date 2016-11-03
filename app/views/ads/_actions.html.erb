@@ -1,19 +1,39 @@
-<% if policy(ad).update? || policy(ad).bump? %>
+<% if policy(ad).update? || policy(ad).bump? || policy(ad).change_status? %>
   <ul class="ad_actions">
+    <% if policy(ad).change_status? %>
+      <% Ad.statuses.keys.each do |status| %>
+        <% next if ad.public_send(:"#{status}?") %>
+
+        <li>
+          <% full_title = t('nlt.mark_this_ad', status: t("nlt.#{status}")) %>
+
+          <%= link_to ads_change_status_path(ad, status: status),
+                      method: :post, title: full_title do %>
+            <%= image_tag "#{status}.png", alt: full_title %>
+            <%= t('nlt.mark_as', status: t("nlt.#{status}")) %>
+          <% end %>
+        </li>
+      <% end %>
+    <% end %>
+
     <% if policy(ad).update? %>
       <li>
-        <%= link_to ads_edit_path(ad.id) do %>
-          <%= image_tag "edit_ad.png", alt: t('nlt.edit_this_ad') %>
-          &nbsp; <%= t('nlt.edit_this_ad') %>
+        <% full_title = t('nlt.edit_this_ad') %>
+
+        <%= link_to ads_edit_path(ad), title: full_title do %>
+          <%= image_tag "edit_ad.png", alt: full_title %>
+          <%= t('nlt.edit') %>
         <% end %>
       </li>
     <% end %>
 
     <% if policy(ad).bump? %>
       <li>
-        <%= link_to ads_bump_path(ad.id), method: :post do %>
-          <%= image_tag "bump_ad.png", alt: t('nlt.bump_this_ad') %>
-          &nbsp; <%= t('nlt.bump_this_ad') %>
+        <% full_title = t('nlt.bump_this_ad') %>
+
+        <%= link_to ads_bump_path(ad), method: :post, title: full_title do %>
+          <%= image_tag "bump_ad.png", alt: full_title %>
+          <%= t('nlt.bump') %>
         <% end %>
       </li>
     <% end %>

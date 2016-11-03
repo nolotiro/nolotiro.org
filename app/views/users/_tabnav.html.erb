@@ -1,22 +1,15 @@
-<ul id="tabnav">
-  <!-- TODO: can an user edit or view messages from another user? -->
+<ul class="nav nlt-tabs">
   <% if user_signed_in? and user == current_user %>
-    <li>
-      <%= link_to t('nlt.messages'),
-                  conversations_path,
-                  class: ('active' if messages_tab?) %>
+    <li role="presentation" <%= 'class=active' if messages_tab? %>>
+      <%= link_to t('nlt.messages'), conversations_path %>
     </li>
   <% end %>
 
-  <li>
-    <%= link_to t('nlt.profile'),
-                profile_path(user.username),
-                class: ('active' if profile_tab?) %>
+  <li role="presentation" <%= 'class=active' if profile_tab? %>>
+    <%= link_to t('nlt.profile'), profile_path(user.username) %>
   </li>
 
-  <li>
-    <%= link_to t('nlt.user_ads'),
-                listads_user_path(user),
-                class: ('active' if ad_tab?) %>
+  <li role="presentation" <%= 'class=active' if ad_tab? %>>
+    <%= link_to t('nlt.user_ads'), listads_user_path(user) %>
   </li>
 </ul>

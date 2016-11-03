@@ -170,9 +170,9 @@ it:
       title: Su nolotiro.org
     access_here: accedi qui
     ads:
-      bumped: Abbiamo ripubblicato annuncio
-      created: 'Abbiamo creato l''annuncio '
-      destroyed: Abbiamo cancellato l'annuncio
+      bumped: Annuncio ripubblicato
+      created: Annuncio creato
+      destroyed: Annuncio cancellato
       form:
         body: Corpo del annuncio
         body_max: Massimo 500 caratteri
@@ -181,11 +181,11 @@ it:
         private_messages_only: Soltanto por messaggi privati
         private_messages_or_comments: Por messaggi privati oppure por commenti nell'annucio
         select_an_image: Seleziona una immagine per il tuo annuncio
-        status: Stato
         title: 'Titolo del tuo annuncio: '
         title_tip: Descrivi brevemente ciò che dai o cerchi (max. 100 caratteri)
         type_ad: Che tipo di annuncio vuoi pubblicare?
-      updated: Abbiamo aggiornato il tuo annuncio
+      marked_as: Annuncio %{status}
+      updated: Annuncio aggiornato
     all: tutti
     all_ads: tutti gli annunci
     are_you_interested: Sei interessato?
@@ -193,6 +193,7 @@ it:
     back: torna alla pagina iniziale
     blog: blog
     booked: riservato
+    bump: Repubblicare
     bump_this_ad: Repubblica questo annuncio
     cancel_my_account: Cancella il mio account
     change_city: cambia città
@@ -230,6 +231,7 @@ it:
     developers: svilupatori
     didn_t_receive_confirmation_instructions: Non hai ricevuto le istruzione di conferma?
     edit_this_ad: Editare questo annuncio
+    edit: Editare
     faq:
       answer_1_html: Lo scopo fondamentale di questo sito è quello di sbarazzarsi di oggetti non più utilizzati e che ci ostacolano in casa
       answer_2_html: Prima a te direttamente perche ti puoi liberare delle cose che non voui più, ma anche alla persona a qui regali implicitamente. Il meglio è vederlo da un punto di vista egoista e controllare la relazione de causa-effetto che stiamo a iniziare. Si facciamo cosí e pensiamo soltanto a liberarci delle cose útili, ma che noi non vogliamo più perche ci incomodano e sono da buttare fuori, sempre terremo una bella esperienza, perche non speriamo niente di più. Ed il fatto de sapere que qualcuno ne está profittando rafforze la esperienza. In altre parole, l'atto di regalare delle cose di valore o útili es sempre positivo se non speriamo un premio morale o placare la nostra coscienza.
@@ -275,6 +277,8 @@ it:
     logout: uscire
     mail:
       automatic: Questo è un messaggio automatico. Si prega di non rispondere a questo indirizzo email.
+    mark_as: Segnare %{status}
+    mark_this_ad: Segna questo annuncio come %{status}
     member_since: membro dal
     messages: messaggi
     messages_title: Messaggi
@@ -319,6 +323,8 @@ it:
         add: 
         confirm: 
         delete: 
+      contact: envia un messaggio privato a %{username}
+      edit: modifica profilo utente
       friend:
         add: aggiungere %{username} alla tua lista di amici
         delete: rimuovere %{username} alla tua lista di amici
@@ -339,7 +345,6 @@ it:
     searching_on_html: Cercando <i>%{q}</i> in
     send: Inviare
     send_a_message: "+ Invia un messaggio privato al annunciante"
-    send_a_message_to: 'envia un messaggio privato a '
     share_this_ad: Condividi questo annuncio
     sign_in: Login
     sign_in_with_provider: Accedi con %{provider}

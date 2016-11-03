@@ -35,7 +35,26 @@ class AdManagementTest < AuthenticatedTest
       click_link 'Republica este anuncio'
     end
 
-    assert_text 'Hemos republicado el anuncio'
+    assert_text 'Anuncio republicado'
+  end
+
+  it 'changes ad status' do
+    ad = create(:ad, :available, user: @current_user)
+
+    mocking_yahoo_woeid_info(ad.woeid_code) do
+      visit ad_path(ad)
+
+      assert_no_selector 'a', text: 'Marcar disponible'
+      assert_selector 'a', text: 'Marcar reservado'
+      assert_selector 'a', text: 'Marcar entregado'
+
+      click_link 'Marcar reservado'
+    end
+
+    assert_text 'Anuncio reservado'
+    assert_selector 'a', text: 'Marcar disponible'
+    assert_no_selector 'a', text: 'Marcar reservado'
+    assert_selector 'a', text: 'Marcar entregado'
   end
 
   it 'saves spam ads but does not list them' do

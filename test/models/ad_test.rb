@@ -10,7 +10,6 @@ class AdTest < ActiveSupport::TestCase
   test 'ad requires everything' do
     a = Ad.new
     a.valid?
-    assert_not_empty a.errors[:status]
     assert_not_empty a.errors[:body]
     assert_not_empty a.errors[:title]
     assert_not_empty a.errors[:user_owner]
@@ -29,6 +28,14 @@ class AdTest < ActiveSupport::TestCase
     assert_equal true, build(:ad, status: :booked).valid?
     assert_equal true, build(:ad, status: :delivered).valid?
     assert_raises(ArgumentError) { build(:ad, status: :other) }
+  end
+
+  test 'requires non-nil status for give ads' do
+    assert_equal false, build(:ad, type: :give, status: nil).valid?
+  end
+
+  test 'requires nil status for want ads' do
+    assert_equal false, build(:ad, type: :want, status: :available).valid?
   end
 
   test 'ad validates maximum length of title' do
@@ -128,5 +135,23 @@ class AdTest < ActiveSupport::TestCase
 
   test '.by_title ignores invalid bytes sequences' do
     assert_equal [], Ad.by_title("Física y Química 3º ESoC3\x93")
+  end
+
+  test '.move! changes ad type' do
+    ad = create(:ad, :give)
+    ad.move!
+    assert_equal true, ad.want?
+
+    ad.move!
+    assert_equal true, ad.give?
+  end
+
+  test '.move! updates the status to keep the ad valid' do
+    ad = create(:ad, :give)
+    ad.move!
+    assert_nil ad.status
+
+    ad.move!
+    assert_equal true, ad.available?
   end
 end

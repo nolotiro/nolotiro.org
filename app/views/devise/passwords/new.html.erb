@@ -1,11 +1,14 @@
-<% content_for(:meta_title, t('nlt.forgot_your_password')) %>
+<% title = t('nlt.forgot_your_password') %>
+<% content_for(:meta_title, title) %>
 
-<div id="default_header_section">
-  <h1><%= t('nlt.forgot_your_password') %></h1>
+<div class="default_header_section">
+  <h1><%= title.to_s %></h1>
 </div>
 
-<div class="col-md-8 col-sm-8">
+<div class="default_content_section">
   <div class="row">
-    <%= render "new_form" %>
+    <div class="col-md-8 col-sm-8">
+      <%= render "new_form" %>
+    </div>
   </div>
 </div>

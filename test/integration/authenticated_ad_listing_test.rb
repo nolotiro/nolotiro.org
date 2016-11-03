@@ -46,6 +46,19 @@ class AuthenticatedAdListing < ActionDispatch::IntegrationTest
     assert_selector '.ad_excerpt_list', count: 1, text: 'avamad1'
   end
 
+  it 'lists first page of petitions everywhere in all ads page' do
+    visit ads_listall_path(type: 'want')
+
+    assert_selector '.ad_excerpt_list', count: 1, text: 'busbar'
+  end
+
+  it 'lists other pages of available ads everywhere in all ads page' do
+    visit ads_listall_path(type: 'give')
+    click_link 'siguiente'
+
+    assert_selector '.ad_excerpt_list', count: 1, text: 'avamad1'
+  end
+
   it 'lists first page of available ads in users location in home page' do
     visit root_path
 

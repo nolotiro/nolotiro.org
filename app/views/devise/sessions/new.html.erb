@@ -1,14 +1,20 @@
-<% content_for(:meta_title, t('nlt.sign_in')) %>
+<% content_for :meta_title, t('nlt.sign_in') %>
 
-<div id="default_header_section">
+<div class="default_header_section">
   <h1><%= t('nlt.to_publish_or_send_messages') %></h1>
   <br><br>
   (<%= t 'nlt.if_you_are_new' %>
   <%= link_to t('nlt.register_here'), new_user_registration_path %>)
 </div>
 
-<div class="col-md-8 col-sm-12">
-  <div class="row">
-    <%= render "form" %>
+<div class="default_content_section">
+  <div class="login-card">
+    <div class="registration-form-wrapper">
+      <%= render "form" %>
+    </div>
+
+    <div class="omniauth-wrapper">
+      <%= render "devise/shared/omniauth_links" %>
+    </div>
   </div>
 </div>

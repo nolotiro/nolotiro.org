@@ -1,14 +1,11 @@
 <%= form_tag action: "change" do %>
-  <fieldset>
-    <dl>
-      <dt>&nbsp;</dt>
-      <dd>
-      <%= select_tag :location, options_for_select(locations.as_options) %>
-      </dd>
-      <dt>&nbsp;</dt>
-      <dd>
-      <%= submit_tag t('nlt.change_town.choose') %>
-      </dd>
-    </dl>
-  </fieldset>
+  <div class="form-group">
+    <%= select_tag :location,
+                   options_for_select(locations.as_options),
+                   class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= submit_tag t('nlt.change_town.choose') %>
+  </div>
 <% end %>

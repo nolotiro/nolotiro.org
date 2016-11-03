@@ -33,6 +33,9 @@ NolotiroOrg::Application.routes.draw do
           get '/:id/:slug', to: 'ads#show', as: 'adslug'
           get '/edit/id/:id', to: 'ads#edit', as: 'ads_edit'
           post '/bump/id/:id', to: 'ads#bump', as: 'ads_bump'
+          post '/change_status/id/:id',
+               to: 'ads#change_status',
+               as: 'ads_change_status'
           get '/listall/ad_type/:type(/status/:status)(/page/:page)',
               to: 'woeid#show',
               as: 'ads_listall'

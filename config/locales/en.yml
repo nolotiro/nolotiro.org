@@ -170,9 +170,9 @@ en:
       title: About nolotiro.org
     access_here: access here
     ads:
-      bumped: We have bumped the ad
-      created: We have created the ad
-      destroyed: We have destroyed the ad
+      bumped: Ad bumped
+      created: Ad created
+      destroyed: Ad destroyed
       form:
         body: 'Body of the ad:'
         body_max: Maximum 500 characters
@@ -181,11 +181,11 @@ en:
         private_messages_only: Through private messages only
         private_messages_or_comments: Through both private messages or public comments in the ad
         select_an_image: Choose an image for you ad
-        status: Status
         title: 'Title of your ad:'
         title_tip: Describe briefly what you're giving away or looking for (max. 100 chars)
         type_ad: Which type of ad would you like to publish?
-      updated: We have updated your ad
+      marked_as: Ad %{status}
+      updated: Ad updated
     all: all
     all_ads: all ads
     are_you_interested: Are you interested?
@@ -193,6 +193,7 @@ en:
     back: Back to the main page
     blog: blog
     booked: reserved
+    bump: Republish
     bump_this_ad: Republish this ad
     cancel_my_account: Cancel my account
     change_city: change city
@@ -230,6 +231,7 @@ en:
     developers: developers
     didn_t_receive_confirmation_instructions: Didn't receive the confirmation's instructions?
     edit_this_ad: Edit this ad
+    edit: Edit
     faq:
       answer_1_html: The fundamental purpose of this website is to get rid of items you no longer use and hinder you at home.
       answer_2_html: 'First asking you directly get rid of those things you no longer want, and always to give something implicitly. It is best to approach it selfishly and control the cause-effect relationship that will trigger giving. If we approach the act of giving objects from a selfish perspective, getting rid of useful things that are bothering us and will end up in the trash, we''ll always we have a good experience, not expecting anything more to get rid of those objects. And knowing that someone is giving profit use or enhance the experience as positive. In other words: the act of giving things of value or useful is always a positive thing if we do not expect a moral reward or appease our conscience.'
@@ -273,6 +275,8 @@ en:
     logout: logout
     mail:
       automatic: This is an automatic message, please do not answer to this email address
+    mark_as: Mark %{status}
+    mark_this_ad: Mark this ad as %{status}
     member_since: Member since
     messages: messages
     messages_title: Messages
@@ -313,6 +317,8 @@ en:
         add: 
         confirm: 
         delete: 
+      contact: send a private message to %{username}
+      edit: edit user's profile
       friend:
         add: 'Add %{username} to your friend''s list '
         delete: Delete %{username} from your friend's list
@@ -333,7 +339,6 @@ en:
     searching_on_html: Searching <i>%{q}</i> on
     send: Send
     send_a_message: "+ Send a private message to this user"
-    send_a_message_to: send a private message to
     share_this_ad: Share this ad
     sign_in: Sign in
     sign_in_with_provider: Sign in with %{provider}

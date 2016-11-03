@@ -3,7 +3,7 @@
     <li>
       <%= link_to new_conversation_path(recipient_id: user.id),
                   class: "world_link" do %>
-        <%= t('nlt.send_a_message_to') %> <%= user.username %>
+        <%= t('nlt.profile_actions.contact', username: user.username) %>
 
         <%= image_tag "email_send.png" %>
       <% end %>
@@ -13,7 +13,7 @@
   <% if user_signed_in? %>
     <% if current_user == user %>
       <li>
-        <%= link_to t('nlt.user_edit_profile'),
+        <%= link_to t('nlt.profile_actions.edit'),
                     user_edit_path(user),
                     class: 'world_link' %>
       </li>

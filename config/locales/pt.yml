@@ -181,10 +181,10 @@ pt:
         private_messages_only: Apenas por messagem privada
         private_messages_or_comments: Por messagem privada o ou através de comentários públicos no anúncio
         select_an_image: Adicionar uma imagem para o anúncio
-        status: Estado
         title: 'Titulo do anúncio:'
         title_tip: Descreva resumidamente o que você doar ou procurar (100 caracteres no máximo)
         type_ad: Que tipo de anúncio gostaria de postar?
+      marked_as: Anúncio %{status}
       updated: Anúncio atualizado
     all: todos
     all_ads: todos os anúncios
@@ -193,6 +193,7 @@ pt:
     back: voltar para a pagina de inicio
     blog: blog
     booked: reservado
+    bump: Renovar
     bump_this_ad: Renovar este anúncio
     cancel_my_account: Apagar minha conta
     change_city: escolher cidade
@@ -230,6 +231,7 @@ pt:
     developers: desenvolvedores
     didn_t_receive_confirmation_instructions: Você não recebeu instruções de confirmação?
     edit_this_ad: Edita este anúncio
+    edit: Editar
     faq:
       answer_1_html: O objectivo fundamental deste site é nos livrar dos objetos que já não usamos e ficam nos estorvando em casa.
       answer_2_html: 'No primeiro lugar a você te ajudando a desapegar de aqueles objetos que já não quer manter, e sempre a quem da de presente algo implicitamente. O melhor é abordá-lo de um jeito egoísta e controlar a relação de causa e efeito que vamos desencadear ao fazer um presente. Se abordamos o ato de obsequiar desde uma perspectiva egoísta, onde nos desapegamos de coisas úteis mas que ficam incomodando, ocupando espaço valioso e que muitas vezes vão acabar na lixeira, sempre teremos uma boa experiência, sem esperar nada em troca, pensando só em nos livrar de tais objetos. E saber que alguém está dando-lhe um bom uso vai reforçar essa experiência como positiva. Quer dizer: O ato de dar coisas úteis ou de valor sempre é ama coisa boa se não esperamos uma recompensa moral ou aplacar nossa consciência.'
@@ -273,6 +275,8 @@ pt:
     logout: sair
     mail:
       automatic: Este é uma mensagem automática. Por favor, não responda a este email.
+    mark_as: Marcar %{status}
+    mark_this_ad: Marca este anúncio como %{status}
     member_since: Membro desde
     messages: mensagens
     messages_title: Mensagens
@@ -313,6 +317,8 @@ pt:
         add: 
         confirm: 
         delete: 
+      contact: envia uma mensagem privada a %{username}
+      edit: editar perfil de usuário
       friend:
         add: adicionar %{username} a sua lista de amigos
         delete: excluir %{username} da sua lista de amigos
@@ -333,7 +339,6 @@ pt:
     searching_on_html: Buscando <i>%{q}</i> em
     send: Enviar
     send_a_message: "+ Envia uma mensagem privada ao anunciante"
-    send_a_message_to: envia uma mensagem privada a
     share_this_ad: Compartilha este anúncio
     sign_in: Accesar
     sign_in_with_provider: Fazer login com %{provider}

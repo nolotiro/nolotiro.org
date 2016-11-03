@@ -171,9 +171,9 @@ gl:
       title: Acerca de nolotiro.org
     access_here: Entre aquí
     ads:
-      bumped: Republicamos o anuncio
-      created: Creamos o anuncio
-      destroyed: Eliminamos o anuncio
+      bumped: Anuncio republicado
+      created: Anuncio creado
+      destroyed: Anuncio eliminado
       form:
         body: 'Corpo do anuncio:'
         body_max: Máximo 500 caracteres
@@ -182,11 +182,11 @@ gl:
         private_messages_only: Unicamente por mensaxe privada
         private_messages_or_comments: Por mensaxe privada o mediante comentarios públicos no anuncio
         select_an_image: Seleccione unha imaxe para o súo regalo
-        status: Estado
         title: 'Título do anuncio:'
         title_tip: Describe resumidamente o que doas ou buscas (máx. 100 caracteres)
         type_ad: Que tipo de anuncio quere publicar?
-      updated: actualizamos o anuncio
+      marked_as: Anuncio marcado como %{status}
+      updated: Anuncio actualizado
     all: todos
     all_ads: todos os anuncios
     are_you_interested: Interesado?
@@ -194,7 +194,8 @@ gl:
     back: regresar á páxina de inicio
     blog: blog
     booked: reservado
-    bump_this_ad: 
+    bump: Republicar
+    bump_this_ad: Republicar este anuncio
     cancel_my_account: Cancelar a miña conta
     change_city: cambio cidades
     change_town:
@@ -233,6 +234,7 @@ gl:
     developers: desarrolladores
     didn_t_receive_confirmation_instructions: 
     edit_this_ad: Edita este anuncio
+    edit: Editar
     faq:
       answer_1_html: O principal obxectivo deste sitio é para se librar de elementos que non usa máis e impiden connosco na casa.
       answer_2_html: 
@@ -278,6 +280,8 @@ gl:
     logout: 
     mail:
       automatic: 
+    mark_as: Marcar %{status}
+    mark_this_ad: Marca este anuncio como %{status}
     member_since: 
     messages: 
     messages_title: 
@@ -318,6 +322,8 @@ gl:
         add: 
         confirm: 
         delete: 
+      contact: 
+      edit: editar perfil de usuario
       friend:
         add: 
         delete: 
@@ -338,7 +344,6 @@ gl:
     searching_on_html: 
     send: 
     send_a_message: 
-    send_a_message_to: 
     share_this_ad: Comparte este anuncio
     sign_in: Acceder
     sign_in_with_provider: Entrar co %{provider}

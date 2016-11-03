@@ -31,13 +31,12 @@ class Search < ActionDispatch::IntegrationTest
     assert_text 'No hay anuncios que coincidan con la búsqueda espejo'
   end
 
-  it 'sucessfully changes ad type when searching' do
-    fill_in 'q', with: 'tele'
+  it 'shows a no results message when nothing found in current section' do
+    click_link 'peticiones'
+    fill_in 'q', with: 'muebles'
     click_button 'buscar'
 
     assert_selector '.ad_excerpt_list', count: 0
-    click_link 'peticiones'
-
-    assert_selector '.ad_excerpt_list', count: 1
+    assert_text 'No hay anuncios que coincidan con la búsqueda muebles'
   end
 end

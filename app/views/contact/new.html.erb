@@ -1,14 +1,17 @@
-<% content_for :meta_title, t('nlt.contact_form') %>
+<% title = t('nlt.contact_form') %>
+<% content_for :meta_title, title %>
 
-<div id="default_header_section">
-  <h2><%= t('nlt.contact_form') %></h2>
+<div class="default_header_section">
+  <h1><%= title.to_s %></h1>
   <br>
   <%= t('nlt.contact_legend_html',
         new_ad_link: link_to(t('nlt.here'), new_ad_path)) %>
 </div>
 
-<div class="col-md-8 col-sm-8">
+<div class="default_content_section">
   <div class="row">
-    <%= render 'form', contact: @contact %>
+    <div class="col-md-8 col-sm-8">
+      <%= render 'form', contact: @contact %>
+    </div>
   </div>
 </div>

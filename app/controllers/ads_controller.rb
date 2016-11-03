@@ -20,7 +20,7 @@ class AdsController < ApplicationController
     @ad.user_owner = current_user.id
     @ad.woeid_code = current_user.woeid
     @ad.ip = request.remote_ip
-    @ad.status = :available
+    @ad.status = :available if @ad.give?
     @ad.published_at = Time.zone.now
     authorize(@ad)
 
@@ -41,6 +41,12 @@ class AdsController < ApplicationController
 
   def edit
     session[:return_to] = referer_path
+  end
+
+  def change_status
+    @ad.update!(status: params[:status].to_sym)
+
+    redirect_to :back, notice: t('nlt.ads.marked_as', status: @ad.status_string)
   end
 
   def bump
@@ -98,7 +104,15 @@ class AdsController < ApplicationController
     @ad
   end
 
+  def ad_create_whitelist
+    ad_update_whitelist + [:type]
+  end
+
+  def ad_update_whitelist
+    [:title, :body, :comments_enabled, :image]
+  end
+
   def ad_params
-    params.require(:ad).permit(:title, :body, :type, :status, :comments_enabled, :image)
+    params.require(:ad).permit(send(:"ad_#{params[:action]}_whitelist"))
   end
 end

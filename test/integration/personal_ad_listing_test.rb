@@ -28,7 +28,7 @@ class PersonalAdListingTest < ActionDispatch::IntegrationTest
     assert_selector '.ad_excerpt_list', count: 5
   end
 
-  it 'lists wanted ads in a separate tab in user profile' do
+  it 'lists petitions in a separate tab in user profile' do
     click_link 'peticiones'
 
     assert_selector '.ad_excerpt_list', count: 1, text: 'wan1'

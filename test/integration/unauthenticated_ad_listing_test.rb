@@ -14,6 +14,7 @@ class UnauthenticatedAdListing < ActionDispatch::IntegrationTest
     create(:ad, :available, :in_bar, title: 'avabar', published_at: 2.days.ago)
     create(:ad, :booked, :in_mad, title: 'resmad')
     create(:ad, :delivered, :in_ten, title: 'delten')
+    create(:ad, :want, :in_mad, title: 'wantmad')
 
     with_pagination(1) do
       VCR.use_cassette('mad_bar_ten_info_es') { super(&block) }
@@ -68,12 +69,11 @@ class UnauthenticatedAdListing < ActionDispatch::IntegrationTest
     assert_selector '.ad_excerpt_list', count: 1, text: 'delten'
   end
 
-  it 'lists wanted ads when a status filter is active' do
-    visit ads_woeid_path(766_273, type: 'give')
-    click_link 'disponible'
+  it 'lists petitions everywhere in home page' do
+    visit root_path
     click_link 'peticiones'
 
     assert_text 'Madrid, Madrid, España'
-    assert_selector '.ad_excerpt_list', count: 0
+    assert_selector '.ad_excerpt_list', count: 1, text: 'wantmad'
   end
 end

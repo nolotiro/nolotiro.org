@@ -17,7 +17,8 @@ class Ad < ActiveRecord::Base
   validates :woeid_code, presence: true
 
   enum status: { available: 1, booked: 2, delivered: 3 }
-  validates :status, presence: true
+  validates :status, presence: true, if: :give?
+  validates :status, absence: true, if: :want?
 
   enum type: { give: 1, want: 2 }
   validates :type, presence: true
@@ -99,7 +100,7 @@ class Ad < ActiveRecord::Base
   end
 
   def move!
-    update!(type: give? ? :want : :give)
+    update!(type: give? ? :want : :give, status: give? ? nil : :available)
   end
 
   def slug

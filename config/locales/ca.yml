@@ -169,9 +169,9 @@ ca:
       title: Sobre nolotiro.org
     access_here: accedeix aquí
     ads:
-      bumped: Hem republicat l'anunci
-      created: Hem creat l'anunci
-      destroyed: Hemos eliminat l'annunci
+      bumped: Anunci republicat
+      created: Anunci creat
+      destroyed: Anunci eliminat
       form:
         body: 'Cos de l''anunci:'
         body_max: Màxim 500 caràcters
@@ -180,11 +180,11 @@ ca:
         private_messages_only: Només per missatge privat
         private_messages_or_comments: Per missatge privat o a través de comentaris públics a l'anunci
         select_an_image: Selecciona una imatge per al teu anunci
-        status: Estat
         title: 'Título de tu anuncio:'
         title_tip: Descriu breument el que regales o busques (max. 100 caràcters)
         type_ad: Quin tipus d'anunci vols publicar?
-      updated: Hem actualitzat l'anunci
+      marked_as: Anunci %{status}
+      updated: Anunci actualitzat
     all: tots
     all_ads: tots els anuncis
     are_you_interested: T'interessa?
@@ -192,6 +192,7 @@ ca:
     back: tornar a la pàgina d'inici
     blog: bloc
     booked: reservat
+    bump: Republicar
     bump_this_ad: Republica l'anunci
     cancel_my_account: Cancel·lar el meu compte
     change_city: canviar ciutat
@@ -228,6 +229,7 @@ ca:
     delivered: lliurat
     developers: desenvolupadors
     didn_t_receive_confirmation_instructions: No has rebut les instruccions de confirmació?
+    edit: Editar
     edit_this_ad: Edita aquest anunci
     faq:
       answer_1_html: El propòsit fonamental d'aquesta web és el de desfer-nos dels objectes que ja no fem servir i ens fan nosa a casa.
@@ -272,6 +274,8 @@ ca:
     logout: sortir
     mail:
       automatic: Aquest és un missatge automàtic. Si us plau, no responguis a aquesta adreça de correu electrònic.
+    mark_as: Marcar %{status}
+    mark_this_ad: Marca aquest anunci com %{status}
     member_since: membre des de
     messages: missatges
     messages_title: Missatges
@@ -312,6 +316,8 @@ ca:
         add: bloquejar a %{username}
         confirm: "¿Segur que vols bloquejar %{username}? No podrà tornar a contactar ni a veure els teus anuncis."
         delete: desbloquejar a %{username}
+      contact: envia un missatge privat a %{username}
+      edit: edita perfil d'usuari
       friend:
         add: afegir %{username} a la llista d'amics
         delete: afegir %{username} a la llista d'amics
@@ -332,7 +338,6 @@ ca:
     searching_on_html: Buscant <i>%{q}</i> a
     send: Enviar
     send_a_message: "+ Envia un missatge privat a l'anunciant"
-    send_a_message_to: envia un missatge privat a
     share_this_ad: Comparteix aquest anunci
     sign_in: Accedir
     sign_in_with_provider: Inicia sessió amb %{provider}

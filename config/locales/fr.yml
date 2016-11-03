@@ -170,9 +170,9 @@ fr:
       title: A propos de nolotiro.org
     access_here: accès ici
     ads:
-      bumped: Nous avons publié l'avis
-      created: Nous avons créé l'annonce
-      destroyed: Nous avons supprimé l'annonce
+      bumped: Annonce publié
+      created: Annonce créé
+      destroyed: Annonce supprimé
       form:
         body: 'Corps de l''annonce:'
         body_max: 500 caractères maximum
@@ -181,11 +181,11 @@ fr:
         private_messages_only: 
         private_messages_or_comments: 
         select_an_image: Sélectionnez une image pour votre annonce (en option).
-        status: Etat
         title: 'Titre de votre annonce:'
         title_tip: 
         type_ad: Type d'annonce
-      updated: Nous avons mis à jour l'annonce
+      marked_as: Annonce %{status}
+      updated: Annoce mis à jour
     all: tous
     all_ads: toutes les annonces
     are_you_interested: Ça t'intéresse?
@@ -193,6 +193,7 @@ fr:
     back: retour à la page d'accueil
     blog: blog
     booked: réservé
+    bump: Républiquer
     bump_this_ad: République cette annonce
     cancel_my_account: Annuler mon compte
     change_city: changerment ville
@@ -230,6 +231,7 @@ fr:
     developers: développeurs
     didn_t_receive_confirmation_instructions: Vous avez pas reçu les instructions de confirmation?
     edit_this_ad: Modifier cette annonce
+    edit: Modifier
     faq:
       answer_1_html: Le but principal de ce site est de se débarrasser des éléments que vous utilisez plus et nous empêchent à la maison.
       answer_2_html: 'D''abord, vous directement pudiéndote débarrasser des choses que vous ne voulez plus, et toujours donner quelque chose implicitement. Il est préférable de l''aborder égoïstement et contrôler la relation de cause à effet qui va déclencher donner. Si nous nous concentrons sur le fait de donner des objets à partir d''un point de vue égoïste, se débarrasser des choses utiles mais qui nous dérangee, nous avons toujours une bonne expérience, sans attendre quelque chose de plus pour se débarrasser de ces objets. Et sachant que quelqu''un te donne usage ou avantage de renforcer cette expérience positive. mots: l''acte de donner des objets de valeur ou utile est toujours une chose positive si nous ne prévoyons pas une récompense morale ou apaiser notre conscience.'
@@ -273,6 +275,8 @@ fr:
     logout: déconnecter
     mail:
       automatic: Ceci est un message automatique. S'il vous plaît ne pas répondre à cette adresse e-mail.
+    mark_as: Marquer %{status}
+    mark_this_ad: Marquer cette annonce comme %{status}
     member_since: Membre depuis
     messages: messages
     messages_title: Messages
@@ -315,6 +319,8 @@ fr:
         add: 
         confirm: 
         delete: 
+      contact: envoyer un message privé à %{username}
+      edit: modifier le profil de l'utilisateur
       friend:
         add: ajoutez %{username} à votre liste d'amis
         delete: supprimer %{username} à votre liste d'amis
@@ -335,7 +341,6 @@ fr:
     searching_on_html: Regarder <i>%{q}</i> en
     send: Envoyer
     send_a_message: "+ Envoyer un message privé à l'annonceur"
-    send_a_message_to: Envoyer un message privé à
     share_this_ad: Diffuse cette annonce
     sign_in: S'identifier
     sign_in_with_provider: Connexion avec %{provider}

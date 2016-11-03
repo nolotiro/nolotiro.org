@@ -1,33 +1,24 @@
 <%= form_for(ad, html: {multipart: true}) do |f| %>
-  <fieldset>
-    <%= errors_for(ad) %>
+  <%= errors_for(ad) %>
 
-    <div class='form-group'>
-      <% if ad.image.exists? %>
-        <div class='ad_list_image'>
-          <%= link_to image_tag(ad.image.url(:thumb), alt: ad.filtered_title),
-                      ad.image.url %>
-        </div>
-      <% end %>
+  <div class='form-group'>
+    <% if ad.image.exists? %>
+      <div class='ad_list_image'>
+        <%= link_to image_tag(ad.image.url(:thumb), alt: ad.filtered_title),
+                    ad.image.url %>
+      </div>
+    <% end %>
 
-      <%= f.label :image, t('nlt.ads.form.select_an_image'), class: 'optional' %>
+    <%= f.label :image, t('nlt.ads.form.select_an_image'), class: 'optional' %>
 
-      <%= f.file_field :image %>
+    <%= f.file_field :image %>
 
-      <p class='help-block'>
-        <%= t 'nlt.ads.form.image_permitted_formats' %>
-      </p>
-    </div>
+    <p class='help-block'>
+      <%= t 'nlt.ads.form.image_permitted_formats' %>
+    </p>
+  </div>
 
-    <div class='form-group'>
-      <% if ad.id %>
-        <%= f.label :status, t('nlt.ads.form.status'), class: 'required' %>
-
-        <%= f.select :status,
-                     options_for_select(Ad.statuses.keys.map { |status| [I18n.t("nlt.#{status}"), status] }, selected: ad.status) %>
-      <% end %>
-    </div>
-
+  <% if ad.new_record? %>
     <div class='form-group'>
       <%= f.label :type, t('nlt.ads.form.type_ad'), class: 'required' %>
 
@@ -43,65 +34,65 @@
         <% end %>
       </div>
     </div>
+  <% end %>
 
-    <div class='form-group'>
-      <%= f.label :title, t('nlt.ads.form.title'), class: 'required' %>
+  <div class='form-group'>
+    <%= f.label :title, t('nlt.ads.form.title'), class: 'required' %>
 
-      <%= f.text_field :title, required: true,
-                               maxlength: 100,
-                               class: 'form-control' %>
+    <%= f.text_field :title, required: true,
+                             maxlength: 100,
+                             class: 'form-control' %>
 
-      <p class='help-block'>
-        <%= t 'nlt.ads.form.title_tip' %>
-      </p>
-    </div>
+    <p class='help-block'>
+      <%= t 'nlt.ads.form.title_tip' %>
+    </p>
+  </div>
 
-    <!--
-      The following 'adbo' CSS id is so that we don't get blocked by AdBlock.
-      @todo Globally rename Ad to Present/Request so that we don't have
-      further problems with this and we no longer need this kind of hacks
-    -->
+  <!--
+    The following 'adbo' CSS id is so that we don't get blocked by AdBlock.
+    @todo Globally rename Ad to Present/Request so that we don't have
+    further problems with this and we no longer need this kind of hacks
+  -->
 
-    <div class='form-group'>
-      <%= f.label :body, t('nlt.ads.form.body'), class: 'required', id: 'adbo', for: 'adbo' %>
+  <div class='form-group'>
+    <%= f.label :body, t('nlt.ads.form.body'), class: 'required', id: 'adbo', for: 'adbo' %>
 
-      <%= f.text_area :body, required: true,
-                             maxlength: 500,
-                             rows: 10,
-                             class: 'form-control',
-                             id: 'adbo' %>
+    <%= f.text_area :body, required: true,
+                           maxlength: 500,
+                           rows: 10,
+                           class: 'form-control',
+                           id: 'adbo' %>
 
-      <p class='help-block'>
-        <%= t 'nlt.ads.form.body_max' %>
-      </p>
-    </div>
+    <p class='help-block'>
+      <%= t 'nlt.ads.form.body_max' %>
+    </p>
+  </div>
 
-    <div class='form-group'>
-      <%= f.label :comments_enabled, t('nlt.ads.form.comments_enabled'), class: 'required' %>
+  <div class='form-group'>
+    <%= f.label :comments_enabled, t('nlt.ads.form.comments_enabled'), class: 'required' %>
 
-      <div class='radio'>
-        <%= f.label :comments_enabled, value: 0 do %>
-          <%= f.radio_button :comments_enabled, 0 %>
-          <%= t('nlt.ads.form.private_messages_only') %>
-        <% end %>
-      </div>
-
-      <div class='radio'>
-        <%= f.label :comments_enabled, value: 1 do %>
-          <%= f.radio_button :comments_enabled, 1 %>
-          <%= t('nlt.ads.form.private_messages_or_comments') %>
-        <% end %>
-      </div>
-    </div>
-
-    <div class='form-group'>
-      <% unless params[:action] == 'edit' %>
-        <%= recaptcha %>
+    <div class='radio'>
+      <%= f.label :comments_enabled, value: 0 do %>
+        <%= f.radio_button :comments_enabled, 0 %>
+        <%= t('nlt.ads.form.private_messages_only') %>
       <% end %>
     </div>
 
-    <div class='form-group'>
-      <%= f.button button_label, class: 'btn btn-success' %>
+    <div class='radio'>
+      <%= f.label :comments_enabled, value: 1 do %>
+        <%= f.radio_button :comments_enabled, 1 %>
+        <%= t('nlt.ads.form.private_messages_or_comments') %>
+      <% end %>
     </div>
-  </fieldset>
+  </div>
+
+  <div class='form-group'>
+    <% unless params[:action] == 'edit' %>
+      <%= recaptcha %>
+    <% end %>
+  </div>
+
+  <div class='form-group'>
+    <%= f.button button_label, class: 'btn btn-success' %>
+  </div>
 <% end %>

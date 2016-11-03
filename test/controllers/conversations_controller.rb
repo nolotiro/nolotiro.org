@@ -29,7 +29,7 @@ class ConversationsControllerTest < ActionController::TestCase
       post :create, message: { recipients: @user2, body: 'lo sigues teniendo? ', subject: 'interesado en el ordenador' }
     end
     m = Conversation.last
-    assert_redirected_to conversation_path(m.id)
+    assert_redirected_to conversation_path(m)
 
     sign_out @user1
     sign_in @user2

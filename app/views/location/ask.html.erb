@@ -1,15 +1,20 @@
-<%= content_for(:meta_title, t('nlt.change_your_city')) %>
+<% title = t('nlt.change_your_city') %>
+<%= content_for :meta_title, title %>
 
-<div id="default_header_section">
-  <h1><%= t('nlt.change_your_city') %></h1>
-</div>
+<div class="row">
+  <div class="col-md-6 col-sm-6">
+    <div class="default_header_section">
+      <h1><%= title.to_s %></h1>
+    </div>
 
-<div class="col-md-8 col-sm-8">
-  <div class="row">
-    <%= render "ask_form" %>
+    <div class="default_content_section">
+      <%= render "ask_form" %>
+    </div>
   </div>
-</div>
 
-<div class="col-md-4 col-sm-4">
-  <%= render "partials/google_adsense", class_name: "google_adsense_336_280", ad_slot: "7225596067" %>
+  <div class="col-md-6 col-sm-6">
+    <div class="google_ad_wrapper">
+      <%= render "partials/google_adsense", class_name: "google_adsense_336_280", ad_slot: "7225596067" %>
+    </div>
+  </div>
 </div>

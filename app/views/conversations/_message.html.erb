@@ -1,17 +1,6 @@
-<% if message.sender == message.conversation.originator %>
-  <div class="message-excerpt">
-    <div class="message-from-left">
-      <% if message.sender %>
-        <%= link_to profile_path(message.sender.username) do %>
-          <%= image_tag "contact.png" %>
-          <%= message.sender.username %>
-        <% end %>
-      <% else %>
-        <%= image_tag "contact.png" %>
-        [borrado]
-      <% end %>
-    </div>
-    <div class="message-container-right">
+<div class="message-excerpt">
+  <div class="message-container">
+    <% if message.sender == current_user %>
       <div class="triangle-me">
       </div>
       <div class="bubble bg-bubble-me">
@@ -20,22 +9,7 @@
         </div>
         <%= simple_format(message.body) %>
       </div>
-    </div>
-  </div>
-<% else %>
-  <div class="message-excerpt">
-    <div class="message-from-right">
-      <% if message.sender %>
-        <%= link_to profile_path(message.sender.username) do %>
-          <%= image_tag "contact.png" %>
-          <%= message.sender.username %>
-        <% end %>
-      <% else %>
-        <%= image_tag "contact.png" %>
-        [borrado]
-      <% end %>
-    </div>
-    <div class="message-container-left">
+    <% else %>
       <div class="triangle-other">
       </div>
       <div class="bubble">
@@ -44,6 +18,6 @@
         </div>
         <%= simple_format(message.body) %>
       </div>
-    </div>
+    <% end %>
   </div>
-<% end %>
+</div>
