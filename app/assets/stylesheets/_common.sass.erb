@@ -375,14 +375,6 @@ form.searchbox
 .rss
   margin: 15px 0
 
-.sharelinks
-  clear: both
-  font-size: .7em
-  margin-bottom: 15px
-
-  #social-buttons
-    float: left
-
 .ad_comments
   clear: both
   display: block
@@ -509,6 +501,12 @@ form.searchbox
     font-size: 1em
     font-weight: bold
 
+  .sharelinks
+    @include clearfix
+
+    font-size: .7em
+    margin-top: 15px
+
 /**
  * Layout.
 
@@ -532,17 +530,19 @@ form.searchbox
   .innerWrap
     clear: both
 
-#facebook-button
+.social-buttons
   float: left
-  width: 85px
-  height: 30px
-  padding-right: 5px
+  height: 25px
 
-#twitter-button
-  float: left
-  width: 85px
-  height: 30px
-  padding-right: 5px
+  #facebook-button
+    float: left
+    height: 25px
+    margin-left: 10px
+    width: 105px
+
+  #twitter-button
+    float: left
+    height: 25px
 
 .links-right
   display: inline-block
@@ -714,10 +714,6 @@ form.searchbox
   clear: both
   font-size: 9pt
   color: #999
-
-#social-buttons
-  float: left
-  width: 30%
 
 /**
  * Tabs
