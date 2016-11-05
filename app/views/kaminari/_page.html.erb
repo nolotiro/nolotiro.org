@@ -1,0 +1,6 @@
+<span class="page<%= ' current' if page.current? %>">
+  <%= link_to_unless page.current?,
+                     page,
+                     url,
+                     rel: page.next? ? 'next' : page.prev? ? 'prev' : nil %>
+</span>

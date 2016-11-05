@@ -379,18 +379,8 @@ es:
     formats:
       active_admin: '%d/%m/%y %H:%M'
   time_ago_in_words: hace %{time}
-  will_paginate:
-    next_label: siguiente →
-    page_entries_info:
-      multi_page: Mostrando %{model} %{from} - %{to} de %{count} en total
-      multi_page_html: Mostrando %{model} <b>%{from}&nbsp;-&nbsp;%{to}</b> de <b>%{count}</b> en total
-      single_page:
-        one: Mostrando 1 %{model}
-        other: Mostrando en total %{count} %{model}
-        zero: No se encontraron %{model}
-      single_page_html:
-        one: Mostrando <b>1</b> %{model}
-        other: Mostrando en <b>total&nbsp;%{count}</b> %{model}
-        zero: No se encontraron %{model}
-    page_gap: "&hellip;"
-    previous_label: "← atrás"
+  views:
+    pagination:
+      next: siguiente &rsaquo;
+      previous: "&lsaquo; anterior"
+      truncate: "&hellip;"

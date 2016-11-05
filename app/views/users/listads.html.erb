@@ -15,7 +15,7 @@
       <% if @ads.any? %>
         <%= render 'ads/list_with_adsense', ads: @ads %>
 
-        <%= will_paginate @ads, inner_window: 2, outer_window: -1 %>
+        <%= paginate @ads, window: 1 %>
       <% else %>
         <div class="empty"> <%= t("nlt.no_results.on_user") %> </div>
       <% end %>

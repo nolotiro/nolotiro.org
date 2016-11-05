@@ -23,7 +23,7 @@
           <%= submit_tag t('conversations.buttons.trash_selected'),
                          id: 'delete_multiple_button' %>
         <% end %>
-        <%= will_paginate @conversations %>
+        <%= paginate @conversations %>
       <% else %>
         <p>
           <div class="empty">

@@ -8,7 +8,7 @@ class ConversationsController < ApplicationController
     @conversations =
       policy_scope(Conversation).includes(:originator, :recipient)
                                 .order(updated_at: :desc)
-                                .paginate(page: params[:page])
+                                .page(params[:page])
 
     @unread_counts = Message.where(conversation_id: @conversations.map(&:id))
                             .unread_by(current_user)
