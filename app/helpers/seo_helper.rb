@@ -21,6 +21,32 @@ module SeoHelper
     tag :meta, name: 'robots', content: content_for(:robots)
   end
 
+  def meta_open_graph
+    safe_join([meta_og_title, meta_og_type, meta_og_url, meta_og_image])
+  end
+
+  def meta_og_title
+    tag :meta, property: 'og:title', content: content_for(:title)
+  end
+
+  def meta_og_type
+    tag :meta, property: 'og:type', content: 'article'
+  end
+
+  def meta_og_url
+    tag :meta, property: 'og:url', content: canonical_url
+  end
+
+  def meta_og_image
+    content = if content_for?(:og_image)
+                content_for(:og_image)
+              else
+                asset_url('nolotiro_logo.png')
+              end
+
+    tag :meta, property: 'og:image', content: content
+  end
+
   def rel_canonical
     tag :link, rel: 'canonical', href: canonical_url
   end
