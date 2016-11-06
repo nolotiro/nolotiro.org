@@ -8,14 +8,14 @@
     </div>
 
     <div class="default_content_section">
-      <% if @locations.nil? %>
+      <% if @locations.any? %>
+        <%= render "list_form", locations: @locations %>
+      <% else %>
         <p class="error">
           <%= t('nlt.change_town.choose_html', location: params[:location]) %>
         </p>
 
         <%= render "ask_form" %>
-      <% else %>
-        <%= render "list_form", locations: @locations %>
       <% end %>
     </div>
   </div>

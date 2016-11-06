@@ -37,9 +37,7 @@ class LocationController < ApplicationController
   end
 
   def similar_locations
-    @similar_locations ||= if params[:location].present?
-                             WoeidHelper.search_by_name(params[:location])
-                           end
+    @similar_locations ||= WoeidHelper.search_by_name(params[:location])
   end
 
   def save_location(woeid)

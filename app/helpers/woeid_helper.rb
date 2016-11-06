@@ -23,7 +23,7 @@ module WoeidHelper
   end
 
   def self.search_by_name(name)
-    return unless name
+    return [] unless name.present?
 
     query = <<-SQL.squish
       select * from geo.places
@@ -31,7 +31,7 @@ module WoeidHelper
     SQL
 
     raw_locations = Yahoo::Fetcher.new(query).fetch
-    return if raw_locations.nil?
+    return [] if raw_locations.nil?
 
     Yahoo::ResultSet.new(Array.wrap(raw_locations))
   end
