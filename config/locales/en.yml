@@ -200,7 +200,7 @@ en:
     change_town:
       choose: Choose your location
       choose_html: There are no locations with the name <b>%{location}</b>. Please try it again
-      close_to: 'Our suggested location''s system (based on your IP) indicates us that you are close to:'
+      close_to_html: Our suggested location's system (based on your IP) indicates us that you are close to %{city}
       submit: Send
       town: 'City:'
     change_your_city: change your city

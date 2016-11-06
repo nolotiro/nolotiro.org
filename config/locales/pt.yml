@@ -200,7 +200,7 @@ pt:
     change_town:
       choose: Escolhe sua localização
       choose_html: Não foram encontradas localizações com o nome <b>%{location}</b>. Tente de novo
-      close_to: 'Nosso sistema de sugestões de localização (baseado no seu IP) disse que você está perto de:'
+      close_to_html: Nosso sistema de sugestões de localização (baseado no seu IP) disse que você está perto de %{city}
       submit: Enviar
       town: 'Cidade:'
     change_your_city: Escolha sua cidade
