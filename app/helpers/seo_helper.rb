@@ -42,6 +42,6 @@ module SeoHelper
   end
 
   def canonical_url
-    url_for(params.except(:q).merge(only_path: false))
+    url_for(params.merge(only_path: false))
   end
 end
