@@ -1,6 +1,6 @@
 <% woeid_name = WoeidHelper.convert_woeid_name(current_user.woeid) %>
 <% title = "#{t('nlt.publish_ad')} - #{woeid_name[:full]}" %>
-<%= content_for(:meta_title, title) %>
+<%= content_for(:title, title) %>
 
 <div class="row">
   <div class="col-md-8 col-sm-8">

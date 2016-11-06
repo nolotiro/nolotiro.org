@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
 module SeoHelper
-  def meta_title
-    content_tag(:title, "#{content_for(:meta_title)} - nolotiro.org")
+  def page_title
+    content_tag(:title, "#{content_for(:title)} - nolotiro.org")
   end
 
   def meta_description
