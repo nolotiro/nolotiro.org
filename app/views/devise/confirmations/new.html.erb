@@ -1,8 +1,7 @@
-<% title = t('devise.confirmations.resend') %>
-<% content_for :title, title %>
+<% content_for :title, t('devise.confirmations.resend') %> %>
 
 <div class="default_header_section">
-  <h1><%= title.to_s %></h1>
+  <h1><%= content_for :title %></h1>
 </div>
 
 <div class="default_content_section">
