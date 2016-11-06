@@ -201,7 +201,7 @@ gl:
     change_town:
       choose: Elixa a súa situación
       choose_html: Non hai lugares atopados co nome <b>%{location}</b>. Téntao de novo
-      close_to_html: O noso sistema de suxestións (con base no seu IP) di que estas preto a %{city}
+      close_to_html: O noso sistema de suxestións (con base no seu IP) di que estas perto a %{city}
       submit: Enviar
       town: 'Cidade:'
     change_your_city: Cambiar de cidade
