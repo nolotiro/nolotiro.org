@@ -13,6 +13,24 @@ module SeoHelper
     tag :meta, name: 'description', content: content
   end
 
+  def rel_canonical
+    tag :link, rel: 'canonical', href: canonical_url
+  end
+
+  def rel_alternates
+    x_default = tag :link, rel: 'alternate',
+                           href: localized_url(nil),
+                           hreflang: 'x-default'
+
+    alternates = I18n.available_locales.map do |locale|
+      tag :link, rel: 'alternate', href: localized_url(locale), hreflang: locale
+    end
+
+    x_default + safe_join(alternates)
+  end
+
+  private
+
   def localized_url(locale)
     url_for(params.merge(locale: locale, only_path: false))
   end
