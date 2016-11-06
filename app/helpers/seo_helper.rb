@@ -13,6 +13,12 @@ module SeoHelper
     tag :meta, name: 'description', content: content
   end
 
+  def meta_robots
+    return unless content_for?(:robots)
+
+    tag :meta, name: 'robots', content: content_for(:robots)
+  end
+
   def rel_canonical
     tag :link, rel: 'canonical', href: canonical_url
   end
