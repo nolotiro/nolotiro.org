@@ -200,7 +200,7 @@ es:
     change_town:
       choose: Elige tu ubicación
       choose_html: No se han encontrado ubicaciones con el nombre <b>%{location}</b>. Vuelve a intentarlo
-      close_to: 'Nuestro sistema de sugerencia de ubicación (basado en tu IP) dice que estás cerca de:'
+      close_to_html: Nuestro sistema de sugerencia de ubicación (basado en tu IP) dice que estás cerca de %{city}
       submit: Enviar
       town: 'Ciudad:'
     change_your_city: Cambia tu ciudad

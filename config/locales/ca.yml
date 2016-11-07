@@ -199,7 +199,7 @@ ca:
     change_town:
       choose: Tria la teva ubicació
       choose_html: No s'han trobat ubicacions amb el nom <b>%{location}</b>. Torna a intentar-
-      close_to: 'El nostre sistema de suggeriment d''ubicació (basat en la teva IP) diu que aquestes prop de:'
+      close_to_html: El nostre sistema de suggeriment d''ubicació (basat en la teva IP) diu que aquestes prop de %{city}
       submit: Enviar
       town: 'Ciutat:'
     change_your_city: Canvia la teva ciutat

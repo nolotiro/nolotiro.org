@@ -60,7 +60,6 @@ bin/rake max_mind:extract
 
 You can also, grab the latest version of the DB from MaxMind by running
 
-
 ```
 bin/rake max_mind:update
 ```

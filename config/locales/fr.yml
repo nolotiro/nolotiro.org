@@ -200,7 +200,7 @@ fr:
     change_town:
       choose: Choisissez votre pays
       choose_html: Aucun emplacement trouvé avec le nom <b>%{location}</b>. S'il vous plaît essayer à nouveau
-      close_to: 'Notre emplacement du système de suggestion (en fonction de votre IP) dit que vous êtes près de:'
+      close_to_html: Notre emplacement du système de suggestion (en fonction de votre IP) dit que vous êtes près de %{city}
       submit: Envoyer
       town: 'Ville:'
     change_your_city: Changer de ville
