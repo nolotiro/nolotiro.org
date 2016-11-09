@@ -8,7 +8,9 @@ module PathHelper
   end
 
   def localized_url(locale)
-    url_for(params.merge(locale: locale, only_path: false))
+    request.original_url
+           .chomp('/')
+           .sub(base_with_locale(params[:locale]), base_with_locale(locale))
   end
 
   def canonical_url
