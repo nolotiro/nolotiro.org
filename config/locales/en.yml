@@ -67,7 +67,7 @@ en:
       trash: Conversation deleted
       trash_selected: Delete selected conversations
     index:
-      title: Message from %{username}
+      title: "%{username}'s messages"
     new:
       body_max: Max. 1500 characters
       subject: Topic

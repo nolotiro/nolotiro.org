@@ -67,7 +67,7 @@ it:
       trash: Cancellare la conversazione
       trash_selected: Cancellare le conversazioni selezionati
     index:
-      title: Messaggio di %{username}
+      title: Messaggi di %{username}
     new:
       body_max: 1500 caratteri massimo
       subject: soggetto

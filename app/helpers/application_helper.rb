@@ -14,14 +14,6 @@ module ApplicationHelper
     params[:controller] == 'users' && params['action'] == 'listads'
   end
 
-  def meta_description
-    general = t('nlt.meta_description')
-    specific = content_for(:meta_description) if content_for?(:meta_description)
-    content = specific ? "#{specific}. #{general}" : general
-
-    tag :meta, name: 'description', content: content
-  end
-
   def recaptcha
     recaptcha_tags(display: { theme: 'white' }, ajax: true, hl: I18n.locale)
   end
@@ -47,14 +39,6 @@ module ApplicationHelper
     text = text.gsub(/guasap/, ' ')
     text = text.gsub(/guasp/, ' ')
     text
-  end
-
-  def localized_url(locale)
-    url_for(params.merge(locale: locale, only_path: false))
-  end
-
-  def canonical_url
-    url_for(params.except(:q).merge(only_path: false))
   end
 
   def errors_for(object)
