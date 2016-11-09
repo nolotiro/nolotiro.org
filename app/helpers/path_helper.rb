@@ -6,4 +6,12 @@ module PathHelper
 
     ads_woeid_path(current_woeid, type: type, status: status)
   end
+
+  def localized_url(locale)
+    url_for(params.merge(locale: locale, only_path: false))
+  end
+
+  def canonical_url
+    url_for(params.merge(only_path: false))
+  end
 end
