@@ -12,6 +12,22 @@ module PathHelper
   end
 
   def canonical_url
-    url_for(params.merge(only_path: false))
+    return base_with_locale(params[:locale]) if home_path? || listall_give_path?
+
+    url_for(params.merge(locale: params[:locale], only_path: false))
+  end
+
+  def home_path?
+    return true if current_page?('/')
+
+    I18n.available_locales.any? { |locale| current_page?("/#{locale}") }
+  end
+
+  def listall_give_path?
+    request.path =~ %r{/listall/ad_type/give\Z}
+  end
+
+  def base_with_locale(locale)
+    [request.base_url, locale].compact.join('/')
   end
 end
