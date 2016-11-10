@@ -22,7 +22,9 @@
   </div>
 
   <div class="col-md-3 col-sm-3">
-    <%= render "partials/google_adsense", class_name: "desktop google_adsense_600_160", ad_slot: "6783776462" %>
-    <%= render "partials/google_adsense", class_name: "mobile google_adsense_300_250", ad_slot: "8702329269" %>
+    <div class="google_ad_wrapper">
+      <%= render "partials/raw_google_adsense", class_name: "desktop google_adsense_600_160", ad_slot: "6783776462" %>
+      <%= render "partials/google_adsense", class_name: "mobile google_adsense_300_250", ad_slot: "8702329269" %>
+    </div>
   </div>
 </div>
