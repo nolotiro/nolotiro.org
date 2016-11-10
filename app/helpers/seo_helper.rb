@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 module SeoHelper
+  include PathHelper
+
   def page_title
     content_tag(:title, "#{content_for(:title)} - nolotiro.org")
   end
@@ -33,15 +35,5 @@ module SeoHelper
     end
 
     x_default + safe_join(alternates)
-  end
-
-  private
-
-  def localized_url(locale)
-    url_for(params.merge(locale: locale, only_path: false))
-  end
-
-  def canonical_url
-    url_for(params.merge(only_path: false))
   end
 end
