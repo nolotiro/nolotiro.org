@@ -277,7 +277,7 @@ form.searchbox
     margin-bottom: 1.6em
 
 .filter_status
-  padding: 10px 18px 12px 0
+  padding: 10px 15px
 
 /**
  * Ads
@@ -364,7 +364,7 @@ form.searchbox
 
   position: relative
   display: block
-  padding: 3px
+  padding: 3px 3px 0 3px
   clear: left
   text-align: left
   font-size: 11px
@@ -382,7 +382,7 @@ form.searchbox
     margin-bottom: 0
 
 .rss
-  margin: 15px 0
+  padding: 10px 15px
 
 .ad_comments
   clear: both
@@ -478,14 +478,21 @@ form.searchbox
 /**
  * Home
 
-.ad_excerpt_list
-  border-bottom: 1px solid $gray-separator
+%list_excerpt
+  border-top: 1px solid $gray-separator
   color: $text
-  padding: 10px 0
   width: 100%
 
-  &:first-child
-    border-top: 1px solid $gray-separator
+.ad_excerpt
+  @extend %list_excerpt
+
+  padding: 10px 15px
+
+.adsense_excerpt
+  @extend %list_excerpt
+
+  padding: 10px 0
+
 
 // This should be named `ad_content` but AdBlock doesn't like that.
 // @todo: Rename `Ad` to `Present` and `Petition` so we don't get
@@ -656,17 +663,26 @@ form.searchbox
     margin-bottom: 1.5em
     padding-left: 0
 
-.default_content_section
+%content_section
   border: 1px solid $gray-separator
   border-top: none
+
+.default_content_section
+  @extend %content_section
+
   padding: 15px
+
+.unpadded_content_section
+  @extend %content_section
+
+  padding: 0
 
 /**
  * Pagination
 
 .pagination
-  margin-right: auto
-  margin-left: auto
+  margin: 20px auto 0
+  padding: 10px 15px
 
   .prev a, .next a, .page a, .current, .gap, .last a, .first a
     padding: 4px

@@ -20,14 +20,14 @@ class Search < ActionDispatch::IntegrationTest
     fill_in 'q', with: 'muebles'
     click_button 'buscar'
 
-    assert_selector '.ad_excerpt_list', count: 1, text: 'muebles oro'
+    assert_selector '.ad_excerpt', count: 1, text: 'muebles oro'
   end
 
   it 'shows a no results message when nothing found in current location' do
     fill_in 'q', with: 'espejo'
     click_button 'buscar'
 
-    assert_selector '.ad_excerpt_list', count: 0
+    assert_selector '.ad_excerpt', count: 0
     assert_text 'No hay anuncios que coincidan con la búsqueda espejo'
   end
 
@@ -36,7 +36,7 @@ class Search < ActionDispatch::IntegrationTest
     fill_in 'q', with: 'muebles'
     click_button 'buscar'
 
-    assert_selector '.ad_excerpt_list', count: 0
+    assert_selector '.ad_excerpt', count: 0
     assert_text 'No hay anuncios que coincidan con la búsqueda muebles'
   end
 end
