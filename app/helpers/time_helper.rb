@@ -2,7 +2,7 @@
 
 module TimeHelper
   def time_ago_in_words(time)
-    content_tag(:time, datetime: time, title: time) do
+    content_tag(:time, datetime: time.to_s(:db), title: time.to_s(:db)) do
       t('time_ago_in_words', time: distance_of_time_in_words_to_now(time))
     end
   end

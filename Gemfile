@@ -62,7 +62,7 @@ group :development do
   gem 'capistrano-bundler'
   gem 'capistrano-pending'
   gem 'capistrano-sidekiq'
-  gem 'rubocop', '0.43.0'
+  gem 'rubocop', '0.45.0'
   gem 'brakeman-lib'
   gem 'i18n-tasks', '0.9.5'
   gem 'localeapp',
