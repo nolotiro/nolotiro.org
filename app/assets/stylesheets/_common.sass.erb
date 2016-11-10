@@ -13,6 +13,17 @@
   @media only screen and (min-width: $container-sm + 1)
     padding: 0
 
+.main-row
+  @media only screen and (max-width: $container-sm)
+    @include make-row(0)
+
+    [class*='col-']
+      padding-right: 0
+      padding-left: 0
+
+  @media only screen and (min-width: $container-sm + 1)
+    @include make-row
+
 .announcement
   width: 100%
   background-color: $light-yellow
@@ -283,7 +294,7 @@ form.searchbox
   padding-bottom: 5px
 
 .edit-section, .destroy-section
-  @include make-row
+  @extend .main-row
 
 .edit-section
   margin-bottom: 30px
