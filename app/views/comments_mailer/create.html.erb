@@ -1,9 +1,8 @@
 <p>
-  <%= @comment %>
+  <%= @comment.to_s %>
 </p>
 
 <p>
   <%= t('nlt.comments.do_click') %>
   <%= link_to adslug_url(id: @ad.id, slug: @ad.slug), adslug_url(id: @ad.id, slug: @ad.slug) %>
 </p>
-
