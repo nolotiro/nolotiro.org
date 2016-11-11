@@ -16,7 +16,9 @@
 
         <%= paginate @ads, window: 1 %>
       <% else %>
-        <div class="empty"> <%= t("nlt.no_results.on_user") %> </div>
+        <div class="empty">
+          <%= t("nlt.no_results.on_user") %>
+        </div>
       <% end %>
     </div>
   </div>
