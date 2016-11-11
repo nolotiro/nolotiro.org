@@ -36,6 +36,38 @@ class AdManagementTest < AuthenticatedTest
     assert_text 'Anuncio republicado'
   end
 
+  it 'does not republish ads if not owner' do
+    visit_ad_page(create(:ad, user: create(:user), published_at: 6.days.ago))
+
+    assert_no_selector 'a', text: 'Republica este anuncio'
+  end
+
+  it 'does not republish ads if not owner (direct request)' do
+    ad = create(:ad, user: create(:user), published_at: 6.days.ago)
+    original_path = ads_woeid_path(ad.woeid_code, type: 'give')
+    post ads_bump_path(ad), {}, 'HTTP_REFERER' => original_path
+
+    assert_equal 6.days.ago.to_date, ad.reload.published_at.to_date
+    assert_response :redirect
+    assert_redirected_to original_path
+  end
+
+  it 'does not bump ads too recent' do
+    visit_ad_page(create(:ad, user: @current_user, published_at: 4.days.ago))
+
+    assert_no_selector 'a', text: 'Republica este anuncio'
+  end
+
+  it 'does not bump ads too recent (direct request)' do
+    ad = create(:ad, user: @current_user, published_at: 4.days.ago)
+    original_path = ads_woeid_path(ad.woeid_code, type: 'give')
+    post ads_bump_path(ad), {}, 'HTTP_REFERER' => original_path
+
+    assert_equal 4.days.ago.to_date, ad.reload.published_at.to_date
+    assert_response :redirect
+    assert_redirected_to original_path
+  end
+
   it 'changes ad status' do
     visit_ad_page(create(:ad, :available, user: @current_user))
 
