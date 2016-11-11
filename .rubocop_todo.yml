@@ -10,13 +10,6 @@
 Metrics/AbcSize:
   Max: 25
 
-# Offense count: 11
-# Configuration parameters: CountComments.
-# @todo: Decide on a better default than 25. 25 is unrealistic for a Rails app
-#   like this one.
-Metrics/BlockLength:
-  Max: 92
-
 # Offense count: 4
 # Configuration parameters: CountComments.
 Metrics/ClassLength:
@@ -32,22 +25,6 @@ Metrics/LineLength:
 # Configuration parameters: CountComments.
 Metrics/MethodLength:
   Max: 20
-
-# Offense count: 35
-# Cop supports --auto-correct.
-# Configuration parameters: Include.
-# Include: spec/**/*, test/**/*
-# @todo: Fix when we upgrade to Rails 5.
-Rails/HttpPositionalArguments:
-  Exclude:
-    - 'test/controllers/ads_controller_test.rb'
-    - 'test/controllers/api/v1_controller_test.rb'
-    - 'test/controllers/contact_controller_test.rb'
-    - 'test/controllers/conversations_controller.rb'
-    - 'test/controllers/rss_controller_test.rb'
-    - 'test/controllers/woeid_controller_test.rb'
-    - 'test/integration/locale_test.rb'
-    - 'test/integration/unauthenticated_ad_listing_test.rb'
 
 # Offense count: 75
 Style/Documentation:

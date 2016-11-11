@@ -7,6 +7,13 @@ AllCops:
 
   DisplayStyleGuide: true
 
+#
+# @todo: Decide on a better default than 25 and reenable. 25 is science-fiction
+# for a Rails app, specially if it uses gems like activeadmin.
+#
+Metrics/BlockLength:
+  Enabled: false
+
 Performance/Casecmp:
   Enabled: false
 
@@ -18,5 +25,12 @@ Style/ModuleFunction:
 
 Rails:
   Enabled: true
+
+#
+# @todo Enable when we migrate to Rails 5 or when
+# https://github.com/bbatsov/rubocop/issues/3629 is fixed.
+#
+Rails/HttpPositionalArguments:
+  Enabled: false
 
 inherit_from: .rubocop_todo.yml

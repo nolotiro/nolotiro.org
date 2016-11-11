@@ -13,6 +13,17 @@
   @media only screen and (min-width: $container-sm + 1)
     padding: 0
 
+.main-row
+  @media only screen and (max-width: $container-sm)
+    @include make-row(0)
+
+    [class*='col-']
+      padding-right: 0
+      padding-left: 0
+
+  @media only screen and (min-width: $container-sm + 1)
+    @include make-row
+
 .announcement
   width: 100%
   background-color: $light-yellow
@@ -254,7 +265,6 @@ form.searchbox
 .ad_list_image
   z-index: 300
   float: right
-  padding-left: 4px
   width: 100px
 
   a img
@@ -267,7 +277,7 @@ form.searchbox
     margin-bottom: 1.6em
 
 .filter_status
-  padding: 10px 18px 12px 0
+  padding: 10px 15px
 
 /**
  * Ads
@@ -284,7 +294,7 @@ form.searchbox
   padding-bottom: 5px
 
 .edit-section, .destroy-section
-  @include make-row
+  @extend .main-row
 
 .edit-section
   margin-bottom: 30px
@@ -354,7 +364,7 @@ form.searchbox
 
   position: relative
   display: block
-  padding: 3px
+  padding: 3px 3px 0 3px
   clear: left
   text-align: left
   font-size: 11px
@@ -372,7 +382,7 @@ form.searchbox
     margin-bottom: 0
 
 .rss
-  margin: 15px 0
+  padding: 10px 15px
 
 .ad_comments
   clear: both
@@ -403,7 +413,6 @@ form.searchbox
   margin-bottom: 10px !important
 
 .location_name
-  display: inline-block
   margin-bottom: 14px
 
 /**
@@ -469,14 +478,21 @@ form.searchbox
 /**
  * Home
 
-.ad_excerpt_list
+%list_excerpt
+  border-top: 1px solid $gray-separator
   color: $text
-  padding: 10px 0
   width: 100%
-  border-bottom: 1px solid $gray-separator
 
-  &:first-child
-    border-top: 1px solid $gray-separator
+.ad_excerpt
+  @extend %list_excerpt
+
+  padding: 10px 15px
+
+.adsense_excerpt
+  @extend %list_excerpt
+
+  padding: 10px 0
+
 
 // This should be named `ad_content` but AdBlock doesn't like that.
 // @todo: Rename `Ad` to `Present` and `Petition` so we don't get
@@ -618,15 +634,12 @@ form.searchbox
   text-decoration: none
 
 .location_header_section
-  z-index: 100
-  display: block
   background-color: $blue-searchbox
-  padding-top: 15px
-  padding-bottom: 6px
-  padding-left: 20px
   border: 1px solid $gray-separator
   border-bottom: none
   min-height: 75px
+  padding: 15px 10px
+  z-index: 100
 
 .panel-default
   .static-page-panel-heading
@@ -650,19 +663,29 @@ form.searchbox
     margin-bottom: 1.5em
     padding-left: 0
 
-.default_content_section
+%content_section
   border: 1px solid $gray-separator
   border-top: none
+
+.default_content_section
+  @extend %content_section
+
   padding: 15px
+
+.unpadded_content_section
+  @extend %content_section
+
+  padding: 0
 
 /**
  * Pagination
 
 .pagination
-  background: white
-  cursor: default
-  margin-right: auto
-  margin-left: auto
+  border-radius: 0
+  border-top: 1px solid $gray-separator
+  display: flex
+  margin: 0
+  padding: 10px 15px
 
   .prev a, .next a, .page a, .current, .gap, .last a, .first a
     padding: 4px

@@ -1,6 +1,6 @@
 <ul>
   <% ads.each_with_index do |ad, i| %>
-    <li class="ad_excerpt_list">
+    <li class="ad_excerpt">
       <% if ad_tab? %>
         <%= render "ads/actions", ad: ad %>
       <% end %>
@@ -8,10 +8,9 @@
       <%= render "ads/ad", ad: ad %>
     </li>
 
-    <% if [5, 10, 15].include?(i) %>
-      <li class="ad_excerpt_list">
-        <%= render "partials/google_adsense", class_name: "desktop google_adsense_336_280", ad_slot: "7225596067" %>
-        <%= render "partials/google_adsense", class_name: "mobile google_adsense_320_100", ad_slot: "1977811266" %>
+    <% if [6, 12].include?(i) %>
+      <li class="adsense_excerpt">
+        <%= render "partials/google_adsense", class_name: "google_adsense_300_250", ad_slot: "8702329269" %>
       </li>
     <% end %>
   <% end %>
