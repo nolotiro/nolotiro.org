@@ -1,36 +1,26 @@
 # frozen_string_literal: true
 
 require 'test_helper'
-require 'support/web_mocking'
+require 'support/ads'
 
 class LinksForAds < ActionDispatch::IntegrationTest
-  include WebMocking
+  include AdTestHelpers
 
   it 'shows message link in available ads' do
-    within_ad_page(create(:ad, :available)) do
-      assert_text 'Envía un mensaje privado al anunciante'
-    end
+    visit_ad_page(create(:ad, :available))
+
+    assert_text 'Envía un mensaje privado al anunciante'
   end
 
   it 'does not show message link in booked ads' do
-    within_ad_page(create(:ad, :booked)) do
-      assert_no_text 'Envía un mensaje privado al anunciante'
-    end
+    visit_ad_page(create(:ad, :booked))
+
+    assert_no_text 'Envía un mensaje privado al anunciante'
   end
 
   it 'does not show message link in delivered ads' do
-    within_ad_page(create(:ad, :delivered)) do
-      assert_no_text 'Envía un mensaje privado al anunciante'
-    end
-  end
+    visit_ad_page(create(:ad, :delivered))
 
-  private
-
-  def within_ad_page(ad)
-    mocking_yahoo_woeid_info(ad.woeid_code) do
-      visit ad_path(ad)
-
-      yield
-    end
+    assert_no_text 'Envía un mensaje privado al anunciante'
   end
 end

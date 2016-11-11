@@ -32,6 +32,6 @@ ActiveAdmin.register Comment, as: 'AaComment' do
   end
 
   action_item :view, only: :show do
-    link_to 'Ver en la web', ad_path(aa_comment.ad)
+    link_to 'Ver en la web', adslug_path(aa_comment.ad, slug: aa_comment.ad.slug)
   end
 end

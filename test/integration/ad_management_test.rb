@@ -2,9 +2,11 @@
 
 require 'test_helper'
 require 'integration/concerns/authenticated_test'
+require 'support/ads'
 require 'support/web_mocking'
 
 class AdManagementTest < AuthenticatedTest
+  include AdTestHelpers
   include WebMocking
 
   it 'can have pictures of 5 megabytes or less' do
@@ -28,28 +30,20 @@ class AdManagementTest < AuthenticatedTest
   end
 
   it 'republishes ads' do
-    ad = create(:ad, user: @current_user, published_at: 6.days.ago)
-
-    mocking_yahoo_woeid_info(ad.woeid_code) do
-      visit ad_path(ad)
-      click_link 'Republica este anuncio'
-    end
+    visit_ad_page(create(:ad, user: @current_user, published_at: 6.days.ago))
+    click_link 'Republica este anuncio'
 
     assert_text 'Anuncio republicado'
   end
 
   it 'changes ad status' do
-    ad = create(:ad, :available, user: @current_user)
+    visit_ad_page(create(:ad, :available, user: @current_user))
 
-    mocking_yahoo_woeid_info(ad.woeid_code) do
-      visit ad_path(ad)
+    assert_no_selector 'a', text: 'Marcar disponible'
+    assert_selector 'a', text: 'Marcar reservado'
+    assert_selector 'a', text: 'Marcar entregado'
 
-      assert_no_selector 'a', text: 'Marcar disponible'
-      assert_selector 'a', text: 'Marcar reservado'
-      assert_selector 'a', text: 'Marcar entregado'
-
-      click_link 'Marcar reservado'
-    end
+    click_link 'Marcar reservado'
 
     assert_text 'Anuncio reservado'
     assert_selector 'a', text: 'Marcar disponible'

@@ -23,6 +23,6 @@ class CommentsControllerTest < ActionController::TestCase
       post :create, ad_id: @ad.id, comment: { body: 'hola mundo' }
     end
     assert_response :redirect
-    assert_redirected_to ad_path(@ad)
+    assert_redirected_to adslug_path(@ad, slug: @ad.slug)
   end
 end
