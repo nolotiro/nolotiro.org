@@ -14,6 +14,20 @@ ActiveAdmin.register User do
   scope 'Legítimos', :legitimate, default: true
   scope 'Baneados', :banned
 
+  controller do
+    def find_collection
+      super(except: :sorting)
+    end
+
+    def scoped_collection
+      if current_scope.scope_method == :legitimate
+        super.order(created_at: :desc)
+      else
+        super.order(banned_at: :desc)
+      end
+    end
+  end
+
   filter :username
   filter :email
   filter :confirmed_at
@@ -73,6 +87,9 @@ ActiveAdmin.register User do
     column(:username) { |user| link_to user.username, admin_user_path(user) }
     column :email
     column :confirmed_at
+
+    column(:banned_at) if current_scope.scope_method == :banned
+
     column :last_sign_in_ip
     column :last_sign_in_at
     column :ads_count

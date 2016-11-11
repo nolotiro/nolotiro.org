@@ -18,6 +18,8 @@ class Comment < ActiveRecord::Base
 
   scope :recent, -> { includes(:ad, :user).order(created_at: :desc).limit(30) }
 
+  scope :oldest_first, -> { order(created_at: :asc) }
+
   def body
     ApplicationController.helpers.escape_privacy_data(self[:body])
   end
