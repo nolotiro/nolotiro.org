@@ -15,6 +15,12 @@ module MessagingTests
     login_as @user1
 
     visit new_conversation_path(recipient_id: @user2.id)
+
+    #
+    # @todo Sommetimes the cookie-bar gets in the middle so we need to dismiss
+    # it first. Investigate why this is happening.
+    #
+    within('#cookie-bar') { click_link 'OK' }
   end
 
   def teardown
