@@ -53,9 +53,18 @@ class AdsControllerTest < ActionController::TestCase
 
   test 'should show ad' do
     mocking_yahoo_woeid_info(@ad.woeid_code) do
-      get :show, id: @ad.id
+      get :show, id: @ad.id, slug: @ad.slug
 
       assert_response :success
+    end
+  end
+
+  test 'redirects to slugged version from non-slugged one' do
+    mocking_yahoo_woeid_info(@ad.woeid_code) do
+      get :legacy_show, id: @ad.id
+
+      assert_response :redirect
+      assert_redirected_to adslug_path(@ad, slug: @ad.slug)
     end
   end
 
