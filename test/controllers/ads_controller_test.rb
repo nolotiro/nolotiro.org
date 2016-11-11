@@ -68,6 +68,18 @@ class AdsControllerTest < ActionController::TestCase
     end
   end
 
+  test 'redirects to new slugged URL after title changes' do
+    old_slug = @ad.slug
+    @ad.update!(title: 'My new title, mistyped something')
+
+    mocking_yahoo_woeid_info(@ad.woeid_code) do
+      get :show, id: @ad.id, slug: old_slug
+
+      assert_response :redirect
+      assert_redirected_to adslug_path(@ad, slug: @ad.slug)
+    end
+  end
+
   test 'should not edit any ad as normal user' do
     @ad.update!(user_owner: @admin.id)
     sign_in @user

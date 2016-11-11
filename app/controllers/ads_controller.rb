@@ -38,9 +38,13 @@ class AdsController < ApplicationController
   end
 
   def show
-    @comment = @ad.comments.build
-    @ad.increment_readed_count!
-    @comments = policy_scope(@ad.comments).includes(:user).oldest_first
+    if @ad.slug != params[:slug]
+      redirect_to adslug_path(@ad, slug: @ad.slug), status: :moved_permanently
+    else
+      @comment = @ad.comments.build
+      @ad.increment_readed_count!
+      @comments = policy_scope(@ad.comments).includes(:user).oldest_first
+    end
   end
 
   def edit
