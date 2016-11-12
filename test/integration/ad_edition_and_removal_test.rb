@@ -35,22 +35,15 @@ class AdEditionAndRemovalTest < AuthenticatedTest
     assert_equal initial_path, current_path
   end
 
-  it 'properly deletes ads from slug show page and redirects to user list' do
+  it 'properly deletes ads from show page and redirects to user list' do
     initial_path = adslug_path(@ad, slug: @ad.slug)
 
     assert_destroy_ad_from(initial_path)
     assert_equal listads_user_path(@current_user), current_path
   end
 
-  it 'properly deletes ads from show page and redirects to user list' do
-    initial_path = ad_path(@ad)
-
-    assert_destroy_ad_from(initial_path)
-    assert_equal listads_user_path(@current_user), current_path
-  end
-
   it 'properly deletes ads as an admin and redirects to user list' do
-    initial_path = ad_path(@ad)
+    initial_path = adslug_path(@ad, slug: @ad.slug)
 
     logout
     login_as create(:admin)

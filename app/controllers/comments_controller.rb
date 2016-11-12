@@ -16,7 +16,7 @@ class CommentsController < ApplicationController
       flash[:alert] = t('nlt.comments.flash_ko')
     end
 
-    redirect_to @ad
+    redirect_to adslug_path(@ad, slug: @ad.slug)
   end
 
   private

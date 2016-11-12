@@ -9,6 +9,10 @@ class AdPolicy < ApplicationPolicy
     user && (record.user == user && record.bumpable?)
   end
 
+  def legacy_show?
+    show?
+  end
+
   def change_status?
     user && record.give? && record.user == user
   end

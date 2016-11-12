@@ -85,7 +85,7 @@ ActiveAdmin.register Ad do
   end
 
   action_item :view, only: :show do
-    link_to 'Ver en la web', ad_path(ad)
+    link_to 'Ver en la web', adslug_path(ad, slug: ad.slug)
   end
 
   action_item :move, only: :show do

@@ -4,7 +4,7 @@ class AdsController < ApplicationController
   include StringUtils
 
   before_action :set_ad, except: [:new, :create, :index]
-  before_action :authenticate_user!, except: [:index, :show]
+  before_action :authenticate_user!, except: [:index, :legacy_show, :show]
 
   def new
     if current_user.woeid.nil?
@@ -33,10 +33,18 @@ class AdsController < ApplicationController
     end
   end
 
+  def legacy_show
+    redirect_to adslug_path(@ad, slug: @ad.slug), status: :moved_permanently
+  end
+
   def show
-    @comment = @ad.comments.build
-    @ad.increment_readed_count!
-    @comments = policy_scope(@ad.comments).includes(:user).oldest_first
+    if @ad.slug != params[:slug]
+      redirect_to adslug_path(@ad, slug: @ad.slug), status: :moved_permanently
+    else
+      @comment = @ad.comments.build
+      @ad.increment_readed_count!
+      @comments = policy_scope(@ad.comments).includes(:user).oldest_first
+    end
   end
 
   def edit
@@ -79,13 +87,9 @@ class AdsController < ApplicationController
 
   def destroy_redirect_path
     previous_path = session.delete(:return_to)
-    return previous_path unless previous_path_destroyed?(previous_path)
+    return previous_path unless previous_path == ad_friendly_path
 
     listads_user_path(@ad.user)
-  end
-
-  def previous_path_destroyed?(previous_path)
-    [ad_friendly_path, ad_path(@ad)].include?(previous_path)
   end
 
   def ad_friendly_path

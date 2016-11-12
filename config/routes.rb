@@ -24,12 +24,15 @@ NolotiroOrg::Application.routes.draw do
 
       # FIXME: type on ads#create instead of params
       # FIXME: nolotirov2 legacy - redirect from /es/ad/create
-      resources :ads, path: 'ad', path_names: { new: 'create' }, except: :index do
+      resources :ads, path: 'ad',
+                      path_names: { new: 'create' },
+                      except: [:index, :show] do
         resources :comments, only: :create
       end
 
       constraints(AdConstraint.new) do
         scope '/ad' do
+          get '/:id', to: 'ads#legacy_show'
           get '/:id/:slug', to: 'ads#show', as: 'adslug'
           get '/edit/id/:id', to: 'ads#edit', as: 'ads_edit'
           post '/bump/id/:id', to: 'ads#bump', as: 'ads_bump'

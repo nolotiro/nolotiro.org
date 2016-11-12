@@ -53,42 +53,31 @@ class AdsControllerTest < ActionController::TestCase
 
   test 'should show ad' do
     mocking_yahoo_woeid_info(@ad.woeid_code) do
-      get :show, id: @ad.id
+      get :show, id: @ad.id, slug: @ad.slug
 
       assert_response :success
     end
   end
 
-  test 'only ad owner should bump ads' do
-    @ad.update!(published_at: 6.days.ago)
-    sign_in @user
-    post :bump, id: @ad
+  test 'redirects to slugged version from non-slugged one' do
+    mocking_yahoo_woeid_info(@ad.woeid_code) do
+      get :legacy_show, id: @ad.id
 
-    assert_equal 6.days.ago.to_date, @ad.reload.published_at.to_date
-    assert_response :redirect
-    assert_redirected_to root_path
+      assert_response :redirect
+      assert_redirected_to adslug_path(@ad, slug: @ad.slug)
+    end
   end
 
-  test 'should not bump ads too recent' do
-    @ad.update!(user_owner: @user.id, published_at: 4.days.ago)
-    sign_in @user
-    post :bump, id: @ad
+  test 'redirects to new slugged URL after title changes' do
+    old_slug = @ad.slug
+    @ad.update!(title: 'My new title, mistyped something')
 
-    assert_equal 4.days.ago.to_date, @ad.reload.published_at.to_date
-    assert_response :redirect
-    assert_redirected_to root_path
-  end
+    mocking_yahoo_woeid_info(@ad.woeid_code) do
+      get :show, id: @ad.id, slug: old_slug
 
-  test 'should bump adds old enough' do
-    original_path = ads_woeid_path(@user.woeid, type: @ad.type)
-    request.env['HTTP_REFERER'] = original_path
-    @ad.update!(user_owner: @user.id, published_at: 6.days.ago)
-    sign_in @user
-    post :bump, id: @ad
-
-    assert_equal Time.zone.now.to_date, @ad.reload.published_at.to_date
-    assert_response :redirect
-    assert_redirected_to original_path
+      assert_response :redirect
+      assert_redirected_to adslug_path(@ad, slug: @ad.slug)
+    end
   end
 
   test 'should not edit any ad as normal user' do

@@ -2,9 +2,11 @@
 
 require 'test_helper'
 require 'integration/concerns/authenticated_test'
+require 'support/ads'
 require 'support/web_mocking'
 
 class UserBlockingsTest < AuthenticatedTest
+  include AdTestHelpers
   include WebMocking
 
   before { @other = create(:user, username: 'other') }
@@ -46,7 +48,7 @@ class UserBlockingsTest < AuthenticatedTest
   it 'does not show ad page when visitor is blocked' do
     ad = create(:ad, user: @other)
     create(:blocking, blocker: @other, blocked: @current_user)
-    mocking_yahoo_woeid_info(ad.woeid_code) { visit ad_path(ad) }
+    visit_ad_page(ad)
 
     assert_access_denied
   end
@@ -54,10 +56,10 @@ class UserBlockingsTest < AuthenticatedTest
   it 'does not show send message link in ad page when blocked by user' do
     ad = create(:ad, user: @other)
     create(:blocking, blocker: @current_user, blocked: @other)
-    mocking_yahoo_woeid_info(ad.woeid_code) { visit ad_path(ad) }
+    visit_ad_page(ad)
 
     assert_no_selector 'a', text: 'envía un mensaje privado a other'
-    assert_equal ad_path(ad), current_path
+    assert_equal adslug_path(ad, slug: ad.slug), current_path
   end
 
   it 'does not show conversations with her when blocked by user' do
@@ -71,10 +73,10 @@ class UserBlockingsTest < AuthenticatedTest
   it 'does not show comment textarea when visitor blocking ad author' do
     ad = create(:ad, user: @other, comments_enabled: true)
     create(:blocking, blocker: @current_user, blocked: @other)
-    mocking_yahoo_woeid_info(ad.woeid_code) { visit ad_path(ad) }
+    visit_ad_page(ad)
 
     refute_selector '.comment_form'
-    assert_equal ad_path(ad), current_path
+    assert_equal adslug_path(ad, slug: ad.slug), current_path
   end
 
   private
