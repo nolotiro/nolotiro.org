@@ -16,6 +16,8 @@
   </div>
 <% end %>
 
+<% content_for(:og_image, asset_url(@ad.image.url)) if @ad.image.exists? %>
+
 <div class="main-row">
   <div class="col-md-7 col-sm-7">
     <div class="default_header_section">
