@@ -22,12 +22,6 @@ class ChoosingLocationTest < ActionDispatch::IntegrationTest
     end
   end
 
-  it 'shows an error message when submitted without a search' do
-    choose_location('')
-
-    assert_text 'No se han encontrado ubicaciones con el nombre'
-  end
-
   it 'shows a message when no matching locations are found' do
     mocking_yahoo_woeid_similar('tenerifa') do
       choose_location('tenerifa')
