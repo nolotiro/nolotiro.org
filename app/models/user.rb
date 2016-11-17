@@ -121,14 +121,6 @@ class User < ActiveRecord::Base
     (new_record? || password || password_confirmation) && identities.none?
   end
 
-  def name
-    username
-  end
-
-  def to_s
-    username
-  end
-
   def admin?
     role == 1
   end

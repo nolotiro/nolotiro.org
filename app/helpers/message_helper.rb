@@ -9,14 +9,20 @@ module MessageHelper
     link_to username, profile_path(username)
   end
 
+  def interlocutor_name(conversation)
+    user = conversation.interlocutor(current_user)
+    return '[borrado]' unless user
+
+    user.username
+  end
+
   def linked_conversation_title(conversation)
     conversation_header(link_to_interlocutor(conversation),
                         conversation.subject)
   end
 
   def unlinked_conversation_title(conversation)
-    conversation_header(conversation.interlocutor(current_user),
-                        conversation.subject)
+    conversation_header(interlocutor_name(conversation), conversation.subject)
   end
 
   private
