@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161019233040) do
+ActiveRecord::Schema.define(version: 20161117184138) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -80,6 +80,11 @@ ActiveRecord::Schema.define(version: 20161019233040) do
   add_index "conversations", ["originator_id"], name: "idx_16422_index_conversations_on_originator_id", using: :btree
   add_index "conversations", ["recipient_id"], name: "idx_16422_index_conversations_on_recipient_id", using: :btree
 
+  create_table "countries", force: :cascade do |t|
+    t.string "iso",  limit: 2,   null: false
+    t.string "name", limit: 173, null: false
+  end
+
   create_table "dismissals", id: :bigserial, force: :cascade do |t|
     t.integer "announcement_id", limit: 8
     t.integer "user_id",         limit: 8
@@ -131,6 +136,22 @@ ActiveRecord::Schema.define(version: 20161019233040) do
   add_index "receipts", ["notification_id"], name: "idx_16460_index_receipts_on_notification_id", using: :btree
   add_index "receipts", ["receiver_id"], name: "idx_16460_index_receipts_on_receiver_id", using: :btree
 
+  create_table "states", force: :cascade do |t|
+    t.string  "name",       limit: 173, null: false
+    t.integer "country_id",             null: false
+  end
+
+  add_index "states", ["country_id"], name: "index_states_on_country_id", using: :btree
+
+  create_table "towns", force: :cascade do |t|
+    t.string  "name",       limit: 173, null: false
+    t.integer "state_id"
+    t.integer "country_id",             null: false
+  end
+
+  add_index "towns", ["country_id"], name: "index_towns_on_country_id", using: :btree
+  add_index "towns", ["state_id"], name: "index_towns_on_state_id", using: :btree
+
   create_table "users", id: :bigserial, force: :cascade do |t|
     t.string   "username",               limit: 63,               null: false
     t.string   "legacy_password_hash",   limit: 255
@@ -174,4 +195,7 @@ ActiveRecord::Schema.define(version: 20161019233040) do
   add_foreign_key "identities", "users", on_update: :restrict, on_delete: :restrict
   add_foreign_key "messages", "conversations", name: "notifications_on_conversation_id", on_update: :restrict, on_delete: :restrict
   add_foreign_key "receipts", "messages", column: "notification_id", name: "receipts_on_notification_id", on_update: :restrict, on_delete: :restrict
+  add_foreign_key "states", "countries"
+  add_foreign_key "towns", "countries"
+  add_foreign_key "towns", "states"
 end
