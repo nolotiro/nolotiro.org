@@ -21,7 +21,7 @@ class Comment < ActiveRecord::Base
 
   scope :oldest_first, -> { order(created_at: :asc) }
 
-  def body
-    escape_privacy_data(self[:body])
+  def filtered_body
+    escape_privacy_data(body)
   end
 end
