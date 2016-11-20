@@ -19,6 +19,6 @@ class CommentTest < ActiveSupport::TestCase
     expected_text = 'contactar por email  , por sms  , o   al  '
     comment.body = text
 
-    assert_equal comment.body, expected_text
+    assert_equal expected_text, comment.body
   end
 end
