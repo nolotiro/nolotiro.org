@@ -10,6 +10,7 @@ class AdTest < ActiveSupport::TestCase
   test 'ad requires everything' do
     a = Ad.new
     a.valid?
+
     assert_not_empty a.errors[:body]
     assert_not_empty a.errors[:title]
     assert_not_empty a.errors[:user_owner]
@@ -52,6 +53,7 @@ class AdTest < ActiveSupport::TestCase
     text = 'por email example@example.com, o whatsapp al 666666666'
     expected_text = 'por email  , o   al  '
     ad = build(:ad, title: text)
+
     assert_equal expected_text, ad.filtered_title
   end
 
@@ -59,6 +61,7 @@ class AdTest < ActiveSupport::TestCase
     text = 'por email example@example.com, o whatsapp al 666666666'
     expected_text = 'por email  , o   al  '
     ad = build(:ad, body: text)
+
     assert_equal expected_text, ad.filtered_body
   end
 
@@ -74,6 +77,7 @@ class AdTest < ActiveSupport::TestCase
 
   test 'ad check slug' do
     ad = build(:ad, title: 'ordenador en Vallecas')
+
     assert_equal 'ordenador-en-vallecas', ad.slug
   end
 
@@ -93,6 +97,7 @@ class AdTest < ActiveSupport::TestCase
 
     mocking_yahoo_woeid_info(ad.woeid_code) do
       title = 'regalo - ordenador en Vallecas - Madrid, Madrid, España'
+
       assert_equal title, ad.meta_title
     end
   end
@@ -102,6 +107,7 @@ class AdTest < ActiveSupport::TestCase
 
     mocking_yahoo_woeid_info(ad.woeid_code) do
       title = 'petición - ordenador en Vallecas - Madrid, Madrid, España'
+
       assert_equal title, ad.meta_title
     end
   end
@@ -109,6 +115,7 @@ class AdTest < ActiveSupport::TestCase
   test 'ad body shoudl store emoji' do
     body = 'Pantalones cortos para el veranito que se vene! 😀 '
     ad = create(:ad, body: body)
+
     assert_equal body, ad.body
   end
 

@@ -10,7 +10,7 @@ class BanningTest < AuthenticatedTest
   it 'automatically kicks out banned users' do
     mocking_yahoo_woeid_info(@current_user.woeid) do
       visit root_path
-      assert_selector '#header', text: @current_user.name
+      assert_selector '#header', text: @current_user.username
 
       @current_user.ban!
 

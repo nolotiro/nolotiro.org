@@ -6,6 +6,7 @@ class CommentTest < ActiveSupport::TestCase
   test 'comment requires everything' do
     c = Comment.new
     c.valid?
+
     assert c.errors[:ads_id].include?('no puede estar en blanco')
     assert c.errors[:body].include?('no puede estar en blanco')
     assert c.errors[:user_owner].include?('no puede estar en blanco')
@@ -17,6 +18,7 @@ class CommentTest < ActiveSupport::TestCase
     text = 'contactar por email example@example.com, por sms 999999999, o whatsapp al 666666666'
     expected_text = 'contactar por email  , por sms  , o   al  '
     comment.body = text
-    assert_equal(comment.body, expected_text)
+
+    assert_equal expected_text, comment.body
   end
 end

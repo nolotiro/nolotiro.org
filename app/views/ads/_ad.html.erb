@@ -22,7 +22,7 @@
       <span class="ad_status <%= ad.status %>"><%= ad.status_string %></span>
     <% end %>
 
-    <%= published_ago_by(ad.published_at, ad.user) %>
+    <%= published_ago_by(ad.published_at, ad.user.username) %>
   </div>
 
   <div class="body-wrapper">
