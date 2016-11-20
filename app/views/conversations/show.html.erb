@@ -1,8 +1,4 @@
-<% content_for :title do %>
-  <%= t("conversations.show.title_html",
-        recipient: @interlocutor,
-        subject: @conversation.subject) %>
-<% end %>
+<% content_for :title, unlinked_conversation_title(@conversation) %>
 
 <div class="main-row">
   <div class="col-md-7 col-sm-7">
@@ -11,9 +7,7 @@
         <%= link_to t("conversations.buttons.back"), conversations_path %>
       </h5>
       <h1>
-        <%= t("conversations.show.title_html",
-              recipient: link_to_profile(@interlocutor),
-              subject: @conversation.subject) %>
+        <%= linked_conversation_title(@conversation) %>
       </h1>
 
       <%= link_to t("conversations.buttons.trash"),
