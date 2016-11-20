@@ -2,6 +2,7 @@
 # frozen_string_literal: true
 
 class Ad < ActiveRecord::Base
+  include Censurable
   include Hidable
   include Spamable
   include Statable
@@ -84,11 +85,11 @@ class Ad < ActiveRecord::Base
   end
 
   def filtered_body
-    ApplicationController.helpers.escape_privacy_data(body)
+    escape_privacy_data(body)
   end
 
   def filtered_title
-    ApplicationController.helpers.escape_privacy_data(title)
+    escape_privacy_data(title)
   end
 
   def reset_readed_count!

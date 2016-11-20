@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class Comment < ActiveRecord::Base
+  include Censurable
   include Hidable
   include Statable
 
@@ -21,6 +22,6 @@ class Comment < ActiveRecord::Base
   scope :oldest_first, -> { order(created_at: :asc) }
 
   def body
-    ApplicationController.helpers.escape_privacy_data(self[:body])
+    escape_privacy_data(self[:body])
   end
 end
