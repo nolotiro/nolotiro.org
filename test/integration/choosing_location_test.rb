@@ -24,6 +24,7 @@ class ChoosingLocationTest < ActionDispatch::IntegrationTest
     choose_location('tenerife')
 
     assert_text 'Santa Cruz de Tenerife, Islas Canarias, España (0 anuncios)'
+    assert_text 'Tenerife, Magdalena, Colombia (0 anuncios)'
   end
 
   it 'shows a message when no matching locations are found' do
