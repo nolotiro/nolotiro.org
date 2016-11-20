@@ -4,6 +4,13 @@ FactoryGirl.define do
   factory :state do
     madrid
 
+    trait :andalucia do
+      transient { _country :spain }
+
+      name 'Andalucía'
+      id 12_578_024
+    end
+
     trait :madrid do
       transient { _country :spain }
 

@@ -68,6 +68,27 @@ class ChoosingLocationTest < ActionDispatch::IntegrationTest
     assert_location_page 'Santa Cruz de Tenerife, Islas Canarias, España'
   end
 
+  it 'matches town when searching town without accents' do
+    create(:town, name: 'Leganés', id: 765_045)
+    choose_location('Leganes')
+
+    assert_location_page 'Leganés, Comunidad de Madrid, España'
+  end
+
+  it 'matches state when searching "town, state" without accents' do
+    create(:town, name: 'Torremolinos', id: 765_045, _state: :andalucia)
+    choose_location('Torremolinos, Andalucia')
+
+    assert_location_page 'Torremolinos, Andalucía, España'
+  end
+
+  it 'matches country when searching "town, state, country" without accents' do
+    create(:town, :madrid)
+    choose_location('Madrid, Madrid, Espana')
+
+    assert_location_page 'Madrid, Comunidad de Madrid, España'
+  end
+
   it 'memorizes chosen location in the user' do
     create(:town, :tenerife)
     user = create(:user)

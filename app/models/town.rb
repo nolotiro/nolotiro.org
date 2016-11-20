@@ -30,16 +30,18 @@ class Town < ActiveRecord::Base
   end
 
   scope :by_name, ->(name) do
-    joins(:state, :country).where('towns.name ILIKE ?', "%#{name}%")
+    joins(:state, :country)
+      .where('UNACCENT(towns.name) ILIKE UNACCENT(?)', "%#{name}%")
   end
 
   scope :by_name_and_state, ->(name, state) do
-    by_name(name).where('states.name ILIKE ?', "%#{state}%")
+    by_name(name)
+      .where('UNACCENT(states.name) ILIKE UNACCENT(?)', "%#{state}%")
   end
 
   scope :by_name_state_and_country, ->(name, state, country) do
     by_name_and_state(name, state)
-      .where('countries.name ILIKE ?', "%#{country}%")
+      .where('UNACCENT(countries.name) ILIKE UNACCENT(?)', "%#{country}%")
   end
 
   def fullname
