@@ -95,16 +95,18 @@ class AdTest < ActiveSupport::TestCase
 
   test 'ad meta_title for give ads' do
     ad = build(:ad, :give)
-    title = 'regalo - ordenador en Vallecas - Madrid, Madrid, España'
 
-    assert_equal title, ad.meta_title
+    assert_equal \
+      'regalo - ordenador en Vallecas - Madrid, Comunidad de Madrid, España',
+      ad.meta_title
   end
 
   test 'ad meta_title for want ads' do
     ad = build(:ad, :want)
-    title = 'petición - ordenador en Vallecas - Madrid, Madrid, España'
 
-    assert_equal title, ad.meta_title
+    assert_equal \
+      'petición - ordenador en Vallecas - Madrid, Comunidad de Madrid, España',
+      ad.meta_title
   end
 
   test 'ad body stores emoji' do

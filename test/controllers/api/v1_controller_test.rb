@@ -35,7 +35,7 @@ module Api
       body = JSON.parse(@response.body)
 
       assert_equal '766273', body['woeid_id']
-      assert_equal 'Madrid, Madrid, España', body['woeid_name']
+      assert_equal 'Madrid, Comunidad de Madrid, España', body['woeid_name']
       assert_equal 'ordenador en Vallecas', body['ads'][0]['title']
       assert_response :success
     end

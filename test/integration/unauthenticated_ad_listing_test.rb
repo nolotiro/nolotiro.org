@@ -63,7 +63,7 @@ class UnauthenticatedAdListing < ActionDispatch::IntegrationTest
     visit root_path
     click_link 'peticiones'
 
-    assert_text 'Madrid, Madrid, España'
+    assert_text 'Madrid, Comunidad de Madrid, España'
     assert_selector '.ad_excerpt', count: 1, text: 'wantmad'
   end
 end

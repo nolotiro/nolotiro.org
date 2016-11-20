@@ -7,7 +7,7 @@ FactoryGirl.define do
     trait :madrid do
       transient { _country :spain }
 
-      name 'Madrid'
+      name 'Comunidad de Madrid'
       id 12_578_024
     end
 
