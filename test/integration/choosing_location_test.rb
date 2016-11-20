@@ -49,9 +49,7 @@ class ChoosingLocationTest < ActionDispatch::IntegrationTest
 
   it "directly chooses location when there's a single match" do
     mocking_yahoo_woeid_similar('tenerife_unique') do
-      visit location_ask_path
-      fill_in 'location', with: 'tenerife, islas canarias'
-      click_button 'Enviar'
+      choose_location('tenerife, islas canarias')
 
       assert_location_page 'Santa Cruz de Tenerife, Islas Canarias, España'
     end
