@@ -42,9 +42,6 @@ class Ad < ActiveRecord::Base
 
   validates_attachment_size :image, in: 0.megabytes..5.megabytes
 
-  # before_save :titleize_title if self.title? and /[[:upper:]]/.match(self.title)
-  # before_save :titleize_body if self.body and /[[:upper:]]/.match(self.body)
-
   scope :recent, -> { Ad.includes(:user).recent_first.limit(90) }
 
   scope :by_woeid_code, ->(woeid_code) do
