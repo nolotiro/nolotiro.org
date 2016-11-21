@@ -57,22 +57,22 @@ class AdTest < ActiveSupport::TestCase
     assert_equal expected_text, ad.filtered_title
   end
 
+  test 'ad validates maximum length of body' do
+    assert_equal true, build(:ad, body: 'a' * 1000).valid?
+    assert_equal false, build(:ad, body: 'a' * 1001).valid?
+  end
+
+  test 'ad validates minimum length of body' do
+    assert_equal true, build(:ad, body: 'a' * 25).valid?
+    assert_equal false, build(:ad, body: 'a' * 24).valid?
+  end
+
   test 'ad body escapes privacy data' do
     text = 'por email example@example.com, o whatsapp al 666666666'
     expected_text = 'por email  , o   al  '
     ad = build(:ad, body: text)
 
     assert_equal expected_text, ad.filtered_body
-  end
-
-  test 'ad validates max length of body' do
-    assert_equal true, build(:ad, body: 'a' * 1000).valid?
-    assert_equal false, build(:ad, body: 'a' * 1001).valid?
-  end
-
-  test 'ad validates min length of body' do
-    assert_equal true, build(:ad, body: 'a' * 25).valid?
-    assert_equal false, build(:ad, body: 'a' * 24).valid?
   end
 
   test 'ad check slug' do
