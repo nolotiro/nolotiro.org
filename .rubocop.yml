@@ -4,6 +4,7 @@ AllCops:
     - vendor/bundle/**/*
 
   Include:
+    - '**/*.builder'
     - '**/*.jbuilder'
     - '**/*.rake'
     - '**/config.ru'
