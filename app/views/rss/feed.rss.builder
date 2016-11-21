@@ -21,8 +21,8 @@ xml.rss version: '2.0',
         end
         xml.description description
         xml.pubDate ad.created_at.to_s(:rfc822)
-        xml.link ad_url(ad)
-        xml.guid ad_url(ad)
+        xml.link adslug_url(ad, slug: ad.slug)
+        xml.guid adslug_url(ad, slug: ad.slug)
       end
     end
   end
