@@ -83,6 +83,7 @@ module MessagingTests
 
   def test_just_shows_a_special_label_when_the_interlocutor_is_no_longer_there
     send_message(subject: 'Cosas', body: 'hola, user2')
+    assert_text 'Mensaje enviado'
     @user2.destroy
 
     visit conversations_path
