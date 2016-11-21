@@ -112,7 +112,7 @@ class AdTest < ActiveSupport::TestCase
     end
   end
 
-  test 'ad body shoudl store emoji' do
+  test 'ad body stores emoji' do
     body = 'Pantalones cortos para el veranito que se vene! 😀 '
     ad = create(:ad, body: body)
 
