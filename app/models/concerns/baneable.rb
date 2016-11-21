@@ -43,6 +43,10 @@ module Baneable
     update!(banned_at: Time.zone.now)
   end
 
+  def ban_and_save_ip!(ip)
+    update!(banned_at: Time.zone.now, last_sign_in_ip: ip)
+  end
+
   def legitimate?
     banned_at.nil?
   end

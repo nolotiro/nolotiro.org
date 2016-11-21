@@ -39,5 +39,6 @@ class RegistrationTest < ActionDispatch::IntegrationTest
     click_button 'Regístrate'
     assert_equal 2, User.count
     refute_nil User.last.banned_at
+    assert_equal '1.1.1.1', User.last.last_sign_in_ip
   end
 end
