@@ -44,9 +44,11 @@ class AdTest < ActiveSupport::TestCase
     assert_equal false, build(:ad, title: 'a' * 101).valid?
   end
 
-  test 'ad validates minimum length of title' do
+  test 'ad validates minimum length of filtered title' do
     assert_equal true, build(:ad, title: 'a' * 4).valid?
     assert_equal false, build(:ad, title: 'a' * 3).valid?
+    assert_equal true, build(:ad, title: 'Me llamo spammer@example.org').valid?
+    assert_equal false, build(:ad, title: 'spammer@example.org').valid?
   end
 
   test 'ad title escapes privacy data' do
@@ -62,9 +64,11 @@ class AdTest < ActiveSupport::TestCase
     assert_equal false, build(:ad, body: 'a' * 1001).valid?
   end
 
-  test 'ad validates minimum length of body' do
+  test 'ad validates minimum length of filtered body' do
     assert_equal true, build(:ad, body: 'a' * 25).valid?
     assert_equal false, build(:ad, body: 'a' * 24).valid?
+    assert_equal true, build(:ad, body: 'a' * 25 + ' spammer@example.org').valid?
+    assert_equal false, build(:ad, body: 'a' * 22 + ' spammer@example.org').valid?
   end
 
   test 'ad body escapes privacy data' do

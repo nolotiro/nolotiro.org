@@ -2,7 +2,7 @@
 
 class Comment < ActiveRecord::Base
   include Censurable
-  censors :body
+  censors :body, presence: true
 
   include Hidable
   include Statable
@@ -13,7 +13,6 @@ class Comment < ActiveRecord::Base
   belongs_to :ad, foreign_key: :ads_id
 
   validates :ads_id, presence: true
-  validates :body, presence: true
   validates :user_owner, presence: true
   validates :ip, presence: true
 

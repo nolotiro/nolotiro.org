@@ -3,8 +3,8 @@
 
 class Ad < ActiveRecord::Base
   include Censurable
-  censors :title
-  censors :body
+  censors :title, presence: true, min_length: 4
+  censors :body, presence: true, min_length: 25
 
   include Hidable
   include Spamable
@@ -15,8 +15,8 @@ class Ad < ActiveRecord::Base
   belongs_to :user, foreign_key: :user_owner, counter_cache: true
   has_many :comments, foreign_key: :ads_id, dependent: :destroy
 
-  validates :title, presence: true, length: { minimum: 4, maximum: 100 }
-  validates :body, presence: true, length: { minimum: 25, maximum: 1000 }
+  validates :title, length: { maximum: 100 }
+  validates :body, length: { maximum: 1000 }
   validates :user_owner, presence: true
   validates :woeid_code, presence: true
 

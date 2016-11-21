@@ -9,9 +9,23 @@ module Censurable
   end
 
   module ClassMethods
-    def censors(attribute)
+    def censors(attribute, options = {})
       define_method(:"filtered_#{attribute}") do
         escape_privacy_data(public_send(attribute))
+      end
+
+      define_method(:"min_filtered_#{attribute}") do
+        value = public_send(:"filtered_#{attribute}")
+
+        if value.blank?
+          errors.add(attribute, :blank) if options[:presence]
+        elsif options[:min_length] && value.length < options[:min_length]
+          errors.add(attribute, :too_short, count: value.length)
+        end
+      end
+
+      class_eval do
+        validate :"min_filtered_#{attribute}"
       end
     end
   end
