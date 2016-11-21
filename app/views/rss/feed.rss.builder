@@ -8,7 +8,7 @@ xml.rss version: '2.0',
   xml.channel do
     xml.title 'nolotiro.org'
     xml.description t('nlt.footer_explain')
-    xml.link 'http://nolotiro.org/'
+    xml.link 'https://nolotiro.org/'
 
     @ads.each do |ad|
       xml.item do
