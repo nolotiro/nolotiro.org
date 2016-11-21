@@ -3,6 +3,9 @@
 
 class Ad < ActiveRecord::Base
   include Censurable
+  censors :title
+  censors :body
+
   include Hidable
   include Spamable
   include Statable
@@ -82,14 +85,6 @@ class Ad < ActiveRecord::Base
     return '0' * 20 unless last_ad_publication
 
     last_ad_publication.strftime('%d%m%y%H%M%s')
-  end
-
-  def filtered_body
-    escape_privacy_data(body)
-  end
-
-  def filtered_title
-    escape_privacy_data(title)
   end
 
   def reset_readed_count!

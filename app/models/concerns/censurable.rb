@@ -4,6 +4,18 @@
 # Funcionality related to hiding sensitive information from objects
 #
 module Censurable
+  def self.included(base)
+    base.extend(ClassMethods)
+  end
+
+  module ClassMethods
+    def censors(attribute)
+      define_method(:"filtered_#{attribute}") do
+        escape_privacy_data(public_send(attribute))
+      end
+    end
+  end
+
   def escape_privacy_data(text)
     return unless text
 

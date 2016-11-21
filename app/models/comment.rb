@@ -2,6 +2,8 @@
 
 class Comment < ActiveRecord::Base
   include Censurable
+  censors :body
+
   include Hidable
   include Statable
 
@@ -20,8 +22,4 @@ class Comment < ActiveRecord::Base
   scope :recent, -> { includes(:ad, :user).order(created_at: :desc).limit(30) }
 
   scope :oldest_first, -> { order(created_at: :asc) }
-
-  def filtered_body
-    escape_privacy_data(body)
-  end
 end
