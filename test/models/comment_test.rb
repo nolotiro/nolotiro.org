@@ -13,12 +13,11 @@ class CommentTest < ActiveSupport::TestCase
     assert c.errors[:ip].include?('no puede estar en blanco')
   end
 
-  test 'comment escaped body with escape_privacy_data' do
-    comment = Comment.new
-    text = 'contactar por email example@example.com, por sms 999999999, o whatsapp al 666666666'
-    expected_text = 'contactar por email  , por sms  , o   al  '
-    comment.body = text
+  test 'comment title escapes privacy data' do
+    text = 'contactar por email example@example.com, o whatsapp al 666666666'
+    expected_text = 'contactar por email  , o   al  '
+    comment = build(:comment, body: text)
 
-    assert_equal expected_text, comment.body
+    assert_equal expected_text, comment.filtered_body
   end
 end

@@ -1,6 +1,9 @@
 # frozen_string_literal: true
 
 class Comment < ActiveRecord::Base
+  include Censurable
+  censors :body, presence: true
+
   include Hidable
   include Statable
 
@@ -10,7 +13,6 @@ class Comment < ActiveRecord::Base
   belongs_to :ad, foreign_key: :ads_id
 
   validates :ads_id, presence: true
-  validates :body, presence: true
   validates :user_owner, presence: true
   validates :ip, presence: true
 
@@ -19,8 +21,4 @@ class Comment < ActiveRecord::Base
   scope :recent, -> { includes(:ad, :user).order(created_at: :desc).limit(30) }
 
   scope :oldest_first, -> { order(created_at: :asc) }
-
-  def body
-    ApplicationController.helpers.escape_privacy_data(self[:body])
-  end
 end

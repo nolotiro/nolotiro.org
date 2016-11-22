@@ -2,6 +2,10 @@
 # frozen_string_literal: true
 
 class Ad < ActiveRecord::Base
+  include Censurable
+  censors :title, presence: true, min_length: 4
+  censors :body, presence: true, min_length: 25
+
   include Hidable
   include Spamable
   include Statable
@@ -11,8 +15,8 @@ class Ad < ActiveRecord::Base
   belongs_to :user, foreign_key: :user_owner, counter_cache: true
   has_many :comments, foreign_key: :ads_id, dependent: :destroy
 
-  validates :title, presence: true, length: { minimum: 4, maximum: 100 }
-  validates :body, presence: true, length: { minimum: 25, maximum: 1000 }
+  validates :title, length: { maximum: 100 }
+  validates :body, length: { maximum: 1000 }
   validates :user_owner, presence: true
   validates :woeid_code, presence: true
 
@@ -37,9 +41,6 @@ class Ad < ActiveRecord::Base
   validates_attachment :image, content_type: { content_type: ['image/jpg', 'image/jpeg', 'image/png', 'image/gif'] }
 
   validates_attachment_size :image, in: 0.megabytes..5.megabytes
-
-  # before_save :titleize_title if self.title? and /[[:upper:]]/.match(self.title)
-  # before_save :titleize_body if self.body and /[[:upper:]]/.match(self.body)
 
   scope :recent, -> { Ad.includes(:user).recent_first.limit(90) }
 
@@ -81,14 +82,6 @@ class Ad < ActiveRecord::Base
     return '0' * 20 unless last_ad_publication
 
     last_ad_publication.strftime('%d%m%y%H%M%s')
-  end
-
-  def filtered_body
-    ApplicationController.helpers.escape_privacy_data(body)
-  end
-
-  def filtered_title
-    ApplicationController.helpers.escape_privacy_data(title)
   end
 
   def reset_readed_count!

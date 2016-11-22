@@ -9,7 +9,7 @@ class CommentsController < ApplicationController
 
     if @comment.save
       if @ad.user != current_user
-        CommentsMailer.create(@ad.id, @comment.body).deliver_later
+        CommentsMailer.create(@ad.id, @comment.filtered_body).deliver_later
       end
       flash[:notice] = t('nlt.comments.flash_ok')
     else
