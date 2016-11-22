@@ -3,6 +3,15 @@ AllCops:
     - db/schema.rb
     - vendor/bundle/**/*
 
+  Include:
+    - '**/*.jbuilder'
+    - '**/*.rake'
+    - '**/config.ru'
+    - '**/Gemfile'
+    - '**/Rakefile'
+    - '**/Capfile'
+    - '**/Vagrantfile'
+
   DisplayCopNames: true
 
   DisplayStyleGuide: true
