@@ -231,7 +231,8 @@ ALTER SEQUENCE conversations_id_seq OWNED BY conversations.id;
 CREATE TABLE countries (
     id integer NOT NULL,
     iso character varying(2) NOT NULL,
-    name character varying(173) NOT NULL
+    name character varying(173) NOT NULL,
+    geoname_id integer
 );
 
 
@@ -433,7 +434,8 @@ CREATE TABLE schema_migrations (
 CREATE TABLE states (
     id integer NOT NULL,
     name character varying(173) NOT NULL,
-    country_id integer NOT NULL
+    country_id integer NOT NULL,
+    geoname_id integer
 );
 
 
@@ -464,7 +466,8 @@ CREATE TABLE towns (
     id integer NOT NULL,
     name character varying(173) NOT NULL,
     state_id integer,
-    country_id integer NOT NULL
+    country_id integer NOT NULL,
+    geoname_id integer
 );
 
 
@@ -1099,4 +1102,6 @@ INSERT INTO schema_migrations (version) VALUES ('20161019233040');
 INSERT INTO schema_migrations (version) VALUES ('20161117184138');
 
 INSERT INTO schema_migrations (version) VALUES ('20161117184157');
+
+INSERT INTO schema_migrations (version) VALUES ('20161122140853');
 
