@@ -45,7 +45,9 @@ module MessagingTests
     send_message(subject: 'hola, user2', body: 'How you doing?')
     send_message(body: '')
 
-    assert_text 'Mensaje no puede estar en blanco'
+    # Check HTML5 validator is present since this driver understand it and does
+    # not submit the form
+    assert_selector :xpath, "//textarea[@required='required']"
   end
 
   def test_replies_to_conversation

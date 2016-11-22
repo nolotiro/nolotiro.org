@@ -9,10 +9,10 @@
           <%= errors_for(message) %>
 
           <div class="form-group">
-            <%= text_area_tag :body,
-                              params[:body],
-                              size: '80x3',
-                              maxlength: 1500 %>
+            <%= text_area_tag :body, params[:body], size: '80x3',
+                                                    maxlength: 1500,
+                                                    required: true,
+                                                    class: 'form-control' %>
 
             <p class="help-block">
               <%= t 'conversations.new.body_max' %>
