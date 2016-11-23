@@ -97,9 +97,5 @@ class LegacyRoutingTest < ActionDispatch::IntegrationTest
   def test_routes_to_ad_management
     assert_routing '/es/ad/create', action: 'new', controller: 'ads', locale: 'es'
     assert_routing "/es/ad/#{@ad.id}/#{@ad.slug}", controller: 'ads', action: 'show', locale: 'es', id: @ad.id.to_s, slug: 'ordenador-en-vallecas'
-
-    # sign_in @user
-    # get "/es/ad/edit/id/#{@ad.id}"
-    # assert_redirected_to edit_ad_url(@ad)
   end
 end
