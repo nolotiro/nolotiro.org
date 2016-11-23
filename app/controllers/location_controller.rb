@@ -11,7 +11,7 @@ class LocationController < ApplicationController
   # GET /es/location/change2?location=:location
   def list
     if unique_location
-      save_location unique_location.woeid
+      save_location unique_location
     else
       @locations = similar_locations
     end
@@ -19,10 +19,8 @@ class LocationController < ApplicationController
 
   # POST /es/location/change2
   def change
-    if positive_integer?(params[:location])
-      save_location params[:location]
-    elsif unique_location
-      save_location unique_location.woeid
+    if unique_location
+      save_location unique_location
     else
       redirect_to location_ask_path, alert: 'Hubo un error con el cambio de su ubicación. Inténtelo de nuevo.'
     end
@@ -31,9 +29,11 @@ class LocationController < ApplicationController
   private
 
   def unique_location
-    return unless similar_locations&.count == 1
-
-    similar_locations.first
+    @unique_location ||= if positive_integer?(params[:location])
+                           params[:location]
+                         elsif similar_locations&.count == 1
+                           similar_locations.first.woeid
+                         end
   end
 
   def similar_locations
