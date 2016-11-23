@@ -61,13 +61,6 @@ class ChoosingLocationTest < ActionDispatch::IntegrationTest
     assert_location_page 'Santa Cruz de Tenerife, Islas Canarias, España'
   end
 
-  it 'directly chooses location through GET request' do
-    create(:town, :tenerife)
-    visit location_change_path(location: 'tenerife, islas canarias')
-
-    assert_location_page 'Santa Cruz de Tenerife, Islas Canarias, España'
-  end
-
   it 'matches town when searching town without accents' do
     create(:town, name: 'Leganés', id: 765_045)
     choose_location('Leganes')
