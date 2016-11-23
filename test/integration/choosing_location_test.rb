@@ -2,10 +2,12 @@
 
 require 'test_helper'
 require 'support/web_mocking'
+require 'integration/concerns/geo'
 
 class ChoosingLocationTest < ActionDispatch::IntegrationTest
   include WebMocking
   include Warden::Test::Helpers
+  include Geo
 
   it 'redirects there when user logged in and no location set' do
     login_as create(:user, :stateless)
@@ -84,10 +86,5 @@ class ChoosingLocationTest < ActionDispatch::IntegrationTest
     visit location_ask_path
     fill_in 'location', with: name
     click_button 'Enviar'
-  end
-
-  def assert_location_page(name)
-    assert_text 'No hay anuncios para esta ubicación.'
-    assert_text name
   end
 end

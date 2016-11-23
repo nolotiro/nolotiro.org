@@ -8,6 +8,9 @@ require 'minitest/hooks'
 # Pickup assets from development server if it's running
 Capybara.asset_host = 'http://localhost:3000'
 
+# Default javascript driver
+Capybara.javascript_driver = :poltergeist
+
 module ActionDispatch
   #
   # Base class for integration tests
