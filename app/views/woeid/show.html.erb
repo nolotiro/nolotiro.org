@@ -19,7 +19,7 @@
     <% if current_woeid %>
       <%= link_to t('nlt.change_city'), location_ask_path %>
     <% elsif location_suggest %>
-      <% title = t('nlt.view_ads_on', location: location_suggest.city) %>
+      <% title = t('nlt.view_ads_on', location: location_suggest.name) %>
       <%= link_to_change_location location_suggest.fullname, title %>
     <% else %>
       <%= link_to t('nlt.view_ads_on_your_city'), location_ask_path %>

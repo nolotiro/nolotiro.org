@@ -27,6 +27,9 @@ Metrics/BlockLength:
 Performance/Casecmp:
   Enabled: false
 
+Style/AsciiComments:
+  Enabled: false
+
 Style/Lambda:
   EnforcedStyle: literal
 

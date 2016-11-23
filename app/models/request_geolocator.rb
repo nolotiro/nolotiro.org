@@ -13,11 +13,11 @@ class RequestGeolocator
     suggestion = db.lookup(@ip)
 
     # FIXME: use other APIs when there isn't an IP address mapped
-    return unless suggestion.found?
+    return unless suggestion.found? && suggestion.city
 
-    location = MaxMind::Location.new(suggestion)
-    return unless location.city
+    geoname_id = suggestion.city&.geoname_id
+    return unless geoname_id
 
-    location
+    Town.includes(:state, :country).find_by(geoname_id: geoname_id)
   end
 end

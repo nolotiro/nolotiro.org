@@ -11,6 +11,7 @@ FactoryGirl.define do
       end
 
       id 766_273
+      geoname_id 3_117_735
       name 'Madrid'
     end
 
@@ -21,6 +22,7 @@ FactoryGirl.define do
       end
 
       id 753_692
+      geoname_id 3_128_760
       name 'Barcelona'
     end
 
@@ -31,6 +33,7 @@ FactoryGirl.define do
       end
 
       id 773_692
+      geoname_id 2_511_174
       name 'Santa Cruz de Tenerife'
     end
 
