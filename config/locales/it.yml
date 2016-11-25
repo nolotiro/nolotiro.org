@@ -344,7 +344,7 @@ it:
       no_ads_message_html: Non ci sono annunci che corrispondano alla ricerca <b>%{q}</b>.
     searching_on_html: Cercando <i>%{q}</i> in
     send: Inviare
-    send_a_message: "+ Invia un messaggio privato al annunciante"
+    send_a_message: "+ Invia un messaggio privato a %{user}"
     share_this_ad: Condividi questo annuncio
     sign_in: Login
     sign_in_with_provider: Accedi con %{provider}
