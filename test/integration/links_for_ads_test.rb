@@ -23,4 +23,10 @@ class LinksForAds < ActionDispatch::IntegrationTest
 
     assert_no_text 'Envía un mensaje privado al anunciante'
   end
+
+  it 'shows message link in petition ads' do
+    visit_ad_page(create(:ad, :want))
+
+    assert_text 'Envía un mensaje privado al anunciante'
+  end
 end

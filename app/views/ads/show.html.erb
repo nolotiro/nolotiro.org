@@ -56,7 +56,7 @@
         <%= render "stats", comments_count: @comments.size,
                             readed_count: @ad.readed_count %>
 
-        <% if @ad.available? &&
+        <% if (@ad.want? || @ad.available?) &&
               (current_user.nil? || current_user.whitelisting?(@ad.user)) %>
           <div class="ad_contact">
             <%= t('nlt.are_you_interested') %>
