@@ -87,7 +87,9 @@ class AdsController < ApplicationController
 
   def destroy_redirect_path
     previous_path = session.delete(:return_to)
-    return previous_path unless previous_path == ad_friendly_path
+    unless previous_path.nil? || previous_path == ad_friendly_path
+      return previous_path
+    end
 
     listads_user_path(@ad.user)
   end
