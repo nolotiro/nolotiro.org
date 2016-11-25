@@ -121,10 +121,13 @@ class Ad < ActiveRecord::Base
   end
 
   def bumpable?
-    published_at <= 5.days.ago
+    published_at <= 5.days.ago && !delivered?
   end
 
   def bump
-    update!(published_at: Time.zone.now, readed_count: 1)
+    attributes = { published_at: Time.zone.now, readed_count: 1 }
+    attributes[:status] = :available if give?
+
+    update!(attributes)
   end
 end
