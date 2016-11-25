@@ -13,7 +13,7 @@ class AdTest < ActiveSupport::TestCase
 
     assert_not_empty a.errors[:body]
     assert_not_empty a.errors[:title]
-    assert_not_empty a.errors[:user_owner]
+    assert_not_empty a.errors[:user]
     assert_not_empty a.errors[:type]
     assert_not_empty a.errors[:woeid_code]
   end
