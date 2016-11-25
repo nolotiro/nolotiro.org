@@ -84,10 +84,6 @@ class Ad < ActiveRecord::Base
     last_ad_publication.strftime('%d%m%y%H%M%s')
   end
 
-  def reset_readed_count!
-    update_column(:readed_count, 1)
-  end
-
   def increment_readed_count!
     Ad.increment_counter(:readed_count, id)
   end
@@ -129,8 +125,6 @@ class Ad < ActiveRecord::Base
   end
 
   def bump
-    touch(:published_at)
-
-    reset_readed_count!
+    update!(published_at: Time.zone.now, readed_count: 1)
   end
 end
