@@ -343,7 +343,7 @@ gl:
       no_ads_message_html: 
     searching_on_html: 
     send: 
-    send_a_message: 
+    send_a_message: "+ Envía unha mensaxe a %{user}"
     share_this_ad: Comparte este anuncio
     sign_in: Acceder
     sign_in_with_provider: Entrar co %{provider}
