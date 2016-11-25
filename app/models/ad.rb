@@ -129,5 +129,6 @@ class Ad < ActiveRecord::Base
     attributes[:status] = :available if give?
 
     update!(attributes)
+    comments.destroy_all
   end
 end

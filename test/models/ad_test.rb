@@ -136,6 +136,12 @@ class AdTest < ActiveSupport::TestCase
     assert_equal 1, ad.readed_count
   end
 
+  test 'ad bumping deletes associated comments' do
+    comment = create(:comment)
+
+    assert_difference(-> { Comment.count }, -1) { comment.ad.bump }
+  end
+
   test 'associated comments are deleted when ad is deleted' do
     comment = create(:comment)
 
