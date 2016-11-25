@@ -1,10 +1,8 @@
 <%= render layout: 'partials/ranking',
            locals: { title_key: title_key, scope: scope } do %>
-  <% scope.each do |loc| %>
+  <% scope.ranked.each do |id, name, n_ads| %>
     <li>
-      <%= link_to ads_woeid_path(loc.woeid_code, type: "give") do %>
-        <%= loc.woeid_name_short %> (<%= loc.n_ads %>)
-      <% end %>
+      <%= link_to "#{name} (#{n_ads})", ads_woeid_path(id, type: "give") %>
     </li>
   <% end %>
 <% end %>

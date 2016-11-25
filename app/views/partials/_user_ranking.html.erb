@@ -1,10 +1,8 @@
 <%= render layout: 'partials/ranking',
            locals: { title_key: title_key, scope: scope } do %>
-  <% scope.each do |id, username, n_ads| %>
+  <% scope.ranked.each do |id, name, n_ads| %>
     <li>
-      <%= link_to listads_user_path id do %>
-        <%= "#{username} (#{n_ads})" %>
-      <% end %>
+      <%= link_to "#{name} (#{n_ads})", listads_user_path(id) %>
     </li>
   <% end %>
 <% end %>
