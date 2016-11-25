@@ -13,8 +13,8 @@ class RankingsTest < ActiveSupport::TestCase
     @user2 = create(:user, id: 2, username: 'user2')
     @user3 = create(:user, id: 3, username: 'user3')
 
-    3.times { create(:ad, user: @user1, woeid_code: 766_273) }
-    2.times { create(:ad, user: @user2, woeid_code: 766_273) }
+    3.times { create(:ad, :in_mad, user: @user1) }
+    2.times { create(:ad, :in_mad, user: @user2) }
   end
 
   test 'top overall ignores wanted ads from counts and results' do

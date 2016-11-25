@@ -7,9 +7,9 @@ class Search < ActionDispatch::IntegrationTest
   include WebMocking
 
   before do
-    create(:ad, :available, woeid_code: 766_273, title: 'muebles oro')
-    create(:ad, :want, woeid_code: 766_273, title: 'tele')
-    create(:ad, :available, woeid_code: 753_692, title: 'muebles plata')
+    create(:ad, :available, :in_mad, title: 'muebles oro')
+    create(:ad, :want, :in_mad, title: 'tele')
+    create(:ad, :available, :in_bar, title: 'muebles plata')
 
     mocking_yahoo_woeid_info(766_273) do
       visit ads_woeid_path(766_273, type: 'give')
