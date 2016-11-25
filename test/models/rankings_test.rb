@@ -4,8 +4,6 @@ require 'test_helper'
 
 class RankingsTest < ActiveSupport::TestCase
   setup do
-    Rails.cache.clear
-
     @user1 = create(:user, id: 1, username: 'user1')
     @user2 = create(:user, id: 2, username: 'user2')
     @user3 = create(:user, id: 3, username: 'user3')

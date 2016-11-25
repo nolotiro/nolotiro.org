@@ -61,10 +61,10 @@ class Ad < ActiveRecord::Base
   paginates_per 20
 
   scope :top_locations, -> do
-    AdRanking.new(Ad.give.from_legitimate_authors,
-                  name: "#{I18n.locale}/top-locations",
+    AdRanking.new(Ad.give.from_legitimate_authors.joins(:town),
+                  name: 'top-locations',
                   metric: :woeid_code,
-                  map_extras: [:woeid_name_short])
+                  extra: ['towns.name'])
   end
 
   def increment_readed_count!

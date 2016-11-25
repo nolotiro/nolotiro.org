@@ -93,7 +93,7 @@ class User < ActiveRecord::Base
     AdRanking.new(ads_scope.give.joins(:user).merge(legitimate),
                   name: name,
                   metric: :user_owner,
-                  select_extras: [:username])
+                  extra: [:username])
   end
 
   def self.new_with_session(params, session)
