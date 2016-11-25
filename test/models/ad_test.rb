@@ -117,10 +117,9 @@ class AdTest < ActiveSupport::TestCase
   end
 
   test 'ad body stores emoji' do
-    body = 'Pantalones cortos para el veranito que se vene! 😀 '
-    ad = create(:ad, body: body)
+    ad = create(:ad, body: 'Pantalones cortos para el veranito! 😀 ')
 
-    assert_equal body, ad.body
+    assert_equal 'Pantalones cortos para el veranito! 😀 ', ad.body
   end
 
   test 'ad bumping refreshes publication date' do
@@ -138,10 +137,9 @@ class AdTest < ActiveSupport::TestCase
   end
 
   test 'associated comments are deleted when ad is deleted' do
-    ad = create(:ad)
-    create(:comment, ad: ad)
+    comment = create(:comment)
 
-    assert_difference(-> { Comment.count }, -1) { ad.destroy }
+    assert_difference(-> { Comment.count }, -1) { comment.ad.destroy }
   end
 
   test '.by_title ignores invalid bytes sequences' do
