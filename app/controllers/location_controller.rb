@@ -43,8 +43,6 @@ class LocationController < ApplicationController
   def save_location(woeid)
     current_user.update!(woeid: woeid) if user_signed_in?
 
-    cookies[:location] = woeid
-
     redirect_to ads_woeid_path(woeid, type: 'give')
   end
 end
