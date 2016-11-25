@@ -62,6 +62,18 @@ class RankingsTest < ActiveSupport::TestCase
     end
   end
 
+  test 'top locations excludes ads by banned users' do
+    mocking_yahoo_woeid_info(766_273) do
+      results = Ad.top_locations
+      @user1.ban!
+
+      assert_equal 1, results.length
+      assert_equal 766_273, results.first.woeid_code
+      assert_equal 'Madrid', results.first.woeid_name_short
+      assert_equal 2, results.first.n_ads
+    end
+  end
+
   test 'top overall city with all users ads in the same city' do
     assert_equal [[1, 'user1', 3], [2, 'user2', 2]],
                  User.top_city_overall(766_273)
