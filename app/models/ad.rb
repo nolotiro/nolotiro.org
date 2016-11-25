@@ -13,6 +13,7 @@ class Ad < ActiveRecord::Base
   counter_stats_for :published_at
 
   belongs_to :town, foreign_key: :woeid_code
+  validates :town, presence: true
 
   belongs_to :user, foreign_key: :user_owner, counter_cache: true
   validates :user, presence: true
@@ -21,7 +22,6 @@ class Ad < ActiveRecord::Base
 
   validates :title, length: { maximum: 100 }
   validates :body, length: { maximum: 1000 }
-  validates :woeid_code, presence: true
 
   enum status: { available: 1, booked: 2, delivered: 3 }
   validates :status, presence: true, if: :give?

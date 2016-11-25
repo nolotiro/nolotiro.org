@@ -12,7 +12,7 @@ class AdTest < ActiveSupport::TestCase
     assert_not_empty a.errors[:title]
     assert_not_empty a.errors[:user]
     assert_not_empty a.errors[:type]
-    assert_not_empty a.errors[:woeid_code]
+    assert_not_empty a.errors[:town]
   end
 
   test 'ad validates type' do

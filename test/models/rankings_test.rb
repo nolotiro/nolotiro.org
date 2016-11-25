@@ -62,7 +62,7 @@ class RankingsTest < ActiveSupport::TestCase
   end
 
   test 'top overall city with users ads in different cities' do
-    @user2.ads.last.update!(woeid_code: 753_692)
+    @user2.ads.last.update!(town: create(:town, :barcelona))
 
     assert_equal [[1, 'user1', 3], [2, 'user2', 1]],
                  User.top_city_overall(766_273).ranked
