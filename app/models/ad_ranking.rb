@@ -30,7 +30,7 @@ class AdRanking
   private
 
   def cache_digest
-    last_ad_publication = Ad.maximum(:published_at)
+    last_ad_publication = Ad.give.maximum(:published_at)
     return '0' * 20 unless last_ad_publication
 
     last_ad_publication.strftime('%d%m%y%H%M%s')
