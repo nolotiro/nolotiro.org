@@ -66,7 +66,11 @@ class Ad < ActiveRecord::Base
   end
 
   def self.rank_by(*attributes)
-    give.group(*attributes).order('n_ads DESC').limit(ranking_size)
+    give
+      .from_legitimate_authors
+      .group(*attributes)
+      .order('n_ads DESC')
+      .limit(ranking_size)
   end
 
   def self.full_ranking?(rank_scope)

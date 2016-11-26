@@ -31,10 +31,24 @@ class RankingsTest < ActiveSupport::TestCase
                  User.top_overall
   end
 
+  test 'top overall excludes banned users' do
+    create(:ad, user: @user3)
+    @user1.ban!
+
+    assert_equal [[2, 'user2', 2], [3, 'user3', 1]], User.top_overall
+  end
+
   test "top last week gives last week's top publishers" do
     create(:ad, user: @user3, published_at: 8.days.ago)
 
     assert_equal [[1, 'user1', 3], [2, 'user2', 2]], User.top_last_week
+  end
+
+  test 'top last week excludes banned users' do
+    create(:ad, user: @user3, published_at: 8.days.ago)
+    @user1.ban!
+
+    assert_equal [[2, 'user2', 2]], User.top_last_week
   end
 
   test 'top locations returns cities with most ads' do
@@ -45,6 +59,18 @@ class RankingsTest < ActiveSupport::TestCase
       assert_equal 766_273, results.first.woeid_code
       assert_equal 'Madrid', results.first.woeid_name_short
       assert_equal 3 + 2, results.first.n_ads
+    end
+  end
+
+  test 'top locations excludes ads by banned users' do
+    mocking_yahoo_woeid_info(766_273) do
+      results = Ad.top_locations
+      @user1.ban!
+
+      assert_equal 1, results.length
+      assert_equal 766_273, results.first.woeid_code
+      assert_equal 'Madrid', results.first.woeid_name_short
+      assert_equal 2, results.first.n_ads
     end
   end
 
