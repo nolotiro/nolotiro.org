@@ -230,6 +230,7 @@ it:
     delivered: consegnato
     developers: svilupatori
     didn_t_receive_confirmation_instructions: Non hai ricevuto le istruzione di conferma?
+    do_you_have_it: Ce l'hai?
     edit_this_ad: Editare questo annuncio
     edit: Editare
     faq:
@@ -261,6 +262,7 @@ it:
     gift_on: regalo in %{woeid}
     gifts: regali
     give: regalo
+    give_it_to: Regalalo a %{user}
     hello_to: Ciao %{recipient},
     here: qui
     home_title: 'annunci di regali nuovi e di seconda mano '

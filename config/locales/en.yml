@@ -230,6 +230,7 @@ en:
     delivered: delivered
     developers: developers
     didn_t_receive_confirmation_instructions: Didn't receive the confirmation's instructions?
+    do_you_have_it: Do you have it?
     edit_this_ad: Edit this ad
     edit: Edit
     faq:
@@ -259,6 +260,7 @@ en:
     gift_on: gift on %{woeid}
     gifts: presents
     give: gift
+    give_it_to: Give it away to %{user}
     hello_to: Hello %{recipient},
     here: here
     home_title: new and second hand gift's ads

@@ -27,7 +27,7 @@ class LinksForAds < ActionDispatch::IntegrationTest
   it 'shows message link in petition ads' do
     visit_ad_page_with_type(:want)
 
-    assert_text 'Envía un mensaje privado a lisa'
+    assert_text 'Regálaselo a lisa'
   end
 
   private

@@ -230,6 +230,7 @@ es:
     delivered: entregado
     developers: desarrolladores
     didn_t_receive_confirmation_instructions: "¿No has recibido las instrucciones de confirmación?"
+    do_you_have_it: ¿Lo tienes?
     edit_this_ad: Edita este anuncio
     edit: Editar
     faq:
@@ -259,6 +260,7 @@ es:
     gift_on: regalo en %{woeid}
     gifts: regalos
     give: regalo
+    give_it_to: Regálaselo a %{user}
     hello_to: Hola %{recipient},
     here: aquí
     home_title: anuncios de regalos nuevos y de segunda mano

@@ -229,6 +229,7 @@ ca:
     delivered: lliurat
     developers: desenvolupadors
     didn_t_receive_confirmation_instructions: No has rebut les instruccions de confirmació?
+    do_you_have_it: Ho tens?
     edit: Editar
     edit_this_ad: Edita aquest anunci
     faq:
@@ -258,6 +259,7 @@ ca:
     gift_on: regal en %{woeid}
     gifts: regals
     give: regal
+    give_it_to: Regala'l a %{user}
     hello_to: Hola %{recipient},
     here: aquí
     home_title: anuncis de regals nous i de segona mà
