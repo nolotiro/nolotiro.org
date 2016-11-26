@@ -42,7 +42,7 @@ class Ad < ActiveRecord::Base
 
   validates_attachment_size :image, in: 0.megabytes..5.megabytes
 
-  scope :recent, -> { Ad.includes(:user).recent_first.limit(90) }
+  scope :recent, -> { includes(:user).recent_first.limit(90) }
 
   scope :by_woeid_code, ->(woeid_code) do
     return all unless woeid_code.present?
@@ -78,18 +78,14 @@ class Ad < ActiveRecord::Base
   end
 
   def self.cache_digest
-    last_ad_publication = Ad.maximum(:published_at)
+    last_ad_publication = maximum(:published_at)
     return '0' * 20 unless last_ad_publication
 
     last_ad_publication.strftime('%d%m%y%H%M%s')
   end
 
-  def reset_readed_count!
-    update_column(:readed_count, 1)
-  end
-
   def increment_readed_count!
-    Ad.increment_counter(:readed_count, id)
+    self.class.increment_counter(:readed_count, id)
   end
 
   def move!
@@ -125,12 +121,14 @@ class Ad < ActiveRecord::Base
   end
 
   def bumpable?
-    published_at <= 5.days.ago
+    published_at <= 5.days.ago && !delivered?
   end
 
   def bump
-    touch(:published_at)
+    attributes = { published_at: Time.zone.now, readed_count: 1 }
+    attributes[:status] = :available if give?
 
-    reset_readed_count!
+    update!(attributes)
+    comments.destroy_all
   end
 end
