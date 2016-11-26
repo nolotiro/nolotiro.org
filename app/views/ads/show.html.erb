@@ -65,7 +65,7 @@
             <%= link_to new_conversation_path(recipient_id: @ad.user_owner,
                                               subject: @ad.slug),
                         class: "world_link" do %>
-              <%= title.to_s %>
+              <%= "+ #{title}" %>
               <%= image_tag "email_send.png", alt: title %>
             <% end %>
           </div>

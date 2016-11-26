@@ -338,7 +338,7 @@ es:
       no_ads_message_html: No hay anuncios que coincidan con la búsqueda <b>%{q}</b> en la ubicación.
     searching_on_html: Buscando <i>%{q}</i> en
     send: Enviar
-    send_a_message: "+ Envía un mensaje privado a %{user}"
+    send_a_message: Envía un mensaje privado a %{user}
     share_this_ad: Comparte este anuncio
     sign_in: Acceder
     sign_in_with_provider: Inicia sesión con %{provider}

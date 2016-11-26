@@ -338,7 +338,7 @@ en:
       no_ads_message_html: There are no matching ads with your search <b>%{q}</b>.
     searching_on_html: Searching <i>%{q}</i> on
     send: Send
-    send_a_message: "+ Send a private message to %{user}"
+    send_a_message: Send a private message to %{user}
     share_this_ad: Share this ad
     sign_in: Sign in
     sign_in_with_provider: Sign in with %{provider}
