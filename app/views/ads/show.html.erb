@@ -56,16 +56,17 @@
         <%= render "stats", comments_count: @comments.size,
                             readed_count: @ad.readed_count %>
 
-        <% if @ad.available? &&
+        <% if (@ad.want? || @ad.available?) &&
               (current_user.nil? || current_user.whitelisting?(@ad.user)) %>
           <div class="ad_contact">
             <%= t('nlt.are_you_interested') %>
+            <% title = t('nlt.send_a_message', user: @ad.user.username) %>
 
             <%= link_to new_conversation_path(recipient_id: @ad.user_owner,
                                               subject: @ad.slug),
                         class: "world_link" do %>
-              <%= t('nlt.send_a_message') %>
-              <%= image_tag "email_send.png", alt: t('nlt.send_a_message') %>
+              <%= title.to_s %>
+              <%= image_tag "email_send.png", alt: title %>
             <% end %>
           </div>
         <% end %>

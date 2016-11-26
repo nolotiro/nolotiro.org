@@ -340,7 +340,7 @@ fr:
       no_ads_message_html: Aucune annonce correspondant à la recherche <b>%{q}</b>.
     searching_on_html: Regarder <i>%{q}</i> en
     send: Envoyer
-    send_a_message: "+ Envoyer un message privé à l'annonceur"
+    send_a_message: "+ Envoyer un message privé à %{user}"
     share_this_ad: Diffuse cette annonce
     sign_in: S'identifier
     sign_in_with_provider: Connexion avec %{provider}
