@@ -18,7 +18,13 @@ class RequestGeolocatorTest < ActionView::TestCase
   end
 
   test "does not suggests a location unless it's city-specific" do
-    # This ip address is correctly resolved to Brazil, but not a specific city
-    assert_nil RequestGeolocator.new('179.168.191.163').suggest
+    assert_nil \
+      RequestGeolocator.new(ip_from_brazil_but_not_a_specific_city).suggest
+  end
+
+  private
+
+  def ip_from_brazil_but_not_a_specific_city
+    '179.168.191.163'
   end
 end

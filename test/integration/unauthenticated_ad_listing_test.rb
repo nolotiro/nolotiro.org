@@ -21,12 +21,6 @@ class UnauthenticatedAdListing < ActionDispatch::IntegrationTest
     end
   end
 
-  it 'shows a link to show ads in the guessed location' do
-    get root_path, {}, 'REMOTE_ADDR' => '74.125.225.224'
-
-    assert_select 'a', 'Ver anuncios en Mountain View'
-  end
-
   it 'lists first page of available ads everywhere in all ads page' do
     visit ads_listall_path(type: 'give')
 

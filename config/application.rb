@@ -37,5 +37,8 @@ module NolotiroOrg
     config.action_mailer.smtp_settings = {
       enable_starttls_auto: false
     }
+
+    # Preferred schema format
+    config.active_record.schema_format = :sql
   end
 end

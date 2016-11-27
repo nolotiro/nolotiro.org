@@ -13,11 +13,12 @@ class Ad < ActiveRecord::Base
   counter_stats_for :published_at
 
   belongs_to :user, foreign_key: :user_owner, counter_cache: true
+  validates :user, presence: true
+
   has_many :comments, foreign_key: :ads_id, dependent: :destroy
 
   validates :title, length: { maximum: 100 }
   validates :body, length: { maximum: 1000 }
-  validates :user_owner, presence: true
   validates :woeid_code, presence: true
 
   enum status: { available: 1, booked: 2, delivered: 3 }
