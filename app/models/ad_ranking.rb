@@ -14,7 +14,7 @@ class AdRanking
       @ad_scope.select(@metric, *@select_extras, "COUNT(#{@metric}) as n_ads")
                .group(*@select_extras, @metric)
                .order('n_ads DESC')
-               .limit(size)
+               .limit(20)
                .map do |entry|
         [
           entry.send(@metric),
@@ -25,13 +25,7 @@ class AdRanking
     end
   end
 
-  def full?
-    ranked.length == size
-  end
-
-  def size
-    20
-  end
+  delegate :present?, to: :ranked
 
   private
 
