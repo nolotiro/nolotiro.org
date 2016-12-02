@@ -1,6 +1,6 @@
 <%= render layout: 'partials/ranking',
-           locals: { title_key: title_key, scope: scope } do %>
-  <% scope.ranked.each do |id, name, n_ads| %>
+           locals: { title_key: title_key, ranking: ranking } do %>
+  <% ranking.ranked.each do |id, name, n_ads| %>
     <li>
       <%= link_to "#{name} (#{n_ads})", listads_user_path(id) %>
     </li>

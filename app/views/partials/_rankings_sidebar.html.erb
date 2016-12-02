@@ -1,15 +1,15 @@
 <% unless current_woeid %>
   <%= render "partials/location_ranking", title_key: "cities_in_the_world",
-                                          scope: Ad.top_locations %>
+                                          ranking: Ad.top_locations %>
 <% end %>
 
 <%= render "partials/user_ranking",
            title_key: "users_most_active_last_week",
-           scope: last_week_user_ranking %>
+           ranking: last_week_user_ranking %>
 
 <%= render "partials/user_ranking",
            title_key: "users_most_active",
-           scope: overall_user_ranking %>
+           ranking: overall_user_ranking %>
 
 <div class="google_ad_wrapper">
   <%= render "partials/raw_google_adsense", class_name: "desktop google_adsense_600_160", ad_slot: "6783776462" %>
