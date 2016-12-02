@@ -8,6 +8,11 @@ require 'minitest/hooks'
 # Pickup assets from development server if it's running
 Capybara.asset_host = 'http://localhost:3000'
 
+# Poltergeist customization
+Capybara.register_driver :poltergeist do |app|
+  Capybara::Poltergeist::Driver.new(app, url_whitelist: ['127.0.0.1'])
+end
+
 # Default javascript driver
 Capybara.javascript_driver = :poltergeist
 
