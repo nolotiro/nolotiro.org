@@ -11,6 +11,9 @@
 /log/*.log
 /tmp
 
+# Ignore DB dumps
+/db/*.dump
+
 # App configuration
 .env.local
 .env.staging
