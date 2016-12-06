@@ -468,7 +468,6 @@ DEPENDENCIES
   bullet
   byebug
   capistrano (~> 3.0)
-  capistrano-bundler
   capistrano-pending
   capistrano-rails
   capistrano-rbenv
