@@ -11,7 +11,6 @@ namespace :db do
         --no-acl \
         --no-owner \
         --format c \
-        --schema public \
         --username #{config[:username]} \
         #{config[:database]} > #{backup_name}
     SHELL
@@ -29,7 +28,6 @@ namespace :db do
         --dbname #{config[:database]} \
         --no-acl \
         --no-owner \
-        --schema public \
         --username #{config[:username]} \
         #{backup_name}
     SHELL
