@@ -54,4 +54,14 @@ namespace :deploy do
       sudo 'service nginx restart'
     end
   end
+
+  before :restart, :clear_cache do
+    on roles(:app) do
+      within release_path do
+        with rails_env: fetch(:rails_env) do
+          execute :rake, 'cache:clear'
+        end
+      end
+    end
+  end
 end
