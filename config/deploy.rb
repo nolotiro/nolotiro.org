@@ -36,21 +36,21 @@ namespace :deploy do
 
   desc 'Start application'
   task :start do
-    on roles(:app), in: :sequence, wait: 5 do
+    on roles(:app) do
       sudo 'service nginx start'
     end
   end
 
   desc 'Stop application'
   task :stop do
-    on roles(:app), in: :sequence, wait: 5 do
+    on roles(:app) do
       sudo 'service nginx stop'
     end
   end
 
   desc 'Restart application'
   task :restart do
-    on roles(:app), in: :sequence, wait: 5 do
+    on roles(:app) do
       sudo 'service nginx restart'
     end
   end
