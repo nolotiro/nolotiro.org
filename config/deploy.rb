@@ -3,7 +3,6 @@
 set :application, 'nolotiro.org'
 set :repo_url, 'https://github.com/alabs/nolotiro.org'
 
-set :format, :pretty
 set :log_level, :debug
 set :pty, true
 
