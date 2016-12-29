@@ -60,33 +60,10 @@ class Ad < ActiveRecord::Base
   paginates_per 20
 
   scope :top_locations, -> do
-    key = "#{I18n.locale}/top-locations-#{cache_digest}"
-    sql_count = 'COUNT(woeid_code) as n_ads'
-
-    Rails.cache.fetch(key) { rank_by(:woeid_code).select(:woeid_code, sql_count) }
-  end
-
-  def self.rank_by(*attributes)
-    give
-      .from_legitimate_authors
-      .group(*attributes)
-      .order('n_ads DESC')
-      .limit(ranking_size)
-  end
-
-  def self.full_ranking?(rank_scope)
-    rank_scope.length == ranking_size
-  end
-
-  def self.ranking_size
-    20
-  end
-
-  def self.cache_digest
-    last_ad_publication = maximum(:published_at)
-    return '0' * 20 unless last_ad_publication
-
-    last_ad_publication.strftime('%d%m%y%H%M%s')
+    AdRanking.new(Ad.give.from_legitimate_authors,
+                  name: "#{I18n.locale}/top-locations",
+                  metric: :woeid_code,
+                  map_extras: [:woeid_name_short])
   end
 
   def increment_readed_count!

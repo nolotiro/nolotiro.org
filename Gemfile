@@ -59,7 +59,6 @@ group :development do
   gem 'capistrano', '~> 3.0'
   gem 'capistrano-rbenv'
   gem 'capistrano-rails'
-  gem 'capistrano-bundler'
   gem 'capistrano-pending'
   gem 'capistrano-sidekiq'
   gem 'rubocop', '0.45.0'

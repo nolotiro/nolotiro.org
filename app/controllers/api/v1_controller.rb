@@ -20,7 +20,7 @@ module Api
     end
 
     def woeid_list
-      @section_locations = Ad.top_locations
+      @section_locations = Ad.top_locations.ranked
     end
   end
 end

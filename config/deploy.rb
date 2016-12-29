@@ -3,9 +3,6 @@
 set :application, 'nolotiro.org'
 set :repo_url, 'https://github.com/alabs/nolotiro.org'
 
-set :scm, :git
-
-set :format, :pretty
 set :log_level, :debug
 set :pty, true
 
@@ -38,22 +35,32 @@ namespace :deploy do
 
   desc 'Start application'
   task :start do
-    on roles(:app), in: :sequence, wait: 5 do
+    on roles(:app) do
       sudo 'service nginx start'
     end
   end
 
   desc 'Stop application'
   task :stop do
-    on roles(:app), in: :sequence, wait: 5 do
+    on roles(:app) do
       sudo 'service nginx stop'
     end
   end
 
   desc 'Restart application'
   task :restart do
-    on roles(:app), in: :sequence, wait: 5 do
+    on roles(:app) do
       sudo 'service nginx restart'
+    end
+  end
+
+  before :restart, :clear_cache do
+    on roles(:app) do
+      within release_path do
+        with rails_env: fetch(:rails_env) do
+          execute :rake, 'cache:clear'
+        end
+      end
     end
   end
 end
