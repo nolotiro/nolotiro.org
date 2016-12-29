@@ -233,6 +233,7 @@ gl:
     delivered: dedicado
     developers: desarrolladores
     didn_t_receive_confirmation_instructions: 
+    do_you_have_it: O tes?
     edit_this_ad: Edita este anuncio
     edit: Editar
     faq:
@@ -262,6 +263,7 @@ gl:
     gift_on: regalo en %{woeid}
     gifts: regalos
     give: regalo
+    give_it_to: Regálaselo a %{user}
     hello_to: Ola %{recipient},
     here: aquí
     home_title: 
@@ -343,7 +345,7 @@ gl:
       no_ads_message_html: 
     searching_on_html: 
     send: 
-    send_a_message: "+ Envía unha mensaxe a %{user}"
+    send_a_message: Envía unha mensaxe a %{user}
     share_this_ad: Comparte este anuncio
     sign_in: Acceder
     sign_in_with_provider: Entrar co %{provider}

@@ -59,13 +59,18 @@
         <% if (@ad.want? || @ad.available?) &&
               (current_user.nil? || current_user.whitelisting?(@ad.user)) %>
           <div class="ad_contact">
-            <%= t('nlt.are_you_interested') %>
-            <% title = t('nlt.send_a_message', user: @ad.user.username) %>
+            <% if @ad.available? %>
+              <%= t('nlt.are_you_interested') %>
+              <% title = t('nlt.send_a_message', user: @ad.user.username) %>
+            <% else %>
+              <%= t('nlt.do_you_have_it') %>
+              <% title = t('nlt.give_it_to', user: @ad.user.username) %>
+            <% end %>
 
             <%= link_to new_conversation_path(recipient_id: @ad.user_owner,
                                               subject: @ad.slug),
                         class: "world_link" do %>
-              <%= title.to_s %>
+              <%= "+ #{title}" %>
               <%= image_tag "email_send.png", alt: title %>
             <% end %>
           </div>

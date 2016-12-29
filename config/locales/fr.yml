@@ -230,6 +230,7 @@ fr:
     delivered: dévoué
     developers: développeurs
     didn_t_receive_confirmation_instructions: Vous avez pas reçu les instructions de confirmation?
+    do_you_have_it: Est-ce vous l'avez?
     edit_this_ad: Modifier cette annonce
     edit: Modifier
     faq:
@@ -259,6 +260,7 @@ fr:
     gift_on: cadeau en %{woeid}
     gifts: cadeaux
     give: cadeau
+    give_it_to: Contacter %{user}
     hello_to: Salut %{recipient},
     here: ici
     home_title: annonces de cadeaux neuves et d'occasion
@@ -340,7 +342,7 @@ fr:
       no_ads_message_html: Aucune annonce correspondant à la recherche <b>%{q}</b>.
     searching_on_html: Regarder <i>%{q}</i> en
     send: Envoyer
-    send_a_message: "+ Envoyer un message privé à %{user}"
+    send_a_message: Envoyer un message privé à %{user}
     share_this_ad: Diffuse cette annonce
     sign_in: S'identifier
     sign_in_with_provider: Connexion avec %{provider}

@@ -230,6 +230,7 @@ pt:
     delivered: entregado
     developers: desenvolvedores
     didn_t_receive_confirmation_instructions: Você não recebeu instruções de confirmação?
+    do_you_have_it: Tem isso?
     edit_this_ad: Edita este anúncio
     edit: Editar
     faq:
@@ -259,6 +260,7 @@ pt:
     gift_on: dou presente em %{woeid}
     gifts: presentes
     give: presente
+    give_it_to: Da um presente para %{user}
     hello_to: Olá %{recipient},
     here: aqui
     home_title: anúncios de presentes novos e de segunda mão
@@ -338,7 +340,7 @@ pt:
       no_ads_message_html: Não existem anúncios que concordem com sua búsqueda <b>%{q}</b>.
     searching_on_html: Buscando <i>%{q}</i> em
     send: Enviar
-    send_a_message: "+ Envia uma mensagem privada ao %{user}"
+    send_a_message: Envia uma mensagem privada ao %{user}
     share_this_ad: Compartilha este anúncio
     sign_in: Accesar
     sign_in_with_provider: Fazer login com %{provider}
