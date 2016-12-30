@@ -38,7 +38,6 @@ group :development, :test do
   gem 'byebug'                              # dev: debugger
   gem 'spring'                              # dev: speed up things
   gem 'commands'                            # dev: rake commands in console
-  gem 'mailcatcher'                         # dev: mailbox
 end
 
 group :test do
