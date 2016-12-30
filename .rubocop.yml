@@ -28,7 +28,7 @@ Performance/Casecmp:
   Enabled: false
 
 Style/Lambda:
-  Enabled: false
+  EnforcedStyle: literal
 
 Style/ModuleFunction:
   EnforcedStyle: extend_self
