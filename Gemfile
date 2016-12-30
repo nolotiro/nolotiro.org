@@ -52,13 +52,7 @@ group :production, :staging do
   gem 'newrelic_rpm'                        # monitoring
 end
 
-# deploy
 group :development do
-  gem 'capistrano', '~> 3.0'
-  gem 'capistrano-rbenv'
-  gem 'capistrano-rails'
-  gem 'capistrano-pending'
-  gem 'capistrano-sidekiq'
   gem 'rubocop', '0.45.0'
   gem 'brakeman-lib'
   gem 'i18n-tasks', '0.9.5'
@@ -66,6 +60,13 @@ group :development do
       github: 'deivid-rodriguez/localeapp',
       branch: 'drop_1.9.3_support'                  # i18n interface
   gem 'faker'
+
+  # deploy
+  gem 'capistrano', '~> 3.0'
+  gem 'capistrano-rbenv'
+  gem 'capistrano-rails'
+  gem 'capistrano-pending'
+  gem 'capistrano-sidekiq'
 end
 
 gem 'http_accept_language'
