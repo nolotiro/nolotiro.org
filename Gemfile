@@ -84,7 +84,12 @@ gem 'pundit'                                        # authorization
 gem 'paperclip', '~> 4.0'                           # images
 gem 'delayed_paperclip'                             # images processing in background
 gem 'recaptcha', require: 'recaptcha/rails'         # captcha
-gem 'activeadmin', github: 'activeadmin'            # admin backend
+
+# Admin backend. Adding inherited resources master for Rails 5 support until
+# they starting releasing things. @todo Get rid of this, possibly by completely
+# ditching activeadmin and implementing the console from scratch.
+gem 'activeadmin', github: 'activeadmin'
+gem 'inherited_resources', github: 'activeadmin/inherited_resources'
 
 # For Yahoo YQL interaction
 gem 'rest-client', '~> 2.0'
