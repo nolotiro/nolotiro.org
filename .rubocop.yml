@@ -33,6 +33,9 @@ Style/Lambda:
 Style/ModuleFunction:
   EnforcedStyle: extend_self
 
+Style/EmptyMethod:
+  EnforcedStyle: expanded
+
 Rails:
   Enabled: true
 
