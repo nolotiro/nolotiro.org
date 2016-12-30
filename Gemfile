@@ -37,7 +37,6 @@ group :development, :test do
   gem 'factory_girl_rails', '~> 4.0'        # test: factories
   gem 'byebug'                              # dev: debugger
   gem 'spring'                              # dev: speed up things
-  gem 'commands'                            # dev: rake commands in console
 end
 
 group :test do

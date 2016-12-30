@@ -151,8 +151,6 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.10.0)
-    commands (0.2.1)
-      rails (>= 3.2.0)
     concurrent-ruby (1.0.2)
     connection_pool (2.2.1)
     crack (0.4.3)
@@ -456,7 +454,6 @@ DEPENDENCIES
   capistrano-rbenv
   capistrano-sidekiq
   capybara
-  commands
   database_cleaner (~> 1.5)
   delayed_paperclip
   devise
