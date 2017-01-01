@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-# @todo Revisited the warnings fixed by this in Bundler 2, I guess they will be
+# @todo Revisit the warnings fixed by this in Bundler 2, I guess they will be
 # fixed and this won't be needed
 #
 git_source(:github) do |repo_name|
@@ -85,7 +85,7 @@ gem 'omniauth'               # users login with providers
 gem 'omniauth-facebook'      # users login with facebook
 gem 'omniauth-google-oauth2' # users login with google
 
-gem 'delayed_paperclip'                     # images processing in background
+gem 'delayed_paperclip'                     # image processing in the background
 gem 'paperclip', '~> 4.0'                   # images
 gem 'pundit'                                # authorization
 gem 'recaptcha', require: 'recaptcha/rails' # captcha
