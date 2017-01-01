@@ -41,9 +41,10 @@ NolotiroOrg::Application.configure do
   # Print deprecation notices to the stderr.
   config.active_support.deprecation = :stderr
 
+  # Enforced test order
   config.active_support.test_order = :random
 
-  # for devise
+  # For devise
   config.action_mailer.default_url_options = { host: 'localhost:3000' }
 
   # Set to :debug to see everything in the log.
