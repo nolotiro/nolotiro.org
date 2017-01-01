@@ -39,11 +39,4 @@ Style/EmptyMethod:
 Rails:
   Enabled: true
 
-#
-# @todo Enable when we migrate to Rails 5 or when
-# https://github.com/bbatsov/rubocop/issues/3629 is fixed.
-#
-Rails/HttpPositionalArguments:
-  Enabled: false
-
 inherit_from: .rubocop_todo.yml
