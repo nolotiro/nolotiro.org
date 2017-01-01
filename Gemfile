@@ -32,14 +32,14 @@ group :console do
 end
 
 group :development, :test do
-  gem 'byebug'                       # dev: debugger
-  gem 'capybara'                     # test: real user interactions
-  gem 'factory_girl_rails', '~> 4.0' # test: factories
-  gem 'launchy'                      # test: features - save_and_open_page helper
-  gem 'minitest-hooks'               # test: minitest enhancements
-  gem 'minitest-spec-rails'          # test: specs style out-of-the-box
+  gem 'byebug'                       # debugger
+  gem 'capybara'                     # real user interactions
+  gem 'factory_girl_rails', '~> 4.0' # factories
+  gem 'launchy'                      # features - save_and_open_page helper
+  gem 'minitest-hooks'               # minitest enhancements
+  gem 'minitest-spec-rails'          # specs style out-of-the-box
   gem 'rails-controller-testing'     # controller testing gemified for Rails 5
-  gem 'spring'                       # dev: speed up things
+  gem 'spring'                       # speed up things
 end
 
 group :test do
