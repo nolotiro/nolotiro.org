@@ -32,18 +32,18 @@ group :console do
 end
 
 group :development, :test do
-  gem 'byebug'                              # dev: debugger
-  gem 'capybara'                            # test: real user interactions
-  gem 'factory_girl_rails', '~> 4.0'        # test: factories
-  gem 'launchy'                             # test: features - save_and_open_page helper
-  gem 'minitest-hooks'                      # test: minitest enhancements
-  gem 'minitest-spec-rails'                 # test: specs style out-of-the-box
-  gem 'rails-controller-testing'            # controller testing gemified for Rails 5
-  gem 'spring'                              # dev: speed up things
+  gem 'byebug'                       # dev: debugger
+  gem 'capybara'                     # test: real user interactions
+  gem 'factory_girl_rails', '~> 4.0' # test: factories
+  gem 'launchy'                      # test: features - save_and_open_page helper
+  gem 'minitest-hooks'               # test: minitest enhancements
+  gem 'minitest-spec-rails'          # test: specs style out-of-the-box
+  gem 'rails-controller-testing'     # controller testing gemified for Rails 5
+  gem 'spring'                       # dev: speed up things
 end
 
 group :test do
-  gem 'bullet'                              # n+1 query problem alert
+  gem 'bullet' # n+1 query problem alert
   gem 'database_cleaner', '~> 1.5'
   gem 'poltergeist'
   gem 'vcr', '~> 3.0'
@@ -51,8 +51,8 @@ group :test do
 end
 
 group :production, :staging do
-  gem 'airbrake', '~> 4.0'                  # exception notification
-  gem 'newrelic_rpm'                        # monitoring
+  gem 'airbrake', '~> 4.0' # exception notification
+  gem 'newrelic_rpm'       # monitoring
 end
 
 group :development do
@@ -73,22 +73,22 @@ group :development do
 end
 
 gem 'http_accept_language'
-gem 'pg', '0.19.0'                                  # database adapter
-gem 'redis-rails'                                   # redis cache
-gem 'sidekiq'                                       # job workers
+gem 'pg', '0.19.0'         # database adapter
+gem 'redis-rails'          # redis cache
+gem 'sidekiq'              # job workers
 
-gem 'devise'                                        # users
-gem 'kaminari', '0.17.0'                            # pagination
-gem 'maxminddb'                                     # geolite city v2
+gem 'devise'             # users
+gem 'kaminari', '0.17.0' # pagination
+gem 'maxminddb'          # geolite city v2
 
-gem 'omniauth'                                      # users login with providers
-gem 'omniauth-facebook'                             # users login with facebook
-gem 'omniauth-google-oauth2'                        # users login with google
+gem 'omniauth'               # users login with providers
+gem 'omniauth-facebook'      # users login with facebook
+gem 'omniauth-google-oauth2' # users login with google
 
-gem 'delayed_paperclip'                             # images processing in background
-gem 'paperclip', '~> 4.0'                           # images
-gem 'pundit'                                        # authorization
-gem 'recaptcha', require: 'recaptcha/rails'         # captcha
+gem 'delayed_paperclip'                     # images processing in background
+gem 'paperclip', '~> 4.0'                   # images
+gem 'pundit'                                # authorization
+gem 'recaptcha', require: 'recaptcha/rails' # captcha
 
 # Admin backend. Adding inherited resources master for Rails 5 support until
 # they starting releasing things. @todo Get rid of this, possibly by completely
