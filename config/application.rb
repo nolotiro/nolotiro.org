@@ -20,9 +20,14 @@ module NolotiroOrg
     config.i18n.available_locales = %i(ca en es fr gl it pt)
     ActionMailer::Base.layout 'mail'
 
+    #
+    # Preferred active_job adaptar
+    #
     config.active_job.queue_adapter = :sidekiq
 
+    #
     # Enable locale fallbacks
+    #
     config.i18n.fallbacks = true
 
     #
@@ -30,12 +35,14 @@ module NolotiroOrg
     #
     config.autoload_paths += %W(#{config.root}/lib #{config.root}/lib/routes)
 
+    #
     # Don't use TLS for SMTP since we don't yet have a valid certificate
-    config.action_mailer.smtp_settings = {
-      enable_starttls_auto: false
-    }
+    #
+    config.action_mailer.smtp_settings = { enable_starttls_auto: false }
 
+    #
     # Preferred schema format
+    #
     config.active_record.schema_format = :sql
   end
 end
