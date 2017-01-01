@@ -85,7 +85,9 @@ gem 'omniauth'               # users login with providers
 gem 'omniauth-facebook'      # users login with facebook
 gem 'omniauth-google-oauth2' # users login with google
 
-gem 'delayed_paperclip'                     # image processing in the background
+# Image processing in the background. @todo Properly reenable it
+# gem 'delayed_paperclip'
+
 gem 'paperclip', '~> 4.0'                   # images
 gem 'pundit'                                # authorization
 gem 'recaptcha', require: 'recaptcha/rails' # captcha
