@@ -16,7 +16,7 @@ ruby '2.3.1'
 gem 'rails', '~> 4.2'
 gem 'rails-i18n', '~> 4.0'
 
-gem 'jbuilder', '~> 1.2'
+gem 'jbuilder', '~> 2.6'
 gem 'jquery-rails'
 gem 'uglifier', '>= 1.3.0'
 

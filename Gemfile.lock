@@ -213,9 +213,9 @@ GEM
       parser (>= 2.2.3.0)
       term-ansicolor (>= 1.3.2)
       terminal-table (>= 1.5.1)
-    jbuilder (1.5.3)
-      activesupport (>= 3.0.0)
-      multi_json (>= 1.2.0)
+    jbuilder (2.6.1)
+      activesupport (>= 3.0.0, < 5.1)
+      multi_json (~> 1.2)
     jquery-rails (4.2.1)
       rails-dom-testing (>= 1, < 3)
       railties (>= 4.2.0)
@@ -463,7 +463,7 @@ DEPENDENCIES
   http_accept_language
   i18n-tasks (= 0.9.5)
   inherited_resources!
-  jbuilder (~> 1.2)
+  jbuilder (~> 2.6)
   jquery-rails
   json (~> 1.8)
   kaminari (= 0.17.0)
