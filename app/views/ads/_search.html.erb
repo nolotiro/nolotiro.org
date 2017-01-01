@@ -1,4 +1,4 @@
-<%= form_tag url_for(params.except(:q)), method: :get,
+<%= form_tag url_for(safe_params.except(:q)), method: :get,
                                          class: "searchbox",
                                          enforce_utf8: false do %>
   <%= text_field_tag :q, q %>

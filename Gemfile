@@ -13,11 +13,12 @@ source 'https://rubygems.org'
 
 ruby '2.3.1'
 
-gem 'rails', '~> 4.2'
-gem 'rails-i18n', '~> 4.0'
+gem 'rails', '~> 5.0'
+gem 'rails-i18n', '~> 5.0'
 
 gem 'jbuilder', '~> 2.6'
 gem 'jquery-rails'
+gem 'record_tag_helper', '~> 1.0' # for `div_for`
 gem 'uglifier', '>= 1.3.0'
 
 gem 'dotenv-rails', '~> 2.1'
@@ -37,6 +38,7 @@ group :development, :test do
   gem 'launchy'                             # test: features - save_and_open_page helper
   gem 'minitest-hooks'                      # test: minitest enhancements
   gem 'minitest-spec-rails'                 # test: specs style out-of-the-box
+  gem 'rails-controller-testing'            # controller testing gemified for Rails 5
   gem 'spring'                              # dev: speed up things
 end
 

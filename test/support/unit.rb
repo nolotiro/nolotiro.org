@@ -7,7 +7,7 @@ module ActiveSupport
   class TestCase
     include FactoryGirl::Syntax::Methods
 
-    self.use_transactional_fixtures = false
+    self.use_transactional_tests = false
 
     def setup
       DatabaseCleaner.start
