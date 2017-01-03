@@ -252,7 +252,6 @@ GEM
       net-ssh (>= 2.6.5)
     net-ssh (4.0.0)
     netrc (0.11.0)
-    newrelic_rpm (3.14.1.311)
     nio4r (1.2.1)
     nokogiri (1.7.0)
       mini_portile2 (~> 2.1.0)
@@ -478,7 +477,6 @@ DEPENDENCIES
   maxminddb
   minitest-hooks
   minitest-spec-rails
-  newrelic_rpm
   omniauth
   omniauth-facebook
   omniauth-google-oauth2

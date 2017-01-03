@@ -52,7 +52,8 @@ end
 
 group :production, :staging do
   gem 'airbrake', '~> 4.0' # exception notification
-  gem 'newrelic_rpm'       # monitoring
+
+  # @todo Add a performance monitoring tool
 end
 
 group :development do
