@@ -1059,49 +1059,29 @@ ALTER TABLE ONLY receipts
 
 SET search_path TO "$user", public;
 
-INSERT INTO schema_migrations (version) VALUES ('20160803173909');
+INSERT INTO schema_migrations (version) VALUES
+('20160803173909'),
+('20160803200731'),
+('20160804192403'),
+('20160804225822'),
+('20160807150238'),
+('20160807150239'),
+('20160816012524'),
+('20160816164210'),
+('20160825201238'),
+('20160902112213'),
+('20160904155629'),
+('20160904155856'),
+('20160921193632'),
+('20160923223216'),
+('20160924163454'),
+('20160924163658'),
+('20160930235635'),
+('20161001185104'),
+('20161007014256'),
+('20161019233040'),
+('20161117184138'),
+('20161117184157'),
+('20161122140853');
 
-INSERT INTO schema_migrations (version) VALUES ('20160803200731');
-
-INSERT INTO schema_migrations (version) VALUES ('20160804192403');
-
-INSERT INTO schema_migrations (version) VALUES ('20160804225822');
-
-INSERT INTO schema_migrations (version) VALUES ('20160807150238');
-
-INSERT INTO schema_migrations (version) VALUES ('20160807150239');
-
-INSERT INTO schema_migrations (version) VALUES ('20160816012524');
-
-INSERT INTO schema_migrations (version) VALUES ('20160816164210');
-
-INSERT INTO schema_migrations (version) VALUES ('20160825201238');
-
-INSERT INTO schema_migrations (version) VALUES ('20160902112213');
-
-INSERT INTO schema_migrations (version) VALUES ('20160904155629');
-
-INSERT INTO schema_migrations (version) VALUES ('20160904155856');
-
-INSERT INTO schema_migrations (version) VALUES ('20160921193632');
-
-INSERT INTO schema_migrations (version) VALUES ('20160923223216');
-
-INSERT INTO schema_migrations (version) VALUES ('20160924163454');
-
-INSERT INTO schema_migrations (version) VALUES ('20160924163658');
-
-INSERT INTO schema_migrations (version) VALUES ('20160930235635');
-
-INSERT INTO schema_migrations (version) VALUES ('20161001185104');
-
-INSERT INTO schema_migrations (version) VALUES ('20161007014256');
-
-INSERT INTO schema_migrations (version) VALUES ('20161019233040');
-
-INSERT INTO schema_migrations (version) VALUES ('20161117184138');
-
-INSERT INTO schema_migrations (version) VALUES ('20161117184157');
-
-INSERT INTO schema_migrations (version) VALUES ('20161122140853');
 
