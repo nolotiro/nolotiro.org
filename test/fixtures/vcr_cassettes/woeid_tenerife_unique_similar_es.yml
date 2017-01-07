@@ -12,7 +12,7 @@ http_interactions:
       Accept-Encoding:
       - gzip, deflate
       User-Agent:
-      - rest-client/2.0.0 (linux-gnu x86_64) ruby/2.3.1p112
+      - rest-client/2.0.1 (linux-gnu x86_64) ruby/2.4.1p111
       Host:
       - query.yahooapis.com
   response:
@@ -21,58 +21,33 @@ http_interactions:
       message: OK
     headers:
       X-Yql-Host:
-      - prod_bf1_1;paas.yql;queryyahooapiscomproductionbf1;a25da6a6-81e1-11e6-a7b2-d4ae5297450a
+      - prod_bf1_1;paas.yql;queryyahooapiscomproductionbf1;434af29c-18e2-11e7-a80f-d4ae52974741
       X-Content-Type-Options:
       - nosniff
       Access-Control-Allow-Origin:
       - "*"
       Content-Type:
-      - application/json; charset=UTF-8
+      - application/json;charset=utf-8
       Cache-Control:
       - no-cache
       Date:
-      - Sat, 24 Sep 2016 01:05:13 GMT
+      - Fri, 21 Apr 2017 14:10:56 GMT
       Age:
       - '0'
-      Via:
-      - http/1.1 a31.ue.bf1.yahoo.net (ApacheTrafficServer [cMsSf ])
-      Server:
-      - ATS
-      Y-Trace:
-      - BAEAQAAAAACJmeUUKTcJOwAAAAAAAAAAn1DG2QGkqlIAAAAAAAAAAAAFPTZ8sC.CAAU9NnywYdW9rUlHAAAAAA--
       Transfer-Encoding:
       - chunked
       Connection:
       - keep-alive
+      Via:
+      - http/1.1 a56.ue.bf1.yahoo.net (ApacheTrafficServer [cMsSf ])
+      Server:
+      - ATS
     body:
       encoding: ASCII-8BIT
       string: !binary |-
-        eyJxdWVyeSI6eyJjb3VudCI6MSwiY3JlYXRlZCI6IjIwMTYtMDktMjRUMDE6
-        MDU6MTNaIiwibGFuZyI6ImVuLVVTIiwicmVzdWx0cyI6eyJwbGFjZSI6eyJs
-        YW5nIjoiZXMtIiwieG1sbnMiOiJodHRwOi8vd2hlcmUueWFob29hcGlzLmNv
-        bS92MS9zY2hlbWEucm5nIiwieWFob28iOiJodHRwOi8vd3d3LnlhaG9vYXBp
-        cy5jb20vdjEvYmFzZS5ybmciLCJ1cmkiOiJodHRwOi8vd2hlcmUueWFob29h
-        cGlzLmNvbS92MS9wbGFjZS83NzM2OTIiLCJ3b2VpZCI6Ijc3MzY5MiIsInBs
-        YWNlVHlwZU5hbWUiOnsiY29kZSI6IjciLCJjb250ZW50IjoiUHVlYmxvIn0s
-        Im5hbWUiOiJTYW50YSBDcnV6IGRlIFRlbmVyaWZlIiwiY291bnRyeSI6eyJj
-        b2RlIjoiRVMiLCJ0eXBlIjoiUGHDrXMiLCJ3b2VpZCI6IjIzNDI0OTUwIiwi
-        Y29udGVudCI6IkVzcGHDsWEifSwiYWRtaW4xIjp7ImNvZGUiOiIiLCJ0eXBl
-        IjoiQ29tdW5pZGFkIEF1dMOzbm9tYSIsIndvZWlkIjoiMTI1NzgwMzEiLCJj
-        b250ZW50IjoiSXNsYXMgQ2FuYXJpYXMifSwiYWRtaW4yIjp7ImNvZGUiOiIi
-        LCJ0eXBlIjoiQ29uZGFkbyIsIndvZWlkIjoiMTI2MDIxMDkiLCJjb250ZW50
-        IjoiU2FudGEgQ3J1eiBkZSBUZW5lcmlmZSJ9LCJhZG1pbjMiOm51bGwsImxv
-        Y2FsaXR5MSI6eyJ0eXBlIjoiUHVlYmxvIiwid29laWQiOiI3NzM2OTIiLCJj
-        b250ZW50IjoiU2FudGEgQ3J1eiBkZSBUZW5lcmlmZSJ9LCJsb2NhbGl0eTIi
-        Om51bGwsInBvc3RhbCI6bnVsbCwiY2VudHJvaWQiOnsibGF0aXR1ZGUiOiIy
-        OC40NjE2MyIsImxvbmdpdHVkZSI6Ii0xNi4yNjcwNTkifSwiYm91bmRpbmdC
-        b3giOnsic291dGhXZXN0Ijp7ImxhdGl0dWRlIjoiMjguNDM4MDgiLCJsb25n
-        aXR1ZGUiOiItMTYuMjkxOTI5In0sIm5vcnRoRWFzdCI6eyJsYXRpdHVkZSI6
-        IjI4LjQ4Nzk0OSIsImxvbmdpdHVkZSI6Ii0xNi4yMzU1OSJ9fSwiYXJlYVJh
-        bmsiOiIxIiwicG9wUmFuayI6IjEiLCJ0aW1lem9uZSI6eyJ0eXBlIjoiVGlt
-        ZSBab25lIiwid29laWQiOiIyODM1MDg3MCIsImNvbnRlbnQiOiJBdGxhbnRp
-        Yy9DYW5hcnkifX19fX0=
+        eyJxdWVyeSI6eyJjb3VudCI6MSwiY3JlYXRlZCI6IjIwMTctMDQtMjFUMTQ6MTA6NTZaIiwibGFuZyI6ImVuLVVTIiwicmVzdWx0cyI6eyJwbGFjZSI6eyJsYW5nIjoiZXMtIiwieG1sbnMiOiJodHRwOi8vd2hlcmUueWFob29hcGlzLmNvbS92MS9zY2hlbWEucm5nIiwieWFob28iOiJodHRwOi8vd3d3LnlhaG9vYXBpcy5jb20vdjEvYmFzZS5ybmciLCJ1cmkiOiJodHRwOi8vd2hlcmUueWFob29hcGlzLmNvbS92MS9wbGFjZS83NzM2OTIiLCJ3b2VpZCI6Ijc3MzY5MiIsInBsYWNlVHlwZU5hbWUiOnsiY29kZSI6IjciLCJjb250ZW50IjoiUHVlYmxvIn0sIm5hbWUiOiJTYW50YSBDcnV6IGRlIFRlbmVyaWZlIiwiY291bnRyeSI6eyJjb2RlIjoiRVMiLCJ0eXBlIjoiUGHDrXMiLCJ3b2VpZCI6IjIzNDI0OTUwIiwiY29udGVudCI6IkVzcGHDsWEifSwiYWRtaW4xIjp7ImNvZGUiOiIiLCJ0eXBlIjoiQ29tdW5pZGFkIEF1dMOzbm9tYSIsIndvZWlkIjoiMTI1NzgwMzEiLCJjb250ZW50IjoiSXNsYXMgQ2FuYXJpYXMifSwiYWRtaW4yIjp7ImNvZGUiOiIiLCJ0eXBlIjoiQ29uZGFkbyIsIndvZWlkIjoiMTI2MDIxMDkiLCJjb250ZW50IjoiU2FudGEgQ3J1eiBkZSBUZW5lcmlmZSJ9LCJhZG1pbjMiOm51bGwsImxvY2FsaXR5MSI6eyJ0eXBlIjoiUHVlYmxvIiwid29laWQiOiI3NzM2OTIiLCJjb250ZW50IjoiU2FudGEgQ3J1eiBkZSBUZW5lcmlmZSJ9LCJsb2NhbGl0eTIiOm51bGwsInBvc3RhbCI6bnVsbCwiY2VudHJvaWQiOnsibGF0aXR1ZGUiOiIyOC40NjE2MyIsImxvbmdpdHVkZSI6Ii0xNi4yNjcwNTkifSwiYm91bmRpbmdCb3giOnsic291dGhXZXN0Ijp7ImxhdGl0dWRlIjoiMjguNDM4MDgiLCJsb25naXR1ZGUiOiItMTYuMjkxOTI5In0sIm5vcnRoRWFzdCI6eyJsYXRpdHVkZSI6IjI4LjQ4Nzk0OSIsImxvbmdpdHVkZSI6Ii0xNi4yMzU1OSJ9fSwiYXJlYVJhbmsiOiIxIiwicG9wUmFuayI6IjEiLCJ0aW1lem9uZSI6eyJ0eXBlIjoiVGltZSBab25lIiwid29laWQiOiIyODM1MDg3MCIsImNvbnRlbnQiOiJBdGxhbnRpYy9DYW5hcnkifX19fX0=
     http_version: 
-  recorded_at: Sat, 24 Sep 2016 01:05:13 GMT
+  recorded_at: Fri, 21 Apr 2017 14:10:56 GMT
 - request:
     method: get
     uri: http://query.yahooapis.com/v1/public/yql?format=json&q=select%20*%20from%20geo.places%20where%20woeid%20=%20773692%20AND%20lang%20=%20%27es%27
@@ -85,7 +60,7 @@ http_interactions:
       Accept-Encoding:
       - gzip, deflate
       User-Agent:
-      - rest-client/2.0.0 (linux-gnu x86_64) ruby/2.3.1p112
+      - rest-client/2.0.1 (linux-gnu x86_64) ruby/2.4.1p111
       Host:
       - query.yahooapis.com
   response:
@@ -94,52 +69,31 @@ http_interactions:
       message: OK
     headers:
       X-Yql-Host:
-      - prod_bf1_1;paas.yql;queryyahooapiscomproductionbf1;a25da6a7-81e1-11e6-a7b2-d4ae5297450a
+      - prod_bf1_1;paas.yql;queryyahooapiscomproductionbf1;9562b58e-1958-11e7-a80f-d4ae52974741
       X-Content-Type-Options:
       - nosniff
       Access-Control-Allow-Origin:
       - "*"
       Content-Type:
-      - application/json; charset=UTF-8
+      - application/json;charset=utf-8
       Cache-Control:
       - no-cache
       Date:
-      - Sat, 24 Sep 2016 01:05:13 GMT
+      - Fri, 21 Apr 2017 14:10:57 GMT
       Age:
       - '0'
-      Server:
-      - ATS
       Transfer-Encoding:
       - chunked
       Connection:
       - keep-alive
+      Via:
+      - http/1.1 a04.ue.bf1.yahoo.net (ApacheTrafficServer [cMsSf ])
+      Server:
+      - ATS
     body:
       encoding: ASCII-8BIT
       string: !binary |-
-        eyJxdWVyeSI6eyJjb3VudCI6MSwiY3JlYXRlZCI6IjIwMTYtMDktMjRUMDE6
-        MDU6MTNaIiwibGFuZyI6ImVuLVVTIiwicmVzdWx0cyI6eyJwbGFjZSI6eyJs
-        YW5nIjoiZXMtIiwieG1sbnMiOiJodHRwOi8vd2hlcmUueWFob29hcGlzLmNv
-        bS92MS9zY2hlbWEucm5nIiwieWFob28iOiJodHRwOi8vd3d3LnlhaG9vYXBp
-        cy5jb20vdjEvYmFzZS5ybmciLCJ1cmkiOiJodHRwOi8vd2hlcmUueWFob29h
-        cGlzLmNvbS92MS9wbGFjZS83NzM2OTIiLCJ3b2VpZCI6Ijc3MzY5MiIsInBs
-        YWNlVHlwZU5hbWUiOnsiY29kZSI6IjciLCJjb250ZW50IjoiUHVlYmxvIn0s
-        Im5hbWUiOiJTYW50YSBDcnV6IGRlIFRlbmVyaWZlIiwiY291bnRyeSI6eyJj
-        b2RlIjoiRVMiLCJ0eXBlIjoiUGHDrXMiLCJ3b2VpZCI6IjIzNDI0OTUwIiwi
-        Y29udGVudCI6IkVzcGHDsWEifSwiYWRtaW4xIjp7ImNvZGUiOiIiLCJ0eXBl
-        IjoiQ29tdW5pZGFkIEF1dMOzbm9tYSIsIndvZWlkIjoiMTI1NzgwMzEiLCJj
-        b250ZW50IjoiSXNsYXMgQ2FuYXJpYXMifSwiYWRtaW4yIjp7ImNvZGUiOiIi
-        LCJ0eXBlIjoiQ29uZGFkbyIsIndvZWlkIjoiMTI2MDIxMDkiLCJjb250ZW50
-        IjoiU2FudGEgQ3J1eiBkZSBUZW5lcmlmZSJ9LCJhZG1pbjMiOm51bGwsImxv
-        Y2FsaXR5MSI6eyJ0eXBlIjoiUHVlYmxvIiwid29laWQiOiI3NzM2OTIiLCJj
-        b250ZW50IjoiU2FudGEgQ3J1eiBkZSBUZW5lcmlmZSJ9LCJsb2NhbGl0eTIi
-        Om51bGwsInBvc3RhbCI6bnVsbCwiY2VudHJvaWQiOnsibGF0aXR1ZGUiOiIy
-        OC40NjE2MyIsImxvbmdpdHVkZSI6Ii0xNi4yNjcwNTkifSwiYm91bmRpbmdC
-        b3giOnsic291dGhXZXN0Ijp7ImxhdGl0dWRlIjoiMjguNDM4MDgiLCJsb25n
-        aXR1ZGUiOiItMTYuMjkxOTI5In0sIm5vcnRoRWFzdCI6eyJsYXRpdHVkZSI6
-        IjI4LjQ4Nzk0OSIsImxvbmdpdHVkZSI6Ii0xNi4yMzU1OSJ9fSwiYXJlYVJh
-        bmsiOiIxIiwicG9wUmFuayI6IjEiLCJ0aW1lem9uZSI6eyJ0eXBlIjoiVGlt
-        ZSBab25lIiwid29laWQiOiIyODM1MDg3MCIsImNvbnRlbnQiOiJBdGxhbnRp
-        Yy9DYW5hcnkifX19fX0=
+        eyJxdWVyeSI6eyJjb3VudCI6MSwiY3JlYXRlZCI6IjIwMTctMDQtMjFUMTQ6MTA6NTdaIiwibGFuZyI6ImVuLVVTIiwicmVzdWx0cyI6eyJwbGFjZSI6eyJsYW5nIjoiZXMtIiwieG1sbnMiOiJodHRwOi8vd2hlcmUueWFob29hcGlzLmNvbS92MS9zY2hlbWEucm5nIiwieWFob28iOiJodHRwOi8vd3d3LnlhaG9vYXBpcy5jb20vdjEvYmFzZS5ybmciLCJ1cmkiOiJodHRwOi8vd2hlcmUueWFob29hcGlzLmNvbS92MS9wbGFjZS83NzM2OTIiLCJ3b2VpZCI6Ijc3MzY5MiIsInBsYWNlVHlwZU5hbWUiOnsiY29kZSI6IjciLCJjb250ZW50IjoiUHVlYmxvIn0sIm5hbWUiOiJTYW50YSBDcnV6IGRlIFRlbmVyaWZlIiwiY291bnRyeSI6eyJjb2RlIjoiRVMiLCJ0eXBlIjoiUGHDrXMiLCJ3b2VpZCI6IjIzNDI0OTUwIiwiY29udGVudCI6IkVzcGHDsWEifSwiYWRtaW4xIjp7ImNvZGUiOiIiLCJ0eXBlIjoiQ29tdW5pZGFkIEF1dMOzbm9tYSIsIndvZWlkIjoiMTI1NzgwMzEiLCJjb250ZW50IjoiSXNsYXMgQ2FuYXJpYXMifSwiYWRtaW4yIjp7ImNvZGUiOiIiLCJ0eXBlIjoiQ29uZGFkbyIsIndvZWlkIjoiMTI2MDIxMDkiLCJjb250ZW50IjoiU2FudGEgQ3J1eiBkZSBUZW5lcmlmZSJ9LCJhZG1pbjMiOm51bGwsImxvY2FsaXR5MSI6eyJ0eXBlIjoiUHVlYmxvIiwid29laWQiOiI3NzM2OTIiLCJjb250ZW50IjoiU2FudGEgQ3J1eiBkZSBUZW5lcmlmZSJ9LCJsb2NhbGl0eTIiOm51bGwsInBvc3RhbCI6bnVsbCwiY2VudHJvaWQiOnsibGF0aXR1ZGUiOiIyOC40NjE2MyIsImxvbmdpdHVkZSI6Ii0xNi4yNjcwNTkifSwiYm91bmRpbmdCb3giOnsic291dGhXZXN0Ijp7ImxhdGl0dWRlIjoiMjguNDM4MDgiLCJsb25naXR1ZGUiOiItMTYuMjkxOTI5In0sIm5vcnRoRWFzdCI6eyJsYXRpdHVkZSI6IjI4LjQ4Nzk0OSIsImxvbmdpdHVkZSI6Ii0xNi4yMzU1OSJ9fSwiYXJlYVJhbmsiOiIxIiwicG9wUmFuayI6IjEiLCJ0aW1lem9uZSI6eyJ0eXBlIjoiVGltZSBab25lIiwid29laWQiOiIyODM1MDg3MCIsImNvbnRlbnQiOiJBdGxhbnRpYy9DYW5hcnkifX19fX0=
     http_version: 
-  recorded_at: Sat, 24 Sep 2016 01:05:13 GMT
+  recorded_at: Fri, 21 Apr 2017 14:10:57 GMT
 recorded_with: VCR 3.0.3
