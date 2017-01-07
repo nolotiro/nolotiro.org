@@ -23,10 +23,6 @@ gem 'uglifier', '>= 1.3.0'
 
 gem 'dotenv-rails', '~> 2.1'
 
-group :doc do
-  gem 'sdoc', require: false
-end
-
 group :console do
   gem 'table_print'
 end
