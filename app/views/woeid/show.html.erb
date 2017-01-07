@@ -79,7 +79,7 @@
       <% if @ads.any? %>
         <%= render 'ads/list_with_adsense', ads: @ads %>
 
-        <%= paginate @ads, params: params.merge(id: current_woeid), window: 1 %>
+        <%= paginate @ads, params: { id: current_woeid }, window: 1 %>
       <% elsif @q %>
         <%
           # @todo In the future we might want to enhance this page with interesting

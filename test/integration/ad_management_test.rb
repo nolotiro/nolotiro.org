@@ -56,7 +56,7 @@ class AdManagementTest < AuthenticatedTest
   it 'does not republish delivered ads (direct request)' do
     ad = create(:ad, :delivered, user: create(:user), published_at: 6.days.ago)
     original_path = ads_woeid_path(ad.woeid_code, type: 'give')
-    post ads_bump_path(ad), {}, 'HTTP_REFERER' => original_path
+    post ads_bump_path(ad), headers: { 'HTTP_REFERER' => original_path }
 
     assert_equal 6.days.ago.to_date, ad.reload.published_at.to_date
     assert_response :redirect
@@ -72,7 +72,7 @@ class AdManagementTest < AuthenticatedTest
   it 'does not republish ads if not owner (direct request)' do
     ad = create(:ad, user: create(:user), published_at: 6.days.ago)
     original_path = ads_woeid_path(ad.woeid_code, type: 'give')
-    post ads_bump_path(ad), {}, 'HTTP_REFERER' => original_path
+    post ads_bump_path(ad), headers: { 'HTTP_REFERER' => original_path }
 
     assert_equal 6.days.ago.to_date, ad.reload.published_at.to_date
     assert_response :redirect
@@ -88,7 +88,7 @@ class AdManagementTest < AuthenticatedTest
   it 'does not bump ads too recent (direct request)' do
     ad = create(:ad, user: @current_user, published_at: 4.days.ago)
     original_path = ads_woeid_path(ad.woeid_code, type: 'give')
-    post ads_bump_path(ad), {}, 'HTTP_REFERER' => original_path
+    post ads_bump_path(ad), headers: { 'HTTP_REFERER' => original_path }
 
     assert_equal 4.days.ago.to_date, ad.reload.published_at.to_date
     assert_response :redirect

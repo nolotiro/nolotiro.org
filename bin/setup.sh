@@ -27,11 +27,9 @@ apt-get install -y build-essential \
                    git-core \
                    libc6-dev \
                    libreadline6-dev \
-                   libsqlite3-dev \
                    libssl-dev \
                    libyaml-dev \
                    make \
-                   sqlite3 \
                    zlib1g-dev
 
 cd /vagrant || exit

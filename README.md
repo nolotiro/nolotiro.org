@@ -78,7 +78,8 @@ during development, and you can see them in a nice web interface. The SMTP port
 is already configured.
 
 ```
-bin/mailcatcher
+gem install mailcatcher
+mailcatcher
 open http://localhost:1080
 ```
 

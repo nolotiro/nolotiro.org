@@ -7,7 +7,7 @@ set :rails_env, 'production'
 set :deploy_to, '/var/www/nolotiro.org'
 set :branch, 'master'
 
-set :linked_files, %w(.env.production config/newrelic.yml)
+set :linked_files, %w(.env.production)
 
 if File.exist?('config/deploy/rsa_key')
   set :ssh_options, fetch(:ssh_options).merge(keys: ['config/deploy/rsa_key'])

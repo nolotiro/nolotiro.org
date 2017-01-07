@@ -54,13 +54,15 @@ class AdsController < ApplicationController
   def change_status
     @ad.update!(status: params[:status].to_sym)
 
-    redirect_to :back, notice: t('nlt.ads.marked_as', status: @ad.status_string)
+    redirect_back fallback_location: listads_user_path(@ad.user),
+                  notice: t('nlt.ads.marked_as', status: @ad.status_string)
   end
 
   def bump
     @ad.bump
 
-    redirect_to :back, notice: t('nlt.ads.bumped')
+    redirect_back fallback_location: listads_user_path(@ad.user),
+                  notice: t('nlt.ads.bumped')
   end
 
   def update

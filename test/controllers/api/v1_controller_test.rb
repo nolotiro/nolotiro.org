@@ -27,7 +27,7 @@ module Api
     end
 
     test 'should get ad show on api v1' do
-      get :ad_show, format: 'json', id: @ad
+      get :ad_show, params: { format: 'json', id: @ad }
       body = JSON.parse(@response.body)
 
       assert_equal 766_273, body['woeid_code']
@@ -37,7 +37,7 @@ module Api
 
     test 'should get woeid show on a WOEID on api v1' do
       mocking_yahoo_woeid_info(766_273) do
-        get :woeid_show, format: 'json', type: 'give', id: 766_273
+        get :woeid_show, params: { format: 'json', type: 'give', id: 766_273 }
         body = JSON.parse(@response.body)
 
         assert_equal '766273', body['woeid_id']

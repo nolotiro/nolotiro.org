@@ -31,7 +31,7 @@ class LocaleTest < ActionDispatch::IntegrationTest
   end
 
   it 'ignores deprecated cookies in session' do
-    get root_path(locale: nil), {}, 'HTTP_COOKIE' => 'locale=eu;'
+    get root_path(locale: nil), headers: { 'HTTP_COOKIE' => 'locale=eu;' }
 
     assert_equal I18n.default_locale, I18n.locale
   end
@@ -43,7 +43,7 @@ class LocaleTest < ActionDispatch::IntegrationTest
   end
 
   it 'assigns locale from browser if no locale in param or session' do
-    get root_path(locale: nil), {}, 'HTTP_ACCEPT_LANGUAGE' => 'it'
+    get root_path(locale: nil), headers: { 'HTTP_ACCEPT_LANGUAGE' => 'it' }
 
     assert_equal :it, I18n.locale
   end

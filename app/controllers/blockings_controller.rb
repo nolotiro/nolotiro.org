@@ -6,12 +6,14 @@ class BlockingsController < ApplicationController
   def create
     current_user.blockings.find_or_create_by!(blocked_id: params[:blocked_id])
 
-    redirect_to :back, notice: I18n.t('blockings.create.success')
+    redirect_back fallback_location: profile_path(current_user.username),
+                  notice: I18n.t('blockings.create.success')
   end
 
   def destroy
     current_user.blockings.destroy(params[:id])
 
-    redirect_to :back, notice: I18n.t('blockings.destroy.success')
+    redirect_back fallback_location: profile_path(current_user.username),
+                  notice: I18n.t('blockings.destroy.success')
   end
 end

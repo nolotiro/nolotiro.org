@@ -16,7 +16,11 @@ module PathHelper
   def canonical_url
     return base_with_locale(params[:locale]) if home_path? || listall_give_path?
 
-    url_for(params.merge(locale: params[:locale], only_path: false))
+    url_for(safe_params.merge(locale: params[:locale], only_path: false))
+  end
+
+  def safe_params
+    params.except(:host, :port, :protocol).permit
   end
 
   def home_path?

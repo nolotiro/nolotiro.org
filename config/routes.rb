@@ -2,7 +2,7 @@
 
 require 'sidekiq/web'
 
-NolotiroOrg::Application.routes.draw do
+Rails.application.routes.draw do
   ActiveAdmin.routes(self)
 
   scope '/api' do

@@ -28,19 +28,15 @@ Performance/Casecmp:
   Enabled: false
 
 Style/Lambda:
-  Enabled: false
+  EnforcedStyle: literal
 
 Style/ModuleFunction:
   EnforcedStyle: extend_self
 
+Style/EmptyMethod:
+  EnforcedStyle: expanded
+
 Rails:
   Enabled: true
-
-#
-# @todo Enable when we migrate to Rails 5 or when
-# https://github.com/bbatsov/rubocop/issues/3629 is fixed.
-#
-Rails/HttpPositionalArguments:
-  Enabled: false
 
 inherit_from: .rubocop_todo.yml

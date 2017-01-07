@@ -8,6 +8,6 @@ class DismissalsController < ApplicationController
 
     announcement.dismissals.create!(user: current_user)
 
-    redirect_to :back
+    redirect_back fallback_location: root_path
   end
 end
