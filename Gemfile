@@ -23,10 +23,6 @@ gem 'uglifier', '>= 1.3.0'
 
 gem 'dotenv-rails', '~> 2.1'
 
-group :console do
-  gem 'table_print'
-end
-
 group :development, :test do
   gem 'byebug'                       # debugger
   gem 'capybara'                     # real user interactions
