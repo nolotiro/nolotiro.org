@@ -6,7 +6,5 @@ module ActionController
   #
   class TestCase
     include Devise::Test::ControllerHelpers
-
-    after { Rails.cache.clear }
   end
 end

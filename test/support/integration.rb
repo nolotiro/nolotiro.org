@@ -24,10 +24,7 @@ module ActionDispatch
     # Make the Capybara DSL available in all integration tests
     include Capybara::DSL
 
-    after do
-      Capybara.reset_sessions!
-      Rails.cache.clear
-    end
+    after { Capybara.reset_sessions! }
   end
 
   module Routing
