@@ -42,8 +42,6 @@ class Ad < ActiveRecord::Base
 
   validates_attachment_size :image, in: 0.megabytes..5.megabytes
 
-  scope :recent, -> { includes(:user).recent_first.limit(90) }
-
   scope :by_woeid_code, ->(woeid_code) do
     return all unless woeid_code.present?
     where(woeid_code: woeid_code)

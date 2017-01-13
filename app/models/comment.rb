@@ -18,7 +18,5 @@ class Comment < ActiveRecord::Base
 
   validates :body, length: { maximum: 1000 }
 
-  scope :recent, -> { includes(:ad, :user).order(created_at: :desc).limit(30) }
-
   scope :oldest_first, -> { order(created_at: :asc) }
 end
