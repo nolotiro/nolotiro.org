@@ -4,10 +4,11 @@ class RssController < ApplicationController
   layout false
 
   def feed
-    ads = Ad
-    ads = params[:type] == 'want' ? ads.want : ads.give.available
-    ads = ads.by_woeid_code(params[:woeid])
+    @type = type_scope || 'give'
 
-    @ads = policy_scope(ads).limit(30)
+    scope = Ad.public_send(@type).by_woeid_code(params[:woeid])
+    scope = scope.available if @type == 'give'
+
+    @ads = policy_scope(scope).limit(30)
   end
 end
