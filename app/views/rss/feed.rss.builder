@@ -9,6 +9,9 @@ xml.rss version: '2.0',
     xml.title 'nolotiro.org'
     xml.description t('nlt.footer_explain')
     xml.link root_url
+    xml.tag! 'atom:link', rel: 'self',
+                          type: 'application/rss+xml',
+                          href: request.original_url
 
     @ads.each do |ad|
       xml.item do
