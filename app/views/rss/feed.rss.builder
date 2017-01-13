@@ -23,7 +23,7 @@ xml.rss version: '2.0',
           ) + description
         end
         xml.description description
-        xml.pubDate ad.created_at.rfc822
+        xml.pubDate ad.published_at.rfc822
         xml.link adslug_url(ad, slug: ad.slug)
         xml.guid adslug_url(ad, slug: ad.slug)
       end
