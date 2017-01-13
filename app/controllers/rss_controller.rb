@@ -9,6 +9,6 @@ class RssController < ApplicationController
     scope = Ad.public_send(@type).by_woeid_code(params[:woeid])
     scope = scope.available if @type == 'give'
 
-    @ads = policy_scope(scope).recent_first.limit(30)
+    @ads = policy_scope(scope).latest(30)
   end
 end
