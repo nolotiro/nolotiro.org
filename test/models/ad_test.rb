@@ -42,16 +42,19 @@ class AdTest < ActiveSupport::TestCase
     assert_equal false, build(:ad, title: 'a' * 101).valid?
   end
 
-  test 'ad validates minimum length of filtered title' do
+  test 'ad validates minimum length of title' do
     assert_equal true, build(:ad, title: 'a' * 4).valid?
     assert_equal false, build(:ad, title: 'a' * 3).valid?
-    assert_equal true, build(:ad, title: 'Me llamo spammer@example.org').valid?
-    assert_equal false, build(:ad, title: 'spammer@example.org').valid?
   end
 
   test 'ad title escapes privacy data' do
     text = 'por email example@example.com, o whatsapp al 666666666'
-    expected_text = 'por email  , o   al  '
+
+    expected_text = <<-TXT.squish
+      por email [INFORMACIÓN PRIVADA OCULTA], o [INFORMACIÓN PRIVADA OCULTA] al
+      [INFORMACIÓN PRIVADA OCULTA]
+    TXT
+
     ad = build(:ad, title: text)
 
     assert_equal expected_text, ad.filtered_title
@@ -62,16 +65,19 @@ class AdTest < ActiveSupport::TestCase
     assert_equal false, build(:ad, body: 'a' * 1001).valid?
   end
 
-  test 'ad validates minimum length of filtered body' do
+  test 'ad validates minimum length of body' do
     assert_equal true, build(:ad, body: 'a' * 12).valid?
     assert_equal false, build(:ad, body: 'a' * 11).valid?
-    assert_equal true, build(:ad, body: 'a' * 12 + ' spammer@example.org').valid?
-    assert_equal false, build(:ad, body: 'a' * 9 + ' spammer@example.org').valid?
   end
 
   test 'ad body escapes privacy data' do
     text = 'por email example@example.com, o whatsapp al 666666666'
-    expected_text = 'por email  , o   al  '
+
+    expected_text = <<-TXT.squish
+      por email [INFORMACIÓN PRIVADA OCULTA], o [INFORMACIÓN PRIVADA OCULTA] al
+      [INFORMACIÓN PRIVADA OCULTA]
+    TXT
+
     ad = build(:ad, body: text)
 
     assert_equal expected_text, ad.filtered_body

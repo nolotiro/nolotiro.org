@@ -313,6 +313,7 @@ pt:
     privacy_page:
       body_html: 
       title: Politica de privacidade
+    private_info_hidden: informação privada escondida
     profile: perfil
     profile_actions:
       blocking:

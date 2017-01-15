@@ -2,7 +2,7 @@
 
 class Comment < ActiveRecord::Base
   include Censurable
-  censors :body, presence: true
+  censors :body
 
   include Hidable
   include Statable
@@ -16,7 +16,7 @@ class Comment < ActiveRecord::Base
   validates :user_owner, presence: true
   validates :ip, presence: true
 
-  validates :body, length: { maximum: 1000 }
+  validates :body, presence: true, length: { maximum: 1000 }
 
   scope :oldest_first, -> { order(created_at: :asc) }
 end

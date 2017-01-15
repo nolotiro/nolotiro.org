@@ -318,6 +318,7 @@ gl:
     privacy_page:
       body_html: 
       title: Política de privacidade
+    private_info_hidden: información privada oculta
     profile: perfil
     profile_actions:
       blocking:

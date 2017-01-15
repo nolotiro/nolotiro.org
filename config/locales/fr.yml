@@ -315,6 +315,7 @@ fr:
 
 '
       title: Politique de confidentialité
+    private_info_hidden: informations privées cachées
     profile: profil
     profile_actions:
       blocking:
