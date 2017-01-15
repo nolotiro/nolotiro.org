@@ -33,10 +33,19 @@ module Censurable
   def escape_privacy_data(text)
     return unless text
 
-    text = text.gsub(/([\._a-zA-Z0-9-]+@[\._a-zA-Z0-9-]+)/, ' ')
-    text = text.gsub(/([9|6])+([0-9\s*]{8,})/, ' ')
-    text = text.gsub(/#{whatsapp_slangs.join('|')}/, ' ')
-    text
+    filter_whatsapp(filter_phones(filter_emails(text)))
+  end
+
+  def filter_emails(text)
+    text.gsub(/([\._a-zA-Z0-9-]+@[\._a-zA-Z0-9-]+)/, ' ')
+  end
+
+  def filter_phones(text)
+    text.gsub(/([9|6])+([0-9\s*]{8,})/, ' ')
+  end
+
+  def filter_whatsapp(text)
+    text.gsub(/#{whatsapp_slangs.join('|')}/, ' ')
   end
 
   private
