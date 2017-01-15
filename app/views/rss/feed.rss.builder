@@ -27,7 +27,8 @@ xml.rss version: '2.0',
 
         xml.pubDate ad.published_at.rfc822
         xml.link adslug_url(ad, slug: ad.slug)
-        xml.guid adslug_url(ad, slug: ad.slug)
+        xml.guid({ isPermaLink: false },
+                 "#{ad.id}@#{ad.published_at.strftime('%d%m%Y')}")
       end
     end
   end
