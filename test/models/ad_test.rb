@@ -65,10 +65,10 @@ class AdTest < ActiveSupport::TestCase
   end
 
   test 'ad validates minimum length of filtered body' do
-    assert_equal true, build(:ad, body: 'a' * 25).valid?
-    assert_equal false, build(:ad, body: 'a' * 24).valid?
-    assert_equal true, build(:ad, body: 'a' * 25 + ' spammer@example.org').valid?
-    assert_equal false, build(:ad, body: 'a' * 22 + ' spammer@example.org').valid?
+    assert_equal true, build(:ad, body: 'a' * 12).valid?
+    assert_equal false, build(:ad, body: 'a' * 11).valid?
+    assert_equal true, build(:ad, body: 'a' * 12 + ' spammer@example.org').valid?
+    assert_equal false, build(:ad, body: 'a' * 9 + ' spammer@example.org').valid?
   end
 
   test 'ad body escapes privacy data' do

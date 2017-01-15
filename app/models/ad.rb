@@ -4,7 +4,7 @@
 class Ad < ActiveRecord::Base
   include Censurable
   censors :title, presence: true, min_length: 4
-  censors :body, presence: true, min_length: 25
+  censors :body, presence: true, min_length: 12
 
   include Hidable
   include Spamable
