@@ -16,6 +16,7 @@ xml.rss version: '2.0',
     @ads.each do |ad|
       xml.item do
         xml.title ad.filtered_title
+
         description = ad.filtered_body
         if ad.image?
           description = image_tag(
@@ -23,6 +24,7 @@ xml.rss version: '2.0',
           ) + description
         end
         xml.description description
+
         xml.pubDate ad.published_at.rfc822
         xml.link adslug_url(ad, slug: ad.slug)
         xml.guid adslug_url(ad, slug: ad.slug)
