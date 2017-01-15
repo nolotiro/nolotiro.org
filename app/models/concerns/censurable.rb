@@ -37,15 +37,15 @@ module Censurable
   end
 
   def filter_emails(text)
-    text.gsub(/([\._a-zA-Z0-9-]+@[\._a-zA-Z0-9-]+)/, ' ')
+    filter(/([\._a-zA-Z0-9-]+@[\._a-zA-Z0-9-]+)/, text)
   end
 
   def filter_phones(text)
-    text.gsub(/([9|6])+([0-9\s*]{8,})/, ' ')
+    filter(/([9|6])+([0-9\s*]{8,})/, text)
   end
 
   def filter_whatsapp(text)
-    text.gsub(/#{whatsapp_slangs.join('|')}/, ' ')
+    filter(/#{whatsapp_slangs.join('|')}/, text)
   end
 
   private
@@ -68,5 +68,9 @@ module Censurable
       guasap
       guasp
     )
+  end
+
+  def filter(regexp, text)
+    text.gsub(regexp, ' ')
   end
 end
