@@ -67,7 +67,7 @@ group :development do
 
   # deploy
   gem 'capistrano', '~> 3.0'
-  gem 'capistrano-pending'
+  gem 'capistrano-pending', require: false
   gem 'capistrano-rails'
   gem 'capistrano-rbenv'
   gem 'capistrano-sidekiq'
