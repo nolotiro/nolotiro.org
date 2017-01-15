@@ -20,7 +20,7 @@ xml.rss version: '2.0',
         description = ad.filtered_body
         if ad.image?
           description = image_tag(
-            request.protocol + request.host_with_port + ad.image.url(:thumb), style: 'float:left;'
+            image_url(ad.image.url(:thumb)), style: 'float:left'
           ) + description
         end
         xml.description description
