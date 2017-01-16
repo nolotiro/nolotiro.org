@@ -319,6 +319,7 @@ it:
 
 '
       title: Politica sulla privacy
+    private_info_hidden: informazione privata nascosta
     profile: profilo
     profile_actions:
       blocking:

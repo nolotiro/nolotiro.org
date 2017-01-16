@@ -15,7 +15,12 @@ class CommentTest < ActiveSupport::TestCase
 
   test 'comment title escapes privacy data' do
     text = 'contactar por email example@example.com, o whatsapp al 666666666'
-    expected_text = 'contactar por email  , o   al  '
+
+    expected_text = <<-TXT.squish
+      contactar por email [INFORMACIÓN PRIVADA OCULTA], o [INFORMACIÓN PRIVADA
+      OCULTA] al [INFORMACIÓN PRIVADA OCULTA]
+    TXT
+
     comment = build(:comment, body: text)
 
     assert_equal expected_text, comment.filtered_body

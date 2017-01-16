@@ -3,8 +3,8 @@
 
 class Ad < ActiveRecord::Base
   include Censurable
-  censors :title, presence: true, min_length: 4
-  censors :body, presence: true, min_length: 25
+  censors :title
+  censors :body
 
   include Hidable
   include Spamable
@@ -17,8 +17,8 @@ class Ad < ActiveRecord::Base
 
   has_many :comments, foreign_key: :ads_id, dependent: :destroy
 
-  validates :title, length: { maximum: 100 }
-  validates :body, length: { maximum: 1000 }
+  validates :title, presence: true, length: { minimum: 4, maximum: 100 }
+  validates :body, presence: true, length: { minimum: 12, maximum: 1000 }
   validates :woeid_code, presence: true
 
   enum status: { available: 1, booked: 2, delivered: 3 }

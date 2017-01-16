@@ -11,11 +11,9 @@ class AdTest < ActiveSupport::TestCase
     a = Ad.new
     a.valid?
 
-    assert_not_empty a.errors[:body]
-    assert_not_empty a.errors[:title]
-    assert_not_empty a.errors[:user]
-    assert_not_empty a.errors[:type]
-    assert_not_empty a.errors[:woeid_code]
+    %i(body title user type woeid_code).each do |attribute|
+      assert_not_empty a.errors[attribute]
+    end
   end
 
   test 'ad validates type' do
@@ -44,16 +42,19 @@ class AdTest < ActiveSupport::TestCase
     assert_equal false, build(:ad, title: 'a' * 101).valid?
   end
 
-  test 'ad validates minimum length of filtered title' do
+  test 'ad validates minimum length of title' do
     assert_equal true, build(:ad, title: 'a' * 4).valid?
     assert_equal false, build(:ad, title: 'a' * 3).valid?
-    assert_equal true, build(:ad, title: 'Me llamo spammer@example.org').valid?
-    assert_equal false, build(:ad, title: 'spammer@example.org').valid?
   end
 
   test 'ad title escapes privacy data' do
     text = 'por email example@example.com, o whatsapp al 666666666'
-    expected_text = 'por email  , o   al  '
+
+    expected_text = <<-TXT.squish
+      por email [INFORMACIÓN PRIVADA OCULTA], o [INFORMACIÓN PRIVADA OCULTA] al
+      [INFORMACIÓN PRIVADA OCULTA]
+    TXT
+
     ad = build(:ad, title: text)
 
     assert_equal expected_text, ad.filtered_title
@@ -64,16 +65,19 @@ class AdTest < ActiveSupport::TestCase
     assert_equal false, build(:ad, body: 'a' * 1001).valid?
   end
 
-  test 'ad validates minimum length of filtered body' do
-    assert_equal true, build(:ad, body: 'a' * 25).valid?
-    assert_equal false, build(:ad, body: 'a' * 24).valid?
-    assert_equal true, build(:ad, body: 'a' * 25 + ' spammer@example.org').valid?
-    assert_equal false, build(:ad, body: 'a' * 22 + ' spammer@example.org').valid?
+  test 'ad validates minimum length of body' do
+    assert_equal true, build(:ad, body: 'a' * 12).valid?
+    assert_equal false, build(:ad, body: 'a' * 11).valid?
   end
 
   test 'ad body escapes privacy data' do
     text = 'por email example@example.com, o whatsapp al 666666666'
-    expected_text = 'por email  , o   al  '
+
+    expected_text = <<-TXT.squish
+      por email [INFORMACIÓN PRIVADA OCULTA], o [INFORMACIÓN PRIVADA OCULTA] al
+      [INFORMACIÓN PRIVADA OCULTA]
+    TXT
+
     ad = build(:ad, body: text)
 
     assert_equal expected_text, ad.filtered_body
