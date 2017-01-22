@@ -27,17 +27,6 @@ GIT
       railties (>= 3.2, < 5.1)
       responders
 
-GIT
-  remote: https://github.com/deivid-rodriguez/localeapp.git
-  revision: ed8fa111989e026c4ed87fa5f429d3e45aef99f7
-  branch: drop_1.9.3_support
-  specs:
-    localeapp (2.0.0)
-      gli
-      i18n (~> 0.7)
-      json (>= 1.8, < 3)
-      rest-client (>= 1.8, < 3)
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -184,7 +173,7 @@ GEM
     formtastic (3.1.4)
       actionpack (>= 3.2.13)
     formtastic_i18n (0.6.0)
-    gli (2.14.0)
+    gli (2.16.0)
     globalid (0.4.0)
       activesupport (>= 4.2.0)
     haml (4.0.7)
@@ -218,13 +207,18 @@ GEM
       thor (>= 0.14, < 2.0)
     jquery-ui-rails (5.0.5)
       railties (>= 3.2.16)
-    json (1.8.3)
+    json (2.1.0)
     jwt (1.5.6)
     kaminari (0.17.0)
       actionpack (>= 3.0.0)
       activesupport (>= 3.0.0)
     launchy (2.4.3)
       addressable (~> 2.3)
+    localeapp (2.1.1)
+      gli
+      i18n (~> 0.4)
+      json
+      rest-client
     loofah (2.0.3)
       nokogiri (>= 1.5.9)
     mail (2.6.4)
@@ -461,7 +455,7 @@ DEPENDENCIES
   jquery-rails
   kaminari (= 0.17.0)
   launchy
-  localeapp!
+  localeapp
   maxminddb
   minitest-hooks
   minitest-spec-rails

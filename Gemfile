@@ -52,9 +52,7 @@ group :development do
   gem 'brakeman-lib'
   gem 'faker'
   gem 'i18n-tasks', '0.9.5'
-  gem 'localeapp',
-      github: 'deivid-rodriguez/localeapp',
-      branch: 'drop_1.9.3_support' # i18n interface
+  gem 'localeapp'
   gem 'rubocop', '0.46.0'
 
   # deploy
