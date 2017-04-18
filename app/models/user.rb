@@ -60,8 +60,6 @@ class User < ActiveRecord::Base
 
   validates :password, length: { in: 5..128 }, allow_blank: true
 
-  # Include default devise modules. Others available are:
-  # :timeoutable and :omniauthable
   devise :confirmable, :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :lockable,
          :omniauthable, omniauth_providers: [:facebook, :google]
