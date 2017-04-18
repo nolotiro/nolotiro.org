@@ -11,7 +11,7 @@ end
 
 source 'https://rubygems.org'
 
-ruby '2.3.1'
+ruby RUBY_VERSION
 
 gem 'rails', '~> 5.0'
 gem 'rails-i18n', '~> 5.0'
@@ -67,7 +67,6 @@ group :development do
 
   # deploy
   gem 'capistrano', '~> 3.0'
-  gem 'capistrano-pending', require: false
   gem 'capistrano-rails'
   gem 'capistrano-rbenv'
   gem 'capistrano-sidekiq'

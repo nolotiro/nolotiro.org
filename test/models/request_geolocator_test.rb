@@ -25,6 +25,6 @@ class RequestGeolocatorTest < ActionView::TestCase
   private
 
   def ip_from_brazil_but_not_a_specific_city
-    '179.168.191.163'
+    '177.20.105.105'
   end
 end

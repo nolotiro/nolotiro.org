@@ -11,4 +11,4 @@ require 'capistrano/bundler'
 require 'capistrano/rails'
 require 'capistrano/sidekiq'
 
-require 'capistrano/pending'
+import 'lib/capistrano/tasks/pending.rake'

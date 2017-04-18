@@ -14,4 +14,3 @@ if File.exist?('config/deploy/rsa_key')
 end
 
 set :rbenv_type, :user
-set :rbenv_ruby, '2.3.1'
