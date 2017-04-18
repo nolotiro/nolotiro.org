@@ -10,4 +10,3 @@ set :branch, -> { `git rev-parse --abbrev-ref HEAD`.chomp }
 set :linked_files, %w(.env.staging)
 
 set :rbenv_type, :user
-set :rbenv_ruby, '2.3.1'
