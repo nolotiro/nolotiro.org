@@ -64,28 +64,28 @@ class UserTest < ActiveSupport::TestCase
   end
 
   test 'has passwords no shorter than 5 characters' do
-    @user.password = '1234'
-    assert_not @user.valid?
-    assert_includes @user.errors[:password],
+    user1 = build(:user, password: '1234')
+    assert_not user1.valid?
+    assert_includes user1.errors[:password],
                     'es demasiado corto (5 caracteres mínimo)'
 
-    @user.password = '12345'
-    assert @user.valid?
+    user2 = build(:user, password: '12345')
+    assert user2.valid?
   end
 
   test 'has non-empty usernames' do
-    @user.username = ''
-    assert_not @user.valid?
-    assert_includes @user.errors[:username], 'no puede estar en blanco'
+    user1 = build(:user, username: '')
+    assert_not user1.valid?
+    assert_includes user1.errors[:username], 'no puede estar en blanco'
   end
 
   test 'has usernames no longer than 63 characters' do
-    @user.username = 'A' * 63
-    assert @user.valid?
+    user1 = build(:user, username: 'A' * 63)
+    assert user1.valid?
 
-    @user.username = 'A' * 64
-    assert_not @user.valid?
-    assert_includes @user.errors[:username],
+    user2 = build(:user, username: 'A' * 64)
+    assert_not user2.valid?
+    assert_includes user2.errors[:username],
                     'es demasiado largo (63 caracteres máximo)'
   end
 
