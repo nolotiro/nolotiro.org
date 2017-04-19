@@ -187,7 +187,8 @@ es:
       marked_as: Anuncio %{status}
       updated: Anuncio actualizado
     all: todos
-    all_ads: todos los anuncios
+    all_gifts: todos los regalos
+    all_requests: todas las peticiones
     are_you_interested: "¿Te interesa?"
     available: disponible
     back: volver a la página de inicio
@@ -263,16 +264,16 @@ es:
     give_it_to: Regálaselo a %{user}
     hello_to: Hola %{recipient},
     here: aquí
-    home_title: anuncios de regalos nuevos y de segunda mano
     if_you_are_new: Si eres un nuevo usuario, por favor
     if_youre_already_an_user: Si ya eres un usuario registrado, por favor
-    keywords: 'regalo segunda mano gratis '
     last_published_gifts: últimos regalos publicados
     leave_blank: "(déjala en blanco si no quieres cambiarla)"
     legal_notice: aviso legal
     legal_page:
       body_html: 'Nombre: Asociación aLabs. <br>Inscrita en el registro de asociaciones de la Comunidad de Madrid con número 32.022. <br>CIF: G86139847<br>C/Duque de Alba, 13 (28012) Madrid.'
       title: Aviso legal
+    location_gifts: regalos en %{location}
+    location_requests: peticiones en %{location}
     login: acceder
     logout: salir
     mail:
@@ -283,7 +284,7 @@ es:
     messages: mensajes
     messages_title: Mensajes
     meta_description: 'nolotiro.org es un sitio web donde regalo y busco regalos gratis de segunda mano: muebles, sillas, sofás, bicicletas, ordenadores portátiles, mesas, cocinas, lámparas, camas, ropa, juguetes, cunas o carros para bebes, teléfonos móviles y otras muchas cosas que ya no quieres y ya no necesitas para que las reutilice otra gente a la que puede servirle o darle nueva vida.'
-    meta_description_ad: regalo segunda mano %{title} en %{woeid}. %{body}
+    meta_description_ad: "%{type} en %{woeid} de %{title}. %{body}"
     n_ads:
       one: "%{count} anuncio"
       other: "%{count} anuncios"
@@ -348,6 +349,7 @@ es:
     sign_up: Crear un usuario
     slogan: no lo tiro, te lo regalo (sin condiciones)
     suggestions: sugerencias
+    title_with_page: "%{title}, página %{page}"
     to_publish_or_send_messages: Para publicar anuncios o enviar mensajes accede a tu cuenta
     tos: términos de uso
     translate:

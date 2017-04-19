@@ -1,7 +1,6 @@
-<% if current_woeid.nil? %>
-  <% content_for :title, t('nlt.home_title') %>
-<% else %>
-  <% content_for :title, t('nlt.keywords') + @woeid_info[:full] %>
+<% content_for :title, listing_page_title %>
+
+<% if current_woeid %>
   <% content_for :meta_description,
                  t('nlt.gift_on', woeid: @woeid_info[:full]) %>
 <% end %>
@@ -53,7 +52,7 @@
       <div class="location_name">
         <h1>
           <% if current_woeid.nil? %>
-            <%= t('nlt.all_ads') %>
+            <%= t("nlt.all_#{@type == 'want' ? 'requests' : 'gifts'}") %>
           <% else %>
             <%= t('nlt.searching_on_html', q: @q) if @q %>
 

@@ -187,7 +187,8 @@ it:
       marked_as: Annuncio %{status}
       updated: Annuncio aggiornato
     all: tutti
-    all_ads: tutti gli annunci
+    all_gifts: tutti i regali
+    all_requests: tutte le petizioni
     are_you_interested: Sei interessato?
     available: disponibile
     back: torna alla pagina iniziale
@@ -265,16 +266,16 @@ it:
     give_it_to: Regalalo a %{user}
     hello_to: Ciao %{recipient},
     here: qui
-    home_title: 'annunci di regali nuovi e di seconda mano '
     if_you_are_new: Se sei un utente nuovo, per favore
     if_youre_already_an_user: Si sei un utente registrato, per favore
-    keywords: regalato seconda mano gratis
     last_published_gifts: ultimi regali pubblicati
     leave_blank: "(Lasciala in bianco se non la vuoi cambiare)"
     legal_notice: note legali
     legal_page:
       body_html: 'Nome: Associazione aLabs. <br> registrata nel registro delle associazioni della Comunità di Madrid con il numero 32022. <br> CIF: G86139847 <br>C/Duque de Alba, 13 (28012) Madrid.'
       title: Note legali
+    location_gifts: presenti à %{location}
+    location_requests: petizioni à %{location}
     login: accedi
     logout: uscire
     mail:
@@ -284,10 +285,8 @@ it:
     member_since: membro dal
     messages: messaggi
     messages_title: Messaggi
-    meta_description: 'nolotiro.org è un sito dove guardo per i regali dono gratuito e mobili di seconda mano, sedie, divani, biciclette, computer portatili, tavoli, stufe, lampade, letti, vestiti, giocattoli, lettini per bambini o automobili, telefoni cellulari e altri molte cose che si desidera non è più e non hanno più bisogno di fare il riutilizzo altre persone che possono servire o dare nuova vita.
-
-'
-    meta_description_ad: rivendita regali %{title} en %{woeid}. %{body}
+    meta_description: 'nolotiro.org è un sito dove guardo per i regali dono gratuito e mobili di seconda mano, sedie, divani, biciclette, computer portatili, tavoli, stufe, lampade, letti, vestiti, giocattoli, lettini per bambini o automobili, telefoni cellulari e altri molte cose che si desidera non è più e non hanno più bisogno di fare il riutilizzo altre persone che possono servire o dare nuova vita.'
+    meta_description_ad: "%{type} en %{woeid} di %{title}. %{body}"
     n_ads:
       one: "%{count} annuncio"
       other: "%{count} annunci"
@@ -354,6 +353,7 @@ it:
     sign_up: Creare un utente
     slogan: Non buttare, io regalo (senza condizioni)
     suggestions: suggerimenti
+    title_with_page: "%{title}, pagina %{page}"
     to_publish_or_send_messages: Per pubblicizzare o inviare Accesso al tuo account
     tos: condizioni di utilizzo
     translate:

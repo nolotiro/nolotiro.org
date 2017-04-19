@@ -187,7 +187,8 @@ fr:
       marked_as: Annonce %{status}
       updated: Annoce mis à jour
     all: tous
-    all_ads: toutes les annonces
+    all_gifts: toutes les cadeaux
+    all_requests: toutes les pétitions
     are_you_interested: Ça t'intéresse?
     available: disponible
     back: retour à la page d'accueil
@@ -263,16 +264,16 @@ fr:
     give_it_to: Contacter %{user}
     hello_to: Salut %{recipient},
     here: ici
-    home_title: annonces de cadeaux neuves et d'occasion
     if_you_are_new: Si vous êtes un nouvel utilisateur, s'il vous plaît
     if_youre_already_an_user: Si vous êtes déjà un utilisateur enregistré, s'il vous plaît
-    keywords: cadeau de seconde main gratuit
     last_published_gifts: derniers cadeaux publiés
     leave_blank: "(Laissez vide si vous ne voulez pas changer)"
     legal_notice: avis juridique
     legal_page:
       body_html: 'Nom: Association aLabs. <br>Inscrite au registre des associations de la Communauté de Madrid avec le numéro 32022. <br>CIF: G86139847<br>C/Duque de Alba, 13 (28012) Madrid.'
       title: Mentions légales
+    location_gifts: cadeaux en %{location}
+    location_requests: pétitions en %{location}
     login: connecter
     logout: déconnecter
     mail:
@@ -283,7 +284,7 @@ fr:
     messages: messages
     messages_title: Messages
     meta_description: nolotiro.org est un site où je cherche des cadeaux don gratuit et des meubles de seconde main, des chaises, des canapés, des vélos, des ordinateurs portables, des tables, des poêles, des lampes, des lits, des vêtements, des jouets, des lits bébé ou les voitures, les téléphones mobiles et autres beaucoup de choses que vous ne voulez plus et n'a plus besoin de faire la réutilisation d'autres personnes qui peuvent servir ou donner une nouvelle vie.
-    meta_description_ad: cadeu seconde main %{title} en %{woeid}. %{body}
+    meta_description_ad: "%{type} en %{woeid}. %{title}. %{body}"
     n_ads:
       one: "%{count} annonce"
       other: "%{count} annonces"
@@ -350,6 +351,7 @@ fr:
     sign_up: Créer un usager
     slogan: Ne jetez pas, je Gift (sans conditions)
     suggestions: suggestions
+    title_with_page: "%{title}, page %{page}"
     to_publish_or_send_messages: Liste ou envoyer des messages accéder à votre compte
     tos: Conditions d'utilisation
     translate:

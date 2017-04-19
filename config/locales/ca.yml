@@ -186,7 +186,8 @@ ca:
       marked_as: Anunci %{status}
       updated: Anunci actualitzat
     all: tots
-    all_ads: tots els anuncis
+    all_gifts: tots els regals
+    all_requests: totes les peticions
     are_you_interested: T'interessa?
     available: disponible
     back: tornar a la pàgina d'inici
@@ -262,16 +263,16 @@ ca:
     give_it_to: Regala'l a %{user}
     hello_to: Hola %{recipient},
     here: aquí
-    home_title: anuncis de regals nous i de segona mà
     if_you_are_new: Si ets un nou usuari, si us plau
     if_youre_already_an_user: Si ja ets un usuari registrat, si us plau
-    keywords: regal segona mà gratis
     last_published_gifts: últims regals publicats
     leave_blank: "(deixa-la en blanc si no vols canviar-la)"
     legal_notice: Avís legal
     legal_page:
       body_html: 'Nom: Associació aLabs. <br>Inscrita en el registre d''associacions de la Comunitat de Madrid amb nombre 32.022. <br>CIF: G86139847<br> C/Duque de Alba, 13 (28012) Madrid.'
       title: Avís legal
+    location_gifts: regals en %{location}
+    location_requests: peticions en %{location}
     login: accedir
     logout: sortir
     mail:
@@ -282,7 +283,7 @@ ca:
     messages: missatges
     messages_title: Missatges
     meta_description: 'nolotiro.org és un lloc web on regalar i buscar regals de franc de segona mà: mobles, cadires, sofàs, bicicletes, ordinadors portàtils, taules, cuines, llums, llits, roba, joguines, bressols o carros per a nadons, telèfons mòbils i altres moltes coses que ja no vols i no necessites per a que les reutilitzin altra gent a la qual pot servir o donar-li nova vida.'
-    meta_description_ad: regal segona mà %{title} a %{woeid}. %{body}
+    meta_description_ad: "#{type} a %{woeid} de %{title}. %{body}"
     n_ads:
       one: "%{count} anunci"
       other: "%{count} anuncis"
@@ -347,6 +348,7 @@ ca:
     sign_up: Crear un usuari
     slogan: no ho tir, t'ho regal (sense condicions)
     suggestions: suggeriments
+    title_with_page: "%{title}, pàgina %{page}"
     to_publish_or_send_messages: Per publicar anuncis o enviar missatges accedeix al teu compte
     tos: termes d'ús
     translate:

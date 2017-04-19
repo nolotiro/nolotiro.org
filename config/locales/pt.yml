@@ -187,7 +187,8 @@ pt:
       marked_as: Anúncio %{status}
       updated: Anúncio atualizado
     all: todos
-    all_ads: todos os anúncios
+    all_gifts: todos os presentes
+    all_requests: todas as peticões
     are_you_interested: Está interessado?
     available: disponível
     back: voltar para a pagina de inicio
@@ -263,16 +264,16 @@ pt:
     give_it_to: Da um presente para %{user}
     hello_to: Olá %{recipient},
     here: aqui
-    home_title: anúncios de presentes novos e de segunda mão
     if_you_are_new: Se você é um novo usuário, por favor
     if_youre_already_an_user: Si você já está cadastrado, por favor
-    keywords: presente segunda mão grátis
     last_published_gifts: últimos presentes publicados
     leave_blank: "(deixar em branco se você não quer mudá-la)"
     legal_notice: aviso legal
     legal_page:
       body_html: 'Nome: Asociaçã aLabs. <br>Inscrita en el registro de asociaciones de la Comunidad de Madrid con número 32.022. <br>CIF: G86139847<br>C/Duque de Alba, 13 (28012) Madrid.'
       title: Aviso legal
+    location_gifts: presentes em %{location}
+    location_requests: peticões em %{location}
     login: acessar
     logout: sair
     mail:
@@ -283,7 +284,7 @@ pt:
     messages: mensagens
     messages_title: Mensagens
     meta_description: 'nolotiro.org é um site web onde posso dar presentes e procurar presentes de segunda mão: movéis, cadeiras, sofás, bicicletas, computadores pessoais, mesas, fogões, abajures, camas, roupa, brinquedos, berços ou carrinhos para bebes, celulares e mais outras coisas que você já não quer e não precisa para que sejam reutilizadas por outras pessoas.'
-    meta_description_ad: presentes de segunda mão %{title} em %{woeid}. %{body}
+    meta_description_ad: "%{type} en %{woeid} de %{title}. %{body}"
     n_ads:
       one: "%{count} anúncio"
       other: "%{count} anúncios"
@@ -348,6 +349,7 @@ pt:
     sign_up: Criar usuário
     slogan: não jogo fora, te dou de presente (sem condições)
     suggestions: sugestões
+    title_with_page: "%{title}, página %{page}"
     to_publish_or_send_messages: Para publicar anúncios ou enviar mensagens faça login na sua conta
     tos: termos de uso
     translate:
