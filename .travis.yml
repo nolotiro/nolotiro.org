@@ -19,6 +19,14 @@ env:
 
 language: ruby
 
+notifications:
+  email:
+    recipients:
+      - hola@nolotiro.org
+
+    on_success: always
+    on_failure: always
+
 rvm:
   - 2.3.4
 
