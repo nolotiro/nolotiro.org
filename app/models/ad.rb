@@ -66,7 +66,7 @@ class Ad < ActiveRecord::Base
   end
 
   def increment_readed_count!
-    self.class.increment_counter(:readed_count, id)
+    increment!(:readed_count)
   end
 
   def move!
