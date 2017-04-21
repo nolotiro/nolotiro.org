@@ -3,5 +3,5 @@
 #
 # Represents a first level state in a country.
 #
-class State < ActiveRecord::Base
+class State < ApplicationRecord
 end

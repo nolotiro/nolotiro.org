@@ -7,7 +7,7 @@ class AdValidationTest < ActiveSupport::TestCase
     a = Ad.new
     a.valid?
 
-    %i(body title user type woeid_code).each do |attribute|
+    %i[body title user type woeid_code].each do |attribute|
       assert_not_empty a.errors[attribute]
     end
   end

@@ -13,7 +13,7 @@ class RemoveUnusedMailboxerConversationOptOuts < ActiveRecord::Migration
     end
 
     add_index :mailboxer_conversation_opt_outs,
-              [:unsubscriber_id, :unsubscriber_type],
+              %i[unsubscriber_id unsubscriber_type],
               name: 'index_mailboxer_conversation_opt_outs_on_unsubscriber_id_type'
 
     add_foreign_key :mailboxer_conversation_opt_outs,

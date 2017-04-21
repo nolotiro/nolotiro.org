@@ -36,11 +36,11 @@ class ApplicationController < ActionController::Base
   end
 
   def type_scope
-    %w(give want).include?(params[:type]) ? params[:type] : nil
+    %w[give want].include?(params[:type]) ? params[:type] : nil
   end
 
   def status_scope
-    return unless %w(available booked delivered).include?(params[:status])
+    return unless %w[available booked delivered].include?(params[:status])
 
     params[:status]
   end
@@ -79,8 +79,8 @@ class ApplicationController < ActionController::Base
   protected
 
   def configure_permitted_parameters
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:username, :email, :password, :password_confirmation, :remember_me])
-    devise_parameter_sanitizer.permit(:sign_in, keys: [:username, :email, :password, :remember_me])
+    devise_parameter_sanitizer.permit(:sign_up, keys: %i[username email password password_confirmation remember_me])
+    devise_parameter_sanitizer.permit(:sign_in, keys: %i[username email password remember_me])
     devise_parameter_sanitizer.permit(:account_update, keys: [:username])
   end
 

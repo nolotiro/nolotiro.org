@@ -53,7 +53,8 @@ group :development do
   gem 'faker'
   gem 'i18n-tasks', '0.9.5'
   gem 'localeapp'
-  gem 'rubocop', '0.46.0'
+  # until https://github.com/bbatsov/rubocop/pull/4237 released
+  gem 'rubocop', github: 'bbatsov/rubocop'
 
   # deploy
   gem 'capistrano', '~> 3.0'

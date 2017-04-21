@@ -23,9 +23,9 @@ class AdConstraint
       [nil, nil],
       ['want', nil],
       ['give', nil],
-      %w(give available),
-      %w(give booked),
-      %w(give delivered)
+      %w[give available],
+      %w[give booked],
+      %w[give delivered]
     ].include?([type, status])
   end
 

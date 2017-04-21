@@ -37,7 +37,7 @@ module Censurable
   private
 
   def whatsapp_slangs
-    %w(
+    %w[
       whatsapp
       whatsupp
       whatsap
@@ -53,7 +53,7 @@ module Censurable
       guasapp
       guasap
       guasp
-    )
+    ]
   end
 
   def filter(regexp, text)

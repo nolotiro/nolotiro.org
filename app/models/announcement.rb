@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class Announcement < ActiveRecord::Base
+class Announcement < ApplicationRecord
   has_many :dismissals, dependent: :destroy
 
   scope :current, -> do

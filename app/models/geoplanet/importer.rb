@@ -24,13 +24,13 @@ module Geoplanet
       RawImporter.new(
         connection,
         'places',
-        %w(woe_id iso name language place_type parent_id)
+        %w[woe_id iso name language place_type parent_id]
       ).import!
 
       RawImporter.new(
         connection,
         'admins',
-        %w(woe_id iso state county local_admin country continent)
+        %w[woe_id iso state county local_admin country continent]
       ).import!
 
       import_countries!

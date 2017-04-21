@@ -26,7 +26,7 @@ Rails.application.routes.draw do
       # FIXME: nolotirov2 legacy - redirect from /es/ad/create
       resources :ads, path: 'ad',
                       path_names: { new: 'create' },
-                      except: [:index, :show] do
+                      except: %i[index show] do
         resources :comments, only: :create
       end
 
@@ -64,7 +64,7 @@ Rails.application.routes.draw do
       end
 
       devise_for :users,
-                 skip: [:omniauth_callbacks, :unlocks],
+                 skip: %i[omniauth_callbacks unlocks],
                  controllers: { registrations: 'registrations' },
                  path: 'user',
                  path_names: {
@@ -75,7 +75,7 @@ Rails.application.routes.draw do
                  }
 
       # friendships
-      resources :friendships, only: [:create, :destroy]
+      resources :friendships, only: %i[create destroy]
 
       scope '/admin' do
         authenticate :user, ->(u) { u.admin? } do
@@ -93,7 +93,7 @@ Rails.application.routes.draw do
       get '/search', to: redirect(SearchUrlRewriter.new)
 
       # blocking
-      resources :blockings, only: [:create, :destroy]
+      resources :blockings, only: %i[create destroy]
 
       # legacy messaging
       get '/messages/new', to: redirect(ConversationUrlRewriter.new)

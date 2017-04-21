@@ -60,9 +60,9 @@ namespace :db do
   def backup_name
     name = ENV['BACKUP_NAME']
 
-    raise 'Please specificy BACKUP_NAME' unless name.present?
+    raise 'Please specificy BACKUP_NAME' if name.blank?
 
-    "#{Rails.root}/db/#{name}.dump"
+    Rails.root.join('db', "#{name}.dump")
   end
 
   def config

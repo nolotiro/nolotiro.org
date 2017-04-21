@@ -3,5 +3,5 @@
 #
 # A town on Earth
 #
-class Town < ActiveRecord::Base
+class Town < ApplicationRecord
 end

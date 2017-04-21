@@ -10,7 +10,7 @@ class EnableIndexesOnLikeQueries < ActiveRecord::Migration
       MSG
     end
 
-    %w(towns states countries).each do |table|
+    %w[towns states countries].each do |table|
       execute <<-SQL.squish
         CREATE INDEX index_#{table}_on_name_trigram
         ON #{table}
@@ -20,7 +20,7 @@ class EnableIndexesOnLikeQueries < ActiveRecord::Migration
   end
 
   def down
-    %i(towns states countries).each do |table|
+    %i[towns states countries].each do |table|
       remove_index table, name: "index_#{table}_on_name_trigram"
     end
   end

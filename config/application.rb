@@ -13,7 +13,7 @@ module NolotiroOrg
     config.time_zone = 'UTC'
     config.i18n.default_locale = :es
     config.i18n.enforce_available_locales = true
-    config.i18n.available_locales = %i(ca en es fr gl it pt)
+    config.i18n.available_locales = %i[ca en es fr gl it pt]
     ActionMailer::Base.layout 'mail'
 
     #
@@ -29,7 +29,7 @@ module NolotiroOrg
     #
     # Custom libraries autoloaded
     #
-    config.autoload_paths += %W(#{config.root}/lib #{config.root}/lib/routes)
+    config.autoload_paths += %W[#{config.root}/lib #{config.root}/lib/routes]
 
     #
     # Don't use TLS for SMTP since we don't yet have a valid certificate

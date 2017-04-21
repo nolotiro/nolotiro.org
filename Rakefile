@@ -26,5 +26,5 @@ if %(test development).include?(Rails.env)
   # @todo Remove it, possibly when upgrading to Rails 5
   MiniTest.class_variable_set('@@installed_at_exit', true)
 
-  task default: [:test, :rubocop, :brakeman]
+  task default: %i[test rubocop brakeman]
 end

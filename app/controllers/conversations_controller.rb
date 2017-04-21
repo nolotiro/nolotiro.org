@@ -2,7 +2,7 @@
 
 class ConversationsController < ApplicationController
   before_action :authenticate_user!
-  before_action :load_conversation, only: [:show, :update]
+  before_action :load_conversation, only: %i[show update]
 
   def index
     @conversations =

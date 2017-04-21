@@ -10,7 +10,7 @@ set :deploy_via, :remote_cache
 
 set :ssh_options, forward_agent: true
 
-set :linked_dirs, %w(log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system public/legacy)
+set :linked_dirs, %w[log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system public/legacy]
 
 set :bundle_binstubs, nil
 set :keep_releases, 5

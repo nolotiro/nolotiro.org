@@ -12,6 +12,6 @@ namespace :users do
 
     abort unless STDIN.gets.chomp == 'y'
 
-    target.update_all(woeid: 766_273)
+    target.find_each { |user| user.update!(woeid: 766_273) }
   end
 end

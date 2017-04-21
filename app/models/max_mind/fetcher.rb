@@ -67,7 +67,7 @@ module MaxMind
     end
 
     def local_base_path
-      File.join(Rails.root, 'vendor', 'geolite')
+      Rails.root.join('vendor', 'geolite')
     end
 
     def base_url

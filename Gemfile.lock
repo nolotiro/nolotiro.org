@@ -17,6 +17,18 @@ GIT
       sass-rails
       sprockets (< 4.1)
 
+GIT
+  remote: https://github.com/bbatsov/rubocop.git
+  revision: bbb5ad77b690fd07d96a931a213bb5565a71fda3
+  specs:
+    rubocop (0.48.1)
+      parallel (~> 1.10)
+      parser (>= 2.3.3.1, < 3.0)
+      powerpack (~> 0.1)
+      rainbow (>= 1.99.1, < 3.0)
+      ruby-progressbar (~> 1.7)
+      unicode-display_width (~> 1.0, >= 1.0.1)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -266,6 +278,7 @@ GEM
       cocaine (~> 0.5.5)
       mime-types
       mimemagic (= 0.3.0)
+    parallel (1.11.1)
     parser (2.4.0.0)
       ast (~> 2.2)
     pg (0.19.0)
@@ -349,12 +362,6 @@ GEM
       http-cookie (>= 1.0.2, < 2.0)
       mime-types (>= 1.16, < 4.0)
       netrc (~> 0.8)
-    rubocop (0.46.0)
-      parser (>= 2.3.1.1, < 3.0)
-      powerpack (~> 0.1)
-      rainbow (>= 1.99.1, < 3.0)
-      ruby-progressbar (~> 1.7)
-      unicode-display_width (~> 1.0, >= 1.0.1)
     ruby-progressbar (1.8.1)
     ruby2ruby (2.3.2)
       ruby_parser (~> 3.1)
@@ -467,7 +474,7 @@ DEPENDENCIES
   record_tag_helper (~> 1.0)
   redis-rails
   rest-client (~> 2.0)
-  rubocop (= 0.46.0)
+  rubocop!
   rubyzip
   sass-rails (~> 5.0)
   sidekiq
