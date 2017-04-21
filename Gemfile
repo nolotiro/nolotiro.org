@@ -23,14 +23,6 @@ gem 'uglifier', '>= 1.3.0'
 
 gem 'dotenv-rails', '~> 2.1'
 
-group :doc do
-  gem 'sdoc', require: false
-end
-
-group :console do
-  gem 'table_print'
-end
-
 group :development, :test do
   gem 'byebug'                       # debugger
   gem 'capybara'                     # real user interactions
@@ -47,7 +39,7 @@ group :test do
   gem 'database_cleaner', '~> 1.5'
   gem 'poltergeist'
   gem 'vcr', '~> 3.0'
-  gem 'webmock', '~> 2.0'
+  gem 'webmock', '~> 3.0'
 end
 
 group :production, :staging do
@@ -60,9 +52,7 @@ group :development do
   gem 'brakeman-lib'
   gem 'faker'
   gem 'i18n-tasks', '0.9.5'
-  gem 'localeapp',
-      github: 'deivid-rodriguez/localeapp',
-      branch: 'drop_1.9.3_support' # i18n interface
+  gem 'localeapp'
   gem 'rubocop', '0.46.0'
 
   # deploy
@@ -92,14 +82,12 @@ gem 'paperclip', '~> 4.0'                   # images
 gem 'pundit'                                # authorization
 gem 'recaptcha', require: 'recaptcha/rails' # captcha
 
-# Admin backend. Adding inherited resources master for Rails 5 support until
-# they starting releasing things. @todo Get rid of this, possibly by completely
-# ditching activeadmin and implementing the console from scratch.
+# Admin backend.
+# @todo Get rid of this, possibly by completely ditching activeadmin and
+# implementing the console from scratch.
 gem 'activeadmin', github: 'activeadmin'
-gem 'inherited_resources', github: 'activeadmin/inherited_resources'
 
 # For Yahoo YQL interaction
-gem 'json', '~> 1.8'
 gem 'rest-client', '~> 2.0'
 
 gem 'bootstrap-sass', '~> 3.3'

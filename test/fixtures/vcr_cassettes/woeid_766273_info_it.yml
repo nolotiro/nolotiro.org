@@ -12,7 +12,7 @@ http_interactions:
       Accept-Encoding:
       - gzip, deflate
       User-Agent:
-      - rest-client/2.0.0 (linux-gnu x86_64) ruby/2.3.1p112
+      - rest-client/2.0.1 (linux-gnu x86_64) ruby/2.4.1p111
       Host:
       - query.yahooapis.com
   response:
@@ -21,54 +21,31 @@ http_interactions:
       message: OK
     headers:
       X-Yql-Host:
-      - prod_bf1_1;paas.yql;queryyahooapiscomproductionbf1;421c465a-81e2-11e6-a7b2-d4ae5297450a
+      - prod_bf1_1;paas.yql;queryyahooapiscomproductionbf1;a7f34de1-259e-11e7-b972-d4ae52974741
       X-Content-Type-Options:
       - nosniff
       Access-Control-Allow-Origin:
       - "*"
       Content-Type:
-      - application/json; charset=UTF-8
+      - application/json;charset=utf-8
       Cache-Control:
       - no-cache
       Date:
-      - Sat, 24 Sep 2016 01:05:27 GMT
+      - Fri, 21 Apr 2017 14:11:34 GMT
       Age:
       - '0'
-      Via:
-      - http/1.1 a30.ue.bf1.yahoo.net (ApacheTrafficServer [cMsSf ])
-      Server:
-      - ATS
-      Y-Trace:
-      - BAEAQAAAAACWc1Q25fLtRwAAAAAAAAAAedNWE6t6sLcAAAAAAAAAAAAFPTZ9lJzXAAU9Nn2UwjqE6nlOAAAAAA--
       Transfer-Encoding:
       - chunked
       Connection:
       - keep-alive
+      Via:
+      - http/1.1 a08.ue.bf1.yahoo.net (ApacheTrafficServer [cMsSf ])
+      Server:
+      - ATS
     body:
       encoding: ASCII-8BIT
       string: !binary |-
-        eyJxdWVyeSI6eyJjb3VudCI6MSwiY3JlYXRlZCI6IjIwMTYtMDktMjRUMDE6
-        MDU6MjdaIiwibGFuZyI6ImVuLVVTIiwicmVzdWx0cyI6eyJwbGFjZSI6eyJs
-        YW5nIjoiaXQtIiwieG1sbnMiOiJodHRwOi8vd2hlcmUueWFob29hcGlzLmNv
-        bS92MS9zY2hlbWEucm5nIiwieWFob28iOiJodHRwOi8vd3d3LnlhaG9vYXBp
-        cy5jb20vdjEvYmFzZS5ybmciLCJ1cmkiOiJodHRwOi8vd2hlcmUueWFob29h
-        cGlzLmNvbS92MS9wbGFjZS83NjYyNzMiLCJ3b2VpZCI6Ijc2NjI3MyIsInBs
-        YWNlVHlwZU5hbWUiOnsiY29kZSI6IjciLCJjb250ZW50IjoiQ2l0dMOgIn0s
-        Im5hbWUiOiJNYWRyaWQiLCJjb3VudHJ5Ijp7ImNvZGUiOiJFUyIsInR5cGUi
-        OiJQYWVzZSIsIndvZWlkIjoiMjM0MjQ5NTAiLCJjb250ZW50IjoiU3BhZ25h
-        In0sImFkbWluMSI6eyJjb2RlIjoiIiwidHlwZSI6IkNvbXVuaXTDoCBBdXRv
-        bm9tYSIsIndvZWlkIjoiMTI1NzgwMjQiLCJjb250ZW50IjoiTWFkcmlkIn0s
-        ImFkbWluMiI6eyJjb2RlIjoiIiwidHlwZSI6IkNvbnRlYSIsIndvZWlkIjoi
-        MTI2MDIwOTAiLCJjb250ZW50IjoiTWFkcmlkIn0sImFkbWluMyI6bnVsbCwi
-        bG9jYWxpdHkxIjp7InR5cGUiOiJDaXR0w6AiLCJ3b2VpZCI6Ijc2NjI3MyIs
-        ImNvbnRlbnQiOiJNYWRyaWQifSwibG9jYWxpdHkyIjpudWxsLCJwb3N0YWwi
-        Om51bGwsImNlbnRyb2lkIjp7ImxhdGl0dWRlIjoiNDAuNDIxNDI5IiwibG9u
-        Z2l0dWRlIjoiLTMuNjcxNjMifSwiYm91bmRpbmdCb3giOnsic291dGhXZXN0
-        Ijp7ImxhdGl0dWRlIjoiNDAuMzI1OTM5IiwibG9uZ2l0dWRlIjoiLTMuNzk4
-        ODcifSwibm9ydGhFYXN0Ijp7ImxhdGl0dWRlIjoiNDAuNTIwMDgxIiwibG9u
-        Z2l0dWRlIjoiLTMuNTM0OSJ9fSwiYXJlYVJhbmsiOiIxIiwicG9wUmFuayI6
-        IjEiLCJ0aW1lem9uZSI6eyJ0eXBlIjoiVGltZSBab25lIiwid29laWQiOiI1
-        NjA0MzY0NCIsImNvbnRlbnQiOiJFdXJvcGUvTWFkcmlkIn19fX19
+        eyJxdWVyeSI6eyJjb3VudCI6MSwiY3JlYXRlZCI6IjIwMTctMDQtMjFUMTQ6MTE6MzRaIiwibGFuZyI6ImVuLVVTIiwicmVzdWx0cyI6eyJwbGFjZSI6eyJsYW5nIjoiaXQtIiwieG1sbnMiOiJodHRwOi8vd2hlcmUueWFob29hcGlzLmNvbS92MS9zY2hlbWEucm5nIiwieWFob28iOiJodHRwOi8vd3d3LnlhaG9vYXBpcy5jb20vdjEvYmFzZS5ybmciLCJ1cmkiOiJodHRwOi8vd2hlcmUueWFob29hcGlzLmNvbS92MS9wbGFjZS83NjYyNzMiLCJ3b2VpZCI6Ijc2NjI3MyIsInBsYWNlVHlwZU5hbWUiOnsiY29kZSI6IjciLCJjb250ZW50IjoiQ2l0dMOgIn0sIm5hbWUiOiJNYWRyaWQiLCJjb3VudHJ5Ijp7ImNvZGUiOiJFUyIsInR5cGUiOiJQYWVzZSIsIndvZWlkIjoiMjM0MjQ5NTAiLCJjb250ZW50IjoiU3BhZ25hIn0sImFkbWluMSI6eyJjb2RlIjoiIiwidHlwZSI6IkNvbXVuaXTDoCBBdXRvbm9tYSIsIndvZWlkIjoiMTI1NzgwMjQiLCJjb250ZW50IjoiTWFkcmlkIn0sImFkbWluMiI6eyJjb2RlIjoiIiwidHlwZSI6IkNvbnRlYSIsIndvZWlkIjoiMTI2MDIwOTAiLCJjb250ZW50IjoiTWFkcmlkIn0sImFkbWluMyI6bnVsbCwibG9jYWxpdHkxIjp7InR5cGUiOiJDaXR0w6AiLCJ3b2VpZCI6Ijc2NjI3MyIsImNvbnRlbnQiOiJNYWRyaWQifSwibG9jYWxpdHkyIjpudWxsLCJwb3N0YWwiOm51bGwsImNlbnRyb2lkIjp7ImxhdGl0dWRlIjoiNDAuNDIxNDI5IiwibG9uZ2l0dWRlIjoiLTMuNjcxNjMifSwiYm91bmRpbmdCb3giOnsic291dGhXZXN0Ijp7ImxhdGl0dWRlIjoiNDAuMzI1OTM5IiwibG9uZ2l0dWRlIjoiLTMuNzk4ODcifSwibm9ydGhFYXN0Ijp7ImxhdGl0dWRlIjoiNDAuNTIwMDgxIiwibG9uZ2l0dWRlIjoiLTMuNTM0OSJ9fSwiYXJlYVJhbmsiOiIxIiwicG9wUmFuayI6IjEiLCJ0aW1lem9uZSI6eyJ0eXBlIjoiVGltZSBab25lIiwid29laWQiOiI1NjA0MzY0NCIsImNvbnRlbnQiOiJFdXJvcGUvTWFkcmlkIn19fX19
     http_version: 
-  recorded_at: Sat, 24 Sep 2016 01:05:28 GMT
+  recorded_at: Fri, 21 Apr 2017 14:11:34 GMT
 recorded_with: VCR 3.0.3

@@ -12,7 +12,7 @@ http_interactions:
       Accept-Encoding:
       - gzip, deflate
       User-Agent:
-      - rest-client/2.0.0 (linux-gnu x86_64) ruby/2.3.1p112
+      - rest-client/2.0.1 (linux-gnu x86_64) ruby/2.4.1p111
       Host:
       - query.yahooapis.com
   response:
@@ -21,32 +21,30 @@ http_interactions:
       message: OK
     headers:
       X-Yql-Host:
-      - prod_bf1_1;paas.yql;queryyahooapiscomproductionbf1;a25f7b76-81e1-11e6-a7b2-d4ae5297450a
+      - prod_bf1_1;paas.yql;queryyahooapiscomproductionbf1;7f22e315-259f-11e7-b972-d4ae52974741
       X-Content-Type-Options:
       - nosniff
       Access-Control-Allow-Origin:
       - "*"
       Content-Type:
-      - application/json; charset=UTF-8
+      - application/json;charset=utf-8
       Cache-Control:
       - no-cache
       Date:
-      - Sat, 24 Sep 2016 01:06:00 GMT
+      - Fri, 21 Apr 2017 14:11:53 GMT
       Age:
       - '0'
-      Via:
-      - http/1.1 a19.ue.bf1.yahoo.net (ApacheTrafficServer [cMsSf ])
-      Server:
-      - ATS
-      Y-Trace:
-      - BAEAQAAAAACva9RrtxJlwgAAAAAAAAAAs2PHSKhNWQYAAAAAAAAAAAAFPTZ_fkpvAAU9Nn9.Zow6rV.qAAAAAA--
       Transfer-Encoding:
       - chunked
       Connection:
       - keep-alive
+      Via:
+      - http/1.1 a26.ue.bf1.yahoo.net (ApacheTrafficServer [cMsSf ])
+      Server:
+      - ATS
     body:
       encoding: UTF-8
-      string: '{"query":{"count":0,"created":"2016-09-24T01:06:00Z","lang":"en-US","results":null}}'
+      string: '{"query":{"count":0,"created":"2017-04-21T14:11:53Z","lang":"en-US","results":null}}'
     http_version: 
-  recorded_at: Sat, 24 Sep 2016 01:06:00 GMT
+  recorded_at: Fri, 21 Apr 2017 14:11:53 GMT
 recorded_with: VCR 3.0.3

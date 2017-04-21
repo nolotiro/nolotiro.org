@@ -39,9 +39,9 @@ class ChoosingLocationTest < ActionDispatch::IntegrationTest
   end
 
   it 'chooses between locations matching name' do
-    mocking_yahoo_woeid_similar('tenerife') do
-      choose_location('tenerife')
+    mocking_yahoo_woeid_similar('tenerife') { choose_location('tenerife') }
 
+    mocking_yahoo_woeid_info(773_692) do
       select 'Santa Cruz de Tenerife, Islas Canarias, España (0 anuncios)'
       click_button 'Elige tu ubicación'
 

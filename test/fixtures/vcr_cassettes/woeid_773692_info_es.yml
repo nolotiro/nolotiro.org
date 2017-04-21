@@ -1,0 +1,51 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://query.yahooapis.com/v1/public/yql?format=json&q=select%20*%20from%20geo.places%20where%20woeid%20=%20773692%20AND%20lang%20=%20%27es%27
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.1 (linux-gnu x86_64) ruby/2.4.1p111
+      Host:
+      - query.yahooapis.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Yql-Host:
+      - prod_bf1_1;paas.yql;queryyahooapiscomproductionbf1;1c755079-18ca-11e7-a80f-d4ae52974741
+      X-Content-Type-Options:
+      - nosniff
+      Access-Control-Allow-Origin:
+      - "*"
+      Content-Type:
+      - application/json;charset=utf-8
+      Cache-Control:
+      - no-cache
+      Date:
+      - Fri, 21 Apr 2017 14:10:58 GMT
+      Age:
+      - '0'
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Via:
+      - http/1.1 a26.ue.bf1.yahoo.net (ApacheTrafficServer [cMsSf ])
+      Server:
+      - ATS
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJxdWVyeSI6eyJjb3VudCI6MSwiY3JlYXRlZCI6IjIwMTctMDQtMjFUMTQ6MTA6NThaIiwibGFuZyI6ImVuLVVTIiwicmVzdWx0cyI6eyJwbGFjZSI6eyJsYW5nIjoiZXMtIiwieG1sbnMiOiJodHRwOi8vd2hlcmUueWFob29hcGlzLmNvbS92MS9zY2hlbWEucm5nIiwieWFob28iOiJodHRwOi8vd3d3LnlhaG9vYXBpcy5jb20vdjEvYmFzZS5ybmciLCJ1cmkiOiJodHRwOi8vd2hlcmUueWFob29hcGlzLmNvbS92MS9wbGFjZS83NzM2OTIiLCJ3b2VpZCI6Ijc3MzY5MiIsInBsYWNlVHlwZU5hbWUiOnsiY29kZSI6IjciLCJjb250ZW50IjoiUHVlYmxvIn0sIm5hbWUiOiJTYW50YSBDcnV6IGRlIFRlbmVyaWZlIiwiY291bnRyeSI6eyJjb2RlIjoiRVMiLCJ0eXBlIjoiUGHDrXMiLCJ3b2VpZCI6IjIzNDI0OTUwIiwiY29udGVudCI6IkVzcGHDsWEifSwiYWRtaW4xIjp7ImNvZGUiOiIiLCJ0eXBlIjoiQ29tdW5pZGFkIEF1dMOzbm9tYSIsIndvZWlkIjoiMTI1NzgwMzEiLCJjb250ZW50IjoiSXNsYXMgQ2FuYXJpYXMifSwiYWRtaW4yIjp7ImNvZGUiOiIiLCJ0eXBlIjoiQ29uZGFkbyIsIndvZWlkIjoiMTI2MDIxMDkiLCJjb250ZW50IjoiU2FudGEgQ3J1eiBkZSBUZW5lcmlmZSJ9LCJhZG1pbjMiOm51bGwsImxvY2FsaXR5MSI6eyJ0eXBlIjoiUHVlYmxvIiwid29laWQiOiI3NzM2OTIiLCJjb250ZW50IjoiU2FudGEgQ3J1eiBkZSBUZW5lcmlmZSJ9LCJsb2NhbGl0eTIiOm51bGwsInBvc3RhbCI6bnVsbCwiY2VudHJvaWQiOnsibGF0aXR1ZGUiOiIyOC40NjE2MyIsImxvbmdpdHVkZSI6Ii0xNi4yNjcwNTkifSwiYm91bmRpbmdCb3giOnsic291dGhXZXN0Ijp7ImxhdGl0dWRlIjoiMjguNDM4MDgiLCJsb25naXR1ZGUiOiItMTYuMjkxOTI5In0sIm5vcnRoRWFzdCI6eyJsYXRpdHVkZSI6IjI4LjQ4Nzk0OSIsImxvbmdpdHVkZSI6Ii0xNi4yMzU1OSJ9fSwiYXJlYVJhbmsiOiIxIiwicG9wUmFuayI6IjEiLCJ0aW1lem9uZSI6eyJ0eXBlIjoiVGltZSBab25lIiwid29laWQiOiIyODM1MDg3MCIsImNvbnRlbnQiOiJBdGxhbnRpYy9DYW5hcnkifX19fX0=
+    http_version: 
+  recorded_at: Fri, 21 Apr 2017 14:10:58 GMT
+recorded_with: VCR 3.0.3

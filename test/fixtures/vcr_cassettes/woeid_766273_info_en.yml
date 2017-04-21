@@ -12,7 +12,7 @@ http_interactions:
       Accept-Encoding:
       - gzip, deflate
       User-Agent:
-      - rest-client/2.0.0 (linux-gnu x86_64) ruby/2.3.1p112
+      - rest-client/2.0.1 (linux-gnu x86_64) ruby/2.4.1p111
       Host:
       - query.yahooapis.com
   response:
@@ -21,30 +21,32 @@ http_interactions:
       message: OK
     headers:
       X-Yql-Host:
-      - prod_bf1_1;paas.yql;queryyahooapiscomproductionbf1;a25ff0a8-81e1-11e6-a7b2-d4ae5297450a
+      - prod_bf1_1;paas.yql;queryyahooapiscomproductionbf1;490e83ae-18d8-11e7-a80f-d4ae52974741
       X-Content-Type-Options:
       - nosniff
       Access-Control-Allow-Origin:
       - "*"
       Content-Type:
-      - application/json; charset=UTF-8
+      - application/json;charset=utf-8
       Cache-Control:
       - no-cache
       Date:
-      - Sat, 24 Sep 2016 01:05:29 GMT
+      - Fri, 21 Apr 2017 14:11:35 GMT
       Age:
       - '0'
-      Server:
-      - ATS
       Transfer-Encoding:
       - chunked
       Connection:
       - keep-alive
+      Via:
+      - http/1.1 a32.ue.bf1.yahoo.net (ApacheTrafficServer [cMsSf ])
+      Server:
+      - ATS
     body:
       encoding: UTF-8
-      string: '{"query":{"count":1,"created":"2016-09-24T01:05:29Z","lang":"en-US","results":{"place":{"lang":"en-","xmlns":"http://where.yahooapis.com/v1/schema.rng","yahoo":"http://www.yahooapis.com/v1/base.rng","uri":"http://where.yahooapis.com/v1/place/766273","woeid":"766273","placeTypeName":{"code":"7","content":"Town"},"name":"Madrid","country":{"code":"ES","type":"Country","woeid":"23424950","content":"Spain"},"admin1":{"code":"","type":"Autonomous
+      string: '{"query":{"count":1,"created":"2017-04-21T14:11:35Z","lang":"en-US","results":{"place":{"lang":"en-","xmlns":"http://where.yahooapis.com/v1/schema.rng","yahoo":"http://www.yahooapis.com/v1/base.rng","uri":"http://where.yahooapis.com/v1/place/766273","woeid":"766273","placeTypeName":{"code":"7","content":"Town"},"name":"Madrid","country":{"code":"ES","type":"Country","woeid":"23424950","content":"Spain"},"admin1":{"code":"","type":"Autonomous
         Community","woeid":"12578024","content":"Madrid"},"admin2":{"code":"","type":"Province","woeid":"12602090","content":"Madrid"},"admin3":null,"locality1":{"type":"Town","woeid":"766273","content":"Madrid"},"locality2":null,"postal":null,"centroid":{"latitude":"40.421429","longitude":"-3.67163"},"boundingBox":{"southWest":{"latitude":"40.325939","longitude":"-3.79887"},"northEast":{"latitude":"40.520081","longitude":"-3.5349"}},"areaRank":"1","popRank":"1","timezone":{"type":"Time
         Zone","woeid":"56043644","content":"Europe/Madrid"}}}}}'
     http_version: 
-  recorded_at: Sat, 24 Sep 2016 01:05:29 GMT
+  recorded_at: Fri, 21 Apr 2017 14:11:35 GMT
 recorded_with: VCR 3.0.3
