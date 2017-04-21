@@ -17,7 +17,9 @@ class UnauthenticatedAdListing < ActionDispatch::IntegrationTest
     create(:ad, :want, :in_mad, title: 'wantmad')
 
     with_pagination(1) do
-      VCR.use_cassette('mad_bar_ten_info_es') { super(&block) }
+      VCR.use_cassette('mad_bar_ten_info_es', record: :new_episodes) do
+        super(&block)
+      end
     end
   end
 

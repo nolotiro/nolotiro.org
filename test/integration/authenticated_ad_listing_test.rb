@@ -21,7 +21,9 @@ class AuthenticatedAdListing < ActionDispatch::IntegrationTest
     login_as create(:user, woeid: 766_273)
 
     with_pagination(1) do
-      VCR.use_cassette('mad_bar_ten_info_es') { super(&block) }
+      VCR.use_cassette('mad_bar_ten_info_es', record: :new_episodes) do
+        super(&block)
+      end
     end
 
     logout
