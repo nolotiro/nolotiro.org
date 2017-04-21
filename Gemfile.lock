@@ -459,7 +459,6 @@ DEPENDENCIES
   inherited_resources!
   jbuilder (~> 2.6)
   jquery-rails
-  json (~> 1.8)
   kaminari (= 0.17.0)
   launchy
   localeapp!

@@ -91,7 +91,6 @@ gem 'activeadmin', github: 'activeadmin'
 gem 'inherited_resources', github: 'activeadmin/inherited_resources'
 
 # For Yahoo YQL interaction
-gem 'json', '~> 1.8'
 gem 'rest-client', '~> 2.0'
 
 gem 'bootstrap-sass', '~> 3.3'
