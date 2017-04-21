@@ -333,7 +333,7 @@ ca:
     register: Registra't
     register_here: registra't aquí
     remember_me: Recordar
-    requests: peticiós
+    requests: peticions
     rss_suscribe: Subscriure via RSS
     save_failed: 'Hi ha un problema, revisa això:'
     search:
