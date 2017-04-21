@@ -4,9 +4,9 @@ class ConversationUrlRewriter
   def call(_params, request)
     path = request.fullpath
 
-    if path =~ old_messages_pattern
+    if path.match?(old_messages_pattern)
       path.sub(old_messages_pattern, '\1/conversations')
-    elsif path =~ ancient_new_message_pattern
+    elsif path.match?(ancient_new_message_pattern)
       path.sub(ancient_new_message_pattern,
                '\1/conversations/new?recipient_id=\2&subject=')
     end

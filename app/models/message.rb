@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class Message < ActiveRecord::Base
+class Message < ApplicationRecord
   validates :sender, presence: true, on: :create
   validates :body, presence: true, length: { maximum: 32_000 }
 

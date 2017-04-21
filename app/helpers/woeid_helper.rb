@@ -23,7 +23,7 @@ module WoeidHelper
   end
 
   def self.search_by_name(name)
-    return [] unless name.present?
+    return [] if name.blank?
 
     query = <<-SQL.squish
       select * from geo.places

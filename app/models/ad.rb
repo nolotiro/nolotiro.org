@@ -1,7 +1,7 @@
 # encoding : utf-8
 # frozen_string_literal: true
 
-class Ad < ActiveRecord::Base
+class Ad < ApplicationRecord
   include Censurable
   censors :title
   censors :body
@@ -45,13 +45,13 @@ class Ad < ActiveRecord::Base
   scope :latest, ->(limit) { recent_first.limit(limit) }
 
   scope :by_woeid_code, ->(woeid_code) do
-    return all unless woeid_code.present?
+    return all if woeid_code.blank?
     where(woeid_code: woeid_code)
   end
 
   scope :by_title, ->(query) do
     sanitized_query = query.try(:scrub, '')
-    return all unless sanitized_query.present?
+    return all if sanitized_query.blank?
 
     where('title LIKE ?', "%#{sanitized_query}%")
   end
@@ -66,7 +66,7 @@ class Ad < ActiveRecord::Base
   end
 
   def increment_readed_count!
-    self.class.increment_counter(:readed_count, id)
+    increment!(:readed_count) # rubocop:disable Rails/SkipsModelValidations
   end
 
   def move!

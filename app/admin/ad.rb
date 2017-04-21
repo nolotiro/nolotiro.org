@@ -37,9 +37,9 @@ ActiveAdmin.register Ad do
   filter :body
   filter :user_username, as: :string, label: I18n.t('nlt.username')
   filter :woeid_code
-  filter :status, as: :select, collection: [%w(Disponible available),
-                                            %w(Reservado booked),
-                                            %w(Entregado delivered)]
+  filter :status, as: :select, collection: [%w[Disponible available],
+                                            %w[Reservado booked],
+                                            %w[Entregado delivered]]
   filter :published_at
 
   index do

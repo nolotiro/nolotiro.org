@@ -2,7 +2,7 @@
 
 require 'test_helper'
 
-class CensurableTestPost < ActiveRecord::Base
+class CensurableTestPost < ApplicationRecord
   include Censurable
   censors :title
 end

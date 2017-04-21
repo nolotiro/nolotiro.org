@@ -3,8 +3,8 @@
 class AdsController < ApplicationController
   include StringUtils
 
-  before_action :set_ad, except: [:new, :create, :index]
-  before_action :authenticate_user!, except: [:index, :legacy_show, :show]
+  before_action :set_ad, except: %i[new create index]
+  before_action :authenticate_user!, except: %i[index legacy_show show]
 
   def new
     if current_user.woeid.nil?
@@ -117,7 +117,7 @@ class AdsController < ApplicationController
   end
 
   def ad_update_whitelist
-    [:title, :body, :comments_enabled, :image]
+    %i[title body comments_enabled image]
   end
 
   def ad_params

@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class User < ActiveRecord::Base
+class User < ApplicationRecord
   prepend Baneable
   include Statable
 
@@ -60,11 +60,9 @@ class User < ActiveRecord::Base
 
   validates :password, length: { in: 5..128 }, allow_blank: true
 
-  # Include default devise modules. Others available are:
-  # :timeoutable and :omniauthable
   devise :confirmable, :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :lockable,
-         :omniauthable, omniauth_providers: [:facebook, :google]
+         :omniauthable, omniauth_providers: %i[facebook google]
 
   scope :top_overall, -> { build_rank(Ad, 'top-overall') }
   scope :top_last_week, -> { build_rank(Ad.last_week, 'top-last-week') }

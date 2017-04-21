@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class Dismissal < ActiveRecord::Base
+class Dismissal < ApplicationRecord
   belongs_to :announcement
   belongs_to :user
 end

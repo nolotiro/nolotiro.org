@@ -3,7 +3,7 @@
 #
 # Blockings between users
 #
-class Blocking < ActiveRecord::Base
+class Blocking < ApplicationRecord
   belongs_to :blocker, class_name: 'User'
   belongs_to :blocked, class_name: 'User'
 

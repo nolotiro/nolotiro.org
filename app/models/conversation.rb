@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class Conversation < ActiveRecord::Base
+class Conversation < ApplicationRecord
   validates :subject, presence: true, length: { maximum: 255 }
 
   has_many :messages, dependent: :destroy

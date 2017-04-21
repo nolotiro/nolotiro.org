@@ -7,7 +7,7 @@ module Geoplanet
     end
 
     def local_base_path
-      File.join(Rails.root, 'vendor', 'geoplanet')
+      Rails.root.join('vendor', 'geoplanet')
     end
 
     def compressed_url
