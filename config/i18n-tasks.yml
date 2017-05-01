@@ -22,8 +22,8 @@ search:
 # Consider these keys used
 #
 ignore_unused:
-- errors.*
-- 'active{model,record}.{attributes,models}.*'
-- devise.*
-- recaptcha.errors.*
-- '{time,date}.formats.active_admin'
+  - errors.*
+  - 'active{model,record}.{attributes,models}.*'
+  - devise.*
+  - recaptcha.errors.*
+  - '{time,date}.formats.active_admin'
