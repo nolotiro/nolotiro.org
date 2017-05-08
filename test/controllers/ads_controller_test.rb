@@ -16,7 +16,6 @@ class AdsControllerTest < ActionController::TestCase
   test 'should not get new if not signed in' do
     get :new
 
-    assert_response :redirect
     assert_redirected_to new_user_session_url
   end
 
@@ -69,7 +68,6 @@ class AdsControllerTest < ActionController::TestCase
     mocking_yahoo_woeid_info(@ad.woeid_code) do
       get :legacy_show, params: { id: @ad.id }
 
-      assert_response :redirect
       assert_redirected_to adslug_path(@ad, slug: @ad.slug)
     end
   end
@@ -81,7 +79,6 @@ class AdsControllerTest < ActionController::TestCase
     mocking_yahoo_woeid_info(@ad.woeid_code) do
       get :show, params: { id: @ad.id, slug: old_slug }
 
-      assert_response :redirect
       assert_redirected_to adslug_path(@ad, slug: @ad.slug)
     end
   end
@@ -91,7 +88,6 @@ class AdsControllerTest < ActionController::TestCase
     sign_in @user
     get :edit, params: { id: @ad }
 
-    assert_response :redirect
     assert_redirected_to root_path
   end
 
