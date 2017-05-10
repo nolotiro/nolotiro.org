@@ -17,7 +17,7 @@ class RequestGeolocatorTest < ActionView::TestCase
     end
   end
 
-  test "does not suggests a location unless it's city-specific" do
+  it "does not suggest a location unless it's city-specific" do
     assert_nil \
       RequestGeolocator.new(ip_from_brazil_but_not_a_specific_city).suggest
   end

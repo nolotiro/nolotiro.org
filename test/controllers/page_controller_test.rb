@@ -5,32 +5,32 @@ require 'test_helper'
 class PageControllerTest < ActionController::TestCase
   include Devise::Test::ControllerHelpers
 
-  it 'should get faqs' do
+  it 'gets faqs' do
     get :faqs
     assert_response :success
   end
 
-  it 'should get rules' do
+  it 'gets rules' do
     get :rules
     assert_response :success
   end
 
-  it 'should get about' do
+  it 'gets about' do
     get :about
     assert_response :success
   end
 
-  it 'should get privacy' do
+  it 'gets privacy' do
     get :privacy
     assert_response :success
   end
 
-  it 'should get translate' do
+  it 'gets translate' do
     get :translate
     assert_response :success
   end
 
-  it 'should get legal' do
+  it 'gets legal' do
     get :legal
     assert_response :success
   end
