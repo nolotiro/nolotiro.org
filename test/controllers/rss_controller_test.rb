@@ -7,19 +7,19 @@ class RssControllerTest < ActionController::TestCase
     @ad = create(:ad)
   end
 
-  test 'should get the feed for a WOEID' do
+  it 'should get the feed for a WOEID' do
     get :feed, params: { woeid: @ad.woeid_code, type: 'give', format: 'rss' }
 
     assert_response :success
   end
 
-  test 'should get the feed for a WOEID/give/available' do
+  it 'should get the feed for a WOEID/give/available' do
     get :feed, params: { woeid: @ad.woeid_code, type: 'give', format: 'rss' }
 
     assert_response :success
   end
 
-  test 'should get the feed for a WOEID/give/booked' do
+  it 'should get the feed for a WOEID/give/booked' do
     get :feed,
         params: {
           woeid: @ad.woeid_code, type: 'give', status: 'booked', format: 'rss'
@@ -28,7 +28,7 @@ class RssControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test 'should get the feed for a WOEID/give/delivered' do
+  it 'should get the feed for a WOEID/give/delivered' do
     get :feed,
         params: {
           woeid: @ad.woeid_code, type: 'give', status: 'delivered', format: 'rss'
@@ -37,7 +37,7 @@ class RssControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test 'should get the feed for a WOEID/want' do
+  it 'should get the feed for a WOEID/want' do
     get :feed, params: { woeid: @ad.woeid_code, type: 'want', format: 'rss' }
 
     assert_response :success

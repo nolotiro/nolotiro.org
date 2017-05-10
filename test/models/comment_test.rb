@@ -3,7 +3,7 @@
 require 'test_helper'
 
 class CommentTest < ActiveSupport::TestCase
-  test 'comment requires everything' do
+  it 'comment requires everything' do
     c = Comment.new
     c.valid?
 
@@ -13,7 +13,7 @@ class CommentTest < ActiveSupport::TestCase
     assert c.errors[:ip].include?('no puede estar en blanco')
   end
 
-  test 'comment title escapes privacy data' do
+  it 'comment title escapes privacy data' do
     text = 'contactar por email example@example.com, o whatsapp al 666666666'
 
     expected_text = <<-TXT.squish

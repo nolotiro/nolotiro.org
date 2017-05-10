@@ -7,7 +7,7 @@ class UserBlockingScopesTest < ActiveSupport::TestCase
     @neutral, @blocker, @blocked = create_list(:user, 3)
   end
 
-  test '.whitelisting' do
+  it '.whitelisting' do
     create(:blocking, blocker: @blocker, blocked: @blocked)
     assert_equal [@neutral, @blocked], User.whitelisting(@blocked)
 

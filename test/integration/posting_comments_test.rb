@@ -9,13 +9,13 @@ class PostingCommentsTest < ActionDispatch::IntegrationTest
 
   before { @ad = create(:ad, comments_enabled: true) }
 
-  test 'users need to login before posting a comment' do
+  it 'users need to login before posting a comment' do
     visit_ad_page(@ad)
 
     refute_selector '.comments > form'
   end
 
-  test 'comments can be posted by logged in users' do
+  it 'comments can be posted by logged in users' do
     login_as @ad.user
     visit_ad_page(@ad)
     fill_in 'Tu comentario', with: 'No tiene ruedas'
@@ -25,7 +25,7 @@ class PostingCommentsTest < ActionDispatch::IntegrationTest
     logout
   end
 
-  test 'comments from spammers are not listed' do
+  it 'comments from spammers are not listed' do
     comment = create(:comment, ad: @ad, body: 'Tiene ruedas?')
     comment.user.ban!
     visit_ad_page(@ad)
@@ -33,7 +33,7 @@ class PostingCommentsTest < ActionDispatch::IntegrationTest
     assert_no_selector '.comment', text: 'Tiene ruedas?'
   end
 
-  test 'comments are displayed oldest to newest' do
+  it 'comments are displayed oldest to newest' do
     create(:comment, ad: @ad, body: 'Araña?', created_at: 12.days.ago)
     create(:comment, ad: @ad, body: 'No, gato', created_at: 1.minute.ago)
 

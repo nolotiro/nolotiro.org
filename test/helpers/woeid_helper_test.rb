@@ -8,7 +8,7 @@ class WoeidHelperTest < ActionView::TestCase
 
   after { Rails.cache.clear }
 
-  test 'converts a WOEID to a place name in the given format' do
+  it 'converts a WOEID to a place name in the given format' do
     mocking_yahoo_woeid_info(766_273) do
       location = WoeidHelper.convert_woeid_name(766_273)
       assert_equal('Madrid, Madrid, España', location[:full])
@@ -16,7 +16,7 @@ class WoeidHelperTest < ActionView::TestCase
     end
   end
 
-  test 'suggests cities with similar names' do
+  it 'suggests cities with similar names' do
     mocking_yahoo_woeid_similar('tenerife') do
       actual = WoeidHelper.search_by_name('tenerife')
       options = [
