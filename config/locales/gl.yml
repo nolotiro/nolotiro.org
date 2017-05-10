@@ -328,9 +328,6 @@ gl:
     please_fill_to_become_member: Por favor, enche este formulario para facer membro do nolotiro
     policy_agreement_html: Ao enviar este formulario, vostede acepta que leu, entendeu e está feliz co noso %{tos} e %{privacy}.
     privacy: política de privacidade
-    privacy_page:
-      body_html: 
-      title: Política de privacidade
     private_info_hidden: información privada oculta
     profile: perfil
     profile_actions:
