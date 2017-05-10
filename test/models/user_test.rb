@@ -31,7 +31,7 @@ class UserTest < ActiveSupport::TestCase
     assert_equal false, @user.banned?
   end
 
-  test 'requires confirmation for new users' do
+  it 'requires confirmation for new users' do
     user = create(:non_confirmed_user)
     assert_equal false, user.active_for_authentication?
   end

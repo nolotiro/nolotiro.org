@@ -9,7 +9,7 @@ module Api
 
     setup { @ad = create(:ad, woeid_code: 766_273) }
 
-    test 'should get woeid list on api v1' do
+    it 'should get woeid list on api v1' do
       mocking_yahoo_woeid_info(766_273) do
         get :woeid_list, format: 'json'
         body = JSON.parse(@response.body)
@@ -25,7 +25,7 @@ module Api
       end
     end
 
-    test 'should get ad show on api v1' do
+    it 'should get ad show on api v1' do
       get :ad_show, params: { format: 'json', id: @ad }
       body = JSON.parse(@response.body)
 
@@ -34,7 +34,7 @@ module Api
       assert_response :success
     end
 
-    test 'should get woeid show on a WOEID on api v1' do
+    it 'should get woeid show on a WOEID on api v1' do
       mocking_yahoo_woeid_info(766_273) do
         get :woeid_show, params: { format: 'json', type: 'give', id: 766_273 }
         body = JSON.parse(@response.body)

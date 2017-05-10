@@ -12,13 +12,13 @@ class AdsControllerTest < ActionController::TestCase
     @admin = create(:admin)
   end
 
-  test 'should not get new if not signed in' do
+  it 'should not get new if not signed in' do
     get :new
 
     assert_redirected_to new_user_session_url
   end
 
-  test 'should get new if signed in' do
+  it 'should get new if signed in' do
     mocking_yahoo_woeid_info(@user.woeid) do
       sign_in @user
       get :new
@@ -27,19 +27,19 @@ class AdsControllerTest < ActionController::TestCase
     end
   end
 
-  test 'should not create ad if not signed in' do
+  it 'should not create ad if not signed in' do
     assert_difference('Ad.count', 0) { post :create, params: test_ad_params }
     assert_redirected_to new_user_session_url
   end
 
-  test 'should create ad if logged in' do
+  it 'should create ad if logged in' do
     sign_in @user
 
     assert_difference('Ad.count', 1) { post :create, params: test_ad_params }
     assert_redirected_to adslug_path(Ad.first.id, slug: 'regalo-ferrari')
   end
 
-  test 'should show ad' do
+  it 'should show ad' do
     @ad = create(:ad)
 
     mocking_yahoo_woeid_info(@ad.woeid_code) do
@@ -49,7 +49,7 @@ class AdsControllerTest < ActionController::TestCase
     end
   end
 
-  test 'redirects to new slugged URL after title changes' do
+  it 'redirects to new slugged URL after title changes' do
     @ad = create(:ad, title: 'My newww title')
     @ad.update!(title: 'My new title')
 
@@ -60,7 +60,7 @@ class AdsControllerTest < ActionController::TestCase
     end
   end
 
-  test 'should not edit any ad as normal user' do
+  it 'should not edit any ad as normal user' do
     @ad = create(:ad, user_owner: @admin.id)
     sign_in @user
     get :edit, params: { id: @ad }
@@ -68,7 +68,7 @@ class AdsControllerTest < ActionController::TestCase
     assert_redirected_to root_path
   end
 
-  test 'should edit my own ad as normal user' do
+  it 'should edit my own ad as normal user' do
     @ad = create(:ad, user_owner: @user.id)
     sign_in @user
     get :edit, params: { id: @ad }
@@ -76,7 +76,7 @@ class AdsControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test 'should get edit as admin user' do
+  it 'should get edit as admin user' do
     @ad = create(:ad)
     sign_in @admin
     get :edit, params: { id: @ad }
@@ -84,7 +84,7 @@ class AdsControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test 'should not update other user ad if normal user' do
+  it 'should not update other user ad if normal user' do
     @ad = create(:ad, user_owner: @admin.id)
     sign_in @user
     patch :update,
@@ -94,7 +94,7 @@ class AdsControllerTest < ActionController::TestCase
     assert_redirected_to root_url
   end
 
-  test 'should update own ads as normal user' do
+  it 'should update own ads as normal user' do
     @ad = create(:ad, user_owner: @user.id)
     sign_in @user
 
@@ -107,7 +107,7 @@ class AdsControllerTest < ActionController::TestCase
     assert_equal body, @ad.reload.body
   end
 
-  test 'should update any ad as admin' do
+  it 'should update any ad as admin' do
     @ad = create(:ad)
     sign_in @admin
     patch :update,
@@ -117,13 +117,13 @@ class AdsControllerTest < ActionController::TestCase
     assert_redirected_to adslug_path(@ad, slug: @ad.slug)
   end
 
-  test 'should not destroy ad as anonymous' do
+  it 'should not destroy ad as anonymous' do
     @ad = create(:ad)
     assert_difference('Ad.count', 0) { delete :destroy, params: { id: @ad } }
     assert_redirected_to root_path
   end
 
-  test 'should not destroy non-owned ads as normal user' do
+  it 'should not destroy non-owned ads as normal user' do
     @ad = create(:ad)
     sign_in @user
 

@@ -5,13 +5,13 @@ require 'test_helper'
 class ContactControllerTest < ActionController::TestCase
   include Devise::Test::ControllerHelpers
 
-  test 'should get contact form' do
+  it 'should get contact form' do
     get :new
 
     assert_response :success
   end
 
-  test 'should verify recaptcha in contact form' do
+  it 'should verify recaptcha in contact form' do
     post :create,
          params: {
            contact: { email: 'hola@mundo.com', message: 'hola mundo. hola mundo. hola mundo. hola mundo. hola mundo. hola mundo. hola mundo.' }
