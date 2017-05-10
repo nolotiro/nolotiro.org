@@ -11,7 +11,7 @@ class WoeidControllerTest < ActionController::TestCase
     @ad = create(:ad)
   end
 
-  it 'should get listall and give (available, delivered, booked)' do
+  it 'gets listall and give (available, delivered, booked)' do
     mocking_yahoo_woeid_info(@ad.woeid_code) do
       get :show, params: { type: 'give', status: 'available' }
       assert_response :success
@@ -24,7 +24,7 @@ class WoeidControllerTest < ActionController::TestCase
     end
   end
 
-  it 'should get WOEID and give (available, delivered, booked)' do
+  it 'gets WOEID and give (available, delivered, booked)' do
     mocking_yahoo_woeid_info(@ad.woeid_code) do
       get :show, params: { type: 'give', status: 'available', id: @ad.woeid_code }
       assert_response :success
@@ -35,7 +35,7 @@ class WoeidControllerTest < ActionController::TestCase
     end
   end
 
-  it 'should get WOEID and want' do
+  it 'gets WOEID and want' do
     mocking_yahoo_woeid_info(@ad.woeid_code) do
       get :show, params: { type: 'want', id: @ad.woeid_code }
       assert_response :success

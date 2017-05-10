@@ -36,37 +36,37 @@ class UserTest < ActiveSupport::TestCase
     assert_equal false, user.active_for_authentication?
   end
 
-  it 'associated ads are deleted when user is deleted' do
+  it 'deletest associated ads when user is deleted' do
     create(:ad, user: @user)
 
     assert_difference(-> { Ad.count }, -1) { @user.destroy }
   end
 
-  it 'associated comments are deleted when user is deleted' do
+  it 'deletes associated comments when user is deleted' do
     create(:comment, user: @user)
 
     assert_difference(-> { Comment.count }, -1) { @user.destroy }
   end
 
-  it 'associated blockings are deleted when user is deleted' do
+  it 'deletes associated blockings when user is deleted' do
     create(:blocking, blocker: @user)
 
     assert_difference(-> { Blocking.count }, -1) { @user.destroy }
   end
 
-  it 'associated incoming blockings are deleted when user is deleted' do
+  it 'deletest associated incoming blockings when user is deleted' do
     create(:blocking, blocked: @user)
 
     assert_difference(-> { Blocking.count }, -1) { @user.destroy }
   end
 
-  it 'associated friendships are deleted when user is deleted' do
+  it 'deletes associated friendships when user is deleted' do
     create(:friendship, user: @user)
 
     assert_difference(-> { Friendship.count }, -1) { @user.destroy }
   end
 
-  it 'associated incoming friendships are deleted when user is deleted' do
+  it 'deletes associated incoming friendships when user is deleted' do
     create(:friendship, friend: @user)
 
     assert_difference(-> { Friendship.count }, -1) { @user.destroy }
