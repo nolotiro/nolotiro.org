@@ -222,9 +222,7 @@ gl:
     contact: contacto
     contact_form: 
     contact_legend_html: Este formulario é para poñerse en contacto cos xestores de nolotiro. Vostede quere publicar un anuncio? Prema %{new_ad_link}
-    contact_thanks: 'Mensaxe enviada! Grazas por entrar en contacto nolotiro.org
-
-'
+    contact_thanks: 'Mensaxe enviada! Grazas por entrar en contacto nolotiro.org'
     cookie: Usamos cookies para mellorar a súa navegación neste sitio
     create_new_ad: Crear un novo anuncio
     delete_ad: Eliminar anuncio
