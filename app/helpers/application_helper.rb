@@ -14,6 +14,10 @@ module ApplicationHelper
     params[:controller] == 'users' && params['action'] == 'listads'
   end
 
+  def no_advertising_allowed?
+    devise_controller?
+  end
+
   def recaptcha
     recaptcha_tags(display: { theme: 'white' }, ajax: true, hl: I18n.locale)
   end
