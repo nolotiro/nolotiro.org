@@ -8,7 +8,6 @@ class AdsControllerTest < ActionController::TestCase
   include Devise::Test::ControllerHelpers
 
   setup do
-    @ad = create(:ad)
     @user = create(:user)
     @admin = create(:admin)
   end
@@ -16,7 +15,6 @@ class AdsControllerTest < ActionController::TestCase
   test 'should not get new if not signed in' do
     get :new
 
-    assert_response :redirect
     assert_redirected_to new_user_session_url
   end
 
@@ -30,34 +28,20 @@ class AdsControllerTest < ActionController::TestCase
   end
 
   test 'should not create ad if not signed in' do
-    post :create,
-         params: {
-           ad: { body: 'Es una Ferrari de esas rojas, muy linda.',
-                 title: 'Regalo Ferrari',
-                 type: 'give',
-                 woeid_code: '788273' }
-         }
-
+    assert_difference('Ad.count', 0) { post :create, params: test_ad_params }
     assert_redirected_to new_user_session_url
   end
 
   test 'should create ad if logged in' do
     sign_in @user
 
-    assert_difference('Ad.count') do
-      post :create,
-           params: {
-             ad: { body: 'Es una Ferrari de esas rojas, muy linda.',
-                   title: 'Regalo Ferrari',
-                   type: 'give',
-                   woeid_code: '788273' }
-           }
-    end
-
-    assert_redirected_to adslug_path(assigns(:ad), slug: 'regalo-ferrari')
+    assert_difference('Ad.count', 1) { post :create, params: test_ad_params }
+    assert_redirected_to adslug_path(Ad.first.id, slug: 'regalo-ferrari')
   end
 
   test 'should show ad' do
+    @ad = create(:ad)
+
     mocking_yahoo_woeid_info(@ad.woeid_code) do
       get :show, params: { id: @ad.id, slug: @ad.slug }
 
@@ -66,37 +50,36 @@ class AdsControllerTest < ActionController::TestCase
   end
 
   test 'redirects to slugged version from non-slugged one' do
+    @ad = create(:ad)
+
     mocking_yahoo_woeid_info(@ad.woeid_code) do
       get :legacy_show, params: { id: @ad.id }
 
-      assert_response :redirect
       assert_redirected_to adslug_path(@ad, slug: @ad.slug)
     end
   end
 
   test 'redirects to new slugged URL after title changes' do
-    old_slug = @ad.slug
-    @ad.update!(title: 'My new title, mistyped something')
+    @ad = create(:ad, title: 'My newww title')
+    @ad.update!(title: 'My new title')
 
     mocking_yahoo_woeid_info(@ad.woeid_code) do
-      get :show, params: { id: @ad.id, slug: old_slug }
+      get :show, params: { id: @ad.id, slug: 'my-newww-title' }
 
-      assert_response :redirect
-      assert_redirected_to adslug_path(@ad, slug: @ad.slug)
+      assert_redirected_to adslug_path(@ad, slug: 'my-new-title')
     end
   end
 
   test 'should not edit any ad as normal user' do
-    @ad.update!(user_owner: @admin.id)
+    @ad = create(:ad, user_owner: @admin.id)
     sign_in @user
     get :edit, params: { id: @ad }
 
-    assert_response :redirect
     assert_redirected_to root_path
   end
 
   test 'should edit my own ad as normal user' do
-    @ad.update!(user_owner: @user.id)
+    @ad = create(:ad, user_owner: @user.id)
     sign_in @user
     get :edit, params: { id: @ad }
 
@@ -104,6 +87,7 @@ class AdsControllerTest < ActionController::TestCase
   end
 
   test 'should get edit as admin user' do
+    @ad = create(:ad)
     sign_in @admin
     get :edit, params: { id: @ad }
 
@@ -111,7 +95,7 @@ class AdsControllerTest < ActionController::TestCase
   end
 
   test 'should not update other user ad if normal user' do
-    @ad.update!(user_owner: @admin.id)
+    @ad = create(:ad, user_owner: @admin.id)
     sign_in @user
     patch :update,
           params: { id: @ad,
@@ -121,8 +105,8 @@ class AdsControllerTest < ActionController::TestCase
   end
 
   test 'should update own ads as normal user' do
+    @ad = create(:ad, user_owner: @user.id)
     sign_in @user
-    @ad.update!(user_owner: @user.id)
 
     body = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."
     patch :update,
@@ -134,6 +118,7 @@ class AdsControllerTest < ActionController::TestCase
   end
 
   test 'should update any ad as admin' do
+    @ad = create(:ad)
     sign_in @admin
     patch :update,
           params: { id: @ad,
@@ -143,14 +128,29 @@ class AdsControllerTest < ActionController::TestCase
   end
 
   test 'should not destroy ad as anonymous' do
+    @ad = create(:ad)
     assert_difference('Ad.count', 0) { delete :destroy, params: { id: @ad } }
     assert_redirected_to root_path
   end
 
   test 'should not destroy non-owned ads as normal user' do
+    @ad = create(:ad)
     sign_in @user
 
     assert_difference('Ad.count', 0) { delete :destroy, params: { id: @ad } }
     assert_redirected_to root_path
+  end
+
+  private
+
+  def test_ad_params
+    {
+      ad: {
+        body: 'Es una Ferrari de esas rojas, muy linda.',
+        title: 'Regalo Ferrari',
+        type: 'give',
+        woeid_code: '788273'
+      }
+    }
   end
 end
