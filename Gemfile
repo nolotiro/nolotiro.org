@@ -85,7 +85,7 @@ gem 'recaptcha', require: 'recaptcha/rails' # captcha
 # Admin backend.
 # @todo Get rid of this, possibly by completely ditching activeadmin and
 # implementing the console from scratch.
-gem 'activeadmin', github: 'activeadmin'
+gem 'activeadmin', '~> 1.0'
 
 # For Yahoo YQL interaction
 gem 'rest-client', '~> 2.0'
