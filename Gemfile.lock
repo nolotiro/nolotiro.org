@@ -209,6 +209,10 @@ GEM
     kaminari-core (1.0.1)
     launchy (2.4.3)
       addressable (~> 2.3)
+    listen (3.1.5)
+      rb-fsevent (~> 0.9, >= 0.9.4)
+      rb-inotify (~> 0.9, >= 0.9.7)
+      ruby_dep (~> 1.2)
     localeapp (2.1.1)
       gli
       i18n (~> 0.4)
@@ -367,6 +371,7 @@ GEM
     ruby2ruby (2.3.2)
       ruby_parser (~> 3.1)
       sexp_processor (~> 4.6)
+    ruby_dep (1.5.0)
     ruby_parser (3.9.0)
       sexp_processor (~> 4.1)
     rubyzip (1.2.1)
@@ -461,6 +466,7 @@ DEPENDENCIES
   jquery-rails
   kaminari (~> 1.0)
   launchy
+  listen
   localeapp
   maxminddb
   minitest-hooks
