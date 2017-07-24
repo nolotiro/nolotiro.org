@@ -5,9 +5,12 @@ class Message < ApplicationRecord
   validates :body, presence: true, length: { maximum: 32_000 }
 
   belongs_to :conversation
-  belongs_to :sender, class_name: 'User'
+  belongs_to :sender, class_name: 'User', optional: true
 
-  has_many :receipts, dependent: :destroy, foreign_key: :notification_id
+  has_many :receipts,
+           dependent: :destroy,
+           foreign_key: :notification_id,
+           inverse_of: :message
 
   scope :involving, ->(user) do
     joins(:receipts).merge(Receipt.recipient(user).untrashed)
