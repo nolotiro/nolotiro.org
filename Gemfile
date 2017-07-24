@@ -13,7 +13,7 @@ source 'https://rubygems.org'
 
 ruby RUBY_VERSION
 
-gem 'rails', '~> 5.0'
+gem 'rails', '~> 5.1'
 gem 'rails-i18n', '~> 5.0'
 
 gem 'jbuilder', '~> 2.6'
