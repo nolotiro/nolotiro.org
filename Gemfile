@@ -43,7 +43,7 @@ group :test do
 end
 
 group :production, :staging do
-  gem 'airbrake', '~> 4.0' # exception notification
+  gem 'airbrake', '~> 5.0' # exception notification
 
   # @todo Add a performance monitoring tool
 end
