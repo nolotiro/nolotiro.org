@@ -65,11 +65,12 @@
 
     <div class="hide js-cookie-message"><%= t('nlt.cookie') %></div>
 
-    <script>
-      [].forEach.call(document.querySelectorAll('.adsbygoogle'), function(){
-        (adsbygoogle = window.adsbygoogle || []).push({});
-      });
-    </script>
-
+    <% unless no_advertising_allowed? %>
+      <script>
+        [].forEach.call(document.querySelectorAll('.adsbygoogle'), function(){
+          (adsbygoogle = window.adsbygoogle || []).push({});
+        });
+      </script>
+    <% end %>
   </body>
 </html>
