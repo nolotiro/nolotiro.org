@@ -75,8 +75,6 @@ class LegacyRoutingTest < ActionDispatch::IntegrationTest
     assert_routing '/es/page/faqs', controller: 'page', action: 'faqs', locale: 'es'
     assert_routing '/es/page/rules', controller: 'page', action: 'rules', locale: 'es'
     assert_routing '/es/page/translate', controller: 'page', action: 'translate', locale: 'es'
-    get '/es/page/tos'
-    assert_redirected_to 'http://www.example.com/page/privacy'
     assert_routing '/es/page/privacy', controller: 'page', action: 'privacy', locale: 'es'
     assert_routing '/es/page/about', controller: 'page', action: 'about', locale: 'es'
   end
