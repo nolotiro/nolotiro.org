@@ -255,6 +255,19 @@ es:
       question_9: "¿Puedo conseguir una casa, un coche o una moto a través de nolotiro?"
       title: Preguntas frecuentes
     faqs: preguntas frecuentes
+    rule:
+      entry_1: Nolotiro es una web que sirve para deshacernos de los objetos que ya no utilizamos y nos estorban en casa, regalándoselos a otras personas, sin condiciones. Por lo tanto, no se aceptaran el trueque o intercambio de objetos sino solo la donación.
+      entry_2: Asimismo, los anuncios de compra-venta, pidiendo u ofreciendo dinero, o comerciales no están permitidos. Los usuarios autores de dichos anuncios son expulsados y el contenido borrado en cuanto una moderadora los detecta.
+      entry_3: Los anuncios de regalo de casas, coches u otros objetos de similar valor, suelen conllevar estafas, por lo tanto, no están admitidos.
+      entry_4: Por motivos de seguridad, no se admite la donación de medicamentos (caducados o no) o de alimentos caducados.
+      entry_5: 'Los animales no son objetos que se puedan "tirar" o "reciclar" con lo que quedan fuera del ámbito de nolotiro. En caso que no pueda encargarse de ellos, recomendamos recurrir a una protectora de animales.'
+      entry_6: No se permite realizar peticiones de objetos en la sección de regalos y en cuanto sean detectados, se trasladarán a su sección correspondiente o serán borrados.
+      entry_7: No se publicarán comentarios que fomenten el odio o la discriminación por razones raciales, de género, de nacionalidad, de religión o cualquier otra circunstancia personal. Tampoco los que contengan apología de la violencia o se muestren a favor de violaciones de los derechos humanos.
+      entry_8: No se publicarán anuncios que contengan ’spam’ o que direccionen a contenido publicitario.
+      entry_9: Solo se pueden publicar anuncios para regalar objetos o realizar peticiones, no para utilizar la sección de regalos como vía de comunicación con otros usuarios o administradores (comunicar opiniones, acusar a otros usuarios, indicar citas, etc).
+      entry_10: Nolotiro se reserva el derecho de suprimir los anuncios y comentarios generados , de acuerdo a estas normas o si las moderadoras lo estimasen oportuno.
+      title: Normas de uso
+    rules: normas de uso
     footer_explain: 'nolotiro.org es un sitio web donde regalo y busco regalos gratis de segunda mano: muebles, sillas, sofás, bicicletas, ordenadores portátiles, mesas, cocinas, lámparas, camas, ropa, juguetes, cunas o carros para bebes, teléfonos móviles y otras muchas cosas que ya no quieres y ya no necesitas para que las reutilicen otra gente a la que puede servirle o darle nueva vida.'
     forgot_your_password: "¿Has olvidado tu contraseña?"
     friends: Amigos

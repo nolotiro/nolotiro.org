@@ -255,6 +255,19 @@ it:
       question_9: Posso ricevere una casa, una macchina o una moto su nolotiro?
       title: Domande frequenti
     faqs: domande frequenti
+    rule:
+      entry_1: 
+      entry_2: 
+      entry_3: 
+      entry_4: 
+      entry_5: 
+      entry_6: 
+      entry_7: 
+      entry_8: 
+      entry_9: 
+      entry_10: 
+      title: 
+    rules: 
     footer_explain: 'nolotiro.org è un sito dove guardo per i regali dono gratuito e mobili di seconda mano, sedie, divani, biciclette, computer portatili, tavoli, stufe, lampade, letti, vestiti, giocattoli, lettini per bambini o automobili, telefoni cellulari e altri molte cose che si desidera non è più e non hanno più bisogno di fare il riutilizzo altre persone che possono servire o dare nuova vita.'
     forgot_your_password: Hai dimenticato la tua password?
     friends: Amici

@@ -4,6 +4,9 @@ class PageController < ApplicationController
   def faqs
   end
 
+  def rules
+  end
+
   def about
   end
 

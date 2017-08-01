@@ -254,6 +254,19 @@ ca:
       question_9: Puc aconseguir una casa, un cotxe o una moto a través de nolotiro?
       title: Preguntes freqüents
     faqs: preguntes freqüents
+    rule:
+      entry_1: 
+      entry_2: 
+      entry_3: 
+      entry_4: 
+      entry_5: 
+      entry_6: 
+      entry_7: 
+      entry_8: 
+      entry_9: 
+      entry_10: 
+      title: 
+    rules: 
     footer_explain: 'nolotiro.org és un lloc web on regalar i buscar regals de franc de segona mà: mobles, cadires, sofàs, bicicletes, ordinadors portàtils, taules, cuines, llums, llits, roba, joguines, bressols o carros per a nadons, telèfons mòbils i altres moltes coses que ja no vols i no necessites per a que les reutilitzin altra gent a la qual pot servir o donar-li nova vida.'
     forgot_your_password: Ha oblidat la seva contrasenya?
     friends: Amics
