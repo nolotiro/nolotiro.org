@@ -255,6 +255,19 @@ pt:
       question_9: Posso obter uma casa, um carro ou uma moto no nolotiro?
       title: Perguntas frequentes
     faqs: perguntas frequentes
+    rule:
+      entry_1: 
+      entry_2: 
+      entry_3: 
+      entry_4: 
+      entry_5: 
+      entry_6: 
+      entry_7: 
+      entry_8: 
+      entry_9: 
+      entry_10: 
+      title: 
+    rules: 
     footer_explain: 'nolotiro.org é um site onde dou presentes e busco presentes grátis de segunda mão: móveis, cadeiras, sofás, bicicletas, notebooks, mesas, fogões, camas, roupas, brinquedos, berços ou carrinhos de bebe, celulares e muito mais que você já não precisa para que sejam reutilizados por outras pessoas.'
     forgot_your_password: Você esqueceu sua senha?
     friends: Amigos

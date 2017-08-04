@@ -23,7 +23,6 @@ Rails.application.routes.draw do
       root 'woeid#show', defaults: { type: 'give' }
 
       # FIXME: type on ads#create instead of params
-      # FIXME: nolotirov2 legacy - redirect from /es/ad/create
       resources :ads, path: 'ad',
                       path_names: { new: 'create' },
                       except: %i[index show] do
@@ -83,23 +82,13 @@ Rails.application.routes.draw do
         end
       end
 
-      get '/user/edit/id/:id', to: redirect('/es/user/edit'), as: 'user_edit'
       get '/profile/:id',
           to: 'users#profile',
           as: 'profile',
           constraints: { id: %r{[^/]+} }
 
-      # search
-      get '/search', to: redirect(SearchUrlRewriter.new)
-
       # blocking
       resources :blockings, only: %i[create destroy]
-
-      # legacy messaging
-      get '/messages/new', to: redirect(ConversationUrlRewriter.new)
-      get '/messages/:id', to: redirect(ConversationUrlRewriter.new)
-      get '/message/create/id_user_to/:user_id/subject/:subject',
-          to: redirect(ConversationUrlRewriter.new)
 
       # messaging
       resources :conversations do
@@ -119,7 +108,7 @@ Rails.application.routes.draw do
 
       scope '/page' do
         get '/faqs', to: 'page#faqs', as: 'faqs'
-        get '/tos', to: redirect('/page/privacy')
+        get '/rules', to: 'page#rules', as: 'rules'
         get '/about', to: 'page#about', as: 'about'
         get '/privacy', to: 'page#privacy', as: 'privacy'
         get '/legal', to: 'page#legal', as: 'legal'
