@@ -7,7 +7,7 @@
 #
 class PruneOldInvalidMigrations < ActiveRecord::Migration
   def up
-    execute "DELETE FROM schema_migrations WHERE VERSION < '20160803173909'"
+    execute "DELETE FROM schema_migrations WHERE VERSION < '20160816164211'"
   end
 
   def down
