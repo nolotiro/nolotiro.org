@@ -5,7 +5,7 @@
 # schema of the DB. For now, it just prunes migration older that itself from
 # DB.
 #
-class PruneOldInvalidMigrations < ActiveRecord::Migration
+class PruneOldInvalidMigrations < ActiveRecord::Migration[4.2]
   def up
     execute "DELETE FROM schema_migrations WHERE VERSION < '20160816164211'"
   end

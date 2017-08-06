@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class CreateGeoTables < ActiveRecord::Migration
+class CreateGeoTables < ActiveRecord::Migration[4.2]
   def change
     create_table :countries do |t|
       t.string :iso, limit: 2, null: false

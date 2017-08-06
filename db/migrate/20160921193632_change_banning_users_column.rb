@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class ChangeBanningUsersColumn < ActiveRecord::Migration
+class ChangeBanningUsersColumn < ActiveRecord::Migration[4.2]
   def up
     add_column :users, :banned_at, :datetime
 
