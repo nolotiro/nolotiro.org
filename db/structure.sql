@@ -1,10 +1,3 @@
---
--- PostgreSQL database dump
---
-
--- Dumped from database version 9.6.1
--- Dumped by pg_dump version 9.6.1
-
 SET statement_timeout = 0;
 SET lock_timeout = 0;
 SET idle_in_transaction_session_timeout = 0;
@@ -125,6 +118,18 @@ CREATE SEQUENCE announcements_id_seq
 --
 
 ALTER SEQUENCE announcements_id_seq OWNED BY announcements.id;
+
+
+--
+-- Name: ar_internal_metadata; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE ar_internal_metadata (
+    key character varying NOT NULL,
+    value character varying,
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL
+);
 
 
 --
@@ -642,6 +647,14 @@ ALTER TABLE ONLY users ALTER COLUMN id SET DEFAULT nextval('users_id_seq'::regcl
 
 
 --
+-- Name: ar_internal_metadata ar_internal_metadata_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY ar_internal_metadata
+    ADD CONSTRAINT ar_internal_metadata_pkey PRIMARY KEY (key);
+
+
+--
 -- Name: countries countries_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -1059,7 +1072,7 @@ ALTER TABLE ONLY receipts
 
 SET search_path TO "$user", public;
 
-INSERT INTO schema_migrations (version) VALUES
+INSERT INTO "schema_migrations" (version) VALUES
 ('20160803173909'),
 ('20160803200731'),
 ('20160804192403'),
