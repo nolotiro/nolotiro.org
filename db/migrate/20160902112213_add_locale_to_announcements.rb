@@ -2,6 +2,6 @@
 
 class AddLocaleToAnnouncements < ActiveRecord::Migration[4.2]
   def change
-    add_column :announcements, :locale, :string
+    add_column :announcements, :locale, :string, limit: 255
   end
 end
