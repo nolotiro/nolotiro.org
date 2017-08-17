@@ -2,21 +2,24 @@ connection: &connection
   adapter: postgresql
   username: <%= ENV['NLT_DB_USER'] %>
   password: <%= ENV['NLT_DB_PASS'] %>
-  database: <%= ENV['NLT_DB_NAME'] %>
   timeout: 5000
 
 development:
+  database: nolotirov3_dev
   pool: 5
   <<: *connection
 
 test:
+  database: nolotirov3_test
   pool: 5
   <<: *connection
 
 staging:
+  database: <%= ENV['NLT_DB_NAME'] %>
   pool: 25
   <<: *connection
 
 production:
+  database: <%= ENV['NLT_DB_NAME'] %>
   pool: 25
   <<: *connection

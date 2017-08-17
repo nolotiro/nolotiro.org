@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class AllowNilIpsInAds < ActiveRecord::Migration
+class AllowNilIpsInAds < ActiveRecord::Migration[4.2]
   def up
     change_column_null :ads, :ip, true
     execute "UPDATE ads SET ip = NULL WHERE ip = 'unknown'"
