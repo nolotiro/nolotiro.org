@@ -57,6 +57,29 @@ class UserValidationTest < ActiveSupport::TestCase
     assert_equal 'larryfoster@example.com', user1.email
   end
 
+  test 'handles dot aliases' do
+    create(:user, email: 'gilitofresh@gmail.com')
+    create(:user, email: 'gilitofresh@hotmail.com')
+    create(:user, email: 'gilitofresh@outlook.com')
+
+    assert_not build(:user, email: 'gilito.fresh@gmail.com').valid?
+    assert_not build(:user, email: 'g.ilito.fresh@gmail.com').valid?
+    assert build(:user, email: 'gilito.fresh@hotmail.com').valid?
+    assert build(:user, email: 'g.ilito.fresh@hotmail.com').valid?
+    assert build(:user, email: 'gilito.fresh@outlook.com').valid?
+    assert build(:user, email: 'g.ilito.fresh@outlook.com').valid?
+  end
+
+  test 'handles plus aliases' do
+    create(:user, email: 'gilitofresh@gmail.com')
+    create(:user, email: 'gilitofresh@hotmail.com')
+    create(:user, email: 'gilitofresh@outlook.com')
+
+    assert_not build(:user, email: 'gilitofresh+17@gmail.com').valid?
+    assert_not build(:user, email: 'gilitofresh+17@hotmail.com').valid?
+    assert_not build(:user, email: 'gilitofresh+17@outlook.com').valid?
+  end
+
   test 'has passwords no shorter than 5 characters' do
     user1 = build(:user, password: '1234')
     assert_not user1.valid?
