@@ -10,6 +10,10 @@ class ProfileEditionAndRemovalTest < ActionDispatch::IntegrationTest
                          password: 'topsecret',
                          email: 'terec@example.com')
     login_as(user)
+
+    visit profile_path(user)
+
+    click_link 'editar perfil de usuario'
   end
 
   after { logout }
@@ -37,7 +41,6 @@ class ProfileEditionAndRemovalTest < ActionDispatch::IntegrationTest
   end
 
   it 'allows account deletion' do
-    visit edit_user_registration_path
     click_link 'Cancelar mi cuenta'
 
     assert_text 'Fue grato tenerte con nosotros. Tu cuenta fue cancelada.'
@@ -46,8 +49,6 @@ class ProfileEditionAndRemovalTest < ActionDispatch::IntegrationTest
   private
 
   def submit_form(username: nil, email: nil, password: nil)
-    visit edit_user_registration_path
-
     fill_in('Nombre de usuario', with: username) if username
     fill_in('Correo electrónico', with: email) if email
     fill_in('Contraseña actual', with: password) if password
