@@ -14,7 +14,7 @@
     <% if current_user == user %>
       <li>
         <%= link_to t('nlt.profile_actions.edit'),
-                    edit_user_registration_path(user),
+                    edit_user_registration_path,
                     class: 'world_link' %>
       </li>
     <% elsif blocking %>
