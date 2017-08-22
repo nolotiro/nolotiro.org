@@ -6,6 +6,9 @@
 module Baneable
   def self.prepended(base)
     base.class_eval do
+      before_validation :remove_dot_aliases, if: %i[email_changed? email_allows_dot_aliases?]
+      before_validation :remove_plus_aliases, if: %i[email_changed? email_allows_plus_aliases?]
+
       scope :legitimate, -> { where(banned_at: nil) }
       scope :banned, -> { where.not(banned_at: nil) }
       scope :recent_spammers, -> { where('banned_at >= ?', 3.months.ago) }
@@ -57,5 +60,23 @@ module Baneable
 
   def moderate!
     banned? ? unban! : ban!
+  end
+
+  private
+
+  def email_allows_dot_aliases?
+    email.match?(/@gmail.com\z/)
+  end
+
+  def email_allows_plus_aliases?
+    email.match?(/@(gmail|hotmail|outlook).com\z/)
+  end
+
+  def remove_dot_aliases
+    email.gsub!(/\A([^@]+)/) { |identifier| identifier.delete('.') }
+  end
+
+  def remove_plus_aliases
+    email.gsub!(/\+[^@]+/, '')
   end
 end
