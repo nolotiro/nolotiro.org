@@ -1,9 +1,10 @@
 # frozen_string_literal: true
 
 require 'integration/concerns/messaging'
+require 'integration/concerns/login_helper'
 
 module MessagingTests
-  include Warden::Test::Helpers
+  include LoginHelper
   include Messaging
 
   def setup
@@ -61,8 +62,7 @@ module MessagingTests
     send_message(subject: 'Cosas', body: 'hola, user2')
     assert_text 'Conversación con user2'
 
-    logout
-    login_as @user2
+    relogin_as @user2
 
     visit conversation_path(Conversation.first)
     assert_text 'Conversación con user1'
@@ -129,13 +129,11 @@ module MessagingTests
     click_link 'Borrar conversación'
     assert_no_text 'hola mundo'
 
-    logout
-    login_as @user2
+    relogin_as @user2
     visit conversation_path(Conversation.first)
     send_message(body: 'hombre, tú por aquí')
 
-    logout
-    login_as @user1
+    relogin_as @user1
     visit conversation_path(Conversation.first)
     assert_no_text 'What a nice message!'
   end

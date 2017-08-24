@@ -9,4 +9,9 @@ module LoginHelper
     fill_in 'user_password', with: password
     click_button 'Acceder'
   end
+
+  def relogin_as(user)
+    logout
+    login_as user
+  end
 end
