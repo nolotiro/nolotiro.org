@@ -349,6 +349,7 @@ GEM
       http-cookie (>= 1.0.2, < 2.0)
       mime-types (>= 1.16, < 4.0)
       netrc (~> 0.8)
+    rinku (2.0.2)
     rubocop (0.49.1)
       parallel (~> 1.10)
       parser (>= 2.3.3.1, < 3.0)
@@ -468,6 +469,7 @@ DEPENDENCIES
   record_tag_helper (~> 1.0)
   redis-rails
   rest-client (~> 2.0)
+  rinku (~> 2.0)
   rubocop (= 0.49.1)
   rubyzip
   sass-rails (~> 5.0)
@@ -481,4 +483,4 @@ RUBY VERSION
    ruby 2.4.1p111
 
 BUNDLED WITH
-   1.15.3
+   1.15.4

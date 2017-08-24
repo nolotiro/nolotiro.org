@@ -1,9 +1,10 @@
 # frozen_string_literal: true
 
 require 'integration/concerns/messaging'
+require 'integration/concerns/login_helper'
 
 module MessagingTests
-  include Warden::Test::Helpers
+  include LoginHelper
   include Messaging
 
   def setup
@@ -61,8 +62,7 @@ module MessagingTests
     send_message(subject: 'Cosas', body: 'hola, user2')
     assert_text 'Conversación con user2'
 
-    logout
-    login_as @user2
+    relogin_as @user2
 
     visit conversation_path(Conversation.first)
     assert_text 'Conversación con user1'
@@ -129,14 +129,23 @@ module MessagingTests
     click_link 'Borrar conversación'
     assert_no_text 'hola mundo'
 
-    logout
-    login_as @user2
+    relogin_as @user2
     visit conversation_path(Conversation.first)
     send_message(body: 'hombre, tú por aquí')
 
-    logout
-    login_as @user1
+    relogin_as @user1
     visit conversation_path(Conversation.first)
     assert_no_text 'What a nice message!'
+  end
+
+  def test_include_links_in_messages_only_for_admins
+    send_message(subject: 'hi! <3', body: 'See the FAQs at https://faqs.org')
+    assert_no_selector 'a', text: 'https://faqs.org'
+
+    @user1.update!(role: 1)
+
+    visit new_conversation_path(recipient_id: @user2.id)
+    send_message(subject: 'hi! <3', body: 'See the FAQs at https://faqs.org')
+    assert_selector 'a', text: 'https://faqs.org'
   end
 end

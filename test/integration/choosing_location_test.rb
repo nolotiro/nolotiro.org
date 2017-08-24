@@ -3,10 +3,11 @@
 require 'test_helper'
 require 'support/web_mocking'
 require 'integration/concerns/geo'
+require 'integration/concerns/login_helper'
 
 class ChoosingLocationTest < ActionDispatch::IntegrationTest
   include WebMocking
-  include Warden::Test::Helpers
+  include LoginHelper
   include Geo
 
   it 'redirects there when user logged in and no location set' do
@@ -71,8 +72,7 @@ class ChoosingLocationTest < ActionDispatch::IntegrationTest
 
     mocking_yahoo_woeid_similar('tenerife_unique') do
       choose_location('tenerife, islas canarias')
-      logout
-      login_as user
+      relogin_as user
 
       assert_location_page 'Santa Cruz de Tenerife, Islas Canarias, España'
     end
