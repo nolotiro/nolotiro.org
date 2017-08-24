@@ -19,6 +19,7 @@ gem 'rails-i18n', '~> 5.0'
 gem 'jbuilder', '~> 2.6'
 gem 'jquery-rails'
 gem 'record_tag_helper', '~> 1.0' # for `div_for`
+gem 'rinku', '~> 2.0'
 gem 'uglifier', '>= 1.3.0'
 
 gem 'dotenv-rails', '~> 2.1'

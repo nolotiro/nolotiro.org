@@ -137,4 +137,15 @@ module MessagingTests
     visit conversation_path(Conversation.first)
     assert_no_text 'What a nice message!'
   end
+
+  def test_include_links_in_messages_only_for_admins
+    send_message(subject: 'hi! <3', body: 'See the FAQs at https://faqs.org')
+    assert_no_selector 'a', text: 'https://faqs.org'
+
+    @user1.update!(role: 1)
+
+    visit new_conversation_path(recipient_id: @user2.id)
+    send_message(subject: 'hi! <3', body: 'See the FAQs at https://faqs.org')
+    assert_selector 'a', text: 'https://faqs.org'
+  end
 end

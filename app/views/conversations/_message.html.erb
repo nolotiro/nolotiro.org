@@ -6,7 +6,13 @@
       <div class="message-date">
         <%= time_ago_in_words(message.created_at) %>
       </div>
-      <%= simple_format(message.body) %>
+      <!-- Only for admin until we have better anti-spam measures -->
+      <% if message.sender.admin? %>
+        <%= simple_format(Rinku.auto_link(message.body, :all, 'target="_blank"')) %>
+      <% else %>
+        asfsd
+        <%= simple_format(message.body) %>
+      <% end %>
     </div>
   </div>
 </div>
