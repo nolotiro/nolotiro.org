@@ -10,7 +10,6 @@
       <% if message.sender.admin? %>
         <%= simple_format(Rinku.auto_link(message.body, :all, 'target="_blank"')) %>
       <% else %>
-        asfsd
         <%= simple_format(message.body) %>
       <% end %>
     </div>
