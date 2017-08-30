@@ -62,9 +62,7 @@ module MessagingTests
     send_message(subject: 'Cosas', body: 'hola, user2')
     assert_text 'Conversación con user2'
 
-    relogin_as @user2
-
-    visit conversation_path(Conversation.first)
+    go_to_conversation_as(Conversation.first, @user2)
     assert_text 'Conversación con user1'
   end
 
@@ -129,12 +127,10 @@ module MessagingTests
     click_link 'Borrar conversación'
     assert_no_text 'hola mundo'
 
-    relogin_as @user2
-    visit conversation_path(Conversation.first)
+    go_to_conversation_as(Conversation.first, @user2)
     send_message(body: 'hombre, tú por aquí')
 
-    relogin_as @user1
-    visit conversation_path(Conversation.first)
+    go_to_conversation_as(Conversation.first, @user1)
     assert_no_text 'What a nice message!'
   end
 

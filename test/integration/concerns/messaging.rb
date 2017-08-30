@@ -13,4 +13,9 @@ module Messaging
     fill_in 'body', with: body
     click_button 'Enviar'
   end
+
+  def go_to_conversation_as(conversation, user)
+    relogin_as user
+    visit conversation_path(conversation)
+  end
 end
