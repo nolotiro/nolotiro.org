@@ -7,6 +7,7 @@ Rails.application.configure do
   config.after_initialize do
     Bullet.enable = true
     Bullet.raise = true
+    Bullet.add_whitelist type: :unused_eager_loading, class_name: 'Conversation', association: :recipient
   end
 
   # The test environment is used exclusively to run your application's
