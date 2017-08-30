@@ -83,7 +83,8 @@ module MessagingTests
 
   def test_just_shows_a_special_label_when_the_recipient_is_no_longer_there
     send_message(subject: 'Cosas', body: 'hola, user2')
-    assert_text 'Mensaje enviado'
+    assert_message_sent 'hola, user2'
+
     @user2.destroy
 
     assert_shows_special_label_for_deleted_user
@@ -91,7 +92,8 @@ module MessagingTests
 
   def test_just_shows_a_special_label_when_the_sender_is_no_longer_there
     send_message(subject: 'Cosas', body: 'hola, user2')
-    assert_text 'Mensaje enviado'
+    assert_message_sent 'hola, user2'
+
     @user1.destroy
     go_to_conversation_as(Conversation.last, @user2)
 
