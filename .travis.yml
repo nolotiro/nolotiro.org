@@ -19,6 +19,14 @@ env:
 
 language: ruby
 
+notifications:
+  email:
+    recipients:
+      - hola@nolotiro.org
+
+    on_success: always
+    on_failure: always
+
 rvm:
   - 2.4.1
 
@@ -48,5 +56,6 @@ deploy:
   provider: script
   script: rvm $TRAVIS_RUBY_VERSION do bin/cap production deploy
   skip_cleanup: true
+
   on:
     branch: master
