@@ -18,8 +18,8 @@ module MessagingTests
     visit new_conversation_path(recipient_id: @user2.id)
 
     #
-    # @todo Sommetimes the cookie-bar gets in the middle so we need to dismiss
-    # it first. Investigate why this is happening.
+    # @todo Sometimes the cookie-bar gets in the middle so we need to dismiss it
+    # first. Investigate why this is happening.
     #
     within('#cookie-bar') { click_link 'OK' }
   end
@@ -62,9 +62,7 @@ module MessagingTests
     send_message(subject: 'Cosas', body: 'hola, user2')
     assert_text 'Conversación con user2'
 
-    relogin_as @user2
-
-    visit conversation_path(Conversation.first)
+    go_to_conversation_as(Conversation.first, @user2)
     assert_text 'Conversación con user1'
   end
 
@@ -83,18 +81,23 @@ module MessagingTests
     assert_no_selector 'a', text: 'user2'
   end
 
-  def test_just_shows_a_special_label_when_the_interlocutor_is_no_longer_there
+  def test_just_shows_a_special_label_when_the_recipient_is_no_longer_there
     send_message(subject: 'Cosas', body: 'hola, user2')
-    assert_text 'Mensaje enviado'
+    assert_message_sent 'hola, user2'
+
     @user2.destroy
 
-    visit conversations_path
-    assert_text '[borrado]'
-    assert_no_selector 'a', text: '[borrado]'
+    assert_shows_special_label_for_deleted_user
+  end
 
-    visit conversation_path(Conversation.first)
-    assert_text '[borrado]'
-    assert_no_selector 'a', text: '[borrado]'
+  def test_just_shows_a_special_label_when_the_sender_is_no_longer_there
+    send_message(subject: 'Cosas', body: 'hola, user2')
+    assert_message_sent 'hola, user2'
+
+    @user1.destroy
+    go_to_conversation_as(Conversation.last, @user2)
+
+    assert_shows_special_label_for_deleted_user
   end
 
   def test_messages_another_user
@@ -129,12 +132,10 @@ module MessagingTests
     click_link 'Borrar conversación'
     assert_no_text 'hola mundo'
 
-    relogin_as @user2
-    visit conversation_path(Conversation.first)
+    go_to_conversation_as(Conversation.first, @user2)
     send_message(body: 'hombre, tú por aquí')
 
-    relogin_as @user1
-    visit conversation_path(Conversation.first)
+    go_to_conversation_as(Conversation.first, @user1)
     assert_no_text 'What a nice message!'
   end
 
