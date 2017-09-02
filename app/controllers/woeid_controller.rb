@@ -5,10 +5,6 @@ class WoeidController < ApplicationController
 
   before_action :check_location
 
-  # GET /es/woeid/:id/:type
-  # GET /es/woeid/:id/:type/status/:status
-  # GET /es/ad/listall/ad_type/:type
-  # GET /es/ad/listall/ad_type/:type/status/:status
   def show
     @type = type_scope || 'give'
     @status = status_scope || 'available'

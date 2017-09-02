@@ -4,12 +4,10 @@ class ContactController < ApplicationController
   # TODO: create model for Contact
   # TODO: deliver_later
 
-  # GET /contact
   def new
     @contact = Contact.new
   end
 
-  # POST /contact
   def create
     @contact = Contact.new(params[:contact])
     @contact.email = current_user.email if user_signed_in?

@@ -3,12 +3,9 @@
 class LocationController < ApplicationController
   include StringUtils
 
-  # GET /es/location/change
   def ask
   end
 
-  # POST /es/location/change
-  # GET /es/location/change2?location=:location
   def list
     if unique_location
       save_location unique_location
@@ -17,7 +14,6 @@ class LocationController < ApplicationController
     end
   end
 
-  # POST /es/location/change2
   def change
     if unique_location
       save_location unique_location
