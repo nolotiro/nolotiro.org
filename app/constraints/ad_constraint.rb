@@ -4,12 +4,8 @@
 # Routes constraints for Ad routes
 #
 class AdConstraint
-  include StringUtils
-
   def matches?(request)
     params = request.path_parameters
-
-    return false unless valid_page?(params[:page])
 
     return false unless valid_combination?(params[:type], params[:status])
 
@@ -29,9 +25,5 @@ class AdConstraint
       ['give', 'delivered']
     ].include?([type, status])
     # rubocop:enable Style/WordArray
-  end
-
-  def valid_page?(page)
-    page.nil? || positive_integer?(page)
   end
 end

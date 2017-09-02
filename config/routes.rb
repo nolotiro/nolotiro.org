@@ -29,15 +29,15 @@ Rails.application.routes.draw do
         resources :comments, only: :create
       end
 
-      constraints(AdConstraint.new) do
-        scope '/ad' do
-          get '/:id', to: 'ads#legacy_show'
-          get '/:id/:slug', to: 'ads#show', as: 'adslug'
-          get '/edit/id/:id', to: 'ads#edit', as: 'ads_edit'
-          post '/bump/id/:id', to: 'ads#bump', as: 'ads_bump'
-          post '/change_status/id/:id',
-               to: 'ads#change_status',
-               as: 'ads_change_status'
+      scope '/ad' do
+        get '/:id', to: 'ads#legacy_show'
+        get '/:id/:slug', to: 'ads#show', as: 'adslug'
+        get '/edit/id/:id', to: 'ads#edit', as: 'ads_edit'
+        post '/bump/id/:id', to: 'ads#bump', as: 'ads_bump'
+        post '/change_status/id/:id',
+             to: 'ads#change_status',
+             as: 'ads_change_status'
+        constraints(FullListConstraint.new) do
           get '/listall/ad_type/:type(/status/:status)(/page/:page)',
               to: 'woeid#show',
               as: 'ads_listall'
@@ -46,13 +46,13 @@ Rails.application.routes.draw do
               as: 'listads_user',
               constraints: { id: %r{[^/]+} }
         end
-
-        # locations lists
-        get '/woeid/:id/:type(/status/:status)(/page/:page)',
-            to: 'woeid#show',
-            as: 'ads_woeid',
-            constraints: { id: /\d+/ }
       end
+
+      # locations lists
+      get '/woeid/:id/:type(/status/:status)(/page/:page)',
+          to: 'woeid#show',
+          as: 'ads_woeid',
+          constraints: WoeidListConstraint.new
 
       # location change
       scope '/location' do
