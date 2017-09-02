@@ -11,10 +11,6 @@ class WoeidController < ApplicationController
     @q = params[:q]
     @page = params[:page]
 
-    unless @page.nil? || positive_integer?(@page)
-      raise ActionController::RoutingError, 'Not Found'
-    end
-
     scope = Ad.public_send(@type).by_woeid_code(current_woeid).by_title(@q)
     scope = scope.public_send(@status) if @type == 'give'
 
