@@ -14,8 +14,11 @@ class AuthenticatedAdListing < ActionDispatch::IntegrationTest
     create(:ad, :available, :in_bar, title: 'avabar', published_at: 1.day.ago)
     create(:ad, :available, :in_mad, title: 'avamad1', published_at: 2.days.ago)
     create(:ad, :available, :in_mad, title: 'avamad2', published_at: 3.days.ago)
+    create(:ad, :available, :in_mad, :expired, title: 'avamad3')
     create(:ad, :booked, :in_mad, title: 'resmad')
+    create(:ad, :booked, :in_mad, :expired, title: 'resmad2')
     create(:ad, :delivered, :in_mad, title: 'delmad')
+    create(:ad, :delivered, :in_mad, :expired, title: 'delmad2')
     create(:ad, :want, :in_bar, title: 'busbar')
 
     login_as create(:user, woeid: 766_273)
@@ -72,6 +75,7 @@ class AuthenticatedAdListing < ActionDispatch::IntegrationTest
     click_link 'siguiente'
 
     assert_selector '.ad_excerpt', count: 1, text: 'avamad2'
+    assert_no_selector 'a', text: 'siguiente'
   end
 
   it 'lists petitions in users location in home page' do
@@ -93,12 +97,16 @@ class AuthenticatedAdListing < ActionDispatch::IntegrationTest
     click_link 'reservado'
 
     assert_selector '.ad_excerpt', count: 1, text: 'resmad'
+    assert_no_selector 'a', text: 'siguiente'
   end
 
-  it 'lists delivered ads in users location in home page' do
+  it 'lists delivered ads in users location including expired in home page' do
     visit root_path
     click_link 'entregado'
 
     assert_selector '.ad_excerpt', count: 1, text: 'delmad'
+
+    click_link 'siguiente'
+    assert_selector '.ad_excerpt', count: 1, text: 'delmad2'
   end
 end

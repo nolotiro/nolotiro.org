@@ -40,9 +40,9 @@ class ApplicationController < ActionController::Base
   end
 
   def status_scope
-    return unless %w[available booked delivered].include?(params[:status])
+    return unless %w[available booked delivered expired].include?(params[:status])
 
-    params[:status]
+    "currently_#{params[:status]}"
   end
 
   def location_suggest

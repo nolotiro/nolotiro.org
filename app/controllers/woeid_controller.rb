@@ -7,7 +7,7 @@ class WoeidController < ApplicationController
 
   def show
     @type = type_scope || 'give'
-    @status = status_scope || 'available'
+    @status = status_scope || 'currently_available'
     @q = params[:q]
     @page = params[:page]
 

@@ -19,7 +19,7 @@
 
   <div class="ad_status_line">
     <% if ad.give? %>
-      <span class="ad_status <%= ad.status %>"><%= ad.status_string %></span>
+      <span class="ad_status <%= ad.current_status %>"><%= ad.status_string %></span>
     <% end %>
 
     <%= published_ago_by(ad.published_at, ad.user.username) %>

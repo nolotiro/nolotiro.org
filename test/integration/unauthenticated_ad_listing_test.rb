@@ -12,8 +12,11 @@ class UnauthenticatedAdListing < ActionDispatch::IntegrationTest
   around do |&block|
     create(:ad, :available, :in_mad, title: 'avamad', published_at: 1.day.ago)
     create(:ad, :available, :in_bar, title: 'avabar', published_at: 2.days.ago)
+    create(:ad, :available, :in_bar, :expired, title: 'avabar2')
     create(:ad, :booked, :in_mad, title: 'resmad')
+    create(:ad, :booked, :in_mad, :expired, title: 'resmad2')
     create(:ad, :delivered, :in_ten, title: 'delten')
+    create(:ad, :delivered, :in_ten, :expired, title: 'delten2')
     create(:ad, :want, :in_mad, title: 'wantmad')
 
     with_pagination(1) do
@@ -47,6 +50,7 @@ class UnauthenticatedAdListing < ActionDispatch::IntegrationTest
     click_link 'siguiente'
 
     assert_selector '.ad_excerpt', count: 1, text: 'avabar'
+    assert_no_selector 'a', text: 'siguiente'
   end
 
   it 'lists booked ads everywhere in home page' do
@@ -55,14 +59,19 @@ class UnauthenticatedAdListing < ActionDispatch::IntegrationTest
     click_link 'reservado'
 
     assert_selector '.ad_excerpt', count: 1, text: 'resmad'
+    assert_no_selector 'a', text: 'siguiente'
   end
 
-  it 'lists delivered ads everywhere in home page' do
+  it 'lists delivered ads everywhere including expired ones in home page' do
     visit root_path
     click_link 'siguiente'
     click_link 'entregado'
 
     assert_selector '.ad_excerpt', count: 1, text: 'delten'
+
+    click_link 'siguiente'
+
+    assert_selector '.ad_excerpt', count: 1, text: 'delten2'
   end
 
   it 'lists petitions everywhere in home page' do
