@@ -19,14 +19,16 @@ class AdConstraint
   private
 
   def valid_combination?(type, status)
+    # rubocop:disable Style/WordArray
     [
       [nil, nil],
       ['want', nil],
       ['give', nil],
-      %w[give available],
-      %w[give booked],
-      %w[give delivered]
+      ['give', 'available'],
+      ['give', 'booked'],
+      ['give', 'delivered']
     ].include?([type, status])
+    # rubocop:enable Style/WordArray
   end
 
   def valid_page?(page)
