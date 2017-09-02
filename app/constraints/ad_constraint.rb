@@ -23,6 +23,7 @@ class AdConstraint
       ['users', 'give', 'available'],
       ['users', 'give', 'booked'],
       ['users', 'give', 'delivered'],
+      ['users', 'give', 'expired'],
       ['woeid', nil, nil],
       ['woeid', 'want', nil],
       ['woeid', 'give', nil],

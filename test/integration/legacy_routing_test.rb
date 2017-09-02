@@ -73,6 +73,7 @@ class LegacyRoutingTest < ActionDispatch::IntegrationTest
     assert_user_ad_routing "/es/ad/listuser/id/#{@user.id}/type/give/status/available", type: 'give', status: 'available'
     assert_user_ad_routing "/es/ad/listuser/id/#{@user.id}/type/give/status/booked", type: 'give', status: 'booked'
     assert_user_ad_routing "/es/ad/listuser/id/#{@user.id}/type/give/status/delivered", type: 'give', status: 'delivered'
+    assert_user_ad_routing "/es/ad/listuser/id/#{@user.id}/type/give/status/expired", type: 'give', status: 'expired'
   end
 
   def test_routes_auth
