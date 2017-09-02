@@ -67,7 +67,12 @@ class LegacyRoutingTest < ActionDispatch::IntegrationTest
   def test_routes_to_user_profile
     assert_routing "/es/profile/#{@user.id}", controller: 'users', action: 'profile', locale: 'es', id: @user.id.to_s
     assert_routing "/es/profile/#{@user.username}", controller: 'users', action: 'profile', locale: 'es', id: @user.username
-    assert_routing "/es/ad/listuser/id/#{@user.id}", controller: 'users', action: 'listads', locale: 'es', id: @user.id.to_s
+
+    assert_user_ad_routing "/es/ad/listuser/id/#{@user.id}/type/give", type: 'give'
+    assert_user_ad_routing "/es/ad/listuser/id/#{@user.id}/type/give", type: 'give'
+    assert_user_ad_routing "/es/ad/listuser/id/#{@user.id}/type/give/status/available", type: 'give', status: 'available'
+    assert_user_ad_routing "/es/ad/listuser/id/#{@user.id}/type/give/status/booked", type: 'give', status: 'booked'
+    assert_user_ad_routing "/es/ad/listuser/id/#{@user.id}/type/give/status/delivered", type: 'give', status: 'delivered'
   end
 
   def test_routes_auth
@@ -84,9 +89,19 @@ class LegacyRoutingTest < ActionDispatch::IntegrationTest
   def assert_woeid_ad_routing(route, id: nil, type: nil, status: nil)
     keys = { controller: 'woeid', action: 'show', locale: 'es' }
 
-    keys.merge!(id: id) if id
-    keys.merge!(type: type) if type
-    keys.merge!(status: status) if status
+    assert_ad_routing route, keys, id, type, status
+  end
+
+  def assert_user_ad_routing(route, type: nil, status: nil)
+    keys = { controller: 'users', action: 'listads', locale: 'es' }
+
+    assert_ad_routing route, keys, @user.id.to_s, type, status
+  end
+
+  def assert_ad_routing(route, keys, id, type, status)
+    keys[:id] = id if id
+    keys[:type] = type if type
+    keys[:status] = status if status
 
     assert_routing route, keys
   end
