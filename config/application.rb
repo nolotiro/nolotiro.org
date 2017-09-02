@@ -29,7 +29,7 @@ module NolotiroOrg
     #
     # Custom libraries autoloaded
     #
-    config.autoload_paths += %W[#{config.root}/lib #{config.root}/lib/routes]
+    config.autoload_paths += ["#{config.root}/lib"]
 
     #
     # Don't use TLS for SMTP since we don't yet have a valid certificate
