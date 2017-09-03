@@ -53,6 +53,7 @@ group :development do
   gem 'brakeman-lib'
   gem 'faker'
   gem 'i18n-tasks', '0.9.5'
+  gem 'listen'
   gem 'localeapp'
   gem 'rubocop', '0.49.1'
 
