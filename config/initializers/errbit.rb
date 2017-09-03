@@ -8,7 +8,9 @@ if Rails.env.production? || Rails.env.staging?
   end
 
   Airbrake.add_filter do |notice|
-    if notice[:errors].any? { |error| error[:type] == 'ActiveRecord::RecordNotFound' }
+    allowed_errors = %w[ActiveRecord::RecordNotFound ActionController::RoutingError]
+
+    if notice[:errors].any? { |error| allowed_errors.include?(error[:type]) }
       notice.ignore!
     end
   end
