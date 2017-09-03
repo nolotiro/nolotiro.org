@@ -18,25 +18,25 @@ gem 'rails-i18n', '~> 5.0'
 
 gem 'jbuilder', '~> 2.6'
 gem 'jquery-rails'
-gem 'record_tag_helper', '~> 1.0' # for `div_for`
+gem 'record_tag_helper', '~> 1.0'
 gem 'rinku', '~> 2.0'
 gem 'uglifier', '>= 1.3.0'
 
 gem 'dotenv-rails', '~> 2.1'
 
 group :development, :test do
-  gem 'byebug'                       # debugger
-  gem 'capybara'                     # real user interactions
-  gem 'factory_girl_rails', '~> 4.0' # factories
-  gem 'launchy'                      # features - save_and_open_page helper
-  gem 'minitest-hooks'               # minitest enhancements
-  gem 'minitest-spec-rails'          # specs style out-of-the-box
-  gem 'rails-controller-testing'     # controller testing gemified for Rails 5
-  gem 'spring'                       # speed up things
+  gem 'byebug'
+  gem 'capybara'
+  gem 'factory_girl_rails', '~> 4.0'
+  gem 'launchy'
+  gem 'minitest-hooks'
+  gem 'minitest-spec-rails'
+  gem 'rails-controller-testing'
+  gem 'spring'
 end
 
 group :test do
-  gem 'bullet' # n+1 query problem alert
+  gem 'bullet'
   gem 'database_cleaner', '~> 1.5'
   gem 'poltergeist'
   gem 'vcr', '~> 3.0'
@@ -44,7 +44,7 @@ group :test do
 end
 
 group :production, :staging do
-  gem 'airbrake', '~> 6.0' # exception notification
+  gem 'airbrake', '~> 6.0'
 
   # @todo Add a performance monitoring tool
 end
@@ -65,24 +65,24 @@ group :development do
 end
 
 gem 'http_accept_language'
-gem 'pg', '0.19.0'         # database adapter
-gem 'redis-rails'          # redis cache
-gem 'sidekiq'              # job workers
+gem 'pg', '0.19.0'
+gem 'redis-rails'
+gem 'sidekiq'
 
-gem 'devise'             # users
-gem 'kaminari', '~> 1.0' # pagination
-gem 'maxminddb'          # geolite city v2
+gem 'devise'
+gem 'kaminari', '~> 1.0'
+gem 'maxminddb'
 
-gem 'omniauth'               # users login with providers
-gem 'omniauth-facebook'      # users login with facebook
-gem 'omniauth-google-oauth2' # users login with google
+gem 'omniauth'
+gem 'omniauth-facebook'
+gem 'omniauth-google-oauth2'
 
 # Image processing in the background. @todo Properly reenable it
 # gem 'delayed_paperclip'
 
-gem 'paperclip', '~> 4.0'                   # images
-gem 'pundit'                                # authorization
-gem 'recaptcha', require: 'recaptcha/rails' # captcha
+gem 'paperclip', '~> 4.0'
+gem 'pundit',
+gem 'recaptcha', require: 'recaptcha/rails'
 
 # Admin backend.
 # @todo Get rid of this, possibly by completely ditching activeadmin and
