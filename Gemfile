@@ -69,7 +69,7 @@ gem 'redis-rails'          # redis cache
 gem 'sidekiq'              # job workers
 
 gem 'devise'             # users
-gem 'kaminari', '0.17.0' # pagination
+gem 'kaminari', '~> 1.0' # pagination
 gem 'maxminddb'          # geolite city v2
 
 gem 'omniauth'               # users login with providers
