@@ -37,6 +37,10 @@ FactoryGirl.define do
       status :delivered
     end
 
+    trait :expired do
+      published_at { 32.days.ago }
+    end
+
     trait(:in_mad) { woeid_code 766_273 }
     trait(:in_bar) { woeid_code 753_692 }
     trait(:in_ten) { woeid_code 773_692 }

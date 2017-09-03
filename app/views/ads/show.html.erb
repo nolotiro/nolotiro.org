@@ -44,7 +44,7 @@
 
         <div class="ad_status_line">
           <% if @ad.give? %>
-            <span class="ad_status <%= @ad.status %>"><%= @ad.status_string %></span>
+            <span class="ad_status <%= @ad.current_status %>"><%= @ad.status_string %></span>
           <% end %>
 
           <%= linked_published_ago_by(@ad.published_at, @ad.user) %>
@@ -57,10 +57,10 @@
         <%= render "stats", comments_count: @comments.size,
                             readed_count: @ad.readed_count %>
 
-        <% if (@ad.want? || @ad.available?) &&
+        <% if (@ad.want? || @ad.currently_available?) &&
               (current_user.nil? || current_user.whitelisting?(@ad.user)) %>
           <div class="ad_contact">
-            <% if @ad.available? %>
+            <% if @ad.currently_available? %>
               <%= t('nlt.are_you_interested') %>
               <% title = t('nlt.send_a_message', user: @ad.user.username) %>
             <% else %>

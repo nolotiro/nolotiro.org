@@ -1,4 +1,3 @@
-# encoding : utf-8
 # frozen_string_literal: true
 
 class Ad < ApplicationRecord
@@ -6,6 +5,7 @@ class Ad < ApplicationRecord
   censors :title
   censors :body
 
+  include Classificable
   include Hidable
   include Spamable
   include Statable
@@ -20,13 +20,6 @@ class Ad < ApplicationRecord
   validates :title, presence: true, length: { minimum: 4, maximum: 100 }
   validates :body, presence: true, length: { minimum: 12, maximum: 1000 }
   validates :woeid_code, presence: true
-
-  enum status: { available: 1, booked: 2, delivered: 3 }
-  validates :status, presence: true, if: :give?
-  validates :status, absence: true, if: :want?
-
-  enum type: { give: 1, want: 2 }
-  validates :type, presence: true
 
   # legacy database: has a column with value "type", rails doesn't like that
   # the "type" column is no longer need it by rails, so we don't care about it
@@ -87,14 +80,6 @@ class Ad < ApplicationRecord
 
   def woeid_info
     @woeid_info ||= WoeidHelper.convert_woeid_name(woeid_code)
-  end
-
-  def type_string
-    I18n.t("nlt.#{type}")
-  end
-
-  def status_string
-    I18n.t("nlt.#{status}")
   end
 
   def meta_title

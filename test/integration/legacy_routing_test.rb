@@ -35,35 +35,16 @@ class LegacyRoutingTest < ActionDispatch::IntegrationTest
   end
 
   def test_route_to_woeid_ads
-    assert_routing '/es/woeid/766273/give',
-                   controller: 'woeid', action: 'show', locale: 'es', id: '766273', type: 'give'
-
-    assert_routing '/es/woeid/766273/give/status/available',
-                   controller: 'woeid', action: 'show', locale: 'es', id: '766273', type: 'give', status: 'available'
-
-    assert_routing '/es/woeid/766273/give/status/booked',
-                   controller: 'woeid', action: 'show', locale: 'es', id: '766273', type: 'give', status: 'booked'
-
-    assert_routing '/es/woeid/766273/give/status/delivered',
-                   controller: 'woeid', action: 'show', locale: 'es', id: '766273', type: 'give', status: 'delivered'
-
-    assert_routing '/es/woeid/766273/want',
-                   controller: 'woeid', action: 'show', locale: 'es', id: '766273', type: 'want'
-
-    assert_routing '/es/ad/listall/ad_type/give',
-                   controller: 'woeid', action: 'show', locale: 'es', type: 'give'
-
-    assert_routing '/es/ad/listall/ad_type/give/status/available',
-                   controller: 'woeid', action: 'show', locale: 'es', type: 'give', status: 'available'
-
-    assert_routing '/es/ad/listall/ad_type/give/status/booked',
-                   controller: 'woeid', action: 'show', locale: 'es', type: 'give', status: 'booked'
-
-    assert_routing '/es/ad/listall/ad_type/give/status/delivered',
-                   controller: 'woeid', action: 'show', locale: 'es', type: 'give', status: 'delivered'
-
-    assert_routing '/es/ad/listall/ad_type/want',
-                   controller: 'woeid', action: 'show', locale: 'es', type: 'want'
+    assert_woeid_ad_routing '/es/woeid/766273/give', id: '766273', type: 'give'
+    assert_woeid_ad_routing '/es/woeid/766273/give/status/available', id: '766273', type: 'give', status: 'available'
+    assert_woeid_ad_routing '/es/woeid/766273/give/status/booked', id: '766273', type: 'give', status: 'booked'
+    assert_woeid_ad_routing '/es/woeid/766273/give/status/delivered', id: '766273', type: 'give', status: 'delivered'
+    assert_woeid_ad_routing '/es/woeid/766273/want', id: '766273', type: 'want'
+    assert_woeid_ad_routing '/es/ad/listall/ad_type/give', type: 'give'
+    assert_woeid_ad_routing '/es/ad/listall/ad_type/give/status/available', type: 'give', status: 'available'
+    assert_woeid_ad_routing '/es/ad/listall/ad_type/give/status/booked', type: 'give', status: 'booked'
+    assert_woeid_ad_routing '/es/ad/listall/ad_type/give/status/delivered', type: 'give', status: 'delivered'
+    assert_woeid_ad_routing '/es/ad/listall/ad_type/want', type: 'want'
   end
 
   def test_routes_to_location_change
@@ -86,7 +67,13 @@ class LegacyRoutingTest < ActionDispatch::IntegrationTest
   def test_routes_to_user_profile
     assert_routing "/es/profile/#{@user.id}", controller: 'users', action: 'profile', locale: 'es', id: @user.id.to_s
     assert_routing "/es/profile/#{@user.username}", controller: 'users', action: 'profile', locale: 'es', id: @user.username
-    assert_routing "/es/ad/listuser/id/#{@user.id}", controller: 'users', action: 'listads', locale: 'es', id: @user.id.to_s
+
+    assert_user_ad_routing "/es/ad/listuser/id/#{@user.id}/type/give", type: 'give'
+    assert_user_ad_routing "/es/ad/listuser/id/#{@user.id}/type/give", type: 'give'
+    assert_user_ad_routing "/es/ad/listuser/id/#{@user.id}/type/give/status/available", type: 'give', status: 'available'
+    assert_user_ad_routing "/es/ad/listuser/id/#{@user.id}/type/give/status/booked", type: 'give', status: 'booked'
+    assert_user_ad_routing "/es/ad/listuser/id/#{@user.id}/type/give/status/delivered", type: 'give', status: 'delivered'
+    assert_user_ad_routing "/es/ad/listuser/id/#{@user.id}/type/give/status/expired", type: 'give', status: 'expired'
   end
 
   def test_routes_auth
@@ -96,5 +83,27 @@ class LegacyRoutingTest < ActionDispatch::IntegrationTest
   def test_routes_to_ad_management
     assert_routing '/es/ad/create', action: 'new', controller: 'ads', locale: 'es'
     assert_routing "/es/ad/#{@ad.id}/#{@ad.slug}", controller: 'ads', action: 'show', locale: 'es', id: @ad.id.to_s, slug: 'ordenador-en-vallecas'
+  end
+
+  private
+
+  def assert_woeid_ad_routing(route, id: nil, type: nil, status: nil)
+    keys = { controller: 'woeid', action: 'show', locale: 'es' }
+
+    assert_ad_routing route, keys, id, type, status
+  end
+
+  def assert_user_ad_routing(route, type: nil, status: nil)
+    keys = { controller: 'users', action: 'listads', locale: 'es' }
+
+    assert_ad_routing route, keys, @user.id.to_s, type, status
+  end
+
+  def assert_ad_routing(route, keys, id, type, status)
+    keys[:id] = id if id
+    keys[:type] = type if type
+    keys[:status] = status if status
+
+    assert_routing route, keys
   end
 end

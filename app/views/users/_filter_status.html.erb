@@ -3,15 +3,19 @@
 
   <%= link_to t('nlt.available'),
               url_for(type: 'give', status: 'available'),
-              @status == "available" ? { class: "actual" } : {} %>
+              @status == "currently_available" ? { class: "actual" } : {} %>
 
   <%= link_to t('nlt.booked'),
               url_for(type: 'give', status: 'booked'),
-              @status == "booked" ? { class: "actual" } : {} %>
+              @status == "currently_booked" ? { class: "actual" } : {} %>
 
   <%= link_to t('nlt.delivered'),
               url_for(type: 'give', status: 'delivered'),
-              @status == "delivered" ? { class: "actual" } : {} %>
+              @status == "currently_delivered" ? { class: "actual" } : {} %>
+
+  <%= link_to t('nlt.expired'),
+              url_for(type: 'give', status: 'expired'),
+              @status == "currently_expired" ? { class: "actual" } : {} %>
 
   <%= link_to t('nlt.requests'),
               url_for(type: 'want'),
