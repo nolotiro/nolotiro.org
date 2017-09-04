@@ -5,6 +5,10 @@
       <%= render "users/tabnav", user: @user %>
 
     <div class="default_header_section">
+      <%= render 'actions',
+                 user: @user,
+                 blocking: current_user ? current_user.blocking?(@user) : nil %>
+
       <h1><%= content_for :title %></h1>
 
       <h4>
@@ -17,10 +21,6 @@
     </div>
 
     <div class="default_content_section">
-      <%= render 'actions',
-                 user: @user,
-                 blocking: current_user ? current_user.blocking?(@user) : nil %>
-
       <%= render 'friends', user: @user %>
     </div>
   </div>

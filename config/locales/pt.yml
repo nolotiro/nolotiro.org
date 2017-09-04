@@ -316,14 +316,14 @@ pt:
     profile: perfil
     profile_actions:
       blocking:
-        add: 
-        confirm: 
-        delete: 
-      contact: envia uma mensagem privada a %{username}
+        add: bloquear
+        confirm: Tem certeza que deseja bloquear ao %{username}? O usuário não va puder enviar messagems a você ou olhar os seus anúncios.
+        delete: desbloquear
+      contact: enviar mensagem privada
       edit: editar perfil de usuário
       friend:
-        add: adicionar %{username} a sua lista de amigos
-        delete: excluir %{username} da sua lista de amigos
+        add: adicionar a sua lista de amigos
+        delete: excluir da sua lista de amigos
     publish_ad: Publicar anúncio
     publish_ad_on: Publicar anúncio em %{woeid}
     published_ads: Avisos publicados

@@ -316,14 +316,14 @@ ca:
     profile: perfil
     profile_actions:
       blocking:
-        add: bloquejar a %{username}
+        add: bloquejar
         confirm: "¿Segur que vols bloquejar %{username}? No podrà tornar a contactar ni a veure els teus anuncis."
-        delete: desbloquejar a %{username}
-      contact: envia un missatge privat a %{username}
+        delete: desbloquejar
+      contact: enviar missatge privat
       edit: edita perfil d'usuari
       friend:
-        add: afegir %{username} a la llista d'amics
-        delete: afegir %{username} a la llista d'amics
+        add: afegir a la llista d'amics
+        delete: afegir a la llista d'amics
     publish_ad: Publicar anunci
     publish_ad_on: Publicar anunci en %{woeid}
     published_ads: Anuncis publicats

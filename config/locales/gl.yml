@@ -318,14 +318,14 @@ gl:
     profile: perfil
     profile_actions:
       blocking:
-        add: bloquear a %{username}
+        add: bloquear
         confirm: Seguro que desexa bloquear a %{username}? Non poderá volver a contactar con vostede nin ver ningún dos seus anuncios
-        delete: desbloquear a %{username}
-      contact: 
+        delete: desbloquear
+      contact: enviar menxaje privada
       edit: editar perfil de usuario
       friend:
-        add: agregar %{username} á túa lista de amigos
-        delete: eleminar %{username} da túa lista de amigos
+        add: agregar á túa lista de amigos
+        delete: eliminar da túa lista de amigos
     publish_ad: Publicar anuncio
     publish_ad_on: Publicar anuncio en %{woeid}
     published_ads: Anuncios publicados
