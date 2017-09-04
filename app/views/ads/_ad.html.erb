@@ -33,7 +33,7 @@
       <% unless current_woeid && @type %>
         <div class="ad_info_line">
           <span class="ad_excerpt_woeid">
-            <%= safe_join([current_woeid ? nil : ad.woeid_name,
+            <%= safe_join([current_woeid ? nil : ad.woeid_name_short,
                            @type ? nil : ad.type_string].compact, raw(' &gt; ')) %>
           </span>
         </div>
