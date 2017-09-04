@@ -48,7 +48,7 @@ downloaded copy a nolotiro's master.
 
 ## More information
 
-For obtaining geographical information we use [Yahoo YQL].
+For obtaining geographic information we use [Yahoo YQL].
 
 For IP GeoLocation we use [GeoLite2] City. The database is bundled with this
 repo in compressed format. To extract the database, run
@@ -101,7 +101,7 @@ https://beta.nolotiro.org/api/v1/woeid/766273/give?page=2
 https://beta.nolotiro.org/api/v1/ad/153735
 ```
 
-## 3erd Party
+## 3rd Party
 
 * Core based on [Ruby On Rails].
 * [Yahoo YQL] - This project is strong WOEID integration centered.
