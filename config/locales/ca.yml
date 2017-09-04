@@ -320,7 +320,7 @@ ca:
         confirm: "¿Segur que vols bloquejar %{username}? No podrà tornar a contactar ni a veure els teus anuncis."
         delete: desbloquejar
       contact: enviar missatge privat
-      edit: edita perfil d'usuari
+      edit: editar
       friend:
         add: afegir a la llista d'amics
         delete: afegir a la llista d'amics

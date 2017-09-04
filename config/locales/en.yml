@@ -320,7 +320,7 @@ en:
         confirm: Are you sure you want to block %{username}? The user won't be able to contact you again or access any of your ads.
         delete: Unblock user
       contact: send private message
-      edit: edit user's profile
+      edit: edit
       friend:
         add: Add to your friend list
         delete: Delete from your friend list

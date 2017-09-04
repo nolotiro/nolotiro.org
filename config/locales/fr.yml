@@ -320,7 +320,7 @@ fr:
         confirm: Etes-vous sûr que vous voulez bloquer %{username}? L'utilisateur ne pouvez pas re-contacter ou voir vos annonces.
         delete: débloquer
       contact: envoyer message privé
-      edit: modifier le profil de l'utilisateur
+      edit: modifier
       friend:
         add: ajouter à votre liste d'amis
         delete: supprimer de votre liste d'amis

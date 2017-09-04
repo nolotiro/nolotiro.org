@@ -320,7 +320,7 @@ es:
         confirm: "¿Seguro que deseas bloquear a %{username}? No podrá volverte a contactar ni a ver ninguno de tus anuncios."
         delete: desbloquear
       contact: enviar mensaje privado
-      edit: editar perfil de usuario
+      edit: editar
       friend:
         add: agregar a tu lista de amigos
         delete: eliminar de tu lista de amigos

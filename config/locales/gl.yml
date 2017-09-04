@@ -322,7 +322,7 @@ gl:
         confirm: Seguro que desexa bloquear a %{username}? Non poderá volver a contactar con vostede nin ver ningún dos seus anuncios
         delete: desbloquear
       contact: enviar menxaje privada
-      edit: editar perfil de usuario
+      edit: editar
       friend:
         add: agregar á túa lista de amigos
         delete: eliminar da túa lista de amigos

@@ -320,7 +320,7 @@ it:
         confirm: Sei sicuro que vuoi bloccare %{username}? O utente non potrá piu contattare te oppure vedere i tuoi annunci.
         delete: sbloccare
       contact: enviare messaggio privato
-      edit: modifica profilo utente
+      edit: modificare
       friend:
         add: aggiungere alla tua lista di amici
         delete: rimuovere dalla tua lista di amici

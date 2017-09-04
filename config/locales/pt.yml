@@ -320,7 +320,7 @@ pt:
         confirm: Tem certeza que deseja bloquear ao %{username}? O usuário não va puder enviar messagems a você ou olhar os seus anúncios.
         delete: desbloquear
       contact: enviar mensagem privada
-      edit: editar perfil de usuário
+      edit: editar
       friend:
         add: adicionar a sua lista de amigos
         delete: excluir da sua lista de amigos
