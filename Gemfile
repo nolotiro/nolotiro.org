@@ -17,72 +17,72 @@ gem 'rails', '~> 5.1'
 gem 'rails-i18n', '~> 5.0'
 
 gem 'jbuilder', '~> 2.6'
-gem 'jquery-rails'
-gem 'record_tag_helper', '~> 1.0' # for `div_for`
+gem 'jquery-rails', '~> 4.3'
+gem 'record_tag_helper', '~> 1.0'
 gem 'rinku', '~> 2.0'
-gem 'uglifier', '>= 1.3.0'
+gem 'uglifier', '~> 3.2'
 
 gem 'dotenv-rails', '~> 2.1'
 
 group :development, :test do
-  gem 'byebug'                       # debugger
-  gem 'capybara'                     # real user interactions
-  gem 'factory_girl_rails', '~> 4.0' # factories
-  gem 'launchy'                      # features - save_and_open_page helper
-  gem 'minitest-hooks'               # minitest enhancements
-  gem 'minitest-spec-rails'          # specs style out-of-the-box
-  gem 'rails-controller-testing'     # controller testing gemified for Rails 5
-  gem 'spring'                       # speed up things
+  gem 'byebug', '~> 9.1'
+  gem 'capybara', '~> 2.15'
+  gem 'factory_girl_rails', '~> 4.0'
+  gem 'launchy', '~> 2.4'
+  gem 'minitest-hooks', '~> 1.4'
+  gem 'minitest-spec-rails', '~> 5.4'
+  gem 'rails-controller-testing', '~> 1.0'
+  gem 'spring', '~> 2.0'
 end
 
 group :test do
-  gem 'bullet' # n+1 query problem alert
+  gem 'bullet', '~> 5.6'
   gem 'database_cleaner', '~> 1.5'
-  gem 'poltergeist'
+  gem 'poltergeist', '~> 1.15'
   gem 'vcr', '~> 3.0'
   gem 'webmock', '~> 3.0'
 end
 
 group :production, :staging do
-  gem 'airbrake', '~> 6.0' # exception notification
+  gem 'airbrake', '~> 6.0'
 
   # @todo Add a performance monitoring tool
 end
 
 group :development do
-  gem 'brakeman-lib'
-  gem 'faker'
+  gem 'brakeman-lib', '~> 3.7'
+  gem 'faker', '~> 1.6'
   gem 'i18n-tasks', '0.9.5'
-  gem 'listen'
-  gem 'localeapp'
+  gem 'listen', '~> 3.1'
+  gem 'localeapp', '~> 2.1'
   gem 'rubocop', '0.49.1'
 
   # deploy
   gem 'capistrano', '~> 3.0'
-  gem 'capistrano-rails'
-  gem 'capistrano-rbenv'
-  gem 'capistrano-sidekiq'
+  gem 'capistrano-rails', '~> 1.3'
+  gem 'capistrano-rbenv', '~> 2.1'
+  gem 'capistrano-sidekiq', '0.10.0'
 end
 
-gem 'http_accept_language'
-gem 'pg', '0.19.0'         # database adapter
-gem 'redis-rails'          # redis cache
-gem 'sidekiq'              # job workers
+gem 'http_accept_language', '~> 2.0'
+gem 'pg', '0.19.0'
+gem 'redis-rails', '~> 5.0'
+gem 'sidekiq', '~> 4.2'
 
-gem 'devise'             # users
-gem 'kaminari', '~> 1.0' # pagination
-gem 'maxminddb'          # geolite city v2
+gem 'devise', '~> 4.3'
+gem 'kaminari', '~> 1.0'
+gem 'maxminddb', '0.1.12'
 
-gem 'omniauth'               # users login with providers
-gem 'omniauth-facebook'      # users login with facebook
-gem 'omniauth-google-oauth2' # users login with google
+gem 'omniauth', '~> 1.3'
+gem 'omniauth-facebook', '~> 4.0'
+gem 'omniauth-google-oauth2', '0.4.1'
 
 # Image processing in the background. @todo Properly reenable it
 # gem 'delayed_paperclip'
 
-gem 'paperclip', '~> 4.0'                   # images
-gem 'pundit'                                # authorization
-gem 'recaptcha', require: 'recaptcha/rails' # captcha
+gem 'paperclip', '~> 4.0'
+gem 'pundit', '~> 1.1'
+gem 'recaptcha', '~> 3.3', require: 'recaptcha/rails'
 
 # Admin backend.
 # @todo Get rid of this, possibly by completely ditching activeadmin and
@@ -96,4 +96,4 @@ gem 'bootstrap-sass', '~> 3.3'
 gem 'sass-rails', '~> 5.0'
 
 # Rake task utils
-gem 'rubyzip', require: false
+gem 'rubyzip', '~> 1.2', require: false
