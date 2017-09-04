@@ -323,7 +323,7 @@ ca:
       edit: editar
       friend:
         add: afegir a la llista d'amics
-        delete: afegir a la llista d'amics
+        delete: eliminar de la llista d'amics
     publish_ad: Publicar anunci
     publish_ad_on: Publicar anunci en %{woeid}
     published_ads: Anuncis publicats
