@@ -1,21 +1,23 @@
-<% if conversations.any? %>
-  <%= form_tag trash_conversations_path, method: :delete do %>
-    <table class="table table-condensed mail-list">
-      <tbody>
-        <% conversations.each do |c| %>
-          <%= render "conversations/conversation", c: c %>
-        <% end %>
-      </tbody>
-    </table>
+<div class="inner_content_section">
+  <% if conversations.any? %>
+    <%= form_tag trash_conversations_path, method: :delete do %>
+      <table class="table table-condensed mail-list">
+        <tbody>
+          <% conversations.each do |c| %>
+            <%= render "conversations/conversation", c: c %>
+          <% end %>
+        </tbody>
+      </table>
 
-    <%= submit_tag t('conversations.buttons.trash_selected'),
-                   id: 'delete_multiple_button' %>
+      <%= submit_tag t('conversations.buttons.trash_selected'),
+                     id: 'delete_multiple_button' %>
+    <% end %>
+    <%= paginate conversations %>
+  <% else %>
+    <p>
+      <div class="empty">
+        <%= t("conversations.table.none") %>
+      </div>
+    </p>
   <% end %>
-  <%= paginate conversations %>
-<% else %>
-  <p>
-    <div class="empty">
-      <%= t("conversations.table.none") %>
-    </div>
-  </p>
-<% end %>
+</div>

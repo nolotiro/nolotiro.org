@@ -1,21 +1,23 @@
-<section class="edit-section">
-  <div class="default_content_section">
-    <%= render 'edit_form' %>
-  </div>
-</section>
+<div class="inner_content_section">
+  <section class="edit-section">
+    <div class="inner_content_section">
+      <%= render 'edit_form' %>
+    </div>
+  </section>
 
-<section class="destroy-section">
-  <div class="default_header_section">
-    <h1><%= t('nlt.cancel_my_account') %></h1>
-  </div>
+  <section class="destroy-section">
+    <div class="inner_header_section">
+      <h1><%= t('nlt.cancel_my_account') %></h1>
+    </div>
 
-  <div class="default_content_section">
-    <p>
-      <%= t('nlt.want_to_leave') %>
-      <%= link_to t('nlt.cancel_my_account'),
-                  registration_path(resource_name),
-                  data: { confirm: t('nlt.delete_sure') },
-                  method: :delete %>.
-    </p>
-  </div>
-</section>
+    <div class="inner_content_section">
+      <p>
+        <%= t('nlt.want_to_leave') %>
+        <%= link_to t('nlt.cancel_my_account'),
+                    registration_path(resource_name),
+                    data: { confirm: t('nlt.delete_sure') },
+                    method: :delete %>.
+      </p>
+    </div>
+  </section>
+</div>

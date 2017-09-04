@@ -670,6 +670,12 @@ form.searchbox
     font-weight: bold
     padding-left: 0
 
+.inner_header_section
+  @extend .default_header_section
+
+  border-right: none
+  border-left: none
+
 %content_section
   border: 1px solid $gray-separator
   border-top: none
@@ -677,6 +683,12 @@ form.searchbox
 .default_content_section
   @extend %content_section
 
+  padding: 15px
+
+.inner_content_section
+  @extend %content_section
+
+  border: none
   padding: 15px
 
 .unpadded_content_section
