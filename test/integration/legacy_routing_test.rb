@@ -65,15 +65,38 @@ class LegacyRoutingTest < ActionDispatch::IntegrationTest
   end
 
   def test_routes_to_user_profile
-    assert_routing "/es/profile/#{@user.id}", controller: 'users', action: 'profile', locale: 'es', id: @user.id.to_s
-    assert_routing "/es/profile/#{@user.username}", controller: 'users', action: 'profile', locale: 'es', id: @user.username
+    assert_routing "/es/profile/#{@user.username}", controller: 'users', action: 'profile', locale: 'es', username: @user.username
+    assert_routing "/es/profile/#{@user.id}", controller: 'users', action: 'profile', locale: 'es', username: @user.id.to_s
+  end
 
-    assert_user_ad_routing "/es/ad/listuser/id/#{@user.id}/type/give", type: 'give'
-    assert_user_ad_routing "/es/ad/listuser/id/#{@user.id}/type/give", type: 'give'
-    assert_user_ad_routing "/es/ad/listuser/id/#{@user.id}/type/give/status/available", type: 'give', status: 'available'
-    assert_user_ad_routing "/es/ad/listuser/id/#{@user.id}/type/give/status/booked", type: 'give', status: 'booked'
-    assert_user_ad_routing "/es/ad/listuser/id/#{@user.id}/type/give/status/delivered", type: 'give', status: 'delivered'
-    assert_user_ad_routing "/es/ad/listuser/id/#{@user.id}/type/give/status/expired", type: 'give', status: 'expired'
+  def test_routes_to_user_present_list
+    assert_user_ad_routing "/es/ad/listuser/id/#{@user.username}/type/give", type: 'give'
+    assert_user_ad_routing "/es/ad/listuser/id/#{@user.id}/type/give", type: 'give', username: @user.id.to_s
+  end
+
+  def test_routes_to_user_petition_list
+    assert_user_ad_routing "/es/ad/listuser/id/#{@user.username}/type/want", type: 'want'
+    assert_user_ad_routing "/es/ad/listuser/id/#{@user.id}/type/want", type: 'want', username: @user.id.to_s
+  end
+
+  def test_routes_to_user_available_ads
+    assert_user_ad_routing "/es/ad/listuser/id/#{@user.username}/type/give/status/available", type: 'give', status: 'available'
+    assert_user_ad_routing "/es/ad/listuser/id/#{@user.id}/type/give/status/available", type: 'give', status: 'available', username: @user.id.to_s
+  end
+
+  def test_routes_to_user_booked_ads
+    assert_user_ad_routing "/es/ad/listuser/id/#{@user.username}/type/give/status/booked", type: 'give', status: 'booked'
+    assert_user_ad_routing "/es/ad/listuser/id/#{@user.id}/type/give/status/booked", type: 'give', status: 'booked', username: @user.id.to_s
+  end
+
+  def test_routes_to_user_delivered_ads
+    assert_user_ad_routing "/es/ad/listuser/id/#{@user.username}/type/give/status/delivered", type: 'give', status: 'delivered'
+    assert_user_ad_routing "/es/ad/listuser/id/#{@user.id}/type/give/status/delivered", type: 'give', status: 'delivered', username: @user.id.to_s
+  end
+
+  def test_routes_to_user_expired_ads
+    assert_user_ad_routing "/es/ad/listuser/id/#{@user.username}/type/give/status/expired", type: 'give', status: 'expired'
+    assert_user_ad_routing "/es/ad/listuser/id/#{@user.id}/type/give/status/expired", type: 'give', status: 'expired', username: @user.id.to_s
   end
 
   def test_routes_auth
@@ -89,18 +112,23 @@ class LegacyRoutingTest < ActionDispatch::IntegrationTest
 
   def assert_woeid_ad_routing(route, id: nil, type: nil, status: nil)
     keys = { controller: 'woeid', action: 'show', locale: 'es' }
-
-    assert_ad_routing route, keys, id, type, status
-  end
-
-  def assert_user_ad_routing(route, type: nil, status: nil)
-    keys = { controller: 'users', action: 'listads', locale: 'es' }
-
-    assert_ad_routing route, keys, @user.id.to_s, type, status
-  end
-
-  def assert_ad_routing(route, keys, id, type, status)
     keys[:id] = id if id
+
+    assert_ad_routing route, keys, type, status
+  end
+
+  def assert_user_ad_routing(route, username: nil, type: nil, status: nil)
+    keys = {
+      controller: 'users',
+      action: 'listads',
+      locale: 'es',
+      username: username || @user.username
+    }
+
+    assert_ad_routing route, keys, type, status
+  end
+
+  def assert_ad_routing(route, keys, type, status)
     keys[:type] = type if type
     keys[:status] = status if status
 

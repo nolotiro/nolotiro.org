@@ -40,10 +40,10 @@ Rails.application.routes.draw do
           get '/listall/ad_type/:type(/status/:status)(/page/:page)',
               to: 'woeid#show',
               as: 'ads_listall'
-          get '/listuser/id/:id(/type/:type)(/status/:status)(/page/:page)',
+          get '/listuser/id/:username(/type/:type)(/status/:status)(/page/:page)',
               to: 'users#listads',
               as: 'listads_user',
-              constraints: { id: %r{[^/]+} }
+              constraints: { username: %r{[^/]+} }
         end
       end
 
@@ -81,10 +81,10 @@ Rails.application.routes.draw do
         end
       end
 
-      get '/profile/:id',
+      get '/profile/:username',
           to: 'users#profile',
           as: 'profile',
-          constraints: { id: %r{[^/]+} }
+          constraints: { username: %r{[^/]+} }
 
       # blocking
       resources :blockings, only: %i[create destroy]
