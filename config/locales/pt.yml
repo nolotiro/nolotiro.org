@@ -144,11 +144,13 @@ pt:
       already_confirmed: já foi confirmado, por favor tente efectuar a autenticação
       confirmation_period_expired: necessitava de confirmação até %{period}, por favor faça um novo pedido
       expired: expirou, por favor solicite um novo
+      in_between: "deve ter entre %{min} e %{max}"
       not_found: não foi encontrado
       not_locked: não foi bloqueado
       not_saved:
         one: '1 erro impediu %{resource} de ser gravado:'
         other: "%{count} erros impediram %{resource} de ser gravado:"
+      spoofed_media_type: "tem uma extensão que não corresponde ao seu conteúdo"
   friendships:
     create:
       success: Amigo adicionado
@@ -384,6 +386,12 @@ pt:
     welcome: olá
     write_a_comment: "+ Escreve um comentário"
     your_email: Seu email
+  number:
+    human:
+      storage_units:
+        format: "%n %u"
+        units:
+          mb: "MB"
   oauth:
     errors:
       duplicated_username: O seu nome de usuário de %{provider} já se encontra na nossa base de dados. Se você tiver registrado usando outra rede social ou por email e senha, por favor, inicia sessão deste jeito. No caso contrário, indicar outro nome de usuário para completar o registro.

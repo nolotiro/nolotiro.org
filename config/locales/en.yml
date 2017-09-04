@@ -144,11 +144,13 @@ en:
       already_confirmed: was already confirmed, please try signing in
       confirmation_period_expired: needs to be confirmed within %{period}, please request a new one
       expired: has expired, please request a new one
+      in_between: "must be in between %{min} and %{max}"
       not_found: not found
       not_locked: was not locked
       not_saved:
         one: '1 error prohibited this %{resource} from being saved:'
         other: "%{count} errors prohibited this %{resource} from being saved:"
+      spoofed_media_type: "has contents that are not what they are reported to be"
   friendships:
     create:
       success: Friend added
@@ -383,6 +385,12 @@ en:
     welcome: welcome
     write_a_comment: "+ Write a comment"
     your_email: Your email
+  number:
+    human:
+      storage_units:
+        format: "%n %u"
+        units:
+          mb: "MB"
   oauth:
     errors:
       duplicated_username: The username provided by %{provider} is already in our database. If you already registered through another social network or through email & password, please login using those. Otherwise just specify another username.

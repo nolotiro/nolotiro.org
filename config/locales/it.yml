@@ -144,11 +144,13 @@ it:
       already_confirmed: "è stato già confermato"
       confirmation_period_expired: deve essere confermato entro %{period}, richiedi una nuova conferma
       expired: "è scaduto, si prega di richiederne uno nuovo"
+      in_between: "deve essere compreso tra %{min} e %{max}"
       not_found: non trovato
       not_locked: non era bloccato
       not_saved:
         one: 'Non posso salvare questo %{resource}: 1 errore'
         other: 'Non posso salvare questo %{resource}: %{count} errori.'
+      spoofed_media_type: "possiede contenuti che non corrispondono all'estensione dichiarata"
   friendships:
     create:
       success: Amico aggiunto
@@ -400,3 +402,9 @@ it:
       next: succ. &rsaquo;
       previous: "&lsaquo; prec."
       truncate: "&hellip;"
+  number:
+    human:
+      storage_units:
+        format: "%n %u"
+        units:
+          mb: "MB"

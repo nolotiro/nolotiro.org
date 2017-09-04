@@ -145,11 +145,13 @@ gl:
       already_confirmed: 
       confirmation_period_expired: 
       expired: 
+      in_between: 
       not_found: 
       not_locked: 
       not_saved:
         one: 
         other: 
+      spoofed_media_type: 
   friendships:
     create:
       success: 
@@ -387,6 +389,12 @@ gl:
     welcome: 
     write_a_comment: 
     your_email: 
+  number:
+    human:
+      storage_units:
+        format: 
+        units:
+          mb: 
   oauth:
     errors:
       duplicated_username: 
