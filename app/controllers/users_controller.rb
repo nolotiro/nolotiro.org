@@ -24,7 +24,7 @@ class UsersController < ApplicationController
   private
 
   def load_user
-    @user = friendly_find(params[:id])
+    @user = friendly_find(params[:username])
   end
 
   def friendly_find(param)

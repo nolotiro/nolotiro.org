@@ -10,6 +10,6 @@
   </li>
 
   <li role="presentation" <%= 'class=active' if ad_tab? %>>
-    <%= link_to t('nlt.user_ads'), listads_user_path(user) %>
+    <%= link_to t('nlt.user_ads'), listads_user_path(user.username) %>
   </li>
 </ul>

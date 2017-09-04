@@ -40,7 +40,7 @@ class AdEditionAndRemovalTest < AuthenticatedTest
     initial_path = adslug_path(@ad, slug: @ad.slug)
 
     assert_destroy_ad_from(initial_path)
-    assert_equal listads_user_path(@current_user), current_path
+    assert_equal listads_user_path(@current_user.username), current_path
   end
 
   it 'properly deletes ads as an admin and redirects to user list' do
@@ -49,7 +49,7 @@ class AdEditionAndRemovalTest < AuthenticatedTest
     relogin_as create(:admin)
 
     assert_destroy_ad_from(initial_path)
-    assert_equal listads_user_path(@ad.user), current_path
+    assert_equal listads_user_path(@ad.user.username), current_path
   end
 
   private
