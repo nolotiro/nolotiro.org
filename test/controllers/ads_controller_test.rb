@@ -49,16 +49,6 @@ class AdsControllerTest < ActionController::TestCase
     end
   end
 
-  test 'redirects to slugged version from non-slugged one' do
-    @ad = create(:ad)
-
-    mocking_yahoo_woeid_info(@ad.woeid_code) do
-      get :legacy_show, params: { id: @ad.id }
-
-      assert_redirected_to adslug_path(@ad, slug: @ad.slug)
-    end
-  end
-
   test 'redirects to new slugged URL after title changes' do
     @ad = create(:ad, title: 'My newww title')
     @ad.update!(title: 'My new title')

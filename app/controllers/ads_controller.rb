@@ -4,7 +4,7 @@ class AdsController < ApplicationController
   include StringUtils
 
   before_action :set_ad, except: %i[new create index]
-  before_action :authenticate_user!, except: %i[index legacy_show show]
+  before_action :authenticate_user!, except: %i[index show]
 
   def new
     if current_user.woeid.nil?
@@ -31,10 +31,6 @@ class AdsController < ApplicationController
     else
       render 'new'
     end
-  end
-
-  def legacy_show
-    redirect_to adslug_path(@ad, slug: @ad.slug), status: :moved_permanently
   end
 
   def show
