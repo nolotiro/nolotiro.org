@@ -1,12 +1,16 @@
 <%= link_to adslug_path(ad, ad.slug), class: 'aod_content' do %>
   <div class="row">
     <div class="col-md-3">
-      <% if ad.image.exists? %>
-        <div class="ad_list_image">
-          <%= image_tag ad.image.url(:thumb), title: ad.filtered_title,
-                                              alt: ad.filtered_title %>
-        </div>
-      <% end %>
+      <div class="ad_list_image <%= ad.current_status %>">
+        <%= image_tag ad.image.url(:thumb), title: ad.filtered_title,
+                                            alt: ad.filtered_title %>
+
+        <% if ad.give? %>
+          <div class="ad_status_ribbon <%= ad.current_status %>">
+            <%= ad.status_string %>
+          </div>
+        <% end %>
+      </div>
     </div>
 
     <div class="col-md-6">
@@ -31,14 +35,6 @@
           <span class="ad_excerpt_woeid">
             <%= safe_join([current_woeid ? nil : ad.woeid_name,
                            @type ? nil : ad.type_string].compact, raw(' &gt; ')) %>
-          </span>
-        </div>
-      <% end %>
-
-      <% if ad.give? %>
-        <div class="ad_info_line">
-          <span class="ad_status <%= ad.current_status %>">
-            <%= ad.status_string %>
           </span>
         </div>
       <% end %>
