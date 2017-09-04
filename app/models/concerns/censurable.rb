@@ -31,38 +31,16 @@ module Censurable
   end
 
   def filter_whatsapp(text)
-    filter(/#{whatsapp_slangs.join('|')}/, text)
+    filter(/(wh?ats[au]pp?|wu?ass?ap|guass?app?|guasp)/, text)
   end
 
   private
-
-  def whatsapp_slangs
-    %w[
-      whatsapp
-      whatsupp
-      whatsap
-      whatsap
-      watsap
-      guasap
-      wuassap
-      wuasap
-      wassap
-      wasap
-      guassapp
-      guassap
-      guasapp
-      guasap
-      guasp
-    ]
-  end
 
   def filter(regexp, text)
     text.gsub(regexp, "[#{privacy_mask}]")
   end
 
-  # @todo Remove gsub when migrating to Ruby 2.4 since Ruby can now do full
-  # unicode case mapping.
   def privacy_mask
-    I18n.t('nlt.private_info_hidden').upcase.gsub(/ó/, 'Ó').gsub(/é/, 'É')
+    I18n.t('nlt.private_info_hidden').upcase
   end
 end

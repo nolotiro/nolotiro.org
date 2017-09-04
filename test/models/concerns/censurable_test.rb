@@ -35,4 +35,21 @@ class CensurableTest < ActiveSupport::TestCase
     assert_equal expected_text,
                  CensurableTestPost.new(title: text).filtered_title
   end
+
+  def test_whatsapp_slangs_are_detected
+    %w[whatsapp
+       whatsupp
+       whatsap
+       watsap
+       wuassap
+       wuasap
+       wassap
+       wasap
+       guassapp
+       guassap].each do |word|
+      assert_equal \
+        '[INFORMACIÓN PRIVADA OCULTA]',
+        CensurableTestPost.new(title: word).filtered_title
+    end
+  end
 end
