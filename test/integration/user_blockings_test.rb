@@ -23,7 +23,7 @@ class UserBlockingsTest < AuthenticatedTest
   it 'does not show listads page when visitor is blocked' do
     create(:blocking, blocker: @other, blocked: @current_user)
     mocking_yahoo_woeid_info(@current_user.woeid) do
-      visit listads_user_path(@other)
+      visit listads_user_path(@other.username)
     end
 
     assert_access_denied

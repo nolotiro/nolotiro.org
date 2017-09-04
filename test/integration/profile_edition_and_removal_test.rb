@@ -11,7 +11,7 @@ class ProfileEditionAndRemovalTest < ActionDispatch::IntegrationTest
                          email: 'terec@example.com')
     login_as(user)
 
-    visit profile_path(user)
+    visit profile_path(user.username)
 
     click_link 'editar perfil de usuario'
   end

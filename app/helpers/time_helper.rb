@@ -14,6 +14,8 @@ module TimeHelper
   end
 
   def linked_published_ago_by(time, user)
-    published_ago_by(time, link_to(user.username, profile_path(user)))
+    username = user.username
+
+    published_ago_by(time, link_to(username, profile_path(username)))
   end
 end
