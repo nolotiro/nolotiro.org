@@ -30,7 +30,6 @@ Rails.application.routes.draw do
       end
 
       scope '/ad' do
-        get '/:id', to: 'ads#legacy_show'
         get '/:id/:slug', to: 'ads#show', as: 'adslug'
         get '/edit/id/:id', to: 'ads#edit', as: 'ads_edit'
         post '/bump/id/:id', to: 'ads#bump', as: 'ads_bump'
