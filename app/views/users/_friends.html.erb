@@ -1,6 +1,6 @@
 <% unless user.friends.count == 0 %>
-  <div>
-    <h4><%= t('nlt.friends') %>:</h4>
+  <div class="ranking">
+    <h2><%= t('nlt.friends') %></h2>
 
     <ul>
       <% user.friends.each do |friend| %>
