@@ -68,7 +68,7 @@ gl:
       trash: Eliminar conversa
       trash_selected: Eliminar conversas seleccionadas
     index:
-      title: Mensaxes de %{username}
+      title: Mensaxes
     new:
       body_max: Máximo 1500 carácteres
       subject: Tema
@@ -356,6 +356,7 @@ gl:
     searching_on_html: Buscando <i>%{q}</i> en
     send: Enviar
     send_a_message: Envía unha mensaxe a %{user}
+    settings: Configuración
     share_this_ad: Comparte este anuncio
     sign_in: Acceder
     sign_in_with_provider: Entrar co %{provider}
@@ -373,7 +374,7 @@ gl:
     update: Gardar
     update_ad: Actualizar anuncio
     user_ads: anuncios
-    user_edit_profile: Editar perfil de usuario
+    user_edit_profile: Editar perfil
     username: Nome de usuario
     users_most_active: usuarios máis activos
     users_most_active_last_week: usuarios máis activos na última semana

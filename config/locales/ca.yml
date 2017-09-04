@@ -66,7 +66,7 @@ ca:
       trash: Esborrar conversa
       trash_selected: Esborrar converses seleccionats
     index:
-      title: Missatges de %{username}
+      title: Missatges
     new:
       body_max: Màxim 1500 caràcters
       subject: Tema
@@ -354,6 +354,7 @@ ca:
     searching_on_html: Buscant <i>%{q}</i> a
     send: Enviar
     send_a_message: Envia un missatge privat a %{user}
+    settings: 
     share_this_ad: Comparteix aquest anunci
     sign_in: Accedir
     sign_in_with_provider: Inicia sessió amb %{provider}
@@ -371,7 +372,7 @@ ca:
     update: Guardar
     update_ad: Actualitzar anunci
     user_ads: anuncis
-    user_edit_profile: Edita perfil d'usuari
+    user_edit_profile: Edita perfil
     username: Nom d'usuari
     users_most_active: usuaris més actius
     users_most_active_last_week: usuaris més actius en la darrera setmana

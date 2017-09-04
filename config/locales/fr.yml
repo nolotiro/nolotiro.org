@@ -66,7 +66,7 @@ fr:
       trash: Déplacer un message à corbeille
       trash_selected: Supprimer les messages sélectionnés
     index:
-      title: Messages %{username}
+      title: Messages
     new:
       body_max: Maximum 1500 caractères
       subject: Thème
@@ -354,6 +354,7 @@ fr:
     searching_on_html: Regarder <i>%{q}</i> en
     send: Envoyer
     send_a_message: Envoyer un message privé à %{user}
+    settings: Configuration
     share_this_ad: Diffuse cette annonce
     sign_in: S'identifier
     sign_in_with_provider: Connexion avec %{provider}
@@ -371,7 +372,7 @@ fr:
     update: Suaver
     update_ad: Modifier l'annonce
     user_ads: annonces
-    user_edit_profile: Modifier le profil de l'utilisateur
+    user_edit_profile: Modifier le profil
     username: Nom d'utilisateur
     users_most_active: utilisateurs plus actifs
     users_most_active_last_week: la plupart des utilisateurs actifs dans la dernière semaine

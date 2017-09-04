@@ -66,7 +66,7 @@ en:
       trash: Conversation deleted
       trash_selected: Delete selected conversations
     index:
-      title: "%{username}'s messages"
+      title: Messages
     new:
       body_max: Max. 1500 characters
       subject: Topic
@@ -354,6 +354,7 @@ en:
     searching_on_html: Searching <i>%{q}</i> on
     send: Send
     send_a_message: Send a private message to %{user}
+    settings: Settings
     share_this_ad: Share this ad
     sign_in: Sign in
     sign_in_with_provider: Sign in with %{provider}
@@ -371,7 +372,7 @@ en:
     update: Save
     update_ad: Update ad
     user_ads: ads
-    user_edit_profile: Edit user's profile
+    user_edit_profile: Edit profile
     username: Username
     users_most_active: most active users
     users_most_active_last_week: most active users last week

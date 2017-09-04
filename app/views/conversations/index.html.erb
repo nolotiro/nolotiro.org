@@ -1,6 +1,4 @@
-<% content_for :title do %>
-  <% t('conversations.index.title', username: current_user.username) %>
-<% end %>
+<% content_for :title , t('conversations.index.title') %>
 
 <%= render partial: 'index',
            locals: { conversations: @conversations, user: current_user },

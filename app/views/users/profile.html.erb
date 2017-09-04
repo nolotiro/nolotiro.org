@@ -1,4 +1,4 @@
-<% content_for :title, "#{t('nlt.published_ads')} - #{@user.username}" %>
+<% content_for :title, t('nlt.published_ads') %>
 
 <%= render partial: 'listads',
            locals: { ads: @ads, user: @user },
