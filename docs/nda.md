@@ -1,18 +1,19 @@
 # ACUERDO DE CONFIDENCIALIDAD
 
 La Asociación aLabs, en adelante aLabs, con sede social en la calle Duque de
-Alba, 13, Madrid, y NIF G86139847C y [NOMBRE DEL COLABORADOR], en adelante el
-colaborador, mayor de edad, con DNI [DNI DEL COLABORADOR] ACUERDAN el siguiente
-compromiso de CONFIDENCIALIDAD.
+Alba, 13, Madrid, y NIF G86139847C y [NOMBRE DE LA COLABORADORA], en adelante el
+colaborador, mayor de edad, con DNI [DNI DE LA COLABORADORA] ACUERDAN el
+siguiente compromiso de CONFIDENCIALIDAD.
 
-[NOMBRE DEL COLABORADOR] va a colaborar con la entidad en las siguientes actividades:
+[NOMBRE DE LA COLABORADORA] va a colaborar con la entidad en las siguientes
+actividades:
 
 * Desarrollo de nolotiro.org.
 * Mejoras en la plataforma.
 * Resolución de incidencias.
 
 De acuerdo con lo establecido en la Ley Orgánica 15/1999, de 13 de diciembre, de
-Protección de Datos de Carácter Personal (LOPD), el colaborador cuyos datos
+Protección de Datos de Carácter Personal (LOPD), la colaboradora cuyos datos
 figuran al comienzo de este documento, MANIFIESTA:
 
 * Que colabora con aLabs desde la fecha de este compromiso.
@@ -32,7 +33,7 @@ figuran al comienzo de este documento, MANIFIESTA:
 * Que se compromete a no revelar a persona alguna ajena a aLabs, sin su
   consentimiento, cualquier información a la que haya tenido acceso en el
   desempeño de sus tareas o que pudiera haber obtenido prevaliéndose de su
-  condición de colaborador.
+  condición de colaboradora.
 
 * Que se compromete a cumplir las obligaciones mencionadas anteriormente,
   incluso después de extinguida, por cualquier causa, la colaboración.
@@ -44,6 +45,6 @@ figuran al comienzo de este documento, MANIFIESTA:
 
 Madrid, [DIA] de [MES] de [AÑO]
 
-[FIRMA DEL COLABORADOR]
+[FIRMA DE LA COLABORADORA]
 
 Asociación aLabs
