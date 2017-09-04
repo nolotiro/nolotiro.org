@@ -31,28 +31,10 @@ module Censurable
   end
 
   def filter_whatsapp(text)
-    filter(/#{whatsapp_slangs.join('|')}/, text)
+    filter(/(wh?ats[au]pp?|wu?ass?ap|guass?app?|guasp)/, text)
   end
 
   private
-
-  def whatsapp_slangs
-    %w[
-      whatsapp
-      whatsupp
-      whatsap
-      watsap
-      wuassap
-      wuasap
-      wassap
-      wasap
-      guassapp
-      guassap
-      guasapp
-      guasap
-      guasp
-    ]
-  end
 
   def filter(regexp, text)
     text.gsub(regexp, "[#{privacy_mask}]")
