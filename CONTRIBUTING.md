@@ -11,7 +11,7 @@ master branch, and to keep everyone involved in the development.
   open a PR. Our master is protected so you won't be able to do it anyways.
 
 - The master branch is considered always stable and deployable so the review
-  process when opening a PR is a very important step in the development.
+  process when opening a PR is an important step in the development.
 
 - Your PR must be approved by at least one other contributor and by CI before
   being merged. Once you get a green check from Travis and a :+1: symbol (or
