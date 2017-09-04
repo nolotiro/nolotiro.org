@@ -322,8 +322,8 @@ en:
       contact: send private message
       edit: edit user's profile
       friend:
-        add: 'Add to your friend''s list '
-        delete: Delete from your friend's list
+        add: Add to your friend list
+        delete: Delete from your friend list
     publish_ad: Post ad
     publish_ad_on: Post ad in %{woeid}
     published_ads: Posted ads
