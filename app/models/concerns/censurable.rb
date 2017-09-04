@@ -41,9 +41,7 @@ module Censurable
       whatsapp
       whatsupp
       whatsap
-      whatsap
       watsap
-      guasap
       wuassap
       wuasap
       wassap
