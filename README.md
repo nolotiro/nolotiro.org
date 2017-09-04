@@ -5,8 +5,8 @@
 
 This is the next revision of nolotiro.org (v3), this time in [Ruby On Rails].
 
-* Ruby: 2.3
-* Rails: 4.2
+* Ruby: 2.4
+* Rails: 5.1
 * PostgreSQL: 9.6
 
 ## Automatic Installation
