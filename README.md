@@ -22,7 +22,6 @@ When finished, you need to log in to the virtual machine with the command
 
 ```
 vagrant ssh
-
 ```
 
 Finally you should start the application server
