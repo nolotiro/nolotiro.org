@@ -3,7 +3,7 @@
 class UsersController < ApplicationController
   before_action :load_user
 
-  def listads
+  def profile
     authorize(@user)
 
     @type = type_scope
@@ -15,10 +15,6 @@ class UsersController < ApplicationController
     @ads = @ads.public_send(@status) if @status
 
     @ads = @ads.includes(:user).recent_first.page(params[:page])
-  end
-
-  def profile
-    authorize(@user)
   end
 
   private

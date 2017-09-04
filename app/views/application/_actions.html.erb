@@ -1,5 +1,5 @@
 <ul class="profile-actions">
-  <% if current_user.nil? || blocking.nil? %>
+  <% if current_user.nil? || (blocking.nil? && current_user != user) %>
     <li class="list-group-item">
       <%= link_to new_conversation_path(recipient_id: user.id) do %>
         <i class="glyphicon glyphicon-envelope"></i>
@@ -11,13 +11,26 @@
   <% if user_signed_in? %>
     <% if current_user == user %>
       <li class="list-group-item">
+        <%= link_to profile_path(user.username) do %>
+          <i class="glyphicon glyphicon-user"></i>
+          <%= t('nlt.profile') %>
+        <% end %>
+      </li>
+
+      <li class="list-group-item">
         <%= link_to edit_user_registration_path do %>
           <i class="glyphicon glyphicon-edit"></i>
           <%= t('nlt.profile_actions.edit') %>
         <% end %>
       </li>
-    <% elsif blocking %>
 
+      <li class="list-group-item">
+        <%= link_to conversations_path do %>
+          <i class="glyphicon glyphicon-envelope"></i>
+          <%= t('nlt.messages') %>
+        <% end %>
+      </li>
+    <% elsif blocking %>
       <li class="list-group-item">
         <%= link_to blocking, method: :delete do %>
           <i class="glyphicon glyphicon-ok-circle"></i>

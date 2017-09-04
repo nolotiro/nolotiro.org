@@ -50,14 +50,14 @@ class AdsController < ApplicationController
   def change_status
     @ad.update!(status: params[:status].to_sym)
 
-    redirect_back fallback_location: listads_user_path(@ad.user.username),
+    redirect_back fallback_location: profile_path(@ad.user.username),
                   notice: t('nlt.ads.marked_as', status: @ad.status_string)
   end
 
   def bump
     @ad.bump
 
-    redirect_back fallback_location: listads_user_path(@ad.user.username),
+    redirect_back fallback_location: profile_path(@ad.user.username),
                   notice: t('nlt.ads.bumped')
   end
 
@@ -89,7 +89,7 @@ class AdsController < ApplicationController
       return previous_path
     end
 
-    listads_user_path(@ad.user.username)
+    profile_path(@ad.user.username)
   end
 
   def ad_friendly_path

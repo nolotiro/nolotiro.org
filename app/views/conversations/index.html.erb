@@ -2,43 +2,6 @@
   <% t('conversations.index.title', username: current_user.username) %>
 <% end %>
 
-<div class="main-row">
-  <div class="col-md-9 col-sm-9">
-    <%= render "users/tabnav", user: current_user %>
-
-    <div class="default_header_section">
-      <h1><%= content_for :title %></h1>
-    </div>
-
-    <div class="default_content_section">
-      <% if @conversations.any? %>
-        <%= form_tag trash_conversations_path, method: :delete do %>
-          <table class="table table-condensed mail-list">
-            <tbody>
-              <% @conversations.each do |c| %>
-                <%= render "conversations/conversation", c: c %>
-              <% end %>
-            </tbody>
-          </table>
-
-          <%= submit_tag t('conversations.buttons.trash_selected'),
-                         id: 'delete_multiple_button' %>
-        <% end %>
-        <%= paginate @conversations %>
-      <% else %>
-        <p>
-          <div class="empty">
-            <%= t("conversations.table.none") %>
-          </div>
-        </p>
-      <% end %>
-    </div>
-  </div>
-
-  <div class="col-md-3 col-sm-3">
-    <div class="google_ad_wrapper">
-      <%= render "partials/raw_google_adsense", class_name: "desktop google_adsense_600_160", ad_slot: "6783776462" %>
-      <%= render "partials/google_adsense", class_name: "mobile google_adsense_300_250", ad_slot: "8702329269" %>
-    </div>
-  </div>
-</div>
+<%= render partial: 'index',
+           locals: { conversations: @conversations, user: current_user },
+           layout: 'application/profile' %>

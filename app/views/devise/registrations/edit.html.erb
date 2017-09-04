@@ -1,32 +1,5 @@
 <% content_for :title, t('nlt.user_edit_profile') %>
 
-<section class="edit-section">
-  <div class="col-md-8 col-sm-8">
-    <%= render "users/tabnav", user: @user %>
-
-    <div class="default_header_section">
-      <h1><%= t('nlt.user_edit_profile') %></h1>
-    </div>
-
-    <div class="default_content_section">
-      <%= render 'edit_form' %>
-    </div>
-  </div>
-</div>
-
-<section class="destroy-section">
-  <div class="col-md-8 col-sm-8">
-    <div class="default_header_section">
-      <h1><%= t('nlt.cancel_my_account') %></h1>
-    </div>
-
-    <div class="default_content_section">
-      <p>
-        <%= t('nlt.want_to_leave') %>
-        <%= link_to t('nlt.cancel_my_account'),
-                    registration_path(resource_name),
-                    data: { confirm: t('nlt.delete_sure') }, method: :delete %>.
-      </p>
-    </div>
-  </div>
-</section>
+<%= render partial: 'edit',
+           locals: { user: current_user },
+           layout: 'application/profile' %>

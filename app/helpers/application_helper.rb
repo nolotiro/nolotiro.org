@@ -11,7 +11,7 @@ module ApplicationHelper
   end
 
   def ad_tab?
-    params[:controller] == 'users' && params['action'] == 'listads'
+    params[:controller] == 'users' && params['action'] == 'profile'
   end
 
   def no_advertising_allowed?

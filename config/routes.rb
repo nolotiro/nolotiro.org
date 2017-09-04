@@ -40,11 +40,11 @@ Rails.application.routes.draw do
           get '/listall/ad_type/:type(/status/:status)(/page/:page)',
               to: 'woeid#show',
               as: 'ads_listall'
-          get '/listuser/id/:username(/type/:type)(/status/:status)(/page/:page)',
-              to: 'users#listads',
-              as: 'listads_user',
-              constraints: { username: %r{[^/]+} }
         end
+
+        get '/listuser/id/:username(/type/:type)(/status/:status)(/page/:page)',
+            to: redirect(ProfileUrlRewriter.new),
+            constraints: { username: %r{[^/]+} }
       end
 
       # locations lists
@@ -81,7 +81,7 @@ Rails.application.routes.draw do
         end
       end
 
-      get '/profile/:username',
+      get '/profile/:username(/type/:type)(/status/:status)(/page/:page)',
           to: 'users#profile',
           as: 'profile',
           constraints: { username: %r{[^/]+} }
