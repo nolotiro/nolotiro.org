@@ -285,11 +285,6 @@ form.searchbox
 /**
  * Ads.
 
-.profile-info
-  font-size: 1.3em
-  font-weight: bold
-  margin-bottom: 6px
-
 .ad_date
   color: #666
   font-size: 0.9em
@@ -654,14 +649,24 @@ form.searchbox
   margin-top: 8px
 
 .default_header_section
+  @include clearfix
+
   background-color: $blue-searchbox
   border: 1px solid $gray-separator
   padding: 15px
 
+  h1
+    margin-bottom: 1em
+
   h2
+    margin-bottom: 1.5em
+
+  h4
+    margin-bottom: .9em
+
+  h2, h4
     font-size: 1em
     font-weight: bold
-    margin-bottom: 1.5em
     padding-left: 0
 
 %content_section

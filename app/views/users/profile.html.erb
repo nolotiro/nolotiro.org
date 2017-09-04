@@ -6,17 +6,17 @@
 
     <div class="default_header_section">
       <h1><%= content_for :title %></h1>
-    </div>
 
-    <div class="default_content_section">
-      <h4 class="profile-info">
+      <h4>
         <%= t('nlt.username') %>: <%= @user.username %>
       </h4>
 
-      <h4 class="profile-info">
+      <h4>
         <%= t('nlt.member_since') %>: <%= l @user.created_at, format: :long %>
       </h4>
+    </div>
 
+    <div class="default_content_section">
       <%= render 'actions',
                  user: @user,
                  blocking: current_user ? current_user.blocking?(@user) : nil %>
