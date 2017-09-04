@@ -75,7 +75,7 @@ gem 'maxminddb', '= 0.1.12'
 
 gem 'omniauth', '~> 1.3'
 gem 'omniauth-facebook', '~> 4.0'
-gem 'omniauth-google-oauth2', '= 0.4.1'
+gem 'omniauth-google-oauth2', '= 0.5.2'
 
 # Image processing in the background. @todo Properly reenable it
 # gem 'delayed_paperclip'
