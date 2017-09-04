@@ -27,3 +27,4 @@ ignore_unused:
   - devise.*
   - recaptcha.errors.*
   - '{time,date}.formats.active_admin'
+  - number.human.storage_units.*

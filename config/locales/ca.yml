@@ -143,11 +143,13 @@ ca:
       already_confirmed: ja està confirmat
       confirmation_period_expired: necessita ser confirmat en %{period}, si us plau demana'n un de nou
       expired: ha caducat, si us plau demana'n un de nou
+      in_between: 
       not_found: no s'ha trobat
       not_locked: no està bloquejat
       not_saved:
         one: '1 error ha evitat que %{resource} es pugui desar:'
         other: "%{count} errors han evitat que %{resource} es pugui desar:"
+      spoofed_media_type: 
   friendships:
     create:
       success: Amic agregat
@@ -383,6 +385,12 @@ ca:
     welcome: hola
     write_a_comment: "+ Escriu un nou comentari"
     your_email: El teu email
+  number:
+    human:
+      storage_units:
+        format: 
+        units:
+          mb: 
   oauth:
     errors:
       duplicated_username: El teu nom d'usuari de %{provider} ja es troba a la base de dades. Si t'has registrat ja usant una altra xarxa social o mitjançant email i contrasenya, si us plau, inicia sessió d'aquesta manera. En cas contrari, indica un altre nom d'usuari per completar el registre.
