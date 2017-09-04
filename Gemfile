@@ -52,30 +52,30 @@ end
 group :development do
   gem 'brakeman-lib', '~> 3.7'
   gem 'faker', '~> 1.6'
-  gem 'i18n-tasks', '0.9.5'
+  gem 'i18n-tasks', '= 0.9.5'
   gem 'listen', '~> 3.1'
   gem 'localeapp', '~> 2.1'
-  gem 'rubocop', '0.49.1'
+  gem 'rubocop', '= 0.49.1'
 
   # deploy
   gem 'capistrano', '~> 3.0'
   gem 'capistrano-rails', '~> 1.3'
   gem 'capistrano-rbenv', '~> 2.1'
-  gem 'capistrano-sidekiq', '0.10.0'
+  gem 'capistrano-sidekiq', '= 0.10.0'
 end
 
 gem 'http_accept_language', '~> 2.0'
-gem 'pg', '0.19.0'
+gem 'pg', '= 0.19.0'
 gem 'redis-rails', '~> 5.0'
 gem 'sidekiq', '~> 4.2'
 
 gem 'devise', '~> 4.3'
 gem 'kaminari', '~> 1.0'
-gem 'maxminddb', '0.1.12'
+gem 'maxminddb', '= 0.1.12'
 
 gem 'omniauth', '~> 1.3'
 gem 'omniauth-facebook', '~> 4.0'
-gem 'omniauth-google-oauth2', '0.4.1'
+gem 'omniauth-google-oauth2', '= 0.4.1'
 
 # Image processing in the background. @todo Properly reenable it
 # gem 'delayed_paperclip'
