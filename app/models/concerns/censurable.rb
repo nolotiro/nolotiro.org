@@ -40,9 +40,7 @@ module Censurable
     text.gsub(regexp, "[#{privacy_mask}]")
   end
 
-  # @todo Remove gsub when migrating to Ruby 2.4 since Ruby can now do full
-  # unicode case mapping.
   def privacy_mask
-    I18n.t('nlt.private_info_hidden').upcase.gsub(/ó/, 'Ó').gsub(/é/, 'É')
+    I18n.t('nlt.private_info_hidden').upcase
   end
 end
