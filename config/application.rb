@@ -17,7 +17,7 @@ module NolotiroOrg
     ActionMailer::Base.layout 'mail'
 
     # Initialize configuration defaults for originally generated Rails version.
-    config.load_defaults 5.0
+    config.load_defaults 5.1
 
     #
     # Preferred active_job adaptar
