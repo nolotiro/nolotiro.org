@@ -1,6 +1,6 @@
 <%= link_to adslug_path(ad, ad.slug), class: 'aod_content' do %>
   <div class="row">
-    <div class="col-md-3">
+    <div class="col_ad_image">
       <div class="ad_list_image <%= ad.current_status %>">
         <%= image_tag ad.image.url(:thumb), title: ad.filtered_title,
                                             alt: ad.filtered_title %>
@@ -13,7 +13,7 @@
       </div>
     </div>
 
-    <div class="col-md-6">
+    <div class="col_ad_body">
       <h4>
         <%= ad.filtered_title %>
       </h4>
@@ -23,7 +23,7 @@
       </div>
     </div>
 
-    <div class="col-md-3">
+    <div class="col_ad_extra">
       <div class="ad_info_line">
         <span class="ad_author">
           <%= ad.user.username %>

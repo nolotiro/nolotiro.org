@@ -225,7 +225,7 @@ form.searchbox
   line-height: 20px
   text-align: center
   text-transform: uppercase
-  width: 230px
+  width: 200px
 
 .ad_author
   font-weight: bold
@@ -250,6 +250,24 @@ form.searchbox
   img
     display: block
     margin: auto
+
+.col_ad_image
+  @include make-md-column(3)
+  @include make-sm-column(3)
+
+  width: 230px !important
+
+.col_ad_body
+  @include make-md-column(6)
+  @include make-sm-column(6)
+
+  width: calc(80% - 230px) !important
+
+.col_ad_extra
+  @include make-md-column(3)
+  @include make-sm-column(3)
+
+  width: 20% !important
 
 .no_results
   padding: 10px 15px
