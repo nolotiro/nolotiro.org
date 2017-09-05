@@ -132,6 +132,7 @@ gl:
       signed_up_but_inactive: A súa conta foi creada correctamente. Con todo, non puido iniciar a sesión porque a súa conta aínda non está activada.
       signed_up_but_locked: A súa conta foi creada correctamente. Con todo, non se puido iniciar sesión porque a súa conta está bloqueada.
       signed_up_but_unconfirmed: El enviou unha mensaxe cun enlace de confirmación ao teu correo. Abre o enlace a activar a súa conta.
+      update_needs_confirmation: 
       updated: A súa conta foi actualizada.
     sessions:
       signed_in: Benvido
