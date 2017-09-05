@@ -32,6 +32,8 @@ class Ad < ApplicationRecord
                     url: '/system/img/:attachment/:id_partition/:style/:filename',
                     processors: %i[optimizer thumbnail]
 
+  process_in_background :image
+
   validates_attachment :image, content_type: { content_type: ['image/jpg', 'image/jpeg', 'image/png', 'image/gif'] }
 
   validates_attachment_size :image, in: 0.megabytes..5.megabytes
