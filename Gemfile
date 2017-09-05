@@ -54,7 +54,7 @@ group :development do
   gem 'faker', '~> 1.8'
   gem 'i18n-tasks', '= 0.9.5'
   gem 'listen', '~> 3.1'
-  gem 'localeapp', '~> 2.1'
+  gem 'localeapp', '~> 2.4'
   gem 'rubocop', '= 0.49.1'
 
   # deploy
