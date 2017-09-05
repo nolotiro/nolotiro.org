@@ -369,6 +369,7 @@ en:
       title: Help us to translate nolotiro.org
     translations: translations
     update: Save
+    update_ad: Update ad
     user_ads: ads
     user_edit_profile: Edit user's profile
     user_profile: Profile
