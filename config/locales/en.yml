@@ -66,7 +66,7 @@ en:
       trash: Conversation deleted
       trash_selected: Delete selected conversations
     index:
-      title: "%{username}'s messages"
+      title: Messages
     new:
       body_max: Max. 1500 characters
       subject: Topic
@@ -316,14 +316,14 @@ en:
     profile: profile
     profile_actions:
       blocking:
-        add: 
-        confirm: 
-        delete: 
-      contact: send a private message to %{username}
-      edit: edit user's profile
+        add: Block user
+        confirm: Are you sure you want to block %{username}? The user won't be able to contact you again or access any of your ads.
+        delete: Unblock user
+      contact: send private message
+      edit: edit
       friend:
-        add: 'Add %{username} to your friend''s list '
-        delete: Delete %{username} from your friend's list
+        add: Add to your friend list
+        delete: Delete from your friend list
     publish_ad: Post ad
     publish_ad_on: Post ad in %{woeid}
     published_ads: Posted ads
@@ -354,6 +354,7 @@ en:
     searching_on_html: Searching <i>%{q}</i> on
     send: Send
     send_a_message: Send a private message to %{user}
+    settings: Settings
     share_this_ad: Share this ad
     sign_in: Sign in
     sign_in_with_provider: Sign in with %{provider}
@@ -371,8 +372,6 @@ en:
     update: Save
     update_ad: Update ad
     user_ads: ads
-    user_edit_profile: Edit user's profile
-    user_profile: Profile
     username: Username
     users_most_active: most active users
     users_most_active_last_week: most active users last week

@@ -161,6 +161,12 @@ form.searchbox
   font-size: 14px
   padding: 5px
 
+.profile-actions
+  @extend .list-group
+
+  float: right
+  margin-bottom: 0
+
 .ad_create_tab
   @include clearfix
 
@@ -284,11 +290,6 @@ form.searchbox
 
 /**
  * Ads.
-
-.profile-info
-  font-size: 1.3em
-  font-weight: bold
-  margin-bottom: 6px
 
 .ad_date
   color: #666
@@ -648,21 +649,32 @@ form.searchbox
 
     background-color: $blue-searchbox
 
-.world_link
-  display: inline-block
-  font-weight: bold
-  margin-top: 8px
-
 .default_header_section
+  @include clearfix
+
   background-color: $blue-searchbox
   border: 1px solid $gray-separator
   padding: 15px
 
+  h1
+    margin-bottom: 1em
+
   h2
+    margin-bottom: 1.5em
+
+  h4
+    margin-bottom: .9em
+
+  h2, h4
     font-size: 1em
     font-weight: bold
-    margin-bottom: 1.5em
     padding-left: 0
+
+.inner_header_section
+  @extend .default_header_section
+
+  border-right: none
+  border-left: none
 
 %content_section
   border: 1px solid $gray-separator
@@ -671,6 +683,12 @@ form.searchbox
 .default_content_section
   @extend %content_section
 
+  padding: 15px
+
+.inner_content_section
+  @extend %content_section
+
+  border: none
   padding: 15px
 
 .unpadded_content_section

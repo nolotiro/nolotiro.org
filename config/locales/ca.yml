@@ -66,7 +66,7 @@ ca:
       trash: Esborrar conversa
       trash_selected: Esborrar converses seleccionats
     index:
-      title: Missatges de %{username}
+      title: Missatges
     new:
       body_max: Màxim 1500 caràcters
       subject: Tema
@@ -316,14 +316,14 @@ ca:
     profile: perfil
     profile_actions:
       blocking:
-        add: bloquejar a %{username}
+        add: bloquejar
         confirm: "¿Segur que vols bloquejar %{username}? No podrà tornar a contactar ni a veure els teus anuncis."
-        delete: desbloquejar a %{username}
-      contact: envia un missatge privat a %{username}
-      edit: edita perfil d'usuari
+        delete: desbloquejar
+      contact: enviar missatge privat
+      edit: editar
       friend:
-        add: afegir %{username} a la llista d'amics
-        delete: afegir %{username} a la llista d'amics
+        add: afegir a la llista d'amics
+        delete: eliminar de la llista d'amics
     publish_ad: Publicar anunci
     publish_ad_on: Publicar anunci en %{woeid}
     published_ads: Anuncis publicats
@@ -354,6 +354,7 @@ ca:
     searching_on_html: Buscant <i>%{q}</i> a
     send: Enviar
     send_a_message: Envia un missatge privat a %{user}
+    settings: 
     share_this_ad: Comparteix aquest anunci
     sign_in: Accedir
     sign_in_with_provider: Inicia sessió amb %{provider}
@@ -371,8 +372,6 @@ ca:
     update: Guardar
     update_ad: Actualitzar anunci
     user_ads: anuncis
-    user_edit_profile: Edita perfil d'usuari
-    user_profile: Perfil d'usuari
     username: Nom d'usuari
     users_most_active: usuaris més actius
     users_most_active_last_week: usuaris més actius en la darrera setmana

@@ -1,0 +1,13 @@
+<% unless user.friends.count == 0 %>
+  <div class="ranking">
+    <h2><%= t('nlt.friends') %></h2>
+
+    <ul>
+      <% user.friends.each do |friend| %>
+        <li>
+          <%= link_to friend.username, profile_path(friend.username) %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>

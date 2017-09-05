@@ -68,7 +68,7 @@ gl:
       trash: Eliminar conversa
       trash_selected: Eliminar conversas seleccionadas
     index:
-      title: Mensaxes de %{username}
+      title: Mensaxes
     new:
       body_max: Máximo 1500 carácteres
       subject: Tema
@@ -318,14 +318,14 @@ gl:
     profile: perfil
     profile_actions:
       blocking:
-        add: bloquear a %{username}
+        add: bloquear
         confirm: Seguro que desexa bloquear a %{username}? Non poderá volver a contactar con vostede nin ver ningún dos seus anuncios
-        delete: desbloquear a %{username}
-      contact: 
-      edit: editar perfil de usuario
+        delete: desbloquear
+      contact: enviar menxaje privada
+      edit: editar
       friend:
-        add: agregar %{username} á túa lista de amigos
-        delete: eleminar %{username} da túa lista de amigos
+        add: agregar á túa lista de amigos
+        delete: eliminar da túa lista de amigos
     publish_ad: Publicar anuncio
     publish_ad_on: Publicar anuncio en %{woeid}
     published_ads: Anuncios publicados
@@ -356,6 +356,7 @@ gl:
     searching_on_html: Buscando <i>%{q}</i> en
     send: Enviar
     send_a_message: Envía unha mensaxe a %{user}
+    settings: Configuración
     share_this_ad: Comparte este anuncio
     sign_in: Acceder
     sign_in_with_provider: Entrar co %{provider}
@@ -373,8 +374,6 @@ gl:
     update: Gardar
     update_ad: Actualizar anuncio
     user_ads: anuncios
-    user_edit_profile: Editar perfil de usuario
-    user_profile: Perfil de usuario
     username: Nome de usuario
     users_most_active: usuarios máis activos
     users_most_active_last_week: usuarios máis activos na última semana

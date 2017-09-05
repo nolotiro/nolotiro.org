@@ -66,7 +66,7 @@ pt:
       trash: Apagar conversa
       trash_selected: Apagar conversas selecionadas
     index:
-      title: Mensagens de %{username}
+      title: Mensagens
     new:
       body_max: Máximo 1500 caracteres
       subject: Assunto
@@ -316,14 +316,14 @@ pt:
     profile: perfil
     profile_actions:
       blocking:
-        add: 
-        confirm: 
-        delete: 
-      contact: envia uma mensagem privada a %{username}
-      edit: editar perfil de usuário
+        add: bloquear
+        confirm: Tem certeza que deseja bloquear ao %{username}? O usuário não va puder enviar messagems a você ou olhar os seus anúncios.
+        delete: desbloquear
+      contact: enviar mensagem privada
+      edit: editar
       friend:
-        add: adicionar %{username} a sua lista de amigos
-        delete: excluir %{username} da sua lista de amigos
+        add: adicionar a sua lista de amigos
+        delete: excluir da sua lista de amigos
     publish_ad: Publicar anúncio
     publish_ad_on: Publicar anúncio em %{woeid}
     published_ads: Avisos publicados
@@ -354,6 +354,7 @@ pt:
     searching_on_html: Buscando <i>%{q}</i> em
     send: Enviar
     send_a_message: Envia uma mensagem privada ao %{user}
+    settings: Configuração
     share_this_ad: Compartilha este anúncio
     sign_in: Accesar
     sign_in_with_provider: Fazer login com %{provider}
@@ -371,8 +372,7 @@ pt:
     update: Salvar
     update_ad: Atualizar anúncio
     user_ads: anúncios
-    user_edit_profile: Editar perfil de usuário
-    user_profile: Perfil de usuário
+    user_edit_profile: Editar perfil
     username: Nome de usuário
     users_most_active: usuários mais ativos
     users_most_active_last_week: usuários mais ativos nas últimas semanas

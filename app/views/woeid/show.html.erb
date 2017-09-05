@@ -63,8 +63,8 @@
         <br>
         <%= render "ads/search", q: @q %>
 
-        <%= link_to location_ask_path, class: "world_link" do %>
-          <%= image_tag "change_location.png", alt: "change location" %>
+        <%= link_to location_ask_path do %>
+          <i class="glyphicon glyphicon-map-marker"></i>
           <%= t('nlt.change_city') %>
         <% end %>
       </div>

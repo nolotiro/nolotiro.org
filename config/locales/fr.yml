@@ -66,7 +66,7 @@ fr:
       trash: Déplacer un message à corbeille
       trash_selected: Supprimer les messages sélectionnés
     index:
-      title: Messages %{username}
+      title: Messages
     new:
       body_max: Maximum 1500 caractères
       subject: Thème
@@ -316,14 +316,14 @@ fr:
     profile: profil
     profile_actions:
       blocking:
-        add: 
-        confirm: 
-        delete: 
-      contact: envoyer un message privé à %{username}
-      edit: modifier le profil de l'utilisateur
+        add: bloquer
+        confirm: Etes-vous sûr que vous voulez bloquer %{username}? L'utilisateur ne pouvez pas re-contacter ou voir vos annonces.
+        delete: débloquer
+      contact: envoyer message privé
+      edit: modifier
       friend:
-        add: ajoutez %{username} à votre liste d'amis
-        delete: supprimer %{username} à votre liste d'amis
+        add: ajouter à votre liste d'amis
+        delete: supprimer de votre liste d'amis
     publish_ad: Publier annonce
     publish_ad_on: Publier annonce en %{woeid}
     published_ads: Annonces publiées
@@ -354,6 +354,7 @@ fr:
     searching_on_html: Regarder <i>%{q}</i> en
     send: Envoyer
     send_a_message: Envoyer un message privé à %{user}
+    settings: Configuration
     share_this_ad: Diffuse cette annonce
     sign_in: S'identifier
     sign_in_with_provider: Connexion avec %{provider}
@@ -371,8 +372,6 @@ fr:
     update: Suaver
     update_ad: Modifier l'annonce
     user_ads: annonces
-    user_edit_profile: Modifier le profil de l'utilisateur
-    user_profile: Profil d'utilisateur
     username: Nom d'utilisateur
     users_most_active: utilisateurs plus actifs
     users_most_active_last_week: la plupart des utilisateurs actifs dans la dernière semaine

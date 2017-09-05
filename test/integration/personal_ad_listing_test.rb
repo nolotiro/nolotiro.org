@@ -19,9 +19,7 @@ class PersonalAdListingTest < ActionDispatch::IntegrationTest
 
     create(:ad, title: "something else to ensure it's filtered out")
 
-    mocking_yahoo_woeid_info(@user.woeid) do
-      visit listads_user_path(@user.username)
-    end
+    mocking_yahoo_woeid_info(@user.woeid) { visit profile_path(@user.username) }
   end
 
   it 'lists all ads in a separate tab in user profile' do

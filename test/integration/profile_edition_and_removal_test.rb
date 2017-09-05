@@ -13,7 +13,7 @@ class ProfileEditionAndRemovalTest < ActionDispatch::IntegrationTest
 
     visit profile_path(user.username)
 
-    click_link 'editar perfil de usuario'
+    click_link 'editar'
   end
 
   after { logout }
