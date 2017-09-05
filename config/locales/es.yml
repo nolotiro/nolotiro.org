@@ -1,4 +1,3 @@
----
 es:
   activemodel:
     attributes:
@@ -47,12 +46,12 @@ es:
         remember: Recuérdame
         username: Nombre de usuario
     models:
-      ad:
-        one: anuncio
-        other: Anuncios
       aa_comment:
         one: comentario
         other: Comentarios
+      ad:
+        one: anuncio
+        other: Anuncios
       user:
         one: usuario
         other: Usuarios
@@ -82,7 +81,7 @@ es:
       none: No tienes mensajes de este tipo
   date:
     formats:
-      active_admin: '%d/%m/%y'
+      active_admin: "%d/%m/%y"
   devise:
     confirmations:
       action: Confirmar mi cuenta
@@ -144,13 +143,13 @@ es:
       already_confirmed: ya ha sido confirmada, por favor intenta iniciar sesión
       confirmation_period_expired: necesita confirmarse dentro de %{period}, por favor solicita una nueva
       expired: ha expirado, por favor solicita una nueva
-      in_between: "debe estar entre %{min} y %{max}"
+      in_between: debe estar entre %{min} y %{max}
       not_found: no se ha encontrado
       not_locked: no estaba bloqueada
       not_saved:
         one: 'Ocurrió un error al tratar de guardar %{resource}:'
         other: 'Ocurrieron %{count} errores al tratar de guardar %{resource}:'
-      spoofed_media_type: "tiene una extensión que no coincide con su contenido"
+      spoofed_media_type: tiene una extensión que no coincide con su contenido
   friendships:
     create:
       success: Amigo agregado
@@ -229,13 +228,13 @@ es:
     delete_ad: Borrar anuncio
     delete_if_delivered: Si has regalado este anuncio, te recomendamos que en lugar de borrarlo lo marques como entregado. Así el anuncio contabilizará en tus estadísticas de regalos y quizá estas estadísticas en un futuro sean utilizadas para proporcionar beneficios a los más regaladores.
     delete_if_not_delivered: Si por el contrario has regalado el objeto por otro medio, lo has vendido o has cambiado de opinión y ya no lo quieres regalar, adelante.
-    delete_sure: ¿Seguro que quieres darte de baja? Todo tu contenido será borrado de manera permanente.
+    delete_sure: "¿Seguro que quieres darte de baja? Todo tu contenido será borrado de manera permanente."
     delivered: entregado
     developers: desarrolladores
     didn_t_receive_confirmation_instructions: "¿No has recibido las instrucciones de confirmación?"
-    do_you_have_it: ¿Lo tienes?
-    edit_this_ad: Edita este anuncio
+    do_you_have_it: "¿Lo tienes?"
     edit: Editar
+    edit_this_ad: Edita este anuncio
     expired: expirado
     faq:
       answer_1_html: El propósito fundamental de esta web es el de deshacernos de los objetos que ya no utilizamos y nos estorban en casa.
@@ -258,19 +257,6 @@ es:
       question_9: "¿Puedo conseguir una casa, un coche o una moto a través de nolotiro?"
       title: Preguntas frecuentes
     faqs: preguntas frecuentes
-    rule:
-      entry_1: Nolotiro es una web que sirve para deshacernos de los objetos que ya no utilizamos y nos estorban en casa, regalándoselos a otras personas, sin condiciones. Por lo tanto, no se aceptaran el trueque o intercambio de objetos sino solo la donación.
-      entry_2: Asimismo, los anuncios de compra-venta, pidiendo u ofreciendo dinero, o comerciales no están permitidos. Los usuarios autores de dichos anuncios son expulsados y el contenido borrado en cuanto una moderadora los detecta.
-      entry_3: Los anuncios de regalo de casas, coches u otros objetos de similar valor, suelen conllevar estafas, por lo tanto, no están admitidos.
-      entry_4: Por motivos de seguridad, no se admite la donación de medicamentos (caducados o no) o de alimentos caducados.
-      entry_5: 'Los animales no son objetos que se puedan "tirar" o "reciclar" con lo que quedan fuera del ámbito de nolotiro. En caso que no pueda encargarse de ellos, recomendamos recurrir a una protectora de animales.'
-      entry_6: No se permite realizar peticiones de objetos en la sección de regalos y en cuanto sean detectados, se trasladarán a su sección correspondiente o serán borrados.
-      entry_7: No se publicarán comentarios que fomenten el odio o la discriminación por razones raciales, de género, de nacionalidad, de religión o cualquier otra circunstancia personal. Tampoco los que contengan apología de la violencia o se muestren a favor de violaciones de los derechos humanos.
-      entry_8: No se publicarán anuncios que contengan ’spam’ o que direccionen a contenido publicitario.
-      entry_9: Solo se pueden publicar anuncios para regalar objetos o realizar peticiones, no para utilizar la sección de regalos como vía de comunicación con otros usuarios o administradores (comunicar opiniones, acusar a otros usuarios, indicar citas, etc).
-      entry_10: Nolotiro se reserva el derecho de suprimir los anuncios y comentarios generados , de acuerdo a estas normas o si las moderadoras lo estimasen oportuno.
-      title: Normas de uso
-    rules: normas de uso
     footer_explain: 'nolotiro.org es un sitio web donde regalo y busco regalos gratis de segunda mano: muebles, sillas, sofás, bicicletas, ordenadores portátiles, mesas, cocinas, lámparas, camas, ropa, juguetes, cunas o carros para bebes, teléfonos móviles y otras muchas cosas que ya no quieres y ya no necesitas para que las reutilicen otra gente a la que puede servirle o darle nueva vida.'
     forgot_your_password: "¿Has olvidado tu contraseña?"
     friends: Amigos
@@ -320,7 +306,7 @@ es:
       publish_ad: publicar un anuncio en esta ciudad
       subtitle: Puedes probar alguna de estas cosas
       switch_to_bigger_city_html: "%{choose_bigger} que esté cerca de tu ubicación."
-      switch_to_guessed_city_html: 'Comprueba que has elegido tu ciudad correctamente. Nuestro sistema de sugerencia de ubicación (basado en tu IP) dice que estás cerca de %{change_location}'
+      switch_to_guessed_city_html: Comprueba que has elegido tu ciudad correctamente. Nuestro sistema de sugerencia de ubicación (basado en tu IP) dice que estás cerca de %{change_location}
       title: No hay anuncios para esta ubicación.
     password: Contraseña
     permission_denied: No tienes permisos para realizar esta acción.
@@ -349,6 +335,19 @@ es:
     remember_me: Recuérdame
     requests: peticiones
     rss_suscribe: Suscribirse via RSS
+    rule:
+      entry_1: Nolotiro es una web que sirve para deshacernos de los objetos que ya no utilizamos y nos estorban en casa, regalándoselos a otras personas, sin condiciones. Por lo tanto, no se aceptaran el trueque o intercambio de objetos sino solo la donación.
+      entry_10: Nolotiro se reserva el derecho de suprimir los anuncios y comentarios generados , de acuerdo a estas normas o si las moderadoras lo estimasen oportuno.
+      entry_2: Asimismo, los anuncios de compra-venta, pidiendo u ofreciendo dinero, o comerciales no están permitidos. Los usuarios autores de dichos anuncios son expulsados y el contenido borrado en cuanto una moderadora los detecta.
+      entry_3: Los anuncios de regalo de casas, coches u otros objetos de similar valor, suelen conllevar estafas, por lo tanto, no están admitidos.
+      entry_4: Por motivos de seguridad, no se admite la donación de medicamentos (caducados o no) o de alimentos caducados.
+      entry_5: Los animales no son objetos que se puedan "tirar" o "reciclar" con lo que quedan fuera del ámbito de nolotiro. En caso que no pueda encargarse de ellos, recomendamos recurrir a una protectora de animales.
+      entry_6: No se permite realizar peticiones de objetos en la sección de regalos y en cuanto sean detectados, se trasladarán a su sección correspondiente o serán borrados.
+      entry_7: No se publicarán comentarios que fomenten el odio o la discriminación por razones raciales, de género, de nacionalidad, de religión o cualquier otra circunstancia personal. Tampoco los que contengan apología de la violencia o se muestren a favor de violaciones de los derechos humanos.
+      entry_8: No se publicarán anuncios que contengan ’spam’ o que direccionen a contenido publicitario.
+      entry_9: Solo se pueden publicar anuncios para regalar objetos o realizar peticiones, no para utilizar la sección de regalos como vía de comunicación con otros usuarios o administradores (comunicar opiniones, acusar a otros usuarios, indicar citas, etc).
+      title: Normas de uso
+    rules: normas de uso
     save_failed: 'Hay un problema, revisa esto:'
     search:
       button: buscar
@@ -391,7 +390,7 @@ es:
       storage_units:
         format: "%n %u"
         units:
-          mb: "MB"
+          mb: MB
   oauth:
     errors:
       duplicated_username: Tu nombre de usuario de %{provider} ya se encuentra en nuestra base de datos. Si te has registrado ya usando otra red social o mediante email y contraseña, por favor, inicia sesión de esa manera. En caso contrario, indica otro nombre de usuario para completar el registro.
@@ -401,7 +400,7 @@ es:
       verification_failed: Falló la verificación contra robots, prueba de nuevo
   time:
     formats:
-      active_admin: '%d/%m/%y %H:%M'
+      active_admin: "%d/%m/%y %H:%M"
   time_ago_in_words: hace %{time}
   views:
     pagination:

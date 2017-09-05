@@ -1,4 +1,3 @@
----
 fr:
   activemodel:
     attributes:
@@ -47,12 +46,12 @@ fr:
         remember: Souvenir de moi
         username: Nom d'utilisateur
     models:
-      ad:
-        one: annonce
-        other: Annonces
       aa_comment:
         one: commentaire
         other: Commentaires
+      ad:
+        one: annonce
+        other: Annonces
       user:
         one: utilisateur
         other: Utilisateurs
@@ -87,8 +86,8 @@ fr:
     confirmations:
       action: Confirmer mon compte
       confirmed: Votre compte a été confirmé avec succès.
-      instructions: "S'il vous plaît confirmer votre e-mail en accédant au lien suivant:"
-      no_html_instructions: "Si vous ne pouvez pas cliquer sur le lien, copiez et collez le texte suivant dans la barre d'adresse de votre navigateur:"
+      instructions: 'S''il vous plaît confirmer votre e-mail en accédant au lien suivant:'
+      no_html_instructions: 'Si vous ne pouvez pas cliquer sur le lien, copiez et collez le texte suivant dans la barre d''adresse de votre navigateur:'
       resend: Renvoyer les instructions de confirmation
       send_instructions: Vous allez recevoir sous quelques minutes un courriel comportant des instructions pour confirmer votre compte.
       send_paranoid_instructions: Si votre email existe sur notre base de données, vous recevrez sous quelques minutes un message avec des instructions pour confirmer votre compte.
@@ -108,7 +107,7 @@ fr:
       reset_password_instructions:
         subject: Instructions pour changer le mot de passe
     omniauth_callbacks:
-      failure: "Nous ne pouvons pas vous authentifier depuis %{kind} pour la raison suivante: '%{reason}'."
+      failure: 'Nous ne pouvons pas vous authentifier depuis %{kind} pour la raison suivante: ''%{reason}''.'
       success: Autorisé avec succès par votre compte %{kind}.
     passwords:
       action: Changer le mot de passe
@@ -118,7 +117,7 @@ fr:
       follow_instructions: Quelqu'un a demandé de changer votre mot de passe nolotiro.org. Si vous ne l'avez pas été vous pouvez ignorer cet e-mail. Votre mot de passe ne changera pas jusqu'à ce que vous accédez au lien et créer un nouveau.
       forgot: As tu oublié ton mot de passe?
       instructions: S'il vous plaît entrer votre e-mail et vous envoyer un lien de raccourci pour changer votre mot de passe.
-      no_html_instructions: "Si vous ne pouvez pas cliquer sur le lien, copier et coller cette URL dans la barre d'adresse de votre navigateur: "
+      no_html_instructions: 'Si vous ne pouvez pas cliquer sur le lien, copier et coller cette URL dans la barre d''adresse de votre navigateur: '
       no_token: Vous ne pouvez pas accéder à cette page si vous n’y accédez pas depuis un courriel de réinitialisation de mot de passe. Si vous venez en effet d’un tel courriel, vérifiez que vous avez copié l’adresse URL en entier.
       send: Envoyer par email
       send_instructions: Vous allez recevoir sous quelques minutes un courriel vous indiquant comment réinitialiser votre mot de passe.
@@ -144,13 +143,13 @@ fr:
       already_confirmed: a déjà été confirmé(e)
       confirmation_period_expired: doit être confirmé(e) en %{period}, veuillez en demander un(e) autre
       expired: est expiré, veuillez en demander un autre
-      in_between: "doit être compris entre %{min} et %{max}"
+      in_between: doit être compris entre %{min} et %{max}
       not_found: n’a pas été trouvé(e)
       not_locked: n’était pas verrouillé(e)
       not_saved:
         one: 'une erreur a empêché ce (cet ou cette) %{resource} d’être enregistré(e) :'
         other: "%{count} erreurs ont empêché ce (cet ou cette) %{resource} d’être enregistré(e) :"
-      spoofed_media_type: "ne correspond pas à ce que cela devrait être"
+      spoofed_media_type: ne correspond pas à ce que cela devrait être
   friendships:
     create:
       success: Ami ajouté
@@ -176,7 +175,7 @@ fr:
       created: Annonce créé
       destroyed: Annonce supprimé
       form:
-        body: "Corps de l'annonce:"
+        body: 'Corps de l''annonce:'
         body_max: 500 caractères maximum
         comments_enabled: Autoriser les commentaires du public
         image_permitted_formats: 'Admis formats: gif, jpg, png. Max: 5Mb.'
@@ -234,12 +233,12 @@ fr:
     developers: développeurs
     didn_t_receive_confirmation_instructions: Vous avez pas reçu les instructions de confirmation?
     do_you_have_it: Est-ce vous l'avez?
-    edit_this_ad: Modifier cette annonce
     edit: Modifier
+    edit_this_ad: Modifier cette annonce
     expired: 
     faq:
       answer_1_html: Le but principal de ce site est de se débarrasser des éléments que vous utilisez plus et nous empêchent à la maison.
-      answer_2_html: "D'abord, vous directement pudiéndote débarrasser des choses que vous ne voulez plus, et toujours donner quelque chose implicitement. Il est préférable de l'aborder égoïstement et contrôler la relation de cause à effet qui va déclencher donner. Si nous nous concentrons sur le fait de donner des objets à partir d'un point de vue égoïste, se débarrasser des choses utiles mais qui nous dérangee, nous avons toujours une bonne expérience, sans attendre quelque chose de plus pour se débarrasser de ces objets. Et sachant que quelqu'un te donne usage ou avantage de renforcer cette expérience positive. mots: l'acte de donner des objets de valeur ou utile est toujours une chose positive si nous ne prévoyons pas une récompense morale ou apaiser notre conscience."
+      answer_2_html: 'D''abord, vous directement pudiéndote débarrasser des choses que vous ne voulez plus, et toujours donner quelque chose implicitement. Il est préférable de l''aborder égoïstement et contrôler la relation de cause à effet qui va déclencher donner. Si nous nous concentrons sur le fait de donner des objets à partir d''un point de vue égoïste, se débarrasser des choses utiles mais qui nous dérangee, nous avons toujours une bonne expérience, sans attendre quelque chose de plus pour se débarrasser de ces objets. Et sachant que quelqu''un te donne usage ou avantage de renforcer cette expérience positive. mots: l''acte de donner des objets de valeur ou utile est toujours une chose positive si nous ne prévoyons pas une récompense morale ou apaiser notre conscience.'
       answer_3_html: Sur ce site, vous avez un pouvoir absolu sur la décision de qui, où et quand vous donnez vos objets de valeur. Bien sûr, l'idéal est de donner quelque chose à la personne qui ont le plus besoin. Pas se méprendre sur le chemin nous utilisons le mot égotisme ici. Mais pour savoir si la personne que vous allez donner un objet mérite est une tâche très difficile, et favorise un type de comportement qui mènent à de mauvaises expériences et des jugements de valeur qui peuvent faire beaucoup de mal.
       answer_4_html: Oui, il y a quelques-uns. Mail il n'pas d'importance. Si votre objectif est de se débarrasser des choses que vous ne voulez pas (l'égoïste). Si vous avez donné des objets parce qu'ils portaient et ne savait pas quoi faire avec eux, mais ne les voulait jeter, vous avez bien fait et vous êtes retourné cet objet au <a href="http://www.lapetiteclaudine.com/archives/009217.html">monde des choses utiles</a>, économiser de l'argent aux autres et de l'énergie, générant la richesse (un petit peu). Cependant, la décision finale sur le destinataire de l'objet que vous donnez est exclusivement vôtre. Donc, appliquer les critères que vous jugez appropriées.
       answer_5_html: "Il y a seulement 2 types d'annonces: The Gift, qui offrent des articles qui entraveront ou ne veulent plus. Et je veux des annonces, qui servent à fournir des indices et inspirer les gens à ce genre d'objets que vous voulez que d'autres personnes d'utiliser ou de posséder. \n<Strong> Annonces, vente, demandant l'argent de l'emploi, le commerce, les médicaments etc. ne sont pas autorisés. </strong> Et ils sont supprimés dès qu'il détecte un modérateur, si indésirables affichant plusieurs reprises annonces, vous pouvez procéder à verrouiller le compte utilisateur."
@@ -258,19 +257,6 @@ fr:
       question_9: Est-ce que je peux obtenir une maison, une voiture ou une moto avec nolotiro?
       title: Questions fréquentes
     faqs: questions fréquentes
-    rule:
-      entry_1: 
-      entry_2: 
-      entry_3: 
-      entry_4: 
-      entry_5: 
-      entry_6: 
-      entry_7: 
-      entry_8: 
-      entry_9: 
-      entry_10: 
-      title: 
-    rules: 
     footer_explain: nolotiro.org est un site où je cherche des cadeaux don gratuit et des meubles de seconde main, des chaises, des canapés, des vélos, des ordinateurs portables, des tables, des poêles, des lampes, des lits, des vêtements, des jouets, des lits bébé ou les voitures, les téléphones mobiles et autres beaucoup de choses que vous ne voulez plus et n'a plus besoin de faire la réutilisation d'autres personnes qui peuvent servir ou donner une nouvelle vie.
     forgot_your_password: As tu oublié ton mot de passe?
     friends: Amis
@@ -320,7 +306,7 @@ fr:
       publish_ad: publier une annonce dans cette ville
       subtitle: Vous pouvez essayer une de ces choses
       switch_to_bigger_city_html: "%{choose_bigger} à côté de votre emplacement."
-      switch_to_guessed_city_html: 'Vérifiez que vous avez choisi correctement votre ville. Notre emplacement du système de suggestion (basé sur votre IP) indique que vous êtes près de %{change_location}'
+      switch_to_guessed_city_html: Vérifiez que vous avez choisi correctement votre ville. Notre emplacement du système de suggestion (basé sur votre IP) indique que vous êtes près de %{change_location}
       title: Aucune annonce pour ce lieu.
     password: Mot de passe
     permission_denied: Vous n'êtes pas autorisé à effectuer cette action.
@@ -349,6 +335,19 @@ fr:
     remember_me: souviens-toi de moi
     requests: pétitions
     rss_suscribe: Abonnez-vous via RSS
+    rule:
+      entry_1: 
+      entry_10: 
+      entry_2: 
+      entry_3: 
+      entry_4: 
+      entry_5: 
+      entry_6: 
+      entry_7: 
+      entry_8: 
+      entry_9: 
+      title: 
+    rules: 
     save_failed: 'Il y a un problème, vérifier cela:'
     search:
       button: recherche
@@ -391,7 +390,7 @@ fr:
       storage_units:
         format: "%n %u"
         units:
-          mb: "Mo"
+          mb: Mo
   oauth:
     errors:
       duplicated_username: Votre nom d'utilisateur pour %{provider} est déjà dans notre base de données. Si vous avez enregistré déjà en utilisant un autre réseau social ou via e-mail et mot de passe, s'il vous plaît connectez-vous de cette façon. Dans le cas contraire, il indique un autre nom d'utilisateur pour terminer l'enregistrement.

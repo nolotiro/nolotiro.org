@@ -1,4 +1,3 @@
----
 it:
   activemodel:
     attributes:
@@ -47,12 +46,12 @@ it:
         remember: Ricordami
         username: Nome di utente
     models:
-      ad:
-        one: annuncio
-        other: Annunci
       aa_comment:
         one: commento
         other: Commenti
+      ad:
+        one: annuncio
+        other: Annunci
       user:
         one: utente
         other: Utenti
@@ -118,7 +117,7 @@ it:
       follow_instructions: 'Qualcuno a chiesto di cambiare la password di nolotiro.org. Se non sei stato tu puoi ignorare questa email. La password non cambierà fino a quando non accedi al link per crearne una nuova. '
       forgot: Hai dimenticato la password?
       instructions: Per favore, scrive la tua email e te invieremo un link di acceso diretto per cambiare la tua password.
-      no_html_instructions: "Se non puoi fare clic sul link, copia e incolla l'URL nella barra degli indirizzi del browser: "
+      no_html_instructions: 'Se non puoi fare clic sul link, copia e incolla l''URL nella barra degli indirizzi del browser: '
       no_token: Puoi accedere a questa pagina solamente dalla email di reset della password. Se vieni dalla email controlla di aver inserito l'url completo riportato nella email.
       send: Invia email
       send_instructions: Riceverai un messaggio email con le istruzioni per reimpostare la tua password entro qualche minuto.
@@ -141,16 +140,16 @@ it:
         signed_in: Acceso eseguito
   errors:
     messages:
-      already_confirmed: "è stato già confermato"
+      already_confirmed: è stato già confermato
       confirmation_period_expired: deve essere confermato entro %{period}, richiedi una nuova conferma
-      expired: "è scaduto, si prega di richiederne uno nuovo"
-      in_between: "deve essere compreso tra %{min} e %{max}"
+      expired: è scaduto, si prega di richiederne uno nuovo
+      in_between: deve essere compreso tra %{min} e %{max}
       not_found: non trovato
       not_locked: non era bloccato
       not_saved:
         one: 'Non posso salvare questo %{resource}: 1 errore'
         other: 'Non posso salvare questo %{resource}: %{count} errori.'
-      spoofed_media_type: "possiede contenuti che non corrispondono all'estensione dichiarata"
+      spoofed_media_type: possiede contenuti che non corrispondono all'estensione dichiarata
   friendships:
     create:
       success: Amico aggiunto
@@ -234,15 +233,15 @@ it:
     developers: svilupatori
     didn_t_receive_confirmation_instructions: Non hai ricevuto le istruzione di conferma?
     do_you_have_it: Ce l'hai?
-    edit_this_ad: Editare questo annuncio
     edit: Editare
+    edit_this_ad: Editare questo annuncio
     expired: 
     faq:
       answer_1_html: Lo scopo fondamentale di questo sito è quello di sbarazzarsi di oggetti non più utilizzati e che ci ostacolano in casa
       answer_2_html: Prima a te direttamente perche ti puoi liberare delle cose che non voui più, ma anche alla persona a qui regali implicitamente. Il meglio è vederlo da un punto di vista egoista e controllare la relazione de causa-effetto che stiamo a iniziare. Si facciamo cosí e pensiamo soltanto a liberarci delle cose útili, ma che noi non vogliamo più perche ci incomodano e sono da buttare fuori, sempre terremo una bella esperienza, perche non speriamo niente di più. Ed il fatto de sapere que qualcuno ne está profittando rafforze la esperienza. In altre parole, l'atto di regalare delle cose di valore o útili es sempre positivo se non speriamo un premio morale o placare la nostra coscienza.
       answer_3_html: Su questo sito si ha potere assoluto sulla decisione di chi, dove e quando si dà via gli oggetti di valore. Naturalmente l'ideale è quello di dare qualcosa alla persona che più bisogno. Non fraintendere il senso usiamo la parola egoismo qui. Ma per sapere se la persona che si sta per dare un oggetto merita, è un compito molto difficile, e favorisce un tipo di comportamento che portano a cattive esperienze e giudizi di valore che possono fare molto male.
       answer_4_html: Si, ce ne sone alcuni. Ma a te non te ne friega niente se il tuo obiettivo è quello di sbarazzarti delle cose che non voui più (l'egoista). Se hai regalato degli oggetti perché occupavano troppo spazio e non sapevi cosa fare con loro, hai fatto bene e hai tornato quell'oggetto all <a href="http://www.lapetiteclaudine.com/archives/009217.html">mondo delle cose utili</a>, risparmiando soldi ad'altre persone ed energia, generando ricchezza (anche se poca, è ricchezza). Tuttavia, la decisione finale sul destinatario dell'oggetto che regali è esclusivamente tua. Quindi applica i criteri che consideri più opportuni."
-      answer_5_html: "Ci sono solo 2 tipi di annunci: il dono, che offrono oggetti che ostacolino o non vogliono più. E voglio annunci, che servono a fornire indizi e ispirare le persone a che tipo di oggetti che si desidera che altre persone di utilizzare o possedere. <strong> annunci di cambiamento, vendita, chiedendo denaro da lavoro, commercio, farmaci ecc non sono ammessi. </strong> e vengono cancellati non appena viene rilevato un moderatore, se indesiderato più volte la pubblicazione degli annunci, si può procedere per bloccare l'account utente."
+      answer_5_html: 'Ci sono solo 2 tipi di annunci: il dono, che offrono oggetti che ostacolino o non vogliono più. E voglio annunci, che servono a fornire indizi e ispirare le persone a che tipo di oggetti che si desidera che altre persone di utilizzare o possedere. <strong> annunci di cambiamento, vendita, chiedendo denaro da lavoro, commercio, farmaci ecc non sono ammessi. </strong> e vengono cancellati non appena viene rilevato un moderatore, se indesiderato più volte la pubblicazione degli annunci, si può procedere per bloccare l''account utente.'
       answer_6_html: Il baratto è un sistema che funziona molto bene in formato fisico, cioè, due persone faccia a faccia, guardando gli oggetti e parlare dal vivo e vivere. Ma baratto internet è molto probabile che finiscano in inganni e discussioni infinite o malcontenti. Inoltre, come avete letto sopra, qui gli oggetti sono dato senza condizioni e baratto ha il condizionamento di quid pro quo, vale a dire. Tu me do e do niente di simile.
       answer_7_html: Sorprendentemente molte persone lo fanno, e non c'è niente di sbagliato con spedizioni vengono effettuate, ma devono avere un minimo di cautela con la serietà del ricevitore sono stati casi in cui qualcuno di buona fede ha fatto le spese di spedizione prepagata e poi ha un risultato che ha restituito il pacchetto. Idealmente, non fatto, dovrebbero essere incoraggiati a far circolare gli oggetti il più vicino possibile, il risparmio energetico, e può servire per conoscere meglio le persone della tua città. Spero che nella nuova versione, ci siamo concentrati un concetto locale è raggiunto. <a href="https://en.wikipedia.org/wiki/Think_Globally,_Act_Locally">pensare a livello globale.</a>
       answer_8_html: No. Gli animali non sono oggetti che possano venire "buttati fuori" o "riciclati", quindi non c'entrano niente con nolotiro. Sono esseri viventi, che possono soffrire e dovrebbero esserci controlli più severi quando cambiano di mani.
@@ -258,20 +257,7 @@ it:
       question_9: Posso ricevere una casa, una macchina o una moto su nolotiro?
       title: Domande frequenti
     faqs: domande frequenti
-    rule:
-      entry_1: 
-      entry_2: 
-      entry_3: 
-      entry_4: 
-      entry_5: 
-      entry_6: 
-      entry_7: 
-      entry_8: 
-      entry_9: 
-      entry_10: 
-      title: 
-    rules: 
-    footer_explain: 'nolotiro.org è un sito dove guardo per i regali dono gratuito e mobili di seconda mano, sedie, divani, biciclette, computer portatili, tavoli, stufe, lampade, letti, vestiti, giocattoli, lettini per bambini o automobili, telefoni cellulari e altri molte cose che si desidera non è più e non hanno più bisogno di fare il riutilizzo altre persone che possono servire o dare nuova vita.'
+    footer_explain: nolotiro.org è un sito dove guardo per i regali dono gratuito e mobili di seconda mano, sedie, divani, biciclette, computer portatili, tavoli, stufe, lampade, letti, vestiti, giocattoli, lettini per bambini o automobili, telefoni cellulari e altri molte cose che si desidera non è più e non hanno più bisogno di fare il riutilizzo altre persone che possono servire o dare nuova vita.
     forgot_your_password: Hai dimenticato la tua password?
     friends: Amici
     gift_on: regalo in %{woeid}
@@ -299,7 +285,7 @@ it:
     member_since: membro dal
     messages: messaggi
     messages_title: Messaggi
-    meta_description: 'nolotiro.org è un sito dove guardo per i regali dono gratuito e mobili di seconda mano, sedie, divani, biciclette, computer portatili, tavoli, stufe, lampade, letti, vestiti, giocattoli, lettini per bambini o automobili, telefoni cellulari e altri molte cose che si desidera non è più e non hanno più bisogno di fare il riutilizzo altre persone che possono servire o dare nuova vita.'
+    meta_description: nolotiro.org è un sito dove guardo per i regali dono gratuito e mobili di seconda mano, sedie, divani, biciclette, computer portatili, tavoli, stufe, lampade, letti, vestiti, giocattoli, lettini per bambini o automobili, telefoni cellulari e altri molte cose che si desidera non è più e non hanno più bisogno di fare il riutilizzo altre persone che possono servire o dare nuova vita.
     meta_description_ad: "%{type} en %{woeid} di %{title}. %{body}"
     n_ads:
       one: "%{count} annuncio"
@@ -320,7 +306,7 @@ it:
       publish_ad: pubblicare un annuncio in questa città
       subtitle: Si può provare una qualsiasi di queste cose
       switch_to_bigger_city_html: "%{choose_bigger} vicino da te."
-      switch_to_guessed_city_html: 'Verifica di aver scelto correttamente la tua cità. Il nostro sistema di suggerimento (in base alla tua IP) dice che ti trovi vicino a %{change_location}'
+      switch_to_guessed_city_html: Verifica di aver scelto correttamente la tua cità. Il nostro sistema di suggerimento (in base alla tua IP) dice che ti trovi vicino a %{change_location}
       title: Nessun annuncio per questa posizione.
     password: password
     permission_denied: Non si dispone dell'autorizzazione per eseguire questa azione.
@@ -349,7 +335,20 @@ it:
     remember_me: Ricordare il login
     requests: petizioni
     rss_suscribe: Iscriviti via RSS
-    save_failed: "C'è un problema, verificare questo:"
+    rule:
+      entry_1: 
+      entry_10: 
+      entry_2: 
+      entry_3: 
+      entry_4: 
+      entry_5: 
+      entry_6: 
+      entry_7: 
+      entry_8: 
+      entry_9: 
+      title: 
+    rules: 
+    save_failed: 'C''è un problema, verificare questo:'
     search:
       button: ricerca
       no_ads_message_html: Non ci sono annunci che corrispondano alla ricerca <b>%{q}</b>.
@@ -386,6 +385,12 @@ it:
     welcome: ciao
     write_a_comment: "+ Scrivi un commento"
     your_email: la tua email
+  number:
+    human:
+      storage_units:
+        format: "%n %u"
+        units:
+          mb: MB
   oauth:
     errors:
       duplicated_username: Il tuo username di %{provider} è gia nella nostra basi de dati. Se ti sei iscrito usando un'altra rete sociale oppure email e password, fai login usando quello. Altrimenti, inserisci un'altro username.
@@ -402,9 +407,3 @@ it:
       next: succ. &rsaquo;
       previous: "&lsaquo; prec."
       truncate: "&hellip;"
-  number:
-    human:
-      storage_units:
-        format: "%n %u"
-        units:
-          mb: "MB"

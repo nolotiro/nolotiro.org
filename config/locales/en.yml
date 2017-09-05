@@ -1,4 +1,3 @@
----
 en:
   activemodel:
     attributes:
@@ -12,7 +11,7 @@ en:
         city: City
         id: ID
         image: Image
-        image_content_type: "Type of image's content "
+        image_content_type: 'Type of image''s content '
         image_file_size: Size of the image
         published_at: Published at
         status: Status
@@ -47,12 +46,12 @@ en:
         remember: Remember me
         username: Username
     models:
-      ad:
-        one: ad
-        other: Ads
       aa_comment:
         one: comment
         other: Comments
+      ad:
+        one: ad
+        other: Ads
       user:
         one: user
         other: Users
@@ -88,7 +87,7 @@ en:
       action: Confirm my account
       confirmed: Your email address has been successfully confirmed.
       instructions: 'Please confirm your email by accessing the following link:'
-      no_html_instructions: "If you can't click the link, copy and paste the following into the address bar of your browser:"
+      no_html_instructions: 'If you can''t click the link, copy and paste the following into the address bar of your browser:'
       resend: Resend confirmation instructions
       send_instructions: You will receive an email with instructions for how to confirm your email address in a few minutes.
       send_paranoid_instructions: If your email address exists in our database, you will receive an email with instructions for how to confirm your email address in a few minutes.
@@ -118,7 +117,7 @@ en:
       follow_instructions: Someone asked nolotiro.org about change your password. If it's not you then you can ignore this mail. Your password will not change until you access the link and create a new one.
       forgot: Did you forget your password?
       instructions: Please, enter your email address and we will send you a shortcut link to change your password.
-      no_html_instructions: "If you can't click the link, copy and paste the following into the address bar of your browser: "
+      no_html_instructions: 'If you can''t click the link, copy and paste the following into the address bar of your browser: '
       no_token: You can't access this page without coming from a password reset email. If you do come from a password reset email, please make sure you used the full URL provided.
       send: Send by email
       send_instructions: You will receive an email with instructions about how to reset your password in a few minutes.
@@ -144,13 +143,13 @@ en:
       already_confirmed: was already confirmed, please try signing in
       confirmation_period_expired: needs to be confirmed within %{period}, please request a new one
       expired: has expired, please request a new one
-      in_between: "must be in between %{min} and %{max}"
+      in_between: must be in between %{min} and %{max}
       not_found: not found
       not_locked: was not locked
       not_saved:
         one: '1 error prohibited this %{resource} from being saved:'
         other: "%{count} errors prohibited this %{resource} from being saved:"
-      spoofed_media_type: "has contents that are not what they are reported to be"
+      spoofed_media_type: has contents that are not what they are reported to be
   friendships:
     create:
       success: Friend added
@@ -234,15 +233,15 @@ en:
     developers: developers
     didn_t_receive_confirmation_instructions: Didn't receive the confirmation's instructions?
     do_you_have_it: Do you have it?
-    edit_this_ad: Edit this ad
     edit: Edit
+    edit_this_ad: Edit this ad
     expired: expired
     faq:
       answer_1_html: The fundamental purpose of this website is to get rid of items you no longer use and hinder you at home.
-      answer_2_html: "First asking you directly get rid of those things you no longer want, and always to give something implicitly. It is best to approach it selfishly and control the cause-effect relationship that will trigger giving. If we approach the act of giving objects from a selfish perspective, getting rid of useful things that are bothering us and will end up in the trash, we'll always we have a good experience, not expecting anything more to get rid of those objects. And knowing that someone is giving profit use or enhance the experience as positive. In other words: the act of giving things of value or useful is always a positive thing if we do not expect a moral reward or appease our conscience."
+      answer_2_html: 'First asking you directly get rid of those things you no longer want, and always to give something implicitly. It is best to approach it selfishly and control the cause-effect relationship that will trigger giving. If we approach the act of giving objects from a selfish perspective, getting rid of useful things that are bothering us and will end up in the trash, we''ll always we have a good experience, not expecting anything more to get rid of those objects. And knowing that someone is giving profit use or enhance the experience as positive. In other words: the act of giving things of value or useful is always a positive thing if we do not expect a moral reward or appease our conscience.'
       answer_3_html: On this website you have absolute power over the decision of who, where and when you give away your valuables. Of course the ideal is to give something to the person who most need it. Not misunderstand the way we use the word selfishness here. But to know if the person you're going to give an object deserves it is a very difficult task, and fosters a type of behavior that lead to bad experiences and value judgments that can do great damage.
       answer_4_html: Yes, some people do sell the stuff they get here. But it doesn't matter if your focus is to get rid of things you don't want (the selfish one). If you gave away objects because you didn't know what to do with them, you've done well, and that object has returned to <a href="http://www.lapetiteclaudine.com/archives/009217.html">the world of useful things</a>, saving money and energy, generating wealth (although very little, it's wealth). However, the ultimate decision about who receives your present is exclusively yours. So apply any criteria you feel confortable with.
-      answer_5_html: "There are only 2 kinds of ads: The Gift, which offer items that will hinder or no longer want to have. And the want ads, which serve to provide clues and inspire people about what kind of objects you want to use or possess other people. <strong> change ads, sale, asking for money from employment, trade, drugs etc. are not allowed. </strong> they are deleted as soon as it detects a moderator, publish repeatedly if unwanted ads, you can proceed to block the user's account."
+      answer_5_html: 'There are only 2 kinds of ads: The Gift, which offer items that will hinder or no longer want to have. And the want ads, which serve to provide clues and inspire people about what kind of objects you want to use or possess other people. <strong> change ads, sale, asking for money from employment, trade, drugs etc. are not allowed. </strong> they are deleted as soon as it detects a moderator, publish repeatedly if unwanted ads, you can proceed to block the user''s account.'
       answer_6_html: Barter is a system that works very well in physical format, that is, two people face to face, seeing objects and speaking live. But internet barter is very likely to end in deception or dissatisfaction and endless discussions. In addition, here objects are given without conditions and barter is the conditioning of the quid pro quo, ie. Tu me give and I give you anything like it.
       answer_7_html: Surprisingly many people do, and there's nothing wrong with that shipments are made, but must have a minimum of caution with the seriousness of the receiver have been cases where someone of good faith has made paying shipping costs and then has a result that has returned the package. Ideally, do not, should be encouraged to circulate objects as close as possible, saving energy, and can serve to get to know the people of your city. Hope that in the new version, we have focused a local concept is achieved. <a href="https://en.wikipedia.org/wiki/Think_Globally,_Act_Locally">think globally.</a>
       answer_8_html: No. Animals are not objects that can be "thrown away" or "recycled" so they fall outside of the scope of nolotiro. They are living beings, capable of suffering and should therefore be subject to much stricter controls about in which hands they fall.
@@ -258,20 +257,7 @@ en:
       question_9: Can I get a house, a car or a motorbike through nolotiro?
       title: FAQ
     faqs: FAQ
-    rule:
-      entry_1: 
-      entry_2: 
-      entry_3: 
-      entry_4: 
-      entry_5: 
-      entry_6: 
-      entry_7: 
-      entry_8: 
-      entry_9: 
-      entry_10: 
-      title: Site rules
-    rules: site rules
-    footer_explain: "nolotiro.org is a website where you can give stuff for free or find free second hand stuff: furniture, chairs, bicycles, computers, laptops, tables, beds, clothe, toys, mobile phones and many other stuff you don't want or need, so other people can recycle it and give it a new life."
+    footer_explain: 'nolotiro.org is a website where you can give stuff for free or find free second hand stuff: furniture, chairs, bicycles, computers, laptops, tables, beds, clothe, toys, mobile phones and many other stuff you don''t want or need, so other people can recycle it and give it a new life.'
     forgot_your_password: Forgot your password?
     friends: Friends
     gift_on: gift on %{woeid}
@@ -320,7 +306,7 @@ en:
       publish_ad: post an ad in this city
       subtitle: You can try some of this stuff
       switch_to_bigger_city_html: "%{choose_bigger} close to your location."
-      switch_to_guessed_city_html: 'Double check the city you have chosen. Our IP based city suggestion system tells us you are close to %{change_location}'
+      switch_to_guessed_city_html: Double check the city you have chosen. Our IP based city suggestion system tells us you are close to %{change_location}
       title: There are no results in this location
     password: Password
     permission_denied: You don't have permissions
@@ -337,7 +323,7 @@ en:
       contact: send a private message to %{username}
       edit: edit user's profile
       friend:
-        add: "Add %{username} to your friend's list "
+        add: 'Add %{username} to your friend''s list '
         delete: Delete %{username} from your friend's list
     publish_ad: Post ad
     publish_ad_on: Post ad in %{woeid}
@@ -349,6 +335,19 @@ en:
     remember_me: Remember me
     requests: requests
     rss_suscribe: Suscribe via RSS
+    rule:
+      entry_1: 
+      entry_10: 
+      entry_2: 
+      entry_3: 
+      entry_4: 
+      entry_5: 
+      entry_6: 
+      entry_7: 
+      entry_8: 
+      entry_9: 
+      title: Site rules
+    rules: site rules
     save_failed: 'There is problem, please review this:'
     search:
       button: search
@@ -390,7 +389,7 @@ en:
       storage_units:
         format: "%n %u"
         units:
-          mb: "MB"
+          mb: MB
   oauth:
     errors:
       duplicated_username: The username provided by %{provider} is already in our database. If you already registered through another social network or through email & password, please login using those. Otherwise just specify another username.
