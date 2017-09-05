@@ -19,10 +19,18 @@
 
   <div>
     <% if ad.give? %>
-      <span class="ad_status <%= ad.current_status %>"><%= ad.status_string %></span>
+      <span class="ad_status <%= ad.current_status %>">
+        <%= ad.status_string %>
+      </span>
     <% end %>
 
-    <%= published_ago_by(ad.published_at, ad.user.username) %>
+    <span class="ad_author">
+      <%= ad.user.username %>
+    </span>
+
+    <span class="ad_date">
+      <%= time_ago_in_words(ad.published_at) %>
+    </span>
   </div>
 
   <div class="body-wrapper">
