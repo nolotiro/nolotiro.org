@@ -149,8 +149,8 @@ gl:
       not_found: 
       not_locked: 
       not_saved:
-        one: 
-        other: 
+        one: 'Ocorreu un erro al tratar de guardar %{resource}:'
+        other: 'Ocorreron %{count} erros al tratar de guardar %{resource}:'
       spoofed_media_type: 
   friendships:
     create:
@@ -303,7 +303,7 @@ gl:
     messages: 
     messages_title: 
     meta_description: 
-    meta_description_ad: 
+    meta_description_ad: "%{type} en %{woeid} de %{title}. %{body}"
     n_ads:
       one: "%{count} anuncio"
       other: "%{count} anuncios"
@@ -311,8 +311,8 @@ gl:
       one: ", %{count} comentario"
       other: ", %{count} comentarios"
     n_reads:
-      one: 
-      other: 
+      one: "%{count} lectura"
+      other: "%{count} lecturas"
     new_user: 
     no_location_specified: 
     no_results:
