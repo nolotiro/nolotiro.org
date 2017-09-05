@@ -4,6 +4,8 @@ if Rails.env.development?
   Localeapp.configure do |config|
     config.api_key = ENV['LOCALEAPP_APIKEY']
 
+    config.translation_data_directory = 'config/locales'
+
     config.polling_environments = []
     config.sending_environments = []
     config.reloading_environments = []
