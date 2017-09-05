@@ -28,3 +28,6 @@ ignore_unused:
   - recaptcha.errors.*
   - '{time,date}.formats.active_admin'
   - number.human.storage_units.*
+
+ignore_missing:
+  - active_admin.batch_actions.succesfully_destroyed
