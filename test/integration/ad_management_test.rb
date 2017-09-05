@@ -59,7 +59,6 @@ class AdManagementTest < AuthenticatedTest
     post ads_bump_path(ad), headers: { 'HTTP_REFERER' => original_path }
 
     assert_equal 6.days.ago.to_date, ad.reload.published_at.to_date
-    assert_response :redirect
     assert_redirected_to original_path
   end
 
@@ -75,7 +74,6 @@ class AdManagementTest < AuthenticatedTest
     post ads_bump_path(ad), headers: { 'HTTP_REFERER' => original_path }
 
     assert_equal 6.days.ago.to_date, ad.reload.published_at.to_date
-    assert_response :redirect
     assert_redirected_to original_path
   end
 
@@ -91,7 +89,6 @@ class AdManagementTest < AuthenticatedTest
     post ads_bump_path(ad), headers: { 'HTTP_REFERER' => original_path }
 
     assert_equal 4.days.ago.to_date, ad.reload.published_at.to_date
-    assert_response :redirect
     assert_redirected_to original_path
   end
 
