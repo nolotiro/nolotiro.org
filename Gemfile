@@ -51,7 +51,7 @@ end
 
 group :development do
   gem 'brakeman-lib', '~> 3.7'
-  gem 'faker', '~> 1.6'
+  gem 'faker', '~> 1.8'
   gem 'i18n-tasks', '= 0.9.5'
   gem 'listen', '~> 3.1'
   gem 'localeapp', '~> 2.1'
