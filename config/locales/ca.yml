@@ -1,4 +1,3 @@
----
 ca:
   activemodel:
     attributes:
@@ -47,12 +46,12 @@ ca:
         remember: Recorda'm
         username: Nom d'usuari
     models:
-      ad:
-        one: anunci
-        other: Anuncis
       aa_comment:
         one: comentari
         other: Comentaris
+      ad:
+        one: anunci
+        other: Anuncis
       user:
         one: usuario
         other: Usuarios
@@ -88,7 +87,7 @@ ca:
       action: Confirmar el meu compte
       confirmed: La vostra adreça electrònica ha estat confirmada correctament.
       instructions: Per favor confirma el teu compte de correu accedint al següent enllaç
-      no_html_instructions: "Si no pots fer clic a l'enllaç, copia i enganxa el següent a la barra d'adreces del teu navegador:"
+      no_html_instructions: 'Si no pots fer clic a l''enllaç, copia i enganxa el següent a la barra d''adreces del teu navegador:'
       resend: Reexpedir instruccions de confirmació
       send_instructions: En breu rebràs un correu electrònic amb instruccions sobre com confirmar el teu compte.
       send_paranoid_instructions: Si la teva adreça electrònica existeix a la base de dades, rebràs un correu electrònic amb instruccions sobre com confirmar el teu compte.
@@ -118,7 +117,7 @@ ca:
       follow_instructions: Algú ha demanat canviar la teva contrasenya de nolotiro.org. Si no has estat pots ignorar aquest correu. La teva contrasenya no canviarà fins que accedeixis a l'enllaç i creïs una nova.
       forgot: Has oblidat la teva contrasenya?
       instructions: Si us plau, introdueix el teu email i t'enviarem un enllaç d'accés directe per canviar la teva contrasenya.
-      no_html_instructions: "Si no pot fer clic a l'enllaç, copiar i enganxar aquesta URL a la barra d'adreces del navegador: "
+      no_html_instructions: 'Si no pot fer clic a l''enllaç, copiar i enganxar aquesta URL a la barra d''adreces del navegador: '
       no_token: Només pots accedir a aquesta pàgina des d'un correu electrònic de recuperació de la contrasenya. Si realment has fet servir l'enllaç del correu electrònic, comprova que has utilitzat la URL completa.
       send: Envia per correu
       send_instructions: En breu rebràs un correu electrònic amb instruccions sobre com restablir la teva contrasenya.
@@ -175,7 +174,7 @@ ca:
       created: Anunci creat
       destroyed: Anunci eliminat
       form:
-        body: "Cos de l'anunci:"
+        body: 'Cos de l''anunci:'
         body_max: Màxim 500 caràcters
         comments_enabled: Com vols ser contactat?
         image_permitted_formats: 'Formats permesos: gif, jpg, png. Max: 5Mb de mida.'
@@ -202,7 +201,7 @@ ca:
     change_town:
       choose: Tria la teva ubicació
       choose_html: No s'han trobat ubicacions amb el nom <b>%{location}</b>. Torna a intentar-
-      close_to_html: "El nostre sistema de suggeriment d'ubicació (basat en la teva IP) diu que aquestes prop de %{city}"
+      close_to_html: El nostre sistema de suggeriment d'ubicació (basat en la teva IP) diu que aquestes prop de %{city}
       submit: Enviar
       town: 'Ciutat:'
     change_your_city: Canvia la teva ciutat
@@ -238,11 +237,11 @@ ca:
     expired: 
     faq:
       answer_1_html: El propòsit fonamental d'aquesta web és el de desfer-nos dels objectes que ja no fem servir i ens fan nosa a casa.
-      answer_2_html: "Primer a tu directament demanant desfer d'aquestes coses que ja no vols, i sempre al que regales alguna cosa implícitament. El millor és enfocar-egoistament i controlar la relació de causa-efecte que anem a desencadenar regalant. Si enfoquem l'acte de regalar objectes des d'una perspectiva egoista, la de desfer-nos de coses útils, però que ens molesten, perquè ens fan nosa e van a anar a les escombraries, sempre tindrem una bona experiència, en no esperar res més que lliurar-nos d'aquests objectes. I el saber que algú li està donant ús o profit reforçarà aquesta experiència com a positiva. És a dir: l'acte de regalar coses de valor o útils sempre és una cosa positiva si no esperem una recompensa moral o aplacar la nostra consciència."
+      answer_2_html: 'Primer a tu directament demanant desfer d''aquestes coses que ja no vols, i sempre al que regales alguna cosa implícitament. El millor és enfocar-egoistament i controlar la relació de causa-efecte que anem a desencadenar regalant. Si enfoquem l''acte de regalar objectes des d''una perspectiva egoista, la de desfer-nos de coses útils, però que ens molesten, perquè ens fan nosa e van a anar a les escombraries, sempre tindrem una bona experiència, en no esperar res més que lliurar-nos d''aquests objectes. I el saber que algú li està donant ús o profit reforçarà aquesta experiència com a positiva. És a dir: l''acte de regalar coses de valor o útils sempre és una cosa positiva si no esperem una recompensa moral o aplacar la nostra consciència.'
       answer_3_html: En aquest lloc web tu tens poder absolut sobre la decisió de a qui, on i quan regales els teus objectes. Per descomptat que l'idoni és regalar alguna cosa a la persona que mes ho necessiti. No cal malinterpretar la forma en què fem servir la paraula egoisme aquí. Però poder saber si la persona a la qual li donarem un objecte s'ho mereix és una tasca molt difícil, i fomenta un tipus de conductes que deriven en males experiències i judicis de valor que poden fer molt de mal.
       answer_4_html: Sí, hi ha algún. Però no importa. Si el teu enfocament és el d'desfer-te de coses que tu no vols (el egoista), encara que no ho creguis segueixes fent alguna cosa bona. Si vas regalar objectes perquè no usaves i no sabies que fer amb ells, però tampoc els volies tirar a les escombraries has fet bé. t'has fet bé a tu, i has tornat aquest objecte al <a href="http://www.lapetiteclaudine.com/archives/009217.html">món de les coses útils,</a> estalviant diners a gent i energia, generant riquesa (encara que sigui poca, és riquesa). No obstant això, la decisió última sobre el receptor de l'objecte que regales és exclusivament teva. Així que aplica els criteris que consideris oportuns.
-      answer_5_html: "Només hi ha 2 classes d'anuncis: Els de Regal, en els que ofereixes objectes que et destorben o ja no vols tenir. I els anuncis de Vull, que serveixen per donar pistes i inspirar a la gent sobre que classe d'objectes vol una altra gent utilitzar o posseir. <strong> Els anuncis de canvi, venda, demanant diners, comercials, d'ocupació, medicaments, etc no estan permesos. </strong> I són esborrats quant un moderador els detecta, en cas de publicar repetidament anuncis no desitjats, es pot procedir al bloqueig del compte de l'usuari."
-      answer_6_html: "El troc és un sistema que funciona molt bé en format físic, és a dir, dues persones cara a cara, veient els objectes i parlant en viu i en directe. Però a internet la barata és molt susceptible d'acabar a enganys o insatisfaccions i discussions eternes. A més com has pogut llegir anteriorment, aquí es donen objectes sense condicions i la barata té el condicionament de l'quid pro quo, és a dir: el teu em dónes i jo et dono una cosa igual."
+      answer_5_html: 'Només hi ha 2 classes d''anuncis: Els de Regal, en els que ofereixes objectes que et destorben o ja no vols tenir. I els anuncis de Vull, que serveixen per donar pistes i inspirar a la gent sobre que classe d''objectes vol una altra gent utilitzar o posseir. <strong> Els anuncis de canvi, venda, demanant diners, comercials, d''ocupació, medicaments, etc no estan permesos. </strong> I són esborrats quant un moderador els detecta, en cas de publicar repetidament anuncis no desitjats, es pot procedir al bloqueig del compte de l''usuari.'
+      answer_6_html: 'El troc és un sistema que funciona molt bé en format físic, és a dir, dues persones cara a cara, veient els objectes i parlant en viu i en directe. Però a internet la barata és molt susceptible d''acabar a enganys o insatisfaccions i discussions eternes. A més com has pogut llegir anteriorment, aquí es donen objectes sense condicions i la barata té el condicionament de l''quid pro quo, és a dir: el teu em dónes i jo et dono una cosa igual.'
       answer_7_html: Sorprenentment molta gent ho fa, i no hi ha res dolent en que es facin enviaments, però has de tenir un mínim de precaució amb la serietat del receptor, hi ha hagut casos en què algú de molt bona fe ha realitzat un enviament pagant les despeses i després ha resultat que li ha tornat el paquet. L'ideal és que no es facin, s'ha de fomentar que els objectes circulin el més a prop possible, estalviant energia, i pot servir per conèixer millor a la gent de la teva mateixa ciutat. Esperem que en la nova versió, que hem enfocat a un concepte local, s'aconsegueixi. <a href="https://en.wikipedia.org/wiki/Think_Globally,_Act_Locally">Pensa globalment, actúa localment.</a>
       answer_8_html: No, els animals no són objectes que es puguin "tirar" o "reciclar" pel que queden fora de l'àmbit de nolotiro. Són éssers vius, amb capacitat de patir i conseqüentment haurien de tenir controls molt més estrictes sobre en quines mans cauen.
       answer_9_html: No. L'experiència ens diu que aquests anuncis sempre resulten ser estafes així que preferim prohibir-los. En qualsevol cas, les transaccions en nolotiro han d'estar "lliures de diners" i per transferir la titularitat d'aquests objectes s'ha de pagar un impost sobre donacions. Per això, encara que els regals es fessin de bona fe, tampoc podrien ser acceptats.
@@ -257,19 +256,6 @@ ca:
       question_9: Puc aconseguir una casa, un cotxe o una moto a través de nolotiro?
       title: Preguntes freqüents
     faqs: preguntes freqüents
-    rule:
-      entry_1: 
-      entry_2: 
-      entry_3: 
-      entry_4: 
-      entry_5: 
-      entry_6: 
-      entry_7: 
-      entry_8: 
-      entry_9: 
-      entry_10: 
-      title: 
-    rules: 
     footer_explain: 'nolotiro.org és un lloc web on regalar i buscar regals de franc de segona mà: mobles, cadires, sofàs, bicicletes, ordinadors portàtils, taules, cuines, llums, llits, roba, joguines, bressols o carros per a nadons, telèfons mòbils i altres moltes coses que ja no vols i no necessites per a que les reutilitzin altra gent a la qual pot servir o donar-li nova vida.'
     forgot_your_password: Ha oblidat la seva contrasenya?
     friends: Amics
@@ -285,7 +271,7 @@ ca:
     leave_blank: "(deixa-la en blanc si no vols canviar-la)"
     legal_notice: Avís legal
     legal_page:
-      body_html: "Nom: Associació aLabs. <br>Inscrita en el registre d'associacions de la Comunitat de Madrid amb nombre 32.022. <br>CIF: G86139847<br> C/Duque de Alba, 13 (28012) Madrid."
+      body_html: 'Nom: Associació aLabs. <br>Inscrita en el registre d''associacions de la Comunitat de Madrid amb nombre 32.022. <br>CIF: G86139847<br> C/Duque de Alba, 13 (28012) Madrid.'
       title: Avís legal
     location_gifts: regals en %{location}
     location_requests: peticions en %{location}
@@ -299,7 +285,7 @@ ca:
     messages: missatges
     messages_title: Missatges
     meta_description: 'nolotiro.org és un lloc web on regalar i buscar regals de franc de segona mà: mobles, cadires, sofàs, bicicletes, ordinadors portàtils, taules, cuines, llums, llits, roba, joguines, bressols o carros per a nadons, telèfons mòbils i altres moltes coses que ja no vols i no necessites per a que les reutilitzin altra gent a la qual pot servir o donar-li nova vida.'
-    meta_description_ad: "#{type} a %{woeid} de %{title}. %{body}"
+    meta_description_ad: "%{type} a %{woeid} de %{title}. %{body}"
     n_ads:
       one: "%{count} anunci"
       other: "%{count} anuncis"
@@ -319,7 +305,7 @@ ca:
       publish_ad: publicar un anunci en aquesta ciutat
       subtitle: Pots provar alguna d'aquestes coses
       switch_to_bigger_city_html: "%{choose_bigger} que estigui a prop de la teva ubicació."
-      switch_to_guessed_city_html: "Comprova que has triat la teva ciutat correctament. El nostre sistema de suggeriment d'ubicació (basat en la teva IP) diu que aquestes prop de %{change_location}"
+      switch_to_guessed_city_html: Comprova que has triat la teva ciutat correctament. El nostre sistema de suggeriment d'ubicació (basat en la teva IP) diu que aquestes prop de %{change_location}
       title: No hi ha anuncis per a aquesta ubicació.
     password: Contrasenya
     permission_denied: No tens permisos per a realitzar aquesta acció.
@@ -348,6 +334,19 @@ ca:
     remember_me: Recordar
     requests: peticions
     rss_suscribe: Subscriure via RSS
+    rule:
+      entry_1: 
+      entry_10: 
+      entry_2: 
+      entry_3: 
+      entry_4: 
+      entry_5: 
+      entry_6: 
+      entry_7: 
+      entry_8: 
+      entry_9: 
+      title: 
+    rules: 
     save_failed: 'Hi ha un problema, revisa això:'
     search:
       button: buscar

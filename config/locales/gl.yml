@@ -1,4 +1,3 @@
----
 gl:
   activemodel:
     attributes:
@@ -49,20 +48,20 @@ gl:
         remember: Lémbrame
         username: Nome de usuario
     models:
-      ad:
-        one: anuncio
-        other: Anuncios
       aa_comment:
         one: comentario
         other: Comentarios
+      ad:
+        one: anuncio
+        other: Anuncios
       user:
         one: usuario
         other: Usuarios
   blockings:
     create:
-      success: 
+      success: Usuario bloqueado
     destroy:
-      success: 
+      success: Usuario desbloqueado
   conversations:
     buttons:
       back: Mensaxes de novo
@@ -79,9 +78,9 @@ gl:
       sent: Mensaxe enviada
       trash: Conversa arquivada
     show:
-      title_html: 
+      title_html: Conversación con %{recipient} asunto %{subject}
     table:
-      none: 
+      none: Non tes mensaxes deste tipo
   date:
     formats:
       active_admin: 
@@ -110,8 +109,8 @@ gl:
       reset_password_instructions:
         subject: "[nolotiro.org] recuperación Instrucións de contrasinal"
     omniauth_callbacks:
-      failure: 
-      success: 
+      failure: Non foi autorizado na conta %{kind} porque "%{reason}".
+      success: Foi autorizado correctamente na conta %{kind}.
     passwords:
       action: Cambio de contrasinal
       edit:
@@ -133,9 +132,9 @@ gl:
       signed_up_but_inactive: A súa conta foi creada correctamente. Con todo, non puido iniciar a sesión porque a súa conta aínda non está activada.
       signed_up_but_locked: A súa conta foi creada correctamente. Con todo, non se puido iniciar sesión porque a súa conta está bloqueada.
       signed_up_but_unconfirmed: El enviou unha mensaxe cun enlace de confirmación ao teu correo. Abre o enlace a activar a súa conta.
+      update_needs_confirmation: 
       updated: A súa conta foi actualizada.
     sessions:
-      already_signed_out: Sesión finalizada.
       signed_in: Benvido
       signed_out: A sesión finalizou.
       user:
@@ -149,19 +148,19 @@ gl:
       not_found: 
       not_locked: 
       not_saved:
-        one: 
-        other: 
+        one: 'Ocorreu un erro al tratar de guardar %{resource}:'
+        other: 'Ocorreron %{count} erros al tratar de guardar %{resource}:'
       spoofed_media_type: 
   friendships:
     create:
-      success: 
+      success: Amigo agregado
     destroy:
-      success: 
+      success: Amigo eliminado
   message_mailer:
     message:
       body: Mensaxe
       subject: Asunto
-    subject_new: 
+    subject_new: "[nolotiro.org] Nova mensaxe do usuario %{user}"
     visit: Ver conversa e responder o mensaxe
     you_have_new_message: Recibiu unha mensaxe nova
   nlt:
@@ -169,7 +168,7 @@ gl:
     a_request: Una petición
     about: acerca de
     about_page:
-      description_html: 
+      description_html: <b>¿Qué é nolotiro.org?</b><br> É unha site web onde ofrecer ó público as cousas que xa non queiras ou non necesites para que as recolla outras persoas ás que lle pode servir eu serlle de moita utilidade. <br><br> <strong>Le as <a href="/es/page/faqs">preguntas de frecuentes</a> para saber máis detalles da filosofia e obxectivos do proxecto</strong> <br><br> <b>Vantaxes de nolotiro.org:</b><br> A gran vantaxe de nolotiro.org é que substitúe a nostalxia/sentimento de derroche, pola sensación de facer algo por alguén. Consegues desfacerte desas cousas que non tirbas por pena ou porque aínda eran novas e que ó final só acumulaban pó nalgún curuncho, olvidadas ou ocupando espazo, sabendo que alguén lle sacaría proveito, porque realmente lles fai falla. Por outro lado, nolotiro.org ó estar organizado por zonas xeográficas fomenta que as cousas que queiras dar, se queden cerca, non hai custos de envío, nin desprazamentos, nin envíos a países lonxanos que nunca sabes se chegan; daslle ti mesmo a alguén da túa mesma cidade, que o vai buscar nun lugar acordado. <br><br> <b>A ter en conta:</b><br> NON HAI OPCIÓN DE INTERCAMBIO, isto non se basa no troco, nin na compra, porque hai que fomentar o altruismo, dar as cousas porque si, porque nos sobran. <br><br> <b>Explicación en versión literaria</b><br> <a href="http://www.marcianoduran.com.uy/?p=176">¿Porqué non o tiro?</a> Por Marciano Durán <br><br> <b>nolotiro.org funciona grazas ó traballo de moitas <a href="http://www.youtube.com/watch?v=KMU0tzLwhbE">persoas</a> que crearon o seguinte software libre:</b> <a href="http://rubyonrails.org/">Ruby On Rails</a>, <a href="http://www.mysql.com/">MySQL</a>, <a href="https://developer.yahoo.com/yql/">Yahoo YQL</a>, <a href="http://www.postfix.org/">Postfix</a>, <a href="http://www.ubuntu.org/">Ubuntu</a>, <a href="http://nginx.org/">Nginx</a>, e moitos máis, tantos que sería imposible nomealos todos aquí. <br><br> <b>O código fonte de nolotiro.org é codigo aberto</b> e está dispoñible para ser utilizado (baixo licenza Affero GPL 3).<br> Visita a <a href="https://github.com/alabs/nolotiro.org"> web para desenroladores</a> para máis detalles (en inglés).<br> Os colaboradores son bienvidos, ben para programar ou traducir a pa´xina noutras linguas.
       title: Acerca de nolotiro.org
     access_here: Entre aquí
     ads:
@@ -209,22 +208,22 @@ gl:
       town: 'Cidade:'
     change_your_city: Cambiar de cidade
     choose_username: Escoller un nome de usuario
-    choose_your_pass: 
-    choose_your_pass_again: 
-    cities_in_the_world: 
+    choose_your_pass: Escolla contrasinal
+    choose_your_pass_again: Introduza o seu contrasinal (si, outra vez)
+    cities_in_the_world: cidades que máis reciclan
     comments:
-      body_max: 
-      do_click: 
-      flash_ko: 
-      flash_ok: 
-      label: 
-      subject: 
-      submit: 
-      title: 
+      body_max: Máximo 1000 caracteres
+      do_click: 'Faga click nesta ligazón para responder o mensaxe:'
+      flash_ko: Houbo un erro ó gardar o teu comentario. Revísao e envíao de novo
+      flash_ok: Comentario gardado
+      label: O teu comentario
+      subject: "[nolotiro.org] Tes un novo comentario no anuncio %{ad}"
+      submit: Enviar
+      title: Comentarios
     contact: contacto
-    contact_form: 
+    contact_form: Formulario de contacto
     contact_legend_html: Este formulario é para poñerse en contacto cos xestores de nolotiro. Vostede quere publicar un anuncio? Prema %{new_ad_link}
-    contact_thanks: 'Mensaxe enviada! Grazas por entrar en contacto nolotiro.org'
+    contact_thanks: Mensaxe enviada! Grazas por entrar en contacto nolotiro.org
     cookie: Usamos cookies para mellorar a súa navegación neste sitio
     create_new_ad: Crear un novo anuncio
     delete_ad: Eliminar anuncio
@@ -233,46 +232,33 @@ gl:
     delete_sure: Está seguro de que quere cancelar a subscrición? Todo o seu contido será eliminado permanentemente.
     delivered: dedicado
     developers: desarrolladores
-    didn_t_receive_confirmation_instructions: 
+    didn_t_receive_confirmation_instructions: Non recibeu as instruccións de confirmación?
     do_you_have_it: O tes?
-    edit_this_ad: Edita este anuncio
     edit: Editar
+    edit_this_ad: Edita este anuncio
     expired: 
     faq:
       answer_1_html: O principal obxectivo deste sitio é para se librar de elementos que non usa máis e impiden connosco na casa.
-      answer_2_html: 
-      answer_3_html: 
-      answer_4_html: 
-      answer_5_html: 
-      answer_6_html: 
-      answer_7_html: 
-      answer_8_html: 
+      answer_2_html: Primeiro a ti directamente, podendo desfacerte desas cousas que xa non queres, e sempre ó que regalas algo implícitamente. O mellor é enfocalo egoístamente e controlar a relación de causa-efecto que vamos a desencadear regalando. Se enfocamos dito acto de regalar obxectos dende unha perspectiva egoísta, a de desfacernos de cousas inútiles, peros que nos molestan e van acabar no lixo, sempre deremos unha boa experiencia, ó non esperar nada máis que desfacernos de ditos obxectos. E saber que alguén lle está dando uso e proveito reforzará ese experiencia como positiva. É dicir, o acto de regalar cousas de valor ou útiles sempre é algo positivo se non esperamos unha recompensa moral ou aplacar a nosa conciencia.
+      answer_3_html: Nesta site web ti tes o poder absoluto sobre a decisión de a aquen, onde e cando regalas as túas cousas. Por suposto que o idóneo é regalar algo á persoa que máis o necesite. Non hai que malinterpretar a forma en que usamos a palabra egoísmo aquí. Pero poder saber se a persoa á que lle vamos a dar un obxecto o merece é una tarefa moi difícil, e fomenta un tipo de conducta que derivan en malas experiencias e xuízos de valor que poden facer moito dano.
+      answer_4_html: Si, hai algúns. Pero non importa se o teu enfoque é o de desfacerte de cousas que ti non queres (o egoísta). É máis, ainda que non o creas, segues facendo algo bo. Se regalaste obxectos porque non os usabas e non sabías que facer con eles, pero tampouco os querías tirar á basura, fixesches ben. Fixestes ben para ti, e devolvestes ese obxecto ó <a href="http://www.lapetiteclaudine.com/archives/009217.html">mundo das cousas útiles</a>, aforrando cartos á xente, e enerxía, xerando riqueza (aínda que pouca, é riqueza). Non obstante, a decisión última sobre o receptor do obxecto que doas é exclusivamente túa. Así que aplica os criterios que consideres oportunos.
+      answer_5_html: 'Só hai 2 clases de anuncios: os de Regalo, nos que ofreces obxectos que che estorban e xa non queres ter; e os anuncios de Quero, que serven para dar pistas e inspirar á xente sobre que clase de obxectos quere outra xente utilizar ou posuír. <strong>Os anuncios de troco, venda, pedindo cartos, comerciais, de emprego, medicamentos, etc. non están permiticos </strong>. E serán eliminados en canto un moderador os detecta, no caso de publicar repetidamente anuncios non desexados, poderase preceder ó bloqueo da conta do usuario.'
+      answer_6_html: O troco é un sistema que funciona ben en formato físico, isto é, dúas persoas, cara a cara, vendo os obxectos e falando en vivo e directo. Pero en internet o troco é moi susceptible de acabar en enganos ou insatisfaccións e discusións eternas. Ademáis, como puideches ler anteriormente, aquí danse obxectos sen condicións, e o troco ten o condicionamento do quid pro quo, é dicir, ti dasme e eu douche algo igual.
+      answer_7_html: Sorprendentemente faino moita xente, e non hai nada de malo en que se fagan envíos, pero debes ter un mínimo de precaución coa seriedade do receptor, houbo casos nos que alguén de moi boa fe realizou un envío pagando os cusots e logo resultou que se lle devolvera o paquete. O ideal é que non se fagan, débese fomentar a circulación o máis próxima posible dos obxectos, aforrando enerxía, e pode servir para coñecer mellor á xente da túa mesma cidade. Esperamos que na nova versión, que enfocamos a un concepto local, se consiga. <a href="http://en.wikipedia.org/wiki/Think_Globally,_Act_Locally">Pensa globalmente, actúa localmente.</a>
+      answer_8_html: Non. Os animais non son obxectos que se poidan "tirar" ou "reciclar" co que quedan fóra do ámbito de nolotiro. Son seres vivos, con capacidade de sufrir e consecuentemente deberían ter controis moito máis estritos sobre en que mans caen.
       answer_9_html: Non. A experiencia dinos que estes anuncios son sempre estafas, entón preferimos prohibilos. En calquer caso, as transaccións en nolotiro deben ser "libres de diñeiro" e para transferir a propiedade destes oxetos debese pagar un imposto de doazóns. Por eso, aínda se os presentes foron feitos de boa fe, non poden ser acetados.
-      question_1: 
-      question_2: 
-      question_3: 
-      question_4: 
-      question_5: 
-      question_6: 
-      question_7: 
-      question_8: 
+      question_1: Cal é o propósito deste proxecto?
+      question_2: Entón esta web non é para axudar ós demáis?
+      question_3: Pero a min gustaríame regarla as miñas cousas a alguén que realmente os necesite
+      question_4: É verdade que hai xente que logo vende as cousas que se regalan aquí?
+      question_5: Que clase de anuncios podo publicar en nolotiro?
+      question_6: Non está permitido o troco? Que estrano
+      question_7: Podo enviar cousas a xente que non vive na miña cidade?
+      question_8: Podo regalar animais?
       question_9: Podo obter unha casa, un coche ou unha moto a través de nolotiro?
-      title: 
-    faqs: 
-    rule:
-      entry_1: 
-      entry_2: 
-      entry_3: 
-      entry_4: 
-      entry_5: 
-      entry_6: 
-      entry_7: 
-      entry_8: 
-      entry_9: 
-      entry_10: 
-      title: 
-    rules: 
-    footer_explain: 
+      title: Preguntas frecuentes
+    faqs: Preguntas frecuentes
+    footer_explain: 'nolotiro.org é un site web onde regalo e busco regalos gratis de segunda man: mobles, cadeiras, sofás, bicicletas, ordenadores portátiles, mesas, cociñas, lámpadas, camas, roupa, xoguetes, berces ou carros para bebés, teléfonos móviles e outras moitas cousas que xa non queres e xa non necesitas para que as reutilicen outras persoas ás que lle poidan servir ou darlle unha nova vida.'
     forgot_your_password: Esqueceches o contrasinal?
     friends: Amigos
     gift_on: regalo en %{woeid}
@@ -283,10 +269,8 @@ gl:
     here: aquí
     if_you_are_new: Se vostede é un novo usuario, por favor
     if_youre_already_an_user: Se xa é un usuario rexistrado, por favor
-    last_published_gifts: 'últimos presentes publicados
-
-'
-    leave_blank: 
+    last_published_gifts: últimos presentes publicados
+    leave_blank: "(déixea en branco se non a quere cambiar)"
     legal_notice: aviso legal
     legal_page:
       body_html: 'Nome: Asociación aLabs. <br>Inscrita no Rexistro de asociacións da Comunidade de Madrid, co número 32022. <br>CIF: G86139847<br>C/Duque de Alba, 13 (28012) Madrid.'
@@ -294,16 +278,16 @@ gl:
     location_gifts: regalos en %{location}
     location_requests: peticiones en %{location}
     login: acceder
-    logout: 
+    logout: saír
     mail:
-      automatic: 
+      automatic: Este é unha mensaxe automática. Por favor, non responda a esta dirección de correo electrónico
     mark_as: Marcar %{status}
     mark_this_ad: Marca este anuncio como %{status}
-    member_since: 
-    messages: 
-    messages_title: 
-    meta_description: 
-    meta_description_ad: 
+    member_since: Membro dende
+    messages: mensaxes
+    messages_title: Mensaxes
+    meta_description: 'nolotiro.org é un site web onde regalo e busco regalos gratis de segunda man: mobles, cadeiras, sofás, bicicletas, ordenadores portátiles, mesas, cociñas, lámpadas, camas, roupa, xoguetes, berces ou carros para bebés, teléfonos móbiles e outras moitas cousas que xa non queres e xa non necesitas para que as reutilicen outras persoas ás que lle poden servir e dar nova vida'
+    meta_description_ad: "%{type} en %{woeid} de %{title}. %{body}"
     n_ads:
       one: "%{count} anuncio"
       other: "%{count} anuncios"
@@ -311,22 +295,22 @@ gl:
       one: ", %{count} comentario"
       other: ", %{count} comentarios"
     n_reads:
-      one: 
-      other: 
-    new_user: 
-    no_location_specified: 
+      one: "%{count} lectura"
+      other: "%{count} lecturas"
+    new_user: novo usuario
+    no_location_specified: Debes buscar nunha cidade específica
     no_results:
       choose_bigger: 
-      first_to_publish_html: 
-      on_user: 
-      phrase: 
-      publish_ad: 
-      subtitle: 
+      first_to_publish_html: Sé o primeiro en %{publish}
+      on_user: Non hai anuncios deste tipo publicados por este usuario
+      phrase: '"Unha viaxe de mil quilómetro comeza cun simple paso", Lao Tse'
+      publish_ad: publicar un anuncio nesta cidade
+      subtitle: Podes probar algunha destas cousas
       switch_to_bigger_city_html: 
-      switch_to_guessed_city_html: 
-      title: 
+      switch_to_guessed_city_html: 'O noso sistema de suxerencia de situación (basado na túa IP) di que estás preto de: <br> %{change_location}'
+      title: Non hai anuncios para esta situación
     password: Contrasinal
-    permission_denied: 
+    permission_denied: Non ten permisos para realizar esta acción
     please_fill_to_become_member: Por favor, enche este formulario para facer membro do nolotiro
     policy_agreement_html: Ao enviar este formulario, vostede acepta que leu, entendeu e está feliz co noso %{tos} e %{privacy}.
     privacy: política de privacidade
@@ -334,30 +318,43 @@ gl:
     profile: perfil
     profile_actions:
       blocking:
-        add: 
-        confirm: 
-        delete: 
+        add: bloquear a %{username}
+        confirm: Seguro que desexa bloquear a %{username}? Non poderá volver a contactar con vostede nin ver ningún dos seus anuncios
+        delete: desbloquear a %{username}
       contact: 
       edit: editar perfil de usuario
       friend:
-        add: 
-        delete: 
+        add: agregar %{username} á túa lista de amigos
+        delete: eleminar %{username} da túa lista de amigos
     publish_ad: Publicar anuncio
     publish_ad_on: Publicar anuncio en %{woeid}
     published_ads: Anuncios publicados
     published_ago_by_html: Publicado %{time} por el usuario %{user}
-    reads: 
-    register: 
-    register_here: 
-    remember_me: 
+    reads: lecturas
+    register: Rexístrese
+    register_here: rexístrese aquí
+    remember_me: Lémbreme
     requests: peticiones
-    rss_suscribe: 
-    save_failed: 
+    rss_suscribe: Suscribirse via RSS
+    rule:
+      entry_1: 
+      entry_10: 
+      entry_2: 
+      entry_3: 
+      entry_4: 
+      entry_5: 
+      entry_6: 
+      entry_7: 
+      entry_8: 
+      entry_9: 
+      title: 
+    rules: 
+    save_failed: 'Houbo un problema, revise isto:'
     search:
-      button: 
-      no_ads_message_html: 
-    searching_on_html: 
-    send: 
+      button: buscar
+      no_ads_message_html: Non hai anuncios que coincidan coa búsqueda <b>%{q}</b> na ubicación
+    searching_on_html: Buscando <i>%{q}</i> en
+    send: Enviar
     send_a_message: Envía unha mensaxe a %{user}
     share_this_ad: Comparte este anuncio
     sign_in: Acceder
@@ -366,7 +363,7 @@ gl:
     slogan: no lo tiro, te lo regalo (sin condiciones)
     suggestions: suxestións
     title_with_page: "%{title}, páxina %{page}"
-    to_publish_or_send_messages: 
+    to_publish_or_send_messages: Para publicar anuncios ou enviar mensaxes, acceda á súa conta
     tos: condicións de uso
     translate:
       description_html: Actualmente, nolotiro.org está disponible en poucos idiomas, pero podes axudar a %{translate_it}.
@@ -379,16 +376,16 @@ gl:
     user_edit_profile: Editar perfil de usuario
     user_profile: Perfil de usuario
     username: Nome de usuario
-    users_most_active: 
-    users_most_active_last_week: 
-    view_ads_on: 
-    view_ads_on_your_city: 
+    users_most_active: usuarios máis activos
+    users_most_active_last_week: usuarios máis activos na última semana
+    view_ads_on: Ver anuncios en %{location}
+    view_ads_on_your_city: Ver anuncios na túa cidade ou pobo
     want: petición
-    want_to_leave: 
-    we_need_your_password: 
-    welcome: 
-    write_a_comment: 
-    your_email: 
+    want_to_leave: Queres eleminar o teu usuario?
+    we_need_your_password: "(necesitamos o seu contrasinal para confirmar os cambios)"
+    welcome: ola
+    write_a_comment: "+ Escriba un comentario"
+    your_email: O teu email
   number:
     human:
       storage_units:
@@ -397,11 +394,11 @@ gl:
           mb: 
   oauth:
     errors:
-      duplicated_username: 
-      email_not_provided: 
+      duplicated_username: O seu nome de usuario de %{provider} xa está na nosa base de datos. Se xa xe rexistrou empregando outra rede social ou mediante email e contrasinal, por favor, inicie sesión desta maneira. En caso contrario, indique outro nome de usuario para completar o rexistro
+      email_not_provided: Necesitamos que indiques unha dirección de email para copletar o rexistro
   recaptcha:
     errors:
-      verification_failed: 
+      verification_failed: Fallou a verificación contra robots, tente de novo
   time:
     formats:
       active_admin: 
