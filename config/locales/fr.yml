@@ -290,8 +290,8 @@ fr:
       one: "%{count} annonce"
       other: "%{count} annonces"
     n_comments:
-      one: ", %{count} commentaire"
-      other: ", %{count} commentaires"
+      one: "%{count} commentaire"
+      other: "%{count} commentaires"
     n_reads:
       one: "%{count} lecture"
       other: "%{count} lectures"

@@ -290,8 +290,8 @@ ca:
       one: "%{count} anunci"
       other: "%{count} anuncis"
     n_comments:
-      one: ", %{count} comentari"
-      other: ", %{count} comentaris"
+      one: "%{count} comentari"
+      other: "%{count} comentaris"
     n_reads:
       one: "%{count} lecture"
       other: "%{count} lectures"

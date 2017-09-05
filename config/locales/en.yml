@@ -290,8 +290,8 @@ en:
       one: "%{count} ad"
       other: "%{count} ads"
     n_comments:
-      one: ", %{count} comment"
-      other: ", %{count} comments"
+      one: "%{count} comment"
+      other: "%{count} comments"
     n_reads:
       one: "%{count} view"
       other: "%{count} views"
