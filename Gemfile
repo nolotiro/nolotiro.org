@@ -80,7 +80,9 @@ gem 'omniauth-google-oauth2', '= 0.5.2'
 # Image processing in the background. @todo Properly reenable it
 # gem 'delayed_paperclip'
 
+gem 'image_optim_pack', '= 0.5.0.20170831', require: false
 gem 'paperclip', '~> 5.1'
+
 gem 'pundit', '~> 1.1'
 gem 'recaptcha', '~> 3.3', require: 'recaptcha/rails'
 
