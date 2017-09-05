@@ -134,7 +134,6 @@ gl:
       signed_up_but_unconfirmed: El enviou unha mensaxe cun enlace de confirmación ao teu correo. Abre o enlace a activar a súa conta.
       updated: A súa conta foi actualizada.
     sessions:
-      already_signed_out: Sesión finalizada.
       signed_in: Benvido
       signed_out: A sesión finalizou.
       user:
