@@ -8,6 +8,7 @@ require 'rails/test_help'
 
 require 'minitest/pride'
 require 'capybara/rails'
+require 'capybara/minitest'
 
 require 'support/unit'
 require 'support/controller'

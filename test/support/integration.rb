@@ -24,6 +24,7 @@ module ActionDispatch
   class IntegrationTest
     # Make the Capybara DSL available in all integration tests
     include Capybara::DSL
+    include Capybara::Minitest::Assertions
 
     after do
       Capybara.reset_sessions!

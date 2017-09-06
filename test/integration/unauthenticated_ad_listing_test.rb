@@ -50,7 +50,7 @@ class UnauthenticatedAdListing < ActionDispatch::IntegrationTest
     click_link 'siguiente'
 
     assert_selector '.ad_excerpt', count: 1, text: 'avabar'
-    assert_no_selector 'a', text: 'siguiente'
+    assert_no_link 'siguiente'
   end
 
   it 'lists booked ads everywhere in home page' do
@@ -59,7 +59,7 @@ class UnauthenticatedAdListing < ActionDispatch::IntegrationTest
     click_link 'reservado'
 
     assert_selector '.ad_excerpt', count: 1, text: 'resmad'
-    assert_no_selector 'a', text: 'siguiente'
+    assert_no_link 'siguiente'
   end
 
   it 'lists delivered ads everywhere including expired ones in home page' do

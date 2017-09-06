@@ -35,7 +35,7 @@ class AuthenticatedAdListing < ActionDispatch::IntegrationTest
   it 'shows a link to publish ads in the users location' do
     visit root_path
 
-    assert_selector 'a', text: '+ Publicar anuncio en Madrid'
+    assert_link '+ Publicar anuncio en Madrid'
   end
 
   it 'lists first page of available ads everywhere in all ads page' do
@@ -75,7 +75,7 @@ class AuthenticatedAdListing < ActionDispatch::IntegrationTest
     click_link 'siguiente'
 
     assert_selector '.ad_excerpt', count: 1, text: 'avamad2'
-    assert_no_selector 'a', text: 'siguiente'
+    assert_no_link 'siguiente'
   end
 
   it 'lists petitions in users location in home page' do
@@ -97,7 +97,7 @@ class AuthenticatedAdListing < ActionDispatch::IntegrationTest
     click_link 'reservado'
 
     assert_selector '.ad_excerpt', count: 1, text: 'resmad'
-    assert_no_selector 'a', text: 'siguiente'
+    assert_no_link 'siguiente'
   end
 
   it 'lists delivered ads in users location including expired in home page' do

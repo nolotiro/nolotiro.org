@@ -12,7 +12,7 @@ class BlockingsTest < AuthenticatedTest
     click_link 'bloquear'
 
     assert_no_selector 'a', text: /\Abloquear\z/
-    assert_selector 'a', text: 'desbloquear'
+    assert_link 'desbloquear'
     assert_text 'Usuario bloqueado'
   end
 
@@ -21,7 +21,7 @@ class BlockingsTest < AuthenticatedTest
     visit profile_path(@enemy.username)
     click_link 'desbloquear'
 
-    assert_no_selector 'a', text: 'desbloquear'
+    assert_no_link 'desbloquear'
     assert_selector 'a', text: /\Abloquear\z/
     assert_text 'Usuario desbloqueado'
   end

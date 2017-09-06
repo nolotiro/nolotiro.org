@@ -1,6 +1,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery.cookiebar
+//= require bootstrap-sprockets
 
 $(document).ready(function(){
 

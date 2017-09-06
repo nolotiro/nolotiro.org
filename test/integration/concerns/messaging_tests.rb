@@ -70,7 +70,7 @@ module MessagingTests
     send_message(subject: 'Cosas', body: 'hola, user2')
     visit conversations_path
 
-    assert_selector 'a', text: 'user2'
+    assert_link 'user2'
   end
 
   def test_does_not_show_conversations_with_banned_users
@@ -78,7 +78,7 @@ module MessagingTests
     @user2.ban!
     visit conversations_path
 
-    assert_no_selector 'a', text: 'user2'
+    assert_no_link 'user2'
   end
 
   def test_just_shows_a_special_label_when_the_recipient_is_no_longer_there
@@ -141,12 +141,12 @@ module MessagingTests
 
   def test_include_links_in_messages_only_for_admins
     send_message(subject: 'hi! <3', body: 'See the FAQs at https://faqs.org')
-    assert_no_selector 'a', text: 'https://faqs.org'
+    assert_no_link 'https://faqs.org'
 
     @user1.update!(role: 1)
 
     visit new_conversation_path(recipient_id: @user2.id)
     send_message(subject: 'hi! <3', body: 'See the FAQs at https://faqs.org')
-    assert_selector 'a', text: 'https://faqs.org'
+    assert_link 'https://faqs.org'
   end
 end
