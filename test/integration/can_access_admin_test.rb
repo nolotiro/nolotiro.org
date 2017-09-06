@@ -29,13 +29,13 @@ class CanAccessAdmin < ActionDispatch::IntegrationTest
 
   it 'should not get /admin as a anonymous user' do
     visit '/admin'
-    assert_text I18n.t('devise.failure.unauthenticated')
+    assert_text 'Tienes que iniciar sesión o registrarte para poder continuar'
   end
 
   it 'should not get /admin as a normal user' do
     login_as user
     mocking_yahoo_woeid_info(user.woeid) { visit '/admin' }
-    assert_text I18n.t('nlt.permission_denied')
+    assert_text 'No tienes permisos para realizar esta acción'
     logout
   end
 
