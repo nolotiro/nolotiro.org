@@ -19,7 +19,7 @@ module ApplicationHelper
   end
 
   def recaptcha
-    recaptcha_tags(display: { theme: 'white' }, ajax: true, hl: I18n.locale)
+    recaptcha_tags(theme: 'light', ajax: true, hl: I18n.locale)
   end
 
   def errors_for(object)
