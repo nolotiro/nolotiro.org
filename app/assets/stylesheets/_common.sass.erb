@@ -80,8 +80,6 @@ a
     &:last-child > span
       border-right: none
 
-$langs: <%= I18n.available_locales.join(" ") %>
-
 #select_language_box
   position: absolute
   top: 0
@@ -118,27 +116,10 @@ $langs: <%= I18n.available_locales.join(" ") %>
       text-decoration: none !important
       color: #fff !important
 
-  img
-    text-decoration: none !important
-    border: 0
-    right: 2px
-    clear: left
-    vertical-align: baseline
-
   .lang-active
     display: block
     position: absolute
     top: 0
-
-  @each $l in $langs
-    .flag-#{$l}
-      vertical-align: center
-      background-repeat: no-repeat
-      background-position: 0 7px, center
-      background-image: image-url("flags/#{$l}.gif")
-
-      span
-        margin-left: 15px
 
 form.searchbox
   display: inline-block
