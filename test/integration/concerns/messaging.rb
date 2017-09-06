@@ -22,10 +22,10 @@ module Messaging
   def assert_shows_special_label_for_deleted_user
     visit conversations_path
     assert_text '[borrado]'
-    assert_no_selector 'a', text: '[borrado]'
+    assert_no_link '[borrado]'
 
     visit conversation_path(Conversation.first)
     assert_text '[borrado]'
-    assert_no_selector 'a', text: '[borrado]'
+    assert_no_link '[borrado]'
   end
 end

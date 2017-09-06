@@ -50,7 +50,7 @@ class AdManagementTest < AuthenticatedTest
     ad = create(:ad, :delivered, user: @current_user, published_at: 6.days.ago)
     visit_ad_page(ad)
 
-    assert_no_selector 'a', text: 'Republicar'
+    assert_no_link 'Republicar'
   end
 
   it 'does not republish delivered ads (direct request)' do
@@ -65,7 +65,7 @@ class AdManagementTest < AuthenticatedTest
   it 'does not republish ads if not owner' do
     visit_ad_page(create(:ad, user: create(:user), published_at: 6.days.ago))
 
-    assert_no_selector 'a', text: 'Republicar'
+    assert_no_link 'Republicar'
   end
 
   it 'does not republish ads if not owner (direct request)' do
@@ -80,7 +80,7 @@ class AdManagementTest < AuthenticatedTest
   it 'does not bump ads too recent' do
     visit_ad_page(create(:ad, user: @current_user, published_at: 4.days.ago))
 
-    assert_no_selector 'a', text: 'Republicar'
+    assert_no_link 'Republicar'
   end
 
   it 'does not bump ads too recent (direct request)' do
@@ -95,16 +95,16 @@ class AdManagementTest < AuthenticatedTest
   it 'changes ad status' do
     visit_ad_page(create(:ad, :available, user: @current_user))
 
-    assert_no_selector 'a', text: 'Marcar disponible'
-    assert_selector 'a', text: 'Marcar reservado'
-    assert_selector 'a', text: 'Marcar entregado'
+    assert_no_link 'Marcar disponible'
+    assert_link 'Marcar reservado'
+    assert_link 'Marcar entregado'
 
     click_link 'Marcar reservado'
 
     assert_text 'Anuncio reservado'
-    assert_selector 'a', text: 'Marcar disponible'
-    assert_no_selector 'a', text: 'Marcar reservado'
-    assert_selector 'a', text: 'Marcar entregado'
+    assert_link 'Marcar disponible'
+    assert_no_link 'Marcar reservado'
+    assert_link 'Marcar entregado'
   end
 
   it 'saves spam ads but does not list them' do

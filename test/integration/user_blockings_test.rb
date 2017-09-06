@@ -24,7 +24,7 @@ class UserBlockingsTest < AuthenticatedTest
     create(:blocking, blocker: @current_user, blocked: @other)
     visit profile_path(@other.username)
 
-    assert_no_selector 'a', text: 'envía un mensaje privado a other'
+    assert_no_link 'envía un mensaje privado a other'
     assert_equal profile_path(@other.username), current_path
   end
 
@@ -49,7 +49,7 @@ class UserBlockingsTest < AuthenticatedTest
     create(:blocking, blocker: @current_user, blocked: @other)
     visit_ad_page(ad)
 
-    assert_no_selector 'a', text: 'envía un mensaje privado a other'
+    assert_no_link 'envía un mensaje privado a other'
     assert_equal adslug_path(ad, slug: ad.slug), current_path
   end
 

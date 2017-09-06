@@ -26,7 +26,7 @@ class AdEditionAndRemovalTest < AuthenticatedTest
       visit ads_woeid_path(@current_user.woeid, type: 'give')
     end
 
-    assert_no_selector 'a', text: 'Edita este anuncio'
+    assert_no_link 'Edita este anuncio'
   end
 
   it 'properly updates ads from show page and redirects back' do

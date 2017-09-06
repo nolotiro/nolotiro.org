@@ -18,7 +18,7 @@ class SuggestingLocationTest < ActionDispatch::IntegrationTest
   after { Capybara.current_driver = Capybara.default_driver }
 
   it 'shows a link to show ads in the guessed location' do
-    assert_selector 'a', text: 'Ver anuncios en Madrid'
+    assert_link 'Ver anuncios en Madrid'
   end
 
   it 'directly chooses location from IP suggestion' do

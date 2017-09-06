@@ -11,8 +11,8 @@ class FriendshipsTest < AuthenticatedTest
     visit profile_path(@friend.username)
     click_link 'agregar a tu lista de amigos'
 
-    assert_selector 'a', text: 'eliminar de tu lista de amigos'
-    assert_no_selector 'a', text: 'agregar a tu lista de amigos'
+    assert_link 'eliminar de tu lista de amigos'
+    assert_no_link 'agregar a tu lista de amigos'
     assert_text 'Amigo agregado'
   end
 
@@ -21,8 +21,8 @@ class FriendshipsTest < AuthenticatedTest
     visit profile_path(@friend.username)
     click_link 'eliminar de tu lista de amigos'
 
-    assert_no_selector 'a', text: 'eliminar de tu lista de amigos'
-    assert_selector 'a', text: 'agregar a tu lista de amigos'
+    assert_no_link 'eliminar de tu lista de amigos'
+    assert_link 'agregar a tu lista de amigos'
     assert_text 'Amigo eliminado'
   end
 end
