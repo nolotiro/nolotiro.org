@@ -67,7 +67,7 @@ end
 gem 'http_accept_language', '~> 2.1'
 gem 'pg', '= 0.21.0'
 gem 'redis-rails', '~> 5.0'
-gem 'sidekiq', '~> 4.2'
+gem 'sidekiq', '~> 5.0'
 
 gem 'devise', '~> 4.3'
 gem 'kaminari', '~> 1.0'
