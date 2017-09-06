@@ -117,7 +117,7 @@ https://beta.nolotiro.org/api/v1/ad/153735
 [Localeapp]: https://accounts.localeapp.com/projects/6872
 [Phantomjs Bug]: https://github.com/ariya/phantomjs/issues/13953
 [Ruby on Rails]: http://rubyonrails.org
-[Travis Badge]: https://travis-ci.org/alabs/nolotiro.org.svg
+[Travis Badge]: https://travis-ci.org/alabs/nolotiro.org.svg?branch=master
 [Travis Bug]: https://github.com/travis-ci/travis-ci/issues/3225
 [Travis URL]: https://travis-ci.org/alabs/nolotiro.org
 [Vagrant]: https://www.vagrantup.com/
