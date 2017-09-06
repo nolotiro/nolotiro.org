@@ -64,7 +64,7 @@ group :development do
   gem 'capistrano-sidekiq', '= 0.20.0'
 end
 
-gem 'http_accept_language', '~> 2.0'
+gem 'http_accept_language', '~> 2.1'
 gem 'pg', '= 0.19.0'
 gem 'redis-rails', '~> 5.0'
 gem 'sidekiq', '~> 4.2'
