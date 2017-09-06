@@ -48,7 +48,7 @@ class FacebookEmaillessRegistrationTest < ActionDispatch::IntegrationTest
     User.first.confirm
     login_via(:facebook, name: 'pepe')
 
-    assert_text 'hola, pepe'
+    assert_link 'pepe'
   end
 
   private

@@ -382,7 +382,6 @@ gl:
     want: petición
     want_to_leave: Queres eleminar o teu usuario?
     we_need_your_password: "(necesitamos o seu contrasinal para confirmar os cambios)"
-    welcome: ola
     write_a_comment: "+ Escriba un comentario"
     your_email: O teu email
   number:

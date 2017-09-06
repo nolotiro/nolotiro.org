@@ -380,7 +380,6 @@ it:
     want: petizione
     want_to_leave: Vuoi eliminare il tuo utente?
     we_need_your_password: "(Abbiamo bisogno la password per confermare le modifiche)"
-    welcome: ciao
     write_a_comment: "+ Scrivi un commento"
     your_email: la tua email
   number:

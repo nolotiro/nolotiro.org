@@ -21,6 +21,6 @@ module SocialDupUsernameTests
     fill_in 'Elige un nombre de usuario', with: 'pepe_nolotiro'
     click_button 'Regístrate'
 
-    assert_text 'hola, pepe_nolotiro'
+    assert_link 'pepe_nolotiro'
   end
 end
