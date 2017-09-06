@@ -111,7 +111,7 @@ https://beta.nolotiro.org/api/v1/ad/153735
 
 [Gemnasium Badge]: https://gemnasium.com/alabs/nolotiro.org.svg
 [Gemnasium URL]: https://gemnasium.com/alabs/nolotiro.org
-[Geolite2]: https://dev.maxmind.com/geoip/geoip2/geolite2
+[GeoLite2]: https://dev.maxmind.com/geoip/geoip2/geolite2
 [Google Recaptcha]: https://www.google.com/recaptcha/admin#list
 [jQuery]: https://jquery.com
 [Localeapp]: https://accounts.localeapp.com/projects/6872
@@ -121,5 +121,5 @@ https://beta.nolotiro.org/api/v1/ad/153735
 [Travis Bug]: https://github.com/travis-ci/travis-ci/issues/3225
 [Travis URL]: https://travis-ci.org/alabs/nolotiro.org
 [Vagrant]: https://www.vagrantup.com/
-[Virtualbox]: https://www.virtualbox.org/
+[VirtualBox]: https://www.virtualbox.org/
 [Yahoo YQL]: https://developer.yahoo.com/yql
