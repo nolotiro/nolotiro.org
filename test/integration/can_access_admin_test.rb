@@ -39,6 +39,14 @@ class CanAccessAdmin < ActionDispatch::IntegrationTest
     logout
   end
 
+  it 'links to the main site from the admin' do
+    login_as admin
+    visit '/admin'
+
+    assert_selector 'a[href="/"]'
+    logout
+  end
+
   private
 
   def user
