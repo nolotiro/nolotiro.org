@@ -1,37 +1,41 @@
 <div class="user_login_box">
   <% if user_signed_in? %>
     <% if current_user.admin? %>
-      <%= link_to admin_root_path do %>
+      <%= link_to admin_root_path, class: 'box-entry' do %>
         <span>
           <i class='glyphicon glyphicon-fire'></i>
         </span>
       <% end %>
     <% end %>
 
-    <%= link_to profile_path(current_user.username) do %>
+    <%= link_to profile_path(current_user.username), class:'box-entry' do %>
       <span>
         <%= t('nlt.welcome') %>,
         <b><%= current_user.username %></b>
       </span>
     <% end %>
 
-    <%= link_to conversations_path do %>
+    <%= link_to conversations_path, class: 'box-entry' do %>
       <span>
         <i class='glyphicon glyphicon-envelope'></i>
         &nbsp;<b><%= conversations_count %></b>
       </span>
     <% end %>
 
-    <%= link_to destroy_user_session_path, method: :delete do %>
+    <%= link_to destroy_user_session_path, method: :delete, class: 'box-entry' do %>
       <span><%= t('nlt.logout') %></span>
     <% end %>
   <% else %>
-    <%= link_to new_user_registration_path do %>
+    <%= link_to new_user_registration_path, class: 'box-entry' do %>
       <span><%= t('nlt.new_user') %></span>
     <% end %>
 
-    <%= link_to new_user_session_path do %>
+    <%= link_to new_user_session_path, class: 'box-entry' do %>
       <span><%= t('nlt.login') %></span>
     <% end %>
   <% end %>
+
+  <span class='box-entry'>
+    <%= render 'partials/select_language_box' %>
+  </span>
 </div>

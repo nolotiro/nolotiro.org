@@ -61,65 +61,42 @@ a
 
 .user_login_box
   position: relative
-  font-size: 1em
-  background-color: #FFFFCC
   border: 1px solid $gray-separator
   border-top: none
   float: right
-  line-height: 24px
-  right: 100px
   z-index: 200
 
-  a
-    > span
+  .box-entry
+    > span, button
+      font-size: 1em
+      background-color: #FFFFCC
+      line-height: 24px
+      border: none
       border-right: 1px solid $gray-separator
+      color: #00ACCF
       display: block
       float: left
       padding: 0 10px
 
-    &:last-child > span
+    &:last-child > span, &:last-child > button
       border-right: none
 
-#select_language_box
-  position: absolute
-  top: 0
-  float: right
-  right: 0
-  border: 1px solid white
-  display: inline-block
-  height: 24px
-  overflow: hidden
-  vertical-align: top
-  width: 92px
-  padding-top: 24px
-  z-index: 400
-
-  &:hover
-    border: 1px solid $gray-separator
-    background-color: #fff
-    height: auto
-
     .lang
+      padding-left: 4px
+      padding-right: 0
+      line-height: 24px
+      height: 24px
+      width: 100%
+      text-decoration: none !important
+
+    &:hover .dropdown-menu
       display: block
 
-  .lang
-    padding-left: 4px
-    padding-right: 0
-    line-height: 24px
-    height: 24px
-    display: none
-    width: 100%
-    text-decoration: none !important
-
-    &:hover
-      background-color: #999 !important
-      text-decoration: none !important
-      color: #fff !important
-
-  .lang-active
-    display: block
-    position: absolute
-    top: 0
+    .dropdown-menu
+      left: unset
+      min-width: unset
+      padding: 5px 10px
+      right: 0
 
 form.searchbox
   display: inline-block

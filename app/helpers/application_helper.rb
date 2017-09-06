@@ -41,4 +41,16 @@ module ApplicationHelper
 
     link_to title, location_change_path(location: place)
   end
+
+  def available_languages
+    {
+      en: 'English',
+      es: 'Español',
+      ca: 'Català',
+      gl: 'Galego',
+      fr: 'Français',
+      pt: 'Português',
+      it: 'Italiano'
+    }
+  end
 end
