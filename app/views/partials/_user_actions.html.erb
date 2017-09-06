@@ -1,5 +1,13 @@
 <div class="user_login_box">
   <% if user_signed_in? %>
+    <% if current_user.admin? %>
+      <%= link_to admin_root_path do %>
+        <span>
+          <i class='glyphicon glyphicon-fire'></i>
+        </span>
+      <% end %>
+    <% end %>
+
     <%= link_to profile_path(current_user.username) do %>
       <span>
         <%= t('nlt.welcome') %>,
