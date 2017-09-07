@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class NormalizeLockedColumn < ActiveRecord::Migration[4.2]
+class NormalizeLockedColumn < ActiveRecord::Migration[5.1]
   def up
     execute 'UPDATE users SET locked = 0 WHERE locked IS NULL'
 

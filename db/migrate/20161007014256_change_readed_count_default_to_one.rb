@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class ChangeReadedCountDefaultToOne < ActiveRecord::Migration[4.2]
+class ChangeReadedCountDefaultToOne < ActiveRecord::Migration[5.1]
   def up
     change_column_default :ads, :readed_count, 1
 

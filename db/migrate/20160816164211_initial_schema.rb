@@ -4,7 +4,7 @@
 # Initial DB schema
 #
 # rubocop:disable Metrics/ClassLength, Metrics/MethodLength, Metrics/AbcSize
-class InitialSchema < ActiveRecord::Migration[4.2]
+class InitialSchema < ActiveRecord::Migration[5.1]
   def change
     enable_extension 'plpgsql'
     enable_extension 'pg_trgm'
