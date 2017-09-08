@@ -7,13 +7,6 @@
 # classifier.
 #
 module Spamable
-  def self.included(base)
-    base.class_eval do
-      scope :spam, -> { where(spam: true) }
-      scope :not_spam, -> { where(spam: false) }
-    end
-  end
-
   def check_spam!
     user.ban! if spammed?(title) || spammed?(body)
   end
