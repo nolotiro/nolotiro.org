@@ -54,8 +54,10 @@
           <%= simple_format(@ad.filtered_body) %>
         </div>
 
-        <%= render "stats", comments_count: @comments.size,
-                            readed_count: @ad.readed_count %>
+        <div class="ad_meta_info">
+          <%= render "stats", comments_count: @comments.size,
+                              readed_count: @ad.readed_count %>
+        </div>
 
         <% if (@ad.want? || @ad.currently_available?) &&
               (current_user.nil? || current_user.whitelisting?(@ad.user)) %>
