@@ -69,7 +69,7 @@ a
   .box-entry
     > span, button
       font-size: 1em
-      background-color: #FFFFCC
+      background-color: $light-orange
       line-height: 24px
       border: none
       border-right: 1px solid $gray-separator
@@ -171,7 +171,6 @@ form.searchbox
 
     a
       border-right: 1px solid $gray-separator
-      font-size: 10px
       line-height: $action-height / 2
       margin: $action-height / 4 0
       padding: 0 10px
@@ -188,8 +187,25 @@ form.searchbox
       line-height: $action-height / 3
       width: 50%
 
+.ad_report
+  $report-height: 24px
+
+  display: block
+  list-style-type: none
+  width: 100%
+
+  li
+    float: right
+
     a
-      font-size: 9px
+      color: #ff6f69
+      display: block
+      font-size: 10px
+      line-height: $report-height
+      margin: 0
+      padding: 0
+      width: 100%
+
 
 .ad_actions
   display: block
@@ -201,6 +217,7 @@ form.searchbox
 
     a
       display: block
+      font-size: 10px
       width: 100%
 
 .ad_status
@@ -454,7 +471,7 @@ form.searchbox
 // @todo: Rename `Ad` to `Present` and `Petition` so we don't get
 // bitten by this again
 .aod_content
-  clear: left
+  clear: both
   display: block
 
   > div, h4

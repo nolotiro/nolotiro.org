@@ -16,6 +16,7 @@ class Ad < ApplicationRecord
   validates :user, presence: true
 
   has_many :comments, foreign_key: :ads_id, dependent: :destroy
+  has_many :reports, dependent: :destroy
 
   validates :title, presence: true, length: { minimum: 4, maximum: 100 }
   validates :body, presence: true, length: { minimum: 12, maximum: 1000 }
@@ -96,5 +97,9 @@ class Ad < ApplicationRecord
 
     update!(attributes)
     comments.destroy_all
+  end
+
+  def reported_by?(user)
+    user.reported_ads.include?(self)
   end
 end

@@ -332,6 +332,11 @@ pt:
     register: Registre-se
     register_here: cadastre-se aqui
     remember_me: Lembrar-me
+    reports:
+      reason: Razão para reportar
+      reason_scam: Calote
+      reason_spam: Anúncio de venda
+      submit: Enviar denúncia
     requests: peticões
     rss_suscribe: Subscreva-se via RSS
     rule:
@@ -395,6 +400,10 @@ pt:
   recaptcha:
     errors:
       verification_failed: Falha na verificação contra robots, tenta de novo
+  reports:
+    create:
+      success_reported: Conteúdo apagado
+      success_banned: Denúncia recebida
   time:
     formats:
       active_admin: 

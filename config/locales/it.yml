@@ -332,6 +332,11 @@ it:
     register: Iscriviti
     register_here: registrati qui
     remember_me: Ricordare il login
+    reports:
+      reason: Motivo della denuncia
+      reason_scam: Truffa
+      reason_spam: Annuncio di vendita
+      submit: Inviare denuncia
     requests: petizioni
     rss_suscribe: Iscriviti via RSS
     rule:
@@ -395,6 +400,10 @@ it:
   recaptcha:
     errors:
       verification_failed: C'è stato un error nella verificazione contro dei robot
+  reports:
+    create:
+      success_reported: Contenuti rimossi
+      success_banned: Denuncia ricevuta
   time:
     formats:
       active_admin: 

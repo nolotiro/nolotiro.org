@@ -1,0 +1,22 @@
+<%= form_for [@ad, @ad.reports.build] do |f| %>
+  <div class='form-group'>
+    <%= f.label :reason, t('nlt.reports.reason'), class: 'required' %>
+
+    <div class='radio'>
+      <%= f.label :reason, value: 'scam' do %>
+        <%= f.radio_button :reason, 'scam' %>
+        <%= t('nlt.reports.reason_scam') %>
+      <% end %>
+    </div>
+
+    <div class='radio'>
+      <%= f.label :reason, value: 'spam' do %>
+        <%= f.radio_button :reason, 'spam' %>
+        <%= t('nlt.reports.reason_spam') %>
+      <% end %>
+    </div>
+  </div>
+
+  <div class='form-group'>
+    <%= f.button t('nlt.reports.submit'), class: 'btn btn-success' %>
+<% end %>

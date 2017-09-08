@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 class User < ApplicationRecord
-  prepend Baneable
   include Statable
 
   counter_stats_for :created_at
@@ -9,6 +8,9 @@ class User < ApplicationRecord
   has_many :identities, inverse_of: :user, dependent: :destroy
 
   has_many :ads, foreign_key: :user_owner, dependent: :destroy
+
+  prepend Baneable
+
   has_many :comments, foreign_key: :user_owner, dependent: :destroy
 
   has_many :friendships, dependent: :destroy

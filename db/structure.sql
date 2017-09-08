@@ -46,7 +46,7 @@ SET default_with_oids = false;
 --
 
 CREATE TABLE ads (
-    id integer NOT NULL,
+    id bigint NOT NULL,
     title character varying(100) NOT NULL,
     body text NOT NULL,
     user_owner bigint NOT NULL,
@@ -91,7 +91,7 @@ ALTER SEQUENCE ads_id_seq OWNED BY ads.id;
 --
 
 CREATE TABLE announcements (
-    id integer NOT NULL,
+    id bigint NOT NULL,
     message text,
     starts_at timestamp without time zone,
     ends_at timestamp without time zone,
@@ -137,7 +137,7 @@ CREATE TABLE ar_internal_metadata (
 --
 
 CREATE TABLE blockings (
-    id integer NOT NULL,
+    id bigint NOT NULL,
     blocker_id bigint NOT NULL,
     blocked_id bigint NOT NULL
 );
@@ -167,7 +167,7 @@ ALTER SEQUENCE blockings_id_seq OWNED BY blockings.id;
 --
 
 CREATE TABLE comments (
-    id integer NOT NULL,
+    id bigint NOT NULL,
     ads_id bigint NOT NULL,
     body text NOT NULL,
     created_at timestamp without time zone NOT NULL,
@@ -201,7 +201,7 @@ ALTER SEQUENCE comments_id_seq OWNED BY comments.id;
 --
 
 CREATE TABLE conversations (
-    id integer NOT NULL,
+    id bigint NOT NULL,
     subject character varying(255) DEFAULT ''::character varying,
     created_at timestamp without time zone NOT NULL,
     updated_at timestamp without time zone NOT NULL,
@@ -234,7 +234,7 @@ ALTER SEQUENCE conversations_id_seq OWNED BY conversations.id;
 --
 
 CREATE TABLE countries (
-    id integer NOT NULL,
+    id bigint NOT NULL,
     iso character varying(2) NOT NULL,
     name character varying(173) NOT NULL,
     geoname_id integer
@@ -265,7 +265,7 @@ ALTER SEQUENCE countries_id_seq OWNED BY countries.id;
 --
 
 CREATE TABLE dismissals (
-    id integer NOT NULL,
+    id bigint NOT NULL,
     announcement_id bigint,
     user_id bigint
 );
@@ -295,7 +295,7 @@ ALTER SEQUENCE dismissals_id_seq OWNED BY dismissals.id;
 --
 
 CREATE TABLE friendships (
-    id integer NOT NULL,
+    id bigint NOT NULL,
     user_id bigint NOT NULL,
     friend_id bigint NOT NULL
 );
@@ -325,7 +325,7 @@ ALTER SEQUENCE friendships_id_seq OWNED BY friendships.id;
 --
 
 CREATE TABLE identities (
-    id integer NOT NULL,
+    id bigint NOT NULL,
     provider character varying(255),
     uid character varying(255),
     user_id bigint
@@ -356,7 +356,7 @@ ALTER SEQUENCE identities_id_seq OWNED BY identities.id;
 --
 
 CREATE TABLE messages (
-    id integer NOT NULL,
+    id bigint NOT NULL,
     body text,
     subject character varying(255) DEFAULT ''::character varying,
     sender_id bigint,
@@ -390,7 +390,7 @@ ALTER SEQUENCE messages_id_seq OWNED BY messages.id;
 --
 
 CREATE TABLE receipts (
-    id integer NOT NULL,
+    id bigint NOT NULL,
     receiver_id bigint,
     notification_id bigint NOT NULL,
     is_read boolean DEFAULT false,
@@ -424,6 +424,38 @@ ALTER SEQUENCE receipts_id_seq OWNED BY receipts.id;
 
 
 --
+-- Name: reports; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE reports (
+    id integer NOT NULL,
+    ad_id integer,
+    reporter_id integer,
+    reason integer,
+    created_at timestamp without time zone NOT NULL
+);
+
+
+--
+-- Name: reports_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE reports_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: reports_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE reports_id_seq OWNED BY reports.id;
+
+
+--
 -- Name: schema_migrations; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -437,9 +469,9 @@ CREATE TABLE schema_migrations (
 --
 
 CREATE TABLE states (
-    id integer NOT NULL,
+    id bigint NOT NULL,
     name character varying(173) NOT NULL,
-    country_id integer NOT NULL,
+    country_id bigint NOT NULL,
     geoname_id integer
 );
 
@@ -468,10 +500,10 @@ ALTER SEQUENCE states_id_seq OWNED BY states.id;
 --
 
 CREATE TABLE towns (
-    id integer NOT NULL,
+    id bigint NOT NULL,
     name character varying(173) NOT NULL,
-    state_id integer,
-    country_id integer NOT NULL,
+    state_id bigint,
+    country_id bigint NOT NULL,
     geoname_id integer
 );
 
@@ -500,7 +532,7 @@ ALTER SEQUENCE towns_id_seq OWNED BY towns.id;
 --
 
 CREATE TABLE users (
-    id integer NOT NULL,
+    id bigint NOT NULL,
     username character varying(63) NOT NULL,
     legacy_password_hash character varying(255),
     email character varying(100) NOT NULL,
@@ -626,6 +658,13 @@ ALTER TABLE ONLY receipts ALTER COLUMN id SET DEFAULT nextval('receipts_id_seq':
 
 
 --
+-- Name: reports id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY reports ALTER COLUMN id SET DEFAULT nextval('reports_id_seq'::regclass);
+
+
+--
 -- Name: states id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -740,6 +779,14 @@ ALTER TABLE ONLY messages
 
 ALTER TABLE ONLY receipts
     ADD CONSTRAINT receipts_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: reports reports_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY reports
+    ADD CONSTRAINT reports_pkey PRIMARY KEY (id);
 
 
 --
@@ -929,6 +976,20 @@ CREATE INDEX index_countries_on_name_trigram ON countries USING gin (name gin_tr
 
 
 --
+-- Name: index_reports_on_ad_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_reports_on_ad_id ON reports USING btree (ad_id);
+
+
+--
+-- Name: index_reports_on_reporter_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_reports_on_reporter_id ON reports USING btree (reporter_id);
+
+
+--
 -- Name: index_states_on_country_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -996,6 +1057,14 @@ ALTER TABLE ONLY identities
 
 
 --
+-- Name: reports fk_rails_71b2dc22d2; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY reports
+    ADD CONSTRAINT fk_rails_71b2dc22d2 FOREIGN KEY (ad_id) REFERENCES ads(id);
+
+
+--
 -- Name: blockings fk_rails_8b7920d779; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -1025,6 +1094,14 @@ ALTER TABLE ONLY dismissals
 
 ALTER TABLE ONLY ads
     ADD CONSTRAINT fk_rails_9ce39f9139 FOREIGN KEY (user_owner) REFERENCES users(id) ON UPDATE RESTRICT ON DELETE RESTRICT;
+
+
+--
+-- Name: reports fk_rails_c4cb6e6463; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY reports
+    ADD CONSTRAINT fk_rails_c4cb6e6463 FOREIGN KEY (reporter_id) REFERENCES users(id);
 
 
 --
@@ -1089,6 +1166,8 @@ INSERT INTO "schema_migrations" (version) VALUES
 ('20161019233040'),
 ('20161117184138'),
 ('20161117184157'),
-('20161122140853');
+('20161122140853'),
+('20161126111216'),
+('20170905120853');
 
 

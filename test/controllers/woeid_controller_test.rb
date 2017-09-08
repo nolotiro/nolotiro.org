@@ -11,7 +11,7 @@ class WoeidControllerTest < ActionController::TestCase
     @ad = create(:ad)
   end
 
-  test 'should get listall and give (available, delivered, booked)' do
+  it 'gets listall and give (available, delivered, booked)' do
     mocking_yahoo_woeid_info(@ad.woeid_code) do
       get :show, params: { type: 'give', status: 'available' }
       assert_response :success
@@ -24,7 +24,7 @@ class WoeidControllerTest < ActionController::TestCase
     end
   end
 
-  test 'should get WOEID and give (available, delivered, booked)' do
+  it 'gets WOEID and give (available, delivered, booked)' do
     mocking_yahoo_woeid_info(@ad.woeid_code) do
       get :show, params: { type: 'give', status: 'available', id: @ad.woeid_code }
       assert_response :success
@@ -35,28 +35,28 @@ class WoeidControllerTest < ActionController::TestCase
     end
   end
 
-  test 'should get WOEID and want' do
+  it 'gets WOEID and want' do
     mocking_yahoo_woeid_info(@ad.woeid_code) do
       get :show, params: { type: 'want', id: @ad.woeid_code }
       assert_response :success
     end
   end
 
-  test 'accepts a query search parameter' do
+  it 'accepts a query search parameter' do
     mocking_yahoo_woeid_info(@ad.woeid_code) do
       get :show, params: { type: 'give', q: 'ordenador', id: @ad.woeid_code }
       assert_response :success
     end
   end
 
-  test 'accepts a query search parameter when no results' do
+  it 'accepts a query search parameter when no results' do
     mocking_yahoo_woeid_info(@ad.woeid_code) do
       get :show, params: { type: 'give', q: 'notfound', id: @ad.woeid_code }
       assert_response :success
     end
   end
 
-  test 'accepts a query search parameter when WOEID code param not specified' do
+  it 'accepts a query search parameter when WOEID code param not specified' do
     mocking_yahoo_woeid_info(@ad.woeid_code) do
       get :show, params: { type: 'give', q: 'ordenador' }
       assert_response :success

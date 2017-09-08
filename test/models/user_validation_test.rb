@@ -3,7 +3,7 @@
 require 'test_helper'
 
 class UserValidationTest < ActiveSupport::TestCase
-  test 'has unique usernames' do
+  it 'has unique usernames' do
     user1 = build(:user, username: 'Username')
     assert user1.save
 
@@ -12,7 +12,7 @@ class UserValidationTest < ActiveSupport::TestCase
     assert_includes user2.errors[:username], 'ya está en uso'
   end
 
-  test 'has unique case insensitive usernames' do
+  it 'has unique case insensitive usernames' do
     user1 = build(:user, username: 'Username')
     assert user1.save
 
@@ -21,14 +21,14 @@ class UserValidationTest < ActiveSupport::TestCase
     assert_includes user2.errors[:username], 'ya está en uso'
   end
 
-  test 'disallows usernames that look like emails' do
+  it 'disallows usernames that look like emails' do
     user = build(:user, username: 'larryfoster@example.com')
 
     assert_not user.valid?
     assert_includes user.errors[:username], 'no es válido'
   end
 
-  test 'disallows usernames that look like ids' do
+  it 'disallows usernames that look like ids' do
     user1 = build(:user, username: '007')
     assert user1.valid?
 
@@ -37,12 +37,12 @@ class UserValidationTest < ActiveSupport::TestCase
     assert_includes user2.errors[:username], 'no es válido'
   end
 
-  test 'disallows usernames containing URL separator character' do
+  it 'disallows usernames containing URL separator character' do
     user = build(:user, username: 'elena/mario')
     assert_not user.valid?
   end
 
-  test 'has unique emails' do
+  it 'has unique emails' do
     user1 = build(:user, email: 'larryfoster@example.com')
     assert user1.save
 
@@ -51,13 +51,13 @@ class UserValidationTest < ActiveSupport::TestCase
     assert_includes user2.errors[:email], 'ya está en uso'
   end
 
-  test 'saves downcased emails' do
+  it 'saves downcased emails' do
     user1 = build(:user, email: 'Larryfoster@example.com')
     assert user1.save
     assert_equal 'larryfoster@example.com', user1.email
   end
 
-  test 'has passwords no shorter than 5 characters' do
+  it 'has passwords no shorter than 5 characters' do
     user1 = build(:user, password: '1234')
     assert_not user1.valid?
     assert_includes user1.errors[:password],
@@ -67,13 +67,13 @@ class UserValidationTest < ActiveSupport::TestCase
     assert user2.valid?
   end
 
-  test 'has non-empty usernames' do
+  it 'has non-empty usernames' do
     user1 = build(:user, username: '')
     assert_not user1.valid?
     assert_includes user1.errors[:username], 'no puede estar en blanco'
   end
 
-  test 'has usernames no longer than 63 characters' do
+  it 'has usernames no longer than 63 characters' do
     user1 = build(:user, username: 'A' * 63)
     assert user1.valid?
 

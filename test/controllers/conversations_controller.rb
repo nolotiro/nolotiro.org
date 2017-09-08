@@ -11,18 +11,18 @@ class ConversationsControllerTest < ActionController::TestCase
     @user2 = create(:user, email: 'marcbolan@example.com', username: 'trex')
   end
 
-  test 'should redirect to signup to create a message as anon' do
+  it 'redirects to signup to create a message as anon' do
     get :new, params: { user_id: @user1.id }
     assert_redirected_to new_user_session_url
   end
 
-  test 'should get form to create a message as an user' do
+  it 'gets form to create a message as an user' do
     sign_in @user1
     get :new, params: { user_id: @user2.id }
     assert_response :success
   end
 
-  test 'should create a message, show it and let the other user reply it' do
+  it 'creates a message, shows it and lets the other user reply it' do
     # user1 signs in and sends a message to user2
     sign_in @user1
     assert_difference('Conversation.count') do
@@ -43,18 +43,18 @@ class ConversationsControllerTest < ActionController::TestCase
     # TODO: user3 can't access that conversation
   end
 
-  test 'should get list of conversations as user' do
+  it 'gets list of conversations as user' do
     sign_in @user1
     get :index
     assert_response :success
   end
 
-  test 'should not get list of conversations as anon' do
+  it 'does not get list of conversations as anon' do
     get :index
     assert_redirected_to new_user_session_url
   end
 
-  test 'should not get list of conversations to/from another user' do
+  it 'does not get list of conversations to/from another user' do
     sign_in @user1
     assert_difference('Conversation.count') do
       post :create,
@@ -70,7 +70,7 @@ class ConversationsControllerTest < ActionController::TestCase
     assert_equal 'No tienes permisos para realizar esta acción.', flash[:alert]
   end
 
-  test 'should not permit sender param for message' do
+  it 'does not permit sender param for message' do
     sign_in @user1
     post :create,
          params: {
