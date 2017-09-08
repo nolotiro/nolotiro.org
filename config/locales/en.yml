@@ -63,7 +63,7 @@ en:
   conversations:
     buttons:
       back: "< back to messages"
-      trash: Conversation deleted
+      trash: Delete conversation
       trash_selected: Delete selected conversations
     index:
       title: Messages
@@ -74,7 +74,7 @@ en:
       title: New private message for user %{user}
     notifications:
       sent: Sent message
-      trash: 
+      trash: Conversation deleted
     show:
       title_html: Conversation with %{recipient} subject %{subject}
     table:
