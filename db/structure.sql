@@ -46,7 +46,7 @@ SET default_with_oids = false;
 --
 
 CREATE TABLE ads (
-    id integer NOT NULL,
+    id bigint NOT NULL,
     title character varying(100) NOT NULL,
     body text NOT NULL,
     user_owner bigint NOT NULL,
@@ -91,7 +91,7 @@ ALTER SEQUENCE ads_id_seq OWNED BY ads.id;
 --
 
 CREATE TABLE announcements (
-    id integer NOT NULL,
+    id bigint NOT NULL,
     message text,
     starts_at timestamp without time zone,
     ends_at timestamp without time zone,
@@ -137,7 +137,7 @@ CREATE TABLE ar_internal_metadata (
 --
 
 CREATE TABLE blockings (
-    id integer NOT NULL,
+    id bigint NOT NULL,
     blocker_id bigint NOT NULL,
     blocked_id bigint NOT NULL
 );
@@ -167,7 +167,7 @@ ALTER SEQUENCE blockings_id_seq OWNED BY blockings.id;
 --
 
 CREATE TABLE comments (
-    id integer NOT NULL,
+    id bigint NOT NULL,
     ads_id bigint NOT NULL,
     body text NOT NULL,
     created_at timestamp without time zone NOT NULL,
@@ -201,7 +201,7 @@ ALTER SEQUENCE comments_id_seq OWNED BY comments.id;
 --
 
 CREATE TABLE conversations (
-    id integer NOT NULL,
+    id bigint NOT NULL,
     subject character varying(255) DEFAULT ''::character varying,
     created_at timestamp without time zone NOT NULL,
     updated_at timestamp without time zone NOT NULL,
@@ -234,7 +234,7 @@ ALTER SEQUENCE conversations_id_seq OWNED BY conversations.id;
 --
 
 CREATE TABLE countries (
-    id integer NOT NULL,
+    id bigint NOT NULL,
     iso character varying(2) NOT NULL,
     name character varying(173) NOT NULL,
     geoname_id integer
@@ -265,7 +265,7 @@ ALTER SEQUENCE countries_id_seq OWNED BY countries.id;
 --
 
 CREATE TABLE dismissals (
-    id integer NOT NULL,
+    id bigint NOT NULL,
     announcement_id bigint,
     user_id bigint
 );
@@ -295,7 +295,7 @@ ALTER SEQUENCE dismissals_id_seq OWNED BY dismissals.id;
 --
 
 CREATE TABLE friendships (
-    id integer NOT NULL,
+    id bigint NOT NULL,
     user_id bigint NOT NULL,
     friend_id bigint NOT NULL
 );
@@ -325,7 +325,7 @@ ALTER SEQUENCE friendships_id_seq OWNED BY friendships.id;
 --
 
 CREATE TABLE identities (
-    id integer NOT NULL,
+    id bigint NOT NULL,
     provider character varying(255),
     uid character varying(255),
     user_id bigint
@@ -356,7 +356,7 @@ ALTER SEQUENCE identities_id_seq OWNED BY identities.id;
 --
 
 CREATE TABLE messages (
-    id integer NOT NULL,
+    id bigint NOT NULL,
     body text,
     subject character varying(255) DEFAULT ''::character varying,
     sender_id bigint,
@@ -390,7 +390,7 @@ ALTER SEQUENCE messages_id_seq OWNED BY messages.id;
 --
 
 CREATE TABLE receipts (
-    id integer NOT NULL,
+    id bigint NOT NULL,
     receiver_id bigint,
     notification_id bigint NOT NULL,
     is_read boolean DEFAULT false,
@@ -437,9 +437,9 @@ CREATE TABLE schema_migrations (
 --
 
 CREATE TABLE states (
-    id integer NOT NULL,
+    id bigint NOT NULL,
     name character varying(173) NOT NULL,
-    country_id integer NOT NULL,
+    country_id bigint NOT NULL,
     geoname_id integer
 );
 
@@ -468,10 +468,10 @@ ALTER SEQUENCE states_id_seq OWNED BY states.id;
 --
 
 CREATE TABLE towns (
-    id integer NOT NULL,
+    id bigint NOT NULL,
     name character varying(173) NOT NULL,
-    state_id integer,
-    country_id integer NOT NULL,
+    state_id bigint,
+    country_id bigint NOT NULL,
     geoname_id integer
 );
 
@@ -500,7 +500,7 @@ ALTER SEQUENCE towns_id_seq OWNED BY towns.id;
 --
 
 CREATE TABLE users (
-    id integer NOT NULL,
+    id bigint NOT NULL,
     username character varying(63) NOT NULL,
     legacy_password_hash character varying(255),
     email character varying(100) NOT NULL,
