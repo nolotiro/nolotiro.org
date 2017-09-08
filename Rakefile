@@ -8,9 +8,6 @@ require_relative 'config/application'
 NolotiroOrg::Application.load_tasks
 
 if %(test development).include?(Rails.env)
-  require 'rubocop/rake_task'
-  RuboCop::RakeTask.new
-
   require 'rake/testtask'
   Rake::TestTask.new(:test) do |t|
     t.libs << 'lib' << 'test'
@@ -18,13 +15,9 @@ if %(test development).include?(Rails.env)
     t.warning = false
   end
 
-  task :brakeman do
-    system('bin/brakeman --quiet')
-  end
-
   # Hack to prevent tests from being run twice.
   # @todo Remove it, possibly when upgrading to Rails 5
   MiniTest.class_variable_set('@@installed_at_exit', true)
 
-  task default: %i[test rubocop brakeman]
+  task default: :test
 end
