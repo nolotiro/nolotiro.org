@@ -4,6 +4,37 @@ engines:
   brakeman:
     enabled: true
 
+  grep:
+    enabled: true
+    config:
+      patterns:
+        no-trailing-whitespace:
+          pattern: \s*$
+          annotation: "Don't leave trailing whitespace"
+          severity: minor
+          categories: Style
+          path_patterns:
+            - "**.builder"
+            - "**.coffee"
+            - "**.css"
+            - "**.development"
+            - "**.erb"
+            - "**.html"
+            - "**.jbuilder"
+            - "**.js"
+            - "**.lock"
+            - "**.md"
+            - "**.rake"
+            - "**.rb"
+            - "**.ru"
+            - "**.sass"
+            - "**.scss"
+            - "**.sh"
+            - "**.sql"
+            - "**.txt"
+            - "**.xml"
+            - "**.yml"
+
   rubocop:
     enabled: true
     channel: rubocop-0-49
