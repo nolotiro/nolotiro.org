@@ -29,6 +29,8 @@
     <p><%= truncate ad.filtered_body, length: 200, separator: ' ' %></p>
   </div>
 
-  <%= render "ads/stats", comments_count: comment_counts[ad.id] || 0,
-                          readed_count: ad.readed_count %>
+  <div class="ad_meta_info">
+    <%= render "ads/stats", comments_count: comment_counts[ad.id] || 0,
+                            readed_count: ad.readed_count %>
+  </div>
 <% end %>
