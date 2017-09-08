@@ -332,6 +332,11 @@ en:
     register: Register
     register_here: Register here
     remember_me: Remember me
+    reports:
+      reason: Reason for report
+      reason_scam: Scam
+      reason_spam: Spam
+      submit: Submit report
     requests: requests
     rss_suscribe: Suscribe via RSS
     rule:
@@ -395,6 +400,10 @@ en:
   recaptcha:
     errors:
       verification_failed: Robot verification failed, try again
+  reports:
+    create:
+      success_reported: Content retired
+      success_banned: Report received
   time:
     formats:
       active_admin: 

@@ -5,6 +5,9 @@ Rails.application.configure do
 
   # Raise whenever bullet finds unoptimized queries
   config.after_initialize do
+    Bullet.add_whitelist type:  :counter_cache,
+                         class_name: 'User',
+                         association: :recently_received_reports
     Bullet.enable = true
     Bullet.raise = true
     Bullet.add_whitelist type: :unused_eager_loading, class_name: 'Conversation', association: :recipient

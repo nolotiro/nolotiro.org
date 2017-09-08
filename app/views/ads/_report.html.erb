@@ -1,0 +1,15 @@
+<ul class="ad_report">
+  <li>
+    <% if ad.reported_by?(current_user) %>
+      Denunciado
+      <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+    <% else %>
+      <% full_title = "Denunciar este anuncio" %>
+
+      <%= link_to new_ad_report_path(ad), title: full_title do %>
+        Denunciar
+        <span class="glyphicon glyphicon-flag" aria-hidden="true"></span>
+      <% end %>
+    <% end %>
+  </li>
+</ul>

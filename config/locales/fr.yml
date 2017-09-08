@@ -332,6 +332,11 @@ fr:
     register: Inscrivez
     register_here: Inscrivez ici
     remember_me: souviens-toi de moi
+    reports:
+      reason: Motif du rapport
+      reason_scam: Escroquerie
+      reason_spam: Publicités
+      submit: Envoyer rapport
     requests: pétitions
     rss_suscribe: Abonnez-vous via RSS
     rule:
@@ -395,6 +400,10 @@ fr:
   recaptcha:
     errors:
       verification_failed: Il a échoué la vérification contre les robots, essayer à nouveau
+  reports:
+    create:
+      success_reported: Contenu supprimé
+      success_banned: Rapport reçue
   time:
     formats:
       active_admin: 

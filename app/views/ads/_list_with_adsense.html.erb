@@ -3,6 +3,8 @@
     <li class="ad_excerpt">
       <% if ad_tab? %>
         <%= render "ads/actions", ad: ad %>
+      <% elsif user_signed_in? %>
+        <%= render "ads/report", ad: ad %>
       <% end %>
 
       <%= render "ads/ad", ad: ad %>

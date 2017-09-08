@@ -332,6 +332,11 @@ es:
     register: Regístrate
     register_here: registrate aquí
     remember_me: Recuérdame
+    reports:
+      reason: Motivo de la denuncia
+      reason_scam: Estafa
+      reason_spam: Anuncio de venta
+      submit: Enviar denuncia
     requests: peticiones
     rss_suscribe: Suscribirse via RSS
     rule:
@@ -395,6 +400,10 @@ es:
   recaptcha:
     errors:
       verification_failed: Falló la verificación contra robots, prueba de nuevo
+  reports:
+    create:
+      success_reported: Contenido retirado
+      success_banned: Denuncia recibida
   time:
     formats:
       active_admin: "%d/%m/%y %H:%M"

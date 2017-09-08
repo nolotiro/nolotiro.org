@@ -1,0 +1,13 @@
+<% content_for :title, "Denunciar contenido inapropiado" %>
+
+<div class="main-row">
+  <div class="col-md-8 col-sm-8">
+    <div class="default_header_section">
+      <h1><%= content_for :title %></h1>
+    </div>
+
+    <div class="default_content_section">
+      <%= render 'form', report: @report %>
+    </div>
+  </div>
+</div>

@@ -5,13 +5,23 @@
 #
 module Baneable
   def self.prepended(base)
+    base.include InstanceMethods
+
     base.class_eval do
+      has_many :reports, foreign_key: :reporter_id, dependent: :destroy
+      has_many :reported_ads, foreign_key: :reporter_id, source: :ad, through: :reports
+
+      has_many :recently_received_reports,
+               -> { merge(Report.recent) },
+               source: :reports,
+               through: :ads
+
       scope :legitimate, -> { where(banned_at: nil) }
       scope :banned, -> { where.not(banned_at: nil) }
       scope :recent_spammers, -> { where('banned_at >= ?', 3.months.ago) }
     end
 
-    base.extend(ClassMethods)
+    base.extend ClassMethods
   end
 
   module ClassMethods
@@ -57,5 +67,13 @@ module Baneable
 
   def moderate!
     banned? ? unban! : ban!
+  end
+
+  module InstanceMethods
+    include Trustable
+
+    def reported_too_much?
+      recently_received_reports.baneable_score?
+    end
   end
 end

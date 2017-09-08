@@ -27,6 +27,7 @@ Rails.application.routes.draw do
                       path_names: { new: 'create' },
                       except: %i[index show] do
         resources :comments, only: :create
+        resources :reports, only: %i[new create]
       end
 
       scope '/ad' do

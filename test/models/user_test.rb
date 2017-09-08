@@ -9,6 +9,32 @@ class UserTest < ActiveSupport::TestCase
     @admin = create(:admin)
   end
 
+  it 'counts reports recently received' do
+    ad = create(:ad, user: @user)
+    another_ad = create(:ad, user: @user)
+    assert_empty @user.recently_received_reports
+
+    create(:report, ad: ad)
+    create(:report, ad: ad, created_at: 2.days.ago)
+    assert_equal 1, @user.recently_received_reports.size
+
+    create(:report, ad: another_ad)
+    assert_equal 2, @user.recently_received_reports.size
+  end
+
+  it 'ignores old reports received' do
+    create(:report, ad: create(:ad, user: @user), created_at: 2.days.ago)
+
+    assert_empty @user.recently_received_reports
+  end
+
+  it 'aggregates report information from different ads' do
+    create(:report, ad: create(:ad, user: @user))
+    create(:report, ad: create(:ad, user: @user))
+
+    assert_equal 2, @user.recently_received_reports.size
+  end
+
   it 'roles work' do
     assert_equal false, @user.admin?
     assert_equal true, @admin.admin?

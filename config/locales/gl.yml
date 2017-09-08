@@ -334,6 +334,11 @@ gl:
     register: Rexístrese
     register_here: rexístrese aquí
     remember_me: Lémbreme
+    reports:
+      reason: Motivo da denuncia
+      reason_scam: Estafa
+      reason_spam: Anuncio de venda
+      submit: Enviar denuncia
     requests: peticiones
     rss_suscribe: Suscribirse via RSS
     rule:
@@ -397,6 +402,10 @@ gl:
   recaptcha:
     errors:
       verification_failed: Fallou a verificación contra robots, tente de novo
+  reports:
+    create:
+      success_reported: Conteudo retirado
+      success_banned: Denuncia recibida
   time:
     formats:
       active_admin: 
