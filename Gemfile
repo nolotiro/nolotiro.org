@@ -50,7 +50,6 @@ group :production, :staging do
 end
 
 group :development do
-  gem 'brakeman-lib', '~> 3.7'
   gem 'faker', '~> 1.8'
   gem 'i18n-tasks', '= 0.9.18'
   gem 'listen', '~> 3.1'
