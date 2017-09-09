@@ -17,47 +17,47 @@ class RankingsTest < ActiveSupport::TestCase
     2.times { create(:ad, :in_mad, user: @user2) }
   end
 
-  test 'top overall ignores wanted ads from counts and results' do
+  test '.top_overall ignores wanted ads from counts and results' do
     create(:ad, :want, user: @user3)
     @user2.ads.last.move!
 
     assert_equal [[1, 'user1', 3], [2, 'user2', 1]], User.top_overall.ranked
   end
 
-  test 'top overall gives all time top ad publishers' do
+  test '.top_overall gives all time top ad publishers' do
     create(:ad, user: @user3)
 
     assert_equal [[1, 'user1', 3], [2, 'user2', 2], [3, 'user3', 1]],
                  User.top_overall.ranked
   end
 
-  test 'top overall excludes banned users' do
+  test '.top_overall excludes banned users' do
     create(:ad, user: @user3)
     @user1.ban!
 
     assert_equal [[2, 'user2', 2], [3, 'user3', 1]], User.top_overall.ranked
   end
 
-  test "top last week gives last week's top publishers" do
+  test ".top_last_week gives last week's top publishers" do
     create(:ad, user: @user3, published_at: 8.days.ago)
 
     assert_equal [[1, 'user1', 3], [2, 'user2', 2]], User.top_last_week.ranked
   end
 
-  test 'top last week excludes banned users' do
+  test '.top_last_week excludes banned users' do
     create(:ad, user: @user3, published_at: 8.days.ago)
     @user1.ban!
 
     assert_equal [[2, 'user2', 2]], User.top_last_week.ranked
   end
 
-  test 'top locations returns cities with most ads' do
+  test '.top_locations returns cities with most ads' do
     mocking_yahoo_woeid_info(766_273) do
       assert_equal [[766_273, 'Madrid', 3 + 2]], Ad.top_locations.ranked
     end
   end
 
-  test 'top locations excludes ads by banned users' do
+  test '.top_locations excludes ads by banned users' do
     mocking_yahoo_woeid_info(766_273) do
       @user1.ban!
 
@@ -65,12 +65,12 @@ class RankingsTest < ActiveSupport::TestCase
     end
   end
 
-  test 'top overall city with all users ads in the same city' do
+  test '.top_city_overall with all users ads in the same city' do
     assert_equal [[1, 'user1', 3], [2, 'user2', 2]],
                  User.top_city_overall(766_273).ranked
   end
 
-  test 'top overall city with users ads in different cities' do
+  test '.top_city_overall with users ads in different cities' do
     @user2.ads.last.update!(woeid_code: 753_692)
 
     assert_equal [[1, 'user1', 3], [2, 'user2', 1]],
