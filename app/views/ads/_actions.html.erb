@@ -9,7 +9,7 @@
 
           <%= link_to ads_change_status_path(ad, status: status),
                       method: :post, title: full_title do %>
-            <%= image_tag "#{status}.png", alt: full_title %>
+            <i class="glyphicon circle <%= status %>"></i>
             <%= t('nlt.mark_as', status: t("nlt.#{status}")) %>
           <% end %>
         </li>
@@ -21,7 +21,7 @@
         <% full_title = t('nlt.edit_this_ad') %>
 
         <%= link_to ads_edit_path(ad), title: full_title do %>
-          <%= image_tag "edit_ad.png", alt: full_title %>
+          <i class="glyphicon glyphicon-edit"></i>
           <%= t('nlt.edit') %>
         <% end %>
       </li>
@@ -32,7 +32,7 @@
         <% full_title = t('nlt.bump_this_ad') %>
 
         <%= link_to ads_bump_path(ad), method: :post, title: full_title do %>
-          <%= image_tag "bump_ad.png", alt: full_title %>
+          <i class="glyphicon glyphicon-refresh"></i>
           <%= t('nlt.bump') %>
         <% end %>
       </li>
