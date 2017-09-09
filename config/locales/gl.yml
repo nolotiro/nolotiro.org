@@ -396,6 +396,10 @@ gl:
   recaptcha:
     errors:
       verification_failed: Fallou a verificación contra robots, tente de novo
+  reports:
+    create:
+      success_reported: Denuncia recibida. ¡Grazas!
+      success_banned: Conteudo retirado. ¡Grazas!
   time:
     formats:
       active_admin: 

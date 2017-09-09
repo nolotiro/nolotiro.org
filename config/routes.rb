@@ -29,6 +29,10 @@ Rails.application.routes.draw do
         resources :comments, only: :create
       end
 
+      resources :users, only: [] do
+        resources :reports, only: :create
+      end
+
       scope '/ad' do
         get '/:id/:slug', to: 'ads#show', as: 'adslug'
         get '/edit/id/:id', to: 'ads#edit', as: 'ads_edit'

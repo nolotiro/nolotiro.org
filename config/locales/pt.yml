@@ -394,6 +394,10 @@ pt:
   recaptcha:
     errors:
       verification_failed: Falha na verificação contra robots, tenta de novo
+  reports:
+    create:
+      success_reported: Conteúdo apagado. Obrigada!
+      success_banned: Denúncia recebida. Obrigada!
   time:
     formats:
       active_admin: 

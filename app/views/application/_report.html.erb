@@ -1,0 +1,11 @@
+<% if current_user.reported?(user) %>
+  <i class="glyphicon glyphicon-ok"></i>
+  <%= t('nlt.reported_user') %>
+<% else %>
+  <%= link_to user_reports_path(user),
+              method: :post,
+              data: { confirm: t('nlt.profile_actions.reporting.confirm', username: user.username) } do %>
+    <i class="glyphicon glyphicon-flag"></i>
+    <%= title %>
+  <% end %>
+<% end %>

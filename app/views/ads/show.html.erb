@@ -78,6 +78,14 @@
           </div>
         <% end %>
 
+        <% if current_user %>
+          <div class="ad_report">
+            <span><%= t('nlt.is_this_scam') %></span>
+
+            <%= render 'application/report', user: @author, title: t('nlt.report') %>
+          </div>
+        <% end %>
+
         <div class="sharelinks">
           <p><%= t('nlt.share_this_ad') %>:</p>
 

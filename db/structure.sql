@@ -424,6 +424,38 @@ ALTER SEQUENCE receipts_id_seq OWNED BY receipts.id;
 
 
 --
+-- Name: reports; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE reports (
+    id bigint NOT NULL,
+    reported_id integer,
+    reporter_id integer,
+    dismissed_at timestamp without time zone,
+    created_at timestamp without time zone NOT NULL
+);
+
+
+--
+-- Name: reports_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE reports_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: reports_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE reports_id_seq OWNED BY reports.id;
+
+
+--
 -- Name: schema_migrations; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -626,6 +658,13 @@ ALTER TABLE ONLY receipts ALTER COLUMN id SET DEFAULT nextval('receipts_id_seq':
 
 
 --
+-- Name: reports id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY reports ALTER COLUMN id SET DEFAULT nextval('reports_id_seq'::regclass);
+
+
+--
 -- Name: states id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -740,6 +779,14 @@ ALTER TABLE ONLY messages
 
 ALTER TABLE ONLY receipts
     ADD CONSTRAINT receipts_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: reports reports_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY reports
+    ADD CONSTRAINT reports_pkey PRIMARY KEY (id);
 
 
 --
@@ -929,6 +976,20 @@ CREATE INDEX index_countries_on_name_trigram ON countries USING gin (name gin_tr
 
 
 --
+-- Name: index_reports_on_reported_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_reports_on_reported_id ON reports USING btree (reported_id);
+
+
+--
+-- Name: index_reports_on_reporter_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_reports_on_reporter_id ON reports USING btree (reporter_id);
+
+
+--
 -- Name: index_states_on_country_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -996,6 +1057,14 @@ ALTER TABLE ONLY identities
 
 
 --
+-- Name: reports fk_rails_6de8c16dd2; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY reports
+    ADD CONSTRAINT fk_rails_6de8c16dd2 FOREIGN KEY (reported_id) REFERENCES users(id);
+
+
+--
 -- Name: blockings fk_rails_8b7920d779; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -1025,6 +1094,14 @@ ALTER TABLE ONLY dismissals
 
 ALTER TABLE ONLY ads
     ADD CONSTRAINT fk_rails_9ce39f9139 FOREIGN KEY (user_owner) REFERENCES users(id) ON UPDATE RESTRICT ON DELETE RESTRICT;
+
+
+--
+-- Name: reports fk_rails_c4cb6e6463; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY reports
+    ADD CONSTRAINT fk_rails_c4cb6e6463 FOREIGN KEY (reporter_id) REFERENCES users(id);
 
 
 --
@@ -1090,6 +1167,7 @@ INSERT INTO "schema_migrations" (version) VALUES
 ('20161117184138'),
 ('20161117184157'),
 ('20161122140853'),
-('20170905120853');
+('20170905120853'),
+('20170909120825');
 
 
