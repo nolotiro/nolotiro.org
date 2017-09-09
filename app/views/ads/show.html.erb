@@ -47,7 +47,7 @@
             <span class="ad_status <%= @ad.current_status %>"><%= @ad.status_string %></span>
           <% end %>
 
-          <%= linked_published_ago_by(@ad.published_at, @ad.user) %>
+          <%= linked_published_ago_by(@ad.published_at, @author) %>
         </div>
 
         <div class="body-wrapper">
@@ -60,14 +60,14 @@
         </div>
 
         <% if (@ad.want? || @ad.currently_available?) &&
-              (current_user.nil? || current_user.whitelisting?(@ad.user)) %>
+              (current_user.nil? || current_user.whitelisting?(@author)) %>
           <div class="ad_contact">
             <% if @ad.currently_available? %>
               <%= t('nlt.are_you_interested') %>
-              <% title = t('nlt.send_a_message', user: @ad.user.username) %>
+              <% title = t('nlt.send_a_message', user: @author.username) %>
             <% else %>
               <%= t('nlt.do_you_have_it') %>
-              <% title = t('nlt.give_it_to', user: @ad.user.username) %>
+              <% title = t('nlt.give_it_to', user: @author.username) %>
             <% end %>
 
             <%= link_to new_conversation_path(recipient_id: @ad.user_owner,

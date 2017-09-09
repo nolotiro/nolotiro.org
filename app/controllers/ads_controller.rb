@@ -41,6 +41,8 @@ class AdsController < ApplicationController
       @ad.increment_readed_count!
       @comments = policy_scope(@ad.comments).includes(:user).oldest_first
     end
+
+    @author = @ad.user
   end
 
   def edit
