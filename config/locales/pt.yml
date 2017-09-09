@@ -290,8 +290,8 @@ pt:
       one: "%{count} anúncio"
       other: "%{count} anúncios"
     n_comments:
-      one: ", %{count} comentário"
-      other: ", %{count} comentários"
+      one: "%{count} comentário"
+      other: "%{count} comentários"
     n_reads:
       one: "%{count} leitura"
       other: "%{count} leituras"

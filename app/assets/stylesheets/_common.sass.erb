@@ -203,15 +203,32 @@ form.searchbox
       display: block
       width: 100%
 
+.ad_info_line
+  padding-bottom: 5px
+
 .ad_status
   clear: left
-  display: inline-block
   color: #fff
   padding: 3px
   font-weight: bold
   font-size: 11px
   border: 0
   margin-right: 4px
+
+.ad_status_ribbon
+  border: 0
+  bottom: 0
+  color: #fff
+  font-weight: bold
+  font-size: 11px
+  height: 20px
+  line-height: 20px
+  text-align: center
+  text-transform: uppercase
+  width: 200px
+
+.ad_author
+  font-weight: bold
 
 .available
   background-color: #19AF13
@@ -226,12 +243,31 @@ form.searchbox
   background-color: gray
 
 .ad_list_image
-  float: right
-  padding-left: 8px
+  background-color: $gray-separator
   z-index: 300
+  width: 200px
 
-  a img
-    float: right
+  img
+    display: block
+    margin: auto
+
+.col_ad_image
+  @include make-md-column(3)
+  @include make-sm-column(3)
+
+  width: 230px !important
+
+.col_ad_body
+  @include make-md-column(6)
+  @include make-sm-column(6)
+
+  width: calc(80% - 230px) !important
+
+.col_ad_extra
+  @include make-md-column(3)
+  @include make-sm-column(3)
+
+  width: 20% !important
 
 .no_results
   padding: 10px 15px
@@ -318,11 +354,6 @@ form.searchbox
   text-align: right
 
 .ad_meta_info
-  clear: right
-  display: block
-  font-size: 11px
-  padding: 3px 0 3px
-  text-align: right
   width: 100%
 
   b

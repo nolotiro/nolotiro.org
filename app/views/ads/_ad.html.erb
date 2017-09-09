@@ -1,34 +1,53 @@
 <%= link_to adslug_path(ad, ad.slug), class: 'aod_content' do %>
-  <% if ad.image.exists? %>
-    <div class="ad_list_image">
-      <%= image_tag ad.image.url(:thumb), title: ad.filtered_title,
-                                          alt: ad.filtered_title %>
+  <div class="row">
+    <div class="col_ad_image">
+      <div class="ad_list_image <%= ad.current_status %>">
+        <%= image_tag ad.image.url(:thumb), title: ad.filtered_title,
+                                            alt: ad.filtered_title %>
+
+        <% if ad.give? %>
+          <div class="ad_status_ribbon <%= ad.current_status %>">
+            <%= ad.status_string %>
+          </div>
+        <% end %>
+      </div>
     </div>
-  <% end %>
 
-  <h4>
-    <%= ad.filtered_title %>
-  </h4>
+    <div class="col_ad_body">
+      <h4>
+        <%= ad.filtered_title %>
+      </h4>
 
-  <% unless current_woeid && @type %>
-    <div class="ad_excerpt_woeid">
-      <%= safe_join([current_woeid ? nil : ad.woeid_name,
-                     @type ? nil : ad.type_string].compact, raw(' &gt; ')) %>
+      <div class="body-wrapper">
+        <p><%= truncate ad.filtered_body, length: 200, separator: ' ' %></p>
+      </div>
     </div>
-  <% end %>
 
-  <div class="ad_status_line">
-    <% if ad.give? %>
-      <span class="ad_status <%= ad.current_status %>"><%= ad.status_string %></span>
-    <% end %>
+    <div class="col_ad_extra">
+      <div class="ad_info_line">
+        <span class="ad_author">
+          <%= ad.user.username %>
+        </span>
+      </div>
 
-    <%= published_ago_by(ad.published_at, ad.user.username) %>
+      <% unless current_woeid && @type %>
+        <div class="ad_info_line">
+          <span class="ad_excerpt_woeid">
+            <i class="glyphicon glyphicon-map-marker"></i>
+            <%= safe_join([current_woeid ? nil : ad.woeid_name_short,
+                           @type ? nil : ad.type_string].compact, raw(' &gt; ')) %>
+          </span>
+        </div>
+      <% end %>
+
+      <div class="ad_info_line">
+        <span class="ad_date">
+          <%= time_ago_in_words(ad.published_at) %>
+        </span>
+      </div>
+
+      <%= render "ads/stats", comments_count: comment_counts[ad.id] || 0,
+                              readed_count: ad.readed_count %>
+    </div>
   </div>
-
-  <div class="body-wrapper">
-    <p><%= truncate ad.filtered_body, length: 200, separator: ' ' %></p>
-  </div>
-
-  <%= render "ads/stats", comments_count: comment_counts[ad.id] || 0,
-                          readed_count: ad.readed_count %>
 <% end %>
