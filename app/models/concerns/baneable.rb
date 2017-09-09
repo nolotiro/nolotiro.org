@@ -20,6 +20,7 @@ module Baneable
              class_name: 'Report'
 
     has_many :reported_users, through: :sent_reports, source: :reported
+    has_many :reporters, through: :received_reports, source: :reporter
 
     scope :legitimate, -> { where(banned_at: nil) }
 

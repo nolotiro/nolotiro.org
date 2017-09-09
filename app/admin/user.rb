@@ -124,7 +124,7 @@ ActiveAdmin.register User do
 
     user.moderate!
 
-    redirect_to admin_user_path(user),
-                notice: "Usuario #{'des' unless user.banned?}bloqueado"
+    redirect_back fallback_location: admin_reported_users_path,
+                  notice: "Usuario #{'des' unless user.banned?}bloqueado"
   end
 end

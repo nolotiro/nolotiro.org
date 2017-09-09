@@ -44,6 +44,9 @@ es:
         password: Contraseña nueva
         password_confirmation: Contraseña nueva (repetir)
         remember: Recuérdame
+        report_score: Rating de denuncias
+        reporters: Denunciantes
+        status: Estado
         username: Nombre de usuario
     models:
       aa_comment:
@@ -52,6 +55,9 @@ es:
       ad:
         one: anuncio
         other: Anuncios
+      reported_user:
+        one: denuncia
+        other: Denuncias
       user:
         one: usuario
         other: Usuarios
