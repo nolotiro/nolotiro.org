@@ -69,7 +69,7 @@ a
   .box-entry
     > span, button
       font-size: 1em
-      background-color: #FFFFCC
+      background-color: $light-orange
       line-height: 24px
       border: none
       border-right: 1px solid $gray-separator
@@ -171,7 +171,6 @@ form.searchbox
 
     a
       border-right: 1px solid $gray-separator
-      font-size: 10px
       line-height: $action-height / 2
       margin: $action-height / 4 0
       padding: 0 10px
@@ -188,9 +187,6 @@ form.searchbox
       line-height: $action-height / 3
       width: 50%
 
-    a
-      font-size: 9px
-
 .ad_actions
   display: block
   list-style-type: none
@@ -201,6 +197,7 @@ form.searchbox
 
     a
       display: block
+      font-size: 10px
       width: 100%
 
 .ad_status
@@ -212,6 +209,11 @@ form.searchbox
   font-size: 11px
   border: 0
   margin-right: 4px
+
+.circle
+  border-radius: 5px
+  height: 10px
+  width: 10px
 
 .available
   background-color: #19AF13
