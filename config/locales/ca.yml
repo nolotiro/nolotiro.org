@@ -380,7 +380,6 @@ ca:
     want: petició
     want_to_leave: Vols esborrar el teu usuari?
     we_need_your_password: "(necessitem la contrasenya per confirmar els canvis)"
-    write_a_comment: "+ Escriu un nou comentari"
     your_email: El teu email
   number:
     human:

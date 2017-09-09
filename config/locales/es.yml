@@ -380,7 +380,6 @@ es:
     want: petición
     want_to_leave: "¿Quieres borrar tu usuario?"
     we_need_your_password: "(necesitamos tu contraseña para confirmar tus cambios)"
-    write_a_comment: "+ Escribe un comentario"
     your_email: Tu email
   number:
     human:

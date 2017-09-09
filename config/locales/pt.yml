@@ -380,7 +380,6 @@ pt:
     want: petição
     want_to_leave: Você quer apagar o seu usuário?
     we_need_your_password: "(precisamos sua senha para confirmar mudanças)"
-    write_a_comment: "+ Escreve um comentário"
     your_email: Seu email
   number:
     human:
