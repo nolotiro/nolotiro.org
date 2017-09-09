@@ -380,7 +380,6 @@ fr:
     want: pétition
     want_to_leave: Voulez-vous supprimer votre nom d'utilisateur?
     we_need_your_password: "(Nous avons besoin de votre mot de passe pour confirmer vos modifications)"
-    write_a_comment: "+ Ajouter un commentaire"
     your_email: votre e-mail
   number:
     human:

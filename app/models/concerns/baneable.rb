@@ -11,7 +11,7 @@ module Baneable
       scope :recent_spammers, -> { where('banned_at >= ?', 3.months.ago) }
     end
 
-    base.extend(ClassMethods)
+    base.extend ClassMethods
   end
 
   module ClassMethods

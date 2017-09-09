@@ -2,7 +2,6 @@
 
 require 'test_helper'
 require 'integration/concerns/authenticated_test'
-require 'support/web_mocking'
 
 class BlockingsTest < AuthenticatedTest
   before { @enemy = create(:user) }

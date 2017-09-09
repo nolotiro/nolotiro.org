@@ -380,7 +380,6 @@ en:
     want: want
     want_to_leave: Do you want to delete your user?
     we_need_your_password: "(we need your password to confirm your edition)"
-    write_a_comment: "+ Write a comment"
     your_email: Your email
   number:
     human:
