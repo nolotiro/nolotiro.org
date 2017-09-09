@@ -72,8 +72,8 @@
 
             <%= link_to new_conversation_path(recipient_id: @ad.user_owner,
                                               subject: @ad.slug) do %>
-              <%= "+ #{title}" %>
               <i class="glyphicon glyphicon-envelope"></i>
+              <%= title %>
             <% end %>
           </div>
         <% end %>
