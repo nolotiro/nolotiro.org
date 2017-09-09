@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class NormalizeStatusForWantAdsToNil < ActiveRecord::Migration[4.2]
+class NormalizeStatusForWantAdsToNil < ActiveRecord::Migration[5.1]
   def up
     change_column_null :ads, :status, true
 

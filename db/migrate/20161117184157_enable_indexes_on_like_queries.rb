@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class EnableIndexesOnLikeQueries < ActiveRecord::Migration[4.2]
+class EnableIndexesOnLikeQueries < ActiveRecord::Migration[5.1]
   def up
     unless extension_enabled?('pg_trgm')
       raise <<-MSG.squish

@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class RemoveUnusedColumnsFromMessages < ActiveRecord::Migration[4.2]
+class RemoveUnusedColumnsFromMessages < ActiveRecord::Migration[5.1]
   def up
     remove_column :messages, :draft, :boolean, default: false
     remove_column :messages, :notification_code, :string, limit: 255
