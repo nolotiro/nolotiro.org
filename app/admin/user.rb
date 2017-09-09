@@ -6,8 +6,9 @@ ActiveAdmin.register User do
   include StatsSidebar
 
   config.batch_actions = false
-  config.remove_action_item(:new)
-  config.remove_action_item(:destroy)
+
+  config.remove_action_item :new
+  config.remove_action_item :destroy
 
   permit_params :role
 
