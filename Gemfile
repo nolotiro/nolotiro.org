@@ -32,6 +32,7 @@ group :development, :test do
   gem 'minitest-hooks', '~> 1.4'
   gem 'minitest-spec-rails', '~> 5.4'
   gem 'rails-controller-testing', '~> 1.0'
+  gem 'rubocop', '= 0.49.1', require: false
   gem 'spring', '~> 2.0'
 end
 
