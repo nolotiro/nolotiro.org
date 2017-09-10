@@ -1,7 +1,8 @@
 # frozen_string_literal: true
 
 class User < ApplicationRecord
-  prepend Baneable
+  include Baneable
+  include Rankable
   include Statable
 
   counter_stats_for :created_at
@@ -64,18 +65,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :lockable,
          :omniauthable, omniauth_providers: %i[facebook google]
 
-  scope :top_overall, -> { build_rank(Ad, 'top-overall') }
-  scope :top_last_week, -> { build_rank(Ad.last_week, 'top-last-week') }
-
-  scope :top_city_overall, ->(woeid) do
-    build_rank(Ad.by_woeid_code(woeid), "woeid/#{woeid}/top-overall")
-  end
-
-  scope :top_city_last_week, ->(woeid) do
-    build_rank(Ad.last_week.by_woeid_code(woeid),
-               "woeid/#{woeid}/top-last-week")
-  end
-
   scope :whitelisting, ->(user) do
     joined = joins <<-SQL.squish
       LEFT OUTER JOIN blockings
@@ -83,13 +72,6 @@ class User < ApplicationRecord
     SQL
 
     joined.where(blockings: { blocker_id: nil })
-  end
-
-  def self.build_rank(ads_scope, name)
-    AdRanking.new(ads_scope.give.joins(:user).merge(legitimate),
-                  name: name,
-                  metric: :user_owner,
-                  select_extras: [:username])
   end
 
   def self.new_with_session(params, session)
@@ -108,6 +90,10 @@ class User < ApplicationRecord
 
   def password_required?
     (new_record? || password || password_confirmation) && identities.none?
+  end
+
+  def active_for_authentication?
+    super && legitimate?
   end
 
   def admin?
