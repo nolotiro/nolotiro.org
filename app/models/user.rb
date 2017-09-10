@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class User < ApplicationRecord
-  prepend Baneable
+  include Baneable
   include Statable
 
   counter_stats_for :created_at
@@ -108,6 +108,10 @@ class User < ApplicationRecord
 
   def password_required?
     (new_record? || password || password_confirmation) && identities.none?
+  end
+
+  def active_for_authentication?
+    super && legitimate?
   end
 
   def admin?

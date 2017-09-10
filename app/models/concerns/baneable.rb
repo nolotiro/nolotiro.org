@@ -4,17 +4,15 @@
 # Funcionality related to banning users
 #
 module Baneable
-  def self.prepended(base)
-    base.class_eval do
-      scope :legitimate, -> { where(banned_at: nil) }
-      scope :banned, -> { where.not(banned_at: nil) }
-      scope :recent_spammers, -> { where('banned_at >= ?', 3.months.ago) }
-    end
+  extend ActiveSupport::Concern
 
-    base.extend ClassMethods
+  included do
+    scope :legitimate, -> { where(banned_at: nil) }
+    scope :banned, -> { where.not(banned_at: nil) }
+    scope :recent_spammers, -> { where('banned_at >= ?', 3.months.ago) }
   end
 
-  module ClassMethods
+  class_methods do
     def suspicious?(ip)
       condition = <<-SQL.squish
         last_sign_in_ip = :ip OR
@@ -29,10 +27,6 @@ module Baneable
         .where(condition, ip: ip)
         .any?
     end
-  end
-
-  def active_for_authentication?
-    super && legitimate?
   end
 
   def unban!
