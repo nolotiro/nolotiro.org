@@ -7,8 +7,7 @@ ActiveAdmin.register User do
 
   config.batch_actions = false
 
-  config.remove_action_item :new
-  config.remove_action_item :destroy
+  actions :index, :show, :update, :edit
 
   permit_params :role
 
