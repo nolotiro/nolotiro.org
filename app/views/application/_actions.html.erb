@@ -40,15 +40,6 @@
         </li>
       <% else %>
         <li class="list-group-item">
-          <%= link_to blockings_path(blocked_id: user.id),
-                      data: { confirm: t('nlt.profile_actions.blocking.confirm', username: user.username) },
-                      method: :post do %>
-            <i class="glyphicon glyphicon-ban-circle"></i>
-            <%= t('nlt.profile_actions.blocking.add') %>
-          <% end %>
-        </li>
-
-        <li class="list-group-item">
           <% friendship = current_user.friend?(user) %>
 
           <% if friendship %>
@@ -61,6 +52,15 @@
               <i class="glyphicon glyphicon-ok"></i>
               <%= t('nlt.profile_actions.friend.add', username: user.username) %>
             <% end %>
+          <% end %>
+        </li>
+
+        <li class="list-group-item">
+          <%= link_to blockings_path(blocked_id: user.id),
+                      data: { confirm: t('nlt.profile_actions.blocking.confirm', username: user.username) },
+                      method: :post do %>
+            <i class="glyphicon glyphicon-ban-circle"></i>
+            <%= t('nlt.profile_actions.blocking.add') %>
           <% end %>
         </li>
       <% end %>
