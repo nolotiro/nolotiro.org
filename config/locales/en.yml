@@ -394,6 +394,10 @@ en:
   recaptcha:
     errors:
       verification_failed: Robot verification failed, try again
+  reports:
+    create:
+      success_reported: Report received. Thanks!
+      success_banned: Content retired. Thanks!
   time:
     formats:
       active_admin: 

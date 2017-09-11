@@ -44,6 +44,9 @@ es:
         password: Contraseña nueva
         password_confirmation: Contraseña nueva (repetir)
         remember: Recuérdame
+        report_score: Rating de denuncias
+        reporters: Denunciantes
+        status: Estado
         username: Nombre de usuario
     models:
       aa_comment:
@@ -52,6 +55,9 @@ es:
       ad:
         one: anuncio
         other: Anuncios
+      reported_user:
+        one: denuncia
+        other: Denuncias
       user:
         one: usuario
         other: Usuarios
@@ -267,6 +273,7 @@ es:
     here: aquí
     if_you_are_new: Si eres un nuevo usuario, por favor
     if_youre_already_an_user: Si ya eres un usuario registrado, por favor
+    is_this_scam: ¿Es una estafa?
     last_published_gifts: últimos regalos publicados
     leave_blank: "(déjala en blanco si no quieres cambiarla)"
     legal_notice: aviso legal
@@ -324,11 +331,16 @@ es:
       friend:
         add: agregar a tu lista de amigos
         delete: eliminar de tu lista de amigos
+      reporting:
+        report: denunciar estafa
+        confirm: Vas a denunciar a %{username} por estafa. Para cualquier otro tipo de denuncia, escríbenos directamente a hola@nolotiro.org
     publish_ad: Publicar anuncio
     publish_ad_on: Publicar anuncio en %{woeid}
     published_ads: Anuncios publicados
     published_ago_by_html: Publicado %{time} por el usuario %{user}
     reads: lecturas
+    report: Denunciar
+    reported_user: Has denunciado a esta usuaria. Gracias
     register: Regístrate
     register_here: registrate aquí
     remember_me: Recuérdame
@@ -394,6 +406,10 @@ es:
   recaptcha:
     errors:
       verification_failed: Falló la verificación contra robots, prueba de nuevo
+  reports:
+    create:
+      success_reported: Denuncia recibida. ¡Gracias!
+      success_banned: Contenido retirado. ¡Gracias!
   time:
     formats:
       active_admin: "%d/%m/%y %H:%M"

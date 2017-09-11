@@ -394,6 +394,10 @@ ca:
   recaptcha:
     errors:
       verification_failed: Ha fallat la verificació contra robots, intenta-ho de nou
+  reports:
+    create:
+      success_reported: Denúncia rebuda. Gràcies!
+      success_banned: Contingut retirat. Gràcies!
   time:
     formats:
       active_admin: 

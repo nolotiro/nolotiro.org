@@ -394,6 +394,10 @@ it:
   recaptcha:
     errors:
       verification_failed: C'è stato un error nella verificazione contro dei robot
+  reports:
+    create:
+      success_reported: Contenuti rimossi. Grazie!
+      success_banned: Denuncia ricevuta. Grazie!
   time:
     formats:
       active_admin: 

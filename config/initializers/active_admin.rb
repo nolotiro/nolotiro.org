@@ -110,7 +110,7 @@ ActiveAdmin.setup do |config|
   # roots for each namespace.
   #
   # Default:
-  config.root_to = 'ads#index'
+  config.root_to = 'reported_users#index'
 
   # == Admin Comments
   #

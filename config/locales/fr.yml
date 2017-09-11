@@ -394,6 +394,10 @@ fr:
   recaptcha:
     errors:
       verification_failed: Il a échoué la vérification contre les robots, essayer à nouveau
+  reports:
+    create:
+      success_reported: Rapport reçue. Merci!
+      success_banned: Contenu supprimé. Merci!
   time:
     formats:
       active_admin: 
