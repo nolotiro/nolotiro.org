@@ -57,7 +57,7 @@ group :development do
   gem 'localeapp', '~> 2.4'
 
   # deploy
-  gem 'capistrano', '~> 3.0'
+  gem 'capistrano', '~> 3.9'
   gem 'capistrano-rails', '~> 1.3'
   gem 'capistrano-rbenv', '~> 2.1'
   gem 'capistrano-sidekiq', '= 0.20.0'
