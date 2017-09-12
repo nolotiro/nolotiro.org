@@ -8,6 +8,7 @@ ActiveAdmin.register Comment, as: 'AaComment' do
   permit_params :body
 
   filter :created_at
+  filter :user_username, as: :string, label: I18n.t('nlt.username')
 
   controller do
     def scoped_collection
