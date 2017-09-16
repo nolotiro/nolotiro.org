@@ -13,9 +13,6 @@ class User < ApplicationRecord
   has_many :comments, foreign_key: :user_owner, dependent: :destroy
 
   has_many :friendships, dependent: :destroy
-  has_many :incoming_friendships, foreign_key: :friend_id,
-                                  class_name: 'Friendship',
-                                  dependent: :destroy
   has_many :friends, through: :friendships
 
   has_many :receipts, foreign_key: :receiver_id, dependent: :destroy
