@@ -18,9 +18,7 @@ class User < ApplicationRecord
   has_many :receipts, foreign_key: :receiver_id, dependent: :destroy
 
   has_many :blockings, foreign_key: :blocker_id, dependent: :destroy
-  has_many :received_blockings, foreign_key: :blocked_id,
-                                class_name: 'Blocking',
-                                dependent: :destroy
+
   has_many :dismissals, dependent: :destroy
 
   has_many :started_conversations,
