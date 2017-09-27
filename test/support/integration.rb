@@ -30,6 +30,14 @@ module ActionDispatch
       Capybara.reset_sessions!
       Rails.cache.clear
     end
+
+    #
+    # @todo Sometimes the cookie-bar gets in the middle so we need to dismiss it
+    # first. Investigate why this is happening.
+    #
+    def accept_cookie_bar
+      within('#cookie-bar') { click_link 'OK' }
+    end
   end
 
   module Routing

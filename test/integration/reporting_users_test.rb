@@ -27,6 +27,8 @@ module ReportUsersTests
   private
 
   def send_report
+    accept_cookie_bar
+
     accept_confirm { click_link link_label }
   end
 end
