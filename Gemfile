@@ -81,7 +81,7 @@ gem 'omniauth-google-oauth2', '= 0.5.2'
 
 gem 'paperclip', '~> 5.1'
 gem 'pundit', '~> 1.1'
-gem 'recaptcha', '~> 4.4', require: 'recaptcha/rails'
+gem 'recaptcha', '~> 4.5', require: 'recaptcha/rails'
 
 # Admin backend.
 # @todo Get rid of this, possibly by completely ditching activeadmin and
