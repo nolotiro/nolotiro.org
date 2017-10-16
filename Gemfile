@@ -69,7 +69,7 @@ gem 'redis-rails', '~> 5.0'
 gem 'sidekiq', '~> 5.0'
 
 gem 'devise', '~> 4.3'
-gem 'kaminari', '~> 1.0'
+gem 'kaminari', '~> 1.1'
 gem 'maxminddb', '= 0.1.14'
 
 gem 'omniauth', '~> 1.7'
