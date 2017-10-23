@@ -45,7 +45,7 @@ group :test do
 end
 
 group :production, :staging do
-  gem 'airbrake', '~> 7.0'
+  gem 'airbrake', '~> 7.1'
 
   # @todo Add a performance monitoring tool
 end
