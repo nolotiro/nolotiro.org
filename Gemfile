@@ -27,7 +27,7 @@ gem 'dotenv-rails', '~> 2.1'
 group :development, :test do
   gem 'byebug', '~> 9.1'
   gem 'capybara', '~> 2.15'
-  gem 'factory_girl_rails', '~> 4.0'
+  gem 'factory_girl_rails', '~> 4.9'
   gem 'launchy', '~> 2.4'
   gem 'minitest-hooks', '~> 1.4'
   gem 'minitest-spec-rails', '~> 5.4'
