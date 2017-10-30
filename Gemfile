@@ -38,7 +38,7 @@ end
 
 group :test do
   gem 'bullet', '~> 5.6'
-  gem 'database_cleaner', '~> 1.5'
+  gem 'database_cleaner', '~> 1.6'
   gem 'poltergeist', '~> 1.16'
   gem 'vcr', '~> 3.0'
   gem 'webmock', '~> 3.1'
