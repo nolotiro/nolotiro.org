@@ -52,7 +52,7 @@ end
 
 group :development do
   gem 'faker', '~> 1.8'
-  gem 'i18n-tasks', '= 0.9.18'
+  gem 'i18n-tasks', '0.9.19'
   gem 'listen', '~> 3.1'
   gem 'localeapp', '~> 2.4'
 
