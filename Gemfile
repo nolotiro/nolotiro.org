@@ -32,7 +32,7 @@ group :development, :test do
   gem 'minitest-hooks', '~> 1.4'
   gem 'minitest-spec-rails', '~> 5.4'
   gem 'rails-controller-testing', '~> 1.0'
-  gem 'rubocop', '= 0.49.1', require: false
+  gem 'rubocop', '0.49.1', require: false
   gem 'spring', '~> 2.0'
 end
 
@@ -60,21 +60,21 @@ group :development do
   gem 'capistrano', '~> 3.10'
   gem 'capistrano-rails', '~> 1.3'
   gem 'capistrano-rbenv', '~> 2.1'
-  gem 'capistrano-sidekiq', '= 0.20.0'
+  gem 'capistrano-sidekiq', '0.20.0'
 end
 
 gem 'http_accept_language', '~> 2.1'
-gem 'pg', '= 0.21.0'
+gem 'pg', '0.21.0'
 gem 'redis-rails', '~> 5.0'
 gem 'sidekiq', '~> 5.0'
 
 gem 'devise', '~> 4.3'
 gem 'kaminari', '~> 1.1'
-gem 'maxminddb', '= 0.1.14'
+gem 'maxminddb', '0.1.14'
 
 gem 'omniauth', '~> 1.7'
 gem 'omniauth-facebook', '~> 4.0'
-gem 'omniauth-google-oauth2', '= 0.5.2'
+gem 'omniauth-google-oauth2', '0.5.2'
 
 # Image processing in the background. @todo Properly reenable it
 # gem 'delayed_paperclip'
