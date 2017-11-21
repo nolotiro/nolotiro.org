@@ -39,4 +39,11 @@ Style/EmptyMethod:
 Rails:
   Enabled: true
 
+Rails/UnknownEnv:
+  Environments:
+    - development
+    - production
+    - staging
+    - test
+
 inherit_from: .rubocop_todo.yml

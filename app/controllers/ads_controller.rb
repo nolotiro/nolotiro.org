@@ -100,7 +100,7 @@ class AdsController < ApplicationController
 
   def referer_path
     URI(request.referer).path
-  rescue
+  rescue StandardError
     ad_friendly_path
   end
 
