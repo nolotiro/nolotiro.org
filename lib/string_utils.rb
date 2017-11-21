@@ -6,7 +6,7 @@
 module StringUtils
   def positive_integer?(str)
     Integer(str).positive?
-  rescue
+  rescue StandardError
     false
   end
 end
