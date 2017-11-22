@@ -1069,7 +1069,7 @@ ALTER TABLE ONLY reports
 --
 
 ALTER TABLE ONLY blockings
-    ADD CONSTRAINT fk_rails_8b7920d779 FOREIGN KEY (blocked_id) REFERENCES users(id) ON UPDATE RESTRICT ON DELETE RESTRICT;
+    ADD CONSTRAINT fk_rails_8b7920d779 FOREIGN KEY (blocked_id) REFERENCES users(id) ON DELETE CASCADE;
 
 
 --
@@ -1105,11 +1105,27 @@ ALTER TABLE ONLY reports
 
 
 --
+-- Name: friendships fk_rails_d78dc9c7fd; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY friendships
+    ADD CONSTRAINT fk_rails_d78dc9c7fd FOREIGN KEY (friend_id) REFERENCES users(id) ON DELETE CASCADE;
+
+
+--
 -- Name: towns fk_rails_de137abc76; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY towns
     ADD CONSTRAINT fk_rails_de137abc76 FOREIGN KEY (state_id) REFERENCES states(id);
+
+
+--
+-- Name: friendships fk_rails_e3733b59b7; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY friendships
+    ADD CONSTRAINT fk_rails_e3733b59b7 FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE;
 
 
 --
@@ -1125,7 +1141,7 @@ ALTER TABLE ONLY comments
 --
 
 ALTER TABLE ONLY blockings
-    ADD CONSTRAINT fk_rails_feb742f250 FOREIGN KEY (blocker_id) REFERENCES users(id) ON UPDATE RESTRICT ON DELETE RESTRICT;
+    ADD CONSTRAINT fk_rails_feb742f250 FOREIGN KEY (blocker_id) REFERENCES users(id) ON DELETE CASCADE;
 
 
 --
@@ -1168,6 +1184,8 @@ INSERT INTO "schema_migrations" (version) VALUES
 ('20161117184157'),
 ('20161122140853'),
 ('20170905120853'),
-('20170909120825');
+('20170909120825'),
+('20170916170805'),
+('20170916170806');
 
 
