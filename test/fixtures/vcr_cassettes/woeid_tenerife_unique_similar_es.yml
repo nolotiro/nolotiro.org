@@ -12,7 +12,7 @@ http_interactions:
       Accept-Encoding:
       - gzip, deflate
       User-Agent:
-      - rest-client/2.0.1 (linux-gnu x86_64) ruby/2.4.1p111
+      - rest-client/2.0.2 (linux-gnu x86_64) ruby/2.4.2p198
       Host:
       - query.yahooapis.com
   response:
@@ -20,8 +20,6 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      X-Yql-Host:
-      - prod_bf1_1;paas.yql;queryyahooapiscomproductionbf1;434af29c-18e2-11e7-a80f-d4ae52974741
       X-Content-Type-Options:
       - nosniff
       Access-Control-Allow-Origin:
@@ -31,7 +29,7 @@ http_interactions:
       Cache-Control:
       - no-cache
       Date:
-      - Fri, 21 Apr 2017 14:10:56 GMT
+      - Sat, 25 Nov 2017 12:45:04 GMT
       Age:
       - '0'
       Transfer-Encoding:
@@ -39,15 +37,25 @@ http_interactions:
       Connection:
       - keep-alive
       Via:
-      - http/1.1 a56.ue.bf1.yahoo.net (ApacheTrafficServer [cMsSf ])
+      - http/1.1 a37.ue.gq1.yahoo.net (ApacheTrafficServer [cMsSf ])
       Server:
       - ATS
+      Public-Key-Pins-Report-Only:
+      - max-age=2592000; pin-sha256="2oALgLKofTmeZvoZ1y/fSZg7R9jPMix8eVA6DH4o/q8=";
+        pin-sha256="cAajgxHlj7GTSEIzIYIQxmEloOSoJq7VOaxWHfv72QM="; pin-sha256="SVqWumuteCQHvVIaALrOZXuzVVVeS7f4FGxxu6V+es4=";
+        pin-sha256="UZJDjsNp1+4M5x9cbbdflB779y5YRBcV6Z6rBMLIrO4="; pin-sha256="JbQbUG5JMJUoI6brnx0x3vZF6jilxsapbXGVfjhN8Fg=";
+        pin-sha256="lnsM2T/O9/J84sJFdnrpsFp3awZJ+ZZbYpCWhGloaHI="; pin-sha256="h6801m+z8v3zbgkRHpq6L29Esgfzhj89C1SyUCOQmqU=";
+        pin-sha256="SQVGZiOrQXi+kqxcvWWE96HhfydlLVqFr4lQTqI5qqo="; pin-sha256="q5hJUnat8eyv8o81xTBIeB5cFxjaucjmelBPT2pRMo8=";
+        pin-sha256="vPtEqrmtAhAVcGtBIep2HIHJ6IlnWQ9vlK50TciLePs="; pin-sha256="lpkiXF3lLlbN0y3y6W0c/qWqPKC7Us2JM8I7XCdEOCA=";
+        pin-sha256="r/mIkG3eEpVdm+u/ko/cwxzOMo1bk4TyHIlByibiA5E="; pin-sha256="WoiWRyIOVNa9ihaBciRSC7XHjliYS9VwUGOIud4PB18=";
+        pin-sha256="2fRAUXyxl4A1/XHrKNBmc8bTkzA7y4FB/GLJuNAzCqY="; pin-sha256="dolnbtzEBnELx/9lOEQ22e6OZO/QNb6VSSX2XHA3E7A=";
+        includeSubdomains; report-uri="http://csp.yahoo.com/beacon/csp?src=yahoocom-hpkp-report-only"
     body:
       encoding: ASCII-8BIT
       string: !binary |-
-        eyJxdWVyeSI6eyJjb3VudCI6MSwiY3JlYXRlZCI6IjIwMTctMDQtMjFUMTQ6MTA6NTZaIiwibGFuZyI6ImVuLVVTIiwicmVzdWx0cyI6eyJwbGFjZSI6eyJsYW5nIjoiZXMtIiwieG1sbnMiOiJodHRwOi8vd2hlcmUueWFob29hcGlzLmNvbS92MS9zY2hlbWEucm5nIiwieWFob28iOiJodHRwOi8vd3d3LnlhaG9vYXBpcy5jb20vdjEvYmFzZS5ybmciLCJ1cmkiOiJodHRwOi8vd2hlcmUueWFob29hcGlzLmNvbS92MS9wbGFjZS83NzM2OTIiLCJ3b2VpZCI6Ijc3MzY5MiIsInBsYWNlVHlwZU5hbWUiOnsiY29kZSI6IjciLCJjb250ZW50IjoiUHVlYmxvIn0sIm5hbWUiOiJTYW50YSBDcnV6IGRlIFRlbmVyaWZlIiwiY291bnRyeSI6eyJjb2RlIjoiRVMiLCJ0eXBlIjoiUGHDrXMiLCJ3b2VpZCI6IjIzNDI0OTUwIiwiY29udGVudCI6IkVzcGHDsWEifSwiYWRtaW4xIjp7ImNvZGUiOiIiLCJ0eXBlIjoiQ29tdW5pZGFkIEF1dMOzbm9tYSIsIndvZWlkIjoiMTI1NzgwMzEiLCJjb250ZW50IjoiSXNsYXMgQ2FuYXJpYXMifSwiYWRtaW4yIjp7ImNvZGUiOiIiLCJ0eXBlIjoiQ29uZGFkbyIsIndvZWlkIjoiMTI2MDIxMDkiLCJjb250ZW50IjoiU2FudGEgQ3J1eiBkZSBUZW5lcmlmZSJ9LCJhZG1pbjMiOm51bGwsImxvY2FsaXR5MSI6eyJ0eXBlIjoiUHVlYmxvIiwid29laWQiOiI3NzM2OTIiLCJjb250ZW50IjoiU2FudGEgQ3J1eiBkZSBUZW5lcmlmZSJ9LCJsb2NhbGl0eTIiOm51bGwsInBvc3RhbCI6bnVsbCwiY2VudHJvaWQiOnsibGF0aXR1ZGUiOiIyOC40NjE2MyIsImxvbmdpdHVkZSI6Ii0xNi4yNjcwNTkifSwiYm91bmRpbmdCb3giOnsic291dGhXZXN0Ijp7ImxhdGl0dWRlIjoiMjguNDM4MDgiLCJsb25naXR1ZGUiOiItMTYuMjkxOTI5In0sIm5vcnRoRWFzdCI6eyJsYXRpdHVkZSI6IjI4LjQ4Nzk0OSIsImxvbmdpdHVkZSI6Ii0xNi4yMzU1OSJ9fSwiYXJlYVJhbmsiOiIxIiwicG9wUmFuayI6IjEiLCJ0aW1lem9uZSI6eyJ0eXBlIjoiVGltZSBab25lIiwid29laWQiOiIyODM1MDg3MCIsImNvbnRlbnQiOiJBdGxhbnRpYy9DYW5hcnkifX19fX0=
+        eyJxdWVyeSI6eyJjb3VudCI6MSwiY3JlYXRlZCI6IjIwMTctMTEtMjVUMTI6NDU6MDRaIiwibGFuZyI6ImVuLVVTIiwicmVzdWx0cyI6eyJwbGFjZSI6eyJsYW5nIjoiZXMtIiwieG1sbnMiOiJodHRwOi8vd2hlcmUueWFob29hcGlzLmNvbS92MS9zY2hlbWEucm5nIiwieWFob28iOiJodHRwOi8vd3d3LnlhaG9vYXBpcy5jb20vdjEvYmFzZS5ybmciLCJ1cmkiOiJodHRwOi8vd2hlcmUueWFob29hcGlzLmNvbS92MS9wbGFjZS83NzM2OTIiLCJ3b2VpZCI6Ijc3MzY5MiIsInBsYWNlVHlwZU5hbWUiOnsiY29kZSI6IjciLCJjb250ZW50IjoiUHVlYmxvIn0sIm5hbWUiOiJTYW50YSBDcnV6IGRlIFRlbmVyaWZlIiwiY291bnRyeSI6eyJjb2RlIjoiRVMiLCJ0eXBlIjoiUGHDrXMiLCJ3b2VpZCI6IjIzNDI0OTUwIiwiY29udGVudCI6IkVzcGHDsWEifSwiYWRtaW4xIjp7ImNvZGUiOiIiLCJ0eXBlIjoiQ29tdW5pZGFkIEF1dMOzbm9tYSIsIndvZWlkIjoiMTI1NzgwMzEiLCJjb250ZW50IjoiSXNsYXMgQ2FuYXJpYXMifSwiYWRtaW4yIjp7ImNvZGUiOiIiLCJ0eXBlIjoiQ29uZGFkbyIsIndvZWlkIjoiMTI2MDIxMDkiLCJjb250ZW50IjoiU2FudGEgQ3J1eiBkZSBUZW5lcmlmZSJ9LCJhZG1pbjMiOm51bGwsImxvY2FsaXR5MSI6eyJ0eXBlIjoiUHVlYmxvIiwid29laWQiOiI3NzM2OTIiLCJjb250ZW50IjoiU2FudGEgQ3J1eiBkZSBUZW5lcmlmZSJ9LCJsb2NhbGl0eTIiOm51bGwsInBvc3RhbCI6bnVsbCwiY2VudHJvaWQiOnsibGF0aXR1ZGUiOiIyOC40NjE2MyIsImxvbmdpdHVkZSI6Ii0xNi4yNjcwNTkifSwiYm91bmRpbmdCb3giOnsic291dGhXZXN0Ijp7ImxhdGl0dWRlIjoiMjguNDM4MDgiLCJsb25naXR1ZGUiOiItMTYuMjkxOTI5In0sIm5vcnRoRWFzdCI6eyJsYXRpdHVkZSI6IjI4LjQ4Nzk0OSIsImxvbmdpdHVkZSI6Ii0xNi4yMzU1OSJ9fSwiYXJlYVJhbmsiOiIxIiwicG9wUmFuayI6IjEiLCJ0aW1lem9uZSI6eyJ0eXBlIjoiVGltZSBab25lIiwid29laWQiOiIyODM1MDg3MCIsImNvbnRlbnQiOiJBdGxhbnRpYy9DYW5hcnkifX19fX0=
     http_version: 
-  recorded_at: Fri, 21 Apr 2017 14:10:56 GMT
+  recorded_at: Sat, 25 Nov 2017 12:45:04 GMT
 - request:
     method: get
     uri: http://query.yahooapis.com/v1/public/yql?format=json&q=select%20*%20from%20geo.places%20where%20woeid%20=%20773692%20AND%20lang%20=%20%27es%27
@@ -60,7 +68,7 @@ http_interactions:
       Accept-Encoding:
       - gzip, deflate
       User-Agent:
-      - rest-client/2.0.1 (linux-gnu x86_64) ruby/2.4.1p111
+      - rest-client/2.0.2 (linux-gnu x86_64) ruby/2.4.2p198
       Host:
       - query.yahooapis.com
   response:
@@ -68,8 +76,6 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      X-Yql-Host:
-      - prod_bf1_1;paas.yql;queryyahooapiscomproductionbf1;9562b58e-1958-11e7-a80f-d4ae52974741
       X-Content-Type-Options:
       - nosniff
       Access-Control-Allow-Origin:
@@ -79,7 +85,7 @@ http_interactions:
       Cache-Control:
       - no-cache
       Date:
-      - Fri, 21 Apr 2017 14:10:57 GMT
+      - Sat, 25 Nov 2017 12:45:05 GMT
       Age:
       - '0'
       Transfer-Encoding:
@@ -87,13 +93,23 @@ http_interactions:
       Connection:
       - keep-alive
       Via:
-      - http/1.1 a04.ue.bf1.yahoo.net (ApacheTrafficServer [cMsSf ])
+      - http/1.1 a40.ue.gq1.yahoo.net (ApacheTrafficServer [cMsSf ])
       Server:
       - ATS
+      Public-Key-Pins-Report-Only:
+      - max-age=2592000; pin-sha256="2oALgLKofTmeZvoZ1y/fSZg7R9jPMix8eVA6DH4o/q8=";
+        pin-sha256="cAajgxHlj7GTSEIzIYIQxmEloOSoJq7VOaxWHfv72QM="; pin-sha256="SVqWumuteCQHvVIaALrOZXuzVVVeS7f4FGxxu6V+es4=";
+        pin-sha256="UZJDjsNp1+4M5x9cbbdflB779y5YRBcV6Z6rBMLIrO4="; pin-sha256="JbQbUG5JMJUoI6brnx0x3vZF6jilxsapbXGVfjhN8Fg=";
+        pin-sha256="lnsM2T/O9/J84sJFdnrpsFp3awZJ+ZZbYpCWhGloaHI="; pin-sha256="h6801m+z8v3zbgkRHpq6L29Esgfzhj89C1SyUCOQmqU=";
+        pin-sha256="SQVGZiOrQXi+kqxcvWWE96HhfydlLVqFr4lQTqI5qqo="; pin-sha256="q5hJUnat8eyv8o81xTBIeB5cFxjaucjmelBPT2pRMo8=";
+        pin-sha256="vPtEqrmtAhAVcGtBIep2HIHJ6IlnWQ9vlK50TciLePs="; pin-sha256="lpkiXF3lLlbN0y3y6W0c/qWqPKC7Us2JM8I7XCdEOCA=";
+        pin-sha256="r/mIkG3eEpVdm+u/ko/cwxzOMo1bk4TyHIlByibiA5E="; pin-sha256="WoiWRyIOVNa9ihaBciRSC7XHjliYS9VwUGOIud4PB18=";
+        pin-sha256="2fRAUXyxl4A1/XHrKNBmc8bTkzA7y4FB/GLJuNAzCqY="; pin-sha256="dolnbtzEBnELx/9lOEQ22e6OZO/QNb6VSSX2XHA3E7A=";
+        includeSubdomains; report-uri="http://csp.yahoo.com/beacon/csp?src=yahoocom-hpkp-report-only"
     body:
       encoding: ASCII-8BIT
       string: !binary |-
-        eyJxdWVyeSI6eyJjb3VudCI6MSwiY3JlYXRlZCI6IjIwMTctMDQtMjFUMTQ6MTA6NTdaIiwibGFuZyI6ImVuLVVTIiwicmVzdWx0cyI6eyJwbGFjZSI6eyJsYW5nIjoiZXMtIiwieG1sbnMiOiJodHRwOi8vd2hlcmUueWFob29hcGlzLmNvbS92MS9zY2hlbWEucm5nIiwieWFob28iOiJodHRwOi8vd3d3LnlhaG9vYXBpcy5jb20vdjEvYmFzZS5ybmciLCJ1cmkiOiJodHRwOi8vd2hlcmUueWFob29hcGlzLmNvbS92MS9wbGFjZS83NzM2OTIiLCJ3b2VpZCI6Ijc3MzY5MiIsInBsYWNlVHlwZU5hbWUiOnsiY29kZSI6IjciLCJjb250ZW50IjoiUHVlYmxvIn0sIm5hbWUiOiJTYW50YSBDcnV6IGRlIFRlbmVyaWZlIiwiY291bnRyeSI6eyJjb2RlIjoiRVMiLCJ0eXBlIjoiUGHDrXMiLCJ3b2VpZCI6IjIzNDI0OTUwIiwiY29udGVudCI6IkVzcGHDsWEifSwiYWRtaW4xIjp7ImNvZGUiOiIiLCJ0eXBlIjoiQ29tdW5pZGFkIEF1dMOzbm9tYSIsIndvZWlkIjoiMTI1NzgwMzEiLCJjb250ZW50IjoiSXNsYXMgQ2FuYXJpYXMifSwiYWRtaW4yIjp7ImNvZGUiOiIiLCJ0eXBlIjoiQ29uZGFkbyIsIndvZWlkIjoiMTI2MDIxMDkiLCJjb250ZW50IjoiU2FudGEgQ3J1eiBkZSBUZW5lcmlmZSJ9LCJhZG1pbjMiOm51bGwsImxvY2FsaXR5MSI6eyJ0eXBlIjoiUHVlYmxvIiwid29laWQiOiI3NzM2OTIiLCJjb250ZW50IjoiU2FudGEgQ3J1eiBkZSBUZW5lcmlmZSJ9LCJsb2NhbGl0eTIiOm51bGwsInBvc3RhbCI6bnVsbCwiY2VudHJvaWQiOnsibGF0aXR1ZGUiOiIyOC40NjE2MyIsImxvbmdpdHVkZSI6Ii0xNi4yNjcwNTkifSwiYm91bmRpbmdCb3giOnsic291dGhXZXN0Ijp7ImxhdGl0dWRlIjoiMjguNDM4MDgiLCJsb25naXR1ZGUiOiItMTYuMjkxOTI5In0sIm5vcnRoRWFzdCI6eyJsYXRpdHVkZSI6IjI4LjQ4Nzk0OSIsImxvbmdpdHVkZSI6Ii0xNi4yMzU1OSJ9fSwiYXJlYVJhbmsiOiIxIiwicG9wUmFuayI6IjEiLCJ0aW1lem9uZSI6eyJ0eXBlIjoiVGltZSBab25lIiwid29laWQiOiIyODM1MDg3MCIsImNvbnRlbnQiOiJBdGxhbnRpYy9DYW5hcnkifX19fX0=
+        eyJxdWVyeSI6eyJjb3VudCI6MSwiY3JlYXRlZCI6IjIwMTctMTEtMjVUMTI6NDU6MDVaIiwibGFuZyI6ImVuLVVTIiwicmVzdWx0cyI6eyJwbGFjZSI6eyJsYW5nIjoiZXMtIiwieG1sbnMiOiJodHRwOi8vd2hlcmUueWFob29hcGlzLmNvbS92MS9zY2hlbWEucm5nIiwieWFob28iOiJodHRwOi8vd3d3LnlhaG9vYXBpcy5jb20vdjEvYmFzZS5ybmciLCJ1cmkiOiJodHRwOi8vd2hlcmUueWFob29hcGlzLmNvbS92MS9wbGFjZS83NzM2OTIiLCJ3b2VpZCI6Ijc3MzY5MiIsInBsYWNlVHlwZU5hbWUiOnsiY29kZSI6IjciLCJjb250ZW50IjoiUHVlYmxvIn0sIm5hbWUiOiJTYW50YSBDcnV6IGRlIFRlbmVyaWZlIiwiY291bnRyeSI6eyJjb2RlIjoiRVMiLCJ0eXBlIjoiUGHDrXMiLCJ3b2VpZCI6IjIzNDI0OTUwIiwiY29udGVudCI6IkVzcGHDsWEifSwiYWRtaW4xIjp7ImNvZGUiOiIiLCJ0eXBlIjoiQ29tdW5pZGFkIEF1dMOzbm9tYSIsIndvZWlkIjoiMTI1NzgwMzEiLCJjb250ZW50IjoiSXNsYXMgQ2FuYXJpYXMifSwiYWRtaW4yIjp7ImNvZGUiOiIiLCJ0eXBlIjoiQ29uZGFkbyIsIndvZWlkIjoiMTI2MDIxMDkiLCJjb250ZW50IjoiU2FudGEgQ3J1eiBkZSBUZW5lcmlmZSJ9LCJhZG1pbjMiOm51bGwsImxvY2FsaXR5MSI6eyJ0eXBlIjoiUHVlYmxvIiwid29laWQiOiI3NzM2OTIiLCJjb250ZW50IjoiU2FudGEgQ3J1eiBkZSBUZW5lcmlmZSJ9LCJsb2NhbGl0eTIiOm51bGwsInBvc3RhbCI6bnVsbCwiY2VudHJvaWQiOnsibGF0aXR1ZGUiOiIyOC40NjE2MyIsImxvbmdpdHVkZSI6Ii0xNi4yNjcwNTkifSwiYm91bmRpbmdCb3giOnsic291dGhXZXN0Ijp7ImxhdGl0dWRlIjoiMjguNDM4MDgiLCJsb25naXR1ZGUiOiItMTYuMjkxOTI5In0sIm5vcnRoRWFzdCI6eyJsYXRpdHVkZSI6IjI4LjQ4Nzk0OSIsImxvbmdpdHVkZSI6Ii0xNi4yMzU1OSJ9fSwiYXJlYVJhbmsiOiIxIiwicG9wUmFuayI6IjEiLCJ0aW1lem9uZSI6eyJ0eXBlIjoiVGltZSBab25lIiwid29laWQiOiIyODM1MDg3MCIsImNvbnRlbnQiOiJBdGxhbnRpYy9DYW5hcnkifX19fX0=
     http_version: 
-  recorded_at: Fri, 21 Apr 2017 14:10:57 GMT
+  recorded_at: Sat, 25 Nov 2017 12:45:05 GMT
 recorded_with: VCR 3.0.3
