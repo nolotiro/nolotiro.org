@@ -32,9 +32,17 @@ def create_ad(user)
   ad
 end
 
-10.times { create_user }
+User.create!(
+  username: 'admin',
+  email: 'admin@example.org',
+  role: 1,
+  password: '12345678',
+  password_confirmation: '12345678',
+  confirmed_at: Time.zone.now,
+  woeid: 766_273
+)
 
-create_user(1)
+10.times { create_user }
 
 30.times do
   user = User.offset(rand(User.count)).first
