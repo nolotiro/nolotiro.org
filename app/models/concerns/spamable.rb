@@ -8,12 +8,6 @@
 #
 module Spamable
   def check_spam!
-    user.ban! if spammed?(title) || spammed?(body)
-  end
-
-  private
-
-  def spammed?(text)
-    Regexp.new('regalo de campista', Regexp::IGNORECASE).match(text).present?
+    user.ban! if Antifraud::Rule.spam?(self)
   end
 end
