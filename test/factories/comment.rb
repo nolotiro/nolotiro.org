@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-FactoryGirl.define do
+FactoryBot.define do
   factory :comment do
     body 'Qué cosa buena que regalas!'
     ad

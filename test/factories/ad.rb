@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-FactoryGirl.define do
+FactoryBot.define do
   factory :ad do
     title 'ordenador en Vallecas'
     body 'pentium 9 con monitor de plasma de 90 pulgadas. pasar a recoger'
