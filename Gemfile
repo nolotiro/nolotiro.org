@@ -37,7 +37,7 @@ group :development, :test do
 end
 
 group :test do
-  gem 'bullet', '~> 5.6'
+  gem 'bullet', '~> 5.7'
   gem 'database_cleaner', '~> 1.6'
   gem 'poltergeist', '~> 1.16'
   gem 'vcr', '~> 4.0'
