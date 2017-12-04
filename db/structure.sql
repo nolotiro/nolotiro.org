@@ -159,6 +159,7 @@ ALTER SEQUENCE antifraud_matches_id_seq OWNED BY antifraud_matches.id;
 CREATE TABLE antifraud_rules (
     id bigint NOT NULL,
     sentence text,
+    activated_at timestamp without time zone,
     created_at timestamp without time zone NOT NULL,
     updated_at timestamp without time zone NOT NULL
 );

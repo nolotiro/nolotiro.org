@@ -6,6 +6,7 @@ module Antifraud
   class RuleTest < ActiveSupport::TestCase
     setup do
       create(:antifraud_rule, sentence: 'regalo de campista')
+      create(:antifraud_rule, sentence: 'regalo de Mercedes', activated_at: nil)
     end
 
     %w[title body].each do |col|
@@ -31,6 +32,12 @@ module Antifraud
         ad = create(:ad, col => 'Atencion. Regalo de campista para una persona honesta')
 
         assert_spam(ad)
+      end
+
+      test ".spam? excludes disabled rules for #{col}" do
+        ad = create(:ad, col => 'Regalo de Mercedes por la muerte de mi marido')
+
+        assert_ham(ad)
       end
     end
 

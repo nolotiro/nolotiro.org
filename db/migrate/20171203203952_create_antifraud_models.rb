@@ -4,6 +4,7 @@ class CreateAntifraudModels < ActiveRecord::Migration[5.1]
   def change
     create_table :antifraud_rules do |t|
       t.text :sentence
+      t.datetime :activated_at
 
       t.timestamps
     end
