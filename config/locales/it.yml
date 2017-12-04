@@ -52,6 +52,9 @@ it:
       ad:
         one: annuncio
         other: Annunci
+      antifraud/rule:
+        one: regola anti fregatura
+        other: Regole anti fregatura
       user:
         one: utente
         other: Utenti
@@ -189,6 +192,8 @@ it:
     all: tutti
     all_gifts: tutti i regali
     all_requests: tutte le petizioni
+    antifraud:
+      rule: "Regola %{id} (%{keysentence})"
     are_you_interested: Sei interessato?
     available: disponibile
     back: torna alla pagina iniziale
@@ -258,6 +263,7 @@ it:
     faqs: domande frequenti
     footer_explain: nolotiro.org è un sito dove guardo per i regali dono gratuito e mobili di seconda mano, sedie, divani, biciclette, computer portatili, tavoli, stufe, lampade, letti, vestiti, giocattoli, lettini per bambini o automobili, telefoni cellulari e altri molte cose che si desidera non è più e non hanno più bisogno di fare il riutilizzo altre persone che possono servire o dare nuova vita.
     forgot_your_password: Hai dimenticato la tua password?
+    fraud_matched_rules: Regole anti fregatura coincidenti
     friends: Amici
     gift_on: regalo in %{woeid}
     gifts: regali

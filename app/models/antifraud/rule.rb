@@ -17,6 +17,10 @@ module Antifraud
       regexp.match?(ad.title) || regexp.match?(ad.body)
     end
 
+    def to_s
+      I18n.t('nlt.antifraud.rule', id: id, keysentence: sentence)
+    end
+
     private
 
     def regexp

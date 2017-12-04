@@ -36,6 +36,7 @@ ActiveAdmin.register Ad do
   filter :title
   filter :body
   filter :user_username, as: :string, label: I18n.t('nlt.username')
+  filter :fraud_matched_rules, as: :select, label: I18n.t('nlt.fraud_matched_rules')
   filter :woeid_code
   filter :status, as: :select, collection: [%w[Disponible available],
                                             %w[Reservado booked],

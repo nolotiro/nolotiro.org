@@ -52,6 +52,9 @@ en:
       ad:
         one: ad
         other: Ads
+      antifraud/rule:
+        one: antifraud rule
+        other: Antifraud rules
       user:
         one: user
         other: Users
@@ -189,6 +192,8 @@ en:
     all: all
     all_gifts: all gifts
     all_requests: all requests
+    antifraud:
+      rule: "Rule %{id} (%{keysentence})"
     are_you_interested: Are you interested?
     available: available
     back: Back to the main page
@@ -258,6 +263,7 @@ en:
     faqs: FAQ
     footer_explain: 'nolotiro.org is a website where you can give stuff for free or find free second hand stuff: furniture, chairs, bicycles, computers, laptops, tables, beds, clothe, toys, mobile phones and many other stuff you don''t want or need, so other people can recycle it and give it a new life.'
     forgot_your_password: Forgot your password?
+    fraud_matched_rules: Matching antifraud rules
     friends: Friends
     gift_on: gift on %{woeid}
     gifts: presents
