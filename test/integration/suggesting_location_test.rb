@@ -10,7 +10,7 @@ class SuggestingLocationTest < ActionDispatch::IntegrationTest
 
   before do
     Capybara.current_driver = Capybara.javascript_driver
-    page.driver.add_headers('X_FORWARDED_FOR' => '83.39.207.18')
+    page.driver.add_headers('X_FORWARDED_FOR' => '83.39.208.18')
 
     visit root_path
   end
