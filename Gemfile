@@ -61,7 +61,7 @@ gem 'sidekiq', '~> 5.0'
 
 gem 'devise', '~> 4.3'
 gem 'kaminari', '~> 1.1'
-gem 'maxminddb', '0.1.14'
+gem 'maxminddb', '0.1.15'
 
 gem 'omniauth', '~> 1.7'
 gem 'omniauth-facebook', '~> 4.0'
