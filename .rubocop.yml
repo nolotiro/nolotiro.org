@@ -36,6 +36,11 @@ Style/Lambda:
 Style/ModuleFunction:
   EnforcedStyle: extend_self
 
+Style/PercentLiteralDelimiters:
+  PreferredDelimiters:
+    '%i': '[]'
+    '%w': '[]'
+
 Style/EmptyMethod:
   EnforcedStyle: expanded
 

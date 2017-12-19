@@ -12,10 +12,10 @@ class Ad < ApplicationRecord
 
   counter_stats_for :published_at
 
-  belongs_to :user, foreign_key: :user_owner, counter_cache: true
+  belongs_to :user, foreign_key: :user_owner, counter_cache: true, inverse_of: :ads
   validates :user, presence: true
 
-  has_many :comments, foreign_key: :ads_id, dependent: :destroy
+  has_many :comments, foreign_key: :ads_id, dependent: :destroy, inverse_of: :ad
 
   validates :title, presence: true, length: { minimum: 4, maximum: 100 }
   validates :body, presence: true, length: { minimum: 12, maximum: 1000 }
