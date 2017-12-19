@@ -37,4 +37,3 @@ engines:
 
   rubocop:
     enabled: true
-    channel: rubocop-0-51
