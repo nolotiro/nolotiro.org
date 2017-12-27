@@ -18,9 +18,9 @@ class InitialSchema < ActiveRecord::Migration[5.1]
       t.string :author_type
       t.datetime :created_at
       t.datetime :updated_at
-      t.index %i[author_type author_id], name: 'index_active_admin_comments_on_author_type_and_author_id'
-      t.index %i[namespace], name: 'index_active_admin_comments_on_namespace'
-      t.index %i[resource_type resource_id], name: 'index_active_admin_comments_on_resource_type_and_resource_id'
+      t.index %i[author_type author_id], name: :index_active_admin_comments_on_author_type_and_author_id
+      t.index %i[namespace], name: :index_active_admin_comments_on_namespace
+      t.index %i[resource_type resource_id], name: :index_active_admin_comments_on_resource_type_and_resource_id
     end
 
     create_table :ads, force: :cascade do |t|
@@ -41,9 +41,9 @@ class InitialSchema < ActiveRecord::Migration[5.1]
       t.datetime :image_updated_at
       t.bigint :readed_count, default: 0
       t.datetime :published_at, null: false
-      t.index [:status], name: 'idx_16388_index_ads_on_status'
-      t.index [:user_owner], name: 'idx_16388_index_ads_on_user_owner'
-      t.index [:woeid_code], name: 'idx_16388_woeid'
+      t.index [:status], name: :idx_16388_index_ads_on_status
+      t.index [:user_owner], name: :idx_16388_index_ads_on_user_owner
+      t.index [:woeid_code], name: :idx_16388_woeid
     end
 
     create_table :announcements, force: :cascade do |t|
@@ -57,8 +57,8 @@ class InitialSchema < ActiveRecord::Migration[5.1]
     create_table :blockings, force: :cascade do |t|
       t.bigint :blocker_id, null: false
       t.bigint :blocked_id, null: false
-      t.index [:blocked_id], name: 'idx_16407_fk_rails_8b7920d779'
-      t.index [:blocker_id], name: 'idx_16407_fk_rails_feb742f250'
+      t.index [:blocked_id], name: :idx_16407_fk_rails_8b7920d779
+      t.index [:blocker_id], name: :idx_16407_fk_rails_feb742f250
     end
 
     create_table :comments, force: :cascade do |t|
@@ -68,8 +68,8 @@ class InitialSchema < ActiveRecord::Migration[5.1]
       t.bigint :user_owner, null: false
       t.string :ip, limit: 15, null: false
       t.datetime :updated_at
-      t.index [:ads_id], name: 'idx_16413_ads_id'
-      t.index [:user_owner], name: 'idx_16413_index_comments_on_user_owner'
+      t.index [:ads_id], name: :idx_16413_ads_id
+      t.index [:user_owner], name: :idx_16413_index_comments_on_user_owner
     end
 
     create_table :conversations, force: :cascade do |t|
@@ -78,28 +78,28 @@ class InitialSchema < ActiveRecord::Migration[5.1]
       t.datetime :updated_at, null: false
       t.bigint :originator_id
       t.bigint :recipient_id
-      t.index [:originator_id], name: 'idx_16422_index_conversations_on_originator_id'
-      t.index [:recipient_id], name: 'idx_16422_index_conversations_on_recipient_id'
+      t.index [:originator_id], name: :idx_16422_index_conversations_on_originator_id
+      t.index [:recipient_id], name: :idx_16422_index_conversations_on_recipient_id
     end
 
     create_table :dismissals, force: :cascade do |t|
       t.bigint :announcement_id
       t.bigint :user_id
-      t.index [:announcement_id], name: 'idx_16429_index_dismissals_on_announcement_id'
-      t.index [:user_id], name: 'idx_16429_index_dismissals_on_user_id'
+      t.index [:announcement_id], name: :idx_16429_index_dismissals_on_announcement_id
+      t.index [:user_id], name: :idx_16429_index_dismissals_on_user_id
     end
 
     create_table :friendships, force: :cascade do |t|
       t.bigint :user_id, null: false
       t.bigint :friend_id, null: false
-      t.index %i[user_id friend_id], name: 'idx_16435_iduser_idfriend', unique: true
+      t.index %i[user_id friend_id], name: :idx_16435_iduser_idfriend, unique: true
     end
 
     create_table :identities, force: :cascade do |t|
       t.string :provider, limit: 255
       t.string :uid, limit: 255
       t.bigint :user_id
-      t.index [:user_id], name: 'idx_16441_index_identities_on_user_id'
+      t.index [:user_id], name: :idx_16441_index_identities_on_user_id
     end
 
     create_table :messages, force: :cascade do |t|
@@ -114,8 +114,8 @@ class InitialSchema < ActiveRecord::Migration[5.1]
       t.string :attachment, limit: 255
       t.boolean :global, default: false
       t.datetime :expires
-      t.index [:conversation_id], name: 'idx_16450_index_messages_on_conversation_id'
-      t.index [:sender_id], name: 'idx_16450_index_messages_on_sender_id'
+      t.index [:conversation_id], name: :idx_16450_index_messages_on_conversation_id
+      t.index [:sender_id], name: :idx_16450_index_messages_on_sender_id
     end
 
     create_table :receipts, force: :cascade do |t|
@@ -129,8 +129,8 @@ class InitialSchema < ActiveRecord::Migration[5.1]
       t.datetime :updated_at, null: false
       t.string :delivery_method, limit: 255
       t.string :message_id, limit: 255
-      t.index [:notification_id], name: 'idx_16460_index_receipts_on_notification_id'
-      t.index [:receiver_id], name: 'idx_16460_index_receipts_on_receiver_id'
+      t.index [:notification_id], name: :idx_16460_index_receipts_on_notification_id
+      t.index [:receiver_id], name: :idx_16460_index_receipts_on_receiver_id
     end
 
     create_table :users, force: :cascade do |t|
@@ -160,10 +160,10 @@ class InitialSchema < ActiveRecord::Migration[5.1]
       t.string :unconfirmed_email, limit: 255
       t.string :lang, limit: 4, null: false
       t.integer :locked
-      t.index [:confirmation_token], name: 'idx_16475_index_users_on_confirmation_token', unique: true
-      t.index [:email], name: 'idx_16475_index_users_on_email', unique: true
-      t.index [:reset_password_token], name: 'idx_16475_index_users_on_reset_password_token', unique: true
-      t.index [:username], name: 'idx_16475_index_users_on_username', unique: true
+      t.index [:confirmation_token], name: :idx_16475_index_users_on_confirmation_token, unique: true
+      t.index [:email], name: :idx_16475_index_users_on_email, unique: true
+      t.index [:reset_password_token], name: :idx_16475_index_users_on_reset_password_token, unique: true
+      t.index [:username], name: :idx_16475_index_users_on_username, unique: true
     end
 
     add_foreign_key :ads, :users, column: :user_owner, on_update: :restrict, on_delete: :restrict
@@ -174,7 +174,7 @@ class InitialSchema < ActiveRecord::Migration[5.1]
     add_foreign_key :dismissals, :announcements, on_update: :restrict, on_delete: :restrict
     add_foreign_key :dismissals, :users, on_update: :restrict, on_delete: :restrict
     add_foreign_key :identities, :users, on_update: :restrict, on_delete: :restrict
-    add_foreign_key :messages, :conversations, name: 'notifications_on_conversation_id', on_update: :restrict, on_delete: :restrict
-    add_foreign_key :receipts, :messages, column: :notification_id, name: 'receipts_on_notification_id', on_update: :restrict, on_delete: :restrict
+    add_foreign_key :messages, :conversations, name: :notifications_on_conversation_id, on_update: :restrict, on_delete: :restrict
+    add_foreign_key :receipts, :messages, column: :notification_id, name: :receipts_on_notification_id, on_update: :restrict, on_delete: :restrict
   end
 end
