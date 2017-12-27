@@ -9,7 +9,7 @@ class InitialSchema < ActiveRecord::Migration[5.1]
     enable_extension 'plpgsql'
     enable_extension 'pg_trgm'
 
-    create_table 'active_admin_comments', id: :serial, force: :cascade do |t|
+    create_table :active_admin_comments, id: :serial, force: :cascade do |t|
       t.string 'namespace'
       t.text 'body'
       t.string 'resource_id', null: false
@@ -23,7 +23,7 @@ class InitialSchema < ActiveRecord::Migration[5.1]
       t.index %w[resource_type resource_id], name: 'index_active_admin_comments_on_resource_type_and_resource_id'
     end
 
-    create_table 'ads', force: :cascade do |t|
+    create_table :ads, force: :cascade do |t|
       t.string 'title', limit: 100, null: false
       t.text 'body', null: false
       t.bigint 'user_owner', null: false
@@ -46,7 +46,7 @@ class InitialSchema < ActiveRecord::Migration[5.1]
       t.index ['woeid_code'], name: 'idx_16388_woeid'
     end
 
-    create_table 'announcements', force: :cascade do |t|
+    create_table :announcements, force: :cascade do |t|
       t.text 'message'
       t.datetime 'starts_at'
       t.datetime 'ends_at'
@@ -54,14 +54,14 @@ class InitialSchema < ActiveRecord::Migration[5.1]
       t.datetime 'updated_at', null: false
     end
 
-    create_table 'blockings', force: :cascade do |t|
+    create_table :blockings, force: :cascade do |t|
       t.bigint 'blocker_id', null: false
       t.bigint 'blocked_id', null: false
       t.index ['blocked_id'], name: 'idx_16407_fk_rails_8b7920d779'
       t.index ['blocker_id'], name: 'idx_16407_fk_rails_feb742f250'
     end
 
-    create_table 'comments', force: :cascade do |t|
+    create_table :comments, force: :cascade do |t|
       t.bigint 'ads_id', null: false
       t.text 'body', null: false
       t.datetime 'created_at', null: false
@@ -72,7 +72,7 @@ class InitialSchema < ActiveRecord::Migration[5.1]
       t.index ['user_owner'], name: 'idx_16413_index_comments_on_user_owner'
     end
 
-    create_table 'conversations', force: :cascade do |t|
+    create_table :conversations, force: :cascade do |t|
       t.string 'subject', limit: 255, default: ''
       t.datetime 'created_at', null: false
       t.datetime 'updated_at', null: false
@@ -82,27 +82,27 @@ class InitialSchema < ActiveRecord::Migration[5.1]
       t.index ['recipient_id'], name: 'idx_16422_index_conversations_on_recipient_id'
     end
 
-    create_table 'dismissals', force: :cascade do |t|
+    create_table :dismissals, force: :cascade do |t|
       t.bigint 'announcement_id'
       t.bigint 'user_id'
       t.index ['announcement_id'], name: 'idx_16429_index_dismissals_on_announcement_id'
       t.index ['user_id'], name: 'idx_16429_index_dismissals_on_user_id'
     end
 
-    create_table 'friendships', force: :cascade do |t|
+    create_table :friendships, force: :cascade do |t|
       t.bigint 'user_id', null: false
       t.bigint 'friend_id', null: false
       t.index %w[user_id friend_id], name: 'idx_16435_iduser_idfriend', unique: true
     end
 
-    create_table 'identities', force: :cascade do |t|
+    create_table :identities, force: :cascade do |t|
       t.string 'provider', limit: 255
       t.string 'uid', limit: 255
       t.bigint 'user_id'
       t.index ['user_id'], name: 'idx_16441_index_identities_on_user_id'
     end
 
-    create_table 'messages', force: :cascade do |t|
+    create_table :messages, force: :cascade do |t|
       t.text 'body'
       t.string 'subject', limit: 255, default: ''
       t.bigint 'sender_id'
@@ -118,7 +118,7 @@ class InitialSchema < ActiveRecord::Migration[5.1]
       t.index ['sender_id'], name: 'idx_16450_index_messages_on_sender_id'
     end
 
-    create_table 'receipts', force: :cascade do |t|
+    create_table :receipts, force: :cascade do |t|
       t.bigint 'receiver_id'
       t.bigint 'notification_id', null: false
       t.boolean 'is_read', default: false
@@ -133,7 +133,7 @@ class InitialSchema < ActiveRecord::Migration[5.1]
       t.index ['receiver_id'], name: 'idx_16460_index_receipts_on_receiver_id'
     end
 
-    create_table 'users', force: :cascade do |t|
+    create_table :users, force: :cascade do |t|
       t.string 'username', limit: 63, null: false
       t.string 'legacy_password_hash', limit: 255
       t.string 'email', limit: 100, null: false
@@ -166,15 +166,15 @@ class InitialSchema < ActiveRecord::Migration[5.1]
       t.index ['username'], name: 'idx_16475_index_users_on_username', unique: true
     end
 
-    add_foreign_key 'ads', 'users', column: 'user_owner', on_update: :restrict, on_delete: :restrict
-    add_foreign_key 'blockings', 'users', column: 'blocked_id', on_update: :restrict, on_delete: :restrict
-    add_foreign_key 'blockings', 'users', column: 'blocker_id', on_update: :restrict, on_delete: :restrict
-    add_foreign_key 'comments', 'ads', column: 'ads_id', on_update: :restrict, on_delete: :restrict
-    add_foreign_key 'comments', 'users', column: 'user_owner', on_update: :restrict, on_delete: :restrict
-    add_foreign_key 'dismissals', 'announcements', on_update: :restrict, on_delete: :restrict
-    add_foreign_key 'dismissals', 'users', on_update: :restrict, on_delete: :restrict
-    add_foreign_key 'identities', 'users', on_update: :restrict, on_delete: :restrict
-    add_foreign_key 'messages', 'conversations', name: 'notifications_on_conversation_id', on_update: :restrict, on_delete: :restrict
-    add_foreign_key 'receipts', 'messages', column: 'notification_id', name: 'receipts_on_notification_id', on_update: :restrict, on_delete: :restrict
+    add_foreign_key :ads, :users, column: 'user_owner', on_update: :restrict, on_delete: :restrict
+    add_foreign_key :blockings, :users, column: 'blocked_id', on_update: :restrict, on_delete: :restrict
+    add_foreign_key :blockings, :users, column: 'blocker_id', on_update: :restrict, on_delete: :restrict
+    add_foreign_key :comments, :ads, column: 'ads_id', on_update: :restrict, on_delete: :restrict
+    add_foreign_key :comments, :users, column: 'user_owner', on_update: :restrict, on_delete: :restrict
+    add_foreign_key :dismissals, :announcements, on_update: :restrict, on_delete: :restrict
+    add_foreign_key :dismissals, :users, on_update: :restrict, on_delete: :restrict
+    add_foreign_key :identities, :users, on_update: :restrict, on_delete: :restrict
+    add_foreign_key :messages, :conversations, name: 'notifications_on_conversation_id', on_update: :restrict, on_delete: :restrict
+    add_foreign_key :receipts, :messages, column: 'notification_id', name: 'receipts_on_notification_id', on_update: :restrict, on_delete: :restrict
   end
 end
