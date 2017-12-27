@@ -14,7 +14,7 @@ class ContactControllerTest < ActionController::TestCase
   it 'verifies recaptcha in contact form' do
     post :create,
          params: {
-           contact: { email: 'hola@mundo.com', message: 'hola mundo. hola mundo. hola mundo. hola mundo. hola mundo. hola mundo. hola mundo.' }
+           contact: { email: 'hola@mundo.com', message: 'hola mundo. hola mundo. hola mundo. hola mundo.' }
          }
 
     assert_redirected_to root_path

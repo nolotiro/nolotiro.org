@@ -24,6 +24,9 @@ AllCops:
 Metrics/BlockLength:
   Enabled: false
 
+Metrics/LineLength:
+  Max: 110
+
 Performance/Casecmp:
   Enabled: false
 
