@@ -20,7 +20,8 @@ class InitialSchema < ActiveRecord::Migration[5.1]
       t.datetime :updated_at
       t.index %i[author_type author_id], name: :index_active_admin_comments_on_author_type_and_author_id
       t.index %i[namespace], name: :index_active_admin_comments_on_namespace
-      t.index %i[resource_type resource_id], name: :index_active_admin_comments_on_resource_type_and_resource_id
+      t.index %i[resource_type resource_id],
+              name: :index_active_admin_comments_on_resource_type_and_resource_id
     end
 
     create_table :ads, force: :cascade do |t|
@@ -174,7 +175,18 @@ class InitialSchema < ActiveRecord::Migration[5.1]
     add_foreign_key :dismissals, :announcements, on_update: :restrict, on_delete: :restrict
     add_foreign_key :dismissals, :users, on_update: :restrict, on_delete: :restrict
     add_foreign_key :identities, :users, on_update: :restrict, on_delete: :restrict
-    add_foreign_key :messages, :conversations, name: :notifications_on_conversation_id, on_update: :restrict, on_delete: :restrict
-    add_foreign_key :receipts, :messages, column: :notification_id, name: :receipts_on_notification_id, on_update: :restrict, on_delete: :restrict
+
+    add_foreign_key :messages,
+                    :conversations,
+                    name: :notifications_on_conversation_id,
+                    on_update: :restrict,
+                    on_delete: :restrict
+
+    add_foreign_key :receipts,
+                    :messages,
+                    column: :notification_id,
+                    name: :receipts_on_notification_id,
+                    on_update: :restrict,
+                    on_delete: :restrict
   end
 end
