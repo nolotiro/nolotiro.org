@@ -63,7 +63,7 @@ gem 'devise', '~> 4.3'
 gem 'kaminari', '~> 1.1'
 gem 'maxminddb', '0.1.15'
 
-gem 'omniauth', '~> 1.7'
+gem 'omniauth', '~> 1.8'
 gem 'omniauth-facebook', '~> 4.0'
 gem 'omniauth-google-oauth2', '0.5.2'
 
