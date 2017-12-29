@@ -11,7 +11,7 @@ gem 'jbuilder', '~> 2.6'
 gem 'jquery-rails', '~> 4.3'
 gem 'record_tag_helper', '~> 1.0'
 gem 'rinku', '~> 2.0'
-gem 'uglifier', '~> 4.0'
+gem 'uglifier', '~> 4.1'
 
 gem 'dotenv-rails', '~> 2.1'
 
