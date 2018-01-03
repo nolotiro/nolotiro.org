@@ -24,6 +24,9 @@ AllCops:
 Metrics/BlockLength:
   Enabled: false
 
+Metrics/LineLength:
+  Max: 110
+
 Performance/Casecmp:
   Enabled: false
 
@@ -32,6 +35,11 @@ Style/Lambda:
 
 Style/ModuleFunction:
   EnforcedStyle: extend_self
+
+Style/PercentLiteralDelimiters:
+  PreferredDelimiters:
+    '%i': '[]'
+    '%w': '[]'
 
 Style/EmptyMethod:
   EnforcedStyle: expanded

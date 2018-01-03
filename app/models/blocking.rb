@@ -4,8 +4,8 @@
 # Blockings between users
 #
 class Blocking < ApplicationRecord
-  belongs_to :blocker, class_name: 'User'
-  belongs_to :blocked, class_name: 'User'
+  belongs_to :blocker, class_name: 'User', inverse_of: :blockings
+  belongs_to :blocked, class_name: 'User', inverse_of: :received_blockings
 
   validates :blocker, :blocked, presence: true
   validates :blocker, uniqueness: { scope: :blocked }

@@ -1,5 +1,12 @@
 ---
 
+version: "2"
+
+checks:
+  method-complexity:
+    config:
+      threshold: 7
+
 engines:
   brakeman:
     enabled: true
@@ -37,4 +44,3 @@ engines:
 
   rubocop:
     enabled: true
-    channel: rubocop-0-51

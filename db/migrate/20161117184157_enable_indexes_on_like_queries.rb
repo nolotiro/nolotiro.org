@@ -21,7 +21,7 @@ class EnableIndexesOnLikeQueries < ActiveRecord::Migration[5.1]
 
   def down
     %i[towns states countries].each do |table|
-      remove_index table, name: "index_#{table}_on_name_trigram"
+      remove_index table, name: :"index_#{table}_on_name_trigram"
     end
   end
 end
