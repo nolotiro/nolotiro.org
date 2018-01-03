@@ -32,7 +32,7 @@ group :test do
   gem 'database_cleaner', '~> 1.6'
   gem 'poltergeist', '~> 1.17'
   gem 'vcr', '~> 4.0'
-  gem 'webmock', '~> 3.1'
+  gem 'webmock', '~> 3.2'
 end
 
 group :production, :staging do
