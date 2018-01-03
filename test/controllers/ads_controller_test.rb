@@ -98,7 +98,7 @@ class AdsControllerTest < ActionController::TestCase
     @ad = create(:ad, user_owner: @user.id)
     sign_in @user
 
-    body = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."
+    body = 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has ...'
     patch :update,
           params: { id: @ad,
                     ad: { body: body, title: @ad.title, type: @ad.type, woeid_code: @ad.woeid_code } }

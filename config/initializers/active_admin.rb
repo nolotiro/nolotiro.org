@@ -193,7 +193,9 @@ ActiveAdmin.setup do |config|
   #
   #   config.namespace :admin do |admin|
   #     admin.build_menu :utility_navigation do |menu|
-  #       menu.add label: "My Great Website", url: "http://www.mygreatwebsite.com", html_options: { target: :blank }
+  #       menu.add label: "My Great Website",
+  #                url: "http://www.mygreatwebsite.com",
+  #                html_options: { target: :blank }
   #       admin.add_logout_button_to_menu menu
   #     end
   #   end
@@ -202,7 +204,9 @@ ActiveAdmin.setup do |config|
   #
   #   config.namespace :admin do |admin|
   #     admin.build_menu :default do |menu|
-  #       menu.add label: "My Great Website", url: "http://www.mygreatwebsite.com", html_options: { target: :blank }
+  #       menu.add label: "My Great Website",
+  #                url: "http://www.mygreatwebsite.com",
+  #                html_options: { target: :blank }
   #     end
   #   end
 

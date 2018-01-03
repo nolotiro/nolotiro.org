@@ -6,8 +6,8 @@ class Conversation < ApplicationRecord
   has_many :messages, dependent: :destroy
   has_many :receipts, through: :messages
 
-  belongs_to :originator, class_name: 'User'
-  belongs_to :recipient, class_name: 'User'
+  belongs_to :originator, class_name: 'User', inverse_of: :started_conversations
+  belongs_to :recipient, class_name: 'User', inverse_of: :received_conversations
 
   scope :untrashed_by, ->(user) do
     joins(:receipts).merge(Receipt.untrashed_by(user)).distinct

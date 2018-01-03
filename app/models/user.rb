@@ -7,39 +7,48 @@ class User < ApplicationRecord
 
   counter_stats_for :created_at
 
-  has_many :identities, inverse_of: :user, dependent: :destroy
+  with_options dependent: :destroy do
+    has_many :identities, inverse_of: :user
 
-  has_many :ads, foreign_key: :user_owner, dependent: :destroy
-  has_many :comments, foreign_key: :user_owner, dependent: :destroy
+    has_many :ads, foreign_key: :user_owner, inverse_of: :user
+    has_many :comments, foreign_key: :user_owner, inverse_of: :user
 
-  has_many :friendships, dependent: :destroy
-  has_many :incoming_friendships, foreign_key: :friend_id,
-                                  class_name: 'Friendship',
-                                  dependent: :destroy
+    has_many :friendships
+    has_many :incoming_friendships, foreign_key: :friend_id,
+                                    class_name: 'Friendship',
+                                    inverse_of: :friend
+
+    has_many :receipts, foreign_key: :receiver_id,
+                        inverse_of: :receiver
+
+    has_many :blockings, foreign_key: :blocker_id,
+                         inverse_of: :blocker
+
+    has_many :received_blockings, foreign_key: :blocked_id,
+                                  class_name: 'Blocking',
+                                  inverse_of: :blocked
+
+    has_many :dismissals
+  end
+
   has_many :friends, through: :friendships
 
-  has_many :receipts, foreign_key: :receiver_id, dependent: :destroy
+  with_options dependent: :nullify do
+    has_many :started_conversations,
+             foreign_key: :originator_id,
+             class_name: 'Conversation',
+             inverse_of: :originator
 
-  has_many :blockings, foreign_key: :blocker_id, dependent: :destroy
-  has_many :received_blockings, foreign_key: :blocked_id,
-                                class_name: 'Blocking',
-                                dependent: :destroy
-  has_many :dismissals, dependent: :destroy
+    has_many :received_conversations,
+             foreign_key: :recipient_id,
+             class_name: 'Conversation',
+             inverse_of: :recipient
 
-  has_many :started_conversations,
-           foreign_key: :originator_id,
-           class_name: 'Conversation',
-           dependent: :nullify
-
-  has_many :received_conversations,
-           foreign_key: :recipient_id,
-           class_name: 'Conversation',
-           dependent: :nullify
-
-  has_many :sent_messages,
-           foreign_key: :sender_id,
-           class_name: 'Message',
-           dependent: :nullify
+    has_many :sent_messages,
+             foreign_key: :sender_id,
+             class_name: 'Message',
+             inverse_of: :sender
+  end
 
   validates :username, presence: true
   validates :username,

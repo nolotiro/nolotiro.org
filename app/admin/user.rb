@@ -108,9 +108,7 @@ ActiveAdmin.register User do
   end
 
   action_item :contact, only: :show do
-    if user.legitimate?
-      link_to 'Contactar', new_conversation_path(recipient_id: user.id)
-    end
+    link_to 'Contactar', new_conversation_path(recipient_id: user.id) if user.legitimate?
   end
 
   action_item :moderate, only: :show do

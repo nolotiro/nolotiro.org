@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
 class Receipt < ApplicationRecord
-  belongs_to :receiver, class_name: 'User'
-  belongs_to :message, foreign_key: :notification_id
+  belongs_to :receiver, class_name: 'User', inverse_of: :receipts
+  belongs_to :message, foreign_key: :notification_id, inverse_of: :receipts
 
   scope :recipient, ->(recipient) { where(receiver_id: recipient.id) }
 

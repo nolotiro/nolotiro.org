@@ -14,7 +14,7 @@ class UsersController < ApplicationController
     @ads = @ads.public_send(@type) if @type
     @ads = @ads.public_send(@status) if @status
 
-    @ads = @ads.includes(:user).recent_first.page(params[:page])
+    @ads = @ads.recent_first.page(params[:page])
   end
 
   private

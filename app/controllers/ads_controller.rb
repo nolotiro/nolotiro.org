@@ -45,6 +45,9 @@ class AdsController < ApplicationController
     @author = @ad.user
   end
 
+  def index
+  end
+
   def edit
     session[:return_to] = referer_path
   end
@@ -87,9 +90,7 @@ class AdsController < ApplicationController
 
   def destroy_redirect_path
     previous_path = session.delete(:return_to)
-    unless previous_path.nil? || previous_path == ad_friendly_path
-      return previous_path
-    end
+    return previous_path unless previous_path.nil? || previous_path == ad_friendly_path
 
     profile_path(@ad.user.username)
   end

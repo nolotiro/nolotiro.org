@@ -28,7 +28,11 @@ class ConversationsControllerTest < ActionController::TestCase
     assert_difference('Conversation.count') do
       post :create,
            params: {
-             message: { recipients: @user2, body: 'lo sigues teniendo? ', subject: 'interesado en el ordenador' }
+             message: {
+               recipients: @user2,
+               body: 'lo sigues teniendo? ',
+               subject: 'interesado en el ordenador'
+             }
            }
     end
     m = Conversation.last
@@ -59,7 +63,11 @@ class ConversationsControllerTest < ActionController::TestCase
     assert_difference('Conversation.count') do
       post :create,
            params: {
-             message: { recipients: @user2, body: 'lo sigues teniendo? ', subject: 'interesado en el ordenador' }
+             message: {
+               recipients: @user2,
+               body: 'lo sigues teniendo? ',
+               subject: 'interesado en el ordenador'
+             }
            }
     end
     m = Conversation.last
@@ -74,7 +82,12 @@ class ConversationsControllerTest < ActionController::TestCase
     sign_in @user1
     post :create,
          params: {
-           message: { recipients: @user1, sender: @user2, body: 'lo sigues teniendo? ', subject: 'interesado en el ordenador' }
+           message: {
+             recipients: @user1,
+             sender: @user2,
+             body: 'lo sigues teniendo? ',
+             subject: 'interesado en el ordenador'
+           }
          }
     # TODO: finish
   end
