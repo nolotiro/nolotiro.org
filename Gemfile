@@ -51,7 +51,7 @@ group :development do
   gem 'capistrano', '~> 3.10'
   gem 'capistrano-rails', '~> 1.3'
   gem 'capistrano-rbenv', '~> 2.1'
-  gem 'capistrano-sidekiq', '0.20.0'
+  gem 'capistrano-sidekiq', '1.0.0'
 end
 
 gem 'http_accept_language', '~> 2.1'
