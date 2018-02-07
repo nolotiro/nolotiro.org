@@ -16,7 +16,7 @@ gem 'uglifier', '~> 4.1'
 gem 'dotenv-rails', '~> 2.1'
 
 group :development, :test do
-  gem 'byebug', '~> 9.1'
+  gem 'byebug', '~> 10.0'
   gem 'capybara', '~> 2.17'
   gem 'factory_bot_rails', '~> 4.8'
   gem 'launchy', '~> 2.4'
