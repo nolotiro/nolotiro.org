@@ -121,6 +121,70 @@ ALTER SEQUENCE announcements_id_seq OWNED BY announcements.id;
 
 
 --
+-- Name: antifraud_matches; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE antifraud_matches (
+    id bigint NOT NULL,
+    antifraud_rule_id bigint,
+    ad_id bigint,
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL
+);
+
+
+--
+-- Name: antifraud_matches_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE antifraud_matches_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: antifraud_matches_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE antifraud_matches_id_seq OWNED BY antifraud_matches.id;
+
+
+--
+-- Name: antifraud_rules; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE antifraud_rules (
+    id bigint NOT NULL,
+    sentence text,
+    activated_at timestamp without time zone,
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL
+);
+
+
+--
+-- Name: antifraud_rules_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE antifraud_rules_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: antifraud_rules_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE antifraud_rules_id_seq OWNED BY antifraud_rules.id;
+
+
+--
 -- Name: ar_internal_metadata; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -595,6 +659,20 @@ ALTER TABLE ONLY announcements ALTER COLUMN id SET DEFAULT nextval('announcement
 
 
 --
+-- Name: antifraud_matches id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY antifraud_matches ALTER COLUMN id SET DEFAULT nextval('antifraud_matches_id_seq'::regclass);
+
+
+--
+-- Name: antifraud_rules id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY antifraud_rules ALTER COLUMN id SET DEFAULT nextval('antifraud_rules_id_seq'::regclass);
+
+
+--
 -- Name: blockings id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -699,6 +777,22 @@ ALTER TABLE ONLY ads
 
 ALTER TABLE ONLY announcements
     ADD CONSTRAINT announcements_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: antifraud_matches antifraud_matches_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY antifraud_matches
+    ADD CONSTRAINT antifraud_matches_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: antifraud_rules antifraud_rules_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY antifraud_rules
+    ADD CONSTRAINT antifraud_rules_pkey PRIMARY KEY (id);
 
 
 --
@@ -969,6 +1063,20 @@ CREATE UNIQUE INDEX idx_16475_index_users_on_username ON users USING btree (user
 
 
 --
+-- Name: index_antifraud_matches_on_ad_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_antifraud_matches_on_ad_id ON antifraud_matches USING btree (ad_id);
+
+
+--
+-- Name: index_antifraud_matches_on_antifraud_rule_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_antifraud_matches_on_antifraud_rule_id ON antifraud_matches USING btree (antifraud_rule_id);
+
+
+--
 -- Name: index_countries_on_name_trigram; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -1030,6 +1138,14 @@ CREATE INDEX index_towns_on_state_id ON towns USING btree (state_id);
 
 ALTER TABLE ONLY comments
     ADD CONSTRAINT fk_rails_0df6b78f0a FOREIGN KEY (ads_id) REFERENCES ads(id) ON UPDATE RESTRICT ON DELETE RESTRICT;
+
+
+--
+-- Name: antifraud_matches fk_rails_28a7ca2f9e; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY antifraud_matches
+    ADD CONSTRAINT fk_rails_28a7ca2f9e FOREIGN KEY (ad_id) REFERENCES ads(id);
 
 
 --
@@ -1105,6 +1221,14 @@ ALTER TABLE ONLY reports
 
 
 --
+-- Name: antifraud_matches fk_rails_ca4ed698f4; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY antifraud_matches
+    ADD CONSTRAINT fk_rails_ca4ed698f4 FOREIGN KEY (antifraud_rule_id) REFERENCES antifraud_rules(id);
+
+
+--
 -- Name: towns fk_rails_de137abc76; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -1168,6 +1292,7 @@ INSERT INTO "schema_migrations" (version) VALUES
 ('20161117184157'),
 ('20161122140853'),
 ('20170905120853'),
-('20170909120825');
+('20170909120825'),
+('20171203203952');
 
 

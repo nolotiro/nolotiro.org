@@ -108,6 +108,8 @@ class AdManagementTest < AuthenticatedTest
   end
 
   it 'saves spam ads but does not list them' do
+    create(:antifraud_rule, sentence: 'regalo de campista')
+
     mocking_yahoo_woeid_info(@current_user.woeid) do
       assert_difference(-> { Ad.count }, 1) do
         submit_ad_form(title: 'Regalo de campista')
@@ -119,6 +121,8 @@ class AdManagementTest < AuthenticatedTest
   end
 
   it 'automatically kicks out spammers' do
+    create(:antifraud_rule, sentence: 'regalo de campista')
+
     mocking_yahoo_woeid_info(@current_user.woeid) do
       submit_ad_form(title: 'Regalo de campista')
     end

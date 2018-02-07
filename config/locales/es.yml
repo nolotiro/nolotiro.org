@@ -55,6 +55,9 @@ es:
       ad:
         one: anuncio
         other: Anuncios
+      antifraud/rule:
+        one: regla antifraude
+        other: Reglas antifraude
       reported_user:
         one: denuncia
         other: Denuncias
@@ -195,6 +198,8 @@ es:
     all: todos
     all_gifts: todos los regalos
     all_requests: todas las peticiones
+    antifraud:
+      rule: "Regla %{id} (%{keysentence})"
     are_you_interested: "¿Te interesa?"
     available: disponible
     back: volver a la página de inicio
@@ -264,6 +269,7 @@ es:
     faqs: preguntas frecuentes
     footer_explain: 'nolotiro.org es un sitio web donde regalo y busco regalos gratis de segunda mano: muebles, sillas, sofás, bicicletas, ordenadores portátiles, mesas, cocinas, lámparas, camas, ropa, juguetes, cunas o carros para bebes, teléfonos móviles y otras muchas cosas que ya no quieres y ya no necesitas para que las reutilicen otra gente a la que puede servirle o darle nueva vida.'
     forgot_your_password: "¿Has olvidado tu contraseña?"
+    fraud_matched_rules: Reglas antifraude coincidentes
     friends: Amigos
     gift_on: regalo en %{woeid}
     gifts: regalos

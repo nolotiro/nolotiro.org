@@ -7,13 +7,14 @@
 # classifier.
 #
 module Spamable
-  def check_spam!
-    user.ban! if spammed?(title) || spammed?(body)
+  extend ActiveSupport::Concern
+
+  included do
+    has_many :fraud_matches, class_name: 'Antifraud::Match', dependent: :destroy, inverse_of: :ad
+    has_many :fraud_matched_rules, through: :fraud_matches, source: :antifraud_rule
   end
 
-  private
-
-  def spammed?(text)
-    Regexp.new('regalo de campista', Regexp::IGNORECASE).match(text).present?
+  def check_spam!
+    user.ban! if Antifraud::Rule.spam?(self)
   end
 end
