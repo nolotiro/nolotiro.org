@@ -17,7 +17,7 @@ gem 'dotenv-rails', '~> 2.1'
 
 group :development, :test do
   gem 'byebug', '~> 10.0'
-  gem 'capybara', '~> 2.17'
+  gem 'capybara', '~> 2.18'
   gem 'factory_bot_rails', '~> 4.8'
   gem 'launchy', '~> 2.4'
   gem 'minitest-hooks', '~> 1.4'
