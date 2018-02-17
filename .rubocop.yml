@@ -17,11 +17,8 @@ AllCops:
 
   DisplayStyleGuide: true
 
-Metrics/BlockLength:
+Metrics:
   Enabled: false
-
-Metrics/LineLength:
-  Max: 110
 
 Performance/Casecmp:
   Enabled: false
@@ -52,5 +49,3 @@ Rails/UnknownEnv:
     - production
     - staging
     - test
-
-inherit_from: .rubocop_todo.yml
