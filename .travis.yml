@@ -20,7 +20,7 @@ env:
 language: ruby
 
 rvm:
-  - 2.4.2
+  - 2.5.0
 
 services:
   - postgresql

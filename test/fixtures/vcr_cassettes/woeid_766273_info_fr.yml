@@ -12,7 +12,7 @@ http_interactions:
       Accept-Encoding:
       - gzip, deflate
       User-Agent:
-      - rest-client/2.0.2 (linux-gnu x86_64) ruby/2.4.2p198
+      - rest-client/2.0.2 (linux-gnu x86_64) ruby/2.5.0p0
       Host:
       - query.yahooapis.com
   response:
@@ -29,7 +29,7 @@ http_interactions:
       Cache-Control:
       - no-cache
       Date:
-      - Sat, 25 Nov 2017 12:44:20 GMT
+      - Sat, 17 Feb 2018 15:21:54 GMT
       Age:
       - '0'
       Transfer-Encoding:
@@ -37,23 +37,13 @@ http_interactions:
       Connection:
       - keep-alive
       Via:
-      - http/1.1 a26.ue.gq1.yahoo.net (ApacheTrafficServer [cMsSf ])
+      - http/1.1 a13.ue.gq1.yahoo.net (ApacheTrafficServer [cMsSf ])
       Server:
       - ATS
-      Public-Key-Pins-Report-Only:
-      - max-age=2592000; pin-sha256="2oALgLKofTmeZvoZ1y/fSZg7R9jPMix8eVA6DH4o/q8=";
-        pin-sha256="cAajgxHlj7GTSEIzIYIQxmEloOSoJq7VOaxWHfv72QM="; pin-sha256="SVqWumuteCQHvVIaALrOZXuzVVVeS7f4FGxxu6V+es4=";
-        pin-sha256="UZJDjsNp1+4M5x9cbbdflB779y5YRBcV6Z6rBMLIrO4="; pin-sha256="JbQbUG5JMJUoI6brnx0x3vZF6jilxsapbXGVfjhN8Fg=";
-        pin-sha256="lnsM2T/O9/J84sJFdnrpsFp3awZJ+ZZbYpCWhGloaHI="; pin-sha256="h6801m+z8v3zbgkRHpq6L29Esgfzhj89C1SyUCOQmqU=";
-        pin-sha256="SQVGZiOrQXi+kqxcvWWE96HhfydlLVqFr4lQTqI5qqo="; pin-sha256="q5hJUnat8eyv8o81xTBIeB5cFxjaucjmelBPT2pRMo8=";
-        pin-sha256="vPtEqrmtAhAVcGtBIep2HIHJ6IlnWQ9vlK50TciLePs="; pin-sha256="lpkiXF3lLlbN0y3y6W0c/qWqPKC7Us2JM8I7XCdEOCA=";
-        pin-sha256="r/mIkG3eEpVdm+u/ko/cwxzOMo1bk4TyHIlByibiA5E="; pin-sha256="WoiWRyIOVNa9ihaBciRSC7XHjliYS9VwUGOIud4PB18=";
-        pin-sha256="2fRAUXyxl4A1/XHrKNBmc8bTkzA7y4FB/GLJuNAzCqY="; pin-sha256="dolnbtzEBnELx/9lOEQ22e6OZO/QNb6VSSX2XHA3E7A=";
-        includeSubdomains; report-uri="http://csp.yahoo.com/beacon/csp?src=yahoocom-hpkp-report-only"
     body:
       encoding: ASCII-8BIT
       string: !binary |-
-        eyJxdWVyeSI6eyJjb3VudCI6MSwiY3JlYXRlZCI6IjIwMTctMTEtMjVUMTI6NDQ6MjBaIiwibGFuZyI6ImVuLVVTIiwicmVzdWx0cyI6eyJwbGFjZSI6eyJsYW5nIjoiZnItIiwieG1sbnMiOiJodHRwOi8vd2hlcmUueWFob29hcGlzLmNvbS92MS9zY2hlbWEucm5nIiwieWFob28iOiJodHRwOi8vd3d3LnlhaG9vYXBpcy5jb20vdjEvYmFzZS5ybmciLCJ1cmkiOiJodHRwOi8vd2hlcmUueWFob29hcGlzLmNvbS92MS9wbGFjZS83NjYyNzMiLCJ3b2VpZCI6Ijc2NjI3MyIsInBsYWNlVHlwZU5hbWUiOnsiY29kZSI6IjciLCJjb250ZW50IjoiVmlsbGUifSwibmFtZSI6Ik1hZHJpZCIsImNvdW50cnkiOnsiY29kZSI6IkVTIiwidHlwZSI6IlBheXMiLCJ3b2VpZCI6IjIzNDI0OTUwIiwiY29udGVudCI6IkVzcGFnbmUifSwiYWRtaW4xIjp7ImNvZGUiOiIiLCJ0eXBlIjoiQ29tbXVuYXV0w6kgQXV0b25vbWUiLCJ3b2VpZCI6IjEyNTc4MDI0IiwiY29udGVudCI6Ik1hZHJpZCJ9LCJhZG1pbjIiOnsiY29kZSI6IiIsInR5cGUiOiJDb210w6kiLCJ3b2VpZCI6IjEyNjAyMDkwIiwiY29udGVudCI6Ik1hZHJpZCJ9LCJhZG1pbjMiOm51bGwsImxvY2FsaXR5MSI6eyJ0eXBlIjoiVmlsbGUiLCJ3b2VpZCI6Ijc2NjI3MyIsImNvbnRlbnQiOiJNYWRyaWQifSwibG9jYWxpdHkyIjpudWxsLCJwb3N0YWwiOm51bGwsImNlbnRyb2lkIjp7ImxhdGl0dWRlIjoiNDAuNDIxNDI5IiwibG9uZ2l0dWRlIjoiLTMuNjcxNjMifSwiYm91bmRpbmdCb3giOnsic291dGhXZXN0Ijp7ImxhdGl0dWRlIjoiNDAuMzI1OTM5IiwibG9uZ2l0dWRlIjoiLTMuNzk4ODcifSwibm9ydGhFYXN0Ijp7ImxhdGl0dWRlIjoiNDAuNTIwMDgxIiwibG9uZ2l0dWRlIjoiLTMuNTM0OSJ9fSwiYXJlYVJhbmsiOiIxIiwicG9wUmFuayI6IjEiLCJ0aW1lem9uZSI6eyJ0eXBlIjoiVGltZSBab25lIiwid29laWQiOiI1NjA0MzY0NCIsImNvbnRlbnQiOiJFdXJvcGUvTWFkcmlkIn19fX19
+        eyJxdWVyeSI6eyJjb3VudCI6MSwiY3JlYXRlZCI6IjIwMTgtMDItMTdUMTU6MjE6NTRaIiwibGFuZyI6ImVuLVVTIiwicmVzdWx0cyI6eyJwbGFjZSI6eyJsYW5nIjoiZnItIiwieG1sbnMiOiJodHRwOi8vd2hlcmUueWFob29hcGlzLmNvbS92MS9zY2hlbWEucm5nIiwieWFob28iOiJodHRwOi8vd3d3LnlhaG9vYXBpcy5jb20vdjEvYmFzZS5ybmciLCJ1cmkiOiJodHRwOi8vd2hlcmUueWFob29hcGlzLmNvbS92MS9wbGFjZS83NjYyNzMiLCJ3b2VpZCI6Ijc2NjI3MyIsInBsYWNlVHlwZU5hbWUiOnsiY29kZSI6IjciLCJjb250ZW50IjoiVmlsbGUifSwibmFtZSI6Ik1hZHJpZCIsImNvdW50cnkiOnsiY29kZSI6IkVTIiwidHlwZSI6IlBheXMiLCJ3b2VpZCI6IjIzNDI0OTUwIiwiY29udGVudCI6IkVzcGFnbmUifSwiYWRtaW4xIjp7ImNvZGUiOiIiLCJ0eXBlIjoiQ29tbXVuYXV0w6kgQXV0b25vbWUiLCJ3b2VpZCI6IjEyNTc4MDI0IiwiY29udGVudCI6Ik1hZHJpZCJ9LCJhZG1pbjIiOnsiY29kZSI6IiIsInR5cGUiOiJDb210w6kiLCJ3b2VpZCI6IjEyNjAyMDkwIiwiY29udGVudCI6Ik1hZHJpZCJ9LCJhZG1pbjMiOm51bGwsImxvY2FsaXR5MSI6eyJ0eXBlIjoiVmlsbGUiLCJ3b2VpZCI6Ijc2NjI3MyIsImNvbnRlbnQiOiJNYWRyaWQifSwibG9jYWxpdHkyIjpudWxsLCJwb3N0YWwiOm51bGwsImNlbnRyb2lkIjp7ImxhdGl0dWRlIjoiNDAuNDIxNDI5IiwibG9uZ2l0dWRlIjoiLTMuNjcxNjMifSwiYm91bmRpbmdCb3giOnsic291dGhXZXN0Ijp7ImxhdGl0dWRlIjoiNDAuMzI1OTM5IiwibG9uZ2l0dWRlIjoiLTMuNzk4ODcifSwibm9ydGhFYXN0Ijp7ImxhdGl0dWRlIjoiNDAuNTIwMDgxIiwibG9uZ2l0dWRlIjoiLTMuNTM0OSJ9fSwiYXJlYVJhbmsiOiIxIiwicG9wUmFuayI6IjEiLCJ0aW1lem9uZSI6eyJ0eXBlIjoiVGltZSBab25lIiwid29laWQiOiI1NjA0MzY0NCIsImNvbnRlbnQiOiJFdXJvcGUvTWFkcmlkIn19fX19
     http_version: 
-  recorded_at: Sat, 25 Nov 2017 12:44:20 GMT
-recorded_with: VCR 3.0.3
+  recorded_at: Sat, 17 Feb 2018 15:21:54 GMT
+recorded_with: VCR 4.0.0
