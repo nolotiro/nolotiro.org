@@ -26,6 +26,9 @@ Metrics/LineLength:
 Performance/Casecmp:
   Enabled: false
 
+Style/Documentation:
+  Enabled: false
+
 Style/Lambda:
   EnforcedStyle: literal
 
