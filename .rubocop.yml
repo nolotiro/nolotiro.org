@@ -17,10 +17,6 @@ AllCops:
 
   DisplayStyleGuide: true
 
-#
-# @todo: Decide on a better default than 25 and reenable. 25 is science-fiction
-# for a Rails app, specially if it uses gems like activeadmin.
-#
 Metrics/BlockLength:
   Enabled: false
 
