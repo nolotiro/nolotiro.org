@@ -9,17 +9,18 @@ module Baneable
   included do
     include Trustable
 
-    has_many :sent_reports,
-             foreign_key: :reporter_id,
-             dependent: :destroy,
-             class_name: 'Report',
-             inverse_of: :reporter
+    with_options dependent: :destroy do
+      has_many :sent_reports,
+               foreign_key: :reporter_id,
+               class_name: 'Report',
+               inverse_of: :reporter
 
-    has_many :received_reports,
-             -> { pending },
-             foreign_key: :reported_id,
-             class_name: 'Report',
-             inverse_of: :reported
+      has_many :received_reports,
+               -> { pending },
+               foreign_key: :reported_id,
+               class_name: 'Report',
+               inverse_of: :reported
+    end
 
     has_many :reported_users, through: :sent_reports, source: :reported
     has_many :reporters, through: :received_reports, source: :reporter
