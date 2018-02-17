@@ -16,7 +16,7 @@ git clone git://github.com/sstephenson/ruby-build.git "$HOME/.rbenv/plugins/ruby
 source "$HOME/.profile"
 
 # Install required ruby versions
-rbenv install 2.4.2
+rbenv install 2.5.0
 
 cd /vagrant || exit
 
