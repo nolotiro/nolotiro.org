@@ -14,6 +14,6 @@ module Spamable
   private
 
   def spammed?(text)
-    Regexp.new('regalo de campista', Regexp::IGNORECASE).match(text).present?
+    Regexp.new("regalo de campista", Regexp::IGNORECASE).match(text).present?
   end
 end

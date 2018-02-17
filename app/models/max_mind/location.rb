@@ -10,7 +10,7 @@ module MaxMind
     end
 
     def fullname
-      [city, region, country].compact.join(', ')
+      [city, region, country].compact.join(", ")
     end
 
     def city
@@ -32,7 +32,7 @@ module MaxMind
     end
 
     def localize(entity)
-      entity.public_send(:name, I18n.locale) || entity.public_send(:name, 'en')
+      entity.public_send(:name, I18n.locale) || entity.public_send(:name, "en")
     end
   end
 end

@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
-require_relative 'boot'
+require_relative "boot"
 
-require 'rails/all'
+require "rails/all"
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
@@ -10,11 +10,11 @@ Bundler.require(*Rails.groups)
 
 module NolotiroOrg
   class Application < Rails::Application
-    config.time_zone = 'UTC'
+    config.time_zone = "UTC"
     config.i18n.default_locale = :es
     config.i18n.enforce_available_locales = true
     config.i18n.available_locales = %i[ca en es fr gl it pt]
-    ActionMailer::Base.layout 'mail'
+    ActionMailer::Base.layout "mail"
 
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.1

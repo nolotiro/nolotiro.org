@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'test_helper'
+require "test_helper"
 
 class MessageTest < ActiveSupport::TestCase
   def setup
@@ -13,7 +13,7 @@ class MessageTest < ActiveSupport::TestCase
   end
 
   def test_enforces_non_nil_sender_on_creation
-    message = @conversation.messages.build(sender: nil, body: 'hi!')
+    message = @conversation.messages.build(sender: nil, body: "hi!")
 
     assert_equal false, message.valid?
   end
@@ -28,7 +28,7 @@ class MessageTest < ActiveSupport::TestCase
 
     @conversation.envelope_for(sender: @user,
                                recipient: @recipient,
-                               body: 'You there, buddy?')
+                               body: "You there, buddy?")
     @conversation.save!
 
     assert_equal 0, messages.unread_by(@user).size
@@ -40,7 +40,7 @@ class MessageTest < ActiveSupport::TestCase
   end
 
   def test_involving_includes_incoming_messages
-    @conversation.envelope_for(sender: @recipient, recipient: @user, body: 'hi')
+    @conversation.envelope_for(sender: @recipient, recipient: @user, body: "hi")
     @conversation.save!
 
     assert_equal messages.to_set, Message.involving(@user).to_set

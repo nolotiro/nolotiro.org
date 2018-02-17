@@ -17,17 +17,13 @@ AllCops:
 
   DisplayStyleGuide: true
 
-#
-# @todo: Decide on a better default than 25 and reenable. 25 is science-fiction
-# for a Rails app, specially if it uses gems like activeadmin.
-#
-Metrics/BlockLength:
+Metrics:
   Enabled: false
 
-Metrics/LineLength:
-  Max: 110
-
 Performance/Casecmp:
+  Enabled: false
+
+Style/Documentation:
   Enabled: false
 
 Style/Lambda:
@@ -41,6 +37,9 @@ Style/PercentLiteralDelimiters:
     '%i': '[]'
     '%w': '[]'
 
+Style/StringLiterals:
+  EnforcedStyle: double_quotes
+
 Style/EmptyMethod:
   EnforcedStyle: expanded
 
@@ -53,5 +52,3 @@ Rails/UnknownEnv:
     - production
     - staging
     - test
-
-inherit_from: .rubocop_todo.yml

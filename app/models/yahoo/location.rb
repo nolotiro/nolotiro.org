@@ -10,33 +10,33 @@ module Yahoo
     end
 
     def fullname
-      [name, admin1, country].compact.join(', ')
+      [name, admin1, country].compact.join(", ")
     end
 
     def name
-      @place['name']
+      @place["name"]
     end
 
     def woeid
-      @place['woeid'].to_i
+      @place["woeid"].to_i
     end
 
     def town?
-      typecode == '7'
+      typecode == "7"
     end
 
     private
 
     def admin1
-      @place['admin1'].try(:[], 'content')
+      @place["admin1"].try(:[], "content")
     end
 
     def country
-      @place['country']['content']
+      @place["country"]["content"]
     end
 
     def typecode
-      @place['placeTypeName']['code']
+      @place["placeTypeName"]["code"]
     end
   end
 end

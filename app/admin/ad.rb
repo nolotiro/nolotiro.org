@@ -1,15 +1,15 @@
 # frozen_string_literal: true
 
-require 'helpers/stats_sidebar'
+require "helpers/stats_sidebar"
 
 ActiveAdmin.register Ad do
   include StatsSidebar
 
-  config.sort_order = 'published_at_desc'
+  config.sort_order = "published_at_desc"
   config.per_page = 100
 
-  scope 'Regalos', :give, default: true
-  scope 'Peticiones', :want
+  scope "Regalos", :give, default: true
+  scope "Peticiones", :want
 
   controller do
     def scoped_collection
@@ -25,7 +25,7 @@ ActiveAdmin.register Ad do
     plural_model = active_admin_config.plural_resource_label(count: ids.count)
                                       .downcase
 
-    msg = t('active_admin.batch_actions.succesfully_destroyed',
+    msg = t("active_admin.batch_actions.succesfully_destroyed",
             count: count, model: model, plural_model: plural_model)
 
     redirect_to collection_path(q: params[:q]), notice: msg
@@ -35,7 +35,7 @@ ActiveAdmin.register Ad do
 
   filter :title
   filter :body
-  filter :user_username, as: :string, label: I18n.t('nlt.username')
+  filter :user_username, as: :string, label: I18n.t("nlt.username")
   filter :woeid_code
   filter :status, as: :select, collection: [%w[Disponible available],
                                             %w[Reservado booked],
@@ -53,9 +53,9 @@ ActiveAdmin.register Ad do
 
     if current_scope.scope_method == :give
       column :status do |ad|
-        status_tag({ 'available' => 'green',
-                     'booked' => 'orange',
-                     'delivered' => 'red' }[ad.status],
+        status_tag({ "available" => "green",
+                     "booked" => "orange",
+                     "delivered" => "red" }[ad.status],
                    label: ad.status)
       end
     end
@@ -65,8 +65,8 @@ ActiveAdmin.register Ad do
     column :published_at
 
     actions(defaults: false, dropdown: true) do |ad|
-      item 'Editar', edit_admin_ad_path(ad)
-      item 'Eliminar', admin_ad_path(ad), method: :delete
+      item "Editar", edit_admin_ad_path(ad)
+      item "Eliminar", admin_ad_path(ad), method: :delete
       item "Mover a #{ad.give? ? 'peticiones' : 'regalos'}",
            move_admin_ad_path(ad),
            method: :post
@@ -85,7 +85,7 @@ ActiveAdmin.register Ad do
   end
 
   action_item :view, only: :show do
-    link_to 'Ver en la web', adslug_path(ad, slug: ad.slug)
+    link_to "Ver en la web", adslug_path(ad, slug: ad.slug)
   end
 
   action_item :move, only: :show do
@@ -99,6 +99,6 @@ ActiveAdmin.register Ad do
 
     ad.move!
 
-    redirect_to admin_ads_path, notice: 'Anuncio movido'
+    redirect_to admin_ads_path, notice: "Anuncio movido"
   end
 end

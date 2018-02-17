@@ -2,6 +2,7 @@
 
 class CreateGeoTables < ActiveRecord::Migration[5.1]
   def change
+    # rubocop:disable Rails/CreateTableWithTimestamps
     create_table :countries do |t|
       t.string :iso, limit: 2, null: false
       t.string :name, limit: 173, null: false
@@ -17,5 +18,6 @@ class CreateGeoTables < ActiveRecord::Migration[5.1]
       t.references :state, index: true, foreign_key: true
       t.references :country, index: true, foreign_key: true, null: false
     end
+    # rubocop:enable Rails/CreateTableWithTimestamps
   end
 end

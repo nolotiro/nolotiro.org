@@ -13,7 +13,7 @@ class AdRanking
     Rails.cache.fetch("#{@name}-#{cache_digest}") do
       @ad_scope.select(@metric, *@select_extras, "COUNT(#{@metric}) as n_ads")
                .group(*@select_extras, @metric)
-               .order('n_ads DESC')
+               .order("n_ads DESC")
                .limit(20)
                .map do |entry|
         [
@@ -31,8 +31,8 @@ class AdRanking
 
   def cache_digest
     last_ad_publication = Ad.give.maximum(:published_at)
-    return '0' * 20 unless last_ad_publication
+    return "0" * 20 unless last_ad_publication
 
-    last_ad_publication.strftime('%d%m%y%H%M%s')
+    last_ad_publication.strftime("%d%m%y%H%M%s")
   end
 end

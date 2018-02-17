@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 namespace :announcements do
-  desc 'Announce blocking feature'
+  desc "Announce blocking feature"
   task blocking: :environment do
     message = <<-TXT.squish
       Ahora puedes castigar la falta de seriedad, los plantones o cualquier otro
@@ -15,7 +15,7 @@ namespace :announcements do
                          ends_at: 2.weeks.from_now)
   end
 
-  desc 'Translations warning as an announcement'
+  desc "Translations warning as an announcement"
   task translations: :environment do
     include Rails.application.routes.url_helpers
 
@@ -34,7 +34,7 @@ namespace :announcements do
     end
   end
 
-  desc 'Announce that ads about animals are forbidden'
+  desc "Announce that ads about animals are forbidden"
   task animals: :environment do
     include Rails.application.routes.url_helpers
 
@@ -45,17 +45,17 @@ namespace :announcements do
       información.
     TXT
 
-    Announcement.create!(locale: 'es',
+    Announcement.create!(locale: "es",
                          message: message,
                          starts_at: Time.zone.now,
                          ends_at: 3.weeks.from_now)
   end
 
-  desc 'Announce that ads about cars & houses are forbidden'
+  desc "Announce that ads about cars & houses are forbidden"
   task cars_and_houses: :environment do
     include Rails.application.routes.url_helpers
 
-    faq = faqs_path(locale: 'es', anchor: 'faq9')
+    faq = faqs_path(locale: "es", anchor: "faq9")
 
     message = <<-TXT.squish
       A partir de ahora no se permiten anuncios de regalo ni petición de
@@ -63,7 +63,7 @@ namespace :announcements do
       información</a>.
     TXT
 
-    Announcement.create!(locale: 'es',
+    Announcement.create!(locale: "es",
                          message: message,
                          starts_at: Time.zone.now,
                          ends_at: 4.weeks.from_now)

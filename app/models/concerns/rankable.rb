@@ -7,8 +7,8 @@ module Rankable
   extend ActiveSupport::Concern
 
   included do
-    scope :top_overall, -> { build_rank(Ad, 'top-overall') }
-    scope :top_last_week, -> { build_rank(Ad.last_week, 'top-last-week') }
+    scope :top_overall, -> { build_rank(Ad, "top-overall") }
+    scope :top_last_week, -> { build_rank(Ad.last_week, "top-last-week") }
 
     scope :top_city_overall, ->(woeid) do
       build_rank(Ad.by_woeid_code(woeid), "woeid/#{woeid}/top-overall")

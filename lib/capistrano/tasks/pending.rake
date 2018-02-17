@@ -1,12 +1,12 @@
 # frozen_string_literal: true
 
 namespace :deploy do
-  desc 'Shortcut to deploy:pending:log'
-  task pending: 'deploy:pending:log'
+  desc "Shortcut to deploy:pending:log"
+  task pending: "deploy:pending:log"
 
   namespace :pending do
     def git(command, from:, to:)
-      ::Kernel.exec 'git', command, "#{from}..#{to}"
+      ::Kernel.exec "git", command, "#{from}..#{to}"
     end
 
     def ensure_revision
@@ -23,7 +23,7 @@ namespace :deploy do
       of the changes that have occurred since the last deploy.
     DESC
     task log: :capture_revision do
-      git('log', from: fetch(:revision), to: fetch(:branch))
+      git("log", from: fetch(:revision), to: fetch(:branch))
     end
 
     desc <<-DESC
@@ -31,14 +31,14 @@ namespace :deploy do
       examine what changes are about to be deployed.
     DESC
     task diff: :capture_revision do
-      git('diff', from: fetch(:revision), to: fetch(:branch))
+      git("diff", from: fetch(:revision), to: fetch(:branch))
     end
 
     task :capture_revision do
       on roles(:app) do
         ensure_revision do
           within current_path do
-            set :revision, capture(:cat, 'REVISION')
+            set :revision, capture(:cat, "REVISION")
           end
         end
       end

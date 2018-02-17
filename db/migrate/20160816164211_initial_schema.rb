@@ -3,13 +3,12 @@
 #
 # Initial DB schema
 #
-# rubocop:disable Metrics/ClassLength
 class InitialSchema < ActiveRecord::Migration[5.1]
-  # rubocop:disable Metrics/MethodLength, Metrics/AbcSize
   def change
-    enable_extension 'plpgsql'
-    enable_extension 'pg_trgm'
+    enable_extension "plpgsql"
+    enable_extension "pg_trgm"
 
+    # rubocop:disable Rails/CreateTableWithTimestamps
     create_table :active_admin_comments, id: :serial, force: :cascade do |t|
       t.string :namespace
       t.text :body
@@ -75,7 +74,7 @@ class InitialSchema < ActiveRecord::Migration[5.1]
     end
 
     create_table :conversations, force: :cascade do |t|
-      t.string :subject, limit: 255, default: ''
+      t.string :subject, limit: 255, default: ""
       t.datetime :created_at, null: false
       t.datetime :updated_at, null: false
       t.bigint :originator_id
@@ -106,7 +105,7 @@ class InitialSchema < ActiveRecord::Migration[5.1]
 
     create_table :messages, force: :cascade do |t|
       t.text :body
-      t.string :subject, limit: 255, default: ''
+      t.string :subject, limit: 255, default: ""
       t.bigint :sender_id
       t.bigint :conversation_id
       t.datetime :updated_at, null: false
@@ -143,7 +142,7 @@ class InitialSchema < ActiveRecord::Migration[5.1]
       t.integer :active, default: 0, null: false
       t.integer :role, default: 0, null: false
       t.bigint :woeid
-      t.string :encrypted_password, limit: 255, default: '', null: false
+      t.string :encrypted_password, limit: 255, default: "", null: false
       t.string :reset_password_token, limit: 255
       t.datetime :reset_password_sent_at
       t.datetime :remember_created_at
@@ -167,6 +166,7 @@ class InitialSchema < ActiveRecord::Migration[5.1]
       t.index [:reset_password_token], name: :idx_16475_index_users_on_reset_password_token, unique: true
       t.index [:username], name: :idx_16475_index_users_on_username, unique: true
     end
+    # rubocop:enable Rails/CreateTableWithTimestamps
 
     add_foreign_key :ads, :users, column: :user_owner, on_update: :restrict, on_delete: :restrict
     add_foreign_key :blockings, :users, column: :blocked_id, on_update: :restrict, on_delete: :restrict
@@ -190,6 +190,4 @@ class InitialSchema < ActiveRecord::Migration[5.1]
                     on_update: :restrict,
                     on_delete: :restrict
   end
-  # rubocop:enable Metrics/MethodLength, Metrics/AbcSize
 end
-# rubocop:enable Metrics/ClassLength

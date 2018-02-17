@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-ActiveAdmin.register User, as: 'ReportedUser' do
+ActiveAdmin.register User, as: "ReportedUser" do
   config.batch_actions = false
 
   actions :index
@@ -27,13 +27,13 @@ ActiveAdmin.register User, as: 'ReportedUser' do
         link_to reporter.username, admin_user_path(reporter)
       end
 
-      safe_join(reporter_list, ' ')
+      safe_join(reporter_list, " ")
     end
 
     column :report_score
 
     column(:status) do |user|
-      user.banned? ? '(Auto)Bloqueado' : 'Activo'
+      user.banned? ? "(Auto)Bloqueado" : "Activo"
     end
 
     actions(defaults: false, dropdown: true) do |user|
@@ -41,7 +41,7 @@ ActiveAdmin.register User, as: 'ReportedUser' do
            moderate_admin_user_path(user),
            method: :post
 
-      item user.banned? ? 'Confirmar' : 'Ignorar',
+      item user.banned? ? "Confirmar" : "Ignorar",
            dismiss_admin_reported_user_path(user),
            method: :post
     end
@@ -54,6 +54,6 @@ ActiveAdmin.register User, as: 'ReportedUser' do
 
     redirect_back \
       fallback_location: admin_reported_users_path,
-      notice: user.banned? ? 'Bloqueo confirmado' : 'Denuncias ignoradas'
+      notice: user.banned? ? "Bloqueo confirmado" : "Denuncias ignoradas"
   end
 end

@@ -41,6 +41,6 @@ module Censurable
   end
 
   def privacy_mask
-    I18n.t('nlt.private_info_hidden').upcase
+    I18n.t("nlt.private_info_hidden").upcase
   end
 end

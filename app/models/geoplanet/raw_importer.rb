@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
-require 'zip'
-require 'geoplanet/path_helper'
+require "zip"
+require "geoplanet/path_helper"
 
 module Geoplanet
   #
@@ -34,7 +34,7 @@ module Geoplanet
     end
 
     def cleanup_orphan_entries!
-      system('sed', '-i', "/^1321121\t/d", tsv_path)
+      system("sed", "-i", "/^1321121\t/d", tsv_path)
     end
 
     def create_temporary_table!
@@ -49,8 +49,8 @@ module Geoplanet
       SQL
 
       raw_connection.copy_data(sql) do
-        File.open(tsv_path, 'r').each do |line|
-          raw_connection.put_copy_data(line.tr("\t", ','))
+        File.open(tsv_path, "r").each do |line|
+          raw_connection.put_copy_data(line.tr("\t", ","))
         end
       end
 

@@ -28,11 +28,11 @@ class Ad < ApplicationRecord
   scope :recent_first, -> { order(published_at: :desc) }
 
   has_attached_file :image,
-                    styles: { thumb: '100x90>' },
-                    url: '/system/img/:attachment/:id_partition/:style/:filename'
+                    styles: { thumb: "100x90>" },
+                    url: "/system/img/:attachment/:id_partition/:style/:filename"
 
   validates_attachment :image,
-                       content_type: { content_type: ['image/jpg', 'image/jpeg', 'image/png', 'image/gif'] }
+                       content_type: { content_type: ["image/jpg", "image/jpeg", "image/png", "image/gif"] }
 
   validates_attachment_size :image, in: 0.megabytes..5.megabytes
 
@@ -44,10 +44,10 @@ class Ad < ApplicationRecord
   end
 
   scope :by_title, ->(query) do
-    sanitized_query = query.try(:scrub, '')
+    sanitized_query = query.try(:scrub, "")
     return all if sanitized_query.blank?
 
-    where('title LIKE ?', "%#{sanitized_query}%")
+    where("title LIKE ?", "%#{sanitized_query}%")
   end
 
   paginates_per 20

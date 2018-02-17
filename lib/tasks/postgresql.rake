@@ -4,7 +4,7 @@
 # Tasks for taking & restoring db snapshots
 #
 namespace :db do
-  desc 'Dumps the database to a file.'
+  desc "Dumps the database to a file."
   task dump: :environment do
     cmd = <<-SHELL.squish
       pg_dump \
@@ -20,7 +20,7 @@ namespace :db do
     run_with_pgpass(cmd)
   end
 
-  desc 'Restores database from a file.'
+  desc "Restores database from a file."
   task restore: :environment do
     cmd = <<-SHELL.squish
       pg_restore \
@@ -50,19 +50,19 @@ namespace :db do
   end
 
   def create_pgpass(content)
-    File.open(pgpass_path, 'w', 0o600) { |f| f.write(content) }
+    File.open(pgpass_path, "w", 0o600) { |f| f.write(content) }
   end
 
   def pgpass_path
-    File.join(Dir.home, '.pgpass')
+    File.join(Dir.home, ".pgpass")
   end
 
   def backup_name
-    name = ENV['BACKUP_NAME']
+    name = ENV["BACKUP_NAME"]
 
-    raise 'Please specificy BACKUP_NAME' if name.blank?
+    raise "Please specificy BACKUP_NAME" if name.blank?
 
-    Rails.root.join('db', "#{name}.dump")
+    Rails.root.join("db", "#{name}.dump")
   end
 
   def config

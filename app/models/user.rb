@@ -15,7 +15,7 @@ class User < ApplicationRecord
 
     has_many :friendships
     has_many :incoming_friendships, foreign_key: :friend_id,
-                                    class_name: 'Friendship',
+                                    class_name: "Friendship",
                                     inverse_of: :friend
 
     has_many :receipts, foreign_key: :receiver_id,
@@ -25,7 +25,7 @@ class User < ApplicationRecord
                          inverse_of: :blocker
 
     has_many :received_blockings, foreign_key: :blocked_id,
-                                  class_name: 'Blocking',
+                                  class_name: "Blocking",
                                   inverse_of: :blocked
 
     has_many :dismissals
@@ -36,17 +36,17 @@ class User < ApplicationRecord
   with_options dependent: :nullify do
     has_many :started_conversations,
              foreign_key: :originator_id,
-             class_name: 'Conversation',
+             class_name: "Conversation",
              inverse_of: :originator
 
     has_many :received_conversations,
              foreign_key: :recipient_id,
-             class_name: 'Conversation',
+             class_name: "Conversation",
              inverse_of: :recipient
 
     has_many :sent_messages,
              foreign_key: :sender_id,
-             class_name: 'Message',
+             class_name: "Message",
              inverse_of: :sender
   end
 
@@ -84,7 +84,7 @@ class User < ApplicationRecord
   end
 
   def self.new_with_session(params, session)
-    oauth_session = session['devise.omniauth_data']
+    oauth_session = session["devise.omniauth_data"]
     return super unless oauth_session
 
     oauth = OmniAuth::AuthHash.new(oauth_session)

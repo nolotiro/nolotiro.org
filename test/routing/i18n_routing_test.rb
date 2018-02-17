@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
-require 'test_helper'
-require 'support/web_mocking'
+require "test_helper"
+require "support/web_mocking"
 
 class I18nRoutingTest < ActionDispatch::IntegrationTest
   include WebMocking
@@ -15,7 +15,7 @@ class I18nRoutingTest < ActionDispatch::IntegrationTest
       I18n.with_locale(:es) do
         mocking_yahoo_woeid_info(@ad.woeid_code, l) do
           params = {
-            controller: 'woeid', action: 'show', type: 'give', locale: l.to_s
+            controller: "woeid", action: "show", type: "give", locale: l.to_s
           }
           assert_recognizes params, "/#{l}"
           get "/#{l}"

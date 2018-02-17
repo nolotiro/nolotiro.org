@@ -5,9 +5,9 @@ module LoginHelper
 
   def login(username, password)
     visit new_user_session_path
-    fill_in 'user_email', with: username
-    fill_in 'user_password', with: password
-    click_button 'Acceder'
+    fill_in "user_email", with: username
+    fill_in "user_password", with: password
+    click_button "Acceder"
   end
 
   def relogin_as(user)

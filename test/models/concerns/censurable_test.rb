@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'test_helper'
+require "test_helper"
 
 class CensurableTestPost < ApplicationRecord
   include Censurable
@@ -23,8 +23,8 @@ class CensurableTest < ActiveSupport::TestCase
   end
 
   def test_defines_method_for_attribute_censoring
-    text = 'si hay interés, por favor, contactar por email ' \
-           'example@example.com, por sms 999999999, o whatsapp al 666666666'
+    text = "si hay interés, por favor, contactar por email " \
+           "example@example.com, por sms 999999999, o whatsapp al 666666666"
 
     expected_text = <<-TXT.squish
       si hay interés, por favor, contactar por email [INFORMACIÓN PRIVADA
@@ -48,7 +48,7 @@ class CensurableTest < ActiveSupport::TestCase
        guassapp
        guassap].each do |word|
       assert_equal \
-        '[INFORMACIÓN PRIVADA OCULTA]',
+        "[INFORMACIÓN PRIVADA OCULTA]",
         CensurableTestPost.new(title: word).filtered_title
     end
   end
