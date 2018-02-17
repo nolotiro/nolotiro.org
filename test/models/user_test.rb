@@ -70,4 +70,16 @@ class UserTest < ActiveSupport::TestCase
 
     assert_difference(-> { Friendship.count }, -1) { @user.destroy }
   end
+
+  it 'deletes associated reports when user is deleted' do
+    create(:report, reporter: @user)
+
+    assert_difference(-> { Report.count }, -1) { @user.destroy }
+  end
+
+  it 'deletes associated incoming reports when user is deleted' do
+    create(:report, reported: @user)
+
+    assert_difference(-> { Report.count }, -1) { @user.destroy }
+  end
 end
