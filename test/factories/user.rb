@@ -12,7 +12,7 @@ FactoryBot.define do
   factory :user do
     username
     email
-    password '123456789'
+    password "123456789"
     role 0
     madrilenian
     confirmed_at Time.zone.now
@@ -21,8 +21,8 @@ FactoryBot.define do
   # This will use the User class (Admin would have been guessed)
   factory :admin, class: User do
     username
-    email 'admin@example.com'
-    password '12435968770'
+    email "admin@example.com"
+    password "12435968770"
     role 1
     confirmed_at Time.zone.now
   end
@@ -30,7 +30,7 @@ FactoryBot.define do
   factory :non_confirmed_user, class: User do
     username
     email
-    password '123456789'
+    password "123456789"
     role 0
     madrilenian
   end

@@ -27,9 +27,9 @@ class AdsController < ApplicationController
     if verify_recaptcha(model: @ad) && @ad.save
       @ad.check_spam!
 
-      redirect_to ad_friendly_path, notice: t('nlt.ads.created')
+      redirect_to ad_friendly_path, notice: t("nlt.ads.created")
     else
-      render 'new'
+      render "new"
     end
   end
 
@@ -56,30 +56,30 @@ class AdsController < ApplicationController
     @ad.update!(status: params[:status].to_sym)
 
     redirect_back fallback_location: profile_path(@ad.user.username),
-                  notice: t('nlt.ads.marked_as', status: @ad.status_string)
+                  notice: t("nlt.ads.marked_as", status: @ad.status_string)
   end
 
   def bump
     @ad.bump
 
     redirect_back fallback_location: profile_path(@ad.user.username),
-                  notice: t('nlt.ads.bumped')
+                  notice: t("nlt.ads.bumped")
   end
 
   def update
     if @ad.update(ad_params)
       @ad.check_spam!
 
-      redirect_to update_redirect_path, notice: t('nlt.ads.updated')
+      redirect_to update_redirect_path, notice: t("nlt.ads.updated")
     else
-      render 'edit', alert: @ad.errors
+      render "edit", alert: @ad.errors
     end
   end
 
   def destroy
     @ad.destroy
 
-    redirect_to destroy_redirect_path, notice: t('nlt.ads.destroyed')
+    redirect_to destroy_redirect_path, notice: t("nlt.ads.destroyed")
   end
 
   private

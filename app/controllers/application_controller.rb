@@ -13,7 +13,7 @@ class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
 
   rescue_from Pundit::NotAuthorizedError do |_exception|
-    redirect_to request.referer || root_path, alert: t('nlt.permission_denied')
+    redirect_to request.referer || root_path, alert: t("nlt.permission_denied")
   end
 
   def access_denied(exception)
@@ -22,7 +22,7 @@ class ApplicationController < ActionController::Base
 
   def signed_in_root_path(resource)
     woeid = resource.woeid
-    return ads_woeid_path(woeid, type: 'give') if woeid
+    return ads_woeid_path(woeid, type: "give") if woeid
 
     location_ask_path
   end
@@ -31,7 +31,7 @@ class ApplicationController < ActionController::Base
     authenticate_user!
     return if current_user.admin?
 
-    flash[:alert] = t('nlt.permission_denied')
+    flash[:alert] = t("nlt.permission_denied")
     redirect_to root_path
   end
 
@@ -67,7 +67,7 @@ class ApplicationController < ActionController::Base
 
   def current_woeid
     @current_woeid ||=
-      if request.path =~ %r{/listall/} || params[:controller] == 'users'
+      if request.path =~ %r{/listall/} || params[:controller] == "users"
         nil
       else
         params[:id].presence || user_woeid

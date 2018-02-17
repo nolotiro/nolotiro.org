@@ -6,8 +6,8 @@ class Conversation < ApplicationRecord
   has_many :messages, dependent: :destroy
   has_many :receipts, through: :messages
 
-  belongs_to :originator, class_name: 'User', inverse_of: :started_conversations
-  belongs_to :recipient, class_name: 'User', inverse_of: :received_conversations
+  belongs_to :originator, class_name: "User", inverse_of: :started_conversations
+  belongs_to :recipient, class_name: "User", inverse_of: :received_conversations
 
   scope :untrashed_by, ->(user) do
     joins(:receipts).merge(Receipt.untrashed_by(user)).distinct
@@ -18,7 +18,7 @@ class Conversation < ApplicationRecord
   end
 
   scope :participant, ->(user) do
-    where('recipient_id = ? OR originator_id = ?', user.id, user.id)
+    where("recipient_id = ? OR originator_id = ?", user.id, user.id)
   end
 
   scope :whitelisted_for, ->(user) do
@@ -37,10 +37,10 @@ class Conversation < ApplicationRecord
       LEFT OUTER JOIN users u2 ON conversations.recipient_id = u2.id
     SQL
 
-    joined.where('u1.banned_at IS NULL AND u2.banned_at IS NULL')
+    joined.where("u1.banned_at IS NULL AND u2.banned_at IS NULL")
   end
 
-  def self.start(sender:, recipient:, subject: '', body: '')
+  def self.start(sender:, recipient:, subject: "", body: "")
     conversation = new(subject: subject,
                        originator_id: sender.id,
                        recipient_id: recipient.id)
@@ -50,7 +50,7 @@ class Conversation < ApplicationRecord
     conversation
   end
 
-  def envelope_for(sender:, recipient:, body: '')
+  def envelope_for(sender:, recipient:, body: "")
     message = messages.build(sender: sender, body: body)
 
     message.envelope_for(recipient)
@@ -58,7 +58,7 @@ class Conversation < ApplicationRecord
     message
   end
 
-  def reply(sender:, recipient:, body: '')
+  def reply(sender:, recipient:, body: "")
     self.updated_at = Time.zone.now
 
     envelope_for(sender: sender, recipient: recipient, body: body)

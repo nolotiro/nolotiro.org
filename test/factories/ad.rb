@@ -2,12 +2,12 @@
 
 FactoryBot.define do
   factory :ad do
-    title 'ordenador en Vallecas'
-    body 'pentium 9 con monitor de plasma de 90 pulgadas. pasar a recoger'
+    title "ordenador en Vallecas"
+    body "pentium 9 con monitor de plasma de 90 pulgadas. pasar a recoger"
     give
     available
     woeid_code 766_273
-    ip '28.3.2.4'
+    ip "28.3.2.4"
     created_at { Time.zone.now }
     user
     published_at { created_at }

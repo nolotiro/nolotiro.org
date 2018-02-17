@@ -18,7 +18,7 @@ class LocationController < ApplicationController
     if unique_location
       save_location unique_location
     else
-      redirect_to location_ask_path, alert: 'Hubo un error con el cambio de su ubicación. Inténtelo de nuevo.'
+      redirect_to location_ask_path, alert: "Hubo un error con el cambio de su ubicación. Inténtelo de nuevo."
     end
   end
 
@@ -39,6 +39,6 @@ class LocationController < ApplicationController
   def save_location(woeid)
     current_user.update!(woeid: woeid) if user_signed_in?
 
-    redirect_to ads_woeid_path(woeid, type: 'give')
+    redirect_to ads_woeid_path(woeid, type: "give")
   end
 end

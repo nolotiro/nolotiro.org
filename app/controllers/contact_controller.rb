@@ -13,9 +13,9 @@ class ContactController < ApplicationController
     @contact.email = current_user.email if user_signed_in?
     if verify_recaptcha(model: @contact) && @contact.valid?
       ContactMailer.contact_form(@contact.email, @contact.message, request).deliver_now
-      redirect_to root_url, notice: t('nlt.contact_thanks')
+      redirect_to root_url, notice: t("nlt.contact_thanks")
     else
-      render 'new'
+      render "new"
     end
   end
 end

@@ -17,11 +17,11 @@ def create_ad(user)
 end
 
 User.create!(
-  username: 'admin',
-  email: 'admin@example.org',
+  username: "admin",
+  email: "admin@example.org",
   role: 1,
-  password: '12345678',
-  password_confirmation: '12345678',
+  password: "12345678",
+  password_confirmation: "12345678",
   confirmed_at: Time.zone.now,
   woeid: 766_273
 )
@@ -31,8 +31,8 @@ User.create!(
     username: Faker::Name.name,
     email: "user#{n}@example.org",
     role: 0,
-    password: '12345678',
-    password_confirmation: '12345678',
+    password: "12345678",
+    password_confirmation: "12345678",
     confirmed_at: Time.zone.now,
     woeid: 766_273
   )

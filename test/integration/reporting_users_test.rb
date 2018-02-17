@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-require 'test_helper'
-require 'integration/concerns/js_authenticated_test'
-require 'support/web_mocking'
-require 'minitest/mock'
+require "test_helper"
+require "integration/concerns/js_authenticated_test"
+require "support/web_mocking"
+require "minitest/mock"
 
 module ReportUsersTests
   include WebMocking
@@ -11,7 +11,7 @@ module ReportUsersTests
   def test_reports_users
     send_report
 
-    assert_text 'Denuncia recibida. ¡Gracias!'
+    assert_text "Denuncia recibida. ¡Gracias!"
     assert_no_link link_label
   end
 
@@ -19,7 +19,7 @@ module ReportUsersTests
     User.stub(:max_allowed_report_score, 0) do
       mocking_yahoo_woeid_info(@current_user.woeid) { send_report }
 
-      assert_text 'Contenido retirado. ¡Gracias!'
+      assert_text "Contenido retirado. ¡Gracias!"
       assert_no_link link_label
     end
   end
@@ -46,7 +46,7 @@ class ReportingUsersFromProfileTest < JsAuthenticatedTest
   private
 
   def link_label
-    'denunciar'
+    "denunciar"
   end
 end
 
@@ -67,6 +67,6 @@ class ReportingUsersFromAdPageTest < JsAuthenticatedTest
   private
 
   def link_label
-    'Denunciar'
+    "Denunciar"
   end
 end

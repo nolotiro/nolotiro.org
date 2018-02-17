@@ -12,13 +12,13 @@ module Baneable
     with_options dependent: :destroy do
       has_many :sent_reports,
                foreign_key: :reporter_id,
-               class_name: 'Report',
+               class_name: "Report",
                inverse_of: :reporter
 
       has_many :received_reports,
                -> { pending },
                foreign_key: :reported_id,
-               class_name: 'Report',
+               class_name: "Report",
                inverse_of: :reported
     end
 
@@ -37,7 +37,7 @@ module Baneable
     end
 
     scope :banned, -> { where.not(banned_at: nil) }
-    scope :recent_spammers, -> { where('banned_at >= ?', 3.months.ago) }
+    scope :recent_spammers, -> { where("banned_at >= ?", 3.months.ago) }
 
     delegate :max_allowed_report_score, to: :class
   end
@@ -52,8 +52,8 @@ module Baneable
       SQL
 
       recent_spammers
-        .joins('LEFT OUTER JOIN ads ON ads.user_owner = users.id')
-        .joins('LEFT OUTER JOIN comments ON comments.user_owner = users.id')
+        .joins("LEFT OUTER JOIN ads ON ads.user_owner = users.id")
+        .joins("LEFT OUTER JOIN comments ON comments.user_owner = users.id")
         .where(condition, ip: ip)
         .any?
     end

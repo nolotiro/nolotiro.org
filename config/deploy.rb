@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
-set :application, 'nolotiro.org'
-set :repo_url, 'https://github.com/alabs/nolotiro.org'
+set :application, "nolotiro.org"
+set :repo_url, "https://github.com/alabs/nolotiro.org"
 
 set :log_level, :debug
 set :pty, true
@@ -16,41 +16,41 @@ set :bundle_binstubs, nil
 set :keep_releases, 5
 
 # Logical flow for deploying an app
-before 'deploy:publishing', 'deploy:max_mind:extract'
-after  'deploy:finished', 'deploy:restart'
+before "deploy:publishing", "deploy:max_mind:extract"
+after  "deploy:finished", "deploy:restart"
 
 namespace :deploy do
   namespace :max_mind do
-    desc 'Extract MaxMind DB for source compressed file'
+    desc "Extract MaxMind DB for source compressed file"
     task :extract do
       on roles(:app) do
         within release_path do
           with rails_env: fetch(:rails_env) do
-            execute :rake, 'max_mind:extract'
+            execute :rake, "max_mind:extract"
           end
         end
       end
     end
   end
 
-  desc 'Start application'
+  desc "Start application"
   task :start do
     on roles(:app) do
-      sudo 'service nginx start'
+      sudo "service nginx start"
     end
   end
 
-  desc 'Stop application'
+  desc "Stop application"
   task :stop do
     on roles(:app) do
-      sudo 'service nginx stop'
+      sudo "service nginx stop"
     end
   end
 
-  desc 'Restart application'
+  desc "Restart application"
   task :restart do
     on roles(:app) do
-      sudo 'service nginx restart'
+      sudo "service nginx restart"
     end
   end
 end

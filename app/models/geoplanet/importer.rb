@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-require 'open-uri'
-require 'zip'
-require 'geoplanet/path_helper'
-require 'geoplanet/raw_importer'
+require "open-uri"
+require "zip"
+require "geoplanet/path_helper"
+require "geoplanet/raw_importer"
 
 module Geoplanet
   #
@@ -23,13 +23,13 @@ module Geoplanet
 
       RawImporter.new(
         connection,
-        'places',
+        "places",
         %w[woe_id iso name language place_type parent_id]
       ).import!
 
       RawImporter.new(
         connection,
-        'admins',
+        "admins",
         %w[woe_id iso state county local_admin country continent]
       ).import!
 
@@ -41,7 +41,7 @@ module Geoplanet
     private
 
     def download!
-      Rails.logger.info 'Downloading DB from archive.org...'
+      Rails.logger.info "Downloading DB from archive.org..."
 
       return if File.exist?(local_compressed_path)
 
@@ -49,7 +49,7 @@ module Geoplanet
     end
 
     def import_countries!
-      Rails.logger.info 'Importing countries...'
+      Rails.logger.info "Importing countries..."
 
       connection.execute <<-SQL.squish
         INSERT INTO countries(id, name, iso)
@@ -60,7 +60,7 @@ module Geoplanet
     end
 
     def import_states!
-      Rails.logger.info 'Importing states...'
+      Rails.logger.info "Importing states..."
 
       connection.execute <<-SQL.squish
         INSERT INTO states(id, name, country_id)
@@ -71,7 +71,7 @@ module Geoplanet
     end
 
     def import_towns!
-      Rails.logger.info 'Importing towns...'
+      Rails.logger.info "Importing towns..."
 
       connection.execute <<-SQL.squish
         INSERT INTO towns(id, name, state_id, country_id)

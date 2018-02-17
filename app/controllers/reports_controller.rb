@@ -9,10 +9,10 @@ class ReportsController < ApplicationController
 
   def create
     if current_user.report!(@user)
-      redirect_to root_path, notice: I18n.t('reports.create.success_banned')
+      redirect_to root_path, notice: I18n.t("reports.create.success_banned")
     else
       redirect_back fallback_location: profile_path(@user),
-                    notice: I18n.t('reports.create.success_reported')
+                    notice: I18n.t("reports.create.success_reported")
     end
   end
 

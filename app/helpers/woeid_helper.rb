@@ -3,7 +3,7 @@
 module WoeidHelper
   def self.convert_woeid_name(woeid)
     locale = I18n.locale
-    key = 'woeid_' + locale.to_s + '_' + woeid.to_s
+    key = "woeid_" + locale.to_s + "_" + woeid.to_s
     value = Rails.cache.fetch(key)
     return value if value
 

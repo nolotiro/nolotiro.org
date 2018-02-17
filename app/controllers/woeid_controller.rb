@@ -6,13 +6,13 @@ class WoeidController < ApplicationController
   before_action :check_location
 
   def show
-    @type = type_scope || 'give'
-    @status = status_scope || 'currently_available'
+    @type = type_scope || "give"
+    @status = status_scope || "currently_available"
     @q = params[:q]
     @page = params[:page]
 
     scope = Ad.public_send(@type).by_woeid_code(current_woeid).by_title(@q)
-    scope = scope.public_send(@status) if @type == 'give'
+    scope = scope.public_send(@status) if @type == "give"
 
     @ads = policy_scope(scope).includes(:user).recent_first.page(@page)
   end
@@ -25,6 +25,6 @@ class WoeidController < ApplicationController
     return unless current_woeid
 
     @woeid_info = WoeidHelper.convert_woeid_name(current_woeid)
-    raise ActionController::RoutingError, 'Not Found' if @woeid_info.nil?
+    raise ActionController::RoutingError, "Not Found" if @woeid_info.nil?
   end
 end

@@ -5,7 +5,7 @@ class Message < ApplicationRecord
   validates :body, presence: true, length: { maximum: 32_000 }
 
   belongs_to :conversation
-  belongs_to :sender, class_name: 'User',
+  belongs_to :sender, class_name: "User",
                       optional: true,
                       inverse_of: :sent_messages
 

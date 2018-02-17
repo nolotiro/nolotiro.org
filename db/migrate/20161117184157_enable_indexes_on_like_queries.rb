@@ -2,7 +2,7 @@
 
 class EnableIndexesOnLikeQueries < ActiveRecord::Migration[5.1]
   def up
-    unless extension_enabled?('pg_trgm')
+    unless extension_enabled?("pg_trgm")
       raise <<-MSG.squish
         You must enable the pg_trgm extension. You can do so by running
         "CREATE EXTENSION pg_trgm;" on the current DB as a PostgreSQL

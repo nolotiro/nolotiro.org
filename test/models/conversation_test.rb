@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'test_helper'
+require "test_helper"
 
 class ConversationTest < ActiveSupport::TestCase
   def setup
@@ -30,7 +30,7 @@ class ConversationTest < ActiveSupport::TestCase
   end
 
   def test_unread_by_scope_returns_unique_conversations
-    @conversation.reply(sender: @user, recipient: @recipient, body: 'Nice!')
+    @conversation.reply(sender: @user, recipient: @recipient, body: "Nice!")
     @conversation.save!
 
     assert_equal 1, Conversation.unread_by(@recipient).size
@@ -70,7 +70,7 @@ class ConversationTest < ActiveSupport::TestCase
   end
 
   def test_untrashed_by_scope_returns_unique_conversations
-    @conversation.reply(sender: @user, recipient: @recipient, body: 'Nice!')
+    @conversation.reply(sender: @user, recipient: @recipient, body: "Nice!")
     @conversation.save!
     @conversation.move_to_trash(@recipient)
 
@@ -79,7 +79,7 @@ class ConversationTest < ActiveSupport::TestCase
 
   def test_reply_touches_the_conversation_timestamp
     @conversation.update!(updated_at: 1.hour.ago)
-    @conversation.reply(sender: @user, recipient: @recipient, body: 'Hey!')
+    @conversation.reply(sender: @user, recipient: @recipient, body: "Hey!")
 
     assert_in_delta @conversation.updated_at, Time.zone.now, 1.second
   end
@@ -91,7 +91,7 @@ class ConversationTest < ActiveSupport::TestCase
   end
 
   def test_interlocutor_returns_nil_for_orphan_conversations_w_several_msgs
-    @conversation.reply(sender: @recipient, recipient: @user, body: 'Hei!')
+    @conversation.reply(sender: @recipient, recipient: @user, body: "Hei!")
     @conversation.save!
 
     @recipient.destroy
@@ -99,7 +99,7 @@ class ConversationTest < ActiveSupport::TestCase
   end
 
   def test_interlocutor_returns_nil_for_orphan_conversations_w_several_sent_msgs
-    @conversation.reply(sender: @user, recipient: @recipient, body: 'Hei!')
+    @conversation.reply(sender: @user, recipient: @recipient, body: "Hei!")
     @conversation.save!
 
     @recipient.destroy
@@ -107,7 +107,7 @@ class ConversationTest < ActiveSupport::TestCase
   end
 
   def test_recipient_when_she_has_sent_messages_and_originator_no_longer_there
-    @conversation.reply(sender: @recipient, recipient: @user, body: 'Hei!')
+    @conversation.reply(sender: @recipient, recipient: @user, body: "Hei!")
     @conversation.save!
 
     @user.destroy
@@ -122,9 +122,9 @@ class ConversationTest < ActiveSupport::TestCase
   end
 
   def test_messages_for_are_ordered_most_recent_last
-    @conversation.reply(sender: @user, recipient: @recipient, body: 'Hei!')
+    @conversation.reply(sender: @user, recipient: @recipient, body: "Hei!")
     @conversation.save!
 
-    assert_equal 'Hei!', @conversation.messages_for(@user)[1].body
+    assert_equal "Hei!", @conversation.messages_for(@user)[1].body
   end
 end

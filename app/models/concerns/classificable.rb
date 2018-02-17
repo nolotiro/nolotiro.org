@@ -15,8 +15,8 @@ module Classificable
     enum type: { give: 1, want: 2 }
     validates :type, presence: true
 
-    scope :active, -> { where('published_at >= ?', expiration_limit) }
-    scope :expired, -> { where('published_at < ?', expiration_limit) }
+    scope :active, -> { where("published_at >= ?", expiration_limit) }
+    scope :expired, -> { where("published_at < ?", expiration_limit) }
     scope :undelivered, -> { where(status: %i[booked available]) }
 
     scope :currently_available, -> { available.active }
@@ -40,7 +40,7 @@ module Classificable
   end
 
   def current_status
-    return 'expired' if expired? && !delivered?
+    return "expired" if expired? && !delivered?
 
     status
   end

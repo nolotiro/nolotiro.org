@@ -7,12 +7,12 @@ module Api
     end
 
     def woeid_show
-      @type = type_scope || 'give'
+      @type = type_scope || "give"
       @woeid = params[:id]
       @page = params[:page]
 
       @woeid_info = WoeidHelper.convert_woeid_name(@woeid)
-      raise ActionController::RoutingError, 'Not Found' if @woeid_info.nil?
+      raise ActionController::RoutingError, "Not Found" if @woeid_info.nil?
 
       @ads = Ad.public_send(@type).by_woeid_code(@woeid)
       @ads = @ads.available if type_scope == :give

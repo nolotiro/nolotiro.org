@@ -4,12 +4,12 @@ class ChangeReadedCountDefaultToOne < ActiveRecord::Migration[5.1]
   def up
     change_column_default :ads, :readed_count, 1
 
-    execute 'UPDATE ads SET readed_count = 1 WHERE readed_count = 0'
+    execute "UPDATE ads SET readed_count = 1 WHERE readed_count = 0"
   end
 
   def down
     change_column_default :ads, :readed_count, 0
 
-    execute 'UPDATE ads SET readed_count = 0 WHERE readed_count = 1'
+    execute "UPDATE ads SET readed_count = 0 WHERE readed_count = 1"
   end
 end

@@ -1,14 +1,14 @@
 # frozen_string_literal: true
 
-require 'test_helper'
+require "test_helper"
 
 class BaneableTest < ActiveSupport::TestCase
   before do
     @reported = create(:user)
   end
 
-  describe '#reported?' do
-    it 'returns whether the receiver user has reported the passed user' do
+  describe "#reported?" do
+    it "returns whether the receiver user has reported the passed user" do
       reporter = create(:user)
       assert_equal false, reporter.reported?(@reported)
 
@@ -17,22 +17,22 @@ class BaneableTest < ActiveSupport::TestCase
     end
   end
 
-  describe '.reported' do
-    it 'returns only users with received reports' do
+  describe ".reported" do
+    it "returns only users with received reports" do
       create(:user).report!(@reported)
 
       assert_equal [@reported], User.reported
     end
 
-    it 'returns uniq users' do
+    it "returns uniq users" do
       2.times { create(:user).report!(@reported) }
 
       assert_equal [@reported], User.reported
     end
   end
 
-  describe '#report!' do
-    it 'flags user when one report by a tl3 user' do
+  describe "#report!" do
+    it "flags user when one report by a tl3 user" do
       reporter = create(:admin)
       assert_equal false, @reported.banned?
 
@@ -40,7 +40,7 @@ class BaneableTest < ActiveSupport::TestCase
       assert_equal true, @reported.banned?
     end
 
-    it 'flags user when two reports by tl2 users' do
+    it "flags user when two reports by tl2 users" do
       reporter1 = create(:user, confirmed_at: 2.months.ago)
       create_list(:ad, 10, :give, user: reporter1)
       reporter2 = create(:user, confirmed_at: 2.months.ago)
@@ -59,7 +59,7 @@ class BaneableTest < ActiveSupport::TestCase
       assert_equal true, @reported.banned?
     end
 
-    it 'flags user when four reports by tl1 users' do
+    it "flags user when four reports by tl1 users" do
       reporters = create_list(:user, 4, confirmed_at: 3.weeks.ago)
       ignored_reporter = create(:user, confirmed_at: 10.hours.ago)
       assert_equal false, @reported.banned?
@@ -76,7 +76,7 @@ class BaneableTest < ActiveSupport::TestCase
       assert_equal true, @reported.banned?
     end
 
-    it 'ignores tl0 user reports' do
+    it "ignores tl0 user reports" do
       reporters = create_list(:user, 5, confirmed_at: 10.hours.ago)
 
       reporters.each do |reporter|

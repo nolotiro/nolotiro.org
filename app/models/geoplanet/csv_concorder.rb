@@ -1,9 +1,9 @@
 
 # frozen_string_literal: true
 
-require 'open-uri'
-require 'csv'
-require 'geoname_worker'
+require "open-uri"
+require "csv"
+require "geoname_worker"
 
 module Geoplanet
   #
@@ -29,7 +29,7 @@ module Geoplanet
     private
 
     def download!
-      Rails.logger.info 'Downloading woe_id to geoname_id CSV mapping...'
+      Rails.logger.info "Downloading woe_id to geoname_id CSV mapping..."
 
       return if File.exist?(local_csv_path)
 
@@ -37,7 +37,7 @@ module Geoplanet
     end
 
     def process!
-      Rails.logger.info 'Importing woe_id to geoname_id CSV mapping...'
+      Rails.logger.info "Importing woe_id to geoname_id CSV mapping..."
 
       CSV.foreach(local_csv_path) do |row|
         woe_id = row[@woe_id_col]
@@ -54,7 +54,7 @@ module Geoplanet
     end
 
     def local_base_path
-      Rails.root.join('vendor', 'geoplanet')
+      Rails.root.join("vendor", "geoplanet")
     end
 
     def csv_mapping_name

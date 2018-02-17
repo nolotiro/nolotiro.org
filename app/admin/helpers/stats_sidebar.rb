@@ -2,7 +2,7 @@
 
 module StatsSidebar
   def self.included(dsl)
-    dsl.sidebar 'Estadísticas', only: :index do
+    dsl.sidebar "Estadísticas", only: :index do
       scope = dsl.controller.resource_class
       scope = scope.public_send(current_scope.scope_method) if current_scope
 

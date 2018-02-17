@@ -10,7 +10,7 @@ class ChangeBanningUsersColumn < ActiveRecord::Migration[5.1]
   end
 
   def down
-    execute 'UPDATE users SET locked = 1 WHERE banned_at IS NOT NULL'
+    execute "UPDATE users SET locked = 1 WHERE banned_at IS NOT NULL"
 
     remove_column :users, :banned_at
   end

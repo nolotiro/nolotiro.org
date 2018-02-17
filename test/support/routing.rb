@@ -2,7 +2,7 @@
 
 module Routing
   def assert_woeid_ad_routing(route, id: nil, type: nil, status: nil)
-    keys = { controller: 'woeid', action: 'show', locale: 'es' }
+    keys = { controller: "woeid", action: "show", locale: "es" }
     keys[:id] = id if id
 
     assert_ad_routing route, keys, type, status
@@ -10,9 +10,9 @@ module Routing
 
   def assert_user_routing(route, username: nil, type: nil, status: nil)
     keys = {
-      controller: 'users',
-      action: 'profile',
-      locale: 'es',
+      controller: "users",
+      action: "profile",
+      locale: "es",
       username: username || @user.username
     }
 

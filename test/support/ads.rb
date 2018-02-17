@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'support/web_mocking'
+require "support/web_mocking"
 
 module AdTestHelpers
   include WebMocking

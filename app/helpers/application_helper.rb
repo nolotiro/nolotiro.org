@@ -2,16 +2,16 @@
 
 module ApplicationHelper
   def messages_tab?
-    params[:controller] == 'conversations'
+    params[:controller] == "conversations"
   end
 
   def profile_tab?
-    (params[:controller] == 'users' && params['action'] == 'profile') ||
-      (params[:controller] == 'registrations' && params['action'] == 'edit')
+    (params[:controller] == "users" && params["action"] == "profile") ||
+      (params[:controller] == "registrations" && params["action"] == "edit")
   end
 
   def ad_tab?
-    params[:controller] == 'users' && params['action'] == 'profile'
+    params[:controller] == "users" && params["action"] == "profile"
   end
 
   def no_advertising_allowed?
@@ -19,15 +19,15 @@ module ApplicationHelper
   end
 
   def recaptcha
-    recaptcha_tags(theme: 'light', ajax: true, hl: I18n.locale)
+    recaptcha_tags(theme: "light", ajax: true, hl: I18n.locale)
   end
 
   def errors_for(object)
     errs = object.errors
     return unless errs.any?
 
-    content_tag(:div, id: 'error_explanation') do
-      header = content_tag(:h2, t('nlt.save_failed'))
+    content_tag(:div, id: "error_explanation") do
+      header = content_tag(:h2, t("nlt.save_failed"))
       list = content_tag(:ul) do
         safe_join(errs.full_messages.map { |m| content_tag(:li, m) }, "\n")
       end
@@ -44,13 +44,13 @@ module ApplicationHelper
 
   def available_languages
     {
-      en: 'English',
-      es: 'Español',
-      ca: 'Català',
-      gl: 'Galego',
-      fr: 'Français',
-      pt: 'Português',
-      it: 'Italiano'
+      en: "English",
+      es: "Español",
+      ca: "Català",
+      gl: "Galego",
+      fr: "Français",
+      pt: "Português",
+      it: "Italiano"
     }
   end
 end

@@ -17,19 +17,19 @@ class AdConstraint
   def valid_combination?(controller, type, status)
     # rubocop:disable Style/WordArray
     [
-      ['users', nil, nil],
-      ['users', 'want', nil],
-      ['users', 'give', nil],
-      ['users', 'give', 'available'],
-      ['users', 'give', 'booked'],
-      ['users', 'give', 'delivered'],
-      ['users', 'give', 'expired'],
-      ['woeid', nil, nil],
-      ['woeid', 'want', nil],
-      ['woeid', 'give', nil],
-      ['woeid', 'give', 'available'],
-      ['woeid', 'give', 'booked'],
-      ['woeid', 'give', 'delivered']
+      ["users", nil, nil],
+      ["users", "want", nil],
+      ["users", "give", nil],
+      ["users", "give", "available"],
+      ["users", "give", "booked"],
+      ["users", "give", "delivered"],
+      ["users", "give", "expired"],
+      ["woeid", nil, nil],
+      ["woeid", "want", nil],
+      ["woeid", "give", nil],
+      ["woeid", "give", "available"],
+      ["woeid", "give", "booked"],
+      ["woeid", "give", "delivered"]
     ].include?([controller, type, status])
     # rubocop:enable Style/WordArray
   end

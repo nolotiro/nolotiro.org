@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
-require 'test_helper'
-require 'policies/concerns/policy_helper'
+require "test_helper"
+require "policies/concerns/policy_helper"
 
 class ConversationPolicyTest < ActiveSupport::TestCase
   include PolicyHelper

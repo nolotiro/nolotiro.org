@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'integration/concerns/authenticated_test'
+require "integration/concerns/authenticated_test"
 
 class JsAuthenticatedTest < AuthenticatedTest
   before do
