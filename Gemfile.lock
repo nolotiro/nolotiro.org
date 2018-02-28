@@ -318,7 +318,7 @@ GEM
     rb-fsevent (0.10.2)
     rb-inotify (0.9.10)
       ffi (>= 0.5.0, < 2)
-    recaptcha (4.6.4)
+    recaptcha (4.6.5)
       json
     record_tag_helper (1.0.0)
       actionview (~> 5.x)
