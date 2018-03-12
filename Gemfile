@@ -45,7 +45,7 @@ group :development do
   gem "faker", "~> 1.8"
   gem "i18n-tasks", "0.9.20"
   gem "listen", "~> 3.1"
-  gem "localeapp", "~> 2.4"
+  gem "localeapp", "~> 2.5"
 
   # deploy
   gem "capistrano", "~> 3.10"
