@@ -70,7 +70,7 @@ gem "omniauth-google-oauth2", "0.5.3"
 # Image processing in the background. @todo Properly reenable it
 # gem 'delayed_paperclip'
 
-gem "paperclip", "~> 5.2"
+gem "paperclip", "~> 6.0"
 gem "pundit", "~> 1.1"
 gem "recaptcha", "~> 4.6", require: "recaptcha/rails"
 
