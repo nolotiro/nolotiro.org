@@ -6,14 +6,14 @@ class RequestGeolocatorTest < ActionView::TestCase
   it "suggests location from ip address" do
     suggestion = RequestGeolocator.new("74.125.225.224").suggest
 
-    assert_equal "Mountain View, California, Estados Unidos",
+    assert_equal "Alameda, California, Estados Unidos",
                  suggestion.fullname
   end
 
   it "suggests properly translated locations" do
     I18n.with_locale(:en) do
       suggestion = RequestGeolocator.new("74.125.225.224").suggest
-      assert_equal "Mountain View, California, United States", suggestion.fullname
+      assert_equal "Alameda, California, United States", suggestion.fullname
     end
   end
 
