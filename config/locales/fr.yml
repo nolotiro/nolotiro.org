@@ -271,7 +271,7 @@ fr:
     leave_blank: "(Laissez vide si vous ne voulez pas changer)"
     legal_notice: avis juridique
     legal_page:
-      body_html: 'Nom: Association aLabs. <br>Inscrite au registre des associations de la Communauté de Madrid avec le numéro 32022. <br>CIF: G86139847<br>C/Duque de Alba, 13 (28012) Madrid.'
+      body_html: 'Nom: Association aLabs. <br>Inscrite au registre des associations de la Communauté de Madrid avec le numéro 32022. <br>CIF: G86139847<br>C/San Vicente Ferrer 45, 2-D (28004) Madrid.'
       title: Mentions légales
     location_gifts: cadeaux en %{location}
     location_requests: pétitions en %{location}
