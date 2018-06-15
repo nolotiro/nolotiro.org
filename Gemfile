@@ -4,7 +4,7 @@ source "https://rubygems.org"
 
 ruby RUBY_VERSION
 
-gem "rails", "~> 5.1"
+gem "rails", "~>  5.1"
 gem "rails-i18n", "~> 5.1"
 
 gem "jbuilder", "~> 2.6"
@@ -43,9 +43,9 @@ end
 
 group :development do
   gem "faker", "~> 1.8"
-  gem "i18n-tasks", "0.9.20"
+  gem "i18n-tasks", "~> 0.9"
   gem "listen", "~> 3.1"
-  gem "localeapp", "~> 2.4"
+  gem "localeapp", "~> 3.0"
 
   # deploy
   gem "capistrano", "~> 3.10"
@@ -70,9 +70,9 @@ gem "omniauth-google-oauth2", "0.5.3"
 # Image processing in the background. @todo Properly reenable it
 # gem 'delayed_paperclip'
 
-gem "paperclip", "~> 5.2"
+gem "paperclip", "~> 6.0"
 gem "pundit", "~> 1.1"
-gem "recaptcha", "~> 4.6", require: "recaptcha/rails"
+gem "recaptcha", "~> 4.7", require: "recaptcha/rails"
 
 # Admin backend.
 # @todo Get rid of this, possibly by completely ditching activeadmin and
