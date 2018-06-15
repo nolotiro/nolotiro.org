@@ -271,7 +271,7 @@ en:
     leave_blank: "(leave it empty if you do not want to change it)"
     legal_notice: Legal note
     legal_page:
-      body_html: 'Name: aLabs Association. <br>Registered in the associations registry in the Community of Madrid, registration number 32.022. <br>CIF: G86139847 <br>C/Duque de Alba, 13 (28012) Madrid.'
+      body_html: 'Name: aLabs Association. <br>Registered in the associations registry in the Community of Madrid, registration number 32.022. <br>CIF: G86139847 <br>C/San Vicente Ferrer 45, 2-D (28004) Madrid.'
       title: Legal note
     location_gifts: gifts in %{location}
     location_requests: requests in %{location}

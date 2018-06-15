@@ -1,7 +1,7 @@
 # ACUERDO DE CONFIDENCIALIDAD
 
-La Asociación aLabs, en adelante aLabs, con sede social en la calle Duque de
-Alba, 13, Madrid, y NIF G86139847C y [NOMBRE DE LA COLABORADORA], en adelante el
+La Asociación aLabs, en adelante aLabs, con sede social en la calle San Vicente
+Ferrer 45, 2-D, de Madrid, y NIF G86139847C y [NOMBRE DE LA COLABORADORA], en adelante el
 colaborador, mayor de edad, con DNI [DNI DE LA COLABORADORA] ACUERDAN el
 siguiente compromiso de CONFIDENCIALIDAD.
 
