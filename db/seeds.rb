@@ -11,7 +11,7 @@ def create_ad(user)
     type: :give,
     status: :available,
     woeid_code: 766_273,
-    image: Faker::Placeholdit.image
+    image: URI.parse(Faker::Placeholdit.image)
   )
   ad
 end
