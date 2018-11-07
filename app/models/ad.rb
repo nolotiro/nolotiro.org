@@ -28,7 +28,7 @@ class Ad < ApplicationRecord
   scope :recent_first, -> { order(published_at: :desc) }
 
   has_attached_file :image,
-                    styles: { thumb: "100x90>" },
+                    styles: { thumb: "100x90>", original: "800x600>" },
                     url: "/system/img/:attachment/:id_partition/:style/:filename"
 
   validates_attachment :image,
