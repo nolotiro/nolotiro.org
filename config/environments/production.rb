@@ -58,7 +58,7 @@ Rails.application.configure do
   end
 
   # Use a different cache store in production.
-  config.cache_store = :redis_store
+  config.cache_store = :redis_store, "#{ENV['REDIS_URL']}/cache", { expires_in: 90.minutes }
 
   # Enable serving of images, stylesheets, and JavaScripts from an asset server.
   # config.action_controller.asset_host = 'http://assets.example.com'
@@ -68,6 +68,17 @@ Rails.application.configure do
   # config.active_job.queue_name_prefix = "nolotiro_org_#{Rails.env}"
 
   config.action_mailer.perform_caching = false
+  # Default configuration for smtp
+  config.action_mailer.smtp_settings = {
+    address: Rails.application.secrets.smtp_address,
+    port: Rails.application.secrets.smtp_port,
+    authentication: Rails.application.secrets.smtp_authentication,
+    user_name: Rails.application.secrets.smtp_username,
+    password: Rails.application.secrets.smtp_password,
+    domain: Rails.application.secrets.smtp_domain,
+    enable_starttls_auto: Rails.application.secrets.smtp_starttls_auto,
+    openssl_verify_mode: "none"
+  }
 
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to
