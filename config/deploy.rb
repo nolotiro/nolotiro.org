@@ -4,7 +4,7 @@ set :application, "nolotiro.org"
 set :repo_url, "https://github.com/alabs/nolotiro.org"
 set :deploy_to, "/home/ruby-data/app"
 
-append :linked_files, "config/application.yml"
+append :linked_files, "config/application.yml", "vendor/geolite/GeoLite2-City.mmdb"
 append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "public/system", "public/uploads", "public/legacy", "vendor/bundle"
 
 set :keep_releases, 5
