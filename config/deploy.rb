@@ -2,22 +2,17 @@
 
 set :application, "nolotiro.org"
 set :repo_url, "https://github.com/alabs/nolotiro.org"
+set :deploy_to, "/home/ruby-data/app"
 
-set :log_level, :debug
-set :pty, true
+append :linked_files, "config/application.yml"
+append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "public/system", "public/uploads", "public/legacy", "vendor/bundle"
 
-set :deploy_via, :remote_cache
-
-set :ssh_options, forward_agent: true
-
-set :linked_dirs, %w[log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system public/legacy]
-
-set :bundle_binstubs, nil
 set :keep_releases, 5
+set :puma_bind, "tcp://0.0.0.0:3000"
+set :puma_user, fetch(:user)
 
 # Logical flow for deploying an app
 before "deploy:publishing", "deploy:max_mind:extract"
-after  "deploy:finished", "deploy:restart"
 
 namespace :deploy do
   namespace :max_mind do
@@ -30,27 +25,6 @@ namespace :deploy do
           end
         end
       end
-    end
-  end
-
-  desc "Start application"
-  task :start do
-    on roles(:app) do
-      sudo "service nginx start"
-    end
-  end
-
-  desc "Stop application"
-  task :stop do
-    on roles(:app) do
-      sudo "service nginx stop"
-    end
-  end
-
-  desc "Restart application"
-  task :restart do
-    on roles(:app) do
-      sudo "service nginx restart"
     end
   end
 end

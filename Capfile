@@ -8,7 +8,11 @@ install_plugin Capistrano::SCM::Git
 
 require "capistrano/rbenv"
 require "capistrano/bundler"
-require "capistrano/rails"
+require "capistrano/rails/assets"
+require "capistrano/rails/migrations"
 require "capistrano/sidekiq"
 
-import "lib/capistrano/tasks/pending.rake"
+require "capistrano/puma"
+install_plugin Capistrano::Puma # Default puma tasks
+
+Dir.glob("lib/capistrano/tasks/*.rake").each { |r| import r }
