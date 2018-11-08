@@ -12,19 +12,19 @@ set :puma_bind, "tcp://0.0.0.0:3000"
 set :puma_user, fetch(:user)
 
 # Logical flow for deploying an app
-before "deploy:publishing", "deploy:max_mind:extract"
+# before "deploy:publishing", "deploy:max_mind:extract"
 
-namespace :deploy do
-  namespace :max_mind do
-    desc "Extract MaxMind DB for source compressed file"
-    task :extract do
-      on roles(:app) do
-        within release_path do
-          with rails_env: fetch(:rails_env) do
-            execute :rake, "max_mind:extract"
-          end
-        end
-      end
-    end
-  end
-end
+# namespace :deploy do
+#   namespace :max_mind do
+#     desc "Extract MaxMind DB for source compressed file"
+#     task :extract do
+#       on roles(:app) do
+#         within release_path do
+#           with rails_env: fetch(:rails_env) do
+#             execute :rake, "max_mind:extract"
+#           end
+#         end
+#       end
+#     end
+#   end
+# end
