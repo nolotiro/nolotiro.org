@@ -9,10 +9,10 @@ gem "rails-i18n", "~> 5.1"
 
 gem "jbuilder", "~> 2.6"
 gem "jquery-rails", "~> 4.3"
+gem "puma"
 gem "record_tag_helper", "~> 1.0"
 gem "rinku", "~> 2.0"
 gem "uglifier", "~> 4.1"
-
 
 group :development, :test do
   gem "byebug", "~> 10.0"
