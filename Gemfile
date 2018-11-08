@@ -9,11 +9,10 @@ gem "rails-i18n", "~> 5.1"
 
 gem "jbuilder", "~> 2.6"
 gem "jquery-rails", "~> 4.3"
+gem "puma"
 gem "record_tag_helper", "~> 1.0"
 gem "rinku", "~> 2.0"
 gem "uglifier", "~> 4.1"
-
-gem "dotenv-rails", "~> 2.1"
 
 group :development, :test do
   gem "byebug", "~> 10.0"
@@ -37,6 +36,7 @@ end
 
 group :production, :staging do
   gem "airbrake", "~> 7.2"
+  gem "figaro"
 
   # @todo Add a performance monitoring tool
 end
@@ -52,6 +52,7 @@ group :development do
   gem "capistrano-rails", "~> 1.3"
   gem "capistrano-rbenv", "~> 2.1"
   gem "capistrano-sidekiq", "1.0.0"
+  gem "capistrano3-puma"
 end
 
 gem "http_accept_language", "~> 2.1"

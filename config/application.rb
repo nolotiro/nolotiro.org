@@ -35,11 +35,6 @@ module NolotiroOrg
     config.autoload_paths += ["#{config.root}/lib"]
 
     #
-    # Don't use TLS for SMTP since we don't yet have a valid certificate
-    #
-    config.action_mailer.smtp_settings = { enable_starttls_auto: false }
-
-    #
     # Preferred schema format
     #
     config.active_record.schema_format = :sql
