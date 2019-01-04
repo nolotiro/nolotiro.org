@@ -1,7 +1,8 @@
 # frozen_string_literal: true
 
-class User < ActiveRecord::Base
-  prepend Baneable
+class User < ApplicationRecord
+  include Baneable
+  include Rankable
   include Statable
 
   counter_stats_for :created_at
@@ -10,37 +11,45 @@ class User < ActiveRecord::Base
 
   has_many :identities, inverse_of: :user, dependent: :destroy
 
-  has_many :ads, foreign_key: :user_owner, dependent: :destroy
-  has_many :comments, foreign_key: :user_owner, dependent: :destroy
+    has_many :ads, foreign_key: :user_owner, inverse_of: :user
+    has_many :comments, foreign_key: :user_owner, inverse_of: :user
 
-  has_many :friendships, dependent: :destroy
-  has_many :incoming_friendships, foreign_key: :friend_id,
-                                  class_name: 'Friendship',
-                                  dependent: :destroy
+    has_many :friendships
+    has_many :incoming_friendships, foreign_key: :friend_id,
+                                    class_name: "Friendship",
+                                    inverse_of: :friend
+
+    has_many :receipts, foreign_key: :receiver_id,
+                        inverse_of: :receiver
+
+    has_many :blockings, foreign_key: :blocker_id,
+                         inverse_of: :blocker
+
+    has_many :received_blockings, foreign_key: :blocked_id,
+                                  class_name: "Blocking",
+                                  inverse_of: :blocked
+
+    has_many :dismissals
+  end
+
   has_many :friends, through: :friendships
 
-  has_many :receipts, foreign_key: :receiver_id, dependent: :destroy
+  with_options dependent: :nullify do
+    has_many :started_conversations,
+             foreign_key: :originator_id,
+             class_name: "Conversation",
+             inverse_of: :originator
 
-  has_many :blockings, foreign_key: :blocker_id, dependent: :destroy
-  has_many :received_blockings, foreign_key: :blocked_id,
-                                class_name: 'Blocking',
-                                dependent: :destroy
-  has_many :dismissals, dependent: :destroy
+    has_many :received_conversations,
+             foreign_key: :recipient_id,
+             class_name: "Conversation",
+             inverse_of: :recipient
 
-  has_many :started_conversations,
-           foreign_key: :originator_id,
-           class_name: 'Conversation',
-           dependent: :nullify
-
-  has_many :received_conversations,
-           foreign_key: :recipient_id,
-           class_name: 'Conversation',
-           dependent: :nullify
-
-  has_many :sent_messages,
-           foreign_key: :sender_id,
-           class_name: 'Message',
-           dependent: :nullify
+    has_many :sent_messages,
+             foreign_key: :sender_id,
+             class_name: "Message",
+             inverse_of: :sender
+  end
 
   validates :username, presence: true
   validates :username,
@@ -62,23 +71,9 @@ class User < ActiveRecord::Base
 
   validates :password, length: { in: 5..128 }, allow_blank: true
 
-  # Include default devise modules. Others available are:
-  # :timeoutable and :omniauthable
   devise :confirmable, :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :lockable,
-         :omniauthable, omniauth_providers: [:facebook, :google]
-
-  scope :top_overall, -> { build_rank(Ad, 'top-overall') }
-  scope :top_last_week, -> { build_rank(Ad.last_week, 'top-last-week') }
-
-  scope :top_city_overall, ->(woeid) do
-    build_rank(Ad.by_woeid_code(woeid), "woeid/#{woeid}/top-overall")
-  end
-
-  scope :top_city_last_week, ->(woeid) do
-    build_rank(Ad.last_week.by_woeid_code(woeid),
-               "woeid/#{woeid}/top-last-week")
-  end
+         :omniauthable, omniauth_providers: %i[facebook google]
 
   scope :whitelisting, ->(user) do
     joined = joins <<-SQL.squish
@@ -97,7 +92,7 @@ class User < ActiveRecord::Base
   end
 
   def self.new_with_session(params, session)
-    oauth_session = session['devise.omniauth_data']
+    oauth_session = session["devise.omniauth_data"]
     return super unless oauth_session
 
     oauth = OmniAuth::AuthHash.new(oauth_session)
@@ -112,6 +107,10 @@ class User < ActiveRecord::Base
 
   def password_required?
     (new_record? || password || password_confirmation) && identities.none?
+  end
+
+  def active_for_authentication?
+    super && legitimate?
   end
 
   def admin?

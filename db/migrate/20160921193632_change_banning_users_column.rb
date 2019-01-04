@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class ChangeBanningUsersColumn < ActiveRecord::Migration
+class ChangeBanningUsersColumn < ActiveRecord::Migration[5.1]
   def up
     add_column :users, :banned_at, :datetime
 
@@ -10,7 +10,7 @@ class ChangeBanningUsersColumn < ActiveRecord::Migration
   end
 
   def down
-    execute 'UPDATE users SET locked = 1 WHERE banned_at IS NOT NULL'
+    execute "UPDATE users SET locked = 1 WHERE banned_at IS NOT NULL"
 
     remove_column :users, :banned_at
   end

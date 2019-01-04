@@ -1,0 +1,49 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://query.yahooapis.com/v1/public/yql?format=json&q=select%20*%20from%20geo.places%20where%20woeid%20=%20766273%20AND%20lang%20=%20%27ca%27
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (linux-gnu x86_64) ruby/2.5.0p0
+      Host:
+      - query.yahooapis.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Content-Type-Options:
+      - nosniff
+      Access-Control-Allow-Origin:
+      - "*"
+      Content-Type:
+      - application/json;charset=utf-8
+      Cache-Control:
+      - no-cache
+      Date:
+      - Sat, 17 Feb 2018 15:21:50 GMT
+      Age:
+      - '0'
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Via:
+      - http/1.1 a13.ue.gq1.yahoo.net (ApacheTrafficServer [cMsSf ])
+      Server:
+      - ATS
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJxdWVyeSI6eyJjb3VudCI6MSwiY3JlYXRlZCI6IjIwMTgtMDItMTdUMTU6MjE6NTBaIiwibGFuZyI6ImVuLVVTIiwicmVzdWx0cyI6eyJwbGFjZSI6eyJsYW5nIjoiY2EtIiwieG1sbnMiOiJodHRwOi8vd2hlcmUueWFob29hcGlzLmNvbS92MS9zY2hlbWEucm5nIiwieWFob28iOiJodHRwOi8vd3d3LnlhaG9vYXBpcy5jb20vdjEvYmFzZS5ybmciLCJ1cmkiOiJodHRwOi8vd2hlcmUueWFob29hcGlzLmNvbS92MS9wbGFjZS83NjYyNzMiLCJ3b2VpZCI6Ijc2NjI3MyIsInBsYWNlVHlwZU5hbWUiOnsiY29kZSI6IjciLCJjb250ZW50IjoiVG93biJ9LCJuYW1lIjoiTWFkcmlkIiwiY291bnRyeSI6eyJjb2RlIjoiRVMiLCJ0eXBlIjoiQ291bnRyeSIsIndvZWlkIjoiMjM0MjQ5NTAiLCJjb250ZW50IjoiRXNwYW55YSJ9LCJhZG1pbjEiOnsiY29kZSI6IiIsInR5cGUiOiJDb211bml0YXQgYXV0w7Jub21hIiwid29laWQiOiIxMjU3ODAyNCIsImNvbnRlbnQiOiJDb211bml0YXQgZGUgTWFkcmlkIn0sImFkbWluMiI6eyJjb2RlIjoiIiwidHlwZSI6IkNvbXRhdC9EaXN0cmljdGUiLCJ3b2VpZCI6IjEyNjAyMDkwIiwiY29udGVudCI6IlByb3bDrW5jaWEgZGUgTWFkcmlkIn0sImFkbWluMyI6bnVsbCwibG9jYWxpdHkxIjp7InR5cGUiOiJUb3duIiwid29laWQiOiI3NjYyNzMiLCJjb250ZW50IjoiTWFkcmlkIn0sImxvY2FsaXR5MiI6bnVsbCwicG9zdGFsIjpudWxsLCJjZW50cm9pZCI6eyJsYXRpdHVkZSI6IjQwLjQyMTQyOSIsImxvbmdpdHVkZSI6Ii0zLjY3MTYzIn0sImJvdW5kaW5nQm94Ijp7InNvdXRoV2VzdCI6eyJsYXRpdHVkZSI6IjQwLjMyNTkzOSIsImxvbmdpdHVkZSI6Ii0zLjc5ODg3In0sIm5vcnRoRWFzdCI6eyJsYXRpdHVkZSI6IjQwLjUyMDA4MSIsImxvbmdpdHVkZSI6Ii0zLjUzNDkifX0sImFyZWFSYW5rIjoiMSIsInBvcFJhbmsiOiIxIiwidGltZXpvbmUiOnsidHlwZSI6IlRpbWUgWm9uZSIsIndvZWlkIjoiNTYwNDM2NDQiLCJjb250ZW50IjoiRXVyb3BlL01hZHJpZCJ9fX19fQ==
+    http_version: 
+  recorded_at: Sat, 17 Feb 2018 15:21:51 GMT
+recorded_with: VCR 4.0.0

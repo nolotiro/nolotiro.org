@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
-class Receipt < ActiveRecord::Base
-  belongs_to :receiver, class_name: 'User'
-  belongs_to :message, foreign_key: :notification_id
+class Receipt < ApplicationRecord
+  belongs_to :receiver, class_name: "User", inverse_of: :receipts
+  belongs_to :message, foreign_key: :notification_id, inverse_of: :receipts
 
   scope :recipient, ->(recipient) { where(receiver_id: recipient.id) }
 
@@ -12,6 +12,7 @@ class Receipt < ActiveRecord::Base
   scope :untrashed, -> { where(trashed: false) }
   scope :unread, -> { untrashed.where(is_read: false) }
 
+  # rubocop:disable Rails/SkipsModelValidations
   def self.mark_as_read(user)
     recipient(user).update_all(is_read: true)
   end
@@ -19,4 +20,5 @@ class Receipt < ActiveRecord::Base
   def self.move_to_trash(user)
     recipient(user).update_all(trashed: true)
   end
+  # rubocop:enable Rails/SkipsModelValidations
 end

@@ -1,10 +1,3 @@
---
--- PostgreSQL database dump
---
-
--- Dumped from database version 9.6.1
--- Dumped by pg_dump version 9.6.1
-
 SET statement_timeout = 0;
 SET lock_timeout = 0;
 SET idle_in_transaction_session_timeout = 0;
@@ -73,18 +66,18 @@ CREATE TABLE ads (
     user_owner bigint NOT NULL,
     type bigint NOT NULL,
     woeid_code bigint NOT NULL,
-    created_at timestamp with time zone NOT NULL,
+    created_at timestamp without time zone NOT NULL,
     ip character varying(15),
     photo character varying(100),
     status bigint,
     comments_enabled integer,
-    updated_at timestamp with time zone,
+    updated_at timestamp without time zone,
     image_file_name character varying(255),
     image_content_type character varying(255),
     image_file_size bigint,
-    image_updated_at timestamp with time zone,
+    image_updated_at timestamp without time zone,
     readed_count bigint DEFAULT 1,
-    published_at timestamp with time zone NOT NULL
+    published_at timestamp without time zone NOT NULL
 );
 
 
@@ -114,10 +107,10 @@ ALTER SEQUENCE ads_id_seq OWNED BY ads.id;
 CREATE TABLE announcements (
     id bigint NOT NULL,
     message text,
-    starts_at timestamp with time zone,
-    ends_at timestamp with time zone,
-    created_at timestamp with time zone NOT NULL,
-    updated_at timestamp with time zone NOT NULL,
+    starts_at timestamp without time zone,
+    ends_at timestamp without time zone,
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL,
     locale character varying(255)
 );
 
@@ -139,6 +132,18 @@ CREATE SEQUENCE announcements_id_seq
 --
 
 ALTER SEQUENCE announcements_id_seq OWNED BY announcements.id;
+
+
+--
+-- Name: ar_internal_metadata; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE ar_internal_metadata (
+    key character varying NOT NULL,
+    value character varying,
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL
+);
 
 
 --
@@ -179,10 +184,10 @@ CREATE TABLE comments (
     id bigint NOT NULL,
     ads_id bigint NOT NULL,
     body text NOT NULL,
-    created_at timestamp with time zone NOT NULL,
+    created_at timestamp without time zone NOT NULL,
     user_owner bigint NOT NULL,
     ip character varying(15) NOT NULL,
-    updated_at timestamp with time zone
+    updated_at timestamp without time zone
 );
 
 
@@ -212,8 +217,8 @@ ALTER SEQUENCE comments_id_seq OWNED BY comments.id;
 CREATE TABLE conversations (
     id bigint NOT NULL,
     subject character varying(255) DEFAULT ''::character varying,
-    created_at timestamp with time zone NOT NULL,
-    updated_at timestamp with time zone NOT NULL,
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL,
     originator_id bigint,
     recipient_id bigint
 );
@@ -243,7 +248,7 @@ ALTER SEQUENCE conversations_id_seq OWNED BY conversations.id;
 --
 
 CREATE TABLE countries (
-    id integer NOT NULL,
+    id bigint NOT NULL,
     iso character varying(2) NOT NULL,
     name character varying(173) NOT NULL,
     geoname_id integer
@@ -304,9 +309,9 @@ ALTER SEQUENCE dismissals_id_seq OWNED BY dismissals.id;
 --
 
 CREATE TABLE friendships (
+    id bigint NOT NULL,
     user_id bigint NOT NULL,
-    friend_id bigint NOT NULL,
-    id bigint NOT NULL
+    friend_id bigint NOT NULL
 );
 
 
@@ -370,8 +375,8 @@ CREATE TABLE messages (
     subject character varying(255) DEFAULT ''::character varying,
     sender_id bigint,
     conversation_id bigint,
-    updated_at timestamp with time zone NOT NULL,
-    created_at timestamp with time zone NOT NULL
+    updated_at timestamp without time zone NOT NULL,
+    created_at timestamp without time zone NOT NULL
 );
 
 
@@ -406,8 +411,8 @@ CREATE TABLE receipts (
     trashed boolean DEFAULT false,
     deleted boolean DEFAULT false,
     mailbox_type character varying(25),
-    created_at timestamp with time zone NOT NULL,
-    updated_at timestamp with time zone NOT NULL,
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL,
     delivery_method character varying(255),
     message_id character varying(255)
 );
@@ -433,11 +438,43 @@ ALTER SEQUENCE receipts_id_seq OWNED BY receipts.id;
 
 
 --
+-- Name: reports; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE reports (
+    id bigint NOT NULL,
+    reported_id integer,
+    reporter_id integer,
+    dismissed_at timestamp without time zone,
+    created_at timestamp without time zone NOT NULL
+);
+
+
+--
+-- Name: reports_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE reports_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: reports_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE reports_id_seq OWNED BY reports.id;
+
+
+--
 -- Name: schema_migrations; Type: TABLE; Schema: public; Owner: -
 --
 
 CREATE TABLE schema_migrations (
-    version character varying(255) NOT NULL
+    version character varying NOT NULL
 );
 
 
@@ -446,9 +483,9 @@ CREATE TABLE schema_migrations (
 --
 
 CREATE TABLE states (
-    id integer NOT NULL,
+    id bigint NOT NULL,
     name character varying(173) NOT NULL,
-    country_id integer NOT NULL,
+    country_id bigint NOT NULL,
     geoname_id integer
 );
 
@@ -477,10 +514,10 @@ ALTER SEQUENCE states_id_seq OWNED BY states.id;
 --
 
 CREATE TABLE towns (
-    id integer NOT NULL,
+    id bigint NOT NULL,
     name character varying(173) NOT NULL,
-    state_id integer,
-    country_id integer NOT NULL,
+    state_id bigint,
+    country_id bigint NOT NULL,
     geoname_id integer
 );
 
@@ -519,22 +556,22 @@ CREATE TABLE users (
     woeid bigint,
     encrypted_password character varying(255) DEFAULT ''::character varying NOT NULL,
     reset_password_token character varying(255),
-    reset_password_sent_at timestamp with time zone,
-    remember_created_at timestamp with time zone,
-    sign_in_count bigint DEFAULT '0'::bigint NOT NULL,
-    current_sign_in_at timestamp with time zone,
-    last_sign_in_at timestamp with time zone,
+    reset_password_sent_at timestamp without time zone,
+    remember_created_at timestamp without time zone,
+    sign_in_count bigint DEFAULT 0 NOT NULL,
+    current_sign_in_at timestamp without time zone,
+    last_sign_in_at timestamp without time zone,
     current_sign_in_ip character varying(255),
     last_sign_in_ip character varying(255),
-    ads_count bigint DEFAULT '0'::bigint,
+    ads_count bigint DEFAULT 0,
     confirmation_token character varying(255),
-    confirmed_at timestamp with time zone,
-    confirmation_sent_at timestamp with time zone,
+    confirmed_at timestamp without time zone,
+    confirmation_sent_at timestamp without time zone,
     failed_attempts bigint,
     unlock_token character varying(255),
-    locked_at timestamp with time zone,
+    locked_at timestamp without time zone,
     unconfirmed_email character varying(255),
-    banned_at timestamp with time zone
+    banned_at timestamp without time zone
 );
 
 
@@ -635,6 +672,13 @@ ALTER TABLE ONLY receipts ALTER COLUMN id SET DEFAULT nextval('receipts_id_seq':
 
 
 --
+-- Name: reports id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY reports ALTER COLUMN id SET DEFAULT nextval('reports_id_seq'::regclass);
+
+
+--
 -- Name: states id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -656,6 +700,54 @@ ALTER TABLE ONLY users ALTER COLUMN id SET DEFAULT nextval('users_id_seq'::regcl
 
 
 --
+-- Name: ads ads_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY ads
+    ADD CONSTRAINT ads_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: announcements announcements_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY announcements
+    ADD CONSTRAINT announcements_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: ar_internal_metadata ar_internal_metadata_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY ar_internal_metadata
+    ADD CONSTRAINT ar_internal_metadata_pkey PRIMARY KEY (key);
+
+
+--
+-- Name: blockings blockings_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY blockings
+    ADD CONSTRAINT blockings_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: comments comments_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY comments
+    ADD CONSTRAINT comments_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: conversations conversations_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY conversations
+    ADD CONSTRAINT conversations_pkey PRIMARY KEY (id);
+
+
+--
 -- Name: countries countries_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -664,91 +756,59 @@ ALTER TABLE ONLY countries
 
 
 --
--- Name: ads idx_16388_primary; Type: CONSTRAINT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY ads
-    ADD CONSTRAINT idx_16388_primary PRIMARY KEY (id);
-
-
---
--- Name: announcements idx_16398_primary; Type: CONSTRAINT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY announcements
-    ADD CONSTRAINT idx_16398_primary PRIMARY KEY (id);
-
-
---
--- Name: blockings idx_16407_primary; Type: CONSTRAINT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY blockings
-    ADD CONSTRAINT idx_16407_primary PRIMARY KEY (id);
-
-
---
--- Name: comments idx_16413_primary; Type: CONSTRAINT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY comments
-    ADD CONSTRAINT idx_16413_primary PRIMARY KEY (id);
-
-
---
--- Name: conversations idx_16422_primary; Type: CONSTRAINT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY conversations
-    ADD CONSTRAINT idx_16422_primary PRIMARY KEY (id);
-
-
---
--- Name: dismissals idx_16429_primary; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: dismissals dismissals_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY dismissals
-    ADD CONSTRAINT idx_16429_primary PRIMARY KEY (id);
+    ADD CONSTRAINT dismissals_pkey PRIMARY KEY (id);
 
 
 --
--- Name: friendships idx_16435_primary; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: friendships friendships_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY friendships
-    ADD CONSTRAINT idx_16435_primary PRIMARY KEY (id);
+    ADD CONSTRAINT friendships_pkey PRIMARY KEY (id);
 
 
 --
--- Name: identities idx_16441_primary; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: identities identities_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY identities
-    ADD CONSTRAINT idx_16441_primary PRIMARY KEY (id);
+    ADD CONSTRAINT identities_pkey PRIMARY KEY (id);
 
 
 --
--- Name: messages idx_16450_primary; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: messages messages_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY messages
-    ADD CONSTRAINT idx_16450_primary PRIMARY KEY (id);
+    ADD CONSTRAINT messages_pkey PRIMARY KEY (id);
 
 
 --
--- Name: receipts idx_16460_primary; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: receipts receipts_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY receipts
-    ADD CONSTRAINT idx_16460_primary PRIMARY KEY (id);
+    ADD CONSTRAINT receipts_pkey PRIMARY KEY (id);
 
 
 --
--- Name: users idx_16475_primary; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: reports reports_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
-ALTER TABLE ONLY users
-    ADD CONSTRAINT idx_16475_primary PRIMARY KEY (id);
+ALTER TABLE ONLY reports
+    ADD CONSTRAINT reports_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: schema_migrations schema_migrations_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY schema_migrations
+    ADD CONSTRAINT schema_migrations_pkey PRIMARY KEY (version);
 
 
 --
@@ -765,6 +825,14 @@ ALTER TABLE ONLY states
 
 ALTER TABLE ONLY towns
     ADD CONSTRAINT towns_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: users users_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY users
+    ADD CONSTRAINT users_pkey PRIMARY KEY (id);
 
 
 --
@@ -887,13 +955,6 @@ CREATE INDEX idx_16460_index_receipts_on_receiver_id ON receipts USING btree (re
 
 
 --
--- Name: idx_16470_unique_schema_migrations; Type: INDEX; Schema: public; Owner: -
---
-
-CREATE UNIQUE INDEX idx_16470_unique_schema_migrations ON schema_migrations USING btree (version);
-
-
---
 -- Name: idx_16475_index_users_on_confirmation_token; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -926,6 +987,20 @@ CREATE UNIQUE INDEX idx_16475_index_users_on_username ON users USING btree (user
 --
 
 CREATE INDEX index_countries_on_name_trigram ON countries USING gin (name gin_trgm_ops);
+
+
+--
+-- Name: index_reports_on_reported_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_reports_on_reported_id ON reports USING btree (reported_id);
+
+
+--
+-- Name: index_reports_on_reporter_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_reports_on_reporter_id ON reports USING btree (reporter_id);
 
 
 --
@@ -996,6 +1071,14 @@ ALTER TABLE ONLY identities
 
 
 --
+-- Name: reports fk_rails_6de8c16dd2; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY reports
+    ADD CONSTRAINT fk_rails_6de8c16dd2 FOREIGN KEY (reported_id) REFERENCES users(id);
+
+
+--
 -- Name: blockings fk_rails_8b7920d779; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -1025,6 +1108,14 @@ ALTER TABLE ONLY dismissals
 
 ALTER TABLE ONLY ads
     ADD CONSTRAINT fk_rails_9ce39f9139 FOREIGN KEY (user_owner) REFERENCES users(id) ON UPDATE RESTRICT ON DELETE RESTRICT;
+
+
+--
+-- Name: reports fk_rails_c4cb6e6463; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY reports
+    ADD CONSTRAINT fk_rails_c4cb6e6463 FOREIGN KEY (reporter_id) REFERENCES users(id);
 
 
 --
@@ -1073,15 +1164,8 @@ ALTER TABLE ONLY receipts
 
 SET search_path TO "$user", public;
 
-INSERT INTO schema_migrations (version) VALUES
-('20160803173909'),
-('20160803200731'),
-('20160804192403'),
-('20160804225822'),
-('20160807150238'),
-('20160807150239'),
-('20160816012524'),
-('20160816164210'),
+INSERT INTO "schema_migrations" (version) VALUES
+('20160816164211'),
 ('20160825201238'),
 ('20160902112213'),
 ('20160904155629'),
@@ -1096,7 +1180,9 @@ INSERT INTO schema_migrations (version) VALUES
 ('20161019233040'),
 ('20161117184138'),
 ('20161117184157'),
-('20161122140853');
+('20161122140853'),
+('20170905120853'),
+('20170909120825');
 
 
 INSERT INTO schema_migrations (version) VALUES ('20161127103220');

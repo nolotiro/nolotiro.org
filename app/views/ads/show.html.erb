@@ -1,7 +1,8 @@
 <%= content_for :title, @ad.meta_title %>
 
 <%= content_for :meta_description do %>
-  <%= t('nlt.meta_description_ad', title: @ad.filtered_title,
+  <%= t('nlt.meta_description_ad', type: @ad.type_string,
+                                   title: @ad.filtered_title,
                                    woeid: @ad.woeid_name,
                                    body: @ad.filtered_body) %>
 <% end %>
@@ -43,36 +44,45 @@
 
         <div class="ad_status_line">
           <% if @ad.give? %>
-            <span class="ad_status <%= @ad.status %>"><%= @ad.status_string %></span>
+            <span class="ad_status <%= @ad.current_status %>"><%= @ad.status_string %></span>
           <% end %>
 
-          <%= linked_published_ago_by(@ad.published_at, @ad.user) %>
+          <%= linked_published_ago_by(@ad.published_at, @author) %>
         </div>
 
         <div class="body-wrapper">
           <%= simple_format(@ad.filtered_body) %>
         </div>
 
-        <%= render "stats", comments_count: @comments.size,
-                            readed_count: @ad.readed_count %>
+        <div class="ad_meta_info">
+          <%= render "stats", comments_count: @comments.size,
+                              readed_count: @ad.readed_count %>
+        </div>
 
-        <% if (@ad.want? || @ad.available?) &&
-              (current_user.nil? || current_user.whitelisting?(@ad.user)) %>
+        <% if (@ad.want? || @ad.currently_available?) &&
+              (current_user.nil? || current_user.whitelisting?(@author)) %>
           <div class="ad_contact">
-            <% if @ad.available? %>
+            <% if @ad.currently_available? %>
               <%= t('nlt.are_you_interested') %>
-              <% title = t('nlt.send_a_message', user: @ad.user.username) %>
+              <% title = t('nlt.send_a_message', user: @author.username) %>
             <% else %>
               <%= t('nlt.do_you_have_it') %>
-              <% title = t('nlt.give_it_to', user: @ad.user.username) %>
+              <% title = t('nlt.give_it_to', user: @author.username) %>
             <% end %>
 
             <%= link_to new_conversation_path(recipient_id: @ad.user_owner,
-                                              subject: @ad.slug),
-                        class: "world_link" do %>
-              <%= "+ #{title}" %>
-              <%= image_tag "email_send.png", alt: title %>
+                                              subject: @ad.slug) do %>
+              <i class="glyphicon glyphicon-envelope"></i>
+              <%= title %>
             <% end %>
+          </div>
+        <% end %>
+
+        <% if current_user %>
+          <div class="ad_report">
+            <span><%= t('nlt.is_this_scam') %></span>
+
+            <%= render 'application/report', user: @author, title: t('nlt.report') %>
           </div>
         <% end %>
 

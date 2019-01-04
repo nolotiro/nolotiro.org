@@ -12,7 +12,7 @@ class Contact
 
   validates :email, format: { with: /@/ }
   validates :message, length: { maximum: 2000 }
-  validates :message, length: { minimum: 50 }
+  validates :message, length: { minimum: 40 }
 
   def initialize(attributes = {})
     attributes.each do |name, value|

@@ -1,0 +1,9 @@
+<%= render "filter_status" %>
+
+<% if ads.any? %>
+  <%= render 'ads/list_with_adsense', ads: ads %>
+
+  <%= paginate ads, window: 1 %>
+<% else %>
+  <div class="empty"> <%= t("nlt.no_results.on_user") %> </div>
+<% end %>

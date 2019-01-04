@@ -59,90 +59,44 @@ a
 #rememberme-element
   display: inline
 
-.user_login_box
+.link-boxes
   position: relative
-  font-size: 1em
-  background-color: #FFFFCC
   border: 1px solid $gray-separator
   border-top: none
   float: right
-  line-height: 24px
-  right: 100px
   z-index: 200
 
-  a
-    > span
+  .box-entry
+    > span, button
+      font-size: 1em
+      background-color: $light-orange
+      line-height: 24px
+      border: none
       border-right: 1px solid $gray-separator
+      color: #00ACCF
       display: block
       float: left
       padding: 0 10px
 
-    &:last-child > span
+    &:last-child > span, &:last-child > button
       border-right: none
 
-    /* I can't find a better way to vertically-center the envelope... */
-    img
-      margin-bottom: 4px
-
-$langs: <%= I18n.available_locales.join(" ") %>
-
-#select_language_box
-  position: absolute
-  top: 0
-  float: right
-  right: 0
-  border: 1px solid white
-  display: inline-block
-  height: 24px
-  overflow: hidden
-  vertical-align: top
-  width: 92px
-  padding-top: 24px
-  z-index: 400
-
-  &:hover
-    border: 1px solid $gray-separator
-    background-color: #fff
-    height: auto
-
     .lang
+      padding-left: 4px
+      padding-right: 0
+      line-height: 24px
+      height: 24px
+      width: 100%
+      text-decoration: none !important
+
+    &:hover .dropdown-menu
       display: block
 
-  .lang
-    padding-left: 4px
-    padding-right: 0
-    line-height: 24px
-    height: 24px
-    display: none
-    width: 100%
-    text-decoration: none !important
-
-    &:hover
-      background-color: #999 !important
-      text-decoration: none !important
-      color: #fff !important
-
-  img
-    text-decoration: none !important
-    border: 0
-    right: 2px
-    clear: left
-    vertical-align: baseline
-
-  .lang-active
-    display: block
-    position: absolute
-    top: 0
-
-  @each $l in $langs
-    .flag-#{$l}
-      vertical-align: center
-      background-repeat: no-repeat
-      background-position: 0 7px, center
-      background-image: image-url("flags/#{$l}.gif")
-
-      span
-        margin-left: 15px
+    .dropdown-menu
+      left: unset
+      min-width: unset
+      padding: 5px 10px
+      right: 0
 
 form.searchbox
   display: inline-block
@@ -160,6 +114,12 @@ form.searchbox
 .user_profile h4
   font-size: 14px
   padding: 5px
+
+.profile-actions
+  @extend .list-group
+
+  float: right
+  margin-bottom: 0
 
 .ad_create_tab
   @include clearfix
@@ -211,7 +171,6 @@ form.searchbox
 
     a
       border-right: 1px solid $gray-separator
-      font-size: 10px
       line-height: $action-height / 2
       margin: $action-height / 4 0
       padding: 0 10px
@@ -228,8 +187,11 @@ form.searchbox
       line-height: $action-height / 3
       width: 50%
 
-    a
-      font-size: 9px
+.ad_report
+  margin-top: 15px
+
+  a
+    color: #ff6f69
 
 .ad_actions
   display: block
@@ -241,6 +203,7 @@ form.searchbox
 
     a
       display: block
+      font-size: 10px
       width: 100%
 
 .ad_status
@@ -253,6 +216,11 @@ form.searchbox
   border: 0
   margin-right: 4px
 
+.circle
+  border-radius: 5px
+  height: 10px
+  width: 10px
+
 .available
   background-color: #19AF13
 
@@ -261,6 +229,9 @@ form.searchbox
 
 .delivered
   background-color: red
+
+.expired
+  background-color: gray
 
 .ad_list_image
   float: right
@@ -281,11 +252,6 @@ form.searchbox
 
 /**
  * Ads.
-
-.profile-info
-  font-size: 1.3em
-  font-weight: bold
-  margin-bottom: 6px
 
 .ad_date
   color: #666
@@ -645,21 +611,32 @@ form.searchbox
 
     background-color: $blue-searchbox
 
-.world_link
-  display: inline-block
-  font-weight: bold
-  margin-top: 8px
-
 .default_header_section
+  @include clearfix
+
   background-color: $blue-searchbox
   border: 1px solid $gray-separator
   padding: 15px
 
+  h1
+    margin-bottom: 1em
+
   h2
+    margin-bottom: 1.5em
+
+  h4
+    margin-bottom: .9em
+
+  h2, h4
     font-size: 1em
     font-weight: bold
-    margin-bottom: 1.5em
     padding-left: 0
+
+.inner_header_section
+  @extend .default_header_section
+
+  border-right: none
+  border-left: none
 
 %content_section
   border: 1px solid $gray-separator
@@ -668,6 +645,12 @@ form.searchbox
 .default_content_section
   @extend %content_section
 
+  padding: 15px
+
+.inner_content_section
+  @extend %content_section
+
+  border: none
   padding: 15px
 
 .unpadded_content_section
@@ -805,7 +788,7 @@ form.searchbox
   .site-name
     width: 50%
 
-  .user_login_box
+  .link-boxes
     float: left !important
     right: 0 !important
 

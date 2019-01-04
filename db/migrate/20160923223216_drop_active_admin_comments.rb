@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class DropActiveAdminComments < ActiveRecord::Migration
+class DropActiveAdminComments < ActiveRecord::Migration[5.1]
   def up
     drop_table :active_admin_comments
   end
@@ -17,7 +17,7 @@ class DropActiveAdminComments < ActiveRecord::Migration
       t.datetime :updated_at
     end
 
-    add_index :active_admin_comments, [:author_type, :author_id]
-    add_index :active_admin_comments, [:resource_type, :resource_id]
+    add_index :active_admin_comments, %i[author_type author_id]
+    add_index :active_admin_comments, %i[resource_type resource_id]
   end
 end

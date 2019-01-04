@@ -2,9 +2,14 @@
 
 if Rails.env.production? || Rails.env.staging?
   Airbrake.configure do |config|
-    config.api_key = ENV['AIRBRAKE_APIKEY']
-    config.host    = ENV['AIRBRAKE_HOST']
-    config.port    = ENV['AIRBRAKE_PORT'].to_i
-    config.secure  = config.port == 443
+    config.project_key = ENV["AIRBRAKE_APIKEY"]
+    config.project_id = 1
+    config.host = ENV["AIRBRAKE_HOST"]
+  end
+
+  Airbrake.add_filter do |notice|
+    allowed_errors = %w[ActiveRecord::RecordNotFound ActionController::RoutingError]
+
+    notice.ignore! if notice[:errors].any? { |error| allowed_errors.include?(error[:type]) }
   end
 end

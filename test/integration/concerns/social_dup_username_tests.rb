@@ -4,8 +4,8 @@ module SocialDupUsernameTests
   def setup
     super
 
-    create(:user, username: 'pepe', email: 'pepe@example.org')
-    login_via(@provider, name: 'pepe', email: 'pepe@example.com')
+    create(:user, username: "pepe", email: "pepe@example.org")
+    login_via(@provider, name: "pepe", email: "pepe@example.com")
   end
 
   def test_redirects_to_a_form
@@ -18,9 +18,9 @@ module SocialDupUsernameTests
   end
 
   def test_finalizes_registration_properly
-    fill_in 'Elige un nombre de usuario', with: 'pepe_nolotiro'
-    click_button 'Regístrate'
+    fill_in "Elige un nombre de usuario", with: "pepe_nolotiro"
+    click_button "Regístrate"
 
-    assert_text 'hola, pepe_nolotiro'
+    assert_link "pepe_nolotiro"
   end
 end

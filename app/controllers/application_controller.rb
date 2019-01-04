@@ -13,7 +13,7 @@ class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
 
   rescue_from Pundit::NotAuthorizedError do |_exception|
-    redirect_to request.referer || root_path, alert: t('nlt.permission_denied')
+    redirect_to request.referer || root_path, alert: t("nlt.permission_denied")
   end
 
   def access_denied(exception)
@@ -22,7 +22,7 @@ class ApplicationController < ActionController::Base
 
   def signed_in_root_path(resource)
     woeid = resource.woeid
-    return ads_woeid_path(woeid, type: 'give') if woeid
+    return ads_woeid_path(woeid, type: "give") if woeid
 
     location_ask_path
   end
@@ -31,18 +31,18 @@ class ApplicationController < ActionController::Base
     authenticate_user!
     return if current_user.admin?
 
-    flash[:alert] = t('nlt.permission_denied')
+    flash[:alert] = t("nlt.permission_denied")
     redirect_to root_path
   end
 
   def type_scope
-    %w(give want).include?(params[:type]) ? params[:type] : nil
+    %w[give want].include?(params[:type]) ? params[:type] : nil
   end
 
   def status_scope
-    return unless %w(available booked delivered).include?(params[:status])
+    return unless %w[available booked delivered expired].include?(params[:status])
 
-    params[:status]
+    "currently_#{params[:status]}"
   end
 
   def location_suggest
@@ -67,7 +67,7 @@ class ApplicationController < ActionController::Base
 
   def current_woeid
     @current_woeid ||=
-      if request.path =~ %r{/listall/} || params[:controller] == 'users'
+      if request.path =~ %r{/listall/} || params[:controller] == "users"
         nil
       else
         params[:id].presence || user_woeid
@@ -79,9 +79,14 @@ class ApplicationController < ActionController::Base
   protected
 
   def configure_permitted_parameters
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:username, :email, :password, :password_confirmation, :remember_me])
-    devise_parameter_sanitizer.permit(:sign_in, keys: [:username, :email, :password, :remember_me])
-    devise_parameter_sanitizer.permit(:account_update, keys: [:username])
+    devise_parameter_sanitizer.permit(:sign_up,
+                                      keys: %i[username email password password_confirmation remember_me])
+
+    devise_parameter_sanitizer.permit(:sign_in,
+                                      keys: %i[username email password remember_me])
+
+    devise_parameter_sanitizer.permit(:account_update,
+                                      keys: [:username])
   end
 
   private

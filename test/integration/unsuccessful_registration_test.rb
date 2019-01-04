@@ -1,15 +1,15 @@
 # frozen_string_literal: true
 
-require 'test_helper'
+require "test_helper"
 
 class UnsuccessfulRegistrationTest < ActionDispatch::IntegrationTest
   before do
     visit root_path
-    click_link 'nuevo usuario'
-    click_button 'Regístrate'
+    click_link "nuevo usuario"
+    click_button "Regístrate"
   end
 
-  it 'shows errors' do
-    assert_text 'Ocurrieron 3 errores'
+  it "shows errors" do
+    assert_text "Ocurrieron 3 errores"
   end
 end

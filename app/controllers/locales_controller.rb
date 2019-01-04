@@ -27,9 +27,9 @@ class LocalesController < ApplicationController
   def refered_path
     return "/#{locale}" if referer_path.empty?
 
-    segments = referer_path.split('/')
+    segments = referer_path.split("/")
     segments[1] = locale if valid_locale?(segments[1])
-    segments.join('/')
+    segments.join("/")
   end
 
   def locale

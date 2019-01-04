@@ -1,0 +1,141 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://query.yahooapis.com/v1/public/yql?format=json&q=select%20*%20from%20geo.places%20where%20woeid%20=%20766273%20AND%20lang%20=%20%27es%27
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (linux-gnu x86_64) ruby/2.5.0p0
+      Host:
+      - query.yahooapis.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Content-Type-Options:
+      - nosniff
+      Access-Control-Allow-Origin:
+      - "*"
+      Content-Type:
+      - application/json;charset=utf-8
+      Cache-Control:
+      - no-cache
+      Date:
+      - Sat, 17 Feb 2018 15:21:13 GMT
+      Age:
+      - '0'
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Via:
+      - http/1.1 a28.ue.gq1.yahoo.net (ApacheTrafficServer [cMsSf ])
+      Server:
+      - ATS
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJxdWVyeSI6eyJjb3VudCI6MSwiY3JlYXRlZCI6IjIwMTgtMDItMTdUMTU6MjE6MTNaIiwibGFuZyI6ImVuLVVTIiwicmVzdWx0cyI6eyJwbGFjZSI6eyJsYW5nIjoiZXMtIiwieG1sbnMiOiJodHRwOi8vd2hlcmUueWFob29hcGlzLmNvbS92MS9zY2hlbWEucm5nIiwieWFob28iOiJodHRwOi8vd3d3LnlhaG9vYXBpcy5jb20vdjEvYmFzZS5ybmciLCJ1cmkiOiJodHRwOi8vd2hlcmUueWFob29hcGlzLmNvbS92MS9wbGFjZS83NjYyNzMiLCJ3b2VpZCI6Ijc2NjI3MyIsInBsYWNlVHlwZU5hbWUiOnsiY29kZSI6IjciLCJjb250ZW50IjoiUHVlYmxvIn0sIm5hbWUiOiJNYWRyaWQiLCJjb3VudHJ5Ijp7ImNvZGUiOiJFUyIsInR5cGUiOiJQYcOtcyIsIndvZWlkIjoiMjM0MjQ5NTAiLCJjb250ZW50IjoiRXNwYcOxYSJ9LCJhZG1pbjEiOnsiY29kZSI6IiIsInR5cGUiOiJDb211bmlkYWQgQXV0w7Nub21hIiwid29laWQiOiIxMjU3ODAyNCIsImNvbnRlbnQiOiJNYWRyaWQifSwiYWRtaW4yIjp7ImNvZGUiOiIiLCJ0eXBlIjoiQ29uZGFkbyIsIndvZWlkIjoiMTI2MDIwOTAiLCJjb250ZW50IjoiTWFkcmlkIn0sImFkbWluMyI6bnVsbCwibG9jYWxpdHkxIjp7InR5cGUiOiJQdWVibG8iLCJ3b2VpZCI6Ijc2NjI3MyIsImNvbnRlbnQiOiJNYWRyaWQifSwibG9jYWxpdHkyIjpudWxsLCJwb3N0YWwiOm51bGwsImNlbnRyb2lkIjp7ImxhdGl0dWRlIjoiNDAuNDIxNDI5IiwibG9uZ2l0dWRlIjoiLTMuNjcxNjMifSwiYm91bmRpbmdCb3giOnsic291dGhXZXN0Ijp7ImxhdGl0dWRlIjoiNDAuMzI1OTM5IiwibG9uZ2l0dWRlIjoiLTMuNzk4ODcifSwibm9ydGhFYXN0Ijp7ImxhdGl0dWRlIjoiNDAuNTIwMDgxIiwibG9uZ2l0dWRlIjoiLTMuNTM0OSJ9fSwiYXJlYVJhbmsiOiIxIiwicG9wUmFuayI6IjEiLCJ0aW1lem9uZSI6eyJ0eXBlIjoiVGltZSBab25lIiwid29laWQiOiI1NjA0MzY0NCIsImNvbnRlbnQiOiJFdXJvcGUvTWFkcmlkIn19fX19
+    http_version: 
+  recorded_at: Sat, 17 Feb 2018 15:21:13 GMT
+- request:
+    method: get
+    uri: http://query.yahooapis.com/v1/public/yql?format=json&q=select%20*%20from%20geo.places%20where%20woeid%20=%20753692%20AND%20lang%20=%20%27es%27
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (linux-gnu x86_64) ruby/2.5.0p0
+      Host:
+      - query.yahooapis.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Content-Type-Options:
+      - nosniff
+      Access-Control-Allow-Origin:
+      - "*"
+      Content-Type:
+      - application/json;charset=utf-8
+      Cache-Control:
+      - no-cache
+      Date:
+      - Sat, 17 Feb 2018 15:21:13 GMT
+      Age:
+      - '0'
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Via:
+      - http/1.1 a74.ue.gq1.yahoo.net (ApacheTrafficServer [cMsSf ])
+      Server:
+      - ATS
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJxdWVyeSI6eyJjb3VudCI6MSwiY3JlYXRlZCI6IjIwMTgtMDItMTdUMTU6MjE6MTNaIiwibGFuZyI6ImVuLVVTIiwicmVzdWx0cyI6eyJwbGFjZSI6eyJsYW5nIjoiZXMtIiwieG1sbnMiOiJodHRwOi8vd2hlcmUueWFob29hcGlzLmNvbS92MS9zY2hlbWEucm5nIiwieWFob28iOiJodHRwOi8vd3d3LnlhaG9vYXBpcy5jb20vdjEvYmFzZS5ybmciLCJ1cmkiOiJodHRwOi8vd2hlcmUueWFob29hcGlzLmNvbS92MS9wbGFjZS83NTM2OTIiLCJ3b2VpZCI6Ijc1MzY5MiIsInBsYWNlVHlwZU5hbWUiOnsiY29kZSI6IjciLCJjb250ZW50IjoiUHVlYmxvIn0sIm5hbWUiOiJCYXJjZWxvbmEiLCJjb3VudHJ5Ijp7ImNvZGUiOiJFUyIsInR5cGUiOiJQYcOtcyIsIndvZWlkIjoiMjM0MjQ5NTAiLCJjb250ZW50IjoiRXNwYcOxYSJ9LCJhZG1pbjEiOnsiY29kZSI6IiIsInR5cGUiOiJDb211bmlkYWQgQXV0w7Nub21hIiwid29laWQiOiIxMjU3ODAzNCIsImNvbnRlbnQiOiJDYXRhbHXDsWEifSwiYWRtaW4yIjp7ImNvZGUiOiIiLCJ0eXBlIjoiQ29uZGFkbyIsIndvZWlkIjoiMTI2MDIxMjQiLCJjb250ZW50IjoiQmFyY2Vsb25hIn0sImFkbWluMyI6bnVsbCwibG9jYWxpdHkxIjp7InR5cGUiOiJQdWVibG8iLCJ3b2VpZCI6Ijc1MzY5MiIsImNvbnRlbnQiOiJCYXJjZWxvbmEifSwibG9jYWxpdHkyIjpudWxsLCJwb3N0YWwiOm51bGwsImNlbnRyb2lkIjp7ImxhdGl0dWRlIjoiNDEuMzk5MTciLCJsb25naXR1ZGUiOiIyLjE1Mzk3In0sImJvdW5kaW5nQm94Ijp7InNvdXRoV2VzdCI6eyJsYXRpdHVkZSI6IjQxLjMyMTA2IiwibG9uZ2l0dWRlIjoiMi4wNzE5MiJ9LCJub3J0aEVhc3QiOnsibGF0aXR1ZGUiOiI0MS40Njg2MDkiLCJsb25naXR1ZGUiOiIyLjIyNzMxIn19LCJhcmVhUmFuayI6IjEiLCJwb3BSYW5rIjoiMSIsInRpbWV6b25lIjp7InR5cGUiOiJUaW1lIFpvbmUiLCJ3b2VpZCI6IjU2MDQzNjQ0IiwiY29udGVudCI6IkV1cm9wZS9NYWRyaWQifX19fX0=
+    http_version: 
+  recorded_at: Sat, 17 Feb 2018 15:21:13 GMT
+- request:
+    method: get
+    uri: http://query.yahooapis.com/v1/public/yql?format=json&q=select%20*%20from%20geo.places%20where%20woeid%20=%20773692%20AND%20lang%20=%20%27es%27
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (linux-gnu x86_64) ruby/2.5.0p0
+      Host:
+      - query.yahooapis.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Content-Type-Options:
+      - nosniff
+      Access-Control-Allow-Origin:
+      - "*"
+      Content-Type:
+      - application/json;charset=utf-8
+      Cache-Control:
+      - no-cache
+      Date:
+      - Sat, 17 Feb 2018 15:21:14 GMT
+      Age:
+      - '0'
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Via:
+      - http/1.1 a24.ue.gq1.yahoo.net (ApacheTrafficServer [cMsSf ])
+      Server:
+      - ATS
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJxdWVyeSI6eyJjb3VudCI6MSwiY3JlYXRlZCI6IjIwMTgtMDItMTdUMTU6MjE6MTRaIiwibGFuZyI6ImVuLVVTIiwicmVzdWx0cyI6eyJwbGFjZSI6eyJsYW5nIjoiZXMtIiwieG1sbnMiOiJodHRwOi8vd2hlcmUueWFob29hcGlzLmNvbS92MS9zY2hlbWEucm5nIiwieWFob28iOiJodHRwOi8vd3d3LnlhaG9vYXBpcy5jb20vdjEvYmFzZS5ybmciLCJ1cmkiOiJodHRwOi8vd2hlcmUueWFob29hcGlzLmNvbS92MS9wbGFjZS83NzM2OTIiLCJ3b2VpZCI6Ijc3MzY5MiIsInBsYWNlVHlwZU5hbWUiOnsiY29kZSI6IjciLCJjb250ZW50IjoiUHVlYmxvIn0sIm5hbWUiOiJTYW50YSBDcnV6IGRlIFRlbmVyaWZlIiwiY291bnRyeSI6eyJjb2RlIjoiRVMiLCJ0eXBlIjoiUGHDrXMiLCJ3b2VpZCI6IjIzNDI0OTUwIiwiY29udGVudCI6IkVzcGHDsWEifSwiYWRtaW4xIjp7ImNvZGUiOiIiLCJ0eXBlIjoiQ29tdW5pZGFkIEF1dMOzbm9tYSIsIndvZWlkIjoiMTI1NzgwMzEiLCJjb250ZW50IjoiSXNsYXMgQ2FuYXJpYXMifSwiYWRtaW4yIjp7ImNvZGUiOiIiLCJ0eXBlIjoiQ29uZGFkbyIsIndvZWlkIjoiMTI2MDIxMDkiLCJjb250ZW50IjoiU2FudGEgQ3J1eiBkZSBUZW5lcmlmZSJ9LCJhZG1pbjMiOm51bGwsImxvY2FsaXR5MSI6eyJ0eXBlIjoiUHVlYmxvIiwid29laWQiOiI3NzM2OTIiLCJjb250ZW50IjoiU2FudGEgQ3J1eiBkZSBUZW5lcmlmZSJ9LCJsb2NhbGl0eTIiOm51bGwsInBvc3RhbCI6bnVsbCwiY2VudHJvaWQiOnsibGF0aXR1ZGUiOiIyOC40NjE2MyIsImxvbmdpdHVkZSI6Ii0xNi4yNjcwNTkifSwiYm91bmRpbmdCb3giOnsic291dGhXZXN0Ijp7ImxhdGl0dWRlIjoiMjguNDM4MDgiLCJsb25naXR1ZGUiOiItMTYuMjkxOTI5In0sIm5vcnRoRWFzdCI6eyJsYXRpdHVkZSI6IjI4LjQ4Nzk0OSIsImxvbmdpdHVkZSI6Ii0xNi4yMzU1OSJ9fSwiYXJlYVJhbmsiOiIxIiwicG9wUmFuayI6IjEiLCJ0aW1lem9uZSI6eyJ0eXBlIjoiVGltZSBab25lIiwid29laWQiOiIyODM1MDg3MCIsImNvbnRlbnQiOiJBdGxhbnRpYy9DYW5hcnkifX19fX0=
+    http_version: 
+  recorded_at: Sat, 17 Feb 2018 15:21:14 GMT
+recorded_with: VCR 4.0.0

@@ -1,0 +1,74 @@
+<ul class="profile-actions">
+  <% if current_user.nil? || (blocking.nil? && current_user != user) %>
+    <li class="list-group-item">
+      <%= link_to new_conversation_path(recipient_id: user.id) do %>
+        <i class="glyphicon glyphicon-envelope"></i>
+        <%= t('nlt.profile_actions.contact') %>
+      <% end %>
+    </li>
+  <% end %>
+
+  <% if user_signed_in? %>
+    <% if current_user == user %>
+      <li class="list-group-item">
+        <%= link_to profile_path(user.username) do %>
+          <i class="glyphicon glyphicon-user"></i>
+          <%= t('nlt.profile') %>
+        <% end %>
+      </li>
+
+      <li class="list-group-item">
+        <%= link_to edit_user_registration_path do %>
+          <i class="glyphicon glyphicon-edit"></i>
+          <%= t('nlt.profile_actions.edit') %>
+        <% end %>
+      </li>
+
+      <li class="list-group-item">
+        <%= link_to conversations_path do %>
+          <i class="glyphicon glyphicon-envelope"></i>
+          <%= t('nlt.messages') %>
+        <% end %>
+      </li>
+    <% else %>
+      <% if blocking %>
+        <li class="list-group-item">
+          <%= link_to blocking, method: :delete do %>
+            <i class="glyphicon glyphicon-ok-circle"></i>
+            <%= t('nlt.profile_actions.blocking.delete') %>
+          <% end %>
+        </li>
+      <% else %>
+        <li class="list-group-item">
+          <% friendship = current_user.friend?(user) %>
+
+          <% if friendship %>
+            <%= link_to friendship, method: :delete do %>
+              <i class="glyphicon glyphicon-remove"></i>
+              <%= t('nlt.profile_actions.friend.delete', username: user.username) %>
+            <% end %>
+          <% else %>
+            <%= link_to friendships_path(friend_id: user.id), method: :post do %>
+              <i class="glyphicon glyphicon-ok"></i>
+              <%= t('nlt.profile_actions.friend.add', username: user.username) %>
+            <% end %>
+          <% end %>
+        </li>
+
+        <li class="list-group-item">
+          <%= link_to blockings_path(blocked_id: user.id),
+                      data: { confirm: t('nlt.profile_actions.blocking.confirm', username: user.username) },
+                      method: :post do %>
+            <i class="glyphicon glyphicon-ban-circle"></i>
+            <%= t('nlt.profile_actions.blocking.add') %>
+          <% end %>
+        </li>
+      <% end %>
+
+      <li class="list-group-item">
+        <%= render 'report', user: user,
+                             title: t('nlt.profile_actions.reporting.report') %>
+      </li>
+    <% end %>
+  <% end %>
+</ul>

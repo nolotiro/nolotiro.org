@@ -2,7 +2,7 @@
 
 class ConversationsController < ApplicationController
   before_action :authenticate_user!
-  before_action :load_conversation, only: [:show, :update]
+  before_action :load_conversation, only: %i[show update]
 
   def index
     @conversations =
@@ -35,7 +35,7 @@ class ConversationsController < ApplicationController
       @message.deliver
 
       redirect_to conversation_path(@conversation),
-                  notice: I18n.t('conversations.notifications.sent')
+                  notice: I18n.t("conversations.notifications.sent")
     else
       setup_errors
 
@@ -53,7 +53,7 @@ class ConversationsController < ApplicationController
       @message.deliver
 
       redirect_to conversation_path(@conversation),
-                  notice: I18n.t('conversations.notifications.sent')
+                  notice: I18n.t("conversations.notifications.sent")
     else
       render :show
     end
@@ -76,7 +76,7 @@ class ConversationsController < ApplicationController
     Array(conversation).each { |c| c.move_to_trash(current_user) }
 
     redirect_to conversations_path,
-                notice: I18n.t('conversations.notifications.trash')
+                notice: I18n.t("conversations.notifications.trash")
   end
 
   private
@@ -94,7 +94,7 @@ class ConversationsController < ApplicationController
   end
 
   def setup_errors
-    missing_subject = @conversation.errors['subject']
+    missing_subject = @conversation.errors["subject"]
 
     @message.errors.add(:subject, missing_subject.first) if missing_subject.any?
   end

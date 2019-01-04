@@ -1,4 +1,3 @@
----
 ca:
   activemodel:
     attributes:
@@ -47,12 +46,12 @@ ca:
         remember: Recorda'm
         username: Nom d'usuari
     models:
-      ad:
-        one: anunci
-        other: Anuncis
       aa_comment:
         one: comentari
         other: Comentaris
+      ad:
+        one: anunci
+        other: Anuncis
       user:
         one: usuario
         other: Usuarios
@@ -67,7 +66,7 @@ ca:
       trash: Esborrar conversa
       trash_selected: Esborrar converses seleccionats
     index:
-      title: Missatges de %{username}
+      title: Missatges
     new:
       body_max: Màxim 1500 caràcters
       subject: Tema
@@ -82,7 +81,7 @@ ca:
       none: No tens missatges d'aquest tipus
   date:
     formats:
-      active_admin: 
+      active_admin:
   devise:
     confirmations:
       action: Confirmar el meu compte
@@ -143,11 +142,13 @@ ca:
       already_confirmed: ja està confirmat
       confirmation_period_expired: necessita ser confirmat en %{period}, si us plau demana'n un de nou
       expired: ha caducat, si us plau demana'n un de nou
+      in_between:
       not_found: no s'ha trobat
       not_locked: no està bloquejat
       not_saved:
         one: '1 error ha evitat que %{resource} es pugui desar:'
         other: "%{count} errors han evitat que %{resource} es pugui desar:"
+      spoofed_media_type:
   friendships:
     create:
       success: Amic agregat
@@ -186,7 +187,8 @@ ca:
       marked_as: Anunci %{status}
       updated: Anunci actualitzat
     all: tots
-    all_ads: tots els anuncis
+    all_gifts: tots els regals
+    all_requests: totes les peticions
     are_you_interested: T'interessa?
     available: disponible
     back: tornar a la pàgina d'inici
@@ -199,7 +201,7 @@ ca:
     change_town:
       choose: Tria la teva ubicació
       choose_html: No s'han trobat ubicacions amb el nom <b>%{location}</b>. Torna a intentar-
-      close_to_html: El nostre sistema de suggeriment d''ubicació (basat en la teva IP) diu que aquestes prop de %{city}
+      close_to_html: El nostre sistema de suggeriment d'ubicació (basat en la teva IP) diu que aquestes prop de %{city}
       submit: Enviar
       town: 'Ciutat:'
     change_your_city: Canvia la teva ciutat
@@ -232,6 +234,7 @@ ca:
     do_you_have_it: Ho tens?
     edit: Editar
     edit_this_ad: Edita aquest anunci
+    expired:
     faq:
       answer_1_html: El propòsit fonamental d'aquesta web és el de desfer-nos dels objectes que ja no fem servir i ens fan nosa a casa.
       answer_2_html: 'Primer a tu directament demanant desfer d''aquestes coses que ja no vols, i sempre al que regales alguna cosa implícitament. El millor és enfocar-egoistament i controlar la relació de causa-efecte que anem a desencadenar regalant. Si enfoquem l''acte de regalar objectes des d''una perspectiva egoista, la de desfer-nos de coses útils, però que ens molesten, perquè ens fan nosa e van a anar a les escombraries, sempre tindrem una bona experiència, en no esperar res més que lliurar-nos d''aquests objectes. I el saber que algú li està donant ús o profit reforçarà aquesta experiència com a positiva. És a dir: l''acte de regalar coses de valor o útils sempre és una cosa positiva si no esperem una recompensa moral o aplacar la nostra consciència.'
@@ -262,16 +265,16 @@ ca:
     give_it_to: Regala'l a %{user}
     hello_to: Hola %{recipient},
     here: aquí
-    home_title: anuncis de regals nous i de segona mà
     if_you_are_new: Si ets un nou usuari, si us plau
     if_youre_already_an_user: Si ja ets un usuari registrat, si us plau
-    keywords: regal segona mà gratis
     last_published_gifts: últims regals publicats
     leave_blank: "(deixa-la en blanc si no vols canviar-la)"
     legal_notice: Avís legal
     legal_page:
-      body_html: 'Nom: Associació aLabs. <br>Inscrita en el registre d''associacions de la Comunitat de Madrid amb nombre 32.022. <br>CIF: G86139847<br> C/Duque de Alba, 13 (28012) Madrid.'
+      body_html: 'Nom: Associació aLabs. <br>Inscrita en el registre d''associacions de la Comunitat de Madrid amb nombre 32.022. <br>CIF: G86139847<br> C/San Vicente Ferrer 45, 2-D (28004) Madrid.'
       title: Avís legal
+    location_gifts: regals en %{location}
+    location_requests: peticions en %{location}
     login: accedir
     logout: sortir
     mail:
@@ -282,7 +285,7 @@ ca:
     messages: missatges
     messages_title: Missatges
     meta_description: 'nolotiro.org és un lloc web on regalar i buscar regals de franc de segona mà: mobles, cadires, sofàs, bicicletes, ordinadors portàtils, taules, cuines, llums, llits, roba, joguines, bressols o carros per a nadons, telèfons mòbils i altres moltes coses que ja no vols i no necessites per a que les reutilitzin altra gent a la qual pot servir o donar-li nova vida.'
-    meta_description_ad: regal segona mà %{title} a %{woeid}. %{body}
+    meta_description_ad: "%{type} a %{woeid} de %{title}. %{body}"
     n_ads:
       one: "%{count} anunci"
       other: "%{count} anuncis"
@@ -293,7 +296,7 @@ ca:
       one: "%{count} lecture"
       other: "%{count} lectures"
     new_user: nou usuari
-    no_location_specified: 
+    no_location_specified:
     no_results:
       choose_bigger: Tria una ciutat més gran
       first_to_publish_html: Sigues el primer a %{publish}.
@@ -302,27 +305,25 @@ ca:
       publish_ad: publicar un anunci en aquesta ciutat
       subtitle: Pots provar alguna d'aquestes coses
       switch_to_bigger_city_html: "%{choose_bigger} que estigui a prop de la teva ubicació."
-      switch_to_guessed_city_html: 'Comprova que has triat la teva ciutat correctament. El nostre sistema de suggeriment d''ubicació (basat en la teva IP) diu que aquestes prop de %{change_location}'
+      switch_to_guessed_city_html: Comprova que has triat la teva ciutat correctament. El nostre sistema de suggeriment d'ubicació (basat en la teva IP) diu que aquestes prop de %{change_location}
       title: No hi ha anuncis per a aquesta ubicació.
     password: Contrasenya
     permission_denied: No tens permisos per a realitzar aquesta acció.
     please_fill_to_become_member: Si us plau, ompli aquest formulari per ser membre de nolotiro
     policy_agreement_html: Enviant aquest formulari, admeten haver llegit, comprès, i estàs d'acord amb les nostres %{tos} i %{privacy}.
     privacy: política de privacitat
-    privacy_page:
-      body_html: 'nolotiro.org (en endavant lloc web) pertany i és administrat per: <br> <br> aLabs <br> C/Duque de Alba, 13 <br> 28012 Madrid, Espanya <br> Podeu contactar en el formulari de contacte habilitat a aquest efecte en el lloc web. L''accés al lloc web, implica la plena acceptació de la present política de privacitat i dels termes d''ús. En relació al compliment de la Llei Orgànica 15/1999, de 13 de desembre, de Protecció de Dades de Caràcter Personal (LOPD), l''informem que aquesta pàgina web emmagatzema de forma automatitzada les dades proporcionades en el formulari d''usuari registrat a l''efecte de poder proporcionar-li al usuari els serveis del lloc web d''una manera personalitzada com són: gestió del seu compte d''usuari, publicació d''anuncis, i gestió de sistema de missatges privats entre usuaris. El terme missatges privats es refereix al fet que la possibilitat d''accés a aquests missatges privats serà exclusivament entre dos usuaris, sense possibilitat per part de tercers usuaris a accedir a aquest contingut. No obstant això, a la base de dades dels missatges es guarden en text pla, podent ser posats a disposició de les forces de seguretat en cas de comissió de delicte o de requeriment judicial. L''usuari s''abstindrà de publicar dades personals seus o de tercers en els anuncis com poden ser adreces de correu electrònic, telèfons, adreces postals, etc. El lloc web, prendrà les mesures necessàries per a la preservació de les dades personals, tot i que l''usuari ignori aquests termes de privacitat. És per això que hem desenvolupat un filtre d''emails i telèfons en els anuncis per evitar que aquesta informació sigui recopilada per sistemes automàtics i robots d''indexació. Això no eximeix de l''última responsabilitat de l''usuari pel que fa a la publicació de dades personals seus o de tercers. I es fa només perquè creiem que molts usuaris no són conscients de la importància de la preservació de les seves dades personals. Formulari de contacte: <br> l''informem que les dades personals facilitades per l''usuari en el formulari de contacte són guardats amb l''única finalitat de contacte amb l''usuari, aquestes dades no seran utilitzades en cap cas per al enviament missatges publicitaris així com tampoc seran cedides a tercers. Pis En qualsevol moment pot exercir els drets d''accés, rectificació i cancel·lació de les seves dades dirigint-se per qualsevol dels mitjans de comunicació indicats en el primer paràgraf. Galetes de sessió: <br> L''accés a aquest lloc implica l''utilització de cookies de sessió. Les galetes de sessió són petites quantitats d''informació que s''emmagatzemen en el navegador utilitzat per cada usuari perquè el servidor recordi certa informació que posteriorment pugui utilitzar. Aquesta informació permet identificar a vostè com un usuari concret de forma anònima. Addicionalment aquest lloc pot albergar elements en el codi font de les pàgines que s''utilitzen per mesurar el trànsit d''usuaris que visiten una pàgina web i poder treure un patró de visites dels usuaris. Aquesta informació anònima pot ser compartida amb empreses clients, proveïdors, patrocinadors i anunciants. Actualment utilitzem els serveis de Google Analytics per al mesurament del trànsit d''aquest lloc que pot capturar la informació descrita anteriorment. Podeu veure més informació sobre la política de privacitat en el lloc web de Google: Google (Analytics): https://www.google.com/intl/es_ALL/privacypolicy.html Aquest lloc pot albergar publicitat pròpia, d''afiliats, o de xarxes publicitàries. Aquesta publicitat es mostra mitjançant servidors publicitaris que també utilitzen cookies per mostrar continguts publicitaris afins als usuaris. Cadascun d''aquests servidors publicitaris disposa de la seva pròpia política de privacitat, que pot ser consultada en les seves pròpies pàgines web. Actualment aquest lloc alberga publicitat de Google Adsense: https://www.google.com/intl/es_ALL/privacypolicy.html'
-      title: Política de privacitat
+    private_info_hidden: informació privada oculta
     profile: perfil
     profile_actions:
       blocking:
-        add: bloquejar a %{username}
+        add: bloquejar
         confirm: "¿Segur que vols bloquejar %{username}? No podrà tornar a contactar ni a veure els teus anuncis."
-        delete: desbloquejar a %{username}
-      contact: envia un missatge privat a %{username}
-      edit: edita perfil d'usuari
+        delete: desbloquejar
+      contact: enviar missatge privat
+      edit: editar
       friend:
-        add: afegir %{username} a la llista d'amics
-        delete: afegir %{username} a la llista d'amics
+        add: afegir a la llista d'amics
+        delete: eliminar de la llista d'amics
     publish_ad: Publicar anunci
     publish_ad_on: Publicar anunci en %{woeid}
     published_ads: Anuncis publicats
@@ -331,8 +332,21 @@ ca:
     register: Registra't
     register_here: registra't aquí
     remember_me: Recordar
-    requests: peticiós
+    requests: peticions
     rss_suscribe: Subscriure via RSS
+    rule:
+      entry_1:
+      entry_10:
+      entry_2:
+      entry_3:
+      entry_4:
+      entry_5:
+      entry_6:
+      entry_7:
+      entry_8:
+      entry_9:
+      title:
+    rules:
     save_failed: 'Hi ha un problema, revisa això:'
     search:
       button: buscar
@@ -340,12 +354,14 @@ ca:
     searching_on_html: Buscant <i>%{q}</i> a
     send: Enviar
     send_a_message: Envia un missatge privat a %{user}
+    settings:
     share_this_ad: Comparteix aquest anunci
     sign_in: Accedir
     sign_in_with_provider: Inicia sessió amb %{provider}
     sign_up: Crear un usuari
     slogan: no ho tir, t'ho regal (sense condicions)
     suggestions: suggeriments
+    title_with_page: "%{title}, pàgina %{page}"
     to_publish_or_send_messages: Per publicar anuncis o enviar missatges accedeix al teu compte
     tos: termes d'ús
     translate:
@@ -356,8 +372,6 @@ ca:
     update: Guardar
     update_ad: Actualitzar anunci
     user_ads: anuncis
-    user_edit_profile: Edita perfil d'usuari
-    user_profile: Perfil d'usuari
     username: Nom d'usuari
     users_most_active: usuaris més actius
     users_most_active_last_week: usuaris més actius en la darrera setmana
@@ -366,9 +380,13 @@ ca:
     want: petició
     want_to_leave: Vols esborrar el teu usuari?
     we_need_your_password: "(necessitem la contrasenya per confirmar els canvis)"
-    welcome: hola
-    write_a_comment: "+ Escriu un nou comentari"
     your_email: El teu email
+  number:
+    human:
+      storage_units:
+        format:
+        units:
+          mb:
   oauth:
     errors:
       duplicated_username: El teu nom d'usuari de %{provider} ja es troba a la base de dades. Si t'has registrat ja usant una altra xarxa social o mitjançant email i contrasenya, si us plau, inicia sessió d'aquesta manera. En cas contrari, indica un altre nom d'usuari per completar el registre.
@@ -376,9 +394,13 @@ ca:
   recaptcha:
     errors:
       verification_failed: Ha fallat la verificació contra robots, intenta-ho de nou
+  reports:
+    create:
+      success_reported: Denúncia rebuda. Gràcies!
+      success_banned: Contingut retirat. Gràcies!
   time:
     formats:
-      active_admin: 
+      active_admin:
   time_ago_in_words: fa %{time}
   views:
     pagination:

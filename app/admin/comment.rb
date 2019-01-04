@@ -1,13 +1,14 @@
 # frozen_string_literal: true
 
-require 'helpers/stats_sidebar'
+require "helpers/stats_sidebar"
 
-ActiveAdmin.register Comment, as: 'AaComment' do
+ActiveAdmin.register Comment, as: "AaComment" do
   include StatsSidebar
 
   permit_params :body
 
   filter :created_at
+  filter :user_username, as: :string, label: I18n.t("nlt.username")
 
   controller do
     def scoped_collection
@@ -32,6 +33,6 @@ ActiveAdmin.register Comment, as: 'AaComment' do
   end
 
   action_item :view, only: :show do
-    link_to 'Ver en la web', adslug_path(aa_comment.ad, slug: aa_comment.ad.slug)
+    link_to "Ver en la web", adslug_path(aa_comment.ad, slug: aa_comment.ad.slug)
   end
 end

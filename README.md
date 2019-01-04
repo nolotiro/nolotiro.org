@@ -5,8 +5,8 @@
 
 This is the next revision of nolotiro.org (v3), this time in [Ruby On Rails].
 
-* Ruby: 2.3
-* Rails: 4.2
+* Ruby: 2.5
+* Rails: 5.1
 * PostgreSQL: 9.6
 
 ## Automatic Installation
@@ -22,7 +22,6 @@ When finished, you need to log in to the virtual machine with the command
 
 ```
 vagrant ssh
-
 ```
 
 Finally you should start the application server
@@ -48,6 +47,8 @@ Running `bin/rake` will run all the tests, that should always pass on a freshly
 downloaded copy a nolotiro's master.
 
 ## More information
+
+For obtaining geographic information we use [Yahoo YQL].
 
 For IP GeoLocation we use [GeoLite2] City. The database is bundled with this
 repo in compressed format. To extract the database, run
@@ -100,7 +101,7 @@ https://beta.nolotiro.org/api/v1/woeid/766273/give?page=2
 https://beta.nolotiro.org/api/v1/ad/153735
 ```
 
-## 3erd Party
+## 3rd Party
 
 * Core based on [Ruby On Rails].
 * Geographical data is mantained in-app, and it started as a modified copy of
@@ -112,14 +113,10 @@ https://beta.nolotiro.org/api/v1/ad/153735
 
 [Gemnasium Badge]: https://gemnasium.com/alabs/nolotiro.org.svg
 [Gemnasium URL]: https://gemnasium.com/alabs/nolotiro.org
-[Geolite2]: https://dev.maxmind.com/geoip/geoip2/geolite2
-[Google Recaptcha]: https://www.google.com/recaptcha/admin#list
+[GeoLite2]: https://dev.maxmind.com/geoip/geoip2/geolite2
 [jQuery]: https://jquery.com
-[Localeapp]: https://accounts.localeapp.com/projects/6872
-[Phantomjs Bug]: https://github.com/ariya/phantomjs/issues/13953
 [Ruby on Rails]: http://rubyonrails.org
-[Travis Badge]: https://travis-ci.org/alabs/nolotiro.org.png
-[Travis Bug]: https://github.com/travis-ci/travis-ci/issues/3225
+[Travis Badge]: https://travis-ci.org/alabs/nolotiro.org.svg?branch=master
 [Travis URL]: https://travis-ci.org/alabs/nolotiro.org
 [Vagrant]: https://www.vagrantup.com/
 [Virtualbox]: https://www.virtualbox.org/

@@ -15,16 +15,16 @@ class CallbacksController < Devise::OmniauthCallbacksController
     if oauth_user.valid?
       sign_in_and_redirect
     else
-      session['devise.omniauth_data'] = oauth.except('extra')
+      session["devise.omniauth_data"] = oauth.except("extra")
       redirect_to new_user_registration_path, alert: flash_message
     end
   end
 
   def flash_message
     if oauth_user.errors.keys.include?(:email)
-      I18n.t('oauth.errors.email_not_provided')
+      I18n.t("oauth.errors.email_not_provided")
     else
-      I18n.t('oauth.errors.duplicated_username', provider: oauth['provider'])
+      I18n.t("oauth.errors.duplicated_username", provider: oauth["provider"])
     end
   end
 
@@ -39,6 +39,6 @@ class CallbacksController < Devise::OmniauthCallbacksController
   end
 
   def oauth
-    request.env['omniauth.auth']
+    request.env["omniauth.auth"]
   end
 end

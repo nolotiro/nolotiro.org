@@ -52,7 +52,7 @@
       <div class="location_name">
         <h1>
           <% if current_woeid.nil? %>
-            <%= t('nlt.all_ads') %>
+            <%= t("nlt.all_#{@type == 'want' ? 'requests' : 'gifts'}") %>
           <% else %>
             <%= t('nlt.searching_on_html', q: @q) if @q %>
 
@@ -63,8 +63,8 @@
         <br>
         <%= render "ads/search", q: @q %>
 
-        <%= link_to location_ask_path, class: "world_link" do %>
-          <%= image_tag "change_location.png", alt: "change location" %>
+        <%= link_to location_ask_path do %>
+          <i class="glyphicon glyphicon-map-marker"></i>
           <%= t('nlt.change_city') %>
         <% end %>
       </div>

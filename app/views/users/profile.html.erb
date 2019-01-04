@@ -1,34 +1,5 @@
-<% content_for :title, "#{t('nlt.user_profile')} - #{@user.username}" %>
+<% content_for :title, t('nlt.published_ads') %>
 
-<div class="main-row">
-  <div class="col-md-9 col-sm-9">
-      <%= render "users/tabnav", user: @user %>
-
-    <div class="default_header_section">
-      <h1><%= content_for :title  %></h1>
-    </div>
-
-    <div class="default_content_section">
-      <h4 class="profile-info">
-        <%= t('nlt.username') %>: <%= @user.username %>
-      </h4>
-
-      <h4 class="profile-info">
-        <%= t('nlt.member_since') %>: <%= l @user.created_at, format: :long %>
-      </h4>
-
-      <%= render 'actions',
-                 user: @user,
-                 blocking: current_user ? current_user.blocking?(@user) : nil %>
-
-      <%= render 'friends', user: @user %>
-    </div>
-  </div>
-
-  <div class="col-md-3 col-sm-3">
-    <div class="google_ad_wrapper">
-      <%= render "partials/raw_google_adsense", class_name: "desktop google_adsense_600_160", ad_slot: "6783776462" %>
-      <%= render "partials/google_adsense", class_name: "mobile google_adsense_300_250", ad_slot: "8702329269" %>
-    </div>
-  </div>
-</div>
+<%= render partial: 'listads',
+           locals: { ads: @ads, user: @user },
+           layout: 'application/profile' %>

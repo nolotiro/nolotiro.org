@@ -38,7 +38,7 @@ module MultiLingualizable
   end
 
   def valid_locale?(locale)
-    return false unless locale.present?
+    return false if locale.blank?
 
     I18n.available_locales.include?(locale.to_sym)
   end

@@ -11,9 +11,9 @@ class WoeidTest < ActionDispatch::IntegrationTest
     end
   end
 
-  it 'returns a hard 404 error if woeid is not an integer' do
+  it "returns a hard 404 error if woeid is not an integer" do
     assert_raise(ActionController::RoutingError) do
-      get '/es/woeid/234LOOOOOOOOOOOOL24801/give'
+      get "/es/woeid/234LOOOOOOOOOOOOL24801/give"
     end
   end
 

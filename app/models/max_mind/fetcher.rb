@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'open-uri'
+require "open-uri"
 
 module MaxMind
   #
@@ -18,12 +18,12 @@ module MaxMind
 
     def extract!
       Zlib::GzipReader.open(local_compressed_db_path) do |input_stream|
-        File.open(local_db_path, 'w') do |output_stream|
+        File.open(local_db_path, "w") do |output_stream|
           IO.copy_stream(input_stream, output_stream)
         end
       end
 
-      raise 'DB does not match expected checksum' unless valid?
+      raise "DB does not match expected checksum" unless valid?
     end
 
     def valid?
@@ -33,7 +33,7 @@ module MaxMind
     private
 
     def local_compressed_db_checksum
-      return '' unless File.exist?(local_db_path)
+      return "" unless File.exist?(local_db_path)
 
       Digest::MD5.file(local_db_path).hexdigest
     end
@@ -47,7 +47,7 @@ module MaxMind
     end
 
     def checksum_url
-      base_url + base_name + '.md5'
+      base_url + base_name + ".md5"
     end
 
     def local_db_path
@@ -59,23 +59,23 @@ module MaxMind
     end
 
     def compressed_db_name
-      db_name + '.gz'
+      db_name + ".gz"
     end
 
     def db_name
-      base_name + '.mmdb'
+      base_name + ".mmdb"
     end
 
     def local_base_path
-      File.join(Rails.root, 'vendor', 'geolite')
+      Rails.root.join("vendor", "geolite")
     end
 
     def base_url
-      'https://geolite.maxmind.com/download/geoip/database/'
+      "https://geolite.maxmind.com/download/geoip/database/"
     end
 
     def base_name
-      'GeoLite2-City'
+      "GeoLite2-City"
     end
   end
 end

@@ -7,11 +7,11 @@ class ChoosingLocationTest < ActionDispatch::IntegrationTest
   include Warden::Test::Helpers
   include Geo
 
-  it 'redirects there when user logged in and no location set' do
+  it "redirects there when user logged in and no location set" do
     login_as create(:user, :stateless)
     visit root_path
 
-    assert_selector 'h1', text: 'Cambia tu ciudad'
+    assert_selector "h1", text: "Cambia tu ciudad"
   end
 
   it 'suggests locations matching name' do
@@ -33,10 +33,10 @@ class ChoosingLocationTest < ActionDispatch::IntegrationTest
     assert_text 'No se han encontrado ubicaciones con el nombre tenerifa'
   end
 
-  it 'shows an error message when submitted without a search' do
-    choose_location('')
+  it "shows an error message when submitted without a search" do
+    choose_location("")
 
-    assert_text 'No se han encontrado ubicaciones con el nombre'
+    assert_text "No se han encontrado ubicaciones con el nombre"
   end
 
   it 'chooses between locations matching name' do
@@ -99,7 +99,7 @@ class ChoosingLocationTest < ActionDispatch::IntegrationTest
 
   def choose_location(name)
     visit location_ask_path
-    fill_in 'location', with: name
-    click_button 'Enviar'
+    fill_in "location", with: name
+    click_button "Enviar"
   end
 end

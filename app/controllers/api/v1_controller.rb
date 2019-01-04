@@ -7,7 +7,7 @@ module Api
     end
 
     def woeid_show
-      @type = type_scope || 'give'
+      @type = type_scope || "give"
       @woeid = params[:id]
       @page = params[:page]
 

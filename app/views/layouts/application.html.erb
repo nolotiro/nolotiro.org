@@ -16,8 +16,10 @@
         <%= render "partials/header" %>
 
         <div class="main-banner">
-          <%= render "partials/google_adsense", class_name: "desktop google_adsense_728_90", ad_slot: "9326281262" %>
-          <%= render "partials/google_adsense", class_name: "mobile google_adsense_320_100", ad_slot: "1977811266" %>
+          <div class="center">
+            <%= image_tag "banner_nlt_728_90.png", class: "desktop", alt: "Nolotiro" %>
+            <%= image_tag "banner_nlt_320_100.png", class: "mobile", alt: "Nolotiro" %>
+          </div>
         </div>
       </div>
 
@@ -58,11 +60,12 @@
 
     <div class="hide js-cookie-message"><%= t('nlt.cookie') %></div>
 
-    <script>
-      [].forEach.call(document.querySelectorAll('.adsbygoogle'), function(){
-        (adsbygoogle = window.adsbygoogle || []).push({});
-      });
-    </script>
-
+    <% unless no_advertising_allowed? %>
+      <script>
+        [].forEach.call(document.querySelectorAll('.adsbygoogle'), function(){
+          (adsbygoogle = window.adsbygoogle || []).push({});
+        });
+      </script>
+    <% end %>
   </body>
 </html>

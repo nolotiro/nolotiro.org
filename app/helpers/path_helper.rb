@@ -9,7 +9,7 @@ module PathHelper
 
   def localized_url(locale)
     request.original_url
-           .chomp('/')
+           .chomp("/")
            .sub(base_with_locale(params[:locale]), base_with_locale(locale))
   end
 
@@ -24,7 +24,7 @@ module PathHelper
   end
 
   def home_path?
-    return true if current_page?('/')
+    return true if current_page?("/")
 
     I18n.available_locales.any? { |locale| current_page?("/#{locale}") }
   end
@@ -34,6 +34,6 @@ module PathHelper
   end
 
   def base_with_locale(locale)
-    [request.base_url, locale].compact.join('/')
+    [request.base_url, locale].compact.join("/")
   end
 end

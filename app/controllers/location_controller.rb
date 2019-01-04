@@ -3,12 +3,9 @@
 class LocationController < ApplicationController
   include StringUtils
 
-  # GET /es/location/change
   def ask
   end
 
-  # POST /es/location/change
-  # GET /es/location/change2?location=:location
   def list
     if unique_location
       save_location unique_location
@@ -17,12 +14,11 @@ class LocationController < ApplicationController
     end
   end
 
-  # POST /es/location/change2
   def change
     if unique_location
       save_location unique_location
     else
-      redirect_to location_ask_path, alert: 'Hubo un error con el cambio de su ubicación. Inténtelo de nuevo.'
+      redirect_to location_ask_path, alert: "Hubo un error con el cambio de su ubicación. Inténtelo de nuevo."
     end
   end
 
@@ -43,6 +39,6 @@ class LocationController < ApplicationController
   def save_location(woeid)
     current_user.update!(woeid: woeid) if user_signed_in?
 
-    redirect_to ads_woeid_path(woeid, type: 'give')
+    redirect_to ads_woeid_path(woeid, type: "give")
   end
 end

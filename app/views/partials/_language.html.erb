@@ -1,7 +1,0 @@
-<% is_active_class = I18n.locale == abbr.to_sym ? "active" : "''" %>
-
-<%= link_to locale_path(abbr),
-            class: "flag-#{abbr} lang lang-#{is_active_class}",
-            "data-langcode" => abbr do %>
-  <span><%= language %></span>
-<% end %>

@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
-require 'test_helper'
-require 'integration/concerns/authenticated_test'
-require 'support/ads'
+require "test_helper"
+require "integration/concerns/authenticated_test"
+require "support/ads"
 
 class BanningTest < AuthenticatedTest
   include AdTestHelpers
@@ -18,7 +18,7 @@ class BanningTest < AuthenticatedTest
     assert_text 'Tu cuenta aún no ha sido activada'
   end
 
-  it 'hides ads from banned users' do
+  it "hides ads from banned users" do
     ad = create(:ad)
     ad.user.ban!
     visit_ad_page(ad)

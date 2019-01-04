@@ -1,4 +1,3 @@
----
 en:
   activemodel:
     attributes:
@@ -47,12 +46,12 @@ en:
         remember: Remember me
         username: Username
     models:
-      ad:
-        one: ad
-        other: Ads
       aa_comment:
         one: comment
         other: Comments
+      ad:
+        one: ad
+        other: Ads
       user:
         one: user
         other: Users
@@ -64,10 +63,10 @@ en:
   conversations:
     buttons:
       back: "< back to messages"
-      trash: Conversation deleted
+      trash: Delete conversation
       trash_selected: Delete selected conversations
     index:
-      title: "%{username}'s messages"
+      title: Messages
     new:
       body_max: Max. 1500 characters
       subject: Topic
@@ -75,7 +74,7 @@ en:
       title: New private message for user %{user}
     notifications:
       sent: Sent message
-      trash: 
+      trash: Conversation deleted
     show:
       title_html: Conversation with %{recipient} subject %{subject}
     table:
@@ -134,7 +133,6 @@ en:
       update_needs_confirmation: You updated your account successfully, but we need to verify your new email address. Please check your email and follow the confirm link to confirm your new email address.
       updated: Your account has been updated successfully.
     sessions:
-      already_signed_out: Signed out successfully.
       signed_in: Signed in successfully.
       signed_out: Signed out successfully.
       user:
@@ -144,11 +142,13 @@ en:
       already_confirmed: was already confirmed, please try signing in
       confirmation_period_expired: needs to be confirmed within %{period}, please request a new one
       expired: has expired, please request a new one
+      in_between: must be in between %{min} and %{max}
       not_found: not found
       not_locked: was not locked
       not_saved:
         one: '1 error prohibited this %{resource} from being saved:'
         other: "%{count} errors prohibited this %{resource} from being saved:"
+      spoofed_media_type: has contents that are not what they are reported to be
   friendships:
     create:
       success: Friend added
@@ -187,7 +187,8 @@ en:
       marked_as: Ad %{status}
       updated: Ad updated
     all: all
-    all_ads: all ads
+    all_gifts: all gifts
+    all_requests: all requests
     are_you_interested: Are you interested?
     available: available
     back: Back to the main page
@@ -231,8 +232,9 @@ en:
     developers: developers
     didn_t_receive_confirmation_instructions: Didn't receive the confirmation's instructions?
     do_you_have_it: Do you have it?
-    edit_this_ad: Edit this ad
     edit: Edit
+    edit_this_ad: Edit this ad
+    expired: expired
     faq:
       answer_1_html: The fundamental purpose of this website is to get rid of items you no longer use and hinder you at home.
       answer_2_html: 'First asking you directly get rid of those things you no longer want, and always to give something implicitly. It is best to approach it selfishly and control the cause-effect relationship that will trigger giving. If we approach the act of giving objects from a selfish perspective, getting rid of useful things that are bothering us and will end up in the trash, we''ll always we have a good experience, not expecting anything more to get rid of those objects. And knowing that someone is giving profit use or enhance the experience as positive. In other words: the act of giving things of value or useful is always a positive thing if we do not expect a moral reward or appease our conscience.'
@@ -263,16 +265,16 @@ en:
     give_it_to: Give it away to %{user}
     hello_to: Hello %{recipient},
     here: here
-    home_title: new and second hand gift's ads
     if_you_are_new: If you are a new user, please
     if_youre_already_an_user: If you are a registered user, please
-    keywords: gift second hand free
     last_published_gifts: last posted gifts
     leave_blank: "(leave it empty if you do not want to change it)"
     legal_notice: Legal note
     legal_page:
-      body_html: 'Name: aLabs Association. <br>Registered in the associations registry in the Community of Madrid, registration number 32.022. <br>CIF: G86139847 <br>C/Duque de Alba, 13 (28012) Madrid.'
+      body_html: 'Name: aLabs Association. <br>Registered in the associations registry in the Community of Madrid, registration number 32.022. <br>CIF: G86139847 <br>C/San Vicente Ferrer 45, 2-D (28004) Madrid.'
       title: Legal note
+    location_gifts: gifts in %{location}
+    location_requests: requests in %{location}
     login: log in
     logout: logout
     mail:
@@ -283,7 +285,7 @@ en:
     messages: messages
     messages_title: Messages
     meta_description: nolotiro.org is a website where I give free gifts and seeking second-hand furniture, chairs, sofas, bicycles, laptops, tables, stoves, lamps, beds, clothes, toys, baby cribs or cars, mobile phones and other many things you no longer want and no longer need to make the reuse other people who may serve or give new life.
-    meta_description_ad: second hand gift %{title} in %{woeid}. %{body}
+    meta_description_ad: "%{type} in %{woeid}. %{title}. %{body}"
     n_ads:
       one: "%{count} ad"
       other: "%{count} ads"
@@ -303,27 +305,25 @@ en:
       publish_ad: post an ad in this city
       subtitle: You can try some of this stuff
       switch_to_bigger_city_html: "%{choose_bigger} close to your location."
-      switch_to_guessed_city_html: 'Double check the city you have chosen. Our IP based city suggestion system tells us you are close to %{change_location}'
+      switch_to_guessed_city_html: Double check the city you have chosen. Our IP based city suggestion system tells us you are close to %{change_location}
       title: There are no results in this location
     password: Password
     permission_denied: You don't have permissions
     please_fill_to_become_member: Please, fill this form to become a member
     policy_agreement_html: By submitting this form, you admit to having read, understood, and you agree with our %{tos} and %{privacy}.
     privacy: privacy policy
-    privacy_page:
-      body_html: 'nolotiro.org (hereinafter website) is owned and managed by: <br> <br> aLabs <br> C/Duque de Alba, 13 <br> 28012 Madrid, Spain <br> <br> can contact in the contact form enabled for this purpose on the website. Access to the website implies full acceptance of the present privacy policy and terms of use. <br> <br> In relation to compliance with the Organic Law 15/1999, of December 13, Protection of Personal Data (Act), we inform you that this website stores automated data provided on the form registered user to effect the user to provide website services in a personalized way, such as: managing your user account, ads, and management system of private messages between users. <br> The term private messages refers to the possibility of access to such private messages will be exclusively between two users without possibility third party users to access such content. However, database messages are stored in plain text and can be made available to law enforcement in case of commission of crime or injunction. <br> The user shall not publish or third parties own personal data in ads such as email addresses, phone numbers, addresses, etc. The website, will take the necessary measures for the preservation of personal data, even if the user ignores these terms of privacy. That''s why we developed a filter emails and telephone listings to prevent such information from being collected by automatic systems and robots of indexing. This does not remove the ultimate responsibility of the user as to the publication of his personal data or third parties. And it is only because we believe that many users are unaware of the importance of the preservation of their personal data. <br> <br> Contact form: <br> we inform you that the personal data provided by the user in the contact form is saved for the sole purpose of contact with the user, these data will not be used under any circumstances for sending advertising messages nor be disclosed to third parties. <br> At any time you can exercise your right of access, rectification and deletion of data by any of the media mentioned in the first paragraph. <br> <br> Session Cookies: <br> Access to this site involves the use of session cookies. Session cookies are small pieces of information that are stored on the browser used by each user for the server to remember certain information that can be used later. This information can identify you as an individual user anonymously. <br> <br> addition this site can accommodate elements in the source code of the pages that are used to measure the traffic of users who visit a website and can draw a pattern of user visits. This anonymous information can be shared with corporate customers, suppliers, sponsors and advertisers. <br> <br> services currently use Google Analytics to measure the traffic on this site that can capture the information described above. You can see more information about the privacy policy on the website of Google: Google (Analytics): https://www.google.com/intl/es_ALL/privacypolicy.html <br> <br> This site also can host advertising own, affiliate or advertising networks. This advertisement is shown through servers that also use cookies to display content related advertising to users. Each of these servers advertising has its own privacy policy, which can be consulted on their own web pages. Currently this site contains advertising from Google Adsense: https://www.google.com/intl/es_ALL/privacypolicy.html'
-      title: Privacy Policy
+    private_info_hidden: private information hidden
     profile: profile
     profile_actions:
       blocking:
-        add: 
-        confirm: 
-        delete: 
-      contact: send a private message to %{username}
-      edit: edit user's profile
+        add: Block user
+        confirm: Are you sure you want to block %{username}? The user won't be able to contact you again or access any of your ads.
+        delete: Unblock user
+      contact: send private message
+      edit: edit
       friend:
-        add: 'Add %{username} to your friend''s list '
-        delete: Delete %{username} from your friend's list
+        add: Add to your friend list
+        delete: Delete from your friend list
     publish_ad: Post ad
     publish_ad_on: Post ad in %{woeid}
     published_ads: Posted ads
@@ -334,19 +334,34 @@ en:
     remember_me: Remember me
     requests: requests
     rss_suscribe: Suscribe via RSS
-    save_failed: 'There is problem, please revied this:'
+    rule:
+      entry_1: 
+      entry_10: 
+      entry_2: 
+      entry_3: 
+      entry_4: 
+      entry_5: 
+      entry_6: 
+      entry_7: 
+      entry_8: 
+      entry_9: 
+      title: Site rules
+    rules: site rules
+    save_failed: 'There is problem, please review this:'
     search:
       button: search
       no_ads_message_html: There are no matching ads with your search <b>%{q}</b>.
     searching_on_html: Searching <i>%{q}</i> on
     send: Send
     send_a_message: Send a private message to %{user}
+    settings: Settings
     share_this_ad: Share this ad
     sign_in: Sign in
     sign_in_with_provider: Sign in with %{provider}
     sign_up: Sign up
     slogan: don't dump it, give it to your neighbor
     suggestions: suggestions
+    title_with_page: "%{title}, page %{page}"
     to_publish_or_send_messages: To post ads or send messages please log in
     tos: Terms and conditions
     translate:
@@ -355,9 +370,8 @@ en:
       title: Help us to translate nolotiro.org
     translations: translations
     update: Save
+    update_ad: Update ad
     user_ads: ads
-    user_edit_profile: Edit user's profile
-    user_profile: Profile
     username: Username
     users_most_active: most active users
     users_most_active_last_week: most active users last week
@@ -366,9 +380,13 @@ en:
     want: want
     want_to_leave: Do you want to delete your user?
     we_need_your_password: "(we need your password to confirm your edition)"
-    welcome: welcome
-    write_a_comment: "+ Write a comment"
     your_email: Your email
+  number:
+    human:
+      storage_units:
+        format: "%n %u"
+        units:
+          mb: MB
   oauth:
     errors:
       duplicated_username: The username provided by %{provider} is already in our database. If you already registered through another social network or through email & password, please login using those. Otherwise just specify another username.
@@ -376,6 +394,10 @@ en:
   recaptcha:
     errors:
       verification_failed: Robot verification failed, try again
+  reports:
+    create:
+      success_reported: Report received. Thanks!
+      success_banned: Content retired. Thanks!
   time:
     formats:
       active_admin: 

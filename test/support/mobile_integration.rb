@@ -2,7 +2,7 @@
 
 Capybara.register_driver :poltergeist_mobile do |app|
   Capybara::Poltergeist::Driver.new(app, window_size: [320, 480],
-                                         url_whitelist: ['127.0.0.1'])
+                                         url_whitelist: ["127.0.0.1"])
 end
 
 class MobileIntegrationTest < ActionDispatch::IntegrationTest

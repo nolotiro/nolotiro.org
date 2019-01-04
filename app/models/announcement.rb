@@ -1,14 +1,14 @@
 # frozen_string_literal: true
 
-class Announcement < ActiveRecord::Base
+class Announcement < ApplicationRecord
   has_many :dismissals, dependent: :destroy
 
   scope :current, -> do
     now = Time.zone.now
 
-    where('starts_at <= :now', now: now)
-      .where('ends_at >= :now OR ends_at IS NULL', now: now)
-      .where('locale IS NULL OR locale = :locale', locale: I18n.locale)
+    where("starts_at <= :now", now: now)
+      .where("ends_at >= :now OR ends_at IS NULL", now: now)
+      .where("locale IS NULL OR locale = :locale", locale: I18n.locale)
   end
 
   def self.pending_for(user)

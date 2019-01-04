@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class RemoveLangFromUsers < ActiveRecord::Migration
+class RemoveLangFromUsers < ActiveRecord::Migration[5.1]
   def up
     remove_column :users, :lang, :string, limit: 4, null: false
   end

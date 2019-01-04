@@ -1,18 +1,18 @@
 # frozen_string_literal: true
 
-require 'helpers/stats_sidebar'
+require "helpers/stats_sidebar"
 
 ActiveAdmin.register User do
   include StatsSidebar
 
   config.batch_actions = false
-  config.remove_action_item(:new)
-  config.remove_action_item(:destroy)
+
+  actions :index, :show, :update, :edit
 
   permit_params :role
 
-  scope 'Legítimos', :legitimate, default: true
-  scope 'Baneados', :banned
+  scope "Legítimos", :legitimate, default: true
+  scope "Baneados", :banned
 
   controller do
     def find_collection
@@ -53,31 +53,31 @@ ActiveAdmin.register User do
       row :ads_count
     end
 
-    panel 'Anuncios' do
+    panel "Anuncios" do
       table_for user.ads.order(published_at: :desc) do
         column(:title) { |ad| link_to ad.title, admin_ad_path(ad) }
 
         column :published_at
 
         column :type do |ad|
-          status_tag({ 'give' => 'green', 'want' => 'red' }[ad.type],
+          status_tag({ "give" => "green", "want" => "red" }[ad.type],
                      label: ad.type)
         end
 
         column :status do |ad|
-          status_tag({ 'available' => 'green',
-                       'booked' => 'orange',
-                       'delivered' => 'red' }[ad.status],
+          status_tag({ "available" => "green",
+                       "booked" => "orange",
+                       "delivered" => "red" }[ad.status],
                      label: ad.status)
         end
 
         column :body
 
         column :actions do |ad|
-          edit = link_to 'Editar', edit_admin_ad_path(ad)
-          delete = link_to 'Eliminar', admin_ad_path(ad), method: :delete
+          edit = link_to "Editar", edit_admin_ad_path(ad)
+          delete = link_to "Eliminar", admin_ad_path(ad), method: :delete
 
-          safe_join([edit, delete], ' ')
+          safe_join([edit, delete], " ")
         end
       end
     end
@@ -95,8 +95,8 @@ ActiveAdmin.register User do
     column :ads_count
 
     actions(defaults: false, dropdown: true) do |user|
-      item 'Editar', edit_admin_user_path(user)
-      item 'Contactar', new_conversation_path(recipient_id: user.id)
+      item "Editar", edit_admin_user_path(user)
+      item "Contactar", new_conversation_path(recipient_id: user.id)
       item "#{user.banned? ? 'Desb' : 'B'}loquear",
            moderate_admin_user_path(user),
            method: :post
@@ -104,13 +104,11 @@ ActiveAdmin.register User do
   end
 
   action_item :view, only: :show do
-    link_to('Ver en la web', profile_path(user.username)) if user.legitimate?
+    link_to("Ver en la web", profile_path(user.username)) if user.legitimate?
   end
 
   action_item :contact, only: :show do
-    if user.legitimate?
-      link_to 'Contactar', new_conversation_path(recipient_id: user.id)
-    end
+    link_to "Contactar", new_conversation_path(recipient_id: user.id) if user.legitimate?
   end
 
   action_item :moderate, only: :show do
@@ -124,7 +122,7 @@ ActiveAdmin.register User do
 
     user.moderate!
 
-    redirect_to admin_user_path(user),
-                notice: "Usuario #{'des' unless user.banned?}bloqueado"
+    redirect_back fallback_location: admin_reported_users_path,
+                  notice: "Usuario #{'des' unless user.banned?}bloqueado"
   end
 end

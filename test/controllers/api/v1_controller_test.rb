@@ -1,4 +1,3 @@
-# encoding : utf-8
 # frozen_string_literal: true
 
 require 'test_helper'
@@ -21,12 +20,12 @@ module Api
       assert_response :success
     end
 
-    test 'should get ad show on api v1' do
-      get :ad_show, params: { format: 'json', id: @ad }
+    it "gets ad show on api v1" do
+      get :ad_show, params: { format: "json", id: @ad }
       body = JSON.parse(@response.body)
 
-      assert_equal 766_273, body['woeid_code']
-      assert_equal 'ordenador en Vallecas', body['title']
+      assert_equal 766_273, body["woeid_code"]
+      assert_equal "ordenador en Vallecas", body["title"]
       assert_response :success
     end
 

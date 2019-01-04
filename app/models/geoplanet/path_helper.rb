@@ -7,7 +7,7 @@ module Geoplanet
     end
 
     def local_base_path
-      File.join(Rails.root, 'vendor', 'geoplanet')
+      Rails.root.join("vendor", "geoplanet")
     end
 
     def compressed_url
@@ -15,11 +15,11 @@ module Geoplanet
     end
 
     def compressed_name
-      'geoplanet_data_7.10.0.zip'
+      "geoplanet_data_7.10.0.zip"
     end
 
     def base_url
-      'https://archive.org/download/geoplanet_data_7.10.0.zip/'
+      "https://archive.org/download/geoplanet_data_7.10.0.zip/"
     end
   end
 end

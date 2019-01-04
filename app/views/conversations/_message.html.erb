@@ -1,23 +1,17 @@
 <div class="message-excerpt">
   <div class="message-container">
-    <% if message.sender == current_user %>
-      <div class="triangle-me">
+    <div class="<%= bubble_edge_css_class(message) %>">
+    </div>
+    <div class="<%= bubble_css_classes(message) %>">
+      <div class="message-date">
+        <%= time_ago_in_words(message.created_at) %>
       </div>
-      <div class="bubble bg-bubble-me">
-        <div class="message-date">
-          <%= time_ago_in_words(message.created_at) %>
-        </div>
+      <!-- Only for admin until we have better anti-spam measures -->
+      <% if message.sender&.admin? %>
+        <%= simple_format(Rinku.auto_link(message.body, :all, 'target="_blank"')) %>
+      <% else %>
         <%= simple_format(message.body) %>
-      </div>
-    <% else %>
-      <div class="triangle-other">
-      </div>
-      <div class="bubble">
-        <div class="message-date">
-          <%= time_ago_in_words(message.created_at) %>
-        </div>
-        <%= simple_format(message.body) %>
-      </div>
-    <% end %>
+      <% end %>
+    </div>
   </div>
 </div>

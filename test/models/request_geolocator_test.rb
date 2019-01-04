@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'test_helper'
+require "test_helper"
 
 class RequestGeolocatorTest < ActionView::TestCase
   test 'does not suggest location from IP address if city not in DB' do
@@ -20,7 +20,7 @@ class RequestGeolocatorTest < ActionView::TestCase
                  RequestGeolocator.new(ip_in_madrid).suggest.fullname
   end
 
-  test "does not suggests a location unless it's city-specific" do
+  it "does not suggest a location unless it's city-specific" do
     assert_nil \
       RequestGeolocator.new(ip_from_brazil_but_not_a_specific_city).suggest
   end
@@ -32,6 +32,6 @@ class RequestGeolocatorTest < ActionView::TestCase
   end
 
   def ip_from_brazil_but_not_a_specific_city
-    '179.168.191.163'
+    "177.20.105.105"
   end
 end

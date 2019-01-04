@@ -1,10 +1,19 @@
-<div id="select_language_box">
-  <%= render "partials/language", abbr: "en", language: "English" %>
-  <%= render "partials/language", abbr: "es", language: "Español" %>
-  <%= render "partials/language", abbr: "ca", language: "Català" %>
-  <%= render "partials/language", abbr: "gl", language: "Galego" %>
-  <%= render "partials/language", abbr: "fr", language: "Français" %>
-  <%= render "partials/language", abbr: "pt", language: "Português" %>
-  <%= render "partials/language", abbr: "it", language: "Italiano" %>
-  <%= link_to "Otro...", translate_path %>
-</div>
+<button type='button' id='dLabel' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
+  <i class='glyphicon glyphicon-globe'></i>
+  <%= available_languages[I18n.locale] %>
+  <span class='caret'></span>
+</button>
+
+<ul class='dropdown-menu' aria-labelledby='dLabel'>
+  <% available_languages.each do |abbr, language| %>
+    <li>
+      <%= link_to locale_path(abbr), class: 'lang', 'data-langcode' => abbr do %>
+        <span><%= language %></span>
+      <% end %>
+    </li>
+  <% end %>
+
+  <li>
+    <%= link_to 'Otro...', translate_path, class: 'lang' %>
+  </li>
+</ul>

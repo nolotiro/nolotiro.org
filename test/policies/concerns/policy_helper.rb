@@ -16,7 +16,7 @@ module PolicyHelper
   private
 
   def permit_index(user, record)
-    (record.class.to_s + 'Policy::Scope')
+    (record.class.to_s + "Policy::Scope")
       .constantize
       .new(user, record.class)
       .resolve

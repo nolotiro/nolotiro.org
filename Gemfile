@@ -1,45 +1,29 @@
 # frozen_string_literal: true
 
-# @todo Revisit the warnings fixed by this in Bundler 2, I guess they will be
-# fixed and this won't be needed
-#
-git_source(:github) do |repo_name|
-  repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?('/')
+source "https://rubygems.org"
 
-  "https://github.com/#{repo_name}.git"
-end
+ruby RUBY_VERSION
 
-source 'https://rubygems.org'
+gem "rails", "~>  5.1"
+gem "rails-i18n", "~> 5.1"
 
-ruby '2.3.1'
-
-gem 'rails', '~> 5.0'
-gem 'rails-i18n', '~> 5.0'
-
-gem 'jbuilder', '~> 2.6'
-gem 'jquery-rails'
-gem 'record_tag_helper', '~> 1.0' # for `div_for`
-gem 'uglifier', '>= 1.3.0'
-
-gem 'dotenv-rails', '~> 2.1'
-
-group :doc do
-  gem 'sdoc', require: false
-end
-
-group :console do
-  gem 'table_print'
-end
+gem "jbuilder", "~> 2.6"
+gem "jquery-rails", "~> 4.3"
+gem "puma"
+gem "record_tag_helper", "~> 1.0"
+gem "rinku", "~> 2.0"
+gem "uglifier", "~> 4.1"
 
 group :development, :test do
-  gem 'byebug'                       # debugger
-  gem 'capybara'                     # real user interactions
-  gem 'factory_girl_rails', '~> 4.0' # factories
-  gem 'launchy'                      # features - save_and_open_page helper
-  gem 'minitest-hooks'               # minitest enhancements
-  gem 'minitest-spec-rails'          # specs style out-of-the-box
-  gem 'rails-controller-testing'     # controller testing gemified for Rails 5
-  gem 'spring'                       # speed up things
+  gem "byebug", "~> 10.0"
+  gem "capybara", "~> 2.18"
+  gem "factory_bot_rails", "~> 4.8"
+  gem "launchy", "~> 2.4"
+  gem "minitest-hooks", "~> 1.4"
+  gem "minitest-spec-rails", "~> 5.4"
+  gem "rails-controller-testing", "~> 1.0"
+  gem "rubocop", "0.52.1", require: false
+  gem "spring", "~> 2.0"
 end
 
 group :test do
@@ -49,56 +33,53 @@ group :test do
 end
 
 group :production, :staging do
-  gem 'airbrake', '~> 4.0' # exception notification
+  gem "airbrake", "~> 7.2"
+  gem "figaro"
 
   # @todo Add a performance monitoring tool
 end
 
 group :development do
-  gem 'brakeman-lib'
-  gem 'faker'
-  gem 'i18n-tasks', '0.9.5'
-  gem 'localeapp',
-      github: 'deivid-rodriguez/localeapp',
-      branch: 'drop_1.9.3_support' # i18n interface
-  gem 'rubocop', '0.46.0'
+  gem "faker", "~> 1.8"
+  gem "i18n-tasks", "~> 0.9"
+  gem "listen", "~> 3.1"
+  gem "localeapp", "~> 3.0"
 
   # deploy
-  gem 'capistrano', '~> 3.0'
-  gem 'capistrano-pending'
-  gem 'capistrano-rails'
-  gem 'capistrano-rbenv'
-  gem 'capistrano-sidekiq'
+  gem "capistrano", "~> 3.10"
+  gem "capistrano-rails", "~> 1.3"
+  gem "capistrano-rbenv", "~> 2.1"
+  gem "capistrano-sidekiq", "1.0.0"
+  gem "capistrano3-puma"
 end
 
-gem 'http_accept_language'
-gem 'pg', '0.19.0'         # database adapter
-gem 'redis-rails'          # redis cache
-gem 'sidekiq'              # job workers
+gem "http_accept_language", "~> 2.1"
+gem "pg", "0.21.0"
+gem "redis-rails", "~> 5.0"
+gem "sidekiq", "~> 5.1"
 
-gem 'devise'             # users
-gem 'kaminari', '0.17.0' # pagination
-gem 'maxminddb'          # geolite city v2
+gem "devise", "~> 4.4"
+gem "kaminari", "~> 1.1"
+gem "maxminddb", "0.1.15"
 
-gem 'omniauth'               # users login with providers
-gem 'omniauth-facebook'      # users login with facebook
-gem 'omniauth-google-oauth2' # users login with google
+gem "omniauth", "~> 1.8"
+gem "omniauth-facebook", "~> 4.0"
+gem "omniauth-google-oauth2", "0.5.3"
 
 # Image processing in the background. @todo Properly reenable it
 # gem 'delayed_paperclip'
 
-gem 'paperclip', '~> 4.0'                   # images
-gem 'pundit'                                # authorization
-gem 'recaptcha', require: 'recaptcha/rails' # captcha
+gem "paperclip", "~> 6.0"
+gem "pundit", "~> 1.1"
+gem "recaptcha", "~> 4.7", require: "recaptcha/rails"
 
-# Admin backend. Adding inherited resources master for Rails 5 support until
-# they starting releasing things. @todo Get rid of this, possibly by completely
-# ditching activeadmin and implementing the console from scratch.
-gem 'activeadmin', github: 'activeadmin'
-gem 'inherited_resources', github: 'activeadmin/inherited_resources'
+# Admin backend.
+# @todo Get rid of this, possibly by completely ditching activeadmin and
+# implementing the console from scratch.
+gem "activeadmin", "~> 1.2"
 
 gem 'bootstrap-sass', '~> 3.3'
 gem 'sass-rails', '~> 5.0'
 
 # Rake task utils
-gem 'rubyzip', require: false
+gem "rubyzip", "~> 1.2", require: false

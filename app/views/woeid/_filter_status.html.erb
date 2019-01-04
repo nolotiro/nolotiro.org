@@ -1,13 +1,13 @@
 <div class="filter_status">
   <%= link_to t('nlt.available'),
               ad_listing_path('give', 'available'),
-              @status == "available" ? { class: "actual" } : {} %>
+              @status == "currently_available" ? { class: "actual" } : {} %>
 
   <%= link_to t('nlt.booked'),
               ad_listing_path('give', 'booked'),
-              @status == "booked" ? { class: "actual" } : {} %>
+              @status == "currently_booked" ? { class: "actual" } : {} %>
 
   <%= link_to t('nlt.delivered'),
               ad_listing_path('give', 'delivered'),
-              @status == "delivered" ? { class: "actual" } : {} %>
+              @status == "currently_delivered" ? { class: "actual" } : {} %>
 </div>

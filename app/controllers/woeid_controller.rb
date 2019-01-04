@@ -5,22 +5,14 @@ class WoeidController < ApplicationController
 
   before_action :check_location
 
-  # GET /es/woeid/:id/:type
-  # GET /es/woeid/:id/:type/status/:status
-  # GET /es/ad/listall/ad_type/:type
-  # GET /es/ad/listall/ad_type/:type/status/:status
   def show
-    @type = type_scope || 'give'
-    @status = status_scope || 'available'
+    @type = type_scope || "give"
+    @status = status_scope || "currently_available"
     @q = params[:q]
     @page = params[:page]
 
-    unless @page.nil? || positive_integer?(@page)
-      raise ActionController::RoutingError, 'Not Found'
-    end
-
     scope = Ad.public_send(@type).by_woeid_code(current_woeid).by_title(@q)
-    scope = scope.public_send(@status) if @type == 'give'
+    scope = scope.public_send(@status) if @type == "give"
 
     @ads = policy_scope(scope).includes(:user, town: [:state, :country])
                               .recent_first

@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
-class EnableIndexesOnLikeQueries < ActiveRecord::Migration
+class EnableIndexesOnLikeQueries < ActiveRecord::Migration[5.1]
   def up
-    unless extension_enabled?('pg_trgm')
+    unless extension_enabled?("pg_trgm")
       raise <<-MSG.squish
         You must enable the pg_trgm extension. You can do so by running
         "CREATE EXTENSION pg_trgm;" on the current DB as a PostgreSQL
@@ -10,7 +10,7 @@ class EnableIndexesOnLikeQueries < ActiveRecord::Migration
       MSG
     end
 
-    %w(towns states countries).each do |table|
+    %w[towns states countries].each do |table|
       execute <<-SQL.squish
         CREATE INDEX index_#{table}_on_name_trigram
         ON #{table}
@@ -20,8 +20,8 @@ class EnableIndexesOnLikeQueries < ActiveRecord::Migration
   end
 
   def down
-    %i(towns states countries).each do |table|
-      remove_index table, name: "index_#{table}_on_name_trigram"
+    %i[towns states countries].each do |table|
+      remove_index table, name: :"index_#{table}_on_name_trigram"
     end
   end
 end

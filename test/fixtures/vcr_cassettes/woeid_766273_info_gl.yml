@@ -1,0 +1,50 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://query.yahooapis.com/v1/public/yql?format=json&q=select%20*%20from%20geo.places%20where%20woeid%20=%20766273%20AND%20lang%20=%20%27gl%27
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (linux-gnu x86_64) ruby/2.5.0p0
+      Host:
+      - query.yahooapis.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Content-Type-Options:
+      - nosniff
+      Access-Control-Allow-Origin:
+      - "*"
+      Content-Type:
+      - application/json;charset=utf-8
+      Cache-Control:
+      - no-cache
+      Date:
+      - Sat, 17 Feb 2018 15:21:53 GMT
+      Age:
+      - '0'
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Via:
+      - http/1.1 a83.ue.gq1.yahoo.net (ApacheTrafficServer [cMsSf ])
+      Server:
+      - ATS
+    body:
+      encoding: UTF-8
+      string: '{"query":{"count":1,"created":"2018-02-17T15:21:53Z","lang":"en-US","results":{"place":{"lang":"gl-","xmlns":"http://where.yahooapis.com/v1/schema.rng","yahoo":"http://www.yahooapis.com/v1/base.rng","uri":"http://where.yahooapis.com/v1/place/766273","woeid":"766273","placeTypeName":{"code":"7","content":"Town"},"name":"Madrid","country":{"code":"ES","type":"Country","woeid":"23424950","content":"Spain"},"admin1":{"code":"","type":"Autonomous
+        Community","woeid":"12578024","content":"Madrid"},"admin2":{"code":"","type":"Province","woeid":"12602090","content":"Madrid"},"admin3":null,"locality1":{"type":"Town","woeid":"766273","content":"Madrid"},"locality2":null,"postal":null,"centroid":{"latitude":"40.421429","longitude":"-3.67163"},"boundingBox":{"southWest":{"latitude":"40.325939","longitude":"-3.79887"},"northEast":{"latitude":"40.520081","longitude":"-3.5349"}},"areaRank":"1","popRank":"1","timezone":{"type":"Time
+        Zone","woeid":"56043644","content":"Europe/Madrid"}}}}}'
+    http_version: 
+  recorded_at: Sat, 17 Feb 2018 15:21:53 GMT
+recorded_with: VCR 4.0.0

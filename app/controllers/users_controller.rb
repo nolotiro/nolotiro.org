@@ -3,7 +3,7 @@
 class UsersController < ApplicationController
   before_action :load_user
 
-  def listads
+  def profile
     authorize(@user)
 
     @type = type_scope
@@ -26,7 +26,7 @@ class UsersController < ApplicationController
   private
 
   def load_user
-    @user = friendly_find(params[:id])
+    @user = friendly_find(params[:username])
   end
 
   def friendly_find(param)

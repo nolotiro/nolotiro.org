@@ -1,4 +1,3 @@
-# encoding : utf-8
 # frozen_string_literal: true
 
 require 'test_helper'
@@ -32,68 +31,37 @@ class AdTest < ActiveSupport::TestCase
     assert_equal false, build(:ad, type: :give, status: nil).valid?
   end
 
-  test 'requires nil status for want ads' do
-    assert_equal false, build(:ad, type: :want, status: :available).valid?
-  end
+  test "#filtered_body escapes privacy data" do
+    text = "por email example@example.com, o whatsapp al 666666666"
 
-  test 'ad validates maximum length of title' do
-    assert_equal true, build(:ad, title: 'a' * 100).valid?
-    assert_equal false, build(:ad, title: 'a' * 101).valid?
-  end
+    expected_text = <<-TXT.squish
+      por email [INFORMACIÓN PRIVADA OCULTA], o [INFORMACIÓN PRIVADA OCULTA] al
+      [INFORMACIÓN PRIVADA OCULTA]
+    TXT
 
-  test 'ad validates minimum length of filtered title' do
-    assert_equal true, build(:ad, title: 'a' * 4).valid?
-    assert_equal false, build(:ad, title: 'a' * 3).valid?
-    assert_equal true, build(:ad, title: 'Me llamo spammer@example.org').valid?
-    assert_equal false, build(:ad, title: 'spammer@example.org').valid?
-  end
-
-  test 'ad title escapes privacy data' do
-    text = 'por email example@example.com, o whatsapp al 666666666'
-    expected_text = 'por email  , o   al  '
-    ad = build(:ad, title: text)
-
-    assert_equal expected_text, ad.filtered_title
-  end
-
-  test 'ad validates maximum length of body' do
-    assert_equal true, build(:ad, body: 'a' * 1000).valid?
-    assert_equal false, build(:ad, body: 'a' * 1001).valid?
-  end
-
-  test 'ad validates minimum length of filtered body' do
-    assert_equal true, build(:ad, body: 'a' * 25).valid?
-    assert_equal false, build(:ad, body: 'a' * 24).valid?
-    assert_equal true, build(:ad, body: 'a' * 25 + ' spammer@example.org').valid?
-    assert_equal false, build(:ad, body: 'a' * 22 + ' spammer@example.org').valid?
-  end
-
-  test 'ad body escapes privacy data' do
-    text = 'por email example@example.com, o whatsapp al 666666666'
-    expected_text = 'por email  , o   al  '
     ad = build(:ad, body: text)
 
     assert_equal expected_text, ad.filtered_body
   end
 
-  test 'ad check slug' do
-    ad = build(:ad, title: 'ordenador en Vallecas')
+  test "#slug" do
+    ad = build(:ad, title: "ordenador en Vallecas")
 
-    assert_equal 'ordenador-en-vallecas', ad.slug
+    assert_equal "ordenador-en-vallecas", ad.slug
   end
 
-  test 'ad check type_string' do
-    assert_equal 'regalo', build(:ad, :give).type_string
-    assert_equal 'petición', build(:ad, :want).type_string
+  test "#type_string" do
+    assert_equal "regalo", build(:ad, :give).type_string
+    assert_equal "petición", build(:ad, :want).type_string
   end
 
-  test 'ad check status_string' do
-    assert_equal 'disponible', build(:ad, :available).status_string
-    assert_equal 'reservado', build(:ad, :booked).status_string
-    assert_equal 'entregado', build(:ad, :delivered).status_string
+  test "#status_string" do
+    assert_equal "disponible", build(:ad, :available).status_string
+    assert_equal "reservado", build(:ad, :booked).status_string
+    assert_equal "entregado", build(:ad, :delivered).status_string
   end
 
-  test 'ad meta_title for give ads' do
+  test "#meta_title for give ads" do
     ad = build(:ad, :give)
 
     assert_equal \
@@ -101,7 +69,7 @@ class AdTest < ActiveSupport::TestCase
       ad.meta_title
   end
 
-  test 'ad meta_title for want ads' do
+  test "#meta_title for want ads" do
     ad = build(:ad, :want)
 
     assert_equal \
@@ -109,43 +77,43 @@ class AdTest < ActiveSupport::TestCase
       ad.meta_title
   end
 
-  test 'ad body stores emoji' do
-    ad = create(:ad, body: 'Pantalones cortos para el veranito! 😀 ')
+  test "#body stores emoji" do
+    ad = create(:ad, body: "Pantalones cortos para el veranito! 😀 ")
 
-    assert_equal 'Pantalones cortos para el veranito! 😀 ', ad.body
+    assert_equal "Pantalones cortos para el veranito! 😀 ", ad.body
   end
 
-  test 'ad bumping refreshes publication date' do
+  test "#bump refreshes publication date" do
     ad = create(:ad, published_at: 1.week.ago)
     ad.bump
 
     assert_in_delta Time.zone.now.to_i, ad.published_at.to_i, 1
   end
 
-  test 'ad bumping resets readed count' do
+  test "#bump resets readed count" do
     ad = create(:ad, readed_count: 100)
     ad.bump
 
     assert_equal 1, ad.readed_count
   end
 
-  test 'ad bumping deletes associated comments' do
+  test "#bump deletes associated comments" do
     comment = create(:comment)
 
     assert_difference(-> { Comment.count }, -1) { comment.ad.bump }
   end
 
-  test 'associated comments are deleted when ad is deleted' do
+  test "associated comments are deleted when ad is deleted" do
     comment = create(:comment)
 
     assert_difference(-> { Comment.count }, -1) { comment.ad.destroy }
   end
 
-  test '.by_title ignores invalid bytes sequences' do
+  test ".by_title ignores invalid bytes sequences" do
     assert_equal [], Ad.by_title("Física y Química 3º ESoC3\x93")
   end
 
-  test '.move! changes ad type' do
+  test ".move! changes ad type" do
     ad = create(:ad, :give)
     ad.move!
     assert_equal true, ad.want?
@@ -154,7 +122,7 @@ class AdTest < ActiveSupport::TestCase
     assert_equal true, ad.give?
   end
 
-  test '.move! updates the status to keep the ad valid' do
+  test ".move! updates the status to keep the ad valid" do
     ad = create(:ad, :give)
     ad.move!
     assert_nil ad.status

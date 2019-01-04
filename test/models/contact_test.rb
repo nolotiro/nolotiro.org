@@ -1,28 +1,28 @@
 # frozen_string_literal: true
 
-require 'test_helper'
+require "test_helper"
 
 class ContactTest < ActiveSupport::TestCase
-  test 'contact requires message' do
+  it "requires message" do
     c = Contact.new
     c.valid?
-    assert_includes c.errors[:message], I18n.t('errors.messages.blank')
+    assert_includes c.errors[:message], I18n.t("errors.messages.blank")
   end
 
-  test 'contact requires email' do
+  it "requires email" do
     c = Contact.new
     c.valid?
-    assert_includes c.errors[:message], I18n.t('errors.messages.blank')
+    assert_includes c.errors[:message], I18n.t("errors.messages.blank")
   end
 
-  test 'contact validates email' do
-    c = Contact.new email: 'bla', message: 'yeeeaaa'
+  it "validates email" do
+    c = Contact.new email: "bla", message: "yeeeaaa"
     c.valid?
-    assert_includes c.errors[:email], I18n.t('errors.messages.invalid')
+    assert_includes c.errors[:email], I18n.t("errors.messages.invalid")
   end
 
-  test 'contact send mail' do
-    c = Contact.new email: 'bla@bla.com', message: 'yyeaaahhhyeaaahhhyeaaahhhyeaaahhhyeaaahhhyeaaahhhyeaaahhhyeaaahhhyeaaahhhyeaaahhhyeaaahhhyeaaahhhyeaaahhheaaahhh'
+  it "sends mail" do
+    c = Contact.new email: "bla@bla.com", message: "yyeaaahhhyeaaahhhyeaaahhhyeaaahhhyeaaahhhyeaaahhhyeaaahhh"
     assert c.valid?
   end
 end

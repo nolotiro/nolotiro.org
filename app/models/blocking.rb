@@ -3,15 +3,15 @@
 #
 # Blockings between users
 #
-class Blocking < ActiveRecord::Base
-  belongs_to :blocker, class_name: 'User'
-  belongs_to :blocked, class_name: 'User'
+class Blocking < ApplicationRecord
+  belongs_to :blocker, class_name: "User", inverse_of: :blockings
+  belongs_to :blocked, class_name: "User", inverse_of: :received_blockings
 
   validates :blocker, :blocked, presence: true
   validates :blocker, uniqueness: { scope: :blocked }
 
   scope :not_affecting, ->(user) do
-    where('blockings.blocked_id IS NULL OR blockings.blocked_id <> ?', user.id)
+    where("blockings.blocked_id IS NULL OR blockings.blocked_id <> ?", user.id)
   end
 
   def self.none_between?(user1, user2)

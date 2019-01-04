@@ -5,7 +5,7 @@ module ActiveSupport
   # Base class for unit testing
   #
   class TestCase
-    include FactoryGirl::Syntax::Methods
+    include FactoryBot::Syntax::Methods
 
     self.use_transactional_tests = false
 

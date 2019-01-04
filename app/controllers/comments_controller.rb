@@ -8,12 +8,11 @@ class CommentsController < ApplicationController
     @comment = @ad.comments.build(comment_params)
 
     if @comment.save
-      if @ad.user != current_user
-        CommentsMailer.create(@ad.id, @comment.filtered_body).deliver_later
-      end
-      flash[:notice] = t('nlt.comments.flash_ok')
+      CommentsMailer.create(@ad.id, @comment.filtered_body).deliver_later if @ad.user != current_user
+
+      flash[:notice] = t("nlt.comments.flash_ok")
     else
-      flash[:alert] = t('nlt.comments.flash_ko')
+      flash[:alert] = t("nlt.comments.flash_ko")
     end
 
     redirect_to adslug_path(@ad, slug: @ad.slug)

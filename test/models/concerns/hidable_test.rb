@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
-require 'test_helper'
+require "test_helper"
 
-class GenericTestPost < ActiveRecord::Base
+class GenericTestPost < ApplicationRecord
   include Hidable
 
   belongs_to :user

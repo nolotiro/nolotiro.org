@@ -1,4 +1,3 @@
----
 it:
   activemodel:
     attributes:
@@ -47,12 +46,12 @@ it:
         remember: Ricordami
         username: Nome di utente
     models:
-      ad:
-        one: annuncio
-        other: Annunci
       aa_comment:
         one: commento
         other: Commenti
+      ad:
+        one: annuncio
+        other: Annunci
       user:
         one: utente
         other: Utenti
@@ -67,7 +66,7 @@ it:
       trash: Cancellare la conversazione
       trash_selected: Cancellare le conversazioni selezionati
     index:
-      title: Messaggi di %{username}
+      title: Messaggi
     new:
       body_max: 1500 caratteri massimo
       subject: soggetto
@@ -134,21 +133,22 @@ it:
       update_needs_confirmation: Il tuo account è stato aggiornato, ma dobbiamo verificare la tua email. Ti invitiamo a consultare la tua email e cliccare sul link di conferma.
       updated: Il tuo account è stato aggiornato.
     sessions:
-      already_signed_out: Sei uscito correttamente.
       signed_in: Accesso effettuato con successo.
       signed_out: Sei uscito correttamente.
       user:
         signed_in: Acceso eseguito
   errors:
     messages:
-      already_confirmed: "è stato già confermato"
+      already_confirmed: è stato già confermato
       confirmation_period_expired: deve essere confermato entro %{period}, richiedi una nuova conferma
-      expired: "è scaduto, si prega di richiederne uno nuovo"
+      expired: è scaduto, si prega di richiederne uno nuovo
+      in_between: deve essere compreso tra %{min} e %{max}
       not_found: non trovato
       not_locked: non era bloccato
       not_saved:
         one: 'Non posso salvare questo %{resource}: 1 errore'
         other: 'Non posso salvare questo %{resource}: %{count} errori.'
+      spoofed_media_type: possiede contenuti che non corrispondono all'estensione dichiarata
   friendships:
     create:
       success: Amico aggiunto
@@ -187,7 +187,8 @@ it:
       marked_as: Annuncio %{status}
       updated: Annuncio aggiornato
     all: tutti
-    all_ads: tutti gli annunci
+    all_gifts: tutti i regali
+    all_requests: tutte le petizioni
     are_you_interested: Sei interessato?
     available: disponibile
     back: torna alla pagina iniziale
@@ -231,8 +232,9 @@ it:
     developers: svilupatori
     didn_t_receive_confirmation_instructions: Non hai ricevuto le istruzione di conferma?
     do_you_have_it: Ce l'hai?
-    edit_this_ad: Editare questo annuncio
     edit: Editare
+    edit_this_ad: Editare questo annuncio
+    expired: 
     faq:
       answer_1_html: Lo scopo fondamentale di questo sito è quello di sbarazzarsi di oggetti non più utilizzati e che ci ostacolano in casa
       answer_2_html: Prima a te direttamente perche ti puoi liberare delle cose che non voui più, ma anche alla persona a qui regali implicitamente. Il meglio è vederlo da un punto di vista egoista e controllare la relazione de causa-effetto che stiamo a iniziare. Si facciamo cosí e pensiamo soltanto a liberarci delle cose útili, ma che noi non vogliamo più perche ci incomodano e sono da buttare fuori, sempre terremo una bella esperienza, perche non speriamo niente di più. Ed il fatto de sapere que qualcuno ne está profittando rafforze la esperienza. In altre parole, l'atto di regalare delle cose di valore o útili es sempre positivo se non speriamo un premio morale o placare la nostra coscienza.
@@ -254,9 +256,7 @@ it:
       question_9: Posso ricevere una casa, una macchina o una moto su nolotiro?
       title: Domande frequenti
     faqs: domande frequenti
-    footer_explain: 'nolotiro.org è un sito dove guardo per i regali dono gratuito e mobili di seconda mano, sedie, divani, biciclette, computer portatili, tavoli, stufe, lampade, letti, vestiti, giocattoli, lettini per bambini o automobili, telefoni cellulari e altri molte cose che si desidera non è più e non hanno più bisogno di fare il riutilizzo altre persone che possono servire o dare nuova vita.
-
-'
+    footer_explain: nolotiro.org è un sito dove guardo per i regali dono gratuito e mobili di seconda mano, sedie, divani, biciclette, computer portatili, tavoli, stufe, lampade, letti, vestiti, giocattoli, lettini per bambini o automobili, telefoni cellulari e altri molte cose che si desidera non è più e non hanno più bisogno di fare il riutilizzo altre persone che possono servire o dare nuova vita.
     forgot_your_password: Hai dimenticato la tua password?
     friends: Amici
     gift_on: regalo in %{woeid}
@@ -265,16 +265,16 @@ it:
     give_it_to: Regalalo a %{user}
     hello_to: Ciao %{recipient},
     here: qui
-    home_title: 'annunci di regali nuovi e di seconda mano '
     if_you_are_new: Se sei un utente nuovo, per favore
     if_youre_already_an_user: Si sei un utente registrato, per favore
-    keywords: regalato seconda mano gratis
     last_published_gifts: ultimi regali pubblicati
     leave_blank: "(Lasciala in bianco se non la vuoi cambiare)"
     legal_notice: note legali
     legal_page:
-      body_html: 'Nome: Associazione aLabs. <br> registrata nel registro delle associazioni della Comunità di Madrid con il numero 32022. <br> CIF: G86139847 <br>C/Duque de Alba, 13 (28012) Madrid.'
+      body_html: 'Nome: Associazione aLabs. <br> registrata nel registro delle associazioni della Comunità di Madrid con il numero 32022. <br> CIF: G86139847 <br>C/San Vicente Ferrer 45, 2-D (28004) Madrid.'
       title: Note legali
+    location_gifts: presenti à %{location}
+    location_requests: petizioni à %{location}
     login: accedi
     logout: uscire
     mail:
@@ -284,10 +284,8 @@ it:
     member_since: membro dal
     messages: messaggi
     messages_title: Messaggi
-    meta_description: 'nolotiro.org è un sito dove guardo per i regali dono gratuito e mobili di seconda mano, sedie, divani, biciclette, computer portatili, tavoli, stufe, lampade, letti, vestiti, giocattoli, lettini per bambini o automobili, telefoni cellulari e altri molte cose che si desidera non è più e non hanno più bisogno di fare il riutilizzo altre persone che possono servire o dare nuova vita.
-
-'
-    meta_description_ad: rivendita regali %{title} en %{woeid}. %{body}
+    meta_description: nolotiro.org è un sito dove guardo per i regali dono gratuito e mobili di seconda mano, sedie, divani, biciclette, computer portatili, tavoli, stufe, lampade, letti, vestiti, giocattoli, lettini per bambini o automobili, telefoni cellulari e altri molte cose che si desidera non è più e non hanno più bisogno di fare il riutilizzo altre persone che possono servire o dare nuova vita.
+    meta_description_ad: "%{type} en %{woeid} di %{title}. %{body}"
     n_ads:
       one: "%{count} annuncio"
       other: "%{count} annunci"
@@ -307,29 +305,25 @@ it:
       publish_ad: pubblicare un annuncio in questa città
       subtitle: Si può provare una qualsiasi di queste cose
       switch_to_bigger_city_html: "%{choose_bigger} vicino da te."
-      switch_to_guessed_city_html: 'Verifica di aver scelto correttamente la tua cità. Il nostro sistema di suggerimento (in base alla tua IP) dice che ti trovi vicino a %{change_location}'
+      switch_to_guessed_city_html: Verifica di aver scelto correttamente la tua cità. Il nostro sistema di suggerimento (in base alla tua IP) dice che ti trovi vicino a %{change_location}
       title: Nessun annuncio per questa posizione.
     password: password
     permission_denied: Non si dispone dell'autorizzazione per eseguire questa azione.
     please_fill_to_become_member: Si prega di compilare questo modulo per essere un membro di nolotiro
     policy_agreement_html: Inviando questo modulo, ammette di aver letto, compreso, e si è soddisfatti con il nostro %{tos} e %{privacy}.
     privacy: politica sulla privacy
-    privacy_page:
-      body_html: 'nolotiro.org (sito web di seguito) è di proprietà e gestito da: <br> <br> aLabs <br> C/Duque de Alba, 13 <br> 28012 Madrid, Spagna <br> può contattare nel contatto modulo abilitato a tale scopo sul sito. L''accesso al sito comporta la piena accettazione del presente informativa sulla privacy e le condizioni d''uso. <br> In relazione al rispetto della legge 15/1999, del 13 dicembre, protezione dei dati personali (LOPD), si informa che questo sito memorizza i dati automatizzati forniti sul modulo si sono registrati all''utente di effettuare l''utente a fornire servizi di siti web in modo personalizzato, come ad esempio: gestire il proprio account utente, gli annunci, e il sistema di gestione di messaggi privati ​​tra utenti. <br> I messaggi privati ​​termine si riferisce alla possibilità di accesso a tali messaggi privati ​​sarà esclusivamente tra due utenti, senza alcuna possibilità di utenti di terze parti per accedere al contenuto. Tuttavia, nei messaggi di database vengono memorizzati in formato testo e può essere messo a disposizione delle forze di sicurezza in caso di commissione di reati o di ingiunzione. <br> L''utente non pubblica o di terzi dati personali che lo annunci, come indirizzi e-mail, numeri di telefono, indirizzi, ecc Il sito web, prendere le misure necessarie per la conservazione dei dati personali, anche se l''utente ignora queste condizioni di privacy. Ecco perché abbiamo sviluppato un e-mail filtro e telefono negli annunci per evitare che tali informazioni possano essere raccolte dai sistemi di indicizzazione automatica e robot. Questo non elimina la responsabilità ultima degli utenti per quanto riguarda la pubblicazione dei propri dati personali o di terzi. Ed è solo perché crediamo che molti utenti non sono consapevoli dell''importanza della conservazione dei propri dati personali. <br> Formulario di contatto: <br> si informa che i dati personali forniti dall''utente nel modulo di contatto vengono memorizzati per il solo scopo di contatto con l''utente, questi dati non possono essere utilizzati in ogni caso, per l''invio di messaggi pubblicitari, né essere ceduti a terzi. <br> In qualsiasi momento è possibile esercitare i diritti di accesso, rettifica e cancellazione dei dati da uno dei mezzi di comunicazione di cui al primo comma. <br> Sessione Cookie: <br> L''accesso a questo sito implica l''uso di cookies di sessione. I cookie di sessione sono piccoli pezzi di informazioni che vengono memorizzate nel browser utilizzato da ciascun utente per il server di ricordare alcune informazioni che possono essere utilizzati in seguito. Queste informazioni possono identificare l''utente come un utente specifico anonimo. <br> Inoltre, questo sito può ospitare elementi nel codice sorgente delle pagine che vengono utilizzati per misurare il traffico di utenti che visitano un sito web e può disegnare un modello di visite degli utenti. Queste informazioni anonime può essere condiviso con i clienti aziendali, fornitori, sponsor e inserzionisti. <br> attualmente usiamo i servizi di Google Analytics per misurare il traffico di questo sito in grado di catturare le informazioni di cui sopra. È possibile visualizzare ulteriori informazioni sulla politica sulla privacy sul sito web di Google: Google (Analytics): https://www.google.com/intl/es_ALL/privacypolicy.html <br> Questo sito può anche ospitare pubblicità reti proprio, affiliazione o pubblicitari. Questo annuncio è mostrato attraverso i server che utilizzano i cookie per visualizzare pubblicità relative contenuti agli utenti. Ognuno di questi server pubblicità ha una propria politica sulla privacy, che può essere consultato sulle proprie pagine web. Attualmente questo sito ospita pubblicità Google Adsense: https://www.google.com/intl/es_ALL/privacypolicy.html
-
-'
-      title: Politica sulla privacy
+    private_info_hidden: informazione privata nascosta
     profile: profilo
     profile_actions:
       blocking:
-        add: 
-        confirm: 
-        delete: 
-      contact: envia un messaggio privato a %{username}
-      edit: modifica profilo utente
+        add: bloccare
+        confirm: Sei sicuro que vuoi bloccare %{username}? O utente non potrá piu contattare te oppure vedere i tuoi annunci.
+        delete: sbloccare
+      contact: enviare messaggio privato
+      edit: modificare
       friend:
-        add: aggiungere %{username} alla tua lista di amici
-        delete: rimuovere %{username} alla tua lista di amici
+        add: aggiungere alla tua lista di amici
+        delete: rimuovere dalla tua lista di amici
     publish_ad: Pubblicare annuncio
     publish_ad_on: Inserisci annunci a %{woeid}
     published_ads: annunci pubblicati
@@ -340,6 +334,19 @@ it:
     remember_me: Ricordare il login
     requests: petizioni
     rss_suscribe: Iscriviti via RSS
+    rule:
+      entry_1: 
+      entry_10: 
+      entry_2: 
+      entry_3: 
+      entry_4: 
+      entry_5: 
+      entry_6: 
+      entry_7: 
+      entry_8: 
+      entry_9: 
+      title: 
+    rules: 
     save_failed: 'C''è un problema, verificare questo:'
     search:
       button: ricerca
@@ -347,12 +354,14 @@ it:
     searching_on_html: Cercando <i>%{q}</i> in
     send: Inviare
     send_a_message: Invia un messaggio privato a %{user}
+    settings: Configurazione
     share_this_ad: Condividi questo annuncio
     sign_in: Login
     sign_in_with_provider: Accedi con %{provider}
     sign_up: Creare un utente
     slogan: Non buttare, io regalo (senza condizioni)
     suggestions: suggerimenti
+    title_with_page: "%{title}, pagina %{page}"
     to_publish_or_send_messages: Per pubblicizzare o inviare Accesso al tuo account
     tos: condizioni di utilizzo
     translate:
@@ -363,8 +372,6 @@ it:
     update: salvare
     update_ad: Aggiornare l'annuncio
     user_ads: annunci
-    user_edit_profile: Modifica profilo utente
-    user_profile: Il profilo dell'utente
     username: Nome degli utenti
     users_most_active: utenti più attivi
     users_most_active_last_week: utenti più attivi nell'ultima settimana
@@ -373,9 +380,13 @@ it:
     want: petizione
     want_to_leave: Vuoi eliminare il tuo utente?
     we_need_your_password: "(Abbiamo bisogno la password per confermare le modifiche)"
-    welcome: ciao
-    write_a_comment: "+ Scrivi un commento"
     your_email: la tua email
+  number:
+    human:
+      storage_units:
+        format: "%n %u"
+        units:
+          mb: MB
   oauth:
     errors:
       duplicated_username: Il tuo username di %{provider} è gia nella nostra basi de dati. Se ti sei iscrito usando un'altra rete sociale oppure email e password, fai login usando quello. Altrimenti, inserisci un'altro username.
@@ -383,6 +394,10 @@ it:
   recaptcha:
     errors:
       verification_failed: C'è stato un error nella verificazione contro dei robot
+  reports:
+    create:
+      success_reported: Contenuti rimossi. Grazie!
+      success_banned: Denuncia ricevuta. Grazie!
   time:
     formats:
       active_admin: 

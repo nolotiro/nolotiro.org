@@ -3,8 +3,8 @@
 class AdsController < ApplicationController
   include StringUtils
 
-  before_action :set_ad, except: [:new, :create, :index]
-  before_action :authenticate_user!, except: [:index, :legacy_show, :show]
+  before_action :set_ad, except: %i[new create index]
+  before_action :authenticate_user!, except: %i[index show]
 
   def new
     if current_user.woeid.nil?
@@ -27,14 +27,10 @@ class AdsController < ApplicationController
     if verify_recaptcha(model: @ad) && @ad.save
       @ad.check_spam!
 
-      redirect_to ad_friendly_path, notice: t('nlt.ads.created')
+      redirect_to ad_friendly_path, notice: t("nlt.ads.created")
     else
-      render 'new'
+      render "new"
     end
-  end
-
-  def legacy_show
-    redirect_to adslug_path(@ad, slug: @ad.slug), status: :moved_permanently
   end
 
   def show
@@ -45,6 +41,11 @@ class AdsController < ApplicationController
       @ad.increment_readed_count!
       @comments = policy_scope(@ad.comments).includes(:user).oldest_first
     end
+
+    @author = @ad.user
+  end
+
+  def index
   end
 
   def edit
@@ -54,31 +55,31 @@ class AdsController < ApplicationController
   def change_status
     @ad.update!(status: params[:status].to_sym)
 
-    redirect_back fallback_location: listads_user_path(@ad.user),
-                  notice: t('nlt.ads.marked_as', status: @ad.status_string)
+    redirect_back fallback_location: profile_path(@ad.user.username),
+                  notice: t("nlt.ads.marked_as", status: @ad.status_string)
   end
 
   def bump
     @ad.bump
 
-    redirect_back fallback_location: listads_user_path(@ad.user),
-                  notice: t('nlt.ads.bumped')
+    redirect_back fallback_location: profile_path(@ad.user.username),
+                  notice: t("nlt.ads.bumped")
   end
 
   def update
     if @ad.update(ad_params)
       @ad.check_spam!
 
-      redirect_to update_redirect_path, notice: t('nlt.ads.updated')
+      redirect_to update_redirect_path, notice: t("nlt.ads.updated")
     else
-      render 'edit', alert: @ad.errors
+      render "edit", alert: @ad.errors
     end
   end
 
   def destroy
     @ad.destroy
 
-    redirect_to destroy_redirect_path, notice: t('nlt.ads.destroyed')
+    redirect_to destroy_redirect_path, notice: t("nlt.ads.destroyed")
   end
 
   private
@@ -89,11 +90,9 @@ class AdsController < ApplicationController
 
   def destroy_redirect_path
     previous_path = session.delete(:return_to)
-    unless previous_path.nil? || previous_path == ad_friendly_path
-      return previous_path
-    end
+    return previous_path unless previous_path.nil? || previous_path == ad_friendly_path
 
-    listads_user_path(@ad.user)
+    profile_path(@ad.user.username)
   end
 
   def ad_friendly_path
@@ -102,7 +101,7 @@ class AdsController < ApplicationController
 
   def referer_path
     URI(request.referer).path
-  rescue
+  rescue StandardError
     ad_friendly_path
   end
 
@@ -117,7 +116,7 @@ class AdsController < ApplicationController
   end
 
   def ad_update_whitelist
-    [:title, :body, :comments_enabled, :image]
+    %i[title body comments_enabled image]
   end
 
   def ad_params
