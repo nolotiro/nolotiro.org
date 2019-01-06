@@ -272,6 +272,7 @@ es:
     give_it_to: Regálaselo a %{user}
     hello_to: Hola %{recipient},
     here: aquí
+    home_title: Nolotiro.org
     if_you_are_new: Si eres un nuevo usuario, por favor
     if_youre_already_an_user: Si ya eres un usuario registrado, por favor
     is_this_scam: ¿Es una estafa?
