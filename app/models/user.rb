@@ -9,25 +9,26 @@ class User < ApplicationRecord
 
   belongs_to :town, foreign_key: :woeid
 
-  has_many :identities, inverse_of: :user, dependent: :destroy
+  with_options dependent: :destroy do
+    has_many :identities, inverse_of: :user, dependent: :destroy
 
     has_many :ads, foreign_key: :user_owner, inverse_of: :user
     has_many :comments, foreign_key: :user_owner, inverse_of: :user
 
     has_many :friendships
-    has_many :incoming_friendships, foreign_key: :friend_id,
-                                    class_name: "Friendship",
-                                    inverse_of: :friend
+    has_many :incoming_friendships,
+             foreign_key: :friend_id,
+             class_name: "Friendship",
+             inverse_of: :friend
 
-    has_many :receipts, foreign_key: :receiver_id,
-                        inverse_of: :receiver
+    has_many :receipts, foreign_key: :receiver_id, inverse_of: :receiver
 
-    has_many :blockings, foreign_key: :blocker_id,
-                         inverse_of: :blocker
+    has_many :blockings, foreign_key: :blocker_id, inverse_of: :blocker
 
-    has_many :received_blockings, foreign_key: :blocked_id,
-                                  class_name: "Blocking",
-                                  inverse_of: :blocked
+    has_many :received_blockings,
+             foreign_key: :blocked_id,
+             class_name: "Blocking",
+             inverse_of: :blocked
 
     has_many :dismissals
   end

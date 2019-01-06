@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class EnsureUnaccentEnabled < ActiveRecord::Migration
+class EnsureUnaccentEnabled < ActiveRecord::Migration[4.2]
   def change
     reversible do |direction|
       direction.up do
