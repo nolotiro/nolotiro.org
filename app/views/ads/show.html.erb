@@ -86,13 +86,6 @@
           </div>
         <% end %>
 
-        <div class="sharelinks">
-          <p><%= t('nlt.share_this_ad') %>:</p>
-
-          <div class="social-buttons">
-            <%= render "partials/social_buttons", url: ad_url(@ad) %>
-          </div>
-        </div>
       </div>
 
       <%= render "comments/list", comments: @comments %>
