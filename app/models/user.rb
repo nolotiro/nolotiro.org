@@ -7,7 +7,7 @@ class User < ApplicationRecord
 
   counter_stats_for :created_at
 
-  belongs_to :town, foreign_key: :woeid
+  belongs_to :town, foreign_key: :woeid, optional: true
 
   with_options dependent: :destroy do
     has_many :identities, inverse_of: :user, dependent: :destroy
