@@ -1,6 +1,5 @@
 # frozen_string_literal: true
 
-<<<<<<< HEAD
 require 'test_helper'
 require 'integration/concerns/authenticated_test'
 require 'support/ads'

@@ -14,7 +14,7 @@ module Statable
     scope :last_month, -> { since(1.month.ago) }
     scope :last_year, -> { since(1.year.ago) }
 
-    scope :since, ->(period_ago) { where(@stats_column.gteq(period_ago)) }
+    scope :since, ->(period_ago) { where(@stats_column.gteq(period_ago)) if @stats_column }
   end
 
   class_methods do

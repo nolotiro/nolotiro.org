@@ -17,7 +17,7 @@ class PersonalAdListingTest < ActionDispatch::IntegrationTest
 
     create(:ad, title: "something else to ensure it's filtered out")
 
-    visit listads_user_path(@user)
+    visit profile_path(@user)
   end
 
   it 'lists all ads in a separate tab in user profile' do

@@ -14,14 +14,9 @@ class UsersController < ApplicationController
     @ads = @ads.public_send(@type) if @type
     @ads = @ads.public_send(@status) if @status
 
-    @ads = @ads.includes(:user, town: [:state, :country])
-               .recent_first
-               .page(params[:page])
+    @ads = @ads.recent_first.page(params[:page])
   end
 
-  def profile
-    authorize(@user)
-  end
 
   private
 

@@ -36,21 +36,16 @@ class AdsControllerTest < ActionController::TestCase
   end
 
   test 'should show ad' do
+    @ad = create(:ad)
     get :show, params: { id: @ad.id, slug: @ad.slug }
 
     assert_response :success
   end
 
-  test 'redirects to slugged version from non-slugged one' do
-    get :legacy_show, params: { id: @ad.id }
-
-    assert_response :redirect
-    assert_redirected_to adslug_path(@ad, slug: @ad.slug)
-  end
-
   test 'redirects to new slugged URL after title changes' do
+    @ad = create(:ad, title: "My newww title")
     old_slug = @ad.slug
-    @ad.update!(title: 'My new title, mistyped something')
+    @ad.update!(title: 'My new title')
 
     get :show, params: { id: @ad.id, slug: old_slug }
 

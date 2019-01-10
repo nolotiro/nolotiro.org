@@ -2,9 +2,9 @@
 
 FactoryBot.define do
   factory :announcement do
-    transient { dismisser nil }
+    transient { dismisser { nil } }
 
-    message "hello world"
+    message { "hello world" }
 
     trait :acknowledged do
       after(:create) do |announcement, evaluator|
@@ -29,7 +29,7 @@ FactoryBot.define do
 
     trait :eternal do
       starts_at { 1.hour.ago }
-      ends_at nil
+      ends_at { nil }
     end
 
     current

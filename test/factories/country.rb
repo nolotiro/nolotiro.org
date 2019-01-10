@@ -5,13 +5,13 @@ FactoryBot.define do
     spain
 
     trait :spain do
-      iso 'ES'
-      name 'España'
+      iso { 'ES' }
+      name { 'España' }
     end
 
     trait :colombia do
-      name 'Colombia'
-      iso 'CO'
+      name { 'Colombia' }
+      iso { 'CO' }
     end
 
     initialize_with { Country.find_or_initialize_by(iso: iso) }

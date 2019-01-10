@@ -5,7 +5,7 @@ FactoryBot.define do
     association :originator, factory: :user
     association :recipient, factory: :user
 
-    subject "Talking about presents"
+    subject { "Talking about presents" }
 
     after(:build) do |conversation, evaluator|
       conversation.envelope_for(sender: evaluator.originator,
