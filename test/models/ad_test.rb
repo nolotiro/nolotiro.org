@@ -56,7 +56,7 @@ class AdTest < ActiveSupport::TestCase
   end
 
   test "#status_string" do
-    assert_equal "disponible", build(:ad, :available).status_string
+    assert_equal "lo regalo", build(:ad, :available).status_string
     assert_equal "reservado", build(:ad, :booked).status_string
     assert_equal "entregado", build(:ad, :delivered).status_string
   end
