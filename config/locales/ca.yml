@@ -355,7 +355,7 @@ ca:
       no_ads_message_html: No hi ha anuncis que coincideixin amb la cerca <b>%{q}</b>.
     searching_on_html: Buscant <i>%{q}</i> a
     send: Enviar
-    send_a_message: Envia un missatge privat a %{user}
+    send_a_message: Contacte a %{user}
     settings:
     share_this_ad: Comparteix aquest anunci
     sign_in: Accedir

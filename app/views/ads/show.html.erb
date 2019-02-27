@@ -35,8 +35,7 @@
     </span>
 
     <div class="add_list_image">
-      <%= link_to image_tag(@ad.image.url(:original), alt: @ad.filtered_title, class: "img-responsive"),
-        @ad.image.url %>
+      <%= image_tag(@ad.image.url(:original), alt: @ad.filtered_title, class: "img-responsive") %>
     </div>
   </div>
   <div class="col-md-4 col-sm-12 actions">
@@ -59,7 +58,7 @@
     <% if (@ad.want? || @ad.currently_available?) &&
         (current_user.nil? || current_user.whitelisting?(@author)) %>
     <%= link_to new_conversation_path(recipient_id: @ad.user_owner,
-                                      subject: @ad.slug), class: "btn btn-lg btn-primary" do %>
+                                      subject: @ad.slug), class: "btn btn-lg btn-primary btn-block" do %>
                                       <i class="glyphicon glyphicon-envelope"></i>
                                       <%= title %>
                                     <% end %>
