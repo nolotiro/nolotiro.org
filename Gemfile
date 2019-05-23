@@ -78,7 +78,7 @@ gem "recaptcha", "~> 4.7", require: "recaptcha/rails"
 # implementing the console from scratch.
 gem "activeadmin", "~> 1.2"
 
-gem 'bootstrap-sass', '~> 3.3'
+gem 'bootstrap-sass', '~> 3.4'
 gem 'sass-rails', '~> 5.0'
 
 # Rake task utils
