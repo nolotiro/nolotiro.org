@@ -58,7 +58,7 @@ gem "pg", "0.21.0"
 gem "redis-rails", "~> 5.0"
 gem "sidekiq", "~> 5.1"
 
-gem "devise", "~> 4.4"
+gem "devise", "~> 4.6"
 gem "kaminari", "~> 1.1"
 gem "maxminddb", "0.1.15"
 
