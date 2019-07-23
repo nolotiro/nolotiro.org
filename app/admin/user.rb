@@ -34,6 +34,7 @@ ActiveAdmin.register User do
   filter :last_sign_in_ip
   filter :last_sign_in_at
   filter :ads_count
+  filter :created_at
 
   show do
     attributes_table do
