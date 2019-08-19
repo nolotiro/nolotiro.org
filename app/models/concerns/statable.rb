@@ -14,12 +14,16 @@ module Statable
     scope :last_month, -> { since(1.month.ago) }
     scope :last_year, -> { since(1.year.ago) }
 
-    scope :since, ->(period_ago) { where(@stats_column.gteq(period_ago)) if @stats_column }
+    scope :since, ->(period_ago) do
+      where(stats_column.gteq(period_ago)) if stats_column
+    end
   end
 
   class_methods do
     def counter_stats_for(column)
-      @stats_column = arel_table[column.to_sym]
+      define_singleton_method(:stats_column) do
+        arel_table[column.to_sym]
+      end
     end
   end
 end
