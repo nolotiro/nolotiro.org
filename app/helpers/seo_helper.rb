@@ -11,7 +11,7 @@ module SeoHelper
     key = params[:type] == "want" ? "requests" : "gifts"
 
     main = if current_woeid
-             t("nlt.location_#{key}", location: @woeid_info[:full])
+             t("nlt.location_#{key}", location: @town.fullname)
            else
              t("nlt.all_#{key}")
            end

@@ -1,8 +1,8 @@
-<% if current_woeid.nil? %>
-  <% content_for :title, t('nlt.home_title') %>
-<% else %>
-  <% content_for :title, t('nlt.keywords') + @town.fullname %>
-  <% content_for :meta_description, t('nlt.gift_on', woeid: @town.fullname) %>
+<% content_for :title, listing_page_title %>
+
+<% if current_woeid %>
+  <% content_for :meta_description,
+                 t('nlt.gift_on', woeid: @town.fullname) %>
 <% end %>
 
 <% if current_woeid && @status == 'available' %>
@@ -108,3 +108,4 @@
     <%= render 'partials/rankings_sidebar' %>
   </div>
 </div>
+
