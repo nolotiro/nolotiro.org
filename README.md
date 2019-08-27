@@ -2,6 +2,7 @@
 
 [![Build Status][Travis Badge]][Travis URL]
 [![Dependency Status][Gemnasium Badge]][Gemnasium URL]
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Falabs%2Fnolotiro.org.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Falabs%2Fnolotiro.org?ref=badge_shield)
 
 This is the next revision of nolotiro.org (v3), this time in [Ruby On Rails].
 
@@ -121,3 +122,7 @@ https://beta.nolotiro.org/api/v1/ad/153735
 [Vagrant]: https://www.vagrantup.com/
 [Virtualbox]: https://www.virtualbox.org/
 [Yahoo Geoplanet]: https://archive.org/details/geoplanet_data_7.10.0.zip
+
+
+## License
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Falabs%2Fnolotiro.org.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Falabs%2Fnolotiro.org?ref=badge_large)
