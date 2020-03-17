@@ -243,6 +243,7 @@ es:
     do_you_have_it: "¿Lo tienes?"
     edit: Editar
     edit_this_ad: Edita este anuncio
+    emergency_flash_html: "<p> Debido a la <b>crisis del Coronavirus</b> vamos a desactivar la posibilidad de regalar o pedir objetos mientras dure la cuarentena. </p> <p>Queremos daros las gracias por preocuparos de reutilizar y regalar objetos a personas que los necesitan, es la mejor manera de luchar contra el cámbio climático, pero la situación de cuarentena nos obliga a ser prudentes y no salir de casa por unas semanas.</p> <p>Esperamos que vuelva la normalidad en poco tiempo y podamos seguir ayudando a que se tiren menos cosas a la basura. Muchas gracias por vuestra comprensión.</p>"
     expired: expirado
     faq:
       answer_1_html: El propósito fundamental de esta web es el de deshacernos de los objetos que ya no utilizamos y nos estorban en casa.
