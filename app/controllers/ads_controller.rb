@@ -7,6 +7,7 @@ class AdsController < ApplicationController
   before_action :authenticate_user!, except: %i[index show]
 
   def new
+    redirect_to root_path, notice: "No se pueden dar de alta anuncios nuevos"
     if current_user.woeid.nil?
       redirect_to location_ask_path
     else
